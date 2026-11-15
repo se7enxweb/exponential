@@ -69447,6 +69447,26 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>same as anonymous visitors</source>
         <translation>am yinebgawen udrigen</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>arussin</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ur yettwaḥrez ara deg tuffirt</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: asebter-a ur yettwaḥrez deg ula d yiwet n tuffirt, yesbadu-t %source (%calls n yisawalen)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Alamma d %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: akk tuffirin ad ǧǧent asebter-a ɣef %expiry (deg %seconds n tasinin), yesbadu-t %source (%calls n yisawalen)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

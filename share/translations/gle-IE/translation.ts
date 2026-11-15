@@ -69386,6 +69386,26 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>same as anonymous visitors</source>
         <translation>mar an gcéanna le cuairteoirí anaithnide</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>anaithnid</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Gan taisceadh</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ní choinnítear an leathanach seo in aon taisce, socraithe ag %source (%calls glao)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Go dtí %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: scaoileann gach taisce an leathanach seo ag %expiry (i gceann %seconds s), socraithe ag %source (%calls glao)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

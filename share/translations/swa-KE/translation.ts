@@ -69445,6 +69445,26 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>same as anonymous visitors</source>
         <translation>sawa na wa wageni wasiojulikana</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>haijulikani</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Haijahifadhiwa kwenye akiba</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ukurasa huu hauhifadhiwi kwenye akiba yoyote, umewekwa na %source (miito %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Hadi %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: akiba zote huachilia ukurasa huu saa %expiry (baada ya sekunde %seconds), umewekwa na %source (miito %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

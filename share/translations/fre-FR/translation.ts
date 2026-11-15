@@ -69346,6 +69346,26 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>same as anonymous visitors</source>
         <translation>identique à celui des visiteurs anonymes</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>inconnu</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Non mis en cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until : cette page n'est conservée dans aucun cache, défini par %source (%calls appels)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Jusqu'à %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until : chaque cache libère cette page à %expiry (dans %seconds s), défini par %source (%calls appels)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

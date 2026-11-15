@@ -69447,6 +69447,26 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>same as anonymous visitors</source>
         <translation>mitovy amin'ny an'ireo mpitsidika tsy fantatra anarana</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>tsy fantatra</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Tsy ao anaty cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: tsy tehirizina ao anaty cache na inona na inona ity pejy ity, napetrak'i %source (antso %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Hatramin'ny %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: avotsotry ny cache rehetra ity pejy ity amin'ny %expiry (afaka %seconds segondra), napetrak'i %source (antso %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

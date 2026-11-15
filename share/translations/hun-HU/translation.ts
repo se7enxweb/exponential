@@ -69386,6 +69386,26 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>same as anonymous visitors</source>
         <translation>ugyanaz, mint a névtelen látogatóknál</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ismeretlen</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Nincs gyorsítótárazva</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ez az oldal egyik gyorsítótárban sem marad, beállította: %source (%calls hívás)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Eddig: %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: minden gyorsítótár ekkor engedi el ezt az oldalt: %expiry (%seconds mp múlva), beállította: %source (%calls hívás)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

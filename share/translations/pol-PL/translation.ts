@@ -69202,6 +69202,26 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>same as anonymous visitors</source>
         <translation>taki sam jak u anonimowych odwiedzających</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>nieznany</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Brak w pamięci podręcznej</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ta strona nie jest przechowywana w żadnej pamięci podręcznej, ustawione przez %source (wywołania: %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Do %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: każda pamięć podręczna zwalnia tę stronę %expiry (za %seconds s), ustawione przez %source (wywołania: %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

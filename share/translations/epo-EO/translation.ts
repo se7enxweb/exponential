@@ -69447,6 +69447,26 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>same as anonymous visitors</source>
         <translation>sama kiel por anonimaj vizitantoj</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>nekonata</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ne kaŝmemorita</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ĉi tiu paĝo estas konservata en neniu kaŝmemoro, difinita de %source (%calls vokoj)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Ĝis %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ĉiu kaŝmemoro forlasas ĉi tiun paĝon je %expiry (post %seconds s), difinita de %source (%calls vokoj)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

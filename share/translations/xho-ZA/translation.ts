@@ -69445,6 +69445,26 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>same as anonymous visitors</source>
         <translation>iyafana nezeendwendwe ezingaziwayo</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>akwaziwa</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ayigcinwanga kwi-cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: eli phepha aligcinwa kuyo nayiphi na i-cache, limiselwe ngu-%source (iminxeba eyi-%calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Kude kube ngu-%time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: yonke i-cache iliyekela eli phepha ngo-%expiry (kwimizuzwana eyi-%seconds), limiselwe ngu-%source (iminxeba eyi-%calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

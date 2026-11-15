@@ -69445,6 +69445,26 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>same as anonymous visitors</source>
         <translation>dị ka nke ndị ọbịa na-enweghị aha</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>amaghị</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Edebeghị na cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: a naghị edebe ibe a n'ime cache ọ bụla, nke %source setịrị (oku %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Ruo %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache ọ bụla na-ahapụ ibe a na %expiry (n'ime sekọnd %seconds), nke %source setịrị (oku %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

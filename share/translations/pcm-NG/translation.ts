@@ -69455,6 +69455,26 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>same as anonymous visitors</source>
         <translation>na di same tin wey anonymous visitors dey get</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>no dey known</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>E no dey cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: no cache dey keep dis page, na %source set am (%calls calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Reach %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: all di cache go release dis page for %expiry (inside %seconds s), na %source set am (%calls calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

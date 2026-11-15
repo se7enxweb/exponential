@@ -69447,6 +69447,26 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>same as anonymous visitors</source>
         <translation>giống như khách truy cập ẩn danh</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>không xác định</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Không được lưu đệm</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: trang này không được giữ trong bộ đệm nào, do %source thiết lập (%calls lần gọi)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Đến %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: mọi bộ đệm sẽ giải phóng trang này lúc %expiry (sau %seconds giây), do %source thiết lập (%calls lần gọi)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

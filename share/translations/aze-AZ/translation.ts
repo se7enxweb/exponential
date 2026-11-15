@@ -69447,6 +69447,26 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>same as anonymous visitors</source>
         <translation>anonim ziyarətçilərdəki kimi</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>məlum deyil</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Keşlənməyib</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: bu səhifə heç bir keşdə saxlanmır, %source tərəfindən təyin edilib (%calls çağırış)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time-dək</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: bütün keşlər bu səhifəni %expiry vaxtında buraxır (%seconds san sonra), %source tərəfindən təyin edilib (%calls çağırış)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

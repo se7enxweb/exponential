@@ -69447,6 +69447,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>အမည်မသိ ဧည့်သည်များနှင့် အတူတူပင်</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>မသိရသေးပါ</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>ကက်ရှ်မလုပ်ထားပါ</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ဤစာမျက်နှာကို မည်သည့်ကက်ရှ်တွင်မျှ မသိမ်းထားပါ၊ %source မှ သတ်မှတ်သည် (ခေါ်ဆိုမှု %calls ကြိမ်)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time အထိ</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ကက်ရှ်အားလုံးသည် ဤစာမျက်နှာကို %expiry တွင် လွှတ်ပေးသည် (%seconds စက္ကန့်အတွင်း)၊ %source မှ သတ်မှတ်သည် (ခေါ်ဆိုမှု %calls ကြိမ်)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

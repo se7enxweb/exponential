@@ -69447,6 +69447,26 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>same as anonymous visitors</source>
         <translation>zvakafanana nezvevashanyi vasingazivikanwe</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>hazvizivikanwi</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Haina kuchengetwa mucache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: peji iyi haichengetwi mune chero cache, yakaiswa na %source (kudanwa %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Kusvika %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: macache ose anosunungura peji iyi pa %expiry (mumasekondi %seconds), yakaiswa na %source (kudanwa %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

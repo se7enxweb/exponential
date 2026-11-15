@@ -69447,6 +69447,26 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>same as anonymous visitors</source>
         <translation>itselde as by anonime besikers</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ûnbekend</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Net yn cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: dizze side wurdt yn gjin inkelde cache bewarre, ynsteld troch %source (%calls oanroppen)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Oant %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: alle caches litte dizze side los om %expiry (oer %seconds s), ynsteld troch %source (%calls oanroppen)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

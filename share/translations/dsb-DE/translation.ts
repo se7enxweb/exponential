@@ -69386,6 +69386,26 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>same as anonymous visitors</source>
         <translation>ako pśi anonymnych woglědowarjach</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>njeznaty</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Njejo w cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: toś ten bok njeskładujo se w žednem cache, nastajone pśez %source (%calls wołanjow)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Do %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: wšykne cache wótpušćiju toś ten bok %expiry (za %seconds s), nastajone pśez %source (%calls wołanjow)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

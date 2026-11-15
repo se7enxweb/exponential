@@ -69447,6 +69447,26 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>same as anonymous visitors</source>
         <translation>seamma go namahis guossiin</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ii dieđihuvvo</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ii leat gaskarádjosis</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: dát siidu ii vurkejuvvo makkárge gaskarádjosii, %source mearridan (%calls rávkalusa)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Gitta %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: buot gaskarádjosat luitet dán siiddu %expiry (%seconds sekundda geažes), %source mearridan (%calls rávkalusa)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

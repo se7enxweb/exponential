@@ -69447,6 +69447,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>ምስ ስም-ኣልቦ በጻሕቲ ሓደ ዓይነት</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ዘይፍለጥ</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>ኣብ ካሽ ኣይተዓቀበን</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: እዚ ገጽ ኣብ ዝኾነ ካሽ ኣይዕቀብን፣ ብ %source ዝተወሰነ (%calls ጻውዒት)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>ክሳብ %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ኩሎም ካሽታት ነዚ ገጽ ኣብ %expiry ይለቅዎ (ድሕሪ %seconds ካልኢት)፣ ብ %source ዝተወሰነ (%calls ጻውዒት)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

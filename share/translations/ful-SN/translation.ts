@@ -69447,6 +69447,26 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>same as anonymous visitors</source>
         <translation>ko wano koɓe jillotooɓe ɓe innde mum anndaaka</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>anndaaka</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Waawaa mooftaade e cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ngoo hello mooftaaka e cache woo, ko %source tellini (noddaade %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Haa %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache kala accata ngoo hello e %expiry (e nder %seconds sekond), ko %source tellini (noddaade %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69447,6 +69447,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>ຄືກັບຜູ້ເຂົ້າຊົມທີ່ບໍ່ລະບຸຊື່</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ບໍ່ຮູ້</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>ບໍ່ໄດ້ແຄຊ</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ໜ້ານີ້ບໍ່ຖືກເກັບໄວ້ໃນແຄຊໃດໆ, ຕັ້ງໂດຍ %source (ເອີ້ນ %calls ຄັ້ງ)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>ຈົນເຖິງ %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ທຸກແຄຊຈະປ່ອຍໜ້ານີ້ເວລາ %expiry (ໃນອີກ %seconds ວິນາທີ), ຕັ້ງໂດຍ %source (ເອີ້ນ %calls ຄັ້ງ)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

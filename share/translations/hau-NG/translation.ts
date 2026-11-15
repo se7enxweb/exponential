@@ -69445,6 +69445,26 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>same as anonymous visitors</source>
         <translation>daidai da na baƙi marasa suna</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>Ba a sani ba</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ba a adana a cache ba</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ba a ajiye wannan shafi a kowane cache ba, %source ne ya saita (kira %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Har zuwa %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: kowane cache zai saki wannan shafi a %expiry (cikin daƙiƙa %seconds), %source ne ya saita (kira %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

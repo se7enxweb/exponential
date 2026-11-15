@@ -67995,6 +67995,26 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>same as anonymous visitors</source>
         <translation>anonim ziyaretçilerinkiyle aynı</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>bilinmiyor</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Önbelleğe alınmadı</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: bu sayfa hiçbir önbellekte tutulmaz, %source tarafından ayarlandı (%calls çağrı)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time saatine kadar</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: tüm önbellekler bu sayfayı %expiry anında bırakır (%seconds sn sonra), %source tarafından ayarlandı (%calls çağrı)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

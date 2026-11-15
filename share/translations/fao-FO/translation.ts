@@ -69447,6 +69447,26 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>same as anonymous visitors</source>
         <translation>sum hjá dulnevndum vitjandi</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ókent</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ikki í skundminni</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: henda síðan verður ikki goymd í nøkrum skundminni, ásett av %source (%calls kall)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Til %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: øll skundminni sleppa hesi síðuni %expiry (um %seconds sek.), ásett av %source (%calls kall)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

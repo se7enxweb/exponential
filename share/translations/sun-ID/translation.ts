@@ -69455,6 +69455,26 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>same as anonymous visitors</source>
         <translation>sarua jeung nu nganjang anonim</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>teu dipikanyaho</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Henteu di-cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: kaca ieu henteu disimpen dina cache mana waé, disetél ku %source (%calls panggero)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Nepi ka %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: unggal cache ngaleupaskeun kaca ieu dina %expiry (dina %seconds dt), disetél ku %source (%calls panggero)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

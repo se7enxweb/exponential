@@ -69386,6 +69386,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>ίδιο με τους ανώνυμους επισκέπτες</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>άγνωστο</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Χωρίς κρυφή μνήμη</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: αυτή η σελίδα δεν διατηρείται σε καμία κρυφή μνήμη, ορίστηκε από %source (%calls κλήσεις)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Έως %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: κάθε κρυφή μνήμη αποδεσμεύει αυτή τη σελίδα στις %expiry (σε %seconds δ), ορίστηκε από %source (%calls κλήσεις)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

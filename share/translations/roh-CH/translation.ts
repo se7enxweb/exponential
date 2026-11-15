@@ -69447,6 +69447,26 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>same as anonymous visitors</source>
         <translation>sco tar visitaders anonims</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>nunenconuschent</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Betg en il cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: questa pagina na vegn tegnida en nagin cache, definì da %source (%calls clamadas)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Fin %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: mintga cache relascha questa pagina a %expiry (en %seconds s), definì da %source (%calls clamadas)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

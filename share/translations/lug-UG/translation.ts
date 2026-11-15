@@ -69447,6 +69447,26 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>same as anonymous visitors</source>
         <translation>kye kimu n'eky'abagenyi abatamanyiddwa mannya</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>tamanyiddwa</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Tekyaterekeddwa mu cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: olupapula luno teluterekebwa mu cache yonna, kyateekebwawo %source (emirundi %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Okutuusa %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: buli cache erekula olupapula luno ku %expiry (mu sikonda %seconds), kyateekebwawo %source (emirundi %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

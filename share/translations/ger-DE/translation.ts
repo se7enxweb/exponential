@@ -72384,6 +72384,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
         <translation>Größer als %size (debugbar.ini SessionWarnBytes): Jeder Request dieses Benutzers liest die ganze Session.</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>unbekannt</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Nicht gecacht</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: Diese Seite wird in keinem Cache gehalten, gesetzt von %source (%calls Aufrufe)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Bis %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: Jeder Cache gibt diese Seite um %expiry frei (in %seconds s), gesetzt von %source (%calls Aufrufe)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

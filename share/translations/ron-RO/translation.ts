@@ -69386,6 +69386,26 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>same as anonymous visitors</source>
         <translation>la fel ca pentru vizitatorii anonimi</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>necunoscut</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Nememorat în cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: această pagină nu este păstrată în niciun cache, setat de %source (%calls apeluri)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Până la %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: toate cache-urile eliberează această pagină la %expiry (în %seconds s), setat de %source (%calls apeluri)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

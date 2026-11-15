@@ -69447,6 +69447,26 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>same as anonymous visitors</source>
         <translation>igual ca para os visitantes anónimos</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>descoñecido</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Sen caché</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: esta páxina non se garda en ningunha caché, definido por %source (%calls chamadas)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Ata as %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: todas as cachés liberan esta páxina ás %expiry (en %seconds s), definido por %source (%calls chamadas)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

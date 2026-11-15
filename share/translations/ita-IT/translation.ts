@@ -69397,6 +69397,26 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>same as anonymous visitors</source>
         <translation>uguale a quello dei visitatori anonimi</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>sconosciuto</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Non in cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: questa pagina non viene conservata in nessuna cache, impostato da %source (%calls chiamate)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Fino alle %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ogni cache rilascia questa pagina il %expiry (tra %seconds s), impostato da %source (%calls chiamate)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

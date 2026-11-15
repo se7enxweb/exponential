@@ -69386,6 +69386,26 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>same as anonymous visitors</source>
         <translation>sama kuin anonyymeillä vierailijoilla</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>tuntematon</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ei välimuistissa</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: tätä sivua ei säilytetä missään välimuistissa, asettanut %source (%calls kutsua)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time asti</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: kaikki välimuistit vapauttavat tämän sivun %expiry (%seconds s kuluttua), asettanut %source (%calls kutsua)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

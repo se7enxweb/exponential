@@ -69447,6 +69447,26 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>same as anonymous visitors</source>
         <translation>sutinnaq watukuqkuna hina</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>mana yachasqa</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Mana cachepi waqaychasqachu</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: kay p'anqaqa mana ima cachepipas waqaychakunchu, %source churasqan (%calls waqyakuy)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time kama</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: llapan cachekuna kay p'anqata %expiry nisqapi kacharinku (%seconds segundopi), %source churasqan (%calls waqyakuy)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69447,6 +69447,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>เหมือนกับผู้เยี่ยมชมที่ไม่ระบุชื่อ</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ไม่ทราบ</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>ไม่ได้แคช</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: หน้านี้ไม่ถูกเก็บไว้ในแคชใดเลย ตั้งค่าโดย %source (เรียก %calls ครั้ง)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>จนถึง %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: แคชทุกตัวจะปล่อยหน้านี้เมื่อ %expiry (ในอีก %seconds วินาที) ตั้งค่าโดย %source (เรียก %calls ครั้ง)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

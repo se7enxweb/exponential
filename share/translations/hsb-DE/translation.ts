@@ -69447,6 +69447,26 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>same as anonymous visitors</source>
         <translation>kaž pola anonymnych wopytowarjow</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>njeznate</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Njepufrowane</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: tuta strona so w žanym pufrowaku njeskładuje, nastajene přez %source (%calls wołanjow)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Hač do %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: kóždy pufrowak pušći tutu stronu %expiry (za %seconds s), nastajene přez %source (%calls wołanjow)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

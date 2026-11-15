@@ -69386,6 +69386,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>익명 방문자와 같음</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>알 수 없음</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>캐시되지 않음</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: 이 페이지는 어떤 캐시에도 저장되지 않습니다. 설정: %source (%calls회 호출)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time까지</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: 모든 캐시가 %expiry에 이 페이지를 해제합니다(%seconds초 후). 설정: %source (%calls회 호출)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

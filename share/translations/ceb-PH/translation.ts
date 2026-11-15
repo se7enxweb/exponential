@@ -69447,6 +69447,26 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>same as anonymous visitors</source>
         <translation>pareho sa mga anonimong bisita</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>wala mahibaloi</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Wala na-cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: kini nga panid wala gitipigan sa bisan unsang cache, gitakda sa %source (%calls ka tawag)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Hangtod %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: buhian kini nga panid sa tanang cache sa %expiry (sulod sa %seconds segundo), gitakda sa %source (%calls ka tawag)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

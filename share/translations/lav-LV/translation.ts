@@ -69386,6 +69386,26 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>same as anonymous visitors</source>
         <translation>tāds pats kā anonīmajiem apmeklētājiem</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>nav zināms</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Nav kešatmiņā</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: šī lapa netiek glabāta nevienā kešatmiņā, iestatīja %source (%calls izsaukumi)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Līdz %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: visas kešatmiņas atbrīvo šo lapu %expiry (pēc %seconds s), iestatīja %source (%calls izsaukumi)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69447,6 +69447,26 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>same as anonymous visitors</source>
         <translation>ɛte sɛ ahɔho a wɔnnim wɔn din no deɛ</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>wonnim</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Wɔnkora no wɔ cache mu</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: wɔnkora krataafa yi wɔ cache biara mu, %source na ɛhyɛɛ no (frɛ %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Kosi %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache biara gyae krataafa yi wɔ %expiry (wɔ simma %seconds mu), %source na ɛhyɛɛ no (frɛ %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

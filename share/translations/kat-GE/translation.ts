@@ -69447,6 +69447,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>ისევე, როგორც ანონიმური სტუმრებისთვის</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>უცნობი</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>არ არის ქეშირებული</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ეს გვერდი არცერთ ქეშში არ ინახება, დაყენებულია %source-ის მიერ (%calls გამოძახება)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time-მდე</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ყველა ქეში ამ გვერდს გაათავისუფლებს %expiry-ზე (%seconds წმ-ში), დაყენებულია %source-ის მიერ (%calls გამოძახება)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69447,6 +69447,26 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>same as anonymous visitors</source>
         <translation>sama seperti pengunjung anonim</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>tidak diketahui</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Tidak di-cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: halaman ini tidak disimpan di cache mana pun, ditetapkan oleh %source (%calls panggilan)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Hingga %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: semua cache melepas halaman ini pada %expiry (dalam %seconds dtk), ditetapkan oleh %source (%calls panggilan)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

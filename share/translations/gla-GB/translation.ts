@@ -69447,6 +69447,26 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>same as anonymous visitors</source>
         <translation>co-ionann ri luchd-tadhail gun ainm</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>neo-aithnichte</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Gun tasgadh</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: chan eil an duilleag seo ga cumail ann an tasgadan sam bith, air a shuidheachadh le %source (%calls gairmean)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Gu %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: leigidh gach tasgadan às an duilleag seo aig %expiry (an ceann %seconds diog), air a shuidheachadh le %source (%calls gairmean)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

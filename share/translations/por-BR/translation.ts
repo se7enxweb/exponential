@@ -69982,6 +69982,26 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>same as anonymous visitors</source>
         <translation>igual ao dos visitantes anônimos</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconhecido</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Sem cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: esta página não é mantida em nenhum cache, definido por %source (%calls chamadas)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Até %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: todos os caches liberam esta página em %expiry (em %seconds s), definido por %source (%calls chamadas)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

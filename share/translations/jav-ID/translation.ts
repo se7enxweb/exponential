@@ -69455,6 +69455,26 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>same as anonymous visitors</source>
         <translation>padha karo pengunjung anonim</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>durung dingerteni</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ora di-cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: kaca iki ora disimpen ing cache apa wae, disetel dening %source (%calls panggilan)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Nganti %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: saben cache ngeculake kaca iki ing %expiry (ing %seconds dt), disetel dening %source (%calls panggilan)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

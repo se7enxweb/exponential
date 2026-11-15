@@ -69447,6 +69447,26 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>same as anonymous visitors</source>
         <translation>ndenge moko na oyo ya bapaya bazangi nkombo</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>eyebani te</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ebombami na cache te</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: lokasa oyo ebombamaka na cache moko te, etiamaki na %source (mbala %calls ya kobenga)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Kino %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ba-cache nyonso etiki lokasa oyo na %expiry (na kati ya sekonde %seconds), etiamaki na %source (mbala %calls ya kobenga)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

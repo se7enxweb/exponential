@@ -69215,6 +69215,26 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>same as anonymous visitors</source>
         <translation>zoals bij anonieme bezoekers</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Niet gecachet</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: deze pagina wordt in geen enkele cache bewaard, ingesteld door %source (%calls aanroepen)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Tot %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: elke cache laat deze pagina los om %expiry (over %seconds s), ingesteld door %source (%calls aanroepen)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

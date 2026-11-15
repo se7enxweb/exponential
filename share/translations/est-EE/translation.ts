@@ -69386,6 +69386,26 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>same as anonymous visitors</source>
         <translation>sama mis anonüümsetel külastajatel</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>teadmata</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Puhverdamata</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: seda lehte ei hoita üheski puhvris, määras %source (%calls kutset)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Kuni %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: kõik puhvrid vabastavad selle lehe %expiry (%seconds s pärast), määras %source (%calls kutset)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69447,6 +69447,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>گمنام گهمڻ وارن جهڙو</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>اڻڄاتل</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>ڪيش ٿيل ناهي</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: هي صفحو ڪنهن به ڪيش ۾ نٿو رکيو وڃي، %source طرفان مقرر (%calls ڪالون)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time تائين</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: هر ڪيش هن صفحي کي %expiry تي ڇڏي ٿو (%seconds سيڪنڊن ۾)، %source طرفان مقرر (%calls ڪالون)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

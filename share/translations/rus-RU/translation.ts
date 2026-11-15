@@ -69386,6 +69386,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>как у анонимных посетителей</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>неизвестно</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Не кешируется</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: эта страница не хранится ни в одном кеше, задано в %source (вызовов: %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>До %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: все кеши освобождают эту страницу в %expiry (через %seconds с), задано в %source (вызовов: %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69447,6 +69447,26 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>same as anonymous visitors</source>
         <translation>a ye kelen ye ni bisigilikɛla tɔgɔbaliw ta ye</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>tɛ dɔn</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ma mara cache la</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: nin ɲɛ tɛ mara cache si la, %source de y'a sigi (weelekan %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Fo %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache bɛɛ bɛ nin ɲɛ bila %expiry (segɔni %seconds kɔnɔ), %source de y'a sigi (weelekan %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

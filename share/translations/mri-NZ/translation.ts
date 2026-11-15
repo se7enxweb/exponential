@@ -69447,6 +69447,26 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>same as anonymous visitors</source>
         <translation>he ōrite ki ō ngā manuhiri ingoakore</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>kāore e mōhiotia</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Kāore i te keteroki</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: kāore tēnei whārangi e puritia ki tētahi keteroki, nā %source i tautuhi (%calls karanga)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Tae noa ki %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ka tukuna e ia keteroki tēnei whārangi ā %expiry (i roto i te %seconds hēkona), nā %source i tautuhi (%calls karanga)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

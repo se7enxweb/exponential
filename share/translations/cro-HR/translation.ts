@@ -69043,6 +69043,26 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>same as anonymous visitors</source>
         <translation>isto kao kod anonimnih posjetitelja</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>nepoznato</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Nije u predmemoriji</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ova se stranica ne čuva ni u jednoj predmemoriji, postavio %source (poziva: %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Do %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: sve predmemorije otpuštaju ovu stranicu u %expiry (za %seconds s), postavio %source (poziva: %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

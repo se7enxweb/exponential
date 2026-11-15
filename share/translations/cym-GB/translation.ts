@@ -69447,6 +69447,26 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>same as anonymous visitors</source>
         <translation>yr un fath ag ymwelwyr dienw</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>anhysbys</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Heb ei storio</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ni chedwir y dudalen hon mewn unrhyw storfa, wedi'i osod gan %source (%calls galwad)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Tan %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: mae pob storfa'n gollwng y dudalen hon am %expiry (ymhen %seconds eiliad), wedi'i osod gan %source (%calls galwad)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69386,6 +69386,26 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>same as anonymous visitors</source>
         <translation>igual que per als visitants anònims</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconegut</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Sense memòria cau</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: aquesta pàgina no es conserva en cap memòria cau, definit per %source (%calls crides)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Fins a les %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: totes les memòries cau alliberen aquesta pàgina a %expiry (d'aquí a %seconds s), definit per %source (%calls crides)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69386,6 +69386,26 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>same as anonymous visitors</source>
         <translation>igual ao dos visitantes anónimos</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconhecido</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Sem cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: esta página não é mantida em nenhuma cache, definido por %source (%calls chamadas)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Até às %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: todas as caches libertam esta página às %expiry (dentro de %seconds s), definido por %source (%calls chamadas)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

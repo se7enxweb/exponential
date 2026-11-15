@@ -69386,6 +69386,26 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>same as anonymous visitors</source>
         <translation>dieselfde as vir anonieme besoekers</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Nie gekas nie</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: hierdie bladsy word in geen kas gehou nie, gestel deur %source (%calls oproepe)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Tot %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: elke kas laat hierdie bladsy om %expiry gaan (oor %seconds s), gestel deur %source (%calls oproepe)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

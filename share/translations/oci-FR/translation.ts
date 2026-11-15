@@ -69447,6 +69447,26 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>same as anonymous visitors</source>
         <translation>parièr coma per los visitaires anonims</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconegut</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Pas en cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: aquesta pagina es pas gardada dins cap de cache, definit per %source (%calls apèls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Fins a %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: totes los caches daissan aquesta pagina a %expiry (dins %seconds s), definit per %source (%calls apèls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

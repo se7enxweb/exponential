@@ -67939,6 +67939,26 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>same as anonymous visitors</source>
         <translation>idem ac hospitibus anonymis</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ignotum</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Non in cella servatur</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: haec pagina in nulla cella servatur, a %source statutum (%calls invocationes)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Usque ad %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: omnes cellae hanc paginam %expiry dimittunt (post %seconds s), a %source statutum (%calls invocationes)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

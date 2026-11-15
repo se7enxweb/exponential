@@ -69272,6 +69272,26 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>same as anonymous visitors</source>
         <translation>stejné jako u anonymních návštěvníků</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznámé</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Neukládáno do mezipaměti</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: tato stránka se neukládá do žádné mezipaměti, nastaveno v %source (volání: %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Do %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: všechny mezipaměti uvolní tuto stránku v %expiry (za %seconds s), nastaveno v %source (volání: %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

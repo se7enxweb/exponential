@@ -69447,6 +69447,26 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>same as anonymous visitors</source>
         <translation>kimwe n'ivy'abagenzi batazwi</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ntizwi</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ntibitswe muri cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: uru rupapuro ntirubikwa muri cache n'imwe, vyashizweho na %source (incuro %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Gushika %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache zose zirarekura uru rupapuro saa %expiry (mu masegonda %seconds), vyashizweho na %source (incuro %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

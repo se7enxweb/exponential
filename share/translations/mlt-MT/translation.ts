@@ -69386,6 +69386,26 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>same as anonymous visitors</source>
         <translation>l-istess bħal tal-viżitaturi anonimi</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>mhux magħruf</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Mhux fil-cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: din il-paġna ma tinżamm f'ebda cache, issettjat minn %source (%calls sejħiet)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Sa %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: kull cache iħalli din il-paġna fi %expiry (fi %seconds s), issettjat minn %source (%calls sejħiet)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

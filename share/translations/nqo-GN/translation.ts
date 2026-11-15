@@ -69447,6 +69447,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>ߞߋߟߋ߲ ߞߏ߫ ߕߐ߯ߒߕߊߓߊߟߌ ߟߎ߬ ߕߊ</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ߕߍ ߘߏ߲</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>ߡߊ߫ ߟߊߡߊߙߊ߫</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ߞߐߜߍ ߣߌ߲߬ ߡߊ߫ ߟߊߡߊߙߊ߫ ߟߊߡߙߊ߬ߦߙߐ߫ ߛߌ߫ ߞߣߐ߫، ߊ߬ ߟߊߘߏ߲߬ߣߍ߲߫ ߦߋ߫ %source ߟߋ߬ ߓߟߏ߫ (ߥߟߌ߬ ߞߍߣߍ߲߫ %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>ߝߏ߫ %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ߟߊߡߙߊ߬ߦߙߐ߫ ߓߍ߯ ߓߘߊ߫ ߞߐߜߍ ߣߌ߲߬ ߓߌ߬ߟߊ߬ %expiry (ߝߊ߲߬ߘߌ߬ %seconds ߞߣߐ߫)، ߊ߬ ߟߊߘߏ߲߬ߣߍ߲߫ ߦߋ߫ %source ߟߋ߬ ߓߟߏ߫ (ߥߟߌ߬ ߞߍߣߍ߲߫ %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

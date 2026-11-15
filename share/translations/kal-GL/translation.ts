@@ -69386,6 +69386,26 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>same as anonymous visitors</source>
         <translation>takusartut aqqeqanngitsut assigalugit</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ilisimaneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Cache-mut toqqorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: quppernera una cache-mi sumiluunniit toqqorneqanngilaq, %source-mit aalajangersarneqarpoq (%calls taaneqarnerit)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time tikillugu</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache-t tamarmik quppernera una %expiry-mi peerartarpaat (sekundit %seconds qaangiuppata), %source-mit aalajangersarneqarpoq (%calls taaneqarnerit)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

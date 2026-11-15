@@ -69427,6 +69427,26 @@ Remoambuevaerã nódo klase swap tembiapo rupive.</translation>
         <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
         <translation>Tuichave %size-gui (debugbar.ini SessionWarnBytes): opaite ko puruhára jerure omoñe'ẽ jeike tuichakue.</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ojekuaa'ỹva</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Noñeñongatúi caché-pe</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ko kuatiarogue noñeñongatúi mamove caché-pe, omoĩ %source (%calls ñehenói)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time peve</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: opaite caché oheja ko kuatiarogue %expiry-pe (%seconds aravo'ípe), omoĩ %source (%calls ñehenói)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

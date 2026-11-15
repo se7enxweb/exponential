@@ -69445,6 +69445,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>bákan náà pẹ̀lú ti àwọn àlejò aláìlórúkọ</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>àìmọ̀</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Kò sí nínú cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: a kò tọ́jú ojú-ìwé yìí sínú cache kankan, %source ló ṣètò rẹ̀ (ìpè %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Títí di %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: gbogbo cache yóò tú ojú-ìwé yìí sílẹ̀ ní %expiry (ní ìṣẹ́jú-àáyá %seconds), %source ló ṣètò rẹ̀ (ìpè %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

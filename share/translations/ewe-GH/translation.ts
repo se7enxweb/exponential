@@ -69447,6 +69447,26 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>same as anonymous visitors</source>
         <translation>esɔ kple amedzro siwo ŋkɔ menya o tɔ</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>menya o</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Womedzra ɖo cache me o</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: womedzraa axa sia ɖo cache aɖeke me o, %source ye ɖoe (yɔyɔ %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Va se ɖe %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache ɖesiaɖe aɖe asi le axa sia ŋu le %expiry (le sekend %seconds me), %source ye ɖoe (yɔyɔ %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

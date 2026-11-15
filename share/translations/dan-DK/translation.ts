@@ -68392,6 +68392,26 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>same as anonymous visitors</source>
         <translation>samme som for anonyme besøgende</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukendt</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ikke cachet</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: denne side gemmes ikke i nogen cache, angivet af %source (%calls kald)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Indtil %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: alle caches slipper denne side kl. %expiry (om %seconds s), angivet af %source (%calls kald)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

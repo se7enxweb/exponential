@@ -71681,6 +71681,26 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>same as anonymous visitors</source>
         <translation>igual que para los visitantes anónimos</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconocido</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Sin caché</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: esta página no se guarda en ninguna caché, definido por %source (%calls llamadas)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Hasta las %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: todas las cachés liberan esta página el %expiry (en %seconds s), definido por %source (%calls llamadas)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

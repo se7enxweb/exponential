@@ -69447,6 +69447,26 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>same as anonymous visitors</source>
         <translation>kapareho ng sa mga anonimong bisita</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>hindi alam</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Hindi naka-cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: hindi itinatago ang pahinang ito sa anumang cache, itinakda ng %source (%calls tawag)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Hanggang %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: bibitawan ng bawat cache ang pahinang ito sa %expiry (sa loob ng %seconds seg), itinakda ng %source (%calls tawag)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

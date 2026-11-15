@@ -69447,6 +69447,26 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>same as anonymous visitors</source>
         <translation>heñvel ouzh ar weladennerien dizanv</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>dianav</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>N'eo ket er grubuilh</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ne vez miret ar bajenn-mañ e krubuilh ebet, termenet gant %source (%calls galv)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Betek %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: pep krubuilh a laosk ar bajenn-mañ da %expiry (a-benn %seconds eilenn), termenet gant %source (%calls galv)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

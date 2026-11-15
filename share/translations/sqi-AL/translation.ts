@@ -69386,6 +69386,26 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>same as anonymous visitors</source>
         <translation>njëlloj si për vizitorët anonimë</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>e panjohur</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Jo në cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: kjo faqe nuk ruhet në asnjë cache, caktuar nga %source (%calls thirrje)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Deri në %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: çdo cache e lëshon këtë faqe në %expiry (pas %seconds s), caktuar nga %source (%calls thirrje)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

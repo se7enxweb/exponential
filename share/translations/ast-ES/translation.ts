@@ -69447,6 +69447,26 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>same as anonymous visitors</source>
         <translation>igual que pa los visitantes anónimos</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconocíu</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ensin caché</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: esta páxina nun se guarda en nenguna caché, establecío por %source (%calls llamaes)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Hasta les %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: toles cachés lliberen esta páxina a les %expiry (en %seconds s), establecío por %source (%calls llamaes)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

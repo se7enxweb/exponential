@@ -69445,6 +69445,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>與匿名訪客相同</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>未知</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>未快取</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until：此頁面不保留於任何快取中，由 %source 設定（呼叫 %calls 次）</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>至 %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until：所有快取將於 %expiry 釋放此頁面（%seconds 秒後），由 %source 設定（呼叫 %calls 次）</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

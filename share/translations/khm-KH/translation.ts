@@ -69447,6 +69447,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>ដូចអ្នកទស្សនាអនាមិក</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>មិនស្គាល់</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>មិនបានដាក់ក្នុងឃ្លាំងសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ទំព័រនេះមិនត្រូវបានរក្សាទុកក្នុងឃ្លាំងសម្ងាត់ណាមួយទេ កំណត់ដោយ %source (ការហៅ %calls ដង)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>រហូតដល់ %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: ឃ្លាំងសម្ងាត់នីមួយៗលែងទំព័រនេះនៅ %expiry (ក្នុងរយៈពេល %seconds វិនាទី) កំណត់ដោយ %source (ការហៅ %calls ដង)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

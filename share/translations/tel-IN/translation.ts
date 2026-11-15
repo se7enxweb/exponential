@@ -69445,6 +69445,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>అనామక సందర్శకులకు ఉన్నట్లే</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>తెలియదు</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>కాష్ చేయబడలేదు</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ఈ పేజీ ఏ కాష్‌లోనూ ఉంచబడదు, %source ద్వారా సెట్ చేయబడింది (%calls కాల్‌లు)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time వరకు</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: అన్ని కాష్‌లు ఈ పేజీని %expiry కు విడుదల చేస్తాయి (%seconds సెకన్లలో), %source ద్వారా సెట్ చేయబడింది (%calls కాল్‌లు)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

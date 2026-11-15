@@ -63677,6 +63677,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
         <translation>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>unknown</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Not cached</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: this page is kept in no cache, set by %source (%calls calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Until %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

@@ -69447,6 +69447,26 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>same as anonymous visitors</source>
         <translation>anonim tashrif buyuruvchilarnikidek</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>nomaʼlum</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Keshlanmagan</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: bu sahifa hech bir keshda saqlanmaydi, %source tomonidan belgilangan (%calls ta chaqiruv)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time gacha</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: barcha keshlar bu sahifani %expiry da boʻshatadi (%seconds s dan keyin), %source tomonidan belgilangan (%calls ta chaqiruv)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

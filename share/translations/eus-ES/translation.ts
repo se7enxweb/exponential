@@ -69447,6 +69447,26 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>same as anonymous visitors</source>
         <translation>bisitari anonimoena bezalakoa</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ezezaguna</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Cachean gorde gabe</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: orri hau ez da inongo cachean gordetzen, %source fitxategiak ezarria (%calls dei)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time arte</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache guztiek orri hau %expiry unean askatzen dute (%seconds s barru), %source fitxategiak ezarria (%calls dei)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

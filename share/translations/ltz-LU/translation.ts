@@ -69447,6 +69447,26 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>same as anonymous visitors</source>
         <translation>wéi bei anonyme Visiteuren</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekannt</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Net am Cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: dës Säit gëtt a kengem Cache gehal, gesat vun %source (%calls Opruff)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Bis %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: all Cache loossen dës Säit um %expiry lass (an %seconds s), gesat vun %source (%calls Opruff)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

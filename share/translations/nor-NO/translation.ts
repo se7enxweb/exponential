@@ -69248,6 +69248,26 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>same as anonymous visitors</source>
         <translation>samme som for anonyme besøkende</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukjent</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ikke bufret</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: denne siden lagres ikke i noen hurtigbuffer, satt av %source (%calls kall)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Til %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: alle hurtigbuffere slipper denne siden %expiry (om %seconds s), satt av %source (%calls kall)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

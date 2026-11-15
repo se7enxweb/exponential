@@ -69386,6 +69386,26 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>same as anonymous visitors</source>
         <translation>toks pat kaip anoniminių lankytojų</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>nežinoma</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Nesaugoma podėlyje</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: šis puslapis nelaikomas jokiame podėlyje, nustatė %source (iškvietimų: %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Iki %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: kiekvienas podėlis paleidžia šį puslapį %expiry (po %seconds s), nustatė %source (iškvietimų: %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69447,6 +69447,26 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>same as anonymous visitors</source>
         <translation>no ta ageni matarĩ na rĩĩtwa</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>ndĩmenyekaine</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ndĩrĩ cache-inĩ</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: rũrathi rũrũ rũtiigagwo cache-inĩ o na ĩmwe, rũrathiĩtwo nĩ %source (mĩĩtano %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Nginya %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache ciothe itigaga rũrathi rũrũ hĩndĩ ya %expiry (thutha wa sekondi %seconds), rũrathiĩtwo nĩ %source (mĩĩtano %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

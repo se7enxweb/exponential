@@ -69447,6 +69447,26 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>same as anonymous visitors</source>
         <translation>benn la ak gan yi ñu xamul seen tur</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>xamul</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Duñu ko denc ci cache</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: xët wii duñu ko denc ci benn cache, %source moo ko taxawal (%calls woote)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Ba %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: cache yépp dañuy bàyyi xët wii ci %expiry (ci biir %seconds segond), %source moo ko taxawal (%calls woote)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

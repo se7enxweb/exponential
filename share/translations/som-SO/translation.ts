@@ -69445,6 +69445,26 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>same as anonymous visitors</source>
         <translation>la mid ah booqdayaasha aan la aqoon</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>aan la aqoon</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Kaashka kuma jirto</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: boggan lagama hayo kaash kasta, waxaa dejiyay %source (%calls wacitaan)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Ilaa %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: kaash kastaa wuxuu boggan sii daayaa %expiry (%seconds ilbiriqsi gudahood), waxaa dejiyay %source (%calls wacitaan)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

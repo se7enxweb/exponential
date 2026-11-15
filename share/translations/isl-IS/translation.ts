@@ -69386,6 +69386,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>same as anonymous visitors</source>
         <translation>sama og hjá nafnlausum gestum</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>óþekkt</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ekki í skyndiminni</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: þessi síða er ekki geymd í neinu skyndiminni, stillt af %source (%calls köll)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Til %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: öll skyndiminni sleppa þessari síðu kl. %expiry (eftir %seconds s), stillt af %source (%calls köll)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

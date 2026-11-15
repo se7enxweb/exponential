@@ -69386,6 +69386,26 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>same as anonymous visitors</source>
         <translation>rovnaké ako u anonymných návštevníkov</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznáme</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Bez vyrovnávacej pamäte</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: táto stránka sa neuchováva v žiadnej vyrovnávacej pamäti, nastavil %source (%calls volaní)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Do %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: každá vyrovnávacia pamäť uvoľní túto stránku %expiry (o %seconds s), nastavil %source (%calls volaní)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

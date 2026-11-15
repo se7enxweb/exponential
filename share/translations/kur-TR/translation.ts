@@ -67995,6 +67995,26 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>same as anonymous visitors</source>
         <translation>wek yên serdanvanên nenas</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>nenas</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ne di cacheyê de ye</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ev rûpel di tu cacheyê de nayê hilanîn, ji aliyê %source ve hatiye danîn (%calls bang)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Heta %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: hemû cache vê rûpelê di %expiry de berdidin (piştî %seconds çirkeyan), ji aliyê %source ve hatiye danîn (%calls bang)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

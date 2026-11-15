@@ -69447,6 +69447,26 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>same as anonymous visitors</source>
         <translation>näbelli myhmanlardaky ýaly</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>näbelli</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Keşlenmedik</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: bu sahypa hiç bir keşde saklanmaýar, %source tarapyndan bellenen (%calls çagyryş)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time çenli</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: her keş bu sahypany %expiry wagtynda goýberýär (%seconds sek. soň), %source tarapyndan bellenen (%calls çagyryş)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

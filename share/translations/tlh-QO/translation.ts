@@ -67939,6 +67939,26 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>same as anonymous visitors</source>
         <translation>pong Huv'eghbe'bogh SuchwI'pu' rap</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>Sovlu'be'</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>pol'be'lu'</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: wa' polwI'Daq je ngechvam polbe'lu', %source cherta' (%calls rI'meH)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>%time ret</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: Hoch polwI' ngechvam tlhabmoH %expiry (%seconds lup pIq), %source cherta' (%calls rI'meH)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

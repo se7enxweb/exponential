@@ -69386,6 +69386,26 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>same as anonymous visitors</source>
         <translation>enako kot pri anonimnih obiskovalcih</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznano</translation>
+    </message>
+    <message>
+        <source>Not cached</source>
+        <translation>Ni predpomnjeno</translation>
+    </message>
+    <message>
+        <source>cache_until: this page is kept in no cache, set by %source (%calls calls)</source>
+        <translation>cache_until: ta stran se ne hrani v nobenem predpomnilniku, nastavil %source (klicev: %calls)</translation>
+    </message>
+    <message>
+        <source>Until %time</source>
+        <translation>Do %time</translation>
+    </message>
+    <message>
+        <source>cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)</source>
+        <translation>cache_until: vsi predpomnilniki sprostijo to stran ob %expiry (čez %seconds s), nastavil %source (klicev: %calls)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
