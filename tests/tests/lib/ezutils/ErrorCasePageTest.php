@@ -63,7 +63,9 @@ class ErrorCasePageTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '<title>The site is missing the software libraries it needs</title>', $html );
         $this->assertStringContainsString( '<h1>The site is missing the software libraries it needs</h1>', $html );
         $this->assertStringContainsString( '503', $html );
-        $this->assertSame( 3, substr_count( $html, '<li>' ) - substr_count( $html, '<li data-step' ), 'three steps' );
+        // the administrator's three steps are plain <li>; the repair panel's progress list (shown when a repair key
+        // is set up) uses <li data-step=...>, which '<li>' never matches, so it is not subtracted
+        $this->assertSame( 3, substr_count( $html, '<li>' ), 'three steps' );
         $this->assertStringContainsString( 'put it back in the installation directory', $html );
         $this->assertStringContainsString( 'composer install', $html );
         $this->assertStringContainsString( 'restart it', $html );
