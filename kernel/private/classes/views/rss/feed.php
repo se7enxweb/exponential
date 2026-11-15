@@ -32,17 +32,18 @@ class Feed extends \Exponential\Runnable\ModuleView
 
         if ( !isset ( $Params['RSSFeed'] ) )
         {
-            \eZDebug::writeError( 'No RSS feed specified' );
+            \eZDebug::writeNotice( 'No RSS feed specified' );
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         }
 
         $feedName = $Params['RSSFeed'];
         $RSSExport = \eZRSSExport::fetchByName( $feedName );
 
-        // Get and check if RSS Feed exists
+        // Get and check if RSS Feed exists. A feed that is gone is a 404 for the visitor; crawlers keep asking for
+        // removed feeds, so it is a notice, not an error.log line on every request
         if ( !$RSSExport )
         {
-            \eZDebug::writeError( 'Could not find RSSExport : ' . $Params['RSSFeed'] );
+            \eZDebug::writeNotice( 'Could not find RSSExport : ' . $Params['RSSFeed'] );
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         }
 

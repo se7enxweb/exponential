@@ -26483,7 +26483,7 @@ e2a014dc07a1ef064dd179a026ce713c  kernel/private/classes/views/role/edit.php
 08a4b3f9c87f5d2523dc88ca71fa146d  kernel/private/classes/views/role/view.php
 22de6b3dae2a59667731a1b177091b2a  kernel/private/classes/views/rss/edit_export.php
 ccb9d8aa169fb3815ab94b3f22d68729  kernel/private/classes/views/rss/edit_import.php
-6dc2c00bfe00a43b0becb25b0aba6aea  kernel/private/classes/views/rss/feed.php
+13416aebed8358855afffe11fda21b50  kernel/private/classes/views/rss/feed.php
 a63214827ebe6f9f45a23d72353a6ce2  kernel/private/classes/views/rss/list.php
 3dde50a32ccce1c7ecf5d955cc40c28e  kernel/private/classes/views/search/stats.php
 dd11ead12b128c32952744446dda5bb4  kernel/private/classes/views/secrets/list.php
@@ -29469,6 +29469,7 @@ c00a1c39a7e5c42e5216499c9f6df85c  tests/tests/kernel/classes/expPolicyOmitListTe
 534b9f669ba0bccf8f2cd3da0a2dd3c8  tests/tests/kernel/classes/expReviewHoldTest.php
 ceeffa0bc56cad57e85e2d23d4d42b19  tests/tests/kernel/classes/expRoleGrantCheckTest.php
 c40cd0bc9e3cb716a69ed51ad0dcf654  tests/tests/kernel/classes/expRolePagesTest.php
+fe6b793a74408f00c9d34d57da569cd4  tests/tests/kernel/classes/expRssFeedMissingNotAnErrorTest.php
 27b8133acdef84f7b2d21c90ef82c168  tests/tests/kernel/classes/expSearchSuggestTest.php
 596e3188451406338f843bc97d09d2f4  tests/tests/kernel/classes/expSecretRuleTest.php
 902c2a032e40ebda1450dae7194b89dc  tests/tests/kernel/classes/expSectionOverviewTest.php
