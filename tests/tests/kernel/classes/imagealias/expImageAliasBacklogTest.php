@@ -323,7 +323,7 @@ class expImageAliasBacklogTest extends PHPUnit\Framework\TestCase
         // tests, Velocity's persistent workers keep them in memory)
         $this->assertNull( expImageAliasUrl::keyFile() );
         $url = (string)file_get_contents( $root . '/kernel/classes/imagealias/expimagealiasurl.php' );
-        $this->assertStringContainsString( 'umask( 077 )', $url, 'the key file is readable by the site user only' );
+        $this->assertStringContainsString( 'umask( eZFile::creationUmask( 077 ) )', $url, 'the key file is readable by the site user only' );
         $this->assertStringContainsString( 'self::forgetKeyFile();', $url, 'forgotten when the key changes' );
     }
 

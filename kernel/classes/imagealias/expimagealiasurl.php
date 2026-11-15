@@ -192,7 +192,7 @@ class expImageAliasUrl
         if ( $file === null || !is_dir( dirname( $file ) ) )
             return;
         $temporary = $file . '.' . getmypid() . '.tmp';
-        $old = umask( 077 );
+        $old = umask( eZFile::creationUmask( 077 ) );
         $written = @file_put_contents( $temporary, "<?php\n// The image alias signing keys as last read (expImageAliasUrl::keyFile()); a cache, removed freely\nreturn "
                                                     . var_export( $keys, true ) . ";\n" );
         umask( $old );

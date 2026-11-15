@@ -164,7 +164,7 @@ class expImageAliasBacklog
             return false;
         }
         // Velocity runs as root, PHP-FPM as the site user: both take entries the other wrote
-        @chmod( $temporary, 0666 );
+        @chmod( $temporary, eZFile::fileMode( 0666 ) );
         if ( !@rename( $temporary, $file ) )
         {
             @unlink( $temporary );
