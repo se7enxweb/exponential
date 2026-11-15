@@ -87,6 +87,9 @@ $eZTemplateOperatorArray[] = array( 'class' => 'expContentSecurityPolicyOperator
 $eZTemplateOperatorArray[] = array( 'class' => 'expViewParameterOperator',
                                     'operator_names' => array( 'view_parameter' ) );
 
+$eZTemplateOperatorArray[] = array( 'class' => 'expCacheUntilOperator',
+                                    'operator_names' => array( 'cache_until', 'seconds_until' ) );
+
 $eZTemplateOperatorArray[] = array( 'class' => 'expKernelTransferOperator',
                                     'operator_names' => array( 'transfer_tools', 'transfer_actions', 'transfer_related', 'transfer_tool' ) );
 

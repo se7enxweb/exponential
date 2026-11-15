@@ -541,6 +541,24 @@ class expRenderStats
         return $tree;
     }
 
+    /**
+     * The template being rendered (the innermost of the tree): its file after the overrides, else what was asked
+     * for; '' when the tree is not recorded or no template runs (cache_until() names it in the debug output).
+     *
+     * @return string
+     */
+    public static function currentTemplate()
+    {
+        for ( $i = count( self::$treeStack ) - 1; $i >= 0; $i-- )
+        {
+            $index = self::$treeStack[$i];
+            if ( $index >= 0 && isset( self::$tree[$index] ) )
+                return (string)( self::$tree[$index]['file'] !== null && self::$tree[$index]['file'] !== ''
+                                 ? self::$tree[$index]['file'] : self::$tree[$index]['uri'] );
+        }
+        return '';
+    }
+
     /** @return int templates rendered in this request, also those past MAX_TREE */
     public static function treeCount()
     {

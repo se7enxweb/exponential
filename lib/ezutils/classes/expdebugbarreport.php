@@ -1490,6 +1490,8 @@ class expDebugBarReport
                        'cache_block_totals' => method_exists( 'expRenderStats', 'cacheBlockTotals' ) ? expRenderStats::cacheBlockTotals() : null,
                        'tree' => method_exists( 'expRenderStats', 'tree' ) ? expRenderStats::tree() : array(),
                        'tree_count' => method_exists( 'expRenderStats', 'treeCount' ) ? expRenderStats::treeCount() : 0,
+                       // the page's expiry ({cache_until()}, cache_ttl, a replayed view or cache-block); null: none
+                       'cache_until' => class_exists( 'expCacheUntil' ) ? expCacheUntil::report() : null,
                        'siteaccess' => '', 'navigation_part' => '',
                        'design' => array(), 'settings' => array() );
         if ( isset( $GLOBALS['eZCurrentAccess']['name'] ) )
@@ -1557,6 +1559,22 @@ class expDebugBarReport
         $chips[] = array( 'rendering', 'compiled', $compiled > 0 ? 'warn' : 'ok', self::t( 'Compiled %count', array( '%count' => $compiled ) ),
                           self::t( '%compiled templates compiled in this request, %executed runs of compiled templates',
                                    array( '%compiled' => $compiled, '%executed' => (int)$r['templates']['executed'] ) ) );
+        // The page's expiry: when every cache lets the page go, and what set it (expCacheUntil)
+        $until = isset( $r['cache_until'] ) && is_array( $r['cache_until'] ) ? $r['cache_until'] : null;
+        if ( $until !== null )
+        {
+            $remaining = (int)$until['remaining'];
+            $source = (string)$until['source'] !== '' ? (string)$until['source'] : self::t( 'unknown' );
+            if ( $remaining === 0 )
+                $chips[] = array( 'rendering', 'cacheuntil', 'warn', self::t( 'Not cached' ),
+                                  self::t( 'cache_until: this page is kept in no cache, set by %source (%calls calls)',
+                                           array( '%source' => $source, '%calls' => (int)$until['call_count'] ) ) );
+            else
+                $chips[] = array( 'rendering', 'cacheuntil', 'ok', self::t( 'Until %time', array( '%time' => substr( (string)$until['text'], 11, 5 ) ) ),
+                                  self::t( 'cache_until: every cache lets this page go at %expiry (in %seconds s), set by %source (%calls calls)',
+                                           array( '%expiry' => (string)$until['text'], '%seconds' => $remaining, '%source' => $source,
+                                                  '%calls' => (int)$until['call_count'] ) ) );
+        }
         return $chips;
     }
 

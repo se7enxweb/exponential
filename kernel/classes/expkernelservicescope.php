@@ -66,6 +66,8 @@ class expKernelServiceScope
         'staticbuild' => array( 'expStaticBuildSignature', 'resetRequest' ),
         // the redirects of exp_url_redirect are read again (an import or an undo of another process counts at once)
         'urlredirect' => array( 'expUrlRedirect', 'resetRequest' ),
+        // the page expiry {cache_until()} calls of the previous request set (expCacheUntil)
+        'cacheuntil'  => array( 'expCacheUntil', 'reset' ),
     );
 
     /**

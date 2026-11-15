@@ -316,13 +316,21 @@ class eZTemplateCacheFunction
         if ( $noted )
             expRenderStats::cacheBlockGenerationStarted();
         $start = microtime( true );
-        $content = eZTemplateCacheFunction::processUncached( $tpl, $functionChildren, $rootNamespace, $currentNamespace );
+        // what {cache_until()} asks for in the block's body is the block's expiry as well (expCacheUntil)
+        $scope = class_exists( 'expCacheUntil' ) ? expCacheUntil::beginScope() : null;
+        try
+        {
+            $content = eZTemplateCacheFunction::processUncached( $tpl, $functionChildren, $rootNamespace, $currentNamespace );
+        }
+        finally
+        {
+            $cacheUntil = $scope !== null ? expCacheUntil::endScope( $scope ) : null;
+        }
         $this->generateMs = ( microtime( true ) - $start ) * 1000;
         if ( $noted )
             expRenderStats::cacheBlockGenerationEnded();
-        return array( 'scope'      => 'template-block',
-                      'content'    => $content,
-                      'binarydata' => $content );
+        return array( 'content' => $content ) +
+               eZTemplateCacheBlock::storeData( is_array( $cacheUntil ) ? $cacheUntil['expires'] : null, $content );
     }
 
     /*!

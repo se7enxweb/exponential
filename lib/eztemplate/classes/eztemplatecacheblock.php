@@ -190,6 +190,10 @@ class eZTemplateCacheBlock
             $ttl = -1;
         $content = $cacheHandler->processCache( array( 'eZTemplateCacheBlock', 'retrieveContent' ), null,
                                                 $ttl, $globalExpiryTime );
+        // Not in the cache: the caller generates the block and hands it to store(). What {cache_until()} asks for
+        // meanwhile is the block's expiry as well (lib/ does not need the kernel)
+        if ( $content instanceof eZClusterFileFailure && class_exists( 'expCacheUntil' ) )
+            self::$cacheUntilScopes[spl_object_id( $cacheHandler )] = expCacheUntil::beginScope();
         if ( $noted )
         {
             $hit = !( $content instanceof eZClusterFileFailure );
@@ -206,7 +210,7 @@ class eZTemplateCacheBlock
      */
     static function store( $cacheHandler, $cachedText )
     {
-        $cacheHandler->storeCache( array( 'scope' => 'template-block', 'binarydata' => $cachedText ) );
+        $cacheHandler->storeCache( self::storeData( self::endCacheUntilScope( $cacheHandler ), $cachedText ) );
         // by the handler handle() returned: a nested block has its own, while the compiled code's $cachePath is shared
         if ( ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' ) )
             expRenderStats::noteCacheBlockStored( spl_object_id( $cacheHandler ), strlen( (string)$cachedText ) );
@@ -423,8 +427,68 @@ class eZTemplateCacheBlock
      */
     static function retrieveContent( $fname, $mtime )
     {
-        return file_get_contents( $fname );
+        return self::cachedText( file_get_contents( $fname ) );
     }
+
+    /**
+     * The text of a cache-block file. A block whose body called {cache_until()} was kept with its expiry
+     * (expCacheUntil::wrapBlock()): once that has come the block is expired (an eZClusterFileFailure, so it is
+     * generated again); before, the page gets the block's expiry, as if the call had run again.
+     *
+     * @param string|false $data what the file holds
+     * @return string|false|eZClusterFileFailure
+     */
+    static function cachedText( $data )
+    {
+        if ( !is_string( $data ) || !class_exists( 'expCacheUntil' ) || strncmp( $data, expCacheUntil::BLOCK_MARK, strlen( expCacheUntil::BLOCK_MARK ) ) !== 0 )
+            return $data;
+        list( $text, $expires ) = expCacheUntil::unwrapBlock( $data );
+        if ( $expires !== null )
+        {
+            if ( expCacheUntil::now() >= $expires )
+                return new eZClusterFileFailure( 1, 'The cache-block is expired by cache_until (' . date( 'c', $expires ) . ')' );
+            expCacheUntil::limit( $expires, 'cache-block' );
+        }
+        return $text;
+    }
+
+    /**
+     * The expiry {cache_until()} gave the block that handle() did not find in the cache, now that it was generated.
+     *
+     * @param object $cacheHandler
+     * @return int|null
+     */
+    static function endCacheUntilScope( $cacheHandler )
+    {
+        $id = spl_object_id( $cacheHandler );
+        if ( !isset( self::$cacheUntilScopes[$id] ) )
+            return null;
+        $scope = expCacheUntil::endScope( self::$cacheUntilScopes[$id] );
+        unset( self::$cacheUntilScopes[$id] );
+        return is_array( $scope ) ? $scope['expires'] : null;
+    }
+
+    /**
+     * What storeCache() gets for a generated block: the text as before when no {cache_until()} ran in it, the text
+     * with its expiry when one did, and nothing to store (the cache lock is let go) when the block must not be kept.
+     *
+     * @param int|null $expires
+     * @param string $text
+     * @return array
+     */
+    static function storeData( $expires, $text )
+    {
+        $data = array( 'scope' => 'template-block', 'binarydata' => $text );
+        if ( $expires === null || !class_exists( 'expCacheUntil' ) )
+            return $data;
+        $data['binarydata'] = expCacheUntil::wrapBlock( $text, $expires );
+        if ( $expires <= expCacheUntil::now() )
+            $data['store'] = false;
+        return $data;
+    }
+
+    /** @var array spl_object_id of a handler handle() returned on a miss => the expCacheUntil scope of its block */
+    protected static $cacheUntilScopes = array();
 }
 
 ?>

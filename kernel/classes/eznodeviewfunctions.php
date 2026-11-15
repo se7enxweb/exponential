@@ -196,7 +196,16 @@ class eZNodeviewfunctions
         $event->notify( 'content/pre_rendering', array( $node, $tpl, $viewMode ) );
 
         $Result = array();
-        $Result['content']         = $tpl->fetch( 'design:node/view/' . $viewMode . '.tpl' );
+        // What {cache_until()} calls of the view's templates ask for is kept with the view (expCacheUntil)
+        $cacheUntilScope = class_exists( 'expCacheUntil' ) ? expCacheUntil::beginScope() : null;
+        try
+        {
+            $Result['content']     = $tpl->fetch( 'design:node/view/' . $viewMode . '.tpl' );
+        }
+        finally
+        {
+            $cacheUntil = $cacheUntilScope !== null ? expCacheUntil::endScope( $cacheUntilScope ) : null;
+        }
         $Result['view_parameters'] = $viewParameters;
         $Result['path']            = $path;
         $Result['title_path']      = $titlePath;
@@ -266,6 +275,24 @@ class eZNodeviewfunctions
 
         $Result['cache_ttl'] = $cacheTTL;
 
+        // The expiry of the view, absolute: the earliest {cache_until()} of its templates and cache_ttl as
+        // time() + cache_ttl. Kept in the cache file, so a replay hands the caches after it the time that is left
+        // (contentViewRetrieve()), not the lifetime the view had when it was generated
+        if ( $cacheUntilScope !== null )
+        {
+            $cacheExpires = self::viewExpiry( $cacheUntil, $cacheTTL, expCacheUntil::now() );
+            if ( $cacheExpires !== null )
+            {
+                $Result['cache_expires'] = $cacheExpires['expires'];
+                if ( $cacheExpires['source'] !== '' )
+                    $Result['cache_expires_source'] = $cacheExpires['source'];
+                // and the page: cache_ttl reaches the request here, a cache_until() call reached it when it ran
+                expCacheUntil::limit( $cacheExpires['expires'], $cacheExpires['source'] );
+                if ( $cacheExpires['expires'] <= expCacheUntil::now() )
+                    $cacheTTL = $Result['cache_ttl'] = 0;
+            }
+        }
+
         // if cache_ttl is set to 0 from the template, we need to add a no-cache advice
         // to the node's data. That way, the retrieve callback on the next calls
         // will be able to determine earlier that no cache generation should be started
@@ -281,6 +308,54 @@ class eZNodeviewfunctions
         }
 
         return $Result;
+    }
+
+    /**
+     * The absolute expiry of a generated view: the earlier of what its templates asked for with {cache_until()}
+     * and cache_ttl ({set-block scope=root variable=cache_ttl}) taken as $now + cache_ttl; 0 for cache_ttl=0.
+     *
+     * @param array|null $cacheUntil what expCacheUntil::endScope() returned for the view
+     * @param int $cacheTTL -1 when not set
+     * @param int $now
+     * @return array|null array( 'expires' => int, 'source' => string ), null when the view has no expiry
+     */
+    static function viewExpiry( $cacheUntil, $cacheTTL, $now )
+    {
+        $expires = null;
+        $source = '';
+        if ( is_array( $cacheUntil ) && $cacheUntil['expires'] !== null )
+        {
+            $expires = (int)$cacheUntil['expires'];
+            $source = (string)$cacheUntil['source'];
+        }
+        if ( is_numeric( $cacheTTL ) && (int)$cacheTTL >= 0 )
+        {
+            $ttlExpires = (int)$cacheTTL === 0 ? 0 : (int)$now + (int)$cacheTTL;
+            if ( $expires === null || $ttlExpires < $expires )
+            {
+                $expires = $ttlExpires;
+                $source = 'cache_ttl=' . (int)$cacheTTL;
+            }
+        }
+        return $expires === null ? null : array( 'expires' => $expires, 'source' => $source );
+    }
+
+    /**
+     * When a view cache entry expires: its cache_expires, or for an entry written before 6.0.15 its file time plus
+     * cache_ttl; null when it has no expiry of its own.
+     *
+     * @param array $result the cached $Result
+     * @param int $mtime the time the cache file was written
+     * @return int|null
+     */
+    static function cachedViewExpiry( array $result, $mtime )
+    {
+        if ( isset( $result['cache_expires'] ) && is_numeric( $result['cache_expires'] ) )
+            return (int)$result['cache_expires'];
+        $cacheTTL = isset( $result['cache_ttl'] ) ? $result['cache_ttl'] : -1;
+        if ( is_numeric( $cacheTTL ) && (int)$cacheTTL > 0 )
+            return (int)$mtime + (int)$cacheTTL;
+        return null;
     }
 
     /**
@@ -575,6 +650,13 @@ class eZNodeviewfunctions
                     $expiryReason = 'Content cache is expired by cache_ttl=' . $cacheTTL;
                 }
             }
+            // ... and when the expiry its templates asked for ({cache_until()}) has come
+            $cachedExpiry = is_array( $Result ) ? self::cachedViewExpiry( $Result, $mtime ) : null;
+            if ( !$cacheExpired && $cachedExpiry !== null && time() >= $cachedExpiry )
+            {
+                $cacheExpired = true;
+                $expiryReason = 'Content cache is expired by cache_until (' . date( 'c', $cachedExpiry ) . ')';
+            }
 
             // Check if template source files are newer, but only if the cache is not expired
             if ( !$cacheExpired )
@@ -604,6 +686,10 @@ class eZNodeviewfunctions
 
             if ( !$cacheExpired )
             {
+                // The page keeps the view's expiry: the caches after this one get the time that is left
+                if ( $cachedExpiry !== null && class_exists( 'expCacheUntil' ) )
+                    expCacheUntil::limit( $cachedExpiry, isset( $Result['cache_expires_source'] )
+                                                         ? 'view cache: ' . $Result['cache_expires_source'] : 'view cache' );
                 if ( !isset( $Result['content_info'] ) )
                 {
                     // set error type & number for kernel errors (see https://jira.ez.no/browse/EZP-23046)

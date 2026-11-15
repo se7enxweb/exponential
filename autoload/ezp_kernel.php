@@ -1234,6 +1234,8 @@ return array(
       'expBookmarkView'                                              => 'kernel/classes/expbookmarkview.php',
       'expCacheCatalogue'                                            => 'kernel/classes/expcachecatalogue.php',
       'expCacheManager'                                              => 'kernel/classes/expcachemanager.php',
+      'expCacheUntil'                                                => 'kernel/classes/expcacheuntil.php',
+      'expCacheUntilOperator'                                        => 'kernel/common/expcacheuntiloperator.php',
       'expCacheWarm'                                                 => 'kernel/classes/expcachewarm.php',
       'expClassicMenuSettings'                                       => 'kernel/classes/classicmenu/expclassicmenusettings.php',
       'expClassicMenuSiteAccessInspector'                            => 'kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php',

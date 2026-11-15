@@ -641,21 +641,37 @@ class ezpHttpCacheContract
      * at store time, kept only for information).
      */
     /**
-     * @param int|null $maxAge seconds, capped by the configured maxAge
-     *        (a template's cache_ttl); null for the configured one
+     * @param int|null $maxAge seconds, capped by the configured maxAge; null for the configured one
+     * @param int|null $expires the page's absolute expiry (Unix time, expCacheUntil: {cache_until()}, cache_ttl):
+     *        the entry lives until then at most, and is never served stale after it. Nothing is stored when it
+     *        has come. null: the page has no expiry of its own
+     * @return array|false the entry's metadata, false when nothing was stored
      */
-    public function storeEntry( $key, $status, array $headers, $body, array $tags, array $placeholders, $maxAge = null )
+    public function storeEntry( $key, $status, array $headers, $body, array $tags, array $placeholders, $maxAge = null, $expires = null )
     {
         if ( strlen( $body ) > $this->config['maxBodySize'] )
             return false;
         $limit = (int)$this->config['maxAge'];
+        $created = microtime( true );
         $meta = array(
             'v' => self::FORMAT, 'status' => (int)$status, 'headers' => $headers,
-            'created' => microtime( true ),
+            'created' => $created,
             'maxAge' => $maxAge !== null && $maxAge > 0 ? min( (int)$maxAge, $limit ) : $limit,
             'swr' => (int)$this->config['swr'], 'tags' => array_values( array_unique( $tags ) ),
             'etag' => sha1( $body ), 'placeholders' => $placeholders, 'size' => strlen( $body ),
         );
+        if ( $expires !== null )
+        {
+            // The time that is left, not a lifetime counted from now: a page replayed from the view cache at 23:00
+            // that expires at midnight lives one hour here
+            $left = (int)$expires - (int)floor( $created );
+            if ( $left <= 0 )
+                return false;
+            $meta['maxAge'] = min( $meta['maxAge'], $left );
+            $meta['expires'] = (int)$expires;
+            // what changes at a given time is not served stale after it
+            $meta['swr'] = 0;
+        }
         $this->ensureDir( dirname( $this->entryPath( $key, 'meta' ) ) );
         // The body is named after its hash, so metadata always points at its
         // own body: a reader holding the old metadata never gets the new body
@@ -671,6 +687,24 @@ class ezpHttpCacheContract
         @unlink( $this->entryPath( $key, 'refresh' ) );
         $this->count( 'stores' );
         return $meta;
+    }
+
+    /** The max-age an answer from this cache is sent to anonymous visitors with. */
+    const HIT_MAX_AGE = 300;
+
+    /**
+     * The max-age of an answer from this cache: HIT_MAX_AGE, or the seconds left until the entry's expiry when that
+     * is sooner ({cache_until()}).
+     *
+     * @param array $meta
+     * @param int|null $now
+     * @return int
+     */
+    public static function hitMaxAge( array $meta, $now = null )
+    {
+        if ( !isset( $meta['expires'] ) )
+            return self::HIT_MAX_AGE;
+        return max( 0, min( self::HIT_MAX_AGE, (int)$meta['expires'] - ( $now === null ? time() : (int)$now ) ) );
     }
 
     private function bodyPath( $key, $etag )
@@ -708,6 +742,9 @@ class ezpHttpCacheContract
         // served, not even stale.
         if ( !$this->isCurrent( $meta['created'], $meta['tags'] ) )
             return $this->miss( 'purged' );
+        // the page's own expiry ({cache_until()}): never served at or after it, not even stale
+        if ( isset( $meta['expires'] ) && time() >= (int)$meta['expires'] )
+            return $this->miss( 'expired (cache_until)' );
         $age = microtime( true ) - $meta['created'];
         if ( $age > $meta['maxAge'] )
         {
@@ -1223,7 +1260,9 @@ class ezpHttpCacheContract
         $headers['Age'] = (string)max( 0, (int)( microtime( true ) - $meta['created'] ) );
         $headers['X-Exp-Cache'] = ( empty( $meta['stale'] ) ? 'HIT' : 'STALE' ) . ( $viaShield ? ' (request-shield lookup)' : '' );
         // A lookup answers an address no cache may keep: a proxy in front must not keep it either.
-        $headers['Cache-Control'] = $userID !== 0 ? 'private, no-cache, must-revalidate' : ( $viaShield ? 'private, max-age=300' : 'public, max-age=300' );
+        // A page with an expiry of its own ({cache_until()}) is kept by the browser or a proxy no longer than that
+        $headers['Cache-Control'] = $userID !== 0 ? 'private, no-cache, must-revalidate'
+            : ( $viaShield ? 'private' : 'public' ) . ', max-age=' . self::hitMaxAge( $meta );
         // Only the one TagHeader asks for, never one an older entry kept.
         unset( $headers['xkey'], $headers['Surrogate-Key'], $headers['Cache-Tag'] );
         $headers = $this->tagHeaders( $meta['tags'] ) + $headers;

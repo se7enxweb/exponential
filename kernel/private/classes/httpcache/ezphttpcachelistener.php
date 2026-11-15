@@ -377,6 +377,15 @@ class ezpHttpCacheListener
             self::header( 'X-Exp-Cache', 'BYPASS (cache_ttl=0)' );
             return;
         }
+        // The expiry of the page (expCacheUntil): every {cache_until()} of this request -- the view, the pagelayout,
+        // its layout blocks and cache-blocks -- and the view cache's expiry when the view was replayed from it, as
+        // an absolute time. The time that is left is the page's lifetime here, never the view's original cache_ttl.
+        $expires = class_exists( 'expCacheUntil' ) ? expCacheUntil::expires() : null;
+        if ( $expires !== null && $expires <= time() )
+        {
+            self::header( 'X-Exp-Cache', 'BYPASS (cache_until)' );
+            return;
+        }
         // The early exit finds the visitor by this cookie; if it names another,
         // signed-in visitors would be taken for anonymous ones.
         if ( session_name() !== ( $contract->config['sessionCookie'][$siteaccess] ?? null ) )
@@ -424,7 +433,6 @@ class ezpHttpCacheListener
         }
         $tags = array_values( array_unique( array_merge( self::tags( self::$view['result'] ), self::$extraTags ) ) );
         $key = $contract->entryKey( $scheme, $host, $siteaccess, eZSys::serverVariable( 'REQUEST_URI' ), $entryContext );
-        $ttl = (int)( self::$view['result']['cache_ttl'] ?? -1 );
         // The security headers go with the page: an answer from this cache is
         // assembled without the kernel (Velocity asks the contract directly),
         // so a page kept with Content-Type alone was served without them. The
@@ -438,7 +446,11 @@ class ezpHttpCacheListener
         $filtered = ezpEvent::getInstance()->filter( 'httpcache/store/headers', $headers );
         if ( is_array( $filtered ) )
             $headers = $filtered;
-        $meta = $contract->storeEntry( $key, 200, $headers, $body, $tags, $offsets, $ttl > 0 ? $ttl : null );
+        // An answer from this cache names the expiry as the rendered page did (without the template, which only the
+        // debug output shows)
+        if ( $expires !== null )
+            $headers[expCacheUntil::HEADER] = expCacheUntil::headerValue( $expires );
+        $meta = $contract->storeEntry( $key, 200, $headers, $body, $tags, $offsets, null, $expires );
         if ( $debugBar !== null && is_array( $meta ) )
             $contract->storeDebugReport( $key, $meta, $barOffset, $debugBar[1], $debugBar[2], $user->id(), $before );
         if ( $user->isRegistered() )

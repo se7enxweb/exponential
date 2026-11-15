@@ -808,6 +808,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
 
         eZDebug::addTimingPoint( "Script end" );
 
+        // The page is rendered: its expiry ({cache_until()} in the view, the pagelayout and its blocks, the view
+        // cache's expiry when it was replayed) goes into the response headers. Nothing changes without one.
+        if ( class_exists( 'expCacheUntil' ) )
+            expCacheUntil::sendResponseHeaders();
+
         $content = trim( ob_get_clean() );
 
         ob_start();
