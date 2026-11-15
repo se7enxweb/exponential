@@ -310,6 +310,14 @@ class expPreloadRunner
         $started = microtime( true );
         $cookies = array();
         $names = array();
+        // a request of the installation to one of its own pages: signed, so the request shield (exp_request_shield)
+        // lets it pass instead of answering the pace limit's browser check, which no script passes
+        if ( class_exists( 'expRequestShield' ) && method_exists( 'expRequestShield', 'selfHeader' ) )
+        {
+            $own = expRequestShield::selfHeader( $url, $headOnly ? 'HEAD' : 'GET' );
+            if ( $own !== null )
+                $headers[] = $own;
+        }
         $ch = curl_init();
         if ( $headers )
             curl_setopt( $ch, CURLOPT_HTTPHEADER, array_values( array_map( 'strval', $headers ) ) );

@@ -74,8 +74,10 @@ class expUpgradeStepFinishSmoke extends expUpgradeFinishStep
      */
     public static function status( $url )
     {
+        // signed as the installation's own request, so the request shield does not answer the login with its check
+        $own = class_exists( 'expRequestShield' ) && method_exists( 'expRequestShield', 'selfHeader' ) ? expRequestShield::selfHeader( $url ) : null;
         $context = stream_context_create( array( 'http' => array( 'method' => 'GET', 'timeout' => 20, 'ignore_errors' => true,
-                                                                  'follow_location' => 0, 'header' => "User-Agent: exp-upgrade-smoke\r\n" ) ) );
+                                                                  'follow_location' => 0, 'header' => "User-Agent: exp-upgrade-smoke\r\n" . ( $own !== null ? $own . "\r\n" : '' ) ) ) );
         $handle = @fopen( $url, 'r', false, $context );
         if ( !$handle )
             return 0;

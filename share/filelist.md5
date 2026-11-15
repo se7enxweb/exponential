@@ -304,7 +304,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-82f5e38a3b085ab564abb71e05fffaf6  composer.json
+ef2bffdd7875cdb613fa2ec32155bfb0  composer.json
 a180ccab56cfc079f1e8da6819229745  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 81d83b433294489cbb16a8512cf056f2  config.php-RECOMMENDED
@@ -11831,7 +11831,7 @@ a9aa303ddfe5e211c9d2c6c766e9baef  doc/eng-us/help/request-shield/the-dashboard-a
 61a80d27839b7ef05cbbc9f27499e563  doc/eng-us/help/request-shield/the-log.md
 2a5c45bffe37c2171cdf1cea509141b0  doc/eng-us/help/request-shield/the-rules.md
 f5eba9bdde9c05cf31721e0f56bafc2c  doc/eng-us/help/request-shield/the-switches.md
-f970c09eccd741e0b25716be04d4ca66  doc/eng-us/help/request-shield/troubleshooting.md
+d64f9b090510a5e12e5b31c876d10150  doc/eng-us/help/request-shield/troubleshooting.md
 7e4f91433973da11bb8c904c89e0502c  doc/eng-us/help/request-shield/under-velocity.md
 10fe5e2ae75e47966d84dea3787dc0f3  doc/eng-us/help/resellers/basics/choosing-a-partner-level.md
 9195a494eda04764739ca93a8d46db12  doc/eng-us/help/resellers/basics/referral-only-reselling.md
@@ -20774,7 +20774,7 @@ ea1b36ddb2fe3898722bb07789efad8e  doc/ger-de/hilfe/request-shield/das-log.md
 60c8e8389e469ef8dd89d0ecc8c1a824  doc/ger-de/hilfe/request-shield/die-schalter.md
 59adad706e460abe5851e5595ee89fda  doc/ger-de/hilfe/request-shield/die-uebersicht-und-ihr-diagramm.md
 c0641c8f04ac18dda00c490f6bc94858  doc/ger-de/hilfe/request-shield/faq.md
-4082497173489163ddcaa851d37db156  doc/ger-de/hilfe/request-shield/fehlersuche.md
+22d8b0bbea4a48db7d7263865d45c6b1  doc/ger-de/hilfe/request-shield/fehlersuche.md
 07e834f09d45eb0efb407c777cf4e3ba  doc/ger-de/hilfe/request-shield/unter-velocity.md
 ce2912745edc881d25b670f6cdab4d90  doc/ger-de/hilfe/rundgang-durch-die-administration.md
 a85b1e0a5ca224ed96b8cd423e8c85e9  doc/ger-de/hilfe/seitenpakete/README.md
@@ -25613,7 +25613,7 @@ ad736fc7bfb99b01659a745f218a2dc0  kernel/classes/upgrade/steps/expupgradestepcon
 cbea0fa4b585784263ee3e07dcdeffdd  kernel/classes/upgrade/steps/expupgradestepdatatabletables.php
 07986d6d982c4f46df0e8a367fbf9ccc  kernel/classes/upgrade/steps/expupgradestepeditorpolicies.php
 162998013b34562d1604c3e7beaf0441  kernel/classes/upgrade/steps/expupgradestepfinishdeploy.php
-5a014a5f6518b81a8e6cc46820d8bc77  kernel/classes/upgrade/steps/expupgradestepfinishsmoke.php
+9ff553ac043eb2eeb82ef98f7715fe4e  kernel/classes/upgrade/steps/expupgradestepfinishsmoke.php
 1932cc847c21f425aae86d8ce5bf8421  kernel/classes/upgrade/steps/expupgradestephelpclassmetadata.php
 a7345db423f27fe05f24099cf808b3f5  kernel/classes/upgrade/steps/expupgradestephelpcontenttables.php
 bbea45e1ec5c8245b6b6cc91d1c85953  kernel/classes/upgrade/steps/expupgradestephelpreadpolicy.php
@@ -26829,7 +26829,7 @@ c7045d0c22f47072c8975b1ecee2ac3c  kernel/setup/expmoduleextensionwizard.php
 444829a3b91a2d47584bd94eb2e7fd05  kernel/setup/expmoduletablecode.php
 2f83a64057fca66eaf457394f2f8c9de  kernel/setup/expmoduletablewizard.php
 21ff0b47c3f299c1a6c40410d2558ec2  kernel/setup/expmodulewizard.php
-4ad6e22be53f1ee5109bfc394c688477  kernel/setup/exppreloadrunner.php
+46af04621b1afc609815b03dfdc7eb6e  kernel/setup/exppreloadrunner.php
 435230ba42366c90bbbd00054307379d  kernel/setup/expradcatalogue.php
 66a21bc7971ea7600781fb8cf16c5721  kernel/setup/expradhealth.php
 2de453e5d90c9971026647938c8d7ea9  kernel/setup/expradsurvey.php
@@ -29459,6 +29459,7 @@ be0d9664a26c04457647f96100bb1fa9  tests/tests/kernel/classes/expLoveStackFixture
 cdfdff3e579099f23a16bcf3bbbe53b9  tests/tests/kernel/classes/expManagedConfigurationTest.php
 30e3d775a094b28d3c63a93b88e1ce61  tests/tests/kernel/classes/expMemberManagementTest.php
 4e54dff351f02fccab68ee0e978958a3  tests/tests/kernel/classes/expNodeQuickPickTest.php
+0a282cdb6ac67820ac4c9026afcf2efb  tests/tests/kernel/classes/expOwnRequestsSignedForTheShieldTest.php
 14a3cd86e37c7c7e5717c13e6898e5ee  tests/tests/kernel/classes/expPDFExportTest.php
 00ca9c9239d9f2970b0d87cda78da14d  tests/tests/kernel/classes/expPhpSupportTest.php
 c00a1c39a7e5c42e5216499c9f6df85c  tests/tests/kernel/classes/expPolicyOmitListTest.php
