@@ -212,7 +212,8 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php",
       "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
     ],
     "tests/tests/kernel/classes/imagealias/fixtures/*": [
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php"
@@ -230,7 +231,8 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasFormatsTest.php"
     ],
     "design/standard/javascript/exp_image_swap.js": [
-      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
     ],
     "settings/image.ini": [
       "tests/tests/lib/ezimage/expImageFocalPointTest.php",
@@ -240,7 +242,8 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasFormatsTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
     ],
     "lib/ezimage/classes/expimagefocalpoint.php": [
       "tests/tests/lib/ezimage/expImageFocalPointTest.php"
@@ -3255,6 +3258,18 @@
     ],
     "design/admin*/templates/setup/cache.tpl": [
       "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php"
+    ],
+    "cronjobs/imagealiasbacklog.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
+    ],
+    "kernel/private/classes/cronjobs/imagealiasbacklog.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
+    ],
+    "settings/cronjob.ini": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
+    ],
+    "lib/ezutils/classes/ezextension.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
     ]
   },
   "generated": {
