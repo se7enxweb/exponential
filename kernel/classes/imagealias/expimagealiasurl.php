@@ -56,6 +56,9 @@ class expImageAliasUrl
     /** @var array|null current => string|null, previous => string|null, previous_until => int, read => int */
     protected static $keys = null;
 
+    /** @var bool the keys of this process came from the key file (keyFile()), not from the store */
+    protected static $keysFromFile = false;
+
     /** @var bool keys set by setKeys() (tests): never read from the store */
     protected static $fixedKeys = false;
 
@@ -97,6 +100,16 @@ class expImageAliasUrl
             return self::$keys;
         if ( self::$keys !== null && time() - self::$keys['read'] < self::KEY_TTL && ( self::$keys['current'] !== null || !$create ) )
             return self::$keys;
+        // A process that ends with its request (PHP-FPM): the keys another request read within KEY_TTL, without a
+        // database connection
+        $kept = self::readKeyFile();
+        if ( $kept !== null )
+        {
+            self::$keys = $kept;
+            self::$keysFromFile = true;
+            return self::$keys;
+        }
+        self::$keysFromFile = false;
         $current = null;
         $previous = null;
         $previousUntil = 0;
@@ -131,7 +144,81 @@ class expImageAliasUrl
             }
         }
         self::$keys = self::keysEntry( $current, $previous, $previousUntil, time() );
+        if ( self::$keys['current'] !== null )
+            self::writeKeyFile( self::$keys );
         return self::$keys;
+    }
+
+    /**
+     * The file the keys are kept in between the requests of PHP-FPM, LiteSpeed and the like (<cache dir>/
+     * imagealias-keys.php, readable by the site's user only), or null where it is not used: on the command line
+     * (scripts, tests, Velocity's persistent workers, which keep the keys in memory).
+     *
+     * @return string|null
+     */
+    public static function keyFile()
+    {
+        if ( PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg' || !class_exists( 'eZSys' ) )
+            return null;
+        return eZSys::cacheDirectory() . '/imagealias-keys.php';
+    }
+
+    /**
+     * The keys kept in keyFile() while they are younger than KEY_TTL, else null.
+     *
+     * @return array|null
+     */
+    protected static function readKeyFile()
+    {
+        $file = self::keyFile();
+        if ( $file === null || !is_file( $file ) || !is_readable( $file ) )
+            return null;
+        $kept = @include $file;
+        if ( !is_array( $kept ) || !isset( $kept['read'], $kept['current'] ) || !is_string( $kept['current'] ) || $kept['current'] === ''
+             || time() - (int)$kept['read'] >= self::KEY_TTL || (int)$kept['read'] > time() + 60 )
+            return null;
+        return array( 'current' => $kept['current'], 'previous' => isset( $kept['previous'] ) && is_string( $kept['previous'] ) && $kept['previous'] !== '' ? $kept['previous'] : null,
+                      'previous_until' => (int)( $kept['previous_until'] ?? 0 ), 'read' => (int)$kept['read'] );
+    }
+
+    /**
+     * Keeps $keys in keyFile() (written whole, then renamed into place; mode 0600).
+     *
+     * @param array $keys
+     */
+    protected static function writeKeyFile( array $keys )
+    {
+        $file = self::keyFile();
+        if ( $file === null || !is_dir( dirname( $file ) ) )
+            return;
+        $temporary = $file . '.' . getmypid() . '.tmp';
+        $old = umask( 077 );
+        $written = @file_put_contents( $temporary, "<?php\n// The image alias signing keys as last read (expImageAliasUrl::keyFile()); a cache, removed freely\nreturn "
+                                                    . var_export( $keys, true ) . ";\n" );
+        umask( $old );
+        if ( $written === false || !@rename( $temporary, $file ) )
+        {
+            @unlink( $temporary );
+            return;
+        }
+        if ( function_exists( 'opcache_invalidate' ) )
+            @opcache_invalidate( $file, true );
+    }
+
+    /**
+     * Removes keyFile() (the keys were changed).
+     */
+    public static function forgetKeyFile()
+    {
+        $file = self::keyFile();
+        if ( $file === null && class_exists( 'eZSys' ) )
+            $file = eZSys::cacheDirectory() . '/imagealias-keys.php';
+        if ( $file !== null && is_file( $file ) )
+        {
+            @unlink( $file );
+            if ( function_exists( 'opcache_invalidate' ) )
+                @opcache_invalidate( $file, true );
+        }
     }
 
     /**
@@ -205,6 +292,7 @@ class expImageAliasUrl
                                'The image alias signing key before the last change, accepted until the time in front of it.' )
            && expSecrets::set( self::SECRET, bin2hex( random_bytes( 32 ) ), 'image' );
         self::resetKeys();
+        self::forgetKeyFile();
         return $ok;
     }
 
@@ -266,6 +354,14 @@ class expImageAliasUrl
                 $signed = true;
                 break;
             }
+        }
+        // Kept keys that do not confirm it (changed meanwhile): asked again from the store
+        if ( !$signed && self::$keysFromFile )
+        {
+            self::$keys = null;
+            self::forgetKeyFile();
+            self::$keysFromFile = false;
+            return self::verify( $token, $now );
         }
         if ( !$signed )
             return $result;
