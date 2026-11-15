@@ -294,6 +294,11 @@ class expImageAliasStagerTest extends PHPUnit\Framework\TestCase
                                                                     array( 'status' => 200, 'type' => 'image/svg+xml', 'body' => '<html><body/></html>' ), 0 )[0] );
         // Not an image path at all
         $this->assertSame( 'invalid', expImageAliasStager::validate( 'var/site/storage/original/a.pdf', array( 'status' => 200, 'type' => 'application/pdf', 'body' => '%PDF' ), 0 )[0] );
+        // An AVIF variant PHP reads no size of (before PHP 8.2): its signature decides; without one it stays refused
+        $avif = "\0\0\0\x1cftypavif\0\0\0\0avifmif1miaf" . str_repeat( "\0", 64 );
+        $this->assertNull( expImageAliasStager::validate( 'var/site/storage/images/a_small.jpg.avif', array( 'status' => 200, 'type' => 'image/avif', 'body' => $avif ), 0 ) );
+        $this->assertSame( 'invalid', expImageAliasStager::validate( 'var/site/storage/images/a_small.jpg.avif',
+                                                                    array( 'status' => 200, 'type' => 'image/avif', 'body' => str_repeat( 'x', 80 ) ), 0 )[0] );
     }
 
     /**

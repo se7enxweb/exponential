@@ -397,7 +397,8 @@ class expImageAliasFormatsTest extends PHPUnit\Framework\TestCase
                 $this->assertSame( $converter, expImageFormatConverter::lastConverter() );
                 $this->assertTrue( expImageFormatConverter::hasSignature( $destination, $format ), "$converter $format" );
                 $size = getimagesize( $destination );
-                if ( $size )
+                // PHP before 8.2 reads no AVIF size (8.1 answers 0 x 0): the signature above is all it can check
+                if ( $size && ( $format !== 'avif' || PHP_VERSION_ID >= 80200 ) )
                     $this->assertSame( array( 640, 480 ), array( $size[0], $size[1] ), "$converter $format keeps the size" );
                 ++$made;
             }

@@ -432,6 +432,10 @@ class expImageAliasStager
             return null;
         }
         $size = @getimagesizefromstring( $body );
+        // PHP before 8.2 reads no AVIF size (8.1: 0 x 0, 8.0: no image at all): an AVIF with its signature is taken
+        if ( $expected === 'image/avif' && ( !is_array( $size ) || empty( $size[0] ) || empty( $size[1] ) )
+             && expImageFormatConverter::headHasSignature( substr( $body, 0, 16 ), 'avif' ) )
+            return null;
         if ( !is_array( $size ) || empty( $size[0] ) || empty( $size[1] ) )
             return array( 'invalid', 'not a readable image' );
         if ( self::normalizeMime( (string)( $size['mime'] ?? '' ) ) !== $expected )

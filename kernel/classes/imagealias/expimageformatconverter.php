@@ -402,7 +402,20 @@ class expImageFormatConverter
      */
     public static function hasSignature( $path, $format )
     {
-        $head = (string)@file_get_contents( $path, false, null, 0, 16 );
+        return self::headHasSignature( (string)@file_get_contents( $path, false, null, 0, 16 ), $format );
+    }
+
+    /**
+     * Whether the first bytes of a file are the signature of $format: RIFF....WEBP, or an ISO box ftyp with the brand
+     * avif or avis. Decides an AVIF where PHP reads no size (getimagesize() before PHP 8.2: 0 x 0 on 8.1, nothing on 8.0).
+     *
+     * @param string $head at least the first 12 bytes
+     * @param string $format webp or avif
+     * @return bool
+     */
+    public static function headHasSignature( $head, $format )
+    {
+        $head = (string)$head;
         if ( $format === 'webp' )
             return strlen( $head ) >= 12 && substr( $head, 0, 4 ) === 'RIFF' && substr( $head, 8, 4 ) === 'WEBP';
         if ( $format === 'avif' )
