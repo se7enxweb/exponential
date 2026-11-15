@@ -74,6 +74,7 @@ Registered in `kernel/common/eztemplateautoload.php`:
 | `audit_label` | labels of the audit log |
 | `exp_environment`, `exp_environment_badge` | the environment (development, staging, production) and its badge |
 | `csp_nonce` | the Content Security Policy nonce of the request ([CSP-safe design](../theme-design/csp-safe-design.md)) |
+| `cache_until`, `seconds_until` | until when the page's output is true, honored by every cache; the seconds until a time ([cache_until and seconds_until](cache-until.md)) |
 
 `kernel/private/eztemplate/eztemplateautoload.php` adds `language_switcher`.
 

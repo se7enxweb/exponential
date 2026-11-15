@@ -61,6 +61,12 @@ einem kurzen `max-age` ([HTTP-Cache-Header](http-cache-header.md#zwischenspeiche
 Wenn die Website des Kunden auf Velocity läuft, beantwortet bereits dessen Antwort-Cache anonyme Seiten am Origin; das CDN spart dann
 vor allem die Netzwerkstrecke und nimmt statische Dateien ab.
 
+**Seiten, die zu einer Uhrzeit ablaufen.** Sagt ein Template mit `cache_until`, bis wann eine Seite gilt (seit 6.0.15),
+senkt der Origin `max-age` und `s-maxage` auf die verbleibende Zeit und sendet `X-Exp-Cache-Until`. Ein CDN hält sich
+daran, wenn seine Cache-Regel die Header des Origins beachtet (bei Cloudflare: Edge TTL „use cache-control header if
+present“). Eine feste Edge-TTL, die den Origin übergeht, kann die Anwendung nicht begrenzen: Leeren Sie dann am CDN
+oder wählen Sie dort eine kürzere TTL ([cache_until: Seiten, die pünktlich ablaufen](../../../funktionen/6.0/cache-until.md#velocity-cdn-litespeed-und-browser)).
+
 ## Dem CDN vertrauen
 
 Hinter einem CDN kommt jede Anfrage von den Adressen des CDN. Ohne Vertrauen behandelt der Kernel Anfragen als reines HTTP von der

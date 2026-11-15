@@ -107,6 +107,12 @@ Platzhalter. Um die Aliase eines Teils der Website neu oder vor den Besuchern zu
 Bild-Aliase** (Massenläufe) oder `./console exp:image:alias regenerate`, statt alle zu leeren
 ([Auf Abruf erzeugte Bild-Aliase](../funktionen/6.0/bild-aliase-auf-abruf.md)).
 
+**Eine Seite mit Terminen oder einem „heute“ zeigt nach Mitternacht noch den alten Stand.** Kein Cache muss geleert
+werden, wenn das Template sagt, bis wann seine Ausgabe gilt: `{cache_until( 'tomorrow' )}` oder
+`{cache_until( $naechster_termin )}`. View-Cache, Cache-Blöcke, HTTP-Cache, Velocity und Browser halten die Seite dann
+höchstens bis dahin; der Header `X-Exp-Cache-Until` zeigt den Zeitpunkt. Siehe
+[Zeitabhängige Inhalte cachen](zeitabhaengige-inhalte-cachen.md).
+
 **Eine Seite zeigt nach dem Leeren noch die alte Fassung.** Leeren Sie den Antwort-Cache von Velocity oder warten Sie einige Sekunden. Handelt
 es sich um eine Änderung der Einstellungen, starten Sie Velocity neu.
 

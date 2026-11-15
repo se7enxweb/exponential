@@ -372,6 +372,13 @@ rules for `index_image.php` from `.htaccess_root` (or the
 script where root scripts are listed, and give images their own budget in the request shield. See
 [Image aliases made on demand (BC)](../bc/6.0/image-aliases-on-demand.md).
 
+**Pages that expire on time (6.0.15).** The template operator `cache_until` lets a template say until when its output
+is true, and every cache honors it. Pages without a call and without `cache_ttl` are unchanged. `cache_ttl` keeps
+working; the role-aware HTTP cache now keeps such pages only for the time that is left and serves no stale copy after
+it, and their headers can carry `s-maxage`. Existing sites keep their (often empty) `[TimeZoneSettings] TimeZone`:
+set it, as Setup > System information suggests. See
+[Pages that expire on time (BC)](../bc/6.0/cache-until.md).
+
 ### Step 2: apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, for MySQL, PostgreSQL and SQLite.

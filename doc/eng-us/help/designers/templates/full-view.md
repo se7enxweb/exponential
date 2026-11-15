@@ -75,8 +75,10 @@ The full view runs before the pagelayout. To tell it something (hide the side co
 The full view is view-cached (`CachedViewModes` includes `full`):
 
 - nothing visitor-specific in it (names, baskets, "you are signed in");
-- `currentdate()`-based output frozen until the next publish; set a short `cache_ttl` if needed
-  ([Caching for designers](../theme-design/caching-for-designers.md)).
+- `currentdate()`-based output frozen until the next publish; say until when it is true with
+  `{cache_until( 'tomorrow' )}` or `{cache_until( $next_event_start )}` (since 6.0.15; a short `cache_ttl` still
+  works) ([cache_until and seconds_until](cache-until.md),
+  [Caching for designers](../theme-design/caching-for-designers.md)).
 
 ## One full view per class
 

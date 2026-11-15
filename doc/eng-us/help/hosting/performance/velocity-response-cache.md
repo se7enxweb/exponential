@@ -87,6 +87,13 @@ From [Chapter 8](../../../install/08-serving-the-site.md#838-the-response-cache)
 The shipped `NotFoundSeconds=0` is a deliberate choice: a 404 answered from the cache "was seen once a minute at
 most" in the logs. For a host whose security monitoring reads those logs, keep it at 0.
 
+A page that names its own expiry with `cache_until` (6.0.15) is kept no longer than that: it carries `s-maxage` or
+`max-age` at most the seconds left (`s-maxage` is added when less than `DefaultTtl` is left, `s-maxage=0` when the page
+must not be kept), and the role-aware HTTP cache's answers carry the same limit. So an event list or "open now" box
+is correct at the moment it changes, whatever `DefaultTtl` says. One exception: in the seconds after such an expiry,
+`StaleWhileRevalidate` may still hand the old copy to requests that arrive while one request renders the new page
+([Pages that expire on time](../../../features/6.0/cache-until.md#limits)).
+
 The trade the file names for `DefaultTtl`: "a page that differs between anonymous visitors without a cookie telling
 them apart would be shared between them." A customer who personalizes anonymous pages by something other than a
 cookie needs `DefaultTtl=0` (only pages that bring their own lifetime are cached).
@@ -132,6 +139,7 @@ published change appears on the **second** view, not the first." The kill switch
 | The customer says | Check | Answer |
 |---|---|---|
 | "My edit does not show for visitors" | `X-Cache: HIT` and `Age` | it shows within `DefaultTtl` seconds, or after `exp:velocity cache clear`; with the navigation cache, on the second view |
+| "The event list still shows an event that started" | `X-Exp-Cache-Until` on the page | the template needs `cache_until` for the start time ([Caching time-dependent content](../../../guides/caching-time-dependent-content.md)) |
 | "Signed-in users see the old page" | not the response cache | signed-in visitors never get it; look at the view cache or the HTTP cache |
 | "A 404 page appears in our logs only sometimes" | `NotFoundSeconds` | above 0, cached 404s do not reach PHP |
 | "The site is slow after a deploy" | the cache was cleared | warm it ([Cache clearing and warming](cache-clearing-and-warming.md)) |

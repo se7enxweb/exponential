@@ -33,7 +33,7 @@ seines Inhalts und verwendet sie wieder, bis sich seine Schlüssel ändern oder 
 | Parameter | Bedeutung |
 |---|---|
 | `keys` | ein Wert oder Array; jede andere Kombination erhält ihre eigene gespeicherte Kopie |
-| `expiry` | Lebensdauer in Sekunden; Standard 7200 (`DEFAULT_TTL`); `0` bedeutet keine Zeitgrenze |
+| `expiry` | Lebensdauer in Sekunden; Standard 7200 (`DEFAULT_TTL`); `0` bedeutet keine Zeitgrenze. Für Inhalte, die zu einem bestimmten Zeitpunkt falsch werden, nehmen Sie stattdessen `cache_until` im Block ([Ablauf](#ablauf)) |
 | `ignore_content_expiry` | die Kopie behalten, wenn Inhalte veröffentlicht werden (standardmäßig lässt eine Veröffentlichung Cache-Blöcke ablaufen) |
 | `subtree_expiry` | ablaufen, wenn Inhalte unterhalb des angegebenen Knotens (ID oder Pfad) veröffentlicht werden, statt bei jeder Veröffentlichung |
 
@@ -60,6 +60,36 @@ Pagelayout der Administration baut einen Benutzer-Hash aus Rollen- und Einschrä
 - Eine Fußzeile, die sich nie mit Inhalten ändert: `ignore_content_expiry` und ein langes `expiry`.
 - Ein Menü einer Sektion: `subtree_expiry` mit dem Wurzelknoten der Sektion, sodass Veröffentlichungen anderswo ihn
   behalten.
+
+### Ablauf zu einem Zeitpunkt: cache_until
+
+Seit 6.0.15 kann der Inhalt eines Blocks selbst sagen, bis wann er gilt. Ein Block, in dessen Inhalt (auch in einem
+eingebundenen Template) `{cache_until( … )}` läuft, wird mit diesem Zeitpunkt gespeichert und läuft dann ab, zusätzlich
+zu `expiry` und den Veröffentlichungen. Kommt er aus dem Cache, meldet er den Zeitpunkt der Seite erneut, sodass auch
+der HTTP-Cache, Velocity und der Browser die Seite nicht länger halten. Ein `expiry=` nur für zeitabhängige Inhalte
+ist damit nicht mehr nötig:
+
+```tpl
+{cache-block keys=array( 'next-event' )}
+    {def $next = fetch( 'content', 'list', hash( 'parent_node_id', 60,
+                     'class_filter_type', 'include', 'class_filter_array', array( 'event' ),
+                     'attribute_filter', array( array( 'event/start', '>', currentdate() ) ),
+                     'sort_by', array( 'attribute', true(), 'event/start' ), 'limit', 1 ) )}
+    {if $next}
+        <a href={$next[0].url_alias|ezurl}>{$next[0].name|wash}</a>
+        {cache_until( $next[0].data_map.start.content.timestamp )}
+    {/if}
+    {undef $next}
+{/cache-block}
+```
+
+- `{cache_until( 0 )}` im Block: Der Block wird nicht gespeichert.
+- `expiry` begrenzt nur den Block, nie die Seite: Es beschreibt, wie fein der Block gecacht wird, nicht wann sein
+  Inhalt falsch wird.
+- Blöcke ohne Aufruf werden genau wie bisher gespeichert; Block-Dateien von vor 6.0.15 funktionieren weiter.
+
+Siehe [cache_until und seconds_until](cache-until.md) und
+[Zeitabhängige Inhalte cachen](../../../anleitungen/zeitabhaengige-inhalte-cachen.md#8-inhalte-von-cache-blöcken).
 
 ## Sichere Muster
 
@@ -100,6 +130,7 @@ Pagelayout der Administration baut einen Benutzer-Hash aus Rollen- und Einschrä
 
 - [Caching für Designer](../theme-design/caching-fuer-designer.md)
 - [Run-once](run-once.md)
+- [cache_until und seconds_until](cache-until.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

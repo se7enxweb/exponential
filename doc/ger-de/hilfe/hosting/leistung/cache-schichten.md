@@ -23,9 +23,10 @@ Support erkennen, woher eine veraltete oder langsame Seite kommt.
 4. [Im Kernel](#im-kernel)
 5. [Unter dem Kernel](#unter-dem-kernel)
 6. [Welche Schichten zwischen Servern geteilt werden](#welche-schichten-zwischen-servern-geteilt-werden)
-7. [Die Header lesen](#die-header-lesen)
-8. [Was ein Tarif einschalten kann](#was-ein-tarif-einschalten-kann)
-9. [Checkliste](#checkliste)
+7. [Wie jede Schicht den Ablauf einer Seite beachtet](#wie-jede-schicht-den-ablauf-einer-seite-beachtet)
+8. [Die Header lesen](#die-header-lesen)
+9. [Was ein Tarif einschalten kann](#was-ein-tarif-einschalten-kann)
+10. [Checkliste](#checkliste)
 
 ## Die Schichten auf einen Blick
 
@@ -120,6 +121,27 @@ beide. Zwei Dinge nicht ([Caches](../../../anleitungen/caches.md#kurz-gesagt)):
 APCu und OPcache gelten pro Prozessbaum. Auf mehreren Web-Knoten werden Dateien in einem geteilten `var/` geteilt; APCu gilt pro Server
 (dafür gibt es `Storage=file` des Abfrage-Caches). Siehe [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md).
 
+## Wie jede Schicht den Ablauf einer Seite beachtet
+
+Seit 6.0.15 kann ein Template sagen, bis wann eine Seite gilt: `{cache_until( 'tomorrow' )}`,
+`{cache_until( $event_start )}`, `{cache_until( 0 )}` (gar nicht behalten). Der früheste Zeitpunkt aller Templates der
+Anfrage ist der Ablauf der Seite. Ohne Aufruf ändert sich nichts.
+
+| # | Schicht | Wie sie den Ablauf beachtet |
+|---|---|---|
+| 1, 2 | Browser | über das gesenkte `max-age` und `Expires` der Antwort |
+| 3 | CDN, Proxy | über das gesenkte `max-age`/`s-maxage`, wenn seine Regel die Header des Origins beachtet ([CDN](cdn.md)) |
+| 3 | Seiten-Cache von LiteSpeed | `X-LiteSpeed-Cache-Control: no-cache` bei Ablauf 0; eine Lebensdauer nur mit `site.ini [CacheUntilSettings] LiteSpeedMaxAge=enabled` |
+| 4 | Antwort-Cache von Velocity | über `s-maxage`/`max-age`; `s-maxage` wird ergänzt, wenn die verbleibende Zeit unter `DefaultTtl` liegt ([Antwort-Cache von Velocity](antwort-cache-von-velocity.md)) |
+| 5 | Rollenbewusster HTTP-Cache | Eintrag lebt höchstens bis zum Ablauf, ohne stale-while-revalidate danach; `max-age` eines Treffers höchstens die verbleibende Zeit ([HTTP-Cache-Header](http-cache-header.md#der-rollenbewusste-http-cache)) |
+| 6 | Statischer Cache | **nicht**: Seiten mit `cache_until` gehören nicht hinein ([Statischer Cache](statischer-cache.md)) |
+| 7 | Content-View-Cache | Eintrag läuft zum Ablauf ab und meldet bei jedem Treffer die verbleibende Zeit weiter |
+| 8 | Template-Block-Cache | Block läuft zum Ablauf ab und meldet ihn bei jedem Treffer der Seite |
+
+Der Header `X-Exp-Cache-Until` nennt den Ablauf jeder Seite, die einen hat (ISO 8601 in der Zeitzone der Website, oder
+`0`). Siehe [cache_until: Seiten, die pünktlich ablaufen](../../../funktionen/6.0/cache-until.md) und
+[Zeitabhängige Inhalte cachen](../../../anleitungen/zeitabhaengige-inhalte-cachen.md).
+
 ## Die Header lesen
 
 | Header | Gesetzt von | Bedeutung |
@@ -127,9 +149,10 @@ APCu und OPcache gelten pro Prozessbaum. Auf mehreren Web-Knoten werden Dateien 
 | `X-Cache: HIT`, `STALE` | dem Antwort-Cache von Velocity | aus dem Cache beantwortet, oder aus einer abgelaufenen Kopie, während eine neue gerendert wird |
 | `Age` | dem Antwort-Cache von Velocity | Sekunden, seit der Eintrag gespeichert wurde |
 | `X-Exp-Cache: HIT`, `STALE`, `MISS (reason)`, `BYPASS (reason)` | dem rollenbewussten HTTP-Cache | was er getan hat und warum |
+| `X-Exp-Cache-Until` | dem Kernel (`cache_until`, `cache_ttl`) | bis wann jede Schicht die Seite höchstens hält; `0`: gar nicht |
 
 ```bash
-curl -sI https://example.com/ | grep -iE 'x-cache|x-exp-cache|age|cache-control'
+curl -sI https://example.com/ | grep -iE 'x-cache|x-exp-cache|age|cache-control|expires'
 ```
 
 Eine Seite, die der Antwort-Cache von Velocity beantwortet, trägt auch das mit ihr gespeicherte `X-Exp-Cache`, oft `MISS` aus dem

@@ -128,6 +128,7 @@ The template language, operators and functions, fetching content, view modes, ov
 - [Section (legacy)](templates/section-legacy.md)
 - [Set-block and append-block](templates/set-block-and-append-block.md)
 - [Cache-block](templates/cache-block.md)
+- [cache_until and seconds_until](templates/cache-until.md)
 - [Run-once](templates/run-once.md)
 - [Literal and delimiters](templates/literal-and-delimiters.md)
 - [Comments](templates/comments.md)

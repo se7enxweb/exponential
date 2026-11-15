@@ -3578,7 +3578,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a0a5eb5bfd94f757922bc52e662f64c4  doc/changelogs/6.0/6.0.15.md
+7c7ad3a611e3ae32082f751d4a6a88b2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3687,7 +3687,7 @@ a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 dcdf710d757a03980f1f5e503ccdb34a  doc/eng-us/README-LICENSE.md
 b14cd94c5ea788d16f5e5feac572a7a2  doc/eng-us/SUPPORT.md
 0ad9c5cf443537f4044d6148bd6729f8  doc/eng-us/UNINSTALL.md
-70d7a4a967c0450ff677559a7cedc2e7  doc/eng-us/UPDATE.md
+6370c41c08b42c9c508de3e2733c23e1  doc/eng-us/UPDATE.md
 18eb180621655795c488a99d85dd26f0  doc/eng-us/bc/4.1/changes-4.1.0.txt
 23d0e20abd1918e03ad0770ee403ff66  doc/eng-us/bc/4.2/changes-4.2.0.txt
 21caf491f15ecab82c5915c46c526f3c  doc/eng-us/bc/4.3/changes-4.3.0.txt
@@ -3722,6 +3722,7 @@ ae36ca4cd0badc551841af1a15c85de9  doc/eng-us/bc/6.0/backend_ezjscore_services.md
 634c9b738dac08042ef4b52dee1d3212  doc/eng-us/bc/6.0/bookmark-folders.md
 262f5d2f4bb5d5e20915eb16f5ce7fea  doc/eng-us/bc/6.0/bookmarks-of-system-pages.md
 103eb43b7b3b7a7162e0a1cc7d050273  doc/eng-us/bc/6.0/cache-console.md
+0dfd9682fb7f66d8feb273b10a21f8d6  doc/eng-us/bc/6.0/cache-until.md
 a4728bf2db13d48f57e43d6418d4a08f  doc/eng-us/bc/6.0/ci.md
 20ce9d5335e19c7a69aae9cdaf03daed  doc/eng-us/bc/6.0/cleanuprss.md
 f8dec2dfb81fbb16a107d0bde08c230b  doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
@@ -4416,7 +4417,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
 944aeae01d2bf82c970b585a00033775  doc/eng-us/examples/htaccess
-43b51b196b2f8a378cd3e4a8c7981bdf  doc/eng-us/examples/ini-settings/README.md
+44bbc72c90c855d8a06bcc70ab134675  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -5595,6 +5596,7 @@ c135beb9575378bd3a7973db8cf47a2e  doc/eng-us/examples/ini-settings/shopaccount/R
 1df9e4d2089bcc49541116c12816fc5f  doc/eng-us/examples/ini-settings/site/AppendNodeIDFilterSettings.md
 c22b859268798f7505fc18a76c38fef3  doc/eng-us/examples/ini-settings/site/BackwardCompatibilitySettings.md
 d36bf8e7d0e8f4ce28e1b81020f0fc2b  doc/eng-us/examples/ini-settings/site/Cache.md
+26a2bafa526f6da31f2f964ff1e7f67a  doc/eng-us/examples/ini-settings/site/CacheUntilSettings.md
 2f549deb730a04e2b09a3dc3eb0987ac  doc/eng-us/examples/ini-settings/site/Cache_exphelpcontent.md
 51f4e05e06715d711cba3b5ee08e4f41  doc/eng-us/examples/ini-settings/site/Cache_rest.md
 dcbe6793307e97575199813dc0a46289  doc/eng-us/examples/ini-settings/site/Cache_restRoutes.md
@@ -5624,7 +5626,7 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-00364be9cadca6fd8031b333143bab86  doc/eng-us/examples/ini-settings/site/README.md
+995bfbfa9adba6688cd07a1474255886  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
@@ -5651,7 +5653,7 @@ d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteData
 9c7893cd8fdb562ad88192fc8f906324  doc/eng-us/examples/ini-settings/site/SiteSettings.md
 02edbbb315e15fd0cc25a6a4e7f4db63  doc/eng-us/examples/ini-settings/site/TemplateBridgeSettings.md
 7f49107a3863d0c6ba769baa561d084b  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
-6923dbcc08a6b096908508291722e55b  doc/eng-us/examples/ini-settings/site/TimeZoneSettings.md
+ed83198c1d744b8b6870195fe85f56e1  doc/eng-us/examples/ini-settings/site/TimeZoneSettings.md
 f71ee5c2e368a56f3de8ca5747acc89e  doc/eng-us/examples/ini-settings/site/TipAFriend.md
 045b0078c262d6b1200c1960d4f70cd1  doc/eng-us/examples/ini-settings/site/URLTranslator.md
 daa5454492380b74d1f3f81dc57185f5  doc/eng-us/examples/ini-settings/site/UnitSettings.md
@@ -6456,7 +6458,7 @@ f75c6717404d181c69a0f42a30bc82e4  doc/eng-us/examples/template-functions/shop_ac
 79ac0e4658285cc066b118bdf7484718  doc/eng-us/examples/template-functions/tool_bar.md
 eb53f689889b090a6a6decbed5277d91  doc/eng-us/examples/template-functions/undef.md
 e5355c40fe515527462c85a880edcf0a  doc/eng-us/examples/template-functions/while.md
-04082250c6d85ff8f5166ba2bba10c71  doc/eng-us/examples/template-operators/README.md
+ac96f367452f9c4bee5a38615f2edc29  doc/eng-us/examples/template-operators/README.md
 94284652ab561535f9c054c1aff5639f  doc/eng-us/examples/template-operators/abs.md
 6339c9515ce47d063fccf61d1a758040  doc/eng-us/examples/template-operators/action_icon.md
 1fa93d6ac83b522d8c35b316154ce5cc  doc/eng-us/examples/template-operators/addcslashes.md
@@ -6475,6 +6477,7 @@ f9c8b8cd2d756fcb3e4f3b01adae64d6  doc/eng-us/examples/template-operators/autolin
 3b665746a126e3486315b5733090f115  doc/eng-us/examples/template-operators/begins_with.md
 bad37e580f51870f2278f6c7f9294cf9  doc/eng-us/examples/template-operators/bin2hex.md
 0ced1efbaf095866b2c28335f4946096  doc/eng-us/examples/template-operators/break.md
+b6b81dc7179dc05d44645c99ad0bb5c8  doc/eng-us/examples/template-operators/cache_until.md
 87aa6b6f996cc06d4881b9f64ab76fb6  doc/eng-us/examples/template-operators/ceil.md
 45bf9a0d4d6dbb7be5a3678e3f403fb4  doc/eng-us/examples/template-operators/choose.md
 59aedd26bebc9019d4adf85cd9ce99fc  doc/eng-us/examples/template-operators/chr.md
@@ -6632,6 +6635,7 @@ d27a616faa6cb0c4b73e03e6bf644313  doc/eng-us/examples/template-operators/roman.m
 b451ec885315dab162aeba8db1053858  doc/eng-us/examples/template-operators/round.md
 1e8a39243c2786dcd19a1b07b110291c  doc/eng-us/examples/template-operators/rstring.md
 dbb6e32430c1bc0baf6e1b212d146c59  doc/eng-us/examples/template-operators/rtrim.md
+2499e4f164880fe2c176585ea45718eb  doc/eng-us/examples/template-operators/seconds_until.md
 2358649432c25e0e3ec98d3666ab14e2  doc/eng-us/examples/template-operators/shorten.md
 80d5e415d1796d34a93ddeb2d786c039  doc/eng-us/examples/template-operators/si.md
 bd5baf42c609efbf12b61d213a653c42  doc/eng-us/examples/template-operators/similar_text.md
@@ -6955,7 +6959,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-180f37d2329417ec3fc9cf153c79fc3a  doc/eng-us/features/6.0/README.md
+ac30e3476ac43fc60964a654e0647763  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6973,6 +6977,7 @@ e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 457ed37f55792f132d65cf84e8825a68  doc/eng-us/features/6.0/bookmark-folders.md
 5c77cbe69fa7e3424fbbdda91b017a5d  doc/eng-us/features/6.0/bookmarks-of-system-pages.md
 73986af5ddf303d1baee0bc49446baf1  doc/eng-us/features/6.0/cache-clear-rename-aside.md
+dabff75a311362f40ae3a24bf5b55b51  doc/eng-us/features/6.0/cache-until.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
@@ -7064,7 +7069,7 @@ d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 a36270828104fa37cf3bda0353135917  doc/eng-us/features/6.0/image-aliases-on-demand.md
-c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command.md
+ce13a51757dfdf09e65f74df8fc27fee  doc/eng-us/features/6.0/install-in-one-command.md
 1a6c0d26fd13dea1a6e2b109c412530d  doc/eng-us/features/6.0/installation-name-in-pages.md
 ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
 4c96dc340d9978f9df05c778f26cd192  doc/eng-us/features/6.0/kickstarter-cli.md
@@ -7166,7 +7171,7 @@ aeab614b104ddc5b03384aa3e24a56d5  doc/eng-us/features/6.0/velocity-control-panel
 8ececd72a30eb4be5e39acae31c7fc26  doc/eng-us/features/6.0/velocity-packages-and-binaries.md
 5b8ce05c5b27ce82a22252826464ec0b  doc/eng-us/features/6.0/velocity-persistent-worker-server.md
 3a7ae794d1a2417e7e9e941778fa9222  doc/eng-us/features/6.0/velocity-q-shell.md
-8e0608ef0547b503538a84cd0d907a44  doc/eng-us/features/6.0/velocity-response-cache.md
+a35ae81458fe2ed0e1bf22ffea58ba04  doc/eng-us/features/6.0/velocity-response-cache.md
 cb0a48ff20b86767111112e282e26cf8  doc/eng-us/features/6.0/velocity-scheduler.md
 689c3938f738743357301aa79b4074f4  doc/eng-us/features/6.0/velocity-static-files-and-images.md
 a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
@@ -7175,16 +7180,17 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-commands.md
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
-c1ca3de5715a283fd00bb4373305c910  doc/eng-us/glossary.md
+2dc9a045c46588be96fe872c408e2c77  doc/eng-us/glossary.md
 5dfb2fe078dafcf6eca6c73e07d8f144  doc/eng-us/goals.md
-0a28a63007919ffb3fa3a13cf6c0b813  doc/eng-us/guides/README.md
+d4a50d3de42da781ce13fed86b8f4d7b  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
 cb328df2d889368b2297e4864f4c9c19  doc/eng-us/guides/a-static-documentation-site.md
 bc3ce42df979a00f09fbb3e81ada65cd  doc/eng-us/guides/api-keys.md
 a68843766fba12d6bf9d1878a045e9eb  doc/eng-us/guides/approving-new-editor-accounts.md
 158d25c3e5f52e97b5cfaad49c8e6a00  doc/eng-us/guides/benchmarking.md
 9c41dd92bb18e4edbd028274c7279c5f  doc/eng-us/guides/bookmarks.md
-83e9a9454f370d7c7d594f37107f9ede  doc/eng-us/guides/caches.md
+19f021765323dd43633949823ea288cd  doc/eng-us/guides/caches.md
+55bbb559d2cf3f3c9f7a84275b3dec11  doc/eng-us/guides/caching-time-dependent-content.md
 b448ed8a155b834a33e48205b69cbf82  doc/eng-us/guides/changing-owners.md
 3a8ab864a2b8f976a88b4a4db5df7851  doc/eng-us/guides/class-groups.md
 b73a9d2acee4cfc8c68b3afca0bab7a5  doc/eng-us/guides/classic-menu-settings.md
@@ -7251,7 +7257,7 @@ a101a3bb9c015da9204c6718c2598563  doc/eng-us/guides/images/maintenance/installat
 8d19a39038e4b5fd8c9aa3bb1d006424  doc/eng-us/guides/images/workflows/controls.png
 2d0dfaacccd86266df5bfc75450bbcff  doc/eng-us/guides/images/workflows/process-card.png
 261f6c6b6a30183007fd97d521ca819d  doc/eng-us/guides/images/workflows/status-and-overview.png
-f0a473f08f27cdd9764532d6f1e6245b  doc/eng-us/guides/litespeed-page-cache.md
+80cc04993f2642dadbc7986c74bc5c22  doc/eng-us/guides/litespeed-page-cache.md
 5aabf1ae3d90cc32431398e0289c5d12  doc/eng-us/guides/mail-preferences-administrator.md
 d11111815c1efec3a438ecccd836072e  doc/eng-us/guides/mail-preferences-developer.md
 9090ac1bfc0b083e83885f6eb1f344b0  doc/eng-us/guides/maintenance-mode.md
@@ -8587,7 +8593,7 @@ af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrad
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
-b95f496a80ee8b71c7bd57d09c51a404  doc/eng-us/help/designers/README.md
+5dfcb519d44f304348c77655779e0e73  doc/eng-us/help/designers/README.md
 a1e0f9b5c331ce1cc92537402f0da60a  doc/eng-us/help/designers/designers-start-here.md
 e773e3f7d6e696119b69c7e5a26ac540  doc/eng-us/help/designers/distribution/a-pushed-tag-is-permanent.md
 15da780a556eb5f011694416a88644a7  doc/eng-us/help/designers/distribution/annotated-tags.md
@@ -8748,7 +8754,8 @@ f6b898992e78c0edef00abaa024eca64  doc/eng-us/help/designers/templates/alternate-
 1c0c58bcd8e31ab2206585ba8e9ab6da  doc/eng-us/help/designers/templates/attribute-view-gui.md
 6da6e25f1714fbd53b398a9a318c37a8  doc/eng-us/help/designers/templates/attributes-and-dot-notation.md
 c424591593662a146e817ca1b3494788  doc/eng-us/help/designers/templates/breadcrumbs.md
-96cdc8fad1a6f608beecdf70408381b1  doc/eng-us/help/designers/templates/cache-block.md
+b66eb2962257073a86befa80cb52056d  doc/eng-us/help/designers/templates/cache-block.md
+2dad4e6bf7c4a10a36dea8b4233b8976  doc/eng-us/help/designers/templates/cache-until.md
 d8bad4bb4ca3f61bf434e087779981dd  doc/eng-us/help/designers/templates/comments.md
 89bb5a198a7b854bf2566611a650ca67  doc/eng-us/help/designers/templates/common-template-mistakes.md
 fc333cf448d9b813aee12b2b1be6fd06  doc/eng-us/help/designers/templates/cond-and-first-set.md
@@ -8773,7 +8780,7 @@ e6b38121e7ce3089011472240e378268  doc/eng-us/help/designers/templates/fetching-n
 17662ce758a7d07f008d95a749cca89a  doc/eng-us/help/designers/templates/for-loops.md
 d97a405abceb38b2ff3283443d79da48  doc/eng-us/help/designers/templates/foreach-loops.md
 b567b2ad238f6a3495718ab3369b1adc  doc/eng-us/help/designers/templates/forms-in-templates.md
-c3d76db6bff5400946d91ca135776393  doc/eng-us/help/designers/templates/full-view.md
+79cfe5d00ea66e86afe19508f7f963bf  doc/eng-us/help/designers/templates/full-view.md
 b6ad6b5fe420698a53c222621ac3e387  doc/eng-us/help/designers/templates/function-reference.md
 a5ef91bbe0a4d84a5ce7d94478440f6f  doc/eng-us/help/designers/templates/i18n-operator.md
 e5ba43e343c14829600b2497680e7857  doc/eng-us/help/designers/templates/if-and-conditions.md
@@ -8788,7 +8795,7 @@ b48119cb0f29b121aef902faabcbdccc  doc/eng-us/help/designers/templates/module-res
 0ea728275694529290dbf5e0e76c872b  doc/eng-us/help/designers/templates/node-templates-by-class.md
 b5eb0bbf834df79396a53899373beec8  doc/eng-us/help/designers/templates/node-view-gui.md
 03c2ed44151799f1144180f23682e881  doc/eng-us/help/designers/templates/nodes-objects-attributes.md
-7f8e246e59ef91ecd21e94a7fd2e9ae8  doc/eng-us/help/designers/templates/operator-reference.md
+cb128abe4f80575b3616237eb837d052  doc/eng-us/help/designers/templates/operator-reference.md
 1ac31662fb6773634d07d967ba07c38b  doc/eng-us/help/designers/templates/operators-overview.md
 16e2541aed00908ce45f61ded1b38a4d  doc/eng-us/help/designers/templates/override-a-single-node.md
 141396a05d11bd64c5bd190385864e43  doc/eng-us/help/designers/templates/override-by-parent.md
@@ -8803,11 +8810,11 @@ ac6f52fa77ba9797f42574abcfa3d95c  doc/eng-us/help/designers/templates/role-and-p
 0460054b2bf83cd81b95036c3ac707e9  doc/eng-us/help/designers/templates/run-once.md
 451773f38ad1aff0077d61dce30a8531  doc/eng-us/help/designers/templates/search-results-template.md
 c03da7a0b9caa77264f8b381c3d11690  doc/eng-us/help/designers/templates/section-legacy.md
-50644bd117263d8204956bae4c4021de  doc/eng-us/help/designers/templates/set-block-and-append-block.md
+32aecfbcddc53f3bf79e9b02c226e401  doc/eng-us/help/designers/templates/set-block-and-append-block.md
 56b42fd53e68faa83cf15804ec1e4acd  doc/eng-us/help/designers/templates/string-operators.md
 3ef6d4aad0b6e316278edcdcc6ab2640  doc/eng-us/help/designers/templates/string-template-operators.md
 8be55b73535c525c4e63243f151e5ef1  doc/eng-us/help/designers/templates/switch-case.md
-e545640814627517dd40aae742cf9387  doc/eng-us/help/designers/templates/template-compilation-and-cache.md
+0cc8e69a120e188385c8fed7b492a480  doc/eng-us/help/designers/templates/template-compilation-and-cache.md
 8c9ce41f10c575c728bd69e8cbb69acc  doc/eng-us/help/designers/templates/template-debugging.md
 7346d8929a0685379664376ee80a4b30  doc/eng-us/help/designers/templates/template-editor-overrides.md
 6fb3b8803222777948fc66f92e9917c0  doc/eng-us/help/designers/templates/template-path-comments.md
@@ -8831,7 +8838,7 @@ db8e07272435b086bb85b00b5e87433d  doc/eng-us/help/designers/theme-design/admin-d
 a1751ed1cb0dcbc24d9e46ffd68cd73f  doc/eng-us/help/designers/theme-design/block-definitions.md
 89eaf0ca10872de046e106be27c0c3f2  doc/eng-us/help/designers/theme-design/block-view-templates.md
 ce699d6ed5f3bf7e256743bbbae93266  doc/eng-us/help/designers/theme-design/breakpoints-and-container-widths.md
-2102d8c0d93b238162ee59574c008c59  doc/eng-us/help/designers/theme-design/caching-for-designers.md
+1f72f1faf4cdb3bfe89343315350b1ae  doc/eng-us/help/designers/theme-design/caching-for-designers.md
 bab5d006ffc6526997286f83b82d13c4  doc/eng-us/help/designers/theme-design/checklist-accessibility.md
 2c08aec5c7a1bd553ec176fae16f85c1  doc/eng-us/help/designers/theme-design/checklist-code-review-for-templates.md
 2d4302dff226080248f1207f6fd3522f  doc/eng-us/help/designers/theme-design/checklist-csp.md
@@ -10263,16 +10270,16 @@ d9f1c859b5b87e1fe68ee30d0ce32aca  doc/eng-us/help/hosting/panels/ispconfig.md
 0a9a21fe62d1b1173e191e2f74eff5ad  doc/eng-us/help/hosting/performance/README.md
 1f0166d48f1422de3ee9c3acac8e18c4  doc/eng-us/help/hosting/performance/benchmarking-a-hosted-site.md
 adc3cdaafcda28ca26b186bb5010fcd9  doc/eng-us/help/hosting/performance/cache-clearing-and-warming.md
-e7881896f989effbb1e24df4652a2a16  doc/eng-us/help/hosting/performance/caching-layers.md
-0b3b16320bab0924c8d44d5869beb311  doc/eng-us/help/hosting/performance/cdn.md
+cba2597ddeff5e8040828fbaa00b200c  doc/eng-us/help/hosting/performance/caching-layers.md
+47b093b86a53beb02cb461237705cdfd  doc/eng-us/help/hosting/performance/cdn.md
 1c717e1b6237b95671fec34f498821ab  doc/eng-us/help/hosting/performance/compiled-kernel-container.md
-de99e06ba59d8f4bc6a90ebff2ea40e3  doc/eng-us/help/hosting/performance/http-cache-headers.md
+4fe218fe83e0c86dfe094d31a5d95f56  doc/eng-us/help/hosting/performance/http-cache-headers.md
 bbc2e47e4c6eeda9e2a8032bcb88e3c5  doc/eng-us/help/hosting/performance/opcache.md
 2a4310e39dd7a2f94e2451320313b527  doc/eng-us/help/hosting/performance/php-fpm-tuning.md
-460d5e6d0376d949e6e9f171219f1c93  doc/eng-us/help/hosting/performance/static-cache.md
+d131e3ec9e0644c75316ae67fd369a9b  doc/eng-us/help/hosting/performance/static-cache.md
 2f734c46e521148219d206db23aa6126  doc/eng-us/help/hosting/performance/valkey-and-redis.md
 3905029b580d91ef8f5c296b878a7664  doc/eng-us/help/hosting/performance/varnish-and-reverse-proxies.md
-85bbd1bdc93585ff9c171ebd51c59a5f  doc/eng-us/help/hosting/performance/velocity-response-cache.md
+668573e4f35678fc9054d44d93124a51  doc/eng-us/help/hosting/performance/velocity-response-cache.md
 a3f4972707c3564d9f2b74477b4d0927  doc/eng-us/help/hosting/provisioning/README.md
 dd582453e1e6183e47880b25389b071a  doc/eng-us/help/hosting/provisioning/automating-provisioning.md
 0a700fbb3b888d7034574ad761725e8f  doc/eng-us/help/hosting/provisioning/exp-install.md
@@ -13259,7 +13266,7 @@ d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-meth
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
 775ac59139d5fbe41099044e578388be  doc/eng-us/install/09-databases.md
 278eeb7d25c1222ac28937a2f8165689  doc/eng-us/install/10-after-installing.md
-b62bba733b95405981155ba159dd1803  doc/eng-us/install/11-upgrading.md
+7d74c59b0b7912c54de447b8ebde43f9  doc/eng-us/install/11-upgrading.md
 7d7d72184cb95c9e937886f4057bcbbc  doc/eng-us/install/12-troubleshooting.md
 311dc1363a91c90c78f4d57a63ee0ed2  doc/eng-us/install/13-security-hardening.md
 a44e8b7abf94d51ef6660523668e4f07  doc/eng-us/install/14-migrating-from-4x.md
@@ -13643,7 +13650,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-5066bb47b3df0ca50798274f8ce047a6  doc/ger-de/.paths.json
+82bfd7b3cd21e28c095ad72eccaeda86  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -13656,7 +13663,7 @@ ee3c5da721b9704840763c5f4db59a32  doc/ger-de/README-LIZENZ.md
 ddbb3c2493e9b29f1d3369b5cc346376  doc/ger-de/SUPPORT.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 16e180262785397d120984f48d41567b  doc/ger-de/UPDATE.md
-2cfd5f8e21d8fc4df47839ad84fe0c17  doc/ger-de/anleitungen/README.md
+9281b95b8da0c2b77451ee904423019b  doc/ger-de/anleitungen/README.md
 e3c61d5416e6d17b34e0dc53c58fc0ec  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 8f9534d539b24431f28aa5bd8ee1b1ea  doc/ger-de/anleitungen/aktualisieren.md
 5df3d20c93c092ba569cbbde187645d6  doc/ger-de/anleitungen/api-schluessel.md
@@ -13707,7 +13714,7 @@ d8812c18820e2cd52bb9fdd4bc3da57c  doc/ger-de/anleitungen/bilder/object-states/gr
 5706cb4155636711c9e9cbdd85117885  doc/ger-de/anleitungen/bilder/workflows/process-card.png
 e61ac02a2c33d3cf125d4ffdde64ac2b  doc/ger-de/anleitungen/bilder/workflows/status-and-overview.png
 d9f88b7cb92763306aaf6698466b5796  doc/ger-de/anleitungen/caches-vorwaermen.md
-7d792160787c1c7e4f0b5a61fe1547bb  doc/ger-de/anleitungen/caches.md
+021efc231578fd646542bbdd6ead29b6  doc/ger-de/anleitungen/caches.md
 2b30c7ed08d5ad75b37466714fdf7559  doc/ger-de/anleitungen/cronjobs.md
 be84d6ea2accb0fb7881b73e5cc9e0cb  doc/ger-de/anleitungen/datentypen.md
 e9159f73e1f92f04a0571a6696814f4c  doc/ger-de/anleitungen/eigentuemer-aendern.md
@@ -13758,7 +13765,7 @@ e6b2e42e0fbcb6f71c0d627295536c75  doc/ger-de/anleitungen/pdf-exporte.md
 5881950e58cb7a300ad83735d0c15c82  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
 296d6912eab7b7915cf59b235283ed90  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
-945362d6c020034e39ef908f52ced23c  doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
+6ac6476a7a091994adfb311cc475480c  doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
 77a1266b9917afd29599811737f1b3ea  doc/ger-de/anleitungen/seitenaufrufe-zaehlen.md
 6c14b68ff14fb3ae5a59c84bb5609cc8  doc/ger-de/anleitungen/sektionen.md
 65397ae907e9925c848b87c52e153223  doc/ger-de/anleitungen/setup-dateien-von-der-konsole.md
@@ -13823,6 +13830,7 @@ c1c8278213eb670e6b935f24adbb53ee  doc/ger-de/anleitungen/url-zuordnungen.md
 e3df8372cd5e4c7aa625e0fab21222ad  doc/ger-de/anleitungen/von-statischem-html-zu-exponential-und-zurueck.md
 b055f7da6714bbbb0030b07eb7b6615c  doc/ger-de/anleitungen/wartungsmodus.md
 e85dd39016eef809cb91b42a067f4bc0  doc/ger-de/anleitungen/workflows.md
+6c8eb93328a935069f0f85e84f29e813  doc/ger-de/anleitungen/zeitabhaengige-inhalte-cachen.md
 bcc267552ff0e1035833fcf4d0896072  doc/ger-de/anleitungen/zu-expcomponents-beitragen.md
 a309c3015f2e4822e567a6faa9f998b7  doc/ger-de/anleitungen/zwei-faktor-anmeldung.md
 58c4891a76ca6784c4aaafc34d1ac597  doc/ger-de/bc/4.1/aenderungen-4.1.0.txt
@@ -13854,6 +13862,7 @@ d6da8f43f86cb2c80fb007c253d0b4ad  doc/ger-de/bc/6.0/audit.md
 7d8f0fba67902933adbd5e253e0047bb  doc/ger-de/bc/6.0/bild-aliase-auf-abruf.md
 9b7506a7ea91b45fc3769cd97ec73382  doc/ger-de/bc/6.0/bild-fokuspunkt.md
 db7eda525294b18a40ac90327cdfc4a9  doc/ger-de/bc/6.0/cache-konsole.md
+b986ed645197bbfa044f33f49775c395  doc/ger-de/bc/6.0/cache-until.md
 9084b7b48207a2078a49ff00725cbaab  doc/ger-de/bc/6.0/ci.md
 849862b5a277d882cd0d73fb2f762cca  doc/ger-de/bc/6.0/cleanuprss.md
 7c8fc03f63aca0660cd5253f9b7e96e6  doc/ger-de/bc/6.0/cli-cronjob-und-view-abstraktionen.md
@@ -14521,7 +14530,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
 5d2f87561bff92eb954c8fd7f31efb90  doc/ger-de/beispiele/htaccess
-077cc36073cc4bc080be2dbc9c8d21e7  doc/ger-de/beispiele/ini-einstellungen/README.md
+444f92c679d8f03c62f558d6bcf179b3  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
 da8522f9eb603cff06146203b11e3431  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_datatable.md
@@ -15700,6 +15709,7 @@ be7ad08467d1bf1c08ef882b42205c0c  doc/ger-de/beispiele/ini-einstellungen/site/Ad
 d9a592ba61b663981fbaae713603cca8  doc/ger-de/beispiele/ini-einstellungen/site/AppendNodeIDFilterSettings.md
 14308d57b497bcd3de656ac866546274  doc/ger-de/beispiele/ini-einstellungen/site/BackwardCompatibilitySettings.md
 da4bb28ec7d6fb56ba036ab94cbc4b34  doc/ger-de/beispiele/ini-einstellungen/site/Cache.md
+1913da2bc4a8b4a99d8d6f3d0b33e829  doc/ger-de/beispiele/ini-einstellungen/site/CacheUntilSettings.md
 151e4972998c9c422ef88e9dd6a25e74  doc/ger-de/beispiele/ini-einstellungen/site/Cache_exphelpcontent.md
 ae6724d793676170744543ef50a359c6  doc/ger-de/beispiele/ini-einstellungen/site/Cache_rest.md
 ad02566e142916aee2c24e897ff6eee7  doc/ger-de/beispiele/ini-einstellungen/site/Cache_restRoutes.md
@@ -15729,7 +15739,7 @@ e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/Li
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-2ca0ecc32314117a4f1b8b7b5970180c  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+c68c377e5402d2cee666971d6f6351db  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 2a84114d910780aab58cbed6767c7621  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_account.md
 aced08af929c3205955ec65ed29d4727  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
@@ -15756,7 +15766,7 @@ fcad2a9141871c1b2031263cf684ae7f  doc/ger-de/beispiele/ini-einstellungen/site/Se
 988c875873f8f78e5b806d67bda87fae  doc/ger-de/beispiele/ini-einstellungen/site/SiteSettings.md
 b138b048f1e956c000627dc11e780a23  doc/ger-de/beispiele/ini-einstellungen/site/TemplateBridgeSettings.md
 1356ec4aa94e6a2fb64e6ac5a0adc656  doc/ger-de/beispiele/ini-einstellungen/site/TemplateSettings.md
-bd2cdec549f737c40f2e666e9bb56eb8  doc/ger-de/beispiele/ini-einstellungen/site/TimeZoneSettings.md
+b649ec3055f4c402b5472cc0ae4880f9  doc/ger-de/beispiele/ini-einstellungen/site/TimeZoneSettings.md
 20b486bb370d31a7d01543c720859c7d  doc/ger-de/beispiele/ini-einstellungen/site/TipAFriend.md
 299f0d42d64d08313fb883ab5fe8ae1a  doc/ger-de/beispiele/ini-einstellungen/site/URLTranslator.md
 46e156bc589500349c2054c9ac53788d  doc/ger-de/beispiele/ini-einstellungen/site/UnitSettings.md
@@ -16575,7 +16585,7 @@ fe3d5c331c6a5a8c1f389b536a63713c  doc/ger-de/beispiele/template-funktionen/set.m
 78ea0116c845fb4f8bd0426c2a195cf8  doc/ger-de/beispiele/template-funktionen/tool_bar.md
 1ba2e1857a0ba2493c968dee2b8bf579  doc/ger-de/beispiele/template-funktionen/undef.md
 e98d6ebabc6727998bd863284f809a63  doc/ger-de/beispiele/template-funktionen/while.md
-128579d4dfe41e8a372a69d2566205c8  doc/ger-de/beispiele/template-operatoren/README.md
+ca6e0b77abcde2e34d708d8857064962  doc/ger-de/beispiele/template-operatoren/README.md
 8cfd3af6a328b63da96036d39ae7b081  doc/ger-de/beispiele/template-operatoren/abs.md
 3cc870fe8dc1a50bed27def6c4195c00  doc/ger-de/beispiele/template-operatoren/action_icon.md
 1a425f5fc4a47ff1cb57710e0e4c7442  doc/ger-de/beispiele/template-operatoren/addcslashes.md
@@ -16594,6 +16604,7 @@ e91f10a8578958fe4610d5b4e004cfc6  doc/ger-de/beispiele/template-operatoren/audit
 268f5614651a6de39e3b425755c35c1f  doc/ger-de/beispiele/template-operatoren/begins_with.md
 ec23157e1b7cfa528bb56c3d6ab0aca2  doc/ger-de/beispiele/template-operatoren/bin2hex.md
 b00eec70131328a79a03eb0127995884  doc/ger-de/beispiele/template-operatoren/break.md
+27f40f91356c08e2f23dbbc16ccd32fe  doc/ger-de/beispiele/template-operatoren/cache_until.md
 3c02bf13e2e68b16d70be7befb98fbb0  doc/ger-de/beispiele/template-operatoren/ceil.md
 9836504d462aa4a2102a231bb9b316ad  doc/ger-de/beispiele/template-operatoren/choose.md
 0bdd3dc4bd2150bfe58e22faf949af90  doc/ger-de/beispiele/template-operatoren/chr.md
@@ -16751,6 +16762,7 @@ c5420c5ca56a61689f542e8f71bf4b7d  doc/ger-de/beispiele/template-operatoren/repla
 024f7b2d131da5a0ff3733650e73e396  doc/ger-de/beispiele/template-operatoren/round.md
 46e53f9ba3e0dc94626d5293a279385a  doc/ger-de/beispiele/template-operatoren/rstring.md
 e7fa3ca14108953f244dc1806af45d20  doc/ger-de/beispiele/template-operatoren/rtrim.md
+3c394e8143ff7cae2eae166dcf71fb5d  doc/ger-de/beispiele/template-operatoren/seconds_until.md
 7c28edfdc890488f3e66b22e6bbc61d5  doc/ger-de/beispiele/template-operatoren/shorten.md
 0ea8baab0ca6aaf534aa7c940b6ffe4c  doc/ger-de/beispiele/template-operatoren/si.md
 0b69af953c5082c5c41a9291edf2509c  doc/ger-de/beispiele/template-operatoren/similar_text.md
@@ -17067,7 +17079,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-195ec4cb883ab6a4873ee6d90216e5e5  doc/ger-de/funktionen/6.0/README.md
+6a62cc33a4faef8c80d6c17a91d9c1af  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17094,6 +17106,7 @@ b84f7c8bcee906734aff197e984eb450  doc/ger-de/funktionen/6.0/benutzer-auditprotok
 dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
 100fb434f45891d8699b08d20417d137  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
+2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
@@ -17263,7 +17276,7 @@ fdbd3678418acb16837dc2783cd78dd7  doc/ger-de/funktionen/6.0/umgebungseinstellung
 b8efc890590fb7c297851b4d3a6067b3  doc/ger-de/funktionen/6.0/unterelemente-auswahl-kopieren.md
 669ba491ffa9f35e2a9d3299d857fa60  doc/ger-de/funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md
 718df527f9f810acfaaf721b7e218dd4  doc/ger-de/funktionen/6.0/valkey-cache-hooks.md
-9780b7727f61cc999450e9e34295af34  doc/ger-de/funktionen/6.0/velocity-antwort-cache.md
+70840a84f0dfb7a6199125880e648e7d  doc/ger-de/funktionen/6.0/velocity-antwort-cache.md
 56ab9bea52576b2f3e20e3caabdfabce  doc/ger-de/funktionen/6.0/velocity-control-panel.md
 9cb778e7158fa692dcb9597ec9b3b993  doc/ger-de/funktionen/6.0/velocity-erkennung-foederation-und-deployment.md
 2f50d112636c120f392910d8c4f1ece8  doc/ger-de/funktionen/6.0/velocity-https-zertifikate.md
@@ -17622,7 +17635,7 @@ dfce835ea41187dc08f7603fdbc6630e  doc/ger-de/geschichte/velocity/2026-09d.md
 b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
-75b307e6c5aab3447dc06843a437b179  doc/ger-de/glossar.md
+d2183b43b462a4f777e5abe19c104238  doc/ger-de/glossar.md
 60ec43424cfbc43311fd6ec16e772cfe  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
 576cb2fcc82b008d018d872d90666a88  doc/ger-de/hilfe/anmelden-im-editor.md
@@ -18469,7 +18482,7 @@ a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeic
 645dab6147fd9a8cd21d1e4d67f31107  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
-568d151daaaeeb0a3dfc8ba97c879d35  doc/ger-de/hilfe/designer/README.md
+1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
 06c2c34c0d7f802dc3048ca6170fde3a  doc/ger-de/hilfe/designer/designer-hier-beginnen.md
 0c8ac7b3c65a5572103912aaa6e754e9  doc/ger-de/hilfe/designer/erweiterungen/abhaengigkeiten-in-extension-xml.md
 15fa54532dd3c30444cccddeaeeb5081  doc/ger-de/hilfe/designer/erweiterungen/checkliste-theme-erweiterung-bereit.md
@@ -18716,7 +18729,8 @@ b7409176f8fd317a2c0126b3b67d32bc  doc/ger-de/hilfe/designer/veroeffentlichung/ve
 9eeb7999d5ed4e055119b0d273e9de8b  doc/ger-de/hilfe/designer/vorlagen/attribute-view-gui.md
 fafcde564082b956e2f5d8da884c4e3d  doc/ger-de/hilfe/designer/vorlagen/benutzer-und-anmelde-templates.md
 39a868d0de7877784994972ae5bed30a  doc/ger-de/hilfe/designer/vorlagen/brotkrumen.md
-a995aacdc262aebbfb8dff48c741730f  doc/ger-de/hilfe/designer/vorlagen/cache-block.md
+2921c572c01f06586830dc0bea454d17  doc/ger-de/hilfe/designer/vorlagen/cache-block.md
+4462f66b2b99eff5f04fb908932a08aa  doc/ger-de/hilfe/designer/vorlagen/cache-until.md
 a72b349a0e1d22cc334dd791dd10afce  doc/ger-de/hilfe/designer/vorlagen/cond-und-first-set.md
 650df7a779abdeac6103c246d4a7f836  doc/ger-de/hilfe/designer/vorlagen/content-view-gui.md
 ad0fd7886bb1c43c32793d0a8ede4e2b  doc/ger-de/hilfe/designer/vorlagen/datentyp-ansichtstemplates.md
@@ -18756,7 +18770,7 @@ b9f9fde8321a362841eb1ba5241c05d9  doc/ger-de/hilfe/designer/vorlagen/menues-und-
 eddea5f481a02291715f38df140e6ebd  doc/ger-de/hilfe/designer/vorlagen/module-result-und-content-info.md
 0c84008f3399db0cb1c60d049d405444  doc/ger-de/hilfe/designer/vorlagen/node-view-gui.md
 363e0c570bd7a3f4ec324606efae4910  doc/ger-de/hilfe/designer/vorlagen/operatoren-ueberblick.md
-679c20071ea99de4ef68525f13c34b05  doc/ger-de/hilfe/designer/vorlagen/operatorreferenz.md
+24de1e15d5a3f9f858a9d841599c43d9  doc/ger-de/hilfe/designer/vorlagen/operatorreferenz.md
 e07d066cfb9fe653ca93638c4cabc572  doc/ger-de/hilfe/designer/vorlagen/override-grundlagen.md
 07dad3f50e7884bb2d594642263ce6e8  doc/ger-de/hilfe/designer/vorlagen/override-match-schluessel.md
 47a59136c03af50dc7c6c0400b74477c  doc/ger-de/hilfe/designer/vorlagen/override-nach-elternknoten.md
@@ -18769,11 +18783,11 @@ bd1449888b097f936f0e27994df341e6  doc/ger-de/hilfe/designer/vorlagen/rich-text-t
 90c4c50ad6ee959cd2a5cfc50777c22a  doc/ger-de/hilfe/designer/vorlagen/schaltflaechen-zum-bearbeiten-entfernen-und-anlegen.md
 6c1b76822370fb7707768c7e3cbaf14a  doc/ger-de/hilfe/designer/vorlagen/section-legacy.md
 d67a452041fbffd14146b2c0d17cf0c0  doc/ger-de/hilfe/designer/vorlagen/seitenumbruch.md
-b327f93ee3d98b933e4f61bcc2cb470f  doc/ger-de/hilfe/designer/vorlagen/set-block-und-append-block.md
+8292d6fa097d639191d0d0308fab28c3  doc/ger-de/hilfe/designer/vorlagen/set-block-und-append-block.md
 1747d3d26f7eec1ae9548cd6452b0670  doc/ger-de/hilfe/designer/vorlagen/suchergebnis-template.md
 31077aeac2d6fe8af3129ff4ce06eb97  doc/ger-de/hilfe/designer/vorlagen/switch-und-case.md
 f120b95b7e8a32e61f8d9fa5be83d56f  doc/ger-de/hilfe/designer/vorlagen/template-debugging.md
-e6bad7f9b5dd021e96e024a9dbc4b80f  doc/ger-de/hilfe/designer/vorlagen/template-kompilierung-und-cache.md
+e550100b3427ad107c8085bd52307251  doc/ger-de/hilfe/designer/vorlagen/template-kompilierung-und-cache.md
 e5f0da791188090e4a0cf9df1d186c98  doc/ger-de/hilfe/designer/vorlagen/template-pfad-kommentare.md
 b2ff353739506aa3d7677c3125e9dc6f  doc/ger-de/hilfe/designer/vorlagen/template-styleguide.md
 2e1daa9e94c091f604062f1af4f3c2d2  doc/ger-de/hilfe/designer/vorlagen/template-texte-uebersetzen.md
@@ -18782,7 +18796,7 @@ b2ff353739506aa3d7677c3125e9dc6f  doc/ger-de/hilfe/designer/vorlagen/template-st
 fd66eed26ab9b1ed06e53c8d90e73b79  doc/ger-de/hilfe/designer/vorlagen/tpl-syntax-grundlagen.md
 84bbdb7f1f97e2572834dba7e23ee65a  doc/ger-de/hilfe/designer/vorlagen/url-operatoren.md
 cd59b8e1fbe0992a3fb39daf2c950c08  doc/ger-de/hilfe/designer/vorlagen/variablen-und-def.md
-93e145334f3154a390622328d729c4dc  doc/ger-de/hilfe/designer/vorlagen/vollansicht.md
+d14e5eaa44dc56a77db5d05b9a56602d  doc/ger-de/hilfe/designer/vorlagen/vollansicht.md
 6cd3cb14635d069f95f6edda830664bf  doc/ger-de/hilfe/designer/vorlagen/wash-und-maskierung.md
 0411c6dc86a3ddd91cfb840c37fe9dfa  doc/ger-de/hilfe/designer/vorlagen/while-und-do-schleifen.md
 c3c578a466434404ce23d6ec16fc6040  doc/ger-de/hilfe/designer/vorlagen/zeichenketten-operatoren.md
@@ -19625,15 +19639,15 @@ bb1c3056e17f1125dc9111572b56aa88  doc/ger-de/hilfe/hosting/grundlagen/such-backe
 434bb6491f348ffd7ac50d9d720f7fb2  doc/ger-de/hilfe/hosting/hosting-anbieter-hier-beginnen.md
 b93293be981dd5609e96cf669e0f580e  doc/ger-de/hilfe/hosting/leistung/README.md
 b438f175d145c4d6087878c059c26072  doc/ger-de/hilfe/hosting/leistung/abstimmung-von-php-fpm.md
-ebc80d48489758f3e030ca282542076a  doc/ger-de/hilfe/hosting/leistung/antwort-cache-von-velocity.md
+7ad1f989e0913d3b5a96a62ee885b7fa  doc/ger-de/hilfe/hosting/leistung/antwort-cache-von-velocity.md
 50872af97d688d9489393bf3df301cce  doc/ger-de/hilfe/hosting/leistung/benchmark-einer-gehosteten-website.md
-046608c508b1a0f72084063486e6441c  doc/ger-de/hilfe/hosting/leistung/cache-schichten.md
+dfc0513673234476a910f87c3188708b  doc/ger-de/hilfe/hosting/leistung/cache-schichten.md
 9830e0fcf72b62033073f726ca478392  doc/ger-de/hilfe/hosting/leistung/caches-leeren-und-vorwaermen.md
-1e655c555c6c2754d447e94d9a6d4c88  doc/ger-de/hilfe/hosting/leistung/cdn.md
-c0cea58908b3e29643faafa706769873  doc/ger-de/hilfe/hosting/leistung/http-cache-header.md
+f744a9f52a4b91260c14c61a1d290cd4  doc/ger-de/hilfe/hosting/leistung/cdn.md
+a97de403b2876e10a6318eeaacceb7e0  doc/ger-de/hilfe/hosting/leistung/http-cache-header.md
 4d95d8bcd0935aa9a184ad973f7677ef  doc/ger-de/hilfe/hosting/leistung/kompilierter-kernel-container.md
 2c5c74dceaf7f726ebc26f160fd06f40  doc/ger-de/hilfe/hosting/leistung/opcache.md
-919d0ffe1a144cea128170c86797709d  doc/ger-de/hilfe/hosting/leistung/statischer-cache.md
+dea45bba159904f5ebd44013c16388a8  doc/ger-de/hilfe/hosting/leistung/statischer-cache.md
 9fa2fa343fd2399a25e8dea24021bf04  doc/ger-de/hilfe/hosting/leistung/valkey-und-redis.md
 70ac60ec11ae501d2fa3bc84d050f20d  doc/ger-de/hilfe/hosting/leistung/varnish-und-reverse-proxys.md
 2281f3ef75edd81d9729c6a55598f3aa  doc/ger-de/hilfe/hosting/migrationen/README.md

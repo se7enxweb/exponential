@@ -22,8 +22,9 @@ rollenbewusste HTTP-Cache hinzufügt. Die Quellen sind [HTTP-Caching für anonym
 3. [Statische Dateien](#statische-dateien)
 4. [Der rollenbewusste HTTP-Cache](#der-rollenbewusste-http-cache)
 5. [Purge-Tags für einen vorgeschalteten Proxy](#purge-tags-für-einen-vorgeschalteten-proxy)
-6. [Prüfungen](#prüfungen)
-7. [Checkliste](#checkliste)
+6. [Seiten mit einem Ablauf: cache_until](#seiten-mit-einem-ablauf-cache_until)
+7. [Prüfungen](#prüfungen)
+8. [Checkliste](#checkliste)
 
 ## Die Standardwerte
 
@@ -112,7 +113,7 @@ Zum Einschalten: `Enabled=enabled` in `settings/override/httpcache.ini.append.ph
 | `MaxBodySize` | 2 MB | größere Seiten werden nicht gespeichert |
 
 Nie zwischengespeichert: POST und andere schreibende Anfragen, Antworten außer 200, Antworten, die ein Cookie setzen, Seiten, deren
-Template `cache_ttl=0` setzt, alles, was keine Inhaltsansicht ist, und eine Seite, die den Debug-Bericht ihrer Anfrage trägt.
+Template `cache_ttl=0` oder `cache_until( 0 )` setzt (oder dessen Ablauf beim Rendern schon erreicht ist), alles, was keine Inhaltsansicht ist, und eine Seite, die den Debug-Bericht ihrer Anfrage trägt.
 Formular-Tokens werden aus der gespeicherten Seite entfernt, und bei jedem Treffer wird das eigene des Besuchers wieder eingesetzt. Der
 Cronjob-Teil `cache_cleanup` entfernt tote Einträge.
 
@@ -126,6 +127,28 @@ Cronjob-Teil `cache_cleanup` entfernt tote Einträge.
 von Varnish), `Surrogate-Key` (Fastly) oder `Cache-Tag` (Cloudflare). Standardmäßig ist es `disabled`, weil die Tags interne IDs
 nennen. Exponential selbst sendet nichts an den Proxy; ihn zu leeren, ist Ihre Aufgabe. Siehe
 [Varnish und Reverse Proxys](varnish-und-reverse-proxys.md).
+
+## Seiten mit einem Ablauf: cache_until
+
+Ein Template kann seit 6.0.15 sagen, bis wann eine Seite gilt (`{cache_until( 'tomorrow' )}`,
+`{cache_until( $event_start )}`, `{cache_until( 0 )}`). Nur dann ändern sich die Header, nach dem Pagelayout und vor
+der Ausgabe:
+
+| Header | Änderung |
+|---|---|
+| `Cache-Control` | jedes `max-age` und `s-maxage` über den verbleibenden Sekunden wird auf sie gesenkt, nie erhöht |
+| `Cache-Control` ohne Lebensdauer (`no-cache, must-revalidate`, nicht `private`/`no-store`) | `s-maxage=<verbleibend>` wird ergänzt, wenn die verbleibende Zeit 0 ist oder unter `velocity.ini [CacheSettings] DefaultTtl` (30) liegt |
+| `Expires` | gesenkt, wenn er später liegt |
+| `Pragma: no-cache` | entfernt, nur wenn `Cache-Control` danach ein positives `max-age` und kein `no-cache` hat |
+| `X-LiteSpeed-Cache-Control` | `no-cache` bei Ablauf 0; `max-age=<verbleibend>` für anonyme Besucher nur mit `site.ini [CacheUntilSettings] LiteSpeedMaxAge=enabled` |
+| `X-Exp-Cache-Until` | der Ablauf (ISO 8601 in der Zeitzone der Website) oder `0`; mit Debug-Ausgabe auch `; source="…"` |
+
+Der rollenbewusste HTTP-Cache hält solche Seiten höchstens bis zum Ablauf (`min(Ablauf - jetzt, MaxAge)`), liefert
+sie danach nicht als `STALE` aus und sendet einen Treffer mit `max-age` = dem kleineren Wert aus 300 und der
+verbleibenden Zeit. Ist der Ablauf beim Rendern schon erreicht, speichert er nichts (`X-Exp-Cache: BYPASS (cache_until)`; steht `cache_until( 0 )` in der Inhaltsansicht
+selbst, wie bisher `BYPASS (cache_ttl=0)`).
+Spätere Schichten überschreiben wie bisher (`private, no-store` mit Debug-Bericht, `private, no-cache` mit
+Formular-Token). Siehe [cache_until: Seiten, die pünktlich ablaufen](../../../funktionen/6.0/cache-until.md#die-response-header).
 
 ## Prüfungen
 

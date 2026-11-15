@@ -91,6 +91,7 @@ Lesen Sie sie beim ersten Mal in dieser Reihenfolge. Jede steht aber auch für s
 | [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md) | `.htaccess` und `config.php` aus ihren Vorlagen kopiert, mit Sicherung und ohne stilles Überschreiben, eine Einstellung in `config.php` ohne Editor gelesen, gesetzt und entfernt, die Dateien nach einem Upgrade mit den neuen Vorlagen verglichen | 10 Minuten |
 | [Betrieb einer Site](betrieb-einer-website.md) | Die richtigen Caches geleert, Cronjobs in Betrieb genommen, den statischen Cache und Preload eingeschaltet, eine Sicherung, eine Checkliste | 30 Minuten |
 | [Systeminformationen](systeminformationen.md) | Welcher Server geantwortet hat und wie er PHP ausführt, die Zustandsprüfungen gelesen und umgesetzt, die Übersichtskarten verstanden, einen maskierten Bericht für den Support heruntergeladen, dasselbe über die Kommandozeile | 15 Minuten |
+| [Zeitabhängige Inhalte cachen](zeitabhaengige-inhalte-cachen.md) | Kommende Termine, Beitrag des Tages, Öffnungszeiten, Countdowns, befristete Hinweise und Live-Ticker mit `cache_until` gecacht, im Pagelayout, in Layouts-Blöcken und in Cache-Blöcken, von `cache_ttl` umgestiegen, mit curl und der Debug-Leiste geprüft, die Zeitzone eingerichtet | 25 Minuten |
 | [Caches](caches.md) | Jeden Cache in seiner Gruppe gelesen, mit seinem Inhalt, seiner Größe und dem Zeitpunkt der letzten Leerung, ein Cache, eine Gruppe oder alle geleert mit der Bestätigung, die nennt, was wegfällt, Velocitys Antwort-Cache und Neustart verstanden, dasselbe aus einer Shell | 15 Minuten |
 | [Benchmarks](benchmarking.md) | Seiten gemessen, aus dem Cache und gerendert, Apache gegen Velocity, eine Codeänderung und eine Bereitstellung auf Rückschritte geprüft, die Performance-Prüfung der CI verstanden | 30 Minuten |
 | [Cronjobs](cronjobs.md) | Jeden Teil und jedes Skript gesehen, einen Teil und ein einzelnes Skript ausgeführt und im Browser verfolgt, die Crontab-Zeilen installiert, die Logs gelesen, die üblichen Probleme gelöst | 30 Minuten |
@@ -205,6 +206,7 @@ Sie bestimmen, wie die Site aussieht und welche Extensions sie verwendet.
    - [Template-Pfad-Kommentare](../funktionen/6.0/template-pfad-kommentare.md): sehen, welche Datei welches Markup geschrieben hat
    - [Template-Editor](../funktionen/6.0/template-editor-ueberschreibungen.md) und [Reihenfolge der Overrides](../funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md)
    - [Die Exp-Debug-Leiste](../funktionen/6.0/exp-debug-leiste.md)
+   - [Zeitabhängige Inhalte cachen](zeitabhaengige-inhalte-cachen.md): Seiten, die pünktlich ablaufen, mit `cache_until`
    - [Exponential Admin UI](../funktionen/6.0/exp-adminui.md): das Aussehen der Admin UI für die Administration, als eigener Siteaccess `adminui`
    - [Das Design der Administration wählen](../funktionen/6.0/ui-umschalter-design.md): admin4l, admin4, AdminUI oder das klassische Design je Benutzer und Sitzung, und [die zugehörige Anleitung](ui-umschalter-design.md)
    - [Exponential Layouts](../bc/6.0/layouts.md): Blöcke, Zonen und Regeln, im Browser gebaut

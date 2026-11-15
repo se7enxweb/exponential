@@ -37,6 +37,10 @@ it is used and stored under `var/<site>/cache/template/compiled/`; later request
 `php bin/php/ezcache.php --clear-id=<id>`; `--list-ids` prints them all. `[TemplateSettings] TemplateCache=enabled`
 controls cache-blocks (disabled: never used).
 
+A view cache entry and a cache-block also expire at the time a template named with `cache_until` (since 6.0.15), and
+a compiled template runs `cache_until` and `seconds_until` on every request: they are never folded into the compiled
+file ([cache_until and seconds_until](cache-until.md)).
+
 ## Development settings
 
 `[TemplateSettings] DevelopmentMode=enabled` makes the template engine compare the times of compiled and source files,

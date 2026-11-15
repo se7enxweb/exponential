@@ -59,7 +59,10 @@ and full views for their view cache lifetime:
 {set-block scope=root variable=cache_ttl}400{/set-block}
 ```
 
-(the ezwebin event calendar). For values the pagelayout needs, prefer the persistent variable
+(the ezwebin event calendar). `cache_ttl` is a lifetime in seconds and only works in the content view; since 6.0.15
+it is read as `cache_until( time() + cache_ttl )`. For output that changes at a known time, prefer
+`{cache_until( 'tomorrow' )}` or `{cache_until( $event_start )}`, which works in every template and reaches every
+cache ([cache_until and seconds_until](cache-until.md)). For values the pagelayout needs, prefer the persistent variable
 ([The persistent variable](persistent-variable.md)).
 
 ## Uses in the shipped templates
@@ -72,6 +75,7 @@ and full views for their view cache lifetime:
 
 - [Variables and def](variables-and-def.md)
 - [Caching for designers](../theme-design/caching-for-designers.md)
+- [cache_until and seconds_until](cache-until.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

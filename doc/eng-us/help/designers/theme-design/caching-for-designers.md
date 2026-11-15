@@ -51,6 +51,11 @@ Consequences for designers:
   (`eznodeviewfunctions.php`). The ezwebin event calendar keeps its page for 400 seconds:
   `{set-block scope=root variable=cache_ttl}400{/set-block}`. A value of `0` stores nothing; use that rarely, since a
   page that is never cached is rendered on every request.
+- Since 6.0.15, output that changes at a known time says so with `{cache_until( 'tomorrow' )}`,
+  `{cache_until( $event_start )}` or `{cache_until( 0 )}`: it works in every template (the pagelayout, menus, layout
+  blocks, cache-block bodies too), and every cache keeps the page no longer
+  ([cache_until and seconds_until](../templates/cache-until.md),
+  [Caching time-dependent content](../../../guides/caching-time-dependent-content.md)). `cache_ttl` keeps working.
 - Per node, `ViewCacheTweaks[<node_id>]` has options such as `pr_user` (cache per user) and `disabled` (comments in
   `settings/site.ini`).
 
@@ -91,6 +96,7 @@ See [The packer cache and deploys](packer-cache-and-deploy.md) for the full tabl
 ## Related pages
 
 - [Cache-block](../templates/cache-block.md)
+- [cache_until and seconds_until](../templates/cache-until.md)
 - [Template compilation and cache](../templates/template-compilation-and-cache.md)
 - [Theme performance](theme-performance.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

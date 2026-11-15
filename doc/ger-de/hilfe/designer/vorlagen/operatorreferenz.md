@@ -74,6 +74,7 @@ Registriert in `kernel/common/eztemplateautoload.php`:
 | `audit_label` | Beschriftungen des Audit-Protokolls |
 | `exp_environment`, `exp_environment_badge` | die Umgebung (Entwicklung, Staging, Produktion) und ihre Plakette |
 | `csp_nonce` | die Nonce der Content Security Policy der Anfrage ([CSP-sicheres Design](../theme-design/csp-sicheres-design.md)) |
+| `cache_until`, `seconds_until` | bis wann die Ausgabe der Seite gilt, für jeden Cache der Seite; die Sekunden bis zu einem Zeitpunkt (seit 6.0.15, [cache_until und seconds_until](cache-until.md)) |
 
 `kernel/private/eztemplate/eztemplateautoload.php` fügt `language_switcher` hinzu.
 
@@ -108,6 +109,7 @@ und in `[TemplateSettings] ExtensionAutoloadPath[]` aufgeführt ist.
 
 - [Operatoren im Überblick](operatoren-ueberblick.md)
 - [Funktionsreferenz](funktionsreferenz.md)
+- [cache_until und seconds_until](cache-until.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

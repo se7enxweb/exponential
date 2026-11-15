@@ -483,6 +483,30 @@ Kopie einer gerade angesehenen Seite aus seinem Browser sehen, bis sie abläuft;
 gemeinsame Caches Seiten behalten sollen, sagt `public, max-age=0, s-maxage=120` das den üblichen Caches; prüfen Sie
 auf Ihrem Server, dass LiteSpeed `s-maxage` aus der Antwort liest, bevor Sie sich darauf verlassen.
 
+### Seiten mit einem Ablauf: cache_until
+
+Sagt ein Template mit `cache_until`, bis wann eine Seite gilt (seit 6.0.15, zum Beispiel
+`{cache_until( 'tomorrow' )}`), senkt Exponential `max-age` und `s-maxage` der Antwort auf die verbleibende Zeit. Viele
+LiteSpeed-Server ignorieren aber das `Cache-Control` der Antwort und behalten eine Seite für das `max-age` ihrer
+Rewrite-Regel. Den eigenen Header `X-LiteSpeed-Cache-Control` liest LiteSpeed immer:
+
+- Eine Seite, die nicht behalten werden darf (`cache_until( 0 )`, ein Ablauf, der schon erreicht ist), bekommt immer
+  `X-LiteSpeed-Cache-Control: no-cache`. Das hält eine Seite nur heraus.
+- Mit `site.ini [CacheUntilSettings] LiteSpeedMaxAge=enabled` (Standard `disabled`) bekommt die Seite eines anonymen
+  Besuchers mit einem Ablauf `X-LiteSpeed-Cache-Control: max-age=<verbleibende Sekunden>`, und LiteSpeed hält sie
+  nicht über den Ablauf hinaus.
+
+```ini
+# settings/override/site.ini.append.php
+[CacheUntilSettings]
+LiteSpeedMaxAge=enabled
+```
+
+Weil LiteSpeed diesen Header bei jeder Antwort liest, auch bei einer, die Ihre Rewrite-Regeln nicht cachen würden,
+kann er eine solche Seite cachebar machen. Schalten Sie ihn deshalb nur ein, wenn die Seiten mit `cache_until` zu denen
+gehören, die Ihr Block cacht. Siehe [Zeitabhängige Inhalte cachen](zeitabhaengige-inhalte-cachen.md) und
+[cache_until: Seiten, die pünktlich ablaufen](../funktionen/6.0/cache-until.md#velocity-cdn-litespeed-und-browser).
+
 ## max-age wählen, und was Redakteure sehen
 
 Nichts in Exponential sagt LiteSpeed, dass sich eine Seite geändert hat. `max-age` ist also die längste Zeit, die ein

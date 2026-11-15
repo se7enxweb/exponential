@@ -37,6 +37,11 @@ Mit `site.ini [TemplateSettings] TemplateCompile=enabled` (Standard) wird jedes 
 `php bin/php/ezcache.php --clear-id=<id>`; `--list-ids` gibt alle aus. `[TemplateSettings] TemplateCache=enabled` steuert
 Cache-Blöcke (disabled: nie verwendet).
 
+Wie lange `content` und `template-block` eine Ausgabe halten, kann ein Template seit 6.0.15 selbst sagen:
+`{cache_until( 'tomorrow' )}` lässt den View-Cache-Eintrag oder den Cache-Block zu diesem Zeitpunkt ablaufen. Der
+Operator wird auch in kompilierten Templates bei jedem Lauf ausgewertet; ein konstanter Wert wie `'tomorrow'` wird
+nicht beim Kompilieren festgeschrieben ([cache_until und seconds_until](cache-until.md)).
+
 ## Einstellungen für die Entwicklung
 
 `[TemplateSettings] DevelopmentMode=enabled` lässt die Template-Engine die Zeiten von kompilierten und Quelldateien
@@ -54,6 +59,7 @@ sodass die ersten Besucher nach einem Deployment nicht für die Kompilierung bez
 
 - [Caching für Designer](../theme-design/caching-fuer-designer.md)
 - [Der Packer-Cache und Deployments](../theme-design/packer-cache-und-deployment.md)
+- [cache_until und seconds_until](cache-until.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

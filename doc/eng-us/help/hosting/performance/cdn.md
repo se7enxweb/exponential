@@ -57,6 +57,12 @@ the edge keep anonymous pages, switch on cacheable headers for anonymous visitor
 > configure the CDN to ignore the origin's `private` or `no-cache`. A signed-in page cached at the edge is served to
 > strangers.
 
+**Pages that expire on time.** A template can name the moment its output stops being true (`cache_until`, 6.0.15);
+the page then carries a `max-age` or `s-maxage` no longer than the seconds left, and `X-Exp-Cache-Until`. A CDN that
+respects the origin's headers keeps it no longer (Cloudflare: Edge TTL "Use cache-control header if present"). An
+edge TTL that overrides the origin cannot be limited by the application: purge at the CDN, or give such pages a short
+edge TTL ([Pages that expire on time](../../../features/6.0/cache-until.md#6-a-cdn-cloudflare)).
+
 If the customer's site runs on Velocity, its response cache already answers anonymous pages at the origin; the CDN
 mostly saves the network distance and offloads static files.
 

@@ -65,6 +65,11 @@ every page again. A cache warmer sends the header `x-cache-refresh` instead.
 
 The lifetime is `s-maxage`, else `max-age`, else `defaultTtl` (default `0`, which stores nothing).
 
+An Exponential page whose templates named an expiry with `cache_until` (6.0.15) carries a `max-age` or `s-maxage` no
+longer than the time that is left, `s-maxage=<seconds left>` when that is below `DefaultTtl`, and `s-maxage=0` when it
+must not be kept, so this cache keeps it no longer than the expiry
+([Pages that expire on time](cache-until.md#5-velocitys-response-cache)).
+
 Entries live in APCu for small ones when usable, and as one file per page on disk below `dir`, in a two-level
 directory.
 

@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweiterungen registrieren (das `$eZTemplateOperatorArray` jeder `eztemplateautoload.php` und `settings/template.ini` `[PHP] PHPOperatorList[]`), mit seinen Parametern und einem Beispiel. „Verwendet in“ gibt an, ob ein ausgeliefertes Template ihn verwendet; seine Seite zitiert die erste Verwendung.
 
-243 Operatoren.
+245 Operatoren.
 
 | Operator | Klasse | Parameter | In einem ausgelieferten Template verwendet |
 |---|---|---|---|
@@ -34,6 +34,7 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [begins_with](begins_with.md) | eZTemplateArrayOperator | 1 | ja |
 | [bin2hex](bin2hex.md) | eZTemplateStringsOperator | ? |  |
 | [break](break.md) | eZTemplateStringOperator | 0 | ja |
+| [cache_until](cache_until.md) | expCacheUntilOperator | 1 |  |
 | [ceil](ceil.md) | eZTemplateArithmeticOperator | 0 |  |
 | [choose](choose.md) | eZTemplateLogicOperator | 0 | ja |
 | [chr](chr.md) | eZTemplateStringOperator | 0 | ja |
@@ -191,6 +192,7 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [round](round.md) | eZTemplateArithmeticOperator | 0 | ja |
 | [rstring](rstring.md) | eZTemplateStringsOperator | ? |  |
 | [rtrim](rtrim.md) | eZTemplateStringsOperator | ? |  |
+| [seconds_until](seconds_until.md) | expCacheUntilOperator | 1 |  |
 | [shorten](shorten.md) | eZTemplateStringOperator | 3 | ja |
 | [si](si.md) | eZTemplateUnitOperator | 5 | ja |
 | [similar_text](similar_text.md) | eZTemplateStringsOperator | ? |  |

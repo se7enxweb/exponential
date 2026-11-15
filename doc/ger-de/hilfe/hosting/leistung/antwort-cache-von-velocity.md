@@ -91,6 +91,12 @@ Die Abwägung, die die Datei für `DefaultTtl` nennt: Eine Seite, die sich zwisc
 sie unterscheidet, würde zwischen ihnen geteilt. Ein Kunde, der anonyme Seiten durch etwas anderes als ein Cookie personalisiert, braucht
 `DefaultTtl=0` (nur Seiten, die ihre eigene Lebensdauer mitbringen, werden zwischengespeichert).
 
+**Seiten mit einem Ablauf.** Eine Seite, deren Template mit `cache_until` sagt, bis wann sie gilt (seit 6.0.15), hält
+Velocity nicht länger: Der Kernel senkt `max-age` und `s-maxage` auf die verbleibende Zeit und ergänzt
+`s-maxage=<verbleibend>`, wenn diese unter `DefaultTtl` liegt. Eine Seite mit `cache_until( 0 )` oder `cache_ttl` = 0
+trägt `s-maxage=0` und wird gar nicht behalten. Antworten des HTTP-Caches bringen ihr gesenktes `max-age` mit. Velocity
+selbst ist dafür unverändert ([cache_until: Seiten, die pünktlich ablaufen](../../../funktionen/6.0/cache-until.md)).
+
 ## Ihn prüfen
 
 Fragen Sie dieselbe anonyme Seite zweimal an; die zweite Antwort trägt `X-Cache: HIT` und einen Header `Age`:

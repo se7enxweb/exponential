@@ -59,6 +59,21 @@ role and limitation lists.
 - Default: two hours, and on every content publish.
 - A footer that never changes with content: `ignore_content_expiry` and a long `expiry`.
 - A menu of a section: `subtree_expiry` with the section's root node, so publishing elsewhere keeps it.
+- Output that changes at a known time (today's entry, the next events, opening hours): call
+  `{cache_until( ... )}` in the block's body. Since 6.0.15 the block is stored with that time and expires then,
+  whatever its `expiry`; read back from the cache, it limits the page to the same time. No `expiry=` is needed for
+  it, and `{cache_until( 0 )}` in the body keeps the block from being stored
+  ([cache_until and seconds_until](cache-until.md)).
+- `expiry` itself never limits the page: it says how often the block is rendered again, not until when its content
+  is true.
+
+```tpl
+{* today's entry: renewed exactly at midnight *}
+{cache-block keys=array( 'entry-of-the-day' ) ignore_content_expiry expiry=0}
+    {cache_until( 'tomorrow' )}
+    {include uri='design:parts/entry_of_the_day.tpl'}
+{/cache-block}
+```
 
 ## Safe patterns
 
@@ -94,6 +109,8 @@ role and limitation lists.
 ## Related pages
 
 - [Caching for designers](../theme-design/caching-for-designers.md)
+- [cache_until and seconds_until](cache-until.md)
+- [Caching time-dependent content](../../../guides/caching-time-dependent-content.md)
 - [Run-once](run-once.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 

@@ -22,8 +22,9 @@ adds. The sources are [HTTP caching for anonymous visitors](../../../bc/6.0/http
 3. [Static files](#static-files)
 4. [The role-aware HTTP cache](#the-role-aware-http-cache)
 5. [Purge tags for a proxy in front](#purge-tags-for-a-proxy-in-front)
-6. [Checks](#checks)
-7. [Checklist](#checklist)
+6. [Pages that expire on time](#pages-that-expire-on-time)
+7. [Checks](#checks)
+8. [Checklist](#checklist)
 
 ## The defaults
 
@@ -111,7 +112,7 @@ To switch it on: `Enabled=enabled` in `settings/override/httpcache.ini.append.ph
 | `MaxBodySize` | 2 MB | larger pages are not stored |
 
 Never cached: POST and other writes, responses other than 200, responses that set a cookie, pages whose template sets
-`cache_ttl=0`, anything not a content view, and a page carrying the debug report of its request. Form tokens are
+`cache_ttl=0` or `cache_until( 0 )`, anything not a content view, and a page carrying the debug report of its request. Form tokens are
 taken out of the stored page and the visitor's own put back on every hit. The `cache_cleanup` cronjob part removes
 dead entries.
 
@@ -125,6 +126,27 @@ dead entries.
 (Varnish xkey module), `Surrogate-Key` (Fastly) or `Cache-Tag` (Cloudflare). It is `disabled` by default because the
 tags name internal ids. Exponential itself sends nothing to the proxy; purging it is your job. See
 [Varnish and reverse proxies](varnish-and-reverse-proxies.md).
+
+## Pages that expire on time
+
+Since 6.0.15 a template can name the moment its output stops being true: `{cache_until( 'tomorrow' )}`,
+`{cache_until( $event_start )}`, `{cache_until( 0 )}`. The headers then follow
+([Pages that expire on time](../../../features/6.0/cache-until.md#4-the-response-headers-of-a-rendered-page)):
+
+- every `max-age` and `s-maxage` above the seconds left is lowered to them; nothing is raised. With the cacheable
+  headers above (`public, max-age=60`), a page that expires in 20 seconds says `max-age=20`;
+- the default `no-cache, must-revalidate` gains `s-maxage=<seconds left>` when that is 0 or below Velocity's
+  `DefaultTtl` (while its response cache is enabled, as shipped), so Velocity keeps it no longer;
+- `Expires` is lowered when it names a later time; `Pragma: no-cache` is dropped only when `Cache-Control` now has a
+  positive `max-age` and no `no-cache`;
+- `X-LiteSpeed-Cache-Control: no-cache` when nothing is left, and `max-age=<seconds left>` for anonymous visitors with
+  `site.ini [CacheUntilSettings] LiteSpeedMaxAge=enabled`;
+- `X-Exp-Cache-Until: 2026-11-16T00:00:00+01:00` (or `0`) names the expiry.
+
+The role-aware HTTP cache keeps such a page `min( seconds left, MaxAge )`, never serves it stale after the expiry,
+stores nothing once it has come (`BYPASS (cache_until)`), and answers a `HIT` with `max-age` the smaller of 300 and
+the seconds left. Before 6.0.15 it took the view's original `cache_ttl` as a fresh lifetime, so a page replayed late in
+the day could outlive its `cache_ttl` by many hours. A page with no call keeps the headers above unchanged.
 
 ## Checks
 
@@ -153,6 +175,7 @@ hit rate and why requests missed. Use a test account for the signed-in check, ne
 - [Caching layers](caching-layers.md)
 - [Varnish and reverse proxies](varnish-and-reverse-proxies.md)
 - [CDN](cdn.md)
+- [Pages that expire on time](../../../features/6.0/cache-until.md)
 - [The role-aware HTTP cache](../../../bc/6.0/httpcache.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 

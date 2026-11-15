@@ -78,6 +78,9 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
   `se7enxweb/expcomponents-*` unter Apache 2.0, dieselben `ezc`-Klassen, die Paketzuordnung und die Geschichte
 - [Cache leeren, indem Verzeichnisse beiseitegeschoben werden](cache-leeren-durch-umbenennen.md)
 - [Inhalts- und INI-Cache in Redis oder Valkey halten](valkey-cache-hooks.md)
+- [cache_until: Seiten, die pünktlich ablaufen](cache-until.md): ein Template sagt, bis wann seine Ausgabe gilt
+  (`{cache_until( 'tomorrow' )}`), und View-Cache, Cache-Blöcke, HTTP-Cache, Velocity, CDN und Browser halten die Seite
+  höchstens bis dahin; `seconds_until`, die Zeitzone neuer Installationen
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Statisches Veröffentlichen: eine statische Kopie einer Website für GitHub Pages und jeden statischen Host](statisches-veroeffentlichen.md)
 - [Request Shield: eine Web Application Firewall vor jeder Anfrage](request-shield.md)

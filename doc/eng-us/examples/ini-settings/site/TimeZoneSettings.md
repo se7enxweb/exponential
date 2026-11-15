@@ -23,6 +23,12 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 > See /usr/share/zoneinfo/zone.tab for possible values ( 3rd column ).  
 > Example: TimeZone=America/Antigua  
 >
+> The site's time zone: dates in templates, timed publishing, and the times cache\_until() reads  
+> ('tomorrow' is midnight here). Empty: PHP's date.timezone (often UTC, or the zone of a container image).  
+> A new installation writes it to settings/override/site.ini.append.php (exp:install --timezone=, kickstart.ini  
+> \[language\_options\] TimeZone, else derived from the primary language); Setup > System information notes  
+> it while it is empty (a warning when PHP has no zone either).  
+>
 > Notice: This will not work on threaded web servers or on Windows.  
 >         Use only with Apache 1.3 or 2.0 prefork on \*nix.  
 

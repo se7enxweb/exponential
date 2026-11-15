@@ -48,7 +48,7 @@ process list and shell history.
 | Group | Options |
 |---|---|
 | Database | `--db`, `--db-host`, `--db-port`, `--db-name`, `--db-user`, `--db-password`, `--db-socket`, `--db-action` |
-| Site | `--package`, `--language`, `--languages`, `--title`, `--url`, `--access` (`url`, `host` or `port`), `--site-access`, `--admin-access`, `--host`, `--admin-host`, `--port`, `--admin-port` |
+| Site | `--package`, `--language`, `--languages`, `--title`, `--url`, `--access` (`url`, `host` or `port`), `--site-access`, `--admin-access`, `--host`, `--admin-host`, `--port`, `--admin-port`, `--timezone` |
 | Administrator | `--email`, `--password`, `--random-password`, `--first-name`, `--last-name` |
 | Control | `--force`, `--dry-run`, `--print` |
 
@@ -63,6 +63,11 @@ process list and shell history.
   password the installation really set: when the setup replaces a password it
   refuses, the summary reads the one it recorded in
   `var/log/initial-admin-password`.
+- `--timezone=<zone>` (6.0.15) is written to `site.ini [TimeZoneSettings] TimeZone`, for example
+  `--timezone=Europe/Berlin`; an unknown zone stops the command with an error. Without it the zone of `--language`'s
+  country is used when the country has one main zone (`ger-DE` Europe/Berlin), else php.ini's `date.timezone`, else
+  UTC. The dry run and the summary say which and why (`Time zone: Europe/Berlin (from ger-DE)`). Dates, timed
+  publishing and `cache_until( 'tomorrow' )` follow it ([Pages that expire on time](cache-until.md#the-time-zone)).
 - It refuses to run over an existing installation unless you add `--force`.
 - `--dry-run` checks the configuration and the packages and installs nothing.
 - `--print` shows the configuration it would use, passwords masked.

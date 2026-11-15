@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-Die ausgelieferten Einstellungen von `settings/site.ini`: 67 Blöcke, 527 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/site.ini`: 68 Blöcke, 528 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -85,6 +85,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 67 Blöcke, 527 Einste
 | [TipAFriend](TipAFriend.md) | 3 |
 | [SSLZoneSettings](SSLZoneSettings.md) | 3 |
 | [HTTPHeaderSettings](HTTPHeaderSettings.md) | 10 |
+| [CacheUntilSettings](CacheUntilSettings.md) | 1 |
 | [ContentSecurityPolicy](ContentSecurityPolicy.md) | 15 |
 | [TimeZoneSettings](TimeZoneSettings.md) | 1 |
 | [eZINISettings](eZINISettings.md) | 2 |

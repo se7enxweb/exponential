@@ -116,6 +116,13 @@ cache (switched on with the block of `.htaccess_root`) is not cleared from this 
 [Page caching with LiteSpeed and OpenLiteSpeed](litespeed-page-cache.md#purging) describes. A response header
 `X-LiteSpeed-Cache: hit` says the page came from there.
 
+**A page that changes at a known time (the next events, "open now") is late.** Clearing caches fixes it once. For
+good, the template says until when its output is true, `{cache_until( 'tomorrow' )}` or
+`{cache_until( $event_start )}`, and every cache keeps the page no longer: the view cache, cache-blocks, the HTTP
+cache, Velocity's response cache and the headers for a CDN and the browser (not the static cache). The header
+`X-Exp-Cache-Until` shows the time ([Caching time-dependent content](caching-time-dependent-content.md),
+[Pages that expire on time](../features/6.0/cache-until.md)).
+
 **The log says "Expiring all view cache".** A change touched so many pages that clearing each one would take
 longer than clearing them all: when the view caches of `site.ini [ContentSettings] CacheThreshold` nodes or more
 (default 250) are to be cleared, every view cache of the site is expired instead, and the next visits to every page

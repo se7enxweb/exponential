@@ -22,10 +22,11 @@ can tell where a stale or slow page comes from.
 3. [In the server, before the kernel](#in-the-server-before-the-kernel)
 4. [Inside the kernel](#inside-the-kernel)
 5. [Under the kernel](#under-the-kernel)
-6. [Which layers are shared between servers](#which-layers-are-shared-between-servers)
-7. [Reading the headers](#reading-the-headers)
-8. [What a plan can switch on](#what-a-plan-can-switch-on)
-9. [Checklist](#checklist)
+6. [Pages that expire on time](#pages-that-expire-on-time)
+7. [Which layers are shared between servers](#which-layers-are-shared-between-servers)
+8. [Reading the headers](#reading-the-headers)
+9. [What a plan can switch on](#what-a-plan-can-switch-on)
+10. [Checklist](#checklist)
 
 ## The layers at a glance
 
@@ -110,6 +111,26 @@ Exponential (a restore, a SQL client) are invisible to it: clear it after every 
 **OPcache and APCu** belong to each PHP process tree. See [OPcache](opcache.md) and
 [PHP-FPM tuning](php-fpm-tuning.md#apcu).
 
+## Pages that expire on time
+
+Since 6.0.15 a template can say until when its output is true (`{cache_until( 'tomorrow' )}`,
+`{cache_until( $event_start )}`, `{cache_until( 0 )}`), and the layers above keep the page no longer
+([Pages that expire on time](../../../features/6.0/cache-until.md)):
+
+| # | Layer | Honors the expiry |
+|---|---|---|
+| 1, 2 | Browser | yes: `max-age` and `Expires` lowered to the time left |
+| 3 | CDN or proxy | when it respects the origin's `max-age` and `s-maxage`; an edge TTL that overrides the origin is not limited |
+| 3 | LiteSpeed page cache | `X-LiteSpeed-Cache-Control: no-cache` for a page that must not be kept; `max-age=<left>` with `site.ini [CacheUntilSettings] LiteSpeedMaxAge=enabled` |
+| 4 | Velocity response cache | yes: `s-maxage` added when less than `DefaultTtl` is left, `s-maxage=0` for a page that must not be kept |
+| 5 | Role-aware HTTP cache | yes: kept `min( time left, MaxAge )`, never served stale after the expiry; a `HIT` sends `max-age` at most the time left |
+| 6 | Static cache | **no**: its files have no lifetime; keep such pages out of it |
+| 7 | Content view cache | yes: the entry expires then and gives later layers the time left |
+| 8 | Template-block cache | yes: a block whose body called it expires then and limits the page when read back |
+
+A page answers with `X-Exp-Cache-Until: <time>` when it has an expiry. A page with no call is unchanged. Templates:
+[Caching time-dependent content](../../../guides/caching-time-dependent-content.md).
+
 ## Which layers are shared between servers
 
 The cache files are in `var/`, which Apache with PHP-FPM and Velocity share: clearing a cache in Setup > Caches
@@ -129,9 +150,10 @@ APCu and OPcache are per process tree. On several web nodes, files in a shared `
 | `X-Cache: HIT`, `STALE` | Velocity's response cache | answered from the cache, or from an expired copy while a new one renders |
 | `Age` | Velocity's response cache | seconds since the entry was stored |
 | `X-Exp-Cache: HIT`, `STALE`, `MISS (reason)`, `BYPASS (reason)` | the role-aware HTTP cache | what it did and why |
+| `X-Exp-Cache-Until` | the kernel (6.0.15) | until when the page may be kept (`cache_until`, `cache_ttl`); `0`: not at all |
 
 ```bash
-curl -sI https://example.com/ | grep -iE 'x-cache|x-exp-cache|age|cache-control'
+curl -sI https://example.com/ | grep -iE 'x-cache|x-exp-cache|age|cache-control|expires'
 ```
 
 A page answered by Velocity's response cache also carries the `X-Exp-Cache` stored with it, often `MISS` from the

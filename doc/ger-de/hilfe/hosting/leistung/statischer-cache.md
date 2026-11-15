@@ -47,6 +47,12 @@ Der statische Cache verwandelt öffentliche Seiten in einfache Dateien unter `va
 Exponential überhaupt zu starten. Rewrite-Regeln beantworten eine Anfrage aus der Datei, wenn sie ein einfaches `GET` oder `HEAD` ist,
 keinen Query-String hat und keine Sitzung trägt; Formulare, Suchen und alle Angemeldeten bekommen immer die Live-Seite.
 
+Die Dateien haben keine Lebensdauer; sie werden beim Veröffentlichen neu erzeugt. Den Ablauf, den ein Template seit
+6.0.15 mit `cache_until` setzt (`{cache_until( 'tomorrow' )}`), beachtet der statische Cache deshalb **nicht**. Nehmen
+Sie solche Seiten aus (nicht in `staticcache.ini [CacheSettings] CachedURLArray[]`), lassen Sie sie zum Ablauf von
+einem Cronjob neu erzeugen, oder nutzen Sie den rollenbewussten HTTP-Cache, der den Ablauf beachtet
+([cache_until: Seiten, die pünktlich ablaufen](../../../funktionen/6.0/cache-until.md#der-statische-cache)).
+
 ## Warum er ausgeschaltet ausgeliefert wird
 
 `site.ini [ContentSettings] StaticCache=disabled` ist der mitgelieferte Wert, und der Installer schreibt ihn so. Das Installationsbuch

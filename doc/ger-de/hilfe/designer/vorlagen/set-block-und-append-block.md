@@ -59,7 +59,12 @@ und Vollansichten für die Lebensdauer ihres View-Cache:
 {set-block scope=root variable=cache_ttl}400{/set-block}
 ```
 
-(der Veranstaltungskalender von ezwebin). Für Werte, die das Pagelayout braucht, ziehen Sie die persistent variable vor
+(der Veranstaltungskalender von ezwebin). `cache_ttl` funktioniert weiter: Seit 6.0.15 wird es beim Erzeugen der
+Ansicht zu `{cache_until( time() + cache_ttl )}`, und `cache_ttl` = 0 zu `{cache_until( 0 )}`. Es wirkt aber nur in der
+Inhaltsansicht; `cache_until` wirkt überall und nennt einen Zeitpunkt statt einer Dauer, zum Beispiel
+`{cache_until( 'tomorrow' )}` statt eines `cache_ttl` bis Mitternacht ([cache_until und seconds_until](cache-until.md)).
+
+Für Werte, die das Pagelayout braucht, ziehen Sie die persistent variable vor
 ([Die persistent variable](die-persistent-variable.md)).
 
 ## Verwendungen in den mitgelieferten Templates
@@ -72,6 +77,7 @@ und Vollansichten für die Lebensdauer ihres View-Cache:
 
 - [Variablen und def](variablen-und-def.md)
 - [Caching für Designer](../theme-design/caching-fuer-designer.md)
+- [cache_until und seconds_until](cache-until.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

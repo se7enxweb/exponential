@@ -38,7 +38,8 @@ generate and serve it if a customer needs it. The sources are
 4. [Generating it](#generating-it)
 5. [Serving it from the web server](#serving-it-from-the-web-server)
 6. [Settings](#settings)
-7. [Checklist](#checklist)
+7. [Pages that expire on time](#pages-that-expire-on-time)
+8. [Checklist](#checklist)
 
 ## What it is
 
@@ -122,12 +123,27 @@ leading `var/`; a default installation (`var/site`) needs no change.
 Installations upgraded from older releases may have overrides that relied on the old defaults; see
 [Static cache defaults](../../../bc/6.0/static-cache-defaults.md).
 
+## Pages that expire on time
+
+A template can say until when its page is true with `cache_until` (6.0.15), and every other cache keeps the page no
+longer. **The static cache does not**: its files have no lifetime, they are regenerated on publish and served by the
+web server without PHP, so nothing could expire them on time
+([Pages that expire on time](../../../features/6.0/cache-until.md#8-the-static-cache-not-honored)). For such pages:
+
+- leave them out of `staticcache.ini [CacheSettings] CachedURLArray[]` (it lists only what is cached; there is no
+  exclude list, so list the subtrees you do cache instead of `/*`), and out of `AlwaysUpdateArray[]`, which
+  regenerates on publish;
+- or regenerate the cache by a cron job at the time the pages change, for example at midnight:
+  `php bin/php/makestaticcache.php --site=<siteaccess>`;
+- or use the role-aware HTTP cache, which honors the expiry.
+
 ## Checklist
 
 - [ ] `StaticCache=disabled` on every plan unless a customer asked for it and accepted the publish cost.
 - [ ] If used: offload rules only on the public vhost; `EZ_VAR_SITE` matches `VarDir`.
 - [ ] Generation run as the site's user; the stored pages checked with a plain `curl`.
 - [ ] Signed-in requests and requests with a query string still reach PHP.
+- [ ] No page that calls `cache_until` is in `CachedURLArray[]`, or a cron job regenerates it on time.
 
 ## Related pages
 

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-The shipped settings of `settings/site.ini`: 67 blocks, 527 settings.
+The shipped settings of `settings/site.ini`: 68 blocks, 528 settings.
 
 > Exponential configuration file.  
 >
@@ -85,6 +85,7 @@ The shipped settings of `settings/site.ini`: 67 blocks, 527 settings.
 | [TipAFriend](TipAFriend.md) | 3 |
 | [SSLZoneSettings](SSLZoneSettings.md) | 3 |
 | [HTTPHeaderSettings](HTTPHeaderSettings.md) | 10 |
+| [CacheUntilSettings](CacheUntilSettings.md) | 1 |
 | [ContentSecurityPolicy](ContentSecurityPolicy.md) | 15 |
 | [TimeZoneSettings](TimeZoneSettings.md) | 1 |
 | [eZINISettings](eZINISettings.md) | 2 |

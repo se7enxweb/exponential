@@ -78,8 +78,10 @@ hinzufügen), setzen Sie die [persistent variable](die-persistent-variable.md); 
 Die Vollansicht wird im View-Cache gespeichert (`CachedViewModes` enthält `full`):
 
 - nichts Besucherspezifisches darin (Namen, Warenkörbe, „Sie sind angemeldet“);
-- auf `currentdate()` beruhende Ausgabe ist bis zur nächsten Veröffentlichung eingefroren; setzen Sie bei Bedarf ein kurzes
-  `cache_ttl` ([Caching für Designer](../theme-design/caching-fuer-designer.md)).
+- auf `currentdate()` beruhende Ausgabe ist bis zur nächsten Veröffentlichung eingefroren; sagen Sie mit
+  `cache_until`, bis wann sie gilt (`{cache_until( 'tomorrow' )}`, `{cache_until( $next_event_start )}`), statt eines
+  kurzen `cache_ttl`, das weiter funktioniert ([cache_until und seconds_until](cache-until.md),
+  [Caching für Designer](../theme-design/caching-fuer-designer.md)).
 
 ## Eine Vollansicht pro Klasse
 

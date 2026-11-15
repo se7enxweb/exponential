@@ -72,6 +72,11 @@ Server nicht dazu bringen kann, jede Seite erneut zu rendern. Ein Cache-Warmer s
 
 Die Lebensdauer ist `s-maxage`, sonst `max-age`, sonst `defaultTtl` (Standard `0`, was nichts speichert).
 
+Eine Exponential-Seite, deren Template mit `cache_until` einen Ablauf setzt, hält deshalb nicht länger als bis dahin:
+Der Kernel senkt `max-age` und `s-maxage` auf die verbleibende Zeit und ergänzt `s-maxage=<verbleibend>`, wenn diese
+unter `velocity.ini [CacheSettings] DefaultTtl` liegt; `cache_until( 0 )` und `cache_ttl` = 0 ergeben `s-maxage=0`
+([cache_until: Seiten, die pünktlich ablaufen](cache-until.md)).
+
 Einträge liegen, sofern verwendbar, für kleine Einträge in APCu und als eine Datei pro Seite auf der Festplatte
 unterhalb von `dir`, in einem zweistufigen Verzeichnis.
 

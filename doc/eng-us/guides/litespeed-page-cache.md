@@ -457,6 +457,26 @@ seconds, so a visitor who signs in may see their browser's anonymous copy of a p
 keep the value short. If you only want shared caches to keep pages, `public, max-age=0, s-maxage=120` says so to
 standard caches; check on your server that LiteSpeed reads `s-maxage` from the response before relying on it.
 
+### Pages that expire on time (cache_until)
+
+A template can say until when its output is true (`{cache_until( 'tomorrow' )}`, `{cache_until( $event_start )}`,
+`{cache_until( 0 )}`, Exponential 6.0.15). LiteSpeed keeps a page for the `max-age` of the rewrite rule, often
+whatever the response's `Cache-Control` says, so the kernel tells it in LiteSpeed's own header, which it always reads:
+
+- a page that must not be kept (`cache_until( 0 )`, or its time has come) gets `X-LiteSpeed-Cache-Control: no-cache`.
+  Always on: it only ever keeps a page out;
+- with `site.ini [CacheUntilSettings] LiteSpeedMaxAge=enabled` (in `settings/override/site.ini.append.php`; shipped
+  `disabled`), an anonymous visitor's page with an expiry also gets `X-LiteSpeed-Cache-Control: max-age=<seconds
+  left>`, so LiteSpeed keeps it no longer than the expiry, even below the rule's `max-age`.
+
+The second is opt-in because LiteSpeed reads the header on every response, also on pages its rewrite rules do not
+cache, and could then keep a page you meant to leave out. Enable it when the pages that call `cache_until` are pages
+the block of `.htaccess_root` caches. Then `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
+
+Check: `curl -sI https://example.com/Events | grep -i -E 'x-litespeed|x-exp-cache-until'`. Templates and decisions:
+[Caching time-dependent content](caching-time-dependent-content.md),
+[Pages that expire on time](../features/6.0/cache-until.md#7-litespeeds-page-cache).
+
 ## Choosing max-age, and what editors see
 
 Nothing in Exponential tells LiteSpeed that a page changed. So `max-age` is the longest time an anonymous visitor can
@@ -470,6 +490,9 @@ see a page as it was before a publish.
 
 Even 60 seconds removes almost all of the load of a crawler burst or a traffic peak: a page asked for 1,000 times a
 minute is rendered once a minute.
+
+A page whose template names an expiry with `cache_until` is the exception when `LiteSpeedMaxAge=enabled`: LiteSpeed
+keeps it only until then ([Pages that expire on time (cache_until)](#pages-that-expire-on-time-cache_until)).
 
 **What editors see.** Editors are signed in, carry a session cookie and always get the live page. Only when they look
 at the public site in another browser or a private window (as an anonymous visitor) do they see the stored copy until

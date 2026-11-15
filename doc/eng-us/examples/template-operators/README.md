@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Every operator the kernel, its libraries and the bundled extensions register (the `$eZTemplateOperatorArray` of each `eztemplateautoload.php`, and `settings/template.ini` `[PHP] PHPOperatorList[]`), with its parameters and an example. "Used in" says whether a shipped template uses it; its page quotes the first use.
 
-243 operators.
+245 operators.
 
 | Operator | Class | Parameters | Used in a shipped template |
 |---|---|---|---|
@@ -34,6 +34,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [begins_with](begins_with.md) | eZTemplateArrayOperator | 1 | yes |
 | [bin2hex](bin2hex.md) | eZTemplateStringsOperator | ? |  |
 | [break](break.md) | eZTemplateStringOperator | 0 | yes |
+| [cache_until](cache_until.md) | expCacheUntilOperator | 1 |  |
 | [ceil](ceil.md) | eZTemplateArithmeticOperator | 0 |  |
 | [choose](choose.md) | eZTemplateLogicOperator | 0 | yes |
 | [chr](chr.md) | eZTemplateStringOperator | 0 | yes |
@@ -191,6 +192,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [round](round.md) | eZTemplateArithmeticOperator | 0 | yes |
 | [rstring](rstring.md) | eZTemplateStringsOperator | ? |  |
 | [rtrim](rtrim.md) | eZTemplateStringsOperator | ? |  |
+| [seconds_until](seconds_until.md) | expCacheUntilOperator | 1 |  |
 | [shorten](shorten.md) | eZTemplateStringOperator | 3 | yes |
 | [si](si.md) | eZTemplateUnitOperator | 5 | yes |
 | [similar_text](similar_text.md) | eZTemplateStringsOperator | ? |  |

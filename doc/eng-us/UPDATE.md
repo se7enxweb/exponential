@@ -175,6 +175,13 @@ To keep the old behavior, set `AliasGeneration=render` in `settings/override/ima
 [Image aliases made on demand (BC)](bc/6.0/image-aliases-on-demand.md) and the
 [web server recipes](examples/web-servers/image-aliases-on-demand.md).
 
+**Updating to 6.0.15 or later: pages that expire on time.** Templates can call `{cache_until( 'tomorrow' )}` and
+every cache keeps the page no longer. Nothing to do for pages without a call; `cache_ttl` keeps working, and the
+role-aware HTTP cache now keeps such pages for the time that is left (clear it once after the update:
+`php bin/php/ezcache.php --clear-id=exphttpcache`). If `site.ini [TimeZoneSettings] TimeZone` is empty, set it in
+`settings/override/site.ini.append.php` (the update does not change it). See
+[Pages that expire on time (BC)](bc/6.0/cache-until.md).
+
 ## 5. Update the database
 
 The database update files are in `update/database/<engine>/6.0/`:

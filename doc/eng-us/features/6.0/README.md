@@ -77,6 +77,9 @@ nginx with PHP-FPM keep working as before.
 - [Request shield: a web application firewall in front of every request](request-shield.md)
 - [Image aliases made on demand](image-aliases-on-demand.md): computed while a page renders, made when the browser
   asks; WebP/AVIF, pre-generation, staging from production, Setup > Image aliases and `exp:image:alias`
+- [Pages that expire on time: cache_until](cache-until.md): a template says until when its output is true
+  (`{cache_until( 'tomorrow' )}`), and the view cache, cache-blocks, the HTTP cache, the response headers, Velocity, a
+  CDN and LiteSpeed keep the page no longer; the time zone of new installations
 - [Cronjobs console](cronjobs-console.md), [Pausing cronjob parts](cronjob-pause.md),
   [Leaving out a cronjob part](cronjob-part-filter.md)
 - [Log rotation and pruning](log-rotation.md), [The log viewer](log-viewer.md),
