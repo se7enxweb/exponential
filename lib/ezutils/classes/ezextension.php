@@ -55,6 +55,9 @@ class eZExtension
      */
     protected static $extensionPathCache = array();
 
+    /** @var array root => array( 'list' => entries, 'names' => entry => index ): the extension roots as read (entryNamed()) */
+    protected static $rootEntriesCache = array();
+
     /**
      * Return the actual case-sensitive extension directory name for a given name.
      * If the exact name already exists it is returned as-is. Otherwise the
@@ -151,50 +154,49 @@ class eZExtension
                 continue;
 
             $root = rtrim( $root, '/\\' );
-            $direct = $root . '/' . $name;
-            if ( file_exists( $direct ) && is_dir( $direct ) )
+            // The entries of the root as read once (entryNamed()); read again when the name is not among them, so a
+            // directory made since is found
+            $realName = self::entryNamed( $root, $name, false );
+            if ( $realName === null )
+                $realName = self::entryNamed( $root, $name, true );
+            if ( $realName !== null )
             {
-                // The directory was found, but on a case-insensitive filesystem
-                // the caller's name may not match the real on-disk case.
-                // Scan the parent directory and return the exact entry name.
-                $realName = null;
-                foreach ( scandir( $root ) as $entry )
-                {
-                    if ( $entry === '.' || $entry === '..' || !is_dir( $root . '/' . $entry ) )
-                        continue;
-
-                    if ( $entry === $name )
-                    {
-                        $realName = $entry;
-                        break;
-                    }
-
-                    if ( $realName === null && strcasecmp( $entry, $name ) === 0 )
-                        $realName = $entry;
-                }
-
-                if ( $realName !== null )
-                {
-                    $path = $root . '/' . $realName;
-                    self::$extensionPathCache[$name] = $path;
-                    return $path;
-                }
-            }
-
-            foreach ( scandir( $root ) as $entry )
-            {
-                if ( $entry === '.' || $entry === '..' )
-                    continue;
-                if ( strcasecmp( $entry, $name ) === 0 && is_dir( $root . '/' . $entry ) )
-                {
-                    $path = $root . '/' . $entry;
-                    self::$extensionPathCache[$name] = $path;
-                    return $path;
-                }
+                $path = $root . '/' . $realName;
+                self::$extensionPathCache[$name] = $path;
+                return $path;
             }
         }
 
         return false;
+    }
+
+    /**
+     * The entry of the extension root $root that is the directory of the extension $name, as it is spelled on disk:
+     * the exact name first, else the first entry that differs only in case (a case-insensitive filesystem, or a
+     * caller's spelling); null when there is none.
+     *
+     * @param string $root
+     * @param string $name
+     * @param bool $reread read the directory again first
+     * @return string|null
+     */
+    protected static function entryNamed( $root, $name, $reread )
+    {
+        if ( $reread || !isset( self::$rootEntriesCache[$root] ) )
+        {
+            $entries = @scandir( $root );
+            $entries = is_array( $entries ) ? array_values( array_diff( $entries, array( '.', '..' ) ) ) : array();
+            self::$rootEntriesCache[$root] = array( 'list' => $entries, 'names' => array_flip( $entries ) );
+        }
+        $known = self::$rootEntriesCache[$root];
+        if ( isset( $known['names'][$name] ) && is_dir( $root . '/' . $name ) )
+            return $name;
+        foreach ( $known['list'] as $entry )
+        {
+            if ( strcasecmp( $entry, $name ) === 0 && is_dir( $root . '/' . $entry ) )
+                return $entry;
+        }
+        return null;
     }
 
     /**
@@ -463,6 +465,7 @@ class eZExtension
     public static function clearCaches()
     {
         self::$extensionPathCache = array();
+        self::$rootEntriesCache = array();
         self::$extensionNameCache = array();
         self::clearActiveExtensionsMemoryCache();
     }
