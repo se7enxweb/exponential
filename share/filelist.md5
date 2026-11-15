@@ -304,7 +304,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-9068a1719926c7dcf56973cbd0ecb8f4  composer.json
+82f5e38a3b085ab564abb71e05fffaf6  composer.json
 a180ccab56cfc079f1e8da6819229745  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 81d83b433294489cbb16a8512cf056f2  config.php-RECOMMENDED
@@ -11831,7 +11831,7 @@ a9aa303ddfe5e211c9d2c6c766e9baef  doc/eng-us/help/request-shield/the-dashboard-a
 61a80d27839b7ef05cbbc9f27499e563  doc/eng-us/help/request-shield/the-log.md
 2a5c45bffe37c2171cdf1cea509141b0  doc/eng-us/help/request-shield/the-rules.md
 f5eba9bdde9c05cf31721e0f56bafc2c  doc/eng-us/help/request-shield/the-switches.md
-afc629b8530a74edbb222e743d4c9b7a  doc/eng-us/help/request-shield/troubleshooting.md
+f970c09eccd741e0b25716be04d4ca66  doc/eng-us/help/request-shield/troubleshooting.md
 7e4f91433973da11bb8c904c89e0502c  doc/eng-us/help/request-shield/under-velocity.md
 10fe5e2ae75e47966d84dea3787dc0f3  doc/eng-us/help/resellers/basics/choosing-a-partner-level.md
 9195a494eda04764739ca93a8d46db12  doc/eng-us/help/resellers/basics/referral-only-reselling.md
@@ -20774,7 +20774,7 @@ ea1b36ddb2fe3898722bb07789efad8e  doc/ger-de/hilfe/request-shield/das-log.md
 60c8e8389e469ef8dd89d0ecc8c1a824  doc/ger-de/hilfe/request-shield/die-schalter.md
 59adad706e460abe5851e5595ee89fda  doc/ger-de/hilfe/request-shield/die-uebersicht-und-ihr-diagramm.md
 c0641c8f04ac18dda00c490f6bc94858  doc/ger-de/hilfe/request-shield/faq.md
-1a0486a5cef23e9d8bbfa62f9ee12c58  doc/ger-de/hilfe/request-shield/fehlersuche.md
+4082497173489163ddcaa851d37db156  doc/ger-de/hilfe/request-shield/fehlersuche.md
 07e834f09d45eb0efb407c777cf4e3ba  doc/ger-de/hilfe/request-shield/unter-velocity.md
 ce2912745edc881d25b670f6cdab4d90  doc/ger-de/hilfe/rundgang-durch-die-administration.md
 a85b1e0a5ca224ed96b8cd423e8c85e9  doc/ger-de/hilfe/seitenpakete/README.md
