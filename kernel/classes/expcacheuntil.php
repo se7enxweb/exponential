@@ -160,9 +160,10 @@ class expCacheUntil
      *
      *  - false, 0, '0': 0, the page must not be kept at all
      *  - an integer, a numeric string or a DateTimeInterface: that Unix time (one at or before now means the same as 0)
-     *  - any other string: a date or relative time as strtotime() reads it ('tomorrow', 'next hour', '+15 minutes',
-     *    'next monday', '2026-12-24 18:00'), in the site's time zone; a time of day that has already passed today is
-     *    its next occurrence ('midnight', 'noon', '18:00')
+     *  - any other string: a date or relative time as DateTimeImmutable::modify() reads it from now ('tomorrow',
+     *    'next hour' = one hour from now, '+15 minutes', 'next monday', '2026-12-24 18:00'), in the site's time zone;
+     *    a date without a time keeps the current time of day ('2026-12-24 00:00' for midnight); a time of day that
+     *    has already passed today is its next occurrence ('midnight', 'noon', '18:00')
      *  - null, true, '', an array or a string that is not a time: null, the call is ignored ($problem says why)
      *
      * @param mixed $value
