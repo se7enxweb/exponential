@@ -26347,7 +26347,7 @@ a0dfae33c90fce6b6e3e2ac283ec7355  kernel/private/classes/views/collaboration/vie
 eca41f08ae6162bd0fde7d1844e29ac7  kernel/private/classes/views/content/copy.php
 c48cb915c5fe22aa3f3683a547d7b831  kernel/private/classes/views/content/copysubtree.php
 f68f99eb2eee686c7f3e9f5133b3f8b3  kernel/private/classes/views/content/dashboard.php
-efa682f58a2b0f40837f4910ca67a56c  kernel/private/classes/views/content/download.php
+32cf0513ffab5e0235e4cc0611764145  kernel/private/classes/views/content/download.php
 3648e1cbd79ddd6595e040f573f944ff  kernel/private/classes/views/content/draft.php
 cf107b80ccd20b3f4c8086a81c93ea95  kernel/private/classes/views/content/edit.php
 c3756bc5da54ec456354e3188d817aa6  kernel/private/classes/views/content/hide.php
@@ -29447,7 +29447,7 @@ d3160db2f56eddb9e6e594789e952315  tests/tests/kernel/classes/expEditorPoliciesTe
 70891af7174fec16971483810e051238  tests/tests/kernel/classes/expEntryScriptRenameRulesTest.php
 75d4909bce770c7bfceac5e3e99db3f5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 4b2f5a942b0d8969ff13e6554264e300  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
-59410c14cc7dd043faea8eabf885b694  tests/tests/kernel/classes/expKernelCallFixesTest.php
+678c65717156beebc86b7da3a2ae8151  tests/tests/kernel/classes/expKernelCallFixesTest.php
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
 69e930b35051a508205c2c4d5482c24b  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php

@@ -9,6 +9,8 @@
  *  KC-03 - content/download announces its event with positional arguments: a listener with other parameter names
  *          is called (string keys became named arguments under PHP 8: "Unknown named parameter"), and ezpEvent::notify()
  *          passes a hash by position too
+ *  KC-04 - content/download of an object that is gone is a 404 without an error.log line: the view asks
+ *          eZContentObject::exists() before fetch(), which logs "Object not found" for a missing id
  *
  * @copyright Copyright CJW Network and Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -148,5 +150,24 @@ class expKernelCallFixesTest extends PHPUnit\Framework\TestCase
         // position too: ezpEvent::notify() drops the keys, where it ended in "Unknown named parameter"
         $event->notify( 'content/download', array( 'contentObjectID' => 56, 'contentObjectAttributeID' => 78 ) );
         $this->assertSame( array( array( 12, 34 ), array( 56, 78 ) ), expKernelCallFixesDownloadListener::$calls );
+    }
+
+    /** KC-04 */
+    public function testDownloadOfAMissingObjectLogsNoError()
+    {
+        $code = (string)file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/views/content/download.php' );
+        $this->assertStringContainsString( '\eZContentObject::exists( (int)$contentObjectID ) ? \eZContentObject::fetch( $contentObjectID ) : null', $code );
+
+        // with every read empty the object does not exist, and exists() answers that without a database server
+        $previousDB = $GLOBALS['eZDBGlobalInstance'] ?? null;
+        eZDB::setInstance( new expKernelCallFixesStandInDB( array() ) );
+        try
+        {
+            $this->assertFalse( eZContentObject::exists( 987654321 ) );
+        }
+        finally
+        {
+            eZDB::setInstance( $previousDB );
+        }
     }
 }

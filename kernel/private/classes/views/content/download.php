@@ -30,7 +30,9 @@ class Download extends \Exponential\Runnable\ModuleView
 
         $contentObjectID = $Params['ContentObjectID'];
         $contentObjectAttributeID = $Params['ContentObjectAttributeID'];
-        $contentObject = \eZContentObject::fetch( $contentObjectID );
+        // a removed object is a 404 for the visitor: looked up with exists() first, so crawlers that keep asking for
+        // old download links do not write an error.log line ("Object not found") on every request
+        $contentObject = is_numeric( $contentObjectID ) && \eZContentObject::exists( (int)$contentObjectID ) ? \eZContentObject::fetch( $contentObjectID ) : null;
         if ( !is_object( $contentObject ) || $contentObject->attribute( 'status' ) == \eZContentObject::STATUS_ARCHIVED)
         {
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
