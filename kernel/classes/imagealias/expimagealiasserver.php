@@ -54,6 +54,9 @@ class expImageAliasServer
     /** @var int[] ids of the jobs this request queued (tests, the log) */
     protected $queued = array();
 
+    /** @var bool|null this request uses the backlog (usesBacklog()) */
+    protected $backlog = null;
+
     public function __construct()
     {
         $this->start = microtime( true );
@@ -263,6 +266,16 @@ class expImageAliasServer
         if ( !$check['valid'] )
             return $this->placeholder( $width, $height, 404, $check['reason'], (string)$payload['n'], $target );
 
+        // The backlog with every slot taken (a page full of new images): the signed URL names everything the backlog
+        // needs, so the answer goes out without a database query (readers wait while the aliases being made are
+        // written); the image is checked when the alias is made. Not while staging, which fetches in the request.
+        if ( $this->usesBacklog() && expImageAliasStager::forRequest() === null && expImageAliasThrottle::busy() >= expImageAliasThrottle::limit() )
+        {
+            expImageAliasLog::write( 'defer', array( 'result' => 'timeout', 'ms' => 0, 'alias' => (string)$payload['n'], 'path' => $target ) );
+            $this->queueCompletion( (string)$payload['n'], $format !== null ? array( $format ) : array(), $target );
+            return $this->placeholder( $width, $height, 200, 'pending', (string)$payload['n'], $target );
+        }
+
         $attribute = eZContentObjectAttribute::fetch( (int)$payload['a'], (int)$payload['v'] );
         if ( !$attribute instanceof eZContentObjectAttribute || $attribute->attribute( 'language_code' ) !== (string)$payload['l']
              || $attribute->attribute( 'data_type_string' ) !== 'ezimage' )
@@ -397,25 +410,33 @@ class expImageAliasServer
             $adopt = $staged === 'alias';
         }
         $left = $this->left();
-        $before = expImageAliasLock::setWaitLimit( $left );
+        // The backlog ([AliasSettings] Backlog): a request makes the alias only in a slot that is free now and waits
+        // for no other process; otherwise it answers at once and the alias is made after the answer
+        $backlog = $this->usesBacklog();
+        $before = expImageAliasLock::setWaitLimit( $backlog ? 0.0 : $left );
         // A request starts no conversion after its MaxWait (a reference alias made on the way to this one included);
         // a conversion that has started is finished (it cannot be stopped half way without losing the work)
         $deadlineBefore = expImageAliasThrottle::setDeadline( $this->job ? null : $this->start + expImageAliasSettings::maxWait() );
         expImageAliasThrottle::forgetLastHold();
         $started = microtime( true );
         $timedOut = false;
+        $lockTimeouts = expImageAliasLock::timeouts();
+        $slot = false;
         try
         {
-            $alias = expImageAliasSettings::withRender( function () use ( $handler, $aliasName, $adopt, $target ) {
-                // An entry whose file is gone is made again (the XML entry is replaced)
-                $handler->forgetMissingAliasFile( $aliasName );
-                // A file fetched from the source is recorded as render mode records an alias it made
-                if ( $adopt )
-                    return expImageAliasStager::adopting( $aliasName, $target, function () use ( $handler, $aliasName ) {
-                        return $handler->imageAlias( $aliasName );
-                    } );
-                return $handler->imageAlias( $aliasName );
-            } );
+            if ( $backlog && !( $slot = expImageAliasThrottle::acquire( 0.0 ) ) )
+                $alias = null;
+            else
+                $alias = expImageAliasSettings::withRender( function () use ( $handler, $aliasName, $adopt, $target ) {
+                    // An entry whose file is gone is made again (the XML entry is replaced)
+                    $handler->forgetMissingAliasFile( $aliasName );
+                    // A file fetched from the source is recorded as render mode records an alias it made
+                    if ( $adopt )
+                        return expImageAliasStager::adopting( $aliasName, $target, function () use ( $handler, $aliasName ) {
+                            return $handler->imageAlias( $aliasName );
+                        } );
+                    return $handler->imageAlias( $aliasName );
+                } );
         }
         catch ( Throwable $e )
         {
@@ -424,13 +445,19 @@ class expImageAliasServer
         }
         finally
         {
+            if ( $slot )
+                expImageAliasThrottle::release();
             expImageAliasLock::setWaitLimit( $before );
             expImageAliasThrottle::setDeadline( $deadlineBefore );
         }
         $ms = (int)round( ( microtime( true ) - $started ) * 1000 );
         $ok = is_array( $alias ) && (string)( $alias['url'] ?? '' ) !== '';
+        // After the answer this request makes what waits in the backlog, when it gets a free slot then
+        if ( $backlog )
+            expImageAliasBacklog::scheduleDrain();
         // No slot in time, or the wait for another process's lock ran out
-        if ( !$ok && ( expImageAliasThrottle::timedOut() || $ms >= (int)( $left * 1000 ) ) )
+        if ( !$ok && ( ( $backlog && !$slot ) || expImageAliasThrottle::timedOut() || expImageAliasLock::timeouts() > $lockTimeouts
+                       || $ms >= (int)( $left * 1000 ) ) )
             $timedOut = true;
         $fields = array( 'result' => $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' ), 'ms' => $ms, 'alias' => $aliasName );
         $fields += self::holdFields();
@@ -440,6 +467,21 @@ class expImageAliasServer
         // A timeout is logged as defer, not fail: the request answers the placeholder and a job makes the alias
         expImageAliasLog::write( expImageAliasLog::eventFor( $fields['result'] ), $fields );
         return $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' );
+    }
+
+    /**
+     * Whether this request leaves what it cannot make at once to the backlog (expImageAliasBacklog::applies()); never
+     * for a job.
+     *
+     * @return bool
+     */
+    protected function usesBacklog()
+    {
+        if ( $this->job )
+            return false;
+        if ( $this->backlog === null )
+            $this->backlog = expImageAliasBacklog::applies();
+        return $this->backlog;
     }
 
     /**
@@ -531,7 +573,14 @@ class expImageAliasServer
     {
         if ( $this->job || $this->miss === null || ( $target !== null && expImageAliasUrl::isVersionedPath( $target ) ) )
             return;
-        $job = expImageAliasJob::queueMiss( $this->miss['attribute'], $this->miss['version'], $this->miss['language'], $aliasName, $formats, $target );
+        // The backlog: made by this server right after the answer, no job (a database write per image) needed
+        if ( $this->usesBacklog() )
+        {
+            expImageAliasBacklog::add( $this->miss['attribute'], $this->miss['version'], $this->miss['language'], $aliasName, $formats, $target );
+            expImageAliasBacklog::scheduleDrain();
+            return;
+        }
+        $job =expImageAliasJob::queueMiss( $this->miss['attribute'], $this->miss['version'], $this->miss['language'], $aliasName, $formats, $target );
         if ( $job !== null )
             $this->queued[] = $job;
     }
@@ -666,7 +715,8 @@ class expImageAliasServer
         if ( !$mayMake || !expImageFormatConverter::canWrite( $format ) )
             return null;
         $left = $this->left();
-        $before = expImageAliasLock::setWaitLimit( $left );
+        // The backlog: no wait for a slot or another process's lock (see generate())
+        $before = expImageAliasLock::setWaitLimit( $this->usesBacklog() ? 0.0 : $left );
         $deadlineBefore = expImageAliasThrottle::setDeadline( $this->job ? null : $this->start + expImageAliasSettings::maxWait() );
         expImageAliasThrottle::forgetLastHold();
         $started = microtime( true );

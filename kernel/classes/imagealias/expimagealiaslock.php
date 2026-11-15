@@ -39,6 +39,9 @@ class expImageAliasLock
     /** @var string|null a lock directory for this process (tests) */
     protected static $directory = null;
 
+    /** @var int the waits for a lock that ran out in this process (timeouts()) */
+    protected static $timeouts = 0;
+
     /** @var string the alias file this lock is for */
     protected $path;
 
@@ -129,9 +132,21 @@ class expImageAliasLock
         $deadline = microtime( true ) + $timeout;
 
         $cluster = $this->clusterLockHandler();
-        if ( $cluster !== null )
-            return $this->acquireCluster( $cluster, $deadline );
-        return $this->acquireFile( $deadline );
+        $held = $cluster !== null ? $this->acquireCluster( $cluster, $deadline ) : $this->acquireFile( $deadline );
+        if ( $this->timedOut )
+            self::$timeouts++;
+        return $held;
+    }
+
+    /**
+     * How many waits for a lock ran out in this process so far: a caller compares the number before and after a
+     * piece of work to learn whether it stopped because another process held a lock (not because it failed).
+     *
+     * @return int
+     */
+    public static function timeouts()
+    {
+        return self::$timeouts;
     }
 
     /**
