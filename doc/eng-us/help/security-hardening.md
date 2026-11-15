@@ -379,7 +379,9 @@ if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
 
 `config.php-RECOMMENDED` shows the line in its place, under "REQUEST SHIELD". Activate the extension
 (`ActiveExtensions[]=exp_request_shield`), regenerate the autoloads and clear the caches, or run
-`./console exp:velocity deploy`. The step by step procedure: [Request shield guide](../guides/request-shield.md).
+`./console exp:velocity deploy`. The step by step procedure: [Request shield guide](../guides/request-shield.md). Every
+setting and rule with its default: [configuration reference](request-shield/configuration-reference.md); recipes to
+copy, from the search and PDFs to Cloudflare and webhooks: [cookbook](request-shield/cookbook.md).
 
 The rules come with the extension, in `extension/exp_request_shield/rules/`:
 

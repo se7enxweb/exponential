@@ -411,7 +411,9 @@ if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
 `config.php-RECOMMENDED` zeigt die Zeile an ihrem Platz, unter "REQUEST SHIELD". Aktivieren Sie die
 Erweiterung (`ActiveExtensions[]=exp_request_shield`), erzeugen Sie die Autoloads neu und leeren Sie die Caches, oder
 führen Sie `./console exp:velocity deploy` aus. Das Vorgehen Schritt für Schritt:
-[Anleitung Request Shield](../anleitungen/request-shield.md).
+[Anleitung Request Shield](../anleitungen/request-shield.md). Jede Einstellung und Regel mit ihrer Vorgabe:
+[Konfigurationsreferenz](request-shield/konfigurationsreferenz.md); Rezepte zum Kopieren, von der Suche und PDFs bis zu
+Cloudflare und Webhooks: [Kochbuch](request-shield/kochbuch.md).
 
 Die Regeln kommen mit der Erweiterung, in `extension/exp_request_shield/rules/`:
 

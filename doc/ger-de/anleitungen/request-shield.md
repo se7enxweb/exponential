@@ -7,7 +7,9 @@ Hosting-Personal mit Shell-Zugang zur Installation.
 
 [Anleitungen](README.md) · Referenz der Funktion: [Der Request Shield](../funktionen/6.0/request-shield.md) ·
 Hinweise zur Aktualisierung: [Aktualisierung auf 6.0.15: der Request Shield](../bc/6.0/request-shield.md) · In der
-Hilfe: [Request Shield: hier beginnen](../hilfe/request-shield/README.md)
+Hilfe: [Request Shield: hier beginnen](../hilfe/request-shield/README.md) · Jede Einstellung:
+[Konfigurationsreferenz](../hilfe/request-shield/konfigurationsreferenz.md) · Rezepte:
+[Kochbuch](../hilfe/request-shield/kochbuch.md)
 
 ## Kurz gesagt
 
@@ -284,6 +286,8 @@ Englisch).
 - [Aktualisierung auf 6.0.15: der Request Shield](../bc/6.0/request-shield.md)
 - [Request Shield: hier beginnen](../hilfe/request-shield/README.md) und seine
   [Fehlersuche](../hilfe/request-shield/fehlersuche.md)
+- [Request Shield: Konfigurationsreferenz](../hilfe/request-shield/konfigurationsreferenz.md)
+- [Request Shield: Kochbuch](../hilfe/request-shield/kochbuch.md), Rezepte zum Kopieren
 - [Der HTTP-Cache mit vorgeschaltetem request-shield](../bc/6.0/httpcache.md#mit-vorgeschaltetem-request-shield)
 - [Sicherheit und Audit](sicherheit-und-audit.md)
 - [Bereitstellung](bereitstellung.md)

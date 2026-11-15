@@ -136,6 +136,16 @@ leeren.
 
 **Größen messen zeigt „≥“.** Das Zeitbudget von drei Sekunden war aufgebraucht, bevor jede Datei gezählt war.
 
+## Vor den Caches: der Request Shield
+
+Der Request Shield (`exp_request_shield`) entscheidet jede Anfrage vor dem Kernel und vor dem frühen Ausstieg des
+HTTP-Caches. Er hält die Caches sauber (eine Adresse mit unbekanntem Query-Parameter wird beantwortet, aber nie
+gespeichert), weist Scanner ab, bevor sie das Rendern einer Seite kosten, und begrenzt die teuren ungecachten Seiten
+(die Suche, Downloads) pro Besucher. Bei Bedarf erzeugte Bild-Aliase haben ein eigenes Budget, sodass eine Seite mit
+Hunderten neuer Bilder nicht gebremst wird. Die Einstellungen:
+[Konfigurationsreferenz](../hilfe/request-shield/konfigurationsreferenz.md); die Budgets für bildreiche Seiten und
+belebte Intranets anpassen: [Kochbuch](../hilfe/request-shield/kochbuch.md#bildreiche-seiten-und-belebte-intranets).
+
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
 und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte

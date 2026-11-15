@@ -7,6 +7,8 @@ was die Administration von ihm zeigt und ab welcher Version eine Website ihn bek
 Verwandt: [Den Request Shield einrichten](../../anleitungen/request-shield.md) (Leitfaden),
 [Aktualisierung auf 6.0.15: der Request Shield](../../bc/6.0/request-shield.md) (Hinweise zur Aktualisierung),
 [Request Shield: hier beginnen](../../hilfe/request-shield/README.md) (Hilfe für Administratoren),
+[Konfigurationsreferenz](../../hilfe/request-shield/konfigurationsreferenz.md) (jede Einstellung und Regel),
+[Kochbuch](../../hilfe/request-shield/kochbuch.md) (Rezepte mit Beispielen),
 [Der Log-Betrachter](log-betrachter.md), [Anfrageprotokolle](anfrageprotokolle.md).
 
 ## Kurz gesagt
@@ -19,7 +21,7 @@ Verwandt: [Den Request Shield einrichten](../../anleitungen/request-shield.md) (
   Network), MIT-Lizenz. Die Extension liefert **request-shield 0.4.0** als einzelne PHP-Dateien mit, dazu einen Build
   derselben Dateien für PHP 7.4. Sonst ist nichts zu installieren, ein Composer-Autoloader ist nicht nötig.
 - Paket: [`se7enxweb/exp_request_shield`](https://packagist.org/packages/se7enxweb/exp_request_shield) auf
-  Packagist, Version **0.0.1.0**. Unterstützt **PHP 7.4 bis 8.5**. Die Extension steht unter der
+  Packagist, Version **0.0.1.6**. Unterstützt **PHP 7.4 bis 8.5**. Die Extension steht unter der
   **GPL-2.0-or-later**; die mitgelieferte Bibliothek und die drei daraus kopierten Exponential-Regeldateien behalten
   ihre **MIT**-Lizenz.
 - **Eine Zeile in `config.php`** schaltet ihn ein, oberhalb des frühen Ausstiegs des HTTP-Caches, sodass auch
@@ -38,16 +40,17 @@ Verwandt: [Den Request Shield einrichten](../../anleitungen/request-shield.md) (
 
 1. [Warum ein Filter vor dem Kernel](#warum-ein-filter-vor-dem-kernel)
 2. [Was er entscheidet](#was-er-entscheidet)
-3. [Wie eine Anfrage ihn durchläuft](#wie-eine-anfrage-ihn-durchläuft)
-4. [PHP-FPM und Velocity](#php-fpm-und-velocity)
-5. [Regeldateien](#regeldateien)
-6. [Modi und Ausschalten](#modi-und-ausschalten)
-7. [Dateien auf der Festplatte](#dateien-auf-der-festplatte)
-8. [In der Administration](#in-der-administration)
-9. [Die Kommandozeile](#die-kommandozeile)
-10. [Lizenzen](#lizenzen)
-11. [Wer ihn bekommt und wann](#wer-ihn-bekommt-und-wann)
-12. [Verwandte Seiten](#verwandte-seiten)
+3. [Was Sie damit tun können](#was-sie-damit-tun-können)
+4. [Wie eine Anfrage ihn durchläuft](#wie-eine-anfrage-ihn-durchläuft)
+5. [PHP-FPM und Velocity](#php-fpm-und-velocity)
+6. [Regeldateien](#regeldateien)
+7. [Modi und Ausschalten](#modi-und-ausschalten)
+8. [Dateien auf der Festplatte](#dateien-auf-der-festplatte)
+9. [In der Administration](#in-der-administration)
+10. [Die Kommandozeile](#die-kommandozeile)
+11. [Lizenzen](#lizenzen)
+12. [Wer ihn bekommt und wann](#wer-ihn-bekommt-und-wann)
+13. [Verwandte Seiten](#verwandte-seiten)
 
 ## Warum ein Filter vor dem Kernel
 
@@ -84,6 +87,29 @@ Warum es jede Regel gibt, erklärt der
 der Bibliothek, die Browserprüfung
 [The browser check, explained](https://github.com/cjw-network/request-shield/blob/main/docs/explained/browser-check.md)
 (beides auf Englisch).
+
+## Was Sie damit tun können
+
+Die mitgelieferten Regeln sind ein Anfang. Jeder der folgenden Punkte ist ein paar Zeilen in der Regeldatei der
+Website, mit Beispielen, die sie belegen; das [Kochbuch](../../hilfe/request-shield/kochbuch.md) hat jeden zum
+Kopieren:
+
+| Sie möchten | Mit |
+|---|---|
+| nur die eigenen Hostnamen beantworten und Admin-Module hinter jedem URI-Siteaccess abweisen | `host`, `replace [EXP-MODULES]` |
+| die Suche, Downloads, PDFs, Hilfe-PDFs oder Schlagwortlisten für einen Bot teurer machen als für einen Menschen | ein Budget pro Bereich (`limit ... at`, `match`) oder die Browserprüfung (`challenge`) |
+| Anmeldung und Registrierung öfter prüfen oder Registrierungen begrenzen | `replace [EXP-LOGIN]`, `limit registrations` |
+| Formulare eigener Erweiterungen, die REST-API mit PUT, PATCH und DELETE, Webhooks annehmen | `allow`, `method`, `post-origin except`, `challenge-exempt` |
+| die Administration nur für das Büro oder das VPN öffnen | `restrict /admin/** to ...`, `exempt` |
+| Monitore, Partner und eigene Skripte durchlassen | `exempt ... until`, signierte eigene Anfragen (`expRequestShield::selfHeader()`) |
+| bildreichen Seiten und belebten Intranets Luft geben | `replace [EXP-IMAGES]`, `replace [EXP-PACE]` |
+| hinter Cloudflare, einem Load Balancer, nginx oder LiteSpeed laufen | `trust`, `set secret`, `set store file` |
+| eine Regel beobachten, bevor sie jemanden abweist | `set mode monitor`, `monitor <Regel>` |
+| Scanner bannen, Adressen aussperren, Crawler begrüßen oder sperren | `ban`, `deny`, `feed`, `crawlers` |
+| eigene Texte und Fehlerseiten zeigen | `set text.<Sprache>.<Schlüssel>`, `set error-page` |
+| jede Regel belegen, bevor sie live geht | `expect`-Zeilen, `request-shield test`, `trace`, `replay` |
+
+Jedes Regelwort und jede Einstellung mit ihrer Vorgabe: [Konfigurationsreferenz](../../hilfe/request-shield/konfigurationsreferenz.md).
 
 ## Wie eine Anfrage ihn durchläuft
 
@@ -160,7 +186,8 @@ Behalten Sie `www.example.org` in einer `host`-Zeile der Website-Datei: Die mitg
 senden diesen Namen, und `bin/request-shield test` lässt ohne ihn fünf davon scheitern. Die Domain ist für
 Dokumentation reserviert; kein echter Besucher sendet sie.
 
-Jede Zeile der Regelsprache ist in der Bibliothek dokumentiert (auf Englisch):
+Jede Regelzeile und Einstellung mit ihrer Vorgabe und jede mitgelieferte Regel nach ID:
+[Konfigurationsreferenz](../../hilfe/request-shield/konfigurationsreferenz.md). In der Bibliothek (auf Englisch):
 [Regeldateien](https://github.com/cjw-network/request-shield/blob/main/docs/reference/rule-files.md) und
 [Einstellungen](https://github.com/cjw-network/request-shield/blob/main/docs/reference/settings.md).
 
@@ -265,6 +292,9 @@ ihre Anfragen über PHP-FPM, nicht ihre Anfragen über Velocity, bis die Website
 - [Den Request Shield einrichten](../../anleitungen/request-shield.md)
 - [Aktualisierung auf 6.0.15: der Request Shield](../../bc/6.0/request-shield.md)
 - [Request Shield: hier beginnen](../../hilfe/request-shield/README.md)
+- [Request Shield: Konfigurationsreferenz](../../hilfe/request-shield/konfigurationsreferenz.md)
+- [Request Shield: Kochbuch](../../hilfe/request-shield/kochbuch.md)
+- [Request Shield: Fehlersuche](../../hilfe/request-shield/fehlersuche.md)
 - [Der HTTP-Cache mit vorgeschaltetem request-shield](../../bc/6.0/httpcache.md#mit-vorgeschaltetem-request-shield)
 - [Sicherheitshärtung](../../hilfe/sicherheitshaertung.md)
 - [Content Security Policy](content-security-policy.md)

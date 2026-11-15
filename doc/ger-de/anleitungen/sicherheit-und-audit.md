@@ -87,7 +87,7 @@ php bin/php/resetuserpassword.php --allow-root-user -u admin -g
 curl -sI https://<site>/settings/site.ini      # 404, vom Schutzschild im Durchsetzungsmodus
 ```
 
-Lesen Sie in den ersten Tagen sein Log und ergänzen Sie eine Ausnahme für alles, was ein echter Besucher oder Redakteur getan hat. Zum sofortigen Ausschalten legen Sie `var/request-shield/PAUSED` an. Schritt für Schritt: [Request Shield](request-shield.md).
+Lesen Sie in den ersten Tagen sein Log und ergänzen Sie eine Ausnahme für alles, was ein echter Besucher oder Redakteur getan hat. Zum sofortigen Ausschalten legen Sie `var/request-shield/PAUSED` an. Schritt für Schritt: [Request Shield](request-shield.md); jede Einstellung: [Konfigurationsreferenz](../hilfe/request-shield/konfigurationsreferenz.md); Rezepte für die Suche, Downloads, die Anmeldung, die API, die Administration, Webhooks und Proxys: [Kochbuch](../hilfe/request-shield/kochbuch.md).
 
 Vertiefung: [Sicherheitsvoreinstellungen vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md), [Härtung in 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md).
 

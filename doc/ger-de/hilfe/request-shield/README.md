@@ -63,6 +63,8 @@ Ein Scanner, eine Anfrageflut oder eine Anfrage nach einer internen Datei erhäl
 | [Die Schalter](die-schalter.md) | Pausieren und Einschalten, Durchsetzen, Beobachten, Aus: was jeder ändert, wann er wirkt, wer ihn benutzen darf |
 | [Das Protokoll](das-log.md) | Das Protokoll nach Zeitraum und Entscheidung lesen, die Spalten, das Netz des Clients, ein Link auf eine Ansicht |
 | [Die Regeln](die-regeln.md) | Welche Regeldatei verwendet wird, ihre Einbindungen, ob sie sich übersetzen lässt, die Befehle, die sie prüfen |
+| [Konfigurationsreferenz](konfigurationsreferenz.md) | Jede Einstellung, jede Regelzeile und jeder `set`-Schlüssel mit Vorgabe und Wirkung, jede mitgelieferte Regel nach ID, die Logzeile, signierte eigene Anfragen |
+| [Kochbuch](kochbuch.md) | Rezepte zum Kopieren, jedes mit seinen Beispielen: Suche, Downloads und PDFs, Anmeldung, Formulare, REST-API, Administration, Webhooks, Überwachung, eigene Skripte, Bilder, Cloudflare und andere Proxys, Shared Hosting, Einführung mit Beobachten, Banns, Testen |
 | [Beobachten und durchsetzen](beobachten-und-durchsetzen.md) | Die Modi, wann Sie zuerst beobachten, die Rückkehr zu enforce |
 | [Unter Velocity](unter-velocity.md) | Was anders ist, wenn Exponential Velocity die Website ausliefert |
 | [Fehlersuche](fehlersuche.md) | Symptome, Ursachen und Abhilfe |
@@ -72,6 +74,7 @@ Ein Scanner, eine Anfrageflut oder eine Anfrage nach einer internen Datei erhäl
 
 - [Der Request Shield](../../funktionen/6.0/request-shield.md) (Referenz der Funktion: wie er arbeitet, Dateien,
   Lizenzen, wer ihn wann bekommt)
+- [Request Shield: Konfigurationsreferenz](konfigurationsreferenz.md) und [Kochbuch](kochbuch.md)
 - [Den Request Shield einrichten](../../anleitungen/request-shield.md) (Installation, eigene Regeln, prüfen und
   testen, aktualisieren, deinstallieren)
 - [Aktualisierung auf 6.0.15: der Request Shield](../../bc/6.0/request-shield.md)

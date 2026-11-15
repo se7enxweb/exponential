@@ -86,7 +86,7 @@ php bin/php/resetuserpassword.php --allow-root-user -u admin -g
 curl -sI https://<site>/settings/site.ini      # 404, by the shield in enforce mode
 ```
 
-Read its log in the first days and add an exception for anything a real visitor or editor did. To switch it off at once, create `var/request-shield/PAUSED`. Step by step: [Request shield](request-shield.md).
+Read its log in the first days and add an exception for anything a real visitor or editor did. To switch it off at once, create `var/request-shield/PAUSED`. Step by step: [Request shield](request-shield.md); every setting: [configuration reference](../help/request-shield/configuration-reference.md); recipes for the search, downloads, the login, the API, the administration, webhooks and proxies: [cookbook](../help/request-shield/cookbook.md).
 
 Depth: [security defaults of September 2026](../specifications/6.0/security-defaults-2026-09.md), [datatype and input hardening](../specifications/6.0/datatype-input-hardening.md), [hardening of 6.0.13](../specifications/6.0/security-hardening-6.0.13.md).
 

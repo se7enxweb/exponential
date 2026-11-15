@@ -136,6 +136,15 @@ clear.
 
 **Measure sizes says "≥".** The three-second budget ran out before every file was counted.
 
+## In front of the caches: the request shield
+
+The request shield (`exp_request_shield`) decides every request before the kernel and before the HTTP cache's early
+exit. It keeps the caches clean (an address with an unknown query parameter is answered but never stored), refuses
+scanners before they cost a page rendering, and limits the expensive uncached pages (the search, downloads) per
+visitor. Image aliases made on demand have a budget of their own, so a page of hundreds of new images is not slowed
+down. The settings: [configuration reference](../help/request-shield/configuration-reference.md); tuning the budgets
+for image-heavy pages and busy intranets: [cookbook](../help/request-shield/cookbook.md#image-heavy-pages-and-busy-intranets).
+
 ## Smarty templates
 
 Pages made of Smarty templates (`.stpl`) use the same caches, plus Smarty's compiled templates in

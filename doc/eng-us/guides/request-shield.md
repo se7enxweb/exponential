@@ -7,7 +7,9 @@ to the installation.
 
 [Guides](README.md) · Feature reference: [The request shield](../features/6.0/request-shield.md) · Upgrade notes:
 [Upgrading to 6.0.15: the request shield](../bc/6.0/request-shield.md) · In the help:
-[Request shield: start here](../help/request-shield/README.md)
+[Request shield: start here](../help/request-shield/README.md) · Every setting:
+[configuration reference](../help/request-shield/configuration-reference.md) · Recipes:
+[cookbook](../help/request-shield/cookbook.md)
 
 ## In short
 
@@ -272,6 +274,8 @@ builds the single files and the PHP 7.4 build and checks the rules on every PHP 
 - [Upgrading to 6.0.15: the request shield](../bc/6.0/request-shield.md)
 - [Request shield: start here](../help/request-shield/README.md) and its
   [troubleshooting](../help/request-shield/troubleshooting.md)
+- [Request shield: configuration reference](../help/request-shield/configuration-reference.md)
+- [Request shield: cookbook](../help/request-shield/cookbook.md), recipes to copy
 - [The HTTP cache with request-shield in front](../bc/6.0/httpcache.md#with-request-shield-in-front)
 - [Security and audit](security-and-audit.md)
 - [Deploying](deploying.md)

@@ -200,6 +200,7 @@ the page reads: a run's progress and status, the list of runs, and start, stop a
 | **Ended without finishing** | The process was killed (a restart of the machine, an out-of-memory kill). Start it again. |
 | Many **denied** pages | 401 and 403 are counted apart: pages behind a login. They are not broken links. |
 | Image aliases made: *not counted* | A clustered file handler keeps the files elsewhere; the run still warms them. |
+| Pages end in **429** after about 120 | The request shield's pace limit answered the preloader. Since exp_request_shield 0.0.1.5 (and the kernel from 2026-11-14 on) the preloader signs its requests and passes; update both. A warmer of your own: [sign its requests](../help/request-shield/cookbook.md#sign-your-own-scripts-requests). |
 | A run is slow | Each page is rendered by the server; a cold site takes as long as its pages take to render. Lower the page limit or the depth, or run it from cron at a quiet hour. |
 
 ## References

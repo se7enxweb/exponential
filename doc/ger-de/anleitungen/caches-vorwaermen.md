@@ -209,6 +209,7 @@ Jedes `POST` trägt das Formular-Token.
 | **Ohne Abschluss beendet** | Der Prozess wurde beendet (ein Neustart der Maschine, ein Abbruch wegen Speichermangels). Starten Sie ihn erneut. |
 | Viele **verweigerte** Seiten | 401 und 403 werden getrennt gezählt: Seiten hinter einer Anmeldung. Sie sind keine defekten Links. |
 | Erzeugte Bildvarianten: *nicht gezählt* | Ein geclusterter Datei-Handler hält die Dateien anderswo; der Lauf wärmt sie trotzdem vor. |
+| Seiten enden nach etwa 120 mit **429** | Das Tempolimit des Request Shields hat dem Vorwärmer geantwortet. Seit exp_request_shield 0.0.1.5 (und dem Kernel ab dem 14.11.2026) signiert der Vorwärmer seine Anfragen und kommt durch; aktualisieren Sie beides. Ein eigener Vorwärmer: [seine Anfragen signieren](../hilfe/request-shield/kochbuch.md#die-anfragen-eigener-skripte-signieren). |
 | Ein Lauf ist langsam | Jede Seite wird vom Server gerendert; eine kalte Site braucht so lange, wie das Rendern ihrer Seiten dauert. Senken Sie das Seitenlimit oder die Tiefe, oder lassen Sie ihn zu einer ruhigen Stunde per Cron laufen. |
 
 ## Quellen

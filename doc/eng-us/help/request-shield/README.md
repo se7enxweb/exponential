@@ -62,6 +62,8 @@ requests) and never reaches the site.
 | [The switches](the-switches.md) | Pause and Switch on, Enforce, Monitor, Off: what each changes, when it takes effect, who may use them |
 | [The log](the-log.md) | Reading the log by period and decision, the columns, the client's network, a link to a view |
 | [The rules](the-rules.md) | Which rule file is used, its includes, whether it compiles, the commands that check it |
+| [Configuration reference](configuration-reference.md) | Every setting, every rule line and `set` key with its default and effect, every shipped rule by ID, the log line, signed own requests |
+| [Cookbook](cookbook.md) | Recipes to copy, each with its examples: search, downloads and PDFs, login, forms, REST API, administration, webhooks, monitoring, own scripts, images, Cloudflare and other proxies, shared hosting, monitor rollout, bans, testing |
 | [Monitor and enforce](monitor-and-enforce.md) | The modes, when to watch first, going back to enforce |
 | [Under Velocity](under-velocity.md) | What differs when Exponential Velocity serves the site |
 | [Troubleshooting](troubleshooting.md) | Symptoms, causes and fixes |
@@ -71,6 +73,7 @@ requests) and never reaches the site.
 
 - [The request shield](../../features/6.0/request-shield.md) (feature reference: how it works, files, licensing,
   who gets it when)
+- [Request shield: configuration reference](configuration-reference.md) and [cookbook](cookbook.md)
 - [Setting up the request shield](../../guides/request-shield.md) (install, own rules, check and test, update,
   uninstall)
 - [Upgrading to 6.0.15: the request shield](../../bc/6.0/request-shield.md)

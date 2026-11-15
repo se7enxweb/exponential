@@ -7,6 +7,8 @@ shows of it, and from which release on a site gets it.
 Related: [Setting up the request shield](../../guides/request-shield.md) (guide),
 [Upgrading to 6.0.15: the request shield](../../bc/6.0/request-shield.md) (upgrade notes),
 [Request shield: start here](../../help/request-shield/README.md) (help for administrators),
+[configuration reference](../../help/request-shield/configuration-reference.md) (every setting and rule),
+[cookbook](../../help/request-shield/cookbook.md) (recipes with examples),
 [The log viewer](log-viewer.md), [Request logs](request-logs.md).
 
 ## In short
@@ -19,7 +21,7 @@ Related: [Setting up the request shield](../../guides/request-shield.md) (guide)
   (CJW Network), MIT License. The extension bundles **request-shield 0.4.0** as single PHP files, plus a build of the
   same files for PHP 7.4. Nothing else to install, no Composer autoloader needed.
 - Package: [`se7enxweb/exp_request_shield`](https://packagist.org/packages/se7enxweb/exp_request_shield) on
-  Packagist, version **0.0.1.1**. Supports **PHP 7.4 to 8.5**. The extension is licensed **GPL-2.0-or-later**; the
+  Packagist, version **0.0.1.6**. Supports **PHP 7.4 to 8.5**. The extension is licensed **GPL-2.0-or-later**; the
   bundled library and the three Exponential rule files copied from it stay under their **MIT** License.
 - **One line in `config.php`** switches it on, above the HTTP cache's early exit, so cached pages are protected too.
   It runs under Apache or nginx with **PHP-FPM** and under **Exponential Velocity**, with identical answers.
@@ -33,16 +35,17 @@ Related: [Setting up the request shield](../../guides/request-shield.md) (guide)
 
 1. [Why a filter before the kernel](#why-a-filter-before-the-kernel)
 2. [What it decides](#what-it-decides)
-3. [How a request goes through it](#how-a-request-goes-through-it)
-4. [PHP-FPM and Velocity](#php-fpm-and-velocity)
-5. [Rule files](#rule-files)
-6. [Modes and switching it off](#modes-and-switching-it-off)
-7. [Files on disk](#files-on-disk)
-8. [In the administration](#in-the-administration)
-9. [The command line](#the-command-line)
-10. [Licensing](#licensing)
-11. [Who gets it, and when](#who-gets-it-and-when)
-12. [Related pages](#related-pages)
+3. [What you can do with it](#what-you-can-do-with-it)
+4. [How a request goes through it](#how-a-request-goes-through-it)
+5. [PHP-FPM and Velocity](#php-fpm-and-velocity)
+6. [Rule files](#rule-files)
+7. [Modes and switching it off](#modes-and-switching-it-off)
+8. [Files on disk](#files-on-disk)
+9. [In the administration](#in-the-administration)
+10. [The command line](#the-command-line)
+11. [Licensing](#licensing)
+12. [Who gets it, and when](#who-gets-it-and-when)
+13. [Related pages](#related-pages)
 
 ## Why a filter before the kernel
 
@@ -74,6 +77,28 @@ Among other things they:
 Why each rule exists is explained in the library's
 [Exponential use case](https://github.com/cjw-network/request-shield/blob/main/docs/use-cases/exponential.md);
 the browser check in [The browser check, explained](https://github.com/cjw-network/request-shield/blob/main/docs/explained/browser-check.md).
+
+## What you can do with it
+
+The shipped rules are a start. Each of these is a few lines in the site's rule file, with examples that prove them;
+the [cookbook](../../help/request-shield/cookbook.md) has every one ready to copy:
+
+| You want to | With |
+|---|---|
+| answer only the site's own host names, and refuse admin modules behind every URI siteaccess | `host`, `replace [EXP-MODULES]` |
+| make the search, downloads, PDFs, help PDFs or keyword lists cost a bot more than a person | a budget per area (`limit ... at`, `match`), or the browser check (`challenge`) |
+| check the login and registration more often, or limit registrations | `replace [EXP-LOGIN]`, `limit registrations` |
+| take forms of your own extensions, the REST API with PUT, PATCH and DELETE, webhooks | `allow`, `method`, `post-origin except`, `challenge-exempt` |
+| open the administration only to the office or the VPN | `restrict /admin/** to ...`, `exempt` |
+| let monitors, partners and your own scripts through | `exempt ... until`, signed own requests (`expRequestShield::selfHeader()`) |
+| give image-heavy pages and busy intranets room | `replace [EXP-IMAGES]`, `replace [EXP-PACE]` |
+| run behind Cloudflare, a load balancer, nginx or LiteSpeed | `trust`, `set secret`, `set store file` |
+| watch a rule before it refuses anybody | `set mode monitor`, `monitor <rule>` |
+| ban scanners, keep addresses out, welcome or block crawlers | `ban`, `deny`, `feed`, `crawlers` |
+| show your own texts and error pages | `set text.<lang>.<key>`, `set error-page` |
+| prove every rule before it is live | `expect` lines, `request-shield test`, `trace`, `replay` |
+
+Every rule word and setting with its default: [configuration reference](../../help/request-shield/configuration-reference.md).
 
 ## How a request goes through it
 
@@ -149,7 +174,8 @@ Keep `www.example.org` in a `host` line of the site's file: the shipped examples
 `bin/request-shield test` fails five of them without it. It is a domain reserved for documentation; no real visitor
 sends it.
 
-Every line of the rule language is documented upstream:
+Every rule line and setting with its default, and every shipped rule by ID:
+[configuration reference](../../help/request-shield/configuration-reference.md). Upstream:
 [rule files](https://github.com/cjw-network/request-shield/blob/main/docs/reference/rule-files.md) and
 [settings](https://github.com/cjw-network/request-shield/blob/main/docs/reference/settings.md).
 
@@ -249,6 +275,9 @@ PHP-FPM requests, not its Velocity requests, until the site runs the 6.0.15 line
 - [Setting up the request shield](../../guides/request-shield.md)
 - [Upgrading to 6.0.15: the request shield](../../bc/6.0/request-shield.md)
 - [Request shield: start here](../../help/request-shield/README.md)
+- [Request shield: configuration reference](../../help/request-shield/configuration-reference.md)
+- [Request shield: cookbook](../../help/request-shield/cookbook.md)
+- [Request shield: troubleshooting](../../help/request-shield/troubleshooting.md)
 - [The HTTP cache with request-shield in front](../../bc/6.0/httpcache.md#with-request-shield-in-front)
 - [Security hardening](../../help/security-hardening.md)
 - [Content security policy](content-security-policy.md)
