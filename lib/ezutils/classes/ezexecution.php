@@ -49,6 +49,7 @@ class eZExecution
     static function cleanup()
     {
         $handlers = eZExecution::cleanupHandlers();
+        self::$cleaningUp = true;
         foreach ( $handlers as $handler )
         {
             if ( is_callable( $handler ) )
@@ -111,6 +112,20 @@ class eZExecution
     {
         self::forRequest();
         return self::$hasCleanExit;
+    }
+
+    /**
+     * Whether the request reached its clean-up (cleanup(), which cleanExit() runs before it sets the clean exit):
+     * its answer is complete then. A request that ends inside the clean-up without a PHP error was not unfinished
+     * (under LiteSpeed's PHP a request whose whole answer has gone out can end there), and the kernel's fatal error
+     * handler writes a notice for it instead of "Fatal error".
+     *
+     * @return bool
+     */
+    static function isCleaningUp()
+    {
+        self::forRequest();
+        return self::$cleaningUp;
     }
 
     /*!
@@ -286,6 +301,7 @@ class eZExecution
         if ( self::$requestKey !== null )
         {
             self::$hasCleanExit = false;
+            self::$cleaningUp = false;
             self::$shutdownHandle = false;
             self::$fatalErrorHandlers = array();
             self::$cleanupHandlers = array();
@@ -667,9 +683,11 @@ class eZExecution
     }
 
     static private $eZDocumentRoot = null;
-    /** @var string|null requestKey() of the request the four below belong to, null before the first call */
+    /** @var string|null requestKey() of the request the five below belong to, null before the first call */
     static private $requestKey = null;
     static private $hasCleanExit = false;
+    /** @var bool cleanup() has started for this request */
+    static private $cleaningUp = false;
     static private $shutdownHandle = false;
     /** @var bool the exception handler was installed in this process (never reset per request) */
     static private $handlerInstalled = false;

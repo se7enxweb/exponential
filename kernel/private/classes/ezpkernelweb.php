@@ -370,6 +370,15 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         eZDebug::writeNotice( 'The client closed the connection before the request ended', 'ezpKernelWeb' );
                         return;
                     }
+                    // The answer was complete and the request was in its clean-up (eZExecution::cleanExit() runs the
+                    // clean-up handlers first, then marks the exit clean) when it ended, without a PHP error: under
+                    // LiteSpeed's PHP a request that sent its whole answer with a Content-Length (an RSS feed, a download)
+                    // can end there. Nothing failed for the visitor: a notice, no "Fatal error" line without a cause.
+                    if ( eZExecution::isCleaningUp() && !( $last && ( $last['type'] & $fatal ) ) )
+                    {
+                        eZDebug::writeNotice( 'The request ended during its clean-up, after its answer was sent', 'ezpKernelWeb' );
+                        return;
+                    }
                     $reference = eZExecution::errorReference();
                     eZLog::write( 'Fatal error ' . $reference . ( $last ? ': ' . $last['message'] . ' in ' . $last['file'] . ' on line ' . $last['line'] : '' ), 'error.log' );
                     eZExecution::renderErrorPage( 500, $reference,
