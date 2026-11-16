@@ -36,6 +36,8 @@ class expTemplateBridge
         'exp_demo_mode',
         // kernel/common/expenvironmentoperator.php
         'exp_environment', 'exp_environment_badge',
+        // kernel/common/expnodesiteurloperator.php
+        'exp_node_site_url',
         // kernel/common/ezmoduleoperator.php
         'ezmodule',
         // kernel/common/eztocoperator.php

@@ -27334,7 +27334,7 @@ bd0414aea94d956d6a49564a1b2602ae  lib/smarty/classes/expsmartysetblock.php
 080011e698c52c746b5117ab04e921b4  lib/smarty/classes/expsmartyundefallfunction.php
 d0da0f82c287c316c9de3c8d9f1e11d7  lib/smarty/classes/expsmartyvoid.php
 220cdd9bec7b252136e1b737273a8d04  lib/smarty/classes/eztemplateautoload.php
-ff7708b7a2fcb81a3d2ef1f4b417ed07  lib/templatebridge/classes/exptemplatebridge.php
+552536ec70b9ef4234d05b4ec3df7b32  lib/templatebridge/classes/exptemplatebridge.php
 951ce985e9e30d128246f7a99db01731  lib/templatebridge/classes/exptemplatechainconverter.php
 ff90d61bd2eb1bd443b71de5cde1795b  lib/templatebridge/classes/exptemplatechecker.php
 f6221d447a44caef9bae13894b507009  lib/templatebridge/classes/exptemplatecheckformatter.php
@@ -30850,7 +30850,7 @@ e9dc36950a634c82ef8020ec2fac1d5c  tests/tests/lib/ezutils/server/vh/view/win2008
 118db387b03ea1d18bf55b794e1e10c4  tests/tests/lib/ezversion/ExponentialSDKPackageServerPathTest.php
 af93c000344de5991a1b90daf0befa49  tests/tests/lib/smarty/expSmartyDebugBarTest.php
 ce5cb55291ac4e7ae3e1024ac55ef3c6  tests/tests/lib/smarty/expSmartyOperatorParityTest.php
-0ae5d76d5cdb971c27fcf659bbf7ca00  tests/tests/lib/smarty/expSmartyParameterOperatorTest.php
+db1541f6a1ce3cd505899dc62151f036  tests/tests/lib/smarty/expSmartyParameterOperatorTest.php
 91fbf92093334365e3de40bd87bd87c8  tests/tests/lib/smarty/expSmartyReverseConverterTest.php
 f459121c346b5472f5dccc0b7a238e60  tests/tests/lib/smarty/expSmartySecurityTest.php
 8d63fc25779951afd6cd2416c42691f3  tests/tests/lib/smarty/expSmartyTemplateRenderTest.php

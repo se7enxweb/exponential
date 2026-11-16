@@ -31,7 +31,7 @@ class expSmartyParameterOperatorTest extends PHPUnit\Framework\TestCase
     const CLASSIFICATION = array(
         'ezhttp' => 'param', 'ezhttp_hasvariable' => 'param', 'icon_info' => 'param', 'alphabet' => 'param',
         'content_structure_tree' => 'param', 'csp_nonce' => 'param', 'exp_demo_mode' => 'param',
-        'exp_environment' => 'param', 'exp_environment_badge' => 'param', 'ezmodule' => 'param', 'eztoc' => 'param',
+        'exp_environment' => 'param', 'exp_environment_badge' => 'param', 'exp_node_site_url' => 'param', 'ezmodule' => 'param', 'eztoc' => 'param',
         'has_role' => 'param', 'has_role_id' => 'param', 'has_any_role' => 'param', 'has_role_by_user' => 'param',
         'has_role_by_user_id' => 'param', 'has_policy' => 'param', 'has_policy_by_user' => 'param',
         'installation_name' => 'param', 'is_production_system' => 'param', 'language_switcher' => 'param',
