@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-Die ausgelieferten Einstellungen von `settings/site.ini`: 68 Blöcke, 528 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/site.ini`: 68 Blöcke, 531 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -62,7 +62,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 68 Blöcke, 528 Einste
 | [ReauthGroup_export](ReauthGroup_export.md) | 2 |
 | [ReauthGroup_delete](ReauthGroup_delete.md) | 2 |
 | [ReauthGroup_content](ReauthGroup_content.md) | 3 |
-| [SiteAccessSettings](SiteAccessSettings.md) | 37 |
+| [SiteAccessSettings](SiteAccessSettings.md) | 40 |
 | [PortAccessSettings](PortAccessSettings.md) | 2 |
 | [RoleSettings](RoleSettings.md) | 13 |
 | [ConfigurationSettings](ConfigurationSettings.md) | 1 |

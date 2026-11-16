@@ -2,14 +2,14 @@
 title: site.ini [SiteAccessSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [SiteAccessSettings] in site.ini: ForceVirtualHost, CheckValidity, RequireUserLogin, AvailableSiteAccessList, RelatedSiteAccessList, AnonymousAccessList, MatchOrder, URIMatchType ..."
-keywords: Einstellung, site.ini, SiteAccessSettings, INI, setting, ForceVirtualHost, CheckValidity, RequireUserLogin, AvailableSiteAccessList, RelatedSiteAccessList, AnonymousAccessList, MatchOrder, URIMatchType, URIMatchElement, URIMatchRegexp, URIMatchRegexpItem, URIMatchMapItems, HostMatchType, HostMatchElement, HostMatchRegexp, HostMatchRegexpItem, HostMatchSubtextPre, HostMatchSubtextPost, HostMatchMethod, HostUriMatchMethodDefault, HostUriMatchMapItems, DefaultHostUriRedirect, DefaultHostUriMatchMapItems, ServerVariableName, RemoveSiteAccessIfDefaultAccess, PathPrefix, PathPrefixExclude, ShowHiddenNodes, DetectMobileDevice, MobileSiteAccessURL
+summary: "Die Einstellungen von [SiteAccessSettings] in site.ini: ForceVirtualHost, CheckValidity, RequireUserLogin, AvailableSiteAccessList, RelatedSiteAccessList, PreviewInOwningSiteAccess, PreviewOnOwningHost, PreviewTokenLifetime ..."
+keywords: Einstellung, site.ini, SiteAccessSettings, INI, setting, ForceVirtualHost, CheckValidity, RequireUserLogin, AvailableSiteAccessList, RelatedSiteAccessList, PreviewInOwningSiteAccess, PreviewOnOwningHost, PreviewTokenLifetime, AnonymousAccessList, MatchOrder, URIMatchType, URIMatchElement, URIMatchRegexp, URIMatchRegexpItem, URIMatchMapItems, HostMatchType, HostMatchElement, HostMatchRegexp, HostMatchRegexpItem, HostMatchSubtextPre, HostMatchSubtextPost, HostMatchMethod, HostUriMatchMethodDefault, HostUriMatchMapItems, DefaultHostUriRedirect, DefaultHostUriMatchMapItems, ServerVariableName, RemoveSiteAccessIfDefaultAccess, PathPrefix, PathPrefixExclude
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [SiteAccessSettings]
 
-Der Block `[SiteAccessSettings]` von `settings/site.ini`, mit 37 Einstellung(en).
+Der Block `[SiteAccessSettings]` von `settings/site.ini`, mit 40 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -87,6 +87,60 @@ Standard: eine leere Liste.
 [SiteAccessSettings]
 # ein leeres "RelatedSiteAccessList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 RelatedSiteAccessList[]
+*/ ?>
+```
+
+## PreviewInOwningSiteAccess
+
+> Die Vorschau einer Version (content/versionview) in einer Installation, die mehrere Sites aus einem Inhaltsbaum  
+> ausliefert (doc/eng-us/features/6.0/preview-in-owning-siteaccess.md). Gelesen im Siteaccess, in dem die Vorschau  
+> geöffnet wird (der Administration).  
+> PreviewInOwningSiteAccess: Die Vorschau wählt den Siteaccess vor, zu dem der Knoten gehört: aus  
+>   RelatedSiteAccessList\[\] (ohne Administrations- und Redaktions-Siteaccesses) den, dessen Inhaltswurzel  
+>   (content.ini \[NodeSettings\] RootNode, \[SiteSettings\] IndexPage, PathPrefix; die tiefste davon) den Knoten enthält,  
+>   die spezifischste Wurzel zuerst, dann den, dessen ContentObjectLocale oder SiteLanguageList\[\] die Sprache der  
+>   Version hat; DefaultAccess nur, wenn keiner den Knoten enthält. disabled: der erste Siteaccess der Liste, dessen  
+>   ContentObjectLocale die Sprache ist, sonst DefaultAccess (vor 6.0.15). Die Redaktion kann weiterhin einen anderen  
+>   wählen. Der Link "View on site" eines Knotens (exp\_node\_site\_url()) folgt derselben Regel.  
+> PreviewOnOwningHost: Ein Siteaccess, der auf einem anderen Host ausgeliefert wird (per host, host\_uri oder seine  
+>   SiteURL erkannt), zeigt die Vorschau auf diesem Host (content/hostpreview, mit einem signierten Einmal-Token von  
+>   PreviewTokenLifetime Sekunden, 60 bis 900); ein per URI erkannter Siteaccess behält /<siteaccess>/ auf diesem Host.  
+>   Dieser Host muss der Administration erlauben, die Seite in einem Frame zu zeigen: content/hostpreview ergänzt  
+>   frame-ancestors selbst um die Herkunft der Administration und entfernt X-Frame-Options, Header, die ein Webserver  
+>   selbst hinzufügt, müssen es aber ebenfalls erlauben. Braucht den Geheimnisspeicher (Setup > Secrets); ohne ihn und  
+>   für einen Siteaccess mit RequireUserLogin=true bleibt die Vorschau auf diesem Host.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[SiteAccessSettings]
+PreviewInOwningSiteAccess=enabled
+*/ ?>
+```
+
+## PreviewOnOwningHost
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[SiteAccessSettings]
+PreviewOnOwningHost=enabled
+*/ ?>
+```
+
+## PreviewTokenLifetime
+
+Standard: `300`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[SiteAccessSettings]
+PreviewTokenLifetime=300
 */ ?>
 ```
 

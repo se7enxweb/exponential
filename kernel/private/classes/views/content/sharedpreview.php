@@ -47,8 +47,35 @@ class Sharedpreview extends \Exponential\Runnable\ModuleView
         /** @var \eZContentObjectVersion $versionObject */
         $versionObject = $open['version'];
         $link = $open['link'];
-        $language = (string)$link['language'];
-        $versionNumber = (int)$link['version'];
+        list( $Result, $objectName ) = self::renderVersion( $contentObject, $versionObject, (string)$link['language'], 'full', 0 );
+
+        // the notice above the content: a draft, not published, and until when the link works
+        $notice = \eZTemplate::factory();
+        $notice->setVariable( 'state', 'active' );
+        $notice->setVariable( 'expires', (int)$link['expires'] );
+        $notice->setVariable( 'object_name', $objectName );
+        $Result['content'] = $notice->fetch( 'design:content/sharedpreview.tpl' ) . $Result['content'];
+        $Result['requested_uri_string'] = 'content/sharedpreview';
+        $Result['ui_context'] = 'view';
+        unset( $Module );
+        return $Result;
+    }
+
+    /**
+     * Renders one version of an object in a language in the current siteaccess's design, as content/versionview
+     * does: a node built from the version's placement (the main node assignment, or $placementID), the full view
+     * (or $viewMode) of it. Also used by content/hostpreview (expContentHostPreview).
+     *
+     * @param \eZContentObject $contentObject
+     * @param \eZContentObjectVersion $versionObject
+     * @param string $language
+     * @param string $viewMode
+     * @param int $placementID a node assignment of the version, 0 for the main one
+     * @return array the view's result and the object's name in the version
+     */
+    public static function renderVersion( \eZContentObject $contentObject, \eZContentObjectVersion $versionObject, $language, $viewMode = 'full', $placementID = 0 )
+    {
+        $versionNumber = (int)$versionObject->attribute( 'version' );
         $objectID = (int)$contentObject->attribute( 'id' );
 
         // the placement: the main node assignment of the version, as content/versionview has it
@@ -56,12 +83,17 @@ class Sharedpreview extends \Exponential\Runnable\ModuleView
         $parentNodeObject = null;
         foreach ( (array)$versionObject->attribute( 'node_assignments' ) as $assignment )
         {
-            if ( $assignment->attribute( 'is_main' ) == 1 || $parentNodeID === false )
+            $chosen = $placementID > 0 ? (int)$assignment->attribute( 'id' ) === (int)$placementID
+                                       : ( $assignment->attribute( 'is_main' ) == 1 || $parentNodeID === false );
+            if ( $chosen )
             {
                 $parentNodeID = (int)$assignment->attribute( 'parent_node' );
                 $parentNodeObject = \eZContentObjectTreeNode::fetch( $parentNodeID );
             }
         }
+        // a placement the version does not have: the main one
+        if ( $parentNodeID === false && $placementID > 0 )
+            return self::renderVersion( $contentObject, $versionObject, $language, $viewMode, 0 );
         $virtualNodeID = $contentObject->attribute( 'main_node_id' ) ? (int)$contentObject->attribute( 'main_node_id' ) : null;
 
         $GLOBALS['eZContentObjectDefaultLanguage'] = $language;
@@ -97,7 +129,7 @@ class Sharedpreview extends \Exponential\Runnable\ModuleView
                              array( 'remote_id', $contentObject->attribute( 'remote_id' ) ),
                              array( 'class', $class->attribute( 'id' ) ),
                              array( 'class_identifier', $class->attribute( 'identifier' ) ),
-                             array( 'viewmode', 'full' ) );
+                             array( 'viewmode', $viewMode ) );
         if ( $parentNodeID !== false )
             $designKeys[] = array( 'parent_node', $parentNodeID );
         if ( $parentNodeObject instanceof \eZContentObjectTreeNode )
@@ -105,19 +137,10 @@ class Sharedpreview extends \Exponential\Runnable\ModuleView
         $res->setKeys( $designKeys );
 
         $tpl = \eZTemplate::factory();
-        $tpl->setVariable( 'view_mode', 'full' );
-        $Result = \eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $language, 'full', 0, array( 'offset' => 0 ) );
+        $tpl->setVariable( 'view_mode', $viewMode );
+        $Result = \eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $language, $viewMode, 0, array( 'offset' => 0 ) );
 
-        // the notice above the content: a draft, not published, and until when the link works
-        $notice = \eZTemplate::factory();
-        $notice->setVariable( 'state', 'active' );
-        $notice->setVariable( 'expires', (int)$link['expires'] );
-        $notice->setVariable( 'object_name', $objectName );
-        $Result['content'] = $notice->fetch( 'design:content/sharedpreview.tpl' ) . $Result['content'];
-        $Result['requested_uri_string'] = 'content/sharedpreview';
-        $Result['ui_context'] = 'view';
-        unset( $Module );
-        return $Result;
+        return array( $Result, $objectName );
     }
 
     /**

@@ -162,6 +162,17 @@ if ( $Module->hasActionParameter( 'SiteAccess' ) )
     $siteaccess = $Module->actionParameter( 'SiteAccess' );
 }
 
+// The siteaccess the node belongs to (site.ini [SiteAccessSettings] PreviewInOwningSiteAccess, since 6.0.15): the one
+// whose content root contains the node, the most specific first, in the language of the version; DefaultAccess when
+// none contains it. The form below can still choose another one.
+$siteaccessLocaleMap = array();
+if ( !$siteaccess && class_exists( 'expSiteAccessForNode' ) && expSiteAccessForNode::previewInOwningSiteAccess() )
+{
+    $owning = expSiteAccessForNode::forNode( (string)$node->attribute( 'path_string' ), (string)$LanguageCode );
+    if ( $owning['reason'] === expSiteAccessForNode::REASON_TREE )
+        $siteaccess = $owning['siteaccess'];
+}
+
 // Find ContentObjectLocale for all site accesses in RelatedSiteAccessList
 foreach ( $ini->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' ) as $relatedSA )
 {
@@ -178,6 +189,13 @@ foreach ( $ini->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' ) as $re
 if ( !$siteaccess )
 {
     $siteaccess = $ini->variable( 'SiteSettings', 'DefaultAccess' );
+}
+
+// The chosen siteaccess is in the list the form offers, also when it is not related (DefaultAccess, a resolved one)
+if ( is_string( $siteaccess ) && $siteaccess !== '' && !isset( $siteaccessLocaleMap[$siteaccess] )
+     && in_array( $siteaccess, (array)$ini->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ), true ) )
+{
+    $siteaccessLocaleMap[$siteaccess] = eZSiteAccess::getIni( $siteaccess, 'site.ini' )->variable( 'RegionalSettings', 'ContentObjectLocale' );
 }
 
 // Try to find a version that has the language we want, by going backwards in the version history

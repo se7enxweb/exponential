@@ -28,7 +28,7 @@
      $locations = $object.assigned_nodes|count
      $a4_translations = fetch( 'content', 'language_states', hash( 'object', $node.object ) )
      $a4_main_language_name = $node.object.initial_language.name
-     $site_url = concat( siteaccess_url()|trim( '/' ), '/', $node.url_alias )}
+     $site_url = exp_node_site_url( $node )}
 {if $has_content_class}
     {if eq( 0, count( $object.content_class.can_create_languages ) )}
         {set $disable_another_language = 'edit-class-another-language'}

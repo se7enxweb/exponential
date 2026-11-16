@@ -78,6 +78,10 @@ $eZTemplateOperatorArray[] = array( 'class' => 'expAuditTemplateOperator',
 $eZTemplateOperatorArray[] = array( 'class' => 'expEnvironmentOperator',
                                     'operator_names' => array( 'exp_environment', 'exp_environment_badge' ) );
 
+// The address a node is published at on the site it belongs to (the administration's "View on site")
+$eZTemplateOperatorArray[] = array( 'class' => 'expNodeSiteURLOperator',
+                                    'operator_names' => array( 'exp_node_site_url' ) );
+
 $eZTemplateOperatorArray[] = array( 'class' => 'expDemoModeOperator',
                                     'operator_names' => array( 'exp_demo_mode' ) );
 

@@ -28,7 +28,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-275bf19fad3bd6782884f9a743ab4744  autoload/ezp_kernel.php
+3ea047b5baf7f38656a7eaf0e6f32486  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -1606,7 +1606,7 @@ c6caf8a9fa0db2771a975b122bcb5226  design/admin4/templates/navigator/google.tpl
 c49f6538ab403d0457921734f2327d39  design/admin4/templates/node/removenode.tpl
 cc3560235bfe3988d0e9b1cfe0b55ea5  design/admin4/templates/node/removeobject.tpl
 2f5bd72b8c887844a74775e01433d813  design/admin4/templates/node/top_node_full.tpl
-9280846ae5986c2f759a7cac5ba0f9b4  design/admin4/templates/node/view/a4_full_body.tpl
+d7ea40d4db75a8a59be2ebd812e24c37  design/admin4/templates/node/view/a4_full_body.tpl
 b9de9cc67bede1896335b38e94a945eb  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin4/templates/node/view/browse_thumbnail.tpl
@@ -2888,6 +2888,7 @@ adae0def427fd51706089f0a31a1063e  design/standard/templates/content/edit_validat
 5306124eec6cd439e04259f2cec26c31  design/standard/templates/content/front_search_page.tpl
 d8079a06a353c58205c4023b72fdd1a3  design/standard/templates/content/history.tpl
 a716d7ff7c19c5cac43aaafeeb84c4a1  design/standard/templates/content/history_access_messages.tpl
+329ba3761a30b9c132ed1aa08067b144  design/standard/templates/content/hostpreview.tpl
 456ae8da6dd39dde2bdb8e80b7f218ea  design/standard/templates/content/job.tpl
 4b3ee7e61152f67d41cdb954bf253096  design/standard/templates/content/job_confirm.tpl
 bb5ef34d9326458c42e29b3d37337047  design/standard/templates/content/job_mode_choice.tpl
@@ -5629,7 +5630,7 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-995bfbfa9adba6688cd07a1474255886  doc/eng-us/examples/ini-settings/site/README.md
+302d630edcc27852db61613cc4996150  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
@@ -5640,7 +5641,7 @@ a717b3ec7e0e55b3dfeb1bd45fa50b00  doc/eng-us/examples/ini-settings/site/ReauthGr
 2386f6d38beeb105bc6ea8269c96bca3  doc/eng-us/examples/ini-settings/site/ReauthSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/eng-us/examples/ini-settings/site/RegionalSettings.md
 f28588e05ec0e35f21c7961596721b67  doc/eng-us/examples/ini-settings/site/RequestLogSettings.md
-8137db61cb85dcf46795a115d41056bd  doc/eng-us/examples/ini-settings/site/RoleSettings.md
+99905f65df92487eed4e7541e62d6b10  doc/eng-us/examples/ini-settings/site/RoleSettings.md
 4703a90992c78039e764aa5688105b04  doc/eng-us/examples/ini-settings/site/RunnableSettings.md
 234ffb8572b80d1ccf09da9d2cfffdd4  doc/eng-us/examples/ini-settings/site/SSLZoneSettings.md
 18308ceff84326f966bf76d2a0ac90a1  doc/eng-us/examples/ini-settings/site/SearchSettings.md
@@ -5650,7 +5651,7 @@ e48642eee4dbd6e70732b2362277b641  doc/eng-us/examples/ini-settings/site/Session.
 94c8a3269ae0216f9bb8c244676c3164  doc/eng-us/examples/ini-settings/site/ShopSettings.md
 14a2d46327c1841a0bb5225cb6fd8ad2  doc/eng-us/examples/ini-settings/site/SignInSecondFactorSettings.md
 f919ae53a39eb0dbdae8797d7dc8691e  doc/eng-us/examples/ini-settings/site/SiteAccessRules.md
-36e872ffef7704d11ee1144b082c2198  doc/eng-us/examples/ini-settings/site/SiteAccessSettings.md
+bf582de164c4a227bfd22b939c2b4f7c  doc/eng-us/examples/ini-settings/site/SiteAccessSettings.md
 d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteDataSettings.md
 7f2553f59a0b5aea11dbc56ee4460231  doc/eng-us/examples/ini-settings/site/SiteSearchSuggestSettings.md
 9c7893cd8fdb562ad88192fc8f906324  doc/eng-us/examples/ini-settings/site/SiteSettings.md
@@ -5981,7 +5982,7 @@ f389a70f96befc288e984f50f2661bab  doc/eng-us/examples/migration-steps/sql.md
 8d7bc74d322f4d4a9df7b75f60de94fe  doc/eng-us/examples/migration-steps/url_alias.md
 cd880b717583b4bdf2c2e8919a72789c  doc/eng-us/examples/migration-steps/user.md
 887c3683f69cb7a5a4d18671aa6b41bf  doc/eng-us/examples/migration-steps/user_group.md
-67e3f0a2075963051c5cdac8c6cec674  doc/eng-us/examples/module-views/README.md
+bff08d208bc85a7ae1bd024b0c7e8f00  doc/eng-us/examples/module-views/README.md
 d47ea617a5a6ef7957b8ab9f59d987fc  doc/eng-us/examples/module-views/apikey/README.md
 ffa53e72494d43ac42b742210fb45311  doc/eng-us/examples/module-views/apikey/list.md
 2805e18cdf0c9a1e3a48b7131199e9c1  doc/eng-us/examples/module-views/audit/README.md
@@ -6012,7 +6013,7 @@ f6630aafe1facb40d7b7e5691e565b64  doc/eng-us/examples/module-views/collaboration
 1674cf092806140ff5c00c9ee28ad1a4  doc/eng-us/examples/module-views/collaboration/group.md
 df54384a09e4f3f09b08a080e3737a01  doc/eng-us/examples/module-views/collaboration/item.md
 0c14661a9916c362be636b31fb44a077  doc/eng-us/examples/module-views/collaboration/view.md
-8d89b44d7cefec8e0c4c4337034b8b31  doc/eng-us/examples/module-views/content/README.md
+d0793e427f1cd8e3248539078087fe9a  doc/eng-us/examples/module-views/content/README.md
 115381decabdfaae353339119c859b4d  doc/eng-us/examples/module-views/content/action.md
 694332e8a553ef63ba95f2ed30d0965b  doc/eng-us/examples/module-views/content/advancedsearch.md
 c4b9736ca2053881c149c5859f35d7e6  doc/eng-us/examples/module-views/content/bookmark.md
@@ -6027,6 +6028,7 @@ f33f6f6489c93b698c3a91d57da4ef8a  doc/eng-us/examples/module-views/content/dashb
 5b699e7e7887339a5d5b57f875eabf43  doc/eng-us/examples/module-views/content/edit.md
 3b06f7b827ac7f77c3ddd7c58e33eb38  doc/eng-us/examples/module-views/content/hide.md
 a9adf7417d024cacb79e76d2c8d5fb4d  doc/eng-us/examples/module-views/content/history.md
+08028e5cb6d4247537624726299ce5ce  doc/eng-us/examples/module-views/content/hostpreview.md
 1ac0f55ff5522bf747dc20a2fa4362d0  doc/eng-us/examples/module-views/content/image.md
 2014145411831b5ecd99200282fc1a6d  doc/eng-us/examples/module-views/content/job.md
 0cbdb52edb46faa3d8a9dc5bb7970a1c  doc/eng-us/examples/module-views/content/jobs.md
@@ -6375,7 +6377,7 @@ da3f6b188f8bfe1a5d48526cbdadd4ea  doc/eng-us/examples/module-views/workflow/up.m
 d6ec3bba02deac72d2831972526df59a  doc/eng-us/examples/policies/audit.md
 ad10095b797f6b5becb28574a063235d  doc/eng-us/examples/policies/class.md
 603182180d85ceca82756313d39c4670  doc/eng-us/examples/policies/collaboration.md
-e7cd52d1760c568c147bd3c5172da31a  doc/eng-us/examples/policies/content.md
+877d5e205f33c92ab330dc4d92e48cfa  doc/eng-us/examples/policies/content.md
 ac2216b59c0f58dfd52c41b566006ed3  doc/eng-us/examples/policies/contentcheck.md
 bd86883afe035e3e6031db57af41d74c  doc/eng-us/examples/policies/contentfinder.md
 479c60c474fe0d9573ecf89189c46fb5  doc/eng-us/examples/policies/csp.md
@@ -6461,7 +6463,7 @@ f75c6717404d181c69a0f42a30bc82e4  doc/eng-us/examples/template-functions/shop_ac
 79ac0e4658285cc066b118bdf7484718  doc/eng-us/examples/template-functions/tool_bar.md
 eb53f689889b090a6a6decbed5277d91  doc/eng-us/examples/template-functions/undef.md
 e5355c40fe515527462c85a880edcf0a  doc/eng-us/examples/template-functions/while.md
-ac96f367452f9c4bee5a38615f2edc29  doc/eng-us/examples/template-operators/README.md
+b97a206fbec60630e9e701e49b1062dd  doc/eng-us/examples/template-operators/README.md
 94284652ab561535f9c054c1aff5639f  doc/eng-us/examples/template-operators/abs.md
 6339c9515ce47d063fccf61d1a758040  doc/eng-us/examples/template-operators/action_icon.md
 1fa93d6ac83b522d8c35b316154ce5cc  doc/eng-us/examples/template-operators/addcslashes.md
@@ -6511,6 +6513,7 @@ c74c4fef619b0fecc141328864240e87  doc/eng-us/examples/template-operators/ends_wi
 d4b37f09b360c35b64f8a41c6dfbfa36  doc/eng-us/examples/template-operators/exp_demo_mode.md
 62e8c1d9a9a3a0c70e2f7d0d388a7ea1  doc/eng-us/examples/template-operators/exp_environment.md
 67746cfbaadf98b2fcab2e947cc37f6f  doc/eng-us/examples/template-operators/exp_environment_badge.md
+3106ae302451c8022921c18b4b0c31b6  doc/eng-us/examples/template-operators/exp_node_site_url.md
 436ab20b82b3f4159e460d75864e7196  doc/eng-us/examples/template-operators/exp_smarty_render.md
 f708cfe8cbe4d35aa07da1956b5dc138  doc/eng-us/examples/template-operators/exp_twig_render.md
 9ad2b878569e43b70ed67b2644b5eb20  doc/eng-us/examples/template-operators/expinfo.md
@@ -13651,10 +13654,11 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 6d17ce10aad16af20731c4703b7d2409  doc/ger-de/.examples/descriptions/41-image-aliases-on-demand-2026-11-14.json
 27cfff59ae453e47c249c18a69040455  doc/ger-de/.examples/descriptions/42-exphelp-pdf-cache-2026-11-14.json
 05a920c0aec069f9d6c8ef23df079f82  doc/ger-de/.examples/descriptions/43-image-alias-backlog-2026-11-15.json
+8082b588d8d330d9dbd60fbdefebf303  doc/ger-de/.examples/descriptions/44-preview-in-owning-siteaccess-2026-11-16.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-289c40e7eacbd7e11dd5d79bae73a183  doc/ger-de/.paths.json
+5f50fc03941fe9c490c3d271b093b916  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -15745,7 +15749,7 @@ e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/Li
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-c68c377e5402d2cee666971d6f6351db  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+54e086ccad61d20e85840287a06e5f11  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 2a84114d910780aab58cbed6767c7621  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_account.md
 aced08af929c3205955ec65ed29d4727  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
@@ -15756,7 +15760,7 @@ aced08af929c3205955ec65ed29d4727  doc/ger-de/beispiele/ini-einstellungen/site/Re
 8cec3ffe08d0d841b10bd2153621d6e9  doc/ger-de/beispiele/ini-einstellungen/site/ReauthSettings.md
 0c379efcf6aa89dde09c2380f4be2550  doc/ger-de/beispiele/ini-einstellungen/site/RegionalSettings.md
 b1bbd5b632dffcbf06fde8214877c824  doc/ger-de/beispiele/ini-einstellungen/site/RequestLogSettings.md
-27604f7061938c57498e4c3069ac5b63  doc/ger-de/beispiele/ini-einstellungen/site/RoleSettings.md
+0d3300e04e61522a3ebb06f4f9651464  doc/ger-de/beispiele/ini-einstellungen/site/RoleSettings.md
 7746d5c390d0476d849fa7fe2a60a2fb  doc/ger-de/beispiele/ini-einstellungen/site/RunnableSettings.md
 5e4c3e6299812834a252e9ebed1315a8  doc/ger-de/beispiele/ini-einstellungen/site/SSLZoneSettings.md
 3d51a2f37c53f10f7d29266e969bb321  doc/ger-de/beispiele/ini-einstellungen/site/SearchSettings.md
@@ -15766,7 +15770,7 @@ fcad2a9141871c1b2031263cf684ae7f  doc/ger-de/beispiele/ini-einstellungen/site/Se
 20025c05a82e1ac5b21fd3d3231e342a  doc/ger-de/beispiele/ini-einstellungen/site/ShopSettings.md
 9f93a2a06b58369321c32dc53867ba77  doc/ger-de/beispiele/ini-einstellungen/site/SignInSecondFactorSettings.md
 68280efa8ec9398045e4676359d4441a  doc/ger-de/beispiele/ini-einstellungen/site/SiteAccessRules.md
-1649a702d04d655fda752562852f4944  doc/ger-de/beispiele/ini-einstellungen/site/SiteAccessSettings.md
+64a8fe53fc9011b01f5de1682f819143  doc/ger-de/beispiele/ini-einstellungen/site/SiteAccessSettings.md
 830bb02905506fcf16617e7243013530  doc/ger-de/beispiele/ini-einstellungen/site/SiteDataSettings.md
 21918bb0186baa846733accb0d525a2b  doc/ger-de/beispiele/ini-einstellungen/site/SiteSearchSuggestSettings.md
 988c875873f8f78e5b806d67bda87fae  doc/ger-de/beispiele/ini-einstellungen/site/SiteSettings.md
@@ -16112,7 +16116,7 @@ e79747c956b180fd00da1c6159d444d8  doc/ger-de/beispiele/migrationsschritte/sql.md
 ef89de860fe006fcc180386bc419a317  doc/ger-de/beispiele/migrationsschritte/url_alias.md
 4ad69742d0ad2067d094b7aac89e311f  doc/ger-de/beispiele/migrationsschritte/user.md
 1bf9705c8afcb52672f02f277339aec2  doc/ger-de/beispiele/migrationsschritte/user_group.md
-ba9e03e7457467cbdcb1e4a05175ee91  doc/ger-de/beispiele/modulansichten/README.md
+576e84bcdc3c85b73b80d5c235bbb22b  doc/ger-de/beispiele/modulansichten/README.md
 62411fdeac4996f3fe0c8b6cc41b1b9b  doc/ger-de/beispiele/modulansichten/apikey/README.md
 604d7ff93ba6773a4cdfd04c487ce9ba  doc/ger-de/beispiele/modulansichten/apikey/list.md
 e398d30a54f7e2d74ea9ed8101c0bca5  doc/ger-de/beispiele/modulansichten/audit/README.md
@@ -16143,7 +16147,7 @@ c3579f0336c96be8288553ca28a9761f  doc/ger-de/beispiele/modulansichten/collaborat
 9fe823585b26bc064b64d9625937ddf0  doc/ger-de/beispiele/modulansichten/collaboration/group.md
 e30e85c707bab8a02fb1da06ea2bf177  doc/ger-de/beispiele/modulansichten/collaboration/item.md
 ac460ff4e7dd25f590901e2b27be5ebf  doc/ger-de/beispiele/modulansichten/collaboration/view.md
-617d392c8451389f5bb9f36401c2226d  doc/ger-de/beispiele/modulansichten/content/README.md
+3befe9f6232463214157ac3c8eb3b820  doc/ger-de/beispiele/modulansichten/content/README.md
 6a7db016e6291c969e084db689ba7bf5  doc/ger-de/beispiele/modulansichten/content/action.md
 1a0ddcdefb3446c025f332641707c4da  doc/ger-de/beispiele/modulansichten/content/advancedsearch.md
 34bea827af5f5ba8afd6fd34705e4d27  doc/ger-de/beispiele/modulansichten/content/bookmark.md
@@ -16158,6 +16162,7 @@ b9693e62bbbfe49306c2fd817f089f29  doc/ger-de/beispiele/modulansichten/content/do
 9d31971260c4ec0253bdff6abb6e2cef  doc/ger-de/beispiele/modulansichten/content/edit.md
 91881feec6082836dc929f847af33653  doc/ger-de/beispiele/modulansichten/content/hide.md
 ca5d6d1f948f459a297ed066bce343b7  doc/ger-de/beispiele/modulansichten/content/history.md
+9387c4c08ee2c9051576d79204144d4c  doc/ger-de/beispiele/modulansichten/content/hostpreview.md
 79941186ee061d44831869a9d2400548  doc/ger-de/beispiele/modulansichten/content/image.md
 d95f7385e8654737115cf74c7cc04e16  doc/ger-de/beispiele/modulansichten/content/job.md
 e07f0fe8e0cc661f27c19c8092d3636b  doc/ger-de/beispiele/modulansichten/content/jobs.md
@@ -16506,7 +16511,7 @@ e896869e088c7ec4e77b2db6fe29dc09  doc/ger-de/beispiele/richtlinien/apikey.md
 4852b4071c26b46cb6a29a2d519058a6  doc/ger-de/beispiele/richtlinien/audit.md
 aac0b1c0ca8a8a16ea8a21fa3c436046  doc/ger-de/beispiele/richtlinien/class.md
 f4f3d2d5da99df070a85b9eb48bcd8f7  doc/ger-de/beispiele/richtlinien/collaboration.md
-cae25ca5e8a516b60ef3eae7ce5b5ab2  doc/ger-de/beispiele/richtlinien/content.md
+95b70ad80178c0d7e38463e7dcc448a2  doc/ger-de/beispiele/richtlinien/content.md
 c9b06869aab0ce23db89ccb571bf88ec  doc/ger-de/beispiele/richtlinien/contentcheck.md
 c3de0e7f77782d306ddc5dfdd05cb5f7  doc/ger-de/beispiele/richtlinien/contentfinder.md
 a596fb672515d47ff126450e4af6714b  doc/ger-de/beispiele/richtlinien/csp.md
@@ -16591,7 +16596,7 @@ fe3d5c331c6a5a8c1f389b536a63713c  doc/ger-de/beispiele/template-funktionen/set.m
 78ea0116c845fb4f8bd0426c2a195cf8  doc/ger-de/beispiele/template-funktionen/tool_bar.md
 1ba2e1857a0ba2493c968dee2b8bf579  doc/ger-de/beispiele/template-funktionen/undef.md
 e98d6ebabc6727998bd863284f809a63  doc/ger-de/beispiele/template-funktionen/while.md
-ca6e0b77abcde2e34d708d8857064962  doc/ger-de/beispiele/template-operatoren/README.md
+ea8f5aeffc192a748135e614690c0e85  doc/ger-de/beispiele/template-operatoren/README.md
 8cfd3af6a328b63da96036d39ae7b081  doc/ger-de/beispiele/template-operatoren/abs.md
 3cc870fe8dc1a50bed27def6c4195c00  doc/ger-de/beispiele/template-operatoren/action_icon.md
 1a425f5fc4a47ff1cb57710e0e4c7442  doc/ger-de/beispiele/template-operatoren/addcslashes.md
@@ -16641,6 +16646,7 @@ b60566ed8e0afeeebda980b309a8f48d  doc/ger-de/beispiele/template-operatoren/dump.
 80cd7d6917305cf3a8c52d39a3055949  doc/ger-de/beispiele/template-operatoren/exp_demo_mode.md
 0523eb45da70fa8fcff2d79b460c7b8f  doc/ger-de/beispiele/template-operatoren/exp_environment.md
 ea600629621d141c59f071fdc48149c7  doc/ger-de/beispiele/template-operatoren/exp_environment_badge.md
+30f5273c397dd74f6969f55396213739  doc/ger-de/beispiele/template-operatoren/exp_node_site_url.md
 f7e2d1bd7d97821132440a06547c141b  doc/ger-de/beispiele/template-operatoren/exp_smarty_render.md
 4b532b248d2192d2501268247f17c7e1  doc/ger-de/beispiele/template-operatoren/exp_twig_render.md
 ffd1cdabe5097f983cf0cf9910e5180c  doc/ger-de/beispiele/template-operatoren/expinfo.md
@@ -24923,6 +24929,7 @@ d68460ffe32b23d056a46ce92d02483c  kernel/classes/expcollaborationinbox.php
 2e40030c083c7510590264d154258abc  kernel/classes/expcontentdraftlist.php
 e649fc544775af7ccf70f308853e7878  kernel/classes/expcontentfieldmarker.php
 2b8c5aba431eb7022455b5e77253d8aa  kernel/classes/expcontenthistorylist.php
+448887a9f5887f999282140d6aae83a4  kernel/classes/expcontenthostpreview.php
 d8df80e6f7684b3a57b83865cb18d6df  kernel/classes/expcontentlanguagestates.php
 ceb8038b13ca2723d475c854688ff1f8  kernel/classes/expcontentpendinglist.php
 1b4e8108623f430025a9e0d635d87bae  kernel/classes/expcontentpreviewlink.php
@@ -24982,6 +24989,7 @@ aa90dfe294797d07ac3ee9c7be7aa569  kernel/classes/expsecretrule.php
 e773b6378b88c7fb7d34dda61c0242d0  kernel/classes/expsetupfilecopy.php
 d5e199bd454224432eabb39471db46a8  kernel/classes/expsetuplog.php
 4a29f879cc3847d3e41cd7e7dcbfd967  kernel/classes/expsetupwizardguard.php
+2f5e31abe82e52ec263cdb2e4e67e1ff  kernel/classes/expsiteaccessfornode.php
 637ac03ebbf6e4d714559bef9a58a068  kernel/classes/expsiteaccessoverview.php
 a70c7033fc74fd1cfa553dcc3effdc8f  kernel/classes/expsystemreport.php
 004f61c2ffe717623433b8cf4bcf206c  kernel/classes/expsystemreportmask.php
@@ -25774,6 +25782,7 @@ f2eed6e24213fa5941d3a532b8dae4d0  kernel/common/expcontentsecuritypolicyoperator
 cde508d824033b7eff2894b4c613c266  kernel/common/expdemomodeoperator.php
 d67b1d30138d5ee3c5d49f074f952e2a  kernel/common/expenvironmentoperator.php
 0c5f06e6dde3bb91e25c99731183db18  kernel/common/expkerneltransferoperator.php
+3a2a67c6955e98c8fe8eefe6097ffc4f  kernel/common/expnodesiteurloperator.php
 db1c2ac6ce9408c48ef429336ec315c1  kernel/common/expviewparameteroperator.php
 f6e44aaf98a9635651362eca6f8d550b  kernel/common/ezalphabetoperator.php
 1441f9825dbe2b381681488ee5ad766c  kernel/common/ezautolinkoperator.php
@@ -25789,7 +25798,7 @@ aef2f5c3c7107baa33f484b7c8fcfe01  kernel/common/ezpi18n.php
 c00985701847ba36c6ca4e6ef206c3c6  kernel/common/ezpsiteaccessmenuoperator.php
 5b6b35ed8c1fdcf693f6b5fe780a6976  kernel/common/ezpsiteaccessurloperator.php
 834385a7ae60514effca331e458626ba  kernel/common/ezsimpletagsoperator.php
-58153bcc244d314f105b95f6e8d216f8  kernel/common/eztemplateautoload.php
+89f12cfdc83808c17cfea70f19c10d1c  kernel/common/eztemplateautoload.php
 fa9666366c649f1a9b0337c34105678c  kernel/common/eztemplatedesignresource.php
 16bfa311660d19eaf3c6acab3e08ece1  kernel/common/eztemplatesstatisticsreporter.php
 3129f35290c25b757e6ef88aed71c234  kernel/common/eztocoperator.php
@@ -25818,11 +25827,12 @@ bfc735ea8665dbb870074c7a69427d77  kernel/content/ezcontentpublishingbehaviour.ph
 c9ac4eac6334735a7389c61ebb9e8a8a  kernel/content/function_definition.php
 7388554514526aa970cf52f0f66b5ca8  kernel/content/hide.php
 d6f62b2cc63dc30774e5df0248e79317  kernel/content/history.php
+f608471eb5f00296238a024736cd5382  kernel/content/hostpreview.php
 0d72448385fbb06904972fb4eb534eb1  kernel/content/image.php
 d42c2661d43bf56587959a5fd93f5579  kernel/content/job.php
 d8905c3df3f0e1dc629afcae018cc8f7  kernel/content/jobs.php
 838d5a8ea7e18b02312501a4f0ff95e3  kernel/content/keyword.php
-673bf61a16481b08697cb5718d046b2e  kernel/content/module.php
+85f0d6ec4bb529c911d61ec538df1ab6  kernel/content/module.php
 56b140f7913d79ccf4ace0e3216c7cab  kernel/content/move.php
 dd3d0d0a53d5d9d22893ebfccd31b3e0  kernel/content/multiedit.php
 ea5c50677a44807e4a9de842f49705c2  kernel/content/multiedit_functions.php
@@ -25860,7 +25870,7 @@ c79d61003c25190f8d19ee1199598792  kernel/content/urlalias_wildcard.php
 c74aafbb423ded44aa9dbc2c042b6312  kernel/content/urlimporthistory.php
 7f2f0e2a11d250c5d85b8c52d0181710  kernel/content/urlredirects.php
 cf4233dea1741720f9f310edf738fa12  kernel/content/versionview.php
-4cb68517622996269ccd8cc1cb13dbe1  kernel/content/versionviewframe.php
+43c94c021a3fe85318b1398ddb8cffa4  kernel/content/versionviewframe.php
 40d24020b1408cbee1371e81882f0b48  kernel/content/view.php
 182e90f17110be516b0c38b279a7fb0f  kernel/contentcheck/brokenrelations.php
 c83745f44df5211abc16cd81a9dd1ae5  kernel/contentcheck/fixfiles.php
@@ -26381,6 +26391,7 @@ f68f99eb2eee686c7f3e9f5133b3f8b3  kernel/private/classes/views/content/dashboard
 cf107b80ccd20b3f4c8086a81c93ea95  kernel/private/classes/views/content/edit.php
 c3756bc5da54ec456354e3188d817aa6  kernel/private/classes/views/content/hide.php
 72c3290ae35ed704e6f2f5d3da5bcb40  kernel/private/classes/views/content/history.php
+78b201e2bf9b377a62ea5ad904542fda  kernel/private/classes/views/content/hostpreview.php
 380a940ace9e9062f2c8368c745d95db  kernel/private/classes/views/content/image.php
 3d8bd4206bbf0aaf9da6cfb70ab9ba2b  kernel/private/classes/views/content/job.php
 5f1385cc81ea79622e88e6e826204542  kernel/private/classes/views/content/jobs.php
@@ -26398,7 +26409,7 @@ b52b67d6458a3035c758f93043eafa0b  kernel/private/classes/views/content/removeass
 1be3cc3868490ea661289530d566cd53  kernel/private/classes/views/content/restore.php
 4c76096eb254f944fb870043b35f6c05  kernel/private/classes/views/content/reverserelatedlist.php
 1cda96151ae21e1d0cca1d6a61ef9bb7  kernel/private/classes/views/content/search.php
-d7eb50f9fc448059c7a761655e8f0e2b  kernel/private/classes/views/content/sharedpreview.php
+d52783b824352dcf709ad42322ed28f7  kernel/private/classes/views/content/sharedpreview.php
 8e3664871a6442dbf690c504fadd2171  kernel/private/classes/views/content/sitesuggest.php
 8a9eb394e340040723f45a0b05f73fcd  kernel/private/classes/views/content/subitemsexport.php
 28f29a90d8706da4651c88d4a10dea0c  kernel/private/classes/views/content/suggest.php
@@ -26415,7 +26426,7 @@ dcc0aa44423d39d2d2ca13800a30b0b4  kernel/private/classes/views/content/urlexport
 f1c67e9bd53d30c3d5969f74ad306a8b  kernel/private/classes/views/content/urlimport.php
 7b0e2a97f002d82c6d916ea5dee371c8  kernel/private/classes/views/content/urlimporthistory.php
 1175fd2647274a2f931b0ac64d168bca  kernel/private/classes/views/content/urlredirects.php
-5cc33f04a4fc492138ba6723ec2100e0  kernel/private/classes/views/content/versionview.php
+f0d4955f6c792ac50c5c875e86f3d085  kernel/private/classes/views/content/versionview.php
 7993de6a08337e53161135b84cbe2f6f  kernel/private/classes/views/content/view.php
 d2e03dd76d48fb1c5d74a5194675df81  kernel/private/classes/views/contentcheck/brokenrelations.php
 3a34bc4f629d55fe49c9aba2bc87461a  kernel/private/classes/views/contentcheck/fixfiles.php
@@ -27515,7 +27526,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-04819e4b52844ac44b815280f4143e25  settings/site.ini
+699cdf9c55606438c63fa1b5e1f4913f  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -29458,6 +29469,7 @@ e3cef9e4e4454bc5476c8e1d8da2b6e5  tests/tests/kernel/classes/expCacheManagerTest
 b5c23cd29414f9b4fc63e63845ce9fb3  tests/tests/kernel/classes/expContentFieldMarkerTest.php
 0003ae74609fa96f7f06556231e2be64  tests/tests/kernel/classes/expContentHideReturnTest.php
 3a9bd915cd127bc821aad8744db3ae92  tests/tests/kernel/classes/expContentHistoryListTest.php
+fb420be7795f87628d6cf7ff766920ba  tests/tests/kernel/classes/expContentHostPreviewTest.php
 a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 6e629a30bdb5317e8023fc65878b4808  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
 e42961c4fe3ce49ad8e38bf95e12d2d2  tests/tests/kernel/classes/expContentPreviewLinkTest.php
@@ -29506,6 +29518,7 @@ fe6b793a74408f00c9d34d57da569cd4  tests/tests/kernel/classes/expRssFeedMissingNo
 902c2a032e40ebda1450dae7194b89dc  tests/tests/kernel/classes/expSectionOverviewTest.php
 dba841fd53bca2a48771071bc8576cfd  tests/tests/kernel/classes/expSettingsPageTest.php
 9306390fd3cb22bf39fd361414f72235  tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php
+43c7c35a84ea05c4589b342f42ba92fd  tests/tests/kernel/classes/expSiteAccessForNodeTest.php
 7dc45bff6e79677e772657b530962141  tests/tests/kernel/classes/expSiteAccessOverviewTest.php
 a6c45cabdc422979ba5cdb2a8df85408  tests/tests/kernel/classes/expSiteSearchSuggestTest.php
 0d4beaad5e2fda13b3e43dffb081ee1c  tests/tests/kernel/classes/expSoapEntryScriptTest.php

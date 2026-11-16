@@ -164,6 +164,16 @@ $ViewList['sharedpreview'] = array(
     'script' => 'sharedpreview.php',
     'params' => array( 'Token' ) );
 
+// The preview of a version on the host of its siteaccess (expContentHostPreview): content/versionview in the
+// administration sends its preview frame here with a signed one-time token when that siteaccess is served on another
+// host. No policy (site.ini [RoleSettings] PolicyOmitList[]): the token is the permission, for that one version
+$ViewList['hostpreview'] = array(
+    'functions' => array( 'read' ),
+    'default_navigation_part' => 'ezcontentnavigationpart',
+    'ui_context' => 'view',
+    'script' => 'hostpreview.php',
+    'params' => array( 'Token' ) );
+
 $ViewList['restore'] = array(
     'functions' => array( 'restore' ),
     'default_navigation_part' => 'ezcontentnavigationpart',

@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Every operator the kernel, its libraries and the bundled extensions register (the `$eZTemplateOperatorArray` of each `eztemplateautoload.php`, and `settings/template.ini` `[PHP] PHPOperatorList[]`), with its parameters and an example. "Used in" says whether a shipped template uses it; its page quotes the first use.
 
-245 operators.
+246 operators.
 
 | Operator | Class | Parameters | Used in a shipped template |
 |---|---|---|---|
@@ -65,6 +65,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [exp_demo_mode](exp_demo_mode.md) | expDemoModeOperator | 0 | yes |
 | [exp_environment](exp_environment.md) | expEnvironmentOperator | 0 |  |
 | [exp_environment_badge](exp_environment_badge.md) | expEnvironmentOperator | 0 | yes |
+| [exp_node_site_url](exp_node_site_url.md) | expNodeSiteURLOperator | 2 |  |
 | [exp_smarty_render](exp_smarty_render.md) | expSmartyOperator | 1 |  |
 | [exp_twig_render](exp_twig_render.md) | expTwigOperator | 1 |  |
 | [expinfo](expinfo.md) | eZTemplateExpInfoOperator | 0 | yes |

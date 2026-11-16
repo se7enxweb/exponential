@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-The shipped settings of `settings/site.ini`: 68 blocks, 528 settings.
+The shipped settings of `settings/site.ini`: 68 blocks, 531 settings.
 
 > Exponential configuration file.  
 >
@@ -62,7 +62,7 @@ The shipped settings of `settings/site.ini`: 68 blocks, 528 settings.
 | [ReauthGroup_export](ReauthGroup_export.md) | 2 |
 | [ReauthGroup_delete](ReauthGroup_delete.md) | 2 |
 | [ReauthGroup_content](ReauthGroup_content.md) | 3 |
-| [SiteAccessSettings](SiteAccessSettings.md) | 37 |
+| [SiteAccessSettings](SiteAccessSettings.md) | 40 |
 | [PortAccessSettings](PortAccessSettings.md) | 2 |
 | [RoleSettings](RoleSettings.md) | 13 |
 | [ConfigurationSettings](ConfigurationSettings.md) | 1 |

@@ -2,14 +2,14 @@
 title: site.ini [SiteAccessSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [SiteAccessSettings] in site.ini: ForceVirtualHost, CheckValidity, RequireUserLogin, AvailableSiteAccessList, RelatedSiteAccessList, AnonymousAccessList, MatchOrder, URIMatchType ..."
-keywords: site.ini, SiteAccessSettings, INI, setting, ForceVirtualHost, CheckValidity, RequireUserLogin, AvailableSiteAccessList, RelatedSiteAccessList, AnonymousAccessList, MatchOrder, URIMatchType, URIMatchElement, URIMatchRegexp, URIMatchRegexpItem, URIMatchMapItems, HostMatchType, HostMatchElement, HostMatchRegexp, HostMatchRegexpItem, HostMatchSubtextPre, HostMatchSubtextPost, HostMatchMethod, HostUriMatchMethodDefault, HostUriMatchMapItems, DefaultHostUriRedirect, DefaultHostUriMatchMapItems, ServerVariableName, RemoveSiteAccessIfDefaultAccess, PathPrefix, PathPrefixExclude, ShowHiddenNodes, DetectMobileDevice, MobileSiteAccessURL
+summary: "The settings of [SiteAccessSettings] in site.ini: ForceVirtualHost, CheckValidity, RequireUserLogin, AvailableSiteAccessList, RelatedSiteAccessList, PreviewInOwningSiteAccess, PreviewOnOwningHost, PreviewTokenLifetime ..."
+keywords: site.ini, SiteAccessSettings, INI, setting, ForceVirtualHost, CheckValidity, RequireUserLogin, AvailableSiteAccessList, RelatedSiteAccessList, PreviewInOwningSiteAccess, PreviewOnOwningHost, PreviewTokenLifetime, AnonymousAccessList, MatchOrder, URIMatchType, URIMatchElement, URIMatchRegexp, URIMatchRegexpItem, URIMatchMapItems, HostMatchType, HostMatchElement, HostMatchRegexp, HostMatchRegexpItem, HostMatchSubtextPre, HostMatchSubtextPost, HostMatchMethod, HostUriMatchMethodDefault, HostUriMatchMapItems, DefaultHostUriRedirect, DefaultHostUriMatchMapItems, ServerVariableName, RemoveSiteAccessIfDefaultAccess, PathPrefix, PathPrefixExclude
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [SiteAccessSettings]
 
-The block `[SiteAccessSettings]` of `settings/site.ini`, with 37 setting(s).
+The block `[SiteAccessSettings]` of `settings/site.ini`, with 40 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -87,6 +87,59 @@ Default: an empty list.
 [SiteAccessSettings]
 # an empty "RelatedSiteAccessList[]" first replaces the shipped list; without it the items are added
 RelatedSiteAccessList[]
+*/ ?>
+```
+
+## PreviewInOwningSiteAccess
+
+> The preview of a version (content/versionview) in an installation that serves several sites from one content  
+> tree (doc/eng-us/features/6.0/preview-in-owning-siteaccess.md). Read from the siteaccess the preview is opened in  
+> (the administration).  
+> PreviewInOwningSiteAccess: the preview preselects the siteaccess the node belongs to: of RelatedSiteAccessList\[\]  
+>   (administration and editor siteaccesses left out), the one whose content root (content.ini \[NodeSettings\]  
+>   RootNode, \[SiteSettings\] IndexPage, PathPrefix; the deepest of them) contains the node, the most specific root  
+>   first, then the one whose ContentObjectLocale or SiteLanguageList\[\] has the language of the version; DefaultAccess  
+>   only when none contains the node. disabled: the first siteaccess of the list whose ContentObjectLocale is the  
+>   language, else DefaultAccess (before 6.0.15). The editor can still choose another one. The "View on site" link  
+>   of a node (exp\_node\_site\_url()) follows the same rule.  
+> PreviewOnOwningHost: a siteaccess served on another host (matched by host, host\_uri or its SiteURL) shows the  
+>   preview on that host (content/hostpreview, with a signed one-time token of PreviewTokenLifetime seconds, 60 to  
+>   900); a siteaccess matched by URI keeps /<siteaccess>/ on this host. That host must let the administration  
+>   frame the page: content/hostpreview adds the administration's origin to frame-ancestors and drops  
+>   X-Frame-Options itself, but headers a web server adds on its own must allow it too. Needs the secret store  
+>   (Setup > Secrets); without it, and for a siteaccess with RequireUserLogin=true, the preview stays on this host.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[SiteAccessSettings]
+PreviewInOwningSiteAccess=enabled
+*/ ?>
+```
+
+## PreviewOnOwningHost
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[SiteAccessSettings]
+PreviewOnOwningHost=enabled
+*/ ?>
+```
+
+## PreviewTokenLifetime
+
+Default: `300`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[SiteAccessSettings]
+PreviewTokenLifetime=300
 */ ?>
 ```
 

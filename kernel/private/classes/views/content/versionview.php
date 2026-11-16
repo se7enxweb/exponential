@@ -261,6 +261,12 @@ class Versionview extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // A siteaccess served on another host: the preview is shown there (content/hostpreview with a one-time token),
+        // with that host's links, headers and cookies (site.ini [SiteAccessSettings] PreviewOnOwningHost)
+        $hostPreview = self::hostPreviewURL( $versionObject, $LanguageCode, $siteAccess, $viewMode, $placementID );
+        if ( $hostPreview !== null )
+            return $this->viewResult( null, $Module->redirectTo( $hostPreview ) );
+
         $access = $GLOBALS['eZCurrentAccess'];
         $access['name'] = $siteAccess;
 
@@ -323,7 +329,46 @@ class Versionview extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Returns the view mode a version is to be shown in: $requested when content.ini [VersionView] ViewModes[] lists
+     * The address of the preview on the host of $siteAccess (content/hostpreview/<token>), when that siteaccess is
+     * served on another host than this request's: site.ini [SiteAccessSettings] PreviewOnOwningHost is enabled, the
+     * siteaccess is available, needs no login and is not this one, its address (ezpSiteAccessURL::root()) is on a
+     * host a redirect may go to (eZRedirectManager::isOwnHost()), and a token can be made. null otherwise: the
+     * preview is rendered here, in /<siteaccess>/, as before.
+     *
+     * @param \eZContentObjectVersion $versionObject
+     * @param string $language
+     * @param string $siteAccess
+     * @param string $viewMode
+     * @param mixed $placementID
+     * @return string|null
+     */
+    public static function hostPreviewURL( $versionObject, $language, $siteAccess, $viewMode, $placementID )
+    {
+        if ( !$versionObject instanceof \eZContentObjectVersion || !is_string( $siteAccess ) || $siteAccess === ''
+             || !class_exists( 'expSiteAccessForNode' ) || !\expSiteAccessForNode::previewOnOwningHost() )
+            return null;
+        $current = \eZSiteAccess::current();
+        if ( isset( $current['name'] ) && (string)$current['name'] === $siteAccess )
+            return null;
+        $base = \expSiteAccessForNode::baseURL( $siteAccess );
+        $currentHost = (string)\eZSys::hostname();
+        if ( !is_string( $base ) || !\expSiteAccessForNode::isOtherHost( $base, $currentHost )
+             || !\eZRedirectManager::isOwnHost( (string)parse_url( $base, PHP_URL_HOST ) ) )
+            return null;
+        $siteIni = \eZSiteAccess::getIni( $siteAccess, 'site.ini' );
+        if ( $siteIni->hasVariable( 'SiteAccessSettings', 'RequireUserLogin' )
+             && $siteIni->variable( 'SiteAccessSettings', 'RequireUserLogin' ) === 'true' )
+            return null;
+        $origin = ( \eZSys::isSSLNow() ? 'https' : 'http' ) . '://' . $currentHost;
+        $token = \expContentHostPreview::issue( $versionObject, (string)$language, $siteAccess, (string)$viewMode,
+                                                is_numeric( $placementID ) ? (int)$placementID : 0, $origin );
+        if ( $token === null )
+            return null;
+        return rtrim( $base, '/' ) . '/content/hostpreview/' . $token;
+    }
+
+    /**
+     * Returns the view mode a version is to be shown in:$requested when content.ini [VersionView] ViewModes[] lists
      * it, full when nothing was asked for, null for a view mode that is not listed.
      *
      * @param string|null $requested The (view_mode) parameter of the address
