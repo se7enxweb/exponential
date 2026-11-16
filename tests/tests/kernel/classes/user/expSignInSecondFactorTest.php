@@ -257,9 +257,15 @@ class expSignInSecondFactorTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'new expRestSecondFactorRequiredStatus( $statusCode', $controller );
         $this->assertStringContainsString( 'in_array( $statusCode, expSignInSecondFactor::reasons(), true )', $controller );
 
-        // there is no OAuth password grant to guard: the token end point takes authorization codes and refresh tokens
-        $token = self::file( 'kernel/private/rest/classes/controllers/oauth_token.php' );
-        $this->assertMatchesRegularExpression( "/allowedGrantTypes = array\\( 'authorization_code',\\s*'refresh_token',\\s*\\);/", $token );
+        // the OAuth password grant is offered only for listed clients and asks the second step as the REST channel does
+        $this->assertSame( array( 'authorization_code', 'refresh_token' ), ezpRestOauthTokenController::grantTypes( array() ) );
+        $grant = self::file( 'kernel/private/rest/classes/oauth/password_grant.php' );
+        $this->assertStringContainsString( 'new expRestPasswordAuthFilter()', $grant );
+        $this->assertStringContainsString( 'if ( !$viaAppPassword && class_exists( \'expSignInSecondFactor\' ) )', $grant );
+        $guard = strpos( $grant, 'expSignInSecondFactor::check( $user, expSignInSecondFactor::CHANNEL_REST, expSignInSecondFactor::presentedCode() )' );
+        $issue = strpos( $grant, '$token = new ezpRestToken();' );
+        $this->assertNotFalse( $guard );
+        $this->assertLessThan( $issue, $guard, 'refused before a token is issued' );
     }
 
     // ------------------------------------------------------------------ SF-08

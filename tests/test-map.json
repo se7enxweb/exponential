@@ -1564,11 +1564,13 @@
       "tests/tests/kernel/private/oauth/ezpOauthGrantChecksTest.php"
     ],
     "kernel/private/rest/classes/oauth/password_grant.php": [
-      "tests/tests/kernel/private/oauth/expOAuthPasswordGrantTest.php"
+      "tests/tests/kernel/private/oauth/expOAuthPasswordGrantTest.php",
+      "tests/tests/kernel/classes/user/expSignInSecondFactorTest.php"
     ],
     "kernel/private/rest/classes/controllers/oauth_token.php": [
       "tests/tests/kernel/private/oauth/expOAuthPasswordGrantTest.php",
-      "tests/tests/kernel/private/oauth/ezpOauthGrantChecksTest.php"
+      "tests/tests/kernel/private/oauth/ezpOauthGrantChecksTest.php",
+      "tests/tests/kernel/classes/user/expSignInSecondFactorTest.php"
     ],
     "design/admin*/templates/oauthadmin/*": [
       "tests/tests/design/AdminOauthadminPagesTest.php",
