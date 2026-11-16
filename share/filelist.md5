@@ -25872,7 +25872,7 @@ c79d61003c25190f8d19ee1199598792  kernel/content/urlalias_wildcard.php
 c74aafbb423ded44aa9dbc2c042b6312  kernel/content/urlimporthistory.php
 7f2f0e2a11d250c5d85b8c52d0181710  kernel/content/urlredirects.php
 cf4233dea1741720f9f310edf738fa12  kernel/content/versionview.php
-43c94c021a3fe85318b1398ddb8cffa4  kernel/content/versionviewframe.php
+5f77bd4ff6d5d4d9d1399b6a5f89897f  kernel/content/versionviewframe.php
 40d24020b1408cbee1371e81882f0b48  kernel/content/view.php
 182e90f17110be516b0c38b279a7fb0f  kernel/contentcheck/brokenrelations.php
 c83745f44df5211abc16cd81a9dd1ae5  kernel/contentcheck/fixfiles.php
@@ -26428,7 +26428,7 @@ dcc0aa44423d39d2d2ca13800a30b0b4  kernel/private/classes/views/content/urlexport
 f1c67e9bd53d30c3d5969f74ad306a8b  kernel/private/classes/views/content/urlimport.php
 7b0e2a97f002d82c6d916ea5dee371c8  kernel/private/classes/views/content/urlimporthistory.php
 1175fd2647274a2f931b0ac64d168bca  kernel/private/classes/views/content/urlredirects.php
-f0d4955f6c792ac50c5c875e86f3d085  kernel/private/classes/views/content/versionview.php
+a8dc7348bef51ffd44a2486b9498aebc  kernel/private/classes/views/content/versionview.php
 7993de6a08337e53161135b84cbe2f6f  kernel/private/classes/views/content/view.php
 d2e03dd76d48fb1c5d74a5194675df81  kernel/private/classes/views/contentcheck/brokenrelations.php
 3a34bc4f629d55fe49c9aba2bc87461a  kernel/private/classes/views/contentcheck/fixfiles.php
@@ -27460,7 +27460,7 @@ d41d8cd98f00b204e9800998ecf8427e  openspec/specs/.gitkeep
 40c7a22b435e0cc56484e4822baa854b  openspec/specs/admin/search-page/spec.md
 cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.md
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
-4b411bfb881c1e20ffa8380747085912  phpstan-baseline.neon
+f4865f5b9afa65dfb8afd33f4e795172  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
 82432bde434c2995a71eef86502f9c79  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
@@ -29520,7 +29520,7 @@ fe6b793a74408f00c9d34d57da569cd4  tests/tests/kernel/classes/expRssFeedMissingNo
 902c2a032e40ebda1450dae7194b89dc  tests/tests/kernel/classes/expSectionOverviewTest.php
 dba841fd53bca2a48771071bc8576cfd  tests/tests/kernel/classes/expSettingsPageTest.php
 9306390fd3cb22bf39fd361414f72235  tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php
-43c7c35a84ea05c4589b342f42ba92fd  tests/tests/kernel/classes/expSiteAccessForNodeTest.php
+0b128ba9cb821ea759fbd6a55d21af54  tests/tests/kernel/classes/expSiteAccessForNodeTest.php
 7dc45bff6e79677e772657b530962141  tests/tests/kernel/classes/expSiteAccessOverviewTest.php
 a6c45cabdc422979ba5cdb2a8df85408  tests/tests/kernel/classes/expSiteSearchSuggestTest.php
 0d4beaad5e2fda13b3e43dffb081ee1c  tests/tests/kernel/classes/expSoapEntryScriptTest.php

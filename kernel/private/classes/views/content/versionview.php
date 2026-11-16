@@ -265,7 +265,7 @@ class Versionview extends \Exponential\Runnable\ModuleView
         // with that host's links, headers and cookies (site.ini [SiteAccessSettings] PreviewOnOwningHost)
         $hostPreview = self::hostPreviewURL( $versionObject, $LanguageCode, $siteAccess, $viewMode, $placementID );
         if ( $hostPreview !== null )
-            return $this->viewResult( null, $Module->redirectTo( $hostPreview ) );
+            return $this->viewResult( null, $scope['Params']['Module']->redirectTo( $hostPreview ) );
 
         $access = $GLOBALS['eZCurrentAccess'];
         $access['name'] = $siteAccess;

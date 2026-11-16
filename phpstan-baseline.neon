@@ -1219,12 +1219,6 @@ parameters:
 			path: kernel/content/versionviewframe.php
 
 		-
-			message: '#^Variable \$siteaccessLocaleMap might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/content/versionviewframe.php
-
-		-
 			message: '#^Variable \$versionObject might not be defined\.$#'
 			identifier: variable.undefined
 			count: 5

@@ -135,7 +135,7 @@ class expSiteAccessForNodeTest extends PHPUnit\Framework\TestCase
         $frame = file_get_contents( $root . 'kernel/content/versionviewframe.php' );
         $this->assertStringContainsString( 'expSiteAccessForNode::forNode(', $frame );
         // an explicit choice in the form is kept: the resolver runs only when the form chose nothing
-        $this->assertMatchesRegularExpression( '/if \( !\$siteaccess && class_exists\( \'expSiteAccessForNode\' \)/', $frame );
+        $this->assertMatchesRegularExpression( '/if \( !\$siteaccess && isset\( \$node \) && class_exists\( \'expSiteAccessForNode\' \)/', $frame );
         $view = file_get_contents( $root . 'kernel/private/classes/views/content/versionview.php' );
         $this->assertStringContainsString( 'self::hostPreviewURL(', $view );
         $this->assertStringContainsString( "'/content/hostpreview/'", $view );

@@ -166,9 +166,9 @@ if ( $Module->hasActionParameter( 'SiteAccess' ) )
 // whose content root contains the node, the most specific first, in the language of the version; DefaultAccess when
 // none contains it. The form below can still choose another one.
 $siteaccessLocaleMap = array();
-if ( !$siteaccess && class_exists( 'expSiteAccessForNode' ) && expSiteAccessForNode::previewInOwningSiteAccess() )
+if ( !$siteaccess && isset( $node ) && class_exists( 'expSiteAccessForNode' ) && expSiteAccessForNode::previewInOwningSiteAccess() )
 {
-    $owning = expSiteAccessForNode::forNode( (string)$node->attribute( 'path_string' ), (string)$LanguageCode );
+    $owning = expSiteAccessForNode::forNode( (string)$node->attribute( 'path_string' ), isset( $LanguageCode ) ? (string)$LanguageCode : '' );
     if ( $owning['reason'] === expSiteAccessForNode::REASON_TREE )
         $siteaccess = $owning['siteaccess'];
 }
