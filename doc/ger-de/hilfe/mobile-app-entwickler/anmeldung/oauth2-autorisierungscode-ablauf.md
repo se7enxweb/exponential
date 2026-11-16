@@ -110,7 +110,7 @@ Geprüft in `kernel/private/rest/classes/controllers/oauth_token.php` und `kerne
 
 | Thema | Was der Code tut | Was zu tun ist |
 |---|---|---|
-| Grants | nur `authorization_code` und `refresh_token` | kein Password Grant, kein Client Credentials Grant |
+| Grants | `authorization_code` und `refresh_token`; `password` nur für Clients in `PasswordGrantClients[]` | kein Client Credentials Grant |
 | Client-Authentifizierung | `client_secret` ist am Token-Endpunkt Pflicht | auf einem Server halten |
 | PKCE | nicht unterstützt (`code_verifier` wird nicht gelesen) | das Backend schützt den Austausch |
 | `state` | wird nicht zurückgegeben („state, not implemented yet“) | einen Einmalwert in der App oder im Backend halten und gegen die Sitzung prüfen, die den Ablauf gestartet hat |

@@ -132,7 +132,8 @@ Benutzer. Zwei Anmeldedaten werden angenommen:
   4. Sie erneuert das Token mit `grant_type=refresh_token`, bevor `rest.ini [OAuthSettings] TokenTTL` (eine Stunde)
      abläuft.
 
-  Der Token-Endpunkt unterstützt die Grants `authorization_code` und `refresh_token`. Ein öffentlicher Client, etwa
+  Der Token-Endpunkt unterstützt die Grants `authorization_code`, `refresh_token` und, nur für die Clients in
+  `rest.ini [OAuthSettings] PasswordGrantClients[]`, `password`. Ein öffentlicher Client, etwa
   eine mobile App ohne Geheimnis, muss PKCE verwenden. Ein Token funktioniert nicht mehr, sobald sein Benutzer
   deaktiviert oder gesperrt ist. Einzelheiten:
   [OAuth-Anwendungen für Integrationen](hilfe/integratoren/oauth-anwendungen-fuer-integrationen.md),

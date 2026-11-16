@@ -28,7 +28,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-3ea047b5baf7f38656a7eaf0e6f32486  autoload/ezp_kernel.php
+1ee0d768bf285122cc564a8172d8f6b9  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3580,7 +3580,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-3baeb101d649f22fa9e53eca37b08a09  doc/changelogs/6.0/6.0.15.md
+25b5caebea83fcd0a72f5a9229b0a44f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3684,7 +3684,7 @@ bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
 ba34fdb46710aeaf4d07089fce9a4354  doc/eng-us/HISTORY.md
 d2b739d6fa608fb07ce75fbad57269fd  doc/eng-us/INSTALL.md
-0d2535964cf0dc24c86fb01118809a4b  doc/eng-us/INTEGRATING.md
+2ad2ddcc246ceef3533255537837bdf7  doc/eng-us/INTEGRATING.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 dcdf710d757a03980f1f5e503ccdb34a  doc/eng-us/README-LICENSE.md
 b14cd94c5ea788d16f5e5feac572a7a2  doc/eng-us/SUPPORT.md
@@ -5539,10 +5539,10 @@ f03a38793bf6b11e16691cfec0b17612  doc/eng-us/examples/ini-settings/rest/Authenti
 c96ff90781a378411143192c8466ee5b  doc/eng-us/examples/ini-settings/rest/CacheSettings.md
 d21a9606681dfe00727029d405ebe666  doc/eng-us/examples/ini-settings/rest/CorsSettings.md
 3ba79fb25271b5fc45911b3d79a8f7ec  doc/eng-us/examples/ini-settings/rest/DebugSettings.md
-3e08af8b334774d03b4d56896e405605  doc/eng-us/examples/ini-settings/rest/OAuthSettings.md
+6068cc7dc4ec5217de09ed03fce9ff84  doc/eng-us/examples/ini-settings/rest/OAuthSettings.md
 5fffabea45925191ea0eb63d39e9034a  doc/eng-us/examples/ini-settings/rest/OutputSettings.md
 40b44f989441d03e7e289bf5b6858efb  doc/eng-us/examples/ini-settings/rest/PreRoutingFilters.md
-ca077652df1a0c4a403a09ad34c9abf0  doc/eng-us/examples/ini-settings/rest/README.md
+d27afa818bae841aec1b752f4b0da844  doc/eng-us/examples/ini-settings/rest/README.md
 7abdaa9187f460e6686f7c97e83d97d8  doc/eng-us/examples/ini-settings/rest/RequestFilters.md
 da3d5309e6ae5a766a45fba86c0ad1c6  doc/eng-us/examples/ini-settings/rest/ResponseFilters.md
 56ab46dd56360b175e103102d23e7722  doc/eng-us/examples/ini-settings/rest/ResultFilters.md
@@ -7139,7 +7139,7 @@ f7cbe38d847fe4d918e89191f4cc6d99  doc/eng-us/features/6.0/role-assignment-paging
 dc1fd58d472fa3c3a1c8e324f1cf8729  doc/eng-us/features/6.0/role-policy-order.md
 af2ea1c17487c15b45d19b7ce95ab33d  doc/eng-us/features/6.0/rss-podcast-and-feed-list.md
 5a25fab404068e02e43fddfc228ce716  doc/eng-us/features/6.0/safe-redirects.md
-8a724d0ff70b1eda66b4f79d36438884  doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md
+de9ca1cccd8c2ee8addd4af5cfa2f3c5  doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md
 5cf43a89a88445de40cfaa218f9ae89d  doc/eng-us/features/6.0/secret-store.md
 07281e0ec124e471b0e45e1ff0749ae6  doc/eng-us/features/6.0/setup-files-and-config-php-commands.md
 1497469bf44fb513ad56e60906801746  doc/eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md
@@ -7291,7 +7291,7 @@ d79ee6f6d33aa7bb6763edf5adab0741  doc/eng-us/guides/pdf-exports.md
 f2a5a38aa054a26eec28886ade18b85c  doc/eng-us/guides/preloading-caches.md
 a18d1933d4f72ad93e278381d78e827f  doc/eng-us/guides/remote-services-and-apps.md
 891152c91f548f545988b8a05722f550  doc/eng-us/guides/request-shield.md
-f6d79b99716bc171380904f653c66c17  doc/eng-us/guides/rest-api-v1-and-v2.md
+7fd1b6da668b0f7c0fa8947e43afcc28  doc/eng-us/guides/rest-api-v1-and-v2.md
 cd91a7c1c714e9d97dac609915a069f2  doc/eng-us/guides/roles-and-policies.md
 f337e682866a0c40c31e27575e8f3a38  doc/eng-us/guides/rss-feeds.md
 95673ee9935e9be417754641a1ca13dc  doc/eng-us/guides/sections.md
@@ -11336,7 +11336,7 @@ d9cc7ae879b25e1e16ad470db87493b4  doc/eng-us/help/migrations/status-and-history.
 38d209194f3924ed81a88837641ddd57  doc/eng-us/help/mobile-app-developers/auth/authorization-header-and-proxies.md
 49a7601401e3f022e0bc57837fb7e48a  doc/eng-us/help/mobile-app-developers/auth/choosing-a-credential.md
 80a3f167227781802e13518cb4e8356c  doc/eng-us/help/mobile-app-developers/auth/expservices-tokens-in-apps.md
-61beaa1482ac203077cecee44e0a5089  doc/eng-us/help/mobile-app-developers/auth/oauth2-authorization-code-flow.md
+836bd66b08198634a71017990462618d  doc/eng-us/help/mobile-app-developers/auth/oauth2-authorization-code-flow.md
 fbf4af47b4b155246ad6735aa1a4cf56  doc/eng-us/help/mobile-app-developers/auth/personal-api-keys-for-tools.md
 cc7ac691d668001296fbb1b4fa411994  doc/eng-us/help/mobile-app-developers/auth/storing-secrets-on-devices.md
 1c614174c4277a47c0eee7a475f6843e  doc/eng-us/help/mobile-app-developers/checklists/README.md
@@ -11358,7 +11358,7 @@ d61b877f26341a70042c263873999f9e  doc/eng-us/help/mobile-app-developers/media-an
 e789f33f3e3fa94f0a9cb2379a5830c9  doc/eng-us/help/mobile-app-developers/media-and-images/files-and-uploads.md
 d78fa63f27eb0d0831dc0d098f00d20e  doc/eng-us/help/mobile-app-developers/media-and-images/image-aliases-for-screen-sizes.md
 4ee29807c94094ffb43135e4fe728256  doc/eng-us/help/mobile-app-developers/media-and-images/images-in-rest-answers.md
-92109ecc652291c26757d8882b108657  doc/eng-us/help/mobile-app-developers/mobile-app-developers-faq.md
+95845640a7256fe20c44a8496841f0fb  doc/eng-us/help/mobile-app-developers/mobile-app-developers-faq.md
 b974d2899226f1db07fefd8e0f142a5e  doc/eng-us/help/mobile-app-developers/mobile-app-developers-glossary.md
 0fb9946babe0d5b20661a372b20e20aa  doc/eng-us/help/mobile-app-developers/mobile-app-developers-reading-path.md
 80aed738e33ad4059b393163cae76740  doc/eng-us/help/mobile-app-developers/mobile-app-developers-start-here.md
@@ -11384,7 +11384,7 @@ f0559498dcd382721582d01118209c59  doc/eng-us/help/mobile-app-developers/rest-api
 806b41e18df9f5c70b57041d88bf06aa  doc/eng-us/help/mobile-app-developers/testing/README.md
 5c77c6da32c2e7f603811b44208cbe65  doc/eng-us/help/mobile-app-developers/testing/a-local-test-installation.md
 e68fe2eced95ad725375c49248ceb1b0  doc/eng-us/help/mobile-app-developers/testing/testing-against-a-demo.md
-44bd8c21470c63a0e6e527060674cdcd  doc/eng-us/help/mobile-app-developers/what-the-apis-do-not-do.md
+dc777094adafe123b287158888d993c6  doc/eng-us/help/mobile-app-developers/what-the-apis-do-not-do.md
 40b3beb49fe248b49dc7cde32fcd6b10  doc/eng-us/help/mobile-app-developers/which-api-for-your-app.md
 fe33ef220e0e4638cf118a887a4a0d03  doc/eng-us/help/non-profits/a-free-website-for-your-nonprofit.md
 c49ff3f06466b607fd9d2ead0f6ef129  doc/eng-us/help/non-profits/accessibility/README.md
@@ -13656,6 +13656,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 27cfff59ae453e47c249c18a69040455  doc/ger-de/.examples/descriptions/42-exphelp-pdf-cache-2026-11-14.json
 05a920c0aec069f9d6c8ef23df079f82  doc/ger-de/.examples/descriptions/43-image-alias-backlog-2026-11-15.json
 8082b588d8d330d9dbd60fbdefebf303  doc/ger-de/.examples/descriptions/44-preview-in-owning-siteaccess-2026-11-16.json
+2a1d441460c038d9dfd2262c6154f4bf  doc/ger-de/.examples/descriptions/45-oauth-password-grant-2026-11-16.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
@@ -13666,7 +13667,7 @@ d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-eve
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 72a6daa6760de22190206de884484e7d  doc/ger-de/HISTORY.md
 6b25c34e16c9dcecfae9e0d3ed1a098f  doc/ger-de/INSTALL.md
-331c76d21d725307de301f8eac4a8c2b  doc/ger-de/INTEGRATING.md
+8f5021bc74ead35a752a5366535ca248  doc/ger-de/INTEGRATING.md
 28bb0394d0d8b5056ebfe1a57ae0bd12  doc/ger-de/LIZENZ-GFDL-1.3.txt
 ee3c5da721b9704840763c5f4db59a32  doc/ger-de/README-LIZENZ.md
 ddbb3c2493e9b29f1d3369b5cc346376  doc/ger-de/SUPPORT.md
@@ -13771,7 +13772,7 @@ fb6880b3d82b28215fb0d664ecf3f351  doc/ger-de/anleitungen/oeffentlich-entwickeln-
 575b4ba2020a8e3d1d389c78eb8b9257  doc/ger-de/anleitungen/passkeys.md
 e6b2e42e0fbcb6f71c0d627295536c75  doc/ger-de/anleitungen/pdf-exporte.md
 56470f8dfea3c44fa63d159a72d8e61b  doc/ger-de/anleitungen/request-shield.md
-5881950e58cb7a300ad83735d0c15c82  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
+e2faf28c3cc1f3b442a3b3679c9d40e6  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
 296d6912eab7b7915cf59b235283ed90  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 6ac6476a7a091994adfb311cc475480c  doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
@@ -15659,10 +15660,10 @@ d374066bb97cbf9fcf5699dcfd671b3a  doc/ger-de/beispiele/ini-einstellungen/rest/Au
 a16cbd5cdbedf80418b0aaf089058b62  doc/ger-de/beispiele/ini-einstellungen/rest/CacheSettings.md
 90f42368ec39d9158ec2d7cd02bde0d2  doc/ger-de/beispiele/ini-einstellungen/rest/CorsSettings.md
 8d1af89c154b2193c927c4c447717773  doc/ger-de/beispiele/ini-einstellungen/rest/DebugSettings.md
-f952b301f3084db608647f35928ca111  doc/ger-de/beispiele/ini-einstellungen/rest/OAuthSettings.md
+2a827dea8181d41462c30452458b5d41  doc/ger-de/beispiele/ini-einstellungen/rest/OAuthSettings.md
 7a591a1761a6af5ece3eca998fcca39c  doc/ger-de/beispiele/ini-einstellungen/rest/OutputSettings.md
 c368c33a27b10acd802427871c924235  doc/ger-de/beispiele/ini-einstellungen/rest/PreRoutingFilters.md
-7a9543c985c0253d6e0aba971986cb9c  doc/ger-de/beispiele/ini-einstellungen/rest/README.md
+521eebb5e8f2811d8de7922850f2e1fb  doc/ger-de/beispiele/ini-einstellungen/rest/README.md
 f8b6063bf490da72cab33be9cdc39a58  doc/ger-de/beispiele/ini-einstellungen/rest/RequestFilters.md
 af9c1334a3d27dca368d09ec0b90a980  doc/ger-de/beispiele/ini-einstellungen/rest/ResponseFilters.md
 212f7d4c0a532bbd91cb176f6468a337  doc/ger-de/beispiele/ini-einstellungen/rest/ResultFilters.md
@@ -17313,7 +17314,7 @@ bea8ea9f00dfc81102f6e376de1bea4e  doc/ger-de/funktionen/6.0/websiteuebergreifend
 3c2b3930490f58368df9a670f4cf0959  doc/ger-de/funktionen/6.0/zugriffs-und-cache-filter.md
 33e16568cbad1e45fe1e44d083263267  doc/ger-de/funktionen/6.0/zurueckhaltung-zur-pruefung.md
 aba05fee1af76fb5cde206933fa6cb94  doc/ger-de/funktionen/6.0/zusaetzliche-extension-verzeichnisse.md
-b0b0ff8b4f57f667b255a5f62fb642bf  doc/ger-de/funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md
+b1c0964ca1abf7e505b89987edfc4cb7  doc/ger-de/funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md
 f93c81f4ad0dd384ce6de2fb1688d476  doc/ger-de/geschichte/2023/2023-12.md
 e6058bf5bf6fcbfe5cb963fdab35d6cd  doc/ger-de/geschichte/2024/2024-01a.md
 707d66e5767a0e07fad4308fa952623e  doc/ger-de/geschichte/2024/2024-01b.md
@@ -20195,14 +20196,14 @@ d68df7d91cd2e0698d0449fe4100aa2d  doc/ger-de/hilfe/mobile-app-entwickler/anmeldu
 08be1c77b39349f67196e4f7490b0f3b  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/ein-backend-fuer-ihre-app.md
 7c2ccb4bde831d22f8a6e045cd672466  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/expservices-tokens-in-apps.md
 e9625fcca33cf9808442f280919d2e2d  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/geheimnisse-auf-geraeten-speichern.md
-782e8005a72a615ae0fed383e76663fb  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/oauth2-autorisierungscode-ablauf.md
+678db6ec81f83a06a5e6a83db542a9c8  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/oauth2-autorisierungscode-ablauf.md
 e6afa133cff55dd60862180da089a16f  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/persoenliche-api-schluessel-fuer-werkzeuge.md
 19376acb408cb1032a8057f72693f750  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/zugangsdaten-auswaehlen.md
 58045ef04dc050b59c7d0b41192bc044  doc/ger-de/hilfe/mobile-app-entwickler/checklisten/README.md
 902e91a3b61c86d4fbab7ba1d85ac0e9  doc/ger-de/hilfe/mobile-app-entwickler/checklisten/bereit-fuer-die-app-store-pruefung.md
 ffacab77c83014bdc68842806e6b8540  doc/ger-de/hilfe/mobile-app-entwickler/checklisten/checkliste-fuer-den-start.md
 069b610e5576c4f8b11b5fc25c0c2dbe  doc/ger-de/hilfe/mobile-app-entwickler/checklisten/sicherheitscheckliste.md
-b4366c982e11065d1250cf421555d449  doc/ger-de/hilfe/mobile-app-entwickler/faq-fuer-mobile-app-entwickler.md
+77290aebf1f9d8b043e6255c762e7ab9  doc/ger-de/hilfe/mobile-app-entwickler/faq-fuer-mobile-app-entwickler.md
 c5e75a5a1368e742603f6dfbcd560c85  doc/ger-de/hilfe/mobile-app-entwickler/glossar-fuer-mobile-app-entwickler.md
 fa7a2d1fba06150bd8e116ddf13423b1  doc/ger-de/hilfe/mobile-app-entwickler/inhaltsmodellierung/README.md
 009347a1ea604949aedffa4234f55e4a  doc/ger-de/hilfe/mobile-app-entwickler/inhaltsmodellierung/inhaltsklassen-fuer-apps.md
@@ -20242,7 +20243,7 @@ f9cde84ecd47df3c600586749e738746  doc/ger-de/hilfe/mobile-app-entwickler/testen/
 d79afdfabf1652735fd0fe06a41e6ac8  doc/ger-de/hilfe/mobile-app-entwickler/veroeffentlichungsablauf/README.md
 a2feb29e182d5b75f45e8efbe22ba859  doc/ger-de/hilfe/mobile-app-entwickler/veroeffentlichungsablauf/berechtigungen-fuer-app-benutzer.md
 06ae1fd202313f1dbb5fcf29af82de11  doc/ger-de/hilfe/mobile-app-entwickler/veroeffentlichungsablauf/entwuerfe-vorschau-und-veroeffentlichung.md
-3ae40aeb89b2a775b25e7c475ebcff3f  doc/ger-de/hilfe/mobile-app-entwickler/was-die-apis-nicht-koennen.md
+c6ff8fbf530daab01514163f43012d2b  doc/ger-de/hilfe/mobile-app-entwickler/was-die-apis-nicht-koennen.md
 acfa03b40232f94272e51c962b45c5b8  doc/ger-de/hilfe/mobile-app-entwickler/welche-api-fuer-ihre-app.md
 98480585266235816a7ceb8cdb9e50f3  doc/ger-de/hilfe/mobile-app-entwickler/wie-exponential-inhalte-in-eine-app-gelangen.md
 a28b64c06b9843012bd6990a8c83d131  doc/ger-de/hilfe/neu-in-6-0-15-rest-api.md
@@ -26741,7 +26742,7 @@ ddd814313e63d7f68d52f403e288b3c7  kernel/private/rest/classes/cache/storage.php
 b74e5ec3929e1ef6ad9a1f24cc69227c  kernel/private/rest/classes/content_renderer.php
 3f9636f05f71f6ab59d8b993f4876c4e  kernel/private/rest/classes/controllers/auth.php
 c55fc0336414725344db05f506f2ea68  kernel/private/rest/classes/controllers/error.php
-6bf495a68f4a181468302e04ebeb459e  kernel/private/rest/classes/controllers/oauth_token.php
+4f822a2ef0273582c46fc9417930f0b1  kernel/private/rest/classes/controllers/oauth_token.php
 a2fc96bc1bc75c6d1d70866f66810c89  kernel/private/rest/classes/controllers/rest_controller.php
 67bf0e1f221065be61e835883615cf27  kernel/private/rest/classes/cors.php
 4e5ccdbe35fda835f2ff9bac9004249b  kernel/private/rest/classes/debug/debug.php
@@ -26785,6 +26786,7 @@ bb6c79a268f048dd8ffb2b826bbe253b  kernel/private/rest/classes/models/rest_model.
 03a717231206240eb2193e4a17509682  kernel/private/rest/classes/oauth/authorize_policy.php
 e419f69a99b810b1d51f85b9c38fb3e8  kernel/private/rest/classes/oauth/authorize_policy_grant.php
 e79684251e365b9acf15dd8148332922  kernel/private/rest/classes/oauth/oauth_filter.php
+7e0802d0cabe61e7b6f645bb815b56b7  kernel/private/rest/classes/oauth/password_grant.php
 3bc2c8725eb45a20cc1e31650fdab2f1  kernel/private/rest/classes/oauth/pkce.php
 1231b10db32960dd989e08bc07711572  kernel/private/rest/classes/oauth/utility.php
 17ad2a8f3f5b8d344e01df8f400c73b2  kernel/private/rest/classes/oauth_token_endpoint_error.php
@@ -27523,7 +27525,7 @@ bada4e0f552e8fc8c771aec209487b83  settings/querycache.ini
 21696fbd63b02afd759ad1e39c5a8e8a  settings/rad.ini
 ed3939b3ee8263c326063584d635acc9  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
-85c944b84352ca4e900256a7e545f96a  settings/rest.ini
+fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 0e25e6140fca0aab71d94cdb05352146  settings/secrets.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
@@ -28894,7 +28896,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-49a1b078a07d0a51321f14da2e7d5555  tests/test-map.json
+11da5e047318303225e48b2cbb960a0a  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -30336,6 +30338,7 @@ a56d096ff58a48875d29700a03618921  tests/tests/kernel/private/ezpmobiledevicedete
 904510b6caa8c1842288f5d6279a1437  tests/tests/kernel/private/eztopologicalsort_test.php
 ee5fc3cffeb80f427976f5b4952915d4  tests/tests/kernel/private/oauth/expOAuthAuthorizePolicyGrantTest.php
 ae07e3f67362b0ab6234e865d7efd089  tests/tests/kernel/private/oauth/expOAuthAuthorizePolicyTest.php
+ae2ec0e7db1da9e9992d64450515220b  tests/tests/kernel/private/oauth/expOAuthPasswordGrantTest.php
 75ef3085779327e4d9a009c3699656bf  tests/tests/kernel/private/oauth/expOAuthPkceSchemaTest.php
 c6702ee0abe1478afcbccc05fdf8e37a  tests/tests/kernel/private/oauth/expOAuthPkceTest.php
 14ab7b34beb2e4a1e3facb071fc27ded  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php

@@ -32,8 +32,11 @@ Lesezugriffe antworten in beiden gleich; Schreibzugriffe gibt es nur in v2. Neue
 ([API-Versionen v1 und v2](rest-api/api-versionen-v1-und-v2.md)).
 
 **Unterstützt der OAuth-Server PKCE oder öffentliche Clients?**
-Nein. Der Token-Endpunkt verlangt `client_secret` und unterstützt nur die Grants `authorization_code` und
-`refresh_token`. Halten Sie das Secret auf einem Server ([Ein Backend für Ihre App](anmeldung/ein-backend-fuer-ihre-app.md)).
+Ja, seit 6.0.15. Ein Client ohne gespeichertes Secret ist ein öffentlicher Client und muss PKCE verwenden
+([PKCE und state](../../bc/6.0/oauth-pkce-und-state.md)); ein Client mit Secret hält es auf einem Server
+([Ein Backend für Ihre App](anmeldung/ein-backend-fuer-ihre-app.md)). Der Token-Endpunkt unterstützt die Grants
+`authorization_code` und `refresh_token`, dazu `password` für die Clients, die die Site in `rest.ini [OAuthSettings]
+PasswordGrantClients[]` einträgt.
 
 **Kann ich einen persönlichen API-Schlüssel in meiner App ausliefern?**
 Nein. Ein Schlüssel gehört einem Benutzer, handelt als dieser Benutzer und ist für dessen eigene Skripte gedacht. Jeder,

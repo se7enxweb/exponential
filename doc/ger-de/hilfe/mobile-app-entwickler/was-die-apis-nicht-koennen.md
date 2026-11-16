@@ -39,7 +39,7 @@ Sprint zu entdecken.
 | Lücke | Beleg | Umweg |
 |---|---|---|
 | Der Token-Endpunkt braucht `client_secret` | `doHandleRequest()` verlangt `grant_type`, `client_id`, `client_secret` | das Secret auf einem eigenen Server halten ([Ein Backend für Ihre App](anmeldung/ein-backend-fuer-ihre-app.md)) |
-| Nur zwei Grants | `authorization_code` und `refresh_token` (`validateGrantType()`) | kein Password Grant, kein Client Credentials Grant; nutzen Sie den Code-Ablauf |
+| Höchstens drei Grants | `authorization_code` und `refresh_token`; `password` nur für die Clients in `rest.ini [OAuthSettings] PasswordGrantClients[]` (`validateGrantType()`) | kein Client Credentials Grant; nutzen Sie den Code-Ablauf, wenn die Site Ihre App nicht für den Password-Grant einträgt |
 | Kein PKCE | der Token-Endpunkt liest keinen `code_verifier` | das Backend hält das Secret und führt den Austausch durch |
 | `state` wird nicht zurückgegeben | die View authorize: „state, not implemented yet“ | einen eigenen Korrelationswert in der App oder im Backend halten |
 | Persönliche API-Schlüssel sind persönlich | von einem Benutzer unter **Mein Konto > API-Zugang** erzeugt, einmal angezeigt | nie in einer App ausliefern ([Persönliche API-Schlüssel für Werkzeuge](anmeldung/persoenliche-api-schluessel-fuer-werkzeuge.md)) |

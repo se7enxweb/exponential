@@ -2,14 +2,14 @@
 title: rest.ini [OAuthSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [OAuthSettings] in rest.ini: TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce"
-keywords: Einstellung, rest.ini, OAuthSettings, INI, setting, TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce
+summary: "Die Einstellungen von [OAuthSettings] in rest.ini: TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce ..."
+keywords: Einstellung, rest.ini, OAuthSettings, INI, setting, TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce, PasswordGrantClients, PasswordGrantMaxFailures, PasswordGrantFailureWindow
 type: generated
 generated: exp:help:examples
 ---
 # rest.ini [OAuthSettings]
 
-Der Block `[OAuthSettings]` von `settings/rest.ini`, mit 8 Einstellung(en).
+Der Block `[OAuthSettings]` von `settings/rest.ini`, mit 11 Einstellung(en).
 
 Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -145,6 +145,56 @@ Standard: `disabled`.
 # settings/override/rest.ini.append.php
 [OAuthSettings]
 AllowPlainPkce=disabled
+*/ ?>
+```
+
+## PasswordGrantClients
+
+> Der Password-Grant (RFC 6749, Abschnitt 4.3: grant\_type=password mit username und password) am Token-Endpunkt,  
+> nur für die hier eingetragenen Clients (ihre Client-Kennung, ezprest\_clients.client\_id): eigene Anwendungen, denen  
+> die Site die Passwörter ihrer Benutzer anvertraut, etwa ihre eigene mobile App. Jeder andere Client erhält  
+> unauthorized\_client; ist die Liste leer (Standard), wird der Grant nicht angeboten (unsupported\_grant\_type). Der  
+> Benutzer meldet sich an wie bei der Basic-Authentifizierung der REST-Schnittstelle: fehlgeschlagene Anmeldungen  
+> zählen, ein deaktiviertes oder gesperrtes Konto erhält kein Token, und der zweite Anmeldeschritt wird verlangt, wo  
+> der REST-Weg geschützt ist (Code in X-Exp-OTP oder im Feld otp, oder ein App-Passwort).  
+> doc/eng-us/guides/rest-api-v1-and-v2.md, Abschnitt 3.1  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+# ein leeres "PasswordGrantClients[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+PasswordGrantClients[]
+*/ ?>
+```
+
+## PasswordGrantMaxFailures
+
+> Erlaubte fehlgeschlagene Password-Grants je Login-Name innerhalb von PasswordGrantFailureWindow Sekunden; danach  
+> wird der Grant abgelehnt (invalid\_grant), bis das Zeitfenster vorbei ist. 0 = keine Grenze. Unabhängig von  
+> site.ini \[UserSettings\] MaxNumberOfFailedLogin, das das Konto selbst sperrt und standardmäßig aus ist (0).  
+
+Standard: `10`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+PasswordGrantMaxFailures=10
+*/ ?>
+```
+
+## PasswordGrantFailureWindow
+
+Standard: `900`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+PasswordGrantFailureWindow=900
 */ ?>
 ```
 

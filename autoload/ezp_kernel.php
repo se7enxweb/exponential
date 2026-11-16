@@ -1700,6 +1700,7 @@ return array(
       'expNotificationService'                                       => 'kernel/classes/expnotificationservice.php',
       'expOAuthAuthorizePolicy'                                      => 'kernel/private/rest/classes/oauth/authorize_policy.php',
       'expOAuthAuthorizePolicyGrant'                                 => 'kernel/private/rest/classes/oauth/authorize_policy_grant.php',
+      'expOAuthPasswordGrant'                                        => 'kernel/private/rest/classes/oauth/password_grant.php',
       'expOAuthPkce'                                                 => 'kernel/private/rest/classes/oauth/pkce.php',
       'expOrderSiteaccess'                                           => 'kernel/classes/expordersiteaccess.php',
       'expOrderSiteaccessBackfill'                                   => 'kernel/classes/expordersiteaccessbackfill.php',

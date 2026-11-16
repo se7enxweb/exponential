@@ -38,7 +38,7 @@ build an app; it is a list of things to plan instead of discovering them in the 
 | Gap | Evidence | Way around it |
 |---|---|---|
 | The token endpoint needs `client_secret` | `doHandleRequest()` requires `grant_type`, `client_id`, `client_secret` | keep the secret on a server of yours ([A back end for your app](auth/a-backend-for-your-app.md)) |
-| Only two grants | `authorization_code` and `refresh_token` (`validateGrantType()`) | no password grant, no client credentials grant; use the code flow |
+| Three grants at most | `authorization_code` and `refresh_token`; `password` only for the clients in `rest.ini [OAuthSettings] PasswordGrantClients[]` (`validateGrantType()`) | no client credentials grant; use the code flow unless the site lists your app for the password grant |
 | No PKCE | the token endpoint reads no `code_verifier` | the back end holds the secret and does the exchange |
 | `state` is not returned | the authorize view: "state, not implemented yet" | keep your own correlation value in the app or back end |
 | Personal API keys are personal | made by one user at **My account > API access**, shown once | never ship one in an app ([Personal API keys for tools](auth/personal-api-keys-for-tools.md)) |

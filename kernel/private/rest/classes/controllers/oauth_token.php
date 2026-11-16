@@ -20,7 +20,8 @@ class ezpRestOauthTokenController extends ezcMvcController
     /**
      * Handles the POST request which is sent to obtain token data.
      *
-     * Currently only authorization code access grant is supported, section 4.1.1
+     * Supported: the authorization code grant (section 4.1.3), the refresh token grant (section 6) and, for the
+     * clients of rest.ini [OAuthSettings] PasswordGrantClients[] only, the password grant (section 4.3).
      *
      * @return ezcMvcResult
      */
@@ -31,13 +32,17 @@ class ezpRestOauthTokenController extends ezcMvcController
         // REQUIRED: grant_type, client_id, and client_secret for a confidential client
         // OPTIONAL: scope
         //
-        // Supported grant types are: authorization_code and refresh_token
+        // Supported grant types are: authorization_code, refresh_token and, for the clients of
+        // rest.ini [OAuthSettings] PasswordGrantClients[] only, password
         //
         // Additional params for 'authorization_code', Section 4.1.1
         // REQUIRED: code, redirect_uri
         //
         // Additional param for 'refresh_token", Section 4.1.4
         // REQUIRED: refresh_token
+        //
+        // Additional params for 'password', Section 4.3.2
+        // REQUIRED: username, password (OPTIONAL: otp, the one-time code of a second sign-in step)
 
         // A public client (one stored without a secret, RFC 6749 section 2.1) sends no client_secret; it is bound to
         // its authorization code by PKCE (code_verifier, RFC 7636 section 4.5) instead. Whether a client must send
@@ -52,6 +57,9 @@ class ezpRestOauthTokenController extends ezcMvcController
 
         // params for grant_type=refresh_token
         $refreshRequiredParams = array( 'refresh_token' );
+
+        // params for grant_type=password
+        $passwordRequiredParams = array( 'username', 'password' );
 
         $this->checkParams( $initialRequiredParams );
 
@@ -82,6 +90,11 @@ class ezpRestOauthTokenController extends ezcMvcController
             case 'refresh_token':
                 $this->checkParams( $refreshRequiredParams );
                 $newToken = ezpOauthUtility::doRefreshToken( $client_id, $client_secret, $this->request->post['refresh_token'] );
+                break;
+
+            case expOAuthPasswordGrant::GRANT_TYPE:
+                $this->checkParams( $passwordRequiredParams );
+                $newToken = expOAuthPasswordGrant::issue( $client_id, $client_secret, $this->request->post['username'], $this->request->post['password'] );
                 break;
         }
 
@@ -162,11 +175,22 @@ class ezpRestOauthTokenController extends ezcMvcController
 
     protected function validateGrantType( $grant )
     {
-        $allowedGrantTypes = array( 'authorization_code',
-                                    'refresh_token',
-                                  );
+        return in_array( $grant, self::grantTypes( expOAuthPasswordGrant::clients() ), true );
+    }
 
-
-        return in_array( $grant, $allowedGrantTypes );
+    /**
+     * The grant types the endpoint takes: authorization_code and refresh_token, and password while rest.ini
+     * [OAuthSettings] PasswordGrantClients[] names a client (expOAuthPasswordGrant). Without such a client the
+     * password grant answers unsupported_grant_type, as before it existed.
+     *
+     * @param string[] $passwordGrantClients
+     * @return string[]
+     */
+    public static function grantTypes( array $passwordGrantClients )
+    {
+        $grantTypes = array( 'authorization_code', 'refresh_token' );
+        if ( !empty( $passwordGrantClients ) )
+            $grantTypes[] = expOAuthPasswordGrant::GRANT_TYPE;
+        return $grantTypes;
     }
 }

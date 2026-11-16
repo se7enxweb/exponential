@@ -164,7 +164,40 @@ Für eine Anwendung, bei der sich *andere* Benutzer anmelden und für die sie in
 Ein Token, ein Code oder ein Refresh-Token hört auf zu funktionieren, sobald sein Benutzer deaktiviert oder durch
 fehlgeschlagene Anmeldungen gesperrt ist ([Härtung der OAuth-Tokens](../bc/6.0/oauth-token-haertung.md)).
 
-Der Token-Endpunkt unterstützt die Grants `authorization_code` und `refresh_token`.
+Der Token-Endpunkt unterstützt die Grants `authorization_code` und `refresh_token`, dazu `password` für die Clients,
+die ein Administrator in `rest.ini [OAuthSettings] PasswordGrantClients[]` einträgt (standardmäßig keiner).
+
+#### Der Password-Grant
+
+Eine eigene Anwendung, der die Site die Passwörter ihrer Benutzer anvertraut, etwa die eigene mobile App der Site,
+kann sich statt über die Autorisierungsseite mit Login und Passwort des Benutzers anmelden (RFC 6749, Abschnitt 4.3):
+
+```
+POST /api/auth/v1/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=<client id>&client_secret=<secret>&username=<login>&password=<passwort>
+```
+
+Die Antwort ist dieselbe wie für einen Code: `access_token`, `refresh_token` und `expires_in`; erneuert wird wie in
+Schritt 5.
+
+- Nur die Clients in `PasswordGrantClients[]` dürfen ihn verwenden; ein anderer Client erhält `unauthorized_client`.
+  Ist die Liste leer, antwortet `grant_type=password` wie bisher mit `unsupported_grant_type`.
+- Der Benutzer meldet sich an wie bei der Basic-Authentifizierung der REST-Schnittstelle: mit Login (oder
+  E-Mail-Adresse, nach `[UserSettings] AuthenticateMatch`), ein falsches Passwort zählt als fehlgeschlagene Anmeldung
+  (`MaxNumberOfFailedLogin`), und ein deaktiviertes, unveröffentlichtes oder gesperrtes Konto erhält kein Token.
+  Falsche Zugangsdaten und ein solches Konto erhalten dieselbe Antwort, `invalid_grant` "The user name or password is
+  not right.".
+- Fehlversuche sind außerdem je Login-Name begrenzt: nach `PasswordGrantMaxFailures` (10) innerhalb von
+  `PasswordGrantFailureWindow` Sekunden (900) antwortet der Grant mit `invalid_grant` "Too many failed sign-in
+  attempts", bis das Zeitfenster vorbei ist.
+- Wo die Site den REST-Weg mit dem zweiten Anmeldeschritt schützt
+  ([Zweiter Schritt auf anderen Anmeldewegen](../funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md)), erhält
+  ein Passwort allein `invalid_grant` mit `second_factor_required`; die Anwendung sendet den Code im Header
+  `X-Exp-OTP` oder im Feld `otp`, oder der Benutzer verwendet ein App-Passwort. Ein Konto, das sein Passwort ändern
+  muss, erhält `password_change_required`.
+- Der erste Grant vermerkt die Autorisierung des Clients durch den Benutzer, wie es `oauth/authorize` tut.
 
 Eine Seite in einem Browser auf einem anderen Host (eine Single-Page-Anwendung) kann die API nur aufrufen, wenn CORS
 für ihren Ursprung eingeschaltet ist, `rest.ini [CorsSettings]`; standardmäßig ist es aus

@@ -53,8 +53,8 @@ Die Gründe:
 - `second_factor_setup_required`: Das Konto hat noch keinen zweiten Schritt. Es meldet sich auf der Website an,
   richtet ihn ein und erstellt danach ein App-Passwort.
 
-Der Token-Endpunkt von OAuth in der REST-Schnittstelle nimmt nur Autorisierungscodes und Refresh-Tokens an. Einen
-Password-Grant, der den zweiten Schritt umgehen könnte, gibt es nicht.
+Der Token-Endpunkt von OAuth in der REST-Schnittstelle nimmt den Password-Grant nur für die Clients in `rest.ini
+[OAuthSettings] PasswordGrantClients[]` an (standardmäßig keiner) und fragt den zweiten Schritt wie der REST-Weg ab.
 
 ## App-Passwörter
 

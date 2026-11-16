@@ -159,7 +159,38 @@ For an application that lets *other* users sign in and act for them.
 A token, a code or a refresh token stops working as soon as its user is disabled or locked by failed logins
 ([OAuth token hardening](../bc/6.0/oauth-token-hardening.md)).
 
-The token endpoint supports the grants `authorization_code` and `refresh_token`.
+The token endpoint supports the grants `authorization_code` and `refresh_token`, and `password` for the clients an
+administrator lists in `rest.ini [OAuthSettings] PasswordGrantClients[]` (none by default).
+
+#### The password grant
+
+For a first-party application the site trusts with its users' passwords, such as the site's own mobile app, the
+application can sign in with the user's login and password instead of the authorize page (RFC 6749, section 4.3):
+
+```
+POST /api/auth/v1/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=<client id>&client_secret=<secret>&username=<login>&password=<password>
+```
+
+The answer is the same as for a code: `access_token`, `refresh_token` and `expires_in`; refresh as in step 5.
+
+- Only the clients in `PasswordGrantClients[]` may use it; another client gets `unauthorized_client`. With the list
+  empty, `grant_type=password` answers `unsupported_grant_type`, as before.
+- The user signs in as with the REST interface's basic authentication: by login (or e-mail address, by
+  `[UserSettings] AuthenticateMatch`), a wrong password counts as a failed login (`MaxNumberOfFailedLogin`), and a
+  disabled, unpublished or locked account gets no token. Wrong credentials and such an account get the same answer,
+  `invalid_grant` "The user name or password is not right.".
+- Failed attempts are also limited per login name: after `PasswordGrantMaxFailures` (10) within
+  `PasswordGrantFailureWindow` seconds (900), the grant answers `invalid_grant` "Too many failed sign-in attempts"
+  until the window is over.
+- Where the site guards the REST channel with the second sign-in step
+  ([Second factor on other sign-in paths](../features/6.0/second-factor-on-other-sign-in-paths.md)), a password
+  alone gets `invalid_grant` with `second_factor_required`; the application sends the code in the header `X-Exp-OTP`
+  or the field `otp`, or the user uses an app password. An account that must change its password gets
+  `password_change_required`.
+- The first grant records the user's authorization of the client, as `oauth/authorize` does.
 
 A page in a browser on another host (a single page application) can call the API only when CORS is switched on
 for its origin, `rest.ini [CorsSettings]`; it is off by default ([CORS for the REST API](../bc/6.0/rest-cors.md)).

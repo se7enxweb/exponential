@@ -2,14 +2,14 @@
 title: rest.ini [OAuthSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [OAuthSettings] in rest.ini: TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce"
-keywords: rest.ini, OAuthSettings, INI, setting, TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce
+summary: "The settings of [OAuthSettings] in rest.ini: TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce ..."
+keywords: rest.ini, OAuthSettings, INI, setting, TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce, PasswordGrantClients, PasswordGrantMaxFailures, PasswordGrantFailureWindow
 type: generated
 generated: exp:help:examples
 ---
 # rest.ini [OAuthSettings]
 
-The block `[OAuthSettings]` of `settings/rest.ini`, with 8 setting(s).
+The block `[OAuthSettings]` of `settings/rest.ini`, with 11 setting(s).
 
 Never edit `settings/rest.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -145,6 +145,55 @@ Default: `disabled`.
 # settings/override/rest.ini.append.php
 [OAuthSettings]
 AllowPlainPkce=disabled
+*/ ?>
+```
+
+## PasswordGrantClients
+
+> The password grant (RFC 6749, section 4.3: grant\_type=password with username and password) at the token end point,  
+> for the clients listed here only (their client identifier, ezprest\_clients.client\_id): first-party applications the  
+> site trusts with its users' passwords, such as its own mobile app. Every other client gets unauthorized\_client; with  
+> the list empty (the default) the grant is not offered (unsupported\_grant\_type). The user signs in as with the REST  
+> interface's basic authentication: failed logins count, a disabled or locked account gets no token, and the second  
+> sign-in step is asked where the REST channel is guarded (code in X-Exp-OTP or the field otp, or an app password).  
+> doc/eng-us/guides/rest-api-v1-and-v2.md, section 3.1  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+# an empty "PasswordGrantClients[]" first replaces the shipped list; without it the items are added
+PasswordGrantClients[]
+*/ ?>
+```
+
+## PasswordGrantMaxFailures
+
+> Failed password grants allowed per login name within PasswordGrantFailureWindow seconds; after that the grant is  
+> refused (invalid\_grant) until the window is over. 0 = no limit. Independent of site.ini \[UserSettings\]  
+> MaxNumberOfFailedLogin, which locks the account itself and is off (0) by default.  
+
+Default: `10`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+PasswordGrantMaxFailures=10
+*/ ?>
+```
+
+## PasswordGrantFailureWindow
+
+Default: `900`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+PasswordGrantFailureWindow=900
 */ ?>
 ```
 

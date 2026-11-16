@@ -125,7 +125,8 @@ credentials are accepted:
      `Authorization: Bearer <token>`.
   4. It renews the token with `grant_type=refresh_token` before `rest.ini [OAuthSettings] TokenTTL` (one hour) ends.
 
-  The token endpoint supports the grants `authorization_code` and `refresh_token`. A public client, such as a mobile
+  The token endpoint supports the grants `authorization_code`, `refresh_token` and, for the clients in
+  `rest.ini [OAuthSettings] PasswordGrantClients[]` only, `password`. A public client, such as a mobile
   app with no secret, must use PKCE. A token stops working as soon as its user is disabled or locked. Details:
   [OAuth applications for integrations](help/integrators/oauth-applications-for-integrations.md),
   [PKCE and state](bc/6.0/oauth-pkce.md) and [OAuth token hardening](bc/6.0/oauth-token-hardening.md).

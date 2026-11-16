@@ -31,8 +31,11 @@ Reads answer the same at both; writes exist at v2 only. New apps can use v2 thro
 ([API versions v1 and v2](rest-api/api-versions-v1-and-v2.md)).
 
 **Does the OAuth server support PKCE or public clients?**
-No. The token endpoint requires `client_secret` and supports the grants `authorization_code` and `refresh_token`
-only. Keep the secret on a server ([A back end for your app](auth/a-backend-for-your-app.md)).
+Yes, since 6.0.15. A client stored without a secret is a public client and must use PKCE
+([PKCE and state](../../bc/6.0/oauth-pkce.md)); a client with a secret keeps it on a server
+([A back end for your app](auth/a-backend-for-your-app.md)). The token endpoint supports the grants
+`authorization_code` and `refresh_token`, and `password` for the clients the site lists in `rest.ini [OAuthSettings]
+PasswordGrantClients[]`.
 
 **Can I ship a personal API key inside my app?**
 No. A key belongs to one user, acts as that user and is meant for that user's own scripts. Anyone who unpacks the

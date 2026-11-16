@@ -109,7 +109,7 @@ Checked in `kernel/private/rest/classes/controllers/oauth_token.php` and `kernel
 
 | Topic | What the code does | What to do |
 |---|---|---|
-| Grants | `authorization_code` and `refresh_token` only | no password or client credentials grant |
+| Grants | `authorization_code` and `refresh_token`; `password` only for clients in `PasswordGrantClients[]` | no client credentials grant |
 | Client authentication | `client_secret` is required at the token endpoint | keep it on a server |
 | PKCE | not supported (`code_verifier` is not read) | the back end protects the exchange |
 | `state` | not passed back ("state, not implemented yet") | keep a one-time value in the app or back end and check it against the session that started the flow |
