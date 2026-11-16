@@ -205,11 +205,20 @@ class eZVATManager
     /**
      * Set user's country.
      *
+     * The anonymous user is refused (false): its object is shared by every visitor, so a country saved
+     * there would become the country of all of them. A guest's country stays in the order.
+     *
      * \public
      * \static
      */
     static function setUserCountry( $user, $country )
     {
+        if ( !$user->isRegistered() )
+        {
+            eZDebug::writeNotice( "Not saving country '$country' for the anonymous user", __METHOD__ );
+            return false;
+        }
+
         $userObject = $user->attribute( 'contentobject' );
         $requireUserCountry = eZVATManager::isUserCountryRequired();
         $countryAttributeName = eZVATManager::getUserCountryAttributeName( $requireUserCountry );

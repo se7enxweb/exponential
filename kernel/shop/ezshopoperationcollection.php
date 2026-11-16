@@ -43,7 +43,10 @@ class eZShopOperationCollection
             return array( 'status' => eZModuleOperationInfo::STATUS_CANCELLED );
         }
 
-        if ( $user->attribute( 'is_logged_in' ) )
+        // A guest's country is kept in the order's account information only: every guest is the same
+        // anonymous user object, so a country saved there would become the country of every visitor.
+        $isRegistered = $user->attribute( 'is_logged_in' );
+        if ( $isRegistered )
             $userCountry = eZVATManager::getUserCountry( $user, false );
 
         $acctInfo = $order->attribute( 'account_information' );
@@ -54,7 +57,7 @@ class eZShopOperationCollection
             // If user is registered and logged in
             // and country is not yet specified for the user
             // then save entered country to the user information.
-            if ( !isset( $userCountry ) || !$userCountry )
+            if ( $isRegistered && ( !isset( $userCountry ) || !$userCountry ) )
                 eZVATManager::setUserCountry( $user, $country );
         }
         elseif ( isset( $userCountry ) && $userCountry )

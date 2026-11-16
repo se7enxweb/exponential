@@ -3580,7 +3580,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-ae2e40cc3ffe6ceb7f4f9d840da236a2  doc/changelogs/6.0/6.0.15.md
+3baeb101d649f22fa9e53eca37b08a09  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -25133,7 +25133,7 @@ aaa9aa87850a92027797223872a012b8  kernel/classes/eztrigger.php
 0f1de5b5b79e997c1cb88dc7b55fdc70  kernel/classes/ezurlaliasquery.php
 7b752d5b1d7d9a54e849d45b89b1cac7  kernel/classes/ezurlwildcard.php
 e5198c312191591389da3b48d195e0fb  kernel/classes/ezuserdiscountrule.php
-b30eb94ca3ccc22e2dc132a86ee110ec  kernel/classes/ezvatmanager.php
+05a2ca12a3d9ae17acf8809a02189e3c  kernel/classes/ezvatmanager.php
 ceca34d223bc3f097ee52175c15f7023  kernel/classes/ezvatrule.php
 4c57b085b2d275120266c7f760d3cc89  kernel/classes/ezvattype.php
 e88b7b08a4fdbcdec9ad2b2caed50bfe  kernel/classes/ezviewcounter.php
@@ -26973,7 +26973,7 @@ fd0aec831d3c48833cebad94875b0db8  kernel/shop/editcurrency.php
 4ecc08948a810408bf0d88b2ceb7eb95  kernel/shop/editvatrule.php
 3a877cf9040fc031400b4a2ae2aa04ce  kernel/shop/errors.php
 bd0da59e39c29a94f28ef8cf6d038296  kernel/shop/ezshopfunctioncollection.php
-901c17a5bdd1145b3a93dab3cc1e32ba  kernel/shop/ezshopoperationcollection.php
+6cb4f2d9f0191c72642524df316539f6  kernel/shop/ezshopoperationcollection.php
 2e9df2fd7bfd44da7bb63bbc883c647b  kernel/shop/function_definition.php
 9d8462371921609d7473b0168e723b44  kernel/shop/module.php
 6c09adc1975cf969d95fe1e15249c736  kernel/shop/operation_definition.php
@@ -30000,6 +30000,7 @@ f895533bef23d3248a37993d3c8bb60d  tests/tests/kernel/classes/setupsteps/eZSetupC
 2dcbeb2171ec30dd25d5e0e751249fff  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
 86aa0ccfa2184670b266ec74014b3061  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php
 898a07f1d7fbb897f355e37de77d33c4  tests/tests/kernel/classes/shop/eZCurrencyConverterRoundingTest.php
+e8c3642c224e80667df594fbcc832182  tests/tests/kernel/classes/shop/eZVATManagerUserCountryTest.php
 67a20f5786b3718e91ce7f373febb481  tests/tests/kernel/classes/shop/expOrderSiteaccessBackfillTest.php
 3e9dac43c913a188cc0438eec5f65ed8  tests/tests/kernel/classes/shop/expOrderSiteaccessTest.php
 daae1c2f9fd305fb79f5b60fbcefb287  tests/tests/kernel/classes/shop/expOrderSiteaccessURLTest.php
