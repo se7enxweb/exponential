@@ -3580,7 +3580,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a291ac1ea2448549cfc1302bf5b734d7  doc/changelogs/6.0/6.0.15.md
+ae2e40cc3ffe6ceb7f4f9d840da236a2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6965,7 +6965,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-ac30e3476ac43fc60964a654e0647763  doc/eng-us/features/6.0/README.md
+0651d5a433c0f42b5f7831a92c04359f  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7115,6 +7115,7 @@ e72286bc83884f1eb24b2ee9034f6481  doc/eng-us/features/6.0/platform-layouts-core-
 cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.md
 2e6216a45844e2f3da0b09fbbea87102  doc/eng-us/features/6.0/platform-sqlite-install.md
 90c5f27d343a57526bf016d4e13900ef  doc/eng-us/features/6.0/preload-sites-view.md
+c07c4366ceda3d30c77c453388701333  doc/eng-us/features/6.0/preview-in-owning-siteaccess.md
 ae08ede3efea95365e6dbc15478de7cf  doc/eng-us/features/6.0/preview-links.md
 79030ca296afed184958364e53456507  doc/eng-us/features/6.0/publish-without-notification.md
 123834657cac8b92a11cff1ebbef2dbe  doc/eng-us/features/6.0/quality-checks.md
@@ -17304,6 +17305,7 @@ b2ec6f7c415225178be44e5caeab8388  doc/ger-de/funktionen/6.0/velocity-zeitplaner.
 15bb0f4001591aa883db2831b1ce8cd3  doc/ger-de/funktionen/6.0/verbesserte-debug-ausgabe.md
 7b9d3ace84a70314eeb6b83a3949469a  doc/ger-de/funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md
 8a6387d0944cfcf12dbffe21cf8cf6f6  doc/ger-de/funktionen/6.0/vorabladen-des-zugriffsarrays.md
+2b80869ae76e18ff55f9c3df3f17077e  doc/ger-de/funktionen/6.0/vorschau-im-eigenen-siteaccess.md
 33115da642a7e51b0393d1be5624b8ca  doc/ger-de/funktionen/6.0/vorschaulinks.md
 5a82b84fa068555c248d17d1a6d4125f  doc/ger-de/funktionen/6.0/wartungsmodus.md
 0eb69b86b32c2545332f801a64521116  doc/ger-de/funktionen/6.0/website-seitenleiste.md

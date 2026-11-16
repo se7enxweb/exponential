@@ -229,6 +229,7 @@ nginx with PHP-FPM keep working as before.
 - [The audit trail: who did what, and proof that nobody changed the record](audit-trail.md)
 - [The secret store: passwords and keys of the tools, encrypted, by name](secret-store.md)
 - [Preview links: a draft for a reviewer without an account, signed, expiring and revocable](preview-links.md)
+- [The preview in the siteaccess and on the host the content belongs to](preview-in-owning-siteaccess.md): multisite installations with one siteaccess per host
 - [Content Security Policy](content-security-policy.md)
 - [Review hold: no editing or publishing of a page until a reviewer releases it](review-hold.md), and the auto-hold of visitors' submissions
 - [Recent content: the newest content, held submissions and actions on a selection](moderation.md)
