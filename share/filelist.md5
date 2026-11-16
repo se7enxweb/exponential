@@ -3580,7 +3580,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-25b5caebea83fcd0a72f5a9229b0a44f  doc/changelogs/6.0/6.0.15.md
+4591a97296ce419f688ec371d9fae893  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3714,7 +3714,7 @@ fd4ff9bc9f75a7fc9dd1edfa4251fe51  doc/eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPAN
 d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 f0adee4f1f3831d6106acd3e50242461  doc/eng-us/bc/6.0/admin4-styling.md
 a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
-57fc6878bd998cb0f26251b458c5fda8  doc/eng-us/bc/6.0/anonymous-public-policies.md
+2fdc25f2d9a0e0d333eec6045a319e6a  doc/eng-us/bc/6.0/anonymous-public-policies.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
 a1d1878ec286b054f5486e7955c9030e  doc/eng-us/bc/6.0/audit.md
 ae36ca4cd0badc551841af1a15c85de9  doc/eng-us/bc/6.0/backend_ezjscore_services.md
@@ -13861,7 +13861,7 @@ dcf1b0b94d93bc43a5091638826844ee  doc/ger-de/bc/5.90/passwortlaenge.md
 039ce123c1a0a75a7c9e730e577e0136  doc/ger-de/bc/5.90/php7.md
 689d7697b4e0de53b8a47785f689f6e0  doc/ger-de/bc/6.0/admin4-gestaltung.md
 5a4621981bfe41d7b35285f2ddc481b7  doc/ger-de/bc/6.0/admin4l.md
-5df1d6e52db73baef257a5a6ba2f57a5  doc/ger-de/bc/6.0/anonymous-rolle-richtlinien.md
+4e78fa65819106fb7b5ad9c32bbd555c  doc/ger-de/bc/6.0/anonymous-rolle-richtlinien.md
 693eca963756cd0b335bee8289bc4022  doc/ger-de/bc/6.0/antwort-cache-und-navigation.md
 0e9a9f2936d696af431fdd512833676e  doc/ger-de/bc/6.0/api-schluessel.md
 d6da8f43f86cb2c80fb007c253d0b4ad  doc/ger-de/bc/6.0/audit.md

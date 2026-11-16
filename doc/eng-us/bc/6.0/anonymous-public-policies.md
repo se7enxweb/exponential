@@ -33,7 +33,7 @@ from `PolicyOmitList[]`: registration is then open through that list, policy or 
 
 | Policy | Why | Where it comes from |
 | --- | --- | --- |
-| content / read, Section Standard | reading the public content; content/view, content/search, content/advancedsearch and content/download declare the function *read*, so search, advanced search and downloading a public file need nothing more | base data |
+| content / read, Section Standard | reading the public content; content/view, content/search, content/advancedsearch and content/download declare the function *read*, so search, advanced search and downloading a public file need nothing more. The multisite packages add Node and Subtree to it, so visitors do not read `/configuration` (below) | base data; Node and Subtree: `sevenx_multisite`, `sevenx_multisite_clean`, `cjw_multisite` |
 | content / pdf, Section Standard | the PDF view of public content | base data |
 | user / login, SiteAccess = the public siteaccesses | signing in on the site (not in the administration); also user/activate, which declares *login* | site package |
 | user / register | registering (`user/register`) and the confirmation page (`user/success`, which declares *register*) on a new installation, which takes `user/register` out of `PolicyOmitList[]` | base data from 6.0.15, setup step, site packages, upgrade script |
@@ -48,6 +48,47 @@ from `PolicyOmitList[]`: registration is then open through that list, policy or 
 Not needed as a policy: `user/forgotpassword`, `user/activate`, `user/success` and `user/login` are in
 `PolicyOmitList[]`; `oauth/authorize` checks its policy itself, after the visitor has signed in. Not for visitors:
 `ezinfo` (switched off on public siteaccesses by the site packages).
+
+## Settings content that visitors do not read: /configuration
+
+Some content belongs to no site and is not for visitors, such as the store's coupons. The multisite packages
+(`sevenx_multisite`, `sevenx_multisite_clean`, `cjw_multisite`, from 16 November 2026) put it in three folders directly
+below the content root, in the Standard section like all other content:
+
+| Folder | Remote id | Below |
+| --- | --- | --- |
+| Configuration | `exp-configuration` | the content root (node 2) |
+| Store | `exp-configuration-store` | Configuration |
+| Coupons | `exp-configuration-store-coupons` | Store |
+
+Editors and administrators see, read and edit them as any other content. Visitors do not, because of one policy: the
+Anonymous role's *content / read* policy of the Standard section gets two more limitation values.
+
+| | Before | After |
+| --- | --- | --- |
+| Section | Standard | Standard |
+| Node | - | the content root (node 2) |
+| Subtree | - | every child of the content root except Configuration, and every other top-level node (Users, Media, Setup, Design, ...) |
+
+Node and Subtree in one policy are alternatives: the policy grants content of the Standard section that is the content
+root itself or lies below one of the subtrees. Configuration is in neither, so a visitor gets "access denied" for it and
+for everything below it, does not find it in search, and does not see it in menus or sub-item lists, all of which ask
+the same policy. The folders are not hidden and no section was added. Code that reads the content without asking for
+permissions, such as the coupon lookup of the checkout (xrowcoupon), works as before.
+
+The installer works out the values at the end of the installation, from the top-level nodes it finds; a rerun replaces
+them. **A top-level folder you add later below the content root is not readable by visitors until you add its subtree
+to the policy** (Roles and policies, Anonymous, the *content / read* policy with Section Standard, Edit). Content moved
+inside an existing subtree stays readable.
+
+The folders are made before the installer regenerates the url aliases, so they are `/configuration`,
+`/configuration/store` and `/configuration/store/coupons`, as on an installation that made them by hand. The 6.0.15 base
+data's top-level folder Configuration (node 3, Setup section, not the same folder) then gets `configuration2`. Visitors
+read neither.
+
+An installation that exists keeps its role as it is. To give it the same limit, edit the policy in the administration
+as above: keep Section = Standard, add Node = the content root and Subtree = every top-level subtree except the one to
+keep visitors out of.
 
 ## What to do when you upgrade
 

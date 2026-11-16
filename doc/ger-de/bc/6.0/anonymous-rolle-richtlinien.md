@@ -36,7 +36,7 @@ ohne Richtlinie.
 
 | Richtlinie | Warum | Woher sie kommt |
 | --- | --- | --- |
-| content / read, Sektion Standard | die öffentlichen Inhalte lesen; content/view, content/search, content/advancedsearch und content/download geben die Funktion *read* an, Suche, erweiterte Suche und das Herunterladen einer öffentlichen Datei brauchen also nichts weiter | Grunddaten |
+| content / read, Sektion Standard | die öffentlichen Inhalte lesen; content/view, content/search, content/advancedsearch und content/download geben die Funktion *read* an, Suche, erweiterte Suche und das Herunterladen einer öffentlichen Datei brauchen also nichts weiter. Die Multisite-Pakete ergänzen Node und Subtree, damit Besucher `/configuration` nicht lesen (unten) | Grunddaten; Node und Subtree: `sevenx_multisite`, `sevenx_multisite_clean`, `cjw_multisite` |
 | content / pdf, Sektion Standard | die PDF-Ansicht öffentlicher Inhalte | Grunddaten |
 | user / login, SiteAccess = die öffentlichen Siteaccesses | Anmelden auf der Website (nicht in der Administration); auch user/activate, das *login* angibt | Website-Paket |
 | user / register | Registrieren (`user/register`) und die Bestätigungsseite (`user/success`, das *register* angibt) bei einer neuen Installation, die `user/register` aus `PolicyOmitList[]` herausnimmt | Grunddaten ab 6.0.15, Setup-Schritt, Website-Pakete, Aktualisierungsskript |
@@ -51,6 +51,50 @@ ohne Richtlinie.
 Als Richtlinie nicht nötig: `user/forgotpassword`, `user/activate`, `user/success` und `user/login` stehen in
 `PolicyOmitList[]`; `oauth/authorize` prüft seine Richtlinie selbst, nachdem sich der Besucher angemeldet hat. Nicht für
 Besucher: `ezinfo` (von den Website-Paketen auf öffentlichen Siteaccesses abgeschaltet).
+
+## Einstellungsinhalte, die Besucher nicht lesen: /configuration
+
+Manche Inhalte gehören zu keiner Website und sind nicht für Besucher bestimmt, etwa die Gutscheine des Shops. Die
+Multisite-Pakete (`sevenx_multisite`, `sevenx_multisite_clean`, `cjw_multisite`, ab 16. November 2026) legen sie in drei
+Ordner direkt unter dem Inhaltsstamm, in der Sektion Standard wie alle anderen Inhalte:
+
+| Ordner | Remote-ID | Unter |
+| --- | --- | --- |
+| Configuration | `exp-configuration` | dem Inhaltsstamm (Knoten 2) |
+| Store | `exp-configuration-store` | Configuration |
+| Coupons | `exp-configuration-store-coupons` | Store |
+
+Redakteure und Administratoren sehen, lesen und bearbeiten sie wie alle anderen Inhalte. Besucher nicht, wegen einer
+einzigen Richtlinie: Die Richtlinie *content / read* der Sektion Standard in der Rolle Anonymous bekommt zwei weitere
+Begrenzungswerte.
+
+| | Vorher | Nachher |
+| --- | --- | --- |
+| Section | Standard | Standard |
+| Node | - | der Inhaltsstamm (Knoten 2) |
+| Subtree | - | jedes Kind des Inhaltsstamms außer Configuration und jeder andere Knoten der obersten Ebene (Users, Media, Setup, Design, ...) |
+
+Node und Subtree in einer Richtlinie sind Alternativen: Die Richtlinie erlaubt Inhalte der Sektion Standard, die der
+Inhaltsstamm selbst sind oder unter einem der Teilbäume liegen. Configuration liegt in keinem davon, also bekommt ein
+Besucher dafür und für alles darunter "Zugriff verweigert", findet es in der Suche nicht und sieht es nicht in Menüs
+oder Unterelement-Listen, die alle dieselbe Richtlinie fragen. Die Ordner sind nicht versteckt, und es wurde keine
+Sektion angelegt. Code, der die Inhalte ohne Rechteprüfung liest, etwa die Gutscheinsuche an der Kasse (xrowcoupon),
+arbeitet wie bisher.
+
+Der Installer ermittelt die Werte am Ende der Installation aus den Knoten der obersten Ebene, die er vorfindet; ein
+erneuter Lauf ersetzt sie. **Einen Ordner der obersten Ebene, den Sie später unter dem Inhaltsstamm anlegen, können
+Besucher erst lesen, wenn Sie seinen Teilbaum in die Richtlinie aufnehmen** (Rollen und Richtlinien, Anonymous, die
+Richtlinie *content / read* mit Section Standard, Bearbeiten). Inhalte, die innerhalb eines vorhandenen Teilbaums
+verschoben werden, bleiben lesbar.
+
+Die Ordner entstehen, bevor der Installer die URL-Aliase neu erzeugt, also heißen sie `/configuration`,
+`/configuration/store` und `/configuration/store/coupons`, wie bei einer Installation, die sie von Hand angelegt hat. Der
+Ordner Configuration der obersten Ebene aus den Grunddaten von 6.0.15 (Knoten 3, Sektion Setup, ein anderer Ordner)
+bekommt dann `configuration2`. Besucher lesen keinen von beiden.
+
+Eine bestehende Installation behält ihre Rolle, wie sie ist. Um ihr dieselbe Begrenzung zu geben, bearbeiten Sie die
+Richtlinie in der Administration wie oben: Section = Standard behalten, Node = der Inhaltsstamm und Subtree = jeder
+Teilbaum der obersten Ebene außer dem, aus dem Besucher herausgehalten werden sollen, hinzufügen.
 
 ## Was beim Aktualisieren zu tun ist
 
