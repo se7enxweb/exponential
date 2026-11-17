@@ -684,7 +684,12 @@ class eZPostgreSQLDB extends eZDBInterface
 
     function close()
     {
-        pg_close( $this->DBConnection );
+        // only an open connection: pg_close( false ) throws a TypeError on PHP 8, and the
+        // Velocity warm-up closes the parent's connection before its workers fork
+        if ( $this->DBConnection )
+            pg_close( $this->DBConnection );
+        $this->DBConnection = false;
+        $this->IsConnected = false;
     }
 
     function createDatabase( $dbName )

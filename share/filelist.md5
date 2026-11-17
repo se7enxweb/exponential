@@ -27087,16 +27087,16 @@ f8422b2d7c5983552ff65b4105c20766  kernel/workflow/view.php
 4ca5c95269d6a6ee11b56bab377d82e9  kernel/workflow/workflowlist.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
 7f8405d13b52f241e1e58d0d2820df4a  kickstart.ini-dist
-1e9f3dead0e1a181a1cf28a06113e4e2  lib/ezdb/classes/expmongodb.php
+73bdd010e8aea24ad8f74c7e8e95f402  lib/ezdb/classes/expmongodb.php
 13f0a583c9b7da0867680d243ffdcb5e  lib/ezdb/classes/exppdodb.php
 4a4c9ff3c3b806245f6e3e709208198b  lib/ezdb/classes/ezdb.php
 661ef313a4ddad8e41cfa06a5e021a1e  lib/ezdb/classes/ezdbinterface.php
 b66248e35051b10fab37396107632d39  lib/ezdb/classes/ezdbquerycache.php
 5d130fa0386f0a1810c63282941ab4aa  lib/ezdb/classes/ezdbtool.php
 7ef8186a613986a90636b30fac85b4f9  lib/ezdb/classes/ezmysqlcharset.php
-30844fe013028638ef2816877e83baa5  lib/ezdb/classes/ezmysqlidb.php
+b159cf7b4fb08c52b2515eeaa94cd36e  lib/ezdb/classes/ezmysqlidb.php
 ec6538c99af5eb7c84f089898a6907d2  lib/ezdb/classes/eznulldb.php
-d2b9ad028227c37896ac352d2c697f71  lib/ezdb/classes/ezpostgresqldb.php
+755ec0a2dd5bf99a69a3107756d4f01f  lib/ezdb/classes/ezpostgresqldb.php
 0962e8b7c5413af7373c4c305a1cb207  lib/ezdb/classes/ezsqlite3db.php
 ac6df8d4565b779eff3ff9c41b2da301  lib/ezdbschema/classes/expmongoschema.php
 eca147e65440b86a146555c6e4122e0f  lib/ezdbschema/classes/ezdbschema.php
@@ -28896,7 +28896,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-a7ecdb16f3b38b53c97fe042e74dba1c  tests/test-map.json
+2a4b32bc38e1ca84dcda30b8f3d36c66  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -30590,6 +30590,7 @@ f57e1fdde9566303d12ebf1c33041f52  tests/tests/lib/ezdb/eZSQLite3ModFunctionTest.
 105e57833c58aeef86420e806693bbb0  tests/tests/lib/ezdb/eZSQLite3SerialIDTest.php
 7ad84e2261cffb8ef3c402509373b2c9  tests/tests/lib/ezdb/eZSQLite3ShippedSchemaTest.php
 7ddc144c630f4b56eda487d1887d2c96  tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php
+ac57cd831646f86c9835dbbba2ca8d05  tests/tests/lib/ezdb/expDBDriverCloseAndForkTest.php
 9237bb35592e32f427078aa870fcdb33  tests/tests/lib/ezdb/expMongoDBInsertSelectPlanTest.php
 5748fdf5e719376a18a1e49d5a4e7354  tests/tests/lib/ezdb/expPDODBTest.php
 874730de335b5f2eafa192b4ed5018f7  tests/tests/lib/ezdb/ezdbinterface_test.php

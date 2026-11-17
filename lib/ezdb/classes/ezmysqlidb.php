@@ -991,6 +991,9 @@ class eZMySQLiDB extends eZDBInterface
             if ( $this->UseSlaveServer === true )
                 mysqli_close( $this->DBConnection );
             mysqli_close( $this->DBWriteConnection );
+            // closed: a second close() (the Velocity warm-up closes the parent's connection
+            // before its workers fork) must not call mysqli_close() on a closed link, which throws
+            $this->IsConnected = false;
         }
     }
 

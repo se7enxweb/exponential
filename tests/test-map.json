@@ -3154,7 +3154,12 @@
       "tests/tests/lib/ezdbschema/expPgsqlSchemaAddFieldTest.php"
     ],
     "lib/ezdb/classes/expmongodb.php": [
-      "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php",
+      "tests/tests/lib/ezdb/expDBDriverCloseAndForkTest.php"
+    ],
+    "lib/ezdb/classes/ezpostgresqldb.php": [
+      "tests/tests/lib/ezdb/expDBDriverCloseAndForkTest.php",
+      "tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php"
     ],
     "lib/ezdbschema/classes/expmongoschema.php": [
       "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php"

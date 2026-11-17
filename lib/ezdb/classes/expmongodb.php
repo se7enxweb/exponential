@@ -184,17 +184,48 @@ class expMongoDB extends eZDBInterface
         return 'mongo';
     }
 
+    /**
+     * The clients of this process, keyed by connection URI (see getClient()).
+     *
+     * @var MongoDB\Client[]
+     */
+    private static $Clients = array();
+
+    /** The process the clients in $Clients were made in. */
+    private static $ClientsPid = null;
+
     public function getClient()
     {
         // One client per connection URI, kept for the life of the process so a persistent
         // worker reuses its connections; keyed, so a later instance for another server,
         // user or database (another siteaccess) does not get the first instance's client.
         // Bounded by the number of configured databases.
-        static $clients = array();
+        //
+        // Only for the life of THIS process: a process forked after connecting (a Velocity
+        // worker of a parent that rendered pages during its warm-up) must not go on using
+        // the parent's client and its sockets, so the clients are dropped and made again
+        // the first time a new process id asks for one.
+        $pid = getmypid();
+        if ( self::$ClientsPid !== $pid )
+        {
+            self::$Clients = array();
+            self::$ClientsPid = $pid;
+        }
         $uri = self::connectionUri( $this->Server, $this->Port, $this->User, $this->Password, $this->DB );
-        if ( !isset( $clients[$uri] ) )
-            $clients[$uri] = new MongoDB\Client($uri);
-        return $clients[$uri];
+        if ( !isset( self::$Clients[$uri] ) )
+            self::$Clients[$uri] = new MongoDB\Client($uri);
+        return self::$Clients[$uri];
+    }
+
+    /**
+     * Whether this process holds a client for this instance's connection URI.
+     *
+     * @return bool
+     */
+    public function hasClient()
+    {
+        return self::$ClientsPid === getmypid()
+            && isset( self::$Clients[self::connectionUri( $this->Server, $this->Port, $this->User, $this->Password, $this->DB )] );
     }
 
     /**
@@ -3393,5 +3424,17 @@ class expMongoDB extends eZDBInterface
         return $literal;
     }
 
-    function close() {}
+    /**
+     * Releases this process's client for this instance's connection URI. Another instance on the
+     * same URI, or this one used again, gets a new client from getClient().
+     *
+     * The driver (ext-mongodb) may keep the underlying connection pool for the process and reuse it
+     * for the next client; it resets that pool itself in a forked child.
+     */
+    function close()
+    {
+        if ( self::$ClientsPid === getmypid() )
+            unset( self::$Clients[self::connectionUri( $this->Server, $this->Port, $this->User, $this->Password, $this->DB )] );
+        $this->IsConnected = false;
+    }
 }
