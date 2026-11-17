@@ -30,6 +30,8 @@
     // url => state: 'waiting' | 'done' | 'refused'
     var seen = {};
     var waiting = [];
+    // real url => the src of the <img> that shows its page placeholder ([AliasSettings] PagePlaceholders)
+    var shownAs = {};
     var timer = null;
     var running = false;
     var idleRounds = 0;
@@ -69,9 +71,11 @@
     // The <img> elements that show url, through src or srcset
     function imagesShowing(url) {
         var found = [];
+        var alt = shownAs[url];
         for (var i = 0; i < document.images.length; i++) {
             var img = document.images[i];
-            if (img.currentSrc === url || img.src === url || (img.srcset && img.srcset.indexOf(url) !== -1)) {
+            if (img.currentSrc === url || img.src === url || (img.srcset && img.srcset.indexOf(url) !== -1)
+                || (alt && (img.src === alt || img.currentSrc === alt))) {
                 found.push(img);
             }
         }
@@ -96,7 +100,7 @@
             if (img.srcset && img.srcset.indexOf(url) !== -1) {
                 img.srcset = img.srcset.split(url).join(replacement);
             }
-            if (img.src === url || img.currentSrc === url) {
+            if (img.src === url || img.currentSrc === url || (shownAs[url] && img.src === shownAs[url])) {
                 img.src = replacement;
             }
             img.removeAttribute('data-exp-placeholder');
@@ -148,8 +152,11 @@
         running = true;
         var at = positions();
         var last = document.images.length;
+        function place(url) {
+            return url in at ? at[url] : (shownAs[url] && shownAs[url] in at ? at[shownAs[url]] : last);
+        }
         waiting.sort(function (a, b) {
-            return (a in at ? at[a] : last) - (b in at ? at[b] : last);
+            return place(a) - place(b);
         });
         var queue = waiting.slice();
         var made = 0;
@@ -201,6 +208,59 @@
             }
         }
     }
+
+    // A page placeholder (a page with many images not made yet): a static file whose fragment names the real image,
+    // #exp-src=<address>&exp-depth=<path segments of the placeholder below the installation's root>
+    function placeholderTarget(src) {
+        var at = src.indexOf('#exp-src=');
+        if (at === -1 || !window.URL) {
+            return null;
+        }
+        var real = null;
+        var depth = 0;
+        src.slice(at + 1).split('&').forEach(function (part) {
+            var eq = part.indexOf('=');
+            var key = eq === -1 ? part : part.slice(0, eq);
+            var value = eq === -1 ? '' : part.slice(eq + 1);
+            if (key === 'exp-src') {
+                try { real = decodeURIComponent(value); } catch (e) { real = null; }
+            } else if (key === 'exp-depth') {
+                depth = parseInt(value, 10) || 0;
+            }
+        });
+        if (!real) {
+            return null;
+        }
+        try {
+            var file = new URL(src);
+            var parts = file.pathname.split('/');
+            var root = parts.slice(0, Math.max(1, parts.length - depth)).join('/') + '/';
+            var target = new URL(real, file.origin + root);
+            return target.origin === file.origin ? target.href : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function scanPlaceholders() {
+        for (var i = 0; i < document.images.length; i++) {
+            var src = document.images[i].src;
+            if (!src || src.indexOf('#exp-src=') === -1) {
+                continue;
+            }
+            var real = placeholderTarget(src);
+            if (real && !shownAs[real]) {
+                shownAs[real] = src;
+                add(real);
+            }
+        }
+    }
+    if (document.readyState !== 'loading') {
+        scanPlaceholders();
+    } else {
+        document.addEventListener('DOMContentLoaded', scanPlaceholders);
+    }
+    window.addEventListener('load', scanPlaceholders);
 
     var timingSupported = window.PerformanceResourceTiming && 'serverTiming' in window.PerformanceResourceTiming.prototype;
     if (timingSupported && window.PerformanceObserver) {

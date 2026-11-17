@@ -46,6 +46,24 @@ class expImageAliasBacklog
     /** @var string the request the drain was registered for (a persistent worker serves many) */
     protected static $scheduledFor = '';
 
+    /** @var string the millisecond of the last entry this process added */
+    protected static $sequenceMs = '';
+
+    /** @var int entries this process added within that millisecond, less one */
+    protected static $sequence = 0;
+
+    /** @var callable|null what startDrainers() runs to start a drainer, over the process (tests) */
+    protected static $spawner = null;
+
+    /** Waiting entries per drainer: fewer start no further drainer */
+    const DRAINER_ENTRIES = 4;
+
+    /** Seconds a drainer counts as running after it was started, until it holds its lock */
+    const DRAINER_START = 10;
+
+    /** Seconds a drainer waits for new entries before it ends */
+    const DRAINER_IDLE = 2;
+
     /**
      * Sets the backlog directory for this process (tests); null: <cache dir>/imagealias-backlog/<server name>.
      *
@@ -156,7 +174,12 @@ class expImageAliasBacklog
         $key = self::key( $entry );
         if ( glob( $directory . '/*-' . $key . '.json', GLOB_NOSORT ) )
             return false;
-        $file = $directory . '/' . sprintf( '%014.0f', microtime( true ) * 1000 ) . '-' . $key . '.json';
+        // Milliseconds, then this process's count within the millisecond: a page adds hundreds of entries at once,
+        // and they are made in the order it added them
+        $ms = sprintf( '%014.0f', microtime( true ) * 1000 );
+        self::$sequence = $ms === self::$sequenceMs ? self::$sequence + 1 : 0;
+        self::$sequenceMs = $ms;
+        $file = $directory . '/' . $ms . sprintf( '%03d', min( 999, self::$sequence ) ) . '-' . $key . '.json';
         $temporary = $file . '.' . getmypid() . '.tmp';
         if ( @file_put_contents( $temporary, json_encode( $entry ) ) === false )
         {
@@ -355,7 +378,11 @@ class expImageAliasBacklog
             self::finishRequest();
             if ( (string)$directory !== '' && $directory !== $before )
                 @chdir( $directory );
-            self::drain( expImageAliasSettings::backlogTime() );
+            // A process of its own makes the backlog ([AliasSettings] BacklogDrainer=process): this one is free for
+            // the next request at once. Velocity hands a worker its next request as soon as it has answered, so a
+            // worker that drained here kept that request waiting for BacklogTime.
+            if ( !self::usesDrainers() || self::startDrainers() === null )
+                self::drain( expImageAliasSettings::backlogTime() );
         }
         catch ( Throwable $e )
         {
@@ -366,6 +393,252 @@ class expImageAliasBacklog
             if ( $before !== false && getcwd() !== $before )
                 @chdir( $before );
         }
+    }
+
+    // ------------------------------------------------------------------------------------------------ drainer processes
+
+    /**
+     * Sets what startDrainers() runs to start drainer $slot (tests): callable( int $slot ) => bool started; null: a
+     * detached process of bin/php/expimagealiasdrain.php.
+     *
+     * @param callable|null $spawner
+     */
+    public static function setSpawner( $spawner )
+    {
+        self::$spawner = $spawner;
+    }
+
+    /**
+     * Whether the backlog is made by drainer processes ([AliasSettings] BacklogDrainer=process) and this PHP can
+     * start one (proc_open() allowed).
+     *
+     * @return bool
+     */
+    public static function usesDrainers()
+    {
+        if ( expImageAliasSettings::backlogDrainer() !== 'process' )
+            return false;
+        if ( self::$spawner !== null )
+            return true;
+        $disabled = array_map( 'trim', explode( ',', (string)ini_get( 'disable_functions' ) ) );
+        return function_exists( 'proc_open' ) && !in_array( 'proc_open', $disabled, true );
+    }
+
+    /**
+     * @return string the directory of the drainer locks: <backlog directory>/.drainers
+     */
+    public static function drainerDirectory()
+    {
+        return self::directory() . '/.drainers';
+    }
+
+    /**
+     * Starts drainer processes for the backlog: one per MaxParallel slot that no drainer holds (a lock file each),
+     * while there are at least DRAINER_ENTRIES waiting entries per drainer. A drainer just started counts as running
+     * for DRAINER_START seconds (its marker file), until it holds its lock.
+     *
+     * @return int|null drainers started (0: enough run already, or nothing waits); null when none could be started
+     */
+    public static function startDrainers()
+    {
+        $waiting = self::count();
+        if ( $waiting === 0 )
+            return 0;
+        $directory = self::drainerDirectory();
+        if ( !is_dir( $directory ) )
+            eZDir::mkdir( $directory, false, true );
+        $running = 0;
+        $free = array();
+        for ( $slot = 0; $slot < expImageAliasSettings::maxParallel(); $slot++ )
+        {
+            if ( self::drainerRunning( $slot ) )
+                $running++;
+            else
+                $free[] = $slot;
+        }
+        $started = 0;
+        $failed = false;
+        foreach ( $free as $slot )
+        {
+            if ( ( $running + $started ) * self::DRAINER_ENTRIES >= $waiting )
+                break;
+            $marker = $directory . '/drainer-' . $slot . '.start';
+            @touch( $marker );
+            @chmod( $marker, eZFile::fileMode( 0666 ) );
+            $ok = self::$spawner !== null ? ( call_user_func( self::$spawner, $slot ) ? true : 'the spawner refused' )
+                                          : self::spawnDrainer( $slot );
+            if ( $ok === true )
+                $started++;
+            else
+            {
+                @unlink( $marker );
+                $failed = true;
+                // The request makes the backlog itself then; said once per request in imagealias.log
+                expImageAliasLog::write( 'queue', array( 'result' => 'no-drainer', 'slot' => $slot, 'reason' => (string)$ok ) );
+                break;
+            }
+        }
+        return $failed && $started === 0 && $running === 0 ? null : $started;
+    }
+
+    /**
+     * Whether a drainer holds slot $slot, or was started for it less than DRAINER_START seconds ago.
+     *
+     * @param int $slot
+     * @return bool
+     */
+    public static function drainerRunning( $slot )
+    {
+        $directory = self::drainerDirectory();
+        $marker = $directory . '/drainer-' . (int)$slot . '.start';
+        clearstatcache( true, $marker );
+        $started = @filemtime( $marker );
+        if ( $started !== false && time() - $started < self::DRAINER_START )
+            return true;
+        $file = $directory . '/drainer-' . (int)$slot . '.lock';
+        if ( !is_file( $file ) )
+            return false;
+        // read-only is enough for flock(): a lock file another user made works as well
+        $handle = @fopen( $file, 'r' );
+        if ( !$handle )
+            return false;
+        $free = flock( $handle, LOCK_EX | LOCK_NB );
+        if ( $free )
+            flock( $handle, LOCK_UN );
+        fclose( $handle );
+        return !$free;
+    }
+
+    /**
+     * Starts bin/php/expimagealiasdrain.php --slot=$slot detached (its own session, no terminal, output discarded),
+     * in this request's siteaccess.
+     *
+     * @param int $slot
+     * @return true|string true when started, else why not
+     */
+    protected static function spawnDrainer( $slot )
+    {
+        $php = self::phpBinary();
+        if ( $php === '' )
+            return 'no PHP command line binary found';
+        $argv = array( $php, 'bin/php/expimagealiasdrain.php', '--slot=' . (int)$slot, '-q' );
+        $siteAccess = expImageAliasSettings::currentSiteAccess();
+        if ( $siteAccess !== '' )
+            array_push( $argv, '-s', $siteAccess );
+        // Started by root (Velocity): the drainer becomes the owner of var/ itself
+        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
+            $argv[] = '--allow-root-user';
+        $setsid = class_exists( 'expProcessTools' ) ? (string)expProcessTools::setsid() : '';
+        $shell = is_executable( '/bin/bash' ) ? '/bin/bash' : '/bin/sh';
+        // close what the parent left open above 2 (a web worker's sockets), then start it detached
+        $script = 'for f in /proc/$$/fd/*; do n=${f##*/}; case $n in 0|1|2) ;; *[!0-9]*) ;; *) eval "exec $n>&-" 2>/dev/null ;; esac; done; '
+                . ( $setsid !== '' ? 'exec ' . $setsid . ' -f "$@" < /dev/null > /dev/null 2>&1'
+                                   : '"$@" < /dev/null > /dev/null 2>&1 & exit 0' );
+        // Pipes, not files: Velocity's workers replace the file:// stream wrapper, and proc_open() cannot hand a
+        // wrapped file to a process (it failed there). The drainer itself reads and writes /dev/null (above).
+        $pipes = array();
+        error_clear_last();
+        $process = @proc_open( array_merge( array( $shell, '-c', $script, 'expimagealiasdrain-spawn' ), $argv ),
+                               array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ),
+                               $pipes, getcwd() !== false ? getcwd() : null );
+        if ( !is_resource( $process ) )
+        {
+            $last = error_get_last();
+            return 'proc_open() failed' . ( $last ? ': ' . $last['message'] : '' );
+        }
+        foreach ( $pipes as $pipe )
+            fclose( $pipe );
+        $code = proc_close( $process );
+        // -1: the status could not be read (another part of the process reaps its children); the start went out
+        if ( $code !== 0 && $code !== -1 )
+            return 'the start of ' . $php . ' bin/php/expimagealiasdrain.php ended with exit code ' . $code;
+        return true;
+    }
+
+    /**
+     * The PHP command line binary for drainers: the one this process runs when it is the command line (Velocity),
+     * else the one found once and kept for a day in <drainer directory>/php (finding it runs PHP, too slow for
+     * every request of PHP-FPM).
+     *
+     * @return string '' when none is found
+     */
+    protected static function phpBinary()
+    {
+        if ( PHP_SAPI === 'cli' && PHP_BINARY !== '' )
+            return PHP_BINARY;
+        $file = self::drainerDirectory() . '/php';
+        clearstatcache( true, $file );
+        $kept = @filemtime( $file );
+        if ( $kept !== false && time() - $kept < 86400 )
+        {
+            $php = trim( (string)@file_get_contents( $file ) );
+            if ( $php !== '' && is_executable( $php ) )
+                return $php;
+        }
+        $php = class_exists( 'expProcessTools' ) ? (string)expProcessTools::phpCli() : '';
+        if ( $php === '' && is_executable( PHP_BINDIR . '/php' ) )
+            $php = PHP_BINDIR . '/php';
+        if ( $php !== '' && @file_put_contents( $file . '.' . getmypid() . '.tmp', $php ) !== false )
+        {
+            @chmod( $file . '.' . getmypid() . '.tmp', eZFile::fileMode( 0666 ) );
+            @rename( $file . '.' . getmypid() . '.tmp', $file );
+        }
+        return $php;
+    }
+
+    /**
+     * What a drainer process does (bin/php/expimagealiasdrain.php): holds the lock of $slot, makes the backlog in a
+     * conversion slot until it is empty or BacklogTime seconds have passed, waiting DRAINER_IDLE seconds for new
+     * entries before it ends.
+     *
+     * @param int $slot
+     * @return int|false aliases made; false when another drainer holds $slot
+     */
+    public static function runDrainer( $slot )
+    {
+        $directory = self::drainerDirectory();
+        if ( !is_dir( $directory ) )
+            eZDir::mkdir( $directory, false, true );
+        $file = $directory . '/drainer-' . (int)$slot . '.lock';
+        $handle = @fopen( $file, 'c' );
+        if ( !$handle )
+            $handle = @fopen( $file, 'r' );
+        if ( !$handle || !flock( $handle, LOCK_EX | LOCK_NB ) )
+        {
+            if ( $handle )
+                fclose( $handle );
+            return false;
+        }
+        @chmod( $file, eZFile::fileMode( 0666 ) );
+        @unlink( $directory . '/drainer-' . (int)$slot . '.start' );
+        $worked = 0;
+        try
+        {
+            if ( !expImageAliasThrottle::applies() )
+                return 0;
+            $end = microtime( true ) + expImageAliasSettings::backlogTime();
+            $idleUntil = microtime( true ) + self::DRAINER_IDLE;
+            while ( microtime( true ) < $end )
+            {
+                if ( self::count() === 0 )
+                {
+                    if ( microtime( true ) >= $idleUntil )
+                        break;
+                    usleep( 200000 );
+                    continue;
+                }
+                $made = self::drain( $end - microtime( true ), 1.0 );
+                $worked += $made;
+                if ( $made > 0 )
+                    $idleUntil = microtime( true ) + self::DRAINER_IDLE;
+            }
+        }
+        finally
+        {
+            flock( $handle, LOCK_UN );
+            fclose( $handle );
+        }
+        return $worked;
     }
 
     /**

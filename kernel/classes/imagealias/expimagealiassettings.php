@@ -205,6 +205,48 @@ class expImageAliasSettings
     }
 
     /**
+     * Who makes the backlog after a request's answer ([AliasSettings] BacklogDrainer): process (default) starts a
+     * drainer process of its own (bin/php/expimagealiasdrain.php, at most MaxParallel per server); request makes it in
+     * the request's own process, as before.
+     *
+     * @return string process|request
+     */
+    public static function backlogDrainer()
+    {
+        $value = strtolower( trim( (string)self::value( 'AliasSettings', 'BacklogDrainer', 'process' ) ) );
+        return $value === 'request' ? 'request' : 'process';
+    }
+
+    /**
+     * Whether a page that shows many images not made yet links the rest to a static placeholder of their size
+     * ([AliasSettings] PagePlaceholders, expImageAliasPagePlaceholder).
+     *
+     * @return bool
+     */
+    public static function pagePlaceholdersEnabled()
+    {
+        return self::enabled( 'AliasSettings', 'PagePlaceholders', true );
+    }
+
+    /**
+     * @return int aliases not made yet a page links through content/image before the rest get the static placeholder
+     *             ([AliasSettings] PagePlaceholderAfter, 0 to 10000, default 24)
+     */
+    public static function pagePlaceholderAfter()
+    {
+        return (int)self::number( 'AliasSettings', 'PagePlaceholderAfter', 24, 0, 10000 );
+    }
+
+    /**
+     * @return int seconds a page that links such placeholders may be kept in the view cache ([AliasSettings]
+     *             PagePlaceholderTime, 10 to 3600, default 60)
+     */
+    public static function pagePlaceholderTime()
+    {
+        return (int)self::number( 'AliasSettings', 'PagePlaceholderTime', 60, 10, 3600 );
+    }
+
+    /**
      * @return int the size (bytes) var/log/imagealias.log may reach before it is rotated: its own, not the kernel's
      *             LogFileMaxSize for all logs, since a bulk run writes a line per alias (1 MB to 1 GB, default 20 MB)
      */

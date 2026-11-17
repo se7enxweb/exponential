@@ -570,6 +570,10 @@ class eZImageAliasHandler
         $entry = expImageAliasUrl::computedEntry( $aliasName, $aliasList, $this->focalData(), $attribute, $options );
         if ( $entry === null )
             return null;
+        // A page with many images not made yet links the rest to a static placeholder ([AliasSettings]
+        // PagePlaceholders): no PHP request per image; the backlog makes them and the swap script shows them
+        if ( class_exists( 'expImageAliasPagePlaceholder' ) )
+            $entry = expImageAliasPagePlaceholder::apply( $entry, $attribute, $aliasName, $options );
         $custom['on_demand_alias'][$aliasName] = $entry;
         return $entry;
     }
