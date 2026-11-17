@@ -3,13 +3,13 @@ title: image.ini [AliasSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [AliasSettings] in image.ini: AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter ..."
-keywords: Einstellung, image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, Backlog, BacklogTime, BulkNice, CacheMaxAge, LogFileMaxSize
+keywords: Einstellung, image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, Backlog, BacklogTime, BacklogDrainer, PagePlaceholders, PagePlaceholderAfter, PagePlaceholderTime, BulkNice, CacheMaxAge, LogFileMaxSize
 type: generated
 generated: exp:help:examples
 ---
 # image.ini [AliasSettings]
 
-Der Block `[AliasSettings]` von `settings/image.ini`, mit 20 Einstellung(en).
+Der Block `[AliasSettings]` von `settings/image.ini`, mit 24 Einstellung(en).
 
 > -------- Einstellungen der Bild-Aliase --------  
 
@@ -330,6 +330,77 @@ Standard: `30`.
 # settings/override/image.ini.append.php
 [AliasSettings]
 BacklogTime=30
+*/ ?>
+```
+
+## BacklogDrainer
+
+> Wer den Rückstau nach der Antwort einer Anfrage erzeugt:  
+>   process   ein eigener Abarbeiter-Prozess (bin/php/expimagealiasdrain.php, von der Anfrage losgelöst  
+>             gestartet, höchstens MaxParallel je Server, jeder höchstens BacklogTime Sekunden lang), sodass  
+>             der Prozess des Webservers sofort für die nächste Anfrage frei ist. Velocity gibt einem Worker  
+>             seine nächste Anfrage, sobald er geantwortet hat: Ein Worker, der den Rückstau selbst erzeugte,  
+>             ließ diese Anfrage warten. Braucht proc\_open() und die PHP-Kommandozeile; ohne sie wie request.  
+>   request   der Prozess der Anfrage selbst erzeugt ihn nach seiner Antwort.  
+
+Standard: `process`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+BacklogDrainer=process
+*/ ?>
+```
+
+## PagePlaceholders
+
+> Eine Seite, die viele noch nicht erzeugte Bilder zeigt (eine Liste mit Hunderten neuer Bilder): Die ersten  
+> PagePlaceholderAfter davon werden wie immer über content/image verlinkt; die übrigen werden auf einen  
+> statischen Platzhalter ihrer Größe verlinkt (<cache dir>/public/imagealias-placeholder/<Breite>x<Höhe>.svg,  
+> vom Webserver ohne PHP beantwortet, einmal je Größe) und kommen in den Rückstau des Servers, während  
+> die Seite erzeugt wird, in der Reihenfolge der Seite. Die Adresse des echten Bildes steht im Fragment der  
+> Platzhalter-URL (#exp-src=...), wo das Austauschskript exp\_image\_swap.js sie findet und jedes Bild  
+> zeigt, sobald es erzeugt ist. Ohne das Austauschskript zeigen diese Bilder den Platzhalter, bis die Seite  
+> neu geladen wird. Die Seite bleibt höchstens PagePlaceholderTime Sekunden im Ansichts-Cache.  
+> Braucht den Rückstau (Backlog=enabled und einen Server, der zuerst antwortet); nur im Modus auf Abruf.  
+> disabled: jedes noch nicht erzeugte Bild wird über content/image verlinkt.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+PagePlaceholders=enabled
+*/ ?>
+```
+
+## PagePlaceholderAfter
+
+> Noch nicht erzeugte Bilder, die eine Seite über content/image verlinkt, bevor die übrigen den Platzhalter bekommen (0 bis 10000).  
+
+Standard: `24`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+PagePlaceholderAfter=24
+*/ ?>
+```
+
+## PagePlaceholderTime
+
+> Sekunden, die eine Seite mit solchen Platzhaltern im Ansichts-Cache bleiben darf (10 bis 3600).  
+
+Standard: `60`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+PagePlaceholderTime=60
 */ ?>
 ```
 

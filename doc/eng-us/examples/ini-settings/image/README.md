@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # image.ini
 
-The shipped settings of `settings/image.ini`: 23 blocks, 91 settings.
+The shipped settings of `settings/image.ini`: 23 blocks, 95 settings.
 
 > Exponential configuration file for image handling  
 >
@@ -27,7 +27,7 @@ The shipped settings of `settings/image.ini`: 23 blocks, 91 settings.
 | [GDSettings](GDSettings.md) | 1 |
 | [FileSettings](FileSettings.md) | 5 |
 | [OutputSettings](OutputSettings.md) | 1 |
-| [AliasSettings](AliasSettings.md) | 20 |
+| [AliasSettings](AliasSettings.md) | 24 |
 | [AliasStaging](AliasStaging.md) | 9 |
 | [AliasSource_pro](AliasSource_pro.md) | 2 |
 | [reference](reference.md) | 1 |

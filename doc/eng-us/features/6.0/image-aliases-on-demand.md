@@ -38,8 +38,9 @@ notes), [Image aliases](../../help/image-aliases.md) (help for Setup > Image ali
 - **Setup > Image aliases** (`setup/aliases`) shows the state and controls everything; `./console exp:image:alias`
   does the same on the command line. Every event is written to `imagealias.log`.
 - **Performance, honestly**: a page of 500 images whose aliases exist loads in **1.7 s** (Apache/PHP-FPM) and
-  **1.9 s** (Velocity). A page of 500 **new** images is not complete in 3 seconds: 8.2 s on Apache/PHP-FPM (was
-  20.7 s), 24.4 s on Velocity, and its real images follow within about half a minute; converting 500 full-size
+  **1.9 s** (Velocity). A page of 500 **new** images is complete in 4.6 s on Apache/PHP-FPM (was 20.7 s) and 6.6 s
+  on Velocity (was 40.7 s) on a heavily loaded server, once in 2.6 s, and its real images follow within about half a
+  minute; converting 500 full-size
   originals alone takes more CPU time than 3 seconds of a 12-core server. Pre-generation after publishing is what
   makes long image lists fast; see [Performance and tuning](#performance-and-tuning).
 
@@ -165,6 +166,31 @@ order they were asked for, so the ones after it are not ready either). The pause
 grows to 3 s while nothing comes; after a minute without any image made it gives up. A page of 500 new images costs
 about one request per image made plus one per round.
 
+### Page placeholders: a page with many new images
+
+`PagePlaceholders=enabled` (default). Every image not made yet is a request to PHP (`content/image`), and on a page of
+hundreds of new images those requests, not the conversions, decide when the page has loaded. So the first
+`PagePlaceholderAfter` (default 24) images not made yet of a page are linked through `content/image` as always, and
+the rest are linked to a **static placeholder** of their size, which the web server answers without PHP and the
+browser asks for once per size:
+
+```
+var/<site>/cache/public/imagealias-placeholder/160x106.svg#exp-src=<the content/image address>&exp-depth=6
+```
+
+- The fragment (`#...`) is never sent to the server. It names the real image for the swap script, which asks for it
+  in page order and puts it in place once it is made; `exp-depth` tells the script how many path segments the
+  placeholder lies below the installation's root, so a relative address resolves as the template's `ezroot` did.
+- The aliases go to the backlog while the page is made, in page order, and the drainers start right after the page's
+  answer, so they are being made before the browser has the page.
+- A page that links such placeholders is kept in the view cache for at most `PagePlaceholderTime` seconds (default
+  60), so the next visitors get the real addresses.
+- Without the swap script these images keep the placeholder until the page is loaded again: a theme with a pagelayout
+  of its own must load it (see above).
+- Only where the backlog applies (a server that answers first) and only for aliases that are not made yet; an
+  outdated alias keeps its address (its old file shows until the new one is made). `disabled`: every image not made
+  yet is linked through `content/image`, as before.
+
 **A theme with a pagelayout of its own must load the script itself**, or the placeholders stay until the next page
 view. The kernel's designs load `FrontendJavaScriptList[]`; a theme that writes its own `<script>` tags does not. The
 media theme (`sevenx_themes_media`) does it at the bottom of its page, in
@@ -262,6 +288,15 @@ written to the database for each image.
   was shown in, the same lock and slots, so the files and the database writes are those of render mode.
 - The cronjob part `imagealiasbacklog.php` (group `frequent`) makes what no request has taken (a server that gets no
   more requests) and gives back an entry whose process died (after 5 minutes).
+- **Drainer processes** (`BacklogDrainer=process`, default): after its answer the request does not make the backlog
+  itself; it starts a drainer, `bin/php/expimagealiasdrain.php --slot=<n>`, detached (its own session, output
+  discarded), and is free for the next request at once. One drainer per four waiting aliases, at most `MaxParallel`
+  per server (a lock file each in `<backlog directory>/.drainers/`); each makes the backlog in a conversion slot until
+  it is empty or `BacklogTime` seconds have passed. Started by root (Velocity), a drainer becomes the owner of `var/`
+  first. Why: Velocity hands a worker its next request as soon as it has answered, so a worker that made the backlog
+  itself kept that request waiting up to `BacklogTime` (measured: 19 to 30 s for one image during a cold page);
+  PHP-FPM's children were held the same way. Needs `proc_open()` and the PHP command line; without them, and with
+  `BacklogDrainer=request`, the request makes the backlog after its answer as before.
 - The Apache module (`mod_php`) and the command line cannot answer first: there the request waits within `MaxWait`
   and queues a job, as with `Backlog=disabled`.
 - With staging (`[AliasStaging] SyncFrom`) a request still fetches within `MaxWait`; only a request that finds every
@@ -475,6 +510,10 @@ documented in the file and in the generated reference
 | `MaxParallel` | `2` | conversions at once per server, over every process |
 | `Backlog` | `enabled` | a request that finds every slot taken answers at once; the alias is made right after the answer |
 | `BacklogTime` | `30` | seconds a request goes on making the backlog after its answer (1 to 600) |
+| `BacklogDrainer` | `process` | who makes the backlog after the answer: drainer processes, or `request` (the request itself) |
+| `PagePlaceholders` | `enabled` | past `PagePlaceholderAfter` images not made yet, a page links the rest to a static placeholder |
+| `PagePlaceholderAfter` | `24` | images not made yet a page links through `content/image` first (0 to 10000) |
+| `PagePlaceholderTime` | `60` | seconds a page with such placeholders may stay in the view cache (10 to 3600) |
 | `BulkNice` | `10` | nice value of a bulk run's worker (0 leaves it) |
 | `CacheMaxAge` | `31536000` | `Cache-Control` max-age of a real alias (placeholders: `no-store`) |
 | `LogFileMaxSize` | `20971520` | Bytes `var/log/imagealias.log` may reach before it is rotated: its own size, not site.ini `LogFileMaxSize` for all logs, so a bulk run keeps its history (1 MB to 1 GB) |
@@ -496,6 +535,27 @@ documented in the file and in the generated reference
 missing images to `index_image.php` (default: it does).
 
 ## Performance and tuning
+
+**Measured again on 17 November 2026**, after two changes: page placeholders (past 24 images not made yet a page
+links the rest to a static placeholder, no PHP request; see
+[Page placeholders](#page-placeholders-a-page-with-many-new-images)) and drainer processes (the backlog is made by
+processes of their own, not by the web server's; on Velocity a worker that drained kept the next request it was given
+waiting up to 30 s). Same server and page, `MaxParallel=6`, medians of three runs; the server was far busier than on
+15 November (load 85 to 124 on 12 cores during these runs, 13 to 36 during the runs before the changes, the same day):
+
+| Page | Server | State | Load before (same day) | Load now | Complete now | Real now |
+|---|---|---|---|---|---|---|
+| 500 x i160 | Apache/PHP-FPM | cold | 18.2 s | 4.6 s | 4.3 s | 50.6 s |
+| 500 x i160 | Velocity | cold | 30.7 s | 6.6 s | 6.3 s | over 60 s |
+| 500 x i160 | Apache/PHP-FPM | warm (HTML from the cold visit) | 3.1 s | 5.3 s | 5.3 s | 5.3 s |
+| 500 x i160 | Velocity | warm (HTML from the cold visit) | 2.8 s | 3.5 s | 3.5 s | 3.5 s |
+
+- One cold run on Apache/PHP-FPM, at a lower load the same morning, was complete in **2.6 s**. The warm figures are
+  slower only through the load: nothing on the warm path changed.
+- The page now costs 24 PHP requests and one static request per placeholder size, instead of 500 PHP requests; the
+  drainers make the aliases at about 15 to 30 a second on this server, and the swap script shows them in page order.
+- "Real" is bound by the conversions (about 40 s of CPU for 500 full-size originals), more so at this load; it is what
+  pre-generation after publishing is for.
 
 **Measured again on 15 November 2026**, after three changes: the backlog (a request never waits for a slot), the
 signing keys kept between PHP-FPM requests (no database for an image request) and the extension directory read once

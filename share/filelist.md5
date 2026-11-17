@@ -3581,7 +3581,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4591a97296ce419f688ec371d9fae893  doc/changelogs/6.0/6.0.15.md
+a144404694f49e1f0e615ec6a9bf2c38  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -5107,7 +5107,7 @@ eed63982fe34e9b64c9c374ecb284e5f  doc/eng-us/examples/ini-settings/i18n/Characte
 c02534996936a3ba602251ab2b8901ac  doc/eng-us/examples/ini-settings/icon/FlagIcons.md
 b2387d8109c7068982688ba185649c55  doc/eng-us/examples/ini-settings/icon/IconSettings.md
 9770932d9d2553de032137a849d3cf48  doc/eng-us/examples/ini-settings/icon/README.md
-072890240d322f361b638dfdeb53bd9e  doc/eng-us/examples/ini-settings/image/AliasSettings.md
+f9bb324b5924992191815d618289f78e  doc/eng-us/examples/ini-settings/image/AliasSettings.md
 49063cb0c469ca9bb0d797d0789c9e03  doc/eng-us/examples/ini-settings/image/AliasSource_pro.md
 ece942af4a6ac88eab76508ef704e928  doc/eng-us/examples/ini-settings/image/AliasStaging.md
 384e5fa12abfd0d7b15ff95473f1acb6  doc/eng-us/examples/ini-settings/image/AnalyzerSettings.md
@@ -5123,7 +5123,7 @@ b0a1ceb5076ecf0064ffcc23b49fef3a  doc/eng-us/examples/ini-settings/image/ImageUp
 443146fc69d9cf9bc026ecf5c921a911  doc/eng-us/examples/ini-settings/image/LayeredPhotoshop.md
 42850b486bfeded6028c2414bd82c354  doc/eng-us/examples/ini-settings/image/MIMETypeSettings.md
 fa76da37ef4a950660f8e12c837011bb  doc/eng-us/examples/ini-settings/image/OutputSettings.md
-cd772904f493600f40e729d5cf0c7c3f  doc/eng-us/examples/ini-settings/image/README.md
+ee29700271e1dfd32dc17111eb1b8ab9  doc/eng-us/examples/ini-settings/image/README.md
 1a67a17e1ae6154bac8c4a7ddb58d19c  doc/eng-us/examples/ini-settings/image/ShellSettings.md
 0d267956caca0cf3e409d5e80ace4c8f  doc/eng-us/examples/ini-settings/image/large.md
 397b15bc4081304ba3e3e7f220a57c3a  doc/eng-us/examples/ini-settings/image/medium.md
@@ -7075,7 +7075,7 @@ d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
 3f3dbc6029b05961b3dd1fd969bf1b69  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
-22bd033cb5f05cb996b1f707ff971e11  doc/eng-us/features/6.0/image-aliases-on-demand.md
+d18228b66aa901eebf243c337c738c48  doc/eng-us/features/6.0/image-aliases-on-demand.md
 ce13a51757dfdf09e65f74df8fc27fee  doc/eng-us/features/6.0/install-in-one-command.md
 1a6c0d26fd13dea1a6e2b109c412530d  doc/eng-us/features/6.0/installation-name-in-pages.md
 ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
@@ -13658,6 +13658,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 05a920c0aec069f9d6c8ef23df079f82  doc/ger-de/.examples/descriptions/43-image-alias-backlog-2026-11-15.json
 8082b588d8d330d9dbd60fbdefebf303  doc/ger-de/.examples/descriptions/44-preview-in-owning-siteaccess-2026-11-16.json
 2a1d441460c038d9dfd2262c6154f4bf  doc/ger-de/.examples/descriptions/45-oauth-password-grant-2026-11-16.json
+9b29f31eaa4e22de4a4305c02da60dd2  doc/ger-de/.examples/descriptions/46-image-alias-page-placeholders-2026-11-17.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
@@ -15228,7 +15229,7 @@ ff82abef5ad2370a30d933c5d02c11fa  doc/ger-de/beispiele/ini-einstellungen/icon/Ex
 525332d3e37f70b1bc5c6b6a3ebbc44f  doc/ger-de/beispiele/ini-einstellungen/icon/FlagIcons.md
 5398082912d34155e307b7384d7cf162  doc/ger-de/beispiele/ini-einstellungen/icon/IconSettings.md
 8a7452ef88681799f0ff0ccc8bf418ec  doc/ger-de/beispiele/ini-einstellungen/icon/README.md
-e714bef7f08974aebab21dab2bd1b131  doc/ger-de/beispiele/ini-einstellungen/image/AliasSettings.md
+01d48989dd976ce9b353cfbf3f61436d  doc/ger-de/beispiele/ini-einstellungen/image/AliasSettings.md
 f2c5351e8b24ce60746e2c9bfe7a3989  doc/ger-de/beispiele/ini-einstellungen/image/AliasSource_pro.md
 6da3dffd573bca65a7d16ecbbee6aa1d  doc/ger-de/beispiele/ini-einstellungen/image/AliasStaging.md
 f8558cb122f5be32a80a310d2fd97846  doc/ger-de/beispiele/ini-einstellungen/image/AnalyzerSettings.md
@@ -15244,7 +15245,7 @@ f7af43935cbb1d741b8aa73d7952af8d  doc/ger-de/beispiele/ini-einstellungen/image/I
 58fe3623efbef9753afe05f28140f2c7  doc/ger-de/beispiele/ini-einstellungen/image/LayeredPhotoshop.md
 fcc644f3800f5886f00b6521c96a2640  doc/ger-de/beispiele/ini-einstellungen/image/MIMETypeSettings.md
 9d09230b5a4b5bf02692e8a04ba65491  doc/ger-de/beispiele/ini-einstellungen/image/OutputSettings.md
-03cac4718dbe40252d37abfe2d878543  doc/ger-de/beispiele/ini-einstellungen/image/README.md
+94a0ab61a282742f3116122a9b1bc7c6  doc/ger-de/beispiele/ini-einstellungen/image/README.md
 ea0a8892ee751055189b58e6bf3da037  doc/ger-de/beispiele/ini-einstellungen/image/ShellSettings.md
 daf3db7b6844332175ff477f23bcfffd  doc/ger-de/beispiele/ini-einstellungen/image/large.md
 1a13eca2f5af4aa68e6d44377daa966f  doc/ger-de/beispiele/ini-einstellungen/image/medium.md
@@ -17119,7 +17120,7 @@ b84f7c8bcee906734aff197e984eb450  doc/ger-de/funktionen/6.0/benutzer-auditprotok
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
 dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
-1f0b3d26e09cf09d9328a67246e6fa40  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
+c101190a0d0375412432054e564d3ed1  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md

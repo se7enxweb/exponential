@@ -45,7 +45,8 @@ Verwandt: [Webserver-Rezepte für auf Abruf erzeugte Bild-Aliase](../../beispiel
   dasselbe auf der Kommandozeile. Jedes Ereignis wird in `imagealias.log` geschrieben.
 - **Leistung, ehrlich gesagt**: Eine Seite mit 500 Bildern, deren Aliase es gibt, lädt in **1,7 s**
   (Apache/PHP-FPM) und **1,9 s** (Velocity). Eine Seite mit 500 **neuen** Bildern ist nicht in 3 Sekunden
-  vollständig: 8,2 s mit Apache/PHP-FPM (vorher 20,7 s), 24,4 s mit Velocity, und ihre echten Bilder folgen innerhalb
+  vollständig: 4,6 s mit Apache/PHP-FPM (vorher 20,7 s) und 6,6 s mit Velocity (vorher 40,7 s) auf einem stark
+  ausgelasteten Server, einmal 2,6 s, und ihre echten Bilder folgen innerhalb
   etwa einer halben Minute; allein das Umwandeln von 500 Originalen in voller Größe braucht mehr Rechenzeit als 3
   Sekunden eines Servers mit 12 Kernen. Was lange Bildlisten schnell macht, ist die Vorab-Erzeugung nach dem
   Veröffentlichen; siehe [Leistung und Abstimmung](#leistung-und-abstimmung).
@@ -184,6 +185,32 @@ Die Pause zwischen den Runden beginnt bei 0,5 s und wächst auf 3 s, solange nic
 fertiges Bild gibt es auf. Eine Seite mit 500 neuen Bildern kostet etwa eine Anfrage je fertigem Bild und eine je
 Runde.
 
+### Seiten-Platzhalter: eine Seite mit vielen neuen Bildern
+
+`PagePlaceholders=enabled` (Standard). Jedes noch nicht erzeugte Bild ist eine Anfrage an PHP (`content/image`), und
+auf einer Seite mit Hunderten neuer Bilder entscheiden diese Anfragen, nicht die Umwandlungen, wann die Seite geladen
+ist. Deshalb werden die ersten `PagePlaceholderAfter` (standardmäßig 24) noch nicht erzeugten Bilder einer Seite wie
+immer über `content/image` verlinkt, und die übrigen auf einen **statischen Platzhalter** ihrer Größe, den der
+Webserver ohne PHP beantwortet und den der Browser einmal je Größe anfragt:
+
+```
+var/<site>/cache/public/imagealias-placeholder/160x106.svg#exp-src=<die content/image-Adresse>&exp-depth=6
+```
+
+- Das Fragment (`#...`) wird nie an den Server geschickt. Es nennt dem Austauschskript das echte Bild; das Skript
+  fragt es in der Reihenfolge der Seite an und setzt es ein, sobald es erzeugt ist. `exp-depth` sagt dem Skript, wie
+  viele Pfadsegmente der Platzhalter unter dem Wurzelverzeichnis der Installation liegt, damit eine relative Adresse so
+  aufgelöst wird, wie es `ezroot` im Template tat.
+- Die Aliase kommen in den Rückstau, während die Seite erzeugt wird, in der Reihenfolge der Seite, und die
+  Abarbeiter starten gleich nach der Antwort der Seite; sie werden also schon erzeugt, bevor der Browser die Seite hat.
+- Eine Seite mit solchen Platzhaltern bleibt höchstens `PagePlaceholderTime` Sekunden (standardmäßig 60) im
+  Ansichts-Cache, damit die nächsten Besucher die echten Adressen bekommen.
+- Ohne das Austauschskript behalten diese Bilder den Platzhalter, bis die Seite neu geladen wird: Ein Theme mit
+  eigenem Seitenlayout muss es selbst laden (siehe oben).
+- Nur wo der Rückstau gilt (ein Server, der zuerst antwortet), und nur für Aliase, die noch nicht erzeugt sind; ein
+  veralteter Alias behält seine Adresse (seine alte Datei wird gezeigt, bis die neue erzeugt ist). `disabled`: Jedes
+  noch nicht erzeugte Bild wird wie bisher über `content/image` verlinkt.
+
 **Ein Theme mit eigenem Pagelayout muss das Skript selbst laden**, sonst bleiben die Platzhalter bis zum nächsten
 Seitenaufruf. Die Designs des Kernels laden `FrontendJavaScriptList[]`; ein Theme, das seine eigenen `<script>`-Tags
 schreibt, tut das nicht. Das Media-Theme (`sevenx_themes_media`) tut es am Ende seiner Seite, in
@@ -286,6 +313,16 @@ für die nächste Anfrage frei, und es wird nicht für jedes Bild ein Job in die
   Datenbankschreibvorgänge sind also die des Modus render.
 - Der Cronjob-Teil `imagealiasbacklog.php` (Gruppe `frequent`) erzeugt, was keine Anfrage übernommen hat (ein Server,
   der keine Anfragen mehr bekommt), und gibt einen Eintrag zurück, dessen Prozess gestorben ist (nach 5 Minuten).
+- **Abarbeiter-Prozesse** (`BacklogDrainer=process`, Standard): Nach ihrer Antwort erzeugt die Anfrage den Rückstau
+  nicht selbst; sie startet einen Abarbeiter, `bin/php/expimagealiasdrain.php --slot=<n>`, losgelöst (eigene Sitzung,
+  Ausgabe verworfen), und ist sofort für die nächste Anfrage frei. Ein Abarbeiter je vier wartende Aliase, höchstens
+  `MaxParallel` je Server (je eine Sperrdatei in `<backlog directory>/.drainers/`); jeder erzeugt den Rückstau auf einem
+  Umwandlungsplatz, bis er leer ist oder `BacklogTime` Sekunden vergangen sind. Von root gestartet (Velocity), wird ein
+  Abarbeiter zuerst zum Eigentümer von `var/`. Warum: Velocity gibt einem Worker seine nächste Anfrage, sobald er
+  geantwortet hat; ein Worker, der den Rückstau selbst erzeugte, ließ diese Anfrage bis zu `BacklogTime` warten
+  (gemessen: 19 bis 30 s für ein Bild während einer kalten Seite); die Kinder von PHP-FPM wurden genauso festgehalten.
+  Braucht `proc_open()` und die PHP-Kommandozeile; ohne sie, und mit `BacklogDrainer=request`, erzeugt die Anfrage den
+  Rückstau wie bisher nach ihrer Antwort.
 - Das Apache-Modul (`mod_php`) und die Kommandozeile können nicht zuerst antworten: Dort wartet die Anfrage innerhalb
   von `MaxWait` und reiht einen Job ein, wie mit `Backlog=disabled`.
 - Mit Staging (`[AliasStaging] SyncFrom`) holt eine Anfrage weiterhin innerhalb von `MaxWait`; erst eine Anfrage, die
@@ -515,6 +552,10 @@ ist in der Datei und in der erzeugten Referenz dokumentiert
 | `MaxParallel` | `2` | gleichzeitige Umwandlungen je Server, über alle Prozesse |
 | `Backlog` | `enabled` | eine Anfrage, die alle Plätze belegt findet, antwortet sofort; der Alias wird gleich nach der Antwort erzeugt |
 | `BacklogTime` | `30` | Sekunden, die eine Anfrage nach ihrer Antwort weiter am Rückstau arbeitet (1 bis 600) |
+| `BacklogDrainer` | `process` | wer den Rückstau nach der Antwort erzeugt: Abarbeiter-Prozesse, oder `request` (die Anfrage selbst) |
+| `PagePlaceholders` | `enabled` | nach `PagePlaceholderAfter` noch nicht erzeugten Bildern verlinkt eine Seite die übrigen auf einen statischen Platzhalter |
+| `PagePlaceholderAfter` | `24` | noch nicht erzeugte Bilder, die eine Seite zuerst über `content/image` verlinkt (0 bis 10000) |
+| `PagePlaceholderTime` | `60` | Sekunden, die eine Seite mit solchen Platzhaltern im Ansichts-Cache bleiben darf (10 bis 3600) |
 | `BulkNice` | `10` | nice-Wert des Workers eines Massenlaufs (0 lässt ihn unverändert) |
 | `CacheMaxAge` | `31536000` | max-age in `Cache-Control` eines echten Alias (Platzhalter: `no-store`) |
 | `LogFileMaxSize` | `20971520` | Bytes, die `var/log/imagealias.log` erreichen darf, bevor es rotiert wird: eine eigene Größe, nicht site.ini `LogFileMaxSize` für alle Logs, damit ein Massenlauf seinen Verlauf behält (1 MB bis 1 GB) |
@@ -536,6 +577,29 @@ ist in der Datei und in der erzeugten Referenz dokumentiert
 Bilder an `index_image.php` weiterzugeben (Standard: es tut es).
 
 ## Leistung und Abstimmung
+
+**Erneut gemessen am 17. November 2026**, nach zwei Änderungen: Seiten-Platzhalter (nach 24 noch nicht erzeugten
+Bildern verlinkt eine Seite die übrigen auf einen statischen Platzhalter, ohne PHP-Anfrage; siehe
+[Seiten-Platzhalter](#seiten-platzhalter-eine-seite-mit-vielen-neuen-bildern)) und Abarbeiter-Prozesse (der Rückstau wird
+von eigenen Prozessen erzeugt, nicht von denen des Webservers; mit Velocity ließ ein Worker, der den Rückstau erzeugte,
+die nächste Anfrage, die er bekam, bis zu 30 s warten). Derselbe Server und dieselbe Seite, `MaxParallel=6`, Mediane
+aus drei Läufen; der Server war viel stärker ausgelastet als am 15. November (Last 85 bis 124 auf 12 Kernen während
+dieser Läufe, 13 bis 36 während der Läufe vor den Änderungen am selben Tag):
+
+| Seite | Server | Zustand | Laden vorher (selber Tag) | Laden jetzt | Vollständig jetzt | Echt jetzt |
+|---|---|---|---|---|---|---|
+| 500 x i160 | Apache/PHP-FPM | kalt | 18,2 s | 4,6 s | 4,3 s | 50,6 s |
+| 500 x i160 | Velocity | kalt | 30,7 s | 6,6 s | 6,3 s | über 60 s |
+| 500 x i160 | Apache/PHP-FPM | warm (HTML vom kalten Besuch) | 3,1 s | 5,3 s | 5,3 s | 5,3 s |
+| 500 x i160 | Velocity | warm (HTML vom kalten Besuch) | 2,8 s | 3,5 s | 3,5 s | 3,5 s |
+
+- Ein kalter Lauf mit Apache/PHP-FPM war bei geringerer Last am selben Morgen in **2,6 s** vollständig. Die warmen
+  Werte sind nur durch die Last langsamer: Am warmen Weg hat sich nichts geändert.
+- Die Seite kostet jetzt 24 PHP-Anfragen und eine statische Anfrage je Platzhaltergröße statt 500 PHP-Anfragen; die
+  Abarbeiter erzeugen die Aliase auf diesem Server mit etwa 15 bis 30 je Sekunde, und das Austauschskript zeigt sie in
+  der Reihenfolge der Seite.
+- "Echt" hängt an den Umwandlungen (etwa 40 s Rechenzeit für 500 Originale in voller Größe), bei dieser Last umso mehr;
+  dafür ist die Vorab-Erzeugung nach dem Veröffentlichen da.
 
 **Erneut gemessen am 15. November 2026**, nach drei Änderungen: der Rückstau (eine Anfrage wartet nie auf einen Platz),
 die Signaturschlüssel zwischen den Anfragen von PHP-FPM aufbewahrt (keine Datenbank für eine Bildanfrage) und das

@@ -3,13 +3,13 @@ title: image.ini [AliasSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [AliasSettings] in image.ini: AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter ..."
-keywords: image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, Backlog, BacklogTime, BulkNice, CacheMaxAge, LogFileMaxSize
+keywords: image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, Backlog, BacklogTime, BacklogDrainer, PagePlaceholders, PagePlaceholderAfter, PagePlaceholderTime, BulkNice, CacheMaxAge, LogFileMaxSize
 type: generated
 generated: exp:help:examples
 ---
 # image.ini [AliasSettings]
 
-The block `[AliasSettings]` of `settings/image.ini`, with 20 setting(s).
+The block `[AliasSettings]` of `settings/image.ini`, with 24 setting(s).
 
 > -------- Image alias settings --------  
 
@@ -329,6 +329,77 @@ Default: `30`.
 # settings/override/image.ini.append.php
 [AliasSettings]
 BacklogTime=30
+*/ ?>
+```
+
+## BacklogDrainer
+
+> Who makes the backlog after a request's answer:  
+>   process   a drainer process of its own (bin/php/expimagealiasdrain.php, started detached by the  
+>             request, at most MaxParallel per server, each for at most BacklogTime seconds), so the  
+>             web server's process is free for the next request at once. Velocity hands a worker its  
+>             next request as soon as it has answered: a worker that made the backlog itself kept that  
+>             request waiting. Needs proc\_open() and the PHP command line; without them, as request.  
+>   request   the request's own process makes it after its answer.  
+
+Default: `process`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+BacklogDrainer=process
+*/ ?>
+```
+
+## PagePlaceholders
+
+> A page that shows many images not made yet (a list of hundreds of new images): the first  
+> PagePlaceholderAfter of them are linked through content/image as always; the rest are linked to a  
+> static placeholder of their size (<cache dir>/public/imagealias-placeholder/<width>x<height>.svg,  
+> answered by the web server without PHP, once per size) and go to the backlog of the server while  
+> the page is made, in page order. The address of the real image is in the fragment of the  
+> placeholder's URL (#exp-src=...), where the swap script exp\_image\_swap.js finds it and shows each  
+> image once it is made. Without the swap script those images show the placeholder until the page  
+> is loaded again. The page is kept in the view cache for at most PagePlaceholderTime seconds.  
+> Needs the backlog (Backlog=enabled and a server that answers first); on-demand mode only.  
+> disabled: every image not made yet is linked through content/image.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+PagePlaceholders=enabled
+*/ ?>
+```
+
+## PagePlaceholderAfter
+
+> Images not made yet a page links through content/image before the rest get the placeholder (0 to 10000).  
+
+Default: `24`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+PagePlaceholderAfter=24
+*/ ?>
+```
+
+## PagePlaceholderTime
+
+> Seconds a page that links such placeholders may be kept in the view cache (10 to 3600).  
+
+Default: `60`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+PagePlaceholderTime=60
 */ ?>
 ```
 
