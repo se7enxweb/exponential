@@ -185,7 +185,9 @@
       "tests/tests/lib/ezimage/expImageFocalPointTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasFormatsTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPagePlaceholderTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php"
     ],
     "lib/ezimage/classes/ezimagemanager.php": [
       "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php",
@@ -213,7 +215,9 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php",
       "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPagePlaceholderTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php"
     ],
     "tests/tests/kernel/classes/imagealias/fixtures/*": [
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php"
@@ -232,7 +236,9 @@
     ],
     "design/standard/javascript/exp_image_swap.js": [
       "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPagePlaceholderTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php"
     ],
     "settings/image.ini": [
       "tests/tests/lib/ezimage/expImageFocalPointTest.php",
@@ -243,7 +249,9 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPagePlaceholderTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php"
     ],
     "lib/ezimage/classes/expimagefocalpoint.php": [
       "tests/tests/lib/ezimage/expImageFocalPointTest.php"
@@ -3285,6 +3293,14 @@
     ],
     "lib/ezutils/classes/ezextension.php": [
       "tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php"
+    ],
+    "kernel/private/classes/commands/expimagealiasdrain.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasPagePlaceholderTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php"
+    ],
+    "bin/php/expimagealiasdrain.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasPagePlaceholderTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php"
     ]
   },
   "generated": {
