@@ -773,7 +773,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
     {
         if ( !array_key_exists( 'default', $def ) || $def['default'] === false || $def['default'] === null )
             return false;
-        $value = trim( (string)eZPGSQLSchema::generateDefaultDef( false, false, $def, $params ) );
+        $value = trim( (string)eZPgsqlSchema::generateDefaultDef( false, false, $def, $params ) );
         if ( strncmp( $value, 'DEFAULT ', 8 ) !== 0 )
             return false;
         $value = trim( substr( $value, 8 ) );
