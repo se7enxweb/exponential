@@ -3150,7 +3150,8 @@
       "tests/tests/design/TranslationFilesValidTest.php"
     ],
     "lib/ezdbschema/classes/ezpgsqlschema.php": [
-      "tests/tests/lib/ezdbschema/expPgsqlSchemaEngineOnlyTypesTest.php"
+      "tests/tests/lib/ezdbschema/expPgsqlSchemaEngineOnlyTypesTest.php",
+      "tests/tests/lib/ezdbschema/expPgsqlSchemaAddFieldTest.php"
     ],
     "lib/ezdb/classes/expmongodb.php": [
       "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php"

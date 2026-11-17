@@ -751,9 +751,34 @@ class eZPgsqlSchema extends eZDBSchemaInterface
             $sql .= $defaultSQL . ";\n";
         $nullSQL = eZPGSQLSchema::generateNullDef( $table_name, $field_name, $def, $params );
         if ( $nullSQL )
+        {
+            // SET DEFAULT does not fill the rows the table already has: give them the default first, or
+            // SET NOT NULL fails with "column ... contains null values" on any table that is not empty
+            $fill = $this->generateFillExistingRowsSql( $table_name, $field_name, $def, $params );
+            if ( $fill )
+                $sql .= $fill . ";\n";
             $sql .= $nullSQL . ";\n";
+        }
         $sql .= "\n";
         return $sql;
+    }
+
+    /**
+     * The UPDATE that gives the rows a table already has the default of a column just added to it, so the
+     * column can then be made NOT NULL. False when the column has no default other than NULL.
+     *
+     * @return string|false
+     */
+    function generateFillExistingRowsSql( $table_name, $field_name, $def, $params )
+    {
+        if ( !array_key_exists( 'default', $def ) || $def['default'] === false || $def['default'] === null )
+            return false;
+        $value = trim( (string)eZPGSQLSchema::generateDefaultDef( false, false, $def, $params ) );
+        if ( strncmp( $value, 'DEFAULT ', 8 ) !== 0 )
+            return false;
+        $value = trim( substr( $value, 8 ) );
+        $column = in_array( $field_name, $this->reservedKeywordList() ) ? '"' . $field_name . '"' : $field_name;
+        return "UPDATE $table_name SET $column = $value WHERE $column IS NULL";
     }
 
     /*!
