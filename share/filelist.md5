@@ -26590,7 +26590,7 @@ bd979d24a9f46d21186d7752b5a26ea1  kernel/private/classes/views/shop/add.php
 c0528ec9beb8bcf531b8a919aaa2fecd  kernel/private/classes/views/shop/archivelist.php
 a8e37d80d506557bd19966215a955d53  kernel/private/classes/views/shop/archiveorder.php
 b42a0e158f612ed1d2b253a8c7521af5  kernel/private/classes/views/shop/basket.php
-2753964f276300d878407abf68947476  kernel/private/classes/views/shop/checkout.php
+200fa40eb4fa464660c261a8d8ed97df  kernel/private/classes/views/shop/checkout.php
 cfb3e88e7568beccdf4c607a4c05b461  kernel/private/classes/views/shop/confirmorder.php
 0adb754ff78d0e726062f847042216a9  kernel/private/classes/views/shop/currencylist.php
 2fa25750889b139fbfe9fa68dd3382cd  kernel/private/classes/views/shop/customerlist.php

@@ -32,7 +32,9 @@ class Checkout extends \Exponential\Runnable\ModuleView
         $module = $Params['Module'];
 
         $orderID = $http->sessionVariable( 'MyTemporaryOrderID' );
-        $order = \eZOrder::fetch( $orderID );
+        // A visitor without a temporary order (a fresh session, a crawler, a second tab after the order was made):
+        // no lookup, since id = '' is a type error on PostgreSQL
+        $order = is_numeric( $orderID ) && (int)$orderID > 0 ? \eZOrder::fetch( (int)$orderID ) : null;
 
         if ( $order instanceof \eZOrder )
         {
