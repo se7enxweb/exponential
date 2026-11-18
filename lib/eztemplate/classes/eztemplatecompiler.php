@@ -417,6 +417,13 @@ class eZTemplateCompiler
                 $textElements[] = $text;
                 return true;
             }
+            else if ( $helperStatus === null )
+            {
+                // The file was removed between file_exists() and include (a template cache clear under traffic):
+                // as for a missing file below, the caller compiles the template again or processes its tree
+                eZDebug::writeNotice( "Compiled template '$phpScript' was removed while it was being executed (a template cache clear); it is made again", __METHOD__ );
+                return false;
+            }
             else
             {
                 eZDebug::writeError(
@@ -431,8 +438,30 @@ class eZTemplateCompiler
             }
         }
         else
-            eZDebug::writeError( "Unknown compiled template '$phpScript'", __METHOD__ );
+        {
+            // A notice, not an error: the file was compiled in this request or found by an earlier one and removed
+            // since by a template cache clear. eZTemplate::processURI() recovers (reloadAfterFailedCompiledTemplate()
+            // compiles it again, else the template's tree is processed), and logs its own error when it cannot.
+            eZDebug::writeNotice( "Compiled template '$phpScript' is gone (a template cache clear); it is made again", __METHOD__ );
+        }
         return false;
+    }
+
+    /**
+     * Defines the functions every compiled template calls (compiledFetchAttribute() and the others of common.php)
+     * before a compiled template runs. A compiled template includes common.php itself only when they are not
+     * defined yet, and a template cache clear can remove common.php between the request that wrote it and the one
+     * that runs the template: the template then died with "Call to undefined function compiledFetchAttribute()".
+     * common.php is written again when it is missing.
+     */
+    static function loadCommonCode()
+    {
+        if ( defined( 'EZ_TEMPLATE_COMPILER_COMMON_CODE' ) )
+            return;
+        eZTemplateCompiler::createCommonCompileTemplate();
+        $common = eZTemplateCompiler::compilationDirectory() . '/common.php';
+        if ( file_exists( $common ) )
+            include_once( eZTemplateCompiler::TemplatePrefix() . $common );
     }
 
     /*!
@@ -440,7 +469,7 @@ class eZTemplateCompiler
      set the result text in \a $text.
      The parameters \a $tpl, \a $resourceData, \a $rootNamespace and \a $currentNamespace
      are passed to the executed template compilation script.
-     \return true if a text result was created.
+     \return true if a text result was created, null if the file could not be included (it was removed meanwhile).
     */
     static function executeCompilationHelper( $phpScript, &$text,
                                        $tpl, $key, &$resourceData,
@@ -454,11 +483,15 @@ class eZTemplateCompiler
         $setArray = null;
         $namespaceStack = array();
 
+        eZTemplateCompiler::loadCommonCode();
         $tpl->createLocalVariablesList();
-        include( eZTemplateCompiler::TemplatePrefix() . $phpScript );
+        // include returns false only when the file cannot be opened; a compiled template that returns early gives null
+        $included = include( eZTemplateCompiler::TemplatePrefix() . $phpScript );
         $tpl->unsetLocalVariables();
         $tpl->destroyLocalVariablesList();
 
+        if ( $included === false && $setArray === null )
+            return null;
         if ( $setArray !== null )
         {
             return true;
