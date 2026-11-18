@@ -243,6 +243,12 @@ class View extends \Exponential\Runnable\ModuleView
                             $sevenxValkeyCacheBlock->put( $cacheFileArray['cache_path'], $result, 3600, 0, $NodeID );
                             class_exists( 'expRenderStats' ) && \expRenderStats::noteViewGenerated( $cacheFileArray['cache_path'] );
                         }
+                        else if ( method_exists( $sevenxValkeyCacheBlock, 'releaseLock' ) )
+                        {
+                            // get() took the generation lock for this key; a result that is not stored must give it
+                            // back, or every other request for the page waits for it until the lock expires
+                            $sevenxValkeyCacheBlock->releaseLock( $cacheFileArray['cache_path'] );
+                        }
                     }
                     else
                     {
