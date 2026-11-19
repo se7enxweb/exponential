@@ -4184,11 +4184,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
         if ( !is_array( $nodeList ) || count( $nodeList ) < 1 )
             return array();
 
-        $db = eZDB::instance();
-        $where = $db->generateSQLINStatement( $nodeList, 'node_id', false, false, 'int' );
-        $query = "SELECT node_id, path_identification_string FROM ezcontentobject_tree WHERE $where";
-        $pathListArray = $db->arrayQuery( $query );
-        return $pathListArray;
+        // any number of nodes: asked in IN lists of expDBInList::chunkSize(); false when a list fails, as before
+        return expDBInList::rows( eZDB::instance(), 'SELECT node_id, path_identification_string FROM ezcontentobject_tree WHERE', $nodeList, 'node_id' );
     }
 
     /**
@@ -4253,7 +4250,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
             return null;
 
         $db = eZDB::instance();
-        $nodeListArray = $db->arrayQuery(
+        // any number of ids: asked in IN lists of expDBInList::chunkSize(); false when a list fails, as before
+        $nodeListArray = expDBInList::rows( $db,
             "SELECT " .
             "ezcontentobject.contentclass_id, ezcontentobject.current_version, ezcontentobject.id, ezcontentobject.initial_language_id, ezcontentobject.language_mask, " .
             "ezcontentobject.modified, ezcontentobject.name, ezcontentobject.owner_id, ezcontentobject.published, ezcontentobject.remote_id AS object_remote_id, ezcontentobject.section_id, " .
@@ -4264,8 +4262,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
             "FROM ezcontentobject_tree " .
             "INNER JOIN ezcontentobject ON (ezcontentobject.id = ezcontentobject_tree.contentobject_id) " .
             "INNER JOIN ezcontentclass ON (ezcontentclass.id = ezcontentobject.contentclass_id) " .
-            "WHERE " . $db->generateSQLINStatement( $objectIDArray, 'ezcontentobject_tree.contentobject_id', false, false, 'int' ) . " AND " .
-            "ezcontentobject_tree.main_node_id = ezcontentobject_tree.node_id AND " .
+            "WHERE", (array)$objectIDArray, 'ezcontentobject_tree.contentobject_id', 'int',
+            "AND ezcontentobject_tree.main_node_id = ezcontentobject_tree.node_id AND " .
             "ezcontentclass.version = 0"
         );
 
@@ -7223,19 +7221,13 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
         else
         {
-        $query = 'SELECT
-                    parent_node_id, contentobject_id
-                  FROM
-                    ezcontentobject_tree
-                  WHERE ' . $db->generateSQLINStatement( $objectIDs, 'contentobject_id', false, false, 'int' );
-
-        if ( $onlyMainNode )
-        {
-            $query .= ' AND node_id = main_node_id';
-        }
-
-        $list = $db->arrayQuery( $query );
+        // any number of objects: asked in IN lists of expDBInList::chunkSize(); a failed list gives no parents
+        // instead of a foreach over false
+        $list = expDBInList::rows( $db, 'SELECT parent_node_id, contentobject_id FROM ezcontentobject_tree WHERE', $objectIDs,
+                                   'contentobject_id', 'int', $onlyMainNode ? 'AND node_id = main_node_id' : '' );
         } // end SQL path
+        if ( !is_array( $list ) )
+            $list = array();
 
         $parentNodeIDs = array();
         if ( $groupByObjectId )

@@ -2615,10 +2615,9 @@ class eZSearchEngine implements ezpSearchEngine
      */
     public function updateObjectsSection( array $objectIDs, $sectionID )
     {
-        $db = eZDB::instance();
-        $db->query( "UPDATE ezsearch_object_word_link SET section_id='$sectionID' WHERE " .
-            $db->generateSQLINStatement( $objectIDs, 'contentobject_id', false, true, 'int' )
-        );
+        // any number of objects (a migration, a subtree): one UPDATE per IN list of expDBInList::chunkSize()
+        expDBInList::query( eZDB::instance(), "UPDATE ezsearch_object_word_link SET section_id='" . (int)$sectionID . "' WHERE",
+                            $objectIDs, 'contentobject_id' );
     }
 
 

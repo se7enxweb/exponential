@@ -242,14 +242,17 @@ class TrashList
         {
             // no joins on MongoDB: the objects in the trash first, then their classes
             $objectIDs = array();
-            foreach ( (array)$db->arrayQuery( 'SELECT contentobject_id FROM ezcontentobject_trash' ) as $row )
+            $trashRows = $db->arrayQuery( 'SELECT contentobject_id FROM ezcontentobject_trash' );
+            // (array)false would be one row: object 0
+            foreach ( is_array( $trashRows ) ? $trashRows : array() as $row )
                 $objectIDs[(int)$row['contentobject_id']] = (int)$row['contentobject_id'];
             $result = array();
             if ( $objectIDs )
             {
                 $classIDs = array();
-                foreach ( (array)$db->arrayQuery( 'SELECT contentclass_id FROM ezcontentobject WHERE '
-                                                  . $db->generateSQLINStatement( array_values( $objectIDs ), 'id', false, true, 'int' ) ) as $row )
+                // every object of the trash: asked in IN lists of expDBInList::chunkSize(), a failed list gives no class
+                $rows = \expDBInList::rows( $db, 'SELECT contentclass_id FROM ezcontentobject WHERE', array_values( $objectIDs ), 'id' );
+                foreach ( is_array( $rows ) ? $rows : array() as $row )
                     $classIDs[(int)$row['contentclass_id']] = true;
                 foreach ( array_keys( $classIDs ) as $classID )
                     $result[] = array( 'id' => $classID );

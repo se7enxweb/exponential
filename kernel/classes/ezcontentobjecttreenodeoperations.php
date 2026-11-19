@@ -421,8 +421,13 @@ class eZContentObjectTreeNodeOperations
             return $notifications;
         }
 
-        $idListINString = $db->generateSQLINStatement( $syncObjectIDListNew, 'from_contentobject_id', false, false, 'int' );
-        $relatedRecordsList = $db->arrayQuery( "SELECT * FROM ezcontentobject_link WHERE $idListINString" );
+        // every copied object: asked in IN lists of expDBInList::chunkSize()
+        $relatedRecordsList = expDBInList::rows( $db, 'SELECT * FROM ezcontentobject_link WHERE', $syncObjectIDListNew, 'from_contentobject_id' );
+        if ( $relatedRecordsList === false )
+        {
+            eZDebug::writeError( "Cannot read the relations of the copied objects.", "Subtree Copy Error!" );
+            $relatedRecordsList = array();
+        }
 
         foreach ( $relatedRecordsList as $relatedEntry )
         {

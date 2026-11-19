@@ -1555,20 +1555,21 @@ class eZContentObject extends eZPersistentObject
         }
         else
         {
-        $resRowArray = $db->arrayQuery(
+        // any number of ids: asked in IN lists of expDBInList::chunkSize() (cast to int), each row once
+        $resRowArray = expDBInList::rows( $db,
             "SELECT ezcontentclass.serialized_name_list as class_serialized_name_list, ezcontentobject.*, ezcontentobject_name.name as name,  ezcontentobject_name.real_translation
              FROM
                 ezcontentclass,
                 ezcontentobject,
                 ezcontentobject_name
              WHERE
-                ezcontentclass.id=ezcontentobject.contentclass_id AND " .
-                // All elements from $idArray should be casted to (int)
-                $db->generateSQLINStatement( $idArray, 'ezcontentobject.id', false, true, 'int' ) . " AND
-                ezcontentobject.id = ezcontentobject_name.contentobject_id AND
+                ezcontentclass.id=ezcontentobject.contentclass_id AND", (array)$idArray, 'ezcontentobject.id', 'int',
+            "AND ezcontentobject.id = ezcontentobject_name.contentobject_id AND
                 ezcontentobject.current_version = ezcontentobject_name.content_version AND " .
                 eZContentLanguage::sqlFilter( 'ezcontentobject_name', 'ezcontentobject', 'language_id', 'language_mask', $lang )
         );
+        if ( $resRowArray === false )
+            $resRowArray = array();
         } // end mongo/sql branch
 
         $objectRetArray = array();

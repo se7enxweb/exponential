@@ -285,9 +285,13 @@ class ezpSessionHandlerDB extends ezpSessionHandler
     public function deleteByUserIDs( array $userIDArray )
     {
         // re use destroy to make sure it works with callbacks
-        $db = eZDB::instance();
-        $userINString = $db->generateSQLINStatement( $userIDArray, 'user_id', false, false, 'int' );
-        $rows = $db->arrayQuery( "SELECT session_key FROM ezsession WHERE $userINString" );
+        // any number of users (a bulk removal): asked in IN lists of expDBInList::chunkSize()
+        $rows = expDBInList::rows( eZDB::instance(), 'SELECT session_key FROM ezsession WHERE', $userIDArray, 'user_id' );
+        if ( $rows === false )
+        {
+            eZDebug::writeError( 'The sessions of the users could not be read', __METHOD__ );
+            return;
+        }
         foreach ( $rows as $row )
         {
             $this->destroy( $row['session_key'] );

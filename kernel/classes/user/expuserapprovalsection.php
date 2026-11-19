@@ -225,10 +225,9 @@ class expUserApprovalSection
             $count = 0;
             if ( $objectIDs )
             {
-                $db = eZDB::instance();
-                $rows = $db->arrayQuery( 'SELECT COUNT(*) AS n FROM ezcontentobject WHERE section_id <> ' . $sectionID . ' AND '
-                                         . $db->generateSQLINStatement( $objectIDs, 'id', false, true, 'int' ) );
-                $count = $rows ? (int)$rows[0]['n'] : 0;
+                // every object of the subtree: counted per IN list of expDBInList::chunkSize(); a failed count is 0, as before
+                $count = (int)expDBInList::count( eZDB::instance(), 'FROM ezcontentobject WHERE section_id <> ' . (int)$sectionID . ' AND',
+                                                  $objectIDs, 'id' );
             }
             if ( $count > 0 )
                 $changes['assign'][] = array( 'group' => $group, 'objects' => $count );

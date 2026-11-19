@@ -135,6 +135,8 @@ class eZSubtreeNotificationRule extends eZPersistentObject
                       user_node.is_invisible = 0 AND
                       ezuser_setting.is_enabled = 1";
         $userPart = $db->arrayQuery( $sql );
+        if ( !is_array( $userPart ) )
+            return array();
 
         // Remove duplicates
         $userNodeIDList = array();
@@ -148,16 +150,16 @@ class eZSubtreeNotificationRule extends eZPersistentObject
             return $retValue;
         }
 
-        // Select affected nodes
-        $sqlINString = $db->generateSQLINStatement( $userNodeIDList, 'user_node.node_id', false, false, 'int' );
-        $sql = "SELECT DISTINCT user_node.node_id,
+        // Select affected nodes; a subtree can have tens of thousands of subscribers, so the ids are asked in lists
+        // of expDBInList::chunkSize() (each row carries its node_id, so the lists' rows are distinct)
+        $nodePart = expDBInList::rows( $db, "SELECT DISTINCT user_node.node_id,
                                 user_node.path_string,
                                 user_tree.contentobject_id
                 FROM ezcontentobject_tree user_node,
                      ezcontentobject_tree user_tree
-                WHERE $sqlINString AND
-                      user_node.path_string LIKE $concatString";
-        $nodePart = $db->arrayQuery( $sql );
+                WHERE", $userNodeIDList, 'user_node.node_id', 'int', "AND user_node.path_string LIKE $concatString" );
+        if ( $nodePart === false )
+            return array();
 
         // Remove duplicates
         $objectIDList = array();
@@ -173,15 +175,14 @@ class eZSubtreeNotificationRule extends eZPersistentObject
         }
 
         // Select affected roles and policies
-        $sqlINString = $db->generateSQLINStatement( $objectIDList, 'user_role.contentobject_id', false, false, 'int' );
-        $sql = "SELECT DISTINCT user_role.contentobject_id,
+        $rolePart = expDBInList::rows( $db, "SELECT DISTINCT user_role.contentobject_id,
                                 policy.id AS policy_id,
                                 user_role.limit_identifier AS limitation,
                                 user_role.limit_value AS value
                 FROM ezuser_role user_role,
                      ezpolicy policy
-                WHERE $sqlINString AND
-                      ( user_role.role_id=policy.role_id AND
+                WHERE", $objectIDList, 'user_role.contentobject_id', 'int',
+                "AND ( user_role.role_id=policy.role_id AND
                         ( policy.module_name='*' OR
                           ( policy.module_name='content' AND
                             ( policy.function_name='*' OR
@@ -189,8 +190,9 @@ class eZSubtreeNotificationRule extends eZPersistentObject
                             )
                           )
                         )
-                      )";
-        $rolePart = $db->arrayQuery( $sql );
+                      )" );
+        if ( $rolePart === false )
+            return array();
 
         // Build resultArray. Make sure there are no duplicates.
         $resultArray = array();
@@ -298,13 +300,11 @@ class eZSubtreeNotificationRule extends eZPersistentObject
         }
 
         $nodeIDWhereString = $db->generateSQLINStatement( $nodeIDList, 'rule.node_id', false, false, 'int' );
-        $userIDWhereString = $db->generateSQLINStatement( $acceptedUserArray, 'rule.user_id', false, false, 'int' );
-        $rules = $db->arrayQuery( "SELECT rule.user_id, rule.use_digest, ezuser.email as address
+        $rules = expDBInList::rows( $db, "SELECT rule.user_id, rule.use_digest, ezuser.email as address
                                       FROM ezsubtree_notification_rule rule, ezuser
                                       WHERE rule.user_id=ezuser.contentobject_id AND
-                                            $nodeIDWhereString AND
-                                            $userIDWhereString" );
-        return $rules;
+                                            $nodeIDWhereString AND", $acceptedUserArray, 'rule.user_id' );
+        return $rules === false ? array() : $rules;
     }
 
     /*!

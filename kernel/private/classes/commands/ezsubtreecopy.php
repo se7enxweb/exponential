@@ -442,8 +442,13 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
             $script->shutdown( 3 );
         }
 
-        $idListStr = implode( ',', $syncObjectIDListNew );
-        $relatedRecordsList = $db->arrayQuery( "SELECT * FROM ezcontentobject_link WHERE from_contentobject_id IN ($idListStr)" );
+        // every copied object, however large the subtree: asked in IN lists of expDBInList::chunkSize()
+        $relatedRecordsList = \expDBInList::rows( $db, 'SELECT * FROM ezcontentobject_link WHERE', $syncObjectIDListNew, 'from_contentobject_id' );
+        if ( $relatedRecordsList === false )
+        {
+            $cli->error( "Subtree Copy Error!\nCannot read the relations of the copied objects." );
+            $relatedRecordsList = array();
+        }
 
         foreach ( $relatedRecordsList as $relatedEntry )
         {
