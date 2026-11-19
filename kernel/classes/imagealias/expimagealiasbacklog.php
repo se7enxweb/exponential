@@ -220,6 +220,9 @@ class expImageAliasBacklog
             $work = $file . '.' . getmypid() . '.work';
             if ( !@rename( $file, $work ) )
                 continue; // another process took it first
+            // The time it was taken (a rename keeps the time it was added): recoverStale() gives back only the entries
+            // of processes that died, not one that waited long and is being made now
+            @touch( $work );
             $entry = json_decode( (string)@file_get_contents( $work ), true );
             if ( !is_array( $entry ) || !isset( $entry['a'], $entry['v'], $entry['l'], $entry['n'] ) )
             {

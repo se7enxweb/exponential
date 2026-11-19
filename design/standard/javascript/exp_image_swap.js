@@ -68,13 +68,31 @@
         return false;
     }
 
+    // url without this page's origin: how a srcset written by a template names it (img.srcset is not resolved)
+    function pathOf(url) {
+        var origin = window.location.origin;
+        return origin && url.indexOf(origin + '/') === 0 ? url.substring(origin.length) : url;
+    }
+
+    // The form of url a srcset uses, or null when it names it in neither form
+    function inSrcset(img, url) {
+        if (!img.srcset) {
+            return null;
+        }
+        if (img.srcset.indexOf(url) !== -1) {
+            return url;
+        }
+        var path = pathOf(url);
+        return path !== url && img.srcset.indexOf(path) !== -1 ? path : null;
+    }
+
     // The <img> elements that show url, through src or srcset
     function imagesShowing(url) {
         var found = [];
         var alt = shownAs[url];
         for (var i = 0; i < document.images.length; i++) {
             var img = document.images[i];
-            if (img.currentSrc === url || img.src === url || (img.srcset && img.srcset.indexOf(url) !== -1)
+            if (img.currentSrc === url || img.src === url || inSrcset(img, url) !== null
                 || (alt && (img.src === alt || img.currentSrc === alt))) {
                 found.push(img);
             }
@@ -97,8 +115,9 @@
 
     function swap(url, replacement) {
         imagesShowing(url).forEach(function (img) {
-            if (img.srcset && img.srcset.indexOf(url) !== -1) {
-                img.srcset = img.srcset.split(url).join(replacement);
+            var named = inSrcset(img, url);
+            if (named !== null) {
+                img.srcset = img.srcset.split(named).join(replacement);
             }
             if (img.src === url || img.currentSrc === url || (shownAs[url] && img.src === shownAs[url])) {
                 img.src = replacement;
@@ -195,8 +214,10 @@
         }
         seen[url] = 'waiting';
         waiting.push(url);
-        if (!lastProgress) {
+        // The first placeholder, or one found after the script gave up on the others: it gets its own GIVE_UP
+        if (!lastProgress || now() - lastProgress > GIVE_UP) {
             lastProgress = now();
+            idleRounds = 0;
         }
         schedule();
     }

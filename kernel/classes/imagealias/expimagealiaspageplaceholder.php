@@ -243,5 +243,7 @@ class expImageAliasPagePlaceholder
         self::$request = $request;
         self::$count = 0;
         self::$first = array();
+        // A persistent worker serves other siteaccesses (other cache directories) and the files may be cleared meanwhile
+        self::$files = array();
     }
 }
