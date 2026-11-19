@@ -92,6 +92,7 @@ documented interface, and everything that would have to be written is listed in
 | Character set | UTF-8 | `UTF8` | UTF-8 (BSON) | `utf8mb4` | `AL32UTF8` | `utf8mb4` |
 | Schema update files | `update/database/sqlite/` | `update/database/postgresql/` | none (no SQL) | `update/database/mysql/` | in `ezoracle` | `update/database/mysql/` |
 | Tested in the project's CI | driver unit tests | yes (PostgreSQL 15) | adapter unit tests | no | no | yes (MySQL 8.0) |
+| DFS cluster metadata backend (several web servers) | no (single node only; planned for tests) | yes, in the kernel (`expDFSFileHandlerPostgresqlBackend`, PostgreSQL 13-19 in CI) | planned | yes, in the kernel (MySQLi backend) | `ezoracle` extension; kernel backend planned | yes, in the kernel (MySQLi backend) |
 
 ## Versions, checked against the code
 
@@ -324,6 +325,12 @@ installer does this itself after it loads data.
 `SET` statements) fails here; see [cross-engine notes](../install/09-databases.md#98-cross-engine-notes).
 
 Details: [9.4 PostgreSQL](../install/09-databases.md#94-postgresql).
+
+**Clustering.** A site on several web servers can keep its DFS cluster metadata in PostgreSQL 13 or later with the
+kernel's `expDFSFileHandlerPostgresqlBackend`, the tables of `kernel/sql/postgresql/cluster_dfs_schema.sql` and the
+gateway `dfspostgresql`, with no extension. It refactors and integrates the ezpostgresqlcluster extension by eZ
+Systems (GPL-2.0) and 7x's fork of it: [Clustering on PostgreSQL](../features/6.0/postgresql-dfs-cluster.md), with
+example configurations for PostgreSQL and MySQL/MariaDB.
 
 ## 3. MongoDB
 

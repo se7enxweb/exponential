@@ -3,8 +3,8 @@ title: "Clustering: DFS and its metadata database"
 audience: dba
 category: database-administration
 order: 41
-summary: The database side of an Exponential cluster on several web servers - the DFS file handler and its metadata table ezdfsfile, the backends for MySQL and MariaDB (in the kernel), PostgreSQL (a separate package) and Oracle (ezoracle), the file.ini settings and their unsafe defaults, the cluster update files, maintenance commands and what to monitor.
-keywords: cluster, clustering, DFS, eZDFSFileHandler, eZFSFileHandler, ezdfsfile, ezdfsfile_cache, DBBackend, eZDFSFileHandlerMySQLiBackend, eZDFSFileHandlerPostgresqlBackend, eZDFSFileHandlerOracleBackend, file.ini, eZDFSClusteringSettings, config.cluster.php, clusterize, clusterpurge, dfscleanup, cluster_maintenance, NFS
+summary: The database side of an Exponential cluster on several web servers - the DFS file handler and its metadata table ezdfsfile, the backends for MySQL and MariaDB and for PostgreSQL (both in the kernel) and Oracle (ezoracle), the file.ini settings and their unsafe defaults, the cluster update files, maintenance commands and what to monitor.
+keywords: cluster, clustering, DFS, eZDFSFileHandler, eZFSFileHandler, ezdfsfile, ezdfsfile_cache, DBBackend, eZDFSFileHandlerMySQLiBackend, expDFSFileHandlerPostgresqlBackend, eZDFSFileHandlerPostgresqlBackend, DBLockTimeout, eZDFSFileHandlerOracleBackend, file.ini, eZDFSClusteringSettings, config.cluster.php, clusterize, clusterpurge, dfscleanup, cluster_maintenance, NFS
 type: help
 ---
 # Clustering: DFS and its metadata database
@@ -41,7 +41,7 @@ one machine.
 
 ## The metadata tables
 
-`kernel/sql/mysql/cluster_dfs_schema.sql` creates `ezdfsfile` (one row per clustered file: name, size, modification
+`kernel/sql/mysql/cluster_dfs_schema.sql` (PostgreSQL: `kernel/sql/postgresql/cluster_dfs_schema.sql`) creates `ezdfsfile` (one row per clustered file: name, size, modification
 time, expiry) and `ezdfsfile_cache`. `file.ini [eZDFSClusteringSettings] MetaDataTableNameCache` can name another table
 for caches, for staging setups that share storage entries but not caches. `cluster_db_schema.sql` (`ezdbfile`,
 `ezdbfile_data`) belongs to the older database file handler, which was removed; a site that still uses it is moved as
@@ -56,10 +56,10 @@ data, so the two sets of transactions do not mix.
 | `DBBackend` | Engine | Where it comes from |
 |---|---|---|
 | `eZDFSFileHandlerMySQLiBackend` | MySQL, MariaDB | the kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php`), the shipped default |
-| `eZDFSFileHandlerPostgresqlBackend` | PostgreSQL | not in the kernel: the comment in `file.ini` names it, and it comes from the separate package `ezpostgresqlcluster` |
+| `expDFSFileHandlerPostgresqlBackend` (also `eZDFSFileHandlerPostgresqlBackend`) | PostgreSQL 13 and later | the kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/postgresql.php`), tables in `kernel/sql/postgresql/cluster_dfs_schema.sql`, gateway `dfspostgresql`. A refactoring of the ezpostgresqlcluster extension by eZ Systems and 7x's fork of it: [Clustering on PostgreSQL](../../features/6.0/postgresql-dfs-cluster.md) |
 | `eZDFSFileHandlerOracleBackend` | Oracle | the `ezoracle` extension (`clusterfilehandlers/dfsbackends/oracle.php`); only `DBName` is used, not `DBHost`, `DBPort` or `DBSocket` |
 
-There is no SQLite or MongoDB backend.
+There is no SQLite or MongoDB backend yet; [Clustering on PostgreSQL, "More engines"](../../features/6.0/postgresql-dfs-cluster.md#more-engines-oracle-mongodb-and-sqlite) lays out how the Oracle, MongoDB and SQLite backends follow.
 
 ## The settings
 

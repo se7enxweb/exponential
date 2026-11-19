@@ -77,11 +77,11 @@ scale websites, a dedicated MySQL server can really improve performances".
 | Backend (`[eZDFSClusteringSettings] DBBackend`) | Where it comes from |
 |---|---|
 | `eZDFSFileHandlerMySQLiBackend` | the kernel (the shipped default), for MySQL and MariaDB |
-| `eZDFSFileHandlerPostgresqlBackend` | the package `ezpostgresqlcluster` |
+| `expDFSFileHandlerPostgresqlBackend` (or `eZDFSFileHandlerPostgresqlBackend`) | the kernel, for PostgreSQL 13 and later, after the ezpostgresqlcluster extension by eZ Systems and 7x's fork ([Clustering on PostgreSQL](../../../features/6.0/postgresql-dfs-cluster.md)) |
 | `eZDFSFileHandlerOracleBackend` | the `ezoracle` extension |
 
 Source: [15.17 Cluster and DFS](../../../install/15-migrating-from-5x-legacy.md#1517-cluster-and-dfs) and the backends listed in
-`config.php-RECOMMENDED` (`dfsmysqli`, `dfspostgres`, `dfsoracle`). The storage side can be replaced as well:
+`config.php-RECOMMENDED` (`dfsmysqli`, `dfspostgresql`, `dfsoracle`). The storage side can be replaced as well:
 `[eZDFSClusteringSettings] DFSBackend` names a class that implements `eZDFSFileHandlerDFSBackendInterface`
 ([Configurable DFS cluster backend](../../../features/5.4/configurable_dfs_cluster_backend.md)).
 

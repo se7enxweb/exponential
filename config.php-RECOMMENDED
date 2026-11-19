@@ -162,7 +162,7 @@
 /**
  * Storage backend. Possible values:
  * - dfsmysqli (DFS cluster, mysqli based)
- * - dfspostgres (DFS cluster, postgresql based)
+ * - dfspostgresql (DFS cluster, PostgreSQL 13 and later, in the kernel; dfspostgres is the same)
  * - dfsoracle (with appropriate extension)
  */
 // define( 'CLUSTER_STORAGE_BACKEND', 'dfsmysqli'  );
@@ -186,7 +186,7 @@
  * Cluster storage port.
  * Optional: the default RDBMS port will be used if set to false
  */
-// define( 'CLUSTER_STORAGE_PORT', 3306 );
+// define( 'CLUSTER_STORAGE_PORT', 3306 ); // 5432 for PostgreSQL
 
 /**
  * Cluster storage user

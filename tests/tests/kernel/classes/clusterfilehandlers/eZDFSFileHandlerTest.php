@@ -83,9 +83,8 @@ class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
                 break;
 
             case 'postgresql':
-                $backend = 'eZDFSFileHandlerPostgresqlBackend';
-                if ( !class_exists( 'eZDFSFileHandlerPostgresqlBackend' ) )
-                    self::markTestSkipped( "Missing extension 'ezpostgresqlcluster', skipping PostgreSQL DFS tests" );
+                // the kernel's PostgreSQL backend (kernel/private/classes/clusterfilehandlers/dfsbackends/postgresql.php)
+                $backend = 'expDFSFileHandlerPostgresqlBackend';
                 break;
 
             default:

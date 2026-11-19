@@ -211,10 +211,6 @@ abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerA
     #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestNameTrunk')]
     public function testNameTrunk( $path, $scope, $expectedNameTrunk, $expectedCacheType )
     {
-        // postgres doesn't use nametrunk
-        if ( ezpTestRunner::dsn()->parts['phptype'] == 'postgresql' )
-            self::markTestSkipped( "name_trunk isn't used by postgresql" );
-
         // the template block cache directory of the installation the test runs on (its var directory)
         $templateBlockCacheDir = eZTemplateCacheBlock::templateBlockCacheDir();
         $path = str_replace( '@template-block@/', $templateBlockCacheDir, $path );
