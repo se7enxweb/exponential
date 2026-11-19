@@ -228,9 +228,9 @@ The order the owner set: PostgreSQL first (this page), then the others in the ke
 |---|---|---|
 | Oracle | a kernel backend after the structure of the PostgreSQL one; until then the `ezoracle` extension's `eZDFSFileHandlerOracleBackend` | `MERGE` for the upsert, `SELECT ... FOR UPDATE SKIP LOCKED` and `WAIT n` for bounded locks, ORA-00060 (deadlock) and ORA-30006 (wait timeout) as the retryable errors |
 | MongoDB | a backend on the kernel's MongoDB driver | a unique index on `name_hash` gives the one-winner generation (duplicate key = being generated); `findOneAndUpdate` with `upsert` for stores; no multi-document transaction needed for the single-row operations |
-| SQLite | single node and tests only | one file, so one machine: suited to a one-node test cluster and to the parity suite on a laptop, never to several web servers |
+| SQLite | **built**: `expDFSFileHandlerSQLiteBackend`, one node and tests only ([Clustering on SQLite](sqlite-dfs-cluster.md)) | one file, so one machine: `BEGIN IMMEDIATE` and a busy timeout in place of row locks; suited to a one-node cluster and to the parity suite on a laptop, never to several web servers |
 
-None of these three is built yet; each starts with its parity test class.
+SQLite is built; Oracle and MongoDB each start with their parity test class.
 
 ## Related pages
 

@@ -92,7 +92,7 @@ documented interface, and everything that would have to be written is listed in
 | Character set | UTF-8 | `UTF8` | UTF-8 (BSON) | `utf8mb4` | `AL32UTF8` | `utf8mb4` |
 | Schema update files | `update/database/sqlite/` | `update/database/postgresql/` | none (no SQL) | `update/database/mysql/` | in `ezoracle` | `update/database/mysql/` |
 | Tested in the project's CI | driver unit tests | yes (PostgreSQL 15) | adapter unit tests | no | no | yes (MySQL 8.0) |
-| DFS cluster metadata backend (several web servers) | no (single node only; planned for tests) | yes, in the kernel (`expDFSFileHandlerPostgresqlBackend`, PostgreSQL 13-19 in CI) | planned | yes, in the kernel (MySQLi backend) | `ezoracle` extension; kernel backend planned | yes, in the kernel (MySQLi backend) |
+| DFS cluster metadata backend (several web servers) | one machine only: in the kernel (`expDFSFileHandlerSQLiteBackend`) for a one-node cluster and tests | yes, in the kernel (`expDFSFileHandlerPostgresqlBackend`, PostgreSQL 13-19 in CI) | planned | yes, in the kernel (MySQLi backend) | `ezoracle` extension; kernel backend planned | yes, in the kernel (MySQLi backend) |
 
 ## Versions, checked against the code
 
@@ -298,6 +298,11 @@ The full treatment, with every PRAGMA, the queue's behavior under load, monitori
 `VACUUM`, the WAL file), is [9.2 SQLite 3: a production database in one file](../install/09-databases.md#92-sqlite-3-a-production-database-in-one-file).
 The task-oriented introduction is [SQLite database support](../features/6.0/sqlite-database.md), the driver
 specification [The SQLite3 database driver](../specifications/6.0/sqlite3-database-driver.md).
+
+**Clustering.** A one-node DFS cluster (the PHP servers of one host on one share) can keep its metadata in SQLite with
+the kernel's `expDFSFileHandlerSQLiteBackend`, the tables of `kernel/sql/sqlite/cluster_dfs_schema.sql` and the gateway
+`dfssqlite`; `exp:cluster:enable` sets it up on a SQLite site. Several web servers cannot share a SQLite file safely:
+[Clustering on SQLite](../features/6.0/sqlite-dfs-cluster.md).
 
 ## 2. PostgreSQL
 
