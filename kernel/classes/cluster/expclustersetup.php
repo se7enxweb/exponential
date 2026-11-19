@@ -235,17 +235,17 @@ class expClusterSetup
             return 'a link: ' . $path;
         if ( is_file( $path ) )
         {
-            if ( !is_dir( $backupDir ) && !mkdir( $backupDir, 0700, true ) )
+            if ( !is_dir( $backupDir ) && !mkdir( $backupDir, eZDir::dirMode( 0700 ), true ) )
                 return 'cannot make the backup folder ' . $backupDir;
             if ( !copy( $path, $backupDir . '/' . basename( $path ) ) )
                 return 'cannot back up ' . $path;
         }
         if ( $text === null )
             return !is_file( $path ) || unlink( $path ) ? null : 'cannot remove ' . $path;
-        if ( !is_dir( dirname( $path ) ) && !mkdir( dirname( $path ), 0755, true ) )
+        if ( !is_dir( dirname( $path ) ) && !mkdir( dirname( $path ), eZDir::dirMode( 0755 ), true ) )
             return 'cannot make ' . dirname( $path );
         $tmp = dirname( $path ) . '/.' . basename( $path ) . '.exp-cluster.' . getmypid();
-        if ( file_put_contents( $tmp, $text ) === false || !chmod( $tmp, 0640 ) || !rename( $tmp, $path ) )
+        if ( file_put_contents( $tmp, $text ) === false || !chmod( $tmp, eZFile::fileMode( 0640 ) ) || !rename( $tmp, $path ) )
         {
             @unlink( $tmp );
             return 'cannot write ' . $path;
@@ -328,7 +328,7 @@ class expClusterSetup
         $owned = is_file( $marker ) && !is_link( $marker );
         if ( is_dir( $share ) && !$owned && count( (array)scandir( $share ) ) > 2 )
             return array( 'ok' => false, 'error' => 'the folder ' . $share . ' holds files that are not the cluster\'s' );
-        if ( !is_dir( $share ) && !@mkdir( $share, 0750 ) )
+        if ( !is_dir( $share ) && !@mkdir( $share, eZDir::dirMode( 0750 ) ) )
             return array( 'ok' => false, 'error' => 'the share ' . $share . ' could not be made (does its parent folder exist?)' );
         @file_put_contents( $marker, json_encode( array( 'v' => 1, 'state' => 'preparing', 'by' => 'exp:cluster:enable' ) ) );
         $say( 'PASS share ' . $share );

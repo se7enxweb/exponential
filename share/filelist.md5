@@ -24762,7 +24762,7 @@ b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_to
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
 fe0bce95fbb9c13990be1fecce0356f6  kernel/classes/classicmenu/expclassicmenusettings.php
 778a26bd7868d8b25ced9a004af515fa  kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php
-faa045dd00a61b76c65691b8ccfd7241  kernel/classes/cluster/expclustersetup.php
+1da5dd1d98cc17957b5169974b8771ed  kernel/classes/cluster/expclustersetup.php
 aaff1838ebeaa52d26de4395929327ea  kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php
 865e130c99d93fd0b6943b867d91e3db  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 7a36f246c38cf46fc9a07696f2e82d96  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
