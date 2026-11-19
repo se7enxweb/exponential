@@ -731,6 +731,11 @@ class expImageAliasBacklog
             flock( $handle, LOCK_UN );
             fclose( $handle );
         }
+        // Out of time with entries still waiting: the next drainers take over (this slot is free again), so a page of
+        // hundreds of new images does not wait for the next request or the cronjob part. Only after a run that made
+        // something: entries nobody can make are left to the cronjob part.
+        if ( $worked > 0 && self::count() > 0 && self::usesDrainers() )
+            self::startDrainers();
         return $worked;
     }
 

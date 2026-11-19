@@ -24,6 +24,8 @@
  *  IAX-09 - the aliases a page queues for its page placeholders are written to the backlog after the answer, in the
  *           order they were added, each once, and not when one is already waiting; where the request cannot answer
  *           first they are written at once
+ *  IAX-10 - a drainer that runs out of BacklogTime with entries still waiting starts the next drainers itself; one
+ *           that made nothing in its run leaves them to the cronjob part
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/imagealias/expImageAliasAuditTest.php
  *
@@ -370,6 +372,65 @@ class expImageAliasAuditTest extends PHPUnit\Framework\TestCase
         finally
         {
             expImageAliasBacklog::setAnswerFirst( null );
+        }
+    }
+
+    /** IAX-10 */
+    public function testADrainerOutOfTimeHandsOver()
+    {
+        mkdir( $this->base . '/slots', 0700, true );
+        expImageAliasThrottle::setDirectory( $this->base . '/slots' );
+        expImageAliasThrottle::setLimit( 6 );
+        expImageAliasThrottle::setApplies( true );
+        expImageAliasThrottle::reset();
+        ezpINIHelper::setINISetting( 'image.ini', 'AliasSettings', 'MaxParallel', '6' );
+        ezpINIHelper::setINISetting( 'image.ini', 'AliasSettings', 'BacklogTime', '1' );
+        ezpINIHelper::setINISetting( 'image.ini', 'AliasSettings', 'BacklogDrainer', 'process' );
+        $spawned = array();
+        expImageAliasBacklog::setSpawner( function ( $slot ) use ( &$spawned ) {
+            $spawned[] = $slot;
+            return true;
+        } );
+        try
+        {
+            if ( !expImageAliasBacklog::usesDrainers() )
+                $this->markTestSkipped( 'proc_open() is not allowed here' );
+            for ( $i = 0; $i < 12; $i++ )
+                expImageAliasBacklog::add( 300 + $i, 1, 'eng-GB', 'small', array(), null, 'site' );
+            expImageAliasBacklog::setWorker( function ( array $entry ) {
+                usleep( 300000 );
+            } );
+            $made = expImageAliasBacklog::runDrainer( 0 );
+            $this->assertGreaterThan( 0, $made );
+            $this->assertGreaterThan( 0, expImageAliasBacklog::count(), 'entries left when the time ran out' );
+            $this->assertNotEmpty( $spawned, 'the next drainers started' );
+
+            // Nothing made (every conversion slot held elsewhere): no successor
+            $spawned = array();
+            $held = array();
+            for ( $slot = 0; $slot < 6; $slot++ )
+            {
+                $handle = fopen( $this->base . '/slots/slot-' . $slot . '.lock', 'c' );
+                $this->assertTrue( flock( $handle, LOCK_EX | LOCK_NB ), "slot $slot is free" );
+                $held[] = $handle;
+            }
+            $this->assertSame( 0, expImageAliasBacklog::runDrainer( 1 ) );
+            $this->assertSame( array(), $spawned );
+            foreach ( $held as $handle )
+            {
+                flock( $handle, LOCK_UN );
+                fclose( $handle );
+            }
+        }
+        finally
+        {
+            expImageAliasBacklog::setSpawner( null );
+            expImageAliasBacklog::setWorker( null );
+            expImageAliasThrottle::reset();
+            expImageAliasThrottle::setDirectory( null );
+            expImageAliasThrottle::setLimit( null );
+            expImageAliasThrottle::setApplies( null );
+            ezpINIHelper::restoreINISettings();
         }
     }
 }
