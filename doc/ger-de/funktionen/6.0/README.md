@@ -117,6 +117,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Inhalte aus einfachen Werten: expContentWriter](inhalte-schreiben.md): Der Kernel legt Inhalte aus Textwerten in
   wenigen Zeilen an, ändert und entfernt sie, für Skripte, Importe, Migrationen, Integrationen und die REST API
 - [Entfernte Dienste: die ganze Administration als HTTP-API (expservices)](entfernte-dienste-expservices.md)
+- [Ein DFS-Cluster mit einem Knoten in einem Befehl](cluster-befehle.md): `exp:cluster:enable` und `exp:cluster:disable` legen
+  Share, Cluster-Tabellen und Einstellungen an und verschieben die Dateien hinein (oder zurück); die Gateway-Regel wird für den Webserver ausgegeben
 - [Die GraphQL-API: genau die Felder abfragen, die eine Seite braucht](graphql.md): `/api/graphql`, ein aus den
   Inhaltsklassen erzeugtes Schema, Richtlinien gelten immer, Setup > GraphQL mit einem Playground,
   `exp:graphql:status`, `exp:graphql:schema` und `exp:graphql:query`

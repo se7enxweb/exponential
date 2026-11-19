@@ -3494,6 +3494,7 @@
     "funktionen/6.0/geheimnisspeicher.md": "features/6.0/secret-store.md",
     "funktionen/6.0/generator-fuer-den-statischen-cache.md": "features/6.0/static-cache-generator.md",
     "funktionen/6.0/graphql.md": "features/6.0/graphql.md",
+    "funktionen/6.0/cluster-befehle.md": "features/6.0/cluster-commands.md",
     "funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md": "features/6.0/content-limitation-handlers.md",
     "funktionen/6.0/hilfeinhalte.md": "features/6.0/help-content.md",
     "funktionen/6.0/hilfesystem.md": "features/6.0/help-system.md",

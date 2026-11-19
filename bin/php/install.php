@@ -57,6 +57,8 @@ $options = array(
     'password'       => null,
     'first-name'     => 'Administrator',
     'last-name'      => 'User',
+    'cluster'        => 'single',
+    'cluster-share'  => '',
 );
 $flags = array( 'apply' => false, 'force' => false, 'dry-run' => false, 'print' => false, 'help' => false, 'allow-root-user' => false,
                 'random-password' => false, 'no-crontab' => false );
@@ -206,6 +208,16 @@ if ( !filter_var( $options['email'], FILTER_VALIDATE_EMAIL ) )
 }
 // The site's time zone (site.ini [TimeZoneSettings] TimeZone): as given, else the zone of the primary language's
 // country, else php.ini's date.timezone, else UTC (expInstallTimeZone::choose(), which the installation applies)
+if ( !in_array( $options['cluster'], array( 'single', 'one-node' ), true ) || ( $options['cluster-share'] !== '' && $options['cluster-share'][0] !== '/' ) )
+{
+    fwrite( STDERR, "--cluster is single or one-node, and --cluster-share an absolute path\n" );
+    exit( 1 );
+}
+if ( $options['cluster'] === 'one-node' && !in_array( $db, array( 'mysql', 'mysqli', 'pgsql', 'postgresql' ), true ) )
+{
+    fwrite( STDERR, "--cluster=one-node needs --db=mysql (or pgsql once the kernel has its PostgreSQL cluster backend)\n" );
+    exit( 1 );
+}
 if ( $options['timezone'] !== '' && !expInstallTimeZone::isValid( $options['timezone'] ) )
 {
     fwrite( STDERR, "--timezone is not a time zone this PHP knows: {$options['timezone']} (e.g. Europe/Berlin, America/New_York, UTC)\n" );
@@ -294,6 +306,8 @@ $sections = array(
                                  'Email' => $options['email'], 'Password' => $options['password'] ),
     'security'         => array(),
     'registration'     => array( 'Send' => 'false' ),
+    // a one-node DFS cluster after the install (expKickstarter::enableCluster(), exp:cluster:enable)
+    'cluster'          => array( 'Mode' => $options['cluster'], 'Share' => $options['cluster-share'] ),
 );
 // the editor's value, under the key of the access type ([site_details] EditorAccess, EditorAccessPort or EditorAccessHostname)
 $sections['site_details'][$accessType === 'port' ? 'EditorAccessPort' : ( $accessType === 'hostname' ? 'EditorAccessHostname' : 'EditorAccess' )] = (string)$editorValue;
@@ -485,6 +499,16 @@ Site
                          (with --access=host)
   --editor-port=<port>   editor port, default --port + 2 (with --access=port)
                          The editor never shares the public or admin value.
+
+Cluster
+  --cluster=<mode>       single (default) or one-node: after the install the
+                         site becomes a one-node DFS cluster (exp:cluster:enable:
+                         share, cluster tables, settings, files moved in); needs
+                         --db=mysql (pgsql once the kernel has its PostgreSQL
+                         cluster backend). The gateway rule for the web server
+                         is printed
+  --cluster-share=<path> the cluster's share, an absolute path; default: the
+                         folder dfs next to the installation
 
 Administrator (login: admin)
   --email=<address>      default nospam@exponential.earth

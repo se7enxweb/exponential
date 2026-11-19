@@ -179,6 +179,8 @@ class expKickstarter
             $this->installHelpManuals();
             // and the migrations of the site, its extensions and packages (migration.ini [InstallSettings] RunOnKickstart)
             $migrationsFailed = !$this->runMigrations();
+            // a one-node DFS cluster when kickstart.ini asks for it ([cluster] Mode=one-node; exp:cluster:enable)
+            $migrationsFailed = !$this->enableCluster() || $migrationsFailed;
         }
         else
             expSetupLog::finish( 'stopped after ' . $this->stopStep . ' (nothing installed)' );
@@ -354,6 +356,11 @@ class expKickstarter
         $lines[] = '              var/log/initial-admin-password when the password is generated, the cron job of the installation';
         $lines[] = '              (unless [CrontabSettings] Install=disabled), var/log/kickstart.log';
         $lines[] = 'administrator ' . $get( 'site_admin', 'Email', '?' ) . ' (password not shown)';
+        $cluster = self::clusterChoice( $ini );
+        if ( is_string( $cluster ) )
+            $lines[] = 'cluster       ' . $cluster;
+        else if ( $cluster['mode'] === 'one-node' )
+            $lines[] = 'cluster       one-node DFS cluster after the install (exp:cluster:enable), share ' . ( $cluster['share'] !== '' ? $cluster['share'] : 'dfs next to the installation' );
         return $lines;
     }
 
@@ -918,6 +925,53 @@ class expKickstarter
         $this->cli->output( 'Migrations: FAIL ' . $result['message'] );
         $this->cli->output( 'The site is installed; after fixing the cause run ./console exp:migration:resume --apply (./console exp:migration:status shows what is pending)' );
         return false;
+    }
+
+    /**
+     * The cluster choice of kickstart.ini (pure): [cluster] Mode=single (the default) or one-node, Share (empty: dfs next
+     * to the installation). @return array|string mode, share; or what is wrong
+     */
+    public static function clusterChoice( $ini )
+    {
+        $mode = $ini->hasVariable( 'cluster', 'Mode' ) ? strtolower( trim( (string)$ini->variable( 'cluster', 'Mode' ) ) ) : 'single';
+        $share = $ini->hasVariable( 'cluster', 'Share' ) ? trim( (string)$ini->variable( 'cluster', 'Share' ) ) : '';
+        if ( !in_array( $mode, array( 'single', 'one-node' ), true ) )
+            return '[cluster] Mode must be single or one-node, not ' . $mode;
+        if ( $share !== '' && ( $share[0] !== '/' || preg_match( '#/\.\.?(/|$)#', $share ) ) )
+            return '[cluster] Share must be an absolute path';
+        return array( 'mode' => $mode, 'share' => $share );
+    }
+
+    /** The one-node cluster after the install (exp:cluster:enable in a process of its own: it reads the new settings). */
+    private function enableCluster()
+    {
+        $choice = self::clusterChoice( eZINI::instance( 'kickstart.ini', '.' ) );
+        if ( is_string( $choice ) )
+        {
+            $this->cli->output( 'Cluster: FAIL ' . $choice );
+            return false;
+        }
+        if ( $choice['mode'] !== 'one-node' )
+            return true;
+        $rootUser = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 ? array( '--allow-root-user' ) : array();
+        $command = array_merge( array( PHP_BINARY, getcwd() . '/bin/php/expclusterenable.php', '--apply' ),
+                                $choice['share'] !== '' ? array( '--share=' . $choice['share'] ) : array(), $rootUser );
+        $process = proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes, getcwd() );
+        if ( !is_resource( $process ) )
+        {
+            $this->cli->output( 'Cluster: FAIL exp:cluster:enable could not be started (run ./console exp:cluster:enable --apply)' );
+            return false;
+        }
+        $output = stream_get_contents( $pipes[1] );
+        fclose( $pipes[1] );
+        $ok = proc_close( $process ) === 0;
+        foreach ( preg_split( '/\R/', trim( (string)$output ) ) as $line )
+            if ( preg_match( '/^(PASS|FAIL|backend|  |    )/', $line ) )
+                $this->cli->output( 'Cluster: ' . rtrim( $line ) );
+        expSetupLog::note( 'cluster: one-node ' . ( $ok ? 'on' : 'FAILED' ) );
+        if ( !$ok )
+            $this->cli->output( 'The site is installed on its own file system; after fixing the cause run ./console exp:cluster:enable --apply' );
+        return $ok;
     }
 
     private function installHelpManuals()

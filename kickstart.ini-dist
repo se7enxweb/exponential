@@ -289,3 +289,17 @@
 ## Send=<boolean>
 ## Whether to send registration email or not
 #Send=false
+
+#[cluster]
+## Mode=<single|one-node>
+## one-node: after the install, make the site a one-node DFS cluster with
+## exp:cluster:enable (the share, the cluster tables in the site's database,
+## the cluster settings, the stored files moved in). MySQL/MariaDB, and
+## PostgreSQL once the kernel has its cluster backend. The gateway rule for
+## the web server is printed: add it in front of the site's own rules
+## (doc/eng-us/features/6.0/cluster-commands.md). Default: single.
+#Mode=single
+## Share=<absolute path>
+## Where the cluster keeps its files; empty: the folder dfs next to the
+## installation.
+#Share=

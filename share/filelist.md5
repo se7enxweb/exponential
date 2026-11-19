@@ -28,7 +28,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-149d3020d809fbaf90e035ce138b259d  autoload/ezp_kernel.php
+45f4e67ad2c1eab299848a7497000e0b  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -80,6 +80,8 @@ f9735ca09312da3f20f7e1b102d66af4  bin/php/console
 83d0ecc89908f7aad2a7a7676cef5042  bin/php/convertprice2multiprice.php
 7125986d659f9a1ad894420b5150ae88  bin/php/dfscleanup.php
 32ca6eecc2c80c0e339d8d611fe9b3a1  bin/php/expbackfillordersiteaccess.php
+1b16528f6e93f9aa7e21a53d090f9af6  bin/php/expclusterdisable.php
+4b64961c5ff1bbefd07ba71c50ee91e0  bin/php/expclusterenable.php
 4424d9e17a168a71e846dd76dfb950ed  bin/php/expcontentjob.php
 981486f27bd734a896726563509c4013  bin/php/expfetch.php
 9c7b1306681e9537290dd81b963da726  bin/php/expgraphqlbench.php
@@ -213,7 +215,7 @@ adfd490d2194d182d8918f0e0d4103cb  bin/php/eztc.php
 2864ea8dbbfe3d0d7100ee4c807891f0  bin/php/frankenphp.php
 fd0dd13f16120821d126def744357683  bin/php/i18n.php
 d84a3aa15c8ee45da0f11aebb9749d05  bin/php/ini.php
-e613a4008d06dd417597c57516313e68  bin/php/install.php
+0b57a4eac7650d611dc264fe23774fdc  bin/php/install.php
 bbdf07c4a453d85755333d776b6e4021  bin/php/installcrontab.php
 9d86a3abb4fcd036fbaf5391c8e0e5e9  bin/php/kickstarter.php
 cb6c5762cc9f5b8b5bb6623f91e601f0  bin/php/mailbounces.php
@@ -6966,7 +6968,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-9c5baca69c3c183dfc3435b8e36780f4  doc/eng-us/features/6.0/README.md
+d21a770c95b35b88c99f43205de2d090  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6987,6 +6989,7 @@ e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 dabff75a311362f40ae3a24bf5b55b51  doc/eng-us/features/6.0/cache-until.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
+43baba5766dd6fd95fd909ca6b91a5a5  doc/eng-us/features/6.0/cluster-commands.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
 b10b8f6d48a35a112fc60abd882b4869  doc/eng-us/features/6.0/content-jobs.md
@@ -13663,7 +13666,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-5f50fc03941fe9c490c3d271b093b916  doc/ger-de/.paths.json
+ba1b80a544a663b0f8c9784c7f369c47  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17096,7 +17099,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-6a62cc33a4faef8c80d6c17a91d9c1af  doc/ger-de/funktionen/6.0/README.md
+532608ddb15fa580b9f67bfab9644863  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17124,6 +17127,7 @@ dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-si
 c101190a0d0375412432054e564d3ed1  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
+5975a6240e140fd109346f3a9617ef36  doc/ger-de/funktionen/6.0/cluster-befehle.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
@@ -24758,6 +24762,7 @@ b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_to
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
 fe0bce95fbb9c13990be1fecce0356f6  kernel/classes/classicmenu/expclassicmenusettings.php
 778a26bd7868d8b25ced9a004af515fa  kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php
+faa045dd00a61b76c65691b8ccfd7241  kernel/classes/cluster/expclustersetup.php
 aaff1838ebeaa52d26de4395929327ea  kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php
 865e130c99d93fd0b6943b867d91e3db  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 7a36f246c38cf46fc9a07696f2e82d96  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
@@ -24961,7 +24966,7 @@ e28d493c473360f6987268aad63af821  kernel/classes/expkernelservicecompiler.php
 0d1f6478da3d2c9fe01ada5fdda0c15e  kernel/classes/expkernelservicecontainer.php
 70f9f81d133851b79b1283613b9044ec  kernel/classes/expkernelservices.php
 ea94066279aed484b4db7a287247855b  kernel/classes/expkernelservicescope.php
-a02c47d7c7720aff231314766e7d3a64  kernel/classes/expkickstarter.php
+b77d0785b917bef42e8db136111c0671  kernel/classes/expkickstarter.php
 7834936e5a6591f115b7fb5e61d575ff  kernel/classes/expkickstarterini.php
 4c3efce95489a61f22bdb9f9b1416d40  kernel/classes/explinkcheck.php
 30cddc09f8bfe239c9af3677ba13f8f5  kernel/classes/explovestack.php
@@ -26061,6 +26066,8 @@ cc587fd2e74ad1e9215ec175b94b44fd  kernel/private/classes/commands/clusterize.php
 4882ef935cc53dd1cb405e438dd8ed26  kernel/private/classes/commands/convertprice2multiprice.php
 845042909bb86e2a2700281b37c6d37a  kernel/private/classes/commands/dfscleanup.php
 14d7119d4f084e13faa07b964670e35f  kernel/private/classes/commands/expbackfillordersiteaccess.php
+1a4b109191a04f0803ee7b588db3d311  kernel/private/classes/commands/expclusterdisable.php
+c88a12ab72d39422c7bc2b5645737e48  kernel/private/classes/commands/expclusterenable.php
 40e4958317e33da81fdc573d6814191e  kernel/private/classes/commands/expcontentjob.php
 ab2cbe636f4bd9a9e93cf053b435f3bc  kernel/private/classes/commands/expgraphqlbench.php
 00fa9b3ad265ada70a9ec5fd0b76ad0c  kernel/private/classes/commands/expgraphqldisable.php
@@ -27098,7 +27105,7 @@ ad20aae0cc2b04ec6b27ab524f85b48d  kernel/workflow/module.php
 f8422b2d7c5983552ff65b4105c20766  kernel/workflow/view.php
 4ca5c95269d6a6ee11b56bab377d82e9  kernel/workflow/workflowlist.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
-7f8405d13b52f241e1e58d0d2820df4a  kickstart.ini-dist
+1f7a195d56755dbc47ff0c22eebf8cc9  kickstart.ini-dist
 f72ddefd7b5c0c6321b4bf1f94ed55d3  lib/ezdb/classes/expmongodb.php
 13f0a583c9b7da0867680d243ffdcb5e  lib/ezdb/classes/exppdodb.php
 4a4c9ff3c3b806245f6e3e709208198b  lib/ezdb/classes/ezdb.php
@@ -29297,6 +29304,7 @@ b5e6823fe454da6742dbe533e30d59b4  tests/tests/kernel/classes/cachesmore/eZStatic
 7927b5e0c9a307433593061ff253ec6b  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
 89a4d84cf90433287afc8977a6bd3ecb  tests/tests/kernel/classes/cachesmore/fixtures/preload-demo-site-front-page-uri-matching.html
 c98e893a75b3bf362d0515b4b4c30728  tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php
+716d28c2c02d01e4e4c69a85780ed089  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
 59814cc8048fbb6639df8574b7df0ff2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 5f138b4314e1dab989fb4d4ff1accc73  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
 40b097090c09b72cab33e0559e31c2bc  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php

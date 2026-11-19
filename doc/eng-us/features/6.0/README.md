@@ -112,6 +112,8 @@ nginx with PHP-FPM keep working as before.
 - [Content from plain values: expContentWriter](content-writer.md): the kernel creates, updates and removes content
   from text values in a few lines, for scripts, imports, migrations, integrations and the REST API
 - [Remote services: the whole admin as an HTTP API (expservices)](remote-services-expservices.md)
+- [A one-node DFS cluster in one command](cluster-commands.md): `exp:cluster:enable` and `exp:cluster:disable` make the
+  share, the cluster tables and settings and move the files in (or back); the gateway rule is printed for the web server
 - [The GraphQL API: ask the content for exactly the fields a page needs](graphql.md): `/api/graphql`, a schema
   generated from the content classes, policies always applied, Setup > GraphQL with a playground,
   `exp:graphql:status`, `exp:graphql:schema` and `exp:graphql:query`
