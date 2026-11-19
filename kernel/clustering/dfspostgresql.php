@@ -82,7 +82,10 @@ class expDfsPostgresqlClusterGateway extends ezpClusterGateway
 
     public function passthrough( $filepath, $filesize, $offset = false, $length = false )
     {
-        $dfsFilePath = CLUSTER_MOUNT_POINT_PATH . '/' . $filepath;
+        // config.cluster.php defines it; without it there is no file to serve, which is an error, not a notice
+        if ( !defined( 'CLUSTER_MOUNT_POINT_PATH' ) )
+            throw new RuntimeException( "CLUSTER_MOUNT_POINT_PATH is not defined in config.cluster.php" );
+        $dfsFilePath = constant( 'CLUSTER_MOUNT_POINT_PATH' ) . '/' . $filepath;
 
         if ( !file_exists( $dfsFilePath ) )
             throw new RuntimeException( "Unable to open DFS file '$dfsFilePath'" );
