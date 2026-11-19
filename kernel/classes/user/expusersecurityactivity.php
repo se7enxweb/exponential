@@ -228,7 +228,7 @@ class expUserSecurityActivity
         try
         {
             $db = eZDB::instance();
-            return $db->databaseName() !== 'mongo' && expUserAudit::exists( $db ) === true;
+            return ( $db->databaseName() !== 'mongo' || expMongoDB::sqlFallbackAvailable() ) && expUserAudit::exists( $db ) === true;
         }
         catch ( Throwable $e )
         {

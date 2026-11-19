@@ -137,7 +137,8 @@ class Overview extends \Exponential\Runnable\ModuleView
 
         $db = \eZDB::instance();
         $now = time();
-        $canFilter = $db->databaseName() !== 'mongo';
+        // on MongoDB the filters, the sort and the candidates are SQL, which the adapter's SQL fallback answers
+        $canFilter = $db->databaseName() !== 'mongo' || \expMongoDB::sqlFallbackAvailable();
         if ( !$canFilter )
         {
             $objects = $db->aggregate( 'ezinfocollection', [

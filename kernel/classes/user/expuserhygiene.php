@@ -95,14 +95,14 @@ class expUserHygiene
     }
 
     /**
-     * The instance of this installation's database, or null on MongoDB (the list is read with SQL).
+     * The instance of this installation's database, or null on MongoDB without the SQL fallback (the list is read with SQL).
      *
      * @return expUserHygiene|null
      */
     public static function fromDatabase()
     {
         $db = eZDB::instance();
-        if ( $db->databaseName() === 'mongo' )
+        if ( $db->databaseName() === 'mongo' && !expMongoDB::sqlFallbackAvailable() )
             return null;
         return new self(
             function ( $sql, $offset, $limit ) use ( $db )

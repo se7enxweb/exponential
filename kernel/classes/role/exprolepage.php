@@ -317,7 +317,8 @@ class expRolePage
     {
         $db = eZDB::instance();
         $result = array( 'users_direct' => 0, 'groups' => 0, 'users_total' => null, 'limited' => 0 );
-        if ( $db->databaseName() === 'mongo' )
+        // on MongoDB the SQL below is answered by the adapter's SQL fallback; without it the figures stay empty
+        if ( $db->databaseName() === 'mongo' && !expMongoDB::sqlFallbackAvailable() )
             return $result;
         $rows = $db->arrayQuery( 'SELECT contentobject_id, limit_identifier FROM ezuser_role WHERE role_id = ' . (int)$role->attribute( 'id' ) );
         $objectIDs = array();

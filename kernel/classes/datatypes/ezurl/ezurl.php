@@ -394,7 +394,9 @@ class eZURL extends eZPersistentObject
                 if ( $search !== null )
                     $isValidFilter['url'] = [ '$regex' => preg_quote( $search ), '$options' => 'i' ];
                 $pipeline = [
-                    [ '$match' => $isValidFilter ],
+                    // an object even when empty: an empty PHP array is a BSON array, which $match refuses ("the match
+                    // filter must be an expression in an object"), and the list of all links came back empty
+                    [ '$match' => (object) $isValidFilter ],
                     [ '$lookup' => [
                         'from'         => 'ezurl_object_link',
                         'localField'   => 'id',

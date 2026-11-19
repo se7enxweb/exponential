@@ -268,7 +268,8 @@ class expUserAudit
         if ( !$rows )
             return count( $records );
         $db = eZDB::instance();
-        if ( $db->databaseName() === 'mongo' || self::exists( $db ) !== true )
+        // exists() answers for MongoDB too (its collection list), where this was switched off
+        if ( self::exists( $db ) !== true )
             return false;
         $quoted = array();
         foreach ( array_keys( $rows ) as $eventID )
@@ -545,7 +546,7 @@ class expUserAudit
     {
         $days = $days === null ? self::settings()['retention_days'] : (int)$days;
         $db = eZDB::instance();
-        if ( $db->databaseName() === 'mongo' || self::exists( $db ) !== true )
+        if ( self::exists( $db ) !== true )
             return false;
         if ( $days <= 0 )
             return 0;
@@ -610,6 +611,12 @@ class expUserAudit
                 break;
             case 'oracle':
                 $rows = expAuditIndexSchema::tryArrayQuery( $db, "SELECT table_name AS name FROM user_tables WHERE table_name = 'EXPUSER_AUDIT'" );
+                break;
+            case 'mongodb':
+                // the collection list is the catalogue (the summaries read with GROUP BY are answered by the
+                // adapter's SQL fallback; without it the security activity stays reported as unsupported)
+                $rows = method_exists( $db, 'listCollectionNames' ) && expMongoDB::sqlFallbackAvailable()
+                    ? array_values( array_intersect( (array)$db->listCollectionNames(), array( 'expuser_audit' ) ) ) : null;
                 break;
             default:
                 $rows = null;

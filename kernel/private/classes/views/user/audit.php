@@ -44,7 +44,7 @@ class Audit extends \Exponential\Runnable\ModuleView
 
         $filters = \expUserAudit::normaliseFilters( \expUserAudit::viewParameterInput( $Params ) );
         $query = \expUserAudit::viewParameters( $filters );
-        $supported = $db->databaseName() !== 'mongo';
+        $supported = $db->databaseName() !== 'mongo' || \expMongoDB::sqlFallbackAvailable();
         $installed = $supported && \expUserAudit::exists( $db ) === true;
 
         if ( $installed && \eZSys::serverVariable( 'REQUEST_METHOD', true ) === 'POST' && $http->hasPostVariable( 'ExportButton' ) )

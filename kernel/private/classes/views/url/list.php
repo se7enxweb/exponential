@@ -280,7 +280,7 @@ class ListView extends \Exponential\Runnable\ModuleView
                 $ids[] = (int)$url->attribute( 'id' );
         }
         $db = \eZDB::instance();
-        if ( !$ids || $db->databaseName() === 'mongo' )
+        if ( !$ids || ( $db->databaseName() === 'mongo' && !\expMongoDB::sqlFallbackAvailable() ) )
             return array();
 
         $versionColumn = \eZPersistentObject::getShortAttributeName( $db, \eZURLObjectLink::definition(), 'contentobject_attribute_version' );

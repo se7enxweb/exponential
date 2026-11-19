@@ -230,7 +230,7 @@ class expUnactivatedUsers
         foreach ( $rows as $row )
             $ids[] = (int)$row['contentobject_id'];
         $mainNodes = array();
-        if ( $ids && $db->databaseName() !== 'mongo' )
+        if ( $ids && ( $db->databaseName() !== 'mongo' || expMongoDB::sqlFallbackAvailable() ) )
         {
             $nodes = $db->arrayQuery( 'SELECT contentobject_id, main_node_id FROM ezcontentobject_tree WHERE node_id = main_node_id AND '
                                       . $db->generateSQLINStatement( $ids, 'contentobject_id', false, true, 'int' ) );

@@ -1097,7 +1097,12 @@ class eZPersistentObject
     //   echo "</pre>";
     //   die('final');
 
-        if ( $db->databaseName() !== 'mongo' )
+        // On MongoDB a fetch with tables or conditions of its own (SQL text) takes the SQL path, which the adapter
+        // answers with its SQL fallback: the pipeline below knows neither, and used to return every row of the
+        // class's table instead (Setup > Unactivated users listed enabled accounts).
+        $mongoNeedsSQL = $db->databaseName() === 'mongo'
+            && ( ( is_array( $custom_tables ) && count( $custom_tables ) > 0 ) || ( is_string( $custom_conds ) && trim( $custom_conds ) !== '' ) );
+        if ( $db->databaseName() !== 'mongo' || $mongoNeedsSQL )
         {
             if ( is_array( $custom_tables ) )
             {
@@ -1269,12 +1274,10 @@ class eZPersistentObject
                     $sortStage = [];
                     foreach ( $sortList as $sField => $sDir )
                     {
-                        // Normally 'asc'/'desc' here, but a boolean reaches this
-                        // from callers that use eZ's SortBy convention, where
-                        // false means descending.
-                        $sortStage[$sField] = is_bool( $sDir )
-                            ? ( $sDir ? 1 : -1 )
-                            : ( strtolower( (string)$sDir ) === 'desc' ? -1 : 1 );
+                        // As the SQL path above, with its loose comparison: "desc" (and true, which equals any
+                        // string) sorts descending, false and "asc" ascending. Reading false as descending listed
+                        // the order statuses backwards.
+                        $sortStage[$sField] = ( is_string( $sDir ) ? strtolower( $sDir ) : $sDir ) == "desc" ? -1 : 1;
                     }
                     if ( !empty( $sortStage ) )
                         $pipeline[] = [ '$sort' => $sortStage ];

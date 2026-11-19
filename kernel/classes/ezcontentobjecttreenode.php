@@ -867,6 +867,38 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * @param array $extendedAttributeFilter
      * @return array
      */
+    /**
+     * The MongoDB pipeline stage for an extended attribute filter (createExtendedAttributeFilterSQLStrings()):
+     * the filter's SQL - its tables joined to the tree and the object, its conditions - is run as a SELECT of the
+     * node ids it lets through (the adapter answers it with its SQL fallback), and the stage keeps those nodes.
+     * The subtree fetch and count on MongoDB used to leave the filter out, so a tag's page listed every node of
+     * the subtree instead of the tagged ones.
+     *
+     * @param array $extendedAttributeFilter the result of createExtendedAttributeFilterSQLStrings()
+     * @return array no stage when there is no filter, else one $match on node_id
+     */
+    static function mongoExtendedAttributeFilterStages( $extendedAttributeFilter )
+    {
+        if ( !is_array( $extendedAttributeFilter )
+             || ( trim( (string)$extendedAttributeFilter['tables'] ) === '' && trim( (string)$extendedAttributeFilter['joins'] ) === '' ) )
+            return array();
+
+        $tables = trim( (string)$extendedAttributeFilter['tables'] );
+        // a filter that lists its tables after a comma ("FROM a, b") instead of joining them
+        if ( $tables !== '' && $tables[0] === ',' )
+            $tables = ' ' . $tables;
+        $joins = trim( (string)$extendedAttributeFilter['joins'] );
+        $sql = "SELECT DISTINCT ezcontentobject_tree.node_id FROM ezcontentobject_tree " .
+               "INNER JOIN ezcontentobject ON ( ezcontentobject_tree.contentobject_id = ezcontentobject.id ) " .
+               "$tables WHERE " . ( $joins !== '' ? $joins . ' ' : '' ) .
+               ( preg_match( '/\bAND\s*$/i', $joins ) || $joins === '' ? '1 = 1' : '' );
+        $rows = eZDB::instance()->arrayQuery( $sql );
+        $nodeIDs = array();
+        foreach ( is_array( $rows ) ? $rows : array() as $row )
+            $nodeIDs[] = (int)$row['node_id'];
+        return array( array( '$match' => array( 'node_id' => array( '$in' => $nodeIDs ) ) ) );
+    }
+
     static function createExtendedAttributeFilterSQLStrings( &$extendedAttributeFilter )
     {
         $filter = array( 'tables'   => '',
@@ -3015,6 +3047,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
                     $mPipeline[] = [ '$match' => [ '_obj.contentclass_id' => [ $fop => $filterClassIDs ] ] ];
                 }
             }
+            // the extended attribute filter (eztags and the like): the nodes it lets through, read with its SQL
+            $mPipeline = array_merge( $mPipeline, self::mongoExtendedAttributeFilterStages( $extendedAttributeFilter ) );
             // Name lookup: the name in the most prioritized language, as the SQL engines' join picks it; a version
             // without a name in such a language is left out, as there
             $mPipeline[] = [ '$lookup' => [
@@ -3602,6 +3636,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 $countPipeline[] = [ '$match' => [ 'contentclass_id' => [ $filterOp => array_map( 'intval', $classIDArray ) ] ] ];
             }
             $countPipeline = array_merge( $countPipeline, self::mongoLanguageStages( $mongoLanguage ), $mongoPermissionStages );
+            $countPipeline = array_merge( $countPipeline, self::mongoExtendedAttributeFilterStages( $extendedAttributeFilter ) );
             $filterStages = self::mongoAttributeFilterStages( $attributeFilterParam );
             if ( $filterStages === false )
             {

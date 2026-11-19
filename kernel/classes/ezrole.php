@@ -845,20 +845,16 @@ class eZRole extends eZPersistentObject
                         [ '$match' => [
                             'role.contentobject_id' => [ '$in' => $groupCOIDs ]
                         ] ],
-                        [ '$group' => [
-                            '_id'              => '$id',
-                            'name'             => [ '$first' => '$name' ],
-                            'limit_identifier' => [ '$first' => '$role.limit_identifier' ],
-                            'limit_value'      => [ '$first' => '$role.limit_value' ],
-                            'user_role_id'     => [ '$first' => '$role.id' ],
-                        ] ],
+                        // one row per assignment, as the SQL's DISTINCT over the assignment id gives: grouping by
+                        // the role kept only the first of a role given twice with different limitations (the
+                        // Editor role on two subtrees lost one of them)
                         [ '$project' => [
                             '_id'              => 0,
-                            'id'               => '$_id',
+                            'id'               => 1,
                             'name'             => 1,
-                            'limit_identifier' => 1,
-                            'limit_value'      => 1,
-                            'user_role_id'     => 1,
+                            'limit_identifier' => '$role.limit_identifier',
+                            'limit_value'      => '$role.limit_value',
+                            'user_role_id'     => '$role.id',
                         ] ],
                     ];
                     $roleArray = $db->aggregate( 'ezrole', $pipeline );

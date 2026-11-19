@@ -890,6 +890,50 @@ class eZContentObject extends eZPersistentObject
                 'version'          => (int) $version,
             ] ] ] );
             if ( empty( $attrRows ) ) return null;
+            // The languages, as the SQL path filters them: the ones asked for, else the one translation
+            // eZContentLanguage::sqlFilter() picks (the first prioritized language the version has, else the
+            // always-available one). Without it every translation came back and the last one read won, so a
+            // name pattern gave the German name to the English translation and another translation's value to
+            // the object (the package's About component was published as "12K Tik Tok followers in 12 days").
+            $wanted = array();
+            foreach ( is_array( $languageArray ) ? $languageArray : array() as $langCode )
+            {
+                if ( is_string( $langCode ) )
+                    $wanted[$langCode] = true;
+            }
+            if ( !$wanted )
+            {
+                $present = array();
+                foreach ( $attrRows as $ar )
+                    $present[(string)$ar['language_code']] = (int)$ar['language_id'];
+                foreach ( eZContentLanguage::prioritizedLanguages() as $language )
+                {
+                    if ( isset( $present[$language->attribute( 'locale' )] ) )
+                    {
+                        $wanted[$language->attribute( 'locale' )] = true;
+                        break;
+                    }
+                }
+                if ( !$wanted )
+                {
+                    foreach ( $present as $locale => $languageID )
+                    {
+                        if ( $languageID & 1 )
+                        {
+                            $wanted[$locale] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if ( $wanted )
+            {
+                $attrRows = array_values( array_filter( $attrRows, function ( $ar ) use ( $wanted )
+                {
+                    return isset( $wanted[(string)$ar['language_code']] );
+                } ) );
+                if ( empty( $attrRows ) ) return null;
+            }
             $classAttrIDs = array_values( array_unique( array_map( 'intval', array_column( $attrRows, 'contentclassattribute_id' ) ) ) );
             $classAttrRows = $db->aggregate( 'ezcontentclass_attribute', [ [ '$match' => [
                 'id'      => [ '$in' => $classAttrIDs ],
