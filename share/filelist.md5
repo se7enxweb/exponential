@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-35da771478d5eb276987e9a247deef87  doc/changelogs/6.0/6.0.15.md
+988017e9d534d2a9d3bceccd65edd59a  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -7078,7 +7078,7 @@ d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
 3f3dbc6029b05961b3dd1fd969bf1b69  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
-d18228b66aa901eebf243c337c738c48  doc/eng-us/features/6.0/image-aliases-on-demand.md
+e890299f9120909171f1f5c8cdbf9fc7  doc/eng-us/features/6.0/image-aliases-on-demand.md
 ce13a51757dfdf09e65f74df8fc27fee  doc/eng-us/features/6.0/install-in-one-command.md
 1a6c0d26fd13dea1a6e2b109c412530d  doc/eng-us/features/6.0/installation-name-in-pages.md
 ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
@@ -17124,7 +17124,7 @@ b84f7c8bcee906734aff197e984eb450  doc/ger-de/funktionen/6.0/benutzer-auditprotok
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
 dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
-c101190a0d0375412432054e564d3ed1  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
+1f1a89109f14133da5ec552dcd12b106  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
 5975a6240e140fd109346f3a9617ef36  doc/ger-de/funktionen/6.0/cluster-befehle.md

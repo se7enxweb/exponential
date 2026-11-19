@@ -578,6 +578,24 @@ Bilder an `index_image.php` weiterzugeben (Standard: es tut es).
 
 ## Leistung und Abstimmung
 
+**Erneut gemessen am 19. November 2026**, nachdem die Rückstau-Einträge einer Seite erst nach ihrer Antwort
+geschrieben werden (sie kosteten eine Seite mit 500 neuen Bildern etwa 0,3 s vor ihrem ersten Byte) und Abarbeiter, deren
+Zeit mit wartenden Einträgen abläuft, die nächsten starten. Dieselbe Seite, `MaxParallel=6`, je drei Läufe, Last 18 bis
+35 auf 12 Kernen, der Browser auf demselben Server:
+
+| Seite | Server | Zustand | Laden (Median) | Vollständig | Echt | Erstes Byte |
+|---|---|---|---|---|---|---|
+| 500 x i160 | Apache/PHP-FPM | kalt | **2,8 s** | 2,6 s | 32,6 s | 0,8 s (vorher 1,1 bis 1,3 s) |
+| 500 x i160 | Velocity | kalt | 4,2 s | 4,1 s | 37,3 s | 1,2 s |
+| 500 x i160 | Apache/PHP-FPM | warm | 2,7 s | 2,7 s | 2,7 s | 0,2 s |
+| 500 x i160 | Velocity | warm | 4,3 s | 4,3 s | 4,3 s | 0,5 s |
+
+- Das Ziel (kalt in unter 3 s vollständig) ist mit Apache/PHP-FPM erreicht. Mit Velocity ist eine warme Seite mit 500
+  gespeicherten Bildern langsamer als die kalte, die nur einige Dutzend Platzhalterdateien abruft: Dort begrenzt sein
+  HTTP/2-Weg für viele Streams auf einer Verbindung, nicht die Aliase.
+- Etwa 1,1 bis 1,5 s jedes Ladens braucht der Browser, um 500 Bilder anzuordnen; der Alias-Code nimmt davon wenige
+  Millisekunden.
+
 **Erneut gemessen am 17. November 2026**, nach zwei Änderungen: Seiten-Platzhalter (nach 24 noch nicht erzeugten
 Bildern verlinkt eine Seite die übrigen auf einen statischen Platzhalter, ohne PHP-Anfrage; siehe
 [Seiten-Platzhalter](#seiten-platzhalter-eine-seite-mit-vielen-neuen-bildern)) und Abarbeiter-Prozesse (der Rückstau wird

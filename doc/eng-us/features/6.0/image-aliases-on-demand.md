@@ -536,6 +536,23 @@ missing images to `index_image.php` (default: it does).
 
 ## Performance and tuning
 
+**Measured again on 19 November 2026**, after the page's backlog entries were written after its answer (they cost a
+page of 500 new images about 0.3 s before its first byte) and drainers that run out of time with entries waiting
+start the next ones. Same page, `MaxParallel=6`, three runs each, load 18 to 35 on 12 cores, the browser on the same
+server:
+
+| Page | Server | State | Load (median) | Complete | Real | First byte |
+|---|---|---|---|---|---|---|
+| 500 x i160 | Apache/PHP-FPM | cold | **2.8 s** | 2.6 s | 32.6 s | 0.8 s (1.1 to 1.3 s before) |
+| 500 x i160 | Velocity | cold | 4.2 s | 4.1 s | 37.3 s | 1.2 s |
+| 500 x i160 | Apache/PHP-FPM | warm | 2.7 s | 2.7 s | 2.7 s | 0.2 s |
+| 500 x i160 | Velocity | warm | 4.3 s | 4.3 s | 4.3 s | 0.5 s |
+
+- The target (complete in under 3 s cold) is met on Apache/PHP-FPM. On Velocity a warm page of 500 stored images is
+  slower than the cold one, which asks for a few dozen placeholder files: its HTTP/2 path for many streams on one
+  connection is the limit there, not the aliases.
+- About 1.1 to 1.5 s of each load is the browser laying out 500 images; the alias code takes a few milliseconds of it.
+
 **Measured again on 17 November 2026**, after two changes: page placeholders (past 24 images not made yet a page
 links the rest to a static placeholder, no PHP request; see
 [Page placeholders](#page-placeholders-a-page-with-many-new-images)) and drainer processes (the backlog is made by
