@@ -653,49 +653,56 @@ class eZSearchEngine implements ezpSearchEngine
 
                 if ( $searchTerm !== '' )
                 {
-                    // Build a regex matching any search word
-                    $words = preg_split( '/\s+/', $searchTerm );
-                    $escapedWords = array_map( function( $w ) { return preg_quote( $w, '/' ); }, $words );
-                    $regex = implode( '|', $escapedWords );
-
-                    // Objects matching by name
-                    $nameMatch = $objMatch;
-                    $nameMatch['name'] = [ '$regex' => $regex, '$options' => 'i' ];
-                    $nameRows = $db->aggregate( 'ezcontentobject', [
-                        [ '$match'   => $nameMatch ],
-                        [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
-                    ] );
-
-                    // Objects matching by attribute text (optionally filtered by class attribute)
-                    $attrMatch = [ 'data_text' => [ '$regex' => $regex, '$options' => 'i' ] ];
-                    if ( $searchClassAttrID != -1 )
+                    // Every word, as a whole word, as the search index of the SQL engines matches: an object
+                    // matches when each word is in its name or in one of its attributes. Any word anywhere
+                    // inside another word made "O'Brien's" (the words o, brien and s) find every object.
+                    $words = array_values( array_unique( array_filter( preg_split( '/\s+/u', $searchTerm ), 'strlen' ) ) );
+                    $objectIDs = null;
+                    foreach ( $words as $word )
                     {
-                        if ( is_array( $searchClassAttrID ) )
-                            $attrMatch['contentclassattribute_id'] = [ '$in' => array_map( 'intval', $searchClassAttrID ) ];
-                        else
-                            $attrMatch['contentclassattribute_id'] = (int)$searchClassAttrID;
-                    }
-                    $attrRows = $db->aggregate( 'ezcontentobject_attribute', [
-                        [ '$match' => $attrMatch ],
-                        [ '$group' => [ '_id' => '$contentobject_id' ] ],
-                    ] );
+                        $regex = '(?<![\p{L}\p{N}])' . preg_quote( $word, '/' ) . '(?![\p{L}\p{N}])';
+                        $wordIDs = array();
 
-                    $objectIDs = array();
-                    foreach ( $nameRows as $r ) $objectIDs[(int)$r['id']] = true;
-
-                    // For attrRows hits, still apply the object-level filters
-                    if ( !empty( $attrRows ) )
-                    {
-                        $attrObjIDs = array_map( function( $r ) { return (int)$r['_id']; }, $attrRows );
-                        // Re-apply object filters on the attr-matched IDs
-                        $attrObjMatch = $objMatch;
-                        $attrObjMatch['id'] = [ '$in' => $attrObjIDs ];
-                        $filteredAttrObjs = $db->aggregate( 'ezcontentobject', [
-                            [ '$match'   => $attrObjMatch ],
+                        // Objects matching by name
+                        $nameMatch = $objMatch;
+                        $nameMatch['name'] = [ '$regex' => $regex, '$options' => 'i' ];
+                        foreach ( $db->aggregate( 'ezcontentobject', [
+                            [ '$match'   => $nameMatch ],
                             [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                        ] ) as $r )
+                            $wordIDs[(int)$r['id']] = true;
+
+                        // Objects matching by attribute text (optionally filtered by class attribute)
+                        $attrMatch = [ 'data_text' => [ '$regex' => $regex, '$options' => 'i' ] ];
+                        if ( $searchClassAttrID != -1 )
+                        {
+                            if ( is_array( $searchClassAttrID ) )
+                                $attrMatch['contentclassattribute_id'] = [ '$in' => array_map( 'intval', $searchClassAttrID ) ];
+                            else
+                                $attrMatch['contentclassattribute_id'] = (int)$searchClassAttrID;
+                        }
+                        $attrRows = $db->aggregate( 'ezcontentobject_attribute', [
+                            [ '$match' => $attrMatch ],
+                            [ '$group' => [ '_id' => '$contentobject_id' ] ],
                         ] );
-                        foreach ( $filteredAttrObjs as $r ) $objectIDs[(int)$r['id']] = true;
+
+                        // For attrRows hits, still apply the object-level filters
+                        if ( !empty( $attrRows ) )
+                        {
+                            $attrObjMatch = $objMatch;
+                            $attrObjMatch['id'] = [ '$in' => array_map( function( $r ) { return (int)$r['_id']; }, $attrRows ) ];
+                            foreach ( $db->aggregate( 'ezcontentobject', [
+                                [ '$match'   => $attrObjMatch ],
+                                [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                            ] ) as $r )
+                                $wordIDs[(int)$r['id']] = true;
+                        }
+
+                        $objectIDs = $objectIDs === null ? $wordIDs : array_intersect_key( $objectIDs, $wordIDs );
+                        if ( !$objectIDs )
+                            break;
                     }
+                    $objectIDs = $objectIDs ?: array();
                 }
                 else
                 {
