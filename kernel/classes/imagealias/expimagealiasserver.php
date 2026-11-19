@@ -143,7 +143,8 @@ class expImageAliasServer
     {
         $this->storageRequest = true;
         $path = self::normalizeRequestPath( $path );
-        if ( !expImageAliasUrl::validStoragePath( $path ) )
+        // Only the image storage: index_image.php must not hand out what the web server keeps behind content/download
+        if ( !expImageAliasUrl::validImagePath( $path ) )
             return $this->placeholder( null, null, 404, 'not-storage' );
         $variant = expImageFormatConverter::splitVariant( $path );
         if ( $variant !== null )
@@ -253,9 +254,13 @@ class expImageAliasServer
             return $this->placeholder( $width, $height, 404, 'mismatch' );
 
         $target = expImageAliasUrl::targetPath( $payload );
+        // The payload of a token whose signature fails is anybody's: only a file of the image storage, and its type by
+        // its name, never the m it brings
+        if ( !expImageAliasUrl::validImagePath( $target ) )
+            return $this->placeholder( $width, $height, 404, 'not-storage' );
         if ( $check['valid'] )
             $this->miss = array( 'attribute' => (int)$payload['a'], 'version' => (int)$payload['v'], 'language' => (string)$payload['l'] );
-        $mime = isset( $payload['m'] ) ? (string)$payload['m'] : null;
+        $mime = $check['valid'] && isset( $payload['m'] ) && is_string( $payload['m'] ) ? $payload['m'] : null;
         // The formats the browser may get instead (Formats[] of the alias, Negotiate): the answer varies by Accept
         $format = $this->negotiateFor( (string)$payload['n'], $mime !== null ? $mime : eZMimeType::findByURL( $target )['name'] );
         // r: the file there was outdated when the page was made (other alias settings); a valid URL makes it again

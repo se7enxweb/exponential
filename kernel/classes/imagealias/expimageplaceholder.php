@@ -59,8 +59,8 @@ class expImagePlaceholder
      */
     public static function size( $width, $height )
     {
-        $w = is_numeric( $width ) ? (int)round( (float)$width ) : 0;
-        $h = is_numeric( $height ) ? (int)round( (float)$height ) : 0;
+        $w = is_numeric( $width ) && is_finite( (float)$width ) && abs( (float)$width ) < 1e9 ? (int)round( (float)$width ) : 0;
+        $h = is_numeric( $height ) && is_finite( (float)$height ) && abs( (float)$height ) < 1e9 ? (int)round( (float)$height ) : 0;
         if ( $w <= 0 && $h <= 0 )
             return array( self::DEFAULT_WIDTH, self::DEFAULT_HEIGHT );
         if ( $w <= 0 )

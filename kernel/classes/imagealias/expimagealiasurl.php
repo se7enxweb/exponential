@@ -53,6 +53,9 @@ class expImageAliasUrl
     /** Seconds before a process that found no key (or could not read it) asks the store again */
     const KEY_RETRY = 5;
 
+    /** A signature the kept keys reject is checked against the store again when they were read longer ago than this */
+    const KEY_RECHECK = 10;
+
     /** @var array|null current => string|null, previous => string|null, previous_until => int, read => int */
     protected static $keys = null;
 
@@ -61,6 +64,9 @@ class expImageAliasUrl
 
     /** @var bool keys set by setKeys() (tests): never read from the store */
     protected static $fixedKeys = false;
+
+    /** @var bool the next keys() call reads the store, not the key file (a signature the kept keys reject) */
+    protected static $skipKeyFile = false;
 
     // ------------------------------------------------------------------------------------------------ keys
 
@@ -102,7 +108,8 @@ class expImageAliasUrl
             return self::$keys;
         // A process that ends with its request (PHP-FPM): the keys another request read within KEY_TTL, without a
         // database connection
-        $kept = self::readKeyFile();
+        $kept = self::$skipKeyFile ? null : self::readKeyFile();
+        self::$skipKeyFile = false;
         if ( $kept !== null )
         {
             self::$keys = $kept;
@@ -355,12 +362,15 @@ class expImageAliasUrl
                 break;
             }
         }
-        // Kept keys that do not confirm it (changed meanwhile): asked again from the store
-        if ( !$signed && self::$keysFromFile )
+        // Kept keys (in memory or in the key file) that do not confirm it may have been changed meanwhile (rotateKey()
+        // in another process): asked again from the store, but not more often than every KEY_RECHECK seconds, so old
+        // or forged URLs do not send every request to the database. The key file is rewritten, not removed.
+        if ( !$signed && !self::$fixedKeys && is_array( self::$keys ) && self::$keys['current'] !== null
+             && time() - (int)self::$keys['read'] >= self::KEY_RECHECK )
         {
             self::$keys = null;
-            self::forgetKeyFile();
             self::$keysFromFile = false;
+            self::$skipKeyFile = true;
             return self::verify( $token, $now );
         }
         if ( !$signed )
@@ -398,6 +408,14 @@ class expImageAliasUrl
              || !self::validLanguage( $payload['l'] ) || !self::validAliasName( $payload['n'] )
              || !self::validFileName( $payload['u'] ) || !self::validStoragePath( $payload['o'] ) )
             return null;
+        // The optional fields as the kernel writes them, else dropped (the payload of a forged token is anybody's)
+        foreach ( array( 'w', 'h', 'r', 'x' ) as $key )
+        {
+            if ( isset( $payload[$key] ) && !( is_int( $payload[$key] ) || ( is_string( $payload[$key] ) && ctype_digit( $payload[$key] ) ) ) )
+                unset( $payload[$key] );
+        }
+        if ( isset( $payload['m'] ) && !( is_string( $payload['m'] ) && preg_match( '#^[a-z]+/[a-z0-9.+-]{1,64}$#', $payload['m'] ) ) )
+            unset( $payload['m'] );
         return $payload;
     }
 
@@ -858,6 +876,19 @@ class expImageAliasUrl
                 return false;
         }
         return true;
+    }
+
+    /**
+     * A valid storage path (validStoragePath()) in the image storage: var/<site>/storage/images/ or images-versioned/,
+     * the directories web servers serve as they are. Nothing else of the storage (original/application, packages)
+     * is ever answered for an image alias.
+     *
+     * @param mixed $path
+     * @return bool
+     */
+    public static function validImagePath( $path )
+    {
+        return self::validStoragePath( $path ) && preg_match( '#^var/(?:[^/]+/)?storage/images(?:-versioned)?/[^/]#', (string)$path ) === 1;
     }
 
     /**
