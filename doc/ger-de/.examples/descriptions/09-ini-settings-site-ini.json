@@ -231,6 +231,14 @@
         "en": "If enabled the system will store stack traces for all begin/commits in the\nsystem. When an unbalanced nested transactions are detected it will output\nall begin/commits with information on where it occured as a deep tree.\nThis tree can be used to debug the code and find the missing commit.",
         "de": "Wenn aktiviert, speichert das System Stacktraces für alle begin/commit im\nSystem. Werden unausgeglichene verschachtelte Transaktionen erkannt, gibt es\nalle begin/commit mit der Stelle, an der sie auftraten, als tiefen Baum aus.\nMit diesem Baum lässt sich der Code debuggen und das fehlende commit finden."
     },
+    "ini:settings/site.ini [DatabaseSettings] InListChunkSize": {
+        "en": "How many values at most go into one IN list when code asks for a set of ids\nof any size (role assignments, user groups, nodes of a subtree, objects of a\nremoval ...) through expDBInList: a larger set is asked in several\nstatements, one per list, and the rows are put together. One statement with\ntens of thousands of ids fails or gets slow: Oracle takes at most 1000\nvalues per IN list (ORA-01795, ORA-00913), MySQL and MariaDB refuse a\nstatement longer than max_allowed_packet, SQLite one longer than\nSQLITE_MAX_SQL_LENGTH (1 MB by default), and PostgreSQL plans a long list\nslowly. 1000 ids are about 10 KB of SQL, well inside every limit.",
+        "de": "Wie viele Werte höchstens in eine IN-Liste kommen, wenn Code über expDBInList\nnach einer Menge von IDs beliebiger Größe fragt (Rollenzuweisungen,\nBenutzergruppen, Knoten eines Teilbaums, Objekte einer Löschung ...): Eine\ngrößere Menge wird in mehreren Anweisungen abgefragt, eine je Liste, und die\nZeilen werden zusammengeführt. Eine Anweisung mit Zehntausenden IDs schlägt\nfehl oder wird langsam: Oracle nimmt höchstens 1000 Werte je IN-Liste\n(ORA-01795, ORA-00913), MySQL und MariaDB lehnen eine Anweisung über\nmax_allowed_packet ab, SQLite eine über SQLITE_MAX_SQL_LENGTH (1 MB in der\nVoreinstellung), und PostgreSQL plant eine lange Liste langsam. 1000 IDs sind\netwa 10 KB SQL, weit innerhalb jeder Grenze."
+    },
+    "ini:settings/site.ini [DatabaseSettings] InListChunkSizes": {
+        "en": "The same per engine, by the name the driver gives (mysql, postgresql, sqlite,\noracle, mongo, pdo_<driver>); an engine not listed uses InListChunkSize.\nOracle never takes more than 1000, whatever is set here. For example\nInListChunkSizes[postgresql]=5000 in an override.",
+        "de": "Dasselbe je Datenbank, unter dem Namen, den der Treiber nennt (mysql,\npostgresql, sqlite, oracle, mongo, pdo_<treiber>); eine nicht genannte\nDatenbank verwendet InListChunkSize. Oracle nimmt nie mehr als 1000, was\nimmer hier steht. Zum Beispiel InListChunkSizes[postgresql]=5000 in einem\nOverride."
+    },
     "ini:settings/site.ini [DatabaseSettings] ImplementationAlias": {
         "en": "Alias for implementations",
         "de": "Alias für Implementierungen"

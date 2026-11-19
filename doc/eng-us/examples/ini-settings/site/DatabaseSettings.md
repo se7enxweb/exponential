@@ -3,13 +3,13 @@ title: site.ini [DatabaseSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [DatabaseSettings] in site.ini: SQLitePragmas, SQLiteTransactionWait, SQLiteCLITransactionWait, SQLiteBusyTimeout, SQLiteCLIBusyTimeout, DatabaseImplementation, Server, Port ..."
-keywords: site.ini, DatabaseSettings, INI, setting, SQLitePragmas, SQLiteTransactionWait, SQLiteCLITransactionWait, SQLiteBusyTimeout, SQLiteCLIBusyTimeout, DatabaseImplementation, Server, Port, User, Password, Database, UseSlaveServer, ConnectRetries, Charset, UseBuiltinEncoding, Socket, QueryAnalysisOutput, SQLOutput, SlowQueriesOutput, DebugTransactions, ImplementationAlias, UsePersistentConnection, Transactions
+keywords: site.ini, DatabaseSettings, INI, setting, SQLitePragmas, SQLiteTransactionWait, SQLiteCLITransactionWait, SQLiteBusyTimeout, SQLiteCLIBusyTimeout, DatabaseImplementation, Server, Port, User, Password, Database, UseSlaveServer, ConnectRetries, Charset, UseBuiltinEncoding, Socket, QueryAnalysisOutput, SQLOutput, SlowQueriesOutput, DebugTransactions, InListChunkSize, InListChunkSizes, ImplementationAlias, MongoSQLFallback, MongoSQLFallbackMaxRows, MongoSQLFallbackLifetime, UsePersistentConnection, Transactions
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [DatabaseSettings]
 
-The block `[DatabaseSettings]` of `settings/site.ini`, with 23 setting(s).
+The block `[DatabaseSettings]` of `settings/site.ini`, with 28 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -320,6 +320,46 @@ DebugTransactions=disabled
 */ ?>
 ```
 
+## InListChunkSize
+
+> How many values at most go into one IN list when code asks for a set of ids  
+> of any size (role assignments, user groups, nodes of a subtree, objects of a  
+> removal ...) through expDBInList: a larger set is asked in several  
+> statements, one per list, and the rows are put together. One statement with  
+> tens of thousands of ids fails or gets slow: Oracle takes at most 1000  
+> values per IN list (ORA-01795, ORA-00913), MySQL and MariaDB refuse a  
+> statement longer than max\_allowed\_packet, SQLite one longer than  
+> SQLITE\_MAX\_SQL\_LENGTH (1 MB by default), and PostgreSQL plans a long list  
+> slowly. 1000 ids are about 10 KB of SQL, well inside every limit.  
+
+Default: `1000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+InListChunkSize=1000
+*/ ?>
+```
+
+## InListChunkSizes
+
+> The same per engine, by the name the driver gives (mysql, postgresql, sqlite,  
+> oracle, mongo, pdo\_<driver>); an engine not listed uses InListChunkSize.  
+> Oracle never takes more than 1000, whatever is set here. For example  
+> InListChunkSizes\[postgresql\]=5000 in an override.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+# an empty "InListChunkSizes[]" first replaces the shipped list; without it the items are added
+InListChunkSizes[]
+*/ ?>
+```
+
 ## ImplementationAlias
 
 > Alias for implementations  
@@ -341,6 +381,52 @@ ImplementationAlias[ezpostgresql]=eZPostgreSQLDB
 ImplementationAlias[pgsql]=eZPostgreSQLDB
 ImplementationAlias[sqlite3]=eZSQLite3DB
 ImplementationAlias[mongodb]=expMongoDB
+*/ ?>
+```
+
+## MongoSQLFallback
+
+> MongoDB only (expMongoDB): a SELECT the adapter cannot turn into MongoDB operations  
+> (joins, GROUP BY with HAVING, UNION, derived tables) runs on an in-memory SQLite copy  
+> of the collections it names, so it gives the answer MySQL, PostgreSQL and SQLite give  
+> instead of an empty result. Needs PHP's sqlite3 extension; disabled = the empty result  
+> and a "MONGO TODO" warning, as before 6.0.15.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+MongoSQLFallback=enabled
+*/ ?>
+```
+
+## MongoSQLFallbackMaxRows
+
+> A collection with more documents than this is not copied: the statement is refused.  
+
+Default: `200000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+MongoSQLFallbackMaxRows=200000
+*/ ?>
+```
+
+## MongoSQLFallbackLifetime
+
+> Seconds a copy keeps answering when no write went through the adapter in between.  
+
+Default: `2`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+MongoSQLFallbackLifetime=2
 */ ?>
 ```
 
