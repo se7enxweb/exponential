@@ -113,6 +113,8 @@
         return found;
     }
 
+    var IMAGE_ACCEPT = 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8';
+
     function swap(url, replacement) {
         imagesShowing(url).forEach(function (img) {
             var named = inSrcset(img, url);
@@ -129,7 +131,8 @@
     // Asks for url once: resolves true when the real image is there (swapped), false while it is still a
     // placeholder; a refused or unknown image keeps its placeholder and is not asked for again
     function ask(url) {
-        return window.fetch(url, { cache: 'reload', credentials: 'same-origin' }).then(function (response) {
+        // The Accept of an <img>: a negotiated alias comes back in the format the browser would get (fetch() sends */*)
+        return window.fetch(url, { cache: 'reload', credentials: 'same-origin', headers: { Accept: IMAGE_ACCEPT } }).then(function (response) {
             var pending = response.headers.get('X-Image-Placeholder') || isPlaceholderTiming(response.headers.get('Server-Timing'));
             if (pending && response.status === 200) {
                 return false;

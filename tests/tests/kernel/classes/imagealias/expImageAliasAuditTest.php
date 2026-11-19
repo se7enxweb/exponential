@@ -306,6 +306,8 @@ class expImageAliasAuditTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'inSrcset(img, url) !== null', $js, 'imagesShowing() uses both forms' );
         $this->assertStringContainsString( 'img.srcset.split(named).join(replacement)', $js, 'swap() replaces the form the srcset uses' );
         $this->assertStringNotContainsString( 'img.srcset.split(url).join(replacement)', $js );
+        $this->assertStringContainsString( 'headers: { Accept: IMAGE_ACCEPT }', $js, 'asks as an <img> asks (negotiated formats)' );
+        $this->assertStringContainsString( "image/avif,image/webp", $js );
         $this->assertMatchesRegularExpression( '/if \\(!lastProgress \\|\\| now\\(\\) - lastProgress > GIVE_UP\\) \\{\\s*lastProgress = now\\(\\);\\s*idleRounds = 0;/', $js,
                                                'add() starts the script again after it gave up' );
     }

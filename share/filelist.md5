@@ -2407,7 +2407,7 @@ f4c72a3b44fe9648e42d849832a4b87d  design/standard/images/user_group.png
 5f05ff605e9df3f185922f41b6815b4a  design/standard/javascript/contentstructuremenu/contentstructuremenu.js
 3bdbee98fb080a3dbf3b9ee05e7badae  design/standard/javascript/dashboard_community_activity.js
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
-4fd3d1d8f6725689a84b81e46a23c120  design/standard/javascript/exp_image_swap.js
+075d9798506c0b626abe1a2d76fc5edf  design/standard/javascript/exp_image_swap.js
 2740d834e1c8ecb2a05b6ce65ea4ca3d  design/standard/javascript/exp_passkey.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
@@ -29709,7 +29709,7 @@ ec92451ec6c667e22a7a1270cdf8ae2c  tests/tests/kernel/classes/httpcache/ezpHttpCa
 ed696e81ec63f5233642450e14ddf65b  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
 06dc2c7240fe4c67b6fa5ea1ea729cc1  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php
 5dd4201d7c60c2fb1879b5ae81998b09  tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php
-93cc0dd1a1f1c4af71bc1cabb47759d6  tests/tests/kernel/classes/imagealias/expImageAliasAuditTest.php
+507c9d1469c6ba20c905ab8056746c78  tests/tests/kernel/classes/imagealias/expImageAliasAuditTest.php
 181b9b095ef83e73d89d217934b0d5af  tests/tests/kernel/classes/imagealias/expImageAliasBacklogTest.php
 446f2cf11f2cf986bacb68873ca5516f  tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php
 c741853c6dfc28ccddcfe48de996068a  tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php
