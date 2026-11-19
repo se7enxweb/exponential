@@ -306,3 +306,89 @@ jobs:
       - name: Clean CI Composer overlay
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
+  # The DFS cluster metadata backends against real servers: the PostgreSQL backend on every PostgreSQL major the
+  # kernel supports (13 to 19), and the MySQLi backend through the same parity checks
+  # (tests/tests/kernel/classes/clusterfilehandlers/dfsbackends). Each test class makes and drops a database of its own.
+  cluster-backends:
+    name: DFS cluster backends (PostgreSQL ${{ matrix.postgres }}, MySQL 8.0, PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '8.3' ]
+        postgres: [ '13', '14', '15', '16', '17', '18', '19rc1' ]
+        include:
+          - php: '8.5'
+            postgres: '18'
+
+    services:
+      postgresql:
+        image: postgres:${{ matrix.postgres }}
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -h 127.0.0.1 -U postgres -d postgres"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mysqli, pdo_pgsql, pcntl, posix, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          test -x vendor/bin/phpunit
+
+      - name: Generate autoloads
+        run: php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Run the backend tests
+        env:
+          EXP_TEST_PGCLUSTER_DSN: pgsql://postgres@127.0.0.1:5432/postgres
+          EXP_TEST_MYCLUSTER_DSN: mysql://root@127.0.0.1:3306
+        run: |
+          php vendor/bin/phpunit --colors=always --fail-on-skipped \
+            tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSPostgresqlBackendIntegrationTest.php
+          # two checks are skipped on MySQL by design (32 bit mtime, the server's own lock wait timeout)
+          php vendor/bin/phpunit --colors=always \
+            tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSMySQLiBackendParityTest.php
+          php vendor/bin/phpunit --colors=always \
+            tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerPostgresqlBackendTest.php
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"

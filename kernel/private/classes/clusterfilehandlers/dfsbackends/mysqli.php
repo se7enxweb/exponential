@@ -47,7 +47,7 @@ CREATE TABLE ezdfsfile_cache (
 ) ENGINE=InnoDB;
  */
 
-class eZDFSFileHandlerMySQLiBackend implements eZClusterEventNotifier
+class eZDFSFileHandlerMySQLiBackend implements eZClusterEventNotifier, expDFSFileHandlerDBBackendInterface
 {
     /**
      * Wait for n microseconds until retry if copy fails, to avoid DFS overload.
