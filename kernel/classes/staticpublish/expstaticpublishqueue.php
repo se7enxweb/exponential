@@ -83,9 +83,17 @@ class expStaticPublishQueue
                 foreach ( $targets as $target )
                 {
                     $have = array();
-                    $rows = expKernelTableSchema::tryArrayQuery( $db, 'SELECT * FROM ' . expStaticStatus::PAGE_TABLE . " WHERE target = '" . $db->escapeString( $target ) . "'"
-                                                                    . ' AND node_id IN ( ' . implode( ', ', $nodeIds ) . ' )' );
-                    foreach ( (array)$rows as $row )
+                    // the nodes of a publish can be thousands (relations, keywords): asked in IN lists of
+                    // expDBInList::chunkSize(); a list that cannot be read counts as no page known, as before
+                    $rows = array();
+                    foreach ( expDBInList::chunks( $nodeIds, 'int', $db ) as $chunk )
+                    {
+                        $chunkRows = expKernelTableSchema::tryArrayQuery( $db, 'SELECT * FROM ' . expStaticStatus::PAGE_TABLE . " WHERE target = '" . $db->escapeString( $target ) . "'"
+                                                                             . ' AND ' . expDBInList::condition( $db, $chunk, 'node_id' ) );
+                        foreach ( is_array( $chunkRows ) ? $chunkRows : array() as $row )
+                            $rows[] = $row;
+                    }
+                    foreach ( $rows as $row )
                     {
                         $row = expStaticStatus::normalize( array_change_key_case( (array)$row, CASE_LOWER ), expStaticStatus::PAGE_COLUMNS );
                         $have[$row['node_id']] = true;

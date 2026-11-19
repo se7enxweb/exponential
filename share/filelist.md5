@@ -25556,7 +25556,7 @@ df274ba7eb4bca2bfb911a047518fcca  kernel/classes/staticpublish/expstaticmanifest
 859d83567bd0f0e1c86674de1630a931  kernel/classes/staticpublish/expstaticpostprocessor.php
 dc0ae2c44d17b0a4794af4fc85e90ec3  kernel/classes/staticpublish/expstaticprogress.php
 8049b21c8428b35259703750016c2ba8  kernel/classes/staticpublish/expstaticpublisher.php
-a8c8c3eae7acd1a547005ea77b30469d  kernel/classes/staticpublish/expstaticpublishqueue.php
+eaa6f156b947fcfbc8d1d4ee8be69980  kernel/classes/staticpublish/expstaticpublishqueue.php
 70ea14e60cf10202f14140294c7a71a6  kernel/classes/staticpublish/expstaticredirects.php
 5d4a87ad0a2c0c670cc7ec9e6a3c9b57  kernel/classes/staticpublish/expstaticrepository.php
 763c03bddfc298061737832461b87657  kernel/classes/staticpublish/expstaticschedule.php
