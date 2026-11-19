@@ -1513,12 +1513,6 @@ parameters:
 			path: kernel/private/classes/ezpautoloadclioutput.php
 
 		-
-			message: '#^Variable \$relationship might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/ezpextension.php
-
-		-
 			message: '#^Variable \$moduleResult might not be defined\.$#'
 			identifier: variable.undefined
 			count: 2

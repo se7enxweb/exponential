@@ -26310,7 +26310,7 @@ bf2a83e8deecec2c5171d8e9c6df283f  kernel/private/classes/ezpautoloadclioutput.ph
 6ee75d401b4315737ebdc2ed46db5ad3  kernel/private/classes/ezpcontentpublishingqueue.php
 9da914a2e24f86e54b3a22869844720d  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
 e831523ad84120ee81ca4e37d2a9e68d  kernel/private/classes/ezpevent.php
-ebc39217a365d46378c7b0cb60502df2  kernel/private/classes/ezpextension.php
+5625bfadf5ef59f6c0b0862623c12913  kernel/private/classes/ezpextension.php
 2fbe3c341529aef1f7364fc63bcfa72c  kernel/private/classes/ezpformtokenrefusal.php
 bf34065e5f75151f013ae21ece24fae9  kernel/private/classes/ezpkernel.php
 ab090cf255ce57bb21cc03ce89494ff3  kernel/private/classes/ezpkernelredirect.php
@@ -27466,7 +27466,7 @@ d41d8cd98f00b204e9800998ecf8427e  openspec/specs/.gitkeep
 40c7a22b435e0cc56484e4822baa854b  openspec/specs/admin/search-page/spec.md
 cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.md
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
-f4865f5b9afa65dfb8afd33f4e795172  phpstan-baseline.neon
+6c02e4e777784dc458582238e073cb10  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
 14e179f6eee48a76a41e00ca4240547d  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt

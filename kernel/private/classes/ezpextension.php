@@ -93,6 +93,10 @@ class ezpExtension
                         case 'extends':
                             $relationship = 'before';
                             break;
+
+                        default:
+                            // a dependency type this kernel does not order by (or a stray element): skip it
+                            continue 2;
                     }
 
                     foreach ( $dependenciesNode as $dependency )
