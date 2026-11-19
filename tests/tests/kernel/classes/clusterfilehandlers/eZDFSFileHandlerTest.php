@@ -35,7 +35,8 @@ class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
     /**
      * @var array
      **/
-    protected $sqlFiles = array( 'kernel/sql/', 'cluster_dfs_schema.sql' );
+    // one file of the database type's folder (kernel/sql/<type>/), in the nested form both test modes read
+    protected $sqlFiles = array( array( 'kernel/sql/', 'cluster_dfs_schema.sql' ) );
 
     protected $clusterClass = 'eZDFSFileHandler';
 
