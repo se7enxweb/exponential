@@ -1,5 +1,7 @@
 <?php
 /**
+        if ( is_object( $document ) && method_exists( $document, 'getArrayCopy' ) )
+            $document = $document->getArrayCopy();
  * File containing the expMongoDB class.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -213,8 +215,43 @@ class expMongoDB extends eZDBInterface
         }
         $uri = self::connectionUri( $this->Server, $this->Port, $this->User, $this->Password, $this->DB );
         if ( !isset( self::$Clients[$uri] ) )
+        {
+            self::requireClientLibrary();
             self::$Clients[$uri] = new MongoDB\Client($uri);
+        }
         return self::$Clients[$uri];
+    }
+
+    /**
+     * Makes MongoDB\Client available: composer.json only suggests the library mongodb/mongodb, so an
+     * installation whose Composer autoloader does not know it (the library copied into vendor/ by hand, or left
+     * by an earlier install) has its classes loaded from vendor/mongodb/mongodb/src here. Without the library
+     * at all the error says what to install, where it used to be "Class MongoDB\Client not found" in the
+     * middle of the setup.
+     *
+     * @throws RuntimeException when neither the ext-mongodb extension nor the library is there
+     */
+    static function requireClientLibrary()
+    {
+        if ( class_exists( 'MongoDB\Client' ) )
+            return;
+        if ( !extension_loaded( 'mongodb' ) )
+            throw new RuntimeException( 'MongoDB as the database needs the PHP extension mongodb (pecl install mongodb)' );
+        $root = class_exists( 'eZSys' ) ? (string)eZSys::rootDir() : (string)getcwd();
+        $src = rtrim( $root, '/' ) . '/vendor/mongodb/mongodb/src';
+        if ( !is_file( $src . '/Client.php' ) )
+            throw new RuntimeException( 'MongoDB as the database needs the library mongodb/mongodb: run '
+                . '"composer require mongodb/mongodb" in ' . $root );
+        spl_autoload_register( function ( $class ) use ( $src )
+        {
+            if ( strncmp( $class, 'MongoDB\\', 8 ) !== 0 )
+                return;
+            $file = $src . '/' . str_replace( '\\', '/', substr( $class, 8 ) ) . '.php';
+            if ( is_file( $file ) )
+                require $file;
+        } );
+        if ( is_file( $src . '/functions.php' ) && !function_exists( 'MongoDB\add_logger' ) )
+            require_once $src . '/functions.php';
     }
 
     /**
@@ -1002,6 +1039,10 @@ class expMongoDB extends eZDBInterface
                 $regex .= preg_quote( $char );
         }
 
+        // "s": % and _ match a line break, as in SQL. Without it a LIKE never matched a value of more than one line
+        // (XML in data_text), and the package installer left every object relation list unresolved.
+        if ( strpos( $flags, 's' ) === false )
+            $flags .= 's';
         return new MongoDB\BSON\Regex( '^' . $regex . '$', $flags );
     }
 
@@ -1031,6 +1072,8 @@ class expMongoDB extends eZDBInterface
         // errorNumber()/errorMessage() describe this statement: a failure of the server below sets them again
         $this->setError();
         $this->traceStatement( 'query: ' . $sql );
+        if ( !preg_match( '/^\(?\s*SELECT\b/i', $sql ) )
+            $this->fallbackInvalidate();
 
         // --- UPDATE table SET col=val [, col=val ...] WHERE conditions ---
         if ( preg_match( '/^\s*UPDATE\s+([\w]+)\s+SET\s+(.+?)\s+WHERE\s+(.+)$/is', $sql, $m ) )
@@ -1038,6 +1081,12 @@ class expMongoDB extends eZDBInterface
             $table    = trim( $m[1] );
             $setClause = trim( $m[2] );
             $whereSql  = trim( $m[3] );
+
+            // SET values computed by SQL functions (CONCAT, SUBSTRING, REPLACE ...) are worked out by the SQL
+            // fallback, row by row
+            $updated = $this->fallbackUpdate( $table, $setClause, $whereSql, $handled );
+            if ( $handled )
+                return $updated;
 
             // Parse SET clause into individual assignments (handles simple col=val and col=col+expr)
             $setFields = [];
@@ -1629,6 +1678,9 @@ class expMongoDB extends eZDBInterface
                 $filter = $whereSql !== '' ? $this->parseWhereClause( $whereSql, $table ) : array();
                 if ( $filter === false )
                 {
+                    $rows = $this->sqlFallback( $sql, $params, $handled );
+                    if ( $handled )
+                        return $rows;
                     $this->logError( 'expMongoDB::arrayQuery aggregate refused, its WHERE could not '
                         . 'be translated: ' . substr( $sql, 0, 200 ) );
                     return false;
@@ -1672,6 +1724,9 @@ class expMongoDB extends eZDBInterface
             $filter = $whereSql !== '' ? $this->parseWhereClause( $whereSql, $table ) : array();
             if ( $filter === false )
             {
+                $rows = $this->sqlFallback( $sql, $params, $handled );
+                if ( $handled )
+                    return $rows;
                 // Returning every document would render one page's content on
                 // another, which is exactly what the old silent-drop did.
                 $this->logError( 'expMongoDB::query SELECT refused, its WHERE could not be translated: '
@@ -1754,6 +1809,11 @@ class expMongoDB extends eZDBInterface
             return $result;
         }
 
+        // Multi-table SQL (JOIN, GROUP BY, UNION, sub-selects ...): answered by the SQL fallback when it is on.
+        $rows = $this->sqlFallback( $sql, $params, $handled );
+        if ( $handled )
+            return $rows;
+
         // Cannot translate arbitrary multi-table SQL to MongoDB. Log caller info.
         $trace = debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS, 5 );
         // Find the first frame outside this file
@@ -1789,6 +1849,510 @@ class expMongoDB extends eZDBInterface
             eZDebug::accumulatorStop( 'mongodb_query' );
         }
         return $result;
+    }
+
+    /** @var SQLite3|null the in-memory database of sqlFallback(); null: not opened, or dropped after a write */
+    protected $FallbackDB = null;
+
+    /** @var array table => true, the collections copied into $FallbackDB */
+    protected $FallbackTables = array();
+
+    /** @var float when $FallbackDB was opened (microtime) */
+    protected $FallbackStamp = 0.0;
+
+    /** @var array|null collection name => index, read once per copy of the fallback database */
+    protected $FallbackCollections = null;
+
+    /** @var array|null the fallback settings, read once: array( enabled, max rows, seconds a copy is kept ) */
+    protected static $FallbackSettings = null;
+
+    /**
+     * Forgets the collections copied for sqlFallback(). Every write through this adapter calls it, so a
+     * SELECT after a write never reads the copy made before it.
+     */
+    function fallbackInvalidate()
+    {
+        if ( $this->FallbackDB !== null )
+        {
+            $this->FallbackDB->close();
+            $this->FallbackDB = null;
+        }
+        $this->FallbackTables = array();
+        $this->FallbackCollections = null;
+    }
+
+    /**
+     * The fallback settings: site.ini [DatabaseSettings] MongoSQLFallback (enabled), MongoSQLFallbackMaxRows
+     * (200000, a larger collection is refused as before) and MongoSQLFallbackLifetime (2 seconds: how long
+     * the copy of a collection answers further statements when no write came in between).
+     *
+     * @return array
+     */
+    static function fallbackSettings()
+    {
+        if ( self::$FallbackSettings === null )
+        {
+            $settings = array( true, 200000, 2.0 );
+            if ( class_exists( 'eZINI' ) )
+            {
+                $ini = eZINI::instance();
+                if ( $ini->hasVariable( 'DatabaseSettings', 'MongoSQLFallback' ) )
+                    $settings[0] = $ini->variable( 'DatabaseSettings', 'MongoSQLFallback' ) !== 'disabled';
+                if ( $ini->hasVariable( 'DatabaseSettings', 'MongoSQLFallbackMaxRows' ) )
+                    $settings[1] = max( 1, (int)$ini->variable( 'DatabaseSettings', 'MongoSQLFallbackMaxRows' ) );
+                if ( $ini->hasVariable( 'DatabaseSettings', 'MongoSQLFallbackLifetime' ) )
+                    $settings[2] = max( 0.0, (float)$ini->variable( 'DatabaseSettings', 'MongoSQLFallbackLifetime' ) );
+            }
+            self::$FallbackSettings = $settings;
+        }
+        return self::$FallbackSettings;
+    }
+
+    /**
+     * Whether SQL the adapter cannot translate is answered (the SQL fallback is on and PHP has sqlite3): code that
+     * switched a feature off on MongoDB because its SQL came back empty asks this instead.
+     *
+     * @return bool
+     */
+    static function sqlFallbackAvailable()
+    {
+        $settings = self::fallbackSettings();
+        return $settings[0] && class_exists( 'SQLite3' );
+    }
+
+    /**
+     * Answers a SELECT this adapter cannot translate into MongoDB operations - joins, GROUP BY with HAVING,
+     * UNION, DISTINCT over several tables, sub-selects - with the SQL itself: the collections it names are
+     * copied into an in-memory SQLite database, typed by the .dba schema, and the statement runs there.
+     *
+     * The answer is the one the SQL engines give, where the adapter used to return an empty result (and code
+     * reading the empty result as "nothing there" went wrong quietly). The cost is reading every document of
+     * the collections involved, so the copy is kept for further statements until the next write through
+     * this adapter or for MongoSQLFallbackLifetime seconds; a collection larger than MongoSQLFallbackMaxRows
+     * is not copied and the statement is refused as before.
+     *
+     * @param string $sql
+     * @param array $params arrayQuery() parameters (limit, offset, column)
+     * @param bool $handled set to true when the fallback answered (the result may be empty)
+     * @return array|false
+     */
+    function sqlFallback( $sql, $params, &$handled )
+    {
+        $handled = false;
+        list( $enabled, $maxRows, $lifetime ) = self::fallbackSettings();
+        if ( !$enabled || !class_exists( 'SQLite3' ) || !preg_match( '/^\(?\s*SELECT\b/i', $sql ) )
+            return array();
+
+        $now = microtime( true );
+        if ( $this->FallbackDB !== null && $now - $this->FallbackStamp > $lifetime )
+            $this->fallbackInvalidate();
+        if ( $this->FallbackDB === null )
+        {
+            try
+            {
+                $this->FallbackDB = self::openFallbackDatabase();
+            }
+            catch ( Exception $e )
+            {
+                $this->logError( 'expMongoDB::sqlFallback could not open SQLite: ' . $e->getMessage() );
+                return array();
+            }
+            $this->FallbackTables = array();
+            $this->FallbackStamp = $now;
+        }
+
+        if ( $this->FallbackCollections === null )
+            $this->FallbackCollections = array_flip( $this->listCollectionNames() );
+        $collections = $this->FallbackCollections;
+        foreach ( self::fallbackTableNames( $sql ) as $table )
+        {
+            if ( isset( $this->FallbackTables[$table] ) )
+                continue;
+            if ( !isset( $collections[$table] ) && !self::declaredColumns( $table ) )
+                continue;   // an alias, a derived table's name, or a table neither stored nor declared
+            if ( !$this->copyCollectionToFallback( $table, isset( $collections[$table] ), $maxRows ) )
+                return array();
+            $this->FallbackTables[$table] = true;
+        }
+
+        $lite = self::fallbackDialect( $sql );
+        $limit = isset( $params['limit'] ) ? (int)$params['limit'] : 0;
+        $offset = isset( $params['offset'] ) ? (int)$params['offset'] : 0;
+        if ( $limit > 0 || $offset > 0 )
+            $lite = 'SELECT * FROM ( ' . $lite . ' ) LIMIT ' . ( $limit > 0 ? $limit : -1 ) . ' OFFSET ' . $offset;
+
+        $this->traceStatement( 'sqlFallback: ' . $lite );
+        self::profileStatement( 'fallback' );
+        $handled = true;
+        try
+        {
+            $result = $this->FallbackDB->query( $lite );
+        }
+        catch ( Exception $e )
+        {
+            $this->logError( 'expMongoDB::sqlFallback SQLite refused the statement (' . $e->getMessage()
+                . '): ' . substr( $sql, 0, 300 ) );
+            return array();
+        }
+        $rows = array();
+        $column = isset( $params['column'] ) ? $params['column'] : false;
+        while ( $row = $result->fetchArray( SQLITE3_ASSOC ) )
+        {
+            if ( $column !== false && $column !== null && $column !== '' )
+            {
+                if ( is_int( $column ) )
+                {
+                    $values = array_values( $row );
+                    $rows[] = isset( $values[$column] ) ? $values[$column] : null;
+                }
+                else
+                    $rows[] = array_key_exists( $column, $row ) ? $row[$column] : null;
+            }
+            else
+                $rows[] = $row;
+        }
+        $result->finalize();
+        return $rows;
+    }
+
+    /**
+     * An UPDATE whose SET computes values with SQL functions - the node move's
+     * "path_string = CONCAT( '/1/2/45/', SUBSTRING( path_string FROM 13 ) )", for one - is done with the SQL
+     * fallback: the matching documents are read from MongoDB, the SET expressions are evaluated for each of them
+     * by SQLite, and each document gets its new values. The adapter's own SET translation knew CONCAT only in a
+     * simple form, so a moved node kept its old path, its subtree vanished from fetches and it lost its URL alias.
+     *
+     * @param string $table
+     * @param string $setClause
+     * @param string $whereSql
+     * @param bool $handled set to true when this did the update (or refused it)
+     * @return bool
+     */
+    protected function fallbackUpdate( $table, $setClause, $whereSql, &$handled )
+    {
+        $handled = false;
+        if ( !preg_match( '/\b(concat|concat_ws|substring|substr|replace|lower|upper|lcase|ucase|trim|ltrim|rtrim|coalesce|ifnull|if|cast|length|char_length|md5|left|right)\s*\(/i', $setClause )
+             || !self::sqlFallbackAvailable() )
+            return false;
+
+        $assignments = array();
+        foreach ( self::splitSqlList( $setClause ) as $part )
+        {
+            if ( !preg_match( '/^\s*(?:\w+\.)?(\w+)\s*=\s*(.+)$/s', $part, $am ) )
+                return false;
+            $assignments[$am[1]] = trim( $am[2] );
+        }
+        $filter = $this->parseWhereClause( $whereSql, $table );
+        if ( $filter === false )
+            return false;
+        $handled = true;
+
+        try
+        {
+            $collection = $this->getClient()->selectCollection( $this->DB, $table );
+            $documents = array();
+            foreach ( $collection->find( $filter ) as $document )
+                $documents[] = $document;
+            if ( !$documents )
+                return true;
+
+            $db = self::openFallbackDatabase();
+            $numeric = self::numericColumns( $table );
+            $columns = array();
+            $rows = array();
+            $ids = array();
+            foreach ( $documents as $index => $document )
+            {
+                $raw = is_object( $document ) && method_exists( $document, 'getArrayCopy' ) ? $document->getArrayCopy() : (array)$document;
+                $ids[$index] = $raw['_id'];
+                $row = self::fallbackRow( $raw );
+                unset( $row['_id'] );
+                $rows[$index] = $row;
+                foreach ( $row as $column => $value )
+                    $columns[$column] = true;
+            }
+            foreach ( array_keys( self::declaredColumns( $table ) ) as $column )
+                $columns[$column] = true;
+            $names = array_keys( $columns );
+            $definitions = array( '"__row" INTEGER' );
+            foreach ( $names as $column )
+                $definitions[] = '"' . str_replace( '"', '""', $column ) . '"'
+                    . ( isset( $numeric[$column] ) ? ( $numeric[$column] === 'int' ? ' INTEGER' : ' REAL' ) : ' TEXT' );
+            $db->exec( 'CREATE TABLE "' . $table . '" ( ' . implode( ', ', $definitions ) . ' )' );
+            $insert = $db->prepare( 'INSERT INTO "' . $table . '" VALUES ( ' . implode( ', ', array_fill( 0, count( $names ) + 1, '?' ) ) . ' )' );
+            foreach ( $rows as $index => $row )
+            {
+                $insert->bindValue( 1, $index, SQLITE3_INTEGER );
+                foreach ( $names as $position => $column )
+                {
+                    $value = array_key_exists( $column, $row ) ? $row[$column] : null;
+                    $insert->bindValue( $position + 2, $value, $value === null ? SQLITE3_NULL
+                        : ( is_int( $value ) ? SQLITE3_INTEGER : ( is_float( $value ) ? SQLITE3_FLOAT : SQLITE3_TEXT ) ) );
+                }
+                $insert->execute();
+                $insert->reset();
+            }
+            $select = array( '"__row"' );
+            foreach ( $assignments as $column => $expression )
+                $select[] = self::fallbackDialect( $expression ) . ' AS "' . $column . '"';
+            $result = $db->query( 'SELECT ' . implode( ', ', $select ) . ' FROM "' . $table . '"' );
+            while ( $values = $result->fetchArray( SQLITE3_ASSOC ) )
+            {
+                $index = (int)$values['__row'];
+                unset( $values['__row'] );
+                foreach ( $values as $column => $value )
+                {
+                    if ( isset( $numeric[$column] ) && $value !== null )
+                        $values[$column] = $numeric[$column] === 'int' ? (int)$value : (float)$value;
+                }
+                $collection->updateOne( array( '_id' => $ids[$index] ), array( '$set' => $values ) );
+            }
+            $db->close();
+        }
+        catch ( Exception $e )
+        {
+            $this->logError( 'expMongoDB::fallbackUpdate ' . $table . ' failed: ' . $e->getMessage() );
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * An in-memory SQLite database with the MySQL functions the kernel's SQL uses.
+     *
+     * @return SQLite3
+     */
+    static function openFallbackDatabase()
+    {
+        $db = new SQLite3( ':memory:' );
+        $db->enableExceptions( true );
+        $db->exec( 'PRAGMA journal_mode = OFF; PRAGMA synchronous = OFF; PRAGMA case_sensitive_like = OFF' );
+        $db->createFunction( 'CONCAT', function () { return implode( '', array_map( 'strval', func_get_args() ) ); } );
+        $db->createFunction( 'CONCAT_WS', function ()
+        {
+            $args = func_get_args();
+            $separator = (string)array_shift( $args );
+            return implode( $separator, array_map( 'strval', array_filter( $args, function ( $v ) { return $v !== null; } ) ) );
+        } );
+        $db->createFunction( 'MD5', function ( $value ) { return md5( (string)$value ); }, 1 );
+        $db->createFunction( 'MOD', function ( $a, $b ) { return (int)$b === 0 ? null : (int)$a % (int)$b; }, 2 );
+        $db->createFunction( 'FIND_IN_SET', function ( $needle, $list )
+        {
+            $position = array_search( (string)$needle, explode( ',', (string)$list ), true );
+            return $position === false ? 0 : $position + 1;
+        }, 2 );
+        $db->createFunction( 'UNIX_TIMESTAMP', function () { return time(); }, 0 );
+        $db->createFunction( 'NOW', function () { return date( 'Y-m-d H:i:s' ); }, 0 );
+        $db->createFunction( 'GREATEST', function () { return max( func_get_args() ); } );
+        $db->createFunction( 'LEAST', function () { return min( func_get_args() ); } );
+        $step = function ( $operator )
+        {
+            return function ( $context, $rowNumber, $value ) use ( $operator )
+            {
+                if ( $value === null )
+                    return $context;
+                if ( $context === null )
+                    return (int)$value;
+                return $operator === '|' ? ( $context | (int)$value ) : ( $context & (int)$value );
+            };
+        };
+        $final = function ( $context ) { return $context === null ? 0 : $context; };
+        $db->createAggregate( 'BIT_OR', $step( '|' ), $final, 1 );
+        $db->createAggregate( 'BIT_AND', $step( '&' ), $final, 1 );
+        return $db;
+    }
+
+    /**
+     * The table names a statement reads: after FROM and JOIN, and every entry of a comma list after FROM.
+     *
+     * @param string $sql
+     * @return string[]
+     */
+    static function fallbackTableNames( $sql )
+    {
+        $names = array();
+        if ( preg_match_all( '/\b(?:FROM|JOIN)\s+`?([A-Za-z_]\w*)`?/i', $sql, $m ) )
+            $names = $m[1];
+        if ( preg_match_all( '/\bFROM\s+([A-Za-z_`][^()]*?)(?=\s+(?:WHERE|ORDER|GROUP|LIMIT|HAVING|UNION|INNER|LEFT|RIGHT|CROSS|JOIN|STRAIGHT_JOIN)\b|\)|;|$)/is', $sql, $m ) )
+        {
+            foreach ( $m[1] as $list )
+            {
+                foreach ( explode( ',', $list ) as $entry )
+                {
+                    if ( preg_match( '/^\s*`?([A-Za-z_]\w*)`?/', $entry, $e ) )
+                        $names[] = $e[1];
+                }
+            }
+        }
+        $names = array_unique( $names );
+        return array_values( array_filter( $names, function ( $name )
+        {
+            return !in_array( strtoupper( $name ), array( 'SELECT', 'DUAL' ), true );
+        } ) );
+    }
+
+    /**
+     * Copies one collection into the fallback database as a table typed by the .dba schema (INTEGER and REAL
+     * columns compare with quoted numbers as the SQL engines do), with every field a document carries.
+     *
+     * @param string $table
+     * @param bool $exists whether the collection exists (a declared table without one is created empty)
+     * @param int $maxRows
+     * @return bool false when the collection is too large or could not be read (logged)
+     */
+    protected function copyCollectionToFallback( $table, $exists, $maxRows )
+    {
+        $declared = self::declaredColumns( $table );
+        $numeric = self::numericColumns( $table );
+        $documents = array();
+        if ( $exists )
+        {
+            try
+            {
+                $collection = $this->getClient()->selectCollection( $this->DB, $table );
+                $count = $collection->estimatedDocumentCount();
+                if ( $count > $maxRows )
+                {
+                    $this->logError( "expMongoDB::sqlFallback refused: $table holds $count documents, more than "
+                        . "MongoSQLFallbackMaxRows ($maxRows)" );
+                    return false;
+                }
+                self::profileStatement( 'fallback copy' );
+                foreach ( $collection->find( array(), array( 'projection' => array( '_id' => 0 ) ) ) as $document )
+                    $documents[] = self::fallbackRow( $document );
+            }
+            catch ( Exception $e )
+            {
+                $this->logError( 'expMongoDB::sqlFallback could not read ' . $table . ': ' . $e->getMessage() );
+                return false;
+            }
+        }
+
+        $columns = array();
+        foreach ( $declared as $column => $definition )
+            $columns[$column] = true;
+        foreach ( $documents as $row )
+        {
+            foreach ( $row as $column => $value )
+                $columns[$column] = true;
+        }
+        if ( !$columns )
+            $columns['id'] = true;
+
+        $definitions = array();
+        foreach ( array_keys( $columns ) as $column )
+        {
+            $type = '';
+            if ( isset( $numeric[$column] ) )
+                $type = $numeric[$column] === 'int' ? ' INTEGER' : ' REAL';
+            else if ( isset( $declared[$column] ) )
+                $type = ' TEXT';
+            $definitions[] = '"' . str_replace( '"', '""', $column ) . '"' . $type;
+        }
+        $quotedTable = '"' . str_replace( '"', '""', $table ) . '"';
+        $db = $this->FallbackDB;
+        try
+        {
+            $db->exec( 'DROP TABLE IF EXISTS ' . $quotedTable );
+            if ( !$db->exec( 'CREATE TABLE ' . $quotedTable . ' ( ' . implode( ', ', $definitions ) . ' )' ) )
+            {
+                $this->logError( 'expMongoDB::sqlFallback could not create ' . $table . ': ' . $db->lastErrorMsg() );
+                return false;
+            }
+            if ( !$documents )
+                return true;
+
+            // a NOT NULL column a document lacks reads as its declared default, as in arrayQuery()
+            $defaults = array();
+            foreach ( array_keys( $declared ) as $column )
+            {
+                $default = self::declaredDefault( $table, $column );
+                if ( $default !== null )
+                    $defaults[$column] = $default[0];
+            }
+            $names = array_keys( $columns );
+            $statement = $db->prepare( 'INSERT INTO ' . $quotedTable . ' VALUES ( '
+                . implode( ', ', array_fill( 0, count( $names ), '?' ) ) . ' )' );
+            $db->exec( 'BEGIN' );
+            foreach ( $documents as $row )
+            {
+                foreach ( $names as $index => $column )
+                {
+                    $value = array_key_exists( $column, $row ) ? $row[$column]
+                        : ( array_key_exists( $column, $defaults ) ? $defaults[$column] : null );
+                    $type = $value === null ? SQLITE3_NULL : ( is_int( $value ) ? SQLITE3_INTEGER
+                        : ( is_float( $value ) ? SQLITE3_FLOAT : SQLITE3_TEXT ) );
+                    $statement->bindValue( $index + 1, $value, $type );
+                }
+                $statement->execute();
+                $statement->reset();
+            }
+            $db->exec( 'COMMIT' );
+            $statement->close();
+        }
+        catch ( Exception $e )
+        {
+            $this->logError( 'expMongoDB::sqlFallback could not copy ' . $table . ': ' . $e->getMessage() );
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * A document as a row of scalars: booleans as 0/1, BSON numbers and dates as PHP numbers and strings,
+     * arrays and sub-documents as JSON.
+     *
+     * @param mixed $document
+     * @return array
+     */
+    static function fallbackRow( $document )
+    {
+        $row = array();
+        if ( is_object( $document ) && method_exists( $document, 'getArrayCopy' ) )
+            $document = $document->getArrayCopy();
+        foreach ( $document as $field => $value )
+        {
+            if ( is_bool( $value ) )
+                $value = (int)$value;
+            else if ( $value instanceof MongoDB\BSON\Int64 )
+                $value = (int)(string)$value;
+            else if ( $value instanceof MongoDB\BSON\Decimal128 )
+                $value = (float)(string)$value;
+            else if ( $value instanceof MongoDB\BSON\UTCDateTime )
+                $value = (int)( (string)$value / 1000 );
+            else if ( $value instanceof MongoDB\BSON\ObjectId )
+                $value = (string)$value;
+            else if ( is_object( $value ) || is_array( $value ) )
+                // a sub-document or array of the library (an ArrayObject) as its plain array
+                $value = json_encode( is_object( $value ) && method_exists( $value, 'getArrayCopy' ) ? $value->getArrayCopy() : $value );
+            $row[$field] = $value;
+        }
+        return $row;
+    }
+
+    /**
+     * The MySQL spellings the kernel builds, in SQLite's dialect.
+     *
+     * @param string $sql
+     * @return string
+     */
+    static function fallbackDialect( $sql )
+    {
+        $sql = preg_replace( '/\bsubstring\s*\(\s*([^()]+?)\s+from\s+([^()]+?)\s+for\s+([^()]+?)\s*\)/i', 'substr( $1, $2, $3 )', $sql );
+        $sql = preg_replace( '/\bsubstring\s*\(\s*([^()]+?)\s+from\s+([^()]+?)\s*\)/i', 'substr( $1, $2 )', $sql );
+        $sql = preg_replace( '/\bcast\s*\(\s*(.+?)\s+AS\s+(?:UNSIGNED|SIGNED)(?:\s+INTEGER)?\s*\)/i', 'CAST( $1 AS INTEGER )', $sql );
+        $sql = preg_replace( '/\bSTRAIGHT_JOIN\b/i', 'JOIN', $sql );
+        $sql = preg_replace( '/\b(?:USE|FORCE|IGNORE)\s+INDEX\s*\([^)]*\)/i', '', $sql );
+        $sql = preg_replace( '/\s+FOR\s+UPDATE\s*$|\s+LOCK\s+IN\s+SHARE\s+MODE\s*$/i', '', $sql );
+        $sql = preg_replace( '/\bCOLLATE\s+\w+/i', '', $sql );
+        $sql = preg_replace( '/\bBINARY\s+(?=[\w`(\'])/i', '', $sql );
+        $sql = preg_replace( '/\bIF\s*\(/i', 'iif(', $sql );
+        $sql = preg_replace( '/\bLCASE\s*\(/i', 'lower(', $sql );
+        $sql = preg_replace( '/\bUCASE\s*\(/i', 'upper(', $sql );
+        $sql = preg_replace( '/\bCHAR_LENGTH\s*\(/i', 'length(', $sql );
+        $sql = preg_replace( '/\bRAND\s*\(\s*\)/i', 'random()', $sql );
+        $sql = preg_replace( '/\bGROUP_CONCAT\s*\(\s*(.+?)\s+SEPARATOR\s+(\'[^\']*\')\s*\)/i', 'group_concat( $1, $2 )', $sql );
+        return $sql;
     }
 
     /**
@@ -2002,6 +2566,15 @@ class expMongoDB extends eZDBInterface
         if ( $find !== false )
             return $this->runFind( $table, $find );
 
+        // An empty PHP array is a BSON array, and the server refuses "$match: []" ("the match filter must be an
+        // expression in an object"): a caller that builds its filter from optional conditions got an error and
+        // an empty result whenever none applied (the list of all links, Setup > URL list).
+        foreach ( $pipeline as $index => $stage )
+        {
+            if ( is_array( $stage ) && array_key_exists( '$match', $stage ) && $stage['$match'] === array() )
+                $pipeline[$index]['$match'] = new stdClass();
+        }
+
         $this->traceStatement( 'aggregate ' . $table . ': ' . json_encode( $pipeline ) );
 
         $dbName = $this->DB;
@@ -2133,6 +2706,7 @@ class expMongoDB extends eZDBInterface
     function insert( $table, $doc )
     {
         $dbName = $this->DB;
+        $this->fallbackInvalidate();
         try {
             $doc = $this->applyAutoIncrement( $table, $doc );
             $this->getClient()->selectCollection( $dbName, $table )->insertOne( self::toBsonSafe( $doc ) );
@@ -2149,6 +2723,7 @@ class expMongoDB extends eZDBInterface
     function upsert( $table, $filter, $doc )
     {
         $dbName = $this->DB;
+        $this->fallbackInvalidate();
 
         // A null in the filter matches no row, so the upsert would insert one
         // built from the filter - a document keyed on null, which nothing can
@@ -2237,6 +2812,7 @@ class expMongoDB extends eZDBInterface
     function deleteWhere( $table, $filter )
     {
         $dbName = $this->DB;
+        $this->fallbackInvalidate();
         try {
             $this->getClient()->selectCollection( $dbName, $table )->deleteMany( $filter );
             return true;
@@ -2594,6 +3170,7 @@ class expMongoDB extends eZDBInterface
     function mongoUpdateOne( $table, $filter, $update )
     {
         $dbName = $this->DB;
+        $this->fallbackInvalidate();
         try {
             $this->getClient()->selectCollection( $dbName, $table )->updateOne( $filter, $update );
             return true;
@@ -2609,6 +3186,7 @@ class expMongoDB extends eZDBInterface
     function mongoUpdateMany( $table, $filter, $update )
     {
         $dbName = $this->DB;
+        $this->fallbackInvalidate();
         try {
             $this->getClient()->selectCollection( $dbName, $table )->updateMany( $filter, $update );
             return true;
@@ -2624,6 +3202,7 @@ class expMongoDB extends eZDBInterface
     function mongoDeleteOne( $table, $filter )
     {
         $dbName = $this->DB;
+        $this->fallbackInvalidate();
         try {
             $this->getClient()->selectCollection( $dbName, $table )->deleteOne( $filter );
             return true;
@@ -3335,8 +3914,15 @@ class expMongoDB extends eZDBInterface
 
         if ( class_exists( 'eZExtension' ) )
         {
-            foreach ( (array) eZExtension::activeExtensions() as $extension )
-                $files[] = $root . '/extension/' . $extension . '/share/db_schema.dba';
+            // without a full kernel (the driver on its own, as in its unit tests) the extensions cannot be listed
+            try
+            {
+                foreach ( (array) eZExtension::activeExtensions() as $extension )
+                    $files[] = $root . '/extension/' . $extension . '/share/db_schema.dba';
+            }
+            catch ( Throwable $e )
+            {
+            }
         }
 
         $integerTypes = array( 'int', 'integer', 'bigint', 'smallint', 'tinyint', 'mediumint' );
@@ -3387,6 +3973,17 @@ class expMongoDB extends eZDBInterface
     static function castSqlLiteralForColumn( $literal, $table, $column )
     {
         $value = self::castSqlLiteral( $literal );
+
+        // an unquoted number written into a declared text column is text, as a SQL engine stores it: kept as a
+        // number it no longer matched the column's other values (a Section limitation written "VALUES ( 5, 1 )"
+        // was not found by eZPolicyLimitation::findByType(), and Section > view left its policies out)
+        if ( ( is_int( $value ) || is_float( $value ) ) && !isset( self::numericColumns( $table )[$column] ) )
+        {
+            $declared = self::declaredColumns( $table );
+            $textTypes = array( 'char', 'varchar', 'text', 'tinytext', 'mediumtext', 'longtext' );
+            if ( isset( $declared[$column] ) && in_array( $declared[$column]['type'], $textTypes, true ) )
+                return trim( (string)$literal );
+        }
 
         if ( !is_string( $value ) || $value === '' )
             return $value;

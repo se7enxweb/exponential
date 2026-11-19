@@ -58,6 +58,10 @@ class expMongoDBWhereTextTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '^a.*$', $this->pattern( $this->where( "x LIKE 'a%'" ), 'x' ) );
         $this->assertFalse( $this->where( "x LIKE 'a%' ESCAPE '!!'" ) );
         $this->assertFalse( $this->where( "x LIKE 'a!' ESCAPE '!'" ) );
+        // % matches a line break, as in SQL: the stored XML of a relation list has several lines
+        $filter = $this->where( "data_text LIKE '%contentobject-remote-id%'" );
+        $this->assertSame( 's', $filter['data_text']->getFlags() );
+        $this->assertSame( 1, preg_match( '#' . $filter['data_text']->getPattern() . '#s', "<?xml version=\"1.0\"?>\n<related-objects><relation-item contentobject-remote-id=\"x\"/>\n</related-objects>" ) );
     }
 
     public function testLowerAndUpperOfAColumn()
@@ -77,7 +81,7 @@ class expMongoDBWhereTextTest extends PHPUnit\Framework\TestCase
         $regex = null;
         array_walk_recursive( $filter, function ( $value ) use ( &$regex ) { if ( $value instanceof MongoDB\BSON\Regex ) $regex = $value; } );
         $this->assertInstanceOf( 'MongoDB\\BSON\\Regex', $regex );
-        $this->assertSame( 'i', $regex->getFlags() );
+        $this->assertSame( 'is', $regex->getFlags() );
         $this->assertSame( 1, preg_match( '#' . $regex->getPattern() . '#i', 'my-Test-Pro%duct-x' ) );
         $this->assertSame( 0, preg_match( '#' . $regex->getPattern() . '#i', 'my-test-product' ) );
     }

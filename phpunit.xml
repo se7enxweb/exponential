@@ -111,6 +111,7 @@
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBDeclaredDefaultTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMongoDBSqlFallbackTest.php</file>
         </testsuite>
 
         <!--

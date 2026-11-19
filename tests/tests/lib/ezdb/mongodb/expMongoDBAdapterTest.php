@@ -490,16 +490,29 @@ class expMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox arrayQuery() returns empty array, does NOT throw, and logs via eZDebug (not error_log)
+     * @testdox arrayQuery() without the SQL fallback returns empty array, does NOT throw, and logs via eZDebug (not error_log)
      */
-    #[\PHPUnit\Framework\Attributes\TestDox('arrayQuery() returns empty array, does NOT throw, and logs via eZDebug (not error_log)')]
+    #[\PHPUnit\Framework\Attributes\TestDox('arrayQuery() without the SQL fallback returns empty array, does NOT throw, and logs via eZDebug (not error_log)')]
     public function testArrayQueryReturnsEmptyArray(): void
     {
+        // with the SQL fallback switched off (MongoSQLFallback=disabled); expMongoDBSqlFallbackTest covers it on
+        $setting = new ReflectionProperty( 'expMongoDB', 'FallbackSettings' );
+        if ( PHP_VERSION_ID < 80100 )
+            $setting->setAccessible( true );
+        $saved = $setting->getValue();
+        $setting->setValue( null, array( false, 200000, 2.0 ) );
         $result = null;
-        $warnings = $this->captureDebugWarnings( function ()
+        try
         {
-            return $this->db->arrayQuery( "SELECT * FROM ezcontentobject GROUP BY id" );
-        }, $result );
+            $warnings = $this->captureDebugWarnings( function ()
+            {
+                return $this->db->arrayQuery( "SELECT * FROM ezcontentobject GROUP BY id" );
+            }, $result );
+        }
+        finally
+        {
+            $setting->setValue( null, $saved );
+        }
         $this->assertIsArray( $result );
         $this->assertCount( 0, $result );
         // Warning must be routed through eZDebug, not emitted to error_log / stderr
