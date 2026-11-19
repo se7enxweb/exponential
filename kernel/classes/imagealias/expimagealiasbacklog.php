@@ -49,6 +49,12 @@ class expImageAliasBacklog
     /** @var string the millisecond of the last entry this process added */
     protected static $sequenceMs = '';
 
+    /** @var array entries to write after the answer (addAfterAnswer()), in the order they were added */
+    protected static $pending = array();
+
+    /** @var string|null the request the pending entries belong to (a persistent worker serves many) */
+    protected static $pendingFor = null;
+
     /** @var int entries this process added within that millisecond, less one */
     protected static $sequence = 0;
 
@@ -165,15 +171,97 @@ class expImageAliasBacklog
      */
     public static function add( $attribute, $version, $language, $aliasName, array $formats = array(), $target = null, $siteAccess = null )
     {
-        $entry = array( 's' => $siteAccess !== null ? (string)$siteAccess : expImageAliasSettings::currentSiteAccess(),
-                        'a' => (int)$attribute, 'v' => (int)$version, 'l' => (string)$language, 'n' => (string)$aliasName,
-                        'f' => array_values( array_map( 'strval', $formats ) ), 'u' => $target !== null ? (string)$target : '', 't' => time() );
+        $entry = self::entry( $attribute, $version, $language, $aliasName, $formats, $target, $siteAccess );
         $directory = self::directory();
         if ( !is_dir( $directory ) )
             eZDir::mkdir( $directory, false, true );
         $key = self::key( $entry );
         if ( glob( $directory . '/*-' . $key . '.json', GLOB_NOSORT ) )
             return false;
+        return self::write( $directory, $entry, $key );
+    }
+
+    /**
+     * The entry of an alias (see add()).
+     *
+     * @return array
+     */
+    protected static function entry( $attribute, $version, $language, $aliasName, array $formats, $target, $siteAccess )
+    {
+        return array( 's' => $siteAccess !== null ? (string)$siteAccess : expImageAliasSettings::currentSiteAccess(),
+                      'a' => (int)$attribute, 'v' => (int)$version, 'l' => (string)$language, 'n' => (string)$aliasName,
+                      'f' => array_values( array_map( 'strval', $formats ) ), 'u' => $target !== null ? (string)$target : '', 't' => time() );
+    }
+
+    /**
+     * Adds an alias to the backlog once this request has sent its answer (flushPending() in drainAfterAnswer()): a page
+     * that queues hundreds of aliases (page placeholders) does not write them before its first byte. Where the
+     * request cannot answer first, at once (add()). What a request that dies first leaves unwritten the swap script
+     * asks for through content/image, which adds it then.
+     *
+     * @see add()
+     * @return bool kept for after the answer, or added (false: already waiting, or not written)
+     */
+    public static function addAfterAnswer( $attribute, $version, $language, $aliasName, array $formats = array(), $target = null, $siteAccess = null )
+    {
+        if ( !self::canAnswerFirst() )
+            return self::add( $attribute, $version, $language, $aliasName, $formats, $target, $siteAccess );
+        $request = class_exists( 'eZExecution' ) ? eZExecution::requestKey() : '';
+        if ( self::$pendingFor !== $request )
+        {
+            self::$pending = array();
+            self::$pendingFor = $request;
+        }
+        $entry = self::entry( $attribute, $version, $language, $aliasName, $formats, $target, $siteAccess );
+        self::$pending[self::key( $entry )] = $entry;
+        self::scheduleDrain();
+        return true;
+    }
+
+    /**
+     * Writes the entries addAfterAnswer() kept for this request, in their order, each once: one listing of the
+     * directory finds those already waiting or being made.
+     *
+     * @return int entries written
+     */
+    public static function flushPending()
+    {
+        $request = class_exists( 'eZExecution' ) ? eZExecution::requestKey() : '';
+        $pending = self::$pendingFor === $request ? self::$pending : array();
+        self::$pending = array();
+        self::$pendingFor = null;
+        if ( !$pending )
+            return 0;
+        $directory = self::directory();
+        if ( !is_dir( $directory ) )
+            eZDir::mkdir( $directory, false, true );
+        $known = array();
+        foreach ( (array)@scandir( $directory ) as $name )
+        {
+            if ( preg_match( '/-([0-9a-f]{32})\.json(?:\.\d+\.work)?$/', (string)$name, $match ) )
+                $known[$match[1]] = true;
+        }
+        $written = 0;
+        foreach ( $pending as $key => $entry )
+        {
+            if ( isset( $known[$key] ) )
+                continue;
+            if ( self::write( $directory, $entry, $key ) )
+                $written++;
+        }
+        return $written;
+    }
+
+    /**
+     * Writes an entry file (whole, then renamed into place).
+     *
+     * @param string $directory
+     * @param array $entry
+     * @param string $key
+     * @return bool
+     */
+    protected static function write( $directory, array $entry, $key )
+    {
         // Milliseconds, then this process's count within the millisecond: a page adds hundreds of entries at once,
         // and they are made in the order it added them
         $ms = sprintf( '%014.0f', microtime( true ) * 1000 );
@@ -381,6 +469,8 @@ class expImageAliasBacklog
             self::finishRequest();
             if ( (string)$directory !== '' && $directory !== $before )
                 @chdir( $directory );
+            // The entries the page kept for after its answer (page placeholders), before anything drains
+            self::flushPending();
             // A process of its own makes the backlog ([AliasSettings] BacklogDrainer=process): this one is free for
             // the next request at once. Velocity hands a worker its next request as soon as it has answered, so a
             // worker that drained here kept that request waiting for BacklogTime.

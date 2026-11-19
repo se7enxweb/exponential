@@ -171,8 +171,9 @@ class expImageAliasPagePlaceholder
             if ( expImageFormatConverter::variantApplies( (string)( $entry['mime_type'] ?? '' ), $format ) )
                 $formats[] = $format;
         }
-        expImageAliasBacklog::add( (int)$attribute['id'], (int)$attribute['version'], (string)$attribute['language_code'],
-                                   (string)$aliasName, $formats, isset( $entry['full_path'] ) ? (string)$entry['full_path'] : null );
+        // Written after the answer: hundreds of entry files are no reason to keep the page's first byte waiting
+        expImageAliasBacklog::addAfterAnswer( (int)$attribute['id'], (int)$attribute['version'], (string)$attribute['language_code'],
+                                              (string)$aliasName, $formats, isset( $entry['full_path'] ) ? (string)$entry['full_path'] : null );
     }
 
     /**

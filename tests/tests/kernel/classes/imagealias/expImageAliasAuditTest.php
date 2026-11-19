@@ -21,6 +21,9 @@
  *           absolute URL the browser reports, and a placeholder found after it gave up on the others starts it again
  *  IAX-08 - a queued bulk run that finds bulk runs paused is deferred at once: no checkpoint read, no scope read, no
  *           run-start in the log (it was asked again every PAUSE_RECHECK seconds)
+ *  IAX-09 - the aliases a page queues for its page placeholders are written to the backlog after the answer, in the
+ *           order they were added, each once, and not when one is already waiting; where the request cannot answer
+ *           first they are written at once
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/imagealias/expImageAliasAuditTest.php
  *
@@ -327,6 +330,46 @@ class expImageAliasAuditTest extends PHPUnit\Framework\TestCase
         finally
         {
             expImageAliasThrottle::setPauseStore( false );
+        }
+    }
+
+    /** IAX-09 */
+    public function testPageEntriesAreWrittenAfterTheAnswer()
+    {
+        $dir = $this->base . '/backlog';
+        expImageAliasBacklog::setAnswerFirst( true );
+        try
+        {
+            // One already waiting (a content/image request of the page added it meanwhile)
+            $this->assertTrue( expImageAliasBacklog::add( 12, 1, 'eng-GB', 'small', array(), null, 'site' ) );
+            foreach ( array( 10, 11, 12, 10, 13 ) as $attribute )
+                $this->assertTrue( expImageAliasBacklog::addAfterAnswer( $attribute, 1, 'eng-GB', 'small', array(), null, 'site' ) );
+            $this->assertCount( 1, glob( $dir . '/*.json' ), 'nothing written before the answer' );
+            $this->assertSame( 3, expImageAliasBacklog::flushPending() );
+            $this->assertSame( 0, expImageAliasBacklog::flushPending(), 'written once' );
+            $order = array();
+            foreach ( glob( $dir . '/*.json' ) as $file )
+            {
+                $entry = json_decode( (string)file_get_contents( $file ), true );
+                $order[] = $entry['a'];
+            }
+            $this->assertSame( array( 12, 10, 11, 13 ), $order, 'in the order they were added, after the one waiting' );
+        }
+        finally
+        {
+            expImageAliasBacklog::setAnswerFirst( null );
+        }
+        // A request that cannot answer first writes at once
+        expImageAliasBacklog::setAnswerFirst( false );
+        try
+        {
+            $this->assertTrue( expImageAliasBacklog::addAfterAnswer( 14, 1, 'eng-GB', 'small', array(), null, 'site' ) );
+            $this->assertCount( 5, glob( $dir . '/*.json' ) );
+            $this->assertSame( 0, expImageAliasBacklog::flushPending() );
+        }
+        finally
+        {
+            expImageAliasBacklog::setAnswerFirst( null );
         }
     }
 }
