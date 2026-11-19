@@ -65,6 +65,33 @@ class expImageAliasJob
     /** Seconds a queued bulk run waits before it looks at a pause again */
     const PAUSE_RECHECK = 30;
 
+    /** @var callable|null stands in for expQueue::enqueue( $type, $payload, $options ) (tests) */
+    protected static $queue = null;
+
+    /**
+     * Puts $enqueue in the place of expQueue::enqueue() (tests): the queue counts as available, and $enqueue gets
+     * ( $type, $payload, $options ) and returns the job (an object with attribute( 'id' )) or throws; null: expqueue.
+     *
+     * @param callable|null $enqueue
+     */
+    public static function setQueue( $enqueue )
+    {
+        self::$queue = $enqueue;
+    }
+
+    /**
+     * @param string $type
+     * @param array $payload
+     * @param array $options
+     * @return object the queued job
+     */
+    protected static function queueJob( $type, array $payload, array $options )
+    {
+        if ( self::$queue !== null )
+            return call_user_func( self::$queue, $type, $payload, $options );
+        return expQueue::enqueue( $type, $payload, $options );
+    }
+
     /**
      * Whether a job of $type goes to expqueue: the extension is active, its tables are installed and expqueue.ini
      * names the type.
@@ -74,6 +101,8 @@ class expImageAliasJob
      */
     public static function queueAvailable( $type )
     {
+        if ( self::$queue !== null )
+            return true;
         if ( !class_exists( 'expQueue' ) || !class_exists( 'expQueueConfig' ) || !interface_exists( 'expQueueHandler' ) )
             return false;
         try
@@ -328,7 +357,7 @@ class expImageAliasJob
             $options['idempotency_key'] = $key;
         try
         {
-            $job = expQueue::enqueue( $type, $payload, $options );
+            $job = self::queueJob( $type, $payload, $options );
         }
         catch ( Throwable $e )
         {
@@ -423,8 +452,10 @@ class expImageAliasJob
      * @param array $input see bulkPayload()
      * @param bool $queue
      * @param callable|null $progress
-     * @param array $options for a run now: on_pause => stop (default) or wait
-     * @return array mode, run, job, summary
+     * @param array $options for a run now: on_pause => stop (default) or wait; sync_fallback => false: when the queue
+     *                       is there but refuses the job (a quota, a database error), nothing runs and mode is refused
+     *                       (the admin page must not run a whole site inside a web request)
+     * @return array mode (queue, sync or refused), run, job, summary
      */
     public static function startBulk( array $input, $queue = true, $progress = null, array $options = array() )
     {
@@ -443,6 +474,8 @@ class expImageAliasJob
             $queued = self::enqueue( self::TYPE_BULK, $payload, 'bulk', $payload['run'] );
             if ( $queued !== null )
                 return array( 'mode' => 'queue', 'run' => $payload['run'], 'job' => $queued['job'], 'summary' => null );
+            if ( isset( $options['sync_fallback'] ) && $options['sync_fallback'] === false && self::queueAvailable( self::TYPE_BULK ) )
+                return array( 'mode' => 'refused', 'run' => null, 'job' => null, 'summary' => null );
         }
         return array( 'mode' => 'sync', 'run' => $payload['run'], 'job' => null, 'summary' => self::runBulk( $payload, $progress, null, $options ) );
     }
@@ -474,18 +507,29 @@ class expImageAliasJob
      * @param array $options see expImageAliasStager::resync()
      * @param bool $queue false: always run now
      * @param callable|null $progress for a run now (see expImageAliasStager::resync())
-     * @return array mode (queue or sync), run (the run id in the log), job (the queue job id, or null), summary (of a
-     *               run now, else null)
+     * @param bool $syncFallback false: when the queue is there but refuses the job, nothing runs (mode refused)
+     * @return array mode (queue, sync or refused), run (the run id in the log), job (the queue job id, or null), summary
+     *               (of a run now, else null)
      */
-    public static function startResync( array $options, $queue = true, $progress = null )
+    public static function startResync( array $options, $queue = true, $progress = null, $syncFallback = true )
     {
         $payload = self::resyncPayload( $options );
         if ( !isset( $payload['run'] ) )
             $payload['run'] = expImageAliasStager::newRunId();
         if ( $queue && self::queueAvailable( self::TYPE_RESYNC ) )
         {
-            $job = expQueue::enqueue( self::TYPE_RESYNC, $payload, array( 'idempotency_key' => $payload['run'] ) + self::queueOptions( 'bulk' ) );
-            return array( 'mode' => 'queue', 'run' => $payload['run'], 'job' => (int)$job->attribute( 'id' ), 'summary' => null );
+            // A quota or a database error is a refusal, as in enqueue(), not an exception for the page or the command
+            try
+            {
+                $job = self::queueJob( self::TYPE_RESYNC, $payload, array( 'idempotency_key' => $payload['run'] ) + self::queueOptions( 'bulk' ) );
+                return array( 'mode' => 'queue', 'run' => $payload['run'], 'job' => (int)$job->attribute( 'id' ), 'summary' => null );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeWarning( 'The job ' . self::TYPE_RESYNC . ' could not be queued: ' . $e->getMessage(), __METHOD__ );
+                if ( !$syncFallback )
+                    return array( 'mode' => 'refused', 'run' => null, 'job' => null, 'summary' => null );
+            }
         }
         return array( 'mode' => 'sync', 'run' => $payload['run'], 'job' => null, 'summary' => self::runResync( $payload, $progress ) );
     }

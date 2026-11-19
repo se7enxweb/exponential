@@ -659,12 +659,20 @@ class expImageAliasAdmin
                 $out['message'] = 'not-staging';
                 return $out;
             }
-            if ( !expImageAliasJob::queueAvailable( expImageAliasJob::TYPE_RESYNC ) && expImageAliasStager::countImages( $scopeOptions ) > self::SYNC_LIMIT )
+            $queued = expImageAliasJob::queueAvailable( expImageAliasJob::TYPE_RESYNC );
+            $small = expImageAliasStager::countImages( $scopeOptions ) <= self::SYNC_LIMIT;
+            if ( !$queued && !$small )
             {
                 $out['message'] = 'too-large';
                 return $out;
             }
-            $started = expImageAliasJob::startResync( $options );
+            // The queue can still refuse the job (a quota, a database error): then only a small scope runs here
+            $started = expImageAliasJob::startResync( $options, true, null, $small );
+            if ( $started['mode'] === 'refused' )
+            {
+                $out['message'] = 'too-large';
+                return $out;
+            }
             return array( 'ok' => true, 'mode' => $started['mode'], 'job' => $started['job'], 'run' => $started['run'],
                           'summary' => $started['summary'], 'count' => null, 'aliases' => array(), 'message' => '' );
         }
@@ -674,12 +682,19 @@ class expImageAliasAdmin
             $out = array( 'ok' => true, 'mode' => 'preview', 'count' => expImageAliasStager::countImages( $scopeOptions ), 'aliases' => $aliases ) + $out;
             return $out;
         }
-        if ( !expImageAliasJob::queueAvailable( expImageAliasJob::TYPE_BULK ) && expImageAliasStager::countImages( $scopeOptions ) > self::SYNC_LIMIT )
+        $small = expImageAliasStager::countImages( $scopeOptions ) <= self::SYNC_LIMIT;
+        if ( !expImageAliasJob::queueAvailable( expImageAliasJob::TYPE_BULK ) && !$small )
         {
             $out['message'] = 'too-large';
             return $out;
         }
-        $started = expImageAliasJob::startBulk( $options );
+        // The queue can still refuse the job (a quota, a database error): then only a small scope runs here
+        $started = expImageAliasJob::startBulk( $options, true, null, array( 'sync_fallback' => $small ) );
+        if ( $started['mode'] === 'refused' )
+        {
+            $out['message'] = 'too-large';
+            return $out;
+        }
         return array( 'ok' => true, 'mode' => $started['mode'], 'job' => $started['job'], 'run' => $started['run'],
                       'summary' => $started['summary'], 'count' => null, 'aliases' => $aliases, 'message' => '' );
     }

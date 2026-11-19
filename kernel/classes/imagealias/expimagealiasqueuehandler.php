@@ -99,6 +99,9 @@ if ( interface_exists( 'expQueueHandler' ) && class_exists( 'expQueueHandlerBase
             $payload = $job->payloadArray();
             if ( $payload != expImageAliasJob::bulkPayload( $payload ) )
                 throw new expQueuePermanentException( 'the payload has keys or values a bulk run does not take', 'invalid_payload' );
+            // Paused: asked again later, without reading the scope and without a run in the log
+            if ( expImageAliasThrottle::isBulkPaused() )
+                return expQueueResult::defer( expImageAliasJob::PAUSE_RECHECK, 'image alias bulk runs are paused' );
             // Goes on where an earlier attempt stopped (a pause, a crash)
             $checkpoint = $context->checkpoint();
             if ( is_array( $checkpoint ) && isset( $checkpoint['after'] ) && is_array( $checkpoint['after'] ) )
