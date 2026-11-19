@@ -378,6 +378,55 @@ class eZDBSchemaInterface
                      - data - Whether to insert the data or not, default is \c false
       \return \c false if the schema could not be inserted, \c true if successful
     */
+    /**
+     * Gives the data fields of a table the column names of the table definition they are inserted with, where the
+     * engine's dbschema.ini ColumnNameTranslation renames a column (Oracle:
+     * ezurl_object_link.contentobject_attribute_version is contentobject_attr_version, 31 characters being too
+     * long there).
+     *
+     * transformData() renames the fields only of data marked as generic. The .dba data files of extensions are
+     * dumps of a MySQL installation and say "local", which on MySQL is the generic form; on Oracle the renamed
+     * column was then not in the table definition, the insert left it out, and every one of those rows got the
+     * column's default instead (all the seeded URL links pointed at version 0 of their attribute).
+     *
+     * @param string $tableName
+     * @param array $tableDef the table definition the rows are inserted with
+     * @param array $dataEntries fields and rows, changed in place
+     */
+    /**
+     * The engine's column renames, dbschema.ini [<schema type>] ColumnNameTranslation: "table.column" => local name.
+     *
+     * @return array
+     */
+    protected function columnNameTranslations()
+    {
+        $type = $this->schemaType();
+        if ( !is_string( $type ) || $type === '' || !class_exists( 'eZINI' ) )
+            return array();
+        $rules = $this->loadSchemaTransformationRules( $type );
+        return is_array( $rules ) && isset( $rules['column-name'] ) && is_array( $rules['column-name'] ) ? $rules['column-name'] : array();
+    }
+
+    protected function alignDataFieldNames( $tableName, $tableDef, &$dataEntries )
+    {
+        if ( !isset( $dataEntries['fields'] ) || !is_array( $dataEntries['fields'] ) || !isset( $tableDef['fields'] ) )
+            return;
+        $renames = array();
+        foreach ( $this->columnNameTranslations() as $key => $local )
+        {
+            list( $table, $generic ) = array_pad( explode( '.', $key, 2 ), 2, '' );
+            if ( $table !== $tableName )
+                continue;
+            $renames[$generic] = $local;
+            $renames[$local] = $generic;
+        }
+        foreach ( $dataEntries['fields'] as $index => $field )
+        {
+            if ( !isset( $tableDef['fields'][$field] ) && isset( $renames[$field] ) && isset( $tableDef['fields'][$renames[$field]] ) )
+                $dataEntries['fields'][$index] = $renames[$field];
+        }
+    }
+
     function insertSchema( $params = array() )
     {
         $params = array_merge( array( 'schema' => true,
@@ -455,12 +504,16 @@ class eZDBSchemaInterface
                     continue;
                 }
 
-                // Skip data insertion for tables that already existed
-                if ( isset( $existingTables[$tableName] ) )
+                // Skip data insertion for tables that already existed, when the tables are inserted too (a setup
+                // run again on a database it filled before). A call for the data alone ('schema' => false) is
+                // for tables that exist by definition, e.g. a package adding rows after the install: skipping
+                // them there made such a call return true and insert nothing.
+                if ( $includeSchema && isset( $existingTables[$tableName] ) )
                 {
                     continue;
                 }
 
+                $this->alignDataFieldNames( $tableName, $table, $data[$tableName] );
                 $sqlList = $this->generateTableInsertSQLList( $tableName, $table, $data[$tableName], $params, false );
                 foreach ( array_values( $sqlList ) as $i => $sql )
                 {

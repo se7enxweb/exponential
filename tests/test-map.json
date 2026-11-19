@@ -3163,6 +3163,9 @@
     ],
     "lib/ezdb/classes/expmongodb.php": [
       "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMongoDBSqlFallbackTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMongoDBWhereTextTest.php",
       "tests/tests/lib/ezdb/expDBDriverCloseAndForkTest.php"
     ],
     "lib/ezdb/classes/ezpostgresqldb.php": [
@@ -3946,7 +3949,8 @@
       "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"
     ],
     "lib/ezdbschema/classes/ezdbschemainterface.php": [
-      "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"
+      "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php",
+      "tests/tests/lib/ezdbschema/expInsertSchemaDataOnlyTest.php"
     ],
     "lib/ezdbschema/classes/ezsqliteschema.php": [
       "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"
