@@ -2,7 +2,7 @@
 /**
  * How many people a role reaches (expRolePage::affected()), against a database that records the queries.
  *
- *  RA-01 - Large id lists are asked in IN lists of at most IN_LIST_CHUNK ids, and the users are counted right
+ *  RA-01 - Large id lists are asked in IN lists of at most expDBInList::chunkSize() ids, and the users are counted right
  *  RA-02 - Past AFFECTED_GROUP_LIMIT groups the groups' locations are not read; the groups are still counted
  *  RA-03 - Up to the limit the users of the groups are counted, each user once
  *  RA-04 - A failing query leaves the users unknown instead of counting from a failed result
@@ -115,10 +115,13 @@ class expRolePageAffectedTest extends PHPUnit\Framework\TestCase
         $this->previousDB = $this->hadDB ? $GLOBALS['eZDBGlobalInstance'] : null;
         $this->db = new expRolePageAffectedTestDB();
         eZDB::setInstance( $this->db );
+        // the counts below are for lists of 1000 ids, whatever site.ini says
+        expDBInList::setChunkSize( 1000 );
     }
 
     protected function tearDown(): void
     {
+        expDBInList::setChunkSize( null );
         if ( $this->hadDB )
             eZDB::setInstance( $this->previousDB );
         else
@@ -139,7 +142,7 @@ class expRolePageAffectedTest extends PHPUnit\Framework\TestCase
         $userQueries = $this->db->queriesStartingWith( 'SELECT contentobject_id FROM ezuser WHERE' );
         $this->assertCount( 3, $userQueries );
         foreach ( $userQueries as $sql )
-            $this->assertLessThanOrEqual( expRolePage::IN_LIST_CHUNK, count( expRolePageAffectedTestDB::inList( $sql ) ) );
+            $this->assertLessThanOrEqual( expDBInList::chunkSize( $this->db ), count( expRolePageAffectedTestDB::inList( $sql ) ) );
         $this->assertSame( 2500, $result['users_direct'] );
         $this->assertSame( 0, $result['groups'] );
         $this->assertSame( 2500, $result['users_total'] );

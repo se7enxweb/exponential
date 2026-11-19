@@ -30,9 +30,6 @@ class expRolePage
     /** Up to this many assigned user groups the role page counts the users they hold */
     const AFFECTED_GROUP_LIMIT = 200;
 
-    /** At most this many ids go into one IN list: Oracle takes 1000 per list and fails on a statement with tens of thousands */
-    const IN_LIST_CHUNK = 1000;
-
     /**
      * The search of the role list as the address and the field carry it: trimmed, inner spaces folded, without
      * control characters, at most 100 characters.
@@ -339,7 +336,7 @@ class expRolePage
             return $result;
         }
 
-        $rows = self::rowsForIDs( $db, 'SELECT contentobject_id FROM ezuser WHERE', array_keys( $objectIDs ), 'contentobject_id' );
+        $rows = expDBInList::rows( $db, 'SELECT contentobject_id FROM ezuser WHERE', array_keys( $objectIDs ), 'contentobject_id' );
         if ( $rows === false )
             return $result;
         $users = array();
@@ -356,7 +353,7 @@ class expRolePage
         $total = $users;
         if ( $groupIDs )
         {
-            $nodes = self::rowsForIDs( $db, 'SELECT path_string FROM ezcontentobject_tree WHERE', array_keys( $groupIDs ), 'contentobject_id' );
+            $nodes = expDBInList::rows( $db, 'SELECT path_string FROM ezcontentobject_tree WHERE', array_keys( $groupIDs ), 'contentobject_id' );
             if ( $nodes === false )
                 return $result;
             $likes = array();
@@ -374,30 +371,6 @@ class expRolePage
         }
         $result['users_total'] = count( $total );
         return $result;
-    }
-
-    /**
-     * The rows of a query whose condition is an IN list of ids, asked in lists of IN_LIST_CHUNK ids each. False
-     * when one of the queries fails.
-     *
-     * @param eZDBInterface $db
-     * @param string $select the statement up to and including WHERE
-     * @param int[] $ids
-     * @param string $column the column the ids are looked up in
-     * @return array|false
-     */
-    private static function rowsForIDs( $db, $select, array $ids, $column )
-    {
-        $rows = array();
-        foreach ( array_chunk( $ids, self::IN_LIST_CHUNK ) as $chunk )
-        {
-            $chunkRows = $db->arrayQuery( $select . ' ' . $db->generateSQLINStatement( $chunk, $column, false, true, 'int' ) );
-            if ( !is_array( $chunkRows ) )
-                return false;
-            foreach ( $chunkRows as $row )
-                $rows[] = $row;
-        }
-        return $rows;
     }
 
     /**

@@ -25524,7 +25524,7 @@ d1171fab64f891ffb41c6dfbe9265e80  kernel/classes/requestclassifier/exprequestrul
 36aa0827f76cd25473630d91216d9349  kernel/classes/requestclassifier/exprequestverdictlistenerinterface.php
 02ee3aa27ece5021e6f94844d67dda43  kernel/classes/requestlog/exprequestlog.php
 cf4cd838e73da1d2a8ce5fc4bfad40c6  kernel/classes/role/exprolegrantcheck.php
-e0c6947216ba1bdd4b0d964354f10bfd  kernel/classes/role/exprolepage.php
+b51ea24de4054c29be65b07381b9070e  kernel/classes/role/exprolepage.php
 9598a02ff39657f11b381aa1bfad7e59  kernel/classes/role/exprolepolicysentence.php
 79982b503ae13f282336d980728c84fa  kernel/classes/secrets/expsecret.php
 1a521a5147887ff0b1aa256cbd88fb18  kernel/classes/secrets/expsecretkey.php
@@ -29541,7 +29541,7 @@ c00a1c39a7e5c42e5216499c9f6df85c  tests/tests/kernel/classes/expPolicyOmitListTe
 7fc6f1b8189b5a4e5726f1156661e7e6  tests/tests/kernel/classes/expReviewHoldAutoTest.php
 534b9f669ba0bccf8f2cd3da0a2dd3c8  tests/tests/kernel/classes/expReviewHoldTest.php
 ceeffa0bc56cad57e85e2d23d4d42b19  tests/tests/kernel/classes/expRoleGrantCheckTest.php
-5daa2f087a203e816f77a00217d92480  tests/tests/kernel/classes/expRolePageAffectedTest.php
+e8726cbd351c0d3b14baaedf38e64e9f  tests/tests/kernel/classes/expRolePageAffectedTest.php
 c40cd0bc9e3cb716a69ed51ad0dcf654  tests/tests/kernel/classes/expRolePagesTest.php
 fe6b793a74408f00c9d34d57da569cd4  tests/tests/kernel/classes/expRssFeedMissingNotAnErrorTest.php
 27b8133acdef84f7b2d21c90ef82c168  tests/tests/kernel/classes/expSearchSuggestTest.php
