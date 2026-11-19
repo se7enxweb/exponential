@@ -28,7 +28,26 @@ class expClusterSetup
             'mysqli' => array( 'classes' => array( 'eZDFSFileHandlerMySQLiBackend' ), 'gateway' => 'dfsmysqli', 'sql' => 'mysql', 'port' => 3306 ),
             'postgresql' => array( 'classes' => array( 'eZDFSFileHandlerPostgresqlBackend', 'expDFSFileHandlerPostgresqlBackend' ), 'gateway' => 'dfspostgresql',
                                    'sql' => 'postgresql', 'port' => 5432 ),
+            // one file on one machine: the cluster of one node this command makes, never several web servers
+            'sqlite' => array( 'classes' => array( 'expDFSFileHandlerSQLiteBackend' ), 'gateway' => 'dfssqlite', 'sql' => 'sqlite', 'port' => 0 ),
         );
+    }
+
+    /** The engine of a [DatabaseSettings] DatabaseImplementation (pure), '' when no cluster backend serves it. */
+    public static function engineOf( $implementation )
+    {
+        $engines = array( 'ezmysqli' => 'mysqli', 'ezmysql' => 'mysqli', 'mysqli' => 'mysqli', 'mysql' => 'mysqli',
+                          'ezpostgresql' => 'postgresql', 'postgresql' => 'postgresql', 'pgsql' => 'postgresql',
+                          'ezsqlite3' => 'sqlite', 'sqlite3' => 'sqlite' );
+        $implementation = strtolower( (string)$implementation );
+        return isset( $engines[$implementation] ) ? $engines[$implementation] : '';
+    }
+
+    /** The name of an engine for people (pure). */
+    public static function engineName( $engine )
+    {
+        $names = array( 'mysqli' => 'MySQL/MariaDB', 'postgresql' => 'PostgreSQL', 'sqlite' => 'SQLite' );
+        return isset( $names[$engine] ) ? $names[$engine] : (string)$engine;
     }
 
     /** The share by default (pure): the folder dfs next to the installation, /var/www/vhosts/<site>/dfs for <site>/httpdocs. */
@@ -84,20 +103,24 @@ class expClusterSetup
         }
         $vardirs[$facts['siteaccesses'][$default]['var']] = (string)$default;
         $impl = (string)$db['DatabaseImplementation'];
-        $engine = in_array( $impl, array( 'ezmysqli', 'ezmysql' ), true ) ? 'mysqli' : ( $impl === 'ezpostgresql' ? 'postgresql' : '' );
+        $engine = self::engineOf( $impl );
         if ( $engine === '' )
-            return 'the database (' . ( $impl !== '' ? $impl : 'none' ) . ') has no cluster backend; a one-node cluster needs MySQL/MariaDB or PostgreSQL';
+            return 'the database (' . ( $impl !== '' ? $impl : 'none' ) . ') has no cluster backend; a one-node cluster needs '
+                   . implode( ', ', array_map( array( __CLASS__, 'engineName' ), array_slice( array_keys( self::backends() ), 0, -1 ) ) )
+                   . ' or ' . self::engineName( array_slice( array_keys( self::backends() ), -1 )[0] );
         if ( $wanted !== 'auto' && $wanted !== $engine )
-            return 'the installation runs on ' . ( $engine === 'mysqli' ? 'MySQL/MariaDB' : 'PostgreSQL' ) . ', not ' . $wanted;
+            return 'the installation runs on ' . self::engineName( $engine ) . ', not ' . $wanted;
         if ( !isset( $facts['backends'][$engine] ) )
-            return $engine === 'postgresql' ? 'this Exponential version has no PostgreSQL cluster backend yet' : 'this Exponential version has no MySQL cluster backend';
-        if ( $db['Database'] === '' || $db['User'] === '' )
+            return 'this Exponential version has no ' . ( $engine === 'mysqli' ? 'MySQL' : self::engineName( $engine ) ) . ' cluster backend' . ( $engine === 'mysqli' ? '' : ' yet' );
+        // a SQLite database is a file: no account
+        if ( $db['Database'] === '' || ( $db['User'] === '' && $engine !== 'sqlite' ) )
             return 'the database settings are incomplete';
         $b = self::backends()[$engine];
         return array( 'engine' => $engine, 'backend_class' => (string)$facts['backends'][$engine], 'gateway' => $b['gateway'], 'sql' => $b['sql'],
                       'db' => $db, 'vardirs' => $vardirs, 'default' => (string)$default,
-                      'host' => $db['Server'] !== '' ? $db['Server'] : 'localhost', 'port' => $db['Port'] !== '' ? (int)$db['Port'] : $b['port'],
-                      'socket' => $db['Socket'] !== '' && $db['Socket'] !== 'disabled' ? $db['Socket'] : '' );
+                      'host' => $b['port'] === 0 ? '' : ( $db['Server'] !== '' ? $db['Server'] : 'localhost' ),
+                      'port' => $b['port'] === 0 ? 0 : ( $db['Port'] !== '' ? (int)$db['Port'] : $b['port'] ),
+                      'socket' => $b['port'] !== 0 && $db['Socket'] !== '' && $db['Socket'] !== 'disabled' ? $db['Socket'] : '' );
     }
 
     /** Whether a value can stand in the INI block (pure): one line, never the end of the file's PHP comment. */
@@ -113,7 +136,7 @@ class expClusterSetup
                         '# exp-cluster backend=' . $plan['engine'] . ' share=' . $share,
                         '[ClusteringSettings]', 'FileHandler=eZDFSFileHandler', '',
                         '[eZDFSClusteringSettings]', 'MountPointPath=' . $share, 'DBBackend=' . $plan['backend_class'], 'DFSBackend=eZDFSFileHandlerDFSBackend',
-                        'DBHost=' . $plan['host'], 'DBPort=' . (int)$plan['port'], 'DBSocket=' . $plan['socket'], 'DBName=' . $plan['db']['Database'],
+                        'DBHost=' . $plan['host'], 'DBPort=' . ( (int)$plan['port'] > 0 ? (int)$plan['port'] : '' ), 'DBSocket=' . $plan['socket'], 'DBName=' . $plan['db']['Database'],
                         'DBUser=' . $plan['db']['User'], 'DBPassword=' . $plan['db']['Password'], 'MetaDataTableNameCache=ezdfsfile_cache',
                         '# END ' . self::MARK_INI );
         return implode( "\n", $lines ) . "\n";
@@ -282,7 +305,7 @@ class expClusterSetup
     }
 
     /**
-     * Switches the cluster on. $o: share, backend (auto, mysqli, postgresql), move (bool), apply (bool). $say(line)
+     * Switches the cluster on. $o: share, backend (auto or an engine of backends()), move (bool), apply (bool). $say(line)
      * prints. @return array ok, lines (what was or would be done), error
      */
     public static function enable( $root, array $o, $say )

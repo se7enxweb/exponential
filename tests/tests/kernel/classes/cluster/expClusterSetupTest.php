@@ -36,8 +36,26 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'no PostgreSQL cluster backend yet', expClusterSetup::plan( self::facts( 'ezpostgresql' ) ) );
         $pg = expClusterSetup::plan( self::facts( 'ezpostgresql', array( 'postgresql' => 'eZDFSFileHandlerPostgresqlBackend' ) ) );
         $this->assertSame( array( 'postgresql', 'dfspostgresql', 5432 ), array( $pg['engine'], $pg['gateway'], $pg['port'] ) );
-        $this->assertStringContainsString( 'needs MySQL/MariaDB or PostgreSQL', expClusterSetup::plan( self::facts( 'ezsqlite3' ) ) );
+        $this->assertStringContainsString( 'needs MySQL/MariaDB, PostgreSQL or SQLite', expClusterSetup::plan( self::facts( 'eznulldb' ) ) );
         $this->assertStringContainsString( 'not postgresql', expClusterSetup::plan( self::facts(), 'postgresql' ) );
+    }
+
+    /** SQLite: a file, no account, no host or port; one node only */
+    public function testThePlanOnSQLite()
+    {
+        $this->assertStringContainsString( 'no SQLite cluster backend yet', expClusterSetup::plan( self::facts( 'sqlite3' ) ) );
+        $f = self::facts( 'sqlite3', array( 'sqlite' => 'expDFSFileHandlerSQLiteBackend' ) );
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db'] = array( 'User' => '', 'Password' => '', 'Server' => '', 'Database' => 'site.db' ) + $s['db'];
+        $p = expClusterSetup::plan( $f );
+        $this->assertSame( array( 'sqlite', 'dfssqlite', 'sqlite', '', 0, '' ), array( $p['engine'], $p['gateway'], $p['sql'], $p['host'], $p['port'], $p['socket'] ) );
+        $block = expClusterSetup::iniBlock( $p, '/srv/dfs' );
+        $this->assertStringContainsString( "DBBackend=expDFSFileHandlerSQLiteBackend\n", $block );
+        $this->assertStringContainsString( "DBHost=\nDBPort=\nDBSocket=\nDBName=site.db\n", $block );
+        $this->assertStringContainsString( "define( 'CLUSTER_STORAGE_BACKEND', 'dfssqlite' );", expClusterSetup::gatewayText( $p, '/srv/dfs' ) );
+        $this->assertSame( 'sqlite', expClusterSetup::engineOf( 'ezsqlite3' ) );
+        $this->assertSame( '', expClusterSetup::engineOf( 'eznulldb' ) );
+        $this->assertStringContainsString( 'not mysqli', expClusterSetup::plan( $f, 'mysqli' ) );
     }
 
     public function testTheIniBlock()

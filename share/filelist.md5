@@ -6989,7 +6989,7 @@ e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 dabff75a311362f40ae3a24bf5b55b51  doc/eng-us/features/6.0/cache-until.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
-43baba5766dd6fd95fd909ca6b91a5a5  doc/eng-us/features/6.0/cluster-commands.md
+cf4d3ec8a43366c82c80112d836ca9d7  doc/eng-us/features/6.0/cluster-commands.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
 b10b8f6d48a35a112fc60abd882b4869  doc/eng-us/features/6.0/content-jobs.md
@@ -17129,7 +17129,7 @@ dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-si
 1f1a89109f14133da5ec552dcd12b106  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
-5975a6240e140fd109346f3a9617ef36  doc/ger-de/funktionen/6.0/cluster-befehle.md
+45cacec94554ca922379b6ef869692bd  doc/ger-de/funktionen/6.0/cluster-befehle.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
@@ -24767,7 +24767,7 @@ b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_to
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
 fe0bce95fbb9c13990be1fecce0356f6  kernel/classes/classicmenu/expclassicmenusettings.php
 778a26bd7868d8b25ced9a004af515fa  kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php
-1da5dd1d98cc17957b5169974b8771ed  kernel/classes/cluster/expclustersetup.php
+d39c65b634f40076cb3a7bb2a27231cb  kernel/classes/cluster/expclustersetup.php
 aaff1838ebeaa52d26de4395929327ea  kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php
 865e130c99d93fd0b6943b867d91e3db  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 7a36f246c38cf46fc9a07696f2e82d96  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
@@ -26074,7 +26074,7 @@ cc587fd2e74ad1e9215ec175b94b44fd  kernel/private/classes/commands/clusterize.php
 845042909bb86e2a2700281b37c6d37a  kernel/private/classes/commands/dfscleanup.php
 14d7119d4f084e13faa07b964670e35f  kernel/private/classes/commands/expbackfillordersiteaccess.php
 1a4b109191a04f0803ee7b588db3d311  kernel/private/classes/commands/expclusterdisable.php
-c88a12ab72d39422c7bc2b5645737e48  kernel/private/classes/commands/expclusterenable.php
+2548aae927fcd8014ac592fa3affc926  kernel/private/classes/commands/expclusterenable.php
 40e4958317e33da81fdc573d6814191e  kernel/private/classes/commands/expcontentjob.php
 ab2cbe636f4bd9a9e93cf053b435f3bc  kernel/private/classes/commands/expgraphqlbench.php
 00fa9b3ad265ada70a9ec5fd0b76ad0c  kernel/private/classes/commands/expgraphqldisable.php
@@ -29313,7 +29313,7 @@ b5e6823fe454da6742dbe533e30d59b4  tests/tests/kernel/classes/cachesmore/eZStatic
 7927b5e0c9a307433593061ff253ec6b  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
 89a4d84cf90433287afc8977a6bd3ecb  tests/tests/kernel/classes/cachesmore/fixtures/preload-demo-site-front-page-uri-matching.html
 c98e893a75b3bf362d0515b4b4c30728  tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php
-716d28c2c02d01e4e4c69a85780ed089  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
+271c0b718ab5d5abe811e4ca74a635e8  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
 59814cc8048fbb6639df8574b7df0ff2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 5f138b4314e1dab989fb4d4ff1accc73  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
 50ea77ecdcda20b5cbf355e497af7e95  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php

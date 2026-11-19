@@ -26,8 +26,8 @@ class Expclusterenable extends \Exponential\Runnable\Command
                                                "kernel's cluster tables in the site's own database (kernel/sql/<engine>/cluster_dfs_schema.sql), the\n" .
                                                "cluster settings as a marked block of settings/override/file.ini.append.php and config.cluster.php\n" .
                                                "for the cluster gateway, clears the INI caches, and moves the stored files in with clusterize.php\n" .
-                                               "(once per var directory; --no-move leaves that for later). MySQL/MariaDB, and PostgreSQL once the\n" .
-                                               "kernel has its cluster backend. The rewrite rule of the gateway is printed for the web server: add it\n" .
+                                               "(once per var directory; --no-move leaves that for later). MySQL/MariaDB, PostgreSQL, or SQLite for\n" .
+                                               "one node only. The rewrite rule of the gateway is printed for the web server: add it\n" .
                                                "in front of the site's own rules. Files that change are backed up to var/backup/cluster/. Without\n" .
                                                "--apply nothing is written.\n" .
                                                "\n" .
@@ -42,12 +42,12 @@ class Expclusterenable extends \Exponential\Runnable\Command
                               'use-extensions' => true ) );
         $options = $this->startup( '[share:][backend:][no-move][apply]', '',
                                    array( 'share' => 'the share folder, an absolute path outside the installation (default: dfs next to it)',
-                                          'backend' => 'auto (the default: the site\'s database), mysqli or postgresql',
+                                          'backend' => 'auto (the default: the site\'s database), mysqli, postgresql or sqlite',
                                           'no-move' => 'do not move the stored files in now (run bin/php/clusterize.php yourself)',
                                           'apply' => 'write; without it nothing is changed' ) );
         $backend = isset( $options['backend'] ) && $options['backend'] ? (string)$options['backend'] : 'auto';
-        if ( !in_array( $backend, array( 'auto', 'mysqli', 'postgresql' ), true ) )
-            $this->usage( '--backend must be auto, mysqli or postgresql' );
+        if ( !in_array( $backend, array_merge( array( 'auto' ), array_keys( \expClusterSetup::backends() ) ), true ) )
+            $this->usage( '--backend must be auto or one of: ' . implode( ', ', array_keys( \expClusterSetup::backends() ) ) );
         $out = $this->cli();
         $root = \eZSys::rootDir();
         $r = \expClusterSetup::enable( $root, array( 'share' => isset( $options['share'] ) && $options['share'] ? (string)$options['share'] : '', 'backend' => $backend,
