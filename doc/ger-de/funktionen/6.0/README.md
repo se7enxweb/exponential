@@ -97,6 +97,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 
 - [Unterstützung für die Datenbank SQLite](sqlite-datenbank.md)
 - [MongoDB als Datenbank](mongodb-datenbankunterstuetzung.md)
+- [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
 - [AdminNeo: die Datenbankverwaltung hinter dem Database Source Editor](adminneo-datenbankverwaltung.md)
 - [Datentabellen: die Tabellen der Module als Teil des Systems](datentabellen.md): der Katalog der persistenten
   Klassen, benannte Datenbankverbindungen, Klassen auf ihrer eigenen Verbindung

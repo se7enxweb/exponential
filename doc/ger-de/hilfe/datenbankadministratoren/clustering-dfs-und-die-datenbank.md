@@ -56,7 +56,7 @@ Cluster-Daten, damit sich die beiden Mengen von Transaktionen nicht vermischen.
 | `DBBackend` | Engine | Woher es kommt |
 |---|---|---|
 | `eZDFSFileHandlerMySQLiBackend` | MySQL, MariaDB | der Kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php`), der mitgelieferte Standard |
-| `expDFSFileHandlerPostgresqlBackend` (auch `eZDFSFileHandlerPostgresqlBackend`) | PostgreSQL 13 und neuer | der Kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/postgresql.php`), Tabellen in `kernel/sql/postgresql/cluster_dfs_schema.sql`, Gateway `dfspostgresql`. Eine Überarbeitung der Erweiterung ezpostgresqlcluster von eZ Systems und des Forks von 7x: [Clustering on PostgreSQL](../../../eng-us/features/6.0/postgresql-dfs-cluster.md) (englisch) |
+| `expDFSFileHandlerPostgresqlBackend` (auch `eZDFSFileHandlerPostgresqlBackend`) | PostgreSQL 13 und neuer | der Kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/postgresql.php`), Tabellen in `kernel/sql/postgresql/cluster_dfs_schema.sql`, Gateway `dfspostgresql`. Eine Überarbeitung der Erweiterung ezpostgresqlcluster von eZ Systems und des Forks von 7x: [Clustering mit PostgreSQL](../../funktionen/6.0/postgresql-dfs-cluster.md) |
 | `eZDFSFileHandlerOracleBackend` | Oracle | die Erweiterung `ezoracle` (`clusterfilehandlers/dfsbackends/oracle.php`); nur `DBName` wird verwendet, nicht `DBHost`, `DBPort` oder `DBSocket` |
 
 Es gibt kein Backend für SQLite oder MongoDB.

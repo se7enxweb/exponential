@@ -3541,6 +3541,7 @@
     "funktionen/6.0/plattform-php85-framework-forks.md": "features/6.0/platform-php85-framework-forks.md",
     "funktionen/6.0/plattform-site-bundles.md": "features/6.0/platform-site-bundles.md",
     "funktionen/6.0/plattform-sqlite-installation.md": "features/6.0/platform-sqlite-install.md",
+    "funktionen/6.0/postgresql-dfs-cluster.md": "features/6.0/postgresql-dfs-cluster.md",
     "funktionen/6.0/pruefprotokoll.md": "features/6.0/audit-trail.md",
     "funktionen/6.0/pruefung-umgekehrter-beziehungen.md": "features/6.0/reverse-relation-check.md",
     "funktionen/6.0/qualitaetspruefungen.md": "features/6.0/quality-checks.md",

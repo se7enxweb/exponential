@@ -80,7 +80,7 @@ dedizierter MySQL-Server bei großen Websites die Leistung deutlich verbessern k
 | Backend (`[eZDFSClusteringSettings] DBBackend`) | Woher es kommt |
 |---|---|
 | `eZDFSFileHandlerMySQLiBackend` | der Kernel (der mitgelieferte Standard), für MySQL und MariaDB |
-| `expDFSFileHandlerPostgresqlBackend` (oder `eZDFSFileHandlerPostgresqlBackend`) | der Kernel, für PostgreSQL 13 und neuer, nach der Erweiterung ezpostgresqlcluster von eZ Systems und dem Fork von 7x ([Clustering on PostgreSQL](../../../../eng-us/features/6.0/postgresql-dfs-cluster.md), englisch) |
+| `expDFSFileHandlerPostgresqlBackend` (oder `eZDFSFileHandlerPostgresqlBackend`) | der Kernel, für PostgreSQL 13 und neuer, nach der Erweiterung ezpostgresqlcluster von eZ Systems und dem Fork von 7x ([Clustering mit PostgreSQL](../../../funktionen/6.0/postgresql-dfs-cluster.md)) |
 | `eZDFSFileHandlerOracleBackend` | die Erweiterung `ezoracle` |
 
 Quelle: [15.17 Cluster und DFS](../../../installation/15-migration-von-5x-legacy.md#1517-cluster-und-dfs) und die in
