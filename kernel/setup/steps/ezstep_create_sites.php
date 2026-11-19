@@ -1073,6 +1073,28 @@ class eZStepCreateSites extends eZStepInstaller
             // emptied completely, as a removed MySQL or PostgreSQL database would be.
             if ( strtolower( $db->databaseName() ) === 'sqlite' && method_exists( $db, 'removeDatabase' ) )
                 $db->removeDatabase( $dbName );
+            // MongoDB and Oracle the same way: the collections and tables of extensions (expuser_session,
+            // expaudit_*, explayouts_* ...) kept the previous installation's rows, which the new one then read
+            // (the sessions of earlier installs listed as signed in, migrations seen as done). The database is
+            // dropped on MongoDB; on Oracle every table and sequence of the schema is.
+            else if ( strtolower( $db->databaseName() ) === 'mongo' && method_exists( $db, 'removeDatabase' ) )
+                $db->removeDatabase( $dbName );
+            else if ( strtolower( $db->databaseName() ) === 'oracle' )
+            {
+                foreach ( array( eZDBInterface::RELATION_TABLE, eZDBInterface::RELATION_SEQUENCE ) as $relationType )
+                {
+                    if ( !( $db->supportedRelationTypeMask() & ( 1 << $relationType ) ) )
+                        continue;
+                    foreach ( (array)$db->relationList( $relationType ) as $relation )
+                    {
+                        // Oracle Text's own tables (DR$<index>$...) and the recycle bin go with the table they
+                        // belong to; dropping one of them on its own fails
+                        if ( preg_match( '/^(dr\$|bin\$)/i', (string)$relation ) )
+                            continue;
+                        $db->removeRelation( $relation, $relationType );
+                    }
+                }
+            }
         }
 
         if ( $siteType['existing_database'] != eZStepInstaller::DB_DATA_KEEP )

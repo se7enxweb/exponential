@@ -26920,7 +26920,7 @@ c0f9d333e53a6c752edc9c591a98cc56  kernel/setup/settingstoolbar.php
 a8713d647fe1b82f9ac380b5c4f65e21  kernel/setup/setupmenu.php
 12388c5f3c97658017a91b8ccf53cdc3  kernel/setup/sitedata.php
 99d8125aa80af11aa9c3a40816df9a22  kernel/setup/staticcachestream.php
-b521fdbe94097aa4649998445c08a9b8  kernel/setup/steps/ezstep_create_sites.php
+6f649036cbf6acb204450ab40f011af6  kernel/setup/steps/ezstep_create_sites.php
 a229b281f2a585988ec3d1f040900091  kernel/setup/steps/ezstep_data.php
 d2a0e0acbc37af9ccf239914e1371801  kernel/setup/steps/ezstep_database_choice.php
 73100c86285b78fae3f5cfae4b9670eb  kernel/setup/steps/ezstep_database_init.php
