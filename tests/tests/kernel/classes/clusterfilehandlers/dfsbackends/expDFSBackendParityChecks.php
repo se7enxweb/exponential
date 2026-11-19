@@ -3,9 +3,10 @@
  * The checks every DFS cluster metadata backend passes, whatever its engine: one behavior, several engines. A test
  * class of an engine uses this trait and supplies the throwaway database (engineSetUp(), engineTearDown()), the
  * file.ini settings to reach it (engineSettings()), the backend class (backendClass()) and a raw statement on it
- * (rawExec(), rawRows()). The kernel runs it for MySQL/MariaDB (expDFSMySQLiBackendParityTest) and PostgreSQL
- * (expDFSPostgresqlBackendIntegrationTest); a backend for another engine adds a class of its own
- * (doc/eng-us/features/6.0/postgresql-dfs-cluster.md, "More engines").
+ * (rawExec(), rawRows()). The kernel runs it for MySQL/MariaDB (expDFSMySQLiBackendParityTest), PostgreSQL
+ * (expDFSPostgresqlBackendIntegrationTest) and SQLite (expDFSSQLiteBackendIntegrationTest); a backend for another
+ * engine adds a class of its own (doc/eng-us/features/6.0/postgresql-dfs-cluster.md, "More engines"). An engine
+ * without row locks says how a second connection holds the lock a store waits for (holdLock(), releaseLock()).
  *
  * Every file lives under var/tmp/dfsparity-<pid>/ (the local files and the DFS mount), removed after each test.
  *
@@ -22,7 +23,7 @@ trait expDFSBackendParityChecks
     /** @var bool whether engineSetUp() ran for the class */
     protected static $engineReady = false;
 
-    /** @var eZDFSFileHandlerMySQLiBackend|expDFSFileHandlerPostgresqlBackend */
+    /** @var expDFSFileHandlerDBBackendInterface the backend of backendClass() */
     protected $backend;
 
     /** @var string the directory of the test's files, relative to the root: var/tmp/dfsparity-<pid> */
@@ -62,6 +63,37 @@ trait expDFSBackendParityChecks
     protected function supportsTimesAfter2038()
     {
         return false;
+    }
+
+    /**
+     * Takes, on the connection of $holder (a second backend), the lock a store of $path has to wait for, until
+     * releaseLock(): the row's lock on a server engine (SELECT ... FOR UPDATE in a transaction).
+     *
+     * @param object $holder a connected backend of backendClass()
+     * @param string $path
+     */
+    protected function holdLock( $holder, $path )
+    {
+        $holder->db->beginTransaction();
+        $holder->db->query( "SELECT * FROM ezdfsfile WHERE name_hash = '" . md5( $path ) . "' FOR UPDATE" );
+    }
+
+    /** Releases the lock holdLock() took */
+    protected function releaseLock( $holder )
+    {
+        $holder->db->commit();
+    }
+
+    /** @return string the error code the backend keeps when a lock wait ran out (PostgreSQL's SQLSTATE 55P03) */
+    protected function lockWaitErrorCode()
+    {
+        return '55P03';
+    }
+
+    /** @return string|null the error code of the backend's last failed statement */
+    protected function lastBackendErrorCode()
+    {
+        return $this->backend->lastSqlState();
     }
 
     public static function tearDownAfterClass(): void
@@ -122,7 +154,7 @@ trait expDFSBackendParityChecks
     /**
      * A connected backend with fresh connection parameters and a private event handler.
      *
-     * @return eZDFSFileHandlerMySQLiBackend|expDFSFileHandlerPostgresqlBackend
+     * @return expDFSFileHandlerDBBackendInterface
      */
     protected function newBackend()
     {
@@ -574,10 +606,9 @@ trait expDFSBackendParityChecks
         if ( $pid === 0 )
         {
             $holder = $this->newBackend();
-            $holder->db->beginTransaction();
-            $holder->db->query( "SELECT * FROM ezdfsfile WHERE name_hash = '" . md5( $path ) . "' FOR UPDATE" );
+            $this->holdLock( $holder, $path );
             usleep( (int)( $holdFor * 1000000 ) );
-            $holder->db->commit();
+            $this->releaseLock( $holder );
             posix_kill( getmypid(), SIGKILL );
         }
         usleep( 300000 );
@@ -597,8 +628,7 @@ trait expDFSBackendParityChecks
         if ( $pid === 0 )
         {
             $holder = $this->newBackend();
-            $holder->db->beginTransaction();
-            $holder->db->query( "SELECT * FROM ezdfsfile WHERE name_hash = '" . md5( $path ) . "' FOR UPDATE" );
+            $this->holdLock( $holder, $path );
             usleep( 6000000 );
             posix_kill( getmypid(), SIGKILL );
         }
@@ -611,7 +641,7 @@ trait expDFSBackendParityChecks
         pcntl_waitpid( $pid, $status );
         $this->assertGreaterThan( 1.9, $time );
         $this->assertLessThan( 4.0, $time );
-        $this->assertSame( '55P03', $this->backend->lastSqlState() );
+        $this->assertSame( $this->lockWaitErrorCode(), $this->lastBackendErrorCode() );
     }
 }
 

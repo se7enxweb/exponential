@@ -92,6 +92,7 @@ nginx with PHP-FPM keep working as before.
 - [SQLite database support](sqlite-database.md)
 - [MongoDB as the database](mongodb-database-support.md)
 - [Clustering on PostgreSQL: the DFS backend in the kernel](postgresql-dfs-cluster.md)
+- [Clustering on SQLite: the one-node DFS backend in the kernel](sqlite-dfs-cluster.md)
 - [Queries over id sets of any size: expDBInList and InListChunkSize](in-lists-of-any-size.md)
 - [AdminNeo: the database manager behind the Database Source Editor](adminneo-database-manager.md)
 - [Data tables: module tables as part of the system](data-tables.md): the catalogue of persistent classes, named
