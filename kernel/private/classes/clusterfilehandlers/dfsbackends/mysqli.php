@@ -538,8 +538,10 @@ class eZDFSFileHandlerMySQLiBackend implements eZClusterEventNotifier
         // Convert wildcard to regexp.
         $regex = '^' . mysqli_real_escape_string( $this->db, $wildcard ) . '$';
 
+        // A literal dot is \. in the regular expression, so \\. inside the SQL string literal: a single backslash
+        // was taken by the string literal itself and the dot matched any character (wild/a.txt also matched aXtxt).
         $regex = str_replace( array( '.'  ),
-                              array( '\.' ),
+                              array( '\\\\.' ),
                               $regex );
 
         $regex = str_replace( array( '?', '*',  '{', '}', ',' ),
