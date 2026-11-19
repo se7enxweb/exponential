@@ -4651,6 +4651,16 @@ The only remaining incompatibility is by design:
 
 ## 26. Known Limitations
 
+> **Superseded for 6.0.15 (November 2026).** The SQL fallback of the adapter (`expMongoDB::sqlFallback()`,
+> `site.ini [DatabaseSettings] MongoSQLFallback`) answers the SELECTs the adapter cannot translate with the SQL
+> itself, on an in-memory SQLite copy of the collections, and the kernel fixes of the same release closed the
+> remaining gaps of the list below: URL aliases after a move, the role and policy lists, the cronjobs, `eztags`
+> (tag pages and the tag filter of subtree fetches) and the names of translated objects. The current limits and the
+> measured parity with the SQL engines are in
+> [MongoDB: limits and operations](../../help/database-administrators/mongodb-limits-and-operations.md) and
+> [Database support](../../help/database-support.md#engine-parity-measured). The list below is kept as the record
+> of June 2026.
+
 The following gaps remain in the MongoDB port as of June 2026. All are
 documented in the relevant sections above; this section collects them in one
 place for quick reference.

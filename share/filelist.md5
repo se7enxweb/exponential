@@ -3711,7 +3711,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/eng-us/bc/5.90/relation_indexing.md
 1e03a68c3131eb9d1c8b4570c969d237  doc/eng-us/bc/6.0/EXT_SORT_ORDERS.md
 63d292d03b5d0b7fa65216b38cad65f0  doc/eng-us/bc/6.0/ICONS.md
 2caa3bcb7212945a93a3859ef2ca51b9  doc/eng-us/bc/6.0/LAYOUTS.md
-fd4ff9bc9f75a7fc9dd1edfa4251fe51  doc/eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
+6512bd5f0c96ea7c62f78b88d0ca6213  doc/eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 f0adee4f1f3831d6106acd3e50242461  doc/eng-us/bc/6.0/admin4-styling.md
 a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
@@ -7091,7 +7091,7 @@ a2b887cb3bf61b535d6fca58c72d1ae0  doc/eng-us/features/6.0/managed-by-deployment.
 ec55512dfd4d53e21c83bcc5cb3607ee  doc/eng-us/features/6.0/migrations.md
 edf63d0c3d2620ae2f29a5a96f1c6fa1  doc/eng-us/features/6.0/moderation.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
-df9251aeb6fb79ab9f17590b0bbbb3fb  doc/eng-us/features/6.0/mongodb-database-support.md
+257a4b8dfc81f1f632e0e64362e2bda1  doc/eng-us/features/6.0/mongodb-database-support.md
 3bd8e093800aafdb91540e9466fa4756  doc/eng-us/features/6.0/multi-site-ini-overrides.md
 8c507b215068aeb519298aebe32659da  doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md
 89aef2cbcbbeb2e4a7246cd080448bae  doc/eng-us/features/6.0/multisite-cross-site-links.md
@@ -8565,7 +8565,7 @@ c81764b03ba7c00e6911865fb07cd4a2  doc/eng-us/help/database-administrators/findin
 f01187ea5ce028a25be35cbdd830a654  doc/eng-us/help/database-administrators/glossary-for-database-administrators.md
 6ea0bd34199d042a66c75ba8e2e138f0  doc/eng-us/help/database-administrators/housekeeping-cronjobs-and-queues.md
 dd764d8bb34cf0c66c2b5113b93c4988  doc/eng-us/help/database-administrators/microsoft-sql-server-status.md
-5c7972049b978fb728327b255b64df07  doc/eng-us/help/database-administrators/mongodb-limits-and-operations.md
+c720013dcba7b9c5dd6d9c878c4bbd6f  doc/eng-us/help/database-administrators/mongodb-limits-and-operations.md
 ee73db4449c98d3c83b16fc6b1fa962e  doc/eng-us/help/database-administrators/mongodb-setup.md
 7802db700ce9e89308630df226577447  doc/eng-us/help/database-administrators/monitoring-the-database.md
 5e07f9df29c72b16e8b65b39c731003d  doc/eng-us/help/database-administrators/moving-between-engines.md
@@ -8573,8 +8573,8 @@ a4e626a5864df0b08ec52850b532fee2  doc/eng-us/help/database-administrators/mysql-
 bcf6941bb8ce838b13256ea63d28279d  doc/eng-us/help/database-administrators/mysql-and-mariadb-setup.md
 44ea75cfc662ddbf96fa296b6810befe  doc/eng-us/help/database-administrators/mysql-read-replicas.md
 4b7633b30b37fbb7a6d867ba0d3055d6  doc/eng-us/help/database-administrators/oracle-connections-and-tuning.md
-485340249c54b3076c4deebaf9693ed0  doc/eng-us/help/database-administrators/oracle-maintenance-commands.md
-d04890ec33646613e4c1519fc3c7bd19  doc/eng-us/help/database-administrators/oracle-setup.md
+d3e691f57cca73c3c99d28828e7bdc37  doc/eng-us/help/database-administrators/oracle-maintenance-commands.md
+4b6ee6d83592080a9623477da6b562af  doc/eng-us/help/database-administrators/oracle-setup.md
 a26ea831feb5f66b0442cf7453ade6fe  doc/eng-us/help/database-administrators/performance-and-scaling.md
 e77c720c35a23f17da32829ca3f5733a  doc/eng-us/help/database-administrators/php-extensions-per-engine.md
 f5822f1999a6a9e425388cbcc70d4614  doc/eng-us/help/database-administrators/portable-sql-for-extensions.md
@@ -8597,7 +8597,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-37bb75820e68fad3c6f5112c6e01723c  doc/eng-us/help/database-support.md
+b7413e1bb8718cdc99b248fc4d6b575d  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md

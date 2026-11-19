@@ -32,6 +32,7 @@ limits.
 |---|---|---|---|---|
 | `settings/site.ini` | `[DatabaseSettings]` | `DatabaseImplementation` | `mongodb` | siteaccess |
 | `settings/site.ini` | `[DatabaseSettings]` | `ImplementationAlias[mongodb]` | `expMongoDB` | global |
+| `settings/site.ini` | `[DatabaseSettings]` | `MongoSQLFallback`, `MongoSQLFallbackMaxRows`, `MongoSQLFallbackLifetime` | `enabled`, `200000`, `2` | global |
 | `settings/dbschema.ini` | `[SchemaSettings]` | `SchemaHandlerClasses[mongo]` | `expMongoSchema` | global |
 | `settings/setup.ini` | `[DatabaseSettings]` | `DefaultType` | `sqlite3`; choose `mongodb` in the wizard | global |
 
@@ -55,22 +56,32 @@ supports Unicode; the reference document (section 24.1) states MongoDB 6.0 as th
    ```
 5. Run the cronjobs once to build the search index (`php runcronjobs.php`).
 
-## What works and what does not (June 2026)
+## What works and what does not (6.0.15, November 2026)
 
-Works: content editing and publishing, the content tree, URL aliases, roles
-for access control, the admin interface, the front site, the setup wizard.
+Works: content editing and publishing, the content tree, URL aliases (also
+after a move), roles and their lists, the admin interface, the front site,
+`eztags`, search, the cronjob parts, the setup wizard, the kickstarter and
+`exp:install --db=mongodb`.
 
-Limits you must plan for (full list in section 26 of the reference):
+Since 6.0.15 a SELECT the adapter cannot translate into MongoDB operations
+(joins, `GROUP BY` with `HAVING`, `UNION`, sub-selects) is answered by the
+**SQL fallback**: the collections it names are copied into an in-memory SQLite
+database and the statement runs there, so hand-written SQL in the admin views,
+reports, cronjobs and extensions gets the same rows as on the SQL engines
+instead of an empty result. `site.ini [DatabaseSettings]` `MongoSQLFallback`
+(`enabled`), `MongoSQLFallbackMaxRows` (`200000`) and
+`MongoSQLFallbackLifetime` (`2` seconds) control it; details in
+[MongoDB: limits and operations](../../help/database-administrators/mongodb-limits-and-operations.md).
 
-- Deep URL alias regeneration after moving subtrees is incomplete.
-- Role and policy listing pages can be empty although permissions are enforced.
-- Some cronjobs (static cache cleanup, notification, session garbage
-  collection) are not ported.
-- The `eztags` extension is not usable on MongoDB.
-- The shop checkout and `ezflow` block scheduling are untested end to end.
-- The adapter never runs real SQL: code that sends hand-written SQL through
-  `arrayQuery()` returns nothing and logs a warning (search the logs for
-  `MONGO TODO`).
+Limits you must plan for:
+
+- A SELECT over a collection with more documents than
+  `MongoSQLFallbackMaxRows`, and a write that needs a join or a sub-select,
+  are refused and logged (search `var/log/error.log` for `sqlFallback`).
+- The SQL query cache does not apply, and there are no SQL update files.
+
+The measured parity with the SQL engines (pages, admin views, write paths) is
+in [Database support](../../help/database-support.md#engine-parity-measured).
 
 ## The same release made other engines better
 

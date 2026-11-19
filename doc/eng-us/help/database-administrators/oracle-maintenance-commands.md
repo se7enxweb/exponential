@@ -12,7 +12,7 @@ type: help
 This page is for Oracle database administrators who keep an Exponential schema healthy. The `ezoracle` extension ships
 console commands that wrap the usual Oracle maintenance, and cronjobs that run them on a schedule. This page answers:
 which commands exist, what each one does, how to schedule them and where they report. Source: the "Console commands"
-and "Cronjobs" sections of `extension/ezoracle/INSTALL` (version 2.3.7) and
+and "Cronjobs" sections of `extension/ezoracle/INSTALL` (version 2.3.14) and
 [9.6 Maintenance](../../install/09-databases.md#maintenance).
 
 ## Contents

@@ -10,7 +10,7 @@ type: help
 # Setting up Oracle with ezoracle
 
 This page is for Oracle database administrators who prepare a schema for an Exponential site. Oracle support comes
-from the `ezoracle` extension (version 2.3.7, required by `composer.json` as `~2.3.7`, so it is in
+from the `ezoracle` extension (required by `composer.json` as `~2.3.9`; 2.3.14 at the time of writing, so it is in
 `extension/ezoracle` of every installation and activated only for sites that use Oracle). It provides the driver
 `eZOracleDB`, the schema handler `eZOracleSchema`, console commands and cronjobs. This page answers: what is
 required, which grants the account needs, how to connect and install, and which Oracle behaviors matter. Sources:

@@ -36,19 +36,37 @@ insert, upsert and delete operations on collections named like the kernel's tabl
 
 ## Known limits
 
-- Hand-written SQL that the adapter cannot translate returns an **empty result** and logs a warning. Extensions with
-  SQL of their own may need a MongoDB path. An empty result is not an answer: code that decides access with its own
-  SQL must read it as "no", never as "nothing restricts this". Check the log for untranslated SQL
-  ([below](#finding-untranslated-sql)) before a site goes into production.
-- Deep URL alias regeneration after moving subtrees is incomplete.
-- Role and policy list pages can be empty although permissions are enforced.
-- Some cronjobs are not ported.
-- `eztags` is not usable.
-- The shop checkout and `ezflow` scheduling are untested end to end.
+Since Exponential 6.0.15 a SELECT the adapter cannot turn into MongoDB operations (joins, `GROUP BY` with `HAVING`,
+`UNION`, derived tables, sub-selects) is answered by the **SQL fallback**: the collections the statement names are
+copied into an in-memory SQLite database, typed by the `.dba` schema, and the statement runs there, so it returns
+what MySQL, PostgreSQL and SQLite return. The copy is kept until the next write through the adapter or for two
+seconds. Settings in `site.ini [DatabaseSettings]`:
+
+| Setting | Default | What it does |
+|---|---|---|
+| `MongoSQLFallback` | `enabled` | `disabled` restores the behavior of 6.0.14: an empty result and a `MONGO TODO` warning |
+| `MongoSQLFallbackMaxRows` | `200000` | a collection with more documents is not copied; the statement is refused as before |
+| `MongoSQLFallbackLifetime` | `2` | seconds a copy keeps answering when no write came in between |
+
+The fallback needs PHP's `sqlite3` extension (bundled with PHP). It costs a read of every document of the
+collections involved, so the kernel's frequent paths keep their own MongoDB pipelines; the fallback serves the
+admin views, reports, cronjobs and extensions that send SQL of their own.
+
+What remains:
+
+- A SELECT over a collection larger than `MongoSQLFallbackMaxRows`, and a write that needs SQL (an `UPDATE` or
+  `DELETE` with a join or a sub-select the adapter cannot read), are refused and logged. An empty result is not an
+  answer: code that decides access with its own SQL must read it as "no", never as "nothing restricts this".
 - The SQL query cache does not apply.
 - There are no SQL update files.
 - Errors: `errorNumber()` reports MongoDB's codes (`11000` for a duplicate key); the driver answers `false` and throws
   nothing ([Database error codes and messages](error-codes-and-messages.md)).
+
+Measured on 18 November 2026 with the same site package installed on SQLite, MongoDB and Oracle: the front end and
+the admin pages, content creation, publishing, moving with URL aliases, roles, tags, search, the cronjob parts and
+the trash give the same results on MongoDB as on SQLite; the details are in
+[Database support](../database-support.md#engine-parity-measured). Earlier limits of this page (deep URL alias
+regeneration after a move, empty role and policy lists, cronjobs, `eztags`) no longer apply.
 
 Test every extension and every workflow your site uses on a staging copy before you go live.
 
@@ -58,9 +76,12 @@ Search the logs for the marker the adapter writes:
 
 ```bash
 grep -rn "MONGO TODO" var/log/ | tail -20
+grep -rn "sqlFallback\|refused" var/log/error.log | tail -20
 ```
 
-Each hit names a statement that returned an empty result instead of data. A page that shows "nothing found" where
+A `MONGO TODO` warning appears only with `MongoSQLFallback=disabled`; with the fallback on, a statement it could not
+answer is logged as an error that starts with `expMongoDB::sqlFallback` (too many documents, or SQL that SQLite
+does not accept). Each hit names a statement that returned an empty result instead of data. A page that shows "nothing found" where
 other engines show content usually has a hit here. Report kernel statements on the
 [software tracker](https://github.com/se7enxweb/exponential/issues); fix your own extensions' SQL
 ([Reviewing extension SQL for every engine](portable-sql-for-extensions.md)).

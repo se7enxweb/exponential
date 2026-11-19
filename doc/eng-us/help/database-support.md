@@ -41,9 +41,10 @@ support statement; it links to that chapter wherever the details are.
 15. [Performance and scaling](#performance-and-scaling)
 16. [Backup and restore](#backup-and-restore)
 17. [Moving a site to another database](#moving-a-site-to-another-database)
-18. [Test coverage (CI)](#test-coverage-ci)
-19. [Which database is my site using?](#which-database-is-my-site-using)
-20. [Related pages](#related-pages)
+18. [Engine parity, measured](#engine-parity-measured)
+19. [Test coverage (CI)](#test-coverage-ci)
+20. [Which database is my site using?](#which-database-is-my-site-using)
+21. [Related pages](#related-pages)
 
 ## The supported databases, in order
 
@@ -348,14 +349,15 @@ cronjobs once to build the search index.
 
 ### MongoDB limits
 
-From [MongoDB as the database](../features/6.0/mongodb-database-support.md) and section 26 of the
-[porting reference](../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md):
+From [MongoDB: limits and operations](database-administrators/mongodb-limits-and-operations.md):
 
-- The adapter never runs real SQL. Hand-written SQL that it cannot translate returns an empty result and logs a
-  warning (search the logs for `MONGO TODO`). Extensions with SQL of their own may need a MongoDB path.
-- Deep URL alias regeneration after moving subtrees is incomplete; role and policy list pages can be empty although
-  permissions are enforced; some cronjobs are not ported; `eztags` is not usable; the shop checkout and `ezflow`
-  scheduling are untested end to end.
+- SQL the adapter cannot translate into MongoDB operations (joins, `GROUP BY` with `HAVING`, `UNION`, sub-selects)
+  is answered by its **SQL fallback** since 6.0.15: the collections the statement names are copied into an
+  in-memory SQLite database and the statement runs there (`site.ini [DatabaseSettings] MongoSQLFallback`, on by
+  default; it needs PHP's `sqlite3`). A collection with more documents than `MongoSQLFallbackMaxRows` (200000) is
+  not copied, and such a statement, like a write that needs a join, is refused and logged.
+- The kernel's features, the admin views, `eztags`, the cronjobs and the installers give the same results as on
+  the SQL engines ([Engine parity, measured](#engine-parity-measured)).
 - The SQL query cache does not apply.
 - There are no SQL update files. The upgrade check compares collections instead of tables and prints the `mongosh`
   commands that create the missing ones.
@@ -376,7 +378,7 @@ Details: [9.5 MongoDB](../install/09-databases.md#95-mongodb).
 
 ## 5. Oracle
 
-**What it is.** The `ezoracle` extension (version 2.3.7, required by `composer.json` as `~2.3.7`) provides the driver
+**What it is.** The `ezoracle` extension (required by `composer.json` as `~2.3.9`; 2.3.14 at the time of writing) provides the driver
 `eZOracleDB`, the schema handler `eZOracleSchema`, console commands (`ext:ezoracle:<name>`) and cronjobs. Because
 `composer.json` requires it, it is in `extension/ezoracle` in every installation; it is activated only for sites that
 use Oracle.
@@ -395,8 +397,16 @@ session tracing. Every feature is off by default. When the settings come from a 
 text columns); it compares strings case-sensitively (`OracleCaseInsensitive=enabled` with linguistic indexes from
 `ext:ezoracle:ci-indexes --create`); and it rejects `AS` before a table alias.
 
+**Since 6.0.15** the driver sends a comparison with the empty string as `IS NULL` / `IS NOT NULL` (Oracle keeps
+`''` as NULL, and on a CLOB column the comparison failed with ORA-22848), the search index is written in batches
+on Oracle too (an installation of the demo site takes about a third less time), and rows of extension data files
+reach the columns Oracle renames (`ezurl_object_link.contentobject_attr_version`).
+
 **Limits.** Exponential 6.0.15 or later is needed (earlier versions do not offer Oracle in the installers). Oracle is
-not in the project's CI; Oracle-only tests in the kernel suite skip on other engines. The SQL query cache applies.
+not in the project's CI; Oracle-only tests in the kernel suite skip on other engines; the engine parity check below
+is run by hand against Oracle AI Database 26ai Free. The SQL query cache applies. Oracle, like PostgreSQL, sorts
+NULL after every value in ascending order where MySQL and SQLite sort it first, so a list sorted by a column that is
+often empty can come out in another order.
 
 Details: [9.6 Oracle 19c and later](../install/09-databases.md#96-oracle-19c-and-later-ezoracle), and the extension's
 `README.md` and `INSTALL` in `extension/ezoracle/`.
@@ -604,6 +614,47 @@ window: nothing may be published between the dump and the switch.
 - **Later upgrades** use the update files of the engine the site runs on now, not the one it was installed on.
 
 The step-by-step version is [9.9 Switching an existing site to another engine](../install/09-databases.md#99-switching-an-existing-site-to-another-engine).
+
+## Engine parity, measured
+
+On 18 and 19 November 2026 the demo site package (`sevenx_multisite`) was installed with the kickstarter, from the
+same kernel, on SQLite 3 (the reference), MongoDB 8.0 and Oracle AI Database 26ai Free, and the same pages were
+fetched from each installation and compared: the page's status and title, its headings, the layout blocks, the
+table rows, the links and the visible text, with dates, times and the site's own address masked.
+
+| | SQLite 3 | MongoDB | Oracle |
+|---|---|---|---|
+| Installation (kickstarter, 16 steps) | 0 errors, 54–128 s | 0 errors, 588–916 s | 0 errors, 901–1030 s (1502 s before the search index was batched) |
+| Migrations after the installation | 4 applied | 4 applied (the run hung before: see below) | 4 applied |
+| Pages compared (151 front end, 299 admin) | reference | 405 of 450 identical | 424 of 450 identical |
+| The same pages before the 6.0.15 fixes | | 187 of 380 identical | 115 of 380 identical, with help built during the run |
+| Content objects, URL links, relation lists, layouts | 380, 910, 196, 24 | the same | the same |
+| Create, publish, new version, move with URL alias and subtree, roles, tags, search, remove (17 checks) | 17 passed | 17 passed | 17 passed |
+| Cronjob parts `global`, `frequent`, `infrequent` | no errors | no errors | no errors |
+
+**What the remaining differences are.** None of them is a feature that works on one engine and not on another:
+
+- Lists sorted by a value that several items share (the showcase items have one publication date, the recently
+  modified classes and layouts one time) come out in another order: each engine returns ties in its own order.
+- Oracle, like PostgreSQL, sorts NULL last in ascending order (a role's policies sorted by limitation).
+- Values of the installation itself: audit event ids, migration run ids, the sandbox's path, its crontab, the
+  order of the active extensions (`ezoracle` is activated for an Oracle site).
+- Setup > System information shows the SQL query cache only where it applies (not on MongoDB).
+- On MongoDB, the German URLs of the Bold site take the German path of the parent folders where the SQL engines
+  keep the English one, and the search for "running" finds 26 objects where the SQL engines find 29.
+
+**What the comparison found and 6.0.15 fixed.** MongoDB: SQL the adapter could not translate returned nothing (the
+SQL fallback answers it now); `LIKE` did not match text over several lines, so the installer left every object
+relation list unresolved; object names came from the wrong translation; tag pages listed every node; a moved node
+kept its old path and lost its URL alias; a role given twice on different subtrees counted once; unactivated users
+listed enabled accounts; the security activity, the user audit, the role figures, the order statuses' order, the
+URL list and SQLI Import's tables. Oracle: comparisons with `''` on CLOB columns failed, the default admin layouts
+and 495 URL links of the seed data did not reach the database, and the search index was written word by word. Both:
+`DatabaseAction=remove` left the tables and collections of extensions with the previous installation's rows, and
+a migration run hung on a MongoDB backup (`git_manager`).
+
+The scripts that ran the comparison are kept with the development tools of the project; they need nothing but the
+kickstarter, a throwaway database per engine and PHP's built-in web server.
 
 ## Test coverage (CI)
 
