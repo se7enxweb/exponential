@@ -1154,7 +1154,7 @@ WHERE user_id = '" . $userID . "' AND
         $login = self::trimAuthString( $login );
         $password = self::trimAuthString( $password );
 
-        $loginEscaped = $db->escapeString( $login );
+        $loginEscaped = $db->databaseName() === 'mongo' ? $login : $db->escapeString( $login );
         $passwordEscaped = $db->escapeString( $password );
 
         $loginArray = array();
@@ -3381,7 +3381,10 @@ WHERE user_id = '" . $userID . "' AND
                 eZUser::logoutCurrent();
                 $currentUser = eZUser::currentUser();
             }
-            else
+            // currentUser() can end the session itself (a revoked or stale session, expUserSessionTracker,
+            // expPasswordPolicy) and answer the anonymous user: that visitor is signed out, so the
+            // RequireUserLogin check below applies and the sign-in page is shown, never an access denied page
+            else if ( !$currentUser->isAnonymous() )
             {
                 return null;
             }

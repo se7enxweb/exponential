@@ -2152,7 +2152,7 @@ You will need to change the class of the node by using the swap functionality.' 
         $db = eZDB::instance();
 
         $version = self::VERSION_STATUS_DEFINED;
-        $escapedDataTypeString = $db->escapeString( $dataTypeString );
+        $escapedDataTypeString = $db->databaseName() === 'mongo' ? $dataTypeString : $db->escapeString( $dataTypeString );
 
         $sql = "SELECT DISTINCT contentclass_id
                 FROM ezcontentclass_attribute

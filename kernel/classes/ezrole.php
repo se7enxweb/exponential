@@ -1613,8 +1613,8 @@ class eZRole extends eZPersistentObject
     function assignToUser( $userID, $limitIdent = '', $limitValue = '' )
     {
         $db = eZDB::instance();
-        $limitIdent = $db->escapeString( $limitIdent );
-        $limitValue = $db->escapeString( $limitValue );
+        $limitIdent = $db->databaseName() === 'mongo' ? $limitIdent : $db->escapeString( $limitIdent );
+        $limitValue = $db->databaseName() === 'mongo' ? $limitValue : $db->escapeString( $limitValue );
         $userID =(int) $userID;
 
         // Who assigns which role to whom (doc/eng-us/bc/6.0/audit.md, access.role.assign): recorded when the assignment is new
@@ -2344,8 +2344,8 @@ class eZRole extends eZPersistentObject
     static function fetchRolesByLimitation( $limit_identifier, $limit_value )
     {
         $db = eZDB::instance();
-        $limit_identifier = $db->escapeString( $limit_identifier );
-        $limit_value = $db->escapeString( $limit_value );
+        $limit_identifier = $db->databaseName() === 'mongo' ? $limit_identifier : $db->escapeString( $limit_identifier );
+        $limit_value = $db->databaseName() === 'mongo' ? $limit_value : $db->escapeString( $limit_value );
         $query = "SELECT DISTINCT
                      ezuser_role.role_id as role_id,
                      ezuser_role.contentobject_id as user_id

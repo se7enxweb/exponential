@@ -47,9 +47,9 @@ class eZPreferences
             return false;
         }
         $db = eZDB::instance();
-        $name = $db->escapeString( $name );
+        $name = $db->databaseName() === 'mongo' ? $name : $db->escapeString( $name );
         $rawValue = $value;
-        $value = $db->escapeString( $value );
+        $value = $db->databaseName() === 'mongo' ? $value : $db->escapeString( $value );
 
         $isCurrentUser = true;
         if ( $storeUserID === false )
@@ -155,7 +155,7 @@ class eZPreferences
             return false;
 
         $db = eZDB::instance();
-        $name = $db->escapeString( $name );
+        $name = $db->databaseName() === 'mongo' ? $name : $db->escapeString( $name );
         $userID = $user->attribute( 'contentobject_id' );
         if ( $db->databaseName() === 'mongo' )
         {

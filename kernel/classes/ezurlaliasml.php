@@ -929,7 +929,7 @@ class eZURLAliasML extends eZPersistentObject
         $actionValue = $matches[2];
         $existingElementID = null;
 
-        $actionStr = $db->escapeString( $action );
+        $actionStr = $db->databaseName() === 'mongo' ? $action : $db->escapeString( $action );
         $actionTypeStr = $db->escapeString( $actionName );
 
         $createdElement = null;

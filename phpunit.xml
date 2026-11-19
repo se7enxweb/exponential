@@ -112,6 +112,7 @@
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBDeclaredDefaultTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBSqlFallbackTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMongoDBEscapeStringTest.php</file>
         </testsuite>
 
         <!--

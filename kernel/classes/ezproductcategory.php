@@ -71,7 +71,7 @@ class eZProductCategory extends eZPersistentObject
 
         $db = eZDB::instance();
         $categoryID =(int) $categoryID;
-        $categoryAttrName = $db->escapeString( $categoryAttrName );
+        $categoryAttrName = $db->databaseName() === 'mongo' ? $categoryAttrName : $db->escapeString( $categoryAttrName );
 
         if ( $db->databaseName() === 'mongo' )
         {
@@ -147,7 +147,7 @@ class eZProductCategory extends eZPersistentObject
             if ( $ini->hasVariable( 'VATSettings', 'ProductCategoryAttribute' ) &&
                  $categoryAttrName = $ini->variable( 'VATSettings', 'ProductCategoryAttribute' ) )
             {
-                $categoryAttrName = $db->escapeString( $categoryAttrName );
+                $categoryAttrName = $db->databaseName() === 'mongo' ? $categoryAttrName : $db->escapeString( $categoryAttrName );
 
                 if ( $db->databaseName() === 'mongo' )
                 {

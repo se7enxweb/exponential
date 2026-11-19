@@ -2338,6 +2338,17 @@ class expMongoDB extends eZDBInterface
      */
     static function fallbackDialect( $sql )
     {
+        // String literals in SQLite's form: a backslash escapes nothing there, so the MySQL escapes that
+        // escapeString() and the kernel write (\\ and \') become a plain backslash and a doubled quote
+        if ( strpos( $sql, '\\' ) !== false )
+        {
+            $sql = preg_replace_callback( "/'(?:[^'\\\\]|''|\\\\.)*'/s", function ( $m )
+            {
+                $inner = substr( $m[0], 1, -1 );
+                $inner = preg_replace_callback( '/\\\\(.)/s', function ( $e ) { return $e[1] === "'" ? "''" : $e[1]; }, $inner );
+                return "'" . $inner . "'";
+            }, $sql );
+        }
         $sql = preg_replace( '/\bsubstring\s*\(\s*([^()]+?)\s+from\s+([^()]+?)\s+for\s+([^()]+?)\s*\)/i', 'substr( $1, $2, $3 )', $sql );
         $sql = preg_replace( '/\bsubstring\s*\(\s*([^()]+?)\s+from\s+([^()]+?)\s*\)/i', 'substr( $1, $2 )', $sql );
         $sql = preg_replace( '/\bcast\s*\(\s*(.+?)\s+AS\s+(?:UNSIGNED|SIGNED)(?:\s+INTEGER)?\s*\)/i', 'CAST( $1 AS INTEGER )', $sql );
@@ -3059,10 +3070,23 @@ class expMongoDB extends eZDBInterface
         }
     }
 
+    /**
+     * Escapes a value for a string literal of the SQL this adapter parses, as the SQL engines' drivers do: a single
+     * quote is doubled and a backslash is escaped, which is how tokeniseSql() and castSqlLiteral() read a literal
+     * back. Returned unchanged, a value with a quote (O'Brien, l'été) ended its literal early, so the statement was
+     * refused or - with something like "x' OR '1'='1" - read as another condition.
+     *
+     * The MongoDB branches of the kernel pass their values to find(), aggregate() and the other native calls
+     * unescaped; only SQL text gets this.
+     *
+     * @param mixed $str
+     * @return string
+     */
     function escapeString( $str )
     {
-        // MongoDB queries use BSON — no SQL injection vector, but sanitise nulls
-        return $str === null ? '' : (string)$str;
+        if ( $str === null )
+            return '';
+        return str_replace( array( '\\', "'" ), array( '\\\\', "''" ), (string)$str );
     }
 
     /**

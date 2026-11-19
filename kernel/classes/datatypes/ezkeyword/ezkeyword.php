@@ -300,7 +300,7 @@ class eZKeyword
         foreach ( $newWordArray as $keyword )
         {
             $keyword = trim( $keyword );
-            $keyword = $db->escapeString( $keyword );
+            $keyword = $db->databaseName() === 'mongo' ? $keyword : $db->escapeString( $keyword );
             $db->query( "INSERT INTO ezkeyword ( keyword, class_id ) VALUES ( '$keyword', '$classID' )" );
 
             $keywordID = $db->lastSerialID( 'ezkeyword', 'id' );

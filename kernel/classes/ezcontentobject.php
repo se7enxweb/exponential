@@ -503,7 +503,7 @@ class eZContentObject extends eZPersistentObject
                 return $name;
             }
         }
-        $lang = $db->escapeString( $lang );
+        $lang = $db->databaseName() === 'mongo' ? $lang : $db->escapeString( $lang );
         $version = (int) $version;
 
         $languageID = $this->attribute( 'initial_language_id' );
@@ -598,7 +598,7 @@ class eZContentObject extends eZPersistentObject
         {
             $languageCode = $initialLanguageCode;
         }
-        $languageCode = $db->escapeString( $languageCode );
+        $languageCode = $db->databaseName() === 'mongo' ? $languageCode : $db->escapeString( $languageCode );
         if ( $languageCode == $initialLanguageCode )
         {
             $this->Name = $objectName;
@@ -613,7 +613,7 @@ class eZContentObject extends eZPersistentObject
 
         $languageID =(int) eZContentLanguage::idByLocale( $languageCode );
 
-        $objectName = $db->escapeString( $objectName );
+        $objectName = $db->databaseName() === 'mongo' ? $objectName : $db->escapeString( $objectName );
 
         $db->begin();
         try
@@ -1081,7 +1081,7 @@ class eZContentObject extends eZPersistentObject
     static function fetchByRemoteID( $remoteID, $asObject = true )
     {
         $db = eZDB::instance();
-        $remoteID =$db->escapeString( $remoteID );
+        $remoteID = $db->databaseName() === 'mongo' ? $remoteID : $db->escapeString( $remoteID );
         if ( $db->databaseName() === 'mongo' )
         {
             $resultArray = $db->aggregate( 'ezcontentobject', [

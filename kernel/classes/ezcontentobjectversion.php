@@ -1375,7 +1375,7 @@ class eZContentObjectVersion extends eZPersistentObject
         $languageSQL = '';
         if ( $language !== false )
         {
-            $language = $db->escapeString( $language );
+            $language = $db->databaseName() === 'mongo' ? $language : $db->escapeString( $language );
             $languageSQL = "AND language_code!='$language'";
         }
 
@@ -1471,7 +1471,7 @@ class eZContentObjectVersion extends eZPersistentObject
     static function fetchAttributes( $version, $contentObjectID, $language = false, $asObject = true )
     {
         $db = eZDB::instance();
-        $language = $db->escapeString( $language );
+        $language = $db->databaseName() === 'mongo' ? $language : $db->escapeString( $language );
         $contentObjectID = (int) $contentObjectID;
         $version = (int) $version;
 

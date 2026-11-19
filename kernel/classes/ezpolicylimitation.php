@@ -598,8 +598,8 @@ class eZPolicyLimitation extends eZPersistentObject
     {
         $cond = '';
         $db = eZDB::instance();
-        $value = $db->escapeString( $value );
-        $type = $db->escapeString( $type );
+        $value = $db->databaseName() === 'mongo' ? $value : $db->escapeString( $value );
+        $type = $db->databaseName() === 'mongo' ? $type : $db->escapeString( $type );
         if ( $useLike === true )
         {
             $cond = "ezpolicy_limitation_value.value like '$value%' ";

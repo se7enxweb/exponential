@@ -3166,6 +3166,7 @@
       "tests/tests/lib/ezdb/mongodb/expMongoDBSqlFallbackTest.php",
       "tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php",
       "tests/tests/lib/ezdb/mongodb/expMongoDBWhereTextTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMongoDBEscapeStringTest.php",
       "tests/tests/lib/ezdb/expDBDriverCloseAndForkTest.php"
     ],
     "lib/ezdb/classes/ezpostgresqldb.php": [
