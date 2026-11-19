@@ -30,6 +30,9 @@ class expRolePage
     /** Up to this many assigned user groups the role page counts the users they hold */
     const AFFECTED_GROUP_LIMIT = 200;
 
+    /** At most this many ids go into one IN list: Oracle takes 1000 per list and fails on a statement with tens of thousands */
+    const IN_LIST_CHUNK = 1000;
+
     /**
      * The search of the role list as the address and the field carry it: trimmed, inner spaces folded, without
      * control characters, at most 100 characters.
@@ -308,7 +311,7 @@ class expRolePage
      * How many people a role reaches: the users it is assigned to directly, the user groups, and every user those
      * groups hold, counted once each (a user in two groups of the role counts once). Users of assignments with a
      * subtree or section limitation count too: the role applies to them, inside its limitation. Null for the users
-     * when the role is assigned to more than AFFECTED_GROUP_LIMIT groups or the database is not SQL.
+     * when the role is assigned to more than AFFECTED_GROUP_LIMIT groups, the database is not SQL or a query fails.
      *
      * @param eZRole $role
      * @return array users_direct, groups, users_total (int|null), limited (assignments with a limitation)
@@ -321,8 +324,10 @@ class expRolePage
         if ( $db->databaseName() === 'mongo' && !expMongoDB::sqlFallbackAvailable() )
             return $result;
         $rows = $db->arrayQuery( 'SELECT contentobject_id, limit_identifier FROM ezuser_role WHERE role_id = ' . (int)$role->attribute( 'id' ) );
+        if ( !is_array( $rows ) )
+            return $result;
         $objectIDs = array();
-        foreach ( is_array( $rows ) ? $rows : array() as $row )
+        foreach ( $rows as $row )
         {
             $objectIDs[(int)$row['contentobject_id']] = true;
             if ( trim( (string)$row['limit_identifier'] ) !== '' )
@@ -334,38 +339,65 @@ class expRolePage
             return $result;
         }
 
-        $idList = $db->generateSQLINStatement( array_keys( $objectIDs ), 'contentobject_id', false, true, 'int' );
+        $rows = self::rowsForIDs( $db, 'SELECT contentobject_id FROM ezuser WHERE', array_keys( $objectIDs ), 'contentobject_id' );
+        if ( $rows === false )
+            return $result;
         $users = array();
-        foreach ( (array)$db->arrayQuery( "SELECT contentobject_id FROM ezuser WHERE $idList" ) as $row )
+        foreach ( $rows as $row )
             $users[(int)$row['contentobject_id']] = true;
         $result['users_direct'] = count( $users );
 
         $groupIDs = array_diff_key( $objectIDs, $users );
-        $paths = array();
-        if ( $groupIDs )
-        {
-            $nodes = $db->arrayQuery( 'SELECT path_string FROM ezcontentobject_tree WHERE '
-                                      . $db->generateSQLINStatement( array_keys( $groupIDs ), 'contentobject_id', false, true, 'int' ) );
-            foreach ( (array)$nodes as $node )
-                $paths[(string)$node['path_string']] = true;
-            $result['groups'] = count( $groupIDs );
-        }
+        $result['groups'] = count( $groupIDs );
+        // checked before the groups' locations are read: past the limit they are not used
         if ( count( $groupIDs ) > self::AFFECTED_GROUP_LIMIT )
             return $result;
 
         $total = $users;
-        if ( $paths )
+        if ( $groupIDs )
         {
+            $nodes = self::rowsForIDs( $db, 'SELECT path_string FROM ezcontentobject_tree WHERE', array_keys( $groupIDs ), 'contentobject_id' );
+            if ( $nodes === false )
+                return $result;
             $likes = array();
-            foreach ( array_keys( $paths ) as $path )
-                $likes[] = "t.path_string LIKE '" . $db->escapeString( $path ) . "%'";
-            $members = $db->arrayQuery( 'SELECT DISTINCT u.contentobject_id FROM ezuser u, ezcontentobject_tree t
-                                         WHERE t.contentobject_id = u.contentobject_id AND ( ' . implode( ' OR ', $likes ) . ' )' );
-            foreach ( (array)$members as $row )
-                $total[(int)$row['contentobject_id']] = true;
+            foreach ( $nodes as $node )
+                $likes[(string)$node['path_string']] = "t.path_string LIKE '" . $db->escapeString( (string)$node['path_string'] ) . "%'";
+            if ( $likes )
+            {
+                $members = $db->arrayQuery( 'SELECT DISTINCT u.contentobject_id FROM ezuser u, ezcontentobject_tree t
+                                             WHERE t.contentobject_id = u.contentobject_id AND ( ' . implode( ' OR ', $likes ) . ' )' );
+                if ( !is_array( $members ) )
+                    return $result;
+                foreach ( $members as $row )
+                    $total[(int)$row['contentobject_id']] = true;
+            }
         }
         $result['users_total'] = count( $total );
         return $result;
+    }
+
+    /**
+     * The rows of a query whose condition is an IN list of ids, asked in lists of IN_LIST_CHUNK ids each. False
+     * when one of the queries fails.
+     *
+     * @param eZDBInterface $db
+     * @param string $select the statement up to and including WHERE
+     * @param int[] $ids
+     * @param string $column the column the ids are looked up in
+     * @return array|false
+     */
+    private static function rowsForIDs( $db, $select, array $ids, $column )
+    {
+        $rows = array();
+        foreach ( array_chunk( $ids, self::IN_LIST_CHUNK ) as $chunk )
+        {
+            $chunkRows = $db->arrayQuery( $select . ' ' . $db->generateSQLINStatement( $chunk, $column, false, true, 'int' ) );
+            if ( !is_array( $chunkRows ) )
+                return false;
+            foreach ( $chunkRows as $row )
+                $rows[] = $row;
+        }
+        return $rows;
     }
 
     /**
