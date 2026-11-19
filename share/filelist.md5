@@ -26841,7 +26841,7 @@ c8efb1b6bd89fd44276c1107c9aafe75  kernel/rss/feed.php
 4afd10ddd499e35116500499a18d170f  kernel/search/ezsearchfunctioncollection.php
 21cb82eff40e85eec0808b1b06e501eb  kernel/search/function_definition.php
 48d375d668c69a9441c52a7670fc99f9  kernel/search/module.php
-bf1bf0716c3990a8c96f3b75eb4fd79e  kernel/search/plugins/ezsearchengine/ezsearchengine.php
+115c0f0c97880f570782f4d8b836ba3b  kernel/search/plugins/ezsearchengine/ezsearchengine.php
 24506cfb1509c73b11e267e0909f0756  kernel/search/stats.php
 b7e9ad6c1c58dfe6c0e0253d87d721f0  kernel/secrets/list.php
 2a1570ad382beccea603f65258a851ba  kernel/secrets/module.php

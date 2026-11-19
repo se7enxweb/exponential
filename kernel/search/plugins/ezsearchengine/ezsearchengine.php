@@ -192,6 +192,27 @@ class eZSearchEngine implements ezpSearchEngine
 
       \return wordIDArray
     */
+    /**
+     * One INSERT of several rows, each row a parenthesised list of literals: VALUES ( ... ), ( ... ) on
+     * the engines that accept it, and on Oracle (19c has no multi-row VALUES) the same rows as
+     * SELECT ... FROM DUAL UNION ALL ..., which fires the id trigger for every row as well.
+     *
+     * @param eZDBInterface $db
+     * @param string $table
+     * @param string $columns comma separated column list
+     * @param string[] $rows "( 'a', 'b' )" each
+     * @return string
+     */
+    static function multiRowInsertSQL( $db, $table, $columns, array $rows )
+    {
+        if ( $db->databaseName() !== 'oracle' )
+            return "INSERT INTO $table ( $columns ) VALUES " . implode( ', ', $rows );
+        $selects = array();
+        foreach ( $rows as $row )
+            $selects[] = 'SELECT ' . substr( trim( $row ), 1, -1 ) . ' FROM DUAL';
+        return "INSERT INTO $table ( $columns ) " . implode( ' UNION ALL ', $selects );
+    }
+
     function buildWordIDArray( $indexArrayOnlyWords )
     {
         $db = eZDB::instance();
@@ -214,7 +235,7 @@ class eZSearchEngine implements ezpSearchEngine
         // SQL. The MongoDB driver handles all three as well. Every engine
         // that can run these statements should, because the per-word path is
         // slow everywhere and merely unusable on MongoDB.
-        if ( in_array( $dbName, array( 'mysql', 'mongo', 'sqlite', 'postgresql' ), true ) )
+        if ( in_array( $dbName, array( 'mysql', 'mongo', 'sqlite', 'postgresql', 'oracle' ), true ) )
         {
             $db->begin();
             try
@@ -246,10 +267,10 @@ class eZSearchEngine implements ezpSearchEngine
                     $newWordArray = array_diff( $wordArrayChuck, $existingWordArray );
                     if ( count ($newWordArray) > 0 )
                     {
-                        $newWordString = implode( "', '1' ), ('", $newWordArray );
-                        $db->query( "INSERT INTO
-                               ezsearch_word ( word, object_count )
-                             VALUES ('$newWordString', '1' )" );
+                        $newWordRows = array();
+                        foreach ( $newWordArray as $newWord )
+                            $newWordRows[] = "( '$newWord', '1' )";
+                        $db->query( self::multiRowInsertSQL( $db, 'ezsearch_word', 'word, object_count', $newWordRows ) );
                         $newWordString = implode( "','", $newWordArray );
                         $newWordRes = $db->arrayQuery( "select id,word from ezsearch_word where word in ( '$newWordString' ) " );
                         $newWordCount = count( $newWordRes );
@@ -387,26 +408,15 @@ class eZSearchEngine implements ezpSearchEngine
         // which is what made indexing on MongoDB too slow to use and is
         // wasteful on the SQL engines too. Every engine here accepts a
         // multi-row INSERT; the MongoDB driver turns it into one insertMany.
-        if ( in_array( $dbName, array( 'mysql', 'mongo', 'sqlite', 'postgresql' ), true ) )
+        if ( in_array( $dbName, array( 'mysql', 'mongo', 'sqlite', 'postgresql', 'oracle' ), true ) )
         {
-            if ( count( $valuesStringList ) > 0 )
+            // Oracle: one statement per 250 rows (its SELECT ... UNION ALL form grows with every row)
+            $chunkSize = $dbName === 'oracle' ? 250 : max( 1, count( $valuesStringList ) );
+            foreach ( array_chunk( $valuesStringList, $chunkSize ) as $chunk )
             {
-                $valuesString = implode( ',', $valuesStringList );
-                $db->query( "INSERT INTO
-                           ezsearch_object_word_link
-                        ( word_id,
-                          contentobject_id,
-                          frequency,
-                          placement,
-                          next_word_id,
-                          prev_word_id,
-                          contentclass_id,
-                          contentclass_attribute_id,
-                          published,
-                          section_id,
-                          identifier,
-                          integer_value )
-                          VALUES $valuesString" );
+                $db->query( self::multiRowInsertSQL( $db, 'ezsearch_object_word_link',
+                    'word_id, contentobject_id, frequency, placement, next_word_id, prev_word_id, contentclass_id, '
+                    . 'contentclass_attribute_id, published, section_id, identifier, integer_value', $chunk ) );
             }
         }
         else
