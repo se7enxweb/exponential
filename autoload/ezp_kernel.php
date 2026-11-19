@@ -1311,6 +1311,7 @@ return array(
       'expCronjobPause'                                              => 'kernel/classes/expcronjobpause.php',
       'expCronjobRunner'                                             => 'kernel/setup/expcronjobrunner.php',
       'expCrontabSetup'                                              => 'kernel/classes/expcrontabsetup.php',
+      'expDBInList'                                                  => 'lib/ezdb/classes/expdbinlist.php',
       'expDFSFileHandlerDBBackendInterface'                          => 'kernel/private/classes/clusterfilehandlers/interfaces/expdfsfilehandlerdbbackendinterface.php',
       'expDFSFileHandlerPostgresqlBackend'                           => 'kernel/private/classes/clusterfilehandlers/dfsbackends/postgresql.php',
       'expDataConnection'                                            => 'kernel/classes/datatable/expdataconnection.php',

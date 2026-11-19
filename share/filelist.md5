@@ -28,7 +28,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-45f4e67ad2c1eab299848a7497000e0b  autoload/ezp_kernel.php
+7662088c77bd74bf0a309bdcd59ecbca  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -27107,6 +27107,7 @@ f8422b2d7c5983552ff65b4105c20766  kernel/workflow/view.php
 4ca5c95269d6a6ee11b56bab377d82e9  kernel/workflow/workflowlist.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
 1f7a195d56755dbc47ff0c22eebf8cc9  kickstart.ini-dist
+351dbd82d2db1a46a1f3d5a568f8df8d  lib/ezdb/classes/expdbinlist.php
 f72ddefd7b5c0c6321b4bf1f94ed55d3  lib/ezdb/classes/expmongodb.php
 13f0a583c9b7da0867680d243ffdcb5e  lib/ezdb/classes/exppdodb.php
 4a4c9ff3c3b806245f6e3e709208198b  lib/ezdb/classes/ezdb.php
@@ -27550,7 +27551,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-0ee678939edf6fcd8ef67abec7c1f0e3  settings/site.ini
+444e65510eae4b3e3f52bb13b1c72844  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -30620,6 +30621,7 @@ f57e1fdde9566303d12ebf1c33041f52  tests/tests/lib/ezdb/eZSQLite3ModFunctionTest.
 7ad84e2261cffb8ef3c402509373b2c9  tests/tests/lib/ezdb/eZSQLite3ShippedSchemaTest.php
 7ddc144c630f4b56eda487d1887d2c96  tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php
 ac57cd831646f86c9835dbbba2ca8d05  tests/tests/lib/ezdb/expDBDriverCloseAndForkTest.php
+b83c69108de02038f067416868a38be3  tests/tests/lib/ezdb/expDBInListTest.php
 9237bb35592e32f427078aa870fcdb33  tests/tests/lib/ezdb/expMongoDBInsertSelectPlanTest.php
 5748fdf5e719376a18a1e49d5a4e7354  tests/tests/lib/ezdb/expPDODBTest.php
 874730de335b5f2eafa192b4ed5018f7  tests/tests/lib/ezdb/ezdbinterface_test.php
