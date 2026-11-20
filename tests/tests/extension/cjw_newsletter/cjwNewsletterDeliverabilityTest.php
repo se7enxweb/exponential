@@ -163,7 +163,7 @@ class cjwNewsletterDeliverabilityTest extends cjwNewsletterTestCase
         $address = CjwNewsletterMailinAddress::create( array() );
         $email = 'nltest-' . getmypid() . '-' . ( ++self::$counter ) . '-in@' . self::OWN_DOMAIN;
         $errors = CjwNewsletterMailin::storeAddress( $address, array( 'email' => $email, 'plus_tag' => $tag, 'action' => $action,
-            'list_contentobject_id' => $listId === null ? self::LIST_OBJECT_ID : $listId, 'mailbox_id' => 0, 'is_active' => 1 ) );
+            'list_contentobject_id' => $listId === null ? self::listObjectId() : $listId, 'mailbox_id' => 0, 'is_active' => 1 ) );
         $this->assertSame( array(), $errors );
         return $address;
     }
@@ -444,16 +444,16 @@ class cjwNewsletterDeliverabilityTest extends cjwNewsletterTestCase
         $this->assertArrayHasKey( 'email_list', $errors );
         $errors = CjwNewsletterTestSend::storeGroup( $group, array( 'name' => 'NLTEST ok', 'email_list' => "A@example.invalid; b@example.invalid,a@example.invalid", 'list_contentobject_id' => '999999999' ) );
         $this->assertArrayHasKey( 'list_contentobject_id', $errors, 'not a newsletter list' );
-        $errors = CjwNewsletterTestSend::storeGroup( $group, array( 'name' => 'NLTEST ok', 'email_list' => "A@example.invalid; b@example.invalid,a@example.invalid", 'list_contentobject_id' => (string)self::LIST_OBJECT_ID ) );
+        $errors = CjwNewsletterTestSend::storeGroup( $group, array( 'name' => 'NLTEST ok', 'email_list' => "A@example.invalid; b@example.invalid,a@example.invalid", 'list_contentobject_id' => (string)self::listObjectId() ) );
         $this->assertSame( array(), $errors );
         $this->assertGreaterThan( 0, (int)$group->attribute( 'id' ) );
         $this->assertSame( array( 'a@example.invalid', 'b@example.invalid' ), CjwNewsletterTestSend::groupAddresses( $group ), 'lower case, once each' );
-        $fetched = CjwNewsletterDeliverabilityFetch::fetchTestGroupList( self::LIST_OBJECT_ID );
+        $fetched = CjwNewsletterDeliverabilityFetch::fetchTestGroupList( self::listObjectId() );
         $names = array();
         foreach ( $fetched['result'] as $row )
             $names[$row['name']] = $row['address_count'];
         $this->assertSame( 2, $names['NLTEST ok'] );
-        $other = CjwNewsletterDeliverabilityFetch::fetchTestGroupList( self::LIST_OBJECT_ID + 999999 );
+        $other = CjwNewsletterDeliverabilityFetch::fetchTestGroupList( self::listObjectId() + 999999 );
         foreach ( $other['result'] as $row )
             $this->assertNotSame( 'NLTEST ok', $row['name'], 'a group of a list is not offered for another list' );
     }
@@ -704,7 +704,7 @@ class cjwNewsletterDeliverabilityTest extends cjwNewsletterTestCase
 
         $email = 'nltest-' . getmypid() . '-view@' . self::OWN_DOMAIN;
         $r = $this->runView( 'mailin_address_edit', array( 0 ), array( 'StoreButton' => '1', 'email' => $email, 'plus_tag' => '', 'action' => 'both',
-                                                                         'list_contentobject_id' => (string)self::LIST_OBJECT_ID, 'mailbox_id' => '0', 'is_active' => '1' ) );
+                                                                         'list_contentobject_id' => (string)self::listObjectId(), 'mailbox_id' => '0', 'is_active' => '1' ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
         $this->assertNotNull( CjwNewsletterMailinAddress::fetchByEmailAndPlusTag( $email, '' ) );
         $list = $this->runView( 'mailin_address_list' );

@@ -54,7 +54,7 @@ class cjwNewsletterSeriesSendTest extends cjwNewsletterTestCase
     /** An active series of the list with three steps (0, 3 and 14 days), each with an edition of its own. */
     protected function newSeries()
     {
-        $series = CjwNewsletterSeries::create( array( 'list_contentobject_id' => self::LIST_OBJECT_ID, 'status' => 0,
+        $series = CjwNewsletterSeries::create( array( 'list_contentobject_id' => self::listObjectId(), 'status' => 0,
             'created' => time(), 'modified' => time() ) );
         $series->store();
         $this->seriesIds[] = (int)$series->attribute( 'id' );
@@ -170,8 +170,8 @@ class cjwNewsletterSeriesSendTest extends cjwNewsletterTestCase
 
     public function testTheStepSendHasTheTrackingModeOfTheList()
     {
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID,
-            (int)eZContentObject::fetch( self::LIST_OBJECT_ID )->attribute( 'current_version' ) );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(),
+            (int)eZContentObject::fetch( self::listObjectId() )->attribute( 'current_version' ) );
         if ( !is_object( $list ) )
             $this->markTestSkipped( 'the list is not available' );
         $this->savedTracking = array( 'contentobject_attribute_id = ' . (int)$list->attribute( 'contentobject_attribute_id' )

@@ -51,7 +51,7 @@ class cjwNewsletterSegmentViewsTest extends cjwNewsletterTestCase
     protected function newSegment( $name = 'nltest views segment' )
     {
         $segment = CjwNewsletterSegment::create( array(
-            'list_contentobject_id' => self::LIST_OBJECT_ID, 'name' => $name, 'match_mode' => 'all',
+            'list_contentobject_id' => self::listObjectId(), 'name' => $name, 'match_mode' => 'all',
             'conditions' => json_encode( array( array( 'type' => 'subscribed_within', 'field' => 'created', 'days' => 1 ) ) ),
             'created' => time(), 'modified' => time() ) );
         $segment->store();
@@ -78,32 +78,32 @@ class cjwNewsletterSegmentViewsTest extends cjwNewsletterTestCase
     public function testListAndEditViewsRender()
     {
         $segment = $this->newSegment();
-        $list = $this->runView( 'segment_list', array( self::LIST_OBJECT_ID ) );
+        $list = $this->runView( 'segment_list', array( self::listObjectId() ) );
         $this->assertSame( eZModule::STATUS_OK, $list['exit'] );
         $this->assertStringContainsString( 'nltest views segment', $list['content'] );
 
-        $new = $this->runView( 'segment_edit', array( 0, self::LIST_OBJECT_ID ) );
+        $new = $this->runView( 'segment_edit', array( 0, self::listObjectId() ) );
         $this->assertSame( eZModule::STATUS_OK, $new['exit'] );
         $this->assertNotEmpty( $new['content'] );
 
-        $edit = $this->runView( 'segment_edit', array( (int)$segment->attribute( 'id' ), self::LIST_OBJECT_ID ) );
+        $edit = $this->runView( 'segment_edit', array( (int)$segment->attribute( 'id' ), self::listObjectId() ) );
         $this->assertSame( eZModule::STATUS_OK, $edit['exit'] );
         $this->assertStringContainsString( 'nltest views segment', $edit['content'] );
 
-        $foreign = $this->runView( 'segment_edit', array( (int)$segment->attribute( 'id' ), self::LIST_OBJECT_ID + 100000 ) );
+        $foreign = $this->runView( 'segment_edit', array( (int)$segment->attribute( 'id' ), self::listObjectId() + 100000 ) );
         $this->assertNotSame( eZModule::STATUS_OK, $foreign['exit'], 'an unknown list is not served' );
     }
 
     public function testStoreSavesASegmentWithTwoConditions()
     {
         $name = 'nltest views stored';
-        $r = $this->runView( 'segment_edit', array( 0, self::LIST_OBJECT_ID ), $this->formPost( $name, array( 'StoreButton' => 'Store' ) ) );
+        $r = $this->runView( 'segment_edit', array( 0, self::listObjectId() ), $this->formPost( $name, array( 'StoreButton' => 'Store' ) ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
-        $this->assertStringContainsString( 'segment_list/' . self::LIST_OBJECT_ID, (string)$r['redirect'] );
+        $this->assertStringContainsString( 'segment_list/' . self::listObjectId(), (string)$r['redirect'] );
         $rows = eZDB::instance()->arrayQuery( "SELECT * FROM cjwnl_segment WHERE name = '" . $name . "'" );
         $this->assertCount( 1, $rows );
         $this->segmentIds[] = (int)$rows[0]['id'];
-        $this->assertSame( self::LIST_OBJECT_ID, (int)$rows[0]['list_contentobject_id'] );
+        $this->assertSame( self::listObjectId(), (int)$rows[0]['list_contentobject_id'] );
         $this->assertSame( 'all', $rows[0]['match_mode'] );
         $conditions = json_decode( $rows[0]['conditions'], true );
         $this->assertCount( 2, $conditions );
@@ -112,9 +112,9 @@ class cjwNewsletterSegmentViewsTest extends cjwNewsletterTestCase
 
     public function testStoreWithoutNameOrConditionsSavesNothing()
     {
-        $r = $this->runView( 'segment_edit', array( 0, self::LIST_OBJECT_ID ), $this->formPost( '', array( 'StoreButton' => 'Store' ) ) );
+        $r = $this->runView( 'segment_edit', array( 0, self::listObjectId() ), $this->formPost( '', array( 'StoreButton' => 'Store' ) ) );
         $this->assertSame( eZModule::STATUS_OK, $r['exit'], 'the form is shown again' );
-        $r = $this->runView( 'segment_edit', array( 0, self::LIST_OBJECT_ID ),
+        $r = $this->runView( 'segment_edit', array( 0, self::listObjectId() ),
             array( 'Name' => 'nltest views empty', 'MatchMode' => 'all', 'StoreButton' => 'Store' ) );
         $this->assertSame( eZModule::STATUS_OK, $r['exit'] );
         $this->assertSame( 0, $this->countNamed( 'nltest views empty' ) );
@@ -123,7 +123,7 @@ class cjwNewsletterSegmentViewsTest extends cjwNewsletterTestCase
     public function testShowSizeDoesNotSave()
     {
         $name = 'nltest views size';
-        $r = $this->runView( 'segment_edit', array( 0, self::LIST_OBJECT_ID ), $this->formPost( $name, array( 'ShowSizeButton' => 'Show size' ) ) );
+        $r = $this->runView( 'segment_edit', array( 0, self::listObjectId() ), $this->formPost( $name, array( 'ShowSizeButton' => 'Show size' ) ) );
         $this->assertSame( eZModule::STATUS_OK, $r['exit'] );
         $this->assertNotEmpty( $r['content'] );
         $this->assertSame( 0, $this->countNamed( $name ) );
@@ -138,13 +138,13 @@ class cjwNewsletterSegmentViewsTest extends cjwNewsletterTestCase
         $send->setAttribute( 'status', CjwNewsletterEditionSend::STATUS_WAIT_FOR_SCHEDULE );
         $send->store();
 
-        $r = $this->runView( 'segment_edit', array( $id, self::LIST_OBJECT_ID ), array( 'DeleteButton' => 'Remove' ) );
+        $r = $this->runView( 'segment_edit', array( $id, self::listObjectId() ), array( 'DeleteButton' => 'Remove' ) );
         $this->assertSame( eZModule::STATUS_OK, $r['exit'], 'refused: the form is shown again' );
         $this->assertNotNull( CjwNewsletterSegment::fetch( $id ) );
 
         $send->setAttribute( 'status', CjwNewsletterEditionSend::STATUS_ABORT );
         $send->store();
-        $r = $this->runView( 'segment_edit', array( $id, self::LIST_OBJECT_ID ), array( 'DeleteButton' => 'Remove' ) );
+        $r = $this->runView( 'segment_edit', array( $id, self::listObjectId() ), array( 'DeleteButton' => 'Remove' ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
         $this->assertNull( CjwNewsletterSegment::fetch( $id ) );
     }

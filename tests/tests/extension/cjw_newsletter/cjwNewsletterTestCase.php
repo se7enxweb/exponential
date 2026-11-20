@@ -23,6 +23,38 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
     const LIST_NODE_ID = 18830;
     const MAIL_DOMAIN = 'example.invalid';
 
+    /**
+     * The newsletter list the live tests use: CJWNL_TEST_LIST_OBJECT_ID, else LIST_OBJECT_ID (the list of the
+     * installation the tests were written on). Another installation names its own list there.
+     *
+     * @return int
+     */
+    protected static function listObjectId()
+    {
+        $id = (int)getenv( 'CJWNL_TEST_LIST_OBJECT_ID' );
+        return $id > 0 ? $id : self::LIST_OBJECT_ID;
+    }
+
+    /**
+     * The main node of that list: CJWNL_TEST_LIST_NODE_ID, else the main node of CJWNL_TEST_LIST_OBJECT_ID when that
+     * is set and the kernel runs, else LIST_NODE_ID.
+     *
+     * @return int
+     */
+    protected static function listNodeId()
+    {
+        $id = (int)getenv( 'CJWNL_TEST_LIST_NODE_ID' );
+        if ( $id > 0 )
+            return $id;
+        if ( (int)getenv( 'CJWNL_TEST_LIST_OBJECT_ID' ) > 0 && class_exists( 'eZContentObject' ) )
+        {
+            $object = eZContentObject::fetch( self::listObjectId() );
+            if ( $object instanceof eZContentObject && (int)$object->attribute( 'main_node_id' ) > 0 )
+                return (int)$object->attribute( 'main_node_id' );
+        }
+        return self::LIST_NODE_ID;
+    }
+
     protected static $script = null;
     protected static $bootError = null;
     protected static $counter = 0;
@@ -65,8 +97,8 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             ezpLiveInstallation::installedSiteDatabase();
             if ( !class_exists( 'CjwNewsletterUser' ) )
                 throw new RuntimeException( 'cjw_newsletter is not active' );
-            if ( !eZContentObject::fetch( self::LIST_OBJECT_ID ) )
-                throw new RuntimeException( 'the newsletter list object ' . self::LIST_OBJECT_ID . ' does not exist' );
+            if ( !eZContentObject::fetch( self::listObjectId() ) )
+                throw new RuntimeException( 'the newsletter list object ' . self::listObjectId() . ' does not exist' );
             self::$script = $script;
         }
         catch ( Throwable $e )
@@ -231,7 +263,7 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
         // through setAttribute, so that the status carries its timestamp as it does for a real subscriber
         $user->setAttribute( 'status', $status === null ? CjwNewsletterUser::STATUS_CONFIRMED : $status );
         $user->store();
-        $sub = CjwNewsletterSubscription::create( self::LIST_OBJECT_ID, $user->attribute( 'id' ), $formats,
+        $sub = CjwNewsletterSubscription::create( self::listObjectId(), $user->attribute( 'id' ), $formats,
             $subscriptionStatus === null ? CjwNewsletterSubscription::STATUS_APPROVED : $subscriptionStatus );
         $sub->store();
         return $user;
@@ -240,7 +272,7 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
     /** @return CjwNewsletterSubscription */
     protected function subscriptionOf( CjwNewsletterUser $user )
     {
-        return CjwNewsletterSubscription::fetchByListIdAndNewsletterUserId( self::LIST_OBJECT_ID, $user->attribute( 'id' ) );
+        return CjwNewsletterSubscription::fetchByListIdAndNewsletterUserId( self::listObjectId(), $user->attribute( 'id' ) );
     }
 
     /**
@@ -254,7 +286,7 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
         $object = $class->instantiate( (int)eZUser::currentUserID(), 0, 0 );
         $object->store();
         $node = eZNodeAssignment::create( array( 'contentobject_id' => $object->attribute( 'id' ),
-            'contentobject_version' => 1, 'parent_node' => self::LIST_NODE_ID, 'is_main' => 1, 'sort_field' => 2, 'sort_order' => 0 ) );
+            'contentobject_version' => 1, 'parent_node' => self::listNodeId(), 'is_main' => 1, 'sort_field' => 2, 'sort_order' => 0 ) );
         $node->store();
         $version = $object->currentVersion();
         $map = $version->dataMap();
@@ -318,7 +350,7 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             }
             eZContentObjectOperations::remove( $id );
             $db->query( 'DELETE FROM cjwnl_edition WHERE contentobject_id = ' . (int)$id );
-            if ( (int)$id !== self::LIST_OBJECT_ID )
+            if ( (int)$id !== self::listObjectId() )
                 $db->query( 'DELETE FROM cjwnl_list WHERE contentobject_id = ' . (int)$id );
         }
         $this->createdObjectIds = array();

@@ -12,8 +12,8 @@ class cjwNewsletterFlowTest extends cjwNewsletterTestCase
         return array(
             'SubscribeButton' => 'Subscribe',
             'Subscription_Email' => $email, 'Subscription_FirstName' => 'Ann', 'Subscription_LastName' => 'Tester',
-            'Subscription_IdArray' => array( self::LIST_OBJECT_ID ), 'Subscription_ListArray' => array( self::LIST_OBJECT_ID ),
-            'Subscription_OutputFormatArray_' . self::LIST_OBJECT_ID => array( 0 ) );
+            'Subscription_IdArray' => array( self::listObjectId() ), 'Subscription_ListArray' => array( self::listObjectId() ),
+            'Subscription_OutputFormatArray_' . self::listObjectId() => array( 0 ) );
     }
 
     public function testSubscribeSendsConfirmationAndConfirmLinkWorks()
@@ -57,7 +57,7 @@ class cjwNewsletterFlowTest extends cjwNewsletterTestCase
         $user = $this->newSubscriber( 'cfg' );
         $r = $this->runView( 'configure', array( $user->attribute( 'hash' ) ), array(
             'ConfirmButton' => 'Confirm', 'Subscription_FirstName' => 'Changed', 'Subscription_LastName' => 'Name',
-            'Subscription_IdArray' => array( self::LIST_OBJECT_ID ), 'Subscription_ListArray' => array() ) );
+            'Subscription_IdArray' => array( self::listObjectId() ), 'Subscription_ListArray' => array() ) );
         $this->assertViewOk( $r );
         $user = CjwNewsletterUser::fetchByEmail( $user->attribute( 'email' ) );
         $this->assertSame( 'Changed', $user->attribute( 'first_name' ) );

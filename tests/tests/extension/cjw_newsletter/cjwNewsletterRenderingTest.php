@@ -34,7 +34,7 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
         if ( !class_exists( 'CjwNewsletterRendering' ) )
             $this->markTestSkipped( 'The rendering of 4.2.0 is not installed' );
         $columns = 'contentobject_attribute_id, contentobject_attribute_version, skin_name, skin_name_array_string, main_language, language_array_string, interest_source, personalize_content';
-        $this->savedListRows = eZDB::instance()->arrayQuery( "SELECT $columns FROM cjwnl_list WHERE contentobject_id = " . self::LIST_OBJECT_ID );
+        $this->savedListRows = eZDB::instance()->arrayQuery( "SELECT $columns FROM cjwnl_list WHERE contentobject_id = " . self::listObjectId() );
         CjwNewsletterRendering::clearCache();
         CjwNewsletterInterests::clearCache();
         CjwNewsletterConditions::$active = false;
@@ -95,7 +95,7 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
         $set = array();
         foreach ( $values as $column => $value )
             $set[] = $column . ' = ' . ( is_int( $value ) ? $value : "'" . $db->escapeString( $value ) . "'" );
-        $db->query( 'UPDATE cjwnl_list SET ' . implode( ', ', $set ) . ' WHERE contentobject_id = ' . self::LIST_OBJECT_ID );
+        $db->query( 'UPDATE cjwnl_list SET ' . implode( ', ', $set ) . ' WHERE contentobject_id = ' . self::listObjectId() );
         eZContentObject::clearCache();
         CjwNewsletterRendering::clearCache();
     }
@@ -103,7 +103,7 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
     /** @return CjwNewsletterList */
     protected function testList()
     {
-        return CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        return CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
     }
 
     /** @return string a locale of the site other than the list's main language */
@@ -200,8 +200,10 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
         return $out;
     }
 
-    protected function newInterest( $identifier, $name, $listId = self::LIST_OBJECT_ID, $tagId = 0 )
+    protected function newInterest( $identifier, $name, $listId = null, $tagId = 0 )
     {
+        if ( $listId === null )
+            $listId = self::listObjectId();
         $interest = CjwNewsletterInterest::create( array( 'list_contentobject_id' => $listId, 'identifier' => 'nltest_' . $identifier,
             'name' => $name, 'source' => 'topic', 'eztags_id' => $tagId, 'is_active' => 1, 'created' => time(), 'modified' => time() ) );
         $interest->store();
@@ -218,19 +220,19 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
         $user->setAttribute( 'organisation', 'ACME & Co' );
         $user->setAttribute( 'custom_data_text_2', '<i>vip</i>' );
         $user->store();
-        $values = CjwNewsletterPlaceholders::valuesForSubscriber( $user, self::LIST_OBJECT_ID, true );
+        $values = CjwNewsletterPlaceholders::valuesForSubscriber( $user, self::listObjectId(), true );
         foreach ( array( '[[email]]', '[[organisation]]', '[[custom_1]]', '[[custom_4]]', '[[list_name]]', '[[unsubscribe_url]]', '[[configure_url]]', '[[manage_url]]' ) as $key )
             $this->assertArrayHasKey( $key, $values, $key );
         $this->assertSame( $user->attribute( 'email' ), $values['[[email]]'] );
         $this->assertSame( 'ACME & Co', $values['[[organisation]]'] );
         $this->assertStringContainsString( '/newsletter/unsubscribe/' . $this->subscriptionOf( $user )->attribute( 'hash' ), $values['[[unsubscribe_url]]'] );
-        $this->assertSame( CjwNewsletterPlaceholders::listName( self::LIST_OBJECT_ID ), $values['[[list_name]]'] );
+        $this->assertSame( CjwNewsletterPlaceholders::listName( self::listObjectId() ), $values['[[list_name]]'] );
         $bodies = CjwNewsletterPlaceholders::replaceInBodies( array( 'html' => '<p>[[first_name]] [[organisation]] [[custom_2]]</p>', 'text' => '[[first_name]] [[custom_2]]' ), $values );
         $this->assertSame( '<p>' . self::NAME_ESCAPED . ' ACME &amp; Co &lt;i&gt;vip&lt;/i&gt;</p>', $bodies['html'] );
         $this->assertSame( self::NAME . ' <i>vip</i>', $bodies['text'] );
         $this->assertSame( 'Hi ' . self::NAME_ESCAPED, CjwNewsletterPlaceholders::replaceInText( 'Hi [[first_name]]', $values, true ) );
 
-        $plain = CjwNewsletterPlaceholders::valuesForSubscriber( $user, self::LIST_OBJECT_ID, false );
+        $plain = CjwNewsletterPlaceholders::valuesForSubscriber( $user, self::listObjectId(), false );
         $this->assertArrayNotHasKey( '[[first_name]]', $plain, 'no personal fields without personalisation' );
         $this->assertArrayNotHasKey( '[[email]]', $plain );
         $this->assertArrayHasKey( '[[unsubscribe_url]]', $plain, 'the links are always there' );
@@ -259,7 +261,7 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
               . ' B ' . CjwNewsletterConditions::open( array( 'language' => 'eng-GB,ger-DE' ) ) . 'LANG '
               . CjwNewsletterConditions::open( array( 'field' => 'first_name', 'operator' => 'starts', 'value' => 'an' ) ) . 'NESTED' . CjwNewsletterConditions::close()
               . CjwNewsletterConditions::close() . ' C';
-        $ctx = CjwNewsletterRendering::subscriberContext( $user, self::LIST_OBJECT_ID, 'ger-DE' );
+        $ctx = CjwNewsletterRendering::subscriberContext( $user, self::listObjectId(), 'ger-DE' );
         $this->assertSame( 'A GOLD B LANG NESTED C', CjwNewsletterConditions::resolve( $text, $ctx ) );
         $ctx['language'] = 'eng-US';
         $this->assertSame( 'A GOLD B  C', CjwNewsletterConditions::resolve( $text, $ctx ) );
@@ -267,7 +269,7 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
         $this->assertSame( 'A OTHER B LANG  C', CjwNewsletterConditions::resolve( $text, array( 'mode' => 'anonymous', 'language' => 'ger-DE' ) ),
             'without a subscriber a field condition is false' );
 
-        $list = CjwNewsletterConditions::wrap( array( 'list' => '1,' . self::LIST_OBJECT_ID, 'negate' => 'yes' ), 'NOT-FOR-LIST' );
+        $list = CjwNewsletterConditions::wrap( array( 'list' => '1,' . self::listObjectId(), 'negate' => 'yes' ), 'NOT-FOR-LIST' );
         $this->assertSame( '', CjwNewsletterConditions::resolve( $list, $ctx ) );
         $this->assertSame( 'NOT-FOR-LIST', CjwNewsletterConditions::resolve( $list, array( 'mode' => 'subscriber', 'user' => $user, 'list_id' => 2 ) ) );
         $damaged = '[[cjwnl:if:abcdef123456:@@]]X[[cjwnl:endif:abcdef123456]] [[cjwnl:else:abcdef999999]]Y';
@@ -599,7 +601,7 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
         $user = $this->newSubscriber( 'blk' );
         $marker = CjwNewsletterInterestBlock::marker( 3, 'For <you>', '#123456' );
         $this->assertTrue( CjwNewsletterInterestBlock::hasMarker( $marker ) );
-        $this->assertSame( 'a  b', CjwNewsletterInterestBlock::resolve( 'a ' . $marker . ' b', true, $user, array( 'list_id' => self::LIST_OBJECT_ID ) ),
+        $this->assertSame( 'a  b', CjwNewsletterInterestBlock::resolve( 'a ' . $marker . ' b', true, $user, array( 'list_id' => self::listObjectId() ) ),
             'no interests: no block, not even its heading' );
         $this->assertSame( 'a  b', CjwNewsletterInterestBlock::resolve( 'a ' . $marker . ' b', false, null, array() ), 'no subscriber: nothing' );
         $edition = $this->newEdition( 'NLTEST block' );
@@ -620,14 +622,14 @@ class cjwNewsletterRenderingTest extends cjwNewsletterTestCase
     public function testInterestAdminViews()
     {
         $r = $this->runView( 'interest_edit', array( 0 ), array( 'StoreButton' => 'Save', 'Interest_name' => 'NLTEST View Interest',
-            'Interest_identifier' => 'nltest_view', 'Interest_list_contentobject_id' => (string)self::LIST_OBJECT_ID, 'Interest_source' => 'topic',
+            'Interest_identifier' => 'nltest_view', 'Interest_list_contentobject_id' => (string)self::listObjectId(), 'Interest_source' => 'topic',
             'Interest_priority' => '3', 'Interest_is_active' => '1' ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
-        $interest = CjwNewsletterInterest::fetchByListContentobjectIdAndIdentifier( self::LIST_OBJECT_ID, 'nltest_view' );
+        $interest = CjwNewsletterInterest::fetchByListContentobjectIdAndIdentifier( self::listObjectId(), 'nltest_view' );
         $this->assertNotNull( $interest );
         $this->createdInterestIds[] = (int)$interest->attribute( 'id' );
         $r = $this->runView( 'interest_edit', array( 0 ), array( 'StoreButton' => 'Save', 'Interest_name' => 'Again',
-            'Interest_identifier' => 'nltest_view', 'Interest_list_contentobject_id' => (string)self::LIST_OBJECT_ID ) );
+            'Interest_identifier' => 'nltest_view', 'Interest_list_contentobject_id' => (string)self::listObjectId() ) );
         $this->assertViewOk( $r, 'a duplicate identifier' );
         $this->assertStringContainsString( 'message-error', $r['content'] );
         $r = $this->runView( 'interest_list' );

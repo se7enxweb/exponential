@@ -8,8 +8,8 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
     {
         return array_merge( array( 'Subscription_Email' => $user ? $user->attribute( 'email' ) : $this->newEmail( 'new' ),
             'Subscription_FirstName' => 'Edited', 'Subscription_LastName' => 'Person', 'Subscription_Salutation' => '1', 'Subscription_Note' => 'a note',
-            'Subscription_IdArray' => array( self::LIST_OBJECT_ID ), 'Subscription_ListArray' => array( self::LIST_OBJECT_ID ),
-            'Subscription_OutputFormatArray_' . self::LIST_OBJECT_ID => array( 0, 1 ), 'Subscription_StatusId_' . self::LIST_OBJECT_ID => CjwNewsletterSubscription::STATUS_APPROVED ), $extra );
+            'Subscription_IdArray' => array( self::listObjectId() ), 'Subscription_ListArray' => array( self::listObjectId() ),
+            'Subscription_OutputFormatArray_' . self::listObjectId() => array( 0, 1 ), 'Subscription_StatusId_' . self::listObjectId() => CjwNewsletterSubscription::STATUS_APPROVED ), $extra );
     }
 
     public function testUserListShowsAndSearchesUsers()
@@ -160,7 +160,7 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
     public function testSubscriptionListAndView()
     {
         $user = $this->newSubscriber( 'sl' );
-        $r = $this->runView( 'subscription_list', array( self::LIST_NODE_ID ) );
+        $r = $this->runView( 'subscription_list', array( self::listNodeId() ) );
         $this->assertViewOk( $r );
         $sub = $this->subscriptionOf( $user );
         $r = $this->runView( 'subscription_view', array( $sub->attribute( 'id' ) ) );
@@ -335,7 +335,7 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
         $this->loginAnonymous();
         $email = $this->newEmail( 'fmt' );
         $r = $this->runView( 'subscribe', array(), array( 'SubscribeButton' => 'Subscribe', 'Subscription_Email' => $email, 'Subscription_FirstName' => 'A', 'Subscription_LastName' => 'B',
-            'Subscription_ListArray' => array( self::LIST_OBJECT_ID ) ) );
+            'Subscription_ListArray' => array( self::listObjectId() ) ) );
         $this->assertViewOk( $r );
         $this->assertNotNull( $this->subscriptionOf( CjwNewsletterUser::fetchByEmail( $email ) ) );
     }
@@ -348,7 +348,7 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
         if ( $existing )
             $this->markTestSkipped( 'the administrator already is a newsletter user' );
         $r = $this->runView( 'subscribe', array(), array( 'SubscribeButton' => 'Subscribe', 'Subscription_Email' => $email, 'Subscription_FirstName' => 'A', 'Subscription_LastName' => 'B',
-            'Subscription_IdArray' => array( self::LIST_OBJECT_ID ), 'Subscription_ListArray' => array( self::LIST_OBJECT_ID ) ) );
+            'Subscription_IdArray' => array( self::listObjectId() ), 'Subscription_ListArray' => array( self::listObjectId() ) ) );
         $this->assertViewOk( $r );
         $user = CjwNewsletterUser::fetchByEmail( $email );
         $this->assertNotFalse( $user );
@@ -386,7 +386,7 @@ class cjwNewsletterAdminViewsTest extends cjwNewsletterTestCase
     {
         $user = $this->newSubscriber( 'ubl' );
         CjwNewsletterBlacklistItem::create( $user->attribute( 'email' ), '' )->store();
-        $r = $this->runView( 'unsubscribe', array( CjwNewsletterSubscription::fetchByListIdAndNewsletterUserId( self::LIST_OBJECT_ID, $user->attribute( 'id' ) )->attribute( 'hash' ) ) );
+        $r = $this->runView( 'unsubscribe', array( CjwNewsletterSubscription::fetchByListIdAndNewsletterUserId( self::listObjectId(), $user->attribute( 'id' ) )->attribute( 'hash' ) ) );
         $this->assertSame( eZModule::STATUS_FAILED, $r['exit'] );
     }
 

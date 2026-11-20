@@ -57,7 +57,7 @@ class cjwNewsletterIntegrationTest extends cjwNewsletterTestCase
         foreach ( array( 'TransportMethodCronjob', 'TransportMethodPreview', 'TransportMethodDirectly' ) as $name )
             if ( eZINI::instance( 'cjw_newsletter.ini' )->variable( 'NewsletterMailSettings', $name ) !== 'file' )
                 $this->fail( 'The newsletter transport is not the file transport: the test refuses to run.' );
-        $this->savedList = (array)eZDB::instance()->arrayQuery( 'SELECT * FROM cjwnl_list WHERE contentobject_id = ' . self::LIST_OBJECT_ID );
+        $this->savedList = (array)eZDB::instance()->arrayQuery( 'SELECT * FROM cjwnl_list WHERE contentobject_id = ' . self::listObjectId() );
         $this->smsDir = 'var/tmp/nltest-n7-sms-' . getmypid() . '-' . ( ++self::$counter );
         $this->setIni( 'cjw_newsletter.ini', 'MailInSettings', 'MailIn', 'enabled' );
         $this->setIni( 'cjw_newsletter.ini', 'TrackingSettings', 'Tracking', 'enabled' );
@@ -202,7 +202,7 @@ class cjwNewsletterIntegrationTest extends cjwNewsletterTestCase
         $set = array();
         foreach ( $values as $column => $value )
             $set[] = $column . ' = ' . ( is_int( $value ) ? $value : "'" . $db->escapeString( $value ) . "'" );
-        $db->query( 'UPDATE cjwnl_list SET ' . implode( ', ', $set ) . ' WHERE contentobject_id = ' . self::LIST_OBJECT_ID );
+        $db->query( 'UPDATE cjwnl_list SET ' . implode( ', ', $set ) . ' WHERE contentobject_id = ' . self::listObjectId() );
         eZContentObject::clearCache();
         CjwNewsletterRendering::clearCache();
     }
@@ -228,7 +228,7 @@ class cjwNewsletterIntegrationTest extends cjwNewsletterTestCase
 
     protected function testList()
     {
-        return CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        return CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
     }
 
     protected function otherLanguage()
@@ -363,7 +363,7 @@ class cjwNewsletterIntegrationTest extends cjwNewsletterTestCase
 
     protected function newInterest( $identifier, $name )
     {
-        $interest = CjwNewsletterInterest::create( array( 'list_contentobject_id' => self::LIST_OBJECT_ID, 'identifier' => 'nltest_n7_' . $identifier,
+        $interest = CjwNewsletterInterest::create( array( 'list_contentobject_id' => self::listObjectId(), 'identifier' => 'nltest_n7_' . $identifier,
             'name' => $name, 'source' => 'topic', 'eztags_id' => 0, 'is_active' => 1, 'created' => time(), 'modified' => time() ) );
         $interest->store();
         $this->interestIds[] = (int)$interest->attribute( 'id' );
@@ -376,7 +376,7 @@ class cjwNewsletterIntegrationTest extends cjwNewsletterTestCase
         $address = CjwNewsletterMailinAddress::create( array() );
         $email = 'nltest-n7-' . getmypid() . '-' . ( ++self::$counter ) . '-in@' . self::OWN_DOMAIN;
         $errors = CjwNewsletterMailin::storeAddress( $address, array( 'email' => $email, 'plus_tag' => '', 'action' => 'both',
-            'list_contentobject_id' => self::LIST_OBJECT_ID, 'mailbox_id' => 0, 'is_active' => 1 ) );
+            'list_contentobject_id' => self::listObjectId(), 'mailbox_id' => 0, 'is_active' => 1 ) );
         $this->assertSame( array(), $errors );
         $this->mailinIds[] = (int)$address->attribute( 'id' );
         return $address;
@@ -470,7 +470,7 @@ class cjwNewsletterIntegrationTest extends cjwNewsletterTestCase
             'description' => $this->xml( '<paragraph>OTHER intro [[first_name]] <link url_id="' . $urlId . '">NLTEST read</link></paragraph>' . $condition ) ) );
         $source = $this->newEdition( 'NLTEST n7 pool source', false );
         $sourceArticle = $this->newArticle( $source, 'NLTEST n7 picked intro' );
-        $pool = CjwNewsletterArticlePool::create( array( 'name' => 'NLTEST n7 pool ' . getmypid(), 'list_contentobject_id' => self::LIST_OBJECT_ID, 'max_items' => 5,
+        $pool = CjwNewsletterArticlePool::create( array( 'name' => 'NLTEST n7 pool ' . getmypid(), 'list_contentobject_id' => self::listObjectId(), 'max_items' => 5,
             'parent_node_id_array_string' => ';' . (int)$source->attribute( 'main_node_id' ) . ';', 'class_identifier_array_string' => ';cjw_newsletter_article;' ) );
         $pool->store();
         $this->poolIds[] = (int)$pool->attribute( 'id' );
@@ -581,7 +581,7 @@ class cjwNewsletterIntegrationTest extends cjwNewsletterTestCase
         $this->assertNotSame( 'allow', CjwNewsletterSms::decision( CjwNewsletterUser::fetch( $user->attribute( 'id' ) ) ), 'and no SMS' );
 
         // 10. the subscriber export shows the state
-        $csv = CjwNewsletterSubscriberExport::csv( self::LIST_OBJECT_ID, CjwNewsletterSubscriberExport::cleanFilters(
+        $csv = CjwNewsletterSubscriberExport::csv( self::listObjectId(), CjwNewsletterSubscriberExport::cleanFilters(
             array( 'columns' => array( 'email', 'subscription_status', 'language', 'phone_number' ) ) ) );
         $row = null;
         foreach ( preg_split( "/\r?\n/", $csv ) as $line )
@@ -678,7 +678,7 @@ class cjwNewsletterIntegrationTest extends cjwNewsletterTestCase
                 'status' => $data[1], 'output_format' => '0', 'created' => $t, 'confirmed' => $data[1] ? $t : 0, 'approved' => $data[1] ? $t : 0, 'removed' => 0, 'bounce_count' => 0 ) );
         $pdo = null;
         $before = md5_file( $file );
-        $system = eZContentObjectTreeNode::fetch( self::LIST_NODE_ID )->attribute( 'parent' );
+        $system = eZContentObjectTreeNode::fetch( self::listNodeId() )->attribute( 'parent' );
         $options = array( 'create_lists' => true, 'system_node_id' => (int)$system->attribute( 'node_id' ) );
 
         $dry = new CjwNewsletterEznewsletterMigration( CjwNewsletterEznewsletterSource::sqliteFile( $file ), $options + array( 'dry_run' => true ) );

@@ -6,7 +6,7 @@ class cjwNewsletterEditionTest extends cjwNewsletterTestCase
 {
     public function testListContentOfTheTestList()
     {
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
         $this->assertInstanceOf( 'CjwNewsletterList', $list );
         $this->assertTrue( $list->isValid() );
         $this->assertSame( array( 0 => 'HTML', 1 => 'Text' ), $list->attribute( 'output_format_array' ) );
@@ -19,13 +19,13 @@ class cjwNewsletterEditionTest extends cjwNewsletterTestCase
     {
         $this->assertFalse( CjwNewsletterList::fetchByListObjectVersion( 999999999, 0 ) );
         $this->assertFalse( CjwNewsletterList::fetchByListObjectVersion( 1, 0 ), 'the content root has no list attribute' );
-        $this->assertFalse( CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 999 ) );
+        $this->assertFalse( CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 999 ) );
         $this->assertNull( CjwNewsletterList::fetch( 999999999, 1 ) );
     }
 
     public function testListSiteaccessInformation()
     {
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
         $info = $list->getAvailableSiteaccessList();
         $this->assertArrayHasKey( 'site', $info );
         $this->assertArrayHasKey( 'locale', $info['site'] );
@@ -38,7 +38,7 @@ class cjwNewsletterEditionTest extends cjwNewsletterTestCase
     public function testListSubscriberCounts()
     {
         $this->newSubscriber( 'cnt' );
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
         $this->assertGreaterThanOrEqual( 1, $list->getUserCount() );
         $this->assertGreaterThanOrEqual( 1, $list->getSubscriptionObjectCount( CjwNewsletterSubscription::STATUS_APPROVED ) );
         $this->assertGreaterThanOrEqual( 1, count( $list->getSubscriptionObjectArray( CjwNewsletterSubscription::STATUS_APPROVED ) ) );
@@ -182,9 +182,9 @@ class cjwNewsletterEditionTest extends cjwNewsletterTestCase
         $c = 'CjwNewsletterFunctionCollection';
         foreach ( array( 'pending', 'confirmed', 'approved', 'removed', 'bounced', 'blacklisted', '' ) as $status )
         {
-            $r = $c::fetchSubscriptionList( self::LIST_OBJECT_ID, 0, $status, 50, 0, true );
+            $r = $c::fetchSubscriptionList( self::listObjectId(), 0, $status, 50, 0, true );
             $this->assertIsArray( $r['result'], $status );
-            $this->assertIsNumeric( $c::fetchSubscriptionListCount( self::LIST_OBJECT_ID, 0, $status )['result'], $status );
+            $this->assertIsNumeric( $c::fetchSubscriptionListCount( self::listObjectId(), 0, $status )['result'], $status );
         }
         $this->assertSame( array(), $c::fetchSubscriptionList( 999999999, 0, 'approved', 50, 0, true )['result'], 'an unknown list is an empty result and no warning' );
         $this->assertSame( 0, $c::fetchSubscriptionListCount( 999999999, 0, 'approved' )['result'] );

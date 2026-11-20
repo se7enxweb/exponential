@@ -11,7 +11,7 @@ class cjwNewsletterVirtualListTest extends cjwNewsletterTestCase
         $object = $class->instantiate( (int)eZUser::currentUserID(), 0, 0 );
         $object->store();
         eZNodeAssignment::create( array( 'contentobject_id' => $object->attribute( 'id' ), 'contentobject_version' => 1,
-            'parent_node' => self::LIST_NODE_ID, 'is_main' => 1, 'sort_field' => 2, 'sort_order' => 0 ) )->store();
+            'parent_node' => self::listNodeId(), 'is_main' => 1, 'sort_field' => 2, 'sort_order' => 0 ) )->store();
         $map = $object->currentVersion()->dataMap();
         $map['title']->setAttribute( 'data_text', 'NLTEST virtual list' );
         $map['title']->store();
@@ -38,8 +38,8 @@ class cjwNewsletterVirtualListTest extends cjwNewsletterTestCase
         list( $object, $list ) = $this->newVirtualList();
         $this->assertInstanceOf( 'CjwNewsletterListVirtual', $list );
         $this->assertSame( 1, (int)$list->attribute( 'is_virtual' ) );
-        $this->assertSame( self::LIST_OBJECT_ID, (int)$list->getParentListContentObjectId() );
-        $this->assertSame( self::LIST_OBJECT_ID, (int)$list->attribute( 'parent_list_contentobject_id' ) );
+        $this->assertSame( self::listObjectId(), (int)$list->getParentListContentObjectId() );
+        $this->assertSame( self::listObjectId(), (int)$list->attribute( 'parent_list_contentobject_id' ) );
         $this->assertSame( 0, (int)$list->getParentListContentObjectIdByListId( 999999999 ) );
     }
 

@@ -45,7 +45,7 @@ class cjwNewsletterMiscTest extends cjwNewsletterTestCase
         $GLOBALS['eZCurrentAccess']['name'] = 'site';
         $parts = $filter->createSqlParts( array( 'siteaccess' => 'current_siteaccess' ) );
         $this->assertStringContainsString( 'ezcontentobject_tree.contentobject_id IN (', $parts['joins'] );
-        $this->assertStringContainsString( (string)self::LIST_OBJECT_ID, $parts['joins'], 'the test list is on siteaccess site' );
+        $this->assertStringContainsString( (string)self::listObjectId(), $parts['joins'], 'the test list is on siteaccess site' );
         $parts = $filter->createSqlParts( array( 'siteaccess' => array( 'a', 'b' ) ) );
         $this->assertIsString( $parts['joins'] );
         $parts = $filter->createSqlParts( array( 'siteaccess' => "x' OR '1'='1" ) );
@@ -58,8 +58,8 @@ class cjwNewsletterMiscTest extends cjwNewsletterTestCase
         $GLOBALS['eZCurrentAccess']['name'] = 'site';
         $one = $filter->createSqlParts( array( 'siteaccess' => array( 'site' ) ) );
         $two = $filter->createSqlParts( array( 'siteaccess' => array( 'site', 'no_such_access' ) ) );
-        $this->assertStringContainsString( (string)self::LIST_OBJECT_ID, $one['joins'] );
-        $this->assertStringNotContainsString( (string)self::LIST_OBJECT_ID, $two['joins'], 'a list must be on every named siteaccess' );
+        $this->assertStringContainsString( (string)self::listObjectId(), $one['joins'] );
+        $this->assertStringNotContainsString( (string)self::listObjectId(), $two['joins'], 'a list must be on every named siteaccess' );
     }
 
     public function testEditionFilterBuildsAConditionPerStatus()
@@ -145,7 +145,7 @@ class cjwNewsletterMiscTest extends cjwNewsletterTestCase
 
     public function testListDatatypeValidatesTheForm()
     {
-        $attr = eZContentObject::fetch( self::LIST_OBJECT_ID )->dataMap()['newsletter_list'];
+        $attr = eZContentObject::fetch( self::listObjectId() )->dataMap()['newsletter_list'];
         $type = $attr->dataType();
         $this->assertInstanceOf( 'CjwNewsletterListType', $type );
         $id = $attr->attribute( 'id' );

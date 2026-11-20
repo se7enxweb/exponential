@@ -44,10 +44,10 @@ class cjwNewsletterRunnerTest extends cjwNewsletterTestCase
     public function testAnOrphanSubscriptionIsNotListedNotCountedNotMailedAndIsReported()
     {
         $id = $this->orphanSubscription();
-        $ids = array_map( function ( $s ) { return (int)$s->attribute( 'id' ); }, CjwNewsletterSubscription::fetchSubscriptionListByListId( self::LIST_OBJECT_ID, false, 0, 0 ) );
+        $ids = array_map( function ( $s ) { return (int)$s->attribute( 'id' ); }, CjwNewsletterSubscription::fetchSubscriptionListByListId( self::listObjectId(), false, 0, 0 ) );
         $this->assertNotContains( $id, $ids, 'the list of subscriptions skips it' );
-        $approved = CjwNewsletterSubscription::fetchSubscriptionListByListId( self::LIST_OBJECT_ID, CjwNewsletterSubscription::STATUS_APPROVED, 0, 0 );
-        $this->assertSame( count( $approved ), CjwNewsletterSubscription::fetchSubscriptionListByListIdCount( self::LIST_OBJECT_ID, CjwNewsletterSubscription::STATUS_APPROVED ), 'and the count agrees with the list' );
+        $approved = CjwNewsletterSubscription::fetchSubscriptionListByListId( self::listObjectId(), CjwNewsletterSubscription::STATUS_APPROVED, 0, 0 );
+        $this->assertSame( count( $approved ), CjwNewsletterSubscription::fetchSubscriptionListByListIdCount( self::listObjectId(), CjwNewsletterSubscription::STATUS_APPROVED ), 'and the count agrees with the list' );
         $this->assertContains( $id, CjwNewsletterRunner::orphans()['subscriptions'] );
         $summary = CjwNewsletterDashboard::summary();
         $codes = array_map( function ( $p ) { return $p['code']; }, $summary['problems'] );
@@ -162,7 +162,7 @@ class cjwNewsletterRunnerTest extends cjwNewsletterTestCase
         $this->assertGreaterThanOrEqual( 1, $s['users']['confirmed'] );
         $this->assertGreaterThanOrEqual( 1, $s['subscriptions']['approved'] );
         $names = array_map( function ( $l ) { return $l['object_id']; }, $s['lists'] );
-        $this->assertContains( self::LIST_OBJECT_ID, $names );
+        $this->assertContains( self::listObjectId(), $names );
         $this->assertSame( 'file', $s['transport']['method'], 'the tests switch the transport to files' );
         $codes = array_map( function ( $p ) { return $p['code']; }, $s['problems'] );
         $this->assertContains( 'transport_file', $codes );
@@ -185,7 +185,7 @@ class cjwNewsletterRunnerTest extends cjwNewsletterTestCase
             $errorsAfter = isset( $GLOBALS['eZDebugErrorCount'] ) ? (int)$GLOBALS['eZDebugErrorCount'] : 0;
             $ids = array_map( function ( $l ) { return (int)$l['object_id']; }, $s['lists'] );
             $this->assertNotContains( $objectId, $ids, 'the orphan row is no list' );
-            $this->assertContains( self::LIST_OBJECT_ID, $ids, 'the real lists are still there' );
+            $this->assertContains( self::listObjectId(), $ids, 'the real lists are still there' );
             $this->assertSame( $errorsBefore, $errorsAfter, 'no debug error for the missing object' );
             $this->assertNull( CjwNewsletterUtils::contentObject( $objectId ) );
         }

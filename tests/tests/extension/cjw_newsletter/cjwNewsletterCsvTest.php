@@ -136,22 +136,22 @@ class cjwNewsletterCsvTest extends cjwNewsletterTestCase
     public function testExportViewPreviewListsTheSubscribers()
     {
         $user = $this->newSubscriber( 'exp' );
-        $r = $this->runView( 'subscription_list_csvexport', array( self::LIST_NODE_ID ) );
+        $r = $this->runView( 'subscription_list_csvexport', array( self::listNodeId() ) );
         $this->assertViewOk( $r );
         $this->assertStringContainsString( $user->attribute( 'email' ), $r['content'] );
         $this->assertTrue( function_exists( 'getDataForCsv' ) || function_exists( '\\getDataForCsv' ) );
-        $data = getDataForCsv( self::LIST_OBJECT_ID, 0 );
+        $data = getDataForCsv( self::listObjectId(), 0 );
         $this->assertIsArray( $data );
         $this->assertContains( 'email', $data[0] );
-        $this->assertCount( 1, array_slice( getDataForCsv( self::LIST_OBJECT_ID, 1 ), 1 ), 'the limit applies' );
+        $this->assertCount( 1, array_slice( getDataForCsv( self::listObjectId(), 1 ), 1 ), 'the limit applies' );
     }
 
     public function testImportViewShowsTheUploadFormAndRefusesAnUnknownList()
     {
-        $this->assertViewOk( $this->runView( 'subscription_list_csvimport', array( self::LIST_NODE_ID, 0 ) ) );
+        $this->assertViewOk( $this->runView( 'subscription_list_csvimport', array( self::listNodeId(), 0 ) ) );
         $r = $this->runView( 'subscription_list_csvimport', array( 999999999, 0 ) );
         $this->assertSame( eZModule::STATUS_FAILED, $r['exit'] );
-        $r = $this->runView( 'subscription_list_csvimport', array( self::LIST_NODE_ID, 999999999 ) );
+        $r = $this->runView( 'subscription_list_csvimport', array( self::listNodeId(), 999999999 ) );
         $this->assertSame( eZModule::STATUS_FAILED, $r['exit'] );
     }
 
@@ -165,12 +165,12 @@ class cjwNewsletterCsvTest extends cjwNewsletterTestCase
         CjwNewsletterBlacklistItem::create( $blocked->attribute( 'email' ), '' )->store();
         $dir = eZSys::varDirectory() . '/cjw_newsletter/csvimport';
         $file = $this->csvFile( "$good1;Ann;Tester;1\nnot-an-address;X;Y;1\n$good2;Bob;Test;2\n" . $blocked->attribute( 'email' ) . ";Blocked;User;1\n", $dir );
-        $import = CjwNewsletterImport::create( self::LIST_OBJECT_ID, 'cjwnl_csv', 'nltest', $file );
+        $import = CjwNewsletterImport::create( self::listObjectId(), 'cjwnl_csv', 'nltest', $file );
         $import->store();
         $this->createdImportIds[] = (int)$import->attribute( 'id' );
         $this->files[] = eZSys::siteDir() . $dir . '/' . $import->attribute( 'id' ) . '-import_result.serialize';
 
-        $r = $this->runView( 'subscription_list_csvimport', array( self::LIST_NODE_ID, $import->attribute( 'id' ) ),
+        $r = $this->runView( 'subscription_list_csvimport', array( self::listNodeId(), $import->attribute( 'id' ) ),
             array( 'ImportButton' => 'Import', 'CsvDelimiter' => ';', 'SelectedOutputFormatArray' => array( 0 ) ) );
         $this->assertViewOk( $r );
         foreach ( array( $good1 => 'Ann', $good2 => 'Bob' ) as $email => $first )
@@ -205,20 +205,20 @@ class cjwNewsletterCsvTest extends cjwNewsletterTestCase
     public function testImportViewIgnoresAPostedPathOutsideTheImportDirectory()
     {
         $secret = $this->csvFile( "secret-address@example.invalid;Secret;Person;1\n" );
-        $r = $this->runView( 'subscription_list_csvimport', array( self::LIST_NODE_ID, 0 ), array( 'CsvFilePath' => $secret, 'CsvDelimiter' => ';' ) );
+        $r = $this->runView( 'subscription_list_csvimport', array( self::listNodeId(), 0 ), array( 'CsvFilePath' => $secret, 'CsvDelimiter' => ';' ) );
         $this->assertViewOk( $r );
         $this->assertStringNotContainsString( 'secret-address@example.invalid', $r['content'] );
     }
 
     public function testImportViewRefusesAnUnsupportedDelimiter()
     {
-        $r = $this->runView( 'subscription_list_csvimport', array( self::LIST_NODE_ID, 0 ), array( 'CsvDelimiter' => 'x' ) );
+        $r = $this->runView( 'subscription_list_csvimport', array( self::listNodeId(), 0 ), array( 'CsvDelimiter' => 'x' ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
     }
 
     public function testImportObjectFetchesAndCounts()
     {
-        $import = CjwNewsletterImport::create( self::LIST_OBJECT_ID, 'cjwnl_csv', 'nltest note', '/x.csv', 'nltest-remote' );
+        $import = CjwNewsletterImport::create( self::listObjectId(), 'cjwnl_csv', 'nltest note', '/x.csv', 'nltest-remote' );
         $import->store();
         $this->createdImportIds[] = (int)$import->attribute( 'id' );
         $this->assertFalse( $import->isImported() );

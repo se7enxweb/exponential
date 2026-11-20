@@ -195,7 +195,7 @@ class cjwNewsletterUserTest extends cjwNewsletterTestCase
     public function testFilteredListFindsUsersBySubscription()
     {
         $user = $this->newSubscriber( 'filt' );
-        $list = CjwNewsletterUser::fetchUserListByFilter( array( array( 'cjwnl_subscription.list_contentobject_id' => array( array( self::LIST_OBJECT_ID ) ) ),
+        $list = CjwNewsletterUser::fetchUserListByFilter( array( array( 'cjwnl_subscription.list_contentobject_id' => array( array( self::listObjectId() ) ) ),
                                                                   array( 'cjwnl_user.email' => array( 'like', '%' . $user->attribute( 'email' ) . '%' ) ) ), 50, 0 );
         $this->assertCount( 1, $list );
         $none = CjwNewsletterUser::fetchUserListByFilter( array( array( 'cjwnl_user.email' => array( 'like', "%x' OR '1'='1%" ) ) ), 0, 0 );
@@ -228,7 +228,7 @@ class cjwNewsletterUserTest extends cjwNewsletterTestCase
     {
         $user = $this->newSubscriber( 'arr' );
         $array = $user->getSubscriptionArray();
-        $this->assertSame( array( self::LIST_OBJECT_ID ), array_keys( $array ) );
+        $this->assertSame( array( self::listObjectId() ), array_keys( $array ) );
     }
 
     public function testBlacklistedAddressCannotBeConfirmedBack()

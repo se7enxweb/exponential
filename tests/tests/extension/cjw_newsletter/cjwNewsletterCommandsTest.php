@@ -105,7 +105,7 @@ class cjwNewsletterCommandsTest extends cjwNewsletterTestCase
         $this->assertSame( 1, $code );
         $this->assertStringContainsString( '--import-id', $out );
         // an import whose file is somewhere else is refused, whatever the row says
-        $import = CjwNewsletterImport::create( self::LIST_OBJECT_ID, 'cjwnl_csv', 'nltest', '/etc/passwd' );
+        $import = CjwNewsletterImport::create( self::listObjectId(), 'cjwnl_csv', 'nltest', '/etc/passwd' );
         $import->store();
         $this->createdImportIds[] = (int)$import->attribute( 'id' );
         list( $code, $out ) = $this->command( 'import', array( '--import-id=' . $import->attribute( 'id' ) ) );
@@ -126,7 +126,7 @@ class cjwNewsletterCommandsTest extends cjwNewsletterTestCase
         $file = $dir . '/nltest-' . getmypid() . '-' . ( ++self::$counter ) . '.csv';
         file_put_contents( $file, "email;first_name;last_name;salutation\n$one;Cmd;One;1\nnot-an-address;X;Y;1\n$two;Cmd;Two;2\n" );
         $this->files[] = $file;
-        $import = CjwNewsletterImport::create( self::LIST_OBJECT_ID, 'cjwnl_csv', 'nltest', $file );
+        $import = CjwNewsletterImport::create( self::listObjectId(), 'cjwnl_csv', 'nltest', $file );
         $import->store();
         $this->createdImportIds[] = (int)$import->attribute( 'id' );
         $this->files[] = CjwNewsletterImport::resultFilePath( $import->attribute( 'id' ) );
@@ -177,7 +177,7 @@ class cjwNewsletterCommandsTest extends cjwNewsletterTestCase
     {
         // the stored file is written by the view; a folder that is not writable gives a notice, not an import without rows
         $dir = eZSys::varDirectory() . '/cjw_newsletter/csvimport';
-        $r = $this->runView( 'subscription_list_csvimport', array( self::LIST_NODE_ID, 0 ) );
+        $r = $this->runView( 'subscription_list_csvimport', array( self::listNodeId(), 0 ) );
         $this->assertViewOk( $r );
         $this->assertStringContainsString( 'nl-', $r['content'] . 'nl-', 'the page renders with the notices include' );
         $this->assertDirectoryExists( dirname( $dir ) );

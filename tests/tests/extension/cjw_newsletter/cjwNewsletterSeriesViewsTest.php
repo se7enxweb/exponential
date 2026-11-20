@@ -33,7 +33,7 @@ class cjwNewsletterSeriesViewsTest extends cjwNewsletterTestCase
         parent::setUp();
         if ( !class_exists( 'CjwNewsletterSeries' ) )
             $this->markTestSkipped( 'the series classes are not loaded' );
-        if ( CjwNewsletterSeries::fetchByList( self::LIST_OBJECT_ID ) !== null )
+        if ( CjwNewsletterSeries::fetchByList( self::listObjectId() ) !== null )
             $this->markTestSkipped( 'the list already has a series, which a test must not touch' );
     }
 
@@ -57,10 +57,10 @@ class cjwNewsletterSeriesViewsTest extends cjwNewsletterTestCase
     protected function storedSeries()
     {
         $edition = $this->newEdition();
-        $r = $this->runView( 'series_edit', array( self::LIST_OBJECT_ID ),
+        $r = $this->runView( 'series_edit', array( self::listObjectId() ),
             array( 'AddStepButton' => 'Add', 'Audience' => 0, 'NewEdition' => (int)$edition->attribute( 'id' ), 'NewDelay' => 0 ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
-        $series = CjwNewsletterSeries::fetchByList( self::LIST_OBJECT_ID );
+        $series = CjwNewsletterSeries::fetchByList( self::listObjectId() );
         $this->assertNotNull( $series );
         $this->seriesIds[] = (int)$series->attribute( 'id' );
         return $series;
@@ -68,16 +68,16 @@ class cjwNewsletterSeriesViewsTest extends cjwNewsletterTestCase
 
     public function testPageRenders()
     {
-        $new = $this->runView( 'series_edit', array( self::LIST_OBJECT_ID ) );
+        $new = $this->runView( 'series_edit', array( self::listObjectId() ) );
         $this->assertSame( eZModule::STATUS_OK, $new['exit'] );
         $this->assertNotEmpty( $new['content'] );
 
         $this->storedSeries();
-        $with = $this->runView( 'series_edit', array( self::LIST_OBJECT_ID ) );
+        $with = $this->runView( 'series_edit', array( self::listObjectId() ) );
         $this->assertSame( eZModule::STATUS_OK, $with['exit'] );
         $this->assertNotEmpty( $with['content'] );
 
-        $foreign = $this->runView( 'series_edit', array( self::LIST_OBJECT_ID + 100000 ) );
+        $foreign = $this->runView( 'series_edit', array( self::listObjectId() + 100000 ) );
         $this->assertSame( eZModule::STATUS_FAILED, $foreign['exit'], 'an unknown list is not served' );
         $this->assertStringNotContainsString( 'newsletter-series_edit', (string)$foreign['content'], 'only the error page, not the series page' );
     }
@@ -87,13 +87,13 @@ class cjwNewsletterSeriesViewsTest extends cjwNewsletterTestCase
         $series = $this->storedSeries();
         $this->assertTrue( $series->isPaused(), 'a new series starts paused' );
 
-        $r = $this->runView( 'series_edit', array( self::LIST_OBJECT_ID ), array( 'ResumeButton' => array( 0 => 'Resume' ) ) );
+        $r = $this->runView( 'series_edit', array( self::listObjectId() ), array( 'ResumeButton' => array( 0 => 'Resume' ) ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
-        $this->assertFalse( CjwNewsletterSeries::fetchByList( self::LIST_OBJECT_ID )->isPaused() );
+        $this->assertFalse( CjwNewsletterSeries::fetchByList( self::listObjectId() )->isPaused() );
 
-        $r = $this->runView( 'series_edit', array( self::LIST_OBJECT_ID ), array( 'PauseButton' => array( 0 => 'Pause' ) ) );
+        $r = $this->runView( 'series_edit', array( self::listObjectId() ), array( 'PauseButton' => array( 0 => 'Pause' ) ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
-        $this->assertTrue( CjwNewsletterSeries::fetchByList( self::LIST_OBJECT_ID )->isPaused() );
+        $this->assertTrue( CjwNewsletterSeries::fetchByList( self::listObjectId() )->isPaused() );
     }
 
     public function testStepTestedMailsOnlyTheEditorAndChangesNoMember()
@@ -107,7 +107,7 @@ class cjwNewsletterSeriesViewsTest extends cjwNewsletterTestCase
         $memberRows = eZDB::instance()->arrayQuery( 'SELECT * FROM cjwnl_series_member WHERE series_id = ' . (int)$series->attribute( 'id' ) );
         $before = $this->outbox();
 
-        $r = $this->runView( 'series_edit', array( self::LIST_OBJECT_ID ), array( 'SendTestButton' => array( $stepId => 'Send to me' ) ) );
+        $r = $this->runView( 'series_edit', array( self::listObjectId() ), array( 'SendTestButton' => array( $stepId => 'Send to me' ) ) );
         $this->assertSame( eZModule::STATUS_REDIRECT, $r['exit'] );
 
         // a test mail goes out once per output format of the list (as on the send page), every one to the editor

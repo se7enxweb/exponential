@@ -49,7 +49,7 @@ class cjwNewsletterSegmentSendTest extends cjwNewsletterTestCase
     protected function newSegment( $listId = null )
     {
         $segment = CjwNewsletterSegment::create( array(
-            'list_contentobject_id' => $listId === null ? self::LIST_OBJECT_ID : $listId,
+            'list_contentobject_id' => $listId === null ? self::listObjectId() : $listId,
             'name' => 'nltest segment',
             'match_mode' => 'all',
             'conditions' => json_encode( array( array( 'type' => 'subscribed_within', 'field' => 'created', 'days' => 1 ) ) ),
@@ -93,7 +93,7 @@ class cjwNewsletterSegmentSendTest extends cjwNewsletterTestCase
         for ( $n = 0; $n < 120; $n++ )
             $users[] = $this->newSubscriber( 'sg' . $n );
         $segment = $this->newSegment();
-        $options = CjwNewsletterSegmentHooks::sendFormOptions( self::LIST_OBJECT_ID, true );
+        $options = CjwNewsletterSegmentHooks::sendFormOptions( self::listObjectId(), true );
         $counts = array();
         foreach ( $options as $option )
             $counts[$option['id']] = $option['count'];
@@ -127,7 +127,7 @@ class cjwNewsletterSegmentSendTest extends cjwNewsletterTestCase
         // the send view hands the hooks the edition's content object version, not the datatype content
         $version = eZContentObject::fetch( $object->attribute( 'id' ) )->attribute( 'current' );
         $own = $this->newSegment();
-        $foreign = $this->newSegment( self::LIST_OBJECT_ID + 100000 );
+        $foreign = $this->newSegment( self::listObjectId() + 100000 );
 
         $_POST = array( 'CjwNewsletterSegmentId' => (string)$foreign->attribute( 'id' ) );
         $this->assertNotEmpty( CjwNewsletterSegmentHooks::sendFormValidate( $http, $version ) );

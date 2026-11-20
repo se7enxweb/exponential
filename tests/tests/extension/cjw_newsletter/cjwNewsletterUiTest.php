@@ -123,9 +123,9 @@ class cjwNewsletterUiTest extends cjwNewsletterTestCase
 
     public function testImportAndMailboxListsPageAndShowTheNewestFirst()
     {
-        $a = CjwNewsletterImport::create( self::LIST_OBJECT_ID, 'cjwnl_csv', 'nltest first', '' );
+        $a = CjwNewsletterImport::create( self::listObjectId(), 'cjwnl_csv', 'nltest first', '' );
         $a->store();
-        $b = CjwNewsletterImport::create( self::LIST_OBJECT_ID, 'cjwnl_csv', 'nltest second', '' );
+        $b = CjwNewsletterImport::create( self::listObjectId(), 'cjwnl_csv', 'nltest second', '' );
         $b->store();
         $this->createdImportIds[] = (int)$a->attribute( 'id' );
         $this->createdImportIds[] = (int)$b->attribute( 'id' );

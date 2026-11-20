@@ -131,7 +131,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
     private function mappedImport( $text, $mapping = null, $settings = array(), $consentSource = 'NLTEST trade fair sign-up' )
     {
         $path = $this->uploadFile( $text );
-        $import = CjwNewsletterImport::create( self::LIST_OBJECT_ID, CjwNewsletterMappedImport::TYPE, 'NLTEST import' );
+        $import = CjwNewsletterImport::create( self::listObjectId(), CjwNewsletterMappedImport::TYPE, 'NLTEST import' );
         $import->setAttribute( 'consent_source', $consentSource );
         $import->store();
         $this->createdImportIds[] = (int)$import->attribute( 'id' );
@@ -364,7 +364,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         $filters = CjwNewsletterSubscriberExport::cleanFilters( array( 'statuses' => array( CjwNewsletterSubscription::STATUS_APPROVED ),
                                                                        'columns' => array( 'email', 'first_name', 'last_name', 'subscription_status', 'bogus' ) ) );
         $this->assertSame( array( 'email', 'first_name', 'last_name', 'subscription_status' ), $filters['columns'] );
-        $csv = CjwNewsletterSubscriberExport::csv( self::LIST_OBJECT_ID, $filters );
+        $csv = CjwNewsletterSubscriberExport::csv( self::listObjectId(), $filters );
         $this->assertStringStartsWith( "\xEF\xBB\xBF" . 'email;first_name;last_name;subscription_status', $csv );
         $this->assertStringContainsString( $user->attribute( 'email' ), $csv );
         $this->assertStringNotContainsString( $pending->attribute( 'email' ), $csv, 'the status filter' );
@@ -373,7 +373,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         $this->assertSame( '-5', CjwNewsletterSubscriberExport::defuse( '-5' ), 'a number stays a number' );
         $this->assertStringContainsString( ';approved', $csv );
         $all = CjwNewsletterSubscriberExport::cleanFilters( array() );
-        $this->assertGreaterThanOrEqual( 2, CjwNewsletterSubscriberExport::count( self::LIST_OBJECT_ID, $all ) );
+        $this->assertGreaterThanOrEqual( 2, CjwNewsletterSubscriberExport::count( self::listObjectId(), $all ) );
     }
 
     public function testExportFiltersByDate()
@@ -382,11 +382,11 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         $sub = $this->subscriptionOf( $user );
         eZDB::instance()->query( 'UPDATE cjwnl_subscription SET created = ' . mktime( 12, 0, 0, 3, 15, 2001 ) . ' WHERE id = ' . (int)$sub->attribute( 'id' ) );
         $in = CjwNewsletterSubscriberExport::cleanFilters( array( 'date_field' => 'subscribed', 'date_from' => '2001-03-15', 'date_to' => '2001-03-15', 'columns' => array( 'email', 'subscribed' ) ) );
-        $rows = CjwNewsletterSubscriberExport::fetchRows( self::LIST_OBJECT_ID, $in );
+        $rows = CjwNewsletterSubscriberExport::fetchRows( self::listObjectId(), $in );
         $this->assertSame( array( $user->attribute( 'email' ) ), array_column( $rows, 'email' ) );
         $this->assertStringStartsWith( '2001-03-15T', $rows[0]['subscribed'] );
         $out = CjwNewsletterSubscriberExport::cleanFilters( array( 'date_from' => '2001-03-16', 'date_to' => '2001-03-20' ) );
-        $this->assertNotContains( $user->attribute( 'email' ), array_column( CjwNewsletterSubscriberExport::fetchRows( self::LIST_OBJECT_ID, $out ), 'email' ) );
+        $this->assertNotContains( $user->attribute( 'email' ), array_column( CjwNewsletterSubscriberExport::fetchRows( self::listObjectId(), $out ), 'email' ) );
         $this->assertSame( 0, CjwNewsletterSubscriberExport::day( '2001-02-30', false ), 'not a date' );
     }
 
@@ -441,7 +441,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         $file = $this->oldDatabase();
         $e = $this->oldRows();
         $before = md5_file( $file );
-        $totals = $this->migrate( $file, array( 'dry_run' => true, 'list_map' => array( 1 => self::LIST_OBJECT_ID ) ) );
+        $totals = $this->migrate( $file, array( 'dry_run' => true, 'list_map' => array( 1 => self::listObjectId() ) ) );
         $this->assertSame( '', $totals['error'] );
         $this->assertTrue( $totals['dry_run'] );
         $this->assertSame( 4, $totals['subscriptions']['created'], 'ann, confirmed, removed, existing' );
@@ -462,11 +462,11 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         $existing = CjwNewsletterUser::create( $e['existing'], 0, 'Kept', '', false, CjwNewsletterUser::STATUS_PENDING, 'default', '', '', '', '' );
         $existing->setAttribute( 'status', CjwNewsletterUser::STATUS_CONFIRMED );
         $existing->store();
-        $existingSub = CjwNewsletterSubscription::create( self::LIST_OBJECT_ID, $existing->attribute( 'id' ), array( 0 ), CjwNewsletterSubscription::STATUS_APPROVED );
+        $existingSub = CjwNewsletterSubscription::create( self::listObjectId(), $existing->attribute( 'id' ), array( 0 ), CjwNewsletterSubscription::STATUS_APPROVED );
         $existingSub->store();
         $before = md5_file( $file );
 
-        $totals = $this->migrate( $file, array( 'list_map' => array( 1 => self::LIST_OBJECT_ID ) ) );
+        $totals = $this->migrate( $file, array( 'list_map' => array( 1 => self::listObjectId() ) ) );
         $this->assertSame( '', $totals['error'] );
         $this->assertSame( 3, $totals['subscriptions']['created'] );
         $this->assertSame( 1, $totals['subscriptions']['merged'] );
@@ -510,7 +510,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         $this->assertSame( $before, md5_file( $file ), 'the old tables are never changed' );
 
         // idempotent: a second run takes nothing over twice
-        $again = $this->migrate( $file, array( 'list_map' => array( 1 => self::LIST_OBJECT_ID ) ) );
+        $again = $this->migrate( $file, array( 'list_map' => array( 1 => self::listObjectId() ) ) );
         $this->assertSame( 0, $again['subscriptions']['created'] );
         $this->assertSame( 4, $again['reasons']['already_migrated'] );
         $this->assertSame( 0, $again['sends'], 'the sends are recorded once' );
@@ -524,7 +524,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
             $this->markTestSkipped( 'the e-mail preferences are not installed' );
         $file = $this->oldDatabase();
         $e = $this->oldRows();
-        $system = eZContentObjectTreeNode::fetch( self::LIST_NODE_ID )->attribute( 'parent' );
+        $system = eZContentObjectTreeNode::fetch( self::listNodeId() )->attribute( 'parent' );
         $dry = $this->migrate( $file, array( 'dry_run' => true, 'create_lists' => true, 'system_node_id' => $system->attribute( 'node_id' ), 'robinson_to_suppression' => true ) );
         $this->assertSame( 2, $dry['lists']['created'] );
         $this->assertSame( 1, $dry['robinson']['suppressed'] );
@@ -577,7 +577,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
 
     public function testUploadFormAndMappingViewRender()
     {
-        $r = $this->runView( 'import_mapping', array( 0 ), array(), array( 'list' => self::LIST_NODE_ID ) );
+        $r = $this->runView( 'import_mapping', array( 0 ), array(), array( 'list' => self::listNodeId() ) );
         $this->assertViewOk( $r, 'upload form' );
         $this->assertStringContainsString( 'name="UploadCsvFile"', $r['content'] );
         $this->assertStringContainsString( 'name="ConsentSource"', $r['content'] );
@@ -600,7 +600,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
 
         $r = $this->runView( 'import_mapping', array( $id ), $post + array( 'SaveMappingButton' => '1', 'MappingName' => 'NLTEST mapping' ) );
         $this->assertViewOk( $r, 'save mapping' );
-        $saved = CjwNewsletterImportMapping::fetchListByListContentobjectId( self::LIST_OBJECT_ID );
+        $saved = CjwNewsletterImportMapping::fetchListByListContentobjectId( self::listObjectId() );
         $this->assertSame( 'NLTEST mapping', $saved[0]->attribute( 'name' ) );
         $this->assertSame( array( 'E-Mail' => 'email', 'Vorname' => 'first_name' ), json_decode( $saved[0]->attribute( 'mapping' ), true ) );
 
@@ -627,7 +627,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
     public function testExportAndMigrationLogViewsRender()
     {
         $this->newSubscriber( 'n6exportview' );
-        $r = $this->runView( 'subscriber_export', array( self::LIST_OBJECT_ID ) );
+        $r = $this->runView( 'subscriber_export', array( self::listObjectId() ) );
         $this->assertViewOk( $r, 'export form' );
         $this->assertStringContainsString( 'name="Columns[]"', $r['content'] );
         // the preview holds the first ten rows of the list, which other test data may fill: check the table and the count
@@ -637,7 +637,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
 
         $file = $this->oldDatabase();
         $this->oldRows();
-        $totals = $this->migrate( $file, array( 'dry_run' => true, 'list_map' => array( 1 => self::LIST_OBJECT_ID ) ) );
+        $totals = $this->migrate( $file, array( 'dry_run' => true, 'list_map' => array( 1 => self::listObjectId() ) ) );
         $r = $this->runView( 'migration_log' );
         $this->assertViewOk( $r, 'runs' );
         $this->assertStringContainsString( $totals['run_id'], $r['content'] );
@@ -657,7 +657,7 @@ class cjwNewsletterImportExportTest extends cjwNewsletterTestCase
         $file = $this->oldDatabase();
         $this->oldRows();
         $line = array( PHP_BINARY, 'extension/cjw_newsletter/bin/php/import-eznewsletter.php', '-s', 'admin', '--allow-root-user',
-                       '--dry-run', '--source-sqlite=' . $file, '--list-map=1:' . self::LIST_OBJECT_ID );
+                       '--dry-run', '--source-sqlite=' . $file, '--list-map=1:' . self::listObjectId() );
         $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, eZSys::rootDir(),
                               array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin' ) );
         $out = stream_get_contents( $pipes[1] ) . stream_get_contents( $pipes[2] );

@@ -46,7 +46,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $this->setIni( 'cjw_newsletter.ini', 'ApprovalSettings', 'ApproverUserIds', array( $this->adminId() ) );
         $this->setIni( 'cjw_newsletter.ini', 'ApprovalSettings', 'ApproverGroupIds', array() );
         $this->setIni( 'cjw_newsletter.ini', 'ApprovalSettings', 'AllowSelfApproval', 'disabled' );
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
         $this->savedList = array( 'approval_required' => (int)$list->attribute( 'approval_required' ), 'article_pool_id' => (int)$list->attribute( 'article_pool_id' ) );
     }
 
@@ -97,7 +97,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
             $this->poolIds = array();
             if ( $this->savedList !== null )
             {
-                $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+                $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
                 foreach ( $this->savedList as $column => $value )
                     $list->setAttribute( $column, $value );
                 $list->store();
@@ -117,7 +117,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
     /** @return CjwNewsletterSchedule stored, removed in tearDown */
     protected function newSchedule( $row = array() )
     {
-        $schedule = CjwNewsletterSchedule::create( array_merge( array( 'list_contentobject_id' => self::LIST_OBJECT_ID, 'mode' => 'latest',
+        $schedule = CjwNewsletterSchedule::create( array_merge( array( 'list_contentobject_id' => self::listObjectId(), 'mode' => 'latest',
             'recurrence_type' => 'w', 'recurrence_value' => '1', 'send_time' => 8 * 3600, 'timezone' => 'Europe/Berlin',
             'creator_contentobject_id' => $this->adminId(), 'created' => time() ), $row ) );
         $schedule->store();
@@ -136,7 +136,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
 
     protected function setList( $column, $value )
     {
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
         $list->setAttribute( $column, $value );
         $list->store();
     }
@@ -167,7 +167,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
     /** Every unsent edition of the test list that is not one of this test's: they would be taken by mode latest. */
     protected function foreignUnsentEdition()
     {
-        $found = CjwNewsletterEditionBuilder::latestUnsentEdition( self::LIST_OBJECT_ID );
+        $found = CjwNewsletterEditionBuilder::latestUnsentEdition( self::listObjectId() );
         return $found && !in_array( (int)$found->attribute( 'id' ), $this->createdObjectIds ) ? $found : null;
     }
 
@@ -269,23 +269,23 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
     public function testED07ForListFallsBackFromTheListToTheDefaultToTheSettings()
     {
         $default = CjwNewsletterArticlePool::fetchDefault();
-        $fallback = CjwNewsletterArticlePool::forList( self::LIST_OBJECT_ID );
-        if ( !$default && !CjwNewsletterArticlePool::fetchListByListContentobjectId( self::LIST_OBJECT_ID ) && !$this->savedList['article_pool_id'] )
+        $fallback = CjwNewsletterArticlePool::forList( self::listObjectId() );
+        if ( !$default && !CjwNewsletterArticlePool::fetchListByListContentobjectId( self::listObjectId() ) && !$this->savedList['article_pool_id'] )
         {
             $this->assertFalse( $fallback->isStored(), 'without any pool the settings make one' );
             $this->assertSame( array( 'cjw_newsletter_article' ), $fallback->classIdentifiers() );
             $this->assertNotEmpty( $fallback->parentNodeIds() );
         }
-        $own = $this->newPool( array( 'list_contentobject_id' => self::LIST_OBJECT_ID, 'parent_node_id_array_string' => ';2;' ) );
+        $own = $this->newPool( array( 'list_contentobject_id' => self::listObjectId(), 'parent_node_id_array_string' => ';2;' ) );
         $this->setList( 'article_pool_id', 0 );
-        $this->assertSame( (int)$own->attribute( 'id' ), (int)CjwNewsletterArticlePool::forList( self::LIST_OBJECT_ID )->attribute( 'id' ), 'the pool made for the list' );
+        $this->assertSame( (int)$own->attribute( 'id' ), (int)CjwNewsletterArticlePool::forList( self::listObjectId() )->attribute( 'id' ), 'the pool made for the list' );
         $named = $this->newPool( array( 'parent_node_id_array_string' => ';2;' ) );
         $this->setList( 'article_pool_id', (int)$named->attribute( 'id' ) );
-        $this->assertSame( (int)$named->attribute( 'id' ), (int)CjwNewsletterArticlePool::forList( self::LIST_OBJECT_ID )->attribute( 'id' ), 'the pool the list names wins' );
+        $this->assertSame( (int)$named->attribute( 'id' ), (int)CjwNewsletterArticlePool::forList( self::listObjectId() )->attribute( 'id' ), 'the pool the list names wins' );
         // the named pool is removed: the list falls back and no longer names it
         $named->removePool();
-        $this->assertSame( 0, (int)CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 )->attribute( 'article_pool_id' ) );
-        $this->assertSame( (int)$own->attribute( 'id' ), (int)CjwNewsletterArticlePool::forList( self::LIST_OBJECT_ID )->attribute( 'id' ) );
+        $this->assertSame( 0, (int)CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 )->attribute( 'article_pool_id' ) );
+        $this->assertSame( (int)$own->attribute( 'id' ), (int)CjwNewsletterArticlePool::forList( self::listObjectId() )->attribute( 'id' ) );
         // a list that does not exist gets the default (stored or from the settings)
         $this->assertInstanceOf( 'CjwNewsletterArticlePool', CjwNewsletterArticlePool::forList( 999999999 ) );
         // makeDefault() leaves one default
@@ -371,12 +371,12 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $old = $this->newEdition( 'NLTEST old edition' );
         sleep( 1 );
         $new = $this->newEdition( 'NLTEST new edition' );
-        $found = CjwNewsletterEditionBuilder::latestUnsentEdition( self::LIST_OBJECT_ID );
+        $found = CjwNewsletterEditionBuilder::latestUnsentEdition( self::listObjectId() );
         if ( $this->foreignUnsentEdition() )
             $this->markTestSkipped( 'another unsent edition of the list (made in parallel) is newer' );
         $this->assertSame( (int)$new->attribute( 'id' ), (int)$found->attribute( 'id' ) );
         $this->markSent( $new );
-        $found = CjwNewsletterEditionBuilder::latestUnsentEdition( self::LIST_OBJECT_ID );
+        $found = CjwNewsletterEditionBuilder::latestUnsentEdition( self::listObjectId() );
         $this->assertNotSame( (int)$new->attribute( 'id' ), (int)$found->attribute( 'id' ), 'a sent edition is skipped' );
         if ( !$this->foreignUnsentEdition() )
             $this->assertSame( (int)$old->attribute( 'id' ), (int)$found->attribute( 'id' ), 'the next newest unsent one' );
@@ -387,19 +387,19 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
     public function testED12ACopyOfATemplateEditionWithItsArticles()
     {
         $template = $this->newEdition( 'NLTEST template' );
-        $copy = CjwNewsletterEditionBuilder::copyEdition( $template, self::LIST_OBJECT_ID, 'NLTEST template copy' );
+        $copy = CjwNewsletterEditionBuilder::copyEdition( $template, self::listObjectId(), 'NLTEST template copy' );
         $this->assertInstanceOf( 'eZContentObject', $copy );
         $this->createdObjectIds[] = (int)$copy->attribute( 'id' );
         $this->assertNotSame( (int)$template->attribute( 'id' ), (int)$copy->attribute( 'id' ) );
         $this->assertSame( 'NLTEST template copy', $copy->attribute( 'name' ) );
         $this->assertSame( eZContentObject::STATUS_PUBLISHED, (int)$copy->attribute( 'status' ) );
-        $this->assertSame( self::LIST_NODE_ID, (int)$copy->attribute( 'main_node' )->attribute( 'parent_node_id' ) );
+        $this->assertSame( self::listNodeId(), (int)$copy->attribute( 'main_node' )->attribute( 'parent_node_id' ) );
         $content = CjwNewsletterEditionBuilder::editionContent( $copy );
         $this->assertInstanceOf( 'CjwNewsletterEdition', $content, 'the copy has its newsletter data' );
         $this->assertTrue( $content->isDraft() );
         $children = $copy->attribute( 'main_node' )->subTree( array( 'Depth' => 1, 'ClassFilterType' => 'include', 'ClassFilterArray' => array( 'cjw_newsletter_article' ) ) );
         $this->assertCount( 1, $children, 'the article of the template comes along' );
-        $this->assertFalse( CjwNewsletterEditionBuilder::copyEdition( $this->newArticle( $template, 'x' ), self::LIST_OBJECT_ID ), 'only editions are copied' );
+        $this->assertFalse( CjwNewsletterEditionBuilder::copyEdition( $this->newArticle( $template, 'x' ), self::listObjectId() ), 'only editions are copied' );
         $this->assertFalse( CjwNewsletterEditionBuilder::copyEdition( $template, 999999999 ), 'only into a list that exists' );
         $out = CjwNewsletterEdition::getOutput( $copy->attribute( 'id' ), $copy->attribute( 'current_version' ), 0, 'site', 'default' );
         $this->assertArrayNotHasKey( 'error', $out );
@@ -628,15 +628,15 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $edition = $this->newEdition( 'NLTEST approval' );
         $this->setList( 'approval_required', 1 );
         $version = (int)$edition->attribute( 'current_version' );
-        $this->assertTrue( CjwNewsletterApprovalFlow::isRequired( self::LIST_OBJECT_ID ) );
-        $this->assertSame( self::LIST_OBJECT_ID, CjwNewsletterApprovalFlow::listOfEdition( $edition->attribute( 'id' ) ) );
+        $this->assertTrue( CjwNewsletterApprovalFlow::isRequired( self::listObjectId() ) );
+        $this->assertSame( self::listObjectId(), CjwNewsletterApprovalFlow::listOfEdition( $edition->attribute( 'id' ) ) );
         $this->assertSame( 'none', CjwNewsletterApprovalFlow::state( $edition->attribute( 'id' ), $version ) );
         $this->assertFalse( CjwNewsletterApprovalFlow::maySend( $edition->attribute( 'id' ), $version ) );
         $anonymousId = (int)eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' );
         $approval = CjwNewsletterApprovalFlow::request( $edition, $version, $anonymousId, 'NLTEST please' );
         $this->assertInstanceOf( 'CjwNewsletterApproval', $approval );
         $this->assertSame( 'pending', CjwNewsletterApprovalFlow::state( $edition->attribute( 'id' ), $version ) );
-        $this->assertSame( self::LIST_OBJECT_ID, (int)$approval->attribute( 'list_contentobject_id' ) );
+        $this->assertSame( self::listObjectId(), (int)$approval->attribute( 'list_contentobject_id' ) );
         $item = eZCollaborationItem::fetch( $approval->attribute( 'collaboration_item_id' ) );
         $this->assertInstanceOf( 'eZCollaborationItem', $item );
         $this->assertSame( 'cjwnewsletterapproval', $item->attribute( 'type_identifier' ) );
@@ -760,7 +760,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
     {
         $pool = $this->newPool();
         $attribute = $this->listAttribute();
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
         $base = 'ContentObjectAttribute_CjwNewsletterList_';
         $id = '_' . $attribute->attribute( 'id' );
         $_POST = array();
@@ -777,7 +777,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
 
     protected function listAttribute()
     {
-        foreach ( eZContentObject::fetch( self::LIST_OBJECT_ID )->dataMap() as $attribute )
+        foreach ( eZContentObject::fetch( self::listObjectId() )->dataMap() as $attribute )
             if ( $attribute->attribute( 'data_type_string' ) === 'cjwnewsletterlist' )
                 return $attribute;
         $this->fail( 'the list has no list attribute' );
@@ -817,7 +817,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $this->assertViewOk( $r );
         $this->assertStringContainsString( 'message-error', $r['content'] );
         $before = CjwNewsletterSchedule::fetchListCount();
-        $r = $this->runView( 'schedule_edit', array( 0 ), array( 'StoreButton' => 1, 'ListId' => self::LIST_OBJECT_ID, 'Mode' => 'copy',
+        $r = $this->runView( 'schedule_edit', array( 0 ), array( 'StoreButton' => 1, 'ListId' => self::listObjectId(), 'Mode' => 'copy',
             'TemplateEditionId' => $template->attribute( 'id' ), 'RecurrenceType' => 'd', 'Weekdays' => array( '2', '4', '9', 'x' ),
             'SendTime' => '07:15', 'Timezone' => 'Europe/Vienna', 'AutoFill' => 1, 'SkipIfEmpty' => 1, 'Status' => 0 ) );
         $this->assertNotEmpty( $r['redirect'], 'stored and redirected' );
@@ -895,7 +895,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $this->assertStringContainsString( 'RemoveButton[' . $article->attribute( 'id' ) . ']', $r['content'] );
         $this->runView( 'article_pool', array( $nodeId ), array( 'RemoveButton' => array( $article->attribute( 'id' ) => 1 ) ) );
         $this->assertSame( array(), CjwNewsletterEditionBuilder::pickedObjectIds( $edition->attribute( 'id' ) ) );
-        $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $this->runView( 'article_pool', array( self::LIST_NODE_ID ) )['module']->errorCode(), 'only for an edition' );
+        $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $this->runView( 'article_pool', array( self::listNodeId() ) )['module']->errorCode(), 'only for an edition' );
 
         // the approval view: ask (as admin, the only approver: nobody else gets it), allow self approval, approve
         $this->setList( 'approval_required', 1 );
@@ -911,7 +911,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $this->runView( 'approval', array( $edition->attribute( 'id' ), $version ), array( 'ApproveButton' => 1, 'Comment' => 'NLTEST ok' ) );
         $this->assertSame( 'approved', CjwNewsletterApprovalFlow::state( $edition->attribute( 'id' ), $version ) );
         $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $this->runView( 'approval', array( $edition->attribute( 'id' ), 999 ) )['module']->errorCode() );
-        $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $this->runView( 'approval', array( self::LIST_OBJECT_ID ) )['module']->errorCode() );
+        $this->assertSame( eZError::KERNEL_NOT_AVAILABLE, $this->runView( 'approval', array( self::listObjectId() ) )['module']->errorCode() );
         // the view checks newsletter/editorial or newsletter/approve itself
         $this->loginAnonymous();
         $this->assertSame( eZError::KERNEL_ACCESS_DENIED, $this->runView( 'approval', array( $edition->attribute( 'id' ), $version ) )['module']->errorCode() );
@@ -929,9 +929,9 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $this->assertSame( 'none', $state['result']['state'] );
         $this->assertCount( 1, CjwNewsletterEditorialFetch::fetchEditionArticles( $edition->attribute( 'id' ) )['result'] );
         $this->assertFalse( CjwNewsletterEditorialFetch::fetchApprovalState( 999999999 )['result'] );
-        $this->assertInstanceOf( 'CjwNewsletterArticlePool', CjwNewsletterEditorialFetch::fetchListArticlePool( self::LIST_OBJECT_ID )['result'] );
+        $this->assertInstanceOf( 'CjwNewsletterArticlePool', CjwNewsletterEditorialFetch::fetchListArticlePool( self::listObjectId() )['result'] );
         $this->assertIsArray( CjwNewsletterEditorialFetch::fetchArticlePoolList()['result'] );
-        $this->assertIsArray( CjwNewsletterEditorialFetch::fetchScheduleList( self::LIST_OBJECT_ID )['result'] );
+        $this->assertIsArray( CjwNewsletterEditorialFetch::fetchScheduleList( self::listObjectId() )['result'] );
         $this->loginAnonymous();
         if ( !$edition->canRead() )
         {
@@ -947,7 +947,7 @@ class cjwNewsletterEditorialTest extends cjwNewsletterTestCase
         $source = $this->newEdition( 'NLTEST own source', false );
         $article = $this->newArticle( $source, 'NLTEST own article' );
         // a pool over the whole list: it holds the editions' own articles and the copies the picks make
-        $pool = $this->newPool( array( 'parent_node_id_array_string' => ';' . self::LIST_NODE_ID . ';', 'class_identifier_array_string' => ';cjw_newsletter_article;', 'max_items' => 200 ) );
+        $pool = $this->newPool( array( 'parent_node_id_array_string' => ';' . self::listNodeId() . ';', 'class_identifier_array_string' => ';cjw_newsletter_article;', 'max_items' => 200 ) );
         CjwNewsletterEditionBuilder::addArticle( $edition, $article->attribute( 'main_node' ) );
         $copy = eZContentObject::fetchByRemoteID( CjwNewsletterEditionArticle::copyRemoteId( $edition->attribute( 'id' ), $article->attribute( 'id' ) ) );
         $this->assertInstanceOf( 'eZContentObject', $copy );

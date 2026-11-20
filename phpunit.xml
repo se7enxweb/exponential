@@ -141,7 +141,9 @@
 
         <!--
           cjw_newsletter: live-database tests (admin siteaccess, throwaway nltest-*@example.invalid data, mail written
-          by the file transport into var/tmp, never a real send, never a test database).
+          by the file transport into var/tmp, never a real send, never a test database). They use the newsletter list
+          object CJWNL_TEST_LIST_OBJECT_ID (node CJWNL_TEST_LIST_NODE_ID, else that object's main node; default 18150,
+          the list of the installation they were written on); without that list they are skipped.
           Run: php vendor/bin/phpunit - -testsuite cjw_newsletter
         -->
         <testsuite name="cjw_newsletter">

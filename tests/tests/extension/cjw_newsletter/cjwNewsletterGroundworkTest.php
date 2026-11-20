@@ -146,7 +146,7 @@ class cjwNewsletterGroundworkTest extends cjwNewsletterTestCase
 
     public function testTheListAttributeKeepsThe42ColumnsOnEdit()
     {
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, eZContentObject::fetch( self::LIST_OBJECT_ID )->attribute( 'current_version' ) );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), eZContentObject::fetch( self::listObjectId() )->attribute( 'current_version' ) );
         if ( !is_object( $list ) )
             $this->markTestSkipped( 'no list attribute row for the test list' );
         $attribute = eZContentObjectAttribute::fetch( $list->attribute( 'contentobject_attribute_id' ), $list->attribute( 'contentobject_attribute_version' ) );

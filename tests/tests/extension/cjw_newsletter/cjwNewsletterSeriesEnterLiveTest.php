@@ -46,7 +46,7 @@ class cjwNewsletterSeriesEnterLiveTest extends cjwNewsletterTestCase
 
     protected function newSeries()
     {
-        $series = CjwNewsletterSeries::create( array( 'list_contentobject_id' => self::LIST_OBJECT_ID, 'status' => 0,
+        $series = CjwNewsletterSeries::create( array( 'list_contentobject_id' => self::listObjectId(), 'status' => 0,
             'created' => time(), 'modified' => time() ) );
         $series->store();
         $this->seriesIds[] = (int)$series->attribute( 'id' );

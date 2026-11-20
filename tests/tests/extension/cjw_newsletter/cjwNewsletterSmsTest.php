@@ -92,8 +92,8 @@ class cjwNewsletterSmsTest extends cjwNewsletterTestCase
     {
         $db = eZDB::instance();
         if ( $this->savedListSms === null )
-            $this->savedListSms = $db->arrayQuery( 'SELECT contentobject_attribute_id, contentobject_attribute_version, sms_enabled, sms_sender FROM cjwnl_list WHERE contentobject_id = ' . self::LIST_OBJECT_ID );
-        $db->query( "UPDATE cjwnl_list SET sms_enabled = 1, sms_sender = '" . $db->escapeString( $sender ) . "' WHERE contentobject_id = " . self::LIST_OBJECT_ID );
+            $this->savedListSms = $db->arrayQuery( 'SELECT contentobject_attribute_id, contentobject_attribute_version, sms_enabled, sms_sender FROM cjwnl_list WHERE contentobject_id = ' . self::listObjectId() );
+        $db->query( "UPDATE cjwnl_list SET sms_enabled = 1, sms_sender = '" . $db->escapeString( $sender ) . "' WHERE contentobject_id = " . self::listObjectId() );
     }
 
     protected function restoreListSms()
@@ -581,7 +581,7 @@ class cjwNewsletterSmsTest extends cjwNewsletterTestCase
         $edition = $this->editionContent( $this->newEdition() );
         $db = eZDB::instance();
         $this->enableListSms();
-        $db->query( 'UPDATE cjwnl_list SET sms_enabled = 0 WHERE contentobject_id = ' . self::LIST_OBJECT_ID );
+        $db->query( 'UPDATE cjwnl_list SET sms_enabled = 0 WHERE contentobject_id = ' . self::listObjectId() );
         $this->assertIsString( CjwNewsletterSms::createSend( $edition, 'x' ), 'the list does not allow SMS' );
         $this->enableListSms();
         $this->assertIsString( CjwNewsletterSms::createSend( $edition, '   ' ) );

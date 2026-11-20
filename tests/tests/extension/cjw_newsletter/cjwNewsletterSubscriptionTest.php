@@ -29,7 +29,7 @@ class cjwNewsletterSubscriptionTest extends cjwNewsletterTestCase
     {
         $this->assertEmpty( CjwNewsletterSubscription::fetchByHash( 'nosuchhash' ) );
         $this->assertEmpty( CjwNewsletterSubscription::fetch( 999999999 ) );
-        $this->assertFalse( CjwNewsletterSubscription::fetchByListIdAndNewsletterUserId( self::LIST_OBJECT_ID, 999999999 ) );
+        $this->assertFalse( CjwNewsletterSubscription::fetchByListIdAndNewsletterUserId( self::listObjectId(), 999999999 ) );
         $this->assertSame( array(), CjwNewsletterSubscription::fetchSubscriptionListByNewsletterUserId( 999999999 ) );
     }
 
@@ -62,9 +62,9 @@ class cjwNewsletterSubscriptionTest extends cjwNewsletterTestCase
         $this->assertSame( CjwNewsletterSubscription::STATUS_REMOVED_ADMIN, (int)$this->subscriptionOf( $user )->attribute( 'status' ) );
         $this->subscriptionOf( $user )->approveByAdmin();
         $this->assertSame( CjwNewsletterSubscription::STATUS_APPROVED, (int)$this->subscriptionOf( $user )->attribute( 'status' ) );
-        CjwNewsletterSubscription::removeSubscriptionByAdmin( self::LIST_OBJECT_ID, $user->attribute( 'id' ) );
+        CjwNewsletterSubscription::removeSubscriptionByAdmin( self::listObjectId(), $user->attribute( 'id' ) );
         $this->assertTrue( $this->subscriptionOf( $user )->isRemoved() );
-        $this->assertFalse( (bool)CjwNewsletterSubscription::removeSubscriptionByNewsletterUserSelf( self::LIST_OBJECT_ID, 999999999 ) );
+        $this->assertFalse( (bool)CjwNewsletterSubscription::removeSubscriptionByNewsletterUserSelf( self::listObjectId(), 999999999 ) );
     }
 
     public function testStatusStringsAndTheStatusList()
@@ -80,7 +80,7 @@ class cjwNewsletterSubscriptionTest extends cjwNewsletterTestCase
     public function testCreateUpdateKeepsOneSubscriptionPerUserAndList()
     {
         $user = $this->newSubscriber( 'one' );
-        CjwNewsletterSubscription::createUpdateNewsletterSubscription( self::LIST_OBJECT_ID, $user->attribute( 'id' ), array( 0, 1 ), CjwNewsletterSubscription::STATUS_PENDING );
+        CjwNewsletterSubscription::createUpdateNewsletterSubscription( self::listObjectId(), $user->attribute( 'id' ), array( 0, 1 ), CjwNewsletterSubscription::STATUS_PENDING );
         $this->assertCount( 1, CjwNewsletterSubscription::fetchSubscriptionListByNewsletterUserId( $user->attribute( 'id' ) ) );
         $this->assertSame( array( 0 => 'HTML', 1 => 'Text' ), $this->subscriptionOf( $user )->getOutputFormatArray() );
     }
@@ -90,16 +90,16 @@ class cjwNewsletterSubscriptionTest extends cjwNewsletterTestCase
         $email = $this->newEmail( 'arr' );
         $result = CjwNewsletterSubscription::createSubscriptionByArray( array(
             'email' => $email, 'first_name' => 'A', 'last_name' => 'B', 'salutation' => 0,
-            'id_array' => array( self::LIST_OBJECT_ID ), 'list_array' => array( self::LIST_OBJECT_ID ),
-            'list_output_format_array' => array( self::LIST_OBJECT_ID => array( 0 ) ) ), CjwNewsletterUser::STATUS_PENDING, false, 'test' );
+            'id_array' => array( self::listObjectId() ), 'list_array' => array( self::listObjectId() ),
+            'list_output_format_array' => array( self::listObjectId() => array( 0 ) ) ), CjwNewsletterUser::STATUS_PENDING, false, 'test' );
         $this->assertIsArray( $result );
-        $this->assertArrayHasKey( self::LIST_OBJECT_ID, $result['list_subscribe'] );
+        $this->assertArrayHasKey( self::listObjectId(), $result['list_subscribe'] );
         $user = CjwNewsletterUser::fetchByEmail( $email );
         $this->assertNotNull( $this->subscriptionOf( $user ) );
         // the list is in id_array but no longer in list_array: removed by the user
         $result = CjwNewsletterSubscription::createSubscriptionByArray( array(
             'email' => $email, 'first_name' => 'A', 'last_name' => 'B', 'salutation' => 0,
-            'id_array' => array( self::LIST_OBJECT_ID ), 'list_array' => array(),
+            'id_array' => array( self::listObjectId() ), 'list_array' => array(),
             'list_output_format_array' => array() ), CjwNewsletterUser::STATUS_PENDING, false, 'configure' );
         $this->assertTrue( $this->subscriptionOf( $user )->isRemoved() );
     }
@@ -128,7 +128,7 @@ class cjwNewsletterSubscriptionTest extends cjwNewsletterTestCase
     {
         $this->newSubscriber( 'l1' );
         $this->newSubscriber( 'l2', null, CjwNewsletterSubscription::STATUS_PENDING );
-        $list = CjwNewsletterList::fetchByListObjectVersion( self::LIST_OBJECT_ID, 0 );
+        $list = CjwNewsletterList::fetchByListObjectVersion( self::listObjectId(), 0 );
         $this->assertInstanceOf( 'CjwNewsletterList', $list );
         $approved = CjwNewsletterSubscription::fetchSubscriptionListByListId( $list, CjwNewsletterSubscription::STATUS_APPROVED, 0, 0 );
         $this->assertGreaterThanOrEqual( 1, count( $approved ) );
@@ -137,7 +137,7 @@ class cjwNewsletterSubscriptionTest extends cjwNewsletterTestCase
         foreach ( array( 'all', 'pending', 'confirmed', 'approved', 'removed', 'bounced', 'blacklisted' ) as $key )
             $this->assertArrayHasKey( $key, $stat );
         $this->assertGreaterThanOrEqual( 2, $stat['all'] );
-        $this->assertGreaterThanOrEqual( 1, count( CjwNewsletterSubscription::fetchSubscriptionListByListIdAndStatus( self::LIST_OBJECT_ID, CjwNewsletterSubscription::STATUS_PENDING, 0, 0 ) ) );
+        $this->assertGreaterThanOrEqual( 1, count( CjwNewsletterSubscription::fetchSubscriptionListByListIdAndStatus( self::listObjectId(), CjwNewsletterSubscription::STATUS_PENDING, 0, 0 ) ) );
     }
 
     public function testActiveSubscriptionListLeavesOutRemovedAndBlacklisted()
