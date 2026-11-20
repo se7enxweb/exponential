@@ -237,6 +237,7 @@ class expImageAliasWebServersTest extends PHPUnit\Framework\TestCase
                 return $index;
             };
             $cluster = $at( '#RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]' );
+            $clusterCache = $at( '#RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]' );
             $clusterPass = $at( '#RewriteRule ^index_cluster\.php - [L]' );
             $condition = $at( 'RewriteCond %{REQUEST_FILENAME} !-f' );
             $missing = $at( 'RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php [L]' );
@@ -247,7 +248,9 @@ class expImageAliasWebServersTest extends PHPUnit\Framework\TestCase
             // The condition belongs to the storage rule only; the cluster lines stand before both
             $this->assertSame( $condition + 1, $missing, $name );
             $this->assertLessThan( $condition, $cluster, $name );
-            $this->assertSame( $cluster + 1, $clusterPass, $name );
+            // the cluster block: stored images, the public cache (packed scripts and stylesheets), then the gateway itself
+            $this->assertSame( $cluster + 1, $clusterCache, $name );
+            $this->assertSame( $cluster + 2, $clusterPass, $name );
             $this->assertLessThan( $pass, $view, $name );
             $this->assertLessThan( $served, $pass, $name );
             $this->assertLessThan( $view, $treemenu, $name );

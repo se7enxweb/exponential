@@ -142,12 +142,14 @@ RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 # and will be removed in a later major version: name index_webdav.php in new rules.
 #RewriteRule ^index_webdav\.php - [L]
 # Ein Datenbank-Cluster (eZDFS oder eZDB, file.ini [ClusteringSettings]) hält
-# die Dateien der Ablage anderswo, seine Bilder beantwortet index_cluster.php:
-# kommentieren Sie die beiden Zeilen unten ein; sie müssen vor der Regel für
+# die Dateien der Ablage und den öffentlichen Cache (gepackte Skripte und Stylesheets,
+# Textbilder) anderswo; diese beantwortet index_cluster.php:
+# kommentieren Sie die drei Zeilen unten ein; sie müssen vor der Regel für
 # index_image.php stehen. Das Cluster-Gateway gibt ein Bild, zu dem es keine
 # Datei hat (einen noch nicht erzeugten Bild-Alias), an index_image.php weiter,
 # das ihn im Cluster erzeugt.
 #RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+#RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]
 #RewriteRule ^index_cluster\.php - [L]
 # Ein Bild der Ablage, das nicht da ist (ein noch nicht erzeugter Bild-Alias,
 # siehe settings/image.ini [AliasSettings]), geht an index_image.php, das den
@@ -340,7 +342,7 @@ RewriteRule .* index.php
 | `#RewriteRule ^index_soap\.php - [L]` (auskommentiert) | der SOAP-Server, wenn `soap.ini [GeneralSettings] EnableSOAP=true` gilt | `index_soap.php` ist seit 6.0.15 der SOAP-Front-Controller; `soap.php` leitet nur dorthin weiter. Nehmen Sie mit SOAP an das Kommentarzeichen weg, sonst enden SOAP-Anfragen bei `index.php`; siehe [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md) |
 | `RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]` | das Baummenü der Administration, mit oder ohne vorangestellten Siteaccess | ein schlanker Front-Controller für das JSON des Baums |
 | `#RewriteRule ^index_webdav\.php - [L]` (auskommentiert) | WebDAV auf diesem Host, sobald einkommentiert | `index_webdav.php` ist seit 6.0.15 der WebDAV-Server; `webdav.php` leitet nur dorthin weiter ([was zu ändern ist](../../bc/6.0/webdav-einstiegsskript-index-webdav.md)) |
-| `#RewriteRule ...index_cluster.php` (auskommentiert) | die Bilder der Ablage eines Datenbank-Clusters gehen an das Cluster-Gateway, sobald einkommentiert | eZDFS/eZDB halten die Dateien anderswo; das Gateway gibt ein Bild ohne Datei an `index_image.php` weiter ([Rezepte](bild-aliase-auf-abruf.md#das-cluster-gateway)) |
+| `#RewriteRule ...index_cluster.php` (auskommentiert) | die Bilder der Ablage und der öffentliche Cache (gepackte Skripte und Stylesheets) eines Datenbank-Clusters gehen an das Cluster-Gateway, sobald einkommentiert | eZDFS/eZDB halten die Dateien anderswo; das Gateway gibt ein Bild ohne Datei an `index_image.php` weiter ([Rezepte](bild-aliase-auf-abruf.md#das-cluster-gateway)) |
 | `RewriteCond %{REQUEST_FILENAME} !-f` + `^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php` | ein Bild der Ablage, das nicht da ist, geht an `index_image.php` | auf Abruf erzeugte Bild-Aliase: der Alias wird erzeugt oder ein Platzhalter geantwortet ([die Funktion](../../funktionen/6.0/bild-aliase-auf-abruf.md)) |
 | `^([^/]+/)?content/image/ index_image.php`, `^index_image\.php - [L]` | `content/image` und das Einstiegsskript selbst beantwortet `index_image.php` | die Adresse eines auf Abruf erzeugten Alias, ohne den Seitenkernel |
 | `^var/([^/]+/)?storage/images(-versioned)?/.*` | gespeicherte Bildvarianten werden als Datei gesendet | Bilder in Inhalten |

@@ -234,16 +234,18 @@ Entfernen von Aliasen wird der Antwort-Cache geleert.
 
 ## Das Cluster-Gateway
 
-Ein Datenbank-Cluster (eZDFS oder eZDB, `file.ini [ClusteringSettings]`) hält die Dateien der Ablage anderswo, und
-seine Bilder beantwortet `index_cluster.php`. Kommentieren Sie das Cluster-Paar in `.htaccess_root` ein; es muss
+Ein Datenbank-Cluster (eZDFS oder eZDB, `file.ini [ClusteringSettings]`) hält die Dateien der Ablage und den öffentlichen
+Cache (gepackte Skripte und Stylesheets) anderswo, und beides beantwortet `index_cluster.php`. Kommentieren Sie die drei
+Cluster-Zeilen in `.htaccess_root` ein; sie müssen
 **vor** der Regel für `index_image.php` stehen:
 
 ```apache
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]
 RewriteRule ^index_cluster\.php - [L]
 ```
 
-Für nginx: `location ~ ^/var/([^/]+/)?storage/images(-versioned)?/ { rewrite ^ /index_cluster.php last; }` plus ein
+Für nginx: `location ~ ^/var/([^/]+/)?(storage/images(-versioned)?|cache/(texttoimage|public))/ { rewrite ^ /index_cluster.php last; }` plus ein
 FastCGI-Block `location = /index_cluster.php` wie der für `index_image.php`.
 
 Wenn das Gateway keine Metadaten zu einem Bild der Ablage hat (ein noch nicht erzeugter Alias), schließt es seine

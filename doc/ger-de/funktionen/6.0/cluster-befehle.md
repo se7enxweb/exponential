@@ -37,21 +37,26 @@ Server.
    INI-Caches werden geleert.
 5. Verschiebt die gespeicherten Dateien mit `bin/php/clusterize.php` hinein, einmal pro var-Verzeichnis (`--no-move`
    verschiebt das auf später). Bricht das Verschieben ab, werden die Einstellungen zurückgestellt.
-6. Gibt die Rewrite-Regel des Gateways für den Webserver aus; sie gehört vor die eigenen Regeln der Website:
+6. Gibt die Rewrite-Regeln des Gateways für den Webserver aus; sie gehören vor die eigenen Regeln der Website: die
+   gespeicherten Bilder und der öffentliche Cache (gepackte Skripte und Stylesheets, Textbilder), die der Cluster auf
+   seinem gemeinsamen Speicher hält; ohne die Cache-Regel antwortet ein Knoten mit 404 für eine gepackte Datei, die ein
+   anderer Knoten erzeugt hat:
 
 ```apache
 # Apache, im virtuellen Host (Plesk: zusätzliche Direktiven); [END] verhindert, dass .htaccess sie wieder umschreibt
 RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* /index_cluster.php [PT,END]
+RewriteRule ^/var/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.php [PT,END]
 ```
 
 ```apache
-# .htaccess (die beiden auskommentierten Zeilen aus .htaccess_root, vor der Regel für index_image.php)
+# .htaccess (die drei auskommentierten Zeilen aus .htaccess_root, vor der Regel für index_image.php)
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]
 RewriteRule ^index_cluster\.php - [L]
 ```
 
 ```nginx
-location ~ ^/var/([^/]+/)?storage/images(-versioned)?/ { rewrite ^ /index_cluster.php last; }
+location ~ ^/var/([^/]+/)?(storage/images(-versioned)?|cache/(texttoimage|public))/ { rewrite ^ /index_cluster.php last; }
 ```
 
 Der Befehl schreibt keine Webserver-Konfiguration: Die gehört dem, der den Webserver betreibt. Auf einem Knoten sind

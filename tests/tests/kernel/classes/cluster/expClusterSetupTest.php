@@ -172,10 +172,40 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '/var/www/vhosts/a.example/dfs', expClusterSetup::defaultShare( '/var/www/vhosts/a.example/httpdocs/' ) );
         $rules = expClusterSetup::webServerRules();
         $this->assertStringContainsString( '[PT,END]', $rules['apache-vhost'] );
+        // the public cache (packed scripts and stylesheets) lives in the cluster too: every form sends it to the gateway
+        foreach ( $rules as $where => $rule )
+        {
+            $this->assertMatchesRegularExpression( '#cache/\(texttoimage\|public\)\)?/#', $rule, "$where: the public cache goes to the gateway" );
+            $this->assertStringContainsString( 'storage/images(-versioned)?', $rule, "$where: the stored images go to the gateway" );
+        }
+        $this->assertSame( 1, preg_match( '#^/var/([^/]+/)?(storage/images(-versioned)?|cache/(texttoimage|public))/#', '/var/site/cache/public/javascript/a_1.js' ) );
         foreach ( array( 'enable', 'disable' ) as $n )
         {
             $this->assertStringContainsString( '@alias exp:cluster:' . $n, (string)file_get_contents( $root . '/bin/php/expcluster' . $n . '.php' ) );
             $this->assertStringContainsString( '@alias exp:cluster:' . $n, (string)file_get_contents( $root . '/kernel/private/classes/commands/expcluster' . $n . '.php' ) );
+        }
+    }
+
+    /**
+     * The shipped rewrite rules (.htaccess_root, .htaccess_root_static) send the public cache of a cluster to the
+     * gateway too, in the cluster block, before the rule that serves var/<site>/cache/(texttoimage|public) from disk:
+     * on a DFS cluster the packed scripts and stylesheets are on the shared storage, and a node that did not make one
+     * answered 404 for it.
+     */
+    public function testTheShippedRulesSendThePublicCacheOfAClusterToTheGateway()
+    {
+        $root = eZSys::rootDir();
+        foreach ( array( '.htaccess_root', '.htaccess_root_static' ) as $file )
+        {
+            $lines = file( $root . '/' . $file, FILE_IGNORE_NEW_LINES );
+            $cluster = array_search( '#RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]', $lines, true );
+            $static = array_search( 'RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* - [L]', $lines, true );
+            $gate = array_search( '#RewriteRule ^index_cluster\\.php - [L]', $lines, true );
+            $this->assertIsInt( $cluster, "$file: the cluster rule of the public cache" );
+            $this->assertIsInt( $static, "$file: the rule that serves the public cache from disk" );
+            $this->assertIsInt( $gate, "$file: the rule that lets index_cluster.php through" );
+            $this->assertLessThan( $static, $cluster, "$file: the cluster rule stands before the disk rule" );
+            $this->assertLessThan( $gate, $cluster, "$file: the cluster rules stand together, before index_cluster.php's own" );
         }
     }
 }

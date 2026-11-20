@@ -238,13 +238,21 @@ class expClusterSetup
         return is_string( $text ) && strpos( $text, self::MARK_PHP ) !== false;
     }
 
-    /** The web server rules of the gateway (pure), to be put in front of the site's own rules. */
+    /**
+     * The web server rules of the gateway (pure), to be put in front of the site's own rules: the stored images and
+     * the public cache (the packer's packed scripts and stylesheets, the text images), which the cluster keeps on its
+     * shared storage, not in a node's own var/; without the cache rule a node answers 404 for a packed file another
+     * node made.
+     */
     public static function webServerRules()
     {
         return array(
-            'apache-vhost' => 'RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* /index_cluster.php [PT,END]',
-            'apache-htaccess' => "RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]\nRewriteRule ^index_cluster\\.php - [L]",
-            'nginx' => 'location ~ ^/var/([^/]+/)?storage/images(-versioned)?/ { rewrite ^ /index_cluster.php last; }',
+            'apache-vhost' => "RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* /index_cluster.php [PT,END]\n"
+                            . 'RewriteRule ^/var/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.php [PT,END]',
+            'apache-htaccess' => "RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]\n"
+                               . "RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]\n"
+                               . "RewriteRule ^index_cluster\\.php - [L]",
+            'nginx' => 'location ~ ^/var/([^/]+/)?(storage/images(-versioned)?|cache/(texttoimage|public))/ { rewrite ^ /index_cluster.php last; }',
         );
     }
 

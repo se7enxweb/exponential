@@ -16,8 +16,8 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 b0c2fdf8b09449f33e63f73bb84109fe  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
-50ab99a79bbdc3ec5675766a6abe5a77  .htaccess_root
-681e847dc6196e7b106d4df37a9c92b3  .htaccess_root_static
+1942bd02f05e39a47b6f0c82d826f841  .htaccess_root
+611220d94480211641f3087b69ad7c11  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 0885554911d27ce3062e28ef667da050  CODE_OF_CONDUCT.md
 5bd9b2866fc162be39e6047ade803979  CONTRIBUTING.md
@@ -307,7 +307,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-58e2624c1d2cc4dec23499a79b1aa6a5  composer.json
+9c8bcd43149ea676c8dcc4faae690f04  composer.json
 a180ccab56cfc079f1e8da6819229745  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 41291f5ed06ef9f1031d746a24f7c112  config.php-RECOMMENDED
@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-f8c243ab571adca8170ecaf5c826fc45  doc/changelogs/6.0/6.0.15.md
+92933ab01ed16d6393e27c3ad83723dd  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4422,7 +4422,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 42a70c11641a0fce108e4659cd159987  doc/eng-us/examples/fetch-functions/workflow/workflow_statuses.md
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
-944aeae01d2bf82c970b585a00033775  doc/eng-us/examples/htaccess
+4fee06129929b79b0276aee31d0e0d93  doc/eng-us/examples/htaccess
 5c55de50dad2b8303962c4d85ff0d2c8  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
@@ -6724,14 +6724,14 @@ f1adf7944ec54a89a950e928fa03076f  doc/eng-us/examples/url-maps/query-and-tempora
 cd7675d888d6cda670a0e89e171d5ef2  doc/eng-us/examples/url-maps/wildcards.csv
 16a5696a7600ad9bce1abcdcc843d97b  doc/eng-us/examples/web-servers/Caddyfile.example
 e9dbf2ede5c226fc7d23e61bc5ee8971  doc/eng-us/examples/web-servers/README.md
-8a863f99b4bca6b8ff09d1574efc6c2a  doc/eng-us/examples/web-servers/apache-htaccess.md
+79ee4997ce80ce7646f237b172e1f848  doc/eng-us/examples/web-servers/apache-htaccess.md
 c30a141d87df4e87d1420185a3865450  doc/eng-us/examples/web-servers/apache-virtual-host.md
 2a83fd58ede18a200256ec818402b43d  doc/eng-us/examples/web-servers/caddy.md
 70add323ced892c26dbbf0f24c7bb464  doc/eng-us/examples/web-servers/exponential-velocity.service
 8ae9f33f4fecc1d5d22ce01c3473c1db  doc/eng-us/examples/web-servers/frankenphp.Caddyfile.example
 4aed985d37e376f2e17d4b6c98358511  doc/eng-us/examples/web-servers/frankenphp.md
 4403ba257109fbcb658116c8f5ddb4a1  doc/eng-us/examples/web-servers/iis.md
-a973e78d978a73a2c01fa8aeaf1108d9  doc/eng-us/examples/web-servers/image-aliases-on-demand.md
+3b49405a24d25f5f5a054ac2c8401a80  doc/eng-us/examples/web-servers/image-aliases-on-demand.md
 b712d16f225d0bbc9983833eb14ff511  doc/eng-us/examples/web-servers/litespeed-page-cache.conf
 7e7040ae0416777762109bbc732ec684  doc/eng-us/examples/web-servers/litespeed.md
 e46110ad592db771fb78b978e88f2627  doc/eng-us/examples/web-servers/nginx.conf
@@ -6989,7 +6989,7 @@ e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 dabff75a311362f40ae3a24bf5b55b51  doc/eng-us/features/6.0/cache-until.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
-9c6355890650a5b4e260f01ff2dca126  doc/eng-us/features/6.0/cluster-commands.md
+0be3699bff5a29169413974cdb58c931  doc/eng-us/features/6.0/cluster-commands.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
 b10b8f6d48a35a112fc60abd882b4869  doc/eng-us/features/6.0/content-jobs.md
@@ -14550,7 +14550,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 8383861c182b6605aac7f6f6d7819b37  doc/ger-de/beispiele/fetch-funktionen/workflow/README.md
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
-5d2f87561bff92eb954c8fd7f31efb90  doc/ger-de/beispiele/htaccess
+3330aa96b903cd1b677078636c61ee16  doc/ger-de/beispiele/htaccess
 fc9faee7f497ec785c1e717e39d50d6f  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
@@ -16865,9 +16865,9 @@ f8f5f285ef62d9d1b7e8295b8d42b5bb  doc/ger-de/beispiele/url-zuordnungen/alte-site
 93b14bec27d147a7a1bb8c15351f87c1  doc/ger-de/beispiele/url-zuordnungen/query-und-voruebergehend.csv
 eca301af7e62f9214856a822145088ae  doc/ger-de/beispiele/url-zuordnungen/wildcards.csv
 26e7e09916983c228d87e08f456f06da  doc/ger-de/beispiele/webserver/README.md
-82935891caeb3218158b81f49a3f73ad  doc/ger-de/beispiele/webserver/apache-htaccess.md
+3c6a8801777eb2bb866a7568fa29bb49  doc/ger-de/beispiele/webserver/apache-htaccess.md
 a07a9bf2476ccd3c25dc5e64906b8001  doc/ger-de/beispiele/webserver/apache-virtueller-host.md
-03c9387b55e849cb30ef8926a66b61d0  doc/ger-de/beispiele/webserver/bild-aliase-auf-abruf.md
+c44edba37cfb92f80e18a836ef11cf38  doc/ger-de/beispiele/webserver/bild-aliase-auf-abruf.md
 0e4fc10724704b81d27209b8d609309a  doc/ger-de/beispiele/webserver/caddy.md
 43a3f5ea465dc3a6bfe86a1ac3166fee  doc/ger-de/beispiele/webserver/frankenphp.md
 986e233cfe1ba9d8d787636ef1bf61c7  doc/ger-de/beispiele/webserver/iis.md
@@ -17131,7 +17131,7 @@ dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-si
 1f1a89109f14133da5ec552dcd12b106  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
-cddd00d26e02b6573288a4146f1a8386  doc/ger-de/funktionen/6.0/cluster-befehle.md
+f00b39922fab058954c2ee956bcff364  doc/ger-de/funktionen/6.0/cluster-befehle.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
@@ -24771,7 +24771,7 @@ b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_to
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
 fe0bce95fbb9c13990be1fecce0356f6  kernel/classes/classicmenu/expclassicmenusettings.php
 778a26bd7868d8b25ced9a004af515fa  kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php
-f9ab538154f05d2abb73763e7db559c5  kernel/classes/cluster/expclustersetup.php
+0fc11238d8dc605f5dd54e1e12a02510  kernel/classes/cluster/expclustersetup.php
 aaff1838ebeaa52d26de4395929327ea  kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php
 865e130c99d93fd0b6943b867d91e3db  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 7a36f246c38cf46fc9a07696f2e82d96  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
@@ -29329,7 +29329,7 @@ b5e6823fe454da6742dbe533e30d59b4  tests/tests/kernel/classes/cachesmore/eZStatic
 7927b5e0c9a307433593061ff253ec6b  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
 89a4d84cf90433287afc8977a6bd3ecb  tests/tests/kernel/classes/cachesmore/fixtures/preload-demo-site-front-page-uri-matching.html
 c98e893a75b3bf362d0515b4b4c30728  tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php
-ddf5be7ef3ce2fd3c0f0c88fdccf95aa  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
+cc2354bea46e143a74241548add9c541  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
 59814cc8048fbb6639df8574b7df0ff2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 5f138b4314e1dab989fb4d4ff1accc73  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
 e7ab71f7013e8514190fd44a43041b5d  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php
@@ -29761,7 +29761,7 @@ da71214ea659530c597d168a72393240  tests/tests/kernel/classes/imagealias/expImage
 7833986796e1cd42cd2c751476651256  tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php
 0be33b5bee46ca24f8133ad197e7225c  tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php
 921ba5ea06e6e36458bf4af0678c6c29  tests/tests/kernel/classes/imagealias/expImageAliasUrlTest.php
-155a61d9fdea647b787e18cf3a5e253a  tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php
+2bbb20ed04747275cd2b8090748705ad  tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php
 b1ebd8ffc99147a968396ff9cbb6990b  tests/tests/kernel/classes/imagealias/fixtures/expimagestagingsource.php
 b0df1f3a19d958e2b7f14cd6563c10fc  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 deccbf4f7d53944c1742add156bdd81b  tests/tests/kernel/classes/ini/command/IniCommandTest.php

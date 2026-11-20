@@ -67,11 +67,13 @@ RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 # and will be removed in a later major version: name index_webdav.php in new rules.
 #RewriteRule ^index_webdav\.php - [L]
 # A database cluster (eZDFS or eZDB, file.ini [ClusteringSettings]) keeps the
-# storage files elsewhere, so its images are answered by index_cluster.php:
-# uncomment the two lines below, which have to stand before the index_image.php
+# storage files and the public cache (packed scripts and stylesheets, text images)
+# elsewhere, so they are answered by index_cluster.php: uncomment the three lines
+# below, which have to stand before the index_image.php
 # rule. The cluster gateway hands an image it has no file for (an image alias
 # not made yet) on to index_image.php, which makes it in the cluster.
 #RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+#RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]
 #RewriteRule ^index_cluster\.php - [L]
 # An image of the storage that is not there (an image alias not made yet, see
 # settings/image.ini [AliasSettings]) goes to index_image.php, which makes the

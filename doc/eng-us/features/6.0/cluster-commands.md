@@ -35,21 +35,25 @@ cluster** is that setup on one server.
    cleared.
 5. Moves the stored files in with `bin/php/clusterize.php` once per var directory (`--no-move` leaves that for later).
    A stopped move puts the settings back.
-6. Prints the gateway's rewrite rule for the web server, to stand in front of the site's own rules:
+6. Prints the gateway's rewrite rules for the web server, to stand in front of the site's own rules: the stored
+   images and the public cache (packed scripts and stylesheets, text images), which the cluster keeps on its
+   shared storage; without the cache rule a node answers 404 for a packed file another node made:
 
 ```apache
 # Apache, in the virtual host (Plesk: additional directives); [END] keeps .htaccess from rewriting it again
 RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* /index_cluster.php [PT,END]
+RewriteRule ^/var/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.php [PT,END]
 ```
 
 ```apache
-# .htaccess (the two commented lines of .htaccess_root, before the index_image.php rule)
+# .htaccess (the three commented lines of .htaccess_root, before the index_image.php rule)
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]
 RewriteRule ^index_cluster\.php - [L]
 ```
 
 ```nginx
-location ~ ^/var/([^/]+/)?storage/images(-versioned)?/ { rewrite ^ /index_cluster.php last; }
+location ~ ^/var/([^/]+/)?(storage/images(-versioned)?|cache/(texttoimage|public))/ { rewrite ^ /index_cluster.php last; }
 ```
 
 The command writes no web server configuration: that belongs to whoever runs the web server. On one node the local

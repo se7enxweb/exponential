@@ -225,16 +225,18 @@ are cached normally. After a purge of aliases the response cache is cleared.
 
 ## The cluster gateway
 
-A database cluster (eZDFS or eZDB, `file.ini [ClusteringSettings]`) keeps the storage files elsewhere, and its images
-are answered by `index_cluster.php`. Uncomment the cluster pair in `.htaccess_root`; it must stand **before** the
+A database cluster (eZDFS or eZDB, `file.ini [ClusteringSettings]`) keeps the storage files and the public cache
+(packed scripts and stylesheets) elsewhere, and both are answered by `index_cluster.php`. Uncomment the three cluster
+lines in `.htaccess_root`; they must stand **before** the
 `index_image.php` rule:
 
 ```apache
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]
 RewriteRule ^index_cluster\.php - [L]
 ```
 
-For nginx: `location ~ ^/var/([^/]+/)?storage/images(-versioned)?/ { rewrite ^ /index_cluster.php last; }` plus a
+For nginx: `location ~ ^/var/([^/]+/)?(storage/images(-versioned)?|cache/(texttoimage|public))/ { rewrite ^ /index_cluster.php last; }` plus a
 `location = /index_cluster.php` FastCGI block like the one for `index_image.php`.
 
 When the gateway has no metadata for a storage image (an alias not made yet), it closes its connection and runs

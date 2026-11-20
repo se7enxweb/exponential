@@ -81,12 +81,14 @@ RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 # entfernt: nennen Sie in neuen Regeln index_webdav.php.
 #RewriteRule ^index_webdav\.php - [L]
 # Ein Datenbank-Cluster (eZDFS oder eZDB, file.ini [ClusteringSettings]) hält
-# die Dateien der Ablage anderswo, seine Bilder beantwortet index_cluster.php:
-# kommentieren Sie die beiden Zeilen unten ein; sie müssen vor der Regel für
+# die Dateien der Ablage und den öffentlichen Cache (gepackte Skripte und Stylesheets,
+# Textbilder) anderswo; diese beantwortet index_cluster.php:
+# kommentieren Sie die drei Zeilen unten ein; sie müssen vor der Regel für
 # index_image.php stehen. Das Cluster-Gateway gibt ein Bild, zu dem es keine
 # Datei hat (einen noch nicht erzeugten Bild-Alias), an index_image.php weiter,
 # das ihn im Cluster erzeugt.
 #RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+#RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* index_cluster.php [L]
 #RewriteRule ^index_cluster\.php - [L]
 # Ein Bild der Ablage, das nicht da ist (ein noch nicht erzeugter Bild-Alias,
 # siehe settings/image.ini [AliasSettings]), geht an index_image.php, das den
