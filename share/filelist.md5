@@ -13,7 +13,7 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 83ebb7a0d04f421bdff8ef89b268e003  .github/workflows/ci-health.yml
 dcd2c18968f0d52e402cd003ab6e2c67  .github/workflows/codeql.yml
 ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
-31230d4ae417289ee3875eaaad2543c5  .github/workflows/phpunit.yml
+97ec7972c0ddda552ca1e32daa069fa7  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 50ab99a79bbdc3ec5675766a6abe5a77  .htaccess_root
@@ -28,7 +28,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-3b2e6ee9c4efbd28b97a2b2f8ef868b6  autoload/ezp_kernel.php
+79ffc6113d362102e9da1beffd8a04f9  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-c23758dda34a4eb5fc768b2abba3936c  doc/changelogs/6.0/6.0.15.md
+9298f687d6d845c9ea2bd103252ecf6f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6968,7 +6968,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-c3e88d75a8762ac6fa34dc05fd543ebc  doc/eng-us/features/6.0/README.md
+9444ffc03602e283c5a871443196ca7f  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7096,6 +7096,7 @@ ec55512dfd4d53e21c83bcc5cb3607ee  doc/eng-us/features/6.0/migrations.md
 edf63d0c3d2620ae2f29a5a96f1c6fa1  doc/eng-us/features/6.0/moderation.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 257a4b8dfc81f1f632e0e64362e2bda1  doc/eng-us/features/6.0/mongodb-database-support.md
+76361abb81cabd003431b574efbd8515  doc/eng-us/features/6.0/mongodb-dfs-cluster.md
 3bd8e093800aafdb91540e9466fa4756  doc/eng-us/features/6.0/multi-site-ini-overrides.md
 8c507b215068aeb519298aebe32659da  doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md
 89aef2cbcbbeb2e4a7246cd080448bae  doc/eng-us/features/6.0/multisite-cross-site-links.md
@@ -13668,7 +13669,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-2bea2bd8ffd8124836cd1a99a1f566db  doc/ger-de/.paths.json
+12268c24f3eda76f7dc37d38b3fe38f4  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17101,7 +17102,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-e166d4a14b92ef645462ed9b4791a8c3  doc/ger-de/funktionen/6.0/README.md
+a7a790ab6b05a92283620952594469df  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17239,6 +17240,7 @@ ab38db87d8356eec578bd9158475a255  doc/ger-de/funktionen/6.0/moderation.md
 ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaenderung.md
 298bb86f3a6c50d18a8fd5252f6d84ec  doc/ger-de/funktionen/6.0/modulueberschreibung-durch-extensions.md
 b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunterstuetzung.md
+b488638550b2c56e61f90eca2058a7d5  doc/ger-de/funktionen/6.0/mongodb-dfs-cluster.md
 a0bd58357b09d6587778742acec9e033  doc/ger-de/funktionen/6.0/oberster-knoten-des-inhaltsbaums-im-admin.md
 99269121eb54ff615dc17139eec01ac3  doc/ger-de/funktionen/6.0/online-editor-tinymce8.md
 53e924c6d8365234e1bcd4525bf25bb2  doc/ger-de/funktionen/6.0/optionen-der-unterelementtabelle.md
@@ -25785,6 +25787,7 @@ dd7a181e7f7db62ccd2c195519d410d3  kernel/classes/workflowtypes/event/ezpaymentga
 6fd1876860bc7b42f1023bc0280f7863  kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildate.php
 99b5ebe1514e8fc84131e6a6affe19ad  kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildatetype.php
 7fb56522d52cd32c574d6e7ba558d954  kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildatevalue.php
+ad8641959f398dcd00547788cc945651  kernel/clustering/dfsmongodb.php
 a4af4d7be4e5287c41f36cd21880308b  kernel/clustering/dfsmysqli.php
 82812ff46c6149dde2663cc6da3ddf51  kernel/clustering/dfspostgres.php
 6e8c5e7f9784df4c047395d17d4edd22  kernel/clustering/dfspostgresql.php
@@ -26035,6 +26038,7 @@ a7b6a49383e0515be436a358acf0b05f  kernel/private/classes/asynchronouspublisherou
 63e7e6eb16bb58010107995fc0d1fcd7  kernel/private/classes/clusterfilehandlers/dfsbackends/ezdfsfilehandlerdfsbackendfactoryinterface.php
 a496bdee551b730a1a55e842899922aa  kernel/private/classes/clusterfilehandlers/dfsbackends/ezdfsfilehandlerdfsbackendinterface.php
 4e07f6021dada41dcb056113167268a7  kernel/private/classes/clusterfilehandlers/dfsbackends/ezdfsfilehandlerpostgresqlbackend.php
+4ff47b3ec7db373a66b9d7980beb5ec7  kernel/private/classes/clusterfilehandlers/dfsbackends/mongodb.php
 8046e205e0899cd793f7cdcab1bf5879  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqlbackenderror.php
 c9f239311897fd1d9c0fa91863ed43df  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
 cfaf45c988d952b71febf75f6ddce22f  kernel/private/classes/clusterfilehandlers/dfsbackends/postgresql.php
@@ -26043,7 +26047,7 @@ cfaf45c988d952b71febf75f6ddce22f  kernel/private/classes/clusterfilehandlers/dfs
 57ba3858454b447a3ca5cff0affca3c6  kernel/private/classes/clusterfilehandlers/ezclustereventloggerphp.php
 8698335dff7c842a8251bd50413cfed9  kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
 aefa1f90ce5bfc9e200c3a0f6ee52c75  kernel/private/classes/clusterfilehandlers/ezdfsfilehandlerbackendfactory.php
-e72aee44d9bd900e04e08de10cfb699d  kernel/private/classes/clusterfilehandlers/interfaces/expdfsfilehandlerdbbackendinterface.php
+a5470ffcdc52be8c2292a541045f4a79  kernel/private/classes/clusterfilehandlers/interfaces/expdfsfilehandlerdbbackendinterface.php
 c941e8836131fcd83f4681a01a674b25  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlistener.php
 b48aeb16210c9892df236bcd83029aa2  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlogger.php
 349ba1e50c7a3ccfadf7b60234f2e7ff  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventnotifier.php
@@ -27024,6 +27028,7 @@ f619121b24a4f0d6f91f3f97bfb5d8d1  kernel/shop/vatrules.php
 0a00efff66030a5c736ce21b067e1d64  kernel/shop/vattype.php
 63f3b6903e990a159b8ab0ed7e234e23  kernel/shop/wishlist.php
 ecb61d81b5bf14b44112c2954a9bf629  kernel/sql/common/cleandata.sql
+6f660e2cbd2c89d75246a5b9190815c8  kernel/sql/mongodb/cluster_dfs_schema.json
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
@@ -29316,9 +29321,11 @@ c98e893a75b3bf362d0515b4b4c30728  tests/tests/kernel/classes/classicmenu/expClas
 271c0b718ab5d5abe811e4ca74a635e8  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
 59814cc8048fbb6639df8574b7df0ff2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 5f138b4314e1dab989fb4d4ff1accc73  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
-50ea77ecdcda20b5cbf355e497af7e95  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php
+4696eec88ecd8960075d6b4e74786f06  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php
+cd20623bd79ecafe781527a6b0609d7d  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerMongoDBBackendTest.php
 d9989a52ebe8a99ca236388a605d019e  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerPostgresqlBackendTest.php
 99d66cd76e2f0c83fd4df00d4ce403e2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerSQLiteBackendTest.php
+50a94a8d8e811c84b1e4cdd3582cf560  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSMongoDBBackendIntegrationTest.php
 8dffbc38afd2e6cb30472a95ef4f13fc  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSMySQLiBackendParityTest.php
 99989af7a3edb23feec16c5feea01062  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSPostgresqlBackendIntegrationTest.php
 d4b039ed7e509105ef9ad62d73a5fd64  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSSQLiteBackendIntegrationTest.php

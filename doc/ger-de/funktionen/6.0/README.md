@@ -100,6 +100,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
 - [Clustering mit SQLite: das Ein-Knoten-DFS-Backend im Kernel](sqlite-dfs-cluster.md)
 - [Abfragen über ID-Mengen beliebiger Größe: expDBInList und InListChunkSize](in-listen-beliebiger-groesse.md)
+- [Clustering mit MongoDB: das DFS-Backend im Kernel](mongodb-dfs-cluster.md)
 - [AdminNeo: die Datenbankverwaltung hinter dem Database Source Editor](adminneo-datenbankverwaltung.md)
 - [Datentabellen: die Tabellen der Module als Teil des Systems](datentabellen.md): der Katalog der persistenten
   Klassen, benannte Datenbankverbindungen, Klassen auf ihrer eigenen Verbindung

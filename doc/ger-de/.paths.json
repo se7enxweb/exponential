@@ -3525,6 +3525,7 @@
     "funktionen/6.0/moderne-passwortaenderung.md": "features/6.0/modern-password-change.md",
     "funktionen/6.0/modulueberschreibung-durch-extensions.md": "features/6.0/extension-module-override.md",
     "funktionen/6.0/mongodb-datenbankunterstuetzung.md": "features/6.0/mongodb-database-support.md",
+    "funktionen/6.0/mongodb-dfs-cluster.md": "features/6.0/mongodb-dfs-cluster.md",
     "funktionen/6.0/oberster-knoten-des-inhaltsbaums-im-admin.md": "features/6.0/admin-content-tree-top-node.md",
     "funktionen/6.0/online-editor-tinymce8.md": "features/6.0/online-editor-tinymce8.md",
     "funktionen/6.0/optionen-der-unterelementtabelle.md": "features/6.0/subitems-table-options.md",

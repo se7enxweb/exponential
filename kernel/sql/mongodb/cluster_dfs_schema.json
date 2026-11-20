@@ -1,0 +1,23 @@
+{
+    "description": "The DFS cluster metadata collections of the kernel's MongoDB backend (expDFSFileHandlerMongoDBBackend). One document per clustered file; _id is name_hash (md5 of name), so a path has one document and the unique _id index is the lock of a cache generation. size and mtime are 64 bit integers; a deleted file keeps its document with mtime -ABS(mtime) and expired 1 until it is purged. exp:cluster:enable creates them; by hand: expDFSFileHandlerMongoDBBackend::createSchema().",
+    "collections": {
+        "ezdfsfile": {
+            "indexes": [
+                { "name": "ezdfsfile_name", "key": { "name": 1 } },
+                { "name": "ezdfsfile_name_trunk", "key": { "name_trunk": 1 } },
+                { "name": "ezdfsfile_expired_scope", "key": { "expired": 1, "scope": 1 } },
+                { "name": "ezdfsfile_scope", "key": { "scope": 1 } },
+                { "name": "ezdfsfile_mtime", "key": { "mtime": 1 } }
+            ]
+        },
+        "ezdfsfile_cache": {
+            "indexes": [
+                { "name": "ezdfsfile_cache_name", "key": { "name": 1 } },
+                { "name": "ezdfsfile_cache_name_trunk", "key": { "name_trunk": 1 } },
+                { "name": "ezdfsfile_cache_expired_scope", "key": { "expired": 1, "scope": 1 } },
+                { "name": "ezdfsfile_cache_scope", "key": { "scope": 1 } },
+                { "name": "ezdfsfile_cache_mtime", "key": { "mtime": 1 } }
+            ]
+        }
+    }
+}
