@@ -3,8 +3,8 @@
  * The schema files of cjw_newsletter against share/db_schema.dba, the source of truth: the MySQL and PostgreSQL
  * files name every table and column of the .dba; the SQLite file, executed into a throwaway SQLite file under
  * var/tmp, has every table, column, primary key and index of the .dba; the upgrade SQL of each engine exists for
- * every release that changes the schema; on SQLite the 4.1 -> 4.2 upgrade applied to a 4.1 schema gives the 4.2
- * schema, and a second run of it fails loudly. On the installation's own database (SQLite only) every table and
+ * every release that changes the schema; on SQLite the 4.1 -> 4.2 and 4.2 -> 4.3 upgrades applied to a 4.1 schema give the
+ * 4.3 schema, and a second run of either fails loudly. On the installation's own database (SQLite only) every table and
  * column of the .dba exists.
  *
  * Only throwaway SQLite files are created, and removed afterwards; the installation's database is only read.
@@ -203,6 +203,12 @@ class cjwNewsletterSchemaTest extends TestCase
                 $this->assertMatchesRegularExpression( "/ALTER TABLE $t ADD COLUMN IF NOT EXISTS $c /", $sql );
     }
 
+    /** Path of the 4.3 upgrade file of an engine. */
+    private static function upgrade43( $engine )
+    {
+        return self::$ext . "/update/database/$engine/4.3/dbupdate-4.2.20-to-4.3.0.sql";
+    }
+
     /**
      * The 4.1 -> 4.2 upgrade of each engine: present. On SQLite: applied to the 4.1.20 schema it gives the schema of
      * the .dba, and a second run fails (it must never silently pass over an installation that already has it).
@@ -220,6 +226,15 @@ class cjwNewsletterSchemaTest extends TestCase
         $db = $this->throwaway();
         $db->exec( file_get_contents( $base ) );
         $db->exec( file_get_contents( $upgrade ) );
+        // the 4.2 result lacks exactly the 4.3 additions of the .dba
+        $after42 = self::sqliteTables( $db );
+        $this->assertArrayNotHasKey( 'cjwnl_segment', $after42, 'no segment table before 4.3' );
+        $this->assertArrayNotHasKey( 'segment_id', $after42['cjwnl_edition_send']['columns'] );
+        foreach ( array( 'cjwnl_series', 'cjwnl_series_step', 'cjwnl_series_member' ) as $t )
+            $this->assertArrayNotHasKey( $t, $after42, "no $t table before 4.3" );
+        $this->assertArrayNotHasKey( 'series_step_id', $after42['cjwnl_edition_send']['columns'] );
+        $this->assertArrayNotHasKey( 'person_tracking', $after42['cjwnl_edition_send_item']['columns'] );
+        $db->exec( file_get_contents( self::upgrade43( 'sqlite' ) ) );
         $this->assertSame( self::expected( $dba ), self::normalise( self::sqliteTables( $db ), $dba ) );
         $failed = false;
         try
@@ -255,6 +270,7 @@ class cjwNewsletterSchemaTest extends TestCase
             $db->exec( "INSERT INTO $t (" . implode( ', ', $cols ) . ') VALUES (' . implode( ', ', $values ) . ')' );
         }
         $db->exec( file_get_contents( $upgrade ) );
+        $db->exec( file_get_contents( self::upgrade43( 'sqlite' ) ) );
         $dba = self::dba();
         foreach ( $old as $t => $info )
         {
@@ -266,7 +282,7 @@ class cjwNewsletterSchemaTest extends TestCase
         $db->close();
     }
 
-    /** The MySQL and PostgreSQL upgrades add exactly what the .dba has more than 4.1.20. */
+    /** The MySQL and PostgreSQL upgrades (4.2 and 4.3 together) add exactly what the .dba has more than 4.1.20. */
     public function testMysqlAndPostgresqlUpgradesTo42AddEveryNewTableAndColumn()
     {
         if ( !is_file( self::$ext . '/update/database/sqlite/4.2/dbupdate-4.1.20-to-4.2.0.sql' ) )
@@ -278,7 +294,8 @@ class cjwNewsletterSchemaTest extends TestCase
         $dba = self::dba();
         foreach ( array( 'mysql', 'postgresql' ) as $engine )
         {
-            $sql = file_get_contents( self::$ext . "/update/database/$engine/4.2/dbupdate-4.1.20-to-4.2.0.sql" );
+            $sql = file_get_contents( self::$ext . "/update/database/$engine/4.2/dbupdate-4.1.20-to-4.2.0.sql" )
+                 . "\n" . file_get_contents( self::upgrade43( $engine ) );
             $created = self::sqlColumns( $sql );
             preg_match_all( '/ALTER\s+TABLE\s+(\w+)\s+ADD\s+COLUMN\s+"?(\w+)"?/i', $sql, $m, PREG_SET_ORDER );
             $added = array();
@@ -297,6 +314,43 @@ class cjwNewsletterSchemaTest extends TestCase
             if ( $t !== 'cjwnl_edition' && $t !== 'cjwnl_list' )
                 $this->assertStringContainsString( "ALTER SEQUENCE {$t}_s RENAME TO {$t}_id_seq;", $pg, "the sequence of $t gets the name the driver reads" );
         $this->assertStringNotContainsString( "_s'::text", file_get_contents( self::$ext . '/sql/postgresql/schema.sql' ) );
+    }
+
+    /** The 4.3 upgrade of each engine exists, names every new table and column, and does not run twice on SQLite. */
+    public function testUpgradeTo43ExistsNamesEveryAdditionAndFailsOnASecondRunOnSqlite()
+    {
+        foreach ( array( 'mysql', 'postgresql', 'sqlite' ) as $engine )
+            $this->assertFileExists( self::upgrade43( $engine ) );
+        foreach ( array( 'mysql', 'postgresql' ) as $engine )
+        {
+            $sql = file_get_contents( self::upgrade43( $engine ) );
+            $this->assertMatchesRegularExpression( '/CREATE TABLE cjwnl_segment\s*\(/', $sql, "$engine: the segment table" );
+            $this->assertMatchesRegularExpression( '/ALTER TABLE cjwnl_edition_send ADD COLUMN segment_id /', $sql, "$engine: segment_id" );
+            $this->assertMatchesRegularExpression( '/ALTER TABLE cjwnl_edition_send_item ADD COLUMN person_tracking /', $sql, "$engine: person_tracking" );
+            $this->assertStringNotContainsString( 'IF NOT EXISTS', preg_replace( '/--[^\n]*/', '', $sql ), "$engine: runs once" );
+            $this->assertMatchesRegularExpression( '/ALTER TABLE cjwnl_edition_send ADD COLUMN series_step_id /', $sql, "$engine: series_step_id" );
+            $columns = self::sqlColumns( $sql );
+            foreach ( array( 'cjwnl_segment', 'cjwnl_series', 'cjwnl_series_step', 'cjwnl_series_member' ) as $t )
+            {
+                $this->assertMatchesRegularExpression( "/CREATE TABLE $t\\s*\\(/", $sql, "$engine: the table $t" );
+                $this->assertEqualsCanonicalizing( array_keys( self::dba()[$t]['fields'] ), $columns[$t], "$engine: the columns of $t" );
+            }
+        }
+        $db = $this->throwaway();
+        $db->exec( file_get_contents( __DIR__ . '/fixtures/cjwnl-schema-4.1.20-sqlite.sql' ) );
+        $db->exec( file_get_contents( self::$ext . '/update/database/sqlite/4.2/dbupdate-4.1.20-to-4.2.0.sql' ) );
+        $db->exec( file_get_contents( self::upgrade43( 'sqlite' ) ) );
+        $failed = false;
+        try
+        {
+            $db->exec( file_get_contents( self::upgrade43( 'sqlite' ) ) );
+        }
+        catch ( Exception $e )
+        {
+            $failed = true;
+        }
+        $this->assertTrue( $failed, 'a second run of the 4.3 upgrade fails' );
+        $db->close();
     }
 
     public function testTheInstallationsSqliteDatabaseHasEveryTableAndColumnOfTheDba()

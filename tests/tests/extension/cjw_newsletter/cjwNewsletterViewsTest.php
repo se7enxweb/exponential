@@ -39,6 +39,8 @@ class cjwNewsletterViewsTest extends cjwNewsletterTestCase
             'subscription_list' => array( 'subscription_list' ), 'subscription_view' => array( 'subscription_view' ),
             'subscription_list_csvimport' => array( 'subscription_list_csvimport' ),
             'subscription_list_csvexport' => array( 'subscription_list_csvexport' ),
+            'segment_list' => array( 'segment_list' ), 'segment_edit' => array( 'segment_edit' ),
+            'series_edit' => array( 'series_edit' ),
             'configure' => array( 'configure' ), 'unsubscribe' => array( 'unsubscribe' ),
             'preview_archive' => array( 'preview_archive' ), 'send' => array( 'send' ), 'send_abort' => array( 'send_abort' ),
             'archive' => array( 'archive' ), 'preview' => array( 'preview' ),

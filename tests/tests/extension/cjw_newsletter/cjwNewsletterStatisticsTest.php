@@ -484,11 +484,14 @@ class cjwNewsletterStatisticsTest extends cjwNewsletterTestCase
         };
         $this->assertSame( 2, $rowsOf( $a ) );
         $this->assertSame( 2, $rowsOf( $b ) );
+        $this->assertGreaterThan( 0, (int)$this->item( $send, $a )->attribute( 'person_tracking' ) );
 
         $this->consent( $a, false );
         $this->assertSame( 0, $rowsOf( $a ), 'withdrawn: gone at once' );
         $this->assertSame( 0, (int)$this->item( $send, $a )->attribute( 'click_count' ) );
+        $this->assertSame( 0, (int)$this->item( $send, $a )->attribute( 'person_tracking' ), 'withdrawn: no per-person mark left' );
         $this->assertSame( 2, $rowsOf( $b ), 'the other person is untouched' );
+        $this->assertGreaterThan( 0, (int)$this->item( $send, $b )->attribute( 'person_tracking' ) );
 
         expMailPreferences::forRecipient( CjwNewsletterMailPreferences::recipientForNewsletterUser( $b ) )->erase( expConsentContext::system( 'NLTEST erase' ) );
         $this->assertSame( 0, $rowsOf( $b ), 'erased: gone at once (the kernel calls erased())' );
