@@ -3,8 +3,8 @@ title: "Clustering: DFS and its metadata database"
 audience: dba
 category: database-administration
 order: 41
-summary: The database side of an Exponential cluster on several web servers - the DFS file handler and its metadata table ezdfsfile, the backends for MySQL and MariaDB, for PostgreSQL, for MongoDB and for SQLite on one machine (in the kernel) and Oracle (ezoracle), the file.ini settings and their unsafe defaults, the cluster update files, maintenance commands and what to monitor.
-keywords: cluster, clustering, DFS, eZDFSFileHandler, eZFSFileHandler, ezdfsfile, ezdfsfile_cache, DBBackend, eZDFSFileHandlerMySQLiBackend, expDFSFileHandlerPostgresqlBackend, eZDFSFileHandlerPostgresqlBackend, expDFSFileHandlerSQLiteBackend, expDFSFileHandlerMongoDBBackend, DBLockTimeout, eZDFSFileHandlerOracleBackend, file.ini, eZDFSClusteringSettings, config.cluster.php, clusterize, clusterpurge, dfscleanup, cluster_maintenance, NFS
+summary: The database side of an Exponential cluster on several web servers - the DFS file handler and its metadata table ezdfsfile, the backends for MySQL and MariaDB, for PostgreSQL, for Oracle, for MongoDB and for SQLite on one machine (all in the kernel), the file.ini settings and their unsafe defaults, the cluster update files, maintenance commands and what to monitor.
+keywords: cluster, clustering, DFS, eZDFSFileHandler, eZFSFileHandler, ezdfsfile, ezdfsfile_cache, DBBackend, eZDFSFileHandlerMySQLiBackend, expDFSFileHandlerPostgresqlBackend, eZDFSFileHandlerPostgresqlBackend, expDFSFileHandlerSQLiteBackend, expDFSFileHandlerMongoDBBackend, expDFSFileHandlerOracleBackend, DBLockTimeout, eZDFSFileHandlerOracleBackend, file.ini, eZDFSClusteringSettings, config.cluster.php, clusterize, clusterpurge, dfscleanup, cluster_maintenance, NFS
 type: help
 ---
 # Clustering: DFS and its metadata database
@@ -59,9 +59,10 @@ data, so the two sets of transactions do not mix.
 | `expDFSFileHandlerPostgresqlBackend` (also `eZDFSFileHandlerPostgresqlBackend`) | PostgreSQL 13 and later | the kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/postgresql.php`), tables in `kernel/sql/postgresql/cluster_dfs_schema.sql`, gateway `dfspostgresql`. A refactoring of the ezpostgresqlcluster extension by eZ Systems and 7x's fork of it: [Clustering on PostgreSQL](../../features/6.0/postgresql-dfs-cluster.md) |
 | `expDFSFileHandlerSQLiteBackend` | SQLite 3.24 and later, **one machine only** | the kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/sqlite.php`), tables in `kernel/sql/sqlite/cluster_dfs_schema.sql`, gateway `dfssqlite`; `DBName` is the database file. For a one-node cluster and for tests: [Clustering on SQLite](../../features/6.0/sqlite-dfs-cluster.md) |
 | `expDFSFileHandlerMongoDBBackend` | MongoDB 5.0 and later, one server or a replica set | the kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/mongodb.php`), collections and indexes in `kernel/sql/mongodb/cluster_dfs_schema.json`, gateway `dfsmongodb`; only the PHP extension `mongodb`. `DBHost` may hold a whole `mongodb://` connection string for a replica set: [Clustering on MongoDB](../../features/6.0/mongodb-dfs-cluster.md) |
-| `eZDFSFileHandlerOracleBackend` | Oracle | the `ezoracle` extension (`clusterfilehandlers/dfsbackends/oracle.php`); only `DBName` is used, not `DBHost`, `DBPort` or `DBSocket` |
+| `expDFSFileHandlerOracleBackend` | Oracle 12.1 and later | the kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/oracle.php`), tables in `kernel/sql/oracle/cluster_dfs_schema.sql`, gateway `dfsoracle`; `DBName` is the connect string, `DBHost`, `DBPort` and `DBSocket` are not used. [Clustering on Oracle](../../features/6.0/oracle-dfs-cluster.md) |
+| `eZDFSFileHandlerOracleBackend` | Oracle | the `ezoracle` extension (`clusterfilehandlers/dfsbackends/oracle.php`), replaced by the kernel's; `kernel/sql/oracle/cluster_dfs_schema_upgrade.sql` upgrades its table |
 
-[Clustering on PostgreSQL, "More engines"](../../features/6.0/postgresql-dfs-cluster.md#more-engines-oracle-mongodb-and-sqlite) lays out how the Oracle backend follows in the kernel.
+Every database Exponential supports has a cluster backend in the kernel; [Clustering on PostgreSQL, "More engines"](../../features/6.0/postgresql-dfs-cluster.md#more-engines-oracle-mongodb-and-sqlite) compares them.
 
 ## The settings
 
@@ -103,7 +104,7 @@ On an upgrade apply the `dbupdate-cluster-...` file of every step that has one (
 
 Run `dfscleanup.php` with `-S` and `-B` first and read the result before you add `-D`. `clusterpurge.php` is the
 cronjob part `cluster_maintenance`, which `cronjob.ini [AdminSettings] ForbiddenParts[]` keeps off the browser; run it
-from cron. With the Oracle backend that part is not effective; the extension provides
+from cron. It works with every kernel backend, Oracle's included; only the `ezoracle` extension's old backend needed
 `extension/ezoracle/bin/php/oracleclusterbinarypurge.php` instead.
 
 ## What to watch

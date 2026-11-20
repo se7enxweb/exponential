@@ -226,11 +226,11 @@ The order the owner set: PostgreSQL first (this page), then the others in the ke
 
 | Engine | Plan | Notes |
 |---|---|---|
-| Oracle | a kernel backend after the structure of the PostgreSQL one; until then the `ezoracle` extension's `eZDFSFileHandlerOracleBackend` | `MERGE` for the upsert, `SELECT ... FOR UPDATE SKIP LOCKED` and `WAIT n` for bounded locks, ORA-00060 (deadlock) and ORA-30006 (wait timeout) as the retryable errors |
+| Oracle | **built**: `expDFSFileHandlerOracleBackend`, Oracle 12.1 and later ([Clustering on Oracle](oracle-dfs-cluster.md)); it replaces the `ezoracle` extension's `eZDFSFileHandlerOracleBackend`, whose table `cluster_dfs_schema_upgrade.sql` upgrades | `MERGE` for the upsert, `SELECT ... FOR UPDATE WAIT n` before every change for bounded locks, `SKIP LOCKED` for purges, ORA-00060 (deadlock) and ORA-30006/ORA-00054 (wait timeout) as the retryable errors |
 | MongoDB | **built**: `expDFSFileHandlerMongoDBBackend`, one node or a replica set ([Clustering on MongoDB](mongodb-dfs-cluster.md)) | `_id` = `name_hash`, so the unique `_id` gives the one-winner generation (duplicate key = being generated); upserts for stores, compare and set on `mtime` for take-overs; no multi-document transaction, so it runs on a single server too; only the PHP extension, no library |
 | SQLite | **built**: `expDFSFileHandlerSQLiteBackend`, one node and tests only ([Clustering on SQLite](sqlite-dfs-cluster.md)) | one file, so one machine: `BEGIN IMMEDIATE` and a busy timeout in place of row locks; suited to a one-node cluster and to the parity suite on a laptop, never to several web servers |
 
-SQLite and MongoDB are built; Oracle starts with its parity test class.
+SQLite, MongoDB and Oracle are built: every database Exponential supports has a cluster backend in the kernel.
 
 ## Related pages
 

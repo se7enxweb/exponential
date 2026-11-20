@@ -6989,7 +6989,7 @@ e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 dabff75a311362f40ae3a24bf5b55b51  doc/eng-us/features/6.0/cache-until.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
-c71802a561fbf1c44efdf5d8c72fc62e  doc/eng-us/features/6.0/cluster-commands.md
+9c6355890650a5b4e260f01ff2dca126  doc/eng-us/features/6.0/cluster-commands.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
 b10b8f6d48a35a112fc60abd882b4869  doc/eng-us/features/6.0/content-jobs.md
@@ -7121,7 +7121,7 @@ e72286bc83884f1eb24b2ee9034f6481  doc/eng-us/features/6.0/platform-layouts-core-
 9883032b2ce992bfc3a26c0f0a92cc74  doc/eng-us/features/6.0/platform-php85-framework-forks.md
 cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.md
 2e6216a45844e2f3da0b09fbbea87102  doc/eng-us/features/6.0/platform-sqlite-install.md
-f802f3c37d6a95b83d43234550db0340  doc/eng-us/features/6.0/postgresql-dfs-cluster.md
+0656d3658311e70aca81acb23640d6c8  doc/eng-us/features/6.0/postgresql-dfs-cluster.md
 90c5f27d343a57526bf016d4e13900ef  doc/eng-us/features/6.0/preload-sites-view.md
 c07c4366ceda3d30c77c453388701333  doc/eng-us/features/6.0/preview-in-owning-siteaccess.md
 ae08ede3efea95365e6dbc15478de7cf  doc/eng-us/features/6.0/preview-links.md
@@ -8561,7 +8561,7 @@ b395e87aace8d32bef3c1dbccce95367  doc/eng-us/help/database-administrators/backup
 92550e94f1b9bad1263405563fcce995  doc/eng-us/help/database-administrators/character-sets-and-collations.md
 e3a7e6b926d370d8343a37a93311fe54  doc/eng-us/help/database-administrators/checking-the-schema-after-an-upgrade.md
 ff6fc0bde2ddf85fa9c64732934cee2d  doc/eng-us/help/database-administrators/choosing-an-engine.md
-c448c5ed4e2b669f87432946ec30efb8  doc/eng-us/help/database-administrators/clustering-dfs-and-the-database.md
+412b8a1095091905434c4cfe7c039e6a  doc/eng-us/help/database-administrators/clustering-dfs-and-the-database.md
 0e52e11826cd52af5a7460bd5c8c8d1f  doc/eng-us/help/database-administrators/database-accounts-and-privileges.md
 946fcc652bca6b9599883f6f7d4b3b70  doc/eng-us/help/database-administrators/database-administrators-start-here.md
 9b0dbdd0409985b0191f99d842839722  doc/eng-us/help/database-administrators/database-faq.md
@@ -8605,7 +8605,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-a8afb6fe7ffeb565b0e7e3f9a9670f4c  doc/eng-us/help/database-support.md
+424cb98121f75acbe30d6f233d42f567  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -10254,7 +10254,7 @@ ca30f7e9ac6111347d2dfb17ddbcfa77  doc/eng-us/help/hosting/models/vps-hosting.md
 e4f1691f3c2261d8d5b522ae9ae23026  doc/eng-us/help/hosting/operations/automated-updates-with-ezupdate.md
 aef2dba03885a2061e13cd2660b7682f  doc/eng-us/help/hosting/operations/backup-schedules-and-retention.md
 090ce535f1491a0da62c1536d38597d3  doc/eng-us/help/hosting/operations/backups-what-to-back-up.md
-aca7a523b397f9fef701f2f9690a0e3d  doc/eng-us/help/hosting/operations/clustering-and-shared-storage.md
+6ae869403810d260a231c9ebc9ced944  doc/eng-us/help/hosting/operations/clustering-and-shared-storage.md
 58422cf020cfc35c928d8745f634e16b  doc/eng-us/help/hosting/operations/cron-jobs.md
 54a2d0581192fb2682919771ea80cc65  doc/eng-us/help/hosting/operations/cronjob-console.md
 4b7752b284fe9227fb33106466755882  doc/eng-us/help/hosting/operations/database-backups-per-engine.md
@@ -17131,7 +17131,7 @@ dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-si
 1f1a89109f14133da5ec552dcd12b106  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
-72aa87a17f28058b057764f157768921  doc/ger-de/funktionen/6.0/cluster-befehle.md
+cddd00d26e02b6573288a4146f1a8386  doc/ger-de/funktionen/6.0/cluster-befehle.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
@@ -17260,7 +17260,7 @@ fe5869bd6e0ab614f9de91892d6c9895  doc/ger-de/funktionen/6.0/plattform-nexus-star
 6ded0e62de5d948d8a4f97fac3b2e8e8  doc/ger-de/funktionen/6.0/plattform-php85-framework-forks.md
 393ffffcd603e012a44013ce86323f2b  doc/ger-de/funktionen/6.0/plattform-site-bundles.md
 04a57e6e4790f4c646e57c18412a6b61  doc/ger-de/funktionen/6.0/plattform-sqlite-installation.md
-883eed414cb47c2f6bb11f45640005b6  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
+c632e965fa1c8e75cbe50f5ffd400af8  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
 566dbc8ab28ae074d810044f0c1b0bc8  doc/ger-de/funktionen/6.0/pruefprotokoll.md
 1b7d415eb35e75914386eae1e439cd70  doc/ger-de/funktionen/6.0/pruefung-umgekehrter-beziehungen.md
 adce76c3dd1b2afaf99c06947abb30a5  doc/ger-de/funktionen/6.0/qualitaetspruefungen.md
@@ -18463,7 +18463,7 @@ a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-
 f5be1f862dc084f747a2aec672a8f29e  doc/ger-de/hilfe/das-benutzer-auditprotokoll.md
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
-ffd27e24a0ebe36197cb4a954ced7224  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
+a4cf4bd7e8547a58fa7261ff17dcea34  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
 94089c20901b141be2173f682a80e617  doc/ger-de/hilfe/datenbankadministratoren/das-datenbank-update-6-0-15-anwenden.md
 ced62c6996019200e8471a6a57a4a3d5  doc/ger-de/hilfe/datenbankadministratoren/das-dba-schemaformat.md
 75e95d3bded64acbfbba133add8c278c  doc/ger-de/hilfe/datenbankadministratoren/das-schema-nach-einem-upgrade-pruefen.md
@@ -19606,7 +19606,7 @@ c61d439508facadeb59d0ec7bad0c8f9  doc/ger-de/hilfe/hosting/betrieb/README.md
 32c2a3ccd9221a1035e3d5d3f421ae7a  doc/ger-de/hilfe/hosting/betrieb/automatische-updates-mit-ezupdate.md
 00d77c0b310451b73ffd4e0d07d14b39  doc/ger-de/hilfe/hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md
 57edac404a5260717629912fcb075ab3  doc/ger-de/hilfe/hosting/betrieb/backups-was-gesichert-werden-muss.md
-def630e9be0ea38844bde1d7dafb7b56  doc/ger-de/hilfe/hosting/betrieb/clustering-und-gemeinsamer-speicher.md
+eb15aad673bf32a326b28d20e3b97d27  doc/ger-de/hilfe/hosting/betrieb/clustering-und-gemeinsamer-speicher.md
 84e393a545de730f1705048547076208  doc/ger-de/hilfe/hosting/betrieb/cronjobs.md
 6bc83b68a665290410dc5ead211c044a  doc/ger-de/hilfe/hosting/betrieb/datenbank-backups-je-engine.md
 67b54dd5d1e57e6d4aa5cf5902415968  doc/ger-de/hilfe/hosting/betrieb/die-cronjob-konsole.md
@@ -24771,7 +24771,7 @@ b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_to
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
 fe0bce95fbb9c13990be1fecce0356f6  kernel/classes/classicmenu/expclassicmenusettings.php
 778a26bd7868d8b25ced9a004af515fa  kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php
-b32d4a377d51a201ee5fc2c09d0132bd  kernel/classes/cluster/expclustersetup.php
+8a405917179d4cf81b4080fd4cfdd1a0  kernel/classes/cluster/expclustersetup.php
 aaff1838ebeaa52d26de4395929327ea  kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php
 865e130c99d93fd0b6943b867d91e3db  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 7a36f246c38cf46fc9a07696f2e82d96  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
@@ -26082,7 +26082,7 @@ cc587fd2e74ad1e9215ec175b94b44fd  kernel/private/classes/commands/clusterize.php
 845042909bb86e2a2700281b37c6d37a  kernel/private/classes/commands/dfscleanup.php
 14d7119d4f084e13faa07b964670e35f  kernel/private/classes/commands/expbackfillordersiteaccess.php
 1a4b109191a04f0803ee7b588db3d311  kernel/private/classes/commands/expclusterdisable.php
-1dc359dc379a0b2ebd167f97ead3e984  kernel/private/classes/commands/expclusterenable.php
+3788dcc690140b387a872b57040a938f  kernel/private/classes/commands/expclusterenable.php
 40e4958317e33da81fdc573d6814191e  kernel/private/classes/commands/expcontentjob.php
 ab2cbe636f4bd9a9e93cf053b435f3bc  kernel/private/classes/commands/expgraphqlbench.php
 00fa9b3ad265ada70a9ec5fd0b76ad0c  kernel/private/classes/commands/expgraphqldisable.php
@@ -27537,7 +27537,7 @@ ab00f79238eebe7e595134867213df63  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
-da030ecdcb45b90db495fb9d897a3909  settings/file.ini
+85530c1ded3beb134b91d3da1ac7ca5b  settings/file.ini
 48030b94ca3f24f7ace0b42095a051d7  settings/graphql.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
@@ -29324,7 +29324,7 @@ b5e6823fe454da6742dbe533e30d59b4  tests/tests/kernel/classes/cachesmore/eZStatic
 7927b5e0c9a307433593061ff253ec6b  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
 89a4d84cf90433287afc8977a6bd3ecb  tests/tests/kernel/classes/cachesmore/fixtures/preload-demo-site-front-page-uri-matching.html
 c98e893a75b3bf362d0515b4b4c30728  tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php
-bfcbe9acc3a34e9846e6c3c608aa49b2  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
+625d174ee2d7789b78f6cd54d6797faf  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
 59814cc8048fbb6639df8574b7df0ff2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 5f138b4314e1dab989fb4d4ff1accc73  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
 e7ab71f7013e8514190fd44a43041b5d  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php

@@ -83,7 +83,8 @@ dedizierter MySQL-Server bei großen Websites die Leistung deutlich verbessern k
 | `expDFSFileHandlerPostgresqlBackend` (oder `eZDFSFileHandlerPostgresqlBackend`) | der Kernel, für PostgreSQL 13 und neuer, nach der Erweiterung ezpostgresqlcluster von eZ Systems und dem Fork von 7x ([Clustering mit PostgreSQL](../../../funktionen/6.0/postgresql-dfs-cluster.md)) |
 | `expDFSFileHandlerSQLiteBackend` | der Kernel, für SQLite auf **einer** Maschine: ein Ein-Knoten-Cluster oder Tests, nie mehrere Webserver ([Clustering mit SQLite](../../../funktionen/6.0/sqlite-dfs-cluster.md)) |
 | `expDFSFileHandlerMongoDBBackend` | der Kernel, für MongoDB 5.0 und neuer, ein Server oder ein Replica Set, nur mit der PHP-Erweiterung ([Clustering mit MongoDB](../../../funktionen/6.0/mongodb-dfs-cluster.md)) |
-| `eZDFSFileHandlerOracleBackend` | die Erweiterung `ezoracle` |
+| `expDFSFileHandlerOracleBackend` | der Kernel, für Oracle 12.1 und neuer, nur mit der PHP-Erweiterung `oci8` ([Clustering mit Oracle](../../../funktionen/6.0/oracle-dfs-cluster.md)) |
+| `eZDFSFileHandlerOracleBackend` | die Erweiterung `ezoracle`; ersetzt durch das des Kernels |
 
 Quelle: [15.17 Cluster und DFS](../../../installation/15-migration-von-5x-legacy.md#1517-cluster-und-dfs) und die in
 `config.php-RECOMMENDED` aufgeführten Backends (`dfsmysqli`, `dfspostgresql`, `dfsoracle`). Auch die Speicherseite lässt sich
