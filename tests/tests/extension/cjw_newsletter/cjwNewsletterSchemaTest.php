@@ -210,6 +210,15 @@ class cjwNewsletterSchemaTest extends TestCase
     }
 
     /**
+     * Whether the installed cjw_newsletter is 4.3 or later (it has the 4.3 upgrade). A test run against an older
+     * release (CI installs the release the floor package allows) checks the 4.2 parts only and skips the 4.3 ones.
+     */
+    private static function has43()
+    {
+        return is_file( self::upgrade43( 'sqlite' ) );
+    }
+
+    /**
      * The 4.1 -> 4.2 upgrade of each engine: present. On SQLite: applied to the 4.1.20 schema it gives the schema of
      * the .dba, and a second run fails (it must never silently pass over an installation that already has it).
      */
@@ -234,7 +243,8 @@ class cjwNewsletterSchemaTest extends TestCase
             $this->assertArrayNotHasKey( $t, $after42, "no $t table before 4.3" );
         $this->assertArrayNotHasKey( 'series_step_id', $after42['cjwnl_edition_send']['columns'] );
         $this->assertArrayNotHasKey( 'person_tracking', $after42['cjwnl_edition_send_item']['columns'] );
-        $db->exec( file_get_contents( self::upgrade43( 'sqlite' ) ) );
+        if ( self::has43() )
+            $db->exec( file_get_contents( self::upgrade43( 'sqlite' ) ) );
         $this->assertSame( self::expected( $dba ), self::normalise( self::sqliteTables( $db ), $dba ) );
         $failed = false;
         try
@@ -295,7 +305,7 @@ class cjwNewsletterSchemaTest extends TestCase
         foreach ( array( 'mysql', 'postgresql' ) as $engine )
         {
             $sql = file_get_contents( self::$ext . "/update/database/$engine/4.2/dbupdate-4.1.20-to-4.2.0.sql" )
-                 . "\n" . file_get_contents( self::upgrade43( $engine ) );
+                 . ( self::has43() ? "\n" . file_get_contents( self::upgrade43( $engine ) ) : '' );
             $created = self::sqlColumns( $sql );
             preg_match_all( '/ALTER\s+TABLE\s+(\w+)\s+ADD\s+COLUMN\s+"?(\w+)"?/i', $sql, $m, PREG_SET_ORDER );
             $added = array();
@@ -319,6 +329,8 @@ class cjwNewsletterSchemaTest extends TestCase
     /** The 4.3 upgrade of each engine exists, names every new table and column, and does not run twice on SQLite. */
     public function testUpgradeTo43ExistsNamesEveryAdditionAndFailsOnASecondRunOnSqlite()
     {
+        if ( !self::has43() )
+            $this->markTestSkipped( 'cjw_newsletter before 4.3 is installed: no 4.3 upgrade to check' );
         foreach ( array( 'mysql', 'postgresql', 'sqlite' ) as $engine )
             $this->assertFileExists( self::upgrade43( $engine ) );
         foreach ( array( 'mysql', 'postgresql' ) as $engine )
