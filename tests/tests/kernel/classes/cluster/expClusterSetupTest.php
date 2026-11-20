@@ -36,7 +36,7 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'no PostgreSQL cluster backend yet', expClusterSetup::plan( self::facts( 'ezpostgresql' ) ) );
         $pg = expClusterSetup::plan( self::facts( 'ezpostgresql', array( 'postgresql' => 'eZDFSFileHandlerPostgresqlBackend' ) ) );
         $this->assertSame( array( 'postgresql', 'dfspostgresql', 5432 ), array( $pg['engine'], $pg['gateway'], $pg['port'] ) );
-        $this->assertStringContainsString( 'needs MySQL/MariaDB, PostgreSQL, SQLite or MongoDB', expClusterSetup::plan( self::facts( 'eznulldb' ) ) );
+        $this->assertStringContainsString( 'needs MySQL/MariaDB, PostgreSQL, SQLite, MongoDB or Oracle', expClusterSetup::plan( self::facts( 'eznulldb' ) ) );
         $this->assertStringContainsString( 'not postgresql', expClusterSetup::plan( self::facts(), 'postgresql' ) );
     }
 
@@ -77,6 +77,28 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'cluster_dfs_schema.json', expClusterSetup::schemaFile( $backends['mongodb'] ) );
         $this->assertSame( 'cluster_dfs_schema.sql', expClusterSetup::schemaFile( $backends['sqlite'] ) );
         $this->assertFileExists( dirname( __DIR__, 5 ) . '/kernel/sql/mongodb/cluster_dfs_schema.json' );
+    }
+
+    /** Oracle: the connect string is the database, no host or port; the tables of kernel/sql/oracle */
+    public function testThePlanOnOracle()
+    {
+        $this->assertStringContainsString( 'no Oracle cluster backend yet', expClusterSetup::plan( self::facts( 'ezoracle' ) ) );
+        $f = self::facts( 'ezoracle', array( 'oracle' => 'expDFSFileHandlerOracleBackend' ) );
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db'] = array( 'Server' => '', 'Database' => '127.0.0.1:1521/FREEPDB1' ) + $s['db'];
+        $p = expClusterSetup::plan( $f );
+        $this->assertSame( array( 'oracle', 'dfsoracle', 'oracle', '', 0, '' ), array( $p['engine'], $p['gateway'], $p['sql'], $p['host'], $p['port'], $p['socket'] ) );
+        $block = expClusterSetup::iniBlock( $p, '/srv/dfs' );
+        $this->assertStringContainsString( "DBBackend=expDFSFileHandlerOracleBackend\n", $block );
+        $this->assertStringContainsString( "DBHost=\nDBPort=\nDBSocket=\nDBName=127.0.0.1:1521/FREEPDB1\nDBUser=u1\n", $block );
+        $this->assertStringContainsString( "define( 'CLUSTER_STORAGE_BACKEND', 'dfsoracle' );", expClusterSetup::gatewayText( $p, '/srv/dfs' ) );
+        foreach ( array( 'ezoracle', 'oracle' ) as $implementation )
+            $this->assertSame( 'oracle', expClusterSetup::engineOf( $implementation ) );
+        // an account is needed: Oracle has no anonymous login
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db']['User'] = '';
+        $this->assertStringContainsString( 'incomplete', expClusterSetup::plan( $f ) );
+        $this->assertCount( 10, expClusterSetup::schemaStatements( file_get_contents( dirname( __DIR__, 5 ) . '/kernel/sql/oracle/cluster_dfs_schema.sql' ) ) );
     }
 
     public function testTheIniBlock()

@@ -36,6 +36,8 @@ class expClusterSetup
             // collections, not tables: the schema is a JSON file the backend creates (createSchema())
             'mongodb' => array( 'classes' => array( 'expDFSFileHandlerMongoDBBackend' ), 'gateway' => 'dfsmongodb', 'sql' => 'mongodb', 'port' => 27017,
                                 'schema' => 'cluster_dfs_schema.json' ),
+            // the site's Database is the connect string (Easy Connect, a TNS alias or a descriptor): no host or port
+            'oracle' => array( 'classes' => array( 'expDFSFileHandlerOracleBackend' ), 'gateway' => 'dfsoracle', 'sql' => 'oracle', 'port' => 0 ),
         );
     }
 
@@ -45,7 +47,8 @@ class expClusterSetup
         $engines = array( 'ezmysqli' => 'mysqli', 'ezmysql' => 'mysqli', 'mysqli' => 'mysqli', 'mysql' => 'mysqli',
                           'ezpostgresql' => 'postgresql', 'postgresql' => 'postgresql', 'pgsql' => 'postgresql',
                           'ezsqlite3' => 'sqlite', 'sqlite3' => 'sqlite',
-                          'mongodb' => 'mongodb', 'expmongodb' => 'mongodb', 'mongo' => 'mongodb' );
+                          'mongodb' => 'mongodb', 'expmongodb' => 'mongodb', 'mongo' => 'mongodb',
+                          'ezoracle' => 'oracle', 'oracle' => 'oracle', 'ezoracledb' => 'oracle' );
         $implementation = strtolower( (string)$implementation );
         return isset( $engines[$implementation] ) ? $engines[$implementation] : '';
     }
@@ -53,7 +56,7 @@ class expClusterSetup
     /** The name of an engine for people (pure). */
     public static function engineName( $engine )
     {
-        $names = array( 'mysqli' => 'MySQL/MariaDB', 'postgresql' => 'PostgreSQL', 'sqlite' => 'SQLite', 'mongodb' => 'MongoDB' );
+        $names = array( 'mysqli' => 'MySQL/MariaDB', 'postgresql' => 'PostgreSQL', 'sqlite' => 'SQLite', 'mongodb' => 'MongoDB', 'oracle' => 'Oracle' );
         return isset( $names[$engine] ) ? $names[$engine] : (string)$engine;
     }
 
