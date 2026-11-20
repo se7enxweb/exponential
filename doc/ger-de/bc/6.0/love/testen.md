@@ -23,7 +23,9 @@ Die Installation ist der Siteaccess aus `EXP_TEST_SITEACCESS`, sonst `DefaultAcc
 Datenbank, deren Name `test` als Wort enthält (`site_test`, nicht `latest`): Ist die Datenbank des Siteaccess keine
 solche, laufen sie auf einer Wegwerf-Datenbank `exp_test_*` (Kernel-Schema und saubere Daten), die am Ende gelöscht
 wird. Angelegt wird sie mit dem Konto aus `EXP_TEST_DB_USER`/`EXP_TEST_DB_PASSWORD` (Standard: die
-Datenbankeinstellungen des Siteaccess), das CREATE und DROP auf `exp\_test\_%` braucht. `EXP_TEST_KEEP_DATABASES=1`
+Datenbankeinstellungen des Siteaccess), das CREATE und DROP auf `exp\_test\_%` braucht. Wegwerf-Datenbanken entstehen
+auf MySQL oder MariaDB: Eine Site auf PostgreSQL oder SQLite setzt `EXP_TEST_DB_IMPLEMENTATION=ezmysqli` mit dem
+`EXP_TEST_DB_*`-Konto eines MySQL- oder MariaDB-Servers. `EXP_TEST_KEEP_DATABASES=1`
 behält sie und listet sie in `var/log/test-databases.log`. Ohne ein solches Konto werden die Tests übersprungen, und die
 Meldung nennt den Siteaccess, die Datenbank und den Grund. Die Testklassen auf `ezpDatabaseTestCase` bekommen immer eine
 eigene Wegwerf-Datenbank. `tests/runtests.php --db-per-test --dsn=…` leert nur eine Datenbank mit `test`, `tests` oder

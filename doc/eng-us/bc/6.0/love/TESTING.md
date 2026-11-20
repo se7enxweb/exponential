@@ -23,7 +23,9 @@ The installation is the siteaccess named in `EXP_TEST_SITEACCESS`, else `Default
 write only to a database with `test` as a word of its name (`site_test`, not `latest`): when the siteaccess's database is not one, they
 run on a throwaway database `exp_test_*` (kernel schema and clean data) that is dropped at the end,
 made with the account in `EXP_TEST_DB_USER`/`EXP_TEST_DB_PASSWORD` (default: the siteaccess's
-database settings), which needs CREATE and DROP on `exp\_test\_%`. `EXP_TEST_KEEP_DATABASES=1`
+database settings), which needs CREATE and DROP on `exp\_test\_%`. Throwaway databases are made on
+MySQL or MariaDB: a site on PostgreSQL or SQLite sets `EXP_TEST_DB_IMPLEMENTATION=ezmysqli` with the
+`EXP_TEST_DB_*` account of a MySQL or MariaDB server. `EXP_TEST_KEEP_DATABASES=1`
 keeps them and lists them in `var/log/test-databases.log`. Without such an account the tests are
 skipped, and the message names the siteaccess, the database and the reason. The test classes on
 `ezpDatabaseTestCase` always get a throwaway database of their own. `tests/runtests.php --db-per-test --dsn=…`

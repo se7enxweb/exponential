@@ -123,7 +123,8 @@ class ezpLiveInstallation
         catch ( Throwable $e )
         {
             self::$reason = "needs a live installation (siteaccess '$siteAccess' from " . ( trim( (string)getenv( 'EXP_TEST_SITEACCESS' ) ) !== '' ? 'EXP_TEST_SITEACCESS' : 'DefaultAccess' )
-                . ", database '$database'): " . trim( strtok( $e->getMessage(), "\n" ) );
+                . ", database '$database'): " . trim( strtok( $e->getMessage(), "\n" ) )
+                . ( $e instanceof Error ? ' (' . basename( $e->getFile() ) . ':' . $e->getLine() . ')' : '' );
         }
         return self::$reason;
     }

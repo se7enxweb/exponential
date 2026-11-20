@@ -129,6 +129,9 @@ class ezpThrowawayDatabase
     /**
      * The server the throwaway databases are made on: the EXP_TEST_DB_* variables, else the [DatabaseSettings] of
      * the siteaccess the kernel was started with. Never the database of the siteaccess: only server and account.
+     * EXP_TEST_DB_IMPLEMENTATION names the engine of that server (ezmysqli), so a site on another engine
+     * (PostgreSQL, SQLite) can still run its live tests on a MySQL/MariaDB throwaway server; without it the engine is
+     * the siteaccess's own.
      *
      * @return array( 'implementation', 'host', 'port', 'socket', 'user', 'password' )
      */
@@ -152,7 +155,7 @@ class ezpThrowawayDatabase
         $siteAccount = $env( 'EXP_TEST_DB_USER' ) === null && $env( 'EXP_TEST_DB_HOST' ) === null;
         $socket = $env( 'EXP_TEST_DB_SOCKET' ) ?? ( $siteAccount ? trim( $setting( 'Socket' ) ) : '' );
         self::$server = array(
-            'implementation' => trim( $setting( 'DatabaseImplementation' ) ),
+            'implementation' => trim( $env( 'EXP_TEST_DB_IMPLEMENTATION' ) ?? $setting( 'DatabaseImplementation' ) ),
             'host' => trim( $env( 'EXP_TEST_DB_HOST' ) ?? $setting( 'Server' ) ),
             'port' => trim( $env( 'EXP_TEST_DB_PORT' ) ?? $setting( 'Port' ) ),
             'socket' => $socket === 'disabled' ? '' : trim( $socket ),
@@ -198,7 +201,7 @@ class ezpThrowawayDatabase
             $server = self::server();
             if ( !in_array( $server['implementation'], array( 'ezmysqli', 'ezmysql' ), true ) )
                 throw new RuntimeException( "throwaway databases are made on MySQL/MariaDB only, the siteaccess '" . ezpLiveInstallation::siteAccess()
-                                            . "' uses '" . $server['implementation'] . "'" );
+                                            . "' uses '" . $server['implementation'] . "' (set EXP_TEST_DB_IMPLEMENTATION=ezmysqli with the EXP_TEST_DB_* account of a MySQL/MariaDB server)" );
             $probe = self::newName();
             self::create( $probe, false );
             try
@@ -350,6 +353,19 @@ class ezpThrowawayDatabase
             $ini->setVariable( 'DatabaseSettings', $key, $value );
         foreach ( $files as $key => $value )
             $ini->setVariable( 'FileSettings', $key, $value );
+        // a clustered site (eZDFSFileHandler, eZDBFileHandler) keeps its file metadata in the site's own database,
+        // which a test never touches, and the throwaway has no cluster tables: the run stores its files in its own
+        // VarDir through the plain file handler instead
+        $fileIni = eZINI::instance( 'file.ini' );
+        if ( $fileIni->variable( 'ClusteringSettings', 'FileHandler' ) !== 'eZFSFileHandler' )
+        {
+            $fileIni->setVariable( 'ClusteringSettings', 'FileHandler', 'eZFSFileHandler' );
+            if ( class_exists( 'eZClusterFileHandler' ) )
+                eZClusterFileHandler::resetHandler();
+            // the shared expiry handler was made at kernel start with a cluster file of the site's expiry.php: drop
+            // it without storing (storing would write the site's file through a backend this run disconnects)
+            unset( $GLOBALS['eZExpiryHandlerInstance'] );
+        }
 
         $current = eZDB::hasInstance() ? eZDB::instance() : null;
         if ( $current instanceof eZDBInterface && $current->DB === $name && $current->isConnected() && self::isAlive( $current ) )
