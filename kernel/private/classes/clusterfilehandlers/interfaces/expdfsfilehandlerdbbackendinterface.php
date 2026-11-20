@@ -14,7 +14,8 @@
  *
  * eZDFSFileHandler calls exactly these methods ([eZDFSClusteringSettings] DBBackend names the class). The kernel
  * ships these implementations: eZDFSFileHandlerMySQLiBackend (MySQL, MariaDB), expDFSFileHandlerPostgresqlBackend
- * (PostgreSQL 13 and later), expDFSFileHandlerSQLiteBackend (SQLite, one machine) and expDFSFileHandlerMongoDBBackend
+ * (PostgreSQL 13 and later), expDFSFileHandlerOracleBackend (Oracle 12.1 and later), expDFSFileHandlerSQLiteBackend
+ * (SQLite, one machine) and expDFSFileHandlerMongoDBBackend
  * (MongoDB 5.0 and later). A backend for another engine implements this interface and eZClusterEventNotifier, and
  * passes the parity checks of tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php
  * (doc/eng-us/features/6.0/postgresql-dfs-cluster.md, "More engines").

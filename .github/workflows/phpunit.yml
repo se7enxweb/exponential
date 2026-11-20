@@ -413,3 +413,66 @@ jobs:
       - name: Clean CI Composer overlay
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
+  # The kernel's Oracle DFS cluster backend against Oracle Database Free (23ai): the parity checks every backend passes,
+  # in the schema of an account of its own, and the DB-less unit test.
+  cluster-oracle:
+    name: DFS cluster backend (Oracle Free 23, PHP 8.3)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    services:
+      oracle:
+        image: gvenzl/oracle-free:23-slim-faststart
+        env:
+          ORACLE_PASSWORD: ci-oracle-system
+          APP_USER: dfstest
+          APP_USER_PASSWORD: ci-dfstest
+        ports:
+          - 1521:1521
+        options: >-
+          --health-cmd healthcheck.sh
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, oci8, pcntl, posix, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          test -x vendor/bin/phpunit
+
+      - name: Generate autoloads
+        run: php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Run the backend tests
+        env:
+          EXP_TEST_DFS_ORACLE_USER: dfstest
+          EXP_TEST_DFS_ORACLE_PASSWORD: ci-dfstest
+          EXP_TEST_DFS_ORACLE_CONNECT: 127.0.0.1:1521/FREEPDB1
+        run: |
+          php vendor/bin/phpunit --colors=always --fail-on-skipped \
+            tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSOracleBackendIntegrationTest.php
+          php vendor/bin/phpunit --colors=always \
+            tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerOracleBackendTest.php
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"

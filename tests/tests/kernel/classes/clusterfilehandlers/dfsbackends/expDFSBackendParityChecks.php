@@ -4,7 +4,8 @@
  * class of an engine uses this trait and supplies the throwaway database (engineSetUp(), engineTearDown()), the
  * file.ini settings to reach it (engineSettings()), the backend class (backendClass()) and a raw statement on it
  * (rawExec(), rawRows()). The kernel runs it for MySQL/MariaDB (expDFSMySQLiBackendParityTest), PostgreSQL
- * (expDFSPostgresqlBackendIntegrationTest), SQLite (expDFSSQLiteBackendIntegrationTest) and MongoDB
+ * (expDFSPostgresqlBackendIntegrationTest), Oracle (expDFSOracleBackendIntegrationTest), SQLite
+ * (expDFSSQLiteBackendIntegrationTest) and MongoDB
  * (expDFSMongoDBBackendIntegrationTest, whose rawExec() translates the few statements below); a backend for another
  * engine adds a class of its own (doc/eng-us/features/6.0/postgresql-dfs-cluster.md, "More engines"). An engine
  * without row locks says how a second connection holds the lock a store waits for (holdLock(), releaseLock()).
