@@ -10,7 +10,7 @@ cluster** is that setup on one server.
 |---|---|
 | Commands | `./console exp:cluster:enable`, `./console exp:cluster:disable` (`bin/php/expclusterenable.php`, `bin/php/expclusterdisable.php`) |
 | Dry run | both show what they would do and write nothing without `--apply` |
-| Databases | MySQL/MariaDB (`eZDFSFileHandlerMySQLiBackend`); PostgreSQL (`kernel/sql/postgresql/cluster_dfs_schema.sql`, `kernel/clustering/dfspostgresql.php`, `eZDFSFileHandlerPostgresqlBackend`); SQLite, one node only (`kernel/sql/sqlite/cluster_dfs_schema.sql`, `kernel/clustering/dfssqlite.php`, `expDFSFileHandlerSQLiteBackend`, [Clustering on SQLite](sqlite-dfs-cluster.md)). `--backend` names one (`mysqli`, `postgresql`, `sqlite`); other installations are told why not |
+| Databases | MySQL/MariaDB (`eZDFSFileHandlerMySQLiBackend`); PostgreSQL (`kernel/sql/postgresql/cluster_dfs_schema.sql`, `kernel/clustering/dfspostgresql.php`, `eZDFSFileHandlerPostgresqlBackend`); SQLite, one node only (`kernel/sql/sqlite/cluster_dfs_schema.sql`, `kernel/clustering/dfssqlite.php`, `expDFSFileHandlerSQLiteBackend`, [Clustering on SQLite](sqlite-dfs-cluster.md)); MongoDB, the collections of `kernel/sql/mongodb/cluster_dfs_schema.json` (`kernel/clustering/dfsmongodb.php`, `expDFSFileHandlerMongoDBBackend`, [Clustering on MongoDB](mongodb-dfs-cluster.md)). `--backend` names one (`mysqli`, `postgresql`, `sqlite`, `mongodb`); other installations are told why not |
 | Code | `expClusterSetup` (`kernel/classes/cluster/expclustersetup.php`) |
 
 ## exp:cluster:enable

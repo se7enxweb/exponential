@@ -36,7 +36,7 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'no PostgreSQL cluster backend yet', expClusterSetup::plan( self::facts( 'ezpostgresql' ) ) );
         $pg = expClusterSetup::plan( self::facts( 'ezpostgresql', array( 'postgresql' => 'eZDFSFileHandlerPostgresqlBackend' ) ) );
         $this->assertSame( array( 'postgresql', 'dfspostgresql', 5432 ), array( $pg['engine'], $pg['gateway'], $pg['port'] ) );
-        $this->assertStringContainsString( 'needs MySQL/MariaDB, PostgreSQL or SQLite', expClusterSetup::plan( self::facts( 'eznulldb' ) ) );
+        $this->assertStringContainsString( 'needs MySQL/MariaDB, PostgreSQL, SQLite or MongoDB', expClusterSetup::plan( self::facts( 'eznulldb' ) ) );
         $this->assertStringContainsString( 'not postgresql', expClusterSetup::plan( self::facts(), 'postgresql' ) );
     }
 
@@ -56,6 +56,27 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'sqlite', expClusterSetup::engineOf( 'ezsqlite3' ) );
         $this->assertSame( '', expClusterSetup::engineOf( 'eznulldb' ) );
         $this->assertStringContainsString( 'not mysqli', expClusterSetup::plan( $f, 'mysqli' ) );
+    }
+
+    /** MongoDB: collections from a JSON schema, a server that may run without an account */
+    public function testThePlanOnMongoDB()
+    {
+        $this->assertStringContainsString( 'no MongoDB cluster backend yet', expClusterSetup::plan( self::facts( 'mongodb' ) ) );
+        $f = self::facts( 'mongodb', array( 'mongodb' => 'expDFSFileHandlerMongoDBBackend' ) );
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db'] = array( 'User' => '', 'Password' => '', 'Server' => 'db.example', 'Port' => '', 'Database' => 'site' ) + $s['db'];
+        $p = expClusterSetup::plan( $f );
+        $this->assertSame( array( 'mongodb', 'dfsmongodb', 'mongodb', 'db.example', 27017, '' ), array( $p['engine'], $p['gateway'], $p['sql'], $p['host'], $p['port'], $p['socket'] ) );
+        $block = expClusterSetup::iniBlock( $p, '/srv/dfs' );
+        $this->assertStringContainsString( "DBBackend=expDFSFileHandlerMongoDBBackend\n", $block );
+        $this->assertStringContainsString( "DBHost=db.example\nDBPort=27017\nDBSocket=\nDBName=site\n", $block );
+        $this->assertStringContainsString( "define( 'CLUSTER_STORAGE_BACKEND', 'dfsmongodb' );", expClusterSetup::gatewayText( $p, '/srv/dfs' ) );
+        foreach ( array( 'mongodb', 'expmongodb', 'MongoDB' ) as $implementation )
+            $this->assertSame( 'mongodb', expClusterSetup::engineOf( $implementation ) );
+        $backends = expClusterSetup::backends();
+        $this->assertSame( 'cluster_dfs_schema.json', expClusterSetup::schemaFile( $backends['mongodb'] ) );
+        $this->assertSame( 'cluster_dfs_schema.sql', expClusterSetup::schemaFile( $backends['sqlite'] ) );
+        $this->assertFileExists( dirname( __DIR__, 5 ) . '/kernel/sql/mongodb/cluster_dfs_schema.json' );
     }
 
     public function testTheIniBlock()

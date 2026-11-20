@@ -21,7 +21,10 @@ class expClusterSetup
     const MARK_INI = 'Exponential cluster';
     const MARK_PHP = '// BEGIN Exponential cluster';
 
-    /** The backends: engine => array( classes in order of preference, gateway, schema engine directory, default port ). */
+    /**
+     * The backends: engine => array( classes in order of preference, gateway, schema engine directory, default port,
+     * optional schema file name in that directory, cluster_dfs_schema.sql when none is given ).
+     */
     public static function backends()
     {
         return array(
@@ -30,6 +33,9 @@ class expClusterSetup
                                    'sql' => 'postgresql', 'port' => 5432 ),
             // one file on one machine: the cluster of one node this command makes, never several web servers
             'sqlite' => array( 'classes' => array( 'expDFSFileHandlerSQLiteBackend' ), 'gateway' => 'dfssqlite', 'sql' => 'sqlite', 'port' => 0 ),
+            // collections, not tables: the schema is a JSON file the backend creates (createSchema())
+            'mongodb' => array( 'classes' => array( 'expDFSFileHandlerMongoDBBackend' ), 'gateway' => 'dfsmongodb', 'sql' => 'mongodb', 'port' => 27017,
+                                'schema' => 'cluster_dfs_schema.json' ),
         );
     }
 
@@ -38,7 +44,8 @@ class expClusterSetup
     {
         $engines = array( 'ezmysqli' => 'mysqli', 'ezmysql' => 'mysqli', 'mysqli' => 'mysqli', 'mysql' => 'mysqli',
                           'ezpostgresql' => 'postgresql', 'postgresql' => 'postgresql', 'pgsql' => 'postgresql',
-                          'ezsqlite3' => 'sqlite', 'sqlite3' => 'sqlite' );
+                          'ezsqlite3' => 'sqlite', 'sqlite3' => 'sqlite',
+                          'mongodb' => 'mongodb', 'expmongodb' => 'mongodb', 'mongo' => 'mongodb' );
         $implementation = strtolower( (string)$implementation );
         return isset( $engines[$implementation] ) ? $engines[$implementation] : '';
     }
@@ -46,7 +53,7 @@ class expClusterSetup
     /** The name of an engine for people (pure). */
     public static function engineName( $engine )
     {
-        $names = array( 'mysqli' => 'MySQL/MariaDB', 'postgresql' => 'PostgreSQL', 'sqlite' => 'SQLite' );
+        $names = array( 'mysqli' => 'MySQL/MariaDB', 'postgresql' => 'PostgreSQL', 'sqlite' => 'SQLite', 'mongodb' => 'MongoDB' );
         return isset( $names[$engine] ) ? $names[$engine] : (string)$engine;
     }
 
@@ -77,7 +84,7 @@ class expClusterSetup
         foreach ( self::backends() as $engine => $b )
             foreach ( $b['classes'] as $class )
                 if ( !isset( $facts['backends'][$engine] ) && class_exists( $class )
-                     && is_file( $root . '/kernel/sql/' . $b['sql'] . '/cluster_dfs_schema.sql' ) && is_file( $root . '/kernel/clustering/' . $b['gateway'] . '.php' ) )
+                     && is_file( $root . '/kernel/sql/' . $b['sql'] . '/' . self::schemaFile( $b ) ) && is_file( $root . '/kernel/clustering/' . $b['gateway'] . '.php' ) )
                     $facts['backends'][$engine] = $class;
         return $facts;
     }
@@ -112,8 +119,8 @@ class expClusterSetup
             return 'the installation runs on ' . self::engineName( $engine ) . ', not ' . $wanted;
         if ( !isset( $facts['backends'][$engine] ) )
             return 'this Exponential version has no ' . ( $engine === 'mysqli' ? 'MySQL' : self::engineName( $engine ) ) . ' cluster backend' . ( $engine === 'mysqli' ? '' : ' yet' );
-        // a SQLite database is a file: no account
-        if ( $db['Database'] === '' || ( $db['User'] === '' && $engine !== 'sqlite' ) )
+        // a SQLite database is a file: no account; a MongoDB server may run without authentication
+        if ( $db['Database'] === '' || ( $db['User'] === '' && !in_array( $engine, array( 'sqlite', 'mongodb' ), true ) ) )
             return 'the database settings are incomplete';
         $b = self::backends()[$engine];
         return array( 'engine' => $engine, 'backend_class' => (string)$facts['backends'][$engine], 'gateway' => $b['gateway'], 'sql' => $b['sql'],
@@ -121,6 +128,12 @@ class expClusterSetup
                       'host' => $b['port'] === 0 ? '' : ( $db['Server'] !== '' ? $db['Server'] : 'localhost' ),
                       'port' => $b['port'] === 0 ? 0 : ( $db['Port'] !== '' ? (int)$db['Port'] : $b['port'] ),
                       'socket' => $b['port'] !== 0 && $db['Socket'] !== '' && $db['Socket'] !== 'disabled' ? $db['Socket'] : '' );
+    }
+
+    /** The schema file name of a backend (pure), in kernel/sql/<sql>/. */
+    public static function schemaFile( array $backend )
+    {
+        return isset( $backend['schema'] ) ? (string)$backend['schema'] : 'cluster_dfs_schema.sql';
     }
 
     /** Whether a value can stand in the INI block (pure): one line, never the end of the file's PHP comment. */
@@ -357,6 +370,15 @@ class expClusterSetup
         $say( 'PASS share ' . $share );
 
         // the tables, in the site's own database (emptied when an earlier switch of ours left them)
+        if ( $plan['engine'] === 'mongodb' )
+        {
+            $count = self::mongoCollections( $root, $plan, $owned );
+            if ( is_string( $count ) )
+                return array( 'ok' => false, 'error' => $count );
+            $say( 'PASS collections ezdfsfile, ezdfsfile_cache' );
+            return self::enableSettings( $root, $plan, $share, $o, $say, $iniPath, $gwPath, $iniText, $gwText, $newIni, $marker,
+                                         function () use ( $root, $plan ) { return self::mongoCollections( $root, $plan, true, false ); } );
+        }
         $db = eZDB::instance();
         $schema = (string)@file_get_contents( $root . '/kernel/sql/' . $plan['sql'] . '/cluster_dfs_schema.sql' );
         foreach ( self::schemaStatements( $schema ) as $st )
@@ -377,7 +399,59 @@ class expClusterSetup
             $db->query( 'DELETE FROM ezdfsfile_cache' );
         }
         $say( 'PASS tables ezdfsfile, ezdfsfile_cache' );
+        return self::enableSettings( $root, $plan, $share, $o, $say, $iniPath, $gwPath, $iniText, $gwText, $newIni, $marker,
+                                     function () use ( $db ) { $n = (array)$db->arrayQuery( 'SELECT COUNT(*) AS n FROM ezdfsfile' ); return (int)( $n[0]['n'] ?? 0 ); } );
+    }
 
+    /**
+     * The MongoDB collections of the cluster in the site's database: created (with their indexes) when missing,
+     * emptied when an earlier switch of ours ($owned) left documents. With $prepare false only the documents are
+     * counted. @return int the documents of ezdfsfile, or why not (a string)
+     */
+    protected static function mongoCollections( $root, array $plan, $owned, $prepare = true )
+    {
+        if ( !extension_loaded( 'mongodb' ) || !class_exists( 'expDFSFileHandlerMongoDBBackend' ) )
+            return 'the PHP extension mongodb is not loaded';
+        $database = (string)$plan['db']['Database'];
+        list( $uri, $options ) = expDFSFileHandlerMongoDBBackend::connectionUri( array( 'host' => $plan['host'], 'port' => $plan['port'], 'socket' => $plan['socket'],
+                                                                                       'user' => $plan['db']['User'], 'password' => $plan['db']['Password'], 'dbname' => $database ) );
+        try
+        {
+            $manager = new MongoDB\Driver\Manager( $uri, $options );
+            if ( $prepare )
+                expDFSFileHandlerMongoDBBackend::createSchema( $manager, $database, $root . '/kernel/sql/mongodb/cluster_dfs_schema.json' );
+            $count = function ( $collection ) use ( $manager, $database )
+            {
+                $r = $manager->executeCommand( $database, new MongoDB\Driver\Command( array( 'count' => $collection ) ) )->toArray();
+                return (int)( $r[0]->n ?? 0 );
+            };
+            $n = $count( 'ezdfsfile' );
+            if ( $prepare && $n + $count( 'ezdfsfile_cache' ) > 0 )
+            {
+                if ( !$owned )
+                    return 'the cluster collections hold documents that are not from a switch of ours; nothing was changed';
+                foreach ( array( 'ezdfsfile', 'ezdfsfile_cache' ) as $collection )
+                {
+                    $bulk = new MongoDB\Driver\BulkWrite();
+                    $bulk->delete( array(), array( 'limit' => 0 ) );
+                    $manager->executeBulkWrite( $database . '.' . $collection, $bulk );
+                }
+                $n = 0;
+            }
+            return $n;
+        }
+        catch ( Exception $e )
+        {
+            return 'the MongoDB cluster collections: ' . $e->getMessage();
+        }
+    }
+
+    /**
+     * The second half of enable(): the settings (put back on a failure), the stored files moved in, the marker.
+     * $count() counts the files of the cluster. @return array as enable()
+     */
+    protected static function enableSettings( $root, array $plan, $share, array $o, $say, $iniPath, $gwPath, $iniText, $gwText, $newIni, $marker, $count )
+    {
         // the settings; from here on a failure puts them back
         $backup = $root . '/var/backup/cluster/' . date( 'Ymd-His' );
         $restore = function () use ( $iniPath, $gwPath, $iniText, $gwText, $backup ) {
@@ -404,10 +478,11 @@ class expClusterSetup
                 }
                 $say( 'PASS files of ' . $var . ' moved in (clusterize.php --siteaccess=' . $sa . ')' );
             }
-        $n = (array)$db->arrayQuery( 'SELECT COUNT(*) AS n FROM ezdfsfile' );
-        @file_put_contents( $marker, json_encode( array( 'v' => 1, 'state' => 'cluster', 'since' => time(), 'backend' => $plan['engine'], 'files' => (int)( $n[0]['n'] ?? 0 ),
+        $files = $count();
+        $files = is_int( $files ) ? $files : 0;
+        @file_put_contents( $marker, json_encode( array( 'v' => 1, 'state' => 'cluster', 'since' => time(), 'backend' => $plan['engine'], 'files' => $files,
                                                          'by' => 'exp:cluster:enable' ) ) );
-        return array( 'ok' => true, 'error' => '', 'share' => $share, 'files' => (int)( $n[0]['n'] ?? 0 ), 'plan' => $plan );
+        return array( 'ok' => true, 'error' => '', 'share' => $share, 'files' => $files, 'plan' => $plan );
     }
 
     /** Switches the cluster off. $o: move (bool), apply (bool). @return array ok, error */
