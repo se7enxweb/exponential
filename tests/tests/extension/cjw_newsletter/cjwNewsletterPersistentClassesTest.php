@@ -44,6 +44,8 @@ class cjwNewsletterPersistentClassesTest extends TestCase
         'CjwNewsletterStatTotal' => 'statistics', 'CjwNewsletterAbTest' => 'statistics', 'CjwNewsletterAbVariant' => 'statistics',
         'CjwNewsletterSmsCode' => 'sms', 'CjwNewsletterSmsMessage' => 'sms', 'CjwNewsletterSmsInbound' => 'sms',
         'CjwNewsletterImportMapping' => 'importexport', 'CjwNewsletterMigrationLog' => 'importexport',
+        'CjwNewsletterSegment' => 'segments',
+        'CjwNewsletterSeries' => 'series', 'CjwNewsletterSeriesStep' => 'series', 'CjwNewsletterSeriesMember' => 'series',
     );
 
     private static $dba;
