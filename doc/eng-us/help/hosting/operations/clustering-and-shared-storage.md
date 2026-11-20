@@ -79,6 +79,7 @@ scale websites, a dedicated MySQL server can really improve performances".
 | `eZDFSFileHandlerMySQLiBackend` | the kernel (the shipped default), for MySQL and MariaDB |
 | `expDFSFileHandlerPostgresqlBackend` (or `eZDFSFileHandlerPostgresqlBackend`) | the kernel, for PostgreSQL 13 and later, after the ezpostgresqlcluster extension by eZ Systems and 7x's fork ([Clustering on PostgreSQL](../../../features/6.0/postgresql-dfs-cluster.md)) |
 | `expDFSFileHandlerSQLiteBackend` | the kernel, for SQLite on **one** machine: a one-node cluster or tests, never several web servers ([Clustering on SQLite](../../../features/6.0/sqlite-dfs-cluster.md)) |
+| `expDFSFileHandlerMongoDBBackend` | the kernel, for MongoDB 5.0 and later, one server or a replica set, with only the PHP extension ([Clustering on MongoDB](../../../features/6.0/mongodb-dfs-cluster.md)) |
 | `eZDFSFileHandlerOracleBackend` | the `ezoracle` extension |
 
 Source: [15.17 Cluster and DFS](../../../install/15-migrating-from-5x-legacy.md#1517-cluster-and-dfs) and the backends listed in

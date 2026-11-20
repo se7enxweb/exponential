@@ -4,7 +4,7 @@ audience: dba
 category: database-administration
 order: 41
 summary: Die Datenbankseite eines Exponential-Clusters auf mehreren Webservern - der DFS-Datei-Handler und seine Metadatentabelle ezdfsfile, die Backends für MySQL und MariaDB (im Kernel), PostgreSQL (ein eigenes Paket) und Oracle (ezoracle), die Einstellungen in file.ini und ihre unsicheren Standards, die Cluster-Update-Dateien, Wartungsbefehle und was Sie überwachen.
-keywords: Cluster, Clustering, DFS, eZDFSFileHandler, eZFSFileHandler, ezdfsfile, ezdfsfile_cache, DBBackend, eZDFSFileHandlerMySQLiBackend, expDFSFileHandlerPostgresqlBackend, eZDFSFileHandlerPostgresqlBackend, expDFSFileHandlerSQLiteBackend, eZDFSFileHandlerOracleBackend, file.ini, eZDFSClusteringSettings, config.cluster.php, clusterize, clusterpurge, dfscleanup, cluster_maintenance, NFS, cluster, clustering
+keywords: Cluster, Clustering, DFS, eZDFSFileHandler, eZFSFileHandler, ezdfsfile, ezdfsfile_cache, DBBackend, eZDFSFileHandlerMySQLiBackend, expDFSFileHandlerPostgresqlBackend, eZDFSFileHandlerPostgresqlBackend, expDFSFileHandlerSQLiteBackend, expDFSFileHandlerMongoDBBackend, eZDFSFileHandlerOracleBackend, file.ini, eZDFSClusteringSettings, config.cluster.php, clusterize, clusterpurge, dfscleanup, cluster_maintenance, NFS, cluster, clustering
 type: help
 ---
 # Clustering: DFS und seine Metadatendatenbank
@@ -58,9 +58,10 @@ Cluster-Daten, damit sich die beiden Mengen von Transaktionen nicht vermischen.
 | `eZDFSFileHandlerMySQLiBackend` | MySQL, MariaDB | der Kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php`), der mitgelieferte Standard |
 | `expDFSFileHandlerPostgresqlBackend` (auch `eZDFSFileHandlerPostgresqlBackend`) | PostgreSQL 13 und neuer | der Kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/postgresql.php`), Tabellen in `kernel/sql/postgresql/cluster_dfs_schema.sql`, Gateway `dfspostgresql`. Eine Überarbeitung der Erweiterung ezpostgresqlcluster von eZ Systems und des Forks von 7x: [Clustering mit PostgreSQL](../../funktionen/6.0/postgresql-dfs-cluster.md) |
 | `expDFSFileHandlerSQLiteBackend` | SQLite 3.24 und neuer, **nur eine Maschine** | der Kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/sqlite.php`), Tabellen in `kernel/sql/sqlite/cluster_dfs_schema.sql`, Gateway `dfssqlite`; `DBName` ist die Datenbankdatei. Für einen Ein-Knoten-Cluster und für Tests: [Clustering mit SQLite](../../funktionen/6.0/sqlite-dfs-cluster.md) |
+| `expDFSFileHandlerMongoDBBackend` | MongoDB 5.0 und neuer, ein Server oder ein Replica Set | der Kernel (`kernel/private/classes/clusterfilehandlers/dfsbackends/mongodb.php`), Collections und Indizes in `kernel/sql/mongodb/cluster_dfs_schema.json`, Gateway `dfsmongodb`; nur die PHP-Erweiterung `mongodb`. `DBHost` kann eine ganze `mongodb://`-Verbindungszeichenkette für ein Replica Set enthalten: [Clustering mit MongoDB](../../funktionen/6.0/mongodb-dfs-cluster.md) |
 | `eZDFSFileHandlerOracleBackend` | Oracle | die Erweiterung `ezoracle` (`clusterfilehandlers/dfsbackends/oracle.php`); nur `DBName` wird verwendet, nicht `DBHost`, `DBPort` oder `DBSocket` |
 
-Es gibt noch kein Backend für MongoDB.
+Das Backend für Oracle folgt im Kernel.
 
 ## Die Einstellungen
 

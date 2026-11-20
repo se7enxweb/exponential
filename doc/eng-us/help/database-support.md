@@ -92,7 +92,7 @@ documented interface, and everything that would have to be written is listed in
 | Character set | UTF-8 | `UTF8` | UTF-8 (BSON) | `utf8mb4` | `AL32UTF8` | `utf8mb4` |
 | Schema update files | `update/database/sqlite/` | `update/database/postgresql/` | none (no SQL) | `update/database/mysql/` | in `ezoracle` | `update/database/mysql/` |
 | Tested in the project's CI | driver unit tests | yes (PostgreSQL 15) | adapter unit tests | no | no | yes (MySQL 8.0) |
-| DFS cluster metadata backend (several web servers) | one machine only: in the kernel (`expDFSFileHandlerSQLiteBackend`) for a one-node cluster and tests | yes, in the kernel (`expDFSFileHandlerPostgresqlBackend`, PostgreSQL 13-19 in CI) | planned | yes, in the kernel (MySQLi backend) | `ezoracle` extension; kernel backend planned | yes, in the kernel (MySQLi backend) |
+| DFS cluster metadata backend (several web servers) | one machine only: in the kernel (`expDFSFileHandlerSQLiteBackend`) for a one-node cluster and tests | yes, in the kernel (`expDFSFileHandlerPostgresqlBackend`, PostgreSQL 13-19 in CI) | yes, in the kernel (`expDFSFileHandlerMongoDBBackend`, MongoDB 5.0 and later) | yes, in the kernel (MySQLi backend) | `ezoracle` extension; kernel backend planned | yes, in the kernel (MySQLi backend) |
 
 ## Versions, checked against the code
 
@@ -358,6 +358,11 @@ mongosh --eval '
 **After installing,** create the indexes the kernel's queries rely on
 (`mongosh "mongodb://exponential@localhost:27017/exponential" --file bin/mongodb/create_indexes.js`), then run the
 cronjobs once to build the search index.
+
+**Clustering.** A site on one or several web servers can keep its DFS cluster metadata in MongoDB 5.0 or later with
+the kernel's `expDFSFileHandlerMongoDBBackend`, the collections of `kernel/sql/mongodb/cluster_dfs_schema.json` and the
+gateway `dfsmongodb`, on a single server or a replica set, with only the PHP extension; `exp:cluster:enable` sets it up
+on a MongoDB site: [Clustering on MongoDB](../features/6.0/mongodb-dfs-cluster.md).
 
 ### MongoDB limits
 

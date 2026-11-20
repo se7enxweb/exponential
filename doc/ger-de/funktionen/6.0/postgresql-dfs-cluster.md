@@ -176,8 +176,8 @@ Ein neues Backend ist eine Klasse (die `expDFSFileHandlerDBBackendInterface` und
 implementiert, nach dem Vorbild des PostgreSQL-Backends), eine Schemadatei, ein Gateway und eine Testklasse mit dem
 Trait `expDFSBackendParityChecks`. Reihenfolge laut Vorgabe: zuerst PostgreSQL, danach im Kernel Oracle (`MERGE`,
 `SKIP LOCKED`, `WAIT n`; bis dahin die Erweiterung `ezoracle`), MongoDB (eindeutiger Index auf `name_hash`,
-`findOneAndUpdate` mit `upsert`) und SQLite (nur ein Knoten und Tests). SQLite ist gebaut
-([Clustering mit SQLite](sqlite-dfs-cluster.md)); Oracle und MongoDB folgen.
+`findOneAndUpdate` mit `upsert`) und SQLite (nur ein Knoten und Tests). SQLite und MongoDB sind gebaut
+([Clustering mit SQLite](sqlite-dfs-cluster.md), [Clustering mit MongoDB](mongodb-dfs-cluster.md)); Oracle folgt.
 
 ## Verwandte Seiten
 
