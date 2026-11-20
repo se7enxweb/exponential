@@ -24771,7 +24771,7 @@ b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_to
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
 fe0bce95fbb9c13990be1fecce0356f6  kernel/classes/classicmenu/expclassicmenusettings.php
 778a26bd7868d8b25ced9a004af515fa  kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php
-8a405917179d4cf81b4080fd4cfdd1a0  kernel/classes/cluster/expclustersetup.php
+f9ab538154f05d2abb73763e7db559c5  kernel/classes/cluster/expclustersetup.php
 aaff1838ebeaa52d26de4395929327ea  kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php
 865e130c99d93fd0b6943b867d91e3db  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 7a36f246c38cf46fc9a07696f2e82d96  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
@@ -29324,7 +29324,7 @@ b5e6823fe454da6742dbe533e30d59b4  tests/tests/kernel/classes/cachesmore/eZStatic
 7927b5e0c9a307433593061ff253ec6b  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
 89a4d84cf90433287afc8977a6bd3ecb  tests/tests/kernel/classes/cachesmore/fixtures/preload-demo-site-front-page-uri-matching.html
 c98e893a75b3bf362d0515b4b4c30728  tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php
-625d174ee2d7789b78f6cd54d6797faf  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
+ddf5be7ef3ce2fd3c0f0c88fdccf95aa  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
 59814cc8048fbb6639df8574b7df0ff2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 5f138b4314e1dab989fb4d4ff1accc73  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
 e7ab71f7013e8514190fd44a43041b5d  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php

@@ -60,6 +60,21 @@ class expClusterSetup
         return isset( $names[$engine] ) ? $names[$engine] : (string)$engine;
     }
 
+    /**
+     * The mode the share gets (pure), from the mode it has now: the group may always write. Every node of a cluster
+     * writes into the share, and on a shared disk (NFS) the other nodes come in as the group, not as the owner, so a
+     * share that only its owner can write works on one node and fails on every other one ("Local DFS mount point ... is
+     * not writeable"). The owner's bits and the setgid bit (inherited from a shared parent) stay; others get nothing
+     * added.
+     *
+     * @param int $perms the share's permission bits now (fileperms() & 07777)
+     * @return int
+     */
+    public static function shareMode( $perms )
+    {
+        return ( (int)$perms & 07777 ) | 0070;
+    }
+
     /** The share by default (pure): the folder dfs next to the installation, /var/www/vhosts/<site>/dfs for <site>/httpdocs. */
     public static function defaultShare( $root )
     {
@@ -367,8 +382,14 @@ class expClusterSetup
         $owned = is_file( $marker ) && !is_link( $marker );
         if ( is_dir( $share ) && !$owned && count( (array)scandir( $share ) ) > 2 )
             return array( 'ok' => false, 'error' => 'the folder ' . $share . ' holds files that are not the cluster\'s' );
-        if ( !is_dir( $share ) && !@mkdir( $share, eZDir::dirMode( 0750 ) ) )
+        if ( !is_dir( $share ) && !@mkdir( $share, eZDir::dirMode( 0770 ) ) )
             return array( 'ok' => false, 'error' => 'the share ' . $share . ' could not be made (does its parent folder exist?)' );
+        // group-writable, whatever the umask took away: the other nodes write as the group (shareMode())
+        clearstatcache( true, $share );
+        $perms = fileperms( $share ) & 07777;
+        $mode = eZDir::dirMode( self::shareMode( $perms ) );   // EZP_DIR_MODE_MAX, when set, still wins
+        if ( $mode !== $perms && !@chmod( $share, eZDir::dirMode( self::shareMode( $perms ) ) ) )
+            return array( 'ok' => false, 'error' => 'the share ' . $share . ' could not be made writable for its group' );
         @file_put_contents( $marker, json_encode( array( 'v' => 1, 'state' => 'preparing', 'by' => 'exp:cluster:enable' ) ) );
         $say( 'PASS share ' . $share );
 

@@ -9,6 +9,7 @@
  *          end the PHP comment are refused
  *  CS-04 - config.cluster.php is valid PHP with every value quoted, and is recognized as ours
  *  CS-05 - The schema statements, the default share, the web server rules, the aliases of the commands
+ *  CS-06 - The share is writable for its group (the other nodes write as the group over NFS), keeps owner and setgid
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -151,6 +152,16 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'one-node DFS cluster after the install', implode( "\n", expKickstarter::planLines( $ini ) ) );
         $this->assertStringContainsString( 'single or one-node', expKickstarter::clusterChoice( new expApplyFlagInstallerFakeIni( array( 'cluster' => array( 'Mode' => 'two' ) ) ) ) );
         $this->assertStringContainsString( 'absolute path', expKickstarter::clusterChoice( new expApplyFlagInstallerFakeIni( array( 'cluster' => array( 'Mode' => 'one-node', 'Share' => 'dfs' ) ) ) ) );
+    }
+
+    public function testTheShareIsWritableForItsGroup()
+    {
+        $this->assertSame( 02770, expClusterSetup::shareMode( 02750 ) );
+        $this->assertSame( 0770, expClusterSetup::shareMode( 0700 ) );
+        $this->assertSame( 02775, expClusterSetup::shareMode( 02775 ) );
+        $this->assertSame( 0775, expClusterSetup::shareMode( 0755 ) );
+        $this->assertSame( 0, expClusterSetup::shareMode( 0750 ) & 0007 );
+        $this->assertSame( 02770, expClusterSetup::shareMode( 0102750 ) );
     }
 
     public function testSchemaShareRulesAndAliases()
