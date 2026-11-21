@@ -177,6 +177,18 @@ class eZDBSchemaInterface
            code will do simple SELECT queries
      \sa data()
     */
+    /**
+     * A table or column name as the engine's SELECT needs it. The default leaves it as it is; an engine whose reserved
+     * words can name columns (MySQL, MariaDB) quotes it.
+     *
+     * @param string $name
+     * @return string
+     */
+    function quoteIdentifier( $name )
+    {
+        return $name;
+    }
+
     function fetchTableData( $tableInfo, $offset = false, $limit = false )
     {
         if ( count( $tableInfo['fields'] ) == 0 )
@@ -184,8 +196,11 @@ class eZDBSchemaInterface
 
         $tableName = $tableInfo['name'];
         $fields = array_keys( $tableInfo['fields'] );
-        $fieldText = implode( ', ', $fields );
-        $rows = $this->DBInstance->arrayQuery( "SELECT $fieldText FROM $tableName", array( 'offset' => $offset, 'limit' => $limit ) );
+        // quoted per engine: a column named like a reserved word (MySQL/MariaDB "interval", "key", "order" ...) broke
+        // the whole data dump with a syntax error
+        $fieldText = implode( ', ', array_map( array( $this, 'quoteIdentifier' ), $fields ) );
+        $rows = $this->DBInstance->arrayQuery( "SELECT $fieldText FROM " . $this->quoteIdentifier( $tableName ),
+                                               array( 'offset' => $offset, 'limit' => $limit ) );
         $resultArray = array();
         /// @todo scan only once for fields of type char, not once per row
         foreach ( $rows as $row )

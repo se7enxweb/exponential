@@ -649,6 +649,17 @@ class eZMysqlSchema extends eZDBSchemaInterface
         return true;
     }
 
+    /**
+     * Backticks, so a column named like a reserved word ("interval", "key", "order") can be selected.
+     *
+     * @param string $name
+     * @return string
+     */
+    function quoteIdentifier( $name )
+    {
+        return '`' . str_replace( '`', '``', $name ) . '`';
+    }
+
     function escapeSQLString( $value )
     {
         if ( $this->DBInstance instanceof eZMySQLiDB )
