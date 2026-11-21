@@ -696,6 +696,14 @@ class eZPgsqlSchema extends eZDBSchemaInterface
     function generateDefaultDef( $table_name, $field_name, $def, $params )
     {
         $postgresqlCompatible = isset( $params['compatible_sql'] ) ? $params['compatible_sql'] : false;
+        // A MySQL "NOT NULL" number or date column without a default reaches the schema as default '' (MySQL's
+        // implicit default): PostgreSQL rejects '' as a number or a date, so such a column gets no DEFAULT at all
+        if ( isset( $def['default'] ) && $def['default'] === '' &&
+             in_array( $def['type'], array( 'int', 'bigint', 'smallint', 'tinyint', 'mediumint', 'decimal', 'float', 'double',
+                                            'timestamp', 'datetime', 'date', 'time' ), true ) )
+        {
+            return '';
+        }
         $sql_def = '';
         if ( $table_name and $field_name )
         {
@@ -1035,6 +1043,24 @@ class eZPgsqlSchema extends eZDBSchemaInterface
     function schemaName()
     {
         return 'PostgreSQL';
+    }
+
+    /**
+     * A reserved word in double quotes, as the table definitions already write it ("group" in a third-party
+     * permissions table); every other name stays as it is (unquoted names fold to lower case, as before).
+     *
+     * @param string $name
+     * @return string
+     */
+    function quoteIdentifier( $name )
+    {
+        return in_array( $name, $this->reservedKeywordList() ) ? '"' . str_replace( '"', '""', $name ) . '"' : $name;
+    }
+
+    /** INSERT column lists quote reserved words the same way */
+    function insertColumnName( $name )
+    {
+        return $this->quoteIdentifier( $name );
     }
 
     /*!

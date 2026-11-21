@@ -189,6 +189,18 @@ class eZDBSchemaInterface
         return $name;
     }
 
+    /**
+     * A column name in a generated INSERT. The default leaves it as it is (so existing SQL dumps do not change); an
+     * engine that must quote reserved words there (PostgreSQL: "group") says so.
+     *
+     * @param string $name
+     * @return string
+     */
+    function insertColumnName( $name )
+    {
+        return $name;
+    }
+
     function fetchTableData( $tableInfo, $offset = false, $limit = false )
     {
         if ( count( $tableInfo['fields'] ) == 0 )
@@ -800,7 +812,7 @@ class eZDBSchemaInterface
                     $defText .= ", ";
                 }
             }
-            $defText .= $fieldName;
+            $defText .= $this->insertColumnName( $fieldName );
             ++$entryIndex;
         }
 

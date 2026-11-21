@@ -46,6 +46,27 @@ class expPgsqlSchemaDateTimeTypesTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $s->isTypeLengthSupported( 'character varying' ), 'DT-02 varchar keeps its length' );
     }
 
+    /** DT-04: MySQL's implicit '' default of a NOT NULL number or date column is no DEFAULT in PostgreSQL */
+    public function testEmptyDefaultOfNumberOrDateIsLeftOut()
+    {
+        $s = $this->schema();
+        foreach ( array( 'decimal', 'int', 'bigint', 'tinyint', 'float', 'double', 'timestamp', 'datetime', 'date' ) as $t )
+            $this->assertSame( '', $s->generateDefaultDef( false, false, array( 'type' => $t, 'default' => '' ), array() ), "DT-04 $t" );
+        $this->assertSame( "DEFAULT ''::character varying ",
+                           $s->generateDefaultDef( false, false, array( 'type' => 'varchar', 'default' => '' ), array() ), 'DT-04 varchar keeps it' );
+        $this->assertSame( "DEFAULT '0.00' ",
+                           $s->generateDefaultDef( false, false, array( 'type' => 'decimal', 'default' => '0.00' ), array() ), 'DT-04 a real default stays' );
+    }
+
+    /** DT-05: reserved words are quoted in INSERT column lists and data SELECTs; other names stay plain */
+    public function testReservedColumnNamesQuoted()
+    {
+        $s = $this->schema();
+        $this->assertSame( '"group"', $s->insertColumnName( 'group' ), 'DT-05 group' );
+        $this->assertSame( '"group"', $s->quoteIdentifier( 'group' ), 'DT-05 select' );
+        $this->assertSame( 'name', $s->insertColumnName( 'name' ), 'DT-05 plain name' );
+    }
+
     public function testPostgresqlToStandard()
     {
         $s = $this->schema();
