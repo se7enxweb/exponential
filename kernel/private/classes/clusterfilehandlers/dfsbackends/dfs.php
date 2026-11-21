@@ -376,7 +376,10 @@ class eZDFSFileHandlerDFSBackend implements eZDFSFileHandlerDFSBackendInterface
      */
     public function getDfsFileSize( $filePath )
     {
-        return filesize( $this->makeDFSPath( $filePath ) );
+        // the shared disk is NFS: a size cached by an earlier stat in this process may be out of date
+        $path = $this->makeDFSPath( $filePath );
+        clearstatcache( true, $path );
+        return @filesize( $path );
     }
 
     /**

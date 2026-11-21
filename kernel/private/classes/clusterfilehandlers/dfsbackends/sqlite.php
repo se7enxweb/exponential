@@ -915,10 +915,13 @@ class expDFSFileHandlerSQLiteBackend implements eZClusterEventNotifier, expDFSFi
         }
 
         $dfsFileSize = $this->dfsbackend->getDfsFileSize( $filePath );
+        $maxTries = max( 1, (int)$this->maxCopyTries );
         $loopCount = 0;
         $localFileSize = 0;
 
-        do
+        // The copy is checked under its temporary name, and only a complete copy takes the file's own name: a short
+        // or failed copy never replaces (or freshens the mtime of) the local file that other requests read.
+        while ( $dfsFileSize !== false && $loopCount < $maxTries )
         {
             $tmpid = getmypid() . '-' . mt_rand() . 'tmp';
             if ( strrpos( $filePath, '.' ) > 0 )
@@ -931,39 +934,45 @@ class expDFSFileHandlerSQLiteBackend implements eZClusterEventNotifier, expDFSFi
             if ( !$this->dfsbackend->copyFromDFS( $filePath, $tmpFilePath ) )
             {
                 eZDebug::writeError( "Failed copying DFS://$filePath to FS://$tmpFilePath " );
+                if ( file_exists( $tmpFilePath ) )
+                    unlink( $tmpFilePath );
                 usleep( self::TIME_UNTIL_RETRY );
                 ++$loopCount;
                 continue;
             }
 
-            if ( $uniqueName !== true )
+            clearstatcache( true, $tmpFilePath );
+            $localFileSize = @filesize( $tmpFilePath );
+            if ( $localFileSize === false || (int)$localFileSize !== (int)$dfsFileSize )
             {
-                if ( !eZFile::rename( $tmpFilePath, $filePath, false, eZFile::CLEAN_ON_FAILURE | eZFile::APPEND_DEBUG_ON_FAILURE ) )
-                {
-                    usleep( self::TIME_UNTIL_RETRY );
-                    ++$loopCount;
-                    continue;
-                }
+                if ( file_exists( $tmpFilePath ) )
+                    unlink( $tmpFilePath );
+                usleep( self::TIME_UNTIL_RETRY );
+                ++$loopCount;
+                continue;
             }
-            $filePath = ( $uniqueName ) ? $tmpFilePath : $filePath;
 
+            if ( $uniqueName === true )
+                return $tmpFilePath;
+
+            if ( !eZFile::rename( $tmpFilePath, $filePath, false, eZFile::CLEAN_ON_FAILURE | eZFile::APPEND_DEBUG_ON_FAILURE ) )
+            {
+                usleep( self::TIME_UNTIL_RETRY );
+                ++$loopCount;
+                continue;
+            }
             clearstatcache( true, $filePath );
-            $localFileSize = filesize( $filePath );
-            if ( $dfsFileSize == $localFileSize )
-            {
-                return $filePath;
-            }
-            else if ( file_exists( $tmpFilePath ) )
-            {
-                unlink( $tmpFilePath );
-            }
-
-            usleep( self::TIME_UNTIL_RETRY );
-            ++$loopCount;
+            return $filePath;
         }
-        while ( $dfsFileSize > $localFileSize && $loopCount < $this->maxCopyTries );
 
-        eZDebug::writeError( "Size ({$localFileSize}) of written data for file '{$filePath}' does not match expected size {$metaData['size']}", __METHOD__ );
+        // No complete copy could be made: the local copy under the file's own name is removed, so it is never served
+        // afterwards as if it were current (stale-cache mode serves an existing local file whatever its age).
+        if ( $uniqueName !== true && file_exists( $filePath ) )
+        {
+            @unlink( $filePath );
+            clearstatcache( true, $filePath );
+        }
+        eZDebug::writeError( "Size ({$localFileSize}) of written data for file '{$filePath}' does not match expected size " . ( $dfsFileSize === false ? 'unknown (no DFS file)' : $dfsFileSize ), __METHOD__ );
         return false;
     }
 

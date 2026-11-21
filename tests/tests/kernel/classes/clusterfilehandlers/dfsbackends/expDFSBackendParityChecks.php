@@ -254,6 +254,112 @@ trait expDFSBackendParityChecks
         $this->assertSame( $data, file_get_contents( $unique ) );
     }
 
+    /**
+     * A fetch whose copy comes back short never puts that copy in place: the local file keeps its old content and
+     * mtime while the copy is retried, and after the last try the old local copy is removed rather than left to be
+     * served (stale-cache mode serves an existing local file whatever its age).
+     */
+    public function testShortCopyNeverReplacesTheLocalFileAndAFailedFetchRemovesIt()
+    {
+        $path = $this->path( 'local/short.bin' );
+        eZDir::mkdir( dirname( $path ), false, true );
+        file_put_contents( $path, random_bytes( 200000 ) );
+        $this->backend->_store( $path, 'application/octet-stream', 'image' );
+
+        file_put_contents( $path, 'an old local copy' );
+        touch( $path, time() - 3600 );
+        $real = $this->swapDfsBackend( 'short' );
+        try
+        {
+            $this->assertFalse( $this->backend->_fetch( $path ) );
+        }
+        finally
+        {
+            $this->swapDfsBackend( $real );
+        }
+        clearstatcache();
+        $this->assertFileDoesNotExist( $path, 'a fetch that never got a complete copy removes the old local copy' );
+        $this->assertSame( array(), glob( dirname( $path ) . '/short*tmp*' ), 'no temporary copy is left behind' );
+
+        // with the DFS answering in full again, the next fetch puts the complete file in place
+        $this->assertSame( $path, $this->backend->_fetch( $path ) );
+        $this->assertSame( 200000, filesize( $path ) );
+    }
+
+    /** A fetch whose copy fails on every try removes the old local copy, and a unique fetch leaves the local file alone */
+    public function testFailedFetchRemovesTheOldLocalCopyButAUniqueFetchDoesNot()
+    {
+        $path = $this->path( 'local/gone.bin' );
+        eZDir::mkdir( dirname( $path ), false, true );
+        file_put_contents( $path, random_bytes( 1000 ) );
+        $this->backend->_store( $path, 'application/octet-stream', 'image' );
+        file_put_contents( $path, 'an old local copy' );
+
+        $real = $this->swapDfsBackend( 'fail' );
+        try
+        {
+            $this->assertFalse( $this->backend->_fetch( $path, true ) );
+            clearstatcache();
+            $this->assertFileExists( $path, 'a unique fetch never touches the file under its own name' );
+
+            $this->assertFalse( $this->backend->_fetch( $path ) );
+        }
+        finally
+        {
+            $this->swapDfsBackend( $real );
+        }
+        clearstatcache();
+        $this->assertFileDoesNotExist( $path );
+    }
+
+    /**
+     * Puts a DFS file backend in front of the real one whose copies to the local disk come back short ('short') or
+     * fail ('fail'); with an object, puts that object back. Returns the backend it replaced.
+     */
+    protected function swapDfsBackend( $mode )
+    {
+        $prop = new ReflectionProperty( $this->backend, 'dfsbackend' );
+        if ( PHP_VERSION_ID < 80100 )
+            $prop->setAccessible( true );
+        $current = $prop->getValue( $this->backend );
+        if ( is_object( $mode ) )
+        {
+            $prop->setValue( $this->backend, $mode );
+            return $current;
+        }
+        $prop->setValue( $this->backend, new class( $current, $mode ) implements eZDFSFileHandlerDFSBackendInterface
+        {
+            private $inner;
+            private $mode;
+            public function __construct( $inner, $mode ) { $this->inner = $inner; $this->mode = $mode; }
+            public function copyFromDFS( $srcFilePath, $dstFilePath = false )
+            {
+                if ( $this->mode === 'fail' )
+                    return false;
+                if ( !$this->inner->copyFromDFS( $srcFilePath, $dstFilePath ) )
+                    return false;
+                $dst = $dstFilePath === false ? $srcFilePath : $dstFilePath;
+                $half = (int)( filesize( $dst ) / 2 );
+                $h = fopen( $dst, 'r+' );
+                ftruncate( $h, $half );
+                fclose( $h );
+                return true;
+            }
+            public function copyFromDFSToDFS( $srcFilePath, $dstFilePath ) { return $this->inner->copyFromDFSToDFS( $srcFilePath, $dstFilePath ); }
+            public function copyToDFS( $srcFilePath, $dstFilePath = false ) { return $this->inner->copyToDFS( $srcFilePath, $dstFilePath ); }
+            public function delete( $filePath ) { return $this->inner->delete( $filePath ); }
+            public function passthrough( $filePath, $startOffset = 0, $length = false ) { return $this->inner->passthrough( $filePath, $startOffset, $length ); }
+            public function getContents( $filePath ) { return $this->inner->getContents( $filePath ); }
+            public function createFileOnDFS( $filePath, $contents ) { return $this->inner->createFileOnDFS( $filePath, $contents ); }
+            public function renameOnDFS( $oldPath, $newPath ) { return $this->inner->renameOnDFS( $oldPath, $newPath ); }
+            public function existsOnDFS( $filePath ) { return $this->inner->existsOnDFS( $filePath ); }
+            public function getDfsFileSize( $filePath ) { return $this->inner->getDfsFileSize( $filePath ); }
+            public function getFilesList( $basePath ) { return $this->inner->getFilesList( $basePath ); }
+            public function applyServerUri( $filePath ) { return $this->inner->applyServerUri( $filePath ); }
+        } );
+        return $current;
+    }
+
     public function testPassThroughRange()
     {
         $path = $this->path( 'files/range.bin' );
