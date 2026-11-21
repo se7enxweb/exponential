@@ -345,6 +345,9 @@ class eZPgsqlSchema extends eZDBSchemaInterface
             case 'double precision':
             case 'real':
             case 'bigint':
+            case 'timestamp':
+            case 'date':
+            case 'time':
             {
                 return false;
             } break;
@@ -394,6 +397,18 @@ class eZPgsqlSchema extends eZDBSchemaInterface
 
             case 'decimal':
                 return 'numeric';
+
+            // Not in the standard set either: date and time columns of extension or third-party tables in a MySQL
+            // database being converted (MySQL's datetime has no time zone, as PostgreSQL's timestamp)
+            case 'timestamp':
+            case 'datetime':
+                return 'timestamp';
+
+            case 'date':
+                return 'date';
+
+            case 'time':
+                return 'time';
 
             default:
                 eZDebug::writeError( "Unhandled column type: $type", __METHOD__ );
@@ -446,6 +461,17 @@ class eZPgsqlSchema extends eZDBSchemaInterface
 
             case 'numeric':
                 return 'decimal';
+
+            case 'timestamp without time zone':
+            case 'timestamp':
+                return 'timestamp';
+
+            case 'date':
+                return 'date';
+
+            case 'time without time zone':
+            case 'time':
+                return 'time';
 
             default:
                 eZDebug::writeError( "Unhandled column type: $type", __METHOD__ );
