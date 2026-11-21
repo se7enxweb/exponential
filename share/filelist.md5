@@ -25032,7 +25032,7 @@ acae6bbb77fcc05695116d119c0879f5  kernel/classes/expvelocitywatchdog.php
 19df831ef09fa7411d27bf3b6c4cfea4  kernel/classes/ezaudit.php
 d134647bdf4192c931641fa0bb51f003  kernel/classes/ezbasket.php
 49db61a7999663c74b1b6cbe4b852d89  kernel/classes/ezbinaryfilehandler.php
-7c473b6ad9d46fddf7cc08890585ee56  kernel/classes/ezcache.php
+ab994ee6fde1adae2d4643a46032d795  kernel/classes/ezcache.php
 e01a5a76eb48cb8e1004c440d971cfbf  kernel/classes/ezcachetrash.php
 0d7cbbb2c3b718ca710e52a33b25f904  kernel/classes/ezclusterfilefailure.php
 f540599d3481a273a49e62f5f51c07da  kernel/classes/ezclusterfilehandler.php
@@ -29428,6 +29428,7 @@ b0b0208351f6f5c4ce3099c4cb82dc8f  tests/tests/kernel/classes/debugbar/expDebugBa
 696032021d3ae3808d114e55e104f470  tests/tests/kernel/classes/debugbar/expRenderStatsCollectTest.php
 1281998b4acc637358f5c1d115174be2  tests/tests/kernel/classes/debugbar/expRenderStatsTest.php
 4df91edad78ea27f64a08c4c2a287ed8  tests/tests/kernel/classes/debugbar/expRenderStatsTreeTest.php
+6462f77c1f9944efae80e8b5dea9cc42  tests/tests/kernel/classes/eZCacheValkeyINIClearTest.php
 db77b098f2a0d4b4c7c3a56c08fd1a60  tests/tests/kernel/classes/eZCollaborationItemTest.php
 f03fbacca3a109985d80e6aee6ccadaa  tests/tests/kernel/classes/eZContentBrowseEditReturnTargetTest.php
 febb129df156e1d32fec89e35e7eca13  tests/tests/kernel/classes/eZContentCacheEventSendersTest.php

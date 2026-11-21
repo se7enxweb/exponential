@@ -594,6 +594,10 @@ class eZCache
         $cacheItem['iterationSleep'] = $iterationSleep;
         $cacheItem['iterationMax']   = $iterationMax;
         $cacheItem['expiry']         = $expiry;
+        // The compiled INI arrays may also live in Valkey (sevenx_valkey_cache, used by eZINI when the class exists):
+        // clearing the INI caches on disk alone left them there, and every web host kept reading the old settings
+        if ( isset( $cacheItem['id'] ) && ( $cacheItem['id'] === 'ini' || $cacheItem['id'] === 'global_ini' ) )
+            self::clearValkeyINICache();
         $functionName = false;
         if ( $purge && isset( $cacheItem['purge-function'] ) )
             $functionName = 'purge-function';
@@ -927,6 +931,23 @@ class eZCache
     {
         if ( class_exists( 'ezpHttpCacheListener' ) )
             ezpHttpCacheListener::purgeAll();
+    }
+
+    /**
+     * Clears this installation's compiled INI arrays in Valkey, when the sevenx_valkey_cache extension keeps them there
+     * (its class sevenxValkeyINICache exists and is enabled). Only this installation's own keys go: the extension's
+     * clear() removes them by name and never touches the shared key prefix of other installations.
+     *
+     * @return bool true when a Valkey INI cache was cleared
+     */
+    static function clearValkeyINICache()
+    {
+        if ( !class_exists( 'sevenxValkeyINICache' ) )
+            return false;
+        $cache = sevenxValkeyINICache::instance();
+        if ( !$cache->isEnabled() )
+            return false;
+        return (bool)$cache->clear();
     }
 
     /**
