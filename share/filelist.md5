@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7e6ea8aa199d75bd585f1344a0b44d10  doc/changelogs/6.0/6.0.15.md
+94afd9e0f75022d54977b2851bc066a8  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -8605,7 +8605,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-7c6a3b59212664ea8eba61cc68b7a1d3  doc/eng-us/help/database-support.md
+76e8dccd4e9cd2e11b7b8122a80b9a64  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -9618,7 +9618,7 @@ c19ca619b8525895f5fe0cf0b83d4af2  doc/eng-us/help/government/operations/availabi
 99e0c0f0a317f558c9469f8dd963c797  doc/eng-us/help/government/operations/availability/database-high-availability.md
 37471b0ce44638cb50739b5af3660516  doc/eng-us/help/government/operations/availability/high-availability-overview.md
 7e487a51aee80432f0a4ea395013ed66  doc/eng-us/help/government/operations/availability/maintenance-mode-and-planned-downtime.md
-90e5269191c269a3e24611e873fc4cec  doc/eng-us/help/government/operations/availability/read-replicas.md
+9ec31f7e3fb8c5cae30cd1629ed260ce  doc/eng-us/help/government/operations/availability/read-replicas.md
 64cb1d0cddcb591dc21a58061de49fc4  doc/eng-us/help/government/operations/availability/sessions-across-servers.md
 b2d913cec77a6c46e5c687df3e9184a6  doc/eng-us/help/government/operations/availability/several-web-servers-behind-a-load-balancer.md
 56b8ff9fef1b2132823a0065967ba62c  doc/eng-us/help/government/operations/availability/shared-storage-and-the-dfs-cluster.md
@@ -18510,7 +18510,7 @@ a5a807f6683e34c696f32b0aacc76b15  doc/ger-de/hilfe/datenbankadministratoren/unte
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 0fd3f75c7c74b4cf244e7d5448f3c417  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-fdea332c1db9a2c7d4c070eeaa454c31  doc/ger-de/hilfe/datenbankunterstuetzung.md
+0018c8db76602adac64e9d377751d4ff  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
@@ -22465,7 +22465,7 @@ a384d183706b9b2a68813ba738204833  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbar
 919c8a458d15b264913bf6fc00b0ed3e  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/hochverfuegbarkeit-der-datenbank.md
 2e9a1e161d6fd969f04db622a3aaacc1  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/hochverfuegbarkeit-im-ueberblick.md
 8deb24166d82eea3ea9e0fa02e1cb28c  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/kapazitaetsplanung.md
-51be65d1fa604089f37ae0e193eea2fa  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/lese-replikate.md
+66267ae880d51f38f3bb2bf0e6d8bcaf  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/lese-replikate.md
 11ee62b5d810b29a2fc44bf4caec7af2  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/mehrere-webserver-hinter-einem-load-balancer.md
 1d6f329d6a18813449a5bf38eb4a1f0e  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/sitzungen-ueber-mehrere-server.md
 5208508d0e4401daac4b5555e4625e00  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/statischer-cache.md
@@ -31128,8 +31128,8 @@ df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-
 a978abfd4df3d11208afede1d7f7358f  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php
 b3c3ba2c6748e617bbc1c12512aa8fdf  tests/tests/lib/ezdb/eZPostgreSQLDBReadReplicaTest.php
-b5ea022fc99c50d6f074d2bf3da9e602  doc/eng-us/bc/6.0/postgresql-read-replica.md
-13eb9ef586b7a3e464ff1dc358ef21e1  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
+7215ccbb8622d69e4c8e6fce367c3a7b  doc/eng-us/bc/6.0/postgresql-read-replica.md
+15589276588e8c8cf9db71eef1846d1f  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
 db5c5bde251c17a9563d3b4fe25346ef  tests/tests/kernel/classes/upgrade/expUpgradeBackupPostgresqlToolTest.php
 e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
 520f09719053749ec73c645597be90cf  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php

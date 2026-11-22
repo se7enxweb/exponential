@@ -3,15 +3,15 @@ title: Read replicas
 audience: government, hosting, admin
 category: public-sector
 order: 60
-summary: For database teams in public bodies running Exponential on MySQL or MariaDB. How Exponential sends read queries to replicas with UseSlaveServer, the exact settings, what replication lag means for editors, and when replicas help and when they do not.
+summary: For database teams in public bodies running Exponential on PostgreSQL, MySQL, MariaDB or Oracle. How Exponential sends read queries to replicas with UseSlaveServer, the exact settings, what replication lag means for editors, and when replicas help and when they do not.
 keywords: read replica, replica, slave, UseSlaveServer, SlaveServerArray, SlaverServerUser, replication lag, MySQL, MariaDB, read scaling, database load
 type: help
 ---
 # Read replicas
 
-This page is for database administrators in public bodies whose Exponential site runs on MySQL or MariaDB and who
-want to move read load off the primary server. It answers how Exponential uses replicas, which settings switch it on,
-what replication lag means for editors and visitors, and when replicas are worth it. The source is
+This page is for database administrators in public bodies whose Exponential site runs on PostgreSQL, MySQL, MariaDB or
+Oracle and who want to move read load off the primary server. It answers how Exponential uses replicas, which
+settings switch it on, what replication lag means for editors and visitors, and when replicas are worth it. The source is
 [9.3 MySQL and MariaDB, Replicas](../../../../install/09-databases.md#replicas).
 
 ## Contents
@@ -25,10 +25,10 @@ what replication lag means for editors and visitors, and when replicas are worth
 ## What Exponential does with replicas
 
 With `UseSlaveServer=enabled`, Exponential sends read queries to a replica chosen at random per request; writes go to
-`Server`. MySQL and MariaDB have built-in read splitting ([Database support](../../../database-support.md)), and since 6.0.15
-PostgreSQL too, with stricter rules: only plain SELECTs of anonymous GET requests that have written nothing, and only
-from a streaming standby ([PostgreSQL read replica](../../../../bc/6.0/postgresql-read-replica.md)). Oracle, MongoDB
-and SQLite sites do not use replicas for reads through this setting.
+`Server`. Since 6.0.15 PostgreSQL, MySQL, MariaDB and Oracle (ezoracle) follow one rule: only plain SELECTs of
+anonymous GET and HEAD requests that have written nothing, and only from a replica that is current; signed-in editors,
+forms, cronjobs and scripts read the primary ([Read replicas](../../../../bc/6.0/postgresql-read-replica.md)). MongoDB
+does not use replicas for reads through this setting, and SQLite has none.
 
 Replicas are a performance feature, not a failover: if the primary fails, writes fail. For availability see
 [Database high availability](database-high-availability.md).
@@ -66,18 +66,20 @@ Give the replica user read rights only; it never needs to write. Keep the passwo
 
 ## Replication lag
 
-"Replication lag means a page may show content a few seconds old"
-([9.3](../../../../install/09-databases.md#replicas)). Tell editors what to expect: right after publishing, a page
-read from a replica can still show the old version for a moment. Monitor the lag with your database's tools, and treat
-a growing lag as an incident, because visitors then see old information, which matters for notices with legal or
-safety weight.
+Before 6.0.15, "replication lag means a page may show content a few seconds old"
+([9.3](../../../../install/09-databases.md#replicas)). Since 6.0.15 a replica that lags is not read: MySQL and MariaDB
+read it only once it has applied what the primary had committed when the request started (GTID) and is at most
+`SlaveServerMaxLag` seconds behind; Oracle checks the standby's apply lag; PostgreSQL reads only a streaming standby
+and closes the window with synchronous apply. Editors always read the primary, so they see their own work at once.
+Monitor the lag anyway: a replica that is always behind is simply never read, and the primary carries all the load.
 
 ## When replicas help
 
 | Situation | Replicas help? |
 |---|---|
 | Many anonymous visitors | usually not much: Velocity's response cache and the HTTP cache answer them without the database ([Velocity response cache and HTTP cache](velocity-response-cache-and-http-cache.md)) |
-| Many signed-in users, searches, uncached pages | yes, if the database is the bottleneck |
+| Uncached pages and searches of anonymous visitors | yes, if the database is the bottleneck |
+| Many signed-in users | no: since 6.0.15 signed-in users always read the primary |
 | The primary is slow because of writes | no; replicas only take reads |
 | You need a standby for continuity | not by themselves; see [Database high availability](database-high-availability.md) |
 
@@ -87,7 +89,9 @@ Measure before you add a replica: `exp:benchmark` and the slow query output
 
 ## Checklist
 
-- [ ] The site runs on MySQL or MariaDB.
+- [ ] The site runs on PostgreSQL, MySQL, MariaDB or Oracle (ezoracle).
+- [ ] MySQL/MariaDB: the replica user has `REPLICATION CLIENT` (MySQL) or `REPLICA MONITOR` (MariaDB) for the status
+      check; Oracle: `SELECT` on `v_$database` and `v_$dataguard_stats`; PostgreSQL: `pg_read_all_stats`.
 - [ ] The replica user has read rights only; its password is not in version control.
 - [ ] Settings are in `settings/override`, the INI cache cleared and the engine reloaded.
 - [ ] Replication lag is monitored, and editors know about the short delay.
