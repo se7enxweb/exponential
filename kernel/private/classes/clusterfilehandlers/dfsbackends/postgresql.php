@@ -288,6 +288,8 @@ class expDFSFileHandlerPostgresqlBackend implements eZClusterEventNotifier, expD
             self::$dbparams['lock_timeout'] = $fileINI->hasVariable( 'eZDFSClusteringSettings', 'DBLockTimeout' )
                 ? $fileINI->variable( 'eZDFSClusteringSettings', 'DBLockTimeout' )
                 : self::DEFAULT_LOCK_TIMEOUT;
+            self::$dbparams['persistent_connection'] = $fileINI->hasVariable( 'eZDFSClusteringSettings', 'DBPersistentConnection' )
+                && $fileINI->variable( 'eZDFSClusteringSettings', 'DBPersistentConnection' ) == 'enabled';
 
             self::$dbparams['sql_output'] = $siteINI->variable( "DatabaseSettings", "SQLOutput" ) == "enabled";
 
@@ -308,6 +310,13 @@ class expDFSFileHandlerPostgresqlBackend implements eZClusterEventNotifier, expD
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     // strings, as the MySQLi backend returns them: the handler compares and prints them as such
                     PDO::ATTR_STRINGIFY_FETCHES => true,
+                    // the values are bound client-side (they are only integers, strings and nulls), so a statement
+                    // is one round trip to the server instead of three (prepare, execute, and the DEALLOCATE when
+                    // the statement is freed): a cache file check costs a third of the time over a slow network
+                    PDO::ATTR_EMULATE_PREPARES => true,
+                    // DBPersistentConnection=enabled: the PHP worker keeps its connection between requests (a new
+                    // one costs several round trips for the login); an open transaction is rolled back by PDO
+                    PDO::ATTR_PERSISTENT => !empty( self::$dbparams['persistent_connection'] ),
                 ) );
                 break;
             }
