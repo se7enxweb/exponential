@@ -50,6 +50,7 @@ To close that window make the primary wait until the standby has applied each co
 
 ```sql
 -- on the primary
+ALTER SYSTEM SET synchronous_commit = 'local';   -- only the site's database waits, not every database
 ALTER SYSTEM SET synchronous_standby_names = '<standby application_name>';
 SELECT pg_reload_conf();
 ALTER DATABASE <site database> SET synchronous_commit = remote_apply;

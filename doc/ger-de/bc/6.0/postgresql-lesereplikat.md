@@ -58,6 +58,7 @@ angewendet hat:
 
 ```sql
 -- auf dem Primärserver
+ALTER SYSTEM SET synchronous_commit = 'local';   -- nur die Datenbank der Website wartet, nicht jede
 ALTER SYSTEM SET synchronous_standby_names = '<application_name des Standby>';
 SELECT pg_reload_conf();
 ALTER DATABASE <Datenbank der Website> SET synchronous_commit = remote_apply;

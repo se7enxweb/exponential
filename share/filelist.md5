@@ -31128,5 +31128,5 @@ df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-
 a978abfd4df3d11208afede1d7f7358f  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php
 5fd205114fab8a96ec95f1140580db22  tests/tests/lib/ezdb/eZPostgreSQLDBReadReplicaTest.php
-7c3689ae25c827a59ee5697f682f5720  doc/eng-us/bc/6.0/postgresql-read-replica.md
-0e9f124ac3f52d770d80077750eaa436  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
+b5ea022fc99c50d6f074d2bf3da9e602  doc/eng-us/bc/6.0/postgresql-read-replica.md
+13eb9ef586b7a3e464ff1dc358ef21e1  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
