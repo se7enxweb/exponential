@@ -245,6 +245,7 @@
     "bc/6.0/phpunitv13-fuer-php841.md": "bc/6.0/phpunitv13forPHP841.md",
     "bc/6.0/phpunitv13.md": "bc/6.0/phpunitv13.md",
     "bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md": "bc/6.0/platform-package-forks-and-command-renames.md",
+    "bc/6.0/postgresql-lesereplikat.md": "bc/6.0/postgresql-read-replica.md",
     "bc/6.0/preload.md": "bc/6.0/preload.md",
     "bc/6.0/rad-erweiterungsoberflaeche.md": "bc/6.0/rad-extension-surface.md",
     "bc/6.0/rad-erweiterungspunkte.md": "bc/6.0/rad-extension-points.md",
