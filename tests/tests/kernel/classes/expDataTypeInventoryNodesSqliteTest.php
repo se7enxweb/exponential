@@ -53,7 +53,17 @@ class expDataTypeInventoryNodesSqliteTest extends PHPUnit\Framework\TestCase
         $messages = array();
         $this->assertTrue( expKernelTableSchema::install( array(), $this->db, $root . '/share/db_schema.dba', $messages ), 'the kernel schema' );
         $this->assertNotFalse( $this->db->insertFile( $root . '/kernel/sql/sqlite', 'cleandata.sql', false ), 'kernel/sql/sqlite/cleandata.sql loads' );
+        // the languages of this database, not the language cache file a test before wrote from its own database
+        // (expireCache( false ) leaves that file, and fetchList() would read it: the objects got no languages). Set as
+        // fetchList() sets them, without writing the file: run in an installation, it is that site's cache
         eZContentLanguage::expireCache( false );
+        $GLOBALS['eZContentLanguageList'] = array();
+        $GLOBALS['eZContentLanguageMask'] = 1;
+        foreach ( eZPersistentObject::fetchObjectList( eZContentLanguage::definition() ) as $language )
+        {
+            $GLOBALS['eZContentLanguageList'][$language->attribute( 'id' )] = $language;
+            $GLOBALS['eZContentLanguageMask'] += $language->attribute( 'id' );
+        }
         eZContentObject::clearCache();
 
         $this->folderClass = (int)$this->db->arrayQuery( "SELECT id FROM ezcontentclass WHERE identifier = 'folder' AND version = 0" )[0]['id'];
