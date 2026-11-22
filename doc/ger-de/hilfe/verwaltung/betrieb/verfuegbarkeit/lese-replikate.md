@@ -26,9 +26,11 @@ für Redaktion und Besucher bedeutet und wann sich Replikate lohnen. Die Quelle 
 ## Was Exponential mit Replikaten macht
 
 Mit `UseSlaveServer=enabled` sendet Exponential Leseabfragen an ein Replikat, das je Anfrage zufällig gewählt wird;
-Schreibvorgänge gehen an `Server`. Dies ist die einzige Engine mit eingebauter Aufteilung der Lesezugriffe
-([Datenbankunterstützung](../../../datenbankunterstuetzung.md)). Websites unter PostgreSQL, Oracle, MongoDB und SQLite nutzen
-über diese Einstellung keine Replikate für Lesezugriffe.
+Schreibvorgänge gehen an `Server`. MySQL und MariaDB teilen die Lesezugriffe von sich aus auf
+([Datenbankunterstützung](../../../datenbankunterstuetzung.md)), seit 6.0.15 auch PostgreSQL, mit strengeren Regeln: nur
+einfache SELECTs anonymer GET-Anfragen, die noch nichts geschrieben haben, und nur von einem Standby, der streamt
+([PostgreSQL-Lesereplikat](../../../../bc/6.0/postgresql-lesereplikat.md)). Websites unter Oracle, MongoDB und SQLite
+nutzen über diese Einstellung keine Replikate für Lesezugriffe.
 
 Replikate sind eine Leistungsfunktion, keine Ausfallumschaltung: Fällt der Primärserver aus, scheitern
 Schreibvorgänge. Zur Verfügbarkeit siehe [Hochverfügbarkeit der Datenbank](hochverfuegbarkeit-der-datenbank.md).

@@ -25,8 +25,10 @@ what replication lag means for editors and visitors, and when replicas are worth
 ## What Exponential does with replicas
 
 With `UseSlaveServer=enabled`, Exponential sends read queries to a replica chosen at random per request; writes go to
-`Server`. This is the only engine with built-in read splitting ([Database support](../../../database-support.md)).
-PostgreSQL, Oracle, MongoDB and SQLite sites do not use replicas for reads through this setting.
+`Server`. MySQL and MariaDB have built-in read splitting ([Database support](../../../database-support.md)), and since 6.0.15
+PostgreSQL too, with stricter rules: only plain SELECTs of anonymous GET requests that have written nothing, and only
+from a streaming standby ([PostgreSQL read replica](../../../../bc/6.0/postgresql-read-replica.md)). Oracle, MongoDB
+and SQLite sites do not use replicas for reads through this setting.
 
 Replicas are a performance feature, not a failover: if the primary fails, writes fail. For availability see
 [Database high availability](database-high-availability.md).

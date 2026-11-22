@@ -103,7 +103,7 @@ die Einstellungen einer Website an eine andere.
 Der Konstruktor setzte sieben Zustände der Anfrage von Hand zurück. Sie sind jetzt die Reset-Hooks des
 Request-Gültigkeitsbereichs, `expKernelServiceScope::DEFAULT_RESET_HOOKS`, ausgeführt von
 `expKernelServiceScope::resetRequest()` an derselben Stelle, in derselben Reihenfolge, jeder nur, wenn seine Klasse
-existiert, wie bisher: `eZDBQueryCache::resetRequest`, `eZDBInterface::resetSQLProfile`,
+existiert, wie bisher: `eZDBQueryCache::resetRequest`, `eZDBInterface::resetSQLProfile`, `eZPostgreSQLDB::resetRequest`,
 `expContentSecurityPolicy::reset`, `expAudit::resetRequest`, `expRenderStats::resetRequest`, `expRequestLog::reset`,
 `expRequestClassifier::reset` und seit 6.0.15 `expUserApproval::resetRequest` (die Konfigurationen von "Benutzerkonten
 freigeben", die ein Worker zuvor behielt). Code fügt eigene mit

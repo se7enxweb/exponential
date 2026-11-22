@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-925f71012b15d0fd7ef1e54b89e5746d  doc/changelogs/6.0/6.0.15.md
+7e6ea8aa199d75bd585f1344a0b44d10  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3762,7 +3762,7 @@ e42d994559ab9bfcfdbdfa47277e8ef3  doc/eng-us/bc/6.0/httpcache.md
 2b3cb1c9f14801037ef6f761686abd69  doc/eng-us/bc/6.0/image-focal-point.md
 ca5c128dd8208e512e824d14b875859f  doc/eng-us/bc/6.0/ini-save-file-permissions.md
 8229956155d37f992275bb9335479918  doc/eng-us/bc/6.0/installer-crontab.md
-3660f38720e7641629091aba0a56e2b5  doc/eng-us/bc/6.0/kernel-services.md
+3d0bad7a3e1bbc8d875962ccd9aebe84  doc/eng-us/bc/6.0/kernel-services.md
 68f4f3e4160b983bbac0e3414f0baeec  doc/eng-us/bc/6.0/kickstartercli.md
 5ca820d5c8967133b8ad17d9f5876d7c  doc/eng-us/bc/6.0/legacy-fork-fixes.md
 e507882afaa6ee338610d13740239af1  doc/eng-us/bc/6.0/locations-tab-paging-and-sorting.md
@@ -8605,7 +8605,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-424cb98121f75acbe30d6f233d42f567  doc/eng-us/help/database-support.md
+7c6a3b59212664ea8eba61cc68b7a1d3  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -9618,7 +9618,7 @@ c19ca619b8525895f5fe0cf0b83d4af2  doc/eng-us/help/government/operations/availabi
 99e0c0f0a317f558c9469f8dd963c797  doc/eng-us/help/government/operations/availability/database-high-availability.md
 37471b0ce44638cb50739b5af3660516  doc/eng-us/help/government/operations/availability/high-availability-overview.md
 7e487a51aee80432f0a4ea395013ed66  doc/eng-us/help/government/operations/availability/maintenance-mode-and-planned-downtime.md
-a497ded1861d2a3a82c19f806081b6ee  doc/eng-us/help/government/operations/availability/read-replicas.md
+90e5269191c269a3e24611e873fc4cec  doc/eng-us/help/government/operations/availability/read-replicas.md
 64cb1d0cddcb591dc21a58061de49fc4  doc/eng-us/help/government/operations/availability/sessions-across-servers.md
 b2d913cec77a6c46e5c687df3e9184a6  doc/eng-us/help/government/operations/availability/several-web-servers-behind-a-load-balancer.md
 56b8ff9fef1b2132823a0065967ba62c  doc/eng-us/help/government/operations/availability/shared-storage-and-the-dfs-cluster.md
@@ -13914,7 +13914,7 @@ cf889b0a0d4dd069a1e712446b41dc27  doc/ger-de/bc/6.0/hilfeinhalte-dita-ebooks-rev
 43d676b154295b51022f71acc225fb5f  doc/ger-de/bc/6.0/http2-und-cache-vorwaermen.md
 a8bce999dfa1cb936111fb3883fa06e1  doc/ger-de/bc/6.0/httpcache.md
 f7afe9eda5b02d1cb4e810857a818dd0  doc/ger-de/bc/6.0/inhaltsjobs.md
-4e809d5414ab035953f3b8ebe675aee7  doc/ger-de/bc/6.0/kernel-dienste.md
+8f0969a969c6db8b47b441c1ae4bd03b  doc/ger-de/bc/6.0/kernel-dienste.md
 197db39abf7f4ea2eeb9a260a803daee  doc/ger-de/bc/6.0/kickstartercli.md
 6eb74a075ecaeb09a213b3adc9e697e8  doc/ger-de/bc/6.0/konsole.md
 ff3ac9f50c3e4b1237a93c4431b08964  doc/ger-de/bc/6.0/korrekturen-aus-den-legacy-forks.md
@@ -18510,7 +18510,7 @@ a5a807f6683e34c696f32b0aacc76b15  doc/ger-de/hilfe/datenbankadministratoren/unte
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 0fd3f75c7c74b4cf244e7d5448f3c417  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-645dab6147fd9a8cd21d1e4d67f31107  doc/ger-de/hilfe/datenbankunterstuetzung.md
+fdea332c1db9a2c7d4c070eeaa454c31  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
@@ -22465,7 +22465,7 @@ a384d183706b9b2a68813ba738204833  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbar
 919c8a458d15b264913bf6fc00b0ed3e  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/hochverfuegbarkeit-der-datenbank.md
 2e9a1e161d6fd969f04db622a3aaacc1  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/hochverfuegbarkeit-im-ueberblick.md
 8deb24166d82eea3ea9e0fa02e1cb28c  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/kapazitaetsplanung.md
-a1338a15665234a17eb8bb745188e41b  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/lese-replikate.md
+51be65d1fa604089f37ae0e193eea2fa  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/lese-replikate.md
 11ee62b5d810b29a2fc44bf4caec7af2  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/mehrere-webserver-hinter-einem-load-balancer.md
 1d6f329d6a18813449a5bf38eb4a1f0e  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/sitzungen-ueber-mehrere-server.md
 5208508d0e4401daac4b5555e4625e00  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/statischer-cache.md
@@ -24974,7 +24974,7 @@ ca9fcb3bc539db96ba111b2e89b415cd  kernel/classes/expjsonschemavalidator.php
 e28d493c473360f6987268aad63af821  kernel/classes/expkernelservicecompiler.php
 0d1f6478da3d2c9fe01ada5fdda0c15e  kernel/classes/expkernelservicecontainer.php
 70f9f81d133851b79b1283613b9044ec  kernel/classes/expkernelservices.php
-ea94066279aed484b4db7a287247855b  kernel/classes/expkernelservicescope.php
+e990b55885b82680dc9da38b765d4b4d  kernel/classes/expkernelservicescope.php
 b77d0785b917bef42e8db136111c0671  kernel/classes/expkickstarter.php
 7834936e5a6591f115b7fb5e61d575ff  kernel/classes/expkickstarterini.php
 4c3efce95489a61f22bdb9f9b1416d40  kernel/classes/explinkcheck.php
@@ -27135,7 +27135,7 @@ b66248e35051b10fab37396107632d39  lib/ezdb/classes/ezdbquerycache.php
 7ef8186a613986a90636b30fac85b4f9  lib/ezdb/classes/ezmysqlcharset.php
 b159cf7b4fb08c52b2515eeaa94cd36e  lib/ezdb/classes/ezmysqlidb.php
 ec6538c99af5eb7c84f089898a6907d2  lib/ezdb/classes/eznulldb.php
-755ec0a2dd5bf99a69a3107756d4f01f  lib/ezdb/classes/ezpostgresqldb.php
+abd870d6b782e7d512ba3ea0a7b92b8f  lib/ezdb/classes/ezpostgresqldb.php
 0962e8b7c5413af7373c4c305a1cb207  lib/ezdb/classes/ezsqlite3db.php
 ac6df8d4565b779eff3ff9c41b2da301  lib/ezdbschema/classes/expmongoschema.php
 eca147e65440b86a146555c6e4122e0f  lib/ezdbschema/classes/ezdbschema.php
@@ -29553,7 +29553,7 @@ c62b088528e7417a9609dba5de48b7f9  tests/tests/kernel/classes/expHtaccessLiteSpee
 4b2f5a942b0d8969ff13e6554264e300  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
 678c65717156beebc86b7da3a2ae8151  tests/tests/kernel/classes/expKernelCallFixesTest.php
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
-8b4c6239f1747ab8fb7c14521918fe1d  tests/tests/kernel/classes/expKernelServicesTest.php
+967c5d5cea251e22658201bfa854fbac  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 39b9585e67ff669df4e25290133f3d75  tests/tests/kernel/classes/expLegacyForkFixesTest.php
 e2d49a13d3ace90fa9eb9d1fa6fe2190  tests/tests/kernel/classes/expLinkCheckTest.php
@@ -31127,3 +31127,6 @@ fa3d7944989fb286b4f4dde13c72f425  update/database/postgresql/6.0/dbupdate-6.0.0-
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 a978abfd4df3d11208afede1d7f7358f  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php
+5fd205114fab8a96ec95f1140580db22  tests/tests/lib/ezdb/eZPostgreSQLDBReadReplicaTest.php
+7c3689ae25c827a59ee5697f682f5720  doc/eng-us/bc/6.0/postgresql-read-replica.md
+0e9f124ac3f52d770d80077750eaa436  doc/ger-de/bc/6.0/postgresql-lesereplikat.md

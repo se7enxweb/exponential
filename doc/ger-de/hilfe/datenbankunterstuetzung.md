@@ -442,8 +442,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER,
 `--newtype=InnoDB` konvertiert sie.
 
 **Lese-Replikate.** `UseSlaveServer=enabled` mit `SlaveServerArray[]` und den zugehörigen Schlüsseln schickt
-Lesezugriffe an ein Replikat, das pro Anfrage zufällig gewählt wird; Schreibzugriffe gehen an `Server`. Dies ist die
-einzige Engine mit eingebauter Aufteilung der Lesezugriffe.
+Lesezugriffe an ein Replikat, das pro Anfrage zufällig gewählt wird; Schreibzugriffe gehen an `Server`. Seit 6.0.15 liest
+auch PostgreSQL von einem Replikat, mit strengeren Regeln ([PostgreSQL-Lesereplikat](../bc/6.0/postgresql-lesereplikat.md)).
 
 **Grenzen.** Der Verbindungszeichensatz `utf-8` wird auf MySQLs `utf8` (drei Bytes) abgebildet, sodass Zeichen
 außerhalb der Basic Multilingual Plane, etwa Emoji, nicht durch die Verbindung gelangen, selbst wenn die Tabellen
@@ -587,8 +587,8 @@ ist.
   senkt das auf 16 MB).
 - **PostgreSQL, MariaDB, MySQL** skalieren Schreibzugriffe mit Sperren auf Zeilenebene.
   `UsePersistentConnection=enabled` hält eine Verbindung je PHP-Prozess; unter den persistenten Workern von Velocity
-  behält jeder Worker seine Verbindung ohnehin. MySQL und MariaDB können Lesezugriffe an Replikate schicken
-  (`UseSlaveServer`).
+  behält jeder Worker seine Verbindung ohnehin. MySQL, MariaDB und PostgreSQL können Lesezugriffe an
+  Replikate schicken (`UseSlaveServer`).
 - **MongoDB**: Die Performance hängt von der Anzahl der Anweisungen pro Seite ab; legen Sie die Indizes aus
   `bin/mongodb/create_indexes.js` an, ohne die Abfragen auf Teilbäume und Suchen nach URL-Aliasen ganze Collections
   durchlaufen.

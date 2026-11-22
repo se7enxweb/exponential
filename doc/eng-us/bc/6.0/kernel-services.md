@@ -96,7 +96,7 @@ request. Keyed by siteaccess and the hash of the override directories: one worke
 The constructor reset seven request states by hand. They are now the request scope's reset hooks,
 `expKernelServiceScope::DEFAULT_RESET_HOOKS`, run by `expKernelServiceScope::resetRequest()` at the same place, in the
 same order, each only when its class exists, as before: `eZDBQueryCache::resetRequest`,
-`eZDBInterface::resetSQLProfile`, `expContentSecurityPolicy::reset`, `expAudit::resetRequest`,
+`eZDBInterface::resetSQLProfile`, `eZPostgreSQLDB::resetRequest`, `expContentSecurityPolicy::reset`, `expAudit::resetRequest`,
 `expRenderStats::resetRequest`, `expRequestLog::reset`, `expRequestClassifier::reset`, and since 6.0.15
 `expUserApproval::resetRequest` (the "Approve user accounts" configurations, which a worker kept before). Code adds its own with
 `expKernelServiceScope::onRequestReset( 'name', $callable )` (registering a name again replaces it; kept with the

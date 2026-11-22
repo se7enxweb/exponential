@@ -48,6 +48,8 @@ class expKernelServiceScope
         // the query cache's memo, settings and state view start empty, also in a persistent worker
         'querycache'  => array( 'eZDBQueryCache', 'resetRequest' ),
         'sqlprofile'  => array( 'eZDBInterface', 'resetSQLProfile' ),
+        // PostgreSQL's read replica: the request decides again and starts unpinned (eZPostgreSQLDB, UseSlaveServer)
+        'dbreplica'   => array( 'eZPostgreSQLDB', 'resetRequest' ),
         // the Content Security Policy nonce of the request before is not reused
         'csp'         => array( 'expContentSecurityPolicy', 'reset' ),
         // the audit: what a previous request left is flushed, then its buffer, request id, open parent events and

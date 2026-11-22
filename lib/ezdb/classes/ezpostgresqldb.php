@@ -224,9 +224,17 @@ class eZPostgreSQLDB extends eZDBInterface
             {
                 $this->startTimer();
             }
+            // A read replica ([DatabaseSettings] UseSlaveServer): a plain SELECT of an anonymous GET/HEAD request that
+            // has written nothing yet may run there; anything else, or a failure there, runs on the primary.
+            $result = false;
+            $replica = $this->replicaConnectionFor( $sql, $server );
+            if ( $replica )
+                $result = $this->replicaQuery( $replica, $sql );
+            else
+                $this->notePrimaryStatement( $sql );
             // postgres will by default cast an error if a query fails
             // exception handling mode needs to catch this exception and set the $result variable to false
-            if ( $this->errorHandling == eZDB::ERROR_HANDLING_EXCEPTIONS )
+            if ( $result === false && $this->errorHandling == eZDB::ERROR_HANDLING_EXCEPTIONS )
             {
                 $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
                 try {
@@ -236,7 +244,7 @@ class eZPostgreSQLDB extends eZDBInterface
                 }
                 eZDebug::setHandleType( $oldHandling );
             }
-            else
+            else if ( $result === false )
             {
                 $result = pg_query( $this->DBConnection, $sql );
             }
@@ -317,7 +325,7 @@ class eZPostgreSQLDB extends eZDBInterface
 
             eZDebug::accumulatorStart( 'postgresql_query', 'postgresql_total', 'Postgresql queries' );
 
-            $result = $this->query( $sql );
+            $result = $this->query( $sql, $server );
 
             eZDebug::accumulatorStop( 'postgresql_query' );
 
@@ -690,6 +698,203 @@ class eZPostgreSQLDB extends eZDBInterface
             pg_close( $this->DBConnection );
         $this->DBConnection = false;
         $this->IsConnected = false;
+        if ( $this->ReplicaConnection )
+            @pg_close( $this->ReplicaConnection );
+        $this->ReplicaConnection = false;
+        $this->ReplicaState = null;
+        $this->ReplicaPinned = false;
+    }
+
+    /**
+     * Whether a statement may run on a read replica: a plain SELECT that changes nothing and takes no lock. A WITH
+     * can hold a data-modifying statement; sequence functions write (and currval() is per session), FOR UPDATE/SHARE
+     * and advisory locks lock on the primary only, SELECT ... INTO creates a table. The test is on the text, so a
+     * literal that only contains such a word also goes to the primary: that costs a round trip, never correctness.
+     *
+     * @param string $sql
+     * @return bool
+     * @since 6.0.15
+     */
+    public static function isReplicaReadable( $sql )
+    {
+        $sql = ltrim( (string)$sql, " \t\r\n(" );
+        if ( strncasecmp( $sql, 'select', 6 ) !== 0 || !preg_match( '/^select\b/i', $sql ) )
+            return false;
+        return !preg_match( '/\b(?:nextval|currval|setval|lastval|pg_advisory\w*|pg_try_advisory\w*|txid_current\w*'
+                          . '|pg_current_\w+|pg_notify|set_config|lo_\w+|dblink\w*|pg_sleep\w*)\s*\('
+                          . '|\bfor\s+(?:update|share|no\s+key\s+update|key\s+share)\b|\binto\b/i', $sql );
+    }
+
+    /**
+     * Whether this request may read from the replica at all: a web request (PHP-FPM, Apache or a Velocity worker;
+     * never cronjobs and scripts), GET or HEAD, of a visitor who is not signed in (no is_logged_in cookie: editors
+     * always read the primary, so they see their own work at once).
+     *
+     * @param array $server $_SERVER
+     * @param array $cookies $_COOKIE
+     * @param bool $isWebProcess
+     * @return bool
+     * @since 6.0.15
+     */
+    public static function requestMayReadReplica( array $server, array $cookies, $isWebProcess )
+    {
+        if ( !$isWebProcess )
+            return false;
+        $method = isset( $server['REQUEST_METHOD'] ) ? strtoupper( (string)$server['REQUEST_METHOD'] ) : '';
+        if ( $method !== 'GET' && $method !== 'HEAD' )
+            return false;
+        return empty( $cookies['is_logged_in'] );
+    }
+
+    /**
+     * Whether this process answers web requests (as eZSQLite3DB::isWebProcess()).
+     *
+     * @return bool
+     */
+    protected static function isWebProcess()
+    {
+        return PHP_SAPI !== 'cli' || defined( 'QBIX_WEBSERVER' ) || isset( $_SERVER['QBIX_WORKER'] )
+               || isset( $_SERVER['VELOCITY'] ) || class_exists( 'Q_WebServer', false );
+    }
+
+    /**
+     * A statement that runs on the primary: anything that is not a replica-readable SELECT (a write, BEGIN, a lock,
+     * a sequence) pins the rest of the request to the primary, so the request reads what it wrote.
+     *
+     * @param string $sql
+     */
+    protected function notePrimaryStatement( $sql )
+    {
+        if ( $this->UseSlaveServer && !$this->ReplicaPinned && !self::isReplicaReadable( $sql ) )
+            $this->ReplicaPinned = true;
+    }
+
+    /**
+     * The replica connection for this statement, or false for the primary. The first statement of a request that
+     * may use the replica decides for the whole request: the request must be allowed to (requestMayReadReplica()),
+     * the replica must answer, and it must be streaming from its primary (or be a primary itself), so a replica
+     * whose stream is broken is not read. A node without a replica (nothing listens on the configured port) reads
+     * the primary, so the same settings serve every node of a cluster.
+     *
+     * @param string $sql
+     * @param int|bool $server eZDBInterface::SERVER_MASTER forces the primary
+     * @return resource|object|false
+     */
+    protected function replicaConnectionFor( $sql, $server )
+    {
+        if ( !$this->UseSlaveServer || $this->ReplicaPinned || $this->ReplicaState === 'off'
+             || $this->TransactionCounter > 0 || $server === eZDBInterface::SERVER_MASTER
+             || !self::isReplicaReadable( $sql ) )
+            return false;
+        if ( $this->ReplicaState === null )
+        {
+            $this->ReplicaState = 'off';
+            if ( !$this->SlaveServer || !self::requestMayReadReplica( $_SERVER, $_COOKIE, self::isWebProcess() ) )
+                return false;
+            if ( !$this->ReplicaConnection || pg_connection_status( $this->ReplicaConnection ) !== PGSQL_CONNECTION_OK )
+                $this->ReplicaConnection = $this->connectReplica();
+            if ( !$this->ReplicaConnection )
+                return false;
+            $status = $this->replicaQueryValue( "SELECT CASE WHEN NOT pg_is_in_recovery() THEN 'primary'"
+                                              . " ELSE (SELECT status FROM pg_stat_wal_receiver) END" );
+            if ( $status !== 'streaming' && $status !== 'primary' )
+            {
+                eZDebug::writeWarning( "The read replica {$this->SlaveServer}:{$this->SlavePort} is not streaming ("
+                                     . var_export( $status, true ) . "), reading from the primary", __METHOD__ );
+                return false;
+            }
+            $this->ReplicaState = 'on';
+        }
+        return $this->ReplicaConnection;
+    }
+
+    /**
+     * Opens the replica connection: once, no retries, a short timeout.
+     *
+     * @return resource|object|false
+     */
+    protected function connectReplica()
+    {
+        $connectString = self::connectString( $this->SlaveServer, $this->SlavePort, $this->SlaveDB, $this->SlaveUser,
+                                              $this->SlavePassword ) . " connect_timeout='2'";
+        $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
+        try {
+            $connection = @pg_connect( $connectString, PGSQL_CONNECT_FORCE_NEW );
+        } catch ( Throwable $e ) {
+            $connection = false;
+        }
+        eZDebug::setHandleType( $oldHandling );
+        if ( !$connection )
+            eZDebugSetting::writeDebug( 'kernel-db-postgresql', "No read replica at {$this->SlaveServer}:{$this->SlavePort}, reading from the primary", __METHOD__ );
+        return $connection ?: false;
+    }
+
+    /**
+     * Runs a SELECT on the replica. On any failure the replica is not used again in this request (and its
+     * connection is dropped when it broke) and false is returned, so the caller runs the statement on the primary.
+     *
+     * @param resource|object $replica
+     * @param string $sql
+     * @return resource|object|false
+     */
+    protected function replicaQuery( $replica, $sql )
+    {
+        $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
+        try {
+            $result = @pg_query( $replica, $sql );
+        } catch ( Throwable $e ) {
+            $result = false;
+        }
+        eZDebug::setHandleType( $oldHandling );
+        if ( $result === false )
+        {
+            $this->ReplicaState = 'off';
+            eZDebug::writeWarning( 'A statement failed on the read replica and runs on the primary: '
+                                 . trim( (string)@pg_last_error( $replica ) ), __METHOD__ );
+            if ( pg_connection_status( $replica ) !== PGSQL_CONNECTION_OK )
+            {
+                @pg_close( $replica );
+                $this->ReplicaConnection = false;
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * The first column of the first row of a statement on the replica, or null.
+     *
+     * @param string $sql
+     * @return string|null
+     */
+    protected function replicaQueryValue( $sql )
+    {
+        $result = $this->replicaQuery( $this->ReplicaConnection, $sql );
+        if ( !$result )
+            return null;
+        $row = pg_fetch_row( $result );
+        pg_free_result( $result );
+        return ( $row && $row[0] !== null ) ? (string)$row[0] : null;
+    }
+
+    /**
+     * Starts a request afresh (expKernelServiceScope reset hook, also in a persistent Velocity worker): the replica
+     * decision and the pin of the request before are forgotten; an open replica connection is kept.
+     */
+    public function resetReplicaState()
+    {
+        $this->ReplicaState = null;
+        $this->ReplicaPinned = false;
+    }
+
+    /**
+     * The reset hook: resets the replica state of the current database, when it is PostgreSQL.
+     *
+     * @since 6.0.15
+     */
+    public static function resetRequest()
+    {
+        if ( isset( $GLOBALS['eZDBGlobalInstance'] ) && $GLOBALS['eZDBGlobalInstance'] instanceof eZPostgreSQLDB )
+            $GLOBALS['eZDBGlobalInstance']->resetReplicaState();
     }
 
     function createDatabase( $dbName )
@@ -763,6 +968,27 @@ class eZPostgreSQLDB extends eZDBInterface
 
     /// \privatesection
 
+    /**
+     * The read replica's connection ([DatabaseSettings] UseSlaveServer, SlaveServerArray ...), opened on first use.
+     *
+     * @var resource|object|false
+     */
+    public $ReplicaConnection = false;
+
+    /**
+     * This request's decision about the replica: null (not made yet), 'on' or 'off'.
+     *
+     * @var string|null
+     */
+    public $ReplicaState = null;
+
+    /**
+     * Whether this request has run a statement that writes (or locks, or opens a transaction): from then on it reads
+     * from the primary only.
+     *
+     * @var bool
+     */
+    public $ReplicaPinned = false;
 }
 
 ?>

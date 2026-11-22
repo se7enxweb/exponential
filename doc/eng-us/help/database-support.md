@@ -454,7 +454,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER,
 converts them.
 
 **Read replicas.** `UseSlaveServer=enabled` with `SlaveServerArray[]` and the related keys sends reads to a replica
-chosen at random per request; writes go to `Server`. This is the only engine with built-in read splitting.
+chosen at random per request; writes go to `Server`. PostgreSQL reads from a replica as well since 6.0.15, with
+stricter rules ([PostgreSQL read replica](../bc/6.0/postgresql-read-replica.md)).
 
 **Limits.** The connection character set `utf-8` maps to MySQL's `utf8` (three bytes), so characters outside the
 Basic Multilingual Plane, such as emoji, cannot pass through the connection even when the tables are `utf8mb4`.
@@ -586,8 +587,8 @@ PostgreSQL, Oracle or MongoDB. Compare `lower(...)` on both sides where case mus
 - **SQLite** scales reads with the number of processes; writes queue. Count up to 64 MB of page cache per process
   that has opened the database (`SQLitePragmas[]=cache_size=-16384` lowers it to 16 MB).
 - **PostgreSQL, MariaDB, MySQL** scale writes with row-level locking. `UsePersistentConnection=enabled` keeps one
-  connection per PHP process; under Velocity's persistent workers each worker keeps its connection anyway. MySQL and
-  MariaDB can send reads to replicas (`UseSlaveServer`).
+  connection per PHP process; under Velocity's persistent workers each worker keeps its connection anyway. MySQL,
+  MariaDB and PostgreSQL can send reads to replicas (`UseSlaveServer`).
 - **MongoDB**: performance follows the number of statements per page; create the indexes from
   `bin/mongodb/create_indexes.js`, without which subtree queries and URL alias lookups scan whole collections.
 - **Oracle**: a new dedicated session costs tens of milliseconds; use `Persistent=enabled` and DRCP
