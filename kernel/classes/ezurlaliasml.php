@@ -1676,17 +1676,36 @@ class eZURLAliasML extends eZPersistentObject
     static public function primePathsForNodes( array $nodes )
     {
         $contentRootID = (int)eZINI::instance( 'content.ini' )->variable( 'NodeSettings', 'RootNode' );
-        $lists = array();
-        $union = array();
+        $requests = array();
         foreach ( $nodes as $node )
         {
             if ( !$node instanceof eZContentObjectTreeNode || (int)$node->attribute( 'node_id' ) === $contentRootID )
                 continue;
             $pathArray = $node->pathArray();
             array_shift( $pathArray );
-            if ( !$pathArray )
+            if ( $pathArray )
+                $requests[] = array( $pathArray, $node->CurrentLanguage );
+        }
+        return self::primePathLists( $requests );
+    }
+
+    /**
+     * primePathsForNodes() for paths given as data: each entry is array( path node ids without node 1, language ),
+     * as eZContentObjectTreeNode::pathWithNames() asks fetchPathByActionList() for them. Paths already in the memo are
+     * skipped; the rest are read in two queries.
+     *
+     * @param array $requests
+     * @return int how many paths were made
+     */
+    static public function primePathLists( array $requests )
+    {
+        $lists = array();
+        $union = array();
+        foreach ( $requests as $request )
+        {
+            if ( !is_array( $request ) || empty( $request[0] ) || !is_array( $request[0] ) )
                 continue;
-            $locale = $node->CurrentLanguage;
+            list( $pathArray, $locale ) = array( $request[0], isset( $request[1] ) ? $request[1] : null );
             $memoKey = 'eznode|' . (string)$locale . '|' . implode( ',', $pathArray );
             if ( array_key_exists( $memoKey, self::$PathByActionListCache ) || isset( $lists[$memoKey] ) )
                 continue;

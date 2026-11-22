@@ -3438,6 +3438,10 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
     /*!
      \sa subTreeCount
+
+     With $params['GroupByParent'] = true, Depth 1 and DepthOperator 'eq' (the children of each node of $nodeID):
+     an array parent node id => number of its children, every node counted on its own in one query; null when the
+     database cannot (MongoDB) or the parameters are others.
     */
     static function subTreeCountByNodeID( $params, $nodeID )
     {
@@ -3450,6 +3454,12 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $depth         = isset( $params['Depth'] ) && is_numeric( $params['Depth'] ) ? $params['Depth']              : false;
         $depthOperator = isset( $params['DepthOperator'] )                           ? $params['DepthOperator']      : false;
+
+        $groupByParent = !empty( $params['GroupByParent'] );
+        if ( $groupByParent && ( (int)$depth !== 1 || $depthOperator !== 'eq' || eZDB::instance()->databaseName() === 'mongo' ) )
+        {
+            return null;
+        }
 
         $pathStringCond     = '';
         $notEqParentString  = '';
@@ -3562,7 +3572,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 $permissionScope );
         }
 
-        $query = "SELECT
+        $groupSelect = $groupByParent ? 'ezcontentobject_tree.parent_node_id AS parent_node_id,' : '';
+        $query = "SELECT $groupSelect
                         count( DISTINCT ezcontentobject_tree.node_id ) as count
                   FROM
                        ezcontentobject_tree
@@ -3587,6 +3598,10 @@ class eZContentObjectTreeNode extends eZPersistentObject
                         $sqlPermissionChecking[where]
                         $objectNameFilterSQL
                         $languageFilter ";
+        if ( $groupByParent )
+        {
+            $query .= ' GROUP BY ezcontentobject_tree.parent_node_id';
+        }
 
         $server = count( $sqlPermissionChecking['temp_tables'] ) > 0 ? eZDBInterface::SERVER_SLAVE : false;
 
@@ -3654,6 +3669,16 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         // cleanup temp tables
         $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
+
+        if ( $groupByParent )
+        {
+            if ( !is_array( $nodeListArray ) )
+                return null;
+            $counts = array();
+            foreach ( $nodeListArray as $row )
+                $counts[(int)$row['parent_node_id']] = $row['count'];
+            return $counts;
+        }
 
         return isset( $nodeListArray[0]['count'] ) ? $nodeListArray[0]['count'] : 0;
     }
@@ -3825,6 +3850,9 @@ class eZContentObjectTreeNode extends eZPersistentObject
     */
     function childrenCount( $checkPolicies = true )
     {
+        $batched = $this->batchedChildrenCount( $checkPolicies );
+        if ( $batched !== null )
+            return $batched;
         $params = array( 'Depth' => 1,
                          'DepthOperator' => 'eq' );
         if ( !$checkPolicies )
@@ -4794,6 +4822,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
     */
     static function addChildTo( $contentobjectID, $nodeID, $asObject = false, $contentObjectVersion = false )
     {
+        self::$FetchBatchEpoch++;
         // The tree, not a translation: the parent whatever the prioritized languages
         $node = eZContentObjectTreeNode::fetchStructural( $nodeID );
         if ( !$node )
@@ -4929,6 +4958,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
             }
             else
             {
+                if ( !$regenerateCurrent && $this->FetchBatch !== null )
+                    $this->primeURLAliasBatch();
                 $path = eZURLAliasML::fetchPathByActionList( "eznode", $pathArray, $this->CurrentLanguage );
             }
 
@@ -5775,6 +5806,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     function removeNodeFromTreeUnaudited( $moveToTrash = true )
     {
+        self::$FetchBatchEpoch++;
         $nodeID = $this->attribute( 'node_id' );
         $this->refreshMainNodeID();
         $object = $this->object();
@@ -5981,6 +6013,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
     */
     function move( $newParentNodeID, $nodeID = 0 )
     {
+        self::$FetchBatchEpoch++;
         if ( $nodeID == 0 )
         {
             $node = $this;
@@ -7166,6 +7199,31 @@ class eZContentObjectTreeNode extends eZPersistentObject
             }
             $retNodes[] = $object;
         }
+        // a list of nodes (a menu level, a page of children) usually has the url_alias and the children_count of
+        // each one asked for: the first such question reads them for all of them (primeURLAliasBatch(),
+        // childrenCount())
+        if ( count( $retNodes ) > 1 )
+        {
+            $contentRootID = (int)eZINI::instance( 'content.ini' )->variable( 'NodeSettings', 'RootNode' );
+            $batch = new stdClass();
+            $batch->primed = false;
+            $batch->lists = array();
+            $batch->nodeIDs = array();
+            $batch->childCounts = array();
+            $batch->epoch = self::$FetchBatchEpoch;
+            foreach ( $retNodes as $retNode )
+            {
+                $batch->nodeIDs[] = (int)$retNode->attribute( 'node_id' );
+                if ( (int)$retNode->attribute( 'node_id' ) === $contentRootID )
+                    continue;
+                $pathArray = $retNode->pathArray();
+                array_shift( $pathArray );
+                if ( $pathArray )
+                    $batch->lists[] = array( $pathArray, $retNode->CurrentLanguage );
+            }
+            foreach ( $retNodes as $retNode )
+                $retNode->FetchBatch = $batch;
+        }
         return $retNodes;
     }
 
@@ -7725,6 +7783,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     function store( $fieldFilters = null )
     {
+        self::$FetchBatchEpoch++;
         $db = eZDB::instance();
 
         $db->begin();
@@ -7993,6 +8052,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     static function hideSubTree( eZContentObjectTreeNode $node, $modifyRootNode = true )
     {
+        self::$FetchBatchEpoch++;
         $nodeID = $node->attribute( 'node_id' );
         $time = time();
         $db = eZDB::instance();
@@ -8076,6 +8136,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     static function unhideSubTree( eZContentObjectTreeNode $node, $modifyRootNode = true )
     {
+        self::$FetchBatchEpoch++;
         $nodeID = $node->attribute( 'node_id' );
         $nodePath = $node->attribute( 'path_string' );
         $nodeInvisible = $node->attribute( 'is_invisible' );
@@ -8165,6 +8226,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     static function updateNodeVisibility( $node, $parentNode, $recursive = true )
     {
+        self::$FetchBatchEpoch++;
         if ( !$node )
         {
             eZDebug::writeWarning( 'No such node to update visibility for.' );
@@ -8675,6 +8737,63 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * @var int|null Whether the node's class is a container (1) or not (0)
      */
     protected $ClassIsContainer = null;
+
+    /**
+     * @var stdClass|null The nodes fetched together with this one (makeObjectsArray()): their ids, paths and
+     *      languages, so that the first url_alias or children_count asked of any of them is read for all of them in
+     *      one go (eZURLAliasML::primePathLists(), one grouped count) instead of one or two queries per node. Plain
+     *      data, no node references.
+     */
+    protected $FetchBatch = null;
+
+    /**
+     * @var int Raised by every change to the tree made through this class (store, move, removal, visibility): the
+     *      children counts a fetch batch read before it are not used any more.
+     */
+    public static $FetchBatchEpoch = 0;
+
+    /**
+     * Reads the URL aliases of the nodes fetched together with this one at once, the first time one of them is asked
+     * for its path; once per batch. The paths land in eZURLAliasML's per-request memo, so pathWithNames() then finds
+     * them there; a node whose language changed in between simply misses the memo and is read as before.
+     */
+    protected function primeURLAliasBatch()
+    {
+        $batch = $this->FetchBatch;
+        if ( $batch === null || $batch->primed )
+            return;
+        $batch->primed = true;
+        if ( count( $batch->lists ) > 1 )
+            eZURLAliasML::primePathLists( $batch->lists );
+    }
+
+    /**
+     * The number of children of this node, read for every node of its fetch batch in one grouped query the first time
+     * one of them is asked (the same conditions as subTreeCount() with Depth 1, each node counted on its own); null
+     * when that is not possible here (no batch, a change to the tree since, a database without the grouped count).
+     *
+     * @param bool $checkPolicies
+     * @return int|string|null
+     */
+    protected function batchedChildrenCount( $checkPolicies )
+    {
+        $batch = $this->FetchBatch;
+        if ( $batch === null || count( $batch->nodeIDs ) < 2 || $batch->epoch !== self::$FetchBatchEpoch )
+            return null;
+        $key = $checkPolicies ? 'policies' : 'all';
+        if ( !array_key_exists( $key, $batch->childCounts ) )
+        {
+            $params = array( 'Depth' => 1, 'DepthOperator' => 'eq', 'GroupByParent' => true );
+            if ( !$checkPolicies )
+                $params['Limitation'] = array();
+            $counts = self::subTreeCountByNodeID( $params, $batch->nodeIDs );
+            $batch->childCounts[$key] = is_array( $counts ) ? $counts : false;
+        }
+        if ( $batch->childCounts[$key] === false )
+            return null;
+        $nodeID = (int)$this->attribute( 'node_id' );
+        return isset( $batch->childCounts[$key][$nodeID] ) ? $batch->childCounts[$key][$nodeID] : 0;
+    }
 }
 
 ?>
