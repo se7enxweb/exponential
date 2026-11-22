@@ -151,7 +151,7 @@ jobs:
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
 
   phpunit-db:
-    name: Database tests (${{ matrix.db }}, PHP ${{ matrix.php }})
+    name: Database tests (${{ matrix.db }}${{ matrix.db == 'postgresql' && format(' {0}', matrix.pg) || '' }}, PHP ${{ matrix.php }})
     runs-on: ubuntu-latest
     # A green run takes about 6 minutes; a hung test or install stops here, not at the 6 hour default
     timeout-minutes: 30
@@ -159,17 +159,34 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # pg: the PostgreSQL server of the leg (the service below; the MySQL and MongoDB legs do not use it). The
+        # kernel supports 13 to 19: the oldest, the one the suites ran on alone before, and the two newest.
         include:
           - php: '8.3'
             db: mysql
+            pg: '18'
             dsn: 'mysql://root@127.0.0.1/testdb'
           - php: '8.3'
             db: postgresql
+            pg: '13'
+            dsn: 'postgresql://postgres@127.0.0.1/testdb'
+          - php: '8.3'
+            db: postgresql
+            pg: '15'
+            dsn: 'postgresql://postgres@127.0.0.1/testdb'
+          - php: '8.3'
+            db: postgresql
+            pg: '18'
+            dsn: 'postgresql://postgres@127.0.0.1/testdb'
+          - php: '8.3'
+            db: postgresql
+            pg: '19'
             dsn: 'postgresql://postgres@127.0.0.1/testdb'
           # The migration engine's checks of every step family on MongoDB (the expMigration* classes of the
           # testsuite mongodb-live)
           - php: '8.3'
             db: mongodb
+            pg: '18'
             dsn: 'mongodb://127.0.0.1:27017'
 
     services:
@@ -186,7 +203,7 @@ jobs:
           --health-timeout=5s
           --health-retries=10
       postgresql:
-        image: postgres:15
+        image: postgres:${{ matrix.pg }}
         env:
           POSTGRES_USER: postgres
           POSTGRES_DB: postgres
@@ -235,6 +252,17 @@ jobs:
         run: |
           sudo apt-get -o Acquire::Retries=3 update
           sudo apt-get -o Acquire::Retries=3 install -y imagemagick libbson-dev libmongoc-dev
+
+      # The PostgreSQL client of the leg's server (PGDG): pg_dump refuses a server newer than itself, and the caption
+      # and backup checks dump the test database (the image's own client is older than 18 and 19)
+      - name: Install the PostgreSQL client
+        if: matrix.db == 'postgresql'
+        run: |
+          sudo apt-get -o Acquire::Retries=3 install -y postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get -o Acquire::Retries=3 install -y "postgresql-client-${{ matrix.pg }}"
+          "/usr/lib/postgresql/${{ matrix.pg }}/bin/pg_dump" --version
+          pg_dump --version
 
       - name: Get Composer cache directory
         id: composer-cache-db
@@ -319,7 +347,7 @@ jobs:
       fail-fast: false
       matrix:
         php: [ '8.3' ]
-        postgres: [ '13', '14', '15', '16', '17', '18', '19rc1' ]
+        postgres: [ '13', '14', '15', '16', '17', '18', '19' ]
         include:
           - php: '8.5'
             postgres: '18'
@@ -374,6 +402,11 @@ jobs:
       - name: Install dependencies
         run: |
           cp composer.json "${CI_COMPOSER_FILE}"
+          # --ignore-platform-req=php would otherwise pick PHPUnit 13, which needs PHP 8.4 ("This version of PHPUnit
+          # requires PHP >= 8.4.1"): before 8.4 the PHPUnit the phpunit job runs on that PHP
+          if php -r 'exit(PHP_VERSION_ID < 80400 ? 0 : 1);'; then
+            COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^11.5"
+          fi
           for attempt in 1 2 3; do
             COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php && break
             [ "$attempt" = 3 ] && exit 1
@@ -451,6 +484,8 @@ jobs:
       - name: Install dependencies
         run: |
           cp composer.json "${CI_COMPOSER_FILE}"
+          # PHP 8.3: PHPUnit 11.5 (--ignore-platform-req=php would otherwise pick PHPUnit 13, which needs 8.4)
+          COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^11.5"
           for attempt in 1 2 3; do
             COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php && break
             [ "$attempt" = 3 ] && exit 1
