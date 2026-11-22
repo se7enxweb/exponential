@@ -209,7 +209,41 @@ class ezpHttpCacheListener
                 'clientIpHeader' => $site->hasVariable( 'HTTPHeaderSettings', 'ClientIpByCustomHTTPHeader' )
                     ? (string)$site->variable( 'HTTPHeaderSettings', 'ClientIpByCustomHTTPHeader' ) : '',
             ),
+            // A cluster: purges reach the pages of every server (ezpHttpCacheContract::sharedStatePath())
+            'sharedDir' => self::sharedStateDir( $ini ),
         );
+    }
+
+    /**
+     * Where the servers of a cluster share the purges of this cache: httpcache.ini [HttpCacheSettings] SharedStateDir
+     * (a path, absolute or relative to the installation; "disabled": none), or by default, with the DFS cluster file
+     * handler, the folder exphttpcache on its shared disk (file.ini [eZDFSClusteringSettings] MountPointPath). One
+     * server (any other file handler): '' -- the state stays in the server's own cache folder, as before.
+     *
+     * @param eZINI|null $ini httpcache.ini
+     * @return string
+     */
+    public static function sharedStateDir( $ini = null )
+    {
+        $ini = $ini instanceof eZINI ? $ini : eZINI::instance( 'httpcache.ini' );
+        $setting = $ini->hasVariable( 'HttpCacheSettings', 'SharedStateDir' ) ? trim( (string)$ini->variable( 'HttpCacheSettings', 'SharedStateDir' ) ) : '';
+        if ( $setting === 'disabled' )
+            return '';
+        $path = $setting;
+        if ( $path === '' )
+        {
+            $file = eZINI::instance( 'file.ini' );
+            if ( strcasecmp( (string)$file->variable( 'ClusteringSettings', 'FileHandler' ), 'eZDFSFileHandler' ) !== 0 )
+                return '';
+            $mount = $file->hasVariable( 'eZDFSClusteringSettings', 'MountPointPath' )
+                ? trim( (string)$file->variable( 'eZDFSClusteringSettings', 'MountPointPath' ) ) : '';
+            if ( $mount === '' )
+                return '';
+            $path = rtrim( $mount, '/' ) . '/exphttpcache';
+        }
+        if ( $path[0] !== '/' )
+            $path = eZSys::rootDir() . '/' . $path;
+        return rtrim( $path, '/' );
     }
 
     // ── Store ────────────────────────────────────────────────────────────

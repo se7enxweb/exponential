@@ -91,6 +91,7 @@ Datei `settings/httpcache.ini`, Block `[HttpCacheSettings]`, Geltungsbereich: In
 | `TagHeader` | `disabled` | Die Leerungs-Tags jeder Seite in einem Header, für einen vorgeschalteten Proxy, der leert, oder beim Debuggen: `xkey` (xkey-vmod von Varnish), `Surrogate-Key` (Fastly), `Cache-Tag` (Cloudflare). Standardmäßig aus: Die Tags nennen interne IDs. `ProxyHeaders=enabled`, die Einstellung davor, bedeutet weiterhin `xkey`. |
 | `APCu` | `enabled` | Häufig genutzte Einträge in APCu vor den Dateien. |
 | `MaxBodySize` | 2 MB | Größere Seiten werden nicht gespeichert. |
+| `SharedStateDir` | leer | Mehrere Webserver: wo jedes Leeren geteilt wird, damit es die Seiten aller Server erreicht; leer = die gemeinsame Platte des DFS-Cluster-Handlers, auf einem einzelnen Server nichts; `disabled` = nie. Siehe „Mehrere Webserver“ unten. |
 
 ## Welcher Siteaccess, welches Schema und welcher Host
 
@@ -144,6 +145,33 @@ Was eine Seite sonst zeigt, wird beim Rendern getaggt, das Pagelayout eingeschlo
 Inhaltsansicht, die aus dem View-Cache kommt, werden nicht erneut geholt und folgen dem View-Cache: Die Seite wird
 geleert, wenn dieser View-Cache geleert wird. Operatoren, die Inhalte auf andere Weise lesen, werden nicht getaggt,
 deshalb bleibt `ContentChangePurges=all` der Standard; `tags` ist für Installationen, die ihre Templates kennen.
+
+### Mehrere Webserver (ein Cluster)
+
+Jeder Webserver hält seine eigenen gecachten Seiten (`var/<site>/cache/exphttpcache/`). In einem Cluster kann eine
+Änderung auf jedem von ihnen gemacht werden, und das Leeren muss die Seiten aller Server erreichen. Deshalb wird jedes
+Leeren (Tags oder alle Seiten) zusätzlich in eine Zustandsdatei geschrieben, die alle Server sehen, und jeder Lookup
+liest diese Datei neben seiner eigenen: Eine auf einem Server geleerte Seite ist ab der nächsten Anfrage auf jedem
+Server veraltet. Geteilt werden nur die Zeitpunkte des Leerens; jeder Server behält seine eigene Generation, die
+Kontext-Schlüssel seiner Seiten ändern sich also nicht.
+
+`httpcache.ini [HttpCacheSettings] SharedStateDir` sagt, wo:
+
+```ini
+# leer (Standard): mit dem DFS-Cluster-Dateihandler
+# (file.ini [ClusteringSettings] FileHandler=eZDFSFileHandler) der Ordner
+# exphttpcache auf dessen gemeinsamer Platte ([eZDFSClusteringSettings] MountPointPath);
+# auf einem einzelnen Server ändert sich nichts
+SharedStateDir=
+# ein Ordner, den jeder Server eingebunden hat (absolut oder relativ zur Installation)
+SharedStateDir=/mnt/shared/mysite/exphttpcache
+# nie: das Leeren jedes Servers bleibt sein eigenes
+SharedStateDir=disabled
+```
+
+Es kostet je Lookup einen weiteren kleinen Dateizugriff auf der gemeinsamen Platte. Der eigene Antwort-Cache von
+Exponential Velocity nimmt dann die gemeinsame Datei als Generationsmarke, sodass ihn ein Leeren auf einem anderen
+Server ebenfalls erreicht.
 
 ## Sehen, was er tut
 

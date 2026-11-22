@@ -71,6 +71,10 @@ class ezpHttpCacheContract
             // Who sees the debug bar (site.ini [DebugSettings]): such a visitor is answered from the cache with the
             // bar of the render that stored the page (debugBar()); empty or not enabled: as before
             'debug' => array(),
+            // A cluster (several web servers, one database): a directory every server sees (the shared disk), where
+            // every purge is written too and every lookup reads it, so a change made on one server purges the
+            // pages of all of them. Empty: one server, the state in 'dir' only (see sharedStatePath()).
+            'sharedDir' => '',
         );
     }
 
@@ -537,14 +541,51 @@ class ezpHttpCacheContract
         return $this->config['dir'] . '/state.ser';
     }
 
+    /**
+     * The purge state every server of a cluster shares (config 'sharedDir'), or null on a single server. Every purge
+     * is written there as well as to the server's own state; every lookup reads both (state()), so a change made on
+     * one server makes the pages it touched stale on all of them at once.
+     */
+    public function sharedStatePath()
+    {
+        $dir = (string)( $this->config['sharedDir'] ?? '' );
+        return $dir === '' ? null : rtrim( $dir, '/' ) . '/state.ser';
+    }
+
+    private static function readState( $path )
+    {
+        $raw = @file_get_contents( $path );
+        $state = $raw === false ? false : @unserialize( $raw, array( 'allowed_classes' => false ) );
+        if ( !is_array( $state ) )
+            $state = array( 'generation' => 1, 'genTime' => 0, 'tags' => array() );
+        $state += array( 'generation' => 1, 'genTime' => 0, 'tags' => array() );
+        if ( !is_array( $state['tags'] ) )
+            $state['tags'] = array();
+        return $state;
+    }
+
+    /**
+     * This server's state, with the purges of the shared state folded in: the later full purge (genTime) and, per
+     * tag, the later purge time. The generation stays this server's own: it is part of the context keys, which are
+     * this server's.
+     */
     public function state()
     {
         if ( $this->state !== null )
             return $this->state;
-        $raw = @file_get_contents( $this->statePath() );
-        $state = $raw === false ? false : @unserialize( $raw, array( 'allowed_classes' => false ) );
-        if ( !is_array( $state ) )
-            $state = array( 'generation' => 1, 'genTime' => 0, 'tags' => array() );
+        $state = self::readState( $this->statePath() );
+        $shared = $this->sharedStatePath();
+        if ( $shared !== null )
+        {
+            $s = self::readState( $shared );
+            if ( (float)$s['genTime'] > (float)$state['genTime'] )
+                $state['genTime'] = $s['genTime'];
+            foreach ( $s['tags'] as $t => $time )
+            {
+                if ( !isset( $state['tags'][$t] ) || $time > $state['tags'][$t] )
+                    $state['tags'][$t] = $time;
+            }
+        }
         return $this->state = $state;
     }
 
@@ -554,11 +595,26 @@ class ezpHttpCacheContract
         return (int)$s['generation'];
     }
 
-    /** Apply $change to the state and write it atomically, under a lock. */
+    /**
+     * Apply $change to the state and write it atomically, under a lock; with a shared state (a cluster), the same
+     * change is applied to the shared state too, under its own lock.
+     */
     public function updateState( $change )
     {
-        $this->ensureDir( $this->config['dir'] );
-        $lockPath = $this->config['dir'] . '/state.lock';
+        $state = $this->updateStateFile( $this->config['dir'], $change );
+        $shared = $this->sharedStatePath();
+        if ( $shared !== null )
+            $this->updateStateFile( dirname( $shared ), $change );
+        // read again (merged) by the next lookup
+        $this->state = null;
+        return $state;
+    }
+
+    private function updateStateFile( $dir, $change )
+    {
+        $this->ensureDir( $dir );
+        $path = $dir . '/state.ser';
+        $lockPath = $dir . '/state.lock';
         $isNew = !is_file( $lockPath );
         $lock = @fopen( $lockPath, 'c' );
         if ( $lock )
@@ -567,12 +623,9 @@ class ezpHttpCacheContract
                 $this->adopt( $lockPath );
             flock( $lock, LOCK_EX );
         }
-        $this->state = null;
-        $state = $this->state();
-        $state = call_user_func( $change, $state );
-        if ( !$this->atomicWrite( $this->statePath(), serialize( $state ) ) )
-            error_log( 'exphttpcache: could not write ' . $this->statePath() . '; a purge is lost until entries expire' );
-        $this->state = $state;
+        $state = call_user_func( $change, self::readState( $path ) );
+        if ( !$this->atomicWrite( $path, serialize( $state ) ) )
+            error_log( 'exphttpcache: could not write ' . $path . '; a purge is lost until entries expire' );
         if ( $lock )
         {
             flock( $lock, LOCK_UN );

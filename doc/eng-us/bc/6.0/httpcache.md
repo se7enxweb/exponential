@@ -95,6 +95,7 @@ File `settings/httpcache.ini`, block `[HttpCacheSettings]`, scope: installation.
 | `TagHeader` | `disabled` | The purge tags of each page in one header, for a purging proxy in front or while debugging: `xkey` (Varnish xkey vmod), `Surrogate-Key` (Fastly), `Cache-Tag` (Cloudflare). Off by default: the tags name internal ids. `ProxyHeaders=enabled`, the setting before it, still means `xkey`. |
 | `APCu` | `enabled` | Hot entries in APCu in front of the files. |
 | `MaxBodySize` | 2 MB | Larger pages are not stored. |
+| `SharedStateDir` | empty | Several web servers: where every purge is shared so it reaches the pages of all of them; empty = the shared disk of the DFS cluster handler, or nothing on one server; `disabled` = never. See "Several web servers" below. |
 
 ## Which siteaccess, scheme and host
 
@@ -161,6 +162,34 @@ view that comes from the view cache are not fetched again, and follow the view
 cache: the page is purged when that view cache is. Operators that read content
 some other way are not tagged, which is why `ContentChangePurges=all` stays the
 default; `tags` is for installations that know their templates.
+
+### Several web servers (a cluster)
+
+Each web server keeps its own cached pages (`var/<site>/cache/exphttpcache/`).
+In a cluster a change can be made on any of them, and a purge has to reach the
+pages of all of them. So every purge (tags, or every page) is also written to
+a state file all servers see, and every lookup reads that file as well as its
+own: a page purged on one server is stale on every server from the next
+request on. Only the purge times are shared; each server keeps its own
+generation, so the context keys of its pages do not change.
+
+`httpcache.ini [HttpCacheSettings] SharedStateDir` says where:
+
+```ini
+# empty (the default): with the DFS cluster file handler
+# (file.ini [ClusteringSettings] FileHandler=eZDFSFileHandler) the folder
+# exphttpcache on its shared disk ([eZDFSClusteringSettings] MountPointPath);
+# on one server nothing changes
+SharedStateDir=
+# a folder every server mounts (absolute, or relative to the installation)
+SharedStateDir=/mnt/shared/mysite/exphttpcache
+# never: each server's purges stay its own
+SharedStateDir=disabled
+```
+
+The cost is one more small file read per lookup on the shared disk. Exponential
+Velocity's own response cache takes the shared file as its generation marker
+then, so a purge on another server reaches it too.
 
 ## Seeing what it does
 

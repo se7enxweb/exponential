@@ -24,6 +24,10 @@
  *  HC-20 — A lookup is served an expired page as stale and never takes its refresh
  *  HC-21 — The purged tags the state keeps are bounded; more purge every page
  *  HC-22 — The listener stores nothing request-shield marks allow-uncached
+ *  HC-23 — A cluster: a tag purge on one server makes the pages carrying the tag stale on every server
+ *  HC-24 — A cluster: a full purge on one server makes every page stale on every server; contexts stay each server's
+ *  HC-25 — One server (no shared state): a purge stays that server's, nothing is written elsewhere
+ *  HC-26 — A missing or unreadable shared state purges nothing
  *
  * No database, no kernel: the contract is pure PHP by design.
  *
@@ -614,6 +618,82 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
     }
 
     /** HC-21: the purged tags the state keeps are bounded; more purge every page. */
+    /** Two servers of a cluster: each its own cache folder, one shared state folder (or none). */
+    private function servers( $shared = true )
+    {
+        foreach ( array( 'a', 'b', 'shared' ) as $d )
+        {
+            if ( !is_dir( $this->dir . '/' . $d ) )
+                mkdir( $this->dir . '/' . $d, 0770, true );
+        }
+        $sharedDir = $shared ? $this->dir . '/shared' : '';
+        return array( $this->contract( array( 'dir' => $this->dir . '/a', 'sharedDir' => $sharedDir ) ),
+                      $this->contract( array( 'dir' => $this->dir . '/b', 'sharedDir' => $sharedDir ) ) );
+    }
+
+    /** HC-23 */
+    public function testATagPurgeOnOneServerReachesEveryServerOfACluster()
+    {
+        list( $a, $b ) = $this->servers();
+        list( $onA ) = $this->storeAnonymous( $a, '/page', 'A', array( 'ez-all', 'n42' ) );
+        list( $onB ) = $this->storeAnonymous( $b, '/page', 'B', array( 'ez-all', 'n42' ) );
+        list( $otherB ) = $this->storeAnonymous( $b, '/other', 'O', array( 'ez-all', 'n43' ) );
+        $this->assertNotNull( $b->loadEntry( $onB ) );
+        usleep( 1000 );
+        $a->purgeTags( array( 'n42' ) );
+        $this->assertNull( $a->loadEntry( $onA ), 'purged where the change was made' );
+        // server b, in a later request (a new contract, as the early exit makes one per request)
+        list( , $b2 ) = $this->servers();
+        $this->assertNull( $b2->loadEntry( $onB ), 'purged on the other server too' );
+        $this->assertSame( 'purged', $b2->lastReason );
+        $this->assertNotNull( $b2->loadEntry( $otherB ), 'a page without the tag stays' );
+        $this->assertFileExists( $this->dir . '/shared/state.ser' );
+    }
+
+    /** HC-24 */
+    public function testAFullPurgeOnOneServerReachesEveryServerAndContextsStayEachServers()
+    {
+        list( $a, $b ) = $this->servers();
+        $contextB = $b->anonymousContext( 'site' );
+        list( $onB ) = $this->storeAnonymous( $b, '/page', 'B' );
+        usleep( 1000 );
+        $a->bumpGeneration();
+        list( , $b2 ) = $this->servers();
+        $this->assertNull( $b2->loadEntry( $onB ) );
+        $this->assertSame( $contextB, $b2->anonymousContext( 'site' ), 'the generation (and so the context) is this server\'s own' );
+        // pages stored after the purge are current again
+        usleep( 1000 );
+        list( $again ) = $this->storeAnonymous( $b2, '/page', 'B2' );
+        $this->assertNotNull( $b2->loadEntry( $again ) );
+    }
+
+    /** HC-25 */
+    public function testWithoutASharedStateAPurgeStaysTheServersOwn()
+    {
+        list( $a, $b ) = $this->servers( false );
+        $this->assertNull( $a->sharedStatePath() );
+        list( $onB ) = $this->storeAnonymous( $b, '/page', 'B', array( 'ez-all', 'n42' ) );
+        usleep( 1000 );
+        $a->purgeTags( array( 'n42' ) );
+        $a->bumpGeneration();
+        list( , $b2 ) = $this->servers( false );
+        $this->assertNotNull( $b2->loadEntry( $onB ) );
+        $this->assertFileDoesNotExist( $this->dir . '/shared/state.ser' );
+        $this->assertFileExists( $this->dir . '/a/state.ser' );
+    }
+
+    /** HC-26 */
+    public function testAMissingOrUnreadableSharedStatePurgesNothing()
+    {
+        list( , $b ) = $this->servers();
+        list( $onB ) = $this->storeAnonymous( $b, '/page', 'B', array( 'ez-all', 'n42' ) );
+        list( , $b2 ) = $this->servers();
+        $this->assertNotNull( $b2->loadEntry( $onB ), 'no shared state yet' );
+        file_put_contents( $this->dir . '/shared/state.ser', 'not a state' );
+        list( , $b3 ) = $this->servers();
+        $this->assertNotNull( $b3->loadEntry( $onB ), 'a broken shared state' );
+    }
+
     public function testTooManyPurgedTagsPurgeEveryPage()
     {
         $c = $this->contract();

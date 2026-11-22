@@ -1865,8 +1865,15 @@ class expVelocity
             // pages from this cache first, which knows nothing of its purges.
             // Its state file is rewritten by every purge, so as this cache's
             // generation marker every purge makes this cache's pages stale too.
+            // In a cluster every purge is written to the shared state as well, so that file is the marker: it also
+            // changes when another server purged (ezpHttpCacheListener::sharedStateDir()).
             if ( eZINI::instance( 'httpcache.ini' )->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled' )
-                $cache['generationFile'] = $this->rootDir . '/' . eZSys::cacheDirectory() . '/exphttpcache/state.ser';
+            {
+                $sharedDir = class_exists( 'ezpHttpCacheListener' ) ? ezpHttpCacheListener::sharedStateDir() : '';
+                $cache['generationFile'] = $sharedDir !== ''
+                    ? $sharedDir . '/state.ser'
+                    : $this->rootDir . '/' . eZSys::cacheDirectory() . '/exphttpcache/state.ser';
+            }
 
             foreach ( array( 'FileMode' => 'fileMode', 'DirMode' => 'dirMode' ) as $variable => $key )
             {
