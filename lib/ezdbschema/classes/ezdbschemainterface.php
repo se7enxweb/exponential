@@ -184,7 +184,7 @@ class eZDBSchemaInterface
      * @param string $name
      * @return string
      */
-    function quoteIdentifier( $name )
+    function quoteSchemaIdentifier( $name )
     {
         return $name;
     }
@@ -210,8 +210,8 @@ class eZDBSchemaInterface
         $fields = array_keys( $tableInfo['fields'] );
         // quoted per engine: a column named like a reserved word (MySQL/MariaDB "interval", "key", "order" ...) broke
         // the whole data dump with a syntax error
-        $fieldText = implode( ', ', array_map( array( $this, 'quoteIdentifier' ), $fields ) );
-        $rows = $this->DBInstance->arrayQuery( "SELECT $fieldText FROM " . $this->quoteIdentifier( $tableName ),
+        $fieldText = implode( ', ', array_map( array( $this, 'quoteSchemaIdentifier' ), $fields ) );
+        $rows = $this->DBInstance->arrayQuery( "SELECT $fieldText FROM " . $this->quoteSchemaIdentifier( $tableName ),
                                                array( 'offset' => $offset, 'limit' => $limit ) );
         $resultArray = array();
         /// @todo scan only once for fields of type char, not once per row

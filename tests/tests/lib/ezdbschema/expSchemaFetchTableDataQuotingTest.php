@@ -56,7 +56,7 @@ class expSchemaFetchTableDataQuotingTest extends PHPUnit\Framework\TestCase
         $schema = new eZMysqlSchema( array( 'instance' => $db ) );
         $schema->fetchTableData( $this->table() );
         $this->assertSame( 'SELECT `id`, `interval`, `code` FROM `cron_schedules`', $db->queries[0], 'FQ-01' );
-        $this->assertSame( '`a``b`', $schema->quoteIdentifier( 'a`b' ), 'FQ-01 backtick doubled' );
+        $this->assertSame( '`a``b`', $schema->quoteSchemaIdentifier( 'a`b' ), 'FQ-01 backtick doubled' );
     }
 
     public function testDefaultLeavesNamesAsTheyAre()

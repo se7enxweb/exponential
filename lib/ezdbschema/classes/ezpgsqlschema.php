@@ -1052,7 +1052,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
      * @param string $name
      * @return string
      */
-    function quoteIdentifier( $name )
+    function quoteSchemaIdentifier( $name )
     {
         return in_array( $name, $this->reservedKeywordList() ) ? '"' . str_replace( '"', '""', $name ) . '"' : $name;
     }
@@ -1060,7 +1060,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
     /** INSERT column lists quote reserved words the same way */
     function insertColumnName( $name )
     {
-        return $this->quoteIdentifier( $name );
+        return $this->quoteSchemaIdentifier( $name );
     }
 
     /*!

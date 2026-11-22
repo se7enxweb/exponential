@@ -63,7 +63,7 @@ class expPgsqlSchemaDateTimeTypesTest extends PHPUnit\Framework\TestCase
     {
         $s = $this->schema();
         $this->assertSame( '"group"', $s->insertColumnName( 'group' ), 'DT-05 group' );
-        $this->assertSame( '"group"', $s->quoteIdentifier( 'group' ), 'DT-05 select' );
+        $this->assertSame( '"group"', $s->quoteSchemaIdentifier( 'group' ), 'DT-05 select' );
         $this->assertSame( 'name', $s->insertColumnName( 'name' ), 'DT-05 plain name' );
     }
 

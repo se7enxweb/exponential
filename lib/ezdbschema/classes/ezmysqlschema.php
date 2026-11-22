@@ -655,7 +655,7 @@ class eZMysqlSchema extends eZDBSchemaInterface
      * @param string $name
      * @return string
      */
-    function quoteIdentifier( $name )
+    function quoteSchemaIdentifier( $name )
     {
         return '`' . str_replace( '`', '``', $name ) . '`';
     }
