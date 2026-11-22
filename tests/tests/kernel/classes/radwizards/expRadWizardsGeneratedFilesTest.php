@@ -150,7 +150,14 @@ class expRadWizardsGeneratedFilesTest extends PHPUnit\Framework\TestCase
         $settings = $class::settings( $input + array( 'parts' => self::allParts( $class ) ) );
         $this->assertSame( $input['name'], $settings['name'] );
         $this->assertSame( 'MIT', $settings['licence'] );
-        $this->assertSame( array(), array_values( $class::problems( $settings ) ), 'problems: ' . implode( ' | ', $class::problems( $settings ) ) );
+        $problems = $class::problems( $settings );
+        // a class whose name the recipe fixes (sevenxValkeyINICache) may already be declared in this process by a test
+        // that ran before (eZCacheValkeyINIClearTest's stand-in, which PHP cannot take back): the wizard then rightly
+        // reports it, and that problem is this run's, not the form's
+        $fixed = isset( $settings['class'] ) ? (string)$settings['class'] : '';
+        if ( $fixed !== '' && class_exists( $fixed, false ) )
+            $problems = array_filter( $problems, function ( $problem ) use ( $fixed ) { return strpos( $problem, $fixed ) === false; } );
+        $this->assertSame( array(), array_values( $problems ), 'problems: ' . implode( ' | ', $problems ) );
 
         $files = $class::files( $settings );
         $this->assertNotEmpty( $files );
