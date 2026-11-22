@@ -467,7 +467,11 @@ class ezpHttpCacheListener
     /** Why this response may not be stored, or null when it may. */
     private static function uncacheableReason( $html )
     {
-        if ( ( $_SERVER['REQUEST_METHOD'] ?? 'GET' ) !== 'GET' )
+        // HEAD renders the same page as GET (the web server leaves the body out) and the early exit already answers
+        // a HEAD from a page a GET stored. Not storing it meant that a load balancer's "HEAD /" health check, every
+        // few seconds, rendered the whole front page again each time once its entry had expired.
+        $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+        if ( $method !== 'GET' && $method !== 'HEAD' )
             return 'method';
         if ( !empty( $_POST ) )
             return 'post';
