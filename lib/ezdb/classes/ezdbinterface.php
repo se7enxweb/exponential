@@ -43,6 +43,115 @@ class eZDBInterface
     }
 
     /**
+     * Whether a statement may run on a read replica ([DatabaseSettings] UseSlaveServer). Here: never; a driver that
+     * reads from a replica (eZPostgreSQLDB, eZMySQLiDB, ezoracle's eZOracleDB) answers for its own SQL dialect.
+     *
+     * @param string $sql
+     * @return bool
+     * @since 6.0.15
+     */
+    public static function isReplicaReadable( $sql )
+    {
+        return false;
+    }
+
+    /**
+     * Whether this request may read from a read replica at all: a web request (PHP-FPM, Apache or a Velocity
+     * worker; never cronjobs and scripts), GET or HEAD, of a visitor who is not signed in (no is_logged_in cookie:
+     * editors always read the primary, so they see their own work at once). The same rule for every driver.
+     *
+     * @param array $server $_SERVER
+     * @param array $cookies $_COOKIE
+     * @param bool $isWebProcess
+     * @return bool
+     * @since 6.0.15
+     */
+    public static function requestMayReadReplica( array $server, array $cookies, $isWebProcess )
+    {
+        if ( !$isWebProcess )
+            return false;
+        $method = isset( $server['REQUEST_METHOD'] ) ? strtoupper( (string)$server['REQUEST_METHOD'] ) : '';
+        if ( $method !== 'GET' && $method !== 'HEAD' )
+            return false;
+        return empty( $cookies['is_logged_in'] );
+    }
+
+    /**
+     * Whether this process answers web requests (as eZSQLite3DB::isWebProcess()): a read replica is only ever read
+     * by those.
+     *
+     * @return bool
+     * @since 6.0.15
+     */
+    protected static function isReplicaWebProcess()
+    {
+        return PHP_SAPI !== 'cli' || defined( 'QBIX_WEBSERVER' ) || isset( $_SERVER['QBIX_WORKER'] )
+               || isset( $_SERVER['VELOCITY'] ) || class_exists( 'Q_WebServer', false );
+    }
+
+    /**
+     * A statement that runs on the primary: anything that is not a replica-readable SELECT (a write, BEGIN, a lock,
+     * a session setting, a sequence) pins the rest of the request to the primary, so the request reads what it wrote.
+     *
+     * @param string $sql
+     * @since 6.0.15
+     */
+    protected function notePrimaryStatement( $sql )
+    {
+        if ( $this->UseSlaveServer && !$this->ReplicaPinned && !static::isReplicaReadable( $sql ) )
+            $this->ReplicaPinned = true;
+    }
+
+    /**
+     * A read replica setting of [DatabaseSettings] in site.ini (SlaveServerMaxLag, SlaveServerStatusCheck,
+     * SlaveServerCatchUp, SlaveServerCatchUpWait), read once per connection; $ReplicaSettings answers first.
+     *
+     * @param string $name
+     * @param mixed $default
+     * @return mixed
+     * @since 6.0.15
+     */
+    protected function replicaSetting( $name, $default )
+    {
+        if ( !array_key_exists( $name, $this->ReplicaSettings ) )
+        {
+            $value = $default;
+            if ( class_exists( 'eZINI' ) )
+            {
+                $ini = eZINI::instance();
+                if ( $ini->hasVariable( 'DatabaseSettings', $name ) && trim( (string)$ini->variable( 'DatabaseSettings', $name ) ) !== '' )
+                    $value = $ini->variable( 'DatabaseSettings', $name );
+            }
+            $this->ReplicaSettings[$name] = $value;
+        }
+        return $this->ReplicaSettings[$name];
+    }
+
+    /**
+     * Starts a request afresh (also in a persistent Velocity worker): the replica decision and the pin of the
+     * request before are forgotten; an open replica connection is kept.
+     *
+     * @since 6.0.15
+     */
+    public function resetReplicaState()
+    {
+        $this->ReplicaState = null;
+        $this->ReplicaPinned = false;
+    }
+
+    /**
+     * The request reset hook (expKernelServiceScope 'dbreplica'): resets the replica state of the current database,
+     * whichever driver it is.
+     *
+     * @since 6.0.15
+     */
+    public static function resetReplicaRequest()
+    {
+        if ( isset( $GLOBALS['eZDBGlobalInstance'] ) && $GLOBALS['eZDBGlobalInstance'] instanceof eZDBInterface )
+            $GLOBALS['eZDBGlobalInstance']->resetReplicaState();
+    }
+
+    /**
      * Records one statement for the profile (see $SQLProfileOn). What a query
      * cache would save shows as the repeats: a SELECT whose exact text came
      * earlier in the same request, and the time those took. One line per
@@ -1976,6 +2085,39 @@ class eZDBInterface
      * @var string
      */
     public $SlavePassword;
+
+    /**
+     * The read replica's connection (UseSlaveServer, SlaveServerArray ...), opened on first use; false while none.
+     *
+     * @var mixed
+     * @since 6.0.15
+     */
+    public $ReplicaConnection = false;
+
+    /**
+     * This request's decision about the replica: null (not made yet), 'on' or 'off'.
+     *
+     * @var string|null
+     * @since 6.0.15
+     */
+    public $ReplicaState = null;
+
+    /**
+     * Whether this request has run a statement that writes (or locks, or opens a transaction): from then on it reads
+     * from the primary only.
+     *
+     * @var bool
+     * @since 6.0.15
+     */
+    public $ReplicaPinned = false;
+
+    /**
+     * The read replica settings read so far (replicaSetting()), by name.
+     *
+     * @var array
+     * @since 6.0.15
+     */
+    public $ReplicaSettings = array();
 
     /**
      * The transaction counter, 0 means no transaction

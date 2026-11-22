@@ -70,23 +70,13 @@ class eZMySQLiDB extends eZDBInterface
             }
         }
 
-        // Connect to slave
-        if ( !$this->DBConnection )
+        // DBConnection is the primary as well. A read replica ([DatabaseSettings] UseSlaveServer) has a connection of
+        // its own, opened on the first statement that may run there (replicaConnectionFor()): a replica that is down
+        // no longer stops the site, and every statement that must not read a replica never sees one.
+        if ( !$this->DBConnection && $this->DBWriteConnection )
         {
-            if ( $this->UseSlaveServer === true )
-            {
-                $connection = $this->connect( $this->SlaveServer, $this->SlaveDB, $this->SlaveUser, $this->SlavePassword, $this->SocketPath, $this->Charset, $this->SlavePort );
-            }
-            else
-            {
-                $connection = $this->DBWriteConnection;
-            }
-
-            if ( $connection && $this->DBWriteConnection )
-            {
-                $this->DBConnection = $connection;
-                $this->IsConnected = true;
-            }
+            $this->DBConnection = $this->DBWriteConnection;
+            $this->IsConnected = true;
         }
 
         // Initialize TempTableList
@@ -353,14 +343,15 @@ class eZMySQLiDB extends eZDBInterface
 
             $sql = trim( $sql );
 
-            // Check if we need to use the master or slave server by default
-            if ( $server === false )
-            {
-                $server = strncasecmp( $sql, 'select', 6 ) === 0 && $this->TransactionCounter == 0 ?
-                    eZDBInterface::SERVER_SLAVE : eZDBInterface::SERVER_MASTER;
-            }
-
-            $connection = ( $server == eZDBInterface::SERVER_SLAVE ) ? $this->DBConnection : $this->DBWriteConnection;
+            // A read replica ([DatabaseSettings] UseSlaveServer): a plain SELECT of an anonymous GET/HEAD request that
+            // has written nothing yet may run there, while the replica is current; anything else, or a failure there,
+            // runs on the primary. SERVER_SLAVE is a wish, not an order: the rule decides (SERVER_MASTER always wins).
+            $replicaResult = false;
+            $replica = $this->replicaConnectionFor( $sql, $server );
+            if ( !$replica )
+                $this->notePrimaryStatement( $sql );
+            $server = eZDBInterface::SERVER_MASTER;
+            $connection = $this->DBWriteConnection;
 
             $analysisText = false;
             // If query analysis is enable we need to run the query
@@ -448,7 +439,15 @@ class eZMySQLiDB extends eZDBInterface
             }
 
             $profileStart = eZDBInterface::$SQLProfileOn === false ? 0 : microtime( true );
-            if ( $this->errorHandling == eZDB::ERROR_HANDLING_EXCEPTIONS )
+            if ( $replica )
+                $replicaResult = $this->replicaQuery( $replica, $sql );
+            if ( $replicaResult !== false )
+            {
+                $result = $replicaResult;
+                $connection = $replica;
+                $server = eZDBInterface::SERVER_SLAVE;
+            }
+            else if ( $this->errorHandling == eZDB::ERROR_HANDLING_EXCEPTIONS )
             {
                 // With mysqli reporting errors as exceptions (PHP 8.1's default) a failed statement throws
                 // mysqli_sql_exception past this driver. Code that asked for the database's exceptions gets an
@@ -789,16 +788,9 @@ class eZMySQLiDB extends eZDBInterface
         $tables = array();
         if ( $this->IsConnected )
         {
-            if ( $this->UseSlaveServer && $server == eZDBInterface::SERVER_SLAVE )
-            {
-                $connection = $this->DBConnection;
-                $db = $this->SlaveDB;
-            }
-            else
-            {
-                $connection = $this->DBWriteConnection;
-                $db = $this->DB;
-            }
+            // always the primary: the tables a replica has may lag behind (6.0.15)
+            $connection = $this->DBWriteConnection;
+            $db = $this->DB;
 
             // Do not attempt to list tables if no database has been selected.
             // This can happen during the setup wizard before a database name is chosen.
@@ -986,10 +978,15 @@ class eZMySQLiDB extends eZDBInterface
 
     function close()
     {
+        if ( $this->ReplicaConnection instanceof mysqli )
+        {
+            try { @mysqli_close( $this->ReplicaConnection ); } catch ( Throwable $e ) {}
+        }
+        $this->ReplicaConnection = false;
+        $this->ReplicaState = null;
+        $this->ReplicaPinned = false;
         if ( $this->IsConnected )
         {
-            if ( $this->UseSlaveServer === true )
-                mysqli_close( $this->DBConnection );
             mysqli_close( $this->DBWriteConnection );
             // closed: a second close() (the Velocity warm-up closes the parent's connection
             // before its workers fork) must not call mysqli_close() on a closed link, which throws
@@ -1103,6 +1100,380 @@ class eZMySQLiDB extends eZDBInterface
         return false;
     }
 
+    /**
+     * Whether a statement may run on a read replica: a plain SELECT that changes nothing and takes no lock. FOR
+     * UPDATE/SHARE and LOCK IN SHARE MODE lock on the primary only, SELECT ... INTO writes a file or variables,
+     * named locks, LAST_INSERT_ID() and the sequence functions belong to the primary's session. The test is on the
+     * text, so a literal that only contains such a word also goes to the primary: a round trip, never correctness.
+     *
+     * @param string $sql
+     * @return bool
+     * @since 6.0.15
+     */
+    public static function isReplicaReadable( $sql )
+    {
+        $sql = ltrim( (string)$sql, " \t\r\n(" );
+        if ( strncasecmp( $sql, 'select', 6 ) !== 0 || !preg_match( '/^select\b/i', $sql ) )
+            return false;
+        return !preg_match( '/\b(?:get_lock|release_lock|release_all_locks|is_free_lock|is_used_lock|last_insert_id'
+                          . '|nextval|lastval|setval|master_pos_wait|source_pos_wait'
+                          . '|master_gtid_wait|wait_for_executed_gtid_set|wait_until_sql_thread_after_gtids'
+                          . '|load_file)\s*\(|\b(?:next|previous)\s+value\s+for\b|\bfor\s+(?:update|share)\b'
+                          . '|\block\s+in\s+share\s+mode\b|\binto\b/i', $sql );
+    }
+
+    /**
+     * What a replica's SHOW REPLICA STATUS row says: whether it may be read. A replica is read while both of its
+     * threads run and it is at most $maxLag seconds behind (Seconds_Behind_Master, or _Source since MySQL 8.0.22; NULL
+     * means it does not know, so no). No row: the server is no replica (a primary, or a node whose "replica" is the
+     * primary itself), which is read as it is. False: the status could not be read (no REPLICATION CLIENT or REPLICA
+     * MONITOR privilege) and is trusted only with SlaveServerStatusCheck=disabled.
+     *
+     * @param array|false $row
+     * @param int $maxLag seconds
+     * @return array( bool $usable, string $reason, bool $isReplica )
+     * @since 6.0.15
+     */
+    public static function replicaStatusVerdict( $row, $maxLag )
+    {
+        if ( $row === false )
+            return array( false, 'the replica status could not be read (grant REPLICATION CLIENT, on MariaDB REPLICA MONITOR, or set SlaveServerStatusCheck=disabled)', false );
+        if ( !$row )
+            return array( true, 'not a replica', false );
+        $value = function( array $names ) use ( $row )
+        {
+            foreach ( $names as $name )
+                if ( array_key_exists( $name, $row ) )
+                    return $row[$name];
+            return null;
+        };
+        $io = $value( array( 'Replica_IO_Running', 'Slave_IO_Running' ) );
+        $sqlThread = $value( array( 'Replica_SQL_Running', 'Slave_SQL_Running' ) );
+        $lag = $value( array( 'Seconds_Behind_Source', 'Seconds_Behind_Master' ) );
+        if ( strcasecmp( (string)$io, 'Yes' ) !== 0 || strcasecmp( (string)$sqlThread, 'Yes' ) !== 0 )
+            return array( false, "the replication threads do not run (IO {$io}, SQL {$sqlThread})", true );
+        if ( $lag === null || $lag === '' || !is_numeric( $lag ) )
+            return array( false, 'the replica does not know how far behind it is', true );
+        if ( (int)$lag > (int)$maxLag )
+            return array( false, "the replica is {$lag} s behind (SlaveServerMaxLag {$maxLag})", true );
+        return array( true, "replica, {$lag} s behind", true );
+    }
+
+    /**
+     * The statement that asks the replica whether it has applied the primary's GTID position (read at the start of
+     * the request, before the replica): MariaDB waits up to $waitMs for it (MASTER_GTID_WAIT() answers 0 once it is
+     * there, -1 after the wait), MySQL compares the sets at once (GTID_SUBSET() answers 1). Null without a position
+     * or for one that is not a GTID position.
+     *
+     * @param bool $isMariaDB
+     * @param string $position @@gtid_binlog_pos (MariaDB) or @@gtid_executed (MySQL) of the primary
+     * @param int $waitMs
+     * @return string|null
+     * @since 6.0.15
+     */
+    public static function catchUpStatement( $isMariaDB, $position, $waitMs )
+    {
+        $position = trim( preg_replace( '/\s+/', '', (string)$position ) );
+        if ( $position === '' || !preg_match( '/^[0-9A-Fa-f:,\-]+$/', $position ) )
+            return null;
+        if ( $isMariaDB )
+            return "SELECT MASTER_GTID_WAIT('{$position}', " . sprintf( '%.3F', max( 0, (int)$waitMs ) / 1000 ) . ")";
+        return "SELECT GTID_SUBSET('{$position}', @@GLOBAL.gtid_executed)";
+    }
+
+    /**
+     * Whether the answer of catchUpStatement() says the replica has caught up.
+     *
+     * @param bool $isMariaDB
+     * @param mixed $value
+     * @return bool
+     * @since 6.0.15
+     */
+    public static function catchUpVerdict( $isMariaDB, $value )
+    {
+        return $value !== null && $value !== false && (string)$value === ( $isMariaDB ? '0' : '1' );
+    }
+
+    /**
+     * The replica connection for this statement, or false for the primary. The first statement of a request that
+     * may use the replica decides for the whole request: the request must be allowed to (requestMayReadReplica()),
+     * the replica must answer, both replication threads must run and it must be at most SlaveServerMaxLag seconds
+     * behind (SlaveServerStatusCheck), and it must have applied what the primary had committed when the request
+     * started (SlaveServerCatchUp, by GTID), so a visitor right after an edit sees it, on any node. A node without
+     * a replica (nothing answers on the configured address) reads the primary, so one set of settings serves every
+     * node of a cluster.
+     *
+     * @param string $sql
+     * @param int|bool $server eZDBInterface::SERVER_MASTER forces the primary
+     * @return mysqli|false
+     * @since 6.0.15
+     */
+    protected function replicaConnectionFor( $sql, $server )
+    {
+        if ( !$this->UseSlaveServer || $this->ReplicaPinned || $this->ReplicaState === 'off'
+             || $this->TransactionCounter > 0 || $server === eZDBInterface::SERVER_MASTER
+             || !static::isReplicaReadable( $sql ) )
+            return false;
+        if ( $this->ReplicaState === null )
+        {
+            $this->ReplicaState = 'off';
+            if ( !$this->SlaveServer || !self::requestMayReadReplica( $_SERVER, $_COOKIE, self::isReplicaWebProcess() ) )
+                return false;
+            // the primary's position first: whatever it had committed before this request, the replica must have
+            $catchUp = $this->replicaSetting( 'SlaveServerCatchUp', 'enabled' ) !== 'disabled';
+            $position = $catchUp ? $this->primaryGtidPosition() : '';
+            $kept = (bool)$this->ReplicaConnection;
+            if ( !$kept )
+                $this->ReplicaConnection = $this->connectReplica();
+            if ( !$this->ReplicaConnection )
+                return false;
+            $current = $this->replicaIsCurrent( $position, $failed );
+            if ( !$current && $failed && $kept )
+            {
+                // a connection kept from an earlier request (persistent, a Velocity worker) that broke meanwhile, e.g.
+                // the replica was restarted: once more on a new one
+                $this->dropReplica( 'the kept replica connection failed' );
+                $this->ReplicaConnection = $this->connectReplica();
+                if ( !$this->ReplicaConnection )
+                    return false;
+                $current = $this->replicaIsCurrent( $position, $failed );
+            }
+            if ( !$current )
+            {
+                if ( $failed )
+                    $this->dropReplica( 'a check failed on the replica' );
+                $this->ReplicaState = 'off';
+                return false;
+            }
+            $this->ReplicaState = 'on';
+        }
+        return $this->ReplicaConnection;
+    }
+
+    /**
+     * Whether the open replica may be read now: its status (SlaveServerStatusCheck, SlaveServerMaxLag) and, for a
+     * replica, the primary's GTID position $position (SlaveServerCatchUp).
+     *
+     * @param string $position
+     * @param bool $failed set to whether a statement failed on the replica (rather than its answer saying no)
+     * @return bool
+     */
+    protected function replicaIsCurrent( $position, &$failed = false )
+    {
+        $failed = false;
+        $isReplica = true;
+        if ( $this->replicaSetting( 'SlaveServerStatusCheck', 'enabled' ) !== 'disabled' )
+        {
+            $row = $this->replicaRawRow( 'SHOW REPLICA STATUS', $errno );
+            if ( $row === false && $errno == 1064 )
+                $row = $this->replicaRawRow( 'SHOW SLAVE STATUS', $errno );   // MySQL before 8.0.22, MariaDB before 10.5.1
+            // no privilege (1227) is an answer; anything else that failed is the connection's
+            if ( $row === false && $errno != 1227 && $errno != 1045 && $errno != 1142 )
+                $failed = true;
+            list( $usable, $reason, $isReplica ) = self::replicaStatusVerdict( $row, (int)$this->replicaSetting( 'SlaveServerMaxLag', 0 ) );
+            if ( !$usable )
+            {
+                eZDebug::writeWarning( "The read replica {$this->SlaveServer}:{$this->SlavePort} is not read: {$reason}; reading from the primary", __METHOD__ );
+                return false;
+            }
+        }
+        if ( $isReplica && $position !== '' )
+        {
+            $isMariaDB = $this->isMariaDB();
+            $statement = self::catchUpStatement( $isMariaDB, $position, (int)$this->replicaSetting( 'SlaveServerCatchUpWait', 100 ) );
+            if ( $statement !== null )
+            {
+                $row = $this->replicaRawRow( $statement, $errno, MYSQLI_NUM );
+                if ( $row === false )
+                    $failed = true;
+                if ( !$row || !self::catchUpVerdict( $isMariaDB, $row[0] ) )
+                {
+                    eZDebugSetting::writeDebug( 'kernel-db-mysql', "The read replica {$this->SlaveServer}:{$this->SlavePort} has not applied the primary's position yet, reading from the primary", __METHOD__ );
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
+     * The primary's GTID position: @@gtid_binlog_pos on MariaDB, @@gtid_executed on MySQL; '' without one (no
+     * binary log, gtid_mode OFF), then only the replica's lag decides.
+     *
+     * @return string
+     */
+    protected function primaryGtidPosition()
+    {
+        $variable = $this->isMariaDB() ? '@@GLOBAL.gtid_binlog_pos' : '@@GLOBAL.gtid_executed';
+        $position = '';
+        $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
+        try {
+            $result = mysqli_query( $this->DBWriteConnection, "SELECT {$variable}" );
+            if ( $result )
+            {
+                $row = mysqli_fetch_row( $result );
+                mysqli_free_result( $result );
+                $position = $row && $row[0] !== null ? (string)$row[0] : '';
+            }
+        } catch ( Throwable $e ) {
+            $position = '';
+        }
+        eZDebug::setHandleType( $oldHandling );
+        return $position;
+    }
+
+    /**
+     * Whether the primary is MariaDB (its GTID functions differ from MySQL's).
+     *
+     * @return bool
+     */
+    protected function isMariaDB()
+    {
+        if ( $this->ServerIsMariaDB === null )
+            $this->ServerIsMariaDB = $this->DBWriteConnection instanceof mysqli
+                                     && stripos( (string)@mysqli_get_server_info( $this->DBWriteConnection ), 'mariadb' ) !== false;
+        return $this->ServerIsMariaDB;
+    }
+
+    /**
+     * Opens the replica connection: once, no retries, a short timeout, the primary's character set (a replica on
+     * another one would hand out transliterated text, so it is not used then).
+     *
+     * @return mysqli|false
+     */
+    protected function connectReplica()
+    {
+        $mappedCharset = null;
+        if ( $this->Charset !== null )
+            $mappedCharset = eZMySQLCharset::mapTo( eZCharsetInfo::realCharsetCode( $this->Charset ) );
+        $server = ( $this->UsePersistentConnection ? 'p:' : '' ) . $this->SlaveServer;
+        $database = ( is_string( $this->SlaveDB ) && $this->SlaveDB !== '' ) ? $this->SlaveDB : $this->DB;
+        $connection = false;
+        $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
+        try {
+            $link = mysqli_init();
+            mysqli_options( $link, MYSQLI_OPT_CONNECT_TIMEOUT, 2 );
+            if ( @mysqli_real_connect( $link, $server, $this->SlaveUser, $this->SlavePassword, $database,
+                                       (int)$this->SlavePort, $this->SocketPath !== false ? $this->SocketPath : null ) )
+            {
+                $connection = $link;
+                if ( $mappedCharset !== null )
+                {
+                    @mysqli_set_charset( $connection, $mappedCharset );
+                    if ( @mysqli_character_set_name( $connection ) !== $mappedCharset )
+                    {
+                        @mysqli_close( $connection );
+                        $connection = false;
+                        eZDebug::writeWarning( "The read replica {$this->SlaveServer}:{$this->SlavePort} cannot use the character set {$mappedCharset}, reading from the primary", __METHOD__ );
+                    }
+                }
+            }
+        } catch ( Throwable $e ) {
+            $connection = false;
+        }
+        eZDebug::setHandleType( $oldHandling );
+        if ( !$connection )
+            eZDebugSetting::writeDebug( 'kernel-db-mysql', "No read replica at {$this->SlaveServer}:{$this->SlavePort}, reading from the primary", __METHOD__ );
+        return $connection;
+    }
+
+    /**
+     * Runs a SELECT on the replica. On any failure the replica is not used again in this request (its connection is
+     * dropped when the failure was the connection's) and false is returned, so the caller runs it on the primary.
+     *
+     * @param mysqli $replica
+     * @param string $sql
+     * @return mysqli_result|bool
+     */
+    protected function replicaQuery( $replica, $sql )
+    {
+        $errno = 0;
+        $error = '';
+        $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
+        try {
+            $result = mysqli_query( $replica, $sql );
+            if ( $result === false )
+            {
+                $errno = mysqli_errno( $replica );
+                $error = mysqli_error( $replica );
+            }
+        } catch ( Throwable $e ) {
+            $result = false;
+            $errno = (int)$e->getCode();
+            $error = $e->getMessage();
+        }
+        eZDebug::setHandleType( $oldHandling );
+        if ( $result === false )
+        {
+            $this->ReplicaState = 'off';
+            eZDebug::writeWarning( "A statement failed on the read replica and runs on the primary: ({$errno}) {$error}", __METHOD__ );
+            // whatever failed, a new connection next request: a server that went away does not always say so
+            // with a client error (MariaDB answers a shutdown with 1053, a killed connection with 1927)
+            $this->dropReplica( 'a statement failed on the replica' );
+        }
+        return $result;
+    }
+
+    /**
+     * The first row of a statement on the replica, without the fallback of replicaQuery(): an empty array for no
+     * row, false on an error ($errno says which).
+     *
+     * @param string $sql
+     * @param int $errno
+     * @param int $mode MYSQLI_ASSOC or MYSQLI_NUM
+     * @return array|false
+     */
+    protected function replicaRawRow( $sql, &$errno, $mode = MYSQLI_ASSOC )
+    {
+        $errno = 0;
+        $row = false;
+        $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
+        try {
+            $result = mysqli_query( $this->ReplicaConnection, $sql );
+            if ( $result instanceof mysqli_result )
+            {
+                $row = mysqli_fetch_array( $result, $mode );
+                $row = is_array( $row ) ? $row : array();
+                mysqli_free_result( $result );
+            }
+            else
+                $errno = mysqli_errno( $this->ReplicaConnection );
+        } catch ( Throwable $e ) {
+            $row = false;
+            $errno = (int)$e->getCode();
+        }
+        eZDebug::setHandleType( $oldHandling );
+        return $row;
+    }
+
+    /**
+     * Closes the replica connection for the rest of this request.
+     *
+     * @param string $reason
+     * @return bool false
+     */
+    protected function dropReplica( $reason )
+    {
+        if ( $this->ReplicaConnection instanceof mysqli )
+        {
+            try { @mysqli_close( $this->ReplicaConnection ); } catch ( Throwable $e ) {}
+        }
+        $this->ReplicaConnection = false;
+        $this->ReplicaState = 'off';
+        eZDebugSetting::writeDebug( 'kernel-db-mysql', "Read replica {$this->SlaveServer}:{$this->SlavePort}: {$reason}, reading from the primary", __METHOD__ );
+        return false;
+    }
+
+    /**
+     * The reset hook of the read replica: eZDBInterface::resetReplicaRequest() (expKernelServiceScope 'dbreplica').
+     *
+     * @since 6.0.15
+     */
+    public static function resetRequest()
+    {
+        eZDBInterface::resetReplicaRequest();
+    }
+
     function dropTempTable( $dropTableQuery = '', $server = self::SERVER_SLAVE )
     {
         $dropTableQuery = str_ireplace( 'DROP TABLE', 'DROP TEMPORARY TABLE', $dropTableQuery );
@@ -1110,6 +1481,9 @@ class eZMySQLiDB extends eZDBInterface
     }
 
     protected $TempTableList;
+
+    /** @var bool|null whether the primary is MariaDB (isMariaDB()), null until asked */
+    public $ServerIsMariaDB = null;
 
     /// \privatesection
 }

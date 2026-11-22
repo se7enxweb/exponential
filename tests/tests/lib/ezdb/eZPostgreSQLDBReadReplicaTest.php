@@ -166,6 +166,6 @@ class eZPostgreSQLDBReadReplicaTest extends PHPUnit\Framework\TestCase
 
     public function testTheResetHookIsRegistered()
     {
-        $this->assertSame( array( 'eZPostgreSQLDB', 'resetRequest' ), expKernelServiceScope::DEFAULT_RESET_HOOKS['dbreplica'] );
+        $this->assertSame( array( 'eZDBInterface', 'resetReplicaRequest' ), expKernelServiceScope::DEFAULT_RESET_HOOKS['dbreplica'] );
     }
 }

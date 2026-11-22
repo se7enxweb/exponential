@@ -725,49 +725,8 @@ class eZPostgreSQLDB extends eZDBInterface
                           . '|\bfor\s+(?:update|share|no\s+key\s+update|key\s+share)\b|\binto\b/i', $sql );
     }
 
-    /**
-     * Whether this request may read from the replica at all: a web request (PHP-FPM, Apache or a Velocity worker;
-     * never cronjobs and scripts), GET or HEAD, of a visitor who is not signed in (no is_logged_in cookie: editors
-     * always read the primary, so they see their own work at once).
-     *
-     * @param array $server $_SERVER
-     * @param array $cookies $_COOKIE
-     * @param bool $isWebProcess
-     * @return bool
-     * @since 6.0.15
-     */
-    public static function requestMayReadReplica( array $server, array $cookies, $isWebProcess )
-    {
-        if ( !$isWebProcess )
-            return false;
-        $method = isset( $server['REQUEST_METHOD'] ) ? strtoupper( (string)$server['REQUEST_METHOD'] ) : '';
-        if ( $method !== 'GET' && $method !== 'HEAD' )
-            return false;
-        return empty( $cookies['is_logged_in'] );
-    }
-
-    /**
-     * Whether this process answers web requests (as eZSQLite3DB::isWebProcess()).
-     *
-     * @return bool
-     */
-    protected static function isWebProcess()
-    {
-        return PHP_SAPI !== 'cli' || defined( 'QBIX_WEBSERVER' ) || isset( $_SERVER['QBIX_WORKER'] )
-               || isset( $_SERVER['VELOCITY'] ) || class_exists( 'Q_WebServer', false );
-    }
-
-    /**
-     * A statement that runs on the primary: anything that is not a replica-readable SELECT (a write, BEGIN, a lock,
-     * a sequence) pins the rest of the request to the primary, so the request reads what it wrote.
-     *
-     * @param string $sql
-     */
-    protected function notePrimaryStatement( $sql )
-    {
-        if ( $this->UseSlaveServer && !$this->ReplicaPinned && !self::isReplicaReadable( $sql ) )
-            $this->ReplicaPinned = true;
-    }
+    // requestMayReadReplica(), notePrimaryStatement(), resetReplicaState() and the replica properties are shared by
+    // every driver that reads from a replica: eZDBInterface.
 
     /**
      * The replica connection for this statement, or false for the primary. The first statement of a request that
@@ -789,7 +748,7 @@ class eZPostgreSQLDB extends eZDBInterface
         if ( $this->ReplicaState === null )
         {
             $this->ReplicaState = 'off';
-            if ( !$this->SlaveServer || !self::requestMayReadReplica( $_SERVER, $_COOKIE, self::isWebProcess() ) )
+            if ( !$this->SlaveServer || !self::requestMayReadReplica( $_SERVER, $_COOKIE, self::isReplicaWebProcess() ) )
                 return false;
             if ( !$this->ReplicaConnection || pg_connection_status( $this->ReplicaConnection ) !== PGSQL_CONNECTION_OK )
                 $this->ReplicaConnection = $this->connectReplica();
@@ -877,24 +836,14 @@ class eZPostgreSQLDB extends eZDBInterface
     }
 
     /**
-     * Starts a request afresh (expKernelServiceScope reset hook, also in a persistent Velocity worker): the replica
-     * decision and the pin of the request before are forgotten; an open replica connection is kept.
-     */
-    public function resetReplicaState()
-    {
-        $this->ReplicaState = null;
-        $this->ReplicaPinned = false;
-    }
-
-    /**
-     * The reset hook: resets the replica state of the current database, when it is PostgreSQL.
+     * Resets the replica state of the current database; the reset hook itself is eZDBInterface::resetReplicaRequest(),
+     * which does this for every driver.
      *
      * @since 6.0.15
      */
     public static function resetRequest()
     {
-        if ( isset( $GLOBALS['eZDBGlobalInstance'] ) && $GLOBALS['eZDBGlobalInstance'] instanceof eZPostgreSQLDB )
-            $GLOBALS['eZDBGlobalInstance']->resetReplicaState();
+        eZDBInterface::resetReplicaRequest();
     }
 
     function createDatabase( $dbName )
@@ -967,28 +916,6 @@ class eZPostgreSQLDB extends eZDBInterface
     }
 
     /// \privatesection
-
-    /**
-     * The read replica's connection ([DatabaseSettings] UseSlaveServer, SlaveServerArray ...), opened on first use.
-     *
-     * @var resource|object|false
-     */
-    public $ReplicaConnection = false;
-
-    /**
-     * This request's decision about the replica: null (not made yet), 'on' or 'off'.
-     *
-     * @var string|null
-     */
-    public $ReplicaState = null;
-
-    /**
-     * Whether this request has run a statement that writes (or locks, or opens a transaction): from then on it reads
-     * from the primary only.
-     *
-     * @var bool
-     */
-    public $ReplicaPinned = false;
 }
 
 ?>
