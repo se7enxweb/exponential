@@ -58,6 +58,10 @@
  *           replaced state file count at once, the memo is empty, a lock failure is logged once per request
  *  QC-47 — A lock failure is shown to the admin: Setup > System information (any process), the debug output; a clear
  *           forgets it
+ *  QC-48 — A cluster in shared mode: a write on one server makes the results another server kept stale at once
+ *  QC-49 — A cluster: the results stay each server's own; only the state is in the shared directory
+ *  QC-50 — One server (no shared directory), or request mode: the state stays in the server's own directory
+ *  QC-51 — A clear on one server of a cluster makes every server's results stale
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -89,6 +93,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
     {
         eZDBQueryCache::resetRequest();
         eZDBQueryCache::setStateDir( null );
+        eZDBQueryCache::setLocalDir( null );
         eZDBQueryCache::setSettings( null );
         eZDBQueryCache::setApcuFree( null );
         $this->removeDir( $this->dir );
@@ -1591,5 +1596,89 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $failed, eZDBQueryCache::status( false )['lock_failed'] );
         eZDBQueryCache::clearAll();
         $this->assertSame( 0, eZDBQueryCache::status( false )['lock_failed'] );
+    }
+
+    /**
+     * One server of a cluster in this process, for the next request: its own directory, the shared state directory
+     * (or none), shared mode with result files (APCu is one memory for the whole test process).
+     */
+    private function onServer( $name, $shared = true, $mode = 'shared' )
+    {
+        eZDBQueryCache::setStateDir( null );
+        foreach ( array( $name, 'shared' ) as $d )
+        {
+            if ( !is_dir( $this->dir . '/' . $d ) )
+                mkdir( $this->dir . '/' . $d, 0770, true );
+        }
+        eZDBQueryCache::setLocalDir( $this->dir . '/' . $name );
+        $this->newRequest( array( 'mode' => $mode, 'storage' => 'file', 'sharedStateDir' => $shared ? $this->dir . '/shared' : '' ) );
+    }
+
+    /** QC-48 */
+    public function testAWriteOnOneServerOfAClusterMakesTheResultsOfEveryServerStale()
+    {
+        $read = 'SELECT * FROM ezcontentobject';
+        $control = 'SELECT * FROM ezsection';
+        $this->onServer( 'a' );
+        $this->existingState();
+        $this->onServer( 'b' );
+        $this->assertNull( $this->select( $read ) );
+        $this->assertNull( $this->select( $control ) );
+        $this->onServer( 'b' );
+        $this->assertNotNull( $this->select( $read ), 'server b keeps its results across requests' );
+        $this->onServer( 'a' );
+        $this->write( 'UPDATE ezcontentobject SET x = 1' );
+        $this->onServer( 'b' );
+        $this->assertNull( $this->select( $read ), 'the write on server a is seen by server b at once' );
+        $this->assertNotNull( $this->select( $control ), 'a table server a did not write stays current on b' );
+    }
+
+    /** QC-49 */
+    public function testTheResultsStayEachServersOwn()
+    {
+        $this->onServer( 'a' );
+        $this->existingState();
+        $this->onServer( 'b' );
+        $this->select( 'SELECT * FROM ezcontentobject' );
+        $this->assertFileExists( $this->dir . '/shared/state.ser' );
+        $this->assertDirectoryExists( $this->dir . '/b/entries' );
+        $this->assertDirectoryDoesNotExist( $this->dir . '/shared/entries' );
+        $this->assertFileDoesNotExist( $this->dir . '/b/state.ser' );
+        $this->assertSame( $this->dir . '/shared', eZDBQueryCache::stateDir() );
+        $this->assertSame( $this->dir . '/b/entries', eZDBQueryCache::entriesDir() );
+        // server a never sees server b's results
+        $this->onServer( 'a' );
+        $this->assertNull( $this->select( 'SELECT * FROM ezcontentobject' ) );
+    }
+
+    /** QC-50 */
+    public function testOneServerOrRequestModeKeepsTheStateInItsOwnDirectory()
+    {
+        $this->onServer( 'a', false );
+        $this->write( 'UPDATE ezcontentobject SET x = 1' );
+        $this->assertSame( $this->dir . '/a', eZDBQueryCache::stateDir() );
+        $this->assertFileExists( $this->dir . '/a/state.ser' );
+        $this->assertFileDoesNotExist( $this->dir . '/shared/state.ser' );
+        $this->onServer( 'b', true, 'request' );
+        $this->write( 'UPDATE ezsection SET x = 1' );
+        $this->assertSame( $this->dir . '/b', eZDBQueryCache::stateDir(), 'request mode has no results to share' );
+        $this->assertFileDoesNotExist( $this->dir . '/shared/state.ser' );
+    }
+
+    /** QC-51 */
+    public function testAClearOnOneServerMakesEveryServersResultsStale()
+    {
+        $read = 'SELECT * FROM ezcontentobject';
+        $this->onServer( 'a' );
+        $this->existingState();
+        $this->onServer( 'b' );
+        $this->select( $read );
+        $this->onServer( 'b' );
+        $this->assertNotNull( $this->select( $read ) );
+        $this->onServer( 'a' );
+        usleep( 5 );
+        eZDBQueryCache::clearAll();
+        $this->onServer( 'b' );
+        $this->assertNull( $this->select( $read ) );
     }
 }

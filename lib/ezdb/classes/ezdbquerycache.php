@@ -130,7 +130,8 @@ class eZDBQueryCache
     {
         if ( self::$settings !== null )
             return self::$settings;
-        $s = array( 'mode' => 'off', 'maxAge' => 300, 'maxRows' => 5000, 'exclude' => array(), 'report' => true, 'storage' => 'auto', 'apcuReserve' => 25 );
+        $s = array( 'mode' => 'off', 'maxAge' => 300, 'maxRows' => 5000, 'exclude' => array(), 'report' => true, 'storage' => 'auto', 'apcuReserve' => 25,
+                    'sharedStateDir' => '' );
         if ( class_exists( 'eZINI', false ) && eZINI::exists( 'querycache.ini' ) )
         {
             $ini = eZINI::instance( 'querycache.ini' );
@@ -153,8 +154,43 @@ class eZDBQueryCache
                 $s['apcuReserve'] = min( 90, max( 0, (int)$ini->variable( 'QueryCacheSettings', 'ApcuReserve' ) ) );
             if ( $ini->hasVariable( 'DebugSettings', 'Report' ) )
                 $s['report'] = $ini->variable( 'DebugSettings', 'Report' ) !== 'disabled';
+            $s['sharedStateDir'] = self::sharedStateDirFromSettings(
+                $ini->hasVariable( 'QueryCacheSettings', 'SharedStateDir' ) ? (string)$ini->variable( 'QueryCacheSettings', 'SharedStateDir' ) : '' );
         }
         return self::$settings = $s;
+    }
+
+    /**
+     * Where the servers of a cluster share the state (the time of the last write of every table), in shared mode:
+     * querycache.ini [QueryCacheSettings] SharedStateDir (a path, absolute or relative to the installation;
+     * "disabled": none), or by default, with the DFS cluster file handler, the folder querycache on its shared disk
+     * (file.ini [eZDFSClusteringSettings] MountPointPath). One server (any other file handler): '' -- the state stays
+     * in this server's cache directory, as before.
+     *
+     * @param string $setting
+     * @return string
+     */
+    protected static function sharedStateDirFromSettings( $setting )
+    {
+        $path = trim( (string)$setting );
+        if ( $path === 'disabled' )
+            return '';
+        if ( $path === '' )
+        {
+            if ( !eZINI::exists( 'file.ini' ) )
+                return '';
+            $file = eZINI::instance( 'file.ini' );
+            if ( strcasecmp( (string)$file->variable( 'ClusteringSettings', 'FileHandler' ), 'eZDFSFileHandler' ) !== 0 )
+                return '';
+            $mount = $file->hasVariable( 'eZDFSClusteringSettings', 'MountPointPath' )
+                ? trim( (string)$file->variable( 'eZDFSClusteringSettings', 'MountPointPath' ) ) : '';
+            if ( $mount === '' )
+                return '';
+            $path = rtrim( $mount, '/' ) . '/querycache';
+        }
+        if ( $path[0] !== '/' )
+            $path = eZSys::rootDir() . '/' . $path;
+        return rtrim( $path, '/' );
     }
 
     /** For tests and setup/info: set the settings (null reads them again). */
@@ -343,10 +379,10 @@ class eZDBQueryCache
         self::$apcuFreePinned = $percent !== null;
     }
 
-    /** The directory of the result files of Storage=file (or auto without APCu). */
+    /** The directory of the result files of Storage=file (or auto without APCu): always this server's own. */
     public static function entriesDir()
     {
-        return self::stateDir() . '/entries';
+        return self::localDir() . '/entries';
     }
 
     /**
@@ -391,7 +427,7 @@ class eZDBQueryCache
     {
         if ( !function_exists( 'posix_geteuid' ) || posix_geteuid() !== 0 )
             return false;
-        $owner = @stat( is_dir( self::stateDir() ) ? self::stateDir() : dirname( self::stateDir() ) );
+        $owner = @stat( is_dir( self::localDir() ) ? self::localDir() : dirname( self::localDir() ) );
         return $owner && $owner['uid'] !== 0 ? $owner : false;
     }
 
@@ -430,7 +466,7 @@ class eZDBQueryCache
         $owner = self::handOverOwner();
         if ( !is_dir( $dir ) )
         {
-            $levels = array_filter( array( self::stateDir(), self::entriesDir(), $dir ), function ( $d ) { return !is_dir( $d ); } );
+            $levels = array_filter( array( self::localDir(), self::entriesDir(), $dir ), function ( $d ) { return !is_dir( $d ); } );
             @mkdir( $dir, eZDir::dirMode( 0770 ), true );
             foreach ( $levels as $made )
                 self::handOver( $made, $owner, true );
@@ -1439,11 +1475,38 @@ class eZDBQueryCache
 
     // ── State ────────────────────────────────────────────────────────────
 
+    /**
+     * Where the state file lives: in shared mode on a cluster the shared state directory (sharedStateDir), so a write
+     * on any server makes the results of every server stale at once; otherwise this server's own (localDir()).
+     */
     public static function stateDir()
     {
         if ( self::$stateDir !== null )
             return self::$stateDir;
+        $s = self::settings();
+        if ( $s['mode'] === 'shared' && ( $s['sharedStateDir'] ?? '' ) !== '' )
+            return $s['sharedStateDir'];
+        return self::localDir();
+    }
+
+    /** This server's own directory of the cache: the state on one server, and the result files always. */
+    public static function localDir()
+    {
+        if ( self::$localDir !== null )
+            return self::$localDir;
+        if ( self::$stateDir !== null )
+            return self::$stateDir;
         return eZSys::rootDir() . '/' . eZSys::cacheDirectory() . '/querycache';
+    }
+
+    /** @var string|null another directory for this server's own files (tests: two servers in one process); null for the site's */
+    protected static $localDir = null;
+
+    /** Uses another directory for this server's own files (tests), or the site's again with null. */
+    public static function setLocalDir( $dir )
+    {
+        self::$localDir = $dir;
+        self::$state = null;
     }
 
     /**

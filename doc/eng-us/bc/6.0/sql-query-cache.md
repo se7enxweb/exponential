@@ -113,6 +113,7 @@ Override in `settings/override/querycache.ini.append.php` (or a siteaccess).
 Mode=off          # off | request | shared
 Storage=auto      # where shared keeps results: auto | apcu | file
 ApcuReserve=25    # percent of APCu kept free for the pool's other users; 0 = off
+SharedStateDir=    # a cluster: where the servers share the state (empty: the DFS shared disk, or none on one server; disabled)
 MaxAge=300        # longest life of a result, in seconds
 MaxRows=5000      # results with more rows are not kept
 ExcludeTables[]
@@ -212,6 +213,16 @@ Choosing:
   with `lookupcache=none` and `actimeo=0` (or `noac`) where that matters;
   the state file's lock needs NFSv4 or `lockd`. Clock skew between the servers
   only shifts when the cronjob removes a file, never what is answered.
+- A cluster with its own `var/` per server (the DFS cluster file handler, results in each server's APCu or files):
+  in `shared` mode the state must be one file for all servers, or a write on one server stays unseen on the others
+  until `MaxAge`. `SharedStateDir` says where: empty (the default) means the folder `querycache` on the DFS shared
+  disk (`file.ini [eZDFSClusteringSettings] MountPointPath`) whenever `[ClusteringSettings] FileHandler` is
+  `eZDFSFileHandler`, and nothing on one server; a path names another folder every server mounts; `disabled` keeps
+  each server's state its own (then use `request` mode in a cluster). Only `state.ser` and `state.lock` live there;
+  the results stay each server's own. Every request reads the shared file once, and every write locks and rewrites
+  it, so a write on one server makes the results of every server stale from their next request on. Every user the
+  site runs as must be able to write and lock there: a process running as root on an NFS share that squashes root
+  cannot, and its writes then reach only its own server until `MaxAge`.
 - `MaxAge` bounds what the cache cannot see: a write made outside Exponential
   (another program, a SQL client, a restore). Within Exponential every write
   invalidates at once, whatever `MaxAge` is.
@@ -632,6 +643,10 @@ so the tests never touch the site's cache.
 | QC-45 | A lock taken on a `state.lock` that was deleted meanwhile is given up and taken on the new file (a second process, `pcntl_fork()`; skipped without pcntl) |
 | QC-46 | A persistent worker starts every request from the state on disk: another process's write counts at once, results kept under a replaced state file are not answered (also those stored in the second the request still held it), the memo is empty, a lock failure is logged once per request |
 | QC-47 | A lock failure shows in Setup > System information (`status()` `lock_failed`, from the state file) and in the debug output; a later locked write keeps it, a clear forgets it |
+| QC-48 | A cluster in `shared` mode: a write on one server makes the results another server kept stale from its next request on; results of tables not written stay current |
+| QC-49 | A cluster: only `state.ser` is in the shared directory; the result files stay in each server's own directory, and one server never answers another's results |
+| QC-50 | One server (no shared directory), or `request` mode: the state stays in the server's own directory |
+| QC-51 | A clear on one server of a cluster makes every server's results stale |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest

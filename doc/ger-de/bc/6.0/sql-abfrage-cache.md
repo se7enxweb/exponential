@@ -112,6 +112,7 @@ Hinweise zum Lesen der Tabelle:
 Mode=off          # off | request | shared
 Storage=auto      # where shared keeps results: auto | apcu | file
 ApcuReserve=25    # percent of APCu kept free for the pool's other users; 0 = off
+SharedStateDir=    # a cluster: where the servers share the state (empty: the DFS shared disk, or none on one server; disabled)
 MaxAge=300        # longest life of a result, in seconds
 MaxRows=5000      # results with more rows are not kept
 ExcludeTables[]
@@ -198,6 +199,17 @@ Die Wahl:
   Sie `var/` mit `lookupcache=none` und `actimeo=0` (oder `noac`) ein, wo das wichtig ist; die Sperre der Zustandsdatei
   braucht NFSv4 oder `lockd`. Eine Abweichung der Uhren zwischen den Servern verschiebt nur, wann der Cronjob eine
   Datei entfernt, nie, was geantwortet wird.
+- Ein Cluster mit eigenem `var/` je Server (der DFS-Cluster-Dateihandler, Ergebnisse im APCu oder in den Dateien jedes
+  Servers): Im Modus `shared` muss der Zustand für alle Server eine Datei sein, sonst bleibt ein Schreibvorgang auf
+  einem Server auf den anderen bis `MaxAge` ungesehen. `SharedStateDir` sagt, wo: leer (der Standard) heißt der Ordner
+  `querycache` auf der gemeinsamen DFS-Platte (`file.ini [eZDFSClusteringSettings] MountPointPath`), sobald
+  `[ClusteringSettings] FileHandler` `eZDFSFileHandler` ist, und auf einem einzelnen Server nichts; ein Pfad nennt einen
+  anderen Ordner, den jeder Server eingebunden hat; `disabled` lässt jedem Server seinen eigenen Zustand (dann im
+  Cluster den Modus `request` verwenden). Dort liegen nur `state.ser` und `state.lock`; die Ergebnisse bleiben die
+  jedes Servers. Jede Anfrage liest die gemeinsame Datei einmal, jeder Schreibvorgang sperrt und schreibt sie neu,
+  sodass ein Schreibvorgang auf einem Server die Ergebnisse jedes Servers ab dessen nächster Anfrage veraltet. Jeder
+  Benutzer, unter dem die Site läuft, muss dort schreiben und sperren können: Ein Prozess als root auf einer NFS-Freigabe
+  mit root-squash kann das nicht, und seine Schreibvorgänge erreichen dann bis `MaxAge` nur seinen eigenen Server.
 - `MaxAge` begrenzt, was der Cache nicht sehen kann: einen Schreibvorgang außerhalb von Exponential (ein anderes
   Programm, ein SQL-Client, eine Wiederherstellung). Innerhalb von Exponential macht jeder Schreibvorgang sofort
   ungültig, egal wie groß `MaxAge` ist.
@@ -585,6 +597,10 @@ APCu-Einträge laufen innerhalb von `MaxAge` ab und werden nie gelesen, solange 
 | QC-45 | Eine Sperre auf einem `state.lock`, das inzwischen gelöscht wurde, wird aufgegeben und auf der neuen Datei genommen (ein zweiter Prozess, `pcntl_fork()`; ohne pcntl übersprungen) |
 | QC-46 | Ein persistenter Worker beginnt jede Anfrage mit dem Zustand auf der Festplatte: Der Schreibvorgang eines anderen Prozesses zählt sofort, Ergebnisse unter einer ersetzten Zustandsdatei werden nicht geantwortet (auch nicht die, die in der Sekunde gespeichert wurden, in der die Anfrage noch den alten Zustand hielt), das Memo ist leer, ein Fehlschlag der Sperre wird einmal pro Anfrage protokolliert |
 | QC-47 | Ein Fehlschlag der Sperre erscheint in Setup > Systeminformationen (`status()` `lock_failed`, aus der Zustandsdatei) und in der Debug-Ausgabe; ein späterer Schreibvorgang unter der Sperre behält ihn, ein Leeren vergisst ihn |
+| QC-48 | Ein Cluster im Modus `shared`: Ein Schreibvorgang auf einem Server macht die Ergebnisse, die ein anderer Server hielt, ab dessen nächster Anfrage veraltet; Ergebnisse nicht beschriebener Tabellen bleiben aktuell |
+| QC-49 | Ein Cluster: Nur `state.ser` liegt im gemeinsamen Ordner; die Ergebnisdateien bleiben im eigenen Ordner jedes Servers, und kein Server antwortet mit den Ergebnissen eines anderen |
+| QC-50 | Ein einzelner Server (kein gemeinsamer Ordner) oder der Modus `request`: Der Zustand bleibt im eigenen Ordner des Servers |
+| QC-51 | Ein Leeren auf einem Server eines Clusters macht die Ergebnisse jedes Servers veraltet |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest

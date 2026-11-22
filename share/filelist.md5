@@ -3816,7 +3816,7 @@ c418d47a0244a80e9498e192d9572f52  doc/eng-us/bc/6.0/search-links-with-view-param
 981cb46d02cc504b4d483962e3e5f0ed  doc/eng-us/bc/6.0/shop-basket-view-name.md
 fb079d25e9f453e35fa16aba655bf77b  doc/eng-us/bc/6.0/site-packages-no-extension-packages.md
 1bb2ec9b10e67e5c692f4140f388681a  doc/eng-us/bc/6.0/soap-entry-script-index-soap.md
-1b035a77f2a56fa9b0225c8aca76b934  doc/eng-us/bc/6.0/sql-query-cache.md
+65e0c5953e092320e59000533931c8a7  doc/eng-us/bc/6.0/sql-query-cache.md
 5104cdda217ab0a6590d9f2dda233730  doc/eng-us/bc/6.0/sqlite-transactions.md
 04e2b3effc91ccae524c980b807607a9  doc/eng-us/bc/6.0/static-cache-defaults.md
 6a059f73dc479c2c0b901465f5930e48  doc/eng-us/bc/6.0/static-publishing.md
@@ -13971,7 +13971,7 @@ d9f80a837c4cd657c6eb1fcb894287d8  doc/ger-de/bc/6.0/request-shield.md
 d1cf560d1b942596beff989679e73cdc  doc/ger-de/bc/6.0/seitenweise-anzeige-von-rollen-und-richtlinien.md
 b8c6635746a56bda4315d93d3df53edf  doc/ger-de/bc/6.0/sicherheit-von-content-view-full.md
 f16c71aee0885dfb239e5224c8791a7f  doc/ger-de/bc/6.0/soap-einstiegsskript-index-soap.md
-b6f5671a6d8c8c99ad7a188252af1387  doc/ger-de/bc/6.0/sql-abfrage-cache.md
+dad46558deaf4e4f297cd531eee4e04d  doc/ger-de/bc/6.0/sql-abfrage-cache.md
 b1a0f7ae57d116312dfc9820889fa4fc  doc/ger-de/bc/6.0/sqlite-transaktionen.md
 ed99f303639d301e1bf5ddb4e8c4facc  doc/ger-de/bc/6.0/standardwerte-des-statischen-caches.md
 f16f5e23b0a3ebfd383e1385efc1d390  doc/ger-de/bc/6.0/statisches-veroeffentlichen.md
@@ -27130,7 +27130,7 @@ f72ddefd7b5c0c6321b4bf1f94ed55d3  lib/ezdb/classes/expmongodb.php
 13f0a583c9b7da0867680d243ffdcb5e  lib/ezdb/classes/exppdodb.php
 4a4c9ff3c3b806245f6e3e709208198b  lib/ezdb/classes/ezdb.php
 661ef313a4ddad8e41cfa06a5e021a1e  lib/ezdb/classes/ezdbinterface.php
-b66248e35051b10fab37396107632d39  lib/ezdb/classes/ezdbquerycache.php
+efe75eded3d3ae821f3beeefbde77340  lib/ezdb/classes/ezdbquerycache.php
 5d130fa0386f0a1810c63282941ab4aa  lib/ezdb/classes/ezdbtool.php
 7ef8186a613986a90636b30fac85b4f9  lib/ezdb/classes/ezmysqlcharset.php
 b159cf7b4fb08c52b2515eeaa94cd36e  lib/ezdb/classes/ezmysqlidb.php
@@ -27560,7 +27560,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 cd6e72f7a165cd2867446bc7bc7aad5a  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
-bada4e0f552e8fc8c771aec209487b83  settings/querycache.ini
+1b117cea0460a8723ee7cf9d5297d9ee  settings/querycache.ini
 21696fbd63b02afd759ad1e39c5a8e8a  settings/rad.ini
 ed3939b3ee8263c326063584d635acc9  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
@@ -30636,7 +30636,7 @@ ec5ef923665127adf6539f392d7229c4  tests/tests/kernel/search/ezsearchengine_regre
 4309160b57c8bc1b35c3bb1c2cee8ecb  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 b60dc460fe5444f72a0e09fc1305a105  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 8f01078350da067cc0f5ac5ca3e493fa  tests/tests/lib/ezdb/eZDBInterfaceTest.php
-54f39f9762c8333a26402f1e83ca9b9d  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
+e77b7dedb1056d5734ec5d562cb7913c  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 760663cc3e79fd6f906fe2a921041627  tests/tests/lib/ezdb/eZDBTransactionExceptionTest.php
 90e4a4031f797a1e855b4c1df67badb4  tests/tests/lib/ezdb/eZMySQLiDBEscapeStringWithoutConnectionTest.php
 4546c62f56844b0ad6b89a13bb9e7f6b  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
