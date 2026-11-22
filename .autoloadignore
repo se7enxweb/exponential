@@ -42,3 +42,9 @@ extension/sevenx_smarty
 # (expRequestShield::loadLibrary()). The files keep the .php suffix on purpose: Exponential Velocity turns exit() into
 # its exit signal only in included *.php files.
 extension/exp_request_shield/lib
+
+# bccie's tests declare stand-ins for three kernel types of the transfer runs (expKernelTransferTask, the context and
+# expKernelTransferCancelledException, each behind a class_exists guard) so they also run without the kernel. Walked,
+# the generator reports the cancel exception as a second declaration of a kernel class on every autoload run. The
+# test files load themselves; nothing needs their classes in the array.
+extension/bccie/tests
