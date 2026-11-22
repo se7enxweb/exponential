@@ -841,8 +841,7 @@ class expMigrationDiff
                     @unlink( $clean );
             }
             else
-                $code = expUpgradeBackup::runWithEnv( 'psql -X -q -v ON_ERROR_STOP=0 -h ' . escapeshellarg( $live->Server ?: 'localhost' ) . ( $live->Port ? ' -p ' . (int)$live->Port : '' )
-                                                      . ' -U ' . escapeshellarg( (string)$live->User ) . ' -d ' . escapeshellarg( $name ) . ' -f ' . escapeshellarg( $path ),
+                $code = expUpgradeBackup::runWithEnv( expUpgradeBackup::psqlCommand( $live, $name, '-X -q -v ON_ERROR_STOP=0' ) . ' -f ' . escapeshellarg( $path ),
                                                       array( 'PGPASSWORD' => (string)$live->Password ), $err );
             if ( $code !== 0 )
                 throw new RuntimeException( 'the dump does not load: ' . mb_substr( trim( $err ), 0, 300 ) );

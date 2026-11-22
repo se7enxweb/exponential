@@ -1165,10 +1165,11 @@ function changeDBCharsetPOSTGRESQL( $charset, $collation )
     $connectionParams = "--host=$host --port=$port --username=$user";
 
     // prepare utility commands
-    $pgDump = "pg_dump $connectionParams";
-    $psql = "psql $connectionParams";
-    $dropdb = "dropdb $connectionParams";
-    $createdb = "createdb $connectionParams";
+    // client programs at least as new as the server (pg_dump refuses a newer server)
+    $pgDump = escapeshellarg( expUpgradeBackup::postgresqlTool( 'pg_dump', $db ) ) . " $connectionParams";
+    $psql = escapeshellarg( expUpgradeBackup::postgresqlTool( 'psql', $db ) ) . " $connectionParams";
+    $dropdb = escapeshellarg( expUpgradeBackup::postgresqlTool( 'dropdb', $db ) ) . " $connectionParams";
+    $createdb = escapeshellarg( expUpgradeBackup::postgresqlTool( 'createdb', $db ) ) . " $connectionParams";
 
     // get temporary dir to store dump
     $ini = eZINI::instance();

@@ -33,14 +33,25 @@ trait expMigrationCaptionEngineChecks
     use expMigrationRunnerEngineChecks;
 
     /**
-     * Skips the test when a tool the engine's dump or restore needs is not on PATH.
+     * Skips the test when a tool the engine's dump or restore needs is not on PATH. With $db a PostgreSQL connection,
+     * the PostgreSQL client the kernel picks (expUpgradeBackup::postgresqlTool) has to be at least as new as the
+     * server: pg_dump refuses a newer one, so a host with older client programs only cannot run the check.
      *
      * @param string[] $tools
+     * @param eZDBInterface|null $db
      */
-    protected function requireTools( array $tools )
+    protected function requireTools( array $tools, $db = null )
     {
         foreach ( $tools as $tool )
         {
+            if ( $db instanceof eZPostgreSQLDB )
+            {
+                $major = expUpgradeBackup::postgresqlServerMajor( $db );
+                $path = expUpgradeBackup::postgresqlTool( $tool, $db );
+                if ( $path === $tool || ( $major !== null && expUpgradeBackup::postgresqlToolMajor( $path ) < $major ) )
+                    $this->markTestSkipped( "no $tool for PostgreSQL $major or later is installed" );
+                continue;
+            }
             $found = false;
             foreach ( explode( PATH_SEPARATOR, (string)getenv( 'PATH' ) ) as $dir )
                 if ( $dir !== '' && is_executable( rtrim( $dir, '/' ) . '/' . $tool ) )

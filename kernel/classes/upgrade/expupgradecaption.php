@@ -491,8 +491,7 @@ class expUpgradeCaption
                 }
                 else
                 {
-                    $code = expUpgradeBackup::runWithEnv( 'psql -X -q -v ON_ERROR_STOP=0 -h ' . escapeshellarg( $db->Server ?: 'localhost' ) . ( $db->Port ? ' -p ' . (int)$db->Port : '' )
-                                                          . ' -U ' . escapeshellarg( (string)$db->User ) . ' -d ' . escapeshellarg( $name ) . ' -f ' . escapeshellarg( $dump['path'] ),
+                    $code = expUpgradeBackup::runWithEnv( expUpgradeBackup::psqlCommand( $db, $name, '-X -q -v ON_ERROR_STOP=0' ) . ' -f ' . escapeshellarg( $dump['path'] ),
                                                           array( 'PGPASSWORD' => (string)$db->Password ), $err );
                     $count = $code === 0 ? self::countPostgresTables( $db, $name ) : 0;
                 }
@@ -544,8 +543,10 @@ class expUpgradeCaption
     /** The tables of another PostgreSQL database: asked through psql (a connection is bound to its database). */
     protected static function countPostgresTables( $db, $name )
     {
-        $p = proc_open( array( 'psql', '-X', '-A', '-t', '-h', $db->Server ?: 'localhost', '-U', (string)$db->User, '-d', $name, '-c',
-                               "SELECT count(*) FROM pg_tables WHERE schemaname = 'public'" ), array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ),
+        $p = proc_open( array_merge( array( expUpgradeBackup::postgresqlTool( 'psql', $db ), '-X', '-A', '-t', '-h', $db->Server ?: 'localhost' ),
+                                     $db->Port ? array( '-p', (string)(int)$db->Port ) : array(),
+                                     array( '-U', (string)$db->User, '-d', $name, '-c', "SELECT count(*) FROM pg_tables WHERE schemaname = 'public'" ) ),
+                        array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ),
                         $pipes, null, array( 'PGPASSWORD' => (string)$db->Password ) + getenv() );
         if ( !is_resource( $p ) )
             return 0;

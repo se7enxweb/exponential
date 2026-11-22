@@ -25368,7 +25368,7 @@ ca1d0063945165c253886e9474bda6ae  kernel/classes/migration/expmigrationconverter
 a7e8a4596e85e5feefff3e57647352eb  kernel/classes/migration/expmigrationdefinition.php
 cee4958660a5adc04e3b025bd77d23f6  kernel/classes/migration/expmigrationdeploynotifier.php
 6f6a13dd32448befb57b91b46cc9cdb9  kernel/classes/migration/expmigrationdeployrecord.php
-010dbc179bd22ac4d65295cfc91ee369  kernel/classes/migration/expmigrationdiff.php
+6aaef232b6630b3509df8c6d2909539d  kernel/classes/migration/expmigrationdiff.php
 1b37e5cc50fe805fd44047e2a34e54b6  kernel/classes/migration/expmigrationeditor.php
 c89ec402a3c204c25d3c2111db5422aa  kernel/classes/migration/expmigrationfiles.php
 698a035a7dde2900d764fddd4d418cee  kernel/classes/migration/expmigrationgenerator.php
@@ -25639,9 +25639,9 @@ a0656f5f4b5d1e6ea5bc1f87cda8b703  kernel/classes/uiswitch/expuiswitchlanguagecat
 b175ddfcd284ec585d4e3839b9e02b39  kernel/classes/uiswitch/expuiswitchprovider.php
 97c2143532e0f136ba4e0f7bfef28049  kernel/classes/uiswitch/expuiswitchproviderinterface.php
 540703f94264ab1188d8f24717e2042a  kernel/classes/upgrade/expupgrade.php
-c828134811fc4170f48d0bd8beec4042  kernel/classes/upgrade/expupgradebackup.php
+e39dc5eda66498aecd2d6becdcf1bd23  kernel/classes/upgrade/expupgradebackup.php
 285a5f8e3fba34675fed5ae3bf7e0f23  kernel/classes/upgrade/expupgradebasestep.php
-c1466b2b8ba713269ed30f42c6dba19a  kernel/classes/upgrade/expupgradecaption.php
+a971a81a62b7b5b03cd0bf9dbc43aeb9  kernel/classes/upgrade/expupgradecaption.php
 f91fe6aa39ca39fba9157c3bffc757c5  kernel/classes/upgrade/expupgradecatalog.php
 56f82ab5bb9265d64219d5040041ecfa  kernel/classes/upgrade/expupgradecomposer.php
 6143d98b54e943e83defb3d3e25841e1  kernel/classes/upgrade/expupgradecontext.php
@@ -25650,7 +25650,7 @@ f91fe6aa39ca39fba9157c3bffc757c5  kernel/classes/upgrade/expupgradecatalog.php
 b0b3a1228db9f3321a057b6c6e7b1352  kernel/classes/upgrade/expupgradelock.php
 73a657270220d087d8628c1394da806e  kernel/classes/upgrade/expupgraderecord.php
 592334ca70a9d88447f7394d12ce433e  kernel/classes/upgrade/expupgraderegistry.php
-adc9ef2daefeda3817e54f6214647e20  kernel/classes/upgrade/expupgraderollback.php
+b9b82ba4f228b1fc11d054e3ac842558  kernel/classes/upgrade/expupgraderollback.php
 72a04b971ccb701ae0feb2e6abf797d8  kernel/classes/upgrade/expupgradeschemastep.php
 54d31dc79a5c6149193597e3b9cace46  kernel/classes/upgrade/expupgradescriptstep.php
 f849e9b7c4f5813bbcff0bc3262fffdf  kernel/classes/upgrade/expupgradestep.php
@@ -26190,7 +26190,7 @@ aa29f262ae7a0d325a9ddc2d0c96950e  kernel/private/classes/commands/ezcheckphptag.
 8ae3678f1053a4ee15a8c1a3a7ab81b2  kernel/private/classes/commands/ezchecktranslation.php
 ad252972e0e6260b888049a679698d26  kernel/private/classes/commands/ezcontentcache.php
 f683be7cfac3631145830950a3192494  kernel/private/classes/commands/ezconvert2isbn13.php
-d05564856e8046a5c5a0787dc34e79d4  kernel/private/classes/commands/ezconvertdbcharset.php
+601f40a80815bd3521ed907698c03aa6  kernel/private/classes/commands/ezconvertdbcharset.php
 61e68488d8c236ccb52ff7261054b32d  kernel/private/classes/commands/ezconvertmysqltabletype.php
 6901e1ec08243139292ad167efa44c0b  kernel/private/classes/commands/ezcreatedeactivatedusergroup.php
 7427e00e144701da186cf87ea33fa971  kernel/private/classes/commands/ezcsvexport.php
@@ -27590,7 +27590,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-c35f8e748b27f32d5819bb3913642aa2  settings/upgrade.ini
+216946aacfde7678708b64e2a8a9075a  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 36b07ea522767dd9ddc62b6c380e062d  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -29804,8 +29804,8 @@ fa2880c02db43fdfac79048ad61cba89  tests/tests/kernel/classes/mailpreferences/fix
 0a6bd01026874dfe32ecac793513abda  tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsEngineChecks.php
 bb283a68a175abca48963561fdda7f16  tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsSqliteTest.php
 dae073739b2efda3166ede7d0d00293f  tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php
-c847c2f1c42b445eba074244f6078065  tests/tests/kernel/classes/migration/expMigrationCaptionDatabaseTest.php
-2aff1c282057cc4d2497c2a8871e60e9  tests/tests/kernel/classes/migration/expMigrationCaptionEngineChecks.php
+d0f779c25ddb0cba2397841c8f7f7470  tests/tests/kernel/classes/migration/expMigrationCaptionDatabaseTest.php
+d552ea352a024ae684cfa041bee4753d  tests/tests/kernel/classes/migration/expMigrationCaptionEngineChecks.php
 df2891775fbe7ed2454048f98673e152  tests/tests/kernel/classes/migration/expMigrationCaptionFakes.php
 73d1596bcf3555216d9f028f3da14351  tests/tests/kernel/classes/migration/expMigrationCaptionSqliteTest.php
 8679a4519b9ba76c21c92964a1ed90a3  tests/tests/kernel/classes/migration/expMigrationCaptionTest.php
@@ -31130,3 +31130,4 @@ a978abfd4df3d11208afede1d7f7358f  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.
 5fd205114fab8a96ec95f1140580db22  tests/tests/lib/ezdb/eZPostgreSQLDBReadReplicaTest.php
 b5ea022fc99c50d6f074d2bf3da9e602  doc/eng-us/bc/6.0/postgresql-read-replica.md
 13eb9ef586b7a3e464ff1dc358ef21e1  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
+db5c5bde251c17a9563d3b4fe25346ef  tests/tests/kernel/classes/upgrade/expUpgradeBackupPostgresqlToolTest.php

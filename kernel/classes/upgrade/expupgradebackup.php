@@ -232,10 +232,121 @@ class expUpgradeBackup
         return proc_close( $process );
     }
 
+    /**
+     * The PostgreSQL client program $name (pg_dump, psql) to use with the server of $db: pg_dump refuses a server of a
+     * newer major version ("aborting because of server version mismatch"), so a host whose default client is older
+     * than the database server (PostgreSQL 13 tools against a server upgraded to 18) could make no backup. The first
+     * of these whose major version is at least the server's wins:
+     *
+     *   1. upgrade.ini [UpgradeSettings] PostgreSQLClientDir (a bin directory), when set
+     *   2. the program on PATH
+     *   3. the versioned installations: /usr/pgsql-<major>/bin (PGDG RPM), /usr/lib/postgresql/<major>/bin (Debian),
+     *      /opt/exp-pg<major>/current/bin, /usr/local/pgsql/bin, newest major first
+     *
+     * Without one new enough, the newest found (or the bare name) is returned and the tool reports the mismatch itself.
+     *
+     * @param string $name pg_dump, psql, pg_restore
+     * @param eZDBInterface|int|null $server a PostgreSQL connection, or the server's major version (null: unknown)
+     * @param string[]|null $dirs the directories to look in instead of 2. and 3. (tests)
+     * @return string the program: a path, or $name itself
+     */
+    public static function postgresqlTool( $name, $server = null, ?array $dirs = null )
+    {
+        $major = is_int( $server ) ? $server : self::postgresqlServerMajor( $server );
+        $candidates = array();
+        $configured = '';
+        if ( $dirs === null && class_exists( 'eZINI' ) )
+        {
+            $ini = eZINI::instance( 'upgrade.ini' );
+            if ( $ini->hasVariable( 'UpgradeSettings', 'PostgreSQLClientDir' ) )
+                $configured = trim( (string)$ini->variable( 'UpgradeSettings', 'PostgreSQLClientDir' ) );
+        }
+        if ( $configured !== '' )
+            $candidates[] = rtrim( $configured, '/' ) . '/' . $name;
+        if ( $dirs === null )
+        {
+            $dirs = array_filter( explode( PATH_SEPARATOR, (string)getenv( 'PATH' ) ) );
+            $versioned = array_merge( glob( '/usr/pgsql-*/bin', GLOB_ONLYDIR ) ?: array(),
+                                      glob( '/usr/lib/postgresql/*/bin', GLOB_ONLYDIR ) ?: array(),
+                                      glob( '/opt/exp-pg*/current/bin', GLOB_ONLYDIR ) ?: array(),
+                                      array( '/usr/local/pgsql/bin' ) );
+            usort( $versioned, function ( $a, $b ) { return strnatcmp( $b, $a ); } );
+            $dirs = array_merge( $dirs, $versioned );
+        }
+        foreach ( $dirs as $dir )
+            $candidates[] = rtrim( $dir, '/' ) . '/' . $name;
+
+        $newest = null;
+        $newestMajor = -1;
+        foreach ( array_unique( $candidates ) as $path )
+        {
+            if ( !is_file( $path ) || !is_executable( $path ) )
+                continue;
+            $toolMajor = self::postgresqlToolMajor( $path );
+            if ( $major === null || $toolMajor >= $major )
+                return $path;
+            if ( $toolMajor > $newestMajor )
+            {
+                $newest = $path;
+                $newestMajor = $toolMajor;
+            }
+        }
+        return $newest !== null ? $newest : $name;
+    }
+
+    /**
+     * The major version of a PostgreSQL client program, from its --version ("pg_dump (PostgreSQL) 18.1"); 0 unknown.
+     *
+     * @param string $path
+     * @return int
+     */
+    public static function postgresqlToolMajor( $path )
+    {
+        static $cache = array();
+        if ( !isset( $cache[$path] ) )
+        {
+            $out = array();
+            @exec( escapeshellarg( $path ) . ' --version 2>/dev/null', $out );
+            $cache[$path] = preg_match( '/\(PostgreSQL\)\s+(\d+)/', implode( ' ', $out ), $m ) ? (int)$m[1] : 0;
+        }
+        return $cache[$path];
+    }
+
+    /**
+     * The major version of the server of a PostgreSQL connection (18 for 18.1, 19 for 19rc1), null when unknown.
+     *
+     * @param eZDBInterface|null $db
+     * @return int|null
+     */
+    public static function postgresqlServerMajor( $db )
+    {
+        if ( !is_object( $db ) || !method_exists( $db, 'databaseServerVersion' ) )
+            return null;
+        $version = $db->databaseServerVersion();
+        if ( !is_array( $version ) || !preg_match( '/^(\d+)/', (string)$version['string'], $m ) )
+            return null;
+        return (int)$m[1];
+    }
+
+    /**
+     * The psql command line for a connection, as a shell string: the program postgresqlTool() picks, host, port, user
+     * and database. The password goes into the environment (runWithEnv()), never here.
+     *
+     * @param eZDBInterface $db the connection (server, port, user, and the server version the client must match)
+     * @param string $database the database psql connects to
+     * @param string $options more options, already quoted (e.g. '-X -q -v ON_ERROR_STOP=1')
+     * @return string
+     */
+    public static function psqlCommand( $db, $database, $options = '-X -q' )
+    {
+        return escapeshellarg( self::postgresqlTool( 'psql', $db ) ) . ' ' . $options . ' -h ' . escapeshellarg( $db->Server ?: 'localhost' )
+             . ( $db->Port ? ' -p ' . (int)$db->Port : '' ) . ' -U ' . escapeshellarg( (string)$db->User ) . ' -d ' . escapeshellarg( (string)$database );
+    }
+
     protected static function postgresql( $db, $target, array &$result )
     {
         $file = $target . '/database.sql';
-        $cmd = 'pg_dump --no-owner --clean --if-exists -h ' . escapeshellarg( $db->Server ?: 'localhost' )
+        $cmd = escapeshellarg( self::postgresqlTool( 'pg_dump', $db ) ) . ' --no-owner --clean --if-exists -h ' . escapeshellarg( $db->Server ?: 'localhost' )
              . ( $db->Port ? ' -p ' . (int)$db->Port : '' )
              . ' -U ' . escapeshellarg( (string)$db->User ) . ' -f ' . escapeshellarg( $file ) . ' ' . escapeshellarg( (string)$db->DB );
         // the password in the environment of pg_dump only, never on a command line another user can read

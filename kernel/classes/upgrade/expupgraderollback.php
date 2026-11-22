@@ -303,9 +303,8 @@ class expUpgradeRollback
                             @unlink( $cnf );
                         }
                         else
-                            $code = expUpgradeBackup::runWithEnv( 'psql -X -q -v ON_ERROR_STOP=1 -h ' . escapeshellarg( $db->Server ?: 'localhost' )
-                                                                  . ( $db->Port ? ' -p ' . (int)$db->Port : '' ) . ' -U ' . escapeshellarg( (string)$db->User )
-                                                                  . ' -d ' . escapeshellarg( (string)$db->DB ) . ' -f ' . escapeshellarg( $dump['path'] ),
+                            $code = expUpgradeBackup::runWithEnv( expUpgradeBackup::psqlCommand( $db, (string)$db->DB, '-X -q -v ON_ERROR_STOP=1' )
+                                                                  . ' -f ' . escapeshellarg( $dump['path'] ),
                                                                   array( 'PGPASSWORD' => (string)$db->Password ), $err );
                         if ( $code !== 0 )
                             throw new RuntimeException( 'loading the dump failed (exit ' . $code . '): ' . preg_replace( '/\s+/', ' ', mb_substr( trim( $err ), 0, 400 ) ) );
