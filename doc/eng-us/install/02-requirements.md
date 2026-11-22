@@ -309,7 +309,7 @@ change to the file the other PHP reads.
 | Database | `DatabaseImplementation` and aliases (`settings/site.ini`, `[DatabaseSettings] ImplementationAlias[]`) | Minimum server version the wizard checks | Practical minimum |
 |---|---|---|---|
 | 1. SQLite 3 | `sqlite3` | 3.0.1 | 3.33 (`UPDATE ... FROM`) |
-| 2. PostgreSQL | `pgsql`, `postgresql`, `ezpostgresql` | 8.0 | 13 (`pgcrypto` as a trusted extension) |
+| 2. PostgreSQL | `pgsql`, `postgresql`, `ezpostgresql` | 8.0 | 13 (`pgcrypto` as a trusted extension); 13 to 19 tested |
 | 3. MongoDB | `mongodb` | 4.0 | 6.0, with PHP 8.2 |
 | 4. MariaDB | `mysqli`, `mysql`, `ezmysqli`, `ezmysql` | 4.1.1 | a release your vendor supports |
 | 5. Oracle | `oracle`, `ezoracle` (from `extension/ezoracle/settings/site.ini.append.php`) | 19 | 19c |

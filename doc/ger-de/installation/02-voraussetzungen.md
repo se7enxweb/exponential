@@ -319,7 +319,7 @@ liest; das Web-PHP liest unter Umständen andere (PHP-FPM-Pools haben ihre eigen
 | Datenbank | `DatabaseImplementation` und Aliase (`settings/site.ini`, `[DatabaseSettings] ImplementationAlias[]`) | Vom Assistenten geprüfte Mindestversion des Servers | Praktisches Minimum |
 |---|---|---|---|
 | 1. SQLite 3 | `sqlite3` | 3.0.1 | 3.33 (`UPDATE ... FROM`) |
-| 2. PostgreSQL | `pgsql`, `postgresql`, `ezpostgresql` | 8.0 | 13 (`pgcrypto` als vertrauenswürdige Extension) |
+| 2. PostgreSQL | `pgsql`, `postgresql`, `ezpostgresql` | 8.0 | 13 (`pgcrypto` als vertrauenswürdige Extension); 13 bis 19 getestet |
 | 3. MongoDB | `mongodb` | 4.0 | 6.0, mit PHP 8.2 |
 | 4. MariaDB | `mysqli`, `mysql`, `ezmysqli`, `ezmysql` | 4.1.1 | eine Release, die Ihr Anbieter unterstützt |
 | 5. Oracle | `oracle`, `ezoracle` (aus `extension/ezoracle/settings/site.ini.append.php`) | 19 | 19c |

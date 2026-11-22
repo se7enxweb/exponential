@@ -91,7 +91,7 @@ documented interface, and everything that would have to be written is listed in
 | Several web servers on one database | no | yes | yes | yes | yes | yes |
 | Character set | UTF-8 | `UTF8` | UTF-8 (BSON) | `utf8mb4` | `AL32UTF8` | `utf8mb4` |
 | Schema update files | `update/database/sqlite/` | `update/database/postgresql/` | none (no SQL) | `update/database/mysql/` | in `ezoracle` | `update/database/mysql/` |
-| Tested in the project's CI | driver unit tests | yes (PostgreSQL 15) | adapter unit tests | no | no | yes (MySQL 8.0) |
+| Tested in the project's CI | driver unit tests | yes (PostgreSQL 13, 15, 18 and 19) | adapter unit tests | no | no | yes (MySQL 8.0) |
 | DFS cluster metadata backend (several web servers) | one machine only: in the kernel (`expDFSFileHandlerSQLiteBackend`) for a one-node cluster and tests | yes, in the kernel (`expDFSFileHandlerPostgresqlBackend`, PostgreSQL 13-19 in CI) | yes, in the kernel (`expDFSFileHandlerMongoDBBackend`, MongoDB 5.0 and later) | yes, in the kernel (MySQLi backend) | yes, in the kernel (`expDFSFileHandlerOracleBackend`, Oracle 12.1 and later) | yes, in the kernel (MySQLi backend) |
 
 ## Versions, checked against the code
@@ -107,7 +107,7 @@ Three different numbers exist for each database, and they are easy to mix up:
 | Database | Wizard floor | Practical minimum | Seen working |
 |---|---|---|---|
 | SQLite 3 | 3.0.1 | **3.33** (the driver rewrites MySQL's `UPDATE ... JOIN` into `UPDATE ... FROM`, which SQLite has from 3.33; `eZSQLite3DB::rewriteJoinedUpdate()`) | library 3.34.1 in PHP 8.5 on the development server; the SQLite library of the CI images (version not pinned) |
-| PostgreSQL | 8.0 | **13** (the installer creates `pgcrypto`, a trusted extension from PostgreSQL 13 on); from 15 on the site's user must own the database | 13.23 on the development server; 15 in CI |
+| PostgreSQL | 8.0 | **13** (the installer creates `pgcrypto`, a trusted extension from PostgreSQL 13 on); from 15 on the site's user must own the database | 13.23 on the development server; 13, 15, 18 and 19 in CI (every suite), 13 to 19 for the DFS cluster backend; 18.7 and 19.0 also checked for install, upgrade backup, the database stage of the upgrade, the MySQL to PostgreSQL conversion and the read replica |
 | MongoDB | 4.0 | **6.0** server, PHP **8.2** or later, PHP `mongodb` extension **1.18** or later ([MongoDB as the database](../features/6.0/mongodb-database-support.md)) | server 8.3.13 with extension 2.3.3 on PHP 8.5 on the development server |
 | MariaDB | 4.1.1 (the MySQL number) | a release your vendor still supports; `utf8mb4` and InnoDB | 10.5.29 on the development server |
 | Oracle | 19.0 | **19c** (the driver uses `STANDARD_HASH` and `OFFSET`/`FETCH`; 11g and older are not supported) | Oracle AI Database 26ai Free (23.26) with oci8 3.4.1 and Instant Client 23.26 on PHP 8.5 |
@@ -691,7 +691,7 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | Database | In CI | How |
 |---|---|---|
 | 1. SQLite 3 | yes, driver unit tests | the PHPUnit job on PHP 8.1, 8.2, 8.3, 8.4 and 8.5 loads `sqlite3`; the SQLite tests in `tests/tests/lib/ezdb/` check the driver, partly on an in-memory or temporary database (query counts, the schema mirror of `kernel/sql/sqlite/`) and partly by reading its settings (the transaction wait) |
-| 2. PostgreSQL | yes, database tests | the job "Database tests (postgresql, PHP 8.3)" with a `postgres:15` service and `pgcrypto`, `tests/runtests.php --dsn postgresql://... --db-per-test` |
+| 2. PostgreSQL | yes, database tests | the jobs "Database tests (postgresql 13, 15, 18 and 19, PHP 8.3)" with a `postgres:<version>` service, the PGDG client of that version and `pgcrypto`, `tests/runtests.php --dsn postgresql://... --db-per-test` |
 | 3. MongoDB | adapter unit tests | the PHPUnit job loads `mongodb` and installs `mongodb/mongodb`; the `mongodb` suite (adapter tests without a server) runs; the `mongodb-live` group needs running MongoDB and MySQL servers and is excluded from CI |
 | 4. MariaDB | no | covered indirectly by the MySQL job (same driver) |
 | 5. Oracle | no | Oracle-specific kernel tests skip on other engines; the `ezoracle` extension has no workflow of its own in the installed copy (not verified upstream) |

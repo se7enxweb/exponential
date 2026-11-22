@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-94afd9e0f75022d54977b2851bc066a8  doc/changelogs/6.0/6.0.15.md
+4839d3b009b4860e625950c022b47750  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -8605,7 +8605,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-76e8dccd4e9cd2e11b7b8122a80b9a64  doc/eng-us/help/database-support.md
+e4b954eb0558414a47a629713ca64831  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -13273,7 +13273,7 @@ cd0b6a85e34fba589a0baf3632bf2fc6  doc/eng-us/images/languages/coverage-map.svg
 cff5e250d6fd7deb062328fd2fac4734  doc/eng-us/images/languages/coverage-map.webp
 fa3733d7d5fa00676ab2bc74eafca985  doc/eng-us/images/languages/world-outline.svg
 e039d6d0d56b693ad4785097e70179b4  doc/eng-us/install/01-introduction.md
-bb4d026ffdc950807ce9ba31625e6cda  doc/eng-us/install/02-requirements.md
+c1e46b3535c9ee7a2399f75fc690901e  doc/eng-us/install/02-requirements.md
 6c0a22fd69ca703507655b485c7d657e  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
 17f28fff1139d62b8e0b686bd482c3f3  doc/eng-us/install/05-setup-wizard.md
@@ -13406,7 +13406,7 @@ e2ac3a0ebb0b4f3888fa50445516cb28  doc/eng-us/standards/apis-and-protocols.md
 cb656231284cc62aab9930e9704740fa  doc/eng-us/standards/architecture/kernel-architecture.md
 c82ccb5029181dda770339fe7005bf37  doc/eng-us/standards/architecture/layering-and-naming.md
 cd8ba099d8dbfdc92502ae058c4f3553  doc/eng-us/standards/coding-standards.md
-d355246fd0485dd8399e0aeb99a66299  doc/eng-us/standards/databases-and-sql.md
+157a382e8caa59d2fcf2120496af1d04  doc/eng-us/standards/databases-and-sql.md
 ce3e3b34274d997932fc22e7ed871c80  doc/eng-us/standards/documentation-and-publishing.md
 b2442e26e00678679a10b6f2f2187f0a  doc/eng-us/standards/header.txt
 75e1abba75ed1bec951378269fe29dbf  doc/eng-us/standards/internationalization.md
@@ -18510,7 +18510,7 @@ a5a807f6683e34c696f32b0aacc76b15  doc/ger-de/hilfe/datenbankadministratoren/unte
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 0fd3f75c7c74b4cf244e7d5448f3c417  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-0018c8db76602adac64e9d377751d4ff  doc/ger-de/hilfe/datenbankunterstuetzung.md
+ed8af49f4ce7876f3cc901cf229b0d06  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
@@ -23201,7 +23201,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 3b542781e7b9593616e5ebe02ac6493e  doc/ger-de/hilfe/zwei-wege-zum-bauen/zuordnung-block-zu-template.md
 7b4de1d134e1317c82fbce40572f8ae4  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
 9e12e983523da6185eb7611c6fcfea81  doc/ger-de/installation/01-einfuehrung.md
-d02585d2581a91d8ee723f154ed13456  doc/ger-de/installation/02-voraussetzungen.md
+df8f3a5eb0d62b31fb31a957e3657d22  doc/ger-de/installation/02-voraussetzungen.md
 ee3f7b69c591fb92e75e37a42a162148  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
 6b8f853944871715867d1462d6b4e302  doc/ger-de/installation/05-setup-assistent.md
@@ -23311,7 +23311,7 @@ abde9c42a1d4341895fe65062fdf54ff  doc/ger-de/spezifikationen/trunk/webdav/design
 4e0eec5e0ba68deb282c2f24de4cced0  doc/ger-de/standards/architektur/kompatibilitaet-releases-deployment.md
 43a2f1d024a49dcd7669c76add1cc44a  doc/ger-de/standards/architektur/schichten-und-benennung.md
 8916febe41c2dbad8726da4bd03b9d9d  doc/ger-de/standards/barrierefreiheit.md
-4ea97756a72cffe60444636fa3cc53f3  doc/ger-de/standards/datenbanken-und-sql.md
+de6054b2c0bbcdd143775e13e0a7f745  doc/ger-de/standards/datenbanken-und-sql.md
 182aa838e35c4d7562910e0049130398  doc/ger-de/standards/datenschutz.md
 169104cdf8d670bcd81533d69c602ca6  doc/ger-de/standards/dokumentation-und-veroeffentlichung.md
 2fa8b2ae9f36d243a1fe473012ee9240  doc/ger-de/standards/geplante-aenderungen-mit-openspec.md

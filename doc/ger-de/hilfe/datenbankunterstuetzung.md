@@ -94,7 +94,7 @@ geschriebene Erweiterung, `se7enxweb/xrowmssql`, ist der naheliegende Ausgangspu
 | Mehrere Webserver an einer Datenbank | nein | ja | ja | ja | ja | ja |
 | Zeichensatz | UTF-8 | `UTF8` | UTF-8 (BSON) | `utf8mb4` | `AL32UTF8` | `utf8mb4` |
 | Dateien für Schema-Updates | `update/database/sqlite/` | `update/database/postgresql/` | keine (kein SQL) | `update/database/mysql/` | in `ezoracle` | `update/database/mysql/` |
-| In der CI des Projekts getestet | Unit-Tests des Treibers | ja (PostgreSQL 15) | Unit-Tests des Adapters | nein | nein | ja (MySQL 8.0) |
+| In der CI des Projekts getestet | Unit-Tests des Treibers | ja (PostgreSQL 13, 15, 18 und 19) | Unit-Tests des Adapters | nein | nein | ja (MySQL 8.0) |
 
 ## Versionen, am Code überprüft
 
@@ -110,7 +110,7 @@ Für jede Datenbank gibt es drei verschiedene Zahlen, die man leicht verwechselt
 | Datenbank | Untergrenze des Assistenten | Praktisches Minimum | Im Einsatz gesehen |
 |---|---|---|---|
 | SQLite 3 | 3.0.1 | **3.33** (der Treiber schreibt MySQLs `UPDATE ... JOIN` in `UPDATE ... FROM` um, das SQLite ab 3.33 kennt; `eZSQLite3DB::rewriteJoinedUpdate()`) | Bibliothek 3.34.1 in PHP 8.5 auf dem Entwicklungsserver; die SQLite-Bibliothek der CI-Images (Version nicht festgelegt) |
-| PostgreSQL | 8.0 | **13** (der Installer legt `pgcrypto` an, ab PostgreSQL 13 eine vertrauenswürdige Erweiterung); ab 15 muss der Benutzer der Site Eigentümer der Datenbank sein | 13.23 auf dem Entwicklungsserver; 15 in der CI |
+| PostgreSQL | 8.0 | **13** (der Installer legt `pgcrypto` an, ab PostgreSQL 13 eine vertrauenswürdige Erweiterung); ab 15 muss der Benutzer der Site Eigentümer der Datenbank sein | 13.23 auf dem Entwicklungsserver; 13, 15, 18 und 19 in der CI (alle Suiten), 13 bis 19 für das DFS-Cluster-Backend; 18.7 und 19.0 zusätzlich geprüft für Installation, Upgrade-Sicherung, Datenbankstufe des Upgrades, Umstellung von MySQL auf PostgreSQL und Lesereplikat |
 | MongoDB | 4.0 | Server **6.0**, PHP **8.2** oder neuer, PHP-Erweiterung `mongodb` **1.18** oder neuer ([MongoDB als Datenbank](../funktionen/6.0/mongodb-datenbankunterstuetzung.md)) | Server 8.3.13 mit Erweiterung 2.3.3 auf PHP 8.5 auf dem Entwicklungsserver |
 | MariaDB | 4.1.1 (die MySQL-Nummer) | ein Release, das Ihr Anbieter noch unterstützt; `utf8mb4` und InnoDB | 10.5.29 auf dem Entwicklungsserver |
 | Oracle | 19.0 | **19c** (der Treiber verwendet `STANDARD_HASH` und `OFFSET`/`FETCH`; 11g und älter werden nicht unterstützt) | Oracle AI Database 26ai Free (23.26) mit oci8 3.4.1 und Instant Client 23.26 auf PHP 8.5 |
@@ -658,7 +658,7 @@ Wegwerf-Datenbank pro Test laufen.
 | Datenbank | In der CI | Wie |
 |---|---|---|
 | 1. SQLite 3 | ja, Unit-Tests des Treibers | der PHPUnit-Job auf PHP 8.1, 8.2, 8.3, 8.4 und 8.5 lädt `sqlite3`; die SQLite-Tests in `tests/tests/lib/ezdb/` prüfen den Treiber, teils auf einer In-Memory- oder temporären Datenbank (Anzahl der Abfragen, das Schema-Spiegelbild von `kernel/sql/sqlite/`), teils durch Lesen seiner Einstellungen (die Wartezeit für Transaktionen) |
-| 2. PostgreSQL | ja, Datenbanktests | der Job „Database tests (postgresql, PHP 8.3)“ mit einem `postgres:15`-Service und `pgcrypto`, `tests/runtests.php --dsn postgresql://... --db-per-test` |
+| 2. PostgreSQL | ja, Datenbanktests | die Jobs „Database tests (postgresql 13, 15, 18 und 19, PHP 8.3)“ mit einem `postgres:<Version>`-Service, dem PGDG-Client dieser Version und `pgcrypto`, `tests/runtests.php --dsn postgresql://... --db-per-test` |
 | 3. MongoDB | Unit-Tests des Adapters | der PHPUnit-Job lädt `mongodb` und installiert `mongodb/mongodb`; die Suite `mongodb` (Adaptertests ohne Server) läuft; die Gruppe `mongodb-live` braucht laufende MongoDB- und MySQL-Server und ist von der CI ausgenommen |
 | 4. MariaDB | nein | indirekt durch den MySQL-Job abgedeckt (derselbe Treiber) |
 | 5. Oracle | nein | Oracle-spezifische Kernel-Tests werden auf anderen Engines übersprungen; die Erweiterung `ezoracle` hat in der installierten Kopie keinen eigenen Workflow (upstream nicht geprüft) |

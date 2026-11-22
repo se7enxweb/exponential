@@ -23,7 +23,7 @@ Which databases are supported, in which order, with which versions, settings, in
 |---|---|---|---|
 | SQL, ISO/IEC 9075 | no edition targeted | **Partly complies** | the kernel writes a portable subset and asks the driver for what differs (`lib/ezdb/classes/ezdbinterface.php`); no conformance claim |
 | SQLite 3 dialect | SQLite 3.33 or later | **Complies** | `eZSQLite3DB` (`lib/ezdb/classes/ezsqlite3db.php`); CI: driver unit tests on PHP 8.1 to 8.5 |
-| PostgreSQL dialect | PostgreSQL 13 or later | **Complies** | `eZPostgreSQLDB`; CI: database tests on `postgres:15` |
+| PostgreSQL dialect | PostgreSQL 13 or later | **Complies** | `eZPostgreSQLDB`; CI: database tests on `postgres:13`, `15`, `18` and `19` |
 | MySQL dialect | 8.0 tested | **Complies** | `eZMySQLiDB`; CI: database tests on `mysql:8.0` |
 | MariaDB dialect | 10.5 seen working | **Unverified** | same driver as MySQL; not in CI |
 | Oracle dialect | 19c or later | **Unverified** | `eZOracleDB` in the `ezoracle` extension 2.3.7; not in the kernel's CI |
@@ -182,7 +182,7 @@ PostgreSQL 8.0, SQLite 3.0.1, MongoDB 4.0, Oracle 19.0).
 - Driver `eZPostgreSQLDB`, schema handler `eZPgsqlSchema`, PHP extension `pgsql`. Practical minimum 13 (the
   installer creates the trusted extension `pgcrypto`).
 - Sequences named `<table>_<column>_seq` (`DEFAULT nextval(...)` in `ezpgsqlschema.php`).
-- CI: job "Database tests (postgresql, PHP 8.3)" in `.github/workflows/phpunit.yml`, service `postgres:15`,
+- CI: jobs "Database tests (postgresql 13, 15, 18 and 19, PHP 8.3)" in `.github/workflows/phpunit.yml`, services `postgres:13`, `15`, `18`, `19`,
   `CREATE EXTENSION IF NOT EXISTS pgcrypto`, then `tests/runtests.php --dsn postgresql://... --db-per-test`. Driver
   tests: `tests/tests/lib/ezdb/eZPostgreSQLDBTest.php`, `eZPostgreSQLDBEscapeStringNullTest.php`.
 - **Status: Complies.**

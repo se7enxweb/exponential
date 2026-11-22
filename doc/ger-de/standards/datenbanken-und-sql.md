@@ -24,7 +24,7 @@ vorliegende wiederholt sie nicht.
 |---|---|---|---|
 | SQL, ISO/IEC 9075 | keine Ausgabe angestrebt | **Teilweise erfüllt** | der Kernel schreibt eine portable Teilmenge und fragt den Treiber nach dem, was sich unterscheidet (`lib/ezdb/classes/ezdbinterface.php`); kein Konformitätsanspruch |
 | SQLite-3-Dialekt | SQLite 3.33 oder neuer | **Erfüllt** | `eZSQLite3DB` (`lib/ezdb/classes/ezsqlite3db.php`); CI: Unit-Tests des Treibers auf PHP 8.1 bis 8.5 |
-| PostgreSQL-Dialekt | PostgreSQL 13 oder neuer | **Erfüllt** | `eZPostgreSQLDB`; CI: Datenbanktests auf `postgres:15` |
+| PostgreSQL-Dialekt | PostgreSQL 13 oder neuer | **Erfüllt** | `eZPostgreSQLDB`; CI: Datenbanktests auf `postgres:13`, `15`, `18` und `19` |
 | MySQL-Dialekt | 8.0 getestet | **Erfüllt** | `eZMySQLiDB`; CI: Datenbanktests auf `mysql:8.0` |
 | MariaDB-Dialekt | 10.5 als funktionierend beobachtet | **Nicht geprüft** | derselbe Treiber wie MySQL; nicht in der CI |
 | Oracle-Dialekt | 19c oder neuer | **Nicht geprüft** | `eZOracleDB` in der Extension `ezoracle` 2.3.7; nicht in der CI des Kernels |
@@ -191,7 +191,7 @@ MySQL 4.1.1, PostgreSQL 8.0, SQLite 3.0.1, MongoDB 4.0, Oracle 19.0).
 - Treiber `eZPostgreSQLDB`, Schema-Handler `eZPgsqlSchema`, PHP-Extension `pgsql`. Praktisches Minimum 13 (der
   Installer legt die vertrauenswürdige Extension `pgcrypto` an).
 - Sequenzen namens `<table>_<column>_seq` (`DEFAULT nextval(...)` in `ezpgsqlschema.php`).
-- CI: Job „Database tests (postgresql, PHP 8.3)" in `.github/workflows/phpunit.yml`, Service `postgres:15`,
+- CI: Jobs „Database tests (postgresql 13, 15, 18 und 19, PHP 8.3)" in `.github/workflows/phpunit.yml`, Services `postgres:13`, `15`, `18`, `19`,
   `CREATE EXTENSION IF NOT EXISTS pgcrypto`, dann `tests/runtests.php --dsn postgresql://... --db-per-test`.
   Treibertests: `tests/tests/lib/ezdb/eZPostgreSQLDBTest.php`, `eZPostgreSQLDBEscapeStringNullTest.php`.
 - **Status: Erfüllt.**
