@@ -6,6 +6,15 @@ class eZSQLite3DB extends eZDBInterface
     {
         parent::__construct( $parameters );
 
+        // A read replica ([DatabaseSettings] UseSlaveServer) does not apply to SQLite: the database is one file on
+        // one server, which every statement reads and writes. The setting and SlaveServerArray[] are ignored, so a
+        // site whose settings carry them (a copy of a MySQL or PostgreSQL site's) works unchanged (6.0.15).
+        if ( $this->UseSlaveServer )
+        {
+            eZDebugSetting::writeDebug( 'kernel-db-sqlite', 'UseSlaveServer is ignored: SQLite has no read replica', __METHOD__ );
+            $this->UseSlaveServer = false;
+        }
+
         if ( !extension_loaded( 'sqlite3' ) )
         {
             if ( function_exists( 'eZAppendWarningItem' ) )

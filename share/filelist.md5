@@ -27136,7 +27136,7 @@ efe75eded3d3ae821f3beeefbde77340  lib/ezdb/classes/ezdbquerycache.php
 74e09b53b1cbdc906733d457e770e6fe  lib/ezdb/classes/ezmysqlidb.php
 ec6538c99af5eb7c84f089898a6907d2  lib/ezdb/classes/eznulldb.php
 9e56f421b562f02ad189bffb7881ce2d  lib/ezdb/classes/ezpostgresqldb.php
-0962e8b7c5413af7373c4c305a1cb207  lib/ezdb/classes/ezsqlite3db.php
+f1a728dceda8266d7917f0e48ee310c4  lib/ezdb/classes/ezsqlite3db.php
 ac6df8d4565b779eff3ff9c41b2da301  lib/ezdbschema/classes/expmongoschema.php
 eca147e65440b86a146555c6e4122e0f  lib/ezdbschema/classes/ezdbschema.php
 7f09acd4dab532f71ff61c004d1f4af8  lib/ezdbschema/classes/ezdbschemachecker.php
@@ -31132,3 +31132,4 @@ b5ea022fc99c50d6f074d2bf3da9e602  doc/eng-us/bc/6.0/postgresql-read-replica.md
 13eb9ef586b7a3e464ff1dc358ef21e1  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
 db5c5bde251c17a9563d3b4fe25346ef  tests/tests/kernel/classes/upgrade/expUpgradeBackupPostgresqlToolTest.php
 e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
+520f09719053749ec73c645597be90cf  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php
