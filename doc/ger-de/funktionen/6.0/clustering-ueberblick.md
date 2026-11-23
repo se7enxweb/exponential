@@ -17,8 +17,9 @@ hier gehört zum Kernel von Exponential 6.0.15; eine Erweiterung ist nur nötig,
 7. [Wie eine Änderung jeden Server erreicht](#wie-eine-änderung-jeden-server-erreicht)
 8. [Zustandsprüfungen und Überwachung](#zustandsprüfungen-und-überwachung)
 9. [Befehle und Wartung](#befehle-und-wartung)
-10. [Einen Cluster Schritt für Schritt einrichten](#einen-cluster-schritt-für-schritt-einrichten)
-11. [Alle Cluster-Seiten](#alle-cluster-seiten)
+10. [Den Datenbankserver unter einem laufenden Cluster aktualisieren](#den-datenbankserver-unter-einem-laufenden-cluster-aktualisieren)
+11. [Einen Cluster Schritt für Schritt einrichten](#einen-cluster-schritt-für-schritt-einrichten)
+12. [Alle Cluster-Seiten](#alle-cluster-seiten)
 
 ## Die Teile eines Clusters
 
@@ -261,6 +262,42 @@ nicht.
 | `./console exp:upgrade:backup` | die Datenbanksicherung des Upgrades, für sich allein; auf PostgreSQL mit einem Client, der mindestens so neu ist wie der Server ([PostgreSQL 18 und 19](postgresql-18-und-19.md#client-versionen-php-libpq-pg_dump-und-psql)) |
 
 Führen Sie `clusterpurge.php` nach Zeitplan von **einem** Server aus.
+
+## Den Datenbankserver unter einem laufenden Cluster aktualisieren
+
+Ein Hauptversions-Upgrade des Datenbankservers (etwa PostgreSQL 18 auf 19) betrifft jeden Server des Clusters zugleich,
+denn alle schreiben auf denselben Primärserver, und dort liegen auch die DFS-Metadaten. Die Reihenfolge, die die
+Ausfallzeit kurz hält und die Daten nachweislich gleich lässt (das ganze Verfahren für PostgreSQL mit jedem Befehl:
+[Von 18 auf 19, Schritt für Schritt](postgresql-18-und-19.md#von-18-auf-19-schritt-für-schritt-pg_upgrade-auf-einem-server)):
+
+1. **Zuerst die Clients, auf jedem Server.** Installieren Sie den Client der neuen Hauptversion (`pg_dump`, `psql`) auf
+   jedem Anwendungsserver und auf den Datenbankservern und machen Sie ihn zu dem auf `PATH`, oder setzen Sie
+   `upgrade.ini [UpgradeSettings] PostgreSQLClientDir`. Ein neuerer Client arbeitet mit dem alten Server; ein älterer
+   verweigert den neuen, und Sicherungen, die Sicherung vor dem Upgrade und Timer, die Datenbanken sichern, würden nach
+   dem Umstieg fehlschlagen.
+2. **Ohne Ausfallzeit vorbereiten.** Den neuen Server neben dem alten installieren, sein Datenverzeichnis mit Kodierung,
+   Locale und Prüfsummen-Einstellung des alten anlegen und `pg_upgrade --check` gegen den laufenden Server ausführen.
+3. **Anhalten, was von selbst schreibt:** Sicherungs-Timer, Cronjobs auf dem Datenbankserver, die Replikat-Überwachung.
+4. **Synchrone Replikation lösen** (`synchronous_standby_names = ''`): Der Standby kann der neuen Hauptversion nicht
+   folgen, und Commits würden auf ihn warten.
+5. **Die Türen schließen.** Halten Sie den einen Weg an, auf dem jeder Anwendungsserver die Datenbank erreicht (einen
+   Datenbank-Proxy, eine virtuelle IP oder die Firewall-Regel), damit während des Umstiegs nichts schreibt. Websites mit
+   HTTP-Cache liefern weiter zwischengespeicherte Seiten aus; Anfragen, die die Datenbank brauchen, bekommen für diese
+   Zeit eine Fehlerseite.
+6. **Zählen, aktualisieren, wieder zählen.** Genaue Zeilenzahlen jeder Tabelle und jede Sequenzposition vorher und
+   nachher; auf einem Dateisystem mit Reflinks braucht `pg_upgrade --clone` auch für viele Gigabyte nur Minuten und lässt
+   den alten Cluster startbar. Nur Versionen von Erweiterungen dürfen abweichen.
+7. **Die Türen öffnen**, dann Statistiken sammeln (`vacuumdb --all --analyze-in-stages`), während die Websites schon
+   laufen.
+8. **Den Standby neu aufbauen** aus dem neuen Primärserver (ein neuer Slot, `pg_basebackup`) und die synchrone
+   Replikation wieder einschalten, sobald er streamt. Bis dahin liest jeder Anwendungsserver den Primärserver: Die Regel
+   der Lesereplikate verlangt einen streamenden Standby, es wird also nichts veraltet gelesen.
+9. **Jeden Server prüfen, nicht nur den Load Balancer:** Startseite und eine nicht zwischengespeicherte Suche auf jedem
+   Knoten, eine Bearbeitung auf einem Knoten sofort auf den anderen sichtbar, ein auf einem Knoten hochgeladenes Bild
+   von jedem Knoten Byte für Byte ausgeliefert, alle Zustandsprüfungen des Load Balancers grün.
+
+Behalten Sie das alte Datenverzeichnis, bis der Cluster einige Tage auf der neuen Version lief: Es ist zusammen mit dem
+alten Datenverzeichnis des Standbys der Weg zurück.
 
 ## Einen Cluster Schritt für Schritt einrichten
 

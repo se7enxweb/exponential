@@ -17,8 +17,9 @@ extension is needed unless a row says so.
 7. [How a change reaches every server](#how-a-change-reaches-every-server)
 8. [Health checks and monitoring](#health-checks-and-monitoring)
 9. [Commands and maintenance](#commands-and-maintenance)
-10. [Setting up a cluster, step by step](#setting-up-a-cluster-step-by-step)
-11. [Every cluster page](#every-cluster-page)
+10. [Upgrading the database server under a running cluster](#upgrading-the-database-server-under-a-running-cluster)
+11. [Setting up a cluster, step by step](#setting-up-a-cluster-step-by-step)
+12. [Every cluster page](#every-cluster-page)
 
 ## The parts of a cluster
 
@@ -251,6 +252,39 @@ Velocity checks its own workers and its cluster peers on an endpoint of its own;
 | `./console exp:upgrade:backup` | the database backup the upgrade makes, on its own; on PostgreSQL with a client at least as new as the server ([PostgreSQL 18 and 19](postgresql-18-and-19.md#client-versions-php-libpq-pg_dump-and-psql)) |
 
 Run `clusterpurge.php` on a schedule from **one** server only.
+
+## Upgrading the database server under a running cluster
+
+A major upgrade of the database server (PostgreSQL 18 to 19, for example) touches every server of the cluster at
+once, because they all write to the same primary and the DFS metadata lives there too. The order that keeps the
+downtime short and the data provably the same (the full procedure for PostgreSQL, with every command:
+[From 18 to 19, step by step](postgresql-18-and-19.md#from-18-to-19-step-by-step-pg_upgrade-on-one-server)):
+
+1. **Clients first, on every server.** Install the new major version's client (`pg_dump`, `psql`) on every
+   application server and on the database servers, and make it the one on `PATH`, or set
+   `upgrade.ini [UpgradeSettings] PostgreSQLClientDir`. A newer client works with the old server; an older one refuses
+   the new server, and backups, the upgrade caption and timers that dump databases would fail after the switch.
+2. **Prepare without downtime.** Install the new server next to the old one, initialise its data directory with the
+   old one's encoding, locale and checksum setting, and run `pg_upgrade --check` against the running server.
+3. **Pause what writes on its own:** backup and caption timers, cronjobs on the database server, the replica watch.
+4. **Release synchronous replication** (`synchronous_standby_names = ''`): the standby cannot follow the new major
+   version, and commits would wait for it.
+5. **Close the doors.** Stop the one path every application server uses to reach the database (a database proxy, a
+   virtual IP or the firewall rule), so nothing writes during the switch. Sites with the HTTP cache keep serving cached
+   pages; requests that need the database get an error page for the duration.
+6. **Count, upgrade, count again.** Exact row counts of every table and sequence position before and after; on a
+   file system with reflinks `pg_upgrade --clone` takes minutes even for many gigabytes and leaves the old cluster
+   startable. Only extension versions may differ.
+7. **Open the doors**, then gather statistics (`vacuumdb --all --analyze-in-stages`) while the sites already run.
+8. **Rebuild the standby** from the new primary (a new slot, `pg_basebackup`), and arm synchronous replication again
+   when it streams. Until then every application server reads the primary: the read replica rule needs a streaming
+   standby, so nothing is read stale meanwhile.
+9. **Check every server, not only the load balancer:** the front page and an uncached search on each node, an edit on
+   one node seen at once on the others, an image uploaded on one node served byte for byte by every node, the load
+   balancer's health checks all up.
+
+Keep the old data directory until the cluster has run on the new version for some days: it is the rollback, together
+with the standby's old data directory.
 
 ## Setting up a cluster, step by step
 

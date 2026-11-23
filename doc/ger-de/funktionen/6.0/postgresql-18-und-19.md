@@ -17,8 +17,9 @@ bekannten Grenzen liegen.
 5. [Eine bestehende Installation aktualisieren](#eine-bestehende-installation-aktualisieren)
 6. [Ein Cluster auf 18 und 19](#ein-cluster-auf-18-und-19)
 7. [Nachweis aus dem Produktivbetrieb](#nachweis-aus-dem-produktivbetrieb)
-8. [Bekannte Grenzen](#bekannte-grenzen)
-9. [Verwandte Seiten](#verwandte-seiten)
+8. [Fehlerbehebung](#fehlerbehebung)
+9. [Bekannte Grenzen](#bekannte-grenzen)
+10. [Verwandte Seiten](#verwandte-seiten)
 
 ## Kurz gesagt
 
@@ -197,6 +198,207 @@ Sichern Sie mit dem **neuen** Client vom alten Server und spielen Sie in den neu
 Die Sicherung enthält die aktuellen Werte der Sequenzen; nach einem vollständigen Zurückspielen ist nichts zu
 korrigieren. Haben Sie nur einzelne Tabellen zurückgespielt, korrigieren Sie deren Sequenzen, wie
 [PostgreSQL betreiben](../../hilfe/datenbankadministratoren/postgresql-betrieb.md#sequenzen-korrigieren) zeigt.
+
+### Von 18 auf 19, Schritt für Schritt (pg_upgrade auf einem Server)
+
+Mit diesem Ablauf wurden produktive Server von PostgreSQL 18.7 auf 19.0 gebracht. Er ist für RHEL und seine Nachbauten
+(AlmaLinux, Rocky) mit den PGDG-Paketen geschrieben; auf Debian und Ubuntu laufen dieselben Schritte mit
+`pg_upgradecluster` oder den Programmen in `/usr/lib/postgresql/19/bin`. Jeder Befehl läuft als `root` auf dem
+Datenbankserver, wenn nichts anderes dasteht. Der alte Cluster wird nie verändert: Ein Zurück bleibt möglich, bis Sie ihn
+selbst löschen.
+
+**1. Das Repository.** PostgreSQL 19 braucht ein aktuelles PGDG-Repository-Paket; ältere enthalten nur
+`pgdg19-updates-testing`, nicht `pgdg19`:
+
+```bash
+dnf install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+grep -c '^\[pgdg19\]' /etc/yum.repos.d/pgdg-redhat-all.repo     # muss 1 ausgeben
+```
+
+Haben Sie die Repository-Datei früher bearbeitet (etwa um alle PGDG-Repositories abzuschalten), behält `rpm` Ihre Datei
+und legt die neue als `pgdg-redhat-all.repo.rpmnew` ab. Dann fehlt der Abschnitt `[pgdg19]`, und `dnf` meldet
+„Unknown repo: 'pgdg19'“. Sichern Sie Ihre Datei, setzen Sie die `.rpmnew` an ihre Stelle und tragen Sie Ihre Änderungen
+erneut ein. Prüfen Sie vor der ersten Installation den Schlüssel: sein Fingerabdruck ist
+`D4BF 08AE 67A0 B4C7 A1DB CCD2 40BC A2B4 08B4 0D20`.
+
+**2. Die Pakete, neben 18.** Installieren Sie Server, Contrib-Paket (für `pgcrypto`) und Client; 18 bleibt installiert
+und läuft weiter:
+
+```bash
+dnf --enablerepo=pgdg19 install postgresql19 postgresql19-libs postgresql19-server postgresql19-contrib
+/usr/pgsql-19/bin/postgres --version
+```
+
+Sehen Sie sich die Transaktion zuerst an (`--assumeno`): Sie darf die System-`libpq`, gegen die PHP gelinkt ist, nicht
+ersetzen und nichts entfernen. Auf EL 10 braucht der Server `numactl-libs` aus dem BaseOS-Repository; schalten Sie für
+diese Installation also nicht alle anderen Repositories ab.
+
+**3. Zuerst der Client.** Machen Sie den 19er-Client zu dem, der auf `PATH` gefunden wird (`pg_dump` 19 sichert Server
+13 bis 18, das ist also vor dem Server-Umstieg gefahrlos), und tun Sie dasselbe auf jedem Webserver, der Sicherungen
+macht (siehe [Client-Versionen](#client-versionen-php-libpq-pg_dump-und-psql)):
+
+```bash
+for b in psql pg_dump pg_dumpall pg_restore createdb dropdb vacuumdb pg_isready; do
+    ln -sfn /usr/pgsql-19/bin/$b /usr/local/bin/$b
+done
+pg_dump --version     # pg_dump (PostgreSQL) 19.0
+```
+
+**4. Ein neuer, leerer Cluster mit Kodierung, Locale und Prüfsummen-Einstellung des alten.** Lesen Sie sie aus dem
+alten Server und dem alten Datenverzeichnis:
+
+```bash
+sudo -u postgres psql -At -c "SELECT pg_encoding_to_char(encoding), datcollate, datctype FROM pg_database WHERE datname = 'template1'"
+/usr/pgsql-18/bin/pg_controldata /var/lib/pgsql/18/data | grep 'Data page checksum version'   # 0 = aus
+sudo -u postgres /usr/pgsql-19/bin/initdb -D /var/lib/pgsql/19/data -E UTF8 \
+    --locale=C.UTF-8 --lc-collate=C.UTF-8 --lc-ctype=C.UTF-8 --no-data-checksums
+```
+
+Übernehmen Sie die alten Werte genau. `--no-data-checksums` nur, wenn der alte Cluster keine hat: Ab 18 schaltet
+`initdb` sie standardmäßig ein, und `pg_upgrade` bricht mit „old cluster does not use data checksums but the new one
+does“ ab.
+
+**5. Die Einstellungen mitnehmen.** `pg_upgrade` kopiert Daten, keine Konfiguration. Übertragen Sie, was Sie in der
+alten `postgresql.conf` geändert haben (Speicher, Verbindungen, Adressen, Protokoll, Zeitzone), und kopieren Sie
+`pg_hba.conf`, `pg_ident.conf` und `postgresql.auto.conf` nach dem Upgrade (Schritt 7). So entgeht Ihnen nichts: Listen
+Sie, was der alte Server aus seinen Dateien übernommen hat, und prüfen Sie jeden Namen gegen 19:
+
+```sql
+SELECT name, current_setting(name) FROM pg_settings
+ WHERE source = 'configuration file' AND sourcefile NOT LIKE '%postgresql.auto.conf'
+   AND name NOT IN ('data_directory', 'hba_file', 'ident_file', 'config_file', 'external_pid_file');
+```
+
+```bash
+sudo -u postgres /usr/pgsql-19/bin/postgres --describe-config | cut -f1 | sort > /root/pg19-params.txt   # Namen, die 19 kennt
+sudo -u postgres /usr/pgsql-19/bin/postgres -D /var/lib/pgsql/19/data -C shared_buffers                  # 19 liest die neue Datei
+```
+
+Achten Sie auf `unix_socket_directories`: Die Betriebssystem-Pakete von RHEL legen den Socket nach
+`/var/run/postgresql`, die PGDG-Builds nach `/run/postgresql` und `/tmp`. Behalten Sie das Verzeichnis, das Webserver
+und Skripte schon benutzen.
+
+**6. Prüfen, während 18 noch bedient.** `pg_upgrade --check` gegen den laufenden alten Server liest dessen Katalog und
+ändert nichts:
+
+```bash
+cd /var/lib/pgsql/19 && sudo -u postgres /usr/pgsql-19/bin/pg_upgrade \
+    -b /usr/pgsql-18/bin -B /usr/pgsql-19/bin -d /var/lib/pgsql/18/data -D /var/lib/pgsql/19/data \
+    -p 5432 -P 50432 -U postgres --check --clone
+```
+
+Am Ende muss `*Clusters are compatible*` stehen. 19 fügt zwei Prüfungen hinzu (Unstimmigkeiten bei NOT-NULL-Constraints,
+Verwendung von `gist_inet_ops`/`gist_cidr_ops`); eine Exponential-Datenbank besteht beide.
+
+**7. Der Umstieg.** Zählen Sie die Zeilen jeder Tabelle genau (Schritt 3 von [Bevor Sie beginnen](#bevor-sie-beginnen)),
+halten Sie den alten Server an, aktualisieren Sie, kopieren Sie die Zugriffsdateien und starten Sie 19:
+
+```bash
+systemctl stop postgresql-18
+cd /var/lib/pgsql/19 && sudo -u postgres /usr/pgsql-19/bin/pg_upgrade \
+    -b /usr/pgsql-18/bin -B /usr/pgsql-19/bin -d /var/lib/pgsql/18/data -D /var/lib/pgsql/19/data \
+    -p 50431 -P 50432 -U postgres --clone
+for f in pg_hba.conf pg_ident.conf postgresql.auto.conf; do
+    install -o postgres -g postgres -m 0600 /var/lib/pgsql/18/data/$f /var/lib/pgsql/19/data/$f
+done
+systemctl disable postgresql-18 && systemctl enable --now postgresql-19
+```
+
+Die Übertragungsart richtet sich nach dem Dateisystem:
+
+| Art | Wann | Dauer | Der alte Cluster danach |
+|---|---|---|---|
+| `--clone` | XFS mit `reflink=1`, Btrfs (beide im selben Dateisystem) | so schnell wie `--link` | unverändert und startbar |
+| `--copy` | alles andere; kleine Datenbanken | proportional zur Größe | unverändert und startbar |
+| `--link` | sehr große Datenbanken ohne Reflink | Sekunden | **nicht mehr startbar**, sobald 19 lief |
+| `--swap` (ab 18) | das neue Datenverzeichnis darf geleert werden | Sekunden | nicht startbar |
+
+`xfs_info / | grep reflink` zeigt, ob `--clone` geht. Auf ZFS ist Block-Cloning oft abgeschaltet
+(`zfs_bclone_enabled=0`); nehmen Sie dort `--copy`.
+
+**8. Erweiterungen und Statistiken.** Hat `pg_upgrade` eine `update_extensions.sql` geschrieben, führen Sie sie als
+Superuser aus (`psql -f update_extensions.sql -d postgres`). Danach `vacuumdb --all --analyze-in-stages`. 18 und 19
+übernehmen die Planer-Statistiken durch `pg_upgrade`; die Websites dürfen also wieder herein, bevor das Analyze fertig
+ist.
+
+**9. Vergleichen.** Zählen Sie erneut: Jede Tabelle, jede Sequenzposition, jede Rolle und jede Datenbank-Einstellung
+(`ALTER DATABASE ... SET`, `pg_db_role_setting`) muss gleich sein. Nur Versionen von Erweiterungen dürfen abweichen.
+
+**10. Den alten Cluster später entfernen, nicht jetzt.** `pg_upgrade` schreibt `delete_old_cluster.sh`. Behalten Sie das
+alte Datenverzeichnis, bis die Website einige Tage auf 19 lief; es ist Ihr Weg zurück.
+
+Wenn der Name der Unit für andere Software zählt (ein Hosting-Panel, Proxys mit `After=postgresql.service`), können Sie
+die Unit `postgresql` behalten und sie mit einem Drop-in auf 19 richten, statt auf `postgresql-19` zu wechseln:
+
+```ini
+# /etc/systemd/system/postgresql.service.d/pg19.conf
+[Service]
+Environment=PGDATA=/var/lib/pgsql/19/data
+ExecStartPre=
+ExecStartPre=/usr/pgsql-19/bin/postgresql-19-check-db-dir ${PGDATA}
+ExecStart=
+ExecStart=/usr/pgsql-19/bin/postgres -D ${PGDATA}
+```
+
+Drop-ins werden in Namensreihenfolge gelesen; eine spätere Datei gewinnt. `pg19.conf` überschreibt also ein älteres
+`pg18.conf`, und wer sie entfernt, bekommt 18 zurück.
+
+### Ein Primärserver mit Streaming-Standby: die Reihenfolge
+
+`pg_upgrade` übernimmt keine physischen Replikations-Slots, und ein Standby muss dieselbe Hauptversion wie sein
+Primärserver haben. Aktualisieren Sie in dieser Reihenfolge:
+
+1. Die 19er-Pakete auf dem Primärserver **und** auf dem Rechner des Standbys installieren.
+2. Synchrone Replikation auf dem Primärserver vor dem Umstieg lösen:
+   `ALTER SYSTEM SET synchronous_standby_names = ''; SELECT pg_reload_conf();`. Sonst wartet jeder Commit einer
+   Datenbank mit `remote_apply` (oder des ganzen Servers bei `synchronous_commit = on`) auf einen Standby, der sich nicht
+   mehr verbinden kann.
+3. Den alten Standby anhalten, wenn Sie die Türen schließen (sein Datenverzeichnis behalten), dann den Primärserver
+   aktualisieren (Schritte 4 bis 9). Ein 18er-Standby kann einem 19er-Primärserver nicht folgen; ohne etwas auf der
+   Replikat-Adresse liest jede Website den Primärserver.
+4. Den Slot auf dem neuen Primärserver anlegen: `SELECT pg_create_physical_replication_slot('<Slot-Name>');`.
+5. Den Standby aus dem 19er-Primärserver in ein **neues** Datenverzeichnis aufbauen und das alte behalten:
+   `pg_basebackup -d "host=<Primärserver> user=<Replikations-Login> application_name=<Name>" -D <neues Verzeichnis> -S <Slot> -X stream -R -c fast`.
+   Seine eigenen Einstellungen (Port, `hot_standby_feedback`, `primary_conninfo`) kommen nach der Sicherung hinzu.
+6. Sobald er streamt (`SELECT status FROM pg_stat_wal_receiver` auf dem Standby ergibt `streaming`), die synchrone
+   Replikation wieder einschalten: `ALTER SYSTEM SET synchronous_standby_names = '<Name>'`.
+
+`ALTER DATABASE ... SET synchronous_commit = remote_apply` ist eine Datenbank-Einstellung; `pg_upgrade` übernimmt sie,
+sie gilt also wieder, sobald der Standby genannt ist.
+
+### Auf einem Server mit Plesk
+
+Plesk dokumentiert PostgreSQL bis 18.x unter Linux. Ein Plesk-Server betreibt 19 einwandfrei, mit diesen Schritten nach
+dem Upgrade:
+
+1. Plesk auf die neuen Programme und Daten richten, in `/etc/psa/psa.conf` (vorher sichern):
+   `PGSQL_BIN_D /usr/pgsql-19/bin`, `PGSQL_DATA_D /var/lib/pgsql/19/data`, `PGSQL_CONF_D /var/lib/pgsql/19/data`.
+2. `plesk sbin packagemng -sdf`.
+3. Die Registrierung des Datenbankservers mit dem Passwort des Administrators erneuern (in der Umgebung, nicht auf der
+   Befehlszeile): `PSA_PASSWORD='<Passwort>' plesk bin database-server --update-server localhost:5432 -type postgresql -admin postgres -passwd ""`.
+   Die Antwort muss „Server localhost:5432 is successfully updated“ lauten.
+4. Prüfen: `plesk db "SELECT host, port, server_version, last_error FROM DatabaseServers WHERE type = 'postgresql'"`
+   zeigt `19.0` und `no_error`; dann im Panel eine Datenbank und einen Benutzer anlegen, sichern und wieder entfernen.
+
+Was Sie sehen werden: Die Komponentenliste (`packagemng -l`) nennt weiter die Version des Betriebssystem-Pakets
+`postgresql-server`, solange es installiert bleibt; Plesk nimmt den Server trotzdem an. Meldungen wie
+`sw-engine: /lib64/libpq.so.5: no version information available` stammen von einem PGDG-Paket `libpq5`, das die libpq des
+Betriebssystems ersetzt, und sind harmlos. Die Plesk-eigenen Sicherungen nutzen `PGSQL_BIN_D` und sichern nach Schritt 1
+mit dem 19er-Client.
+
+### Zurück auf 18
+
+Möglich, solange das alte Datenverzeichnis unverändert ist (`--clone` oder `--copy`) und nichts, was auf 19 geschrieben
+wurde, erhalten bleiben muss:
+
+```bash
+systemctl disable --now postgresql-19
+systemctl enable --now postgresql-18        # oder das Drop-in entfernen und: systemctl daemon-reload && systemctl start postgresql
+```
+
+Auf einem Plesk-Server `psa.conf` aus der Sicherung zurückholen und `--update-server` erneut ausführen. Schreibvorgänge
+auf 19 sind nicht im 18er-Cluster. Ein aus 19 neu aufgebauter Standby kann 18 nicht folgen: Starten Sie stattdessen das
+alte Datenverzeichnis des Standbys, es hat seinen Slot noch auf dem 18er-Primärserver.
 
 ### Die Website umstellen und prüfen
 
@@ -397,6 +599,83 @@ Streaming-Standby, der 20 Datenbanken mit 2.936 Tabellen und 59,5 Millionen Zeil
 dem Upgrade verglichen, und alle 20 waren mit dem Stand davor identisch. Der Kernel selbst wurde auf 18 und 19 so
 nachgewiesen, wie unter
 [Unterstützte Versionen](#unterstützte-versionen-und-wie-die-unterstützung-getestet-wird) beschrieben.
+
+Dieselben Installationen gingen danach auf **PostgreSQL 19.0**, mit dem Verfahren aus
+[Von 18 auf 19, Schritt für Schritt](#von-18-auf-19-schritt-für-schritt-pg_upgrade-auf-einem-server), in drei Stufen.
+
+**1. Zuerst ein einzelner Server, und Exponential dagegen nachgewiesen.** Ein Server ohne Produktivdaten ging mit
+`pg_upgrade --copy` von 18.7 auf 19.0: `--check` kompatibel, 35 Einstellungen übernommen, keine davon 19 unbekannt,
+3,9 Sekunden Ausfallzeit, alle Zählungen gleich, die Plesk-Registrierung auf `19.0` ohne Fehler, und eine Datenbank samt
+Benutzer im Panel angelegt, gesichert und wieder entfernt. Danach lief Exponential über das Netz gegen diesen Server, so
+wie ein Webserver in einem anderen Rechenzentrum ihn nutzen würde:
+
+| Was | Ergebnis auf 19.0 |
+|---|---|
+| Alle Datenbank-Testsuiten, genau wie in der CI (`tests/runtests.php --dsn postgresql://... --db-per-test`) | 27.993 Tests, 845.012 Zusicherungen; kein PostgreSQL-Fehler (ein Zeit-Test schlug unter Last fehl und lief im zweiten Anlauf durch) |
+| Das DFS-Cluster-Backend (`expDFSPostgresqlBackendIntegrationTest`) | 29 Tests, 161 Zusicherungen |
+| Lesereplikate gegen einen 19er-Primärserver und einen 19er-Streaming-Standby | 19 Prüfungen: anonyme Lesezugriffe auf dem Standby; ein Schreibvorgang, eine Transaktion, ein POST oder ein Redakteur bindet an den Primärserver; ein angehaltener Stream fällt auf den Primärserver zurück, ein wieder laufender wird wieder gelesen; der gemeinsame SQL-Abfrage-Cache; ein Login ohne `pg_read_all_stats` liest den Primärserver |
+| Eine neue Installation (`install.php --db=pgsql`) | 259 Tabellen, 323 Inhaltsobjekte |
+| `exp:upgrade:backup` | gesichert mit `pg_dump` 19.0, den Exponential selbst gewählt hat |
+| Die Datenbank-Stufe des Upgrades, dann ein zweiter Lauf | nichts mehr zu tun |
+| Ein Wiederherstellungstest mit `psql` 19.0 in eine leere Datenbank | 323 von 323 Inhaltsobjekten |
+| Inhalte | angelegt, veröffentlicht, bearbeitet, als Version 2 erneut veröffentlicht, von der Suche gefunden, nach `ezcache.php --clear-all` unverändert |
+| Ein DFS-Cluster aus zwei Knoten auf 19 (`exp:cluster:enable --backend=postgresql`, ein zweiter Knoten mit gleichem Code und gleichen Einstellungen und eigenem `var/`) | ein auf einem Knoten veröffentlichtes Bild vom anderen Byte für Byte geholt; eine auf einem Knoten gespeicherte Datei auf dem anderen geholt; auf dem zweiten gelöscht und bereinigt, für den ersten verschwunden; ein Cache-Leeren im Cluster-Betrieb |
+
+**2. Der produktive Primärserver.** Der Primärserver eines Clusters mit zehn Websites, 22 Datenbanken, 3.307 Tabellen
+und 59,6 Millionen Zeilen ging in einem Fenster von 18.7 auf 19.0:
+
+| Schritt | Dauer |
+|---|---|
+| Timer angehalten, synchrone Replikation gelöst, die Datenbank-Proxys angehalten (Türen zu) | Sekunden |
+| Genaue Zeilenzahlen auf 18 | 204 s |
+| `pg_upgrade --clone` (XFS mit Reflink) | 112 s; 19 antwortete 116 s nach dem Anhalten des alten Servers |
+| Genaue Zeilenzahlen auf 19 | 51 s |
+| **Ausfallzeit, Türen zu bis Türen auf** | **6 Minuten 12 Sekunden** |
+| `vacuumdb --all --analyze-in-stages`, während die Websites schon liefen | 175 s |
+
+Jede Tabelle, jede Zeilenzahl, jede Sequenzposition (2.584), jede Rolle und jede Datenbank-Einstellung war gleich;
+keine Erweiterung wechselte die Version. Jede Website antwortete auf jedem Knoten und über den Load Balancer, jede
+Website-Datenbank schrieb auf 19, `pg_dump` 19 sicherte jede Datenbank (die größte 846 MB komprimiert), und das
+Hosting-Panel zeigte den Server als 19.0 ohne Fehler. Das alte 18er-Datenverzeichnis blieb durch `--clone` unverändert
+und wird als Weg zurück aufbewahrt.
+
+**3. Der Standby** wird aus dem 19er-Primärserver mit `pg_basebackup` in ein neues Datenverzeichnis aufgebaut (das 18er
+bleibt erhalten); bis er streamt, liest jede Website den Primärserver, wie es die Regel der Lesereplikate vorsieht.
+
+Zwei Lehren aus dem Fenster stehen im Verfahren und in der [Fehlerbehebung](#fehlerbehebung): Halten Sie den alten
+Standby an, wenn die Türen schließen, denn er kann der neuen Hauptversion nicht folgen und soll nicht mehr als Replikat
+angeboten werden; und prüfen Sie jede Website auf jedem Knoten direkt nach dem Öffnen: Auf einem Knoten hingen die
+PHP-Prozesse einer Website (LiteSpeeds `lsphp`) ab dem Moment, in dem die Datenbank nicht erreichbar war, an einer
+Sperre in PHP, und neue Prozesse desselben Elternprozesses hingen ebenso, bis die PHP-Prozesse der Website neu gestartet
+wurden.
+
+19 warnt außerdem bei jeder Anmeldung einer Rolle, die noch einen MD5-Passwort-Hash hat; das funktioniert, setzen Sie
+diese Passwörter aber mit `scram-sha-256` neu (siehe [Bekannte Grenzen](#bekannte-grenzen)).
+
+## Fehlerbehebung
+
+| Was Sie sehen | Warum | Was zu tun ist |
+|---|---|---|
+| `dnf`: „Unknown repo: 'pgdg19'“ | das Repository-Paket ist älter als 19, oder seine neue Datei wurde als `.rpmnew` abgelegt, weil Sie die alte bearbeitet hatten | das aktuelle `pgdg-redhat-repo-latest` installieren und die `.rpmnew` an ihre Stelle setzen ([Schritt 1](#von-18-auf-19-schritt-für-schritt-pg_upgrade-auf-einem-server)) |
+| `dnf`: „repomd.xml GPG signature verification error“ beim ersten Zugriff auf `pgdg19` | der Metadaten-Schlüssel des Repositorys ist noch nicht angenommen | Fingerabdruck prüfen, `rpm --import /etc/pki/rpm-gpg/PGDG-RPM-GPG-KEY-RHEL`, dann `dnf --enablerepo=pgdg19 makecache` und mit Ja antworten |
+| `dnf` auf EL 10: nichts stellt `libnuma.so.1` bereit | `numactl-libs` liegt in BaseOS | die Repositories des Betriebssystems für die Installation nicht abschalten |
+| `pg_upgrade`: „old cluster does not use data checksums but the new one does“ | ab 18 initialisiert `initdb` standardmäßig mit Prüfsummen | `initdb --no-data-checksums` neu, oder `pg_checksums --enable` auf dem angehaltenen alten Cluster |
+| `pg_upgrade`: „could not load library ... pgcrypto“ | das Contrib-Paket des neuen Servers fehlt | `postgresql19-contrib` installieren |
+| `pg_upgrade`: „connection to server on socket ... failed“ | es startet den alten Server auf Port 50432 mit eigenem Socket im aktuellen Verzeichnis; der Benutzer darf dort nicht schreiben, oder ein Passwort wird verlangt | aus einem Verzeichnis starten, das dem Benutzer `postgres` gehört; eine `PGPASSFILE` angeben, die `postgres` lesen darf |
+| `pg_upgrade --clone`: „file cloning not supported on this platform“ | das Dateisystem kann kein Reflink (ext4, ZFS ohne Block-Cloning) | `--copy`, oder `--link`, wenn der alte Cluster danach nicht mehr starten muss |
+| `pg_dump`: „aborting because of server version mismatch“ | ein `pg_dump` 18 oder älter gegen 19 | den 19er-Client auf `PATH`, oder `PostgreSQLClientDir` ([Client-Versionen](#client-versionen-php-libpq-pg_dump-und-psql)) |
+| `exp:upgrade --apply`: „the caption failed, nothing was changed“ | dasselbe: der `pg_dump` der Sicherung ist zu alt | dasselbe |
+| Ein Sicherungs-Timer oder die Panel-Sicherung schlägt nach dem Upgrade fehl | er ruft `/usr/bin/pg_dump` oder einen anderen festen Pfad des alten Clients | auf den 19er-Client oder `/usr/local/bin` richten |
+| Jeder Commit hängt direkt nach dem Umstieg | `synchronous_standby_names` nennt einen Standby, der sich nicht mehr verbinden kann (er ist noch auf 18) | `ALTER SYSTEM SET synchronous_standby_names = ''; SELECT pg_reload_conf();`, Standby neu aufbauen, wieder einschalten |
+| Der Standby auf 18 meldet „database system identifier differs“ oder „unsupported WAL format“ | ein Standby kann keinem Primärserver einer anderen Hauptversion folgen | mit `pg_basebackup` aus dem 19er-Primärserver neu aufbauen |
+| `pg_basebackup`: „replication slot ... does not exist“ | `pg_upgrade` übernimmt keine physischen Slots | `SELECT pg_create_physical_replication_slot('<Slot>')` auf dem neuen Primärserver |
+| Die Website liest das Replikat nach dem Neuaufbau nie | der Standby streamt noch nicht, oder dem Login der Website fehlt `pg_read_all_stats` | `SELECT status FROM pg_stat_wal_receiver` auf dem Standby; `GRANT pg_read_all_stats TO <Login>` auf dem Primärserver |
+| Anmeldungen schlagen nach Sichern und Zurückspielen in einen neuen Server mit „password authentication failed“ fehl | `pg_dumpall --globals-only` wurde nicht eingespielt, oder `password_encryption` weicht ab und `pg_hba.conf` verlangt `scram-sha-256` von einem MD5-Hash | die globalen Objekte einspielen; Passwörter mit `scram-sha-256` neu setzen |
+| Plesk zeigt beim Datenbankserver eine alte Version oder einen Fehler | `psa.conf` nennt noch die alten Programme, oder die Registrierung wurde nicht erneuert | die Schritte unter [Auf einem Server mit Plesk](#auf-einem-server-mit-plesk) |
+| Eine Website hängt nach dem Öffnen der Türen weiter, ihre PHP-Prozesse bei 0 % CPU | PHP-Prozesse (gesehen bei LiteSpeeds `lsphp`) warten seit der Unterbrechung der Datenbank auf eine Sperre in PHP; vom selben Elternprozess gestartete Prozesse hängen ebenso | den PHP-Handler der Website neu starten (alle Prozesse samt Elternprozess); bei PHP-FPM `systemctl reload` des Pools |
+| Anmeldungen protokollieren „MD5 password support is deprecated and will be removed in a future release“ | die Rolle hat noch einen MD5-Passwort-Hash (19 warnt bei jeder Anmeldung) | `SET password_encryption = 'scram-sha-256'`, das Passwort neu setzen, in `pg_hba.conf` `md5` durch `scram-sha-256` ersetzen |
+| Langsame Seiten direkt nach dem Upgrade | die erweiterten Statistiken werden nicht übernommen | `vacuumdb --all --analyze-in-stages`, oder zuerst die größten Tabellen mit `ANALYZE` |
+| Die Sortierung von Text sieht anders aus | Collation-Provider oder C-Bibliothek haben sich mit dem Betriebssystem geändert, nicht mit PostgreSQL | `pg_upgrade --check` meldet „objects affected by Unicode update“; die genannten Text-Indizes neu aufbauen. Mit `C.UTF-8` ändert sich die Reihenfolge nicht |
 
 ## Bekannte Grenzen
 
