@@ -614,8 +614,15 @@ version. Every site answered on every node and through the load balancer, every 
 `pg_dump` 19 dumped every database (the largest 846 MB compressed), and the hosting panel showed the server as 19.0 with
 no error. The old 18 data directory was left untouched by `--clone` and kept for rollback.
 
-**3. The standby** is rebuilt from the 19 primary with `pg_basebackup` into a new data directory (the 18 one kept);
-until it streams, every site reads the primary, as the read replica rule says.
+**3. The standby and the rest.** The standby was rebuilt from the 19 primary with `pg_basebackup` into a new data
+directory (the 18 one kept): 4.7 GB in 17 minutes over the private network with a bandwidth limit, then streaming with
+nothing to replay. Until then every site read the primary, as the read replica rule says; with the standby listening on
+its old address again, the sites read it again without a settings change. Synchronous replication was armed again
+once it had caught up, and a request-by-request check confirmed the routing: anonymous `GET` and `HEAD` on the
+standby's node read the standby; a signed-in editor, a `POST` and the other nodes read the primary. The hosting
+panel's own PostgreSQL server on that node went from 18.7 to 19.0 with `pg_upgrade --copy` in 17.6 seconds of
+downtime, with its panel registration updated and a database and user created, backed up and removed through the
+panel.
 
 Two lessons from the window are in the procedure and the [troubleshooting table](#troubleshooting): stop the old standby
 when the doors close, because it cannot follow the new major version and should not be offered as a replica any more;

@@ -642,8 +642,16 @@ Website-Datenbank schrieb auf 19, `pg_dump` 19 sicherte jede Datenbank (die grö
 Hosting-Panel zeigte den Server als 19.0 ohne Fehler. Das alte 18er-Datenverzeichnis blieb durch `--clone` unverändert
 und wird als Weg zurück aufbewahrt.
 
-**3. Der Standby** wird aus dem 19er-Primärserver mit `pg_basebackup` in ein neues Datenverzeichnis aufgebaut (das 18er
-bleibt erhalten); bis er streamt, liest jede Website den Primärserver, wie es die Regel der Lesereplikate vorsieht.
+**3. Der Standby und der Rest.** Der Standby wurde aus dem 19er-Primärserver mit `pg_basebackup` in ein neues
+Datenverzeichnis aufgebaut (das 18er bleibt erhalten): 4,7 GB in 17 Minuten über das private Netz mit begrenzter
+Bandbreite, danach streamend ohne Rückstand. Bis dahin las jede Website den Primärserver, wie es die Regel der
+Lesereplikate vorsieht; sobald der Standby wieder auf seiner alten Adresse lauschte, lasen die Websites ihn wieder, ohne
+dass eine Einstellung geändert wurde. Die synchrone Replikation wurde wieder eingeschaltet, sobald er aufgeholt hatte,
+und eine Prüfung Anfrage für Anfrage bestätigte die Verteilung: anonyme `GET`- und `HEAD`-Anfragen auf dem Knoten des
+Standbys lesen den Standby; ein angemeldeter Redakteur, ein `POST` und die anderen Knoten lesen den Primärserver. Der
+eigene PostgreSQL-Server des Hosting-Panels auf diesem Knoten ging mit `pg_upgrade --copy` in 17,6 Sekunden
+Ausfallzeit von 18.7 auf 19.0, mit erneuerter Panel-Registrierung, und im Panel wurde eine Datenbank samt Benutzer
+angelegt, gesichert und wieder entfernt.
 
 Zwei Lehren aus dem Fenster stehen im Verfahren und in der [Fehlerbehebung](#fehlerbehebung): Halten Sie den alten
 Standby an, wenn die Türen schließen, denn er kann der neuen Hauptversion nicht folgen und soll nicht mehr als Replikat

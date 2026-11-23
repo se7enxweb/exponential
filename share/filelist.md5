@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-36c06e23e82f01697db5ce90d88852b7  doc/changelogs/6.0/6.0.15.md
+2e8a2f7b1303a87b85e16dde51eefae0  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -31133,7 +31133,7 @@ f27f5e5268a2227d2cd37a56bf679636  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
 db5c5bde251c17a9563d3b4fe25346ef  tests/tests/kernel/classes/upgrade/expUpgradeBackupPostgresqlToolTest.php
 e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
 520f09719053749ec73c645597be90cf  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php
-725c990e88dd7c0c527d7dab93d05d86  doc/eng-us/features/6.0/postgresql-18-and-19.md
+9c23f17cc7d045ce9ef5292bc2667e67  doc/eng-us/features/6.0/postgresql-18-and-19.md
 1a901abc1739f5bcb0d0e820f1469850  doc/eng-us/features/6.0/clustering-overview.md
-941b650d8c06b68181542f319f4fea66  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
+61552fbac72d12b60971fd0fcb07e667  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
 fd5bee2e6ad8c673da05c19a87d0e433  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
