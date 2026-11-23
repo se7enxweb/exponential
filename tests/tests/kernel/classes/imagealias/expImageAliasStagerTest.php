@@ -121,6 +121,31 @@ class expImageAliasStagerTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * Starts PHP's built-in server so that it can neither hold this process's locks nor outlive it.
+     * proc_open() hands every open descriptor to the child, flock()ed files such as var/cache/ezmutex/* among them,
+     * so each one above stderr becomes /dev/null there. A SIGTERM to the server stops it but not its workers
+     * (PHP_CLI_SERVER_WORKERS), and nothing stops anything when the test process dies before tearDown(): a shell
+     * in between stops workers and server on TERM, and as soon as the test process is gone.
+     */
+    private static function startServer( array $command, array $env )
+    {
+        $descriptors = array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'file', '/dev/null', 'w' ), 2 => array( 'file', '/dev/null', 'w' ) );
+        foreach ( (array)@scandir( '/dev/fd' ) as $fd )
+        {
+            if ( ctype_digit( (string)$fd ) && (int)$fd > 2 )
+                $descriptors[(int)$fd] = array( 'file', '/dev/null', 'r' );
+        }
+        $script = '"$@" & server=$!; '
+                // The workers are the server's children; without pkill (minimal containers) /proc names them
+                . 'workers() { if command -v pkill >/dev/null 2>&1; then pkill -TERM -P "$server"; else '
+                . 'for stat in /proc/[0-9]*/stat; do set -- $(cat "$stat" 2>/dev/null); [ "$4" = "$server" ] && kill "$1"; done; fi; } 2>/dev/null; '
+                . 'stop() { workers; kill "$server" 2>/dev/null; wait "$server" 2>/dev/null; exit 0; }; '
+                . 'trap stop TERM INT HUP; '
+                . 'while kill -0 "$PPID" 2>/dev/null && kill -0 "$server" 2>/dev/null; do sleep 1 & wait $!; done; stop';
+        return proc_open( array_merge( array( '/bin/sh', '-c', $script, 'sh' ), $command ), $descriptors, $pipes, null, $env );
+    }
+
+    /**
      * A stager with test settings, a fake transport answering from $answers (url suffix => response) and a fake
      * mailer.
      */
@@ -508,8 +533,7 @@ class expImageAliasStagerTest extends PHPUnit\Framework\TestCase
             $env = array( 'STAGING_SOURCE_ROOT' => realpath( $root ), 'STAGING_SOURCE_AUTH' => 'stageuser:s3cr3t-Pa55',
                           'STAGING_SOURCE_TOKEN' => 'tok-0123456789abcdef', 'STAGING_SOURCE_SLOW' => '3', 'PHP_CLI_SERVER_WORKERS' => '4',
                           'PATH' => (string)getenv( 'PATH' ) );
-            $server = proc_open( array( PHP_BINARY, '-S', "127.0.0.1:$port", __DIR__ . '/fixtures/expimagestagingsource.php' ),
-                                 array( 1 => array( 'file', '/dev/null', 'w' ), 2 => array( 'file', '/dev/null', 'w' ) ), $pipes, null, $env );
+            $server = self::startServer( array( PHP_BINARY, '-S', "127.0.0.1:$port", __DIR__ . '/fixtures/expimagestagingsource.php' ), $env );
             for ( $wait = 0; $wait < 40; $wait++ )
             {
                 usleep( 50000 );
