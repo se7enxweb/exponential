@@ -97,11 +97,16 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 
 - [Unterstützung für die Datenbank SQLite](sqlite-datenbank.md)
 - [MongoDB als Datenbank](mongodb-datenbankunterstuetzung.md)
+- [PostgreSQL 18 und 19](postgresql-18-und-19.md): unterstützte Versionen und ihre Tests, Client-Versionen,
+  Aktualisieren und ein Cluster auf 18 und 19
+- [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
+  Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
 - [Clustering mit SQLite: das Ein-Knoten-DFS-Backend im Kernel](sqlite-dfs-cluster.md)
 - [Abfragen über ID-Mengen beliebiger Größe: expDBInList und InListChunkSize](in-listen-beliebiger-groesse.md)
 - [Clustering mit MongoDB: das DFS-Backend im Kernel](mongodb-dfs-cluster.md)
 - [Clustering mit Oracle: das DFS-Backend im Kernel](oracle-dfs-cluster.md)
+- [Lesereplikate: PostgreSQL, MySQL und MariaDB, Oracle](../../bc/6.0/postgresql-lesereplikat.md)
 - [AdminNeo: die Datenbankverwaltung hinter dem Database Source Editor](adminneo-datenbankverwaltung.md)
 - [Datentabellen: die Tabellen der Module als Teil des Systems](datentabellen.md): der Katalog der persistenten
   Klassen, benannte Datenbankverbindungen, Klassen auf ihrer eigenen Verbindung
