@@ -323,6 +323,10 @@ class expClusterSetup
         $argv = array( PHP_BINARY, '-d', 'memory_limit=1024M', $root . '/bin/php/clusterize.php', '-n', '--siteaccess=' . $siteAccess );
         if ( $back )
             array_splice( $argv, 4, 0, array( '-u' ) );
+        // a command that runs as root was started with --allow-root-user (eZScript stops it otherwise); the child
+        // needs the same, or clusterize.php refuses to run and the move stops with the settings put back
+        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
+            $argv[] = '--allow-root-user';
         $p = proc_open( $argv, array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $root );
         if ( !is_resource( $p ) )
             return 127;
