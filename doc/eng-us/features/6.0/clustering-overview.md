@@ -134,6 +134,9 @@ metadata database and streams it from the share, with byte ranges and HTTP cachi
 `config.cluster.php`: `CLUSTER_STORAGE_BACKEND`, `CLUSTER_STORAGE_HOST`, `CLUSTER_STORAGE_PORT`, `CLUSTER_STORAGE_USER`,
 `CLUSTER_STORAGE_PASS`, `CLUSTER_STORAGE_DB`, `CLUSTER_STORAGE_CHARSET`, `CLUSTER_MOUNT_POINT_PATH`, and optionally
 `CLUSTER_ENABLE_HTTP_CACHE`, `CLUSTER_ENABLE_HTTP_RANGE`, `CLUSTER_EXPIRY_TIMEOUT` and `CLUSTER_IMAGE_ALIAS_ON_DEMAND`.
+On PostgreSQL, `CLUSTER_PERSISTENT_CONNECTION` (default false) set to true keeps the gateway's database connection
+open in the PHP worker between requests, so a worker that serves many images logs in once; count those connections
+against `max_connections`.
 
 ```apache
 # Apache, in the virtual host, before the site's own rules

@@ -512,7 +512,10 @@ und spart die Anmelde-Wege einer neuen Verbindung (mit `scram-sha-256` sind es m
 von PHP-FPM und jeder Velocity-Worker jedes Webservers hält eine Verbindung zur Cluster-Datenbank **und**, mit
 `[DatabaseSettings] UsePersistentConnection=enabled`, eine zur Datenbank der Website. Die Summe muss unter
 `max_connections` des Servers bleiben, mit Platz für Cronjobs, die Konsole und Ihre eigenen Sitzungen. PDO rollt eine
-offene Transaktion am Ende einer Anfrage zurück.
+offene Transaktion am Ende einer Anfrage zurück. Das Gateway `index_cluster.php` behält seine Verbindung mit
+`define( 'CLUSTER_PERSISTENT_CONNECTION', true );` in `config.cluster.php` (Standard false): Ein Worker, der Bild um
+Bild ausliefert, meldet sich dann einmal an. Auf 19 belegt: Fünf Gateway-Anfragen eines Workers nutzten eine
+Backend-PID, ohne die Konstante hatte jede eine neue.
 
 **Begrenztes Warten.** Jede Verbindung setzt `lock_timeout` aus `DBLockTimeout`, keine Anweisung wartet also ewig auf
 eine Zeilensperre; ein Deadlock (`40P01`), eine nicht rechtzeitig gewährte Sperre (`55P03`) und ein
@@ -686,10 +689,6 @@ diese Passwörter aber mit `scram-sha-256` neu (siehe [Bekannte Grenzen](#bekann
 - **Der Client der Sicherung.** `exp:upgrade:backup`, die Prüfung des Sicherungspunkts, das Zurückrollen und
   `ezconvertdbcharset.php` brauchen ein `pg_dump`/`psql`, das mindestens so neu ist wie der Server. Installieren Sie es
   auf jedem Webserver, der sie ausführt.
-- **Das Gateway verbindet sich je Anfrage.** `index_cluster.php` öffnet für jede Datei, die es ausliefert, eine neue
-  Verbindung zur Cluster-Datenbank; `DBPersistentConnection` ist eine Einstellung des Backends, und das
-  PostgreSQL-Gateway nutzt `CLUSTER_PERSISTENT_CONNECTION` nicht. Lassen Sie den Webserver Bilder cachen
-  (`CLUSTER_ENABLE_HTTP_CACHE`) oder stellen Sie ein CDN davor.
 - **Replikate sind physische Standbys.** Die Prüfung des Lesereplikats liest `pg_is_in_recovery()` und
   `pg_stat_wal_receiver`; ein logisches Replikat ist für sie ein Primärserver und würde ohne Prüfung des Rückstands
   gelesen. Nutzen Sie Streaming-Standbys.

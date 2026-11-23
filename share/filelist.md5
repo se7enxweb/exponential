@@ -7121,7 +7121,7 @@ e72286bc83884f1eb24b2ee9034f6481  doc/eng-us/features/6.0/platform-layouts-core-
 9883032b2ce992bfc3a26c0f0a92cc74  doc/eng-us/features/6.0/platform-php85-framework-forks.md
 cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.md
 2e6216a45844e2f3da0b09fbbea87102  doc/eng-us/features/6.0/platform-sqlite-install.md
-f37d619f6fb6d7da8ffd61774ae00c79  doc/eng-us/features/6.0/postgresql-dfs-cluster.md
+373ebb262160b5f12df484121bc564cf  doc/eng-us/features/6.0/postgresql-dfs-cluster.md
 90c5f27d343a57526bf016d4e13900ef  doc/eng-us/features/6.0/preload-sites-view.md
 c07c4366ceda3d30c77c453388701333  doc/eng-us/features/6.0/preview-in-owning-siteaccess.md
 ae08ede3efea95365e6dbc15478de7cf  doc/eng-us/features/6.0/preview-links.md
@@ -17260,7 +17260,7 @@ fe5869bd6e0ab614f9de91892d6c9895  doc/ger-de/funktionen/6.0/plattform-nexus-star
 6ded0e62de5d948d8a4f97fac3b2e8e8  doc/ger-de/funktionen/6.0/plattform-php85-framework-forks.md
 393ffffcd603e012a44013ce86323f2b  doc/ger-de/funktionen/6.0/plattform-site-bundles.md
 04a57e6e4790f4c646e57c18412a6b61  doc/ger-de/funktionen/6.0/plattform-sqlite-installation.md
-a55a33afffece2312c340517cbd1ff4d  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
+93fef405e91996b098ddbe8bbb4dd06c  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
 566dbc8ab28ae074d810044f0c1b0bc8  doc/ger-de/funktionen/6.0/pruefprotokoll.md
 1b7d415eb35e75914386eae1e439cd70  doc/ger-de/funktionen/6.0/pruefung-umgekehrter-beziehungen.md
 adce76c3dd1b2afaf99c06947abb30a5  doc/ger-de/funktionen/6.0/qualitaetspruefungen.md
@@ -25793,7 +25793,7 @@ ad8641959f398dcd00547788cc945651  kernel/clustering/dfsmongodb.php
 a4af4d7be4e5287c41f36cd21880308b  kernel/clustering/dfsmysqli.php
 ca0a2aca4f1bf0980f502e1cf55aeee4  kernel/clustering/dfsoracle.php
 82812ff46c6149dde2663cc6da3ddf51  kernel/clustering/dfspostgres.php
-6e8c5e7f9784df4c047395d17d4edd22  kernel/clustering/dfspostgresql.php
+a9e11c6c202549061fe170d1881a54da  kernel/clustering/dfspostgresql.php
 f5fd285b0dcdd76bae47014b7a3a9cd0  kernel/clustering/dfssqlite.php
 a495fae5b5831a51f9a59607d8375f00  kernel/clustering/gateway.php
 2f8f38217903ca254756cf6595c34cb8  kernel/collaboration/action.php
@@ -29335,12 +29335,12 @@ cc2354bea46e143a74241548add9c541  tests/tests/kernel/classes/cluster/expClusterS
 98b1a398ea128787a895fe3e500318e9  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php
 cd20623bd79ecafe781527a6b0609d7d  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerMongoDBBackendTest.php
 9351ef738fb69117b84f583d6e623d42  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerOracleBackendTest.php
-d9989a52ebe8a99ca236388a605d019e  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerPostgresqlBackendTest.php
+e17102aab4b8cabaf05201dbce40c659  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerPostgresqlBackendTest.php
 99d66cd76e2f0c83fd4df00d4ce403e2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerSQLiteBackendTest.php
 50a94a8d8e811c84b1e4cdd3582cf560  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSMongoDBBackendIntegrationTest.php
 8dffbc38afd2e6cb30472a95ef4f13fc  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSMySQLiBackendParityTest.php
 28ba9033c6c4df127f60f9400561120c  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSOracleBackendIntegrationTest.php
-99989af7a3edb23feec16c5feea01062  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSPostgresqlBackendIntegrationTest.php
+759be122b677d12252bfbde3de11fec8  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSPostgresqlBackendIntegrationTest.php
 d4b039ed7e509105ef9ad62d73a5fd64  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSSQLiteBackendIntegrationTest.php
 52cad8e575244ba627349d22063dbe20  tests/tests/kernel/classes/clusterfilehandlers/eZClusterFileHandlerAbstract.php
 5063f1a7ae18ff4262a69037d66d6ee6  tests/tests/kernel/classes/clusterfilehandlers/eZClusterStaleCacheBase.php
@@ -31133,7 +31133,7 @@ f27f5e5268a2227d2cd37a56bf679636  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
 db5c5bde251c17a9563d3b4fe25346ef  tests/tests/kernel/classes/upgrade/expUpgradeBackupPostgresqlToolTest.php
 e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
 520f09719053749ec73c645597be90cf  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php
-eb0446a710fcedad4f8621fd49edd4bc  doc/eng-us/features/6.0/postgresql-18-and-19.md
-054f18ea0d16398532ec1d726b2ec9b3  doc/eng-us/features/6.0/clustering-overview.md
-03790845794555a87b6b173d79749810  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
-fa37e98f41709e5e6b8c48122db9fcd1  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
+725c990e88dd7c0c527d7dab93d05d86  doc/eng-us/features/6.0/postgresql-18-and-19.md
+1a901abc1739f5bcb0d0e820f1469850  doc/eng-us/features/6.0/clustering-overview.md
+941b650d8c06b68181542f319f4fea66  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
+fd5bee2e6ad8c673da05c19a87d0e433  doc/ger-de/funktionen/6.0/clustering-ueberblick.md

@@ -158,8 +158,9 @@ Prüfung einer Cache-Datei auf ein Drittel. Dafür ist nichts einzustellen.
 `[eZDFSClusteringSettings] DBPersistentConnection=enabled` (Standard aus) behält eine Verbindung je PHP-Worker zwischen
 Anfragen (persistente Verbindungen von PDO) und spart die Anmelde-Wege einer neuen Verbindung. Zählen Sie zuerst die
 Worker jedes Knotens (Kinder von PHP-FPM, Velocity-Worker) gegen `max_connections` des Servers. PDO rollt eine
-Transaktion zurück, die am Ende einer Anfrage offen blieb. Das Gateway `index_cluster.php` öffnet weiter eine
-Verbindung je Anfrage.
+Transaktion zurück, die am Ende einer Anfrage offen blieb. Das Gateway `index_cluster.php` hat einen eigenen Schalter
+in `config.cluster.php`: `define( 'CLUSTER_PERSISTENT_CONNECTION', true );` behält auch seine Verbindung im Worker
+(Standard false, eine Verbindung je Anfrage); zählen Sie diese Verbindungen mit.
 
 Ein Knoten behält und liefert nie eine zu kurze oder gescheiterte Kopie einer Datei vom Share: Die Größe wird an der
 temporären Kopie geprüft, bevor sie an ihren Platz umbenannt wird, und ein Abruf, der bei jedem Versuch scheitert,
@@ -187,7 +188,8 @@ die Klasse des Kernels.
 `expDFSFileHandlerPostgresqlBackendTest` läuft ohne Datenbank; `expDFSPostgresqlBackendIntegrationTest`
 (`EXP_TEST_PGCLUSTER_DSN`) und `expDFSMySQLiBackendParityTest` (`EXP_TEST_MYCLUSTER_DSN`) führen dieselben
 Paritätsprüfungen auf PostgreSQL und MySQL aus, darunter vier Prozesse, die gleichzeitig dieselbe Cache-Datei
-anfordern (einer erzeugt, drei warten), und auf PostgreSQL eine von einer anderen Transaktion gehaltene Sperre.
+anfordern (einer erzeugt, drei warten), und auf PostgreSQL eine von einer anderen Transaktion gehaltene Sperre sowie
+ein Gateway, das eine persistente Verbindung wiederverwendet (eine Backend-PID).
 Gemessen am 19. November 2026: PostgreSQL 13, 14, 15, 16, 17, 18 und 19 (Release Candidate 1, seit der Veröffentlichung auch 19.0) bestanden alle 27
 Prüfungen, MySQL 8.0 die 21, die dort gelten. GitHub Actions führt sie bei jedem Push aus (Job "DFS cluster backends").
 

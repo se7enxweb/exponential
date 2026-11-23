@@ -158,6 +158,31 @@ class expDFSFileHandlerPostgresqlBackendTest extends ezpTestCase
     }
 
     /**
+     * The gateway's connection is persistent exactly when config.cluster.php defines CLUSTER_PERSISTENT_CONNECTION
+     * true (index_cluster.php defaults it to false), and errors stay exceptions either way.
+     */
+    public function testGatewayPersistentConnection()
+    {
+        $root = self::root();
+        if ( !class_exists( 'ezpClusterGateway', false ) )
+            require_once "$root/kernel/clustering/gateway.php";
+        require_once "$root/kernel/clustering/dfspostgresql.php";
+
+        foreach ( array( false, true ) as $persistent )
+        {
+            $options = expDfsPostgresqlClusterGateway::connectionOptions( $persistent );
+            $this->assertSame( $persistent, $options[PDO::ATTR_PERSISTENT] );
+            $this->assertSame( PDO::ERRMODE_EXCEPTION, $options[PDO::ATTR_ERRMODE] );
+            $this->assertTrue( $options[PDO::ATTR_STRINGIFY_FETCHES] );
+        }
+        $this->assertFalse( expDfsPostgresqlClusterGateway::connectionOptions( null )[PDO::ATTR_PERSISTENT] );
+
+        $gateway = file_get_contents( "$root/kernel/clustering/dfspostgresql.php" );
+        $this->assertStringContainsString( "self::connectionOptions( defined( 'CLUSTER_PERSISTENT_CONNECTION' ) && constant( 'CLUSTER_PERSISTENT_CONNECTION' ) )", $gateway );
+        $this->assertStringContainsString( "define( 'CLUSTER_PERSISTENT_CONNECTION', false )", file_get_contents( "$root/index_cluster.php" ) );
+    }
+
+    /**
      * The earlier name maps to the kernel class in the kernel autoload (an installed ezpostgresqlcluster extension
      * still comes first, as extension classes do).
      */

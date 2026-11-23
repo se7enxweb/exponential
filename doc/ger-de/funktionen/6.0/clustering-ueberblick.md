@@ -139,7 +139,9 @@ in der Metadaten-Datenbank nachschlägt und vom Share streamt, mit Byte-Bereiche
 sind Konstanten in `config.cluster.php`: `CLUSTER_STORAGE_BACKEND`, `CLUSTER_STORAGE_HOST`, `CLUSTER_STORAGE_PORT`,
 `CLUSTER_STORAGE_USER`, `CLUSTER_STORAGE_PASS`, `CLUSTER_STORAGE_DB`, `CLUSTER_STORAGE_CHARSET`,
 `CLUSTER_MOUNT_POINT_PATH` und auf Wunsch `CLUSTER_ENABLE_HTTP_CACHE`, `CLUSTER_ENABLE_HTTP_RANGE`,
-`CLUSTER_EXPIRY_TIMEOUT` und `CLUSTER_IMAGE_ALIAS_ON_DEMAND`.
+`CLUSTER_EXPIRY_TIMEOUT` und `CLUSTER_IMAGE_ALIAS_ON_DEMAND`. Auf PostgreSQL hält `CLUSTER_PERSISTENT_CONNECTION`
+(Standard false) auf true gesetzt die Datenbankverbindung des Gateways zwischen Anfragen im PHP-Worker offen; ein
+Worker, der viele Bilder ausliefert, meldet sich also einmal an. Zählen Sie diese Verbindungen gegen `max_connections`.
 
 ```apache
 # Apache, im virtuellen Host, vor den eigenen Regeln der Website

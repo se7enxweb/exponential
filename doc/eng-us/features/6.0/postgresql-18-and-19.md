@@ -490,7 +490,9 @@ saves the login round trips of a new connection (with `scram-sha-256` these are 
 child and every Velocity worker of every web server holds one connection, to the cluster database **and**, with
 `[DatabaseSettings] UsePersistentConnection=enabled`, one to the site's database. The sum must stay below the server's
 `max_connections`, with room for cronjobs, the console and your own sessions. PDO rolls back an open transaction when
-a request ends.
+a request ends. The gateway `index_cluster.php` keeps its connection with `define( 'CLUSTER_PERSISTENT_CONNECTION',
+true );` in `config.cluster.php` (default false): a worker that serves image after image then logs in once. Proven on
+19: five gateway requests of one worker used one backend pid, without the constant each had a new one.
 
 **Bounded waits.** Every connection sets `lock_timeout` from `DBLockTimeout`, so no statement waits for a row lock
 forever; a deadlock (`40P01`), a lock not granted in time (`55P03`) and a serialization failure (`40001`) are retried up
@@ -657,9 +659,6 @@ the same parent hung too, until the site's PHP processes were restarted.
   needed on the web servers.
 - **The client of the backup.** `exp:upgrade:backup`, the caption check, the rollback and `ezconvertdbcharset.php` need
   a `pg_dump`/`psql` at least as new as the server. Install it on every web server that runs them.
-- **The gateway connects per request.** `index_cluster.php` opens a new connection to the cluster database for every
-  file it serves; `DBPersistentConnection` is a setting of the backend, and the PostgreSQL gateway does not use
-  `CLUSTER_PERSISTENT_CONNECTION`. Let the web server cache images (`CLUSTER_ENABLE_HTTP_CACHE`) or put a CDN in front.
 - **Replicas are physical standbys.** The read replica check reads `pg_is_in_recovery()` and `pg_stat_wal_receiver`;
   a logical replica is a primary to it and would be read without a lag check. Use streaming standbys.
 - **The DFS backend reads the primary only.** File metadata changes with every cache write, so it is never read from a

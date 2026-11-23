@@ -12,7 +12,8 @@
  *
  * After the gateway of the ezpostgresqlcluster extension (eZ Systems, GPL-2.0), rewritten: PDO with a prepared
  * statement, PostgreSQL's default port 5432, a Unix socket directory as the host, and the file streamed in
- * pieces, so a range or a large file never sits in memory whole.
+ * pieces, so a range or a large file never sits in memory whole. define( 'CLUSTER_PERSISTENT_CONNECTION', true ) keeps
+ * the connection open in the PHP worker between requests (see connectionOptions()).
  */
 class expDfsPostgresqlClusterGateway extends ezpClusterGateway
 {
@@ -28,10 +29,8 @@ class expDfsPostgresqlClusterGateway extends ezpClusterGateway
         $parts[] = 'connect_timeout=10';
         try
         {
-            $this->db = new PDO( 'pgsql:' . implode( ';', $parts ), (string)$this->user, (string)$this->password, array(
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_STRINGIFY_FETCHES => true,
-            ) );
+            $this->db = new PDO( 'pgsql:' . implode( ';', $parts ), (string)$this->user, (string)$this->password,
+                self::connectionOptions( defined( 'CLUSTER_PERSISTENT_CONNECTION' ) && constant( 'CLUSTER_PERSISTENT_CONNECTION' ) ) );
             $charset = trim( (string)$this->charset );
             $encoding = ( $charset === '' || strtolower( str_replace( array( '-', '_' ), '', $charset ) ) === 'utf8' )
                 ? 'UTF8'
@@ -43,6 +42,24 @@ class expDfsPostgresqlClusterGateway extends ezpClusterGateway
             $this->db = null;
             throw new RuntimeException( "Failed connecting to the PostgreSQL cluster database: " . $e->getMessage() );
         }
+    }
+
+    /**
+     * The PDO options of the gateway's connection (pure). With CLUSTER_PERSISTENT_CONNECTION true in
+     * config.cluster.php the connection is persistent: PDO keeps it open in the PHP worker after the request, and the
+     * next request of that worker to the same server, database and login uses it again instead of logging in anew
+     * (the PDO counterpart of pg_pconnect). close() then only lets go of it; the connection stays in the worker.
+     *
+     * @param bool $persistent
+     * @return array
+     */
+    public static function connectionOptions( $persistent )
+    {
+        return array(
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_STRINGIFY_FETCHES => true,
+            PDO::ATTR_PERSISTENT => (bool)$persistent,
+        );
     }
 
     /**
@@ -119,6 +136,7 @@ class expDfsPostgresqlClusterGateway extends ezpClusterGateway
 
     public function close()
     {
+        // closes a connection of its own; a persistent one (CLUSTER_PERSISTENT_CONNECTION) stays open in the worker
         $this->db = null;
     }
 }

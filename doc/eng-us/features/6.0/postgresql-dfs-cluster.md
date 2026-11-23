@@ -178,7 +178,9 @@ Nothing needs to be set for it.
 `[eZDFSClusteringSettings] DBPersistentConnection=enabled` (default off) keeps one connection per PHP worker between
 requests (PDO persistent connections) and saves the login round trips of a new connection. Count the workers of every
 node (PHP-FPM children, Velocity workers) against the server's `max_connections` first. PDO rolls back a transaction
-left open when a request ends. The gateway `index_cluster.php` keeps opening a connection per request.
+left open when a request ends. The gateway `index_cluster.php` has a switch of its own in `config.cluster.php`:
+`define( 'CLUSTER_PERSISTENT_CONNECTION', true );` keeps its connection open in the worker as well (default false,
+one connection per request); count those connections too.
 
 A node never keeps or serves a short or failed copy of a file from the share: the size is checked on the temporary
 copy before it is renamed into place, and a fetch that fails on every try removes the old local copy (every backend,
@@ -209,7 +211,7 @@ come first in the autoload.
 | Test | What it checks | Needs |
 |---|---|---|
 | `expDFSFileHandlerPostgresqlBackendTest` | SQLSTATE mapping and the retry of a deadlock, DSN, LIKE and wildcard building, name trunks, method parity with the MySQLi backend, the schema files, the gateway, the old class name | nothing (runs in the default suite) |
-| `expDFSPostgresqlBackendIntegrationTest` | the parity checks below, plus the gateway serving metadata and byte ranges, the index use of prefix searches and the upgrade of extension tables | `EXP_TEST_PGCLUSTER_DSN=pgsql://user@host:port/postgres` |
+| `expDFSPostgresqlBackendIntegrationTest` | the parity checks below, plus the gateway serving metadata and byte ranges and reusing a persistent connection (one backend pid), the index use of prefix searches and the upgrade of extension tables | `EXP_TEST_PGCLUSTER_DSN=pgsql://user@host:port/postgres` |
 | `expDFSMySQLiBackendParityTest` | the same parity checks on the MySQLi backend | `EXP_TEST_MYCLUSTER_DSN=mysql://user@host:port` |
 | `eZDFSFileHandlerTest` | the cluster file handler itself, on the database of the test run (MySQL or PostgreSQL) | the database test suites |
 

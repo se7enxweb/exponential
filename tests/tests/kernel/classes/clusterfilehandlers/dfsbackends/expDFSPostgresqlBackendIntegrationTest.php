@@ -205,6 +205,45 @@ class expDFSPostgresqlBackendIntegrationTest extends ezpTestCase
     }
 
     /**
+     * With CLUSTER_PERSISTENT_CONNECTION true, a second gateway request of the same PHP process uses the same server
+     * connection again (the same backend pid) after close(), and errors are still exceptions on it.
+     */
+    public function testGatewayReusesAPersistentConnection()
+    {
+        if ( !class_exists( 'ezpClusterGateway', false ) )
+            require_once dirname( __DIR__, 6 ) . '/kernel/clustering/gateway.php';
+        require_once dirname( __DIR__, 6 ) . '/kernel/clustering/dfspostgresql.php';
+        if ( !defined( 'CLUSTER_PERSISTENT_CONNECTION' ) )
+            define( 'CLUSTER_PERSISTENT_CONNECTION', true );
+        if ( !CLUSTER_PERSISTENT_CONNECTION )
+            $this->markTestSkipped( 'CLUSTER_PERSISTENT_CONNECTION is already defined as false' );
+
+        $pids = array();
+        for ( $request = 0; $request < 3; $request++ )
+        {
+            $gateway = new expDfsPostgresqlClusterGateway( array(
+                'host' => self::$server['host'], 'port' => self::$server['port'], 'user' => self::$server['user'],
+                'password' => self::$server['password'], 'name' => self::$server['database'], 'charset' => 'utf-8',
+            ) );
+            $gateway->connect();
+            $this->assertFalse( $gateway->fetchFileMetadata( $this->path( 'storage/none.bin' ) ) );
+            $db = ( function () { return $this->db; } )->call( $gateway );
+            $pids[] = (int)$db->query( 'SELECT pg_backend_pid()' )->fetchColumn();
+            try
+            {
+                $db->query( 'SELECT * FROM exp_no_such_table' );
+                $this->fail( 'a failed statement on a reused connection must throw' );
+            }
+            catch ( PDOException $e )
+            {
+                $this->assertSame( '42P01', $e->getCode() );
+            }
+            $gateway->close();
+        }
+        $this->assertCount( 1, array_unique( $pids ), 'backend pids: ' . implode( ', ', $pids ) );
+    }
+
+    /**
      * Tables in the form the ezpostgresqlcluster extension made them are upgraded in place, rows kept, and the
      * upgrade can run twice.
      */
