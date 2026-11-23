@@ -5089,7 +5089,7 @@ de4e6a1e90d57005a552a667d9c3a0bd  doc/eng-us/examples/ini-settings/fetchalias/ne
 5d9727f7766b875ddcba19757d5e5ebd  doc/eng-us/examples/ini-settings/fetchalias/reviews.md
 9fb8083c557c09a285690464bbcd8ba2  doc/eng-us/examples/ini-settings/fetchalias/subtree.md
 63f3ff979945562b65e0b97b1b026855  doc/eng-us/examples/ini-settings/file/BinaryFileSettings.md
-3922dca96b568576c37e05087ad92b3e  doc/eng-us/examples/ini-settings/file/ClusterEventsSettings.md
+7dd3b651a0aa878fdc69cb0c9b125da7  doc/eng-us/examples/ini-settings/file/ClusterEventsSettings.md
 888b30231a3094e437e290ed4ddbb3eb  doc/eng-us/examples/ini-settings/file/ClusteringSettings.md
 e51cc0a4b56c7be7bf7e0fcaef16667b  doc/eng-us/examples/ini-settings/file/FileSettings.md
 bf32564c7a1a92b4de72ca42c5a07e96  doc/eng-us/examples/ini-settings/file/PassThroughSettings.md
@@ -6955,7 +6955,7 @@ bd1047aa31aaf5c84bd6238b6e6a4b3a  doc/eng-us/features/4.5/event.txt
 19fff138ebbb0c5aab7fe5cee60ad472  doc/eng-us/features/4.5/ezdb_exception_based_error_handling.txt
 9cf09d7acdd41ba816b1ef078f7ad813  doc/eng-us/features/4.5/user_registeration_with_workflow.txt
 624ed176a352ca2b3144a703b7dbc190  doc/eng-us/features/4.6/namespace_support.txt
-d979015f6bf00cc1fb7e857f552bbae5  doc/eng-us/features/4.7/cluster_events.md
+9359b6c3acfce261f79c2c7f562ac2ee  doc/eng-us/features/4.7/cluster_events.md
 31ec04e6c8f4cc000b48d2e1a1a35aa0  doc/eng-us/features/4.7/cluster_index.md
 55ed4a12699726d3d57d1ff0af2b7e63  doc/eng-us/features/4.7/event.txt
 b41680972ebaeb98663a5911ae485eb2  doc/eng-us/features/5.0/event.txt
@@ -13610,7 +13610,7 @@ d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 d271c1803f2ed1027360a47ef621a244  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 8d4edb28f11abb9d3e8b38917ba13fbf  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 c8240113aa1e9edfbc0171b01c10a209  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
-2bef675481e5d8c4c46dfc3acf1e89fb  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
+e4afa9308eb6b0df8a113eb3ab60e03c  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 bc00ce54ab84fdc5b2f608db46f05c96  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 28d7e287ea3e8a4b9f93dd5a335126ec  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 73e5bb6c6db289f0db780f8772d3ee0c  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
@@ -15217,7 +15217,7 @@ ad08e33ab851ce23ac6070e2b517ed92  doc/ger-de/beispiele/ini-einstellungen/fetchal
 35f24789a897e86f044e34e419857068  doc/ger-de/beispiele/ini-einstellungen/fetchalias/reviews.md
 aade68517d55cb92cdd456240d80bbf0  doc/ger-de/beispiele/ini-einstellungen/fetchalias/subtree.md
 7a6d15afb89a071779b7f20885d44657  doc/ger-de/beispiele/ini-einstellungen/file/BinaryFileSettings.md
-208d854d1e1feae55f4c61926399341f  doc/ger-de/beispiele/ini-einstellungen/file/ClusterEventsSettings.md
+129099a12f89933e9853416cc5736508  doc/ger-de/beispiele/ini-einstellungen/file/ClusterEventsSettings.md
 185780f16b3884339e8d4a76d02fa862  doc/ger-de/beispiele/ini-einstellungen/file/ClusteringSettings.md
 52099e21eb9ffa6810357acf6a6ee06a  doc/ger-de/beispiele/ini-einstellungen/file/FileSettings.md
 c7e0a65f64bad5e826e902417cefbc7d  doc/ger-de/beispiele/ini-einstellungen/file/PassThroughSettings.md
@@ -17090,7 +17090,7 @@ d733397735aa6446ce27965fa55aa9df  doc/ger-de/funktionen/4.4/session_enhancement.
 1070f48dc181cad922afdc8b5b45aaff  doc/ger-de/funktionen/4.5/ezdb_exception_based_error_handling.txt
 af8708b1c6d7388211366cd8c75ef0bf  doc/ger-de/funktionen/4.5/user_registeration_with_workflow.txt
 6dd4dc83ffc2e037ea7b3e2d1069599c  doc/ger-de/funktionen/4.6/namespace_support.txt
-a5081b851a21e3aac6cb770c46462bbe  doc/ger-de/funktionen/4.7/cluster-ereignisse.md
+881442da918888e9225511b8d49b11df  doc/ger-de/funktionen/4.7/cluster-ereignisse.md
 e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 7180fc252df8509b0bfc28a2647a1355  doc/ger-de/funktionen/4.7/event.txt
 1db67cbf690b5fcadd6e363318f1f90c  doc/ger-de/funktionen/5.0/event.txt
@@ -27537,7 +27537,7 @@ ab00f79238eebe7e595134867213df63  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
-77617502677fc9a24ec831861cd6c856  settings/file.ini
+5d07de6f4954ad62af07d0cbeb5b9660  settings/file.ini
 48030b94ca3f24f7ace0b42095a051d7  settings/graphql.ini
 3caf3b141769222bf439f04d4c8eb7f5  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
@@ -31134,6 +31134,6 @@ db5c5bde251c17a9563d3b4fe25346ef  tests/tests/kernel/classes/upgrade/expUpgradeB
 e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
 520f09719053749ec73c645597be90cf  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php
 eb0446a710fcedad4f8621fd49edd4bc  doc/eng-us/features/6.0/postgresql-18-and-19.md
-06e394f04b21eae0957eacd43864ff04  doc/eng-us/features/6.0/clustering-overview.md
+054f18ea0d16398532ec1d726b2ec9b3  doc/eng-us/features/6.0/clustering-overview.md
 03790845794555a87b6b173d79749810  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
-36bf1a2e9344b93478e3fac6b0f0fa97  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
+fa37e98f41709e5e6b8c48122db9fcd1  doc/ger-de/funktionen/6.0/clustering-ueberblick.md

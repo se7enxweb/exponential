@@ -24,7 +24,8 @@ Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 > um auf Cluster-Ereignisse zu reagieren.  
 > Lässt sich verwenden, um eine Cache-Schicht (z. B. Memcached oder Redis) in das Cluster-Backend einzufügen  
 > und so die Last der Cluster-Datenbank zu senken.  
-> Derzeit nur vom MySQLi-Backend von eZDFSFileHandler unterstützt.  
+> Jedes DFS-Backend des Kernels sendet Cluster-Ereignisse (MySQLi, PostgreSQL,  
+> Oracle, MongoDB und SQLite).  
 
 Standard: `disabled`.
 

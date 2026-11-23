@@ -11,7 +11,8 @@ These events would eventually also allow to push media files directly to a CDN (
 
 ## Requirements ##
 
-At the moment, cluster events are only available for a **DFS cluster** environment using **MySQLi backend**.
+Cluster events need a **DFS cluster**. In Exponential 6.0 every DFS backend of the kernel sends them: MySQLi,
+PostgreSQL, Oracle, MongoDB and SQLite (in 4.7 it was the MySQLi backend only).
 
 
 ## Cluster event listener ##

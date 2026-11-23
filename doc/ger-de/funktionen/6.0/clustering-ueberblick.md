@@ -123,6 +123,10 @@ Ein Knoten behält und liefert nie eine zu kurze oder gescheiterte Kopie vom Sha
 der temporären Kopie, bevor es sie an ihren Platz umbenennt, und entfernt die alte lokale Kopie, wenn keine
 vollständige Kopie gelingt.
 
+Jedes Backend sendet die Cluster-Ereignisse (`file.ini [ClusterEventsSettings] ClusterEvents=enabled` mit einer
+`Listener`-Klasse); ein Listener, der Metadaten in Memcached oder Redis hält, arbeitet also mit jedem von ihnen, nicht
+nur mit MySQLi ([Cluster-Ereignisse](../4.7/cluster-ereignisse.md)).
+
 `exp:cluster:enable` macht das Share für seine Gruppe beschreibbar, damit die anderen Knoten, die es über NFS als seine
 Gruppe erreichen, hineinschreiben können. Hängen Sie das Share auf jedem Server mit demselben numerischen Benutzer und
 derselben Gruppe ein.

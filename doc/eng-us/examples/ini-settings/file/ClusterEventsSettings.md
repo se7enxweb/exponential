@@ -24,7 +24,8 @@ Never edit `settings/file.ini` itself: an update replaces it. Put the settings y
 > to respond to cluster events.  
 > Can be used to add a cache layer (e.g. Memcached or Redis) in the cluster backend  
 > and thus reduce cluster database load.  
-> Only supported by eZDFSFileHandler MySQLi backend at the moment.  
+> Every DFS backend of the kernel sends cluster events (MySQLi, PostgreSQL,  
+> Oracle, MongoDB and SQLite).  
 
 Default: `disabled`.
 

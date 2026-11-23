@@ -119,6 +119,10 @@ PostgreSQL, and the other way round. The settings that matter on every SQL backe
 A node never keeps or serves a short or failed copy from the share: every backend checks the size on the temporary
 copy before it renames it into place, and removes the old local copy when no complete copy can be made.
 
+Every backend sends the cluster events (`file.ini [ClusterEventsSettings] ClusterEvents=enabled` with a `Listener`
+class), so a listener that keeps metadata in Memcached or Redis works on each of them, not only on MySQLi
+([Cluster events](../4.7/cluster_events.md)).
+
 `exp:cluster:enable` makes the share group-writable, so the other nodes, which reach it over NFS as its group, can
 write into it. Mount the share with the same numeric user and group on every server.
 

@@ -11,7 +11,8 @@ Diese Ereignisse würden es später auch erlauben, Mediendateien direkt an ein C
 
 ## Voraussetzungen ##
 
-Derzeit stehen Cluster-Ereignisse nur in einer Umgebung mit **DFS-Cluster** und **MySQLi-Backend** zur Verfügung.
+Cluster-Ereignisse brauchen einen **DFS-Cluster**. In Exponential 6.0 sendet sie jedes DFS-Backend des Kernels:
+MySQLi, PostgreSQL, Oracle, MongoDB und SQLite (in 4.7 war es nur das MySQLi-Backend).
 
 
 ## Listener für Cluster-Ereignisse ##
