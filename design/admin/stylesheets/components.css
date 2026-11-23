@@ -15,7 +15,7 @@
  *   --a4-radius, --a4-font, --a4-mono, --a4-leading, --a4-weight-, --a4-duration and --a4-tracking names);
  * - weights, durations, letter spacing and line heights come from those tokens, never as raw numbers (a test
  *   keeps them out; the two progress bars keep their .4s);
- * - one accent (#f26a21; a fill carrying white text takes its darker --a4-accent-strong) and one component radius (--a4-radius-s);
+ * - one accent (the logo's #f15a28; a fill carrying white text takes its darker --a4-accent-strong) and one component radius (--a4-radius-s);
  *   --a4-radius (18px) is the frame's three columns only;
  * - a module's own CSS goes in stylesheets/modules/<group>.css as .a4-<module>-*, for what these classes cannot do.
  *
@@ -26,88 +26,90 @@
 /* ---- Tokens: light (the default, and the only mode of design/admin, admin2 and admin3) ---------------------- */
 
 :root {
-  /* the accent: one colour. -hover and -strong are its darker shades for a pressed fill and for filled controls
-     carrying white text (5.2:1), -press their hovered fill (7:1); -text is the accent as text on a card (5.2:1 light, 7:1 dark).
+  /* the colours are Tailwind CSS 3.4's default palette (greys: slate) and the logo's orange (AdminTokenPaletteTest).
+     the accent: the logo's orange. -hover and -strong are its darker shades for a pressed fill and for filled controls
+     carrying white text (5.2:1), -press their hovered fill (7.3:1); -text is the accent as text on a card (7.3:1 light,
+     7.9:1 dark).
      --a4-on-accent-hover is the text on the -press fill: white in light mode, dark ink on the light orange of dark mode.
-     --a4-ring is opaque: a focus indicator needs 3:1 against the page (5.2:1 light on white, 7:1 dark) */
-  --a4-accent: #f26a21;
-  --a4-accent-hover: #d9561a;
+     --a4-ring is opaque: a focus indicator needs 3:1 against the page (5.2:1 light on white, 7.9:1 dark) */
+  --a4-accent: #f15a28;
+  --a4-accent-hover: #ea580c;
   --a4-accent-strong: #c2410c;
   --a4-accent-press: #9a3412;
-  --a4-accent-text: #ad3809;   /* 6.3:1 on white, 5.4:1 on the hovered row (--a4-info-bg), 4.8:1 for an is-accent badge (--a4-accent-soft) on a hovered row; #bc3f0b was 4.2:1 there */
-  --a4-accent-soft: rgba(242, 106, 33, 0.12);
+  --a4-accent-text: #9a3412;   /* 7.3:1 on white, 6.7:1 on the hovered row (--a4-info-bg), 5.8:1 for an is-accent badge (--a4-accent-soft) on a hovered row, 5.9:1 on the table header; orange-700 was 4.2:1 there */
+  --a4-accent-soft: rgba(241, 90, 40, 0.12);
   --a4-on-accent: #fff;
   --a4-on-accent-hover: #fff;
   --a4-ring: #c2410c;
 
   /* text and surfaces */
-  --a4-ink: #1f2430;
-  --a4-muted: #545c6a;   /* 5:1 also on the table header (--a4-head-bg); #5d6573 until 2026-10 */
-  /* lines, soft surface and zebra two steps darker than until 2026-10 (#e3e6eb, #c9ced6, #f6f7f9, #f2f4f7): the
-     sections, tables and toolbars of a page stood too faintly apart from the white card */
-  --a4-line: #c9cfd8;
-  --a4-line-strong: #aab2bd;
-  --a4-soft: #eaedf1;
+  --a4-ink: #1e293b;
+  --a4-muted: #475569;   /* 6.2:1 also on the table header (--a4-head-bg) */
+  /* lines and soft surface clearly darker than the white card: the sections, tables and toolbars of a page stand
+     apart from it */
+  --a4-line: #cbd5e1;
+  --a4-line-strong: #94a3b8;
+  --a4-soft: #f1f5f9;
   --a4-card: #fff;
   --a4-surface: #fff;
   /* the even body rows of every data table (zebra); text on it keeps the soft surface's contrast */
-  --a4-zebra: #eceff3;
+  --a4-zebra: #f8fafc;
   /* the header row of a data table (table.list th, .a4-table th): darker than the soft surface, still light */
-  --a4-head-bg: #dce1e8;
+  --a4-head-bg: #e2e8f0;
   --a4-field: #fff;
-  --a4-field-line: #6e7588;   /* 3:1 also on the darker page colour (admin4.css); #80879a until 2026-10 */
-  --a4-disabled: #9aa1ad;
-  --a4-overlay: rgba(16, 24, 40, 0.45);
-  --a4-code-bg: #1f2430;
-  --a4-code-ink: #e8ebf0;
+  --a4-field-line: #64748b;   /* 3:1 also on the page colour (admin4.css: 3.9:1) */
+  --a4-disabled: #94a3b8;
+  --a4-overlay: rgba(15, 23, 42, 0.45);
+  --a4-code-bg: #1e293b;
+  --a4-code-ink: #e2e8f0;
   /* syntax highlighting of code blocks (help pages, span.a4-help-tok-<kind>): on --a4-code-bg, dark in both themes,
      so the light and dark values are the same; every colour keeps 4.5:1 on both code backgrounds */
-  --a4-code-comment: #9aa5b8;
-  --a4-code-keyword: #c792ea;
-  --a4-code-string: #a5d6a7;
-  --a4-code-number: #f9ae77;
-  --a4-code-variable: #f78c8c;
-  --a4-code-function: #82aaff;
-  --a4-code-tag: #7fdbca;
-  --a4-code-attr: #ffcb6b;
-  --a4-code-operator: #89ddff;
-  --a4-code-constant: #f9ae77;
-  --a4-code-meta: #b4bcd0;
-  --a4-code-section: #ffd580;
-  --a4-code-inserted: #a5d6a7;
-  --a4-code-deleted: #ff9e9e;
-  --a4-code-property: #addb67;
-  --a4-code-type: #ffcb8b;
+  --a4-code-comment: #94a3b8;
+  --a4-code-keyword: #d8b4fe;
+  --a4-code-string: #86efac;
+  --a4-code-number: #fdba74;
+  --a4-code-variable: #fca5a5;
+  --a4-code-function: #93c5fd;
+  --a4-code-tag: #5eead4;
+  --a4-code-attr: #fcd34d;
+  --a4-code-operator: #7dd3fc;
+  --a4-code-constant: #fdba74;
+  --a4-code-meta: #cbd5e1;
+  --a4-code-section: #fde68a;
+  --a4-code-inserted: #86efac;
+  --a4-code-deleted: #fca5a5;
+  --a4-code-property: #bef264;
+  --a4-code-type: #fed7aa;
 
   /* states: text, tint, edge */
   --a4-ok: #166534;
-  --a4-ok-bg: #e7f5ea;
-  --a4-ok-line: #b7dfc1;
-  --a4-warn: #8a4b00;
-  --a4-warn-bg: #fff3df;
-  --a4-warn-line: #f3d19c;
+  --a4-ok-bg: #f0fdf4;
+  --a4-ok-line: #bbf7d0;
+  --a4-warn: #92400e;
+  --a4-warn-bg: #fffbeb;
+  --a4-warn-line: #fde68a;
   --a4-bad: #b91c1c;
-  --a4-bad-bg: #fdecec;
-  --a4-bad-line: #f1b4b4;
+  --a4-bad-bg: #fef2f2;
+  --a4-bad-line: #fecaca;
   --a4-bad-hover: #7f1d1d;
-  --a4-info: #1e4fa8;
-  --a4-info-bg: #e8effd;
-  --a4-info-line: #bcd0f5;
+  --a4-info: #1e40af;
+  --a4-info-bg: #eff6ff;
+  --a4-info-line: #bfdbfe;
 
   /* a categorical chart palette, in this order (request H4: the audit charts, the shop dashboard) */
-  --a4-chart-1: #2a78d6;
-  --a4-chart-2: #eb6834;
-  --a4-chart-3: #188a63;
-  --a4-chart-4: #a66c00;
-  --a4-chart-5: #d1578a;
-  --a4-chart-6: #008300;
-  --a4-chart-7: #4a3aa7;
-  --a4-chart-8: #e34948;
+  --a4-chart-1: #2563eb;
+  --a4-chart-2: #ea580c;
+  --a4-chart-3: #059669;
+  --a4-chart-4: #d97706;
+  --a4-chart-5: #db2777;
+  --a4-chart-6: #15803d;
+  --a4-chart-7: #4338ca;
+  --a4-chart-8: #dc2626;
 
   /* depth */
-  --a4-shadow-s: 0 1px 2px rgba(16, 24, 40, 0.04);
-  --a4-shadow-m: 0 12px 32px -6px rgba(16, 24, 40, 0.12);
-  --a4-shadow-up: 0 -6px 18px -8px rgba(16, 24, 40, 0.18);
+  --a4-shadow-s: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --a4-shadow-m: 0 12px 32px -6px rgba(15, 23, 42, 0.12);
+  --a4-shadow-up: 0 -6px 18px -8px rgba(15, 23, 42, 0.18);
 
   /* theme-independent: radius, spacing, type */
   --a4-radius: 18px;
@@ -245,51 +247,51 @@ html:lang(th), [lang]:lang(th), html:lang(lo), [lang]:lang(lo), html:lang(km), [
    :where() keeps this block's weight at html[data-a4-theme="dark"], so the frames' own dark blocks still win. */
 html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
   color-scheme: dark;
-  --a4-accent: #f26a21;
-  --a4-accent-hover: #ff8a4c;
+  --a4-accent: #f15a28;
+  --a4-accent-hover: #fb923c;
   --a4-accent-strong: #c2410c;
-  --a4-accent-press: #ff8a4c;
-  --a4-accent-text: #ff9a5c;
-  --a4-accent-soft: rgba(242, 106, 33, 0.18);
+  --a4-accent-press: #fb923c;
+  --a4-accent-text: #fb923c;
+  --a4-accent-soft: rgba(241, 90, 40, 0.18);
   --a4-on-accent: #fff;
-  --a4-on-accent-hover: #0e1218;
-  --a4-ring: #ff9a5c;
+  --a4-on-accent-hover: #020617;
+  --a4-ring: #fb923c;
 
-  --a4-ink: #e8ebf0;
-  --a4-muted: #a3abb9;
-  /* the surfaces a step apart and the lines lighter than until 2026-10 (line #2e3644, line-strong #434d5f, soft
-     #222936, card #1b212c, surface #171c25, zebra #212734): the columns were as dark as the page (1.01:1) */
-  --a4-line: #3a4456;
-  --a4-line-strong: #55617a;
-  --a4-soft: #29313e;
-  --a4-card: #1e242f;      /* no lighter: expui's accent fill (white text 4.5:1) keeps 3:1 on it */
-  --a4-surface: #1a1f29;
-  --a4-zebra: #232a36;
-  --a4-head-bg: #323b4d;
-  --a4-field: #121720;
-  --a4-field-line: #7a85a0;   /* 3:1 also on the table header (#6f7a93 until 2026-10) */
-  --a4-disabled: #6b7486;
+  --a4-ink: #e2e8f0;
+  --a4-muted: #94a3b8;
+  /* the surfaces a step apart: page slate-950, columns and cards slate-900, the table header slate-800; soft and
+     zebra are slate laid over the card, so they stay between the steps of the palette */
+  --a4-line: #334155;
+  --a4-line-strong: #475569;
+  --a4-soft: rgba(51, 65, 85, 0.6);
+  --a4-card: #0f172a;      /* no lighter: expui's accent fill (white text 4.5:1) keeps 3:1 on it (3.4:1; slate-800 was 2.8:1) */
+  --a4-surface: #0f172a;
+  --a4-zebra: rgba(30, 41, 59, 0.6);
+  --a4-head-bg: #1e293b;
+  --a4-field: #020617;
+  --a4-field-line: #94a3b8;   /* 3:1 also on the table header (5.7:1) */
+  --a4-disabled: #64748b;
   --a4-overlay: rgba(0, 0, 0, 0.6);
-  --a4-code-bg: #0e1218;
-  --a4-code-ink: #e8ebf0;
+  --a4-code-bg: #020617;
+  --a4-code-ink: #e2e8f0;
   /* syntax highlighting of code blocks (help pages, span.a4-help-tok-<kind>): on --a4-code-bg, dark in both themes,
      so the light and dark values are the same; every colour keeps 4.5:1 on both code backgrounds */
-  --a4-code-comment: #9aa5b8;
-  --a4-code-keyword: #c792ea;
-  --a4-code-string: #a5d6a7;
-  --a4-code-number: #f9ae77;
-  --a4-code-variable: #f78c8c;
-  --a4-code-function: #82aaff;
-  --a4-code-tag: #7fdbca;
-  --a4-code-attr: #ffcb6b;
-  --a4-code-operator: #89ddff;
-  --a4-code-constant: #f9ae77;
-  --a4-code-meta: #b4bcd0;
-  --a4-code-section: #ffd580;
-  --a4-code-inserted: #a5d6a7;
-  --a4-code-deleted: #ff9e9e;
-  --a4-code-property: #addb67;
-  --a4-code-type: #ffcb8b;
+  --a4-code-comment: #94a3b8;
+  --a4-code-keyword: #d8b4fe;
+  --a4-code-string: #86efac;
+  --a4-code-number: #fdba74;
+  --a4-code-variable: #fca5a5;
+  --a4-code-function: #93c5fd;
+  --a4-code-tag: #5eead4;
+  --a4-code-attr: #fcd34d;
+  --a4-code-operator: #7dd3fc;
+  --a4-code-constant: #fdba74;
+  --a4-code-meta: #cbd5e1;
+  --a4-code-section: #fde68a;
+  --a4-code-inserted: #86efac;
+  --a4-code-deleted: #fca5a5;
+  --a4-code-property: #bef264;
+  --a4-code-type: #fed7aa;
 
   --a4-ok: #86efac;
   --a4-ok-bg: rgba(34, 197, 94, 0.14);
@@ -301,17 +303,17 @@ html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
   --a4-bad-bg: rgba(239, 68, 68, 0.15);
   --a4-bad-line: rgba(252, 165, 165, 0.38);
   --a4-bad-hover: #fecaca;
-  --a4-info: #93b4f5;
+  --a4-info: #93c5fd;
   --a4-info-bg: rgba(59, 130, 246, 0.15);
-  --a4-info-line: rgba(147, 180, 245, 0.38);
+  --a4-info-line: rgba(147, 197, 253, 0.38);
 
-  --a4-chart-1: #5b9cf0;
-  --a4-chart-2: #f5875a;
+  --a4-chart-1: #60a5fa;
+  --a4-chart-2: #fb923c;
   --a4-chart-3: #34d399;
   --a4-chart-4: #fbbf24;
-  --a4-chart-5: #f19bbf;
+  --a4-chart-5: #f472b6;
   --a4-chart-6: #4ade80;
-  --a4-chart-7: #8b7cf0;
+  --a4-chart-7: #a78bfa;
   --a4-chart-8: #f87171;
 
   --a4-shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);

@@ -33,83 +33,83 @@
   --a4-orange-dark: var(--a4-accent-hover);
   --a4-orange-soft: var(--a4-accent-soft);
 
-  /* the page two steps darker than until 2026-10 (#eef1f5, gradient #f6f8fb-#edf0f4), the columns' edge almost three
-     times as strong: the white columns stand clearly off the page, as the classic admin's framed boxes did */
-  --a4-page-color: #d8dee6;
-  --a4-page-image: radial-gradient(1100px 620px at 88% -14%, rgba(242, 106, 33, 0.10), transparent 62%),
-                   radial-gradient(900px 560px at -12% 108%, rgba(64, 120, 192, 0.09), transparent 60%),
-                   linear-gradient(165deg, #e0e5eb 0%, #d5dbe3 100%);
+  /* the page slate-200 to slate-300 with the columns' edge: the white columns stand clearly off the page, as the
+     classic admin's framed boxes did */
+  --a4-page-color: #e2e8f0;
+  --a4-page-image: radial-gradient(1100px 620px at 88% -14%, rgba(241, 90, 40, 0.10), transparent 62%),
+                   radial-gradient(900px 560px at -12% 108%, rgba(59, 130, 246, 0.09), transparent 60%),
+                   linear-gradient(165deg, #e2e8f0 0%, #cbd5e1 100%);
   --a4-header-bg: rgba(255, 255, 255, 0.82);
-  --a4-header-line: rgba(16, 24, 40, 0.07);
-  --a4-header-shadow: 0 1px 0 rgba(16, 24, 40, 0.03), 0 10px 28px rgba(16, 24, 40, 0.06);
-  --a4-header-ink: #3b4252;
-  --a4-header-hover: rgba(16, 24, 40, 0.05);
+  --a4-header-line: rgba(15, 23, 42, 0.07);
+  --a4-header-shadow: 0 1px 0 rgba(15, 23, 42, 0.03), 0 10px 28px rgba(15, 23, 42, 0.06);
+  --a4-header-ink: #334155;
+  --a4-header-hover: rgba(15, 23, 42, 0.05);
   --a4-header-field: var(--a4-field);
-  --a4-header-field-line: rgba(16, 24, 40, 0.14);
+  --a4-header-field-line: rgba(15, 23, 42, 0.14);
   --a4-card-bg: var(--a4-surface);   /* the three columns: white in light mode, slate in dark mode (components.css) */
-  --a4-side-bg: #f3f5f8;             /* the side columns, a shade off the white middle: navigation and content apart */
-  --a4-card-edge: rgba(16, 24, 40, 0.16);
+  --a4-side-bg: #f1f5f9;             /* the side columns, a shade off the white middle: navigation and content apart */
+  --a4-card-edge: rgba(15, 23, 42, 0.16);
   /* explayouts' own navigation column: navy in both modes, with a faint light edge */
-  --a4-explayouts-nav: #1f2937;
+  --a4-explayouts-nav: #1e293b;
   --a4-explayouts-nav-edge: rgba(255, 255, 255, 0.04);
   /* the password field's room for its show/hide toggle: a layout length, the same in both modes */
   --a4-pw-toggle-room: 98px;
-  --a4-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 12px 32px -6px rgba(16, 24, 40, 0.12);
-  --a4-footer-ink: #4f5765;   /* 5.2:1 on the page colour, also at the gradient's darkest end */
-  --a4-footer-link: #434b59;
-  --a4-footer-link-hover: #1f2430;
+  --a4-card-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 12px 32px -6px rgba(15, 23, 42, 0.12);
+  --a4-footer-ink: #475569;   /* 5.1:1 on the page colour, also at the gradient's darkest end */
+  --a4-footer-link: #334155;
+  --a4-footer-link-hover: #1e293b;
   --a4-brand: #f15a28;        /* the logo's orange square (parts/a4_logo.tpl), the artwork's brand color */
   /* the environment badge (site.ini [AdminEnvironment]): fill, text and edge per level; the text 4.5:1 on the fill,
      the edge 3:1 on the header */
-  --a4-env-development: #067647;
+  --a4-env-development: #047857;
   --a4-env-development-ink: #fff;
-  --a4-env-development-line: #067647;
-  --a4-env-test: #fdb022;
-  --a4-env-test-ink: #1f1300;
-  --a4-env-test-line: #b54708;
-  --a4-env-staging: #6941c6;
+  --a4-env-development-line: #047857;
+  --a4-env-test: #fbbf24;
+  --a4-env-test-ink: #451a03;
+  --a4-env-test-line: #b45309;
+  --a4-env-staging: #6d28d9;
   --a4-env-staging-ink: #fff;
-  --a4-env-staging-line: #6941c6;
-  --a4-env-production: #b42318;
+  --a4-env-staging-line: #6d28d9;
+  --a4-env-production: #b91c1c;
   --a4-env-production-ink: #fff;
-  --a4-env-production-line: #b42318;
+  --a4-env-production-line: #b91c1c;
 }
 
 /* ---- Tokens: dark (slate page, slate columns; the shared tokens switch in components.css) --------------------- */
 
 html[data-a4-theme="dark"] {
-  /* the page darker than until 2026-10 (#161b25, gradient #1d2431-#141922): the columns stand off it */
-  --a4-page-color: #0b0e14;
-  --a4-page-image: radial-gradient(1100px 600px at 88% -12%, rgba(242, 106, 33, 0.26), transparent 60%),
-                   radial-gradient(900px 560px at -12% 108%, rgba(64, 120, 192, 0.20), transparent 60%),
-                   linear-gradient(160deg, #131821 0%, #0c0f15 100%);
-  --a4-header-bg: rgba(20, 25, 34, 0.86);
+  /* the page slate-950, the columns slate-900: the columns stand off it */
+  --a4-page-color: #020617;
+  --a4-page-image: radial-gradient(1100px 600px at 88% -12%, rgba(241, 90, 40, 0.26), transparent 60%),
+                   radial-gradient(900px 560px at -12% 108%, rgba(59, 130, 246, 0.20), transparent 60%),
+                   linear-gradient(160deg, #0f172a 0%, #020617 100%);
+  --a4-header-bg: rgba(15, 23, 42, 0.86);
   --a4-header-line: rgba(255, 255, 255, 0.06);
   --a4-header-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-  --a4-header-ink: #d7dbe2;
+  --a4-header-ink: #cbd5e1;
   --a4-header-hover: rgba(255, 255, 255, 0.08);
   --a4-header-field: var(--a4-field);
   --a4-header-field-line: rgba(255, 255, 255, 0.18);
-  --a4-side-bg: #151a22;             /* dark mode: the side columns a shade darker than the middle */
+  --a4-side-bg: rgba(15, 23, 42, 0.6);             /* dark mode: the side columns a shade darker than the middle */
   --a4-card-edge: rgba(255, 255, 255, 0.09);
-  --a4-explayouts-nav: #1f2937;
+  --a4-explayouts-nav: #1e293b;
   --a4-explayouts-nav-edge: rgba(255, 255, 255, 0.04);
   --a4-pw-toggle-room: 98px;
   --a4-card-shadow: 0 18px 44px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
-  --a4-footer-ink: #8d95a3;
-  --a4-footer-link: #c8cdd6;
+  --a4-footer-ink: #94a3b8;
+  --a4-footer-link: #cbd5e1;
   --a4-footer-link-hover: #fff;
   --a4-brand: #f15a28;        /* the same artwork on dark pages */
   --a4-env-development: #047857;
   --a4-env-development-line: #047857;
-  --a4-env-test-line: #fdb022;
-  --a4-env-staging: #7a5af8;
-  --a4-env-staging-line: #7a5af8;
-  --a4-env-production: #d92d20;
-  --a4-env-production-line: #d92d20;
+  --a4-env-test-line: #fbbf24;
+  --a4-env-staging: #7c3aed;
+  --a4-env-staging-line: #7c3aed;
+  --a4-env-production: #dc2626;
+  --a4-env-production-line: #dc2626;
   --a4-env-development-ink: #fff;
-  --a4-env-test: #fdb022;
-  --a4-env-test-ink: #1f1300;
+  --a4-env-test: #fbbf24;
+  --a4-env-test-ink: #451a03;
   --a4-env-staging-ink: #fff;
   --a4-env-production-ink: #fff;
 }
@@ -2869,7 +2869,7 @@ html:root {
   --exp-ink: var(--a4-ink); --exp-muted: var(--a4-muted); --exp-faint: var(--a4-disabled); --exp-line: var(--a4-line);
   --exp-soft: var(--a4-soft); --exp-card: var(--a4-card);
   /* the accent is a FILL under white text in expui (primary dialog button, upload button, selected day): the strong
-     and the pressed orange, 5.2:1 and 7.3:1 with white (admin4's --a4-accent, #f26a21, is 3.1:1). The ring is the
+     and the pressed orange, 5.2:1 and 7.3:1 with white (admin4's --a4-accent, #f15a28, is 3.4:1). The ring is the
      tint expui lays over the drop zone; its focus ring is set to --a4-ring below. */
   --exp-accent: var(--a4-accent-strong); --exp-accent-dark: var(--a4-accent-press); --exp-accent-ring: var(--a4-accent-soft);
   --exp-ok: var(--a4-ok); --exp-ok-bg: var(--a4-ok-bg); --exp-warn: var(--a4-warn); --exp-warn-bg: var(--a4-warn-bg);

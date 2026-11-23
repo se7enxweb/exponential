@@ -40,7 +40,7 @@ admin4 schreibt das Verhältnis neben jedes Farbtoken in `design/admin4/styleshe
 
 ```css
 --a4-accent-strong: #c2410c;  /* filled controls carrying white text (5.2:1) */
---a4-accent-text:   #ad3809;  /* 6.3:1 on white, 5.4:1 on the hovered row */
+--a4-accent-text:   #9a3412;  /* 7.3:1 on white, 6.7:1 on the hovered row */
 --a4-ring:          #c2410c;  /* opaque: a focus indicator needs 3:1 against the page */
 ```
 
@@ -65,7 +65,7 @@ Die Entwicklerwerkzeuge des Browsers zeigen im Farbwähler das Kontrastverhältn
 - **Text auf Fotos**: Legen Sie eine deckende oder halbtransparente Schicht hinter den Text oder einen Textschatten, und prüfen Sie
   die ungünstigste Stelle des Bildes.
 - **Markenfarben**: Eine orange oder gelbe Markenfarbe erreicht mit weißem Text selten 4,5:1. admin4 behält seinen Akzent
-  `#f26a21` für Flächen und verwendet dunklere Töne (`--a4-accent-strong`, `--a4-accent-text`) für Text und gefüllte Knöpfe.
+  `#f15a28` (das Orange des Logos) für Flächen und verwendet dunklere Töne (`--a4-accent-strong`, `--a4-accent-text`) für Text und gefüllte Knöpfe.
 - **Dunkler Modus**: Reines Weiß auf reinem Schwarz ist hart, Grau auf Dunkelgrau versagt oft. Messen Sie, raten Sie nicht.
 - **Gedämpfter Text** (Daten, Bildunterschriften) trägt trotzdem Informationen: Er braucht ebenfalls 4,5:1.
 

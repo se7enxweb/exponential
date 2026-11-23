@@ -87,7 +87,7 @@ Alle als `var(--a4-...)`, definiert in `components.css`.
 
 | Gruppe | Tokens |
 |---|---|
-| Akzent | `--a4-accent` (`#f26a21`), `--a4-accent-hover`, `--a4-accent-strong` (gefüllte Bedienelemente mit weißem Text, 5,2:1), `--a4-accent-press` (deren Füllung beim Überfahren), `--a4-accent-text` (der Akzent als Text oder Link), `--a4-accent-soft` (Tönung), `--a4-on-accent`, `--a4-on-accent-hover` (Text auf der Füllung `-press`), `--a4-ring` (Fokusring, deckend: 3:1 auf jeder Fläche) |
+| Akzent | `--a4-accent` (`#f15a28`, das Orange des Logos), `--a4-accent-hover`, `--a4-accent-strong` (gefüllte Bedienelemente mit weißem Text, 5,2:1), `--a4-accent-press` (deren Füllung beim Überfahren), `--a4-accent-text` (der Akzent als Text oder Link), `--a4-accent-soft` (Tönung), `--a4-on-accent`, `--a4-on-accent-hover` (Text auf der Füllung `-press`), `--a4-ring` (Fokusring, deckend: 3:1 auf jeder Fläche) |
 | Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-line-strong`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-zebra` (die geraden Zeilen von Datentabellen), `--a4-field`, `--a4-field-line`, `--a4-disabled`, `--a4-overlay`, `--a4-code-bg`, `--a4-code-ink` |
 | Zustände | `--a4-ok`, `--a4-ok-bg`, `--a4-ok-line`; `--a4-warn`, `--a4-warn-bg`, `--a4-warn-line`; `--a4-bad`, `--a4-bad-bg`, `--a4-bad-line`, `--a4-bad-hover`; `--a4-info`, `--a4-info-bg`, `--a4-info-line` |
 | Diagramme | `--a4-chart-1` bis `--a4-chart-8`, eine kategoriale Palette in dieser Reihenfolge |
@@ -123,11 +123,19 @@ einfachen Absatz (`AdminStylingRulesTest::testEmptyListsUseTheEmptyState`).
 `--a4-orange`, `--a4-orange-dark` und `--a4-orange-soft` sind die früheren Namen des Akzents, behalten für die
 Erweiterungen, die sie verwenden; neuer Code verwendet die Namen `--a4-accent*`.
 
-**Der Akzent** ist das Marken-Orange `#f26a21`, wie im Kopfbereich von admin4 (die ausgewählte Menüpille) und auf
-seiner Standardschaltfläche. Weißer Text darauf erreicht nur 3:1, daher verwenden gefüllte Bedienelemente mit weißem
-Text seinen dunkleren Ton `--a4-accent-strong` (`#c2410c`, 5,2:1), und Text in Akzentfarbe verwendet
-`--a4-accent-text` (`#ad3809` hell, 5,4:1 auch auf einer überfahrenen Tabellenzeile und 4,8:1 für ein Badge
-`is-accent` darauf; `#ff9a5c` dunkel).
+**Der Akzent** ist das Orange des Logos `#f15a28`, wie im Kopfbereich von admin4 (die ausgewählte Menüpille) und auf
+seiner Standardschaltfläche. Weißer Text darauf erreicht nur 3,4:1, daher verwenden gefüllte Bedienelemente mit weißem
+Text seinen dunkleren Ton `--a4-accent-strong` (`#c2410c`, orange-700, 5,2:1), und Text in Akzentfarbe verwendet
+`--a4-accent-text` (`#9a3412`, orange-800, hell: 7,3:1, 6,7:1 auf einer überfahrenen Tabellenzeile und 5,8:1 für ein
+Badge `is-accent` darauf; `#fb923c`, orange-400, dunkel).
+
+**Eine Palette.** Jede andere Farbe der Stylesheets von admin4 und der Token-Kopie in `design/admin` ist eine Farbe
+der Standardpalette von Tailwind CSS 3.4, Weiß oder Schwarz; ein durchscheinendes `rgba()` übernimmt Rot, Grün und
+Blau einer davon. Die Grautöne sind nur `slate`. `AdminTokenPaletteTest` prüft das gegen
+`tests/tests/design/fixtures/tailwind-palette-3.4.17.json` und dass `--a4-accent` und `--a4-brand` die Füllung des
+Logos sind; `AdminTokenContrastTest` prüft die Kontraste. Eine neue Farbe nimmt die Stufe der Palette, die ihren
+Kontrast erreicht, keinen Wert dazwischen: im Dunkelmodus ist eine Fläche zwischen zwei Stufen ein über die Karte
+gelegtes Slate (`--a4-soft`, `--a4-zebra`), kein gemischter Hex-Wert.
 
 ### Stapelebenen
 
@@ -475,15 +483,15 @@ admin4, ein Wert gilt also überall:
 
 | Token | Hell | Dunkel (admin4) | Erreicht |
 |---|---|---|---|
-| `--a4-ink` | `#1f2430` | `#e8ebf0` | 4,5:1 auf jeder Fläche |
-| `--a4-muted` | `#545c6a` | `#a3abb9` | 4,5:1 auf Karte, Soft, Zebra, Tabellenkopf und jeder Zustandstönung |
-| `--a4-line` | `#c9cfd8` | `#2e3644` | Trennlinie, ohne Kontrastanforderung |
-| `--a4-line-strong` | `#aab2bd` | `#434d5f` | Spaltentrenner |
-| `--a4-soft` | `#eaedf1` | `#222936` | weiche Flächen |
-| `--a4-zebra` | `#eceff3` | `#212734` | die geraden Datenzeilen |
-| `--a4-head-bg` | `#dce1e8` | `#283041` | die Kopfzeile von Datentabellen |
-| `--a4-field-line` | `#6e7588` | `#6f7a93` | 3:1 auf jeder Fläche und auf der Seitenfarbe von admin4 |
-| `--a4-accent-text` | `#ad3809` | `#ff9a5c` | 4,5:1 als Text, auch auf einer Zeile unter dem Zeiger |
+| `--a4-ink` | `#1e293b` (slate-800) | `#e2e8f0` (slate-200) | 4,5:1 auf jeder Fläche |
+| `--a4-muted` | `#475569` (slate-600) | `#94a3b8` (slate-400) | 4,5:1 auf Karte, Soft, Zebra, Tabellenkopf und jeder Zustandstönung |
+| `--a4-line` | `#cbd5e1` (slate-300) | `#334155` (slate-700) | Trennlinie, ohne Kontrastanforderung |
+| `--a4-line-strong` | `#94a3b8` (slate-400) | `#475569` (slate-600) | Spaltentrenner |
+| `--a4-soft` | `#f1f5f9` (slate-100) | slate-700 zu 60 % über der Karte | weiche Flächen |
+| `--a4-zebra` | `#f8fafc` (slate-50) | slate-800 zu 60 % über der Karte | die geraden Datenzeilen |
+| `--a4-head-bg` | `#e2e8f0` (slate-200) | `#1e293b` (slate-800) | die Kopfzeile von Datentabellen |
+| `--a4-field-line` | `#64748b` (slate-500) | `#94a3b8` (slate-400) | 3:1 auf jeder Fläche und auf der Seitenfarbe von admin4 |
+| `--a4-accent-text` | `#9a3412` (orange-800) | `#fb923c` (orange-400) | 4,5:1 als Text, auch auf einer Zeile unter dem Zeiger |
 
 Im klassischen Admin und in admin3 nimmt der Inhaltsbereich diese Tokens; der dunkle Rahmen dieser Designs (Kopf,
 Menüleiste, Fuß, die strukturierte Seite und die Anmeldeseite) behält seine eigenen Farben, sie gehören zu ihrem Bild.

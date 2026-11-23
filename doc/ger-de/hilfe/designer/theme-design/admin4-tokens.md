@@ -26,7 +26,7 @@ diese Seite ist die Zusammenfassung für Designer.
 
 | Gruppe | Beispiele | Im Dunkeln gleich? |
 |---|---|---|
-| Akzent | `--a4-accent` (`#f26a21`), `--a4-accent-strong` (gefüllte Bedienelemente mit weißem Text), `--a4-accent-text` (Akzent als Text), `--a4-accent-soft`, `--a4-ring` (Fokusring) | nein |
+| Akzent | `--a4-accent` (`#f15a28`, das Orange des Logos), `--a4-accent-strong` (gefüllte Bedienelemente mit weißem Text), `--a4-accent-text` (Akzent als Text), `--a4-accent-soft`, `--a4-ring` (Fokusring) | nein |
 | Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-zebra`, `--a4-field`, `--a4-field-line` | nein |
 | Zustände | `--a4-ok`, `--a4-warn`, `--a4-bad`, `--a4-info`, jeweils mit `-bg` und `-line` | nein |
 | Diagramme | `--a4-chart-1` bis `--a4-chart-8` | nein |
@@ -48,9 +48,9 @@ Die hellen Werte stehen auf `:root`. Die dunklen Werte stehen in einem einzigen 
 ```css
 html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
   color-scheme: dark;
-  --a4-ink: #e8ebf0;
-  --a4-card: #1b212c;
-  --a4-accent-text: #ff9a5c;
+  --a4-ink: #e2e8f0;
+  --a4-card: #0f172a;
+  --a4-accent-text: #fb923c;
   /* ... */
 }
 ```
