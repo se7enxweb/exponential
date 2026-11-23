@@ -194,6 +194,7 @@ Cache-Zeile entfernt). Backend und Gateway bestehen `php -l` auf PHP 7.4 bis 8.5
 
 ## Verwandte Seiten
 
+- [Clustering in Exponential 6.0](clustering-ueberblick.md)
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
 - [Clustering mit MongoDB: das DFS-Backend im Kernel](mongodb-dfs-cluster.md)
 - [Clustering mit SQLite: das Ein-Knoten-DFS-Backend im Kernel](sqlite-dfs-cluster.md)

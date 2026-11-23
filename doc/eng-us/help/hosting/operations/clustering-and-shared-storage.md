@@ -197,7 +197,8 @@ Run `dfscleanup.php` with `-S` and `-B` first and read the result before you add
 - **Pausing cron.** Cronjob pause files are local to each server unless `cronjob.ini [PauseSettings] Directory` points
   at a shared directory ([Pausing cronjob parts](../../../features/6.0/cronjob-pause.md)).
 - **Cluster events.** `file.ini [ClusterEventsSettings] ClusterEvents=disabled` ships off; with a listener class they
-  let an extension react to cluster operations, for the DFS cluster with the MySQLi backend only
+  let an extension react to cluster operations; every DFS metadata backend of the kernel (MySQLi, PostgreSQL,
+  Oracle, MongoDB, SQLite) sends them
   ([Cluster events](../../../features/4.7/cluster_events.md)).
 
 ## Checklist
@@ -212,6 +213,7 @@ Run `dfscleanup.php` with `-S` and `-B` first and read the result before you add
 
 ## Related pages
 
+- [Clustering in Exponential 6.0](../../../features/6.0/clustering-overview.md): every part of a cluster in one place
 - [Several web nodes](several-web-nodes.md)
 - [Storage layout](storage-layout.md)
 - [Backups: what to back up](backups-what-to-back-up.md)

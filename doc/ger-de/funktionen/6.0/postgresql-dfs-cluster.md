@@ -129,6 +129,8 @@ DBName=exp_cluster
 DBUser=exp_cluster
 DBPassword=<das Passwort>
 DBLockTimeout=10
+# optional: eine Verbindung je PHP-Worker zwischen Anfragen behalten (siehe unten)
+# DBPersistentConnection=enabled
 ```
 
 Tabellen: `psql -v ON_ERROR_STOP=1 -h cluster-db.internal -U exp_cluster -d exp_cluster -f kernel/sql/postgresql/cluster_dfs_schema.sql`.
@@ -146,8 +148,27 @@ define( 'CLUSTER_STORAGE_CHARSET', 'utf8' );
 define( 'CLUSTER_MOUNT_POINT_PATH', '/mnt/exp-dfs' );
 ```
 
+### Wege zum Server und persistente Verbindungen
+
+Das Backend bindet seine Werte in PHP (emulierte Prepares von PDO; die Werte sind nur Ganzzahlen, Zeichenketten und
+Nullwerte), eine Anweisung ist also ein Weg zur Datenbank statt drei (Prepare, Execute und das `DEALLOCATE`, wenn die
+Anweisung freigegeben wird). In einem Cluster, dessen Datenbank auf einer anderen Maschine liegt, sank so die Zeit jeder
+Prüfung einer Cache-Datei auf ein Drittel. Dafür ist nichts einzustellen.
+
+`[eZDFSClusteringSettings] DBPersistentConnection=enabled` (Standard aus) behält eine Verbindung je PHP-Worker zwischen
+Anfragen (persistente Verbindungen von PDO) und spart die Anmelde-Wege einer neuen Verbindung. Zählen Sie zuerst die
+Worker jedes Knotens (Kinder von PHP-FPM, Velocity-Worker) gegen `max_connections` des Servers. PDO rollt eine
+Transaktion zurück, die am Ende einer Anfrage offen blieb. Das Gateway `index_cluster.php` öffnet weiter eine
+Verbindung je Anfrage.
+
+Ein Knoten behält und liefert nie eine zu kurze oder gescheiterte Kopie einer Datei vom Share: Die Größe wird an der
+temporären Kopie geprüft, bevor sie an ihren Platz umbenannt wird, und ein Abruf, der bei jedem Versuch scheitert,
+entfernt die alte lokale Kopie (jedes Backend, seit 6.0.15).
+
+### Ein Cluster mit einem Knoten
+
 Ein einzelner Server kann im Cluster-Modus laufen (Ein-Knoten-Cluster); ein zweiter Webserver bindet später dieselbe
-Freigabe ein und nutzt dieselben Einstellungen.
+Freigabe ein und nutzt dieselben Einstellungen ([Ein DFS-Cluster mit einem Knoten in einem Befehl](cluster-befehle.md)).
 
 ## Umstieg von der Erweiterung ezpostgresqlcluster
 
@@ -167,7 +188,7 @@ die Klasse des Kernels.
 (`EXP_TEST_PGCLUSTER_DSN`) und `expDFSMySQLiBackendParityTest` (`EXP_TEST_MYCLUSTER_DSN`) führen dieselben
 Paritätsprüfungen auf PostgreSQL und MySQL aus, darunter vier Prozesse, die gleichzeitig dieselbe Cache-Datei
 anfordern (einer erzeugt, drei warten), und auf PostgreSQL eine von einer anderen Transaktion gehaltene Sperre.
-Gemessen am 19. November 2026: PostgreSQL 13, 14, 15, 16, 17, 18 und 19 (Release Candidate 1) bestanden alle 27
+Gemessen am 19. November 2026: PostgreSQL 13, 14, 15, 16, 17, 18 und 19 (Release Candidate 1, seit der Veröffentlichung auch 19.0) bestanden alle 27
 Prüfungen, MySQL 8.0 die 21, die dort gelten. GitHub Actions führt sie bei jedem Push aus (Job "DFS cluster backends").
 
 ## Weitere Datenbanken: Oracle, MongoDB und SQLite
@@ -182,6 +203,10 @@ Trait `expDFSBackendParityChecks`. Reihenfolge laut Vorgabe: zuerst PostgreSQL, 
 
 ## Verwandte Seiten
 
+- [Clustering in Exponential 6.0](clustering-ueberblick.md): der Überblick über alle Teile eines Clusters
+- [PostgreSQL 18 und 19](postgresql-18-und-19.md): Versionen, Clients, Aktualisieren und ein Cluster auf 18 und 19
+- [Ein DFS-Cluster mit einem Knoten in einem Befehl](cluster-befehle.md)
+- [Lesereplikate](../../bc/6.0/postgresql-lesereplikat.md)
 - [Clustering: DFS und die Datenbank](../../hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md)
 - [Clustering und gemeinsamer Speicher](../../hilfe/hosting/betrieb/clustering-und-gemeinsamer-speicher.md)
 - [Datenbankunterstützung](../../hilfe/datenbankunterstuetzung.md)

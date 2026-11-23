@@ -193,6 +193,7 @@ Dokumente anderer Herkunft abgelehnt, die eigenen geleert). Backend und Gateway 
 
 ## Verwandte Seiten
 
+- [Clustering in Exponential 6.0](clustering-ueberblick.md)
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
 - [Clustering mit SQLite: das Ein-Knoten-DFS-Backend im Kernel](sqlite-dfs-cluster.md)
 - [Ein Ein-Knoten-DFS-Cluster mit einem Befehl](cluster-befehle.md)

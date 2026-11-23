@@ -202,8 +202,8 @@ Führen Sie `dfscleanup.php` zuerst mit `-S` und `-B` aus und lesen Sie das Erge
 - **Cron pausieren.** Die Pausendateien der Cronjobs sind auf jedem Server lokal, es sei denn, `cronjob.ini [PauseSettings] Directory`
   zeigt auf ein gemeinsames Verzeichnis ([Cronjob-Teile pausieren](../../../funktionen/6.0/cronjobs-pausieren.md)).
 - **Cluster-Ereignisse.** `file.ini [ClusterEventsSettings] ClusterEvents=disabled` ist ausgeschaltet ausgeliefert; mit einer
-  Listener-Klasse lassen sie eine Erweiterung auf Cluster-Operationen reagieren, nur für den DFS-Cluster mit dem
-  MySQLi-Backend ([Cluster-Ereignisse](../../../funktionen/4.7/cluster-ereignisse.md)).
+  Listener-Klasse lassen sie eine Erweiterung auf Cluster-Operationen reagieren; jedes DFS-Metadaten-Backend des
+  Kernels (MySQLi, PostgreSQL, Oracle, MongoDB, SQLite) sendet sie ([Cluster-Ereignisse](../../../funktionen/4.7/cluster-ereignisse.md)).
 
 ## Checkliste
 
@@ -217,6 +217,7 @@ Führen Sie `dfscleanup.php` zuerst mit `-S` und `-B` aus und lesen Sie das Erge
 
 ## Verwandte Seiten
 
+- [Clustering in Exponential 6.0](../../../funktionen/6.0/clustering-ueberblick.md): alle Teile eines Clusters an einer Stelle
 - [Mehrere Web-Knoten](mehrere-web-knoten.md)
 - [Aufbau des Speichers](aufbau-des-speichers.md)
 - [Was gesichert werden muss](backups-was-gesichert-werden-muss.md)

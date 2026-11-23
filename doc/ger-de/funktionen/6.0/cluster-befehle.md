@@ -83,6 +83,15 @@ er nicht geschrieben hat, bleiben unangetastet (Exit 2).
 | 1 | ein Schritt ist fehlgeschlagen; was geschrieben wurde, wird zurückgestellt |
 | 2 | falsche Optionen, oder die Installation kann nicht umgestellt werden (ihre Datenbank, eigene Cluster-Einstellungen) |
 
+## Mehrere Knoten auf einem Share
+
+Das Share wird für seine Gruppe beschreibbar angelegt (was auch immer die umask weggenommen hat; ein bestehendes Share
+des Befehls wird korrigiert), weil die anderen Knoten eines Clusters es über NFS als seine Gruppe erreichen, nicht als
+sein Eigentümer. Die Bits des Eigentümers und ein geerbtes setgid-Bit bleiben; andere bekommen nichts. Hängen Sie das
+Share auf jedem Knoten mit demselben numerischen Benutzer und derselben Gruppe ein. Jeder weitere Knoten braucht
+dieselben `settings/override/file.ini.append.php`, `config.cluster.php` und Gateway-Regeln, aber ein eigenes `var/`.
+Das ganze Bild: [Clustering in Exponential 6.0](clustering-ueberblick.md).
+
 ## Hosting-Panels
 
 Katalyst von 7x erledigt dieselbe Umstellung für gehostete Websites auf dem Tab Einstellungen der Website, als

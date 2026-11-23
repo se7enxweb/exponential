@@ -158,6 +158,7 @@ for one cache key at the same moment, 20 rounds: exactly one generation per roun
 
 ## Related pages
 
+- [Clustering in Exponential 6.0](clustering-overview.md)
 - [Clustering on PostgreSQL: the DFS backend in the kernel](postgresql-dfs-cluster.md)
 - [A one-node DFS cluster in one command](cluster-commands.md)
 - [SQLite database support](sqlite-database.md)

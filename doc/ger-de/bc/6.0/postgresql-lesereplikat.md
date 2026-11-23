@@ -214,6 +214,8 @@ MongoDB (`expMongoDB`) liest `UseSlaveServer` ebenfalls nicht; ein MongoDB-Repli
 
 ## Verwandte Seiten
 
+- [Clustering in Exponential 6.0](../../funktionen/6.0/clustering-ueberblick.md)
+- [PostgreSQL 18 und 19](../../funktionen/6.0/postgresql-18-und-19.md)
 - [Der Kernel-Dienstcontainer](kernel-dienste.md) (die Reset-Hooks)
 - [Der SQL-Abfrage-Cache](sql-abfrage-cache.md)
 - [Lese-Replikate](../../hilfe/verwaltung/betrieb/verfuegbarkeit/lese-replikate.md)

@@ -185,6 +185,7 @@ gateway pass `php -l` on PHP 7.4 to 8.5.
 
 ## Related pages
 
+- [Clustering in Exponential 6.0](clustering-overview.md)
 - [Clustering on PostgreSQL: the DFS backend in the kernel](postgresql-dfs-cluster.md)
 - [Clustering on SQLite: the one-node DFS backend in the kernel](sqlite-dfs-cluster.md)
 - [A one-node DFS cluster in one command](cluster-commands.md)

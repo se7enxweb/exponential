@@ -188,6 +188,7 @@ column, the old cache row gone). The backend and the gateway pass `php -l` on PH
 
 ## Related pages
 
+- [Clustering in Exponential 6.0](clustering-overview.md)
 - [Clustering on PostgreSQL: the DFS backend in the kernel](postgresql-dfs-cluster.md)
 - [Clustering on MongoDB: the DFS backend in the kernel](mongodb-dfs-cluster.md)
 - [Clustering on SQLite: the one-node DFS backend in the kernel](sqlite-dfs-cluster.md)

@@ -79,6 +79,14 @@ are left alone (exit 2).
 | 1 | a step failed; what was written is put back |
 | 2 | wrong options, or the installation cannot be switched (its database, cluster settings of its own) |
 
+## Several nodes on one share
+
+The share is made group-writable (whatever the umask took away; an existing share of the command is corrected),
+because the other nodes of a cluster reach it over NFS as its group, not as its owner. The owner's bits and an
+inherited setgid bit stay; others get nothing. Mount the share with the same numeric user and group on every node.
+Each further node needs the same `settings/override/file.ini.append.php`, `config.cluster.php` and gateway rules,
+but its own `var/`. The whole picture: [Clustering in Exponential 6.0](clustering-overview.md).
+
 ## Hosting panels
 
 7x's Katalyst does the same switch for hosted sites from the site's Settings tab, as the site's system user, and also

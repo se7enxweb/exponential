@@ -6989,7 +6989,7 @@ e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 dabff75a311362f40ae3a24bf5b55b51  doc/eng-us/features/6.0/cache-until.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
-0be3699bff5a29169413974cdb58c931  doc/eng-us/features/6.0/cluster-commands.md
+532547ce4528590571205bd661320398  doc/eng-us/features/6.0/cluster-commands.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
 b10b8f6d48a35a112fc60abd882b4869  doc/eng-us/features/6.0/content-jobs.md
@@ -7096,13 +7096,13 @@ ec55512dfd4d53e21c83bcc5cb3607ee  doc/eng-us/features/6.0/migrations.md
 edf63d0c3d2620ae2f29a5a96f1c6fa1  doc/eng-us/features/6.0/moderation.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 257a4b8dfc81f1f632e0e64362e2bda1  doc/eng-us/features/6.0/mongodb-database-support.md
-76361abb81cabd003431b574efbd8515  doc/eng-us/features/6.0/mongodb-dfs-cluster.md
+43eb9edddbd9d2c729d83050685b781a  doc/eng-us/features/6.0/mongodb-dfs-cluster.md
 3bd8e093800aafdb91540e9466fa4756  doc/eng-us/features/6.0/multi-site-ini-overrides.md
 8c507b215068aeb519298aebe32659da  doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md
 89aef2cbcbbeb2e4a7246cd080448bae  doc/eng-us/features/6.0/multisite-cross-site-links.md
 1e5257640f8fa49f18f0eebd491884c2  doc/eng-us/features/6.0/notifications.md
 328d31cb3c5429d428bb28e53e460208  doc/eng-us/features/6.0/online-editor-tinymce8.md
-77c227c58b15bcd91f12ef85a9a3c3d7  doc/eng-us/features/6.0/oracle-dfs-cluster.md
+3c4fe94e91ca4bfc49f165feb3b805f7  doc/eng-us/features/6.0/oracle-dfs-cluster.md
 e510905150884893d3af084b35ddf870  doc/eng-us/features/6.0/order-list-sorting.md
 28c90ba4d835d68a0013426971fcec5b  doc/eng-us/features/6.0/order-receipts.md
 33feba3558960bdaf6596ac1841d7075  doc/eng-us/features/6.0/order-siteaccess.md
@@ -7121,7 +7121,7 @@ e72286bc83884f1eb24b2ee9034f6481  doc/eng-us/features/6.0/platform-layouts-core-
 9883032b2ce992bfc3a26c0f0a92cc74  doc/eng-us/features/6.0/platform-php85-framework-forks.md
 cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.md
 2e6216a45844e2f3da0b09fbbea87102  doc/eng-us/features/6.0/platform-sqlite-install.md
-0656d3658311e70aca81acb23640d6c8  doc/eng-us/features/6.0/postgresql-dfs-cluster.md
+f37d619f6fb6d7da8ffd61774ae00c79  doc/eng-us/features/6.0/postgresql-dfs-cluster.md
 90c5f27d343a57526bf016d4e13900ef  doc/eng-us/features/6.0/preload-sites-view.md
 c07c4366ceda3d30c77c453388701333  doc/eng-us/features/6.0/preview-in-owning-siteaccess.md
 ae08ede3efea95365e6dbc15478de7cf  doc/eng-us/features/6.0/preview-links.md
@@ -7155,7 +7155,7 @@ a3c9e2957fb512acbbbb3f7ecbf57df4  doc/eng-us/features/6.0/siteaccess-host-and-la
 fe1c6abb641c7c1556cdce16bb86142c  doc/eng-us/features/6.0/smarty-templates.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
 a46d405f5296bc36483dd00721014cbc  doc/eng-us/features/6.0/sqlite-database.md
-b7fc8b7acbbaaa9a16eb5edbb86d7051  doc/eng-us/features/6.0/sqlite-dfs-cluster.md
+b66a7a499c71003f3f7be4f444876245  doc/eng-us/features/6.0/sqlite-dfs-cluster.md
 935ec6788e61b1717356146c44579111  doc/eng-us/features/6.0/static-cache-generator.md
 87bd2ea6ccbc920155f53d87cb8a61d2  doc/eng-us/features/6.0/static-publishing.md
 afd23090dc06207591ccdb4eb6b91806  doc/eng-us/features/6.0/store-dashboard.md
@@ -10254,7 +10254,7 @@ ca30f7e9ac6111347d2dfb17ddbcfa77  doc/eng-us/help/hosting/models/vps-hosting.md
 e4f1691f3c2261d8d5b522ae9ae23026  doc/eng-us/help/hosting/operations/automated-updates-with-ezupdate.md
 aef2dba03885a2061e13cd2660b7682f  doc/eng-us/help/hosting/operations/backup-schedules-and-retention.md
 090ce535f1491a0da62c1536d38597d3  doc/eng-us/help/hosting/operations/backups-what-to-back-up.md
-6ae869403810d260a231c9ebc9ced944  doc/eng-us/help/hosting/operations/clustering-and-shared-storage.md
+14aec11716125686ad3bcff238206622  doc/eng-us/help/hosting/operations/clustering-and-shared-storage.md
 58422cf020cfc35c928d8745f634e16b  doc/eng-us/help/hosting/operations/cron-jobs.md
 54a2d0581192fb2682919771ea80cc65  doc/eng-us/help/hosting/operations/cronjob-console.md
 4b7752b284fe9227fb33106466755882  doc/eng-us/help/hosting/operations/database-backups-per-engine.md
@@ -17131,7 +17131,7 @@ dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-si
 1f1a89109f14133da5ec552dcd12b106  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
-f00b39922fab058954c2ee956bcff364  doc/ger-de/funktionen/6.0/cluster-befehle.md
+febb3f50fc4a5489e79d860695ae26d4  doc/ger-de/funktionen/6.0/cluster-befehle.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
@@ -17241,11 +17241,11 @@ ab38db87d8356eec578bd9158475a255  doc/ger-de/funktionen/6.0/moderation.md
 ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaenderung.md
 298bb86f3a6c50d18a8fd5252f6d84ec  doc/ger-de/funktionen/6.0/modulueberschreibung-durch-extensions.md
 b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunterstuetzung.md
-b488638550b2c56e61f90eca2058a7d5  doc/ger-de/funktionen/6.0/mongodb-dfs-cluster.md
+5cd14f4f8fc482ab2989f3cd0b7d9dba  doc/ger-de/funktionen/6.0/mongodb-dfs-cluster.md
 a0bd58357b09d6587778742acec9e033  doc/ger-de/funktionen/6.0/oberster-knoten-des-inhaltsbaums-im-admin.md
 99269121eb54ff615dc17139eec01ac3  doc/ger-de/funktionen/6.0/online-editor-tinymce8.md
 53e924c6d8365234e1bcd4525bf25bb2  doc/ger-de/funktionen/6.0/optionen-der-unterelementtabelle.md
-29c023aebb57af54a960328f23de65bb  doc/ger-de/funktionen/6.0/oracle-dfs-cluster.md
+2eeed3b957a41e78505c209937ec2070  doc/ger-de/funktionen/6.0/oracle-dfs-cluster.md
 494f858644b4e88de283a243c0d0c22f  doc/ger-de/funktionen/6.0/paketassistent.md
 25a3174397d3a96f8f3b3b80fd5610f4  doc/ger-de/funktionen/6.0/pakete-vergleichen-und-importieren.md
 87a7ca4d2772cee023e56f84e5f9ae15  doc/ger-de/funktionen/6.0/paketinstallation-in-teilschritten.md
@@ -17260,7 +17260,7 @@ fe5869bd6e0ab614f9de91892d6c9895  doc/ger-de/funktionen/6.0/plattform-nexus-star
 6ded0e62de5d948d8a4f97fac3b2e8e8  doc/ger-de/funktionen/6.0/plattform-php85-framework-forks.md
 393ffffcd603e012a44013ce86323f2b  doc/ger-de/funktionen/6.0/plattform-site-bundles.md
 04a57e6e4790f4c646e57c18412a6b61  doc/ger-de/funktionen/6.0/plattform-sqlite-installation.md
-c632e965fa1c8e75cbe50f5ffd400af8  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
+a55a33afffece2312c340517cbd1ff4d  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
 566dbc8ab28ae074d810044f0c1b0bc8  doc/ger-de/funktionen/6.0/pruefprotokoll.md
 1b7d415eb35e75914386eae1e439cd70  doc/ger-de/funktionen/6.0/pruefung-umgekehrter-beziehungen.md
 adce76c3dd1b2afaf99c06947abb30a5  doc/ger-de/funktionen/6.0/qualitaetspruefungen.md
@@ -17285,7 +17285,7 @@ b11a1cfe5de18bae37f762fc4deab69f  doc/ger-de/funktionen/6.0/smarty-templates.md
 048b85449fe4f1d1f763247b12b53ae7  doc/ger-de/funktionen/6.0/soap-client-tls.md
 c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-bestellliste.md
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
-c5e60dc5b4bc5930fc05d33539a00c47  doc/ger-de/funktionen/6.0/sqlite-dfs-cluster.md
+d6385bbaa2c6dc5931603b6e4af56e47  doc/ger-de/funktionen/6.0/sqlite-dfs-cluster.md
 4585ca572191483a19c48897dd985efc  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
 7b785af03f1e8f01ab7f64354515847f  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
@@ -19606,7 +19606,7 @@ c61d439508facadeb59d0ec7bad0c8f9  doc/ger-de/hilfe/hosting/betrieb/README.md
 32c2a3ccd9221a1035e3d5d3f421ae7a  doc/ger-de/hilfe/hosting/betrieb/automatische-updates-mit-ezupdate.md
 00d77c0b310451b73ffd4e0d07d14b39  doc/ger-de/hilfe/hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md
 57edac404a5260717629912fcb075ab3  doc/ger-de/hilfe/hosting/betrieb/backups-was-gesichert-werden-muss.md
-eb15aad673bf32a326b28d20e3b97d27  doc/ger-de/hilfe/hosting/betrieb/clustering-und-gemeinsamer-speicher.md
+a00a9f8ce95a8d6678e90ff095426d1b  doc/ger-de/hilfe/hosting/betrieb/clustering-und-gemeinsamer-speicher.md
 84e393a545de730f1705048547076208  doc/ger-de/hilfe/hosting/betrieb/cronjobs.md
 6bc83b68a665290410dc5ead211c044a  doc/ger-de/hilfe/hosting/betrieb/datenbank-backups-je-engine.md
 67b54dd5d1e57e6d4aa5cf5902415968  doc/ger-de/hilfe/hosting/betrieb/die-cronjob-konsole.md
@@ -31128,8 +31128,8 @@ df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-
 a978abfd4df3d11208afede1d7f7358f  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php
 b3c3ba2c6748e617bbc1c12512aa8fdf  tests/tests/lib/ezdb/eZPostgreSQLDBReadReplicaTest.php
-7215ccbb8622d69e4c8e6fce367c3a7b  doc/eng-us/bc/6.0/postgresql-read-replica.md
-15589276588e8c8cf9db71eef1846d1f  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
+b57b5d3994882cc18ae91c51b21ec4ba  doc/eng-us/bc/6.0/postgresql-read-replica.md
+f27f5e5268a2227d2cd37a56bf679636  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
 db5c5bde251c17a9563d3b4fe25346ef  tests/tests/kernel/classes/upgrade/expUpgradeBackupPostgresqlToolTest.php
 e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
 520f09719053749ec73c645597be90cf  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php

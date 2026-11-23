@@ -164,6 +164,7 @@ unter PHP 7.4, 8.0, 8.1, 8.2, 8.3, 8.4 und 8.5 ohne Notice oder Deprecation.
 
 ## Verwandte Seiten
 
+- [Clustering in Exponential 6.0](clustering-ueberblick.md)
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
 - [Ein DFS-Cluster mit einem Knoten in einem Befehl](cluster-befehle.md)
 - [Unterstützung für die Datenbank SQLite](sqlite-datenbank.md)

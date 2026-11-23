@@ -146,6 +146,8 @@ DBUser=exp_cluster
 DBPassword=<the password>
 # optional: seconds a statement waits for a row lock before its transaction is tried again
 DBLockTimeout=10
+# optional: keep one connection per PHP worker between requests (see below)
+# DBPersistentConnection=enabled
 ```
 
 Tables: `psql -v ON_ERROR_STOP=1 -h cluster-db.internal -U exp_cluster -d exp_cluster -f kernel/sql/postgresql/cluster_dfs_schema.sql`.
@@ -165,6 +167,22 @@ define( 'CLUSTER_MOUNT_POINT_PATH', '/mnt/exp-dfs' );
 
 The site's own database and the cluster database are separate choices: a site on MySQL can keep its cluster
 metadata in PostgreSQL and the other way round.
+
+### Round trips and persistent connections
+
+The backend binds its values in PHP (PDO emulated prepares; the values are only integers, strings and nulls), so a
+statement is one round trip to the database instead of three (prepare, execute and the `DEALLOCATE` when the statement
+is freed). On a cluster whose database is on another machine this cut the time of every cache file check to a third.
+Nothing needs to be set for it.
+
+`[eZDFSClusteringSettings] DBPersistentConnection=enabled` (default off) keeps one connection per PHP worker between
+requests (PDO persistent connections) and saves the login round trips of a new connection. Count the workers of every
+node (PHP-FPM children, Velocity workers) against the server's `max_connections` first. PDO rolls back a transaction
+left open when a request ends. The gateway `index_cluster.php` keeps opening a connection per request.
+
+A node never keeps or serves a short or failed copy of a file from the share: the size is checked on the temporary
+copy before it is renamed into place, and a fetch that fails on every try removes the old local copy (every backend,
+since 6.0.15).
 
 ### A one-node cluster
 
@@ -204,7 +222,7 @@ moment** (one generates, three wait, nobody fails) and, on PostgreSQL, **a lock 
 waits one second, is retried and succeeds once the lock is gone, or gives up after `DBExecuteRetries` tries instead of
 hanging).
 
-Measured on 19 November 2026: PostgreSQL 13, 14, 15, 16, 17, 18 and 19 (release candidate 1) passed all 27 checks;
+Measured on 19 November 2026: PostgreSQL 13, 14, 15, 16, 17, 18 and 19 (release candidate 1, and 19.0 since its release) passed all 27 checks;
 MySQL 8.0 passed the 21 that apply (the two left out are times after 2038, which MySQL's `int(11)` column cannot hold,
 and the bounded lock wait, which MySQL leaves to its own `innodb_lock_wait_timeout`). GitHub Actions runs the same
 on every push (job "DFS cluster backends" of `.github/workflows/phpunit.yml`, PostgreSQL 13 to 19).
@@ -234,6 +252,10 @@ SQLite, MongoDB and Oracle are built: every database Exponential supports has a 
 
 ## Related pages
 
+- [Clustering in Exponential 6.0](clustering-overview.md): the overview of every part of a cluster
+- [PostgreSQL 18 and 19](postgresql-18-and-19.md): versions, clients, upgrading and a cluster on 18 and 19
+- [A one-node DFS cluster in one command](cluster-commands.md)
+- [Read replicas](../../bc/6.0/postgresql-read-replica.md)
 - [Clustering: DFS and its metadata database](../../help/database-administrators/clustering-dfs-and-the-database.md)
 - [Clustering and shared storage](../../help/hosting/operations/clustering-and-shared-storage.md)
 - [Database support](../../help/database-support.md)
