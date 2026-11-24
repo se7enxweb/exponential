@@ -24,7 +24,7 @@ trait expMigrationRunnerEngineChecks
     /** @var string|null a directory of this test under var/tmp */
     protected $runnerDir;
 
-    /** @var array|null what runnerBegin() changed: the global database, the module paths, the exception handler */
+    /** @var array|null what runnerBegin() changed: the global database, the module paths, the exception handler, the search engine */
     protected $runnerSaved;
 
     /**
@@ -46,6 +46,16 @@ trait expMigrationRunnerEngineChecks
         // the search engine of the publish operation is looked up by the siteaccess
         if ( !isset( $GLOBALS['eZCurrentAccess']['name'] ) )
             $GLOBALS['eZCurrentAccess'] = array( 'name' => 'migration_test', 'type' => 1 );
+        // the kernel's own search engine: the test's database holds the kernel schema only. An extension's engine
+        // that a test before left in place (eZSolr once the ezfind settings were loaded) wrote to its own tables on
+        // every removal; on SQLite the failed transaction ended the whole PHPUnit process
+        $site = eZINI::instance( 'site.ini' );
+        $plugin = 'eZSearchPlugin_' . $GLOBALS['eZCurrentAccess']['name'];
+        $this->runnerSaved['search'] = array( 'plugin' => $plugin,
+                                              'engine' => $site->hasVariable( 'SearchSettings', 'SearchEngine' ) ? $site->variable( 'SearchSettings', 'SearchEngine' ) : null,
+                                              'instance' => array_key_exists( $plugin, $GLOBALS ) ? array( $GLOBALS[$plugin] ) : null );
+        $site->setVariable( 'SearchSettings', 'SearchEngine', 'eZSearchEngine' );
+        unset( $GLOBALS[$plugin] );
         // file caches of the kernel (languages, class attributes ...) in a var directory of the test: caches another
         // test process wrote for its database in var/cache are not this database's
         $ini = eZINI::instance();
@@ -70,6 +80,13 @@ trait expMigrationRunnerEngineChecks
             else
                 $GLOBALS['eZDBGlobalInstance'] = $this->runnerSaved['db'][0];
             eZModule::setGlobalPathList( $this->runnerSaved['modules'] );
+            $search = $this->runnerSaved['search'];
+            if ( $search['engine'] !== null )
+                eZINI::instance( 'site.ini' )->setVariable( 'SearchSettings', 'SearchEngine', $search['engine'] );
+            if ( $search['instance'] === null )
+                unset( $GLOBALS[$search['plugin']] );
+            else
+                $GLOBALS[$search['plugin']] = $search['instance'][0];
             eZINI::instance()->setVariable( 'FileSettings', 'VarDir', $this->runnerSaved['vardir'] );
             unset( $GLOBALS['eZContentLanguageList'], $GLOBALS['eZContentLanguageMask'], $GLOBALS['eZContentSectionObjectCache'] );
             if ( $this->runnerSaved['access'] === null )

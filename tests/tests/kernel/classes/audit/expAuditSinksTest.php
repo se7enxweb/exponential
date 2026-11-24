@@ -84,8 +84,7 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
     {
         if ( $this->receiver )
         {
-            proc_terminate( $this->receiver );
-            proc_close( $this->receiver );
+            ezpLoopbackServer::stop( $this->receiver );
             $this->receiver = null;
         }
         expAuditSinkRegistry::reset();
@@ -116,10 +115,9 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
                 fclose( $s );
                 continue;
             }
-            $this->receiver = proc_open( array( PHP_BINARY, '-S', "127.0.0.1:$port", __DIR__ . '/fixtures/expaudittestwebhookreceiver.php' ),
-                                         array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'file', $this->dir . 'receiver.log', 'a' ),
-                                                2 => array( 'file', $this->dir . 'receiver.log', 'a' ) ), $pipes, $root,
-                                         array( 'AUDIT_RECEIVER_DIR' => $this->dir . 'receiver', 'AUDIT_RECEIVER_SECRET' => $secret, 'PATH' => getenv( 'PATH' ) ) );
+            $this->receiver = ezpLoopbackServer::start( array( PHP_BINARY, '-S', "127.0.0.1:$port", __DIR__ . '/fixtures/expaudittestwebhookreceiver.php' ),
+                                         array( 'AUDIT_RECEIVER_DIR' => $this->dir . 'receiver', 'AUDIT_RECEIVER_SECRET' => $secret, 'PATH' => getenv( 'PATH' ) ),
+                                         $root, $this->dir . 'receiver.log' );
             for ( $i = 0; $i < 50; $i++ )
             {
                 usleep( 50000 );
@@ -131,8 +129,7 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
                     return $port;
                 }
             }
-            proc_terminate( $this->receiver );
-            proc_close( $this->receiver );
+            ezpLoopbackServer::stop( $this->receiver );
             $this->receiver = null;
         }
         $this->fail( 'The test receiver did not start' );
