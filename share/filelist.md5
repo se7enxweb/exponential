@@ -307,7 +307,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-9c8bcd43149ea676c8dcc4faae690f04  composer.json
+c9e47513d7235089d6da5739fabfc3d5  composer.json
 a180ccab56cfc079f1e8da6819229745  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 41291f5ed06ef9f1031d746a24f7c112  config.php-RECOMMENDED

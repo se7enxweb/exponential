@@ -108,6 +108,9 @@
     "replace": {
         "se7enxweb/ezpublish": "self.version"
     },
+    "conflict": {
+        "se7enxweb/exponential-velocity": "<0.0.4.62"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4",
         "webonyx/graphql-php": "^15.32.3"
