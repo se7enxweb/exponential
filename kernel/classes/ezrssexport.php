@@ -1645,6 +1645,9 @@ class eZRSSExport extends eZPersistentObject
      * comes out empty: the person, category and guid of RSS 2.0 and the text
      * constructs (title, subtitle, summary) of ATOM. RSS 1.0 has none.
      *
+     * The list applies only to an ezcFeed that does not escape these fields
+     * itself; see feedWritesPlainText().
+     *
      * @var array(string=>array(string))
      */
     protected static $feedMarkupFields = array(
@@ -1653,8 +1656,36 @@ class eZRSSExport extends eZPersistentObject
     );
 
     /**
-     * A value as ezcFeed expects it for $field of a feed of $type: escaped
-     * once where ezcFeed writes the field as markup, plain text everywhere else.
+     * Cached answer of feedWritesPlainText(); null until asked.
+     *
+     * @var bool|null
+     */
+    protected static $feedWritesPlainText = null;
+
+    /**
+     * Whether the installed ezcFeed escapes every field itself.
+     *
+     * A newer ezcFeed routes every text through ezcFeedProcessor::addText(),
+     * which makes it a DOM text node. Handing it a pre-escaped value, as
+     * $feedMarkupFields does for the older writer, then writes "&amp;amp;".
+     * The method exists only in that newer ezcFeed, so its presence is the test.
+     *
+     * @return bool
+     */
+    static function feedWritesPlainText()
+    {
+        if ( self::$feedWritesPlainText === null )
+        {
+            self::$feedWritesPlainText = method_exists( 'ezcFeedProcessor', 'addText' );
+        }
+
+        return self::$feedWritesPlainText;
+    }
+
+    /**
+     * A value as ezcFeed expects it for $field of a feed of $type: plain text
+     * if ezcFeed escapes every field itself, otherwise escaped once where
+     * ezcFeed writes the field as markup and plain text everywhere else.
      *
      * @param string $type One of 'rss1', 'rss2' and 'atom'
      * @param string $field 'title', 'description', 'author', 'category', 'guid', or another field
@@ -1664,6 +1695,10 @@ class eZRSSExport extends eZPersistentObject
     static function feedText( $type, $field, $text )
     {
         $text = (string) $text;
+        if ( self::feedWritesPlainText() )
+        {
+            return $text;
+        }
         if ( isset( self::$feedMarkupFields[$type] ) && in_array( $field, self::$feedMarkupFields[$type], true ) )
         {
             return htmlspecialchars( $text, ENT_NOQUOTES, 'UTF-8' );
