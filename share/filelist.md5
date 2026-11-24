@@ -25053,7 +25053,7 @@ b6a31653ade7cd2ebcda9412ea3c6c33  kernel/classes/ezcontentbrowsebookmark.php
 4fb5f679386686eabe02eae483b7ff14  kernel/classes/ezcontentbrowsebookmarkfolder.php
 7b5e398571e86941fd2161f7503ca395  kernel/classes/ezcontentbrowserecent.php
 dbf94b992b19048b140be82cded6c0d6  kernel/classes/ezcontentcache.php
-35b845bfba29b2609b7c05a032f41644  kernel/classes/ezcontentcachemanager.php
+4f5ad515efac8a17311a9403bde5fe12  kernel/classes/ezcontentcachemanager.php
 f26738497e957a0be321a84802df6896  kernel/classes/ezcontentclass.php
 5744bbe609eef2b4495c2f9013b8b923  kernel/classes/ezcontentclassattribute.php
 e07ccc2620b94882101cd839c820a2f8  kernel/classes/ezcontentclassclassgroup.php
@@ -29432,7 +29432,7 @@ b0b0208351f6f5c4ce3099c4cb82dc8f  tests/tests/kernel/classes/debugbar/expDebugBa
 db77b098f2a0d4b4c7c3a56c08fd1a60  tests/tests/kernel/classes/eZCollaborationItemTest.php
 f03fbacca3a109985d80e6aee6ccadaa  tests/tests/kernel/classes/eZContentBrowseEditReturnTargetTest.php
 febb129df156e1d32fec89e35e7eca13  tests/tests/kernel/classes/eZContentCacheEventSendersTest.php
-b533223ff137ba97e609f0989be9f84c  tests/tests/kernel/classes/eZContentCacheManagerThresholdWarningTest.php
+c8bceca214f10875b5fbbe72a2d5273a  tests/tests/kernel/classes/eZContentCacheManagerThresholdWarningTest.php
 1490cbf3e646544868f21e82c095a94e  tests/tests/kernel/classes/eZContentClassAttributeSQLiteIDsTest.php
 ace24100c00f37ef948d3aecdbef1eed  tests/tests/kernel/classes/eZContentClassAttributeTest.php
 99258fe007de141e6139ab30dbdcc9a3  tests/tests/kernel/classes/eZContentClassTest.php
