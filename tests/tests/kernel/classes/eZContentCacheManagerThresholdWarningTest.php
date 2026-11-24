@@ -23,7 +23,7 @@
 
 // Stand-ins for sevenx_valkey_cache (not active on the test installation): they record what the kernel asks them to
 // clear, so the test needs no Valkey server.
-if ( !class_exists( 'sevenxValkeyCacheBlock' ) && !class_exists( 'sevenxValkeyCacheHandler' ) )
+if ( !class_exists( 'sevenxValkeyCacheBlock', false ) && !class_exists( 'sevenxValkeyCacheHandler', false ) )
 {
     class sevenxValkeyCacheBlock
     {
