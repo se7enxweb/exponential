@@ -103,6 +103,9 @@ const ASSETS = 'exp-packed-last-good';
 // Paths this must never touch.
 const OFF_LIMITS = [
 	/^\/admin(\/|$)/,
+	// the other admin siteaccesses (adminui, admintest_*): the admin too
+	/^\/adminui(\/|$)/,
+	/^\/admintest_[a-z0-9_]+(\/|$)/,
 	// the editor siteaccess: the admin for content editing
 	/^\/editor(\/|$)/,
 	/^\/user(\/|$)/,
