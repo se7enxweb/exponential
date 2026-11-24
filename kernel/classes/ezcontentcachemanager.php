@@ -792,6 +792,7 @@ class eZContentCacheManager
 
         eZDebugSetting::writeDebug( 'kernel-content-edit', count( $nodeList ), "count in nodeList" );
 
+        $staticCacheHandler = null;
         if ( eZINI::instance()->variable( 'ContentSettings', 'StaticCache' ) === 'enabled' )
         {
             $staticCacheHandler = eZExtension::getHandlerClass(
@@ -806,6 +807,16 @@ class eZContentCacheManager
 
             $staticCacheHandler->generateAlwaysUpdatedCache();
             $staticCacheHandler->generateNodeListCache( $nodeList );
+        }
+
+        // With sevenx_valkey_cache the content view cache is kept in Valkey (kernel/private/classes/views/content/view.php),
+        // and only its own handler clears it there. A site with static cache off, or with another static cache handler,
+        // kept every changed page's old view in Valkey for up to an hour, on every server that shares that Valkey.
+        if ( class_exists( 'sevenxValkeyCacheBlock' ) && class_exists( 'sevenxValkeyCacheHandler' )
+             && !( $staticCacheHandler instanceof sevenxValkeyCacheHandler ) )
+        {
+            $valkeyViewCache = new sevenxValkeyCacheHandler();
+            $valkeyViewCache->generateNodeListCache( $nodeList );
         }
 
         // Static publishing: the pages of these nodes are stale for the targets that publish on content publish
