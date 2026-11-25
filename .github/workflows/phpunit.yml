@@ -520,7 +520,8 @@ jobs:
   # needs a newer server skips on 2017).
   sqlserver:
     name: SQL Server ${{ matrix.server }} (${{ matrix.layer }}, PHP ${{ matrix.php }})
-    runs-on: ubuntu-latest
+    # Microsoft's apt repository serves Ubuntu 24.04; ubuntu-latest moved to 26.04 before it did
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -548,13 +549,16 @@ jobs:
 
       - name: Install Microsoft ODBC Driver 18
         run: |
-          if ! odbcinst -q -d | grep -q 'ODBC Driver 18 for SQL Server'; then
-            curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg
-            echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/mssql-release.list
+          if ! ls /opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.*.so.* >/dev/null 2>&1; then
+            # the runner image may already list Microsoft's repository (a second entry with another key breaks apt)
+            if ! grep -rqs packages.microsoft.com /etc/apt/sources.list /etc/apt/sources.list.d/; then
+              curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --batch --yes --dearmor -o /usr/share/keyrings/microsoft-prod.gpg
+              echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/mssql-release.list
+            fi
             sudo apt-get -o Acquire::Retries=3 update
             sudo ACCEPT_EULA=Y apt-get -o Acquire::Retries=3 install -y msodbcsql18 unixodbc-dev
           fi
-          odbcinst -q -d
+          ls /opt/microsoft/msodbcsql18/lib64/
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -616,7 +620,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.4'
-          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, sqlsrv, pdo_sqlsrv, zip
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, sockets, sqlsrv, pdo_sqlsrv, zip
           coverage: none
           tools: composer:v2
 
@@ -631,7 +635,8 @@ jobs:
         shell: bash
         run: |
           cp composer.json "${CI_COMPOSER_FILE}"
-          COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          # Velocity's Linux-only extensions (pcntl, posix) do not exist on Windows; this job never starts it
+          COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req='ext-*'
           php bin/php/ezpgenerateautoloads.php -s -e
 
       - name: Run the SQL Server tests on LocalDB
