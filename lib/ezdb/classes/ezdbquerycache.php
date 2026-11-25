@@ -1972,6 +1972,7 @@ class eZDBQueryCache
                 return method_exists( $db, 'standardConformingStrings' ) && $db->standardConformingStrings() === false;
             case 'oracle':
             case 'sqlite':
+            case 'SQLServer':
                 return false;
         }
         return null;
