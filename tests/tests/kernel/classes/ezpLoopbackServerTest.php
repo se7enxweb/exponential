@@ -89,7 +89,15 @@ class ezpLoopbackServerTest extends TestCase
     {
         if ( $this->router === '' )
             return array();
-        $out = trim( (string)shell_exec( 'pgrep -f ' . escapeshellarg( basename( $this->router ) ) . ' 2>/dev/null' ) );
+        // pgrep runs without a shell: shell_exec()'s sh -c carries the pattern in its own command line, so pgrep -f
+        // found that shell and the processes never looked gone
+        $process = proc_open( array( 'pgrep', '-f', basename( $this->router ) ),
+                              array( 1 => array( 'pipe', 'w' ), 2 => array( 'file', '/dev/null', 'w' ) ), $pipes );
+        if ( !is_resource( $process ) )
+            return array();
+        $out = trim( (string)stream_get_contents( $pipes[1] ) );
+        fclose( $pipes[1] );
+        proc_close( $process );
         return $out === '' ? array() : array_map( 'intval', preg_split( '/\s+/', $out ) );
     }
 
