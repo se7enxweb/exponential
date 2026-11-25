@@ -31196,8 +31196,8 @@ e3994c8ae20f32679de751f4643817aa  tests/tests/lib/ezdb/sqlserver/expSQLServerDia
 2363e6acc3bca581badcb2c627ce996c  tests/tests/lib/ezdb/sqlserver/expSQLServerTestKit.php
 c556b8a37b70168e2bbeb52e7f8e32d4  tests/tests/lib/ezdb/sqlserver/live/expSQLServerLiveTest.php
 46f32715b3a59f79596a3582a2c0f412  tests/tests/lib/ezdb/sqlserver/live/expSQLServerPeer.php
-346c19dc3d737c3a8556cceb87f64b10  doc/eng-us/features/6.0/sqlserver-database-driver.md
-5a53d73d8680d77fca99f8b7a0a238e5  doc/ger-de/funktionen/6.0/sqlserver-datenbanktreiber.md
+17908346442187202727553d2fa80d77  doc/eng-us/features/6.0/sqlserver-database-driver.md
+ad786d699218b65d6213230330825f51  doc/ger-de/funktionen/6.0/sqlserver-datenbanktreiber.md
 72873eb2cfa278acf66adb1fc7f5b311  kernel/sql/sqlserver/kernel_schema.sql
 e7d6bc7fe7e033138e5bb5c6b5621ae8  lib/ezdb/classes/expdbsqlhelpers.php
 f3b6a5048dc9d09abc48f7581424f227  lib/ezdbschema/classes/expsqlserverschema.php
