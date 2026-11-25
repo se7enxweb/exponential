@@ -513,3 +513,133 @@ jobs:
       - name: Clean CI Composer overlay
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
+  # The Microsoft SQL Server driver (expSQLServerDB) against Microsoft's SQL Server Linux containers, on each PHP
+  # layer it supports. The DB-less SQL Server tests run in the PHPUnit job above (testsuite lib); these are the live
+  # ones (testsuite sqlserver-live), which fail here instead of skipping (--fail-on-skipped is not used: a test that
+  # needs a newer server skips on 2017).
+  sqlserver:
+    name: SQL Server ${{ matrix.server }} (${{ matrix.layer }}, PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { server: '2022-latest', layer: sqlsrv, php: '8.5' }
+          - { server: '2022-latest', layer: pdo_sqlsrv, php: '8.4' }
+          - { server: '2022-latest', layer: pdo_odbc, php: '8.3' }
+          - { server: '2025-latest', layer: sqlsrv, php: '8.5' }
+          - { server: '2019-latest', layer: pdo_sqlsrv, php: '8.2' }
+          - { server: '2017-latest', layer: sqlsrv, php: '8.1' }
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:${{ matrix.server }}
+        env:
+          ACCEPT_EULA: 'Y'
+          MSSQL_PID: Developer
+          MSSQL_SA_PASSWORD: Ci-SqlServer-2026!
+        ports:
+          - 1433:1433
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Install Microsoft ODBC Driver 18
+        run: |
+          if ! odbcinst -q -d | grep -q 'ODBC Driver 18 for SQL Server'; then
+            curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg
+            echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/mssql-release.list
+            sudo apt-get -o Acquire::Retries=3 update
+            sudo ACCEPT_EULA=Y apt-get -o Acquire::Retries=3 install -y msodbcsql18 unixodbc-dev
+          fi
+          odbcinst -q -d
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, pdo, pdo_odbc, sqlsrv, pdo_sqlsrv, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          test -x vendor/bin/phpunit
+
+      - name: Generate autoloads
+        run: php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Wait for SQL Server
+        run: |
+          for i in $(seq 1 60); do
+            php -r 'try { new PDO("odbc:Driver={ODBC Driver 18 for SQL Server};Server=127.0.0.1,1433;Encrypt=yes;TrustServerCertificate=yes", "sa", "Ci-SqlServer-2026!"); exit(0); } catch (Exception $e) { exit(1); }' && exit 0
+            sleep 3
+          done
+          echo "::error::SQL Server did not answer"; exit 1
+
+      - name: Run the SQL Server tests
+        env:
+          EXP_TEST_SQLSERVER_HOST: 127.0.0.1
+          EXP_TEST_SQLSERVER_PORT: 1433
+          EXP_TEST_SQLSERVER_USER: sa
+          EXP_TEST_SQLSERVER_PASSWORD: Ci-SqlServer-2026!
+          EXP_TEST_SQLSERVER_LAYER: ${{ matrix.layer }}
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite sqlserver
+          php vendor/bin/phpunit --colors=always --testsuite sqlserver-live
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
+  # A smoke run on Windows: Microsoft's sqlsrv extension against SQL Server Express LocalDB, when the runner image
+  # has LocalDB (it is not a promise of the image, so the job may not fail the run).
+  sqlserver-windows-localdb:
+    name: SQL Server LocalDB smoke (Windows, sqlsrv, PHP 8.4)
+    runs-on: windows-latest
+    timeout-minutes: 30
+    continue-on-error: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, sqlsrv, pdo_sqlsrv, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Start LocalDB
+        shell: pwsh
+        run: |
+          if (-not (Get-Command sqllocaldb -ErrorAction SilentlyContinue)) { Write-Output "::warning::No LocalDB on this runner"; exit 0 }
+          sqllocaldb start MSSQLLocalDB
+          sqllocaldb info MSSQLLocalDB
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Run the SQL Server tests on LocalDB
+        shell: bash
+        env:
+          EXP_TEST_SQLSERVER_HOST: '(localdb)\MSSQLLocalDB'
+          EXP_TEST_SQLSERVER_USER: '-'
+          EXP_TEST_SQLSERVER_LAYER: sqlsrv
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite sqlserver
+          if command -v sqllocaldb >/dev/null 2>&1; then php vendor/bin/phpunit --colors=always --testsuite sqlserver-live; fi
