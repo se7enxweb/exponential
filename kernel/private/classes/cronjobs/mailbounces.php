@@ -34,8 +34,8 @@ class Mailbounces extends \Exponential\Runnable\CronjobPart
         }
         $r = \expMailBounceReader::run();
         $c = $r['counts'];
-        $cli->output( sprintf( 'Bounce mailbox: %d messages, %d hard bounces, %d soft bounces, %d complaints, %d addresses suppressed',
-                               $c['messages'], $c['hard'], $c['soft'], $c['complaints'], $c['suppressed'] ) );
+        $cli->output( sprintf( 'Bounce mailbox: %d messages, %d hard bounces, %d soft bounces, %d delayed, %d complaints, %d addresses suppressed',
+                               $c['messages'], $c['hard'], $c['soft'], $c['delayed'], $c['complaints'], $c['suppressed'] ) );
         if ( !$r['ok'] )
             $cli->error( 'Bounce mailbox: ' . $r['error'] );
         return $r['ok'];

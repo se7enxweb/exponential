@@ -37,6 +37,7 @@ class expMailBounceReader
 {
     const HARD = 'hard';
     const SOFT = 'soft';
+    const DELAY = 'delay';
     const COMPLAINT = 'complaint';
     const NONE = 'none';
 
@@ -119,10 +120,10 @@ class expMailBounceReader
         );
     }
 
-    /** @return array messages, hard, soft, complaints, other, suppressed (new entries), errors */
+    /** @return array messages, hard, soft, delayed, complaints, other, suppressed (new entries), errors */
     public static function emptyCounts()
     {
-        return array( 'messages' => 0, 'hard' => 0, 'soft' => 0, 'complaints' => 0, 'other' => 0, 'suppressed' => 0, 'errors' => 0 );
+        return array( 'messages' => 0, 'hard' => 0, 'soft' => 0, 'delayed' => 0, 'complaints' => 0, 'other' => 0, 'suppressed' => 0, 'errors' => 0 );
     }
 
     protected static function writeStatus( array $counts, $error )
@@ -261,6 +262,7 @@ class expMailBounceReader
         {
             case self::HARD: $counts['hard']++; break;
             case self::SOFT: $counts['soft']++; break;
+            case self::DELAY: $counts['delayed']++; break;
             case self::COMPLAINT: $counts['complaints']++; break;
             default: $counts['other']++;
         }
@@ -390,7 +392,7 @@ class expMailBounceReader
      * What a message is.
      *
      * @param string $raw the whole message
-     * @return array kind (hard, soft, complaint, none), addresses (the failed or complaining recipients), detail
+     * @return array kind (hard, soft, delay, complaint, none), addresses (the failed or complaining recipients), detail
      *               (the status code, or the feedback type)
      */
     public static function classify( $raw )
@@ -435,6 +437,7 @@ class expMailBounceReader
             array_shift( $blocks ); // the per-message fields
             $hard = array();
             $soft = false;
+            $delay = '';
             $detail = '';
             foreach ( $blocks as $block )
             {
@@ -453,6 +456,12 @@ class expMailBounceReader
                     $hard[] = $address[0];
                     $detail = $status;
                 }
+                else if ( $action === 'delayed' )
+                {
+                    // Still being retried by the sending server: not a failure, so it never suppresses.
+                    if ( $delay === '' )
+                        $delay = $status !== '' ? $status : $action;
+                }
                 else
                 {
                     $soft = true;
@@ -464,6 +473,8 @@ class expMailBounceReader
                 return array( 'kind' => self::HARD, 'addresses' => array_values( array_unique( $hard ) ), 'detail' => $detail );
             if ( $soft )
                 return array( 'kind' => self::SOFT, 'addresses' => array(), 'detail' => $detail );
+            if ( $delay !== '' )
+                return array( 'kind' => self::DELAY, 'addresses' => array(), 'detail' => $delay );
             return $none;
         }
         return $none;
