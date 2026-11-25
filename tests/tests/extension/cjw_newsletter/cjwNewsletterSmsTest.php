@@ -150,7 +150,7 @@ class cjwNewsletterSmsTest extends cjwNewsletterTestCase
         fclose( $probe );
         $env = array( 'CJWNL_SMS_STUB_DIR' => $this->stubDir, 'PATH' => (string)getenv( 'PATH' ) );
         $command = array( PHP_BINARY, '-S', '127.0.0.1:' . $this->stubPort, __DIR__ . '/fixtures/cjwnl_sms_stub_server.php' );
-        $this->stub = proc_open( $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'file', $this->stubDir . '/server.log', 'a' ), 2 => array( 'file', $this->stubDir . '/server.log', 'a' ) ), $pipes, null, $env );
+        $this->stub = ezpLoopbackServer::start( $command, $env, null, $this->stubDir . '/server.log' );
         $this->assertTrue( is_resource( $this->stub ), 'the stub server started' );
         for ( $i = 0; $i < 100; $i++ )
         {
@@ -169,8 +169,7 @@ class cjwNewsletterSmsTest extends cjwNewsletterTestCase
     {
         if ( is_resource( $this->stub ) )
         {
-            proc_terminate( $this->stub );
-            proc_close( $this->stub );
+            ezpLoopbackServer::stop( $this->stub );
         }
         $this->stub = null;
         if ( $this->stubDir && is_dir( $this->stubDir ) )

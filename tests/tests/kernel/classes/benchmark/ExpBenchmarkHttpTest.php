@@ -38,10 +38,9 @@ class ExpBenchmarkHttpTest extends \PHPUnit\Framework\TestCase
 
         $environment = getenv();
         $environment['PHP_CLI_SERVER_WORKERS'] = '4';   // several requests at once
-        self::$server = proc_open(
-            array( PHP_BINARY, '-S', '127.0.0.1:' . $port, __DIR__ . '/stub_server.php' ),
-            array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'file', '/dev/null', 'w' ), 2 => array( 'file', '/dev/null', 'w' ) ),
-            $pipes, __DIR__, $environment );
+        // Holds no descriptor of the test process and ends with it, even without tearDownAfterClass()
+        self::$server = ezpLoopbackServer::start(
+            array( PHP_BINARY, '-S', '127.0.0.1:' . $port, __DIR__ . '/stub_server.php' ), $environment, __DIR__ );
         if ( !is_resource( self::$server ) )
         {
             self::$server = null;
@@ -64,15 +63,7 @@ class ExpBenchmarkHttpTest extends \PHPUnit\Framework\TestCase
 
     public static function tearDownAfterClass(): void
     {
-        if ( is_resource( self::$server ) )
-        {
-            $status = proc_get_status( self::$server );
-            proc_terminate( self::$server );
-            // The workers of php -S are its children; a terminated parent takes them along.
-            if ( !empty( $status['pid'] ) and function_exists( 'posix_kill' ) )
-                @posix_kill( (int)$status['pid'], 15 );
-            proc_close( self::$server );
-        }
+        ezpLoopbackServer::stop( self::$server );
         self::$server = null;
         self::$base = '';
     }

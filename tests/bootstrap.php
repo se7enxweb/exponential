@@ -329,6 +329,7 @@ $optional = [
     'ezpdatabasesuite.php',
     'ezpthrowawaydatabase.php',
     'ezpliveinstallation.php',
+    'ezploopbackserver.php',
 ];
 foreach ( $optional as $file )
 {
