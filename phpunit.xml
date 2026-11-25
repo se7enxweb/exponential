@@ -101,6 +101,7 @@
         <testsuite name="lib">
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>
+            <exclude>tests/tests/lib/ezdb/sqlserver/live</exclude>
         </testsuite>
 
         <!--
@@ -119,6 +120,20 @@
           MongoDB + MySQL live integration tests — require running servers.
           Run: php vendor/bin/phpunit - -testsuite mongodb-live
         -->
+        <!--
+          Microsoft SQL Server driver (expSQLServerDB): the DB-less tests, and the live tests against a server
+          (EXP_TEST_SQLSERVER_HOST, _PORT, _USER, _PASSWORD, _LAYER; they skip without one).
+          Run: php vendor/bin/phpunit - -testsuite sqlserver | sqlserver-live
+        -->
+        <testsuite name="sqlserver">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/sqlserver</directory>
+            <exclude>tests/tests/lib/ezdb/sqlserver/live</exclude>
+        </testsuite>
+
+        <testsuite name="sqlserver-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/sqlserver/live</directory>
+        </testsuite>
+
         <testsuite name="mongodb-live">
             <file>tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php</file>
