@@ -604,6 +604,7 @@ return array(
       'expSQLServerErrorMap'                                         => 'lib/ezdb/classes/expsqlservererrormap.php',
       'expSQLServerLexer'                                            => 'lib/ezdb/classes/expsqlserverlexer.php',
       'expSQLServerPDOTransport'                                     => 'lib/ezdb/classes/expsqlserverpdotransport.php',
+      'expSQLServerSchema'                                           => 'lib/ezdbschema/classes/expsqlserverschema.php',
       'expSQLServerSqlsrvTransport'                                  => 'lib/ezdb/classes/expsqlserversqlsrvtransport.php',
       'expSQLServerTransport'                                        => 'lib/ezdb/classes/expsqlservertransport.php',
       'eZ1337Translator'                                             => 'lib/ezi18n/classes/ez1337translator.php',
