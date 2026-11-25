@@ -40,7 +40,7 @@ admin4 writes the ratio next to each color token in `design/admin4/stylesheets/c
 
 ```css
 --a4-accent-strong: #c2410c;  /* filled controls carrying white text (5.2:1) */
---a4-accent-text:   #ad3809;  /* 6.3:1 on white, 5.4:1 on the hovered row */
+--a4-accent-text:   #9a3412;  /* 7.3:1 on white, 6.7:1 on the hovered row */
 --a4-ring:          #c2410c;  /* opaque: a focus indicator needs 3:1 against the page */
 ```
 
@@ -64,8 +64,8 @@ find most failures in the state the page is in; hover and focus states need a ma
 - **Placeholder text** in fields is often too light; do not use it as the only label.
 - **Text on photos**: put a solid or semi-opaque layer behind the text, or a text shadow, and check the worst part of the
   image.
-- **Brand colors**: an orange or yellow brand color rarely reaches 4.5:1 with white text. admin4 keeps its accent
-  `#f26a21` for fills and uses darker shades (`--a4-accent-strong`, `--a4-accent-text`) for text and filled buttons.
+- **Brand colors**: an orange or yellow brand color rarely reaches 4.5:1 with white text. admin4 keeps its accent, the
+  logo's `#f15a28`, for fills and uses darker shades (`--a4-accent-strong`, `--a4-accent-text`) for text and filled buttons.
 - **Dark mode**: pure white on pure black is harsh, gray on dark gray often fails. Measure, do not guess.
 - **Muted text** (dates, captions) still carries information: it needs 4.5:1 too.
 
