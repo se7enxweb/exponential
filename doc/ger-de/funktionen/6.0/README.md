@@ -99,6 +99,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [MongoDB als Datenbank](mongodb-datenbankunterstuetzung.md)
 - [PostgreSQL 18 und 19](postgresql-18-und-19.md): unterstützte Versionen und ihre Tests, Client-Versionen,
   Aktualisieren und ein Cluster auf 18 und 19
+- [Microsoft-SQL-Server-Treiber](sqlserver-datenbanktreiber.md): `expSQLServerDB` für SQL Server 2017 bis 2025 und Azure
+  SQL, PHP-Schichten, Einstellungen und Tests (in Arbeit)
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
   Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)

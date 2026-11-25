@@ -3573,6 +3573,7 @@
     "funktionen/6.0/sortierung-der-bestellliste.md": "features/6.0/order-list-sorting.md",
     "funktionen/6.0/sqlite-datenbank.md": "features/6.0/sqlite-database.md",
     "funktionen/6.0/sqlite-dfs-cluster.md": "features/6.0/sqlite-dfs-cluster.md",
+    "funktionen/6.0/sqlserver-datenbanktreiber.md": "features/6.0/sqlserver-database-driver.md",
     "funktionen/6.0/standard-extension-auslieferung.md": "features/6.0/default-extension-distribution.md",
     "funktionen/6.0/standardwerte-einer-sauberen-installation.md": "features/6.0/clean-install-defaults.md",
     "funktionen/6.0/statisches-veroeffentlichen.md": "features/6.0/static-publishing.md",
