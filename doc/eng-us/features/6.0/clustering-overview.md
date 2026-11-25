@@ -97,6 +97,7 @@ same parity checks:
 | MySQL, MariaDB | `eZDFSFileHandlerMySQLiBackend` (default) | `dfsmysqli` | any number | [Clustering and shared storage](../../help/hosting/operations/clustering-and-shared-storage.md) |
 | PostgreSQL 13 to 19 | `expDFSFileHandlerPostgresqlBackend` | `dfspostgresql` | any number | [Clustering on PostgreSQL](postgresql-dfs-cluster.md), [PostgreSQL 18 and 19](postgresql-18-and-19.md) |
 | Oracle 12.1 and later | `expDFSFileHandlerOracleBackend` | `dfsoracle` | any number | [Clustering on Oracle](oracle-dfs-cluster.md) |
+| SQL Server 2017 and later, Azure SQL | `expDFSFileHandlerSQLServerBackend` | `dfssqlserver` | any number | [Clustering on SQL Server](sqlserver-dfs-cluster.md) |
 | MongoDB 5.0 and later | `expDFSFileHandlerMongoDBBackend` | `dfsmongodb` | any number, one server or a replica set | [Clustering on MongoDB](mongodb-dfs-cluster.md) |
 | SQLite 3.24 and later | `expDFSFileHandlerSQLiteBackend` | `dfssqlite` | **one machine only** | [Clustering on SQLite](sqlite-dfs-cluster.md) |
 
@@ -111,7 +112,7 @@ PostgreSQL, and the other way round. The settings that matter on every SQL backe
 | `DBName`, `DBUser`, `DBPassword` | `cluster`, `root`, empty | the database and its login; Oracle: `DBName` is the connect string; SQLite: the database file |
 | `DBConnectRetries` | `3` | connection attempts |
 | `DBExecuteRetries` | `20` | tries of a statement that hit a deadlock or a lock wait |
-| `DBLockTimeout` | not set (10 s) | PostgreSQL, Oracle, SQLite, MongoDB: how long a statement waits for a lock before it is tried again |
+| `DBLockTimeout` | not set (10 s) | PostgreSQL, Oracle, SQL Server, SQLite, MongoDB: how long a statement waits for a lock before it is tried again |
 | `DBPersistentConnection` | not set (off) | PostgreSQL and Oracle: keep one connection per PHP worker between requests |
 | `MaxCopyRetries` | `5` | tries of a copy from the share |
 | `MetaDataTableNameCache` | not set | a cache table of its own, for installations that share the storage rows but not the caches |
@@ -316,6 +317,7 @@ with the standby's old data directory.
 - [PostgreSQL 18 and 19](postgresql-18-and-19.md): versions, clients, upgrading, a cluster on 18 and 19
 - [Clustering on PostgreSQL: the DFS backend in the kernel](postgresql-dfs-cluster.md)
 - [Clustering on Oracle: the DFS backend in the kernel](oracle-dfs-cluster.md)
+- [Clustering on SQL Server: the DFS backend in the kernel](sqlserver-dfs-cluster.md)
 - [Clustering on MongoDB: the DFS backend in the kernel](mongodb-dfs-cluster.md)
 - [Clustering on SQLite: the one-node DFS backend in the kernel](sqlite-dfs-cluster.md)
 - [A one-node DFS cluster in one command](cluster-commands.md): `exp:cluster:enable` and `exp:cluster:disable`

@@ -5,10 +5,10 @@ contributors who work on the driver. From Exponential 6.0.15 the kernel has a SQ
 `expSQLServerDB` in `lib/ezdb/classes/`, written anew under the GPL (version 2 or later). It is not derived from the
 old xrowmssql extension; that extension was read for its problems only, and every one of them is now a test.
 
-**Status.** The driver and its tests are done (wave W1); the schema handler `expSQLServerSchema`, the kernel schema in
-`kernel/sql/sqlserver/kernel_schema.sql` and the portable SQL helpers of every driver followed. Still to come: the
-installer entries, the kernel statements that only MySQL, PostgreSQL and SQLite understand, and the DFS cluster
-backend on SQL Server. Until then a site cannot be installed on SQL Server.
+**Status.** The driver, its schema handler `expSQLServerSchema`, the kernel schema in
+`kernel/sql/sqlserver/kernel_schema.sql`, the portable SQL helpers of every driver, the installer entries and the DFS
+cluster backend ([Clustering on SQL Server](sqlserver-dfs-cluster.md)) are done. A site installs on SQL Server with
+`install.php --db=sqlserver` (below): measured on SQL Server 2022, 16 steps, 0 errors, 323 content objects.
 
 ## Contents
 
@@ -16,10 +16,11 @@ backend on SQL Server. Until then a site cannot be installed on SQL Server.
 2. [Settings](#settings)
 3. [What the driver does differently](#what-the-driver-does-differently)
 4. [Helpers every driver offers](#helpers-every-driver-offers)
-5. [Read replicas and failover](#read-replicas-and-failover)
-6. [Tested toolchain (W0)](#tested-toolchain-w0)
-7. [Tests](#tests)
-8. [Traceability: the old extension's problems](#traceability-the-old-extensions-problems)
+5. [Installing a site on SQL Server](#installing-a-site-on-sql-server)
+6. [Read replicas and failover](#read-replicas-and-failover)
+7. [Tested toolchain (W0)](#tested-toolchain-w0)
+8. [Tests](#tests)
+9. [Traceability: the old extension's problems](#traceability-the-old-extensions-problems)
 
 ## Supported servers and PHP layers
 
@@ -57,7 +58,8 @@ Database=site
 `ImplementationAlias[sqlserver]`, `[mssql]` and `[sqlsrv]` all name `expSQLServerDB`. The `[SQLServerSettings]` of
 `site.ini` (all with defaults): `Layer`, `ODBCDriver`, `Encrypt` (yes, no, strict), `TrustServerCertificate`,
 `MultiSubnetFailover`, `ApplicationIntent`, `ReplicaApplicationIntent`, `LoginTimeout`, `ConnectRetryCount` (0: ODBC's
-own reconnect is off, the driver reconnects itself), `LockTimeout` (milliseconds, -1 waits), `LiteralMode` (bind,
+own reconnect is off, the driver reconnects itself), `ConnectionPooling` (disabled: see below), `LockTimeout`
+(milliseconds, -1 waits), `LiteralMode` (bind,
 prefix), `DeadlockRetries`, `DeadlockRetryWait`, `ReconnectOnLoss`, `ApplicationName`, `InListChunkSize`,
 `DatabaseCollation`.
 
@@ -95,7 +97,10 @@ should be `NVARCHAR`.
 
 Kernel SQL that is MySQL-only today becomes portable through driver helpers, never through per-engine branches:
 `sqlLimit()`, `sqlUpsert()` (here `MERGE ... WITH (HOLDLOCK)`), `sqlGroupConcat()` (`STRING_AGG`),
-`sqlUnixTimestamp()` / `sqlFromUnixTimestamp()` (`DATEDIFF_BIG`, safe past 2038) and `sqlQuoteIdentifier()`. Every
+`sqlUnixTimestamp()` / `sqlFromUnixTimestamp()` (`DATEDIFF_BIG`, safe past 2038), `sqlQuoteIdentifier()` and
+`sqlForUpdate()` (a `SELECT` that locks the rows it reads: `FOR UPDATE` on MySQL, PostgreSQL and Oracle, the statement
+as it is on SQLite, `WITH (UPDLOCK, ROWLOCK)` table hints here; a trailing `FOR UPDATE` the driver gets anyway is
+rewritten the same way). Every
 driver has them: `eZDBInterface` writes MySQL's words, each driver names its dialect (`sqlHelperDialect()`), and the SQL
 comes from `expDBSQLHelpers` (mysql, postgresql, sqlite, oracle, sqlserver, generic).
 
@@ -107,6 +112,30 @@ database back: `NVARCHAR` text, `INT IDENTITY` for `auto_increment`, primary key
 no `NVARCHAR(MAX)` column: a text column in an index key is `NVARCHAR(840)` (eight kernel columns, such as the URL alias
 text and `path_identification_string`); other MAX columns and columns past 1,700 bytes of a non-unique index are
 included columns. The kernel schema and data were created in SQL Server 2022 with it and read back with no difference.
+
+## Installing a site on SQL Server
+
+The database must exist (the installer does not create it on SQL Server); create it with a UTF-8 collation and
+`READ_COMMITTED_SNAPSHOT` (above). Then, with `sqlsrv`, `pdo_sqlsrv` or PDO_ODBC in the PHP of the command line:
+
+```bash
+EXP_INSTALL_DB_PASSWORD=secret ./console exp:install --apply --db=sqlserver --db-host=sql1.example.com --db-port=1433 \
+  --db-name=site --db-user=exponential --db-encrypt=yes
+```
+
+`--db=mssql` and `--db=sqlsrv` say the same. `--db-encrypt` takes yes (default), no or strict (TDS 8.0, SQL Server 2022
+and later); `--db-trust-server-certificate` accepts a self-signed certificate, for a test server on a network you
+trust. The web setup wizard and the kickstarter (`kickstart.ini`, `Type=sqlserver`, with `Encrypt` and
+`TrustServerCertificate`) offer the same. The installer writes `[SQLServerSettings]` (`Encrypt`,
+`TrustServerCertificate`) into `settings/override/site.ini.append.php` as well as into each siteaccess, because the
+cluster file handler connects before a siteaccess is matched. A connection that fails is logged with its reason and
+the password masked.
+
+**Connection pooling is off.** `sqlsrv` and `pdo_sqlsrv` keep the socket of a closed connection open for the life of the
+process; a process that forks after closing one (Velocity's parent after its warm-up, a script with workers) hands that
+socket to every child. `ConnectionPooling=disabled` (the default) tells both layers not to pool; on Linux the ODBC
+driver manager decides by `odbcinst.ini` (`[ODBC] Pooling`), so leave that off as well. PDO_ODBC frees the driver with
+its last connection and forks cleanly.
 
 ## Read replicas and failover
 

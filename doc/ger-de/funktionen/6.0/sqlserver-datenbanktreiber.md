@@ -5,10 +5,11 @@ und an alle, die am Treiber mitarbeiten. Ab Exponential 6.0.15 hat der Kernel ei
 `expSQLServerDB` in `lib/ezdb/classes/`, neu geschrieben unter der GPL (Version 2 oder später). Er ist nicht von der
 alten Erweiterung xrowmssql abgeleitet; sie wurde nur auf ihre Fehler hin gelesen, und jeder davon ist jetzt ein Test.
 
-**Stand.** Treiber und Tests sind fertig (Welle W1); es folgten der Schema-Handler `expSQLServerSchema`, das
-Kernel-Schema in `kernel/sql/sqlserver/kernel_schema.sql` und die portablen SQL-Helfer aller Treiber. Es folgen die
-Installer-Einträge, die Anweisungen des Kernels, die nur MySQL, PostgreSQL und SQLite verstehen, und das
-DFS-Cluster-Backend auf SQL Server. Bis dahin lässt sich keine Site auf SQL Server installieren.
+**Stand.** Der Treiber, sein Schema-Handler `expSQLServerSchema`, das Kernel-Schema in
+`kernel/sql/sqlserver/kernel_schema.sql`, die portablen SQL-Helfer aller Treiber, die Installer-Einträge und das
+DFS-Cluster-Backend ([Clustering mit SQL Server](sqlserver-dfs-cluster.md)) sind fertig. Eine Site installiert sich mit
+`install.php --db=sqlserver` auf SQL Server (unten): gemessen auf SQL Server 2022, 16 Schritte, 0 Fehler, 323
+Inhaltsobjekte.
 
 ## Inhalt
 
@@ -16,9 +17,10 @@ DFS-Cluster-Backend auf SQL Server. Bis dahin lässt sich keine Site auf SQL Ser
 2. [Einstellungen](#einstellungen)
 3. [Was der Treiber anders macht](#was-der-treiber-anders-macht)
 4. [Helfer aller Treiber](#helfer-aller-treiber)
-5. [Lesereplikate und Failover](#lesereplikate-und-failover)
-6. [Geprüfte Werkzeugkette (W0)](#geprüfte-werkzeugkette-w0)
-7. [Tests und Rückverfolgbarkeit](#tests-und-rückverfolgbarkeit)
+5. [Eine Site auf SQL Server installieren](#eine-site-auf-sql-server-installieren)
+6. [Lesereplikate und Failover](#lesereplikate-und-failover)
+7. [Geprüfte Werkzeugkette (W0)](#geprüfte-werkzeugkette-w0)
+8. [Tests und Rückverfolgbarkeit](#tests-und-rückverfolgbarkeit)
 
 ## Unterstützte Server und PHP-Schichten
 
@@ -48,7 +50,8 @@ Port=1433
 `ImplementationAlias[sqlserver]`, `[mssql]` und `[sqlsrv]` nennen alle `expSQLServerDB`. Die Gruppe
 `[SQLServerSettings]` in `site.ini` (alle mit Vorgaben): `Layer`, `ODBCDriver`, `Encrypt` (yes, no, strict),
 `TrustServerCertificate`, `MultiSubnetFailover`, `ApplicationIntent`, `ReplicaApplicationIntent`, `LoginTimeout`,
-`ConnectRetryCount` (0: ODBCs eigene Wiederverbindung aus, der Treiber verbindet selbst neu), `LockTimeout`
+`ConnectRetryCount` (0: ODBCs eigene Wiederverbindung aus, der Treiber verbindet selbst neu), `ConnectionPooling`
+(disabled, siehe unten), `LockTimeout`
 (Millisekunden, -1 wartet), `LiteralMode` (bind, prefix), `DeadlockRetries`, `DeadlockRetryWait`, `ReconnectOnLoss`,
 `ApplicationName`, `InListChunkSize`, `DatabaseCollation`.
 
@@ -76,7 +79,10 @@ sollten `NVARCHAR` sein.
 
 Bisher MySQL-eigenes SQL des Kernels wird über Treiber-Helfer portabel, nie über Verzweigungen je Datenbank:
 `sqlLimit()`, `sqlUpsert()` (hier `MERGE ... WITH (HOLDLOCK)`), `sqlGroupConcat()` (`STRING_AGG`),
-`sqlUnixTimestamp()` / `sqlFromUnixTimestamp()` (sicher über 2038 hinaus) und `sqlQuoteIdentifier()`. Alle Treiber haben
+`sqlUnixTimestamp()` / `sqlFromUnixTimestamp()` (sicher über 2038 hinaus), `sqlQuoteIdentifier()` und `sqlForUpdate()`
+(ein `SELECT`, das die gelesenen Zeilen sperrt: `FOR UPDATE` bei MySQL, PostgreSQL und Oracle, unverändert bei SQLite,
+hier die Tabellenhinweise `WITH (UPDLOCK, ROWLOCK)`; ein abschließendes `FOR UPDATE`, das der Treiber trotzdem bekommt,
+wird ebenso umgeschrieben). Alle Treiber haben
 sie: `eZDBInterface` schreibt MySQLs Wörter, jeder Treiber nennt seinen Dialekt (`sqlHelperDialect()`).
 
 ## Schema-Handler
@@ -86,6 +92,31 @@ sie: `eZDBInterface` schreibt MySQLs Wörter, jeder Treiber nennt seinen Dialekt
 im Schlüssel eines Index wird `NVARCHAR(840)`, weil SQL Server höchstens 1.700 Byte Schlüssel und keine
 `NVARCHAR(MAX)`-Spalte indiziert. Kernel-Schema und -Daten wurden damit in SQL Server 2022 angelegt und ohne
 Unterschied zurückgelesen.
+
+## Eine Site auf SQL Server installieren
+
+Die Datenbank muss bestehen (der Installer legt sie auf SQL Server nicht an); sie mit einer UTF-8-Sortierung und
+`READ_COMMITTED_SNAPSHOT` anlegen (oben). Dann, mit `sqlsrv`, `pdo_sqlsrv` oder PDO_ODBC im PHP der Kommandozeile:
+
+```bash
+EXP_INSTALL_DB_PASSWORD=secret ./console exp:install --apply --db=sqlserver --db-host=sql1.example.com --db-port=1433 \
+  --db-name=site --db-user=exponential --db-encrypt=yes
+```
+
+`--db=mssql` und `--db=sqlsrv` bedeuten dasselbe. `--db-encrypt` nimmt yes (Vorgabe), no oder strict (TDS 8.0, ab SQL
+Server 2022); `--db-trust-server-certificate` nimmt ein selbst signiertes Zertifikat an, für einen Testserver in einem
+Netz, dem Sie vertrauen. Der Web-Einrichtungsassistent und der Kickstarter (`kickstart.ini`, `Type=sqlserver`, mit
+`Encrypt` und `TrustServerCertificate`) bieten dasselbe. Der Installer schreibt `[SQLServerSettings]` (`Encrypt`,
+`TrustServerCertificate`) in `settings/override/site.ini.append.php` und in jeden Siteaccess, weil sich der
+Cluster-Datei-Handler verbindet, bevor ein Siteaccess erkannt ist. Eine gescheiterte Verbindung wird mit ihrem Grund
+und verdecktem Passwort protokolliert.
+
+**Verbindungspooling ist aus.** `sqlsrv` und `pdo_sqlsrv` halten den Socket einer geschlossenen Verbindung für die
+Lebensdauer des Prozesses offen; ein Prozess, der danach Kindprozesse abzweigt (Velocitys Elternprozess nach dem
+Aufwärmen, ein Skript mit Workern), gibt diesen Socket an jedes Kind weiter. `ConnectionPooling=disabled` (Vorgabe)
+sagt beiden Schichten, nicht zu poolen; unter Linux entscheidet der ODBC-Treibermanager nach `odbcinst.ini`
+(`[ODBC] Pooling`), das ebenfalls aus bleiben sollte. PDO_ODBC gibt den Treiber mit seiner letzten Verbindung frei und
+lässt sich sauber abzweigen.
 
 ## Lesereplikate und Failover
 

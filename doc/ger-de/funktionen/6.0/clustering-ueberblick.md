@@ -100,6 +100,7 @@ dieselben Paritätsprüfungen:
 | MySQL, MariaDB | `eZDFSFileHandlerMySQLiBackend` (Standard) | `dfsmysqli` | beliebig viele | [Clustering und gemeinsamer Speicher](../../hilfe/hosting/betrieb/clustering-und-gemeinsamer-speicher.md) |
 | PostgreSQL 13 bis 19 | `expDFSFileHandlerPostgresqlBackend` | `dfspostgresql` | beliebig viele | [Clustering mit PostgreSQL](postgresql-dfs-cluster.md), [PostgreSQL 18 und 19](postgresql-18-und-19.md) |
 | Oracle 12.1 und neuer | `expDFSFileHandlerOracleBackend` | `dfsoracle` | beliebig viele | [Clustering mit Oracle](oracle-dfs-cluster.md) |
+| SQL Server 2017 und neuer, Azure SQL | `expDFSFileHandlerSQLServerBackend` | `dfssqlserver` | beliebig viele | [Clustering mit SQL Server](sqlserver-dfs-cluster.md) |
 | MongoDB 5.0 und neuer | `expDFSFileHandlerMongoDBBackend` | `dfsmongodb` | beliebig viele, ein Server oder ein Replica Set | [Clustering mit MongoDB](mongodb-dfs-cluster.md) |
 | SQLite 3.24 und neuer | `expDFSFileHandlerSQLiteBackend` | `dfssqlite` | **nur eine Maschine** | [Clustering mit SQLite](sqlite-dfs-cluster.md) |
 
@@ -114,7 +115,7 @@ Cluster-Metadaten in PostgreSQL halten und umgekehrt. Die Einstellungen, die auf
 | `DBName`, `DBUser`, `DBPassword` | `cluster`, `root`, leer | die Datenbank und ihre Anmeldung; Oracle: `DBName` ist der Connect-String; SQLite: die Datenbankdatei |
 | `DBConnectRetries` | `3` | Verbindungsversuche |
 | `DBExecuteRetries` | `20` | Versuche einer Anweisung, die auf einen Deadlock oder eine Sperre traf |
-| `DBLockTimeout` | nicht gesetzt (10 s) | PostgreSQL, Oracle, SQLite, MongoDB: wie lange eine Anweisung auf eine Sperre wartet, bevor sie neu versucht wird |
+| `DBLockTimeout` | nicht gesetzt (10 s) | PostgreSQL, Oracle, SQL Server, SQLite, MongoDB: wie lange eine Anweisung auf eine Sperre wartet, bevor sie neu versucht wird |
 | `DBPersistentConnection` | nicht gesetzt (aus) | PostgreSQL und Oracle: eine Verbindung je PHP-Worker zwischen Anfragen behalten |
 | `MaxCopyRetries` | `5` | Versuche einer Kopie vom Share |
 | `MetaDataTableNameCache` | nicht gesetzt | eine eigene Cache-Tabelle, für Installationen, die die Speicherzeilen teilen, aber nicht die Caches |
@@ -328,6 +329,7 @@ alten Datenverzeichnis des Standbys der Weg zurück.
 - [PostgreSQL 18 und 19](postgresql-18-und-19.md): Versionen, Clients, Aktualisieren, ein Cluster auf 18 und 19
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
 - [Clustering mit Oracle: das DFS-Backend im Kernel](oracle-dfs-cluster.md)
+- [Clustering mit SQL Server: das DFS-Backend im Kernel](sqlserver-dfs-cluster.md)
 - [Clustering mit MongoDB: das DFS-Backend im Kernel](mongodb-dfs-cluster.md)
 - [Clustering mit SQLite: das Ein-Knoten-DFS-Backend im Kernel](sqlite-dfs-cluster.md)
 - [Ein DFS-Cluster mit einem Knoten in einem Befehl](cluster-befehle.md): `exp:cluster:enable` und `exp:cluster:disable`

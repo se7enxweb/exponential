@@ -100,7 +100,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [PostgreSQL 18 und 19](postgresql-18-und-19.md): unterstützte Versionen und ihre Tests, Client-Versionen,
   Aktualisieren und ein Cluster auf 18 und 19
 - [Microsoft-SQL-Server-Treiber](sqlserver-datenbanktreiber.md): `expSQLServerDB` für SQL Server 2017 bis 2025 und Azure
-  SQL, PHP-Schichten, Einstellungen und Tests (in Arbeit)
+  SQL, PHP-Schichten, Einstellungen, der Installer und Tests
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
   Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
@@ -108,6 +108,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Abfragen über ID-Mengen beliebiger Größe: expDBInList und InListChunkSize](in-listen-beliebiger-groesse.md)
 - [Clustering mit MongoDB: das DFS-Backend im Kernel](mongodb-dfs-cluster.md)
 - [Clustering mit Oracle: das DFS-Backend im Kernel](oracle-dfs-cluster.md)
+- [Clustering mit SQL Server: das DFS-Backend im Kernel](sqlserver-dfs-cluster.md)
 - [Lesereplikate: PostgreSQL, MySQL und MariaDB, Oracle](../../bc/6.0/postgresql-lesereplikat.md)
 - [AdminNeo: die Datenbankverwaltung hinter dem Database Source Editor](adminneo-datenbankverwaltung.md)
 - [Datentabellen: die Tabellen der Module als Teil des Systems](datentabellen.md): der Katalog der persistenten
