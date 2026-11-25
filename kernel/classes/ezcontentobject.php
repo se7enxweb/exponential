@@ -1233,12 +1233,7 @@ class eZContentObject extends eZPersistentObject
         $db = eZDB::instance();
         $id = (int) $id;
 
-        if ( $db->DatabaseName() === 'sqlite' )
-        {
-            // Select for update, to lock the row
-            $resArray = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id='$id'" );
-        }
-        elseif ( $db->databaseName() === 'mongo' )
+        if ( $db->databaseName() === 'mongo' )
         {
             $rows = $db->aggregate( 'ezcontentobject', [
                 [ '$match' => [ 'id' => $id ] ],
@@ -1298,7 +1293,7 @@ class eZContentObject extends eZPersistentObject
         else
         {
             // Select for update, to lock the row
-            $resArray = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id='$id' FOR UPDATE" );
+            $resArray = $db->arrayQuery( $db->sqlForUpdate( "SELECT * FROM ezcontentobject WHERE id='$id'" ) );
         }
 
         if ( !is_array( $resArray ) || count( $resArray ) !== 1 )

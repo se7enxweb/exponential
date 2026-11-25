@@ -66,13 +66,9 @@ class Removeeditversion extends \Exponential\Runnable\ModuleView
                         [ '$match' => [ 'version' => $version, 'contentobject_id' => $objectID ] ],
                     ] );
                 }
-                elseif( $db->DatabaseName() == 'sqlite' )
-                {
-                    $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID" );
-                }
                 else
                 {
-                    $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID FOR UPDATE" );
+                    $versionRows = $db->arrayQuery( $db->sqlForUpdate( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID" ) );
                 }
 
                 if ( empty( $versionRows ) )

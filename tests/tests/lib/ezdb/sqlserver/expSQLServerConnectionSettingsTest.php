@@ -123,7 +123,7 @@ class expSQLServerConnectionSettingsTest extends PHPUnit\Framework\TestCase
     {
         $dsn = expSQLServerDialect::pdoSqlsrvDSN( array( 'host' => 'db', 'port' => 1433, 'database' => 'site', 'trust_server_certificate' => true,
                                                          'multi_subnet_failover' => true ) );
-        $this->assertSame( 'sqlsrv:Server=tcp:db,1433;Database=site;Encrypt=1;TrustServerCertificate=1;MultiSubnetFailover=1;MultipleActiveResultSets=0', $dsn );
+        $this->assertSame( 'sqlsrv:Server=tcp:db,1433;Database=site;Encrypt=1;TrustServerCertificate=1;MultiSubnetFailover=1;MultipleActiveResultSets=0;ConnectionPooling=0', $dsn );
         $this->assertStringNotContainsString( '=yes', $dsn );
     }
 
@@ -163,6 +163,19 @@ class expSQLServerConnectionSettingsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'site', $options['Database'] );
         $this->assertSame( 'u', $options['UID'] );
         $this->assertSame( 'p', $options['PWD'] );
+    }
+
+    /**
+     * Pooling is off unless asked for: a process that forks after closing a pooled connection would give that one
+     * socket to all its children (seen live: TCP Provider errors 0x20 and 0x2746 in the forked cluster tests).
+     */
+    public function testConnectionPoolingIsOffUnlessEnabled()
+    {
+        $this->assertFalse( expSQLServerDialect::sqlsrvOptions( array() )['ConnectionPooling'] );
+        $this->assertTrue( expSQLServerDialect::sqlsrvOptions( array( 'connection_pooling' => 'enabled' ) )['ConnectionPooling'] );
+        $this->assertStringEndsWith( ';ConnectionPooling=0', expSQLServerDialect::pdoSqlsrvDSN( array( 'host' => 'db' ) ) );
+        $this->assertStringEndsWith( ';ConnectionPooling=1', expSQLServerDialect::pdoSqlsrvDSN( array( 'host' => 'db', 'connection_pooling' => true ) ) );
+        $this->assertStringNotContainsString( 'ConnectionPooling', expSQLServerDialect::odbcDSN( array( 'host' => 'db', 'connection_pooling' => true ) ) );
     }
 
     public function testSqlsrvOptionsWithoutUserUseIntegratedAuthentication()

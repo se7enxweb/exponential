@@ -156,6 +156,18 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
             $this->assertSame( $from, expDBSQLHelpers::fromUnixTimestamp( $dialect, 'x' ) );
     }
 
+    public static function forUpdates()
+    {
+        return array( array( 'mysql', 'SELECT * FROM t WHERE id = 1 FOR UPDATE' ), array( 'postgresql', 'SELECT * FROM t WHERE id = 1 FOR UPDATE' ),
+                      array( 'oracle', 'SELECT * FROM t WHERE id = 1 FOR UPDATE' ), array( 'generic', 'SELECT * FROM t WHERE id = 1 FOR UPDATE' ),
+                      array( 'sqlite', 'SELECT * FROM t WHERE id = 1' ), array( 'sqlserver', 'SELECT * FROM t WITH (UPDLOCK, ROWLOCK) WHERE id = 1' ) );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('forUpdates')]
+    public function testForUpdate( $dialect, $expected )
+    {
+        $this->assertSame( $expected, expDBSQLHelpers::forUpdate( $dialect, 'SELECT * FROM t WHERE id = 1;' ) );
+    }
     public static function literals()
     {
         return array( array( null, 'NULL' ), array( true, '1' ), array( false, '0' ), array( 7, '7' ), array( -2.5, '-2.5' ),
@@ -189,6 +201,7 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( expDBSQLHelpers::quoteIdentifier( $dialect, 'x' ), $db->sqlQuoteIdentifier( 'x' ) );
         $this->assertSame( expDBSQLHelpers::unixTimestamp( $dialect ), $db->sqlUnixTimestamp() );
         $this->assertSame( expDBSQLHelpers::fromUnixTimestamp( $dialect, 'x' ), $db->sqlFromUnixTimestamp( 'x' ) );
+        $this->assertSame( expDBSQLHelpers::forUpdate( $dialect, 'SELECT * FROM t' ), $db->sqlForUpdate( 'SELECT * FROM t' ) );
         $this->assertStringContainsString( '7', $db->sqlUpsert( 't', array( 'a' => 7, 'b' => null ), array( 'a' ) ) );
     }
 

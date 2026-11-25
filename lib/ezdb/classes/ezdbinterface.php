@@ -1835,6 +1835,18 @@ class eZDBInterface
     }
 
     /**
+     * A SELECT that locks the rows it reads until the end of the transaction (MySQL's SELECT ... FOR UPDATE).
+     *
+     * @param string $sql a SELECT without FOR UPDATE
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlForUpdate( $sql )
+    {
+        return expDBSQLHelpers::forUpdate( $this->sqlHelperDialect(), $sql );
+    }
+
+    /**
      * An insert-or-update of one row, atomic in the database, as one statement of this database's words.
      *
      * @param string $table

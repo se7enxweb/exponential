@@ -203,26 +203,15 @@ class eZContentObjectVersion extends eZPersistentObject
                 [ '$limit' => 1 ],
             ] );
         }
-        elseif ( $db->DatabaseName() === 'sqlite' )
-        {
-             // Select for update, to lock the row
-             $resArray = $db->arrayQuery(
-             "SELECT * FROM
-                  ezcontentobject_version
-              WHERE
-                  version='$version' AND
-                  contentobject_id='$contentObjectID'" );
-        }
         else
         {
-             // Select for update, to lock the row
-             $resArray = $db->arrayQuery(
+             // Select for update, to lock the row (in the words of the database: sqlForUpdate)
+             $resArray = $db->arrayQuery( $db->sqlForUpdate(
              "SELECT * FROM
                   ezcontentobject_version
               WHERE
                   version='$version' AND
-                  contentobject_id='$contentObjectID'
-              FOR UPDATE" );
+                  contentobject_id='$contentObjectID'" ) );
         }
 
         if ( !is_array( $resArray ) || count( $resArray ) !== 1 )
@@ -1111,18 +1100,9 @@ class eZContentObjectVersion extends eZPersistentObject
                     return;
                 }
 
-                if ( $db->DatabaseName() === 'sqlite' )
-                {
-                    // Ensure no one else deletes this version while we are doing it.
-                    $db->query( 'SELECT * FROM ezcontentobject_version
-                         WHERE id=' . $this->attribute( 'id' ) );
-                }
-                else
-                {
-                    // Ensure no one else deletes this version while we are doing it.
-                    $db->query( 'SELECT * FROM ezcontentobject_version
-                         WHERE id=' . $this->attribute( 'id' ) . ' FOR UPDATE' );
-                }
+                // Ensure no one else deletes this version while we are doing it.
+                $db->query( $db->sqlForUpdate( 'SELECT * FROM ezcontentobject_version
+                     WHERE id=' . (int)$this->attribute( 'id' ) ) );
 
                 $contentObjectTranslations = $this->translations();
 

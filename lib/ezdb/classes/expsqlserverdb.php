@@ -95,6 +95,7 @@ class expSQLServerDB extends eZDBInterface
         'ReplicaApplicationIntent' => 'ReadOnly',
         'LoginTimeout' => 15,
         'ConnectRetryCount' => 0,
+        'ConnectionPooling' => 'disabled',
         'LockTimeout' => -1,
         'LiteralMode' => 'bind',
         'DeadlockRetries' => 3,
@@ -194,6 +195,7 @@ class expSQLServerDB extends eZDBInterface
             'application_intent' => $replica ? $s['ReplicaApplicationIntent'] : $s['ApplicationIntent'],
             'login_timeout' => (int)$s['LoginTimeout'],
             'connect_retry_count' => (int)$s['ConnectRetryCount'],
+            'connection_pooling' => expSQLServerDialect::flag( $s['ConnectionPooling'] ),
             'app_name' => $s['ApplicationName'],
             'odbc_driver' => $s['ODBCDriver'],
         );
@@ -325,10 +327,13 @@ class expSQLServerDB extends eZDBInterface
      */
     public function prepareStatement( $sql )
     {
-        $sql = expSQLServerDialect::backticksToBrackets( trim( (string)$sql ) );
+        $sql = expSQLServerDialect::bracketNameOnlyWords( expSQLServerDialect::backticksToBrackets( trim( (string)$sql ) ) );
         $identityTable = null;
         $identityInsert = null;
         $kind = expSQLServerDialect::statementKind( $sql );
+        // MySQL/PostgreSQL's SELECT ... FOR UPDATE (code that does not use sqlForUpdate()): the row lock as table hints
+        if ( $kind === 'SELECT' && expSQLServerDialect::hasTrailingForUpdate( $sql ) )
+            $sql = expSQLServerDialect::forUpdate( $sql );
         if ( $kind === 'INSERT' )
         {
             $parsed = expSQLServerDialect::parseInsert( $sql );

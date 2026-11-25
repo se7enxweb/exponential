@@ -200,6 +200,46 @@ class expSQLServerDialectStatementsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( "IF OBJECT_ID(N'tempdb..#x') IS NOT NULL DROP TABLE #x", expSQLServerDialect::dropTemporaryTable( '#x' ) );
     }
 
+    public static function forUpdates()
+    {
+        return array(
+            'one table' => array( "SELECT * FROM ezcontentobject WHERE id='5'", "SELECT * FROM ezcontentobject WITH (UPDLOCK, ROWLOCK) WHERE id='5'" ),
+            'trailing for update removed' => array( 'SELECT * FROM t WHERE id = 1 FOR UPDATE', 'SELECT * FROM t WITH (UPDLOCK, ROWLOCK) WHERE id = 1' ),
+            'alias and join' => array( 'SELECT a.id FROM t a JOIN u AS b ON a.id = b.id WHERE a.x = 1',
+                                       'SELECT a.id FROM t a WITH (UPDLOCK, ROWLOCK) JOIN u AS b WITH (UPDLOCK, ROWLOCK) ON a.id = b.id WHERE a.x = 1' ),
+            'schema and comma' => array( 'SELECT * FROM dbo.t, u WHERE 1=1 ORDER BY 1', 'SELECT * FROM dbo.t WITH (UPDLOCK, ROWLOCK), u WITH (UPDLOCK, ROWLOCK) WHERE 1=1 ORDER BY 1' ),
+            'own hints kept' => array( 'SELECT * FROM t WITH (NOLOCK)', 'SELECT * FROM t WITH (NOLOCK)' ),
+            'derived table left alone' => array( 'SELECT * FROM (SELECT 1 AS a) x', 'SELECT * FROM (SELECT 1 AS a) x' ),
+            'bracketed table' => array( 'SELECT * FROM [order] WHERE id = 1', 'SELECT * FROM [order] WITH (UPDLOCK, ROWLOCK) WHERE id = 1' ),
+            'semicolon' => array( 'SELECT * FROM t;', 'SELECT * FROM t WITH (UPDLOCK, ROWLOCK)' ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('forUpdates')]
+    public function testForUpdate( $sql, $expected )
+    {
+        $this->assertSame( $expected, expSQLServerDialect::forUpdate( $sql ) );
+        $this->assertFalse( expSQLServerDialect::isReplicaReadable( expSQLServerDialect::forUpdate( 'SELECT * FROM t' ) ) );
+    }
+
+    public function testTrailingForUpdateIsFoundOnlyOutsideLiterals()
+    {
+        $this->assertTrue( expSQLServerDialect::hasTrailingForUpdate( 'SELECT 1 FROM t FOR UPDATE' ) );
+        $this->assertTrue( expSQLServerDialect::hasTrailingForUpdate( "SELECT 1 FROM t\n   for   update  " ) );
+        $this->assertFalse( expSQLServerDialect::hasTrailingForUpdate( "SELECT 'FOR UPDATE'" ) );
+        $this->assertFalse( expSQLServerDialect::hasTrailingForUpdate( 'SELECT 1 FROM t -- FOR UPDATE' ) );
+        $this->assertFalse( expSQLServerDialect::hasTrailingForUpdate( 'UPDATE t SET a = 1' ) );
+    }
+
+    public function testDriverTurnsTrailingForUpdateIntoHints()
+    {
+        $saved = expSQLServerTestKit::quietDebug();
+        $db = expSQLServerTestKit::driver();
+        $db->arrayQuery( 'SELECT * FROM ezcontentobject_version WHERE version = 2 AND contentobject_id = 41 FOR UPDATE' );
+        $this->assertSame( 'SELECT * FROM ezcontentobject_version WITH (UPDLOCK, ROWLOCK) WHERE version = 2 AND contentobject_id = 41', $db->LastStatement );
+        $this->assertSame( 'SELECT * FROM t WITH (UPDLOCK, ROWLOCK)', $db->sqlForUpdate( 'SELECT * FROM t' ) );
+        expSQLServerTestKit::restoreDebug( $saved );
+    }
     public static function schemaChanges()
     {
         return array( array( 'CREATE TABLE t (a INT)', true ), array( 'ALTER TABLE t ADD b INT', true ), array( 'DROP TABLE t', true ),

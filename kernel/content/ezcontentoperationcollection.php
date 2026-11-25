@@ -184,14 +184,7 @@ class eZContentOperationCollection
 
                 if ( !$versionNum )
                 {
-                    if( $db->DatabaseName() == 'sqlite' )
-                    {
-                        $objectRows = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id = $objectID" );
-                    }
-                    else
-                    {
-                        $objectRows = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id = $objectID FOR UPDATE" );
-                    }
+                    $objectRows = $db->arrayQuery( $db->sqlForUpdate( "SELECT * FROM ezcontentobject WHERE id = $objectID" ) );
 
                     if ( empty( $objectRows ) )
                     {
@@ -202,14 +195,7 @@ class eZContentOperationCollection
                     $versionNum = $objectRows[0]['current_version'];
                 }
 
-                if( $db->DatabaseName() == 'sqlite' )
-                {
-                    $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $versionNum AND contentobject_id = $objectID" );
-                }
-                else
-                {
-                    $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $versionNum AND contentobject_id = $objectID FOR UPDATE" );
-                }
+                $versionRows = $db->arrayQuery( $db->sqlForUpdate( "SELECT * FROM ezcontentobject_version WHERE version = $versionNum AND contentobject_id = $objectID" ) );
 
                 if ( empty( $versionRows ) )
                 {

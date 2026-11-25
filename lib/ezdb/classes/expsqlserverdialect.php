@@ -75,6 +75,17 @@ class expSQLServerDialect
         'WITHIN', 'WRITETEXT',
     );
 
+    /**
+     * Reserved words that can only be names (columns, tables) inside SELECT, INSERT, UPDATE, DELETE and MERGE: they start
+     * statements of their own (CHECKPOINT, BACKUP, DBCC ...) or belong to DDL only (KEY, FILLFACTOR ...). The driver
+     * brackets them there; ambiguous ones (USER is a function, ORDER and OPTION start clauses) are left alone.
+     *
+     * @var string[]
+     */
+    const NAME_ONLY_RESERVED_WORDS = array( 'BACKUP', 'CHECKPOINT', 'DBCC', 'DUMP', 'ERRLVL', 'FILE', 'FILLFACTOR', 'KEY', 'KILL', 'LINENO',
+        'LOAD', 'OFFSETS', 'PLAN', 'PUBLIC', 'READTEXT', 'RECONFIGURE', 'RESTORE', 'RULE', 'SECURITYAUDIT', 'SETUSER', 'SHUTDOWN',
+        'STATISTICS', 'TSEQUAL', 'UPDATETEXT', 'WRITETEXT' );
+
     /** Table hints that take or keep a lock a read replica cannot give: a statement with one runs on the primary */
     const LOCKING_HINTS = array( 'UPDLOCK', 'XLOCK', 'HOLDLOCK', 'TABLOCKX', 'SERIALIZABLE', 'REPEATABLEREAD', 'PAGLOCK', 'ROWLOCK', 'TABLOCK' );
 
@@ -355,6 +366,31 @@ class expSQLServerDialect
             $out .= $token['text'];
         }
         return array( $out, $values );
+    }
+
+    /**
+     * A query or data change with every NAME_ONLY_RESERVED_WORDS word outside literals, comments and brackets in
+     * brackets: INSERT INTO expqueue_job (checkpoint) becomes INSERT INTO expqueue_job ([checkpoint]).
+     *
+     * @param string $sql
+     * @return string
+     */
+    public static function bracketNameOnlyWords( $sql )
+    {
+        $sql = (string)$sql;
+        if ( !in_array( self::statementKind( $sql ), array( 'SELECT', 'INSERT', 'UPDATE', 'DELETE', 'MERGE' ), true ) )
+            return $sql;
+        if ( !preg_match( '/\\b(?:' . implode( '|', self::NAME_ONLY_RESERVED_WORDS ) . ')\\b/i', $sql ) )
+            return $sql;
+        $out = '';
+        foreach ( expSQLServerLexer::tokenize( $sql ) as $token )
+        {
+            if ( $token['type'] === expSQLServerLexer::WORD && in_array( strtoupper( $token['text'] ), self::NAME_ONLY_RESERVED_WORDS, true ) )
+                $out .= '[' . $token['text'] . ']';
+            else
+                $out .= $token['text'];
+        }
+        return $out;
     }
 
     /**
@@ -966,6 +1002,96 @@ class expSQLServerDialect
     }
 
     /**
+     * A SELECT that locks the rows it reads: WITH (UPDLOCK, ROWLOCK) after every table of its outer FROM and JOINs
+     * (SQL Server knows FOR UPDATE only in cursors). A table that has hints of its own keeps them; a trailing
+     * FOR UPDATE is removed.
+     *
+     * @param string $sql
+     * @return string
+     */
+    public static function forUpdate( $sql )
+    {
+        $sql = self::withoutTrailingForUpdate( rtrim( (string)$sql, " \t\r\n;" ) );
+        $tokens = expSQLServerLexer::tokenize( $sql );
+        $significant = expSQLServerLexer::significant( $tokens );
+        $count = count( $significant );
+        $insert = array();
+        $inFrom = false;
+        $stop = array( 'WHERE', 'GROUP', 'ORDER', 'HAVING', 'JOIN', 'INNER', 'LEFT', 'RIGHT', 'FULL', 'CROSS', 'ON', 'UNION',
+                       'EXCEPT', 'INTERSECT', 'OPTION', 'FOR', 'OUTER', 'APPLY', 'OFFSET' );
+        for ( $n = 0; $n < $count; $n++ )
+        {
+            list( $i, $depth ) = $significant[$n];
+            $word = expSQLServerLexer::keyword( $tokens[$i] );
+            if ( $depth !== 0 || !( $word === 'FROM' || $word === 'JOIN' || ( $tokens[$i]['text'] === ',' && $inFrom ) ) )
+            {
+                if ( $depth === 0 && in_array( $word, array( 'WHERE', 'GROUP', 'ORDER', 'HAVING', 'UNION' ), true ) )
+                    $inFrom = false;
+                continue;
+            }
+            if ( $word === 'FROM' )
+                $inFrom = true;
+            // the table: name parts joined by dots
+            $k = $n + 1;
+            if ( !isset( $significant[$k] ) || $tokens[$significant[$k][0]]['text'] === '(' )
+                continue;
+            $last = $significant[$k][0];
+            while ( isset( $significant[$k + 2] ) && $tokens[$significant[$k + 1][0]]['text'] === '.' )
+            {
+                $k += 2;
+                $last = $significant[$k][0];
+            }
+            // an alias, with or without AS
+            if ( isset( $significant[$k + 1] ) && expSQLServerLexer::keyword( $tokens[$significant[$k + 1][0]] ) === 'AS' && isset( $significant[$k + 2] ) )
+            {
+                $k += 2;
+                $last = $significant[$k][0];
+            }
+            else if ( isset( $significant[$k + 1] ) && in_array( $tokens[$significant[$k + 1][0]]['type'], array( expSQLServerLexer::WORD, expSQLServerLexer::IDENT ), true )
+                      && !in_array( expSQLServerLexer::keyword( $tokens[$significant[$k + 1][0]] ), array_merge( $stop, array( 'WITH' ) ), true ) )
+            {
+                $k += 1;
+                $last = $significant[$k][0];
+            }
+            if ( isset( $significant[$k + 1] ) && expSQLServerLexer::keyword( $tokens[$significant[$k + 1][0]] ) === 'WITH' )
+                continue;
+            $insert[$last] = true;
+        }
+        $out = '';
+        foreach ( $tokens as $i => $token )
+            $out .= $token['text'] . ( isset( $insert[$i] ) ? ' WITH (UPDLOCK, ROWLOCK)' : '' );
+        return $out;
+    }
+
+    /**
+     * The statement without a trailing outer FOR UPDATE (as MySQL, PostgreSQL and Oracle write a row lock).
+     *
+     * @param string $sql
+     * @return string
+     */
+    public static function withoutTrailingForUpdate( $sql )
+    {
+        $tokens = expSQLServerLexer::tokenize( (string)$sql );
+        $significant = expSQLServerLexer::significant( $tokens );
+        $c = count( $significant );
+        if ( $c >= 2 && $significant[$c - 1][1] === 0 && expSQLServerLexer::keyword( $tokens[$significant[$c - 1][0]] ) === 'UPDATE'
+             && expSQLServerLexer::keyword( $tokens[$significant[$c - 2][0]] ) === 'FOR' )
+            return rtrim( expSQLServerLexer::join( array_slice( $tokens, 0, $significant[$c - 2][0] ) ) );
+        return (string)$sql;
+    }
+
+    /**
+     * Whether a SELECT ends with an outer FOR UPDATE.
+     *
+     * @param string $sql
+     * @return bool
+     */
+    public static function hasTrailingForUpdate( $sql )
+    {
+        return stripos( (string)$sql, 'update' ) !== false && self::withoutTrailingForUpdate( $sql ) !== (string)$sql;
+    }
+
+    /**
      * GROUP_CONCAT in SQL Server's words: STRING_AGG (SQL Server 2017 and later) over NVARCHAR(MAX), so a result
      * past 8,000 bytes is no error (9829); optionally in an order.
      *
@@ -1259,7 +1385,23 @@ class expSQLServerDialect
             $parts[] = $keyword . '=' . self::connectionValue( $value );
         }
         $parts[] = 'MultipleActiveResultSets=0';
+        $parts[] = 'ConnectionPooling=' . ( self::connectionPooling( $config ) ? '1' : '0' );
         return 'sqlsrv:' . implode( ';', $parts );
+    }
+
+    /**
+     * Whether sqlsrv and pdo_sqlsrv may pool connections ('connection_pooling', off by default). Both pool by default:
+     * a closed connection stays open for the next connect with the same options. A process that forks after closing
+     * one (Velocity's parent after its warm-up, a cluster script with workers) would hand that one socket to every
+     * child, and the first child to finish breaks it for all the others (TCP Provider: Error code 0x20 / 0x2746).
+     * PDO_ODBC pools only when unixODBC's odbcinst.ini says Pooling=Yes, outside of this.
+     *
+     * @param array $config
+     * @return bool
+     */
+    public static function connectionPooling( array $config )
+    {
+        return self::flag( isset( $config['connection_pooling'] ) ? $config['connection_pooling'] : false );
     }
 
     /**
@@ -1305,7 +1447,8 @@ class expSQLServerDialect
      */
     public static function sqlsrvOptions( array $config )
     {
-        $options = array( 'CharacterSet' => 'UTF-8', 'ReturnDatesAsStrings' => true, 'MultipleActiveResultSets' => false );
+        $options = array( 'CharacterSet' => 'UTF-8', 'ReturnDatesAsStrings' => true, 'MultipleActiveResultSets' => false,
+                          'ConnectionPooling' => self::connectionPooling( $config ) );
         foreach ( self::connectionKeywords( $config ) as $keyword => $value )
         {
             if ( $keyword === 'Encrypt' )

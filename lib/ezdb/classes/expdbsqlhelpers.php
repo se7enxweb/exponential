@@ -155,6 +155,24 @@ class expDBSQLHelpers
     }
 
     /**
+     * A SELECT that locks the rows it reads until the end of the transaction: FOR UPDATE (MySQL, PostgreSQL, Oracle,
+     * generic), table hints on SQL Server, the statement as it is on SQLite (whose write transaction locks the database).
+     *
+     * @param string $dialect
+     * @param string $sql a SELECT without FOR UPDATE
+     * @return string
+     */
+    public static function forUpdate( $dialect, $sql )
+    {
+        $sql = rtrim( (string)$sql, " \t\r\n;" );
+        if ( $dialect === 'sqlite' )
+            return $sql;
+        if ( $dialect === 'sqlserver' )
+            return expSQLServerDialect::forUpdate( $sql );
+        return $sql . ' FOR UPDATE';
+    }
+
+    /**
      * The values of a group joined into one text: GROUP_CONCAT, STRING_AGG, LISTAGG. SQLite before 3.44 cannot order
      * inside GROUP_CONCAT: there $orderBy is left out (order the rows in a subquery when it matters).
      *
