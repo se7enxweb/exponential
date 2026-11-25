@@ -975,6 +975,22 @@ class expSQLServerDB extends eZDBInterface
         return expSQLServerDialect::inList( $elements, $columnName, $not === true, $type, (int)$this->Settings['InListChunkSize'] );
     }
 
+    public function sqlHelperDialect()
+    {
+        return 'sqlserver';
+    }
+
+    /**
+     * A PHP value as a literal: text as N'...'.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public function sqlLiteral( $value )
+    {
+        return expSQLServerDialect::literal( $value );
+    }
+
     /**
      * A SELECT with LIMIT and OFFSET in this database's words (the kernel's portable form of "LIMIT n OFFSET m");
      * null when $limit is 0.

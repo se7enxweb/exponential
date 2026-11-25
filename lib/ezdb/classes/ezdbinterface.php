@@ -1785,6 +1785,111 @@ class eZDBInterface
     }
 
     /**
+     * The SQL dialect of the portable helpers below (expDBSQLHelpers): mysql here; a driver that speaks another one
+     * answers for it (postgresql, sqlite, oracle, sqlserver, generic).
+     *
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlHelperDialect()
+    {
+        return 'mysql';
+    }
+
+    /**
+     * A PHP value as an SQL literal of this database (NULL, 1/0, digits, a float without exponent, escaped text).
+     *
+     * @param mixed $value
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlLiteral( $value )
+    {
+        return expDBSQLHelpers::literal( array( $this, 'escapeString' ), $value );
+    }
+
+    /**
+     * A table or column name in this database's quotes (a dotted name part by part).
+     *
+     * @param string $name
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlQuoteIdentifier( $name )
+    {
+        return expDBSQLHelpers::quoteIdentifier( $this->sqlHelperDialect(), $name );
+    }
+
+    /**
+     * A SELECT with LIMIT and OFFSET in this database's words; null when $limit is 0 (no rows: send nothing).
+     *
+     * @param string $sql
+     * @param int|false|null $limit false or null: no limit
+     * @param int $offset
+     * @return string|null
+     * @since 6.0.15
+     */
+    public function sqlLimit( $sql, $limit, $offset = 0 )
+    {
+        return expDBSQLHelpers::limit( $this->sqlHelperDialect(), $sql, $limit, $offset );
+    }
+
+    /**
+     * An insert-or-update of one row, atomic in the database, as one statement of this database's words.
+     *
+     * @param string $table
+     * @param array $row column => PHP value
+     * @param string[] $keyColumns the primary key or unique columns that find the row
+     * @param string[]|null $updateColumns the columns to update when the row exists; null: all but the keys;
+     *                                     array(): insert only, leave an existing row as it is
+     * @return string
+     * @throws InvalidArgumentException without columns or keys
+     * @since 6.0.15
+     */
+    public function sqlUpsert( $table, array $row, array $keyColumns, $updateColumns = null )
+    {
+        return expDBSQLHelpers::upsert( $this->sqlHelperDialect(), array( $this, 'sqlLiteral' ), $table, $row, $keyColumns, $updateColumns );
+    }
+
+    /**
+     * The values of a group joined into one text (MySQL's GROUP_CONCAT).
+     *
+     * @param string $expression
+     * @param string $separator
+     * @param string|null $orderBy e.g. "name ASC"
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlGroupConcat( $expression, $separator = ',', $orderBy = null )
+    {
+        return expDBSQLHelpers::groupConcat( $this->sqlHelperDialect(), array( $this, 'sqlLiteral' ), $expression, $separator, $orderBy );
+    }
+
+    /**
+     * Seconds since 1970 (UTC) of now, or of a date/time expression (MySQL's UNIX_TIMESTAMP()).
+     *
+     * @param string|null $expression
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlUnixTimestamp( $expression = null )
+    {
+        return expDBSQLHelpers::unixTimestamp( $this->sqlHelperDialect(), $expression );
+    }
+
+    /**
+     * A date/time (UTC) of seconds since 1970 (MySQL's FROM_UNIXTIME()).
+     *
+     * @param string $expression
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlFromUnixTimestamp( $expression )
+    {
+        return expDBSQLHelpers::fromUnixTimestamp( $this->sqlHelperDialect(), $expression );
+    }
+
+    /**
      * Returns true if the database handler support the insertion of default values, false if not
      *
      * @return bool

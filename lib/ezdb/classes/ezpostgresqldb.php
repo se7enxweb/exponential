@@ -190,6 +190,17 @@ class eZPostgreSQLDB extends eZDBInterface
     }
 
     /**
+     * The SQL dialect of the portable helpers (eZDBInterface::sqlLimit() ...): PostgreSQL.
+     *
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlHelperDialect()
+    {
+        return 'postgresql';
+    }
+
+    /**
      * Whether this connection's string literals take a backslash literally (standard_conforming_strings, on by
      * default since PostgreSQL 9.1). Read from the connection: the server reports every change of the setting,
      * a SET in this session included, so asking costs no statement. Null without a connection.

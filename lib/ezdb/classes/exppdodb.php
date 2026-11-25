@@ -173,6 +173,17 @@ class expPDODB extends eZDBInterface
         return 'pdo_' . ( $this->PDODriver !== '' ? $this->PDODriver : 'generic' );
     }
 
+    /**
+     * The SQL dialect of the portable helpers (eZDBInterface::sqlLimit() ...): the dialect of the PDO driver.
+     *
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlHelperDialect()
+    {
+        return in_array( $this->Dialect, expDBSQLHelpers::DIALECTS, true ) ? $this->Dialect : 'generic';
+    }
+
     /** @return string the PDO driver name */
     public function pdoDriver()
     {

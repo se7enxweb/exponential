@@ -1,0 +1,260 @@
+<?php
+/**
+ * File containing the expDBSQLHelpers class.
+ *
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package lib
+ */
+
+/**
+ * The SQL of the portable helpers every driver offers (eZDBInterface::sqlLimit(), sqlUpsert(), sqlGroupConcat(),
+ * sqlUnixTimestamp(), sqlFromUnixTimestamp(), sqlQuoteIdentifier()), per SQL dialect: mysql (MySQL and MariaDB),
+ * postgresql, sqlite, oracle, sqlserver; generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
+ * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code
+ * branches on the database it runs on.
+ *
+ * Values are written with the driver's own literal function ($literal: value => SQL), so escaping stays the
+ * driver's.
+ */
+class expDBSQLHelpers
+{
+    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'generic' );
+
+    /**
+     * The limit and offset as integers: limit false for "no limit" (false, null, '', negative or not a number).
+     *
+     * @return array( int|false, int )
+     */
+    public static function normalizeLimit( $limit, $offset )
+    {
+        $limit = ( $limit === false || $limit === null || $limit === '' || !is_numeric( $limit ) || $limit < 0 ) ? false : (int)$limit;
+        $offset = is_numeric( $offset ) ? max( 0, (int)$offset ) : 0;
+        return array( $limit, $offset );
+    }
+
+    /**
+     * A name in the dialect's quotes; a dotted name part by part.
+     *
+     * @param string $dialect
+     * @param string $name
+     * @return string
+     */
+    public static function quoteIdentifier( $dialect, $name )
+    {
+        if ( $dialect === 'sqlserver' )
+            return expSQLServerDialect::quoteName( $name );
+        $out = array();
+        foreach ( explode( '.', (string)$name ) as $part )
+        {
+            if ( $part === '' || strpos( $part, "\0" ) !== false )
+                throw new InvalidArgumentException( 'An empty name or a name with a NUL byte is no identifier' );
+            $out[] = $dialect === 'mysql' ? '`' . str_replace( '`', '``', $part ) . '`' : '"' . str_replace( '"', '""', $part ) . '"';
+        }
+        return implode( '.', $out );
+    }
+
+    /**
+     * A SELECT limited to $limit rows from $offset on; null when $limit is 0 (no rows: the caller sends nothing).
+     *
+     * @param string $dialect
+     * @param string $sql
+     * @param int|false|null $limit
+     * @param int $offset
+     * @return string|null
+     */
+    public static function limit( $dialect, $sql, $limit, $offset = 0 )
+    {
+        if ( $dialect === 'sqlserver' )
+            return expSQLServerDialect::applyLimit( $sql, $limit, $offset );
+        list( $limit, $offset ) = self::normalizeLimit( $limit, $offset );
+        $sql = rtrim( (string)$sql, " \t\r\n;" );
+        if ( $limit === 0 )
+            return null;
+        if ( $limit === false && $offset === 0 )
+            return $sql;
+        switch ( $dialect )
+        {
+            case 'oracle':
+            case 'generic':
+                return $sql . "\nOFFSET $offset ROWS" . ( $limit !== false ? " FETCH NEXT $limit ROWS ONLY" : '' );
+            case 'mysql':
+                return $sql . "\nLIMIT " . ( $limit === false ? '18446744073709551615' : $limit ) . ( $offset ? " OFFSET $offset" : '' );
+            case 'sqlite':
+                return $sql . "\nLIMIT " . ( $limit === false ? '-1' : $limit ) . ( $offset ? " OFFSET $offset" : '' );
+            default:
+                return $sql . "\nLIMIT " . ( $limit === false ? 'ALL' : $limit ) . ( $offset ? " OFFSET $offset" : '' );
+        }
+    }
+
+    /**
+     * An insert-or-update of one row, atomic in the database: MySQL ON DUPLICATE KEY UPDATE (INSERT IGNORE without
+     * update columns), PostgreSQL and SQLite ON CONFLICT (...) DO UPDATE / DO NOTHING, Oracle and SQL Server MERGE.
+     * $keyColumns must be the columns of a primary key or unique index (MySQL decides by any unique key of the row).
+     *
+     * @param string $dialect
+     * @param callable $literal function( mixed $value ): string
+     * @param string $table
+     * @param array $row column => value
+     * @param string[] $keyColumns
+     * @param string[]|null $updateColumns null: every column but the keys; array(): insert only
+     * @return string
+     */
+    public static function upsert( $dialect, callable $literal, $table, array $row, array $keyColumns, $updateColumns = null )
+    {
+        if ( $dialect === 'sqlserver' )
+            return expSQLServerDialect::upsert( $table, $row, $keyColumns, $updateColumns );
+        if ( !$row || !$keyColumns )
+            throw new InvalidArgumentException( 'An upsert needs at least one column and one key column' );
+        foreach ( $keyColumns as $key )
+            if ( !array_key_exists( $key, $row ) )
+                throw new InvalidArgumentException( "The key column '$key' has no value" );
+        if ( $updateColumns === null )
+            $updateColumns = array_values( array_diff( array_keys( $row ), $keyColumns ) );
+        $q = function ( $name ) use ( $dialect ) { return expDBSQLHelpers::quoteIdentifier( $dialect, $name ); };
+        $columns = implode( ', ', array_map( $q, array_keys( $row ) ) );
+        $values = implode( ', ', array_map( $literal, array_values( $row ) ) );
+        $t = $q( $table );
+        switch ( $dialect )
+        {
+            case 'mysql':
+                if ( !$updateColumns )
+                    return "INSERT IGNORE INTO $t ($columns) VALUES ($values)";
+                $set = array();
+                foreach ( $updateColumns as $column )
+                    $set[] = $q( $column ) . ' = VALUES(' . $q( $column ) . ')';
+                return "INSERT INTO $t ($columns) VALUES ($values) ON DUPLICATE KEY UPDATE " . implode( ', ', $set );
+            case 'oracle':
+                $source = array();
+                foreach ( $row as $column => $value )
+                    $source[] = $literal( $value ) . ' AS ' . $q( $column );
+                $on = array();
+                foreach ( $keyColumns as $key )
+                    $on[] = 't.' . $q( $key ) . ' = s.' . $q( $key );
+                $sql = "MERGE INTO $t t USING (SELECT " . implode( ', ', $source ) . ' FROM dual) s ON (' . implode( ' AND ', $on ) . ')';
+                if ( $updateColumns )
+                {
+                    $set = array();
+                    foreach ( $updateColumns as $column )
+                        $set[] = 't.' . $q( $column ) . ' = s.' . $q( $column );
+                    $sql .= ' WHEN MATCHED THEN UPDATE SET ' . implode( ', ', $set );
+                }
+                $sValues = array();
+                foreach ( array_keys( $row ) as $column )
+                    $sValues[] = 's.' . $q( $column );
+                return $sql . " WHEN NOT MATCHED THEN INSERT ($columns) VALUES (" . implode( ', ', $sValues ) . ')';
+            default:
+                $sql = "INSERT INTO $t ($columns) VALUES ($values) ON CONFLICT (" . implode( ', ', array_map( $q, $keyColumns ) ) . ')';
+                if ( !$updateColumns )
+                    return $sql . ' DO NOTHING';
+                $set = array();
+                foreach ( $updateColumns as $column )
+                    $set[] = $q( $column ) . ' = excluded.' . $q( $column );
+                return $sql . ' DO UPDATE SET ' . implode( ', ', $set );
+        }
+    }
+
+    /**
+     * The values of a group joined into one text: GROUP_CONCAT, STRING_AGG, LISTAGG. SQLite before 3.44 cannot order
+     * inside GROUP_CONCAT: there $orderBy is left out (order the rows in a subquery when it matters).
+     *
+     * @param string $dialect
+     * @param callable $literal
+     * @param string $expression
+     * @param string $separator
+     * @param string|null $orderBy
+     * @return string
+     */
+    public static function groupConcat( $dialect, callable $literal, $expression, $separator = ',', $orderBy = null )
+    {
+        if ( $dialect === 'sqlserver' )
+            return expSQLServerDialect::groupConcat( $expression, $separator, $orderBy );
+        $order = ( $orderBy !== null && trim( (string)$orderBy ) !== '' ) ? trim( (string)$orderBy ) : null;
+        $sep = $literal( (string)$separator );
+        switch ( $dialect )
+        {
+            case 'mysql':
+                return "GROUP_CONCAT($expression" . ( $order ? " ORDER BY $order" : '' ) . " SEPARATOR $sep)";
+            case 'sqlite':
+                return "GROUP_CONCAT($expression, $sep)";
+            case 'oracle':
+                return "LISTAGG($expression, $sep) WITHIN GROUP (ORDER BY " . ( $order ? $order : 'NULL' ) . ')';
+            default:
+                return "STRING_AGG(CAST($expression AS TEXT), $sep" . ( $order ? " ORDER BY $order" : '' ) . ')';
+        }
+    }
+
+    /**
+     * Seconds since 1970-01-01 UTC, of now or of a date/time expression (taken as UTC).
+     *
+     * @param string $dialect
+     * @param string|null $expression
+     * @return string
+     */
+    public static function unixTimestamp( $dialect, $expression = null )
+    {
+        switch ( $dialect )
+        {
+            case 'sqlserver':
+                return expSQLServerDialect::unixTimestamp( $expression );
+            case 'mysql':
+                return $expression === null ? 'UNIX_TIMESTAMP()' : "UNIX_TIMESTAMP($expression)";
+            case 'sqlite':
+                return $expression === null ? "CAST(strftime('%s', 'now') AS INTEGER)" : "CAST(strftime('%s', $expression) AS INTEGER)";
+            case 'oracle':
+                $value = $expression === null ? 'SYS_EXTRACT_UTC(SYSTIMESTAMP)' : $expression;
+                return "ROUND((CAST($value AS DATE) - DATE '1970-01-01') * 86400)";
+            default:
+                return $expression === null ? 'CAST(EXTRACT(EPOCH FROM CURRENT_TIMESTAMP) AS BIGINT)' : "CAST(EXTRACT(EPOCH FROM $expression) AS BIGINT)";
+        }
+    }
+
+    /**
+     * A date/time (UTC) from seconds since 1970.
+     *
+     * @param string $dialect
+     * @param string $expression
+     * @return string
+     */
+    public static function fromUnixTimestamp( $dialect, $expression )
+    {
+        switch ( $dialect )
+        {
+            case 'sqlserver':
+                return expSQLServerDialect::fromUnixTimestamp( $expression );
+            case 'mysql':
+                return "FROM_UNIXTIME($expression)";
+            case 'sqlite':
+                return "datetime($expression, 'unixepoch')";
+            case 'oracle':
+                return "(TIMESTAMP '1970-01-01 00:00:00' + NUMTODSINTERVAL($expression, 'SECOND'))";
+            default:
+                return "(TIMESTAMP '1970-01-01 00:00:00' + ($expression) * INTERVAL '1 second')";
+        }
+    }
+
+    /**
+     * A PHP value as a literal: NULL, 1/0, digits, a float in plain notation, else the escaped text in quotes.
+     *
+     * @param callable $escape function( string ): string, the driver's escapeString()
+     * @param mixed $value
+     * @return string
+     */
+    public static function literal( callable $escape, $value )
+    {
+        if ( $value === null )
+            return 'NULL';
+        if ( is_bool( $value ) )
+            return $value ? '1' : '0';
+        if ( is_int( $value ) )
+            return (string)$value;
+        if ( is_float( $value ) )
+        {
+            if ( is_nan( $value ) || is_infinite( $value ) )
+                return 'NULL';
+            $text = rtrim( rtrim( sprintf( '%.15F', $value ), '0' ), '.' );
+            return ( $text === '' || $text === '-' || $text === '-0' ) ? '0' : $text;
+        }
+        return "'" . $escape( (string)$value ) . "'";
+    }
+}

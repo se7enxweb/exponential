@@ -281,6 +281,17 @@ class eZSQLite3DB extends eZDBInterface
         return 'sqlite';
     }
 
+    /**
+     * The SQL dialect of the portable helpers (eZDBInterface::sqlLimit() ...): SQLite (3.24 or later for ON CONFLICT).
+     *
+     * @return string
+     * @since 6.0.15
+     */
+    public function sqlHelperDialect()
+    {
+        return 'sqlite';
+    }
+
     /*!
       \reimp
     */

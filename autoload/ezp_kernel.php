@@ -14,6 +14,7 @@ return array(
       'Cezpdf'                                                       => 'lib/ezpdf/classes/class.ezpdf.php',
       'CommandLineArguments'                                         => 'kernel/private/classes/commands/ezconvertdbcharset.php',
       'Cpdf'                                                         => 'lib/ezpdf/classes/class.pdf.php',
+      'expDBSQLHelpers'                                              => 'lib/ezdb/classes/expdbsqlhelpers.php',
       'ExpInstallationDetailsOutputFilter'                           => 'kernel/classes/expinstallationdetailsoutputfilter.php',
       'ExpInstallationOperator'                                      => 'kernel/classes/expinstallationoperator.php',
       'ExponentialSDK'                                               => 'lib/version.php',
