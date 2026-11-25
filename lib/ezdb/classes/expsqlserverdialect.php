@@ -307,10 +307,32 @@ class expSQLServerDialect
         $values = array();
         $out = '';
         $previous = '';
+        // the function each open parenthesis belongs to, and the last significant token
+        $calls = array();
+        $lastWord = '';
+        $lastSignificant = '';
         foreach ( $tokens as $token )
         {
             if ( $token['type'] === expSQLServerLexer::PARAM )
                 return null;
+            if ( $token['type'] === expSQLServerLexer::PUNCT && $token['text'] === '(' )
+                $calls[] = $lastSignificant === 'word' ? $lastWord : '';
+            else if ( $token['type'] === expSQLServerLexer::PUNCT && $token['text'] === ')' )
+                array_pop( $calls );
+            // STRING_AGG's separator stays a literal: the server refuses anything else there
+            if ( ( $token['type'] === expSQLServerLexer::STRING || $token['type'] === expSQLServerLexer::NSTRING ) && !$token['open']
+                 && $calls && end( $calls ) === 'STRING_AGG' && $lastSignificant === ',' )
+            {
+                $out .= self::stringLiteral( expSQLServerLexer::literalValue( $token ) );
+                $lastSignificant = 'literal';
+                continue;
+            }
+            if ( !expSQLServerLexer::isNoise( $token ) )
+            {
+                $lastSignificant = $token['type'] === expSQLServerLexer::WORD ? 'word' : $token['text'];
+                if ( $token['type'] === expSQLServerLexer::WORD )
+                    $lastWord = strtoupper( $token['text'] );
+            }
             if ( $token['type'] === expSQLServerLexer::WORD )
             {
                 $word = strtoupper( $token['text'] );
@@ -954,8 +976,8 @@ class expSQLServerDialect
      */
     public static function groupConcat( $expression, $separator = ',', $orderBy = null )
     {
-        // the separator must be a literal: as N'...' the driver would bind it, which PDO_ODBC's prepared call refuses
-        $sql = 'STRING_AGG(CAST(' . $expression . ' AS NVARCHAR(MAX)), ' . self::nvarcharConstant( $separator ) . ')';
+        // the separator must be a string literal (error 8733 for an expression or a bound value): parameterize() keeps it
+        $sql = 'STRING_AGG(CAST(' . $expression . ' AS NVARCHAR(MAX)), ' . self::stringLiteral( $separator ) . ')';
         if ( $orderBy !== null && trim( (string)$orderBy ) !== '' )
             $sql .= ' WITHIN GROUP (ORDER BY ' . $orderBy . ')';
         return $sql;

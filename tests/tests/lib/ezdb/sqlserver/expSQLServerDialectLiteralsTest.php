@@ -144,6 +144,9 @@ class expSQLServerDialectLiteralsTest extends PHPUnit\Framework\TestCase
             'like with escape' => array( "SELECT 1 WHERE a LIKE 'x!%' ESCAPE '!'", 'SELECT 1 WHERE a LIKE ? ESCAPE ?', array( 'x!%', '!' ) ),
             'line continuation is data' => array( "SELECT 'a\\\nb'", 'SELECT ?', array( "a\\\nb" ) ),
             'no literal' => array( 'SELECT 1', 'SELECT 1', array() ),
+            'string_agg separator stays a literal' => array( "SELECT STRING_AGG(name, '|') WITHIN GROUP (ORDER BY name) FROM t WHERE a = 'x'",
+                                                             "SELECT STRING_AGG(name, N'|') WITHIN GROUP (ORDER BY name) FROM t WHERE a = ?", array( 'x' ) ),
+            'string_agg first argument is bound' => array( "SELECT STRING_AGG(CONCAT(name, '!'), ',') FROM t", "SELECT STRING_AGG(CONCAT(name, ?), N',') FROM t", array( '!' ) ),
             'numeric text stays text' => array( "SELECT * FROM t WHERE id = '5'", 'SELECT * FROM t WHERE id = ?', array( '5' ) ),
         );
     }

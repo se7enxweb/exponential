@@ -81,9 +81,9 @@ class expSQLServerDialectFunctionsTest extends PHPUnit\Framework\TestCase
 
     public function testGroupConcat()
     {
-        $this->assertSame( "STRING_AGG(CAST(name AS NVARCHAR(MAX)), CAST(0x2C00 AS NVARCHAR(1)))", expSQLServerDialect::groupConcat( 'name' ) );
-        $this->assertSame( "STRING_AGG(CAST(id AS NVARCHAR(MAX)), CAST(0x3B002000 AS NVARCHAR(2))) WITHIN GROUP (ORDER BY id DESC)", expSQLServerDialect::groupConcat( 'id', '; ', 'id DESC' ) );
-        $this->assertSame( "STRING_AGG(CAST(a AS NVARCHAR(MAX)), CAST(0x2700 AS NVARCHAR(1)))", expSQLServerDialect::groupConcat( 'a', "'" ) );
+        $this->assertSame( "STRING_AGG(CAST(name AS NVARCHAR(MAX)), N',')", expSQLServerDialect::groupConcat( 'name' ) );
+        $this->assertSame( "STRING_AGG(CAST(id AS NVARCHAR(MAX)), N'; ') WITHIN GROUP (ORDER BY id DESC)", expSQLServerDialect::groupConcat( 'id', '; ', 'id DESC' ) );
+        $this->assertSame( "STRING_AGG(CAST(a AS NVARCHAR(MAX)), N'''')", expSQLServerDialect::groupConcat( 'a', "'" ) );
         $this->assertStringNotContainsString( 'WITHIN', expSQLServerDialect::groupConcat( 'a', ',', '  ' ) );
     }
 
