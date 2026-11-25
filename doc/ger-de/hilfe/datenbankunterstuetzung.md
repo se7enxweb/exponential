@@ -455,6 +455,11 @@ Einzelheiten: [9.3 MySQL und MariaDB](../installation/09-datenbanken.md#93-mysql
 
 ## Microsoft SQL Server: möglich mit zusätzlichem Aufwand
 
+> **In Arbeit (6.0.15):** Der Kernel hat einen eigenen SQL-Server-Treiber, `expSQLServerDB`
+> (`DatabaseImplementation=sqlserver`), neu geschrieben und nicht von xrowmssql abgeleitet. Treiber und Tests sind
+> vorhanden; Schema-Handler, Installer-Einträge und das DFS-Cluster-Backend folgen. Siehe
+> [Microsoft-SQL-Server-Treiber](../funktionen/6.0/sqlserver-datenbanktreiber.md).
+
 **Die Aussage.** Microsoft SQL Server ist derzeit nachweislich mit zusätzlichem Aufwand möglich. In Exponential 6.0.x
 wird er nicht unterstützt: Es gibt keinen Treiber, keinen Schema-Handler und keinen Eintrag in den Installern dafür,
 und nichts auf dieser Seite ist als Versprechen eines Releases zu verstehen, das einen solchen enthält.
@@ -503,7 +508,7 @@ und diese Seite behauptet nicht, dass sie dort funktioniert.
 | Identity-Inserts | `eZMSSQLDB::query()` | Schaltete `IDENTITY_INSERT` um Inserts herum ein und aus, die die Schlüsselspalte setzen |
 | Schema-Handler | `classes/ezmssqlschema.php` (`eZMssqlSchema`) | Setzte `.dba` in DDL für SQL Server um (`nvarchar`, `ntext`, `int IDENTITY(0,1)`, Primärschlüssel und Indizes, Insert-Trigger) und las eine vorhandene Datenbank in ein Schema zurück |
 | Einstellungen | `settings/site.ini.append`, `settings/dbschema.ini.append` | Die Aliase `mssql` und `ezmssql` für `ImplementationAlias[]`, Port 1433, der Schema-Handler unter `SchemaHandlerClasses[mssql]` und Übersetzungen von Typ und `NOT NULL` pro Spalte für lange Textspalten |
-| Serverobjekte | `sql/PROCEDURE.sql`, `sql/FUNCTION.sql`, `sql/clustering.sql` | Eine Stored Procedure und eine Funktion, die zuerst in SQL Server anzulegen sind, und die Cluster-Tabellen |
+| Serverobjekte | `sql/PROCEDURE.sql`, `sql/FUNCTION.sql`, `sql/clustering.sql` | Eine Stored Procedure und eine Funktion, die zuerst in SQL Server anzulegen sind; `clustering.sql` enthält die Tabelle `ezdbfile` des alten eZDB-Cluster-Handlers (Dateiinhalte in der Datenbank), nicht die Metadatentabelle `ezdfsfile` des heutigen DFS-Clusters |
 | Kernel-Patch | `patch/4.3/kernel.patch` | Eine Änderung an `kernel/classes/ezcontentlanguage.php` für die Arithmetik von SQL Server auf Sprachmasken |
 | Installationshinweise | `README`, `docs/` | Einrichtung des Clients (SQL Server Native Client unter Windows, FreeTDS unter Linux), Laden des Schemas mit `ezsqlinsertschema.php --type=mssql`, Fehlerbehebung und bekannte Fehler |
 
@@ -516,7 +521,7 @@ dass das Verzeichnis der Erweiterung `extension/mssql` heißt.
 | Zeile der Arbeitsliste | Was xrowmssql schon hat | Was sich ändern müsste |
 |---|---|---|
 | Eine Treiberklasse | Die meisten Methoden von `eZDBInterface` | PHP 8: Ihr Konstruktor im Stil von PHP 4 (`function eZMSSQLDB()`, der `$this->eZDBInterface()` aufruft) läuft nicht auf PHP 8, wo `eZDBInterface` nur `__construct()` hat; `connect()` fehlt der Parameter `$port` der heutigen Treiber; die `mssql_*`-Funktionen wurden ab PHP 7 entfernt, sodass als Backend nur `sqlsrv` bleibt, auch unter Linux |
-| Offset und Limit | Nichts in Gebrauch: Die Umschreibung mit `ROW_NUMBER()` in `arrayQuery()` ist auskommentiert, sodass `limit` und `offset` ignoriert werden | `ORDER BY ... OFFSET n ROWS FETCH NEXT m ROWS ONLY`, was SQL Server 2012 oder neuer braucht |
+| Offset und Limit | Falsch angewendet, nicht ignoriert: Die Umschreibung mit `ROW_NUMBER()` in `arrayQuery()` ist auskommentiert; stattdessen wird das ganze Ergebnis über einen statischen Cursor geholt, ab seiner ersten Zeile gelesen und bei `limit` abgeschnitten, die Zeilen ab `offset` nummeriert; keine Zeile wird übersprungen, sodass jede Seite nach der ersten wieder die ersten Zeilen zeigt | `ORDER BY ... OFFSET n ROWS FETCH NEXT m ROWS ONLY`, was SQL Server 2012 oder neuer braucht |
 | `lastSerialID()` | `@@identity` | `SCOPE_IDENTITY()`, das von Triggern nicht verändert wird, oder `OUTPUT inserted.id` |
 | `md5()`, `subString()`, `concatString()` | Vorhanden | `CONVERT(VARCHAR(32), HASHBYTES('MD5', ...), 2)` statt `master.dbo.fn_varbintohexstr`; `NVARCHAR(MAX)` statt der Obergrenze von 8000 Zeichen |
 | `bitAnd()`/`bitOr()` | Die Standardimplementierungen des Kernels (die bitweisen Operatoren AND und OR) passen bereits für SQL Server | Nichts |

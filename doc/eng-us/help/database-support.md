@@ -466,6 +466,11 @@ Details: [9.3 MySQL and MariaDB](../install/09-databases.md#93-mysql-and-mariadb
 
 ## Microsoft SQL Server: possible with additional work
 
+> **In progress (6.0.15):** the kernel has a SQL Server driver of its own, `expSQLServerDB`
+> (`DatabaseImplementation=sqlserver`), written anew and not derived from xrowmssql. The driver and its tests are in
+> place; the schema handler, installer entries and the DFS cluster backend follow. See
+> [Microsoft SQL Server driver](../features/6.0/sqlserver-database-driver.md).
+
 **The statement.** Microsoft SQL Server is known to be possible with additional work at this time. It is not
 supported in Exponential 6.0.x: there is no driver, no schema handler and no installer entry for it, and nothing on
 this page should be read as a promise of a release that has one.
@@ -510,7 +515,7 @@ works there.
 | Identity inserts | `eZMSSQLDB::query()` | Switched `IDENTITY_INSERT` on and off around inserts that set the key column |
 | Schema handler | `classes/ezmssqlschema.php` (`eZMssqlSchema`) | Turned `.dba` into SQL Server DDL (`nvarchar`, `ntext`, `int IDENTITY(0,1)`, primary keys and indexes, insert triggers) and read an existing database back into a schema |
 | Settings | `settings/site.ini.append`, `settings/dbschema.ini.append` | The aliases `mssql` and `ezmssql` for `ImplementationAlias[]`, port 1433, the schema handler under `SchemaHandlerClasses[mssql]`, and per-column type and `NOT NULL` translations for long text columns |
-| Server objects | `sql/PROCEDURE.sql`, `sql/FUNCTION.sql`, `sql/clustering.sql` | A stored procedure and function to create in SQL Server first, and the cluster tables |
+| Server objects | `sql/PROCEDURE.sql`, `sql/FUNCTION.sql`, `sql/clustering.sql` | A stored procedure and function to create in SQL Server first; `clustering.sql` holds the table `ezdbfile` of the old eZDB cluster handler (file contents kept in the database), not the metadata table `ezdfsfile` of today's DFS cluster |
 | Kernel patch | `patch/4.3/kernel.patch` | A change to `kernel/classes/ezcontentlanguage.php` for SQL Server's arithmetic on language masks |
 | Install notes | `README`, `docs/` | Client setup (SQL Server Native Client on Windows, FreeTDS on Linux), loading the schema with `ezsqlinsertschema.php --type=mssql`, troubleshooting and known bugs |
 
@@ -523,7 +528,7 @@ is the GPL version 3; check both before reusing code. The settings expect the ex
 | Work list row | What xrowmssql already has | What would need to change |
 |---|---|---|
 | A driver class | Most methods of `eZDBInterface` | PHP 8: its PHP 4 style constructor (`function eZMSSQLDB()` calling `$this->eZDBInterface()`) does not run on PHP 8, where `eZDBInterface` has only `__construct()`; `connect()` lacks the `$port` parameter of today's drivers; the `mssql_*` functions were removed from PHP 7 on, so only `sqlsrv` remains as a back end, on Linux too |
-| Offset and limit | Nothing in use: the `ROW_NUMBER()` rewrite in `arrayQuery()` is commented out, so `limit` and `offset` are ignored | `ORDER BY ... OFFSET n ROWS FETCH NEXT m ROWS ONLY`, which needs SQL Server 2012 or later |
+| Offset and limit | Applied wrongly, not ignored: the `ROW_NUMBER()` rewrite in `arrayQuery()` is commented out, and instead the whole result is fetched through a static cursor, read from its first row and cut at `limit`, with the rows keyed from `offset`; no row is skipped, so every page after the first repeats the first rows | `ORDER BY ... OFFSET n ROWS FETCH NEXT m ROWS ONLY`, which needs SQL Server 2012 or later |
 | `lastSerialID()` | `@@identity` | `SCOPE_IDENTITY()`, which is not changed by triggers, or `OUTPUT inserted.id` |
 | `md5()`, `subString()`, `concatString()` | Present | `CONVERT(VARCHAR(32), HASHBYTES('MD5', ...), 2)` instead of `master.dbo.fn_varbintohexstr`; `NVARCHAR(MAX)` instead of the 8000 character cap |
 | `bitAnd()`/`bitOr()` | The kernel's defaults (the bitwise AND and OR operators) already fit SQL Server | Nothing |
