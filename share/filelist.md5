@@ -13,7 +13,7 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 83ebb7a0d04f421bdff8ef89b268e003  .github/workflows/ci-health.yml
 dcd2c18968f0d52e402cd003ab6e2c67  .github/workflows/codeql.yml
 ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
-8a85095e535cba648737146620b4a137  .github/workflows/phpunit.yml
+9cff69a6fb9f352431b5b11d863fd444  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 1942bd02f05e39a47b6f0c82d826f841  .htaccess_root
@@ -28,7 +28,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-1dd09b3e6aa771d29faace134157e111  autoload/ezp_kernel.php
+95e7bea07c57213d6cf232b7612411ef  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -6968,7 +6968,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-22183406e4b904644bb364236d994a10  doc/eng-us/features/6.0/README.md
+33d0f8ee592d13b67510642637fb9d70  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -8605,7 +8605,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-e4b954eb0558414a47a629713ca64831  doc/eng-us/help/database-support.md
+cc40ac3a23961967e7b067fd0ded49ca  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -13670,7 +13670,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-e99f9b5f9427fe80d3944c7c985ca0b6  doc/ger-de/.paths.json
+f6557f92e1893cc4ec1bd56c58a6ca76  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17103,7 +17103,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-5ec57a8b96bab74e9d097f5704a8530c  doc/ger-de/funktionen/6.0/README.md
+c354b3ceaab160f566754ad478cd01e9  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -18510,7 +18510,7 @@ a5a807f6683e34c696f32b0aacc76b15  doc/ger-de/hilfe/datenbankadministratoren/unte
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 0fd3f75c7c74b4cf244e7d5448f3c417  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-ed8af49f4ce7876f3cc901cf229b0d06  doc/ger-de/hilfe/datenbankunterstuetzung.md
+bc801632e00b55b42a057c634efcb422  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
@@ -27503,7 +27503,7 @@ cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.m
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 6c02e4e777784dc458582238e073cb10  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
-75bb45a2f80e89c5ec797f4394b307ce  phpunit.xml
+f0a7ce391777bf19d57b25dcd7cbe5e5  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 242b474556fa73a01c4a1cc2b0348abb  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -27569,7 +27569,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-b6d54fa9426d9b45ff7c154aad7c4f9a  settings/site.ini
+f7798eda3db157c01ec635a79f8d9c30  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -31137,3 +31137,25 @@ e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest
 1a901abc1739f5bcb0d0e820f1469850  doc/eng-us/features/6.0/clustering-overview.md
 61552fbac72d12b60971fd0fcb07e667  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
 fd5bee2e6ad8c673da05c19a87d0e433  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
+eb2a615521e7869416ea66616d62af9a  lib/ezdb/classes/expsqlserverlexer.php
+886d335e371f1f22adbeec659f01dce7  lib/ezdb/classes/expsqlserverdialect.php
+e44d29160e3279c76ae9b6d53dcc1f76  lib/ezdb/classes/expsqlservererrormap.php
+8fea61262a360e5a3b83a199f6590c0c  lib/ezdb/classes/expsqlservertransport.php
+3d10eaf8dde978f00c21cf828323b1a6  lib/ezdb/classes/expsqlserversqlsrvtransport.php
+45971fcfe2a5e5080cdc39b74208977a  lib/ezdb/classes/expsqlserverpdotransport.php
+1762ee6b530d44e7da75bd2338b8cfa1  lib/ezdb/classes/expsqlserverdb.php
+cca2540dc9bb828fbc87fb0c93f5f9fd  tests/tests/lib/ezdb/sqlserver/expSQLServerBuilderPropertyTest.php
+94b7fca2ac8e0f66e132781e272e03b4  tests/tests/lib/ezdb/sqlserver/expSQLServerConnectionSettingsTest.php
+d58ce8e9de92dff05c27f05af9f1450b  tests/tests/lib/ezdb/sqlserver/expSQLServerDBTest.php
+50db37fa657d18ceef50ee530523c2dc  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectFunctionsTest.php
+c981b5365c0a7f76a7ad03c8dbfc7cbd  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectLiteralsTest.php
+e3994c8ae20f32679de751f4643817aa  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectNamesTest.php
+4f684eae47979d0bba174002369627e4  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectPagingTest.php
+12334599d7e88a3884b009cb4205e53f  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectStatementsTest.php
+137f529852220346fac774d7152f89b6  tests/tests/lib/ezdb/sqlserver/expSQLServerErrorMapTest.php
+7fd2f60fd8513eeb011cc529f3e27882  tests/tests/lib/ezdb/sqlserver/expSQLServerLexerTest.php
+2363e6acc3bca581badcb2c627ce996c  tests/tests/lib/ezdb/sqlserver/expSQLServerTestKit.php
+c556b8a37b70168e2bbeb52e7f8e32d4  tests/tests/lib/ezdb/sqlserver/live/expSQLServerLiveTest.php
+46f32715b3a59f79596a3582a2c0f412  tests/tests/lib/ezdb/sqlserver/live/expSQLServerPeer.php
+346c19dc3d737c3a8556cceb87f64b10  doc/eng-us/features/6.0/sqlserver-database-driver.md
+5a53d73d8680d77fca99f8b7a0a238e5  doc/ger-de/funktionen/6.0/sqlserver-datenbanktreiber.md
