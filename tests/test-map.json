@@ -406,6 +406,7 @@
       "tests/tests/design/AdminLandmarksTest.php",
       "tests/tests/design/AdminFormLabelsTest.php",
       "tests/tests/design/AdminTokenContrastTest.php",
+      "tests/tests/design/AdminTokenPaletteTest.php",
       "tests/tests/design/AdminPageHeaderTest.php",
       "tests/tests/design/AdminNoticesTest.php",
       "tests/tests/design/AdminThemeSwitchTest.php",
@@ -726,6 +727,7 @@
       "tests/tests/design/AdminLogoTest.php",
       "tests/tests/design/AdminCssReviewFixesTest.php",
       "tests/tests/design/AdminTokenContrastTest.php",
+      "tests/tests/design/AdminTokenPaletteTest.php",
       "tests/tests/design/AdminFirstPaintColumnsTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
@@ -925,7 +927,8 @@
     ],
     "design/admin4/templates/parts/a4_logo.tpl": [
       "tests/tests/design/AdminLogoTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminTokenPaletteTest.php"
     ],
     "design/admin4/templates/loginpagelayout.tpl": [
       "tests/tests/design/AdminLogoTest.php"

@@ -26,7 +26,7 @@ summary.
 
 | Group | Examples | Same in dark? |
 |---|---|---|
-| Accent | `--a4-accent` (`#f26a21`), `--a4-accent-strong` (filled controls with white text), `--a4-accent-text` (accent as text), `--a4-accent-soft`, `--a4-ring` (focus ring) | no |
+| Accent | `--a4-accent` (`#f15a28`, the logo's orange), `--a4-accent-strong` (filled controls with white text), `--a4-accent-text` (accent as text), `--a4-accent-soft`, `--a4-ring` (focus ring) | no |
 | Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-zebra`, `--a4-field`, `--a4-field-line` | no |
 | States | `--a4-ok`, `--a4-warn`, `--a4-bad`, `--a4-info`, each with `-bg` and `-line` | no |
 | Charts | `--a4-chart-1` to `--a4-chart-8` | no |
@@ -48,9 +48,9 @@ Light values are on `:root`. Dark values are in one block:
 ```css
 html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
   color-scheme: dark;
-  --a4-ink: #e8ebf0;
-  --a4-card: #1b212c;
-  --a4-accent-text: #ff9a5c;
+  --a4-ink: #e2e8f0;
+  --a4-card: #0f172a;
+  --a4-accent-text: #fb923c;
   /* ... */
 }
 ```

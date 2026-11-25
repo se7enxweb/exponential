@@ -92,7 +92,7 @@ All `var(--a4-...)`, defined in `components.css`.
 
 | Group | Tokens |
 |---|---|
-| Accent | `--a4-accent` (`#f26a21`), `--a4-accent-hover`, `--a4-accent-strong` (filled controls with white text, 5.2:1), `--a4-accent-press` (their hovered fill), `--a4-accent-text` (the accent as text or link), `--a4-accent-soft` (tint), `--a4-on-accent`, `--a4-on-accent-hover` (text on the `-press` fill), `--a4-ring` (focus ring, opaque: 3:1 on every surface) |
+| Accent | `--a4-accent` (`#f15a28`, the logo's orange), `--a4-accent-hover`, `--a4-accent-strong` (filled controls with white text, 5.2:1), `--a4-accent-press` (their hovered fill), `--a4-accent-text` (the accent as text or link), `--a4-accent-soft` (tint), `--a4-on-accent`, `--a4-on-accent-hover` (text on the `-press` fill), `--a4-ring` (focus ring, opaque: 3:1 on every surface) |
 | Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-line-strong`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-zebra` (the even rows of data tables), `--a4-head-bg` (the header row of data tables), `--a4-field`, `--a4-field-line`, `--a4-disabled`, `--a4-overlay`, `--a4-code-bg`, `--a4-code-ink` |
 | States | `--a4-ok`, `--a4-ok-bg`, `--a4-ok-line`; `--a4-warn`, `--a4-warn-bg`, `--a4-warn-line`; `--a4-bad`, `--a4-bad-bg`, `--a4-bad-line`, `--a4-bad-hover`; `--a4-info`, `--a4-info-bg`, `--a4-info-line` |
 | Charts | `--a4-chart-1` to `--a4-chart-8`, a categorical palette in this order |
@@ -135,9 +135,18 @@ that wrapper, not to the page. An empty list says so in `.a4-empty`, never in a 
 `--a4-orange`, `--a4-orange-dark` and `--a4-orange-soft` are the accent's former names, kept for the extensions that
 use them; new code uses the `--a4-accent*` names.
 
-**The accent** is the brand orange `#f26a21`, as on admin4's header (the selected menu pill) and its default button.
-White text on it is only 3:1, so filled controls with white text use its darker shade `--a4-accent-strong`
-(`#c2410c`, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#ad3809` light, 5.4:1 also on a hovered table row and 4.8:1 for an `is-accent` badge on one; `#ff9a5c` dark).
+**The accent** is the logo's orange `#f15a28`, as on admin4's header (the selected menu pill) and its default button.
+White text on it is only 3.4:1, so filled controls with white text use its darker shade `--a4-accent-strong`
+(`#c2410c`, orange-700, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#9a3412`, orange-800, light: 7.3:1,
+6.7:1 on a hovered table row and 5.8:1 for an `is-accent` badge on one; `#fb923c`, orange-400, dark).
+
+**One palette.** Every other colour of admin4's stylesheets and of the tokens' copy in `design/admin` is a colour of
+Tailwind CSS 3.4's default palette, white or black; a translucent `rgba()` takes the red, green and blue of one of
+them. The greys are `slate` only. `AdminTokenPaletteTest` checks this against
+`tests/tests/design/fixtures/tailwind-palette-3.4.17.json` and that `--a4-accent` and `--a4-brand` are the logo's
+fill; `AdminTokenContrastTest` checks the ratios. A new colour takes the palette step that reaches its ratio, not a
+value in between: in dark mode a surface between two steps is a slate laid over the card (`--a4-soft`,
+`--a4-zebra`), not a mixed hex value.
 
 ### Stacking layers
 
@@ -456,15 +465,15 @@ so a value there is a value everywhere:
 
 | Token | Light | Dark (admin4) | Reaches |
 |---|---|---|---|
-| `--a4-ink` | `#1f2430` | `#e8ebf0` | 4.5:1 on every surface |
-| `--a4-muted` | `#545c6a` | `#a3abb9` | 4.5:1 on card, soft, zebra, head and every state tint |
-| `--a4-line` | `#c9cfd8` | `#2e3644` | a divider, no contrast requirement |
-| `--a4-line-strong` | `#aab2bd` | `#434d5f` | column separators |
-| `--a4-soft` | `#eaedf1` | `#222936` | soft surfaces |
-| `--a4-zebra` | `#eceff3` | `#212734` | the even data rows |
-| `--a4-head-bg` | `#dce1e8` | `#283041` | the header row of data tables |
-| `--a4-field-line` | `#6e7588` | `#6f7a93` | 3:1 on every surface and on admin4's page colour |
-| `--a4-accent-text` | `#ad3809` | `#ff9a5c` | 4.5:1 as text, also on a hovered row |
+| `--a4-ink` | `#1e293b` (slate-800) | `#e2e8f0` (slate-200) | 4.5:1 on every surface |
+| `--a4-muted` | `#475569` (slate-600) | `#94a3b8` (slate-400) | 4.5:1 on card, soft, zebra, head and every state tint |
+| `--a4-line` | `#cbd5e1` (slate-300) | `#334155` (slate-700) | a divider, no contrast requirement |
+| `--a4-line-strong` | `#94a3b8` (slate-400) | `#475569` (slate-600) | column separators |
+| `--a4-soft` | `#f1f5f9` (slate-100) | slate-700 at 60 % over the card | soft surfaces |
+| `--a4-zebra` | `#f8fafc` (slate-50) | slate-800 at 60 % over the card | the even data rows |
+| `--a4-head-bg` | `#e2e8f0` (slate-200) | `#1e293b` (slate-800) | the header row of data tables |
+| `--a4-field-line` | `#64748b` (slate-500) | `#94a3b8` (slate-400) | 3:1 on every surface and on admin4's page colour |
+| `--a4-accent-text` | `#9a3412` (orange-800) | `#fb923c` (orange-400) | 4.5:1 as text, also on a hovered row |
 
 In the classic admin and admin3 the content area takes these tokens; the dark frame of those designs (header, top
 menu, footer, the textured page and the sign-in page) keeps its own colours, which are part of their look.
