@@ -31177,7 +31177,7 @@ e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest
 61552fbac72d12b60971fd0fcb07e667  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
 fd5bee2e6ad8c673da05c19a87d0e433  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
 eb2a615521e7869416ea66616d62af9a  lib/ezdb/classes/expsqlserverlexer.php
-9efcd5685c89f0ce0ec0cb8a4a4591c3  lib/ezdb/classes/expsqlserverdialect.php
+9ed7fac3ac154656571ae117fc54c668  lib/ezdb/classes/expsqlserverdialect.php
 e44d29160e3279c76ae9b6d53dcc1f76  lib/ezdb/classes/expsqlservererrormap.php
 8fea61262a360e5a3b83a199f6590c0c  lib/ezdb/classes/expsqlservertransport.php
 3d10eaf8dde978f00c21cf828323b1a6  lib/ezdb/classes/expsqlserversqlsrvtransport.php
@@ -31186,8 +31186,8 @@ f1ade605c6f1c776057672b9388b46ff  lib/ezdb/classes/expsqlserverdb.php
 cca2540dc9bb828fbc87fb0c93f5f9fd  tests/tests/lib/ezdb/sqlserver/expSQLServerBuilderPropertyTest.php
 94b7fca2ac8e0f66e132781e272e03b4  tests/tests/lib/ezdb/sqlserver/expSQLServerConnectionSettingsTest.php
 d58ce8e9de92dff05c27f05af9f1450b  tests/tests/lib/ezdb/sqlserver/expSQLServerDBTest.php
-72443a53f2f5924746e767118b09f11c  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectFunctionsTest.php
-c981b5365c0a7f76a7ad03c8dbfc7cbd  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectLiteralsTest.php
+0fa374d8f50500e020e996504f68b774  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectFunctionsTest.php
+c9d8739681efebad117f58747ff75dd9  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectLiteralsTest.php
 e3994c8ae20f32679de751f4643817aa  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectNamesTest.php
 4f684eae47979d0bba174002369627e4  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectPagingTest.php
 12334599d7e88a3884b009cb4205e53f  tests/tests/lib/ezdb/sqlserver/expSQLServerDialectStatementsTest.php
@@ -31201,6 +31201,6 @@ ad786d699218b65d6213230330825f51  doc/ger-de/funktionen/6.0/sqlserver-datenbankt
 72873eb2cfa278acf66adb1fc7f5b311  kernel/sql/sqlserver/kernel_schema.sql
 e7d6bc7fe7e033138e5bb5c6b5621ae8  lib/ezdb/classes/expdbsqlhelpers.php
 f3b6a5048dc9d09abc48f7581424f227  lib/ezdbschema/classes/expsqlserverschema.php
-6431168dd09cbec955a64daaee2666c6  tests/tests/lib/ezdb/expDBSQLHelpersTest.php
+869813486c9368c97ee8c52d98d2b28c  tests/tests/lib/ezdb/expDBSQLHelpersTest.php
 63914b3d17e8cab1eedd4ba4fa3de918  tests/tests/lib/ezdb/sqlserver/live/expSQLServerSchemaLiveTest.php
 8a9aa2f2d9cab6d2dcd21826201a8b62  tests/tests/lib/ezdbschema/expSQLServerSchemaTest.php
