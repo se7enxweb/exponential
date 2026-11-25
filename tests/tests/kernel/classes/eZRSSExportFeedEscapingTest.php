@@ -7,7 +7,9 @@
  * (createElement() with a value, nodeValue). Escaping every value before
  * ezcFeed saw it wrote "&amp;amp;" and "&amp;lt;" into RSS 1.0 and 2.0 feeds.
  * These tests build a feed of each type the way generateFeed() does, through
- * eZRSSExport::feedText(), and read it back. No database.
+ * eZRSSExport::feedText(), and read it back. No database. The read-back tests
+ * use the installed ezcFeed (it either escapes every field itself or not, and
+ * eZRSSExport::feedText() follows); the two branch tests force each case.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -62,6 +64,53 @@ class eZRSSExportFeedEscapingTest extends PHPUnit\Framework\TestCase
         $item->updated = 1000000000;
 
         return $feed->generate( $type );
+    }
+
+    private function forceFeedWritesPlainText( $value )
+    {
+        $property = new ReflectionProperty( 'eZRSSExport', 'feedWritesPlainText' );
+        if ( PHP_VERSION_ID < 80100 )
+        {
+            $property->setAccessible( true );
+        }
+        $property->setValue( null, $value );
+    }
+
+    protected function tearDown(): void
+    {
+        $this->forceFeedWritesPlainText( null );
+        parent::tearDown();
+    }
+
+    public function testFeedTextEscapesMarkupFieldsForAWriterThatDoesNot()
+    {
+        $this->forceFeedWritesPlainText( false );
+
+        foreach ( array( 'author', 'category', 'guid' ) as $field )
+        {
+            $this->assertSame( 'a &amp; &lt;b&gt;', eZRSSExport::feedText( 'rss2', $field, 'a & <b>' ), "rss2 $field" );
+        }
+        foreach ( array( 'title', 'description' ) as $field )
+        {
+            $this->assertSame( 'a &amp; &lt;b&gt;', eZRSSExport::feedText( 'atom', $field, 'a & <b>' ), "atom $field" );
+            $this->assertSame( 'a & <b>', eZRSSExport::feedText( 'rss2', $field, 'a & <b>' ), "rss2 $field" );
+            $this->assertSame( 'a & <b>', eZRSSExport::feedText( 'rss1', $field, 'a & <b>' ), "rss1 $field" );
+        }
+        $this->assertSame( 'a & <b>', eZRSSExport::feedText( 'atom', 'author', 'a & <b>' ) );
+        $this->assertSame( 'a & <b>', eZRSSExport::feedText( 'rss1', 'author', 'a & <b>' ) );
+    }
+
+    public function testFeedTextIsPlainForAWriterThatEscapesItself()
+    {
+        $this->forceFeedWritesPlainText( true );
+
+        foreach ( array( 'rss1', 'rss2', 'atom' ) as $type )
+        {
+            foreach ( array( 'title', 'description', 'author', 'category', 'guid', 'other' ) as $field )
+            {
+                $this->assertSame( 'a & <b>', eZRSSExport::feedText( $type, $field, 'a & <b>' ), "$type $field" );
+            }
+        }
     }
 
     private function load( $xml )
