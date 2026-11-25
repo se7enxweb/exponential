@@ -954,10 +954,25 @@ class expSQLServerDialect
      */
     public static function groupConcat( $expression, $separator = ',', $orderBy = null )
     {
-        $sql = 'STRING_AGG(CAST(' . $expression . ' AS NVARCHAR(MAX)), ' . self::stringLiteral( $separator ) . ')';
+        // the separator must be a literal: as N'...' the driver would bind it, which PDO_ODBC's prepared call refuses
+        $sql = 'STRING_AGG(CAST(' . $expression . ' AS NVARCHAR(MAX)), ' . self::nvarcharConstant( $separator ) . ')';
         if ( $orderBy !== null && trim( (string)$orderBy ) !== '' )
             $sql .= ' WITHIN GROUP (ORDER BY ' . $orderBy . ')';
         return $sql;
+    }
+
+    /**
+     * A text constant no binding touches: CAST(0x<UTF-16LE bytes> AS NVARCHAR(n)).
+     *
+     * @param string $text UTF-8
+     * @return string
+     */
+    public static function nvarcharConstant( $text )
+    {
+        $text = str_replace( "\0", '', (string)$text );
+        $utf16 = function_exists( 'mb_convert_encoding' ) ? mb_convert_encoding( $text, 'UTF-16LE', 'UTF-8' ) : iconv( 'UTF-8', 'UTF-16LE', $text );
+        $length = max( 1, intdiv( strlen( $utf16 ), 2 ) );
+        return 'CAST(' . self::binaryLiteral( $utf16 ) . ' AS NVARCHAR(' . ( $length > self::MAX_NVARCHAR_LENGTH ? 'MAX' : $length ) . '))';
     }
 
     /**

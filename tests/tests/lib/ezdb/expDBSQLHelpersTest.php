@@ -125,7 +125,7 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
             array( 'postgresql', 'id', ',', 'id DESC', "STRING_AGG(CAST(id AS TEXT), ',' ORDER BY id DESC)" ),
             array( 'sqlite', 'name', '|', 'name', "GROUP_CONCAT(name, '|')" ),
             array( 'oracle', 'name', ',', null, "LISTAGG(name, ',') WITHIN GROUP (ORDER BY NULL)" ),
-            array( 'sqlserver', 'name', ',', 'name', "STRING_AGG(CAST(name AS NVARCHAR(MAX)), N',') WITHIN GROUP (ORDER BY name)" ),
+            array( 'sqlserver', 'name', ',', 'name', "STRING_AGG(CAST(name AS NVARCHAR(MAX)), CAST(0x2C00 AS NVARCHAR(1))) WITHIN GROUP (ORDER BY name)" ),
         );
     }
 
