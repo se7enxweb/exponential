@@ -572,7 +572,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, pdo, pdo_odbc, sqlsrv, pdo_sqlsrv, zip
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, pdo, pdo_odbc, sqlsrv, pdo_sqlsrv, pcntl, posix, zip
           coverage: none
           tools: composer:v2
 
@@ -615,6 +615,23 @@ jobs:
           php vendor/bin/phpunit --colors=always --testsuite sqlserver
           php vendor/bin/phpunit --colors=always --testsuite sqlserver-live
 
+      # The kernel's DFS cluster backend on SQL Server (expDFSFileHandlerSQLServerBackend) and its gateway: the parity
+      # checks every backend passes, in a database of their own (exp_dfs_test), and the DB-less unit test. The two
+      # checks with processes in parallel run on PDO_ODBC; sqlsrv and pdo_sqlsrv cannot fork after a closed
+      # connection and skip them (expDFSSQLServerBackendIntegrationTest::beforeFork() says why).
+      - name: Run the SQL Server DFS cluster backend tests
+        env:
+          EXP_TEST_SQLSERVER_HOST: 127.0.0.1
+          EXP_TEST_SQLSERVER_PORT: 1433
+          EXP_TEST_SQLSERVER_USER: sa
+          EXP_TEST_SQLSERVER_PASSWORD: Ci-SqlServer-2026!
+          EXP_TEST_SQLSERVER_LAYER: ${{ matrix.layer }}
+        run: |
+          php vendor/bin/phpunit --colors=always --display-skipped \
+            tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSSQLServerBackendIntegrationTest.php
+          php vendor/bin/phpunit --colors=always \
+            tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerSQLServerBackendTest.php
+
       - name: Clean CI Composer overlay
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
@@ -639,11 +656,14 @@ jobs:
           tools: composer:v2
 
       - name: Start LocalDB
+        id: localdb
         shell: pwsh
         run: |
           if (-not (Get-Command sqllocaldb -ErrorAction SilentlyContinue)) { Write-Output "::warning::No LocalDB on this runner"; exit 0 }
           sqllocaldb start MSSQLLocalDB
           sqllocaldb info MSSQLLocalDB
+          # the next step runs in Git Bash, which does not find SqlLocalDB.exe by the lower-case name: it asks this
+          "available=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
 
       - name: Install dependencies
         shell: bash
@@ -661,4 +681,9 @@ jobs:
           EXP_TEST_SQLSERVER_LAYER: sqlsrv
         run: |
           php vendor/bin/phpunit --colors=always --testsuite sqlserver
-          if command -v sqllocaldb >/dev/null 2>&1; then php vendor/bin/phpunit --colors=always --testsuite sqlserver-live; fi
+          # every skipped test prints its reason: a live test skips only when LocalDB does not answer
+          if [ "${{ steps.localdb.outputs.available }}" = true ]; then
+            php vendor/bin/phpunit --colors=always --display-skipped --testsuite sqlserver-live
+          else
+            echo "::warning::No LocalDB on this runner: the live tests did not run"
+          fi
