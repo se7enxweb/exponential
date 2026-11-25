@@ -41,8 +41,7 @@ class eZHTTPToolGetDataByURLTest extends PHPUnit\Framework\TestCase
         $port = (int)substr( strrchr( stream_socket_get_name( $probe, false ), ':' ), 1 );
         fclose( $probe );
         $command = array( ...expTestBarePhpCommand(), '-S', '127.0.0.1:' . $port, __DIR__ . '/fixtures/http_status_router.php' );
-        $null = DIRECTORY_SEPARATOR === '\\' ? 'NUL' : '/dev/null';
-        self::$server = proc_open( $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'file', $null, 'a' ), 2 => array( 'file', $null, 'a' ) ), $pipes );
+        self::$server = ezpLoopbackServer::start( $command );
         if ( !is_resource( self::$server ) )
             return;
         for ( $i = 0; $i < 100; $i++ )
@@ -62,8 +61,7 @@ class eZHTTPToolGetDataByURLTest extends PHPUnit\Framework\TestCase
     {
         if ( is_resource( self::$server ) )
         {
-            proc_terminate( self::$server );
-            proc_close( self::$server );
+            ezpLoopbackServer::stop( self::$server );
         }
         self::$server = null;
         self::$base = null;

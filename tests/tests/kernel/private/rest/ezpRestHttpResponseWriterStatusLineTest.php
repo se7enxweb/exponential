@@ -34,10 +34,8 @@ class ezpRestHttpResponseWriterStatusLineTest extends PHPUnit\Framework\TestCase
         fclose( $socket );
         $port = (int)substr( $name, strrpos( $name, ':' ) + 1 );
 
-        self::$server = proc_open(
-            array( PHP_BINARY, '-S', '127.0.0.1:' . $port, __DIR__ . '/testfiles/status_line_router.php' ),
-            array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'file', '/dev/null', 'w' ), 2 => array( 'file', '/dev/null', 'w' ) ),
-            $pipes, __DIR__ );
+        self::$server = ezpLoopbackServer::start(
+            array( PHP_BINARY, '-S', '127.0.0.1:' . $port, __DIR__ . '/testfiles/status_line_router.php' ), null, __DIR__ );
         if ( !is_resource( self::$server ) )
         {
             self::$server = null;
@@ -60,14 +58,7 @@ class ezpRestHttpResponseWriterStatusLineTest extends PHPUnit\Framework\TestCase
 
     public static function tearDownAfterClass(): void
     {
-        if ( is_resource( self::$server ) )
-        {
-            $status = proc_get_status( self::$server );
-            proc_terminate( self::$server );
-            if ( !empty( $status['pid'] ) and function_exists( 'posix_kill' ) )
-                @posix_kill( (int)$status['pid'], 15 );
-            proc_close( self::$server );
-        }
+        ezpLoopbackServer::stop( self::$server );
         self::$server = null;
         self::$port = 0;
     }
