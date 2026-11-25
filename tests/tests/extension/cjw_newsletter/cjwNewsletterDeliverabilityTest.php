@@ -249,6 +249,82 @@ class cjwNewsletterDeliverabilityTest extends cjwNewsletterTestCase
         $this->assertSame( array( 'x-cjwnl-user' => 'abc', 'x-cjwnl-senditem' => 'def' ), $headers );
     }
 
+    public function testDelayNoticeChangesNothing()
+    {
+        $user = $this->newSubscriber( 'delay' );
+        $send = $this->queuedSend();
+        $this->process();
+        $item = $this->itemOf( $send, $user );
+        $softBefore = (int)CjwNewsletterUser::fetch( $user->attribute( 'id' ) )->attribute( 'soft_bounce_count' );
+        $waitingBefore = CjwNewsletterBounce::waitingRetryCount( $send->attribute( 'id' ) );
+        $values = array( '{{EMAIL}}' => $user->attribute( 'email' ), '{{SENDITEM}}' => $item->attribute( 'hash' ), '{{USER}}' => $user->attribute( 'hash' ) );
+        $kernelFixture = (string)file_get_contents( __DIR__ . '/../../kernel/classes/mailpreferences/fixtures/bounces/dsn-soft-delayed.eml' );
+        foreach ( array( $this->fixture( 'dsn-delayed.eml', $values ), $kernelFixture ) as $raw )
+        {
+            $c = CjwNewsletterBounce::classify( $raw );
+            $this->assertSame( 'delay', $c['kind'] );
+            $r = CjwNewsletterBounce::handle( $c, $item, $user );
+            $this->assertSame( 'none', $r['action'] );
+            $this->assertSame( 0, $r['retry_at'] );
+        }
+        $fresh = $this->sendItem( $item->attribute( 'id' ) );
+        $this->assertSame( CjwNewsletterEditionSendItem::STATUS_SEND, (int)$fresh->attribute( 'status' ) );
+        $this->assertSame( 0, (int)$fresh->attribute( 'bounced' ) );
+        $this->assertSame( $softBefore, (int)CjwNewsletterUser::fetch( $user->attribute( 'id' ) )->attribute( 'soft_bounce_count' ) );
+        $this->assertSame( $waitingBefore, CjwNewsletterBounce::waitingRetryCount( $send->attribute( 'id' ) ) );
+    }
+
+    public function testAutoReplyQuotingACodeIsNotABounce()
+    {
+        $user = $this->newSubscriber( 'auto' );
+        $send = $this->queuedSend();
+        $this->process();
+        $item = $this->itemOf( $send, $user );
+        $raw = $this->fixture( 'auto-reply-450.eml', array( '{{EMAIL}}' => $user->attribute( 'email' ), '{{SENDITEM}}' => $item->attribute( 'hash' ), '{{USER}}' => $user->attribute( 'hash' ) ) );
+        $c = CjwNewsletterBounce::classify( $raw, '450' );
+        $this->assertSame( 'autoreply', $c['kind'] );
+        $this->assertSame( 'none', CjwNewsletterBounce::handle( $c, $item, $user )['action'] );
+        $fresh = $this->sendItem( $item->attribute( 'id' ) );
+        $this->assertSame( CjwNewsletterEditionSendItem::STATUS_SEND, (int)$fresh->attribute( 'status' ) );
+        $this->assertSame( 0, (int)$fresh->attribute( 'bounced' ) );
+        $this->assertSame( 0, (int)CjwNewsletterUser::fetch( $user->attribute( 'id' ) )->attribute( 'soft_bounce_count' ) );
+    }
+
+    public function testHardDsnWithAutoSubmittedIsHard()
+    {
+        $raw = $this->fixture( 'dsn-hard-auto-submitted.eml', array( '{{EMAIL}}' => $this->newEmail( 'hauto' ), '{{SENDITEM}}' => 'x', '{{USER}}' => 'y' ) );
+        $this->assertFalse( CjwNewsletterBounce::isAutomaticReply( $raw ), 'a delivery report is no reply, whatever its headers say' );
+        $this->assertSame( 'hard', CjwNewsletterBounce::classify( $raw )['kind'], 'the DSN wins over the header' );
+    }
+
+    public function testAMailServersBounceMarkedAutomaticIsNoAutoReply()
+    {
+        $plain = "From: Mail Delivery System <MAILER-DAEMON@mx.example.invalid>\nAuto-Submitted: auto-replied\nSubject: Undelivered Mail\n\n550 5.1.1 user unknown\n";
+        $this->assertFalse( CjwNewsletterBounce::isAutomaticReply( $plain ), 'a bounce from the mail server is no reply' );
+        $this->assertSame( 'hard', CjwNewsletterBounce::classify( $plain, '550 5.1.1' )['kind'] );
+        $this->assertFalse( CjwNewsletterBounce::isAutomaticReply( "From: postmaster@mx.example.invalid\nAuto-Submitted: auto-replied\n\nx" ) );
+        $report = "From: x@example.invalid\nAuto-Submitted: auto-replied\nContent-Type: multipart/report;\n report-type=delivery-status; boundary=b\n\n--b--\n";
+        $this->assertFalse( CjwNewsletterBounce::isAutomaticReply( $report ), 'a delivery report is no reply' );
+        $this->assertTrue( CjwNewsletterBounce::isAutomaticReply( "From: Jo <jo@example.invalid>\nAuto-Submitted: auto-replied\n\nOut of office\n" ) );
+    }
+
+    public function testAutoSubmittedNoIsNotAutomatic()
+    {
+        $this->assertFalse( CjwNewsletterBounce::isAutomaticReply( "Subject: x\nAuto-Submitted: no\n\nPlease unsubscribe me" ) );
+        $this->assertFalse( CjwNewsletterBounce::isAutomaticHeaders( 'no', '' ) );
+        $this->assertTrue( CjwNewsletterBounce::isAutomaticHeaders( 'auto-generated', '' ) );
+        $this->assertSame( 'none', CjwNewsletterBounce::classify( "Subject: x\nAuto-Submitted: no\n\nthanks", '0' )['kind'] );
+    }
+
+    public function testHeaderCaseAndFolding()
+    {
+        $this->assertTrue( CjwNewsletterBounce::isAutomaticReply( "Subject: x\nauto-submitted: auto-replied\n\nbody" ) );
+        $this->assertTrue( CjwNewsletterBounce::isAutomaticReply( "Subject: x\nPRECEDENCE: Bulk\n\nbody" ) );
+        $this->assertTrue( CjwNewsletterBounce::isAutomaticReply( "Subject: x\r\nAuto-Submitted:\r\n auto-generated\r\n\r\nbody" ), 'folded value' );
+        $this->assertFalse( CjwNewsletterBounce::isAutomaticReply( "Subject: x\n\nAuto-Submitted: auto-replied in the text" ), 'a line after the first empty line is body' );
+        $this->assertFalse( CjwNewsletterBounce::isAutomaticReply( "Subject: x\n\n> Auto-Submitted: auto-replied" ), 'a quoted copy is no header of the message' );
+    }
+
     public function testHardBounceAndComplaintSuppressTheAddress()
     {
         $this->needSuppression();

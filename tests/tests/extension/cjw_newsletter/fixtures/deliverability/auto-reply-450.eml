@@ -1,0 +1,17 @@
+Return-Path: <person@example.invalid>
+Date: Mon,  5 Oct 2026 10:00:00 +0200 (CEST)
+From: Person <person@example.invalid>
+Subject: Out of office: NLTEST edition
+To: newsletter-bounces@example.invalid
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Message-Id: <nltest-auto-reply-{{UNIQ}}@mx.example.invalid>
+
+I am out of office until Monday. If your matter is urgent, call 450 or the
+desk; a 450 4.2.2 reply would mean a full mailbox, but mine is not full.
+
+> From: newsletter@example.invalid
+> To: {{EMAIL}}
+> X-Cjwnl-Senditem: {{SENDITEM}}
+> X-Cjwnl-User: {{USER}}
