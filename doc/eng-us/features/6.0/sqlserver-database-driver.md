@@ -5,9 +5,10 @@ contributors who work on the driver. From Exponential 6.0.15 the kernel has a SQ
 `expSQLServerDB` in `lib/ezdb/classes/`, written anew under the GPL (version 2 or later). It is not derived from the
 old xrowmssql extension; that extension was read for its problems only, and every one of them is now a test.
 
-**Status.** The driver and its tests are done (wave W1). Still to come: the schema handler (`.dba` to SQL Server DDL
-and back), the installer entries, the kernel's MySQL-only statements made portable through the driver helpers
-below, and the DFS cluster backend on SQL Server. Until then a site cannot be installed on SQL Server.
+**Status.** The driver and its tests are done (wave W1); the schema handler `expSQLServerSchema`, the kernel schema in
+`kernel/sql/sqlserver/kernel_schema.sql` and the portable SQL helpers of every driver followed. Still to come: the
+installer entries, the kernel statements that only MySQL, PostgreSQL and SQLite understand, and the DFS cluster
+backend on SQL Server. Until then a site cannot be installed on SQL Server.
 
 ## Contents
 
@@ -94,8 +95,18 @@ should be `NVARCHAR`.
 
 Kernel SQL that is MySQL-only today becomes portable through driver helpers, never through per-engine branches:
 `sqlLimit()`, `sqlUpsert()` (here `MERGE ... WITH (HOLDLOCK)`), `sqlGroupConcat()` (`STRING_AGG`),
-`sqlUnixTimestamp()` / `sqlFromUnixTimestamp()` (`DATEDIFF_BIG`, safe past 2038) and `sqlQuoteIdentifier()`. The SQL
-Server driver has them now; the base class and the other drivers follow with the porting wave.
+`sqlUnixTimestamp()` / `sqlFromUnixTimestamp()` (`DATEDIFF_BIG`, safe past 2038) and `sqlQuoteIdentifier()`. Every
+driver has them: `eZDBInterface` writes MySQL's words, each driver names its dialect (`sqlHelperDialect()`), and the SQL
+comes from `expDBSQLHelpers` (mysql, postgresql, sqlite, oracle, sqlserver, generic).
+
+## Schema handler
+
+`expSQLServerSchema` (`dbschema.ini`, `SQLServer` and `sqlserver`) turns `.dba` schemas into SQL Server DDL and reads a
+database back: `NVARCHAR` text, `INT IDENTITY` for `auto_increment`, primary keys `PK_<table>`, defaults
+`DF_<table>_<column>` (so a column with a default can be dropped). SQL Server indexes at most 1,700 bytes of a key and
+no `NVARCHAR(MAX)` column: a text column in an index key is `NVARCHAR(840)` (eight kernel columns, such as the URL alias
+text and `path_identification_string`); other MAX columns and columns past 1,700 bytes of a non-unique index are
+included columns. The kernel schema and data were created in SQL Server 2022 with it and read back with no difference.
 
 ## Read replicas and failover
 

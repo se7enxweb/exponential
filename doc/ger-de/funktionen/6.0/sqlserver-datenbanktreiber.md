@@ -5,9 +5,10 @@ und an alle, die am Treiber mitarbeiten. Ab Exponential 6.0.15 hat der Kernel ei
 `expSQLServerDB` in `lib/ezdb/classes/`, neu geschrieben unter der GPL (Version 2 oder später). Er ist nicht von der
 alten Erweiterung xrowmssql abgeleitet; sie wurde nur auf ihre Fehler hin gelesen, und jeder davon ist jetzt ein Test.
 
-**Stand.** Treiber und Tests sind fertig (Welle W1). Es folgen der Schema-Handler (`.dba` nach SQL-Server-DDL und
-zurück), die Installer-Einträge, die bisher MySQL-eigenen Anweisungen des Kernels über die Treiber-Helfer unten und
-das DFS-Cluster-Backend auf SQL Server. Bis dahin lässt sich keine Site auf SQL Server installieren.
+**Stand.** Treiber und Tests sind fertig (Welle W1); es folgten der Schema-Handler `expSQLServerSchema`, das
+Kernel-Schema in `kernel/sql/sqlserver/kernel_schema.sql` und die portablen SQL-Helfer aller Treiber. Es folgen die
+Installer-Einträge, die Anweisungen des Kernels, die nur MySQL, PostgreSQL und SQLite verstehen, und das
+DFS-Cluster-Backend auf SQL Server. Bis dahin lässt sich keine Site auf SQL Server installieren.
 
 ## Inhalt
 
@@ -75,7 +76,16 @@ sollten `NVARCHAR` sein.
 
 Bisher MySQL-eigenes SQL des Kernels wird über Treiber-Helfer portabel, nie über Verzweigungen je Datenbank:
 `sqlLimit()`, `sqlUpsert()` (hier `MERGE ... WITH (HOLDLOCK)`), `sqlGroupConcat()` (`STRING_AGG`),
-`sqlUnixTimestamp()` / `sqlFromUnixTimestamp()` (sicher über 2038 hinaus) und `sqlQuoteIdentifier()`.
+`sqlUnixTimestamp()` / `sqlFromUnixTimestamp()` (sicher über 2038 hinaus) und `sqlQuoteIdentifier()`. Alle Treiber haben
+sie: `eZDBInterface` schreibt MySQLs Wörter, jeder Treiber nennt seinen Dialekt (`sqlHelperDialect()`).
+
+## Schema-Handler
+
+`expSQLServerSchema` setzt `.dba`-Schemas in SQL-Server-DDL um und liest eine Datenbank zurück: `NVARCHAR`-Text,
+`INT IDENTITY` für `auto_increment`, Primärschlüssel `PK_<Tabelle>`, Vorgaben `DF_<Tabelle>_<Spalte>`. Eine Textspalte
+im Schlüssel eines Index wird `NVARCHAR(840)`, weil SQL Server höchstens 1.700 Byte Schlüssel und keine
+`NVARCHAR(MAX)`-Spalte indiziert. Kernel-Schema und -Daten wurden damit in SQL Server 2022 angelegt und ohne
+Unterschied zurückgelesen.
 
 ## Lesereplikate und Failover
 
