@@ -28,6 +28,9 @@
  *  HC-24 — A cluster: a full purge on one server makes every page stale on every server; contexts stay each server's
  *  HC-25 — One server (no shared state): a purge stays that server's, nothing is written elsewhere
  *  HC-26 — A missing or unreadable shared state purges nothing
+ *  HC-27 — SharedStateCacheTime: the shared state comes from APCu, is read again when due; own purges apply at once
+ *  HC-28 — A due shared state is read by one request while the others use the copy; a failed read keeps the copy
+ *  HC-29 — Without a cache time (or without APCu) the shared state is read on every lookup
  *
  * No database, no kernel: the contract is pure PHP by design.
  *
@@ -692,6 +695,92 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         file_put_contents( $this->dir . '/shared/state.ser', 'not a state' );
         list( , $b3 ) = $this->servers();
         $this->assertNotNull( $b3->loadEntry( $onB ), 'a broken shared state' );
+    }
+
+    /** Two servers as servers() makes them, reading the shared state through APCu for $time seconds. */
+    private function cachedServers( $time )
+    {
+        if ( !function_exists( 'apcu_enabled' ) || !apcu_enabled() )
+            $this->markTestSkipped( 'APCu is not usable here (apc.enable_cli)' );
+        foreach ( array( 'a', 'b', 'shared' ) as $d )
+        {
+            if ( !is_dir( $this->dir . '/' . $d ) )
+                mkdir( $this->dir . '/' . $d, 0770, true );
+        }
+        $config = array( 'sharedDir' => $this->dir . '/shared', 'apcu' => true, 'sharedStateCacheTime' => $time );
+        return array( $this->contract( array( 'dir' => $this->dir . '/a' ) + $config ),
+                      $this->contract( array( 'dir' => $this->dir . '/b' ) + $config ) );
+    }
+
+    /**
+     * HC-27: with SharedStateCacheTime a server reads the shared state from APCu; another server's purge reaches it
+     * once the copy is due, its own purges at once.
+     */
+    public function testACachedSharedStateIsReadAgainWhenDueAndOwnPurgesApplyAtOnce()
+    {
+        list( $a, $b ) = $this->cachedServers( 30 );
+        list( $onB ) = $this->storeAnonymous( $b, '/page', 'B', array( 'ez-all', 'n42' ) );
+        $this->assertNotNull( $b->loadEntry( $onB ), 'reads the shared state into APCu' );
+        $key = 'exphttpcache:shared:' . md5( $this->dir . '/shared/state.ser' );
+        $this->assertIsArray( apcu_fetch( $key ) );
+        usleep( 1000 );
+        // the purge of server a, written to the shared file only (another server's APCu is not this one's)
+        $a->purgeTags( array( 'n42' ) );
+        apcu_store( $key, array( microtime( true ), array( 'generation' => 1, 'genTime' => 0, 'tags' => array() ) ) );
+        list( , $b2 ) = $this->cachedServers( 30 );
+        $this->assertNotNull( $b2->loadEntry( $onB ), 'within the cache time the copy answers' );
+        apcu_store( $key, array( microtime( true ) - 31, array( 'generation' => 1, 'genTime' => 0, 'tags' => array() ) ) );
+        list( , $b3 ) = $this->cachedServers( 30 );
+        $this->assertNull( $b3->loadEntry( $onB ), 'once due, the file is read again' );
+        $this->assertSame( 'purged', $b3->lastReason );
+
+        // a purge made on this server applies here at once, whatever the copy said
+        list( $onB4 ) = $this->storeAnonymous( $b3, '/other', 'O', array( 'ez-all', 'n43' ) );
+        usleep( 1000 );
+        $b3->purgeTags( array( 'n43' ) );
+        list( , $b4 ) = $this->cachedServers( 30 );
+        $this->assertNull( $b4->loadEntry( $onB4 ) );
+        $this->assertArrayHasKey( 'n43', apcu_fetch( $key )[1]['tags'], 'the copy is the state just written' );
+        apcu_delete( $key );
+    }
+
+    /** HC-28: while one request reads the due shared state, the others answer with the copy; a failed read keeps it. */
+    public function testADueSharedStateIsReadByOneRequestAndAFailedReadKeepsTheCopy()
+    {
+        list( $a ) = $this->cachedServers( 2 );
+        $key = 'exphttpcache:shared:' . md5( $this->dir . '/shared/state.ser' );
+        $copy = array( 'generation' => 1, 'genTime' => 0, 'tags' => array( 'n7' => 123.0 ) );
+        file_put_contents( $this->dir . '/shared/state.ser', serialize( array( 'generation' => 1, 'genTime' => 0, 'tags' => array( 'n8' => 456.0 ) ) ) );
+
+        apcu_store( $key, array( microtime( true ) - 10, $copy ) );
+        apcu_store( $key . ':reading', 1, 60 );
+        $this->assertSame( array( 'n7' => 123.0 ), $a->state()['tags'], 'another request is reading: the copy answers' );
+
+        apcu_delete( $key . ':reading' );
+        list( $a2 ) = $this->cachedServers( 2 );
+        $this->assertSame( array( 'n8' => 456.0 ), $a2->state()['tags'], 'due and nobody reading: the file' );
+        $this->assertFalse( apcu_exists( $key . ':reading' ) );
+
+        // the shared disk fails: the copy stays, and is not read again before the cache time
+        rename( $this->dir . '/shared/state.ser', $this->dir . '/shared/gone.ser' );
+        apcu_store( $key, array( microtime( true ) - 10, $copy ) );
+        list( $a3 ) = $this->cachedServers( 2 );
+        $this->assertSame( array( 'n7' => 123.0 ), $a3->state()['tags'] );
+        $this->assertGreaterThan( microtime( true ) - 1, apcu_fetch( $key )[0] );
+        apcu_delete( $key );
+    }
+
+    /** HC-29: a cache time of 0 (or APCu off) reads the shared file on every lookup, as before. */
+    public function testWithoutACacheTimeTheSharedStateIsReadEveryTime()
+    {
+        list( $a ) = $this->cachedServers( 0 );
+        $key = 'exphttpcache:shared:' . md5( $this->dir . '/shared/state.ser' );
+        file_put_contents( $this->dir . '/shared/state.ser', serialize( array( 'generation' => 1, 'genTime' => 0, 'tags' => array( 'n9' => 1.0 ) ) ) );
+        $this->assertSame( array( 'n9' => 1.0 ), $a->state()['tags'] );
+        $this->assertFalse( apcu_exists( $key ) );
+        $c = $this->contract( array( 'dir' => $this->dir . '/a', 'sharedDir' => $this->dir . '/shared', 'apcu' => false, 'sharedStateCacheTime' => 30 ) );
+        $this->assertSame( array( 'n9' => 1.0 ), $c->state()['tags'] );
+        $this->assertFalse( apcu_exists( $key ) );
     }
 
     public function testTooManyPurgedTagsPurgeEveryPage()

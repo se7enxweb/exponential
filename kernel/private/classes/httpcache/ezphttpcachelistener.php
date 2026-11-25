@@ -211,6 +211,9 @@ class ezpHttpCacheListener
             ),
             // A cluster: purges reach the pages of every server (ezpHttpCacheContract::sharedStatePath())
             'sharedDir' => self::sharedStateDir( $ini ),
+            // ... read through APCu for this many seconds (ezpHttpCacheContract::sharedState())
+            'sharedStateCacheTime' => $ini->hasVariable( 'HttpCacheSettings', 'SharedStateCacheTime' )
+                ? max( 0, (int)$ini->variable( 'HttpCacheSettings', 'SharedStateCacheTime' ) ) : 2,
         );
     }
 

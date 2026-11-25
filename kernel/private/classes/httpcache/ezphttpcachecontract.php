@@ -75,6 +75,10 @@ class ezpHttpCacheContract
             // every purge is written too and every lookup reads it, so a change made on one server purges the
             // pages of all of them. Empty: one server, the state in 'dir' only (see sharedStatePath()).
             'sharedDir' => '',
+            // Seconds a server keeps the shared state in APCu before it reads the file again (sharedState()); 0: read
+            // it on every lookup. A contract written before the setting existed (or one this server may not rewrite,
+            // ezpHttpCacheListener::contract()) takes the default of httpcache.ini SharedStateCacheTime.
+            'sharedStateCacheTime' => 2,
         );
     }
 
@@ -554,8 +558,12 @@ class ezpHttpCacheContract
 
     private static function readState( $path )
     {
-        $raw = @file_get_contents( $path );
-        $state = $raw === false ? false : @unserialize( $raw, array( 'allowed_classes' => false ) );
+        return self::parseState( @file_get_contents( $path ) );
+    }
+
+    private static function parseState( $raw )
+    {
+        $state = !is_string( $raw ) ? false : @unserialize( $raw, array( 'allowed_classes' => false ) );
         if ( !is_array( $state ) )
             $state = array( 'generation' => 1, 'genTime' => 0, 'tags' => array() );
         $state += array( 'generation' => 1, 'genTime' => 0, 'tags' => array() );
@@ -577,7 +585,7 @@ class ezpHttpCacheContract
         $shared = $this->sharedStatePath();
         if ( $shared !== null )
         {
-            $s = self::readState( $shared );
+            $s = $this->sharedState( $shared );
             if ( (float)$s['genTime'] > (float)$state['genTime'] )
                 $state['genTime'] = $s['genTime'];
             foreach ( $s['tags'] as $t => $time )
@@ -587,6 +595,46 @@ class ezpHttpCacheContract
             }
         }
         return $this->state = $state;
+    }
+
+    private function sharedStateCacheKey( $path )
+    {
+        return 'exphttpcache:shared:' . md5( $path );
+    }
+
+    /** Whether the shared state is kept in APCu (config 'sharedStateCacheTime', APCu usable). */
+    private function sharedStateCacheTime()
+    {
+        $time = (int)( $this->config['sharedStateCacheTime'] ?? 0 );
+        return ( $time > 0 && $this->apcuUsable() ) ? $time : 0;
+    }
+
+    /**
+     * The shared state at $path. With a cache time (httpcache.ini SharedStateCacheTime) it is read through APCu: the
+     * file on the shared disk is read again when the copy is older than that, by one request of this server while the
+     * others go on with the copy, so a slow or stalled shared disk holds up one request instead of every lookup. A
+     * read that fails keeps the copy (as the file itself: an unreadable state purges nothing new) and is tried again
+     * after the cache time. A purge made on another server is seen here within the cache time.
+     */
+    private function sharedState( $path )
+    {
+        $ttl = $this->sharedStateCacheTime();
+        if ( $ttl === 0 )
+            return self::readState( $path );
+        $key = $this->sharedStateCacheKey( $path );
+        $cached = @apcu_fetch( $key );
+        $cached = ( is_array( $cached ) && isset( $cached[0], $cached[1] ) && is_array( $cached[1] ) ) ? $cached : null;
+        if ( $cached !== null && microtime( true ) - (float)$cached[0] < $ttl )
+            return $cached[1];
+        // Due: one request reads the file. Its claim lapses after the longest a read can take on a soft mount, so a
+        // request that died while reading does not keep the copy forever.
+        if ( $cached !== null && !@apcu_add( $key . ':reading', 1, $ttl + 60 ) )
+            return $cached[1];
+        $raw = @file_get_contents( $path );
+        $state = ( $raw === false && $cached !== null ) ? $cached[1] : self::parseState( $raw );
+        @apcu_store( $key, array( microtime( true ), $state ) );
+        @apcu_delete( $key . ':reading' );
+        return $state;
     }
 
     public function generation()
@@ -604,7 +652,12 @@ class ezpHttpCacheContract
         $state = $this->updateStateFile( $this->config['dir'], $change );
         $shared = $this->sharedStatePath();
         if ( $shared !== null )
-            $this->updateStateFile( dirname( $shared ), $change );
+        {
+            $sharedState = $this->updateStateFile( dirname( $shared ), $change );
+            // this server's copy of the shared state is the one just written (sharedState())
+            if ( $this->sharedStateCacheTime() > 0 )
+                @apcu_store( $this->sharedStateCacheKey( $shared ), array( microtime( true ), $sharedState ) );
+        }
         // read again (merged) by the next lookup
         $this->state = null;
         return $state;

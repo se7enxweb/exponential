@@ -26363,9 +26363,9 @@ bcb0332c0b0520ccda4e6c546576e6e8  kernel/private/classes/ezscriptclusterpurge.ph
 fb0da8d265574ee77f00f944f703979e  kernel/private/classes/ezscripttrashpurge.php
 acba595acfd97bf4d89350f4f0205043  kernel/private/classes/global_functions.php
 0c2ce053b7b322805e306d396e4cd307  kernel/private/classes/httpcache/exprenderswitch.php
-0f7dd4206e72bcde6abf44b795dd59c6  kernel/private/classes/httpcache/ezphttpcachecontract.php
+5afa68053cc91f4184059d7bc122a633  kernel/private/classes/httpcache/ezphttpcachecontract.php
 274670c9115ac2f49fcee592bb942e6b  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
-d4242eebcdae1b16a4d0a46913e7d478  kernel/private/classes/httpcache/ezphttpcachelistener.php
+2fa4c9a5394f3bbbc038729e6e90fa29  kernel/private/classes/httpcache/ezphttpcachelistener.php
 11952068f2788ef7918f8110e4e16bdc  kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php
 0289b0a02c9ebfc9527e45098269d12f  kernel/private/classes/requestrules/ezprequestcontext.php
 cd881afda044ea640bc738d58b661a02  kernel/private/classes/requestrules/ezprequestrule.php
@@ -27539,7 +27539,7 @@ e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
 5d07de6f4954ad62af07d0cbeb5b9660  settings/file.ini
 48030b94ca3f24f7ace0b42095a051d7  settings/graphql.ini
-3caf3b141769222bf439f04d4c8eb7f5  settings/httpcache.ini
+058058109fbec70badf325e6c3f799c3  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
 23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
 cb1b4696dd76b14348c3fb0717259e02  settings/image.ini
@@ -29745,7 +29745,7 @@ c9a89abdd3d6ef82f6cab53a0dc3c53d  tests/tests/kernel/classes/help/expHelpSearchT
 997fcea350f65410eb0071eb31e23a26  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php
 5812f4b8137d23bf972385c87a37d72f  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
-463a36483fab0fd1fe3874d87330579e  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
+8dda3a648f7ab7272aba1c0ff4e025f9  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 ec92451ec6c667e22a7a1270cdf8ae2c  tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php
 700221552890de70fcbde1ece3508ca6  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 ed696e81ec63f5233642450e14ddf65b  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
