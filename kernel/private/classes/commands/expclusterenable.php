@@ -27,7 +27,8 @@ class Expclusterenable extends \Exponential\Runnable\Command
                                                "collections of cluster_dfs_schema.json on MongoDB), the\n" .
                                                "cluster settings as a marked block of settings/override/file.ini.append.php and config.cluster.php\n" .
                                                "for the cluster gateway, clears the INI caches, and moves the stored files in with clusterize.php\n" .
-                                               "(once per var directory; --no-move leaves that for later). MySQL/MariaDB, PostgreSQL, MongoDB, Oracle, or SQLite for\n" .
+                                               "(once per var directory; --no-move leaves that for later). MySQL/MariaDB, PostgreSQL, MongoDB, Oracle, SQL Server,\n" .
+                                               "or SQLite for\n" .
                                                "one node only. The rewrite rule of the gateway is printed for the web server: add it\n" .
                                                "in front of the site's own rules. Files that change are backed up to var/backup/cluster/. Without\n" .
                                                "--apply nothing is written.\n" .
@@ -43,7 +44,7 @@ class Expclusterenable extends \Exponential\Runnable\Command
                               'use-extensions' => true ) );
         $options = $this->startup( '[share:][backend:][no-move][apply]', '',
                                    array( 'share' => 'the share folder, an absolute path outside the installation (default: dfs next to it)',
-                                          'backend' => 'auto (the default: the site\'s database), mysqli, postgresql, sqlite, mongodb or oracle',
+                                          'backend' => 'auto (the default: the site\'s database), mysqli, postgresql, sqlite, mongodb, oracle or sqlserver',
                                           'no-move' => 'do not move the stored files in now (run bin/php/clusterize.php yourself)',
                                           'apply' => 'write; without it nothing is changed' ) );
         $backend = isset( $options['backend'] ) && $options['backend'] ? (string)$options['backend'] : 'auto';

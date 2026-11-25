@@ -80,6 +80,14 @@ trait expDFSBackendParityChecks
         $holder->db->query( "SELECT * FROM ezdfsfile WHERE name_hash = '" . md5( $path ) . "' FOR UPDATE" );
     }
 
+    /**
+     * Called after the test closed its backend's connection and before it forks processes. Nothing by default; an
+     * engine whose client library cannot be forked after a closed connection skips the test here.
+     */
+    protected function beforeFork()
+    {
+    }
+
     /** Releases the lock holdLock() took */
     protected function releaseLock( $holder )
     {
@@ -648,6 +656,7 @@ trait expDFSBackendParityChecks
         $path = $this->path( 'cache/gen/parallel.cache' );
         $results = $this->dir . '/parallel-results.txt';
         $this->backend->_disconnect();
+        $this->beforeFork();
         $start = microtime( true ) + 0.5;
         $children = array();
         for ( $i = 0; $i < 4; ++$i )
@@ -708,6 +717,7 @@ trait expDFSBackendParityChecks
         $path = $this->path( 'files/locked.txt' );
         $this->backend->_storeContents( $path, 'before', 'binaryfile', 'text/plain', 1700000000 );
         $this->backend->_disconnect();
+        $this->beforeFork();
 
         $holdFor = 1.5;
         $pid = pcntl_fork();
@@ -732,6 +742,7 @@ trait expDFSBackendParityChecks
         // a lock that stays: DBExecuteRetries (2 here) tries of 1 s each, then false
         ezpINIHelper::setINISetting( 'file.ini', 'eZDFSClusteringSettings', 'DBExecuteRetries', '2' );
         $this->backend->_disconnect();
+        $this->beforeFork();
         $pid = pcntl_fork();
         if ( $pid === 0 )
         {

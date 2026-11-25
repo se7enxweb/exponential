@@ -38,6 +38,8 @@ class expClusterSetup
                                 'schema' => 'cluster_dfs_schema.json' ),
             // the site's Database is the connect string (Easy Connect, a TNS alias or a descriptor): no host or port
             'oracle' => array( 'classes' => array( 'expDFSFileHandlerOracleBackend' ), 'gateway' => 'dfsoracle', 'sql' => 'oracle', 'port' => 0 ),
+            // Microsoft SQL Server and Azure SQL: host and port as the site's database, 1433 by default
+            'sqlserver' => array( 'classes' => array( 'expDFSFileHandlerSQLServerBackend' ), 'gateway' => 'dfssqlserver', 'sql' => 'sqlserver', 'port' => 1433 ),
         );
     }
 
@@ -48,7 +50,8 @@ class expClusterSetup
                           'ezpostgresql' => 'postgresql', 'postgresql' => 'postgresql', 'pgsql' => 'postgresql',
                           'ezsqlite3' => 'sqlite', 'sqlite3' => 'sqlite',
                           'mongodb' => 'mongodb', 'expmongodb' => 'mongodb', 'mongo' => 'mongodb',
-                          'ezoracle' => 'oracle', 'oracle' => 'oracle', 'ezoracledb' => 'oracle' );
+                          'ezoracle' => 'oracle', 'oracle' => 'oracle', 'ezoracledb' => 'oracle',
+                          'sqlserver' => 'sqlserver', 'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver', 'expsqlserverdb' => 'sqlserver' );
         $implementation = strtolower( (string)$implementation );
         return isset( $engines[$implementation] ) ? $engines[$implementation] : '';
     }
@@ -56,7 +59,8 @@ class expClusterSetup
     /** The name of an engine for people (pure). */
     public static function engineName( $engine )
     {
-        $names = array( 'mysqli' => 'MySQL/MariaDB', 'postgresql' => 'PostgreSQL', 'sqlite' => 'SQLite', 'mongodb' => 'MongoDB', 'oracle' => 'Oracle' );
+        $names = array( 'mysqli' => 'MySQL/MariaDB', 'postgresql' => 'PostgreSQL', 'sqlite' => 'SQLite', 'mongodb' => 'MongoDB', 'oracle' => 'Oracle',
+                        'sqlserver' => 'SQL Server' );
         return isset( $names[$engine] ) ? $names[$engine] : (string)$engine;
     }
 
@@ -224,6 +228,14 @@ class expClusterSetup
         $defs = array( 'CLUSTER_STORAGE_BACKEND' => $plan['gateway'], 'CLUSTER_STORAGE_HOST' => $plan['host'], 'CLUSTER_STORAGE_PORT' => (int)$plan['port'],
                        'CLUSTER_STORAGE_USER' => $plan['db']['User'], 'CLUSTER_STORAGE_PASS' => $plan['db']['Password'], 'CLUSTER_STORAGE_DB' => $plan['db']['Database'],
                        'CLUSTER_STORAGE_CHARSET' => 'utf8', 'CLUSTER_MOUNT_POINT_PATH' => $share, 'CLUSTER_METADATA_TABLE_CACHE' => 'ezdfsfile_cache' );
+        // SQL Server: the PHP layer and the encryption of the site's connection (site.ini [SQLServerSettings])
+        if ( isset( $plan['sqlserver'] ) && is_array( $plan['sqlserver'] ) )
+            foreach ( array( 'Layer' => 'CLUSTER_SQLSERVER_LAYER', 'ODBCDriver' => 'CLUSTER_SQLSERVER_ODBC_DRIVER', 'Encrypt' => 'CLUSTER_SQLSERVER_ENCRYPT',
+                             'TrustServerCertificate' => 'CLUSTER_SQLSERVER_TRUST_SERVER_CERTIFICATE' ) as $setting => $constant )
+                if ( isset( $plan['sqlserver'][$setting] ) )
+                    $defs[$constant] = $setting === 'TrustServerCertificate'
+                        ? in_array( strtolower( trim( (string)$plan['sqlserver'][$setting] ) ), array( '1', 'yes', 'true', 'enabled', 'on' ), true )
+                        : (string)$plan['sqlserver'][$setting];
         $lines = array( '<?php', self::MARK_PHP . ': the one-node cluster (exp:cluster:enable; exp:cluster:disable removes this file).',
                         '// The cluster gateway (index_cluster.php) reads these; the kernel reads settings/override/file.ini.append.php.' );
         foreach ( $defs as $k => $v )
@@ -376,6 +388,8 @@ class expClusterSetup
         $plan = self::plan( $facts, (string)$o['backend'] );
         if ( is_string( $plan ) )
             return array( 'ok' => false, 'error' => $plan );
+        if ( $plan['engine'] === 'sqlserver' && class_exists( 'expSQLServerDB' ) )
+            $plan['sqlserver'] = array_intersect_key( expSQLServerDB::settings(), array_flip( array( 'Layer', 'ODBCDriver', 'Encrypt', 'TrustServerCertificate' ) ) );
         foreach ( array( $plan['host'], $plan['socket'], $plan['db']['Database'], $plan['db']['User'], $plan['db']['Password'], $plan['backend_class'], $share ) as $v )
             if ( !self::iniSafe( (string)$v ) )
                 return array( 'ok' => false, 'error' => 'a database setting cannot be written into file.ini safely (a line break, */ or ?>)' );

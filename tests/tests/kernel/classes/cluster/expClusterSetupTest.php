@@ -37,7 +37,7 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'no PostgreSQL cluster backend yet', expClusterSetup::plan( self::facts( 'ezpostgresql' ) ) );
         $pg = expClusterSetup::plan( self::facts( 'ezpostgresql', array( 'postgresql' => 'eZDFSFileHandlerPostgresqlBackend' ) ) );
         $this->assertSame( array( 'postgresql', 'dfspostgresql', 5432 ), array( $pg['engine'], $pg['gateway'], $pg['port'] ) );
-        $this->assertStringContainsString( 'needs MySQL/MariaDB, PostgreSQL, SQLite, MongoDB or Oracle', expClusterSetup::plan( self::facts( 'eznulldb' ) ) );
+        $this->assertStringContainsString( 'needs MySQL/MariaDB, PostgreSQL, SQLite, MongoDB, Oracle or SQL Server', expClusterSetup::plan( self::facts( 'eznulldb' ) ) );
         $this->assertStringContainsString( 'not postgresql', expClusterSetup::plan( self::facts(), 'postgresql' ) );
     }
 
@@ -78,6 +78,32 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'cluster_dfs_schema.json', expClusterSetup::schemaFile( $backends['mongodb'] ) );
         $this->assertSame( 'cluster_dfs_schema.sql', expClusterSetup::schemaFile( $backends['sqlite'] ) );
         $this->assertFileExists( dirname( __DIR__, 5 ) . '/kernel/sql/mongodb/cluster_dfs_schema.json' );
+    }
+
+    /** SQL Server: host and port (1433 by default) as the site's database; the tables of kernel/sql/sqlserver */
+    public function testThePlanOnSQLServer()
+    {
+        $this->assertStringContainsString( 'no SQL Server cluster backend yet', expClusterSetup::plan( self::facts( 'sqlserver' ) ) );
+        $f = self::facts( 'sqlserver', array( 'sqlserver' => 'expDFSFileHandlerSQLServerBackend' ) );
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db'] = array( 'Server' => 'sql.example', 'Port' => '', 'Socket' => '', 'Database' => 'site' ) + $s['db'];
+        $p = expClusterSetup::plan( $f );
+        $this->assertSame( array( 'sqlserver', 'dfssqlserver', 'sqlserver', 'sql.example', 1433, '' ), array( $p['engine'], $p['gateway'], $p['sql'], $p['host'], $p['port'], $p['socket'] ) );
+        $block = expClusterSetup::iniBlock( $p, '/srv/dfs' );
+        $this->assertStringContainsString( "DBBackend=expDFSFileHandlerSQLServerBackend\n", $block );
+        $this->assertStringContainsString( "DBHost=sql.example\nDBPort=1433\nDBSocket=\nDBName=site\n", $block );
+        $this->assertStringContainsString( "define( 'CLUSTER_STORAGE_BACKEND', 'dfssqlserver' );", expClusterSetup::gatewayText( $p, '/srv/dfs' ) );
+        foreach ( array( 'sqlserver', 'mssql', 'sqlsrv', 'expSQLServerDB' ) as $implementation )
+            $this->assertSame( 'sqlserver', expClusterSetup::engineOf( $implementation ) );
+        $this->assertSame( 'SQL Server', expClusterSetup::engineName( 'sqlserver' ) );
+        // the gateway gets the layer and the encryption of the site's connection
+        $p['sqlserver'] = array( 'Layer' => 'pdo_odbc', 'ODBCDriver' => 'ODBC Driver 18 for SQL Server', 'Encrypt' => 'strict', 'TrustServerCertificate' => 'enabled' );
+        $gateway = expClusterSetup::gatewayText( $p, '/srv/dfs' );
+        $this->assertStringContainsString( "define( 'CLUSTER_SQLSERVER_LAYER', 'pdo_odbc' );", $gateway );
+        $this->assertStringContainsString( "define( 'CLUSTER_SQLSERVER_ENCRYPT', 'strict' );", $gateway );
+        $this->assertStringContainsString( "define( 'CLUSTER_SQLSERVER_TRUST_SERVER_CERTIFICATE', true );", $gateway );
+        $this->assertStringContainsString( "define( 'CLUSTER_STORAGE_PORT', 1433 );", $gateway );
+        $this->assertFileExists( dirname( __DIR__, 5 ) . '/kernel/sql/sqlserver/cluster_dfs_schema.sql' );
     }
 
     /** Oracle: the connect string is the database, no host or port; the tables of kernel/sql/oracle */
