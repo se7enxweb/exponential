@@ -257,6 +257,11 @@ class eZDB
                 $databaseParameters['use_persistent_connection'] = $b['use_persistent_connection'];
             if ( isset( $b['show_errors'] ) )
                 $databaseParameters['show_errors'] = $b['show_errors'];
+            // Parameters of one driver eZDB itself does not know (expSQLServerDB's 'sqlserver' settings) go to it as given
+            if ( is_array( $b ) )
+                foreach ( $b as $key => $value )
+                    if ( !array_key_exists( $key, $databaseParameters ) )
+                        $databaseParameters[$key] = $value;
 
             $optionArray = array( 'iniFile'       => 'site.ini',
                                   'iniSection'    => 'DatabaseSettings',

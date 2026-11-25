@@ -123,6 +123,8 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'mysql' => 'mysqli',
                           'sqlite' => 'sqlite3',
                           'oracle' => 'oci8',
+                          'mssql' => 'sqlserver',
+                          'sqlsrv' => 'sqlserver',
                           'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];

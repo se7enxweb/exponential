@@ -21,10 +21,13 @@ $databaseTypes = array(
     'mongodb' => array( 'type' => 'mongodb', 'port' => '27017', 'name' => 'exponential',    'user' => '' ),
     // the name is the service; the connect string becomes host:port/service
     'oracle'  => array( 'type' => 'oci8',    'port' => '1521',  'name' => 'FREEPDB1',       'user' => '' ),
+    // Microsoft SQL Server: the database must exist (CREATE DATABASE, a UTF-8 collation recommended)
+    'sqlserver' => array( 'type' => 'sqlserver', 'port' => '1433', 'name' => 'exponential', 'user' => 'sa' ),
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
                           'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
-                          'oci8' => 'oracle', 'ezoracle' => 'oracle' );
+                          'oci8' => 'oracle', 'ezoracle' => 'oracle',
+                          'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver' );
 
 $options = array(
     'db'             => 'sqlite',
@@ -34,6 +37,7 @@ $options = array(
     'db-user'        => null,
     'db-password'    => '',
     'db-socket'      => '',
+    'db-encrypt'     => '',
     'db-action'      => 'remove',
     'package'        => 'sevenx_multisite',
     'language'       => 'eng-US',
@@ -60,7 +64,7 @@ $options = array(
     'cluster'        => 'single',
     'cluster-share'  => '',
 );
-$flags = array( 'apply' => false, 'force' => false, 'dry-run' => false, 'print' => false, 'help' => false, 'allow-root-user' => false,
+$flags = array( 'db-trust-server-certificate' => false, 'apply' => false, 'force' => false, 'dry-run' => false, 'print' => false, 'help' => false, 'allow-root-user' => false,
                 'random-password' => false, 'no-crontab' => false );
 
 foreach ( $argvIn as $arg )
@@ -110,7 +114,7 @@ if ( isset( $databaseAliases[$db] ) )
     $db = $databaseAliases[$db];
 if ( !isset( $databaseTypes[$db] ) )
 {
-    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb or oracle\n" );
+    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle or sqlserver\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
@@ -292,7 +296,9 @@ $sections = array(
     'email_settings'   => array( 'Type' => 'mta', 'Server' => '', 'User' => '', 'Password' => '' ),
     'database_choice'  => array( 'Type' => $dbDefaults['type'] ),
     'database_init'    => array( 'Server' => $options['db-host'], 'Port' => $dbPort, 'Database' => $dbName,
-                                 'User' => $dbUser, 'Password' => $options['db-password'], 'Socket' => $options['db-socket'] ),
+                                 'User' => $dbUser, 'Password' => $options['db-password'], 'Socket' => $options['db-socket'] )
+                          + ( $db === 'sqlserver' ? array( 'Encrypt' => $options['db-encrypt'] !== '' ? $options['db-encrypt'] : 'yes',
+                                                           'TrustServerCertificate' => $flags['db-trust-server-certificate'] ? 'enabled' : 'disabled' ) : array() ),
     'language_options' => array( 'Primary' => $options['language'], 'Languages' => $languages, 'TimeZone' => $timeZone['zone'] ),
     'site_types'       => array( 'Site_package' => $options['package'] ),
     'site_access'      => array( 'Access' => $accessType ),
@@ -453,19 +459,24 @@ the package, the siteaccesses, the files), checks the database and the remote
 packages, and ends with "PASS: ... (dry run, nothing changed; --apply writes)".
 
 Database (default: SQLite, no server needed)
-  --db=<type>            sqlite (default), mysql, pgsql, mongodb or oracle
+  --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle or sqlserver
+                         (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
                          (oracle: needs oci8 and extension/ezoracle)
   --db-host=<host>       default localhost
   --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
-                         1521 (oracle)
+                         1521 (oracle), 1433 (sqlserver)
   --db-name=<name>       default exponential (exponential.db for sqlite);
                          oracle: the service name, default FREEPDB1, used as
                          host:port/service; a full connect string (with / or
                          a descriptor) or @alias (a TNS alias) is used as it is
-  --db-user=<user>       default root (mysql), postgres (pgsql), none otherwise
+  --db-user=<user>       default root (mysql), postgres (pgsql), sa (sqlserver), none otherwise
   --db-password=<pass>   default none; or set EXP_INSTALL_DB_PASSWORD, which
                          keeps it out of the process list and shell history
   --db-socket=<path>     MySQL socket, instead of host and port
+  --db-encrypt=<mode>    sqlserver: yes (default), no or strict (TDS 8.0)
+  --db-trust-server-certificate
+                         sqlserver: accept the server's certificate without
+                         checking it (a self-signed one, on a trusted network)
   --db-action=<action>   remove (default: empty the database first), ignore, skip
 
 Site

@@ -60,6 +60,13 @@ function eZSetupDatabaseMap()
                                       'required_version' => '4.0',
                                       'has_demo_data' => false,
                                       'supports_unicode' => true ),
+                  // expSQLServerDB in the kernel: sqlsrv, pdo_sqlsrv, PDO_ODBC or pdo_dblib
+                  'sqlserver' => array( 'type' => 'sqlserver',
+                                        'driver' => 'sqlserver',
+                                        'name' => 'Microsoft SQL Server',
+                                        'required_version' => '14.0',
+                                        'has_demo_data' => false,
+                                        'supports_unicode' => true ),
                   // the driver lives in an extension, activated for the
                   // installation by eZSetupActivateDatabaseExtension()
                   'oci8' => array( 'type' => 'oci8',

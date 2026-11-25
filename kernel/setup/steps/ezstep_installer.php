@@ -415,6 +415,8 @@ class eZStepInstaller
                                'socket' => trim( $databaseInfo['socket'] ) == '' ? false : $databaseInfo['socket'],
                                'database' => $databaseInfo['database'],
                                'charset' => $dbCharset );
+        if ( !empty( $databaseInfo['sqlserver'] ) )
+            $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
         $dbParameters = array_merge( $dbParameters, $overrideDBParameters );
 
         // SQLite requires us to specifiy a database name
@@ -449,7 +451,7 @@ class eZStepInstaller
         // MySQL: if the user provided a database name, connect directly to it.
         // This avoids any attempt to select the system 'mysql' database and
         // means SHOW DATABASES / root access is not required.
-        if ( in_array( $this->PersistenceList['database_info']['type'], array( 'mysql', 'mysqli' ) ) and
+        if ( in_array( $this->PersistenceList['database_info']['type'], array( 'mysql', 'mysqli', 'sqlserver' ) ) and
              ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) and
              !empty( $databaseInfo['dbname'] ) )
         {
@@ -507,6 +509,10 @@ class eZStepInstaller
 
         catch( eZDBNoConnectionException $e )
         {
+            $reason = (string)$e->getMessage();
+            if ( (string)$dbParameters['password'] !== '' )
+                $reason = str_replace( (string)$dbParameters['password'], '***', $reason );
+            eZLog::write( "eZStepInstaller: connecting with driver '$dbDriver' failed: " . preg_replace( '/\s+/', ' ', $reason ), 'setup.log' );
             $result['error_code'] = self::DB_ERROR_CONNECTION_FAILED;
             return $result;
         }

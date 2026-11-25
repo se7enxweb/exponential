@@ -125,7 +125,8 @@ class eZStepDatabaseInit extends eZStepInstaller
         // simply use the named database directly.
         // PostgreSQL the same: the connection above went to the named database.
         // Oracle the same: Database is the connect string of the schema to use
-        if ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli', 'pgsql', 'oci8' ) ) &&
+        // SQL Server the same: the login is tested against the named database
+        if ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver' ) ) &&
              !empty( $databaseInfo['dbname'] ) )
         {
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
@@ -186,6 +187,15 @@ class eZStepDatabaseInit extends eZStepInstaller
             $this->PersistenceList['database_info']['password'] = isset( $data['Password'] ) ? $data['Password'] : '';
             $this->PersistenceList['database_info']['socket'] = isset( $data['Socket'] ) ? $data['Socket'] : '';
             $this->PersistenceList['database_info']['database'] = $data['Database'];
+            // SQL Server: the connection's encryption ([SQLServerSettings] of the site)
+            if ( isset( $this->PersistenceList['database_info']['type'] ) && $this->PersistenceList['database_info']['type'] == 'sqlserver' )
+            {
+                $options = array();
+                foreach ( array( 'Encrypt', 'TrustServerCertificate' ) as $key )
+                    if ( isset( $data[$key] ) && trim( (string)$data[$key] ) !== '' )
+                        $options[$key] = trim( (string)$data[$key] );
+                $this->PersistenceList['database_info']['sqlserver'] = $options;
+            }
 
             $result = $this->checkDatabaseRequirements( false );
 

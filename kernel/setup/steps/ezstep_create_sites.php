@@ -365,6 +365,11 @@ class eZStepCreateSites extends eZStepInstaller
         // is matched. A site package may still write its own value afterwards.
         if ( $this->serverRewritesUrls() )
             $ini->setVariable( 'SiteAccessSettings', 'ForceVirtualHost', 'true' );
+        // SQL Server: the encryption of the connection in settings/override as well, not only in the siteaccesses.
+        // The cluster file handler (DFS on SQL Server) connects before a siteaccess is matched, and reads it there.
+        if ( !empty( $this->PersistenceList['database_info']['sqlserver'] ) && is_array( $this->PersistenceList['database_info']['sqlserver'] ) )
+            foreach ( $this->PersistenceList['database_info']['sqlserver'] as $name => $value )
+                $ini->setVariable( 'SQLServerSettings', $name, $value );
         // With this following line commented out, php default session management is used
         // $ini->setVariable( 'Session', 'SessionNameHandler', 'custom' );
         $ini->setVariable( 'MailSettings', 'AdminEmail', $this->PersistenceList['admin']['email'] );
@@ -1034,6 +1039,8 @@ class eZStepCreateSites extends eZStepInstaller
                                'socket' => $dbSocket,
                                'database' => $dbName,
                                'charset' => $dbCharset );
+        if ( !empty( $databaseInfo['sqlserver'] ) )
+            $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
         try
         {
             $db = eZDB::instance( $dbDriver, $dbParameters, true );
@@ -1274,6 +1281,9 @@ class eZStepCreateSites extends eZStepInstaller
                                                      // MySQL, which transliterates what it cannot store, silently
                                                      'Charset' => ( $dbCharset ? $dbCharset : 'utf-8' ) );
         $siteINIChanges['FileSettings'] = array( 'VarDir' => 'var/' . $siteType['identifier'] );
+        // SQL Server: the encryption the installation connected with
+        if ( !empty( $databaseInfo['sqlserver'] ) )
+            $siteINIChanges['SQLServerSettings'] = $databaseInfo['sqlserver'];
         if ( trim( $dbSocket ) != '' )
             $siteINIChanges['DatabaseSettings']['Socket'] = $dbSocket;
         else

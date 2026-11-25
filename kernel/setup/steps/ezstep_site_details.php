@@ -393,6 +393,8 @@ class eZStepSiteDetails extends eZStepInstaller
             $dbParameters['database'] = $dbName;
 
         $this->PersistenceList['database_info']['database'] = $dbParameters['database'];
+        if ( !empty( $databaseInfo['sqlserver'] ) )
+            $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
 
         try
         {

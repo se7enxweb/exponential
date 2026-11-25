@@ -205,7 +205,7 @@ class eZSetupCheckFunctionsTest extends PHPUnit\Framework\TestCase
     public function testDatabaseMap()
     {
         $map = eZSetupDatabaseMap();
-        $this->assertSame( array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'oci8' ), array_keys( $map ) );
+        $this->assertSame( array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'sqlserver', 'oci8' ), array_keys( $map ) );
         foreach ( $map as $type => $info )
         {
             $this->assertSame( $type, $info['type'] );
@@ -213,6 +213,9 @@ class eZSetupCheckFunctionsTest extends PHPUnit\Framework\TestCase
                 $this->assertArrayHasKey( $key, $info, "$type $key" );
         }
         $this->assertSame( 'ezoracle', $map['oci8']['extension'] );
+        // the kernel's own driver (expSQLServerDB): no extension to activate, SQL Server 2017 (14.0) or later
+        $this->assertArrayNotHasKey( 'extension', $map['sqlserver'] );
+        $this->assertSame( '14.0', $map['sqlserver']['required_version'] );
         $this->assertTrue( eZSetupActivateDatabaseExtension( $map['mysqli'] ) );
         $this->assertTrue( eZSetupActivateDatabaseExtension( 'not an array' ) );
         $this->assertIsArray( eZSetupCriticalTests() );
