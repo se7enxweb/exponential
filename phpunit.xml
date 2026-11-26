@@ -107,6 +107,23 @@
             <exclude>tests/tests/lib/ezdb/sqlserver</exclude>
             <!-- in the suites odbc and odbc-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/odbc</exclude>
+            <!-- in the suites mysqlwire and mysqlwire-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/mysqlwire</exclude>
+        </testsuite>
+
+        <!--
+          The drivers of databases that speak the MySQL protocol (expMySQLWireDB: TiDB, Vitess / PlanetScale,
+          SingleStore, MariaDB Xpand, Aurora MySQL): the DB-less tests, and the live tests against servers
+          (EXP_TEST_<TIDB|VITESS|SINGLESTORE|XPAND|AURORA>_HOST, _PORT, _USER, _PASSWORD; each skips without one).
+          Run: php vendor/bin/phpunit - -testsuite mysqlwire | mysqlwire-live
+        -->
+        <testsuite name="mysqlwire">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/mysqlwire</directory>
+            <exclude>tests/tests/lib/ezdb/mysqlwire/live</exclude>
+        </testsuite>
+
+        <testsuite name="mysqlwire-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/mysqlwire/live</directory>
         </testsuite>
 
         <!--

@@ -108,7 +108,7 @@ class eZMySQLiDB extends eZDBInterface
         $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
         eZDebug::accumulatorStart( 'mysqli_connection', 'mysqli_total', 'Database connection' );
         try {
-            $connection = mysqli_connect( $server, $user, $password, null, (int)$port, $socketPath );
+            $connection = $this->openConnection( $server, $user, $password, $port, $socketPath );
         } catch( ErrorException | mysqli_sql_exception $e ) { $connection = false; }
         eZDebug::accumulatorStop( 'mysqli_connection' );
         eZDebug::setHandleType( $oldHandling );
@@ -123,7 +123,7 @@ class eZMySQLiDB extends eZDBInterface
             $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
             eZDebug::accumulatorStart( 'mysqli_connection', 'mysqli_total', 'Database connection' );
             try {
-                $connection = mysqli_connect( $server, $user, $password, null, (int)$port, $socketPath );
+                $connection = $this->openConnection( $server, $user, $password, $port, $socketPath );
             } catch( ErrorException | mysqli_sql_exception $e ) { $connection = false; }
             eZDebug::accumulatorStop( 'mysqli_connection' );
             eZDebug::setHandleType( $oldHandling );
@@ -226,6 +226,23 @@ class eZMySQLiDB extends eZDBInterface
         }
 
         return $connection;
+    }
+
+    /**
+     * Opens the connection itself, for connect(): a driver of a MySQL-wire database (expMySQLWireDB) opens it with
+     * TLS here. Exceptions are caught by connect().
+     *
+     * @param string $server
+     * @param string $user
+     * @param string $password
+     * @param int|string|false $port
+     * @param string|false $socketPath
+     * @return mysqli|false
+     * @since 6.0.15
+     */
+    protected function openConnection( $server, $user, $password, $port, $socketPath )
+    {
+        return mysqli_connect( $server, $user, $password, null, (int)$port, $socketPath );
     }
 
     function databaseName()
