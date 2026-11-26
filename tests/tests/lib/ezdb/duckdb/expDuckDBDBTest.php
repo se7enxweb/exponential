@@ -16,7 +16,7 @@
  *  DB-12 - correctSequenceValues(): setval() where DuckDB has it, nextval() over range() where it has not
  *  DB-13 - release() at the end of a request lets the file go; a later statement opens it again, close() does not
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -2,7 +2,7 @@
 /**
  * File containing the expDuckDBDB class.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib
  */
@@ -249,7 +249,7 @@ class expDuckDBDB extends eZDBInterface
         {
             $dir = dirname( $this->Path );
             if ( !is_dir( $dir ) )
-                @mkdir( $dir, class_exists( 'eZDir' ) ? eZDir::dirMode( 0775 ) : 0775, true );
+                eZDir::mkdir( $dir, false, true );
             if ( $mode === 'READ_ONLY' && !is_file( $this->Path ) )
                 $mode = 'READ_WRITE';   // a file that is not there yet can only be made
         }
@@ -327,6 +327,21 @@ class expDuckDBDB extends eZDBInterface
             return;
         $this->close();
         $this->Released = true;
+    }
+
+    /**
+     * Lets the site's DuckDB file go before this process starts a PHP process of its own that opens the database (the
+     * installer's cluster, help and migration steps): DuckDB lets one process write at a time, so the child would
+     * otherwise wait for its parent and fail. The parent opens the file again with its next statement. Nothing happens
+     * on another database, or inside a transaction.
+     */
+    public static function releaseForChildProcess()
+    {
+        if ( !class_exists( 'eZDB', false ) || !eZDB::hasInstance() )
+            return;
+        $db = eZDB::instance();
+        if ( $db instanceof self && $db->transactionCounter() === 0 )
+            $db->release();
     }
 
     /**
@@ -780,7 +795,7 @@ class expDuckDBDB extends eZDBInterface
             return;
         $engine = new expDuckDBFFI( self::library( $this->Settings ) );
         if ( !is_dir( dirname( $path ) ) )
-            @mkdir( dirname( $path ), 0775, true );
+            eZDir::mkdir( dirname( $path ), false, true );
         if ( $engine->open( $path, array( 'access_mode' => 'READ_WRITE' ) ) )
             $engine->close();
         else

@@ -16,7 +16,7 @@
  *  DL-10 - Integer division as in PostgreSQL; removeDatabase() empties the open database
  *  DL-11 - A data table connection (engine duckdb): problems(), test(), open(), a table made, planned again: nothing
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
