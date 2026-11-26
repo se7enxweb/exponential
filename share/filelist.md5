@@ -31275,9 +31275,9 @@ d6bfabe565a38ac00ad802e5912aa41c  tests/tests/kernel/classes/clusterfilehandlers
 e7db846eee724c360f88cc47a4dfac19  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSSQLServerBackendIntegrationTest.php
 5c8415808e9d8ab9ee50569060253419  tests/tests/kernel/classes/cluster/expClusterGatewayBackendClassTest.php
 030c8e005380e30ebce7e765e88baea8  doc/eng-us/features/6.0/firebird-database-driver.md
-a8a0c235a03d269ba2746f1fce4dcfd1  doc/eng-us/features/6.0/duckdb-database-driver.md
+1ee640efe81a6dc624e87d55193f2521  doc/eng-us/features/6.0/duckdb-database-driver.md
 88ed0f818b84e52a26d9500a00593745  doc/ger-de/funktionen/6.0/firebird-datenbanktreiber.md
-d7f2c1f8c3ad4a082a726d975d014e2c  doc/ger-de/funktionen/6.0/duckdb-datenbanktreiber.md
+9d4a2c78b44ed46116ed783f3433a667  doc/ger-de/funktionen/6.0/duckdb-datenbanktreiber.md
 9acf135e38819447a3826c2e288b489c  kernel/sql/firebird/kernel_schema.sql
 2590eaf14b409aabc9f62a9180433a76  lib/ezdb/classes/expfirebirddb.php
 354f06b4537aa64055468e79453411d6  lib/ezdb/classes/expfirebirddialect.php

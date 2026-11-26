@@ -177,6 +177,8 @@ site installed with `exp:install --db=duckdb` on DuckDB 2.0.1.
 | Several writers at once | **does not** | they queue; a writer waits up to `LockWait`, then fails with `55P03` |
 | Several web servers, DFS cluster | **does not** | no DFS backend: the file lock is one machine's |
 | Read replica (`UseSlaveServer`) | does not | ignored, as for SQLite |
+| Migrations after the install (`exp:migration:migrate`) | works | 49 migrations: 4 applied, 40 not needed, 0 failed. Five that need to read a table's indexes are skipped ("cannot tell"), as the migration checks have no catalog query for DuckDB yet. The installer runs them before the help manuals, whose build is a background worker that holds the file for 20 to 30 minutes |
+| Upgrade captions (the database dump before an upgrade or a migration run) | **does not** | no built-in dump for DuckDB: copy the file (or `EXPORT DATABASE`) yourself and run with `--no-backup` |
 | Schema upgrades: `ALTER TABLE ... ADD COLUMN` | works | |
 | Schema upgrades: changing a column's type, renaming a table, dropping a column, on a table with an index | **does not** | DuckDB refuses (`Cannot alter entry ... because there are entries that depend on it`): drop the table's indexes, alter, create them again. The shipped `update/database/` files are written for MySQL, PostgreSQL and SQLite |
 | PostgreSQL's full-text column of the audit index (`tsvector`) | does not | the audit search falls back to `LIKE`, as on SQLite |

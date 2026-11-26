@@ -184,6 +184,8 @@ Site, installiert mit `exp:install --db=duckdb` auf DuckDB 2.0.1.
 | Mehrere Schreiber gleichzeitig | **geht nicht** | sie stehen an; ein Schreiber wartet bis zu `LockWait` und scheitert dann mit `55P03` |
 | Mehrere Webserver, DFS-Cluster | **geht nicht** | kein DFS-Backend: die Dateisperre gilt nur auf einer Maschine |
 | Lesereplikat (`UseSlaveServer`) | geht nicht | wird nicht beachtet, wie bei SQLite |
+| Migrationen nach der Installation (`exp:migration:migrate`) | geht | 49 Migrationen: 4 angewendet, 40 nicht nötig, 0 gescheitert. Fünf, die die Indizes einer Tabelle lesen müssen, werden übersprungen („cannot tell"), weil die Migrationsprüfungen für DuckDB noch keine Katalogabfrage haben. Der Installer führt sie vor den Hilfe-Handbüchern aus, deren Aufbau ein Hintergrund-Worker ist, der die Datei 20 bis 30 Minuten hält |
+| Upgrade-Sicherungspunkte (der Datenbank-Dump vor einem Upgrade oder einem Migrationslauf) | **geht nicht** | kein eingebauter Dump für DuckDB: die Datei selbst kopieren (oder `EXPORT DATABASE`) und mit `--no-backup` ausführen |
 | Schema-Updates: `ALTER TABLE ... ADD COLUMN` | geht | |
 | Schema-Updates: Spaltentyp ändern, Tabelle umbenennen, Spalte löschen, bei einer Tabelle mit Index | **geht nicht** | DuckDB lehnt ab (`Cannot alter entry ... because there are entries that depend on it`): die Indizes der Tabelle löschen, ändern, wieder anlegen. Die mitgelieferten Dateien in `update/database/` sind für MySQL, PostgreSQL und SQLite geschrieben |
 | PostgreSQLs Volltextspalte des Audit-Index (`tsvector`) | geht nicht | die Audit-Suche nimmt `LIKE`, wie bei SQLite |
