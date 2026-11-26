@@ -26272,7 +26272,7 @@ a573746e35d57fd27c9ed26381984c3a  kernel/private/classes/commands/upgradestatus.
 4d5b91dec82d92b0555e75103bcf5260  kernel/private/classes/commands/userlogincheck.php
 87746228d18ed6cf18f1e7948ad5cb70  kernel/private/classes/commands/userpasswordchangerequired.php
 8f248c48c5d283c36102067ac464a4b5  kernel/private/classes/commands/velocity-router.php
-be9f79c3b80dc80230d42ef38b34ffd9  kernel/private/classes/commands/velocity-warmup.php
+8d78c996e65c0a20e974b652c3f67d70  kernel/private/classes/commands/velocity-warmup.php
 aac65e7fd766d8fa5b4e1f8fd0133409  kernel/private/classes/commands/velocity.php
 459ade5685b7da3718f61d04bfc8f83a  kernel/private/classes/commands/verify_aliases.php
 53b1ff93104b579524e588101c979484  kernel/private/classes/commands/warm.php
@@ -29643,7 +29643,7 @@ ee1f66e32906cf2b1bd5cd32520f60ae  tests/tests/kernel/classes/expUserApprovalSect
 ea968692026672607946f1ce2d953f0e  tests/tests/kernel/classes/expUserLoginIntegrityTest.php
 97243e89c00db1ac5dd6c71784b51916  tests/tests/kernel/classes/expVelocityDeployCachePlanTest.php
 2e1e37d10192dd915e4e1de2fb5721f7  tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php
-4c3db8132b214430475dea3f346a7db8  tests/tests/kernel/classes/expVelocityEnginesTest.php
+ec8cee4026ebb42ba6488a3b6e34b83f  tests/tests/kernel/classes/expVelocityEnginesTest.php
 9068067cc82d1bde0f0604d439d26766  tests/tests/kernel/classes/expVelocityMarkersTest.php
 5d7e9219247cf1987ddbaf643c3401f1  tests/tests/kernel/classes/expVelocityNiceTest.php
 9feef53207b632e7c7cd88d59e00cb87  tests/tests/kernel/classes/expVelocityPhpRefusalTest.php
