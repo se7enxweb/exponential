@@ -525,6 +525,7 @@ class expMailPreferencesService
                     $r = $db->arrayQuery( "SELECT COUNT(*) AS c FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name = '$name'" );
                     return isset( $r[0]['c'] ) && (int)$r[0]['c'] > 0;
                 case 'postgresql':
+                case 'duckdb':
                     $r = $db->arrayQuery( "SELECT COUNT(*) AS c FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = '$name'" );
                     return isset( $r[0]['c'] ) && (int)$r[0]['c'] > 0;
             }

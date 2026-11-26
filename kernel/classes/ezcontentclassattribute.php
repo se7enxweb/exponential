@@ -1203,7 +1203,7 @@ class eZContentClassAttribute extends eZPersistentObject
                               AND ezcontentobject_attribute.language_code = t.language_code
                               AND ezcontentobject_attribute.contentclassattribute_id = $classAttributeID";
             }
-            else if( $db->databaseName() == 'postgresql' )
+            else if( $db->databaseName() == 'postgresql' || $db->databaseName() == 'duckdb' )
             {
                 $updateSql = "UPDATE ezcontentobject_attribute
                               SET id=t.minid FROM

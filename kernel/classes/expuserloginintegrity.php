@@ -304,7 +304,8 @@ class expUserLoginIntegrity
             case 'mysql':
                 return (int)$code === 1062 || stripos( $message, 'Duplicate entry' ) !== false;
             case 'postgresql':
-                return (string)$code === '23505' || stripos( $message, 'duplicate key value' ) !== false;
+            case 'duckdb':
+                return (string)$code === '23505' || stripos( $message, 'duplicate key' ) !== false;
             case 'sqlite':
                 return stripos( $message, 'UNIQUE constraint failed' ) !== false || stripos( $message, 'is not unique' ) !== false;
             case 'oracle':
