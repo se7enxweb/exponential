@@ -986,6 +986,86 @@ jobs:
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
 
+  # DuckDB (expDuckDBDB): the DB-less tests, the live tests against libduckdb through PHP's FFI extension, and a
+  # whole site installed on DuckDB (exp:install --db=duckdb) with its front page and admin login rendered. DuckDB is
+  # embedded: the library is downloaded from DuckDB's releases, no service runs.
+  duckdb:
+    name: DuckDB ${{ matrix.duckdb }} (PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { duckdb: '2.0.1', php: '8.5', install: true }
+          - { duckdb: '1.5.6', php: '8.3', install: false }
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Download libduckdb ${{ matrix.duckdb }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/duckdb" && cd "$RUNNER_TEMP/duckdb"
+          base="https://github.com/duckdb/duckdb/releases/download/v${{ matrix.duckdb }}"
+          # 2.0 publishes duckdb-shared-libs-linux-amd64.tar.gz, 1.x libduckdb-linux-amd64.zip
+          if curl -fsSL --retry 3 -o lib.tgz "$base/duckdb-shared-libs-linux-amd64.tar.gz"; then
+            tar xzf lib.tgz
+          else
+            curl -fsSL --retry 3 -o lib.zip "$base/libduckdb-linux-amd64.zip" && unzip -oq lib.zip
+          fi
+          ls -l libduckdb.so
+          echo "EXP_TEST_DUCKDB_LIBRARY=$RUNNER_TEMP/duckdb/libduckdb.so" >> "$GITHUB_ENV"
+          echo "DUCKDB_LIBRARY=$RUNNER_TEMP/duckdb/libduckdb.so" >> "$GITHUB_ENV"
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, xsl, curl, zlib, ffi, pdo, pdo_sqlite, sqlite3, pcntl, posix, zip
+          ini-values: ffi.enable=true, memory_limit=1G
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            sleep $((attempt * 15))
+          done
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Run the DuckDB tests
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite duckdb
+          php vendor/bin/phpunit --colors=always --display-skipped --testsuite duckdb-live
+
+      # The whole site: the kernel schema and data, the package, the siteaccesses, then the front page and the admin
+      # login through PHP's built-in server
+      - name: Install a site on DuckDB
+        if: matrix.install
+        run: |
+          php bin/php/install.php --db=duckdb --apply --password=Ci-DuckDB-2026 --no-crontab
+          ls -l var/storage/duckdb/
+          php -S 127.0.0.1:8080 -t . index.php >var/log/php-server.log 2>&1 &
+          sleep 2
+          code=$(curl -s -o front.html -w '%{http_code}' http://127.0.0.1:8080/)
+          echo "front page: $code"; head -c 600 front.html
+          test "$code" = 200
+          code=$(curl -s -o admin.html -w '%{http_code}' http://127.0.0.1:8080/admin/user/login)
+          echo "admin login: $code"
+          test "$code" = 200
+
+      - name: Logs
+        if: failure() && matrix.install
+        run: tail -n 200 var/log/error.log var/log/setup.log var/log/php-server.log 2>/dev/null || true
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
   # MS Access on Windows: Microsoft's Access Database Engine 2016 (x64) ODBC driver, an empty .accdb made with ADOX,
   # the driver's live tests, the import through ODBC, and the probe of a minimal site on Access (its report is an
   # artifact). The engine is a download from Microsoft, not part of the runner image, so the job may not fail the run.
