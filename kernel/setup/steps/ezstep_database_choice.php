@@ -188,6 +188,10 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'aurora-postgresql' => 'aurorapostgresql',
                           'ibm_db2' => 'db2',
                           'ifx' => 'informix',
+                          'hana' => 'hana',
+                          'saphana' => 'hana',
+                          'ase' => 'ase',
+                          'sybase' => 'ase',
                           'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];

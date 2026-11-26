@@ -460,7 +460,7 @@ class eZStepInstaller
         // MySQL: if the user provided a database name, connect directly to it.
         // This avoids any attempt to select the system 'mysql' database and
         // means SHOW DATABASES / root access is not required.
-        if ( ( in_array( eZSetupDatabaseFamily( $this->PersistenceList['database_info']['type'] ), array( 'mysql', 'mysqli', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix', 'libsql', 'turso', 'monetdb' ) ) || eZSetupIsMySQLFamily( $this->PersistenceList['database_info']['type'] ) ) and
+        if ( ( in_array( eZSetupDatabaseFamily( $this->PersistenceList['database_info']['type'] ), array( 'mysql', 'mysqli', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix', 'libsql', 'turso', 'hana', 'ase', 'monetdb' ) ) || eZSetupIsMySQLFamily( $this->PersistenceList['database_info']['type'] ) ) and
              ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) and
              !empty( $databaseInfo['dbname'] ) )
         {

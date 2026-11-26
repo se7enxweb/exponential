@@ -1110,10 +1110,10 @@ class eZStepCreateSites extends eZStepInstaller
             // MongoDB and Oracle the same way: the collections and tables of extensions (expuser_session,
             // expaudit_*, explayouts_* ...) kept the previous installation's rows, which the new one then read
             // (the sessions of earlier installs listed as signed in, migrations seen as done). The database is
-            // dropped on MongoDB; on Oracle, Db2 and Informix every table and sequence of the schema is.
+            // dropped on MongoDB; on Oracle, Db2, Informix, SAP HANA and SAP ASE every table and sequence of the schema is.
             else if ( strtolower( $db->databaseName() ) === 'mongo' && method_exists( $db, 'removeDatabase' ) )
                 $db->removeDatabase( $dbName );
-            else if ( in_array( strtolower( $db->databaseName() ), array( 'oracle', 'db2', 'informix' ), true ) )
+            else if ( in_array( strtolower( $db->databaseName() ), array( 'oracle', 'db2', 'informix', 'hana', 'ase' ), true ) )
             {
                 foreach ( array( eZDBInterface::RELATION_TABLE, eZDBInterface::RELATION_SEQUENCE ) as $relationType )
                 {

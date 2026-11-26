@@ -35,6 +35,10 @@ $databaseTypes = array(
     'db2'      => array( 'type' => 'db2',      'port' => '50000', 'name' => 'EXP',         'user' => 'db2inst1' ),
     // Informix 14.10/15 over pdo_ibm through the DRDA listener: the database must exist, logged, UTF-8
     'informix' => array( 'type' => 'informix', 'port' => '9089',  'name' => 'exponential', 'user' => 'informix' ),
+    // SAP HANA: the tenant database's SQL port; the name is the schema (made when missing); SAP's HANA ODBC driver
+    'hana'    => array( 'type' => 'hana',    'port' => '39041', 'name' => 'EXPONENTIAL',    'user' => 'SYSTEM' ),
+    // SAP ASE (Sybase): the database must exist; FreeTDS (pdo_dblib) or ODBC; not tested against a server
+    'ase'     => array( 'type' => 'ase',     'port' => '5000',  'name' => 'exponential',    'user' => 'sa' ),
     // DuckDB: one file (var/storage/duckdb/<name>), no server; needs PHP's FFI extension and libduckdb
     'duckdb'  => array( 'type' => 'duckdb',  'port' => '',      'name' => 'exponential.duckdb', 'user' => '' ),
     // MonetDB: a server (monetdbd); the database must exist (monetdb create, monetdb release); MAPI in plain PHP
@@ -67,7 +71,8 @@ $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' 
                           'fb' => 'firebird', 'pdo_firebird' => 'firebird', 'monetdbd' => 'monetdb',
                           'cockroach' => 'cockroachdb', 'crdb' => 'cockroachdb', 'yugabyte' => 'yugabytedb', 'ysql' => 'yugabytedb',
                           'aurora-postgresql' => 'aurorapostgresql',
-                          'ibm_db2' => 'db2', 'pdo_ibm' => 'db2', 'ifx' => 'informix', 'sqld' => 'libsql' );
+                          'ibm_db2' => 'db2', 'pdo_ibm' => 'db2', 'ifx' => 'informix', 'sqld' => 'libsql',
+                          'saphana' => 'hana', 'hdb' => 'hana', 'sybase' => 'ase', 'sapase' => 'ase' );
 $pgWireTypes = array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql' );
 
 $options = array(
@@ -168,7 +173,7 @@ if ( isset( $databaseAliases[$db] ) )
 if ( !isset( $databaseTypes[$db] ) )
 {
     fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird,"
-                  . " duckdb, monetdb, cockroachdb, yugabytedb, neon, supabase, aurorapostgresql, db2, informix, libsql, turso or odbc\n" );
+                  . " duckdb, monetdb, cockroachdb, yugabytedb, neon, supabase, aurorapostgresql, db2, informix, libsql, turso, odbc, hana or ase\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
@@ -551,6 +556,7 @@ Database (default: SQLite, no server needed)
                          odbc: through the database's ODBC driver (PDO_ODBC or PHP's odbc
                          extension), with --db-dialect; the defaults of port, name and
                          user are the dialect's
+                         hana or ase (SAP)
                          (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
                          (neon, supabase, aurorapostgresql: the database must exist; TLS required by default)
                          (firebird: needs pdo_firebird of PHP 8.4 or later, Firebird 4 or 5, and an
@@ -564,13 +570,18 @@ Database (default: SQLite, no server needed)
                          Db2 and Informix driver pages)
                          (monetdb: MonetDB Dec2023 or later, the database must exist: monetdb create,
                          monetdb release; no PHP extension needed, see [MonetDBSettings])
+                         (hana: needs PHP's odbc extension or PDO_ODBC and SAP's HANA ODBC driver,
+                         registered as HDBODBC, see [HANASettings]; SAP HANA 2.0 SPS 05 or later)
+                         (ase: SAP ASE 15.7 or 16.0, an existing database, pdo_dblib or PDO_ODBC
+                         with FreeTDS, see [ASESettings]; not tested against a server)
   --db-host=<host>       default localhost
   --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
                          1521 (oracle), 1433 (sqlserver), 4000 (tidb), 3050 (firebird),
                          26257 (cockroachdb), 5433 (yugabytedb),
-                         50000 (db2, monetdb), 9089 (informix, DRDA), 8080 (libsql), 443 (turso)
+                         50000 (db2, monetdb), 9089 (informix, DRDA), 8080 (libsql), 443 (turso),
+                         39041 (hana: the tenant database's SQL port), 5000 (ase)
   --db-name=<name>       default exponential (exponential.db for sqlite,
-                         exponential.duckdb for duckdb, EXP for db2);
+                         exponential.duckdb for duckdb, EXP for db2, the schema EXPONENTIAL for hana);
                          oracle: the service name, default FREEPDB1, used as
                          host:port/service; a full connect string (with / or
                          a descriptor) or @alias (a TNS alias) is used as it is;
@@ -578,7 +589,7 @@ Database (default: SQLite, no server needed)
                          path of the database file on the server
   --db-user=<user>       default root (mysql, cockroachdb), postgres (pgsql, supabase, aurorapostgresql),
                          sa (sqlserver), SYSDBA (firebird), yugabyte (yugabytedb), db2inst1 (db2),
-                         informix (informix), monetdb (monetdb), none otherwise
+                         informix (informix), monetdb (monetdb), SYSTEM (hana), sa (ase), none otherwise
   --db-password=<pass>   default none; or set EXP_INSTALL_DB_PASSWORD, which
                          keeps it out of the process list and shell history
   --db-socket=<path>     MySQL socket, instead of host and port

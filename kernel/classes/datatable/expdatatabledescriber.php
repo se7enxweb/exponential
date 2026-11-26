@@ -150,6 +150,19 @@ class expDataTableDescriber
                                                                             'default' => $column['default_type'] === 'L' ? rtrim( (string)$column['default_value'] ) : null );
                 }
                 return $columns;
+            case 'hana':
+                $columns = array();
+                foreach ( method_exists( $db, 'tableColumns' ) ? (array)$db->tableColumns( $table ) : array() as $column )
+                    $columns[(string)$column['name']] = array( 'type' => expHANADialect::typeName( $column['type'], $column['length'], $column['scale'] ),
+                                                               'nullable' => strtoupper( (string)$column['nullable'] ) === 'TRUE',
+                                                               'default' => $column['default_value'] );
+                return $columns;
+            case 'ase':
+                $columns = array();
+                foreach ( method_exists( $db, 'tableColumns' ) ? (array)$db->tableColumns( $table ) : array() as $column )
+                    $columns[(string)$column['name']] = array( 'type' => strtolower( (string)$column['type'] ), 'nullable' => (string)$column['nullable'] === '1',
+                                                               'default' => $column['default'] !== null ? preg_replace( '/^DEFAULT\s+/i', '', trim( (string)$column['default'] ) ) : null );
+                return $columns;
             case 'msaccess':
                 // SQLColumns: Access's catalogue is not readable through ODBC
                 $access = method_exists( $db, 'tableColumns' ) ? $db->tableColumns( $table ) : null;

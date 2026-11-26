@@ -14,7 +14,6 @@
  * db2 (expDb2DB), informix (expInformixDB), cassandra (expCassandraDB: the SQL its driver answers on CQL),
  * couchbase (expCouchbaseDB: MySQL's forms, which its driver turns into SQL++; a LIMIT without a number is an OFFSET
  * alone, as DuckDB's), monetdb (expMonetDBDB), clickhouse (expClickHouseDB);
- * hana (SAP HANA, expHANADB);
  * hana (SAP HANA, expHANADB), ase (SAP ASE, expASEDB);
  * generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
  * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code

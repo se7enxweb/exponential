@@ -128,6 +128,22 @@ function eZSetupDatabaseMap()
                                        'required_version' => '14.10',
                                        'has_demo_data' => false,
                                        'supports_unicode' => true ),
+                  // expHANADB in the kernel: SAP HANA 2.0 SPS 05 or later, or HANA Cloud, over SAP's HANA ODBC
+                  // driver through PHP's odbc extension or PDO_ODBC; the database is a schema of the tenant
+                  'hana' => array( 'type' => 'hana',
+                                   'driver' => 'hana',
+                                   'name' => 'SAP HANA',
+                                   'required_version' => '2.00.050',
+                                   'has_demo_data' => false,
+                                   'supports_unicode' => true ),
+                  // expASEDB in the kernel: SAP ASE 15.7 or 16.0 through FreeTDS (pdo_dblib) or ODBC; not tested
+                  // against a server
+                  'ase' => array( 'type' => 'ase',
+                                  'driver' => 'ase',
+                                  'name' => 'SAP ASE (Sybase)',
+                                  'required_version' => '15.7',
+                                  'has_demo_data' => false,
+                                  'supports_unicode' => true ),
                   // expDuckDBDB in the kernel: one DuckDB file, through PHP's FFI extension and libduckdb
                   'duckdb' => array( 'type' => 'duckdb',
                                      'driver' => 'duckdb',

@@ -97,6 +97,10 @@ class expDataConnections
             // the columnar databases: MonetDB over its own protocol (expMonetDBMapi), ClickHouse over HTTP (expClickHouseHttp)
             'monetdb' => array( 'label' => 'MonetDB', 'kind' => 'relational', 'ez' => 'monetdb', 'pdo' => array(), 'port' => 50000, 'file' => false ),
             'clickhouse' => array( 'label' => 'ClickHouse (no transactions, no enforced keys)', 'kind' => 'relational', 'ez' => 'clickhouse', 'pdo' => array(), 'port' => 8123, 'file' => false ),
+            // expHANADB: SAP HANA through SAP's HANA ODBC driver (PHP's odbc extension or PDO_ODBC); the database is a schema
+            'hana' => array( 'label' => 'SAP HANA', 'kind' => 'relational', 'ez' => 'hana', 'pdo' => array(), 'port' => 39041, 'file' => false ),
+            // expASEDB: SAP ASE through FreeTDS (pdo_dblib) or ODBC (PDO_ODBC); not tested against a server
+            'ase' => array( 'label' => 'SAP ASE (Sybase)', 'kind' => 'relational', 'ez' => 'ase', 'pdo' => array(), 'port' => 5000, 'file' => false ),
         );
     }
 
@@ -152,7 +156,7 @@ class expDataConnections
                 'pdo_driver' => $pdoDriver,
                 'why' => $why,
                 // not run against a server of its own here: the managed PostgreSQL services
-                'untested' => in_array( $key, array( 'sqlserver', 'neon', 'supabase', 'aurorapostgresql', 'turso' ), true ),
+                'untested' => in_array( $key, array( 'sqlserver', 'neon', 'supabase', 'aurorapostgresql', 'turso', 'ase' ), true ),
             );
         }
         return $engines;
@@ -284,6 +288,10 @@ class expDataConnections
             $engine = 'firebird';
         if ( $engine === 'scylla' )
             $engine = 'scylladb';
+        if ( $engine === 'saphana' || $engine === 'hdb' )
+            $engine = 'hana';
+        if ( $engine === 'sybase' || $engine === 'sapase' )
+            $engine = 'ase';
         $wire = expPostgreSQLWireProfile::get( $engine );
         if ( $wire && $wire['name'] !== 'postgresql' )
             $engine = $wire['name'];
@@ -593,6 +601,18 @@ class expDataConnections
             $plan['implementation'] = $engine['ez'];
             if ( $c['engine'] === 'mongodb' )
                 $parameters['charset'] = 'utf-8';
+            // SAP HANA and SAP ASE: the driver's settings of the connection's options
+            $own = array( 'hana' => array( 'odbc_driver' => 'Driver', 'layer' => 'Layer', 'tenant' => 'TenantDatabase', 'encrypt' => 'Encrypt',
+                                           'connection_string' => 'ConnectionString' ),
+                          'ase' => array( 'odbc_driver' => 'ODBCDriver', 'layer' => 'Layer' ) );
+            if ( isset( $own[$c['engine']] ) )
+            {
+                $settings = array();
+                foreach ( $own[$c['engine']] as $option => $setting )
+                    if ( isset( $c['options'][$option] ) )
+                        $settings[$setting] = $c['options'][$option];
+                $parameters[$c['engine']] = $settings;
+            }
             // TiDB, Vitess, SingleStore, Xpand, Aurora: the driver of the profile, with its TLS
             if ( $c['engine'] === 'mysql' && !empty( $c['options']['profile'] ) && class_exists( 'expMySQLWireProfile' )
                  && !in_array( $c['options']['profile'], array( 'mysql', 'mariadb' ), true ) )
@@ -1124,6 +1144,10 @@ class expDataConnections
             case 'couchdb':
                 // the SQL is answered on an in-memory SQLite copy
                 return extension_loaded( 'curl' ) && extension_loaded( 'sqlite3' );
+            case 'hana':
+                return class_exists( 'expHANATransport' ) && expHANATransport::availableLayer() !== null;
+            case 'ase':
+                return class_exists( 'expASEPDOTransport' ) && expASEPDOTransport::chooseASELayer( 'auto' ) !== null;
         }
         return false;
     }
