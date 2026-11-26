@@ -572,7 +572,11 @@ class ezpHttpCacheListener
             return 'request-shield: not for a cache';
         // A request rule decided, or could decide another request for this
         // page otherwise (ezpRequestRuleKernel::keepOutOfSharedCaches())
-        if ( !empty( $GLOBALS['ezpRequestRuleNoStore'] ) )
+        // A page kept for one session alone (noteModuleView()) is not shared, so a rule that only could decide
+        // otherwise for another request (a condition on the address, the user, a header) does not keep it out; a rule
+        // that decided this request still does
+        if ( !empty( $GLOBALS['ezpRequestRuleNoStore'] )
+             && !( !empty( self::$view['private'] ) && empty( $GLOBALS['ezpRequestRuleDecision'] ) ) )
             return 'request rule';
         // The siteaccess was chosen by the browser's languages (DefaultHostUriMatchMapItems); the cache keys an
         // address, not a language
