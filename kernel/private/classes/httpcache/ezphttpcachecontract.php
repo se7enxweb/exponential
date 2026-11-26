@@ -121,6 +121,15 @@ class ezpHttpCacheContract
         return $this->hmac( 'u:' . (int)$userID . '|sa:' . $siteaccess . '|g:' . $this->generation() );
     }
 
+    /**
+     * Context of one session of one user (6.0.15): the pages of module views that show the user's own data
+     * (ezpHttpCacheListener::noteModuleView()). Only the request that carries that session cookie finds them.
+     */
+    public function sessionContext( $userID, $sessionID, $siteaccess )
+    {
+        return $this->hmac( 's:' . (int)$userID . '|' . hash( 'sha256', (string)$sessionID ) . '|sa:' . $siteaccess . '|g:' . $this->generation() );
+    }
+
     public function anonymousContext( $siteaccess )
     {
         return $this->hmac( 'anon|sa:' . $siteaccess . '|g:' . $this->generation() );
@@ -929,16 +938,94 @@ class ezpHttpCacheContract
     {
         if ( !preg_match( '/^[a-zA-Z0-9,-]{22,256}$/', (string)$sessionID ) )
             return null;
+        $redis = $this->config['sessionRedis'] ?? null;
+        if ( is_array( $redis ) )
+        {
+            $raw = $this->redisSession( $redis, $sessionID );
+            if ( $raw === null )
+                return null;       // the session server does not answer: unknown
+            if ( $raw === false )
+                return 0;          // no such session: anonymous
+            return self::sessionUserIDOf( $raw );
+        }
         if ( $this->config['sessionSavePath'] === '' )
             return null;           // not a files handler: the early exit cannot know
         $raw = @file_get_contents( $this->config['sessionSavePath'] . '/sess_' . $sessionID );
         if ( $raw === false )
             return 0;              // no such session: anonymous
+        return self::sessionUserIDOf( $raw );
+    }
+
+    /** The user ID in the data of a PHP session (serialize_handler php), 0 for anonymous (pure). */
+    public static function sessionUserIDOf( $raw )
+    {
+        $raw = (string)$raw;
         if ( preg_match( '/(?:^|[;}])eZUserLoggedInID\|i:(\d+);/', $raw, $m ) )
             return (int)$m[1];
         if ( preg_match( '/(?:^|[;}])eZUserLoggedInID\|s:\d+:"(\d+)";/', $raw, $m ) )
             return (int)$m[1];
         return 0;
+    }
+
+    /**
+     * Where the PHP redis session handler keeps sessions (pure): array( host, port, prefix, database ) for a
+     * session.save_handler redis with one tcp:// or unix:// server, else null.
+     */
+    public static function redisSessionTarget( $handler, $savePath )
+    {
+        if ( $handler !== 'redis' || trim( (string)$savePath ) === '' || strpos( $savePath, ',' ) !== false )
+            return null;
+        $savePath = trim( $savePath );
+        if ( strpos( $savePath, 'unix://' ) === 0 )
+        {
+            // parse_url() does not take unix:///path
+            $rest = substr( $savePath, 7 );
+            $q = strpos( $rest, '?' );
+            $u = array( 'scheme' => 'unix', 'path' => $q === false ? $rest : substr( $rest, 0, $q ),
+                        'query' => $q === false ? '' : substr( $rest, $q + 1 ) );
+        }
+        else
+            $u = parse_url( $savePath );
+        if ( !is_array( $u ) || !isset( $u['scheme'] ) )
+            return null;
+        parse_str( (string)( $u['query'] ?? '' ), $q );
+        if ( isset( $q['auth'] ) || isset( $q['user'] ) )
+            return null;           // a password is never copied into the contract
+        $prefix = isset( $q['prefix'] ) ? (string)$q['prefix'] : 'PHPREDIS_SESSION:';
+        $db = isset( $q['database'] ) ? (int)$q['database'] : 0;
+        if ( $u['scheme'] === 'tcp' && isset( $u['host'] ) )
+            return array( $u['host'], (int)( $u['port'] ?? 6379 ), $prefix, $db );
+        if ( $u['scheme'] === 'unix' && isset( $u['path'] ) )
+            return array( $u['path'], 0, $prefix, $db );
+        return null;
+    }
+
+    /** The raw data of a session in the redis handler's server, false when there is none, null when it does not answer. */
+    private function redisSession( array $target, $sessionID )
+    {
+        static $conn = array();
+        if ( !class_exists( 'Redis', false ) )
+            return null;
+        $k = implode( '|', $target );
+        try
+        {
+            if ( !isset( $conn[$k] ) )
+            {
+                $r = new Redis();
+                if ( !$r->connect( $target[0], $target[1] ?: 0, 0.5 ) )
+                    return null;
+                if ( $target[3] )
+                    $r->select( $target[3] );
+                $conn[$k] = $r;
+            }
+            $raw = $conn[$k]->get( $target[2] . $sessionID );
+            return is_string( $raw ) ? $raw : false;
+        }
+        catch ( Exception $e )
+        {
+            unset( $conn[$k] );
+            return null;
+        }
     }
 
     // ── Placeholders and serving ─────────────────────────────────────────
@@ -1352,6 +1439,12 @@ class ezpHttpCacheContract
 
         $key = $this->entryKey( $scheme, $host, $siteaccess, $uri, $context );
         $entry = $this->loadEntry( $key, !$viaShield );
+        // a module view's page kept for this session alone (ezpHttpCacheListener::noteModuleView())
+        if ( !$entry && $userID !== 0 && $sessionID !== null )
+        {
+            $key = $this->entryKey( $scheme, $host, $siteaccess, $uri, $this->sessionContext( $userID, $sessionID, $siteaccess ) );
+            $entry = $this->loadEntry( $key, !$viaShield );
+        }
         if ( !$entry )
             return null;
         list( $meta, $body ) = $entry;

@@ -29799,6 +29799,7 @@ a91c146f2df39c0a891aa77560bf68bd  tests/tests/kernel/classes/help/expHelpTransla
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
 e4c8eb579a5fa41d2944a361f672a541  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 988730ac96d673f008cfc63d8a9862ac  tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php
+dcf5e3298d335c3a2765212dd197dd26  tests/tests/kernel/classes/httpcache/ezpHttpCacheModulePagesTest.php
 25dc20a75f24e36ceae1352fc38c31e3  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 74c9f1f467fdd401d2bd43d13197f351  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
 496dff601a796de92845086c93a8cb6e  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php

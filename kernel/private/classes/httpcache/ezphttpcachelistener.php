@@ -187,6 +187,8 @@ class ezpHttpCacheListener
             'sessionCookie' => $cookies,
             // Only a files handler can be read before the kernel boots.
             'sessionSavePath' => ( $handler === 'files' && $path !== '' ) ? rtrim( $path, '/' ) : '',
+            // 6.0.15: the PHP redis handler (phpredis) can be read before the kernel boots as well
+            'sessionRedis' => ezpHttpCacheContract::redisSessionTarget( $handler, (string)ini_get( 'session.save_path' ) ),
             'formTokenSecret' => (string)$site->variable( 'HTMLForms', 'Secret' ),
             'formTokenIntention' => 'legacy',
             'maxAge' => (int)$ini->variable( 'HttpCacheSettings', 'MaxAge' ),
@@ -250,6 +252,35 @@ class ezpHttpCacheListener
     }
 
     // ── Store ────────────────────────────────────────────────────────────
+
+    /**
+     * A module view keeps its page for the signed-in user who saw it (6.0.15): the page is stored for that user's
+     * session alone (sessionContext()), never shared with another user or session, and the early exit and Velocity
+     * answer that user's next request for the address from it. For views whose pages show the user's own data (their
+     * work, notifications, form tokens of their session) and that purge their own tags when it changes.
+     *
+     * @param array $result the module result
+     * @param string[] $tags purge tags of the page (lower-case letters and dashes, digits at the end: 'centre',
+     *                       'centre-u14'); purgeTags() with one of them drops it on every server
+     * @param int|null $maxAge seconds at most (never more than HttpCacheSettings MaxAge)
+     * @return array the result, unchanged
+     */
+    public static function noteModuleView( array $result, array $tags = array(), $maxAge = null )
+    {
+        $user = class_exists( 'eZUser' ) ? eZUser::currentUser() : null;
+        if ( !$user instanceof eZUser || !$user->isRegistered() )
+            return $result;
+        self::$view = array( 'result' => $result, 'viewMode' => 'module', 'private' => true,
+                             'maxAge' => $maxAge !== null ? max( 1, (int)$maxAge ) : null );
+        // forgetUser() purges this tag: a changed role or limitation drops every page kept for the user
+        self::$extraTags[] = 'mu' . (int)$user->id();
+        foreach ( $tags as $tag )
+        {
+            if ( is_string( $tag ) && preg_match( '/^[a-z-]+\d*$/', $tag ) )
+                self::$extraTags[] = $tag;
+        }
+        return $result;
+    }
 
     /** Called from kernel/content/view.php with the view's $Result. */
     public static function noteContentView( $result, $viewMode )
@@ -440,11 +471,19 @@ class ezpHttpCacheListener
         $placeholders = array();
         $sessionID = session_id();
         $context = self::userContext( $contract, $user, $siteaccess );
+        // a module view's page of a signed-in user is kept for that session alone (noteModuleView())
+        $private = !empty( self::$view['private'] );
+        if ( $private && ( !$user->isRegistered() || $sessionID === '' ) )
+        {
+            self::header( 'X-Exp-Cache', 'BYPASS (no session)' );
+            return;
+        }
+        $pageContext = $private ? $contract->sessionContext( $user->id(), $sessionID, $siteaccess ) : $context;
         if ( $sessionID !== '' && class_exists( 'ezxFormToken' ) && ezxFormToken::isEnabled() )
             $placeholders['form_token'] = ezxFormToken::getToken();
 
         list( $body, $offsets ) = ezpHttpCacheContract::extractPlaceholders( $html, $placeholders );
-        $entryContext = $context;
+        $entryContext = $pageContext;
         $barOffset = null;
         if ( $debugBar !== null )
         {
@@ -466,7 +505,7 @@ class ezpHttpCacheListener
                 else
                     $before++;
             }
-            $entryContext = $contract->debugContext( $context, $user->id() );
+            $entryContext = $contract->debugContext( $pageContext, $user->id() );
         }
         $tags = array_values( array_unique( array_merge( self::tags( self::$view['result'] ), self::$extraTags ) ) );
         $key = $contract->entryKey( $scheme, $host, $siteaccess, eZSys::serverVariable( 'REQUEST_URI' ), $entryContext );
@@ -487,7 +526,7 @@ class ezpHttpCacheListener
         // debug output shows)
         if ( $expires !== null )
             $headers[expCacheUntil::HEADER] = expCacheUntil::headerValue( $expires );
-        $meta = $contract->storeEntry( $key, 200, $headers, $body, $tags, $offsets, null, $expires );
+        $meta = $contract->storeEntry( $key, 200, $headers, $body, $tags, $offsets, $private ? self::$view['maxAge'] : null, $expires );
         if ( $debugBar !== null && is_array( $meta ) )
             $contract->storeDebugReport( $key, $meta, $barOffset, $debugBar[1], $debugBar[2], $user->id(), $before );
         if ( $user->isRegistered() )
@@ -745,7 +784,11 @@ class ezpHttpCacheListener
     {
         $contract = self::contract();
         if ( $contract )
+        {
             $contract->deleteRecord( $userID );
+            // the module view pages kept for the user's sessions (noteModuleView())
+            $contract->purgeTags( array( 'mu' . (int)$userID ) );
+        }
     }
 
     /** content/cache/all, user/cache/all: everything, and every context. */
