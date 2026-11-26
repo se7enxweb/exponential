@@ -158,7 +158,7 @@ class expDataTableSchema
                 $outcome['ok'] = false;
                 $outcome['errors'] = $step['notes'];
             }
-            elseif ( $step['action'] === 'create' && in_array( $plan['engine'], array( 'mysql', 'postgresql', 'sqlite', 'mongodb' ), true )
+            elseif ( $step['action'] === 'create' && in_array( $plan['engine'], array( 'mysql', 'postgresql', 'sqlite', 'duckdb', 'mongodb' ), true )
                      || ( $step['action'] === 'create' && $plan['engine'] === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
             {
                 $messages = array();
@@ -439,7 +439,7 @@ class expDataTableSchema
             }
             return $step;
         }
-        if ( in_array( $engine, array( 'mysql', 'postgresql', 'sqlite', 'firebird' ), true ) || ( $engine === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
+        if ( in_array( $engine, array( 'mysql', 'postgresql', 'sqlite', 'firebird', 'duckdb' ), true ) || ( $engine === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
         {
             $handler = expKernelTableSchema::handler( $db, array() );
             if ( !$handler )

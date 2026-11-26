@@ -112,6 +112,9 @@ class expKernelTableSchema
             case 'mysql':
                 $sql = "SELECT table_name AS name FROM information_schema.tables WHERE table_schema = DATABASE()";
                 break;
+            case 'duckdb':
+                $sql = "SELECT table_name AS name FROM duckdb_tables() WHERE schema_name = 'main' AND NOT temporary";
+                break;
             case 'postgresql':
                 $sql = "SELECT tablename AS name FROM pg_tables WHERE schemaname = current_schema()";
                 break;

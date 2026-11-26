@@ -71,6 +71,8 @@ class expDataConnections
             'odbc' => array( 'label' => 'ODBC (any driver)', 'kind' => 'relational', 'ez' => '', 'pdo' => array( 'odbc' ), 'port' => 0, 'file' => false, 'class' => 'expODBCDB' ),
             'msaccess' => array( 'label' => 'Microsoft Access (ODBC)', 'kind' => 'relational', 'ez' => '', 'pdo' => array( 'odbc' ), 'port' => 0, 'file' => true, 'class' => 'expMSAccessDB' ),
             'firebird' => array( 'label' => 'Firebird', 'kind' => 'relational', 'ez' => 'firebird', 'pdo' => array( 'firebird' ), 'port' => 3050, 'file' => false ),
+            // expDuckDBDB: one DuckDB file, through PHP's FFI extension and libduckdb
+            'duckdb' => array( 'label' => 'DuckDB', 'kind' => 'relational', 'ez' => 'duckdb', 'pdo' => array(), 'port' => 0, 'file' => true ),
         );
     }
 
@@ -296,8 +298,8 @@ class expDataConnections
         {
             if ( $c['database'] === '' )
                 $problems[] = 'Give the database file.';
-            elseif ( self::sqlitePath( $c['database'] ) === null )
-                $problems[] = 'The database file must end in .db, .sqlite or .sqlite3 and be in one of the directories of datatable.ini [ConnectionSettings] SQLiteDirectories[] (' . implode( ', ', self::sqliteDirectories() ) . ').';
+            elseif ( self::sqlitePath( $c['database'], self::filePattern( $c['engine'] ) ) === null )
+                $problems[] = 'The database file must end in ' . ( $c['engine'] === 'duckdb' ? '.duckdb, .ddb or .db' : '.db, .sqlite or .sqlite3' ) . ' and be in one of the directories of datatable.ini [ConnectionSettings] SQLiteDirectories[] (' . implode( ', ', self::sqliteDirectories() ) . ').';
         }
         else
         {
@@ -516,7 +518,7 @@ class expDataConnections
         $database = $c['database'];
         if ( $engine['file'] )
         {
-            $database = $c['engine'] === 'msaccess' ? self::sqlitePath( $c['database'], '/\.(accdb|mdb)$/i' ) : self::sqlitePath( $c['database'] );
+            $database = self::sqlitePath( $c['database'], self::filePattern( $c['engine'] ) );
             if ( $database === null )
             {
                 $plan['error'] = 'the database file is not in an allowed directory';
@@ -683,6 +685,21 @@ class expDataConnections
     }
 
     /**
+     * The file names a file engine's connection may name (pure).
+     *
+     * @param string $engine sqlite, msaccess or duckdb
+     * @return string a pattern for sqlitePath()
+     */
+    public static function filePattern( $engine )
+    {
+        if ( $engine === 'msaccess' )
+            return '/\.(accdb|mdb)$/i';
+        if ( $engine === 'duckdb' )
+            return '/\.(duckdb|ddb|db)$/i';
+        return '/\.(db|sqlite|sqlite3)$/i';
+    }
+
+    /**
      * The absolute path of a SQLite (or, with its pattern, MS Access) connection's file, or null when it is not allowed:
      * the file must be in one of the SQLiteDirectories and its name must match the pattern.
      *
@@ -841,8 +858,8 @@ class expDataConnections
         {
             $ini = eZINI::instance( 'site.ini' );
             $impl = strtolower( (string)$ini->variable( 'DatabaseSettings', 'DatabaseImplementation' ) );
-            $engine = strpos( $impl, 'sqlite' ) !== false ? 'sqlite' : ( strpos( $impl, 'postgres' ) !== false ? 'postgresql'
-                    : ( strpos( $impl, 'oracle' ) !== false ? 'oracle' : ( strpos( $impl, 'mongo' ) !== false ? 'mongodb' : 'mysql' ) ) );
+            $engine = strpos( $impl, 'duckdb' ) !== false ? 'duckdb' : ( strpos( $impl, 'sqlite' ) !== false ? 'sqlite' : ( strpos( $impl, 'postgres' ) !== false ? 'postgresql'
+                    : ( strpos( $impl, 'oracle' ) !== false ? 'oracle' : ( strpos( $impl, 'mongo' ) !== false ? 'mongodb' : 'mysql' ) ) ) );
             $database = (string)$ini->variable( 'DatabaseSettings', 'Database' );
         }
         catch ( Throwable $e )
@@ -971,6 +988,8 @@ class expDataConnections
                 return extension_loaded( 'mysqli' );
             case 'postgresql':
                 return extension_loaded( 'pgsql' );
+            case 'duckdb':
+                return class_exists( 'expDuckDBFFI' ) && expDuckDBFFI::ffiUsable();
             case 'oracle':
                 return extension_loaded( 'oci8' );
             case 'mongodb':

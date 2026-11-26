@@ -84,6 +84,7 @@ class expDataTableDescriber
                 $sql = "SELECT column_name AS name, data_type AS type, is_nullable AS nullable, column_default AS def FROM information_schema.columns WHERE table_schema = DATABASE() AND table_name = '$table' ORDER BY ordinal_position";
                 break;
             case 'postgresql':
+            case 'duckdb':
                 $sql = "SELECT column_name AS name, data_type AS type, is_nullable AS nullable, column_default AS def FROM information_schema.columns WHERE table_schema = current_schema() AND table_name = '$table' ORDER BY ordinal_position";
                 break;
             case 'sqlserver':

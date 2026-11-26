@@ -141,6 +141,10 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
             $this->assertNotEmpty( expDataConnections::problems( array( 'database' => $file ) + $sqlite ), "file '$file'" );
         $this->assertSame( eZSys::rootDir() . '/var/datatable/a.db', expDataConnections::sqlitePath( 'var/datatable/a.db' ) );
         $this->assertNull( expDataConnections::sqlitePath( "var/datatable/a\0.db" ) );
+        // a DuckDB file: its own endings (expDataConnections::filePattern())
+        $this->assertSame( eZSys::rootDir() . '/var/datatable/a.duckdb', expDataConnections::sqlitePath( 'var/datatable/a.duckdb', expDataConnections::filePattern( 'duckdb' ) ) );
+        $this->assertNull( expDataConnections::sqlitePath( 'var/datatable/a.duckdb' ) );
+        $this->assertNull( expDataConnections::sqlitePath( 'var/datatable/a.sqlite', expDataConnections::filePattern( 'duckdb' ) ) );
         $this->assertSame( array( 'var/datatable' ), expDataConnections::sqliteDirectories() );
     }
 
@@ -205,7 +209,7 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
     public function testEngines()
     {
         $engines = expDataConnections::engines();
-        $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird' ), array_keys( $engines ) );
+        $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird', 'duckdb' ), array_keys( $engines ) );
         foreach ( $engines as $key => $engine )
         {
             foreach ( array( 'label', 'kind', 'ez', 'pdo', 'port', 'file', 'enabled', 'available', 'via', 'handler', 'pdo_driver', 'why', 'untested' ) as $field )
