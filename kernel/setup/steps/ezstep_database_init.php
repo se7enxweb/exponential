@@ -126,7 +126,7 @@ class eZStepDatabaseInit extends eZStepInstaller
         // PostgreSQL the same: the connection above went to the named database.
         // Oracle the same: Database is the connect string of the schema to use
         // SQL Server the same: the login is tested against the named database
-        if ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver' ) ) &&
+        if ( ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
              !empty( $databaseInfo['dbname'] ) )
         {
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
@@ -187,6 +187,16 @@ class eZStepDatabaseInit extends eZStepInstaller
             $this->PersistenceList['database_info']['password'] = isset( $data['Password'] ) ? $data['Password'] : '';
             $this->PersistenceList['database_info']['socket'] = isset( $data['Socket'] ) ? $data['Socket'] : '';
             $this->PersistenceList['database_info']['database'] = $data['Database'];
+            // A MySQL-wire database: TLS ([MySQLWireSettings] of the site; kickstart.ini SSL, SSLCA)
+            if ( isset( $this->PersistenceList['database_info']['type'] ) && eZSetupIsMySQLFamily( $this->PersistenceList['database_info']['type'] )
+                 && !in_array( $this->PersistenceList['database_info']['type'], array( 'mysql', 'mysqli' ), true ) )
+            {
+                $options = array();
+                foreach ( array( 'SSL', 'SSLCA' ) as $key )
+                    if ( isset( $data[$key] ) && trim( (string)$data[$key] ) !== '' )
+                        $options[$key] = trim( (string)$data[$key] );
+                $this->PersistenceList['database_info']['mysqlwire'] = $options;
+            }
             // SQL Server: the connection's encryption ([SQLServerSettings] of the site)
             if ( isset( $this->PersistenceList['database_info']['type'] ) && $this->PersistenceList['database_info']['type'] == 'sqlserver' )
             {

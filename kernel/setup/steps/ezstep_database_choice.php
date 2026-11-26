@@ -125,6 +125,10 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'oracle' => 'oci8',
                           'mssql' => 'sqlserver',
                           'sqlsrv' => 'sqlserver',
+                          'planetscale' => 'vitess',
+                          'memsql' => 'singlestore',
+                          'aurora-mysql' => 'aurora',
+                          'auroramysql' => 'aurora',
                           'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];

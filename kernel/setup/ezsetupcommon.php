@@ -67,6 +67,44 @@ function eZSetupDatabaseMap()
                                         'required_version' => '14.0',
                                         'has_demo_data' => false,
                                         'supports_unicode' => true ),
+                  // databases that speak the MySQL protocol: the MySQL driver with
+                  // the database's profile (expMySQLWireDB); the wizard treats them
+                  // as MySQL ('family'), the site gets the type as its driver
+                  'tidb' => array( 'type' => 'tidb',
+                                   'driver' => 'tidb',
+                                   'family' => 'mysqli',
+                                   'name' => 'TiDB',
+                                   'required_version' => '5.7.25',
+                                   'has_demo_data' => true,
+                                   'supports_unicode' => true ),
+                  'vitess' => array( 'type' => 'vitess',
+                                     'driver' => 'vitess',
+                                     'family' => 'mysqli',
+                                     'name' => 'Vitess / PlanetScale',
+                                     'required_version' => '5.7.0',
+                                     'has_demo_data' => true,
+                                     'supports_unicode' => true ),
+                  'singlestore' => array( 'type' => 'singlestore',
+                                          'driver' => 'singlestore',
+                                          'family' => 'mysqli',
+                                          'name' => 'SingleStore',
+                                          'required_version' => '5.7.0',
+                                          'has_demo_data' => true,
+                                          'supports_unicode' => true ),
+                  'xpand' => array( 'type' => 'xpand',
+                                    'driver' => 'xpand',
+                                    'family' => 'mysqli',
+                                    'name' => 'MariaDB Xpand',
+                                    'required_version' => '5.0.45',
+                                    'has_demo_data' => true,
+                                    'supports_unicode' => true ),
+                  'aurora' => array( 'type' => 'aurora',
+                                     'driver' => 'aurora',
+                                     'family' => 'mysqli',
+                                     'name' => 'Amazon Aurora MySQL',
+                                     'required_version' => '8.0.0',
+                                     'has_demo_data' => true,
+                                     'supports_unicode' => true ),
                   // the driver lives in an extension, activated for the
                   // installation by eZSetupActivateDatabaseExtension()
                   'oci8' => array( 'type' => 'oci8',
@@ -77,6 +115,24 @@ function eZSetupDatabaseMap()
                                    'has_demo_data' => false,
                                    'supports_unicode' => true )
                    );
+}
+}
+
+if ( !function_exists( 'eZSetupIsMySQLFamily' ) ) {
+/**
+ * True for a database type of the wizard that is MySQL or speaks its protocol
+ * (TiDB, Vitess, SingleStore, Xpand, Aurora MySQL: the 'family' of their entry
+ * in eZSetupDatabaseMap()), and is set up as MySQL is.
+ *
+ * @param string $type
+ * @return bool
+ */
+function eZSetupIsMySQLFamily( $type )
+{
+    if ( in_array( $type, array( 'mysql', 'mysqli' ), true ) )
+        return true;
+    $map = eZSetupDatabaseMap();
+    return isset( $map[$type]['family'] ) && $map[$type]['family'] === 'mysqli';
 }
 }
 

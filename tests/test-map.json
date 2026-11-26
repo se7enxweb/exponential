@@ -3349,6 +3349,45 @@
     ],
     "bin/php/expaccessimport.php": [
       "tests/tests/kernel/classes/msaccess/expAccessImportTest.php"
+    ],
+    "lib/ezdb/classes/expmysqlwire*.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php",
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "lib/ezdb/classes/exptidbdb.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php",
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "lib/ezdb/classes/expvitessdb.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php",
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "lib/ezdb/classes/expsinglestoredb.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php",
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "lib/ezdb/classes/expxpanddb.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php",
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "lib/ezdb/classes/expauroramysqldb.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php",
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "lib/ezdb/classes/ezmysqlidb.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "kernel/setup/steps/ezstep_*.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "kernel/classes/datatable/expdataconnections.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "kernel/classes/cluster/expclustersetup.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+    ],
+    "kernel/classes/migration/expmigrationcaption.php": [
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php"
     ]
   },
   "generated": {

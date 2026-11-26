@@ -223,12 +223,26 @@ class expDataConnections
         };
         $options = isset( $c['options'] ) && is_array( $c['options'] ) ? $c['options'] : array();
         $clean = array();
-        foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver', 'odbc_driver', 'odbc_dsn', 'connection_string', 'layer' ) as $key )
+        foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver', 'odbc_driver', 'odbc_dsn', 'connection_string', 'layer',
+                         'profile', 'ssl', 'ssl_ca' ) as $key )
             if ( isset( $options[$key] ) && is_scalar( $options[$key] ) && trim( (string)$options[$key] ) !== '' )
                 $clean[$key] = mb_substr( trim( (string)$options[$key] ), 0, 1000 );
         $engine = strtolower( $text( 'engine', 32 ) );
         if ( $engine === 'mariadb' || $engine === 'mysqli' )
             $engine = 'mysql';
+        // a database that speaks the MySQL protocol (TiDB, Vitess / PlanetScale, SingleStore, Xpand, Aurora): the
+        // engine mysql with the database's profile, opened by its driver (expMySQLWireDB)
+        if ( class_exists( 'expMySQLWireProfile' ) && !in_array( $engine, array( 'mysql', 'mariadb' ), true )
+             && in_array( expMySQLWireProfile::normalizeName( $engine ), expMySQLWireProfile::names(), true ) )
+        {
+            $clean['profile'] = expMySQLWireProfile::normalizeName( $engine );
+            $engine = 'mysql';
+        }
+        if ( isset( $clean['profile'] ) && ( !class_exists( 'expMySQLWireProfile' )
+             || !in_array( expMySQLWireProfile::normalizeName( $clean['profile'] ), expMySQLWireProfile::names(), true ) ) )
+            unset( $clean['profile'] );
+        elseif ( isset( $clean['profile'] ) )
+            $clean['profile'] = expMySQLWireProfile::normalizeName( $clean['profile'] );
         if ( $engine === 'pgsql' )
             $engine = 'postgresql';
         if ( $engine === 'mongo' )
@@ -528,6 +542,19 @@ class expDataConnections
             $plan['implementation'] = $engine['ez'];
             if ( $c['engine'] === 'mongodb' )
                 $parameters['charset'] = 'utf-8';
+            // TiDB, Vitess, SingleStore, Xpand, Aurora: the driver of the profile, with its TLS
+            if ( $c['engine'] === 'mysql' && !empty( $c['options']['profile'] ) && class_exists( 'expMySQLWireProfile' )
+                 && !in_array( $c['options']['profile'], array( 'mysql', 'mariadb' ), true ) )
+            {
+                $facts = expMySQLWireProfile::get( $c['options']['profile'] );
+                $plan['implementation'] = $facts['implementation'];
+                $wire = array( 'Profile' => $facts['name'] );
+                if ( !empty( $c['options']['ssl'] ) )
+                    $wire['SSL'] = $c['options']['ssl'];
+                if ( !empty( $c['options']['ssl_ca'] ) )
+                    $wire['SSLCA'] = $c['options']['ssl_ca'];
+                $parameters['mysqlwire'] = $wire;
+            }
         }
         else
         {

@@ -23,11 +23,18 @@ $databaseTypes = array(
     'oracle'  => array( 'type' => 'oci8',    'port' => '1521',  'name' => 'FREEPDB1',       'user' => '' ),
     // Microsoft SQL Server: the database must exist (CREATE DATABASE, a UTF-8 collation recommended)
     'sqlserver' => array( 'type' => 'sqlserver', 'port' => '1433', 'name' => 'exponential', 'user' => 'sa' ),
+    // databases that speak the MySQL protocol: the MySQL driver with the database's profile (expMySQLWireDB)
+    'tidb'        => array( 'type' => 'tidb',        'port' => '4000', 'name' => 'exponential', 'user' => 'root' ),
+    'vitess'      => array( 'type' => 'vitess',      'port' => '3306', 'name' => 'exponential', 'user' => 'root' ),
+    'singlestore' => array( 'type' => 'singlestore', 'port' => '3306', 'name' => 'exponential', 'user' => 'root' ),
+    'xpand'       => array( 'type' => 'xpand',       'port' => '3306', 'name' => 'exponential', 'user' => 'root' ),
+    'aurora'      => array( 'type' => 'aurora',      'port' => '3306', 'name' => 'exponential', 'user' => 'admin' ),
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
                           'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
                           'oci8' => 'oracle', 'ezoracle' => 'oracle',
-                          'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver' );
+                          'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver',
+                          'planetscale' => 'vitess', 'memsql' => 'singlestore', 'aurora-mysql' => 'aurora', 'auroramysql' => 'aurora' );
 
 $options = array(
     'db'             => 'sqlite',
@@ -38,6 +45,8 @@ $options = array(
     'db-password'    => '',
     'db-socket'      => '',
     'db-encrypt'     => '',
+    'db-ssl'         => '',
+    'db-ssl-ca'      => '',
     'db-action'      => 'remove',
     'package'        => 'sevenx_multisite',
     'language'       => 'eng-US',
@@ -114,7 +123,7 @@ if ( isset( $databaseAliases[$db] ) )
     $db = $databaseAliases[$db];
 if ( !isset( $databaseTypes[$db] ) )
 {
-    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle or sqlserver\n" );
+    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand or aurora\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
@@ -217,7 +226,7 @@ if ( !in_array( $options['cluster'], array( 'single', 'one-node' ), true ) || ( 
     fwrite( STDERR, "--cluster is single or one-node, and --cluster-share an absolute path\n" );
     exit( 1 );
 }
-if ( $options['cluster'] === 'one-node' && !in_array( $db, array( 'mysql', 'mysqli', 'pgsql', 'postgresql' ), true ) )
+if ( $options['cluster'] === 'one-node' && !in_array( $db, array( 'mysql', 'mysqli', 'pgsql', 'postgresql', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), true ) )
 {
     fwrite( STDERR, "--cluster=one-node needs --db=mysql (or pgsql once the kernel has its PostgreSQL cluster backend)\n" );
     exit( 1 );
@@ -298,7 +307,9 @@ $sections = array(
     'database_init'    => array( 'Server' => $options['db-host'], 'Port' => $dbPort, 'Database' => $dbName,
                                  'User' => $dbUser, 'Password' => $options['db-password'], 'Socket' => $options['db-socket'] )
                           + ( $db === 'sqlserver' ? array( 'Encrypt' => $options['db-encrypt'] !== '' ? $options['db-encrypt'] : 'yes',
-                                                           'TrustServerCertificate' => $flags['db-trust-server-certificate'] ? 'enabled' : 'disabled' ) : array() ),
+                                                           'TrustServerCertificate' => $flags['db-trust-server-certificate'] ? 'enabled' : 'disabled' ) : array() )
+                          + ( in_array( $db, array( 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), true ) && $options['db-ssl'] !== ''
+                              ? array_filter( array( 'SSL' => $options['db-ssl'], 'SSLCA' => $options['db-ssl-ca'] ), 'strlen' ) : array() ),
     'language_options' => array( 'Primary' => $options['language'], 'Languages' => $languages, 'TimeZone' => $timeZone['zone'] ),
     'site_types'       => array( 'Site_package' => $options['package'] ),
     'site_access'      => array( 'Access' => $accessType ),
@@ -462,9 +473,12 @@ Database (default: SQLite, no server needed)
   --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle or sqlserver
                          (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
                          (oracle: needs oci8 and extension/ezoracle)
+                         MySQL protocol, with mysqli: tidb, vitess (planetscale),
+                         singlestore (memsql), xpand, aurora (aurora-mysql)
+                         (vitess: the keyspace must exist)
   --db-host=<host>       default localhost
   --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
-                         1521 (oracle), 1433 (sqlserver)
+                         1521 (oracle), 1433 (sqlserver), 4000 (tidb)
   --db-name=<name>       default exponential (exponential.db for sqlite);
                          oracle: the service name, default FREEPDB1, used as
                          host:port/service; a full connect string (with / or
@@ -477,6 +491,9 @@ Database (default: SQLite, no server needed)
   --db-trust-server-certificate
                          sqlserver: accept the server's certificate without
                          checking it (a self-signed one, on a trusted network)
+  --db-ssl=<mode>        tidb, vitess, singlestore, xpand, aurora: enabled (TLS),
+                         verify (TLS, certificate checked) or disabled (default)
+  --db-ssl-ca=<file>     the CA file for --db-ssl=verify (default: the system's)
   --db-action=<action>   remove (default: empty the database first), ignore, skip
 
 Site

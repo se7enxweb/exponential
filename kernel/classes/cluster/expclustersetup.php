@@ -47,6 +47,10 @@ class expClusterSetup
     public static function engineOf( $implementation )
     {
         $engines = array( 'ezmysqli' => 'mysqli', 'ezmysql' => 'mysqli', 'mysqli' => 'mysqli', 'mysql' => 'mysqli',
+                          // databases that speak the MySQL protocol: the MySQL backend (doc/eng-us/features/6.0/mysql-wire-databases.md)
+                          'tidb' => 'mysqli', 'exptidbdb' => 'mysqli', 'vitess' => 'mysqli', 'planetscale' => 'mysqli', 'expvitessdb' => 'mysqli',
+                          'singlestore' => 'mysqli', 'memsql' => 'mysqli', 'expsinglestoredb' => 'mysqli', 'xpand' => 'mysqli', 'expxpanddb' => 'mysqli',
+                          'aurora' => 'mysqli', 'auroramysql' => 'mysqli', 'expauroramysqldb' => 'mysqli',
                           'ezpostgresql' => 'postgresql', 'postgresql' => 'postgresql', 'pgsql' => 'postgresql',
                           'ezsqlite3' => 'sqlite', 'sqlite3' => 'sqlite',
                           'mongodb' => 'mongodb', 'expmongodb' => 'mongodb', 'mongo' => 'mongodb',

@@ -217,7 +217,7 @@ a99f95dd0196c0752d279cda73078d84  bin/php/ezwebinupgrade.php
 3f68d477c3ae4afa9d4513c59a084fd9  bin/php/frankenphp.php
 2bf2f0e6e3dafee7232596d4e3937bee  bin/php/i18n.php
 e4e5a5e9f65cd8f42323b653a152439d  bin/php/ini.php
-09c70936e0cb5927e52580501d5abf8e  bin/php/install.php
+86fbedcd9035b40fbe78b66534043aa2  bin/php/install.php
 f697eeec2a6fe364ac62feff76673996  bin/php/installcrontab.php
 f5773e8f312c969b9080b83fe1ae4ac3  bin/php/kickstarter.php
 d480f36c84716affe53b3e064d52e58c  bin/php/mailbounces.php
@@ -24783,7 +24783,7 @@ b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_to
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
 0e1142d1d41cfa42edc3461be7e49ca7  kernel/classes/classicmenu/expclassicmenusettings.php
 b8ebd3a548e525d6a91dd2a594e32b2d  kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php
-38c44f35423cf86e3cab25f83f78ed76  kernel/classes/cluster/expclustersetup.php
+bad6d535916704d50d1ae20bcb42aeaa  kernel/classes/cluster/expclustersetup.php
 6b7db9abd89a682ec3b07f4d40e464a2  kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php
 92910b9b7865f9f0053271a1c67a2e0a  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 4c970b7c0217d8e0fcdb83fa82050d7f  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
@@ -24827,7 +24827,7 @@ a4eaa659eda324dae71e98320dd1b9d2  kernel/classes/contentjob/expcontentjobtransfe
 360ff8975b148bb0361cb0b98d62b7c2  kernel/classes/contentjob/expcontentjobworker.php
 474ea1a861aee819acdab722cee2f5e0  kernel/classes/contentwriter/expcontentwriter.php
 53190e2e0d73d0c7b0aa4a2eecd4ada8  kernel/classes/datatable/expdataconnection.php
-8eb1a4e222348a869994b80f33254e29  kernel/classes/datatable/expdataconnections.php
+968d6a0cb804adc1fcd09e719f23b720  kernel/classes/datatable/expdataconnections.php
 73b8c1e625a3f79814d488687aba7215  kernel/classes/datatable/expdatatablecatalogue.php
 0d56ee2f117111cdabf68a647bb4bb3b  kernel/classes/datatable/expdatatabledescriber.php
 8f34c0dd424871274d7553e6345b0f3e  kernel/classes/datatable/expdatatablefieldsource.php
@@ -26934,7 +26934,7 @@ b9ae2b6d7c11dfc7cbfb230f9990940e  kernel/setup/expradsurvey.php
 20d19e4c6c386a4751b600fa8fac28e2  kernel/setup/extensions.php
 391d37b4620a6745a2bd442560d6484d  kernel/setup/ezsetup.php
 433e78c97aa0c3fcafabd033470f397c  kernel/setup/ezsetup_summary.php
-f363d0bf2c4a30e012b34310512b3490  kernel/setup/ezsetupcommon.php
+f7b1c8024b16cd174c8cf96a59ece8d0  kernel/setup/ezsetupcommon.php
 38297052a8fa01c39f6209d85873376c  kernel/setup/ezsetupfunctioncollection.php
 ce305a0b7ac2b4a067d9a16aaebac547  kernel/setup/ezsetuptests.php
 f61e6339faf21fad7164647b5a7070e7  kernel/setup/function_definition.php
@@ -26966,20 +26966,20 @@ a456b6cd95469b00072d6d6008005d78  kernel/setup/settingsextension.php
 e1f1e3367eaa39f82acad5c70b42286e  kernel/setup/setupmenu.php
 fe14b77184ccbafe5fdbd76a0bea9428  kernel/setup/sitedata.php
 72be9314636b1a293c5be6efa675cd04  kernel/setup/staticcachestream.php
-002c6f90179928522d37ee834e3d29bf  kernel/setup/steps/ezstep_create_sites.php
+70e7ae73ea97c3f3451791cc2ac6b1f4  kernel/setup/steps/ezstep_create_sites.php
 df68e5e07841432d9e6e51b23e5ae234  kernel/setup/steps/ezstep_data.php
-82f907f27c2cac223c7c222a0a529271  kernel/setup/steps/ezstep_database_choice.php
-03ab59df7e72d4036541bd1c8aa87c0b  kernel/setup/steps/ezstep_database_init.php
+c2941ca75e2a4fbd4e3effde5b399232  kernel/setup/steps/ezstep_database_choice.php
+17bfb2e2c442229982dd48be74d3e2d7  kernel/setup/steps/ezstep_database_init.php
 1eb7cf0835903b23ffeeda25b7e8bf6a  kernel/setup/steps/ezstep_email_settings.php
 d252c1fdbb70b34ee56f05351fb1ad10  kernel/setup/steps/ezstep_final.php
-668c3dc4c16e7db43df2fe084e70d907  kernel/setup/steps/ezstep_installer.php
+9b364c3517eddb09b4a37551001a6c93  kernel/setup/steps/ezstep_installer.php
 354ef133bd7fb328e3e815febc5e6530  kernel/setup/steps/ezstep_language_options.php
 0b0e15cf920388c3361a4778b61018b5  kernel/setup/steps/ezstep_package_language_options.php
 15a86df69632da17559f29833414bdfc  kernel/setup/steps/ezstep_registration.php
 bc24219bdcd16fb8ac4cfdddaad00b39  kernel/setup/steps/ezstep_security.php
 beaa61e71c08d986b7579d43655f0ca0  kernel/setup/steps/ezstep_site_access.php
 7957ceec4ac82087f045fe489ee80e8f  kernel/setup/steps/ezstep_site_admin.php
-13fa5306afc3ba6262e0310d9162931e  kernel/setup/steps/ezstep_site_details.php
+b59612623a37939f58acefaab00a374c  kernel/setup/steps/ezstep_site_details.php
 9c0bc683565055f3f7e22cb3aaf6c832  kernel/setup/steps/ezstep_site_packages.php
 0c806c2ea538afb632e14c4b28d14005  kernel/setup/steps/ezstep_site_templates.php
 74bb49af1352c6309a301d82fdbff5b6  kernel/setup/steps/ezstep_site_types.php
@@ -29000,7 +29000,7 @@ bbf1056a2362f3aa6c8cceea081afffb  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 433535bbea030ca66be73ed16d242a2e  tests/suite.php
-8e624bdd354eeb2010fc1087dedfcf10  tests/test-map.json
+72ef8616ccce565038d8d6e231d36222  tests/test-map.json
 9917402d25f8419adb652d9a634bac4a  tests/tests/bin/CiWorkflowPullRequestTest.php
 aab68864c45774a2a976dbdc7ba53f78  tests/tests/bin/ConsoleExtensionAliasTest.php
 b93b286979fa3eef6b6b03fd1197dd31  tests/tests/bin/CopyrightNoticeTest.php
@@ -30140,7 +30140,7 @@ cf8be805ae4c110abc4bbd547249a7e8  tests/tests/kernel/classes/setup/SetupContentF
 cbcb871b0c8ee1997d8cdcde3b30e2cc  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 ff16951947f561095e82a782732322f0  tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php
 c9d7f04ca55c0d534e3521802d1dafdc  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
-ec097d8a14a20afd5e127801287a7dd7  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
+4f716223f908a1d5462097040883b1ee  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 d51526ae21e250767031d78014d6101a  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
 b1770edc81acb748f08277804bbcf641  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
 34e4df0b59c0edca6965f591f0c23e90  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php
@@ -30772,6 +30772,7 @@ ffb2e96684d7f3e0f4fb2a262d6ccb38  tests/tests/lib/ezdb/mongodb/expMongoDBEscapeS
 9f0de1d8ffad17d1c48d5f1a403cff83  tests/tests/lib/ezdb/mongodb/sevenxMongoDBAdapterTest.php
 e88a8be5f0a7515c331a4377a1bc95e2  tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php
 79532c4f656b21f148701db946e38be2  tests/tests/lib/ezdb/mongodb/stubs.php
+31f9e5733e64c72283d42909ed877880  tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php
 d4fdfc5efb0504d9d923598c271c0c2c  tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php
 9686e8f4cda65d81d9735a04b82323fe  tests/tests/lib/ezdb/mysqlwire/expMySQLWireTestKit.php
 fb3163c9eb144ae9f4ebb2237c64fb1c  tests/tests/lib/ezdb/mysqlwire/live/expMySQLWireLiveTest.php

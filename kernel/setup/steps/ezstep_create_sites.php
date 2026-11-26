@@ -370,6 +370,10 @@ class eZStepCreateSites extends eZStepInstaller
         if ( !empty( $this->PersistenceList['database_info']['sqlserver'] ) && is_array( $this->PersistenceList['database_info']['sqlserver'] ) )
             foreach ( $this->PersistenceList['database_info']['sqlserver'] as $name => $value )
                 $ini->setVariable( 'SQLServerSettings', $name, $value );
+        // A MySQL-wire database (TiDB, Vitess, SingleStore, Xpand, Aurora): its TLS the same way
+        if ( !empty( $this->PersistenceList['database_info']['mysqlwire'] ) && is_array( $this->PersistenceList['database_info']['mysqlwire'] ) )
+            foreach ( $this->PersistenceList['database_info']['mysqlwire'] as $name => $value )
+                $ini->setVariable( 'MySQLWireSettings', $name, $value );
         // With this following line commented out, php default session management is used
         // $ini->setVariable( 'Session', 'SessionNameHandler', 'custom' );
         $ini->setVariable( 'MailSettings', 'AdminEmail', $this->PersistenceList['admin']['email'] );
@@ -1041,6 +1045,8 @@ class eZStepCreateSites extends eZStepInstaller
                                'charset' => $dbCharset );
         if ( !empty( $databaseInfo['sqlserver'] ) )
             $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
+        if ( !empty( $databaseInfo['mysqlwire'] ) )
+            $dbParameters['mysqlwire'] = $databaseInfo['mysqlwire'];
         try
         {
             $db = eZDB::instance( $dbDriver, $dbParameters, true );
@@ -1284,6 +1290,8 @@ class eZStepCreateSites extends eZStepInstaller
         // SQL Server: the encryption the installation connected with
         if ( !empty( $databaseInfo['sqlserver'] ) )
             $siteINIChanges['SQLServerSettings'] = $databaseInfo['sqlserver'];
+        if ( !empty( $databaseInfo['mysqlwire'] ) )
+            $siteINIChanges['MySQLWireSettings'] = $databaseInfo['mysqlwire'];
         if ( trim( $dbSocket ) != '' )
             $siteINIChanges['DatabaseSettings']['Socket'] = $dbSocket;
         else

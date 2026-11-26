@@ -415,6 +415,8 @@ class eZStepInstaller
                                'socket' => trim( $databaseInfo['socket'] ) == '' ? false : $databaseInfo['socket'],
                                'database' => $databaseInfo['database'],
                                'charset' => $dbCharset );
+        if ( !empty( $databaseInfo['mysqlwire'] ) )
+            $dbParameters['mysqlwire'] = $databaseInfo['mysqlwire'];
         if ( !empty( $databaseInfo['sqlserver'] ) )
             $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
         $dbParameters = array_merge( $dbParameters, $overrideDBParameters );
@@ -451,7 +453,7 @@ class eZStepInstaller
         // MySQL: if the user provided a database name, connect directly to it.
         // This avoids any attempt to select the system 'mysql' database and
         // means SHOW DATABASES / root access is not required.
-        if ( in_array( $this->PersistenceList['database_info']['type'], array( 'mysql', 'mysqli', 'sqlserver' ) ) and
+        if ( ( in_array( $this->PersistenceList['database_info']['type'], array( 'mysql', 'mysqli', 'sqlserver' ) ) || eZSetupIsMySQLFamily( $this->PersistenceList['database_info']['type'] ) ) and
              ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) and
              !empty( $databaseInfo['dbname'] ) )
         {

@@ -356,7 +356,7 @@ class eZStepSiteDetails extends eZStepInstaller
         // and breaks on shared hosting where the application user only has access
         // to their own database. If no name is provided, we leave the database
         // parameter empty so we connect to the server without selecting a DB.
-        if ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli' ) ) )
+        if ( eZSetupIsMySQLFamily( $databaseInfo['info']['type'] ) )
         {
             $explicitName = isset( $databaseInfo['dbname'] ) ? trim( $databaseInfo['dbname'] ) : '';
             $dbName = $explicitName !== '' ? $explicitName : '';
@@ -393,6 +393,8 @@ class eZStepSiteDetails extends eZStepInstaller
             $dbParameters['database'] = $dbName;
 
         $this->PersistenceList['database_info']['database'] = $dbParameters['database'];
+        if ( !empty( $databaseInfo['mysqlwire'] ) )
+            $dbParameters['mysqlwire'] = $databaseInfo['mysqlwire'];
         if ( !empty( $databaseInfo['sqlserver'] ) )
             $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
 
@@ -420,7 +422,7 @@ class eZStepSiteDetails extends eZStepInstaller
         // For MySQL/MariaDB, use the named database directly and skip the
         // SHOW DATABASES call (which requires global privileges and may access
         // the 'mysql' system database). This makes shared-hosting installs work.
-        if ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli', 'pgsql' ) ) &&
+        if ( ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli', 'pgsql' ) ) || eZSetupIsMySQLFamily( $databaseInfo['info']['type'] ) ) &&
              isset( $databaseInfo['dbname'] ) && trim( $databaseInfo['dbname'] ) !== '' )
         {
             $this->PersistenceList['database_info_available'] = array( trim( $databaseInfo['dbname'] ) );
