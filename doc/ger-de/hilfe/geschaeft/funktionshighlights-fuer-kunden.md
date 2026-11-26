@@ -305,7 +305,6 @@ Datenbank umziehen ([Eine Site in eine andere Datenbank verschieben](../datenban
 
 **Grenzen, die Sie nennen sollten.** SQLite bedient eine Site von einer Maschine aus; mehrere Webserver brauchen einen
 Datenbankserver. MariaDB und Oracle laufen nicht in der CI des Projekts ([Testabdeckung](../datenbankunterstuetzung.md#testabdeckung-ci)).
-Für Microsoft SQL Server gibt es in 6.0.x keinen Treiber.
 
 ## Den Betrieb der Site im Alltag
 

@@ -103,7 +103,8 @@
         <testsuite name="lib">
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>
-            <exclude>tests/tests/lib/ezdb/sqlserver/live</exclude>
+            <!-- in the suites sqlserver and sqlserver-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/sqlserver</exclude>
             <!-- in the suites odbc and odbc-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/odbc</exclude>
         </testsuite>

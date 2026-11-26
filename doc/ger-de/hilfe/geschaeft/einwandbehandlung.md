@@ -242,7 +242,6 @@ Manche Einwände treffen zu. Sagen Sie das, und bieten Sie die Alternative an, d
 
 | Der Käufer braucht | Ehrliche Antwort | Alternative |
 |---|---|---|
-| Microsoft SQL Server | Kein Treiber in 6.0.x | „Mit zusätzlichem Aufwand möglich“, dokumentiert ([Unterstützte Datenbanken](../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)) |
 | Einen reinen Symfony-Stack | Das ist Exponential 6 nicht | Exponential Platform DXP ([Welches Produkt zu Ihnen passt](../wer-ist-die-exponential-foundation.md#welches-produkt-zu-ihnen-passt)) |
 | Ein veröffentlichtes SLA des Projekts | Es gibt keines | Ein Servicevertrag mit einem Anbieter |
 | Mehr als 62 Inhaltssprachen in einer Installation | Nicht möglich | Auf mehrere Installationen aufteilen oder den tatsächlichen Bedarf prüfen ([Die Grenze von 62](../../sprachen.md#11-die-grenze-von-62-inhaltssprachen)) |

@@ -65,7 +65,7 @@ is to make the Exponential column complete, sourced and honest, including where 
 | Source and history | The full history is kept, back to the oldest commit of 2 September 2002; 27,242 commits on `main` on 18 October 2026 | [Who is 7x?, The eZ Publish years](../who-is-7x.md#the-ez-publish-years-1999-to-2021) |
 | Lineage | Copyright notice "1998 - 2026 Exponential Foundation and 7x" next to "1999 - 2014 eZ Systems AS" | `COPYRIGHT.md` |
 | Self-hosting | Runs on "almost any [operating system] that runs PHP 8.0 or later (PHP 7.4 usable without support)", in four documented tiers | [Operating system support](../os-support.md) |
-| Databases | "1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL" | [Database support](../database-support.md) |
+| Databases | "1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL" | [Database support](../database-support.md) |
 | Web servers | Exponential Velocity (recommended), Apache, nginx, FrankenPHP, LiteSpeed, Caddy, IIS, lighttpd and others | [Operating system support, Web servers](../os-support.md#web-servers), `README.md` |
 | PHP versions | PHP 8.0 to 8.5, Velocity included (from its release 0.0.4.54); PHP 7.4 usable without support from 6.0.15 | [Who is the Exponential Foundation?, PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | Release integrity | "A published tag is never changed": a fix arrives as the next release | `SECURITY.md` |
@@ -128,7 +128,7 @@ collects the others.
 | Under which license is the code, and does it cost anything to use? | GPL v2 or later, free of charge | `README.md`, "License" |
 | Can we read the complete source and its history? | Yes, on GitHub, history from 2002 | [Who is 7x?](../who-is-7x.md#nearly-thirty-years-the-timeline) |
 | Can we host it ourselves, on our operating system? | Yes; see the tier of your system | [Operating system support](../os-support.md#the-four-tiers) |
-| Which databases are supported, and which are tested in CI? | Six supported; PostgreSQL and MySQL run database tests in CI, SQLite and MongoDB driver or adapter unit tests | [Database support, Test coverage](../database-support.md#test-coverage-ci) |
+| Which databases are supported, and which are tested in CI? | Seven supported; PostgreSQL, MySQL and Microsoft SQL Server run database tests in CI, SQLite and MongoDB driver or adapter unit tests | [Database support, Test coverage](../database-support.md#test-coverage-ci) |
 | How are vulnerabilities reported and fixed? | Privately by e-mail, first answer within one business day, fix in the next 6.0.x | `SECURITY.md` |
 | Can a published release change after we install it? | No | `SECURITY.md` |
 | How do we upgrade, and how do we check an upgrade? | Documented chapter, update files per engine, the upgrade check | [Upgrading](../../install/11-upgrading.md), [The upgrade check](../../guides/upgrade-check.md) |
@@ -148,7 +148,7 @@ the other columns for the buyer.
 | License of the documentation      | GNU FDL 1.3 or later                                |          |          | doc/eng-us/README-LICENSE.md |
 | Source and full history public    | Yes, since 2002                                     |          |          | git log      |
 | Self-hosting                      | Yes, any OS with PHP 8.0+ (7.4 usable without support) (tiers)                   |          |          | os-support   |
-| Databases                         | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |          |          | database-support |
+| Databases                         | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, SQL Server |          |          | database-support |
 | Web servers                       | Velocity, Apache, nginx, FrankenPHP and others      |          |          | os-support   |
 | PHP versions                      | 8.0 to 8.5                                          |          |          | composer.json |
 | Published releases immutable      | Yes                                                 |          |          | SECURITY.md  |
@@ -168,7 +168,6 @@ Say these yourself. Each is documented.
 
 | Situation | The honest answer | Source |
 |---|---|---|
-| The customer must run Microsoft SQL Server | There is no driver in 6.0.x; it "is known to be possible with additional work" | [Database support](../database-support.md#microsoft-sql-server-possible-with-additional-work) |
 | A Symfony-only project with no legacy kernel | Exponential Platform DXP, not Exponential 6, is the family member for that | [Which product is for you](../who-is-the-exponential-foundation.md#which-product-is-for-you) |
 | Several replicas sharing one SQLite file | Not possible; several replicas need a database server, PostgreSQL first | [Operating system support](../os-support.md#containers-cloud-and-hosting-panels) |
 | Shared hosting that forbids long-running processes | Velocity usually cannot run; Apache or LiteSpeed with `.htaccess` still serve the site | `README.md`, "When a traditional server is still the right answer" |

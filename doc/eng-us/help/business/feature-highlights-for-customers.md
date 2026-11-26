@@ -290,8 +290,7 @@ A site can move to another database with documented tools
 ([Moving a site to another database](../database-support.md#moving-a-site-to-another-database)).
 
 **Limits to state.** SQLite serves a site from one machine; several web servers need a database server. MariaDB and
-Oracle are not run in the project's CI ([Test coverage](../database-support.md#test-coverage-ci)). Microsoft SQL Server
-has no driver in 6.0.x.
+Oracle are not run in the project's CI ([Test coverage](../database-support.md#test-coverage-ci)).
 
 ## Running the site day to day
 

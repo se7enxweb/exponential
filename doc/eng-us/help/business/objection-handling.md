@@ -235,7 +235,6 @@ Some objections are right. Say so, and offer the alternative the sources name.
 
 | The buyer needs | Honest answer | Alternative |
 |---|---|---|
-| Microsoft SQL Server | No driver in 6.0.x | "Possible with additional work", documented ([Database support](../database-support.md#microsoft-sql-server-possible-with-additional-work)) |
 | A Symfony-only stack | Exponential 6 is not that | Exponential Platform DXP ([Which product is for you](../who-is-the-exponential-foundation.md#which-product-is-for-you)) |
 | A published SLA from the project | There is none | A service contract with a provider |
 | More than 62 content languages in one installation | Not possible | Split into installations, or check the real need ([The limit of 62](../../languages.md#11-the-limit-of-62-content-languages)) |

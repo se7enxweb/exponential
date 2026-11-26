@@ -206,7 +206,6 @@ question must be answered before you promise anything.
 | "We only have shared hosting." | Velocity needs a long-lived process; "Shared hosting usually will not" allow one (`README.md`) | Plan Apache or LiteSpeed with `.htaccess`, as the README advises |
 | "We need features X, Y and Z" that no help page describes | Nothing undocumented may be promised | Hand it to the project manager as a scoping question ([Estimating and scoping with extensions](../leadership/estimating-and-scoping-with-extensions.md)) |
 | "We need a certification or a guaranteed support time." | The sources name no certifications; `SECURITY.md` promises only a first answer to security reports within one business day | Say what the sources say; service levels are a matter of your own contract |
-| "We need Microsoft SQL Server." | It is "known to be possible with additional work", not supported today (`README.md`) | Read [Database support](../database-support.md) together with their IT |
 | "Our site runs on PHP 7." | PHP 7.4 is usable again from 6.0.15, without support and without the features that need PHP 8 | Plan the PHP upgrade as part of the project |
 | "We want a Symfony-only stack." | The Exponential 6 kernel is not Symfony | Look at Exponential Platform DXP ([Which product of the family fits](#which-product-of-the-family-fits)) |
 

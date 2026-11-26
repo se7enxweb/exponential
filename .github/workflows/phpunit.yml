@@ -515,7 +515,7 @@ jobs:
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
 
   # The Microsoft SQL Server driver (expSQLServerDB) against Microsoft's SQL Server Linux containers, on each PHP
-  # layer it supports. The DB-less SQL Server tests run in the PHPUnit job above (testsuite lib); these are the live
+  # layer it supports. The DB-less SQL Server tests run in the PHPUnit job above (testsuite sqlserver); these are the live
   # ones (testsuite sqlserver-live), which fail here instead of skipping (--fail-on-skipped is not used: a test that
   # needs a newer server skips on 2017).
   sqlserver:
