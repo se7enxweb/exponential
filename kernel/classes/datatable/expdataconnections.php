@@ -73,6 +73,13 @@ class expDataConnections
             'firebird' => array( 'label' => 'Firebird', 'kind' => 'relational', 'ez' => 'firebird', 'pdo' => array( 'firebird' ), 'port' => 3050, 'file' => false ),
             // expDuckDBDB: one DuckDB file, through PHP's FFI extension and libduckdb
             'duckdb' => array( 'label' => 'DuckDB', 'kind' => 'relational', 'ez' => 'duckdb', 'pdo' => array(), 'port' => 0, 'file' => true ),
+            // the databases of the PostgreSQL wire protocol (expPostgreSQLWireDB), through PHP's pgsql extension
+            'cockroachdb' => array( 'label' => 'CockroachDB', 'kind' => 'relational', 'ez' => 'cockroachdb', 'pdo' => array( 'pgsql' ), 'port' => 26257, 'file' => false ),
+            'yugabytedb' => array( 'label' => 'YugabyteDB', 'kind' => 'relational', 'ez' => 'yugabytedb', 'pdo' => array( 'pgsql' ), 'port' => 5433, 'file' => false ),
+            'spanner' => array( 'label' => 'Google Cloud Spanner (PostgreSQL, PGAdapter)', 'kind' => 'relational', 'ez' => 'spanner', 'pdo' => array(), 'port' => 5432, 'file' => false ),
+            'neon' => array( 'label' => 'Neon (PostgreSQL)', 'kind' => 'relational', 'ez' => 'neon', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
+            'supabase' => array( 'label' => 'Supabase (PostgreSQL)', 'kind' => 'relational', 'ez' => 'supabase', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
+            'aurora' => array( 'label' => 'Amazon Aurora PostgreSQL', 'kind' => 'relational', 'ez' => 'aurora', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
         );
     }
 
@@ -127,7 +134,8 @@ class expDataConnections
                 'handler' => !empty( $type['class'] ) ? ( $viaClass ? $type['class'] : '' ) : ( $viaEZ ? $handler : ( $pdoDriver !== '' ? 'expPDODB' : '' ) ),
                 'pdo_driver' => $pdoDriver,
                 'why' => $why,
-                'untested' => $key === 'sqlserver',
+                // not run against a server of its own here: the managed PostgreSQL services
+                'untested' => in_array( $key, array( 'sqlserver', 'neon', 'supabase', 'aurora' ), true ),
             );
         }
         return $engines;
@@ -227,7 +235,7 @@ class expDataConnections
         $options = isset( $c['options'] ) && is_array( $c['options'] ) ? $c['options'] : array();
         $clean = array();
         foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver', 'odbc_driver', 'odbc_dsn', 'connection_string', 'layer',
-                         'profile', 'ssl', 'ssl_ca' ) as $key )
+                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler' ) as $key )
             if ( isset( $options[$key] ) && is_scalar( $options[$key] ) && trim( (string)$options[$key] ) !== '' )
                 $clean[$key] = mb_substr( trim( (string)$options[$key] ), 0, 1000 );
         $engine = strtolower( $text( 'engine', 32 ) );
@@ -256,6 +264,9 @@ class expDataConnections
             $engine = 'msaccess';
         if ( $engine === 'fb' || $engine === 'interbase' )
             $engine = 'firebird';
+        $wire = expPostgreSQLWireProfile::get( $engine );
+        if ( $wire && $wire['name'] !== 'postgresql' )
+            $engine = $wire['name'];
         return array(
             'identifier' => strtolower( $text( 'identifier', 64 ) ),
             'name' => $text( 'name' ),
@@ -560,6 +571,13 @@ class expDataConnections
                     $wire['SSLCA'] = $c['options']['ssl_ca'];
                 $parameters['mysqlwire'] = $wire;
             }
+            // the databases of the PostgreSQL wire protocol: TLS and the pooler ([PostgreSQLWireSettings])
+            $pgWire = array();
+            foreach ( array( 'sslmode' => 'SSLMode', 'pooler' => 'Pooler' ) as $option => $setting )
+                if ( isset( $c['options'][$option] ) )
+                    $pgWire[$setting] = $c['options'][$option];
+            if ( $pgWire )
+                $parameters['postgresql_wire'] = $pgWire;
         }
         else
         {
@@ -987,6 +1005,12 @@ class expDataConnections
             case 'mysql':
                 return extension_loaded( 'mysqli' );
             case 'postgresql':
+            case 'cockroachdb':
+            case 'yugabytedb':
+            case 'spanner':
+            case 'neon':
+            case 'supabase':
+            case 'aurora':
                 return extension_loaded( 'pgsql' );
             case 'duckdb':
                 return class_exists( 'expDuckDBFFI' ) && expDuckDBFFI::ffiUsable();

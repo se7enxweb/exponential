@@ -93,7 +93,8 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'charset' => 'utf8mb4' ), $c['options'] );
         $this->assertSame( 'admin', $c['origin'] );
         $this->assertTrue( $c['read_only'] );
-        foreach ( array( 'mysqli' => 'mysql', 'pgsql' => 'postgresql', 'mongo' => 'mongodb', 'mssql' => 'sqlserver', 'sqlite' => 'sqlite' ) as $alias => $engine )
+        foreach ( array( 'mysqli' => 'mysql', 'pgsql' => 'postgresql', 'mongo' => 'mongodb', 'mssql' => 'sqlserver', 'sqlite' => 'sqlite',
+                         'crdb' => 'cockroachdb', 'yugabyte' => 'yugabytedb', 'spannerpg' => 'spanner', 'aurorapostgresql' => 'aurora' ) as $alias => $engine )
             $this->assertSame( $engine, expDataConnections::normalize( array( 'engine' => $alias ) )['engine'], $alias );
         $this->assertSame( 0, expDataConnections::normalize( array( 'port' => '-5' ) )['port'] );
         $this->assertSame( 0, expDataConnections::normalize( array( 'port' => 'abc' ) )['port'] );
@@ -209,7 +210,8 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
     public function testEngines()
     {
         $engines = expDataConnections::engines();
-        $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird', 'duckdb' ), array_keys( $engines ) );
+        $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird', 'duckdb',
+                                  'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurora' ), array_keys( $engines ) );
         foreach ( $engines as $key => $engine )
         {
             foreach ( array( 'label', 'kind', 'ez', 'pdo', 'port', 'file', 'enabled', 'available', 'via', 'handler', 'pdo_driver', 'why', 'untested' ) as $field )
@@ -217,6 +219,11 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
             $this->assertSame( $engine['why'] === '', $engine['available'], $key );
         }
         $this->assertTrue( $engines['sqlserver']['untested'] );
+        // the managed PostgreSQL services are not run against here; CockroachDB, YugabyteDB and Spanner are
+        foreach ( array( 'neon', 'supabase', 'aurora' ) as $key )
+            $this->assertTrue( $engines[$key]['untested'], $key );
+        foreach ( array( 'cockroachdb', 'yugabytedb', 'spanner' ) as $key )
+            $this->assertFalse( $engines[$key]['untested'], $key );
         $this->assertFalse( $engines['mysql']['untested'] );
         $this->assertTrue( $engines['sqlite']['file'] );
         $this->assertSame( 'document', $engines['mongodb']['kind'] );
