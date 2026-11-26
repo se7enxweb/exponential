@@ -194,6 +194,9 @@ if ( !class_exists( 'ezpAutoloader', false ) )
     {
         protected static $ezpClasses = null;
 
+        /** the kernel array, for a class the extension array names in a tests directory (autoload()) */
+        protected static $ezpKernelClasses = array();
+
         /** null = not looked at yet, false = no archive, array = what it holds */
         protected static $ezpPharFiles = null;
 
@@ -211,6 +214,7 @@ if ( !class_exists( 'ezpAutoloader', false ) )
             if ( self::$ezpClasses === null )
             {
                 $ezpKernelClasses = require __DIR__ . '/autoload/ezp_kernel.php';
+                self::$ezpKernelClasses = is_array( $ezpKernelClasses ) ? $ezpKernelClasses : array();
                 $ezpExtensionClasses = false;
                 $ezpTestClasses = false;
 
@@ -256,9 +260,21 @@ if ( !class_exists( 'ezpAutoloader', false ) )
                 }
             }
 
-            if ( isset( self::$ezpClasses[$className] ) )
+            $ezpRelativePath = isset( self::$ezpClasses[$className] ) ? self::$ezpClasses[$className] : null;
+            // An extension or override array generated before the generator left the tests directories out on
+            // Windows (GitHub issue #377) still names their files: a test's stand-in for a kernel class (expDemoMode
+            // in ezmbpaex's tests) then won over the kernel, and loading it ran the test, which stopped the upgrade
+            // that was to regenerate the array. Outside the tests autoload such an entry is passed over: the kernel's
+            // class, else none.
+            if ( $ezpRelativePath !== null && !self::$ezpTestsEnabled && !( defined( 'EZP_AUTOLOAD_TESTS' ) && EZP_AUTOLOAD_TESTS )
+                 && self::isExtensionTestsPath( $ezpRelativePath ) )
             {
-                $ezpRelativePath = self::$ezpClasses[$className];
+                $ezpRelativePath = isset( self::$ezpKernelClasses[$className] ) && !self::isExtensionTestsPath( self::$ezpKernelClasses[$className] )
+                    ? self::$ezpKernelClasses[$className] : null;
+            }
+
+            if ( $ezpRelativePath !== null )
+            {
 
                 // Read the archive's own list of what it holds, once. Asking
                 // the archive per class would be a stat per class, which is
@@ -293,6 +309,25 @@ if ( !class_exists( 'ezpAutoloader', false ) )
             {
                 require( self::$ezpTestsDirectoryClasses[$className] );
             }
+        }
+
+        /**
+         * Whether a file of the autoload arrays lies in a tests directory of an extension: its tests/, or tests/ or
+         * Tests/ of a package vendored in it (vendor/<vendor>/<package>/tests), with either separator. The generator
+         * leaves these out of the extension and override arrays; autoload() passes over them where an older array
+         * still names one.
+         *
+         * @param string $path relative to the installation root, as the arrays hold it
+         * @return bool
+         */
+        public static function isExtensionTestsPath( $path )
+        {
+            $path = strtr( (string)$path, '\\', '/' );
+            if ( stripos( $path, 'tests/' ) === false )
+            {
+                return false;
+            }
+            return (bool)preg_match( '@(^|/)extension/[^/]+/(tests|vendor/[^/]+/[^/]+/(tests|Tests))/@', $path );
         }
 
         /**

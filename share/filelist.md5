@@ -27,7 +27,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 480b67b6ce7d69d1e98ab8179c0102cc  Makefile
 445c26385a719c51e415113c585597ad  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
-a07e962e98509dfc0bb9bca56771410e  autoload.php
+fec8e184c046898f71a24fa2008c767f  autoload.php
 2ae2efe0c02c33c37e7642de68f957fd  autoload/ezp_kernel.php
 4f5aae97c4777e3d9fe309fc409be8d6  benchmarks/classes/ezbenchmark.php
 9c88f2cf9ede23d32cabee36659239f2  benchmarks/classes/ezbenchmarkcase.php
@@ -28992,7 +28992,7 @@ bbf1056a2362f3aa6c8cceea081afffb  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 433535bbea030ca66be73ed16d242a2e  tests/suite.php
-8bf0c63c78cefdc5e7afe977e0678b0f  tests/test-map.json
+d56f444135f255593ed7ecd9efe90d75  tests/test-map.json
 9917402d25f8419adb652d9a634bac4a  tests/tests/bin/CiWorkflowPullRequestTest.php
 aab68864c45774a2a976dbdc7ba53f78  tests/tests/bin/ConsoleExtensionAliasTest.php
 b93b286979fa3eef6b6b03fd1197dd31  tests/tests/bin/CopyrightNoticeTest.php
@@ -30431,7 +30431,7 @@ c180086b69ad2bf9f6dbcf2cba9ea491  tests/tests/kernel/logviewer/expLogTailTest.ph
 85bb01b9626567a8d02f7b9f7473e370  tests/tests/kernel/logviewer/expLogViewerTestFixtures.php
 b30d41d661c2cbeecff3207eaaef9812  tests/tests/kernel/logviewer/expLogWebServerFormatsTest.php
 915b0159309b2b0a7d6a3185965ecd2d  tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php
-3f39079d262aa49530f8c381166ec852  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
+168468151d152d130fc7e1d25c15dd69  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 3b436289e6603bf3f85dd06a8320c4de  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 5c1e00eecf1f5e6fd36de05512d36fd3  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
 46082e8cfdf366ee3204ae014910258b  tests/tests/kernel/private/classes/WebDAVPathsTest.php

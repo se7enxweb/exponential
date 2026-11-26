@@ -350,6 +350,54 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /** The files the autoloader passes over in an array generated before the tests/ exclusions held on Windows (#377). */
+    public function testExtensionTestsPathsAreRecognised()
+    {
+        foreach ( array( 'extension/ezmbpaex/tests/ezmbpaexforgotpasswordviewtest.php', 'extension\ezmbpaex\tests\ezmbpaexforgotpasswordviewtest.php',
+                         'extension/foo/tests/unit/FooTest.php', 'extension/foo/vendor/acme/tool/Tests/Fixture.php',
+                         'extension/foo/vendor/acme/tool/tests/ToolTest.php' ) as $path )
+        {
+            $this->assertTrue( ezpAutoloader::isExtensionTestsPath( $path ), $path );
+        }
+        foreach ( array( 'extension/foo/classes/foo.php', 'extension/foo/tests_old/old.php', 'extension/foo/testsuite/suite.php',
+                         'extension/foo/classes/tests/helper.php', 'extension/foo/vendor/tests/x/y.php', 'kernel/classes/expdemomode.php',
+                         'tests/toolkit/ezpliveinstallation.php', 'extension/foo/tests.php' ) as $path )
+        {
+            $this->assertFalse( ezpAutoloader::isExtensionTestsPath( $path ), $path );
+        }
+    }
+
+    /**
+     * A stale extension array that names a file in an extension's tests/ (#377): outside the tests autoload the entry
+     * is passed over, the kernel's class wins, and a class only the stale entry names is not loaded at all.
+     */
+    public function testAStaleExtensionArrayEntryInTestsIsPassedOver()
+    {
+        $state = Closure::bind( function ( $set = null ) {
+            $old = array( self::$ezpClasses, self::$ezpKernelClasses, self::$ezpTestsEnabled );
+            if ( $set !== null )
+                list( self::$ezpClasses, self::$ezpKernelClasses, self::$ezpTestsEnabled ) = $set;
+            return $old;
+        }, null, 'ezpAutoloader' );
+        $p = 'wp377Stale' . getmypid() . mt_rand( 1000, 9999 );
+        $kernelFile = "$this->dir/$this->name/kernel.php";
+        $this->file( 'kernel.php', "<?php\nclass {$p}Kernel {}\n" );
+        $saved = $state();
+        try
+        {
+            $state( array( array( "{$p}Kernel" => "extension/{$p}/tests/stand-in.php", "{$p}Only" => "extension/{$p}/tests/only.php" ),
+                           array( "{$p}Kernel" => $kernelFile ), false ) );
+            ezpAutoloader::autoload( "{$p}Only" );
+            $this->assertFalse( class_exists( "{$p}Only", false ), 'a class only a stale tests entry names is not loaded' );
+            ezpAutoloader::autoload( "{$p}Kernel" );
+            $this->assertTrue( class_exists( "{$p}Kernel", false ), "the kernel's class is loaded instead of the stale tests entry" );
+        }
+        finally
+        {
+            $state( $saved );
+        }
+    }
+
     public function testPathExpressionQuotesThePathAndAcceptsEitherSeparator()
     {
         $expression = '@^' . eZAutoloadGenerator::pathExpression( 'C:\inetpub\www (1)\site+x\\' ) . '$@';

@@ -2222,7 +2222,8 @@
       "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
     ],
     "autoload.php": [
-      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php",
+      "tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php"
     ],
     "kernel/private/classes/runnable/command.php": [
       "tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php"
