@@ -269,6 +269,8 @@ nginx with PHP-FPM keep working as before.
 - [Faster access arrays for users with many role assignments](access-array-prefetch.md)
 - [Notifications: the user's guide](notifications.md)
 - [E-mail preferences: the user's guide](mail-preferences.md)
+- [Reading mailboxes: the shared rules](mail-receive.md): automatic replies, delay notices, one failing account
+  or message, deleting after storing, fake IMAP and POP3 servers for tests
 
 ## The Exponential Platform line
 

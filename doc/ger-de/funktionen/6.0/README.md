@@ -235,6 +235,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Schnellere Zugriffsarrays für Benutzer mit vielen Rollenzuweisungen](vorabladen-des-zugriffsarrays.md)
 - [Benachrichtigungen: die Anleitung für Benutzer](benachrichtigungen.md)
 - [E-Mail-Einstellungen: die Anleitung für Benutzer](e-mail-einstellungen.md)
+- [Postfächer lesen: die gemeinsamen Regeln](postfaecher-lesen.md): automatische Antworten, Verzögerungsmeldungen,
+  ein fehlschlagendes Konto oder eine Nachricht, Löschen nach dem Speichern, nachgebildete IMAP- und POP3-Server für Tests
 
 ## Die Linie Exponential Platform
 

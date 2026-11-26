@@ -1594,6 +1594,7 @@ return array(
       'expMailPreferenceRow'                                         => 'kernel/classes/mailpreferences/expmailpreferencerow.php',
       'expMailPreferences'                                           => 'kernel/classes/mailpreferences/expmailpreferences.php',
       'expMailPreferencesService'                                    => 'kernel/classes/mailpreferences/expmailpreferencesservice.php',
+      'expMailReceive'                                               => 'kernel/classes/mail/expmailreceive.php',
       'expMailRecipient'                                             => 'kernel/classes/mailpreferences/expmailrecipient.php',
       'expMailSecret'                                                => 'kernel/classes/mailpreferences/expmailsecret.php',
       'expMailSenderDetails'                                         => 'kernel/classes/mailpreferences/expmailsenderdetails.php',

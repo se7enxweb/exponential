@@ -170,6 +170,8 @@ class expMailBounceReader
             $numbers = self::messageNumbers( $transport );
             $max = max( 1, (int)self::setting( 'MaxMessages', 500 ) );
             $delete = !$dryRun && self::setting( 'AfterRead', 'keep' ) === 'delete';
+            // only a message that is understood (or taken by a listener) leaves the server, after the reading
+            $done = array();
             foreach ( array_slice( $numbers, 0, $max ) as $number )
             {
                 $raw = self::fetchRaw( $transport, $number, $dryRun );
@@ -178,10 +180,10 @@ class expMailBounceReader
                 if ( $report )
                     call_user_func( $report, self::describe( $item, '#' . $number ) );
                 if ( $delete && ( $item['kind'] !== self::NONE || !empty( $item['handled'] ) ) )
-                    $transport->delete( $number );
+                    $done[] = $number;
             }
-            if ( $delete && $transport instanceof ezcMailImapTransport )
-                $transport->expunge();
+            if ( $delete )
+                expMailReceive::deleteMessages( $transport, $done );
         }
         catch ( Throwable $e )
         {
@@ -190,16 +192,7 @@ class expMailBounceReader
             $out['counts']['errors']++;
             eZDebug::writeError( 'Bounce reader: ' . $out['error'], __METHOD__ );
         }
-        if ( $transport )
-        {
-            try
-            {
-                $transport->disconnect();
-            }
-            catch ( Throwable $e )
-            {
-            }
-        }
+        expMailReceive::disconnect( $transport );
         if ( !$dryRun )
             self::writeStatus( $out['counts'], $out['error'] );
         return $out;
@@ -330,60 +323,28 @@ class expMailBounceReader
 
     // ------------------------------------------------------------------ the mailbox
 
-    /** @return ezcMailImapTransport|ezcMailPop3Transport connected and logged in */
+    /** @return ezcMailImapTransport|ezcMailPop3Transport connected and logged in (expMailReceive::connect()) */
     protected static function connect()
     {
-        $server = trim( (string)self::setting( 'Server' ) );
-        $port = (int)self::setting( 'Port', 0 );
-        $ssl = self::setting( 'SSL', 'enabled' ) !== 'disabled';
-        $user = (string)self::setting( 'User' );
-        $password = (string)self::setting( 'Password' );
-        if ( self::protocol() === 'pop3' )
-        {
-            $options = new ezcMailPop3TransportOptions();
-            $options->ssl = $ssl;
-            $transport = new ezcMailPop3Transport( $server, $port > 0 ? $port : null, $options );
-            $transport->authenticate( $user, $password );
-            return $transport;
-        }
-        $options = new ezcMailImapTransportOptions();
-        $options->ssl = $ssl;
-        $transport = new ezcMailImapTransport( $server, $port > 0 ? $port : null, $options );
-        $transport->authenticate( $user, $password );
-        $transport->selectMailbox( (string)self::setting( 'Folder', 'INBOX' ) );
-        return $transport;
+        return expMailReceive::connect( array( 'protocol' => self::protocol(),
+                                               'server' => (string)self::setting( 'Server' ),
+                                               'port' => (int)self::setting( 'Port', 0 ),
+                                               'ssl' => self::setting( 'SSL', 'enabled' ) !== 'disabled',
+                                               'user' => (string)self::setting( 'User' ),
+                                               'password' => (string)self::setting( 'Password' ),
+                                               'folder' => (string)self::setting( 'Folder', 'INBOX' ) ) );
     }
 
     /** @return int[] the messages to read: IMAP the unread ones, POP3 all */
     protected static function messageNumbers( $transport )
     {
-        if ( $transport instanceof ezcMailImapTransport )
-        {
-            $set = $transport->searchMailbox( 'UNSEEN' );
-            return array_map( 'intval', (array)$set->getMessageNumbers() );
-        }
-        return array_map( 'intval', array_keys( (array)$transport->listMessages() ) );
+        return expMailReceive::messageNumbers( $transport, true );
     }
 
-    /** @return string the whole message */
+    /** @return string the whole message; a dry run leaves an IMAP message unread, so the next real run reads it */
     protected static function fetchRaw( $transport, $number, $dryRun )
     {
-        $set = $transport->fetchByMessageNr( $number );
-        $raw = '';
-        while ( ( $line = $set->getNextLine() ) !== null )
-            $raw .= $line;
-        if ( $dryRun && $transport instanceof ezcMailImapTransport )
-        {
-            // a dry run leaves the message unread, so the next real run reads it
-            try
-            {
-                $transport->clearFlag( (string)$number, 'SEEN' );
-            }
-            catch ( Throwable $e )
-            {
-            }
-        }
-        return $raw;
+        return expMailReceive::fetchRaw( $transport, $number, $dryRun );
     }
 
     // ------------------------------------------------------------------ understanding a message

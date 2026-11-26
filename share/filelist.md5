@@ -28,7 +28,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-e715c43a537d789d103e69e23fe5689e  autoload/ezp_kernel.php
+53fbbcff024e6e93600321416e51956e  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-2e8a2f7b1303a87b85e16dde51eefae0  doc/changelogs/6.0/6.0.15.md
+e7d077f6559b1365cfc1963182240a18  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6968,7 +6968,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-5b21608aa0bb6bbddfbfc6a342d02d6a  doc/eng-us/features/6.0/README.md
+4a21d6184a1fb68a21191c40f2d5592e  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7090,6 +7090,7 @@ dc5174c6c6658955b28fe63f7b7a8047  doc/eng-us/features/6.0/legacy-fork-fixes.md
 636c8c263571ab562af1d79e9412bf9b  doc/eng-us/features/6.0/log-viewer.md
 3bbfd911c86b7d7853c0838a963d01f4  doc/eng-us/features/6.0/mail-layout.md
 fb41e999d70ad1fbeef83693d1ee6c77  doc/eng-us/features/6.0/mail-preferences.md
+c5984c436afd8c71814648959a87d3ea  doc/eng-us/features/6.0/mail-receive.md
 70689845801571a8ad48a92751b21397  doc/eng-us/features/6.0/maintenance-mode.md
 a2b887cb3bf61b535d6fca58c72d1ae0  doc/eng-us/features/6.0/managed-by-deployment.md
 ec55512dfd4d53e21c83bcc5cb3607ee  doc/eng-us/features/6.0/migrations.md
@@ -13670,7 +13671,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-92f7b073ac9061f5733789b389eb0c0e  doc/ger-de/.paths.json
+d29d8bd915b57bb01aca43c168662aa7  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17103,7 +17104,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-479d20f836d68765c3ba7b940e159a2d  doc/ger-de/funktionen/6.0/README.md
+92f24aa46588b11d17618d8e8ae88a01  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17260,6 +17261,7 @@ fe5869bd6e0ab614f9de91892d6c9895  doc/ger-de/funktionen/6.0/plattform-nexus-star
 6ded0e62de5d948d8a4f97fac3b2e8e8  doc/ger-de/funktionen/6.0/plattform-php85-framework-forks.md
 393ffffcd603e012a44013ce86323f2b  doc/ger-de/funktionen/6.0/plattform-site-bundles.md
 04a57e6e4790f4c646e57c18412a6b61  doc/ger-de/funktionen/6.0/plattform-sqlite-installation.md
+2624cae468b076c31b77ae21176969b5  doc/ger-de/funktionen/6.0/postfaecher-lesen.md
 93fef405e91996b098ddbe8bbb4dd06c  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
 566dbc8ab28ae074d810044f0c1b0bc8  doc/ger-de/funktionen/6.0/pruefprotokoll.md
 1b7d415eb35e75914386eae1e439cd70  doc/ger-de/funktionen/6.0/pruefung-umgekehrter-beziehungen.md
@@ -25337,11 +25339,12 @@ d31774b82ddca071a196136a4d1e4297  kernel/classes/logviewer/explogredactor.php
 f12b0b16b68d340d908d4933a40af99f  kernel/classes/logviewer/explogtail.php
 02a779e5ee2894dab9a48c54ea7f7b35  kernel/classes/logviewer/explogviewer.php
 8c15a25a6ecf294a399249ce6a503fac  kernel/classes/logviewer/explogviewerconfig.php
+4ec3baaaa84a3acbcf396cdba4faca31  kernel/classes/mail/expmailreceive.php
 2a4cb41b731df7e870d97326cf9c224f  kernel/classes/mail/expmailtemplatebody.php
 96419fd40b3f99a21ca3bf8465b2707e  kernel/classes/mailpreferences/expconsentcontext.php
 c34859584019ed0d0e0a9e6784eb4a36  kernel/classes/mailpreferences/expconsentlog.php
 ec2e805f03dcc0ce4a3616a71e285962  kernel/classes/mailpreferences/expmailaddresschange.php
-ffb035529f42f523ce788dbb3d1d3ae9  kernel/classes/mailpreferences/expmailbouncereader.php
+f944cdecc1067191d1d90e1df973b1e8  kernel/classes/mailpreferences/expmailbouncereader.php
 54d449bf9249c20c665189b3ad110390  kernel/classes/mailpreferences/expmailcategory.php
 5fd014e303b5915659371dab191d7206  kernel/classes/mailpreferences/expmailcategoryhandler.php
 e8edeaf08ccfdd27554dabd6a7369c88  kernel/classes/mailpreferences/expmailcategoryregistry.php
@@ -29822,6 +29825,7 @@ dd7f274ea21a1a88848ce1f649f530f6  tests/tests/kernel/classes/ini/expIniRoundTrip
 bd25076f8b7ba02a3816eb1c5ffc7ed0  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 7b4ca49e14dbc25e151be867350808cb  tests/tests/kernel/classes/installationdetails/ExpInstallationDetailsTest.php
 ec56419b8f81359360afffd966df8bea  tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php
+2e07cbe6049c91bf797bae83a57b9d6a  tests/tests/kernel/classes/mail/expMailReceiveTest.php
 9ff27e0531dcf1671ef85dd7d7399bcb  tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php
 f40856b781c318dab05e018c6ea674a0  tests/tests/kernel/classes/mail/expTipafriendSenderTest.php
 c58ac94aa2a04e97f09866c38acc5b84  tests/tests/kernel/classes/mail/ezpMailMessageIdTest.php
@@ -30983,6 +30987,8 @@ cb971b0893048ad24ff035bcf1c1de14  tests/tests/lib/twig/expTwigLibraryGuardTest.p
 25377c1ae5bb295834b6521aec89c0e7  tests/tests/lib/twig/expTwigReverseConverterTest.php
 fa11f35df00ad9b54f4a239edb9f5044  tests/tests/lib/twig/expTwigSecurityTest.php
 38675292467798330c3c3dc062b0374c  tests/tests/lib/twig/expTwigTemplateRenderTest.php
+737a3084ea8d98d32fd052717664a167  tests/toolkit/expfakemailserver.php
+d03c7169b05def269450124caa076372  tests/toolkit/extras/fakemailserver/server.php
 eb5acd70adba577abb6f9c5588a8a4a1  tests/toolkit/extras/kernelwrapper/README
 9a0fa3c87ea8867d174344f3a74727b8  tests/toolkit/extras/kernelwrapper/classes/class.php
 410578b16e1415bfa591280925920137  tests/toolkit/extras/kernelwrapper/classes/node.php

@@ -3546,6 +3546,7 @@
     "funktionen/6.0/plattform-php85-framework-forks.md": "features/6.0/platform-php85-framework-forks.md",
     "funktionen/6.0/plattform-site-bundles.md": "features/6.0/platform-site-bundles.md",
     "funktionen/6.0/plattform-sqlite-installation.md": "features/6.0/platform-sqlite-install.md",
+    "funktionen/6.0/postfaecher-lesen.md": "features/6.0/mail-receive.md",
     "funktionen/6.0/postgresql-18-und-19.md": "features/6.0/postgresql-18-and-19.md",
     "funktionen/6.0/postgresql-dfs-cluster.md": "features/6.0/postgresql-dfs-cluster.md",
     "funktionen/6.0/pruefprotokoll.md": "features/6.0/audit-trail.md",
