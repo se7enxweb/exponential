@@ -3,8 +3,8 @@ title: Datenbankunterstützung
 audience: admin, developer
 category: install-upgrade
 order: 10
-summary: Welche Datenbanken Exponential 6.0.x unterstützt und in welcher Reihenfolge (zuerst SQLite, dann PostgreSQL, MongoDB, MariaDB, Oracle, MySQL sowie Microsoft SQL Server mit Azure SQL), mit einer Unterstützungsmatrix und jeweils mit Versionen, PHP-Erweiterungen, Einstellungen, Installern, Clustering, Zeichensätzen, Performance, Backup und Wiederherstellung, Grenzen, Migration und Testabdeckung.
-keywords: Datenbank, Datenbanken, unterstützte Datenbanken, Unterstützungsmatrix, support matrix, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, Datenbanktreiber, Sicherung, Wiederherstellung, Migration, Zeichensatz, Anforderungen, Versionen, Testabdeckung, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, database, databases, supported databases, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
+summary: Welche Datenbanken Exponential 6.0.x unterstützt und in welcher Reihenfolge (zuerst SQLite, dann PostgreSQL, MongoDB, MariaDB, Oracle, MySQL sowie Microsoft SQL Server mit Azure SQL), die in 6.0.15 hinzugekommenen Datenbanken (Firebird, DuckDB, die Familien des MySQL- und des PostgreSQL-Protokolls, ODBC und MS Access), mit einer Unterstützungsmatrix und jeweils mit Versionen, PHP-Erweiterungen, Einstellungen, Installern, Clustering, Zeichensätzen, Performance, Backup und Wiederherstellung, Grenzen, Migration und Testabdeckung.
+keywords: Datenbank, Datenbanken, unterstützte Datenbanken, Unterstützungsmatrix, support matrix, Firebird, pdo_firebird, DuckDB, FFI, ODBC, MS Access, exp:access:import, TiDB, Vitess, PlanetScale, SingleStore, Xpand, Aurora, CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, Datenbanktreiber, Sicherung, Wiederherstellung, Migration, Zeichensatz, Anforderungen, Versionen, Testabdeckung, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, database, databases, supported databases, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
 featured: true
 context: setup/info, setup/systemupgrade, dse
 type: help
@@ -19,7 +19,9 @@ Integration der Linie 6.0.15 überprüft; wo sich etwas nicht überprüfen ließ
 
 Das Schritt-für-Schritt-Kapitel für den Betrieb, in dem jede Einstellung erklärt wird, ist
 [Kapitel 9 der Installationsanleitung, Datenbanken](../installation/09-datenbanken.md). Diese Seite ist der Überblick und die
-Aussage zur Unterstützung; überall, wo es um Einzelheiten geht, verweist sie auf dieses Kapitel.
+Aussage zur Unterstützung; überall, wo es um Einzelheiten geht, verweist sie auf dieses Kapitel. Jede Datenbank, die
+6.0.15 erreicht, steht in einer Matrix mit einer Entscheidungshilfe je Einsatzzweck auf
+[Eine Datenbank wählen](datenbank-waehlen.md).
 
 ## Inhalt
 
@@ -95,15 +97,25 @@ Was die Reihenfolge in der Praxis bedeutet:
 | TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (ein ungesplitteter Keyspace), SingleStore 8.5+ | `mysqli` | Kickstarter, `exp:install` | beliebig viele Server (das MySQLi-Backend) | TiDB 8.5, Vitess und SingleStore in Containern (Job `mysqlwire`) | unterstützt (neu in 6.0.15): [das MySQL-Protokoll](#datenbanken-die-das-mysql-protokoll-sprechen) |
 | MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | Kickstarter, `exp:install` | das MySQLi-Backend | nein (kein Image; ein verwalteter Dienst) | Treiber und Profile, nicht gemessen |
 | DuckDB | 1.5 und 2.0 (1.5.6 und 2.0.1 getestet) | `ffi` mit DuckDBs C-Bibliothek `libduckdb` | Kickstarter, `exp:install` | keiner: es schreibt immer nur ein Prozess | Treiber- und Live-Tests auf DuckDB 1.5.6 und 2.0.1 und eine ganz installierte Site | unterstützt für kleine Sites, die vor allem gelesen werden (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/duckdb-datenbanktreiber.md#was-geht-und-was-nicht) |
-| CockroachDB (PostgreSQL-Protokoll) | 23.2 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`cockroachdb`) | nicht getestet | die Live-Suite `pgwire-live` auf CockroachDB 25.2, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
-| YugabyteDB (PostgreSQL-Protokoll) | 2.20 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`yugabytedb`) | nicht getestet | die Live-Suite `pgwire-live` auf YugabyteDB 2.25, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
+| CockroachDB (PostgreSQL-Protokoll) | 23.2 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`cockroachdb`) | keins: `exp:cluster:enable` bietet dafür kein Backend an | die Live-Suite `pgwire-live` auf CockroachDB 25.2, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
+| YugabyteDB (PostgreSQL-Protokoll) | 2.20 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`yugabytedb`) | keins: `exp:cluster:enable` bietet dafür kein Backend an | die Live-Suite `pgwire-live` auf YugabyteDB 2.25, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
 | Google Cloud Spanner, PostgreSQL-Dialekt (PGAdapter) | der Spanner-Emulator, PGAdapter | `pgsql` | keiner: keine Site-Datenbank | keins | die Live-Suite `pgwire-live` auf dem Emulator hinter PGAdapter | Datentabellen-Verbindung und Import (neu in 6.0.15) |
-| Neon, Supabase, Amazon Aurora PostgreSQL | das PostgreSQL der Dienste (13 und neuer) | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | wie PostgreSQL, nicht getestet | nur Profile und Unit-Tests; **nicht live getestet** | vollständige Site-Datenbank wie PostgreSQL; Profile neu in 6.0.15 |
+| Neon, Supabase, Amazon Aurora PostgreSQL | das PostgreSQL der Dienste (13 und neuer) | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | keins: `exp:cluster:enable` bietet dafür kein Backend an | nur Profile und Unit-Tests; **nicht live getestet** | vollständige Site-Datenbank wie PostgreSQL, **ungetestet**; Profile neu in 6.0.15 |
+| Firebird | 4.0 und 5.0 | `pdo_firebird` ab PHP 8.4 | Setup-Assistent (mit `pdo_firebird`), Kickstarter, `exp:install` (`firebird`) | noch keins: ein Webserver | 4.0 und 5.0 auf PHP 8.4 und 8.5 (Job `firebird`) | vollständige Site-Datenbank (neu in 6.0.15): [Firebird-Treiber](../funktionen/6.0/firebird-datenbanktreiber.md) |
+| Jede Datenbank über ODBC | der ODBC-Treiber der Datenbank; gemessen auf SQL Server 2022, PostgreSQL 17, MariaDB 11.4, SQLite 3.45 | `pdo_odbc` oder `odbc` | keiner: keine Site-Datenbank | keins | Live-Tests auf vier Datenbanken und beiden Schichten (Job `odbc`); LocalDB unter Windows | Datentabellen-Verbindungen und Importe (neu in 6.0.15): [ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md) |
+| MS Access (`.accdb`, `.mdb`) | Access 97 (JET3) bis ACE | Windows: `odbc`, `pdo_odbc` mit der Access Database Engine x64; Linux: die Programme von MDBTools | keiner: `exp:access:import` | keins | der Import unter Linux; Treiber und Import unter Windows (Job `msaccess-windows`) | Import und unter Windows ein kleiner Treiber für Datentabellen (neu in 6.0.15): [MS Access](../funktionen/6.0/ms-access-unterstuetzung.md) |
 | IBM Db2 | 11.5 und 12.1 (11.5.9 und 12.1.6 getestet) | `pdo_ibm` oder `ibm_db2` mit IBMs Data Server Driver | Setup-Assistent, Kickstarter, `exp:install` (`db2`) | noch keiner: ein Webserver | Treiber- und Live-Tests auf Db2 12.1 und 11.5, auf beiden PHP-Schichten, und eine ganz installierte Site | vollständige Site-Datenbank (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/db2-datenbanktreiber.md#was-geht-und-was-nicht) |
 | IBM Informix | 14.10 und 15 (14.10.FC9W1 und 15.0.1 getestet) | `ibm_db2` mit IBMs Data Server Driver, über den DRDA-Listener | Setup-Assistent, Kickstarter, `exp:install` (`informix`) | noch keiner: ein Webserver | Treiber- und Live-Tests auf Informix 15 und 14.10; eine ganze Site außerhalb der CI auf 15 installiert | vollständige Site-Datenbank (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/informix-datenbanktreiber.md#was-geht-und-was-nicht) |
 
-**In Entwicklung.** Treiber für Microsoft Access und für Datenbanken, die über eine allgemeine ODBC-Verbindung erreicht
-werden, entstehen gerade; sie sind noch in keinem Release enthalten.
+**ODBC und MS Access** (neu in 6.0.15) tragen keine Site. Der allgemeine ODBC-Treiber `expODBCDB`
+(`DatabaseImplementation=odbc`, der SQL-Dialekt in `[ODBCSettings]`) erreicht jede Datenbank mit ODBC-Treiber als
+Datentabellen-Verbindung; `exp:access:import` kopiert die Tabellen einer Access-Datei in die Datenbank der Site oder in
+eine Datentabellen-Verbindung, und unter Windows liest und schreibt der kleine Treiber `expMSAccessDB` Access-Dateien an
+Ort und Stelle. Siehe [ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md) und
+[MS-Access-Unterstützung](../funktionen/6.0/ms-access-unterstuetzung.md).
+
+**In Entwicklung.** Treiber für Datenbanken von IBM und SAP, für Cassandra und ScyllaDB sowie für ClickHouse und
+MonetDB entstehen gerade; sie sind noch in keinem Release enthalten.
 
 **Firebird** (neu in 6.0.15, nicht in der Reihenfolge oben): Firebird 4.0 und 5.0 tragen eine ganze Site mit
 `expFirebirdDB` aus dem Kernel (`DatabaseImplementation=firebird`, pdo_firebird ab PHP 8.4, `exp:install
@@ -162,6 +174,16 @@ Für jede Datenbank gibt es drei verschiedene Zahlen, die man leicht verwechselt
 | MariaDB | 4.1.1 (die MySQL-Nummer) | ein Release, das Ihr Anbieter noch unterstützt; `utf8mb4` und InnoDB | 10.5.29 auf dem Entwicklungsserver |
 | Oracle | 19.0 | **19c** (der Treiber verwendet `STANDARD_HASH` und `OFFSET`/`FETCH`; 11g und älter werden nicht unterstützt) | Oracle AI Database 26ai Free (23.26) mit oci8 3.4.1 und Instant Client 23.26 auf PHP 8.5 |
 | MySQL | 4.1.1 | ein Release, das Ihr Anbieter noch unterstützt; `utf8mb4` und InnoDB | 8.0 in der CI |
+| SQL Server, Azure SQL | 14.0 | **SQL Server 2017** (`STRING_AGG`, `TRIM`, `CONCAT_WS`); 2016 und älter verbinden sich mit einer Warnung, Azure SQL Edge ist eingestellt | 2022 CU28 auf dem Entwicklungsserver; 2017, 2019, 2022 und 2025 in der CI |
+| TiDB | 5.7.25 (was TiDB als MySQL-Version meldet) | **6.5** | 8.5.1 in der CI |
+| Vitess, PlanetScale | 5.7.0 | ein ungesplitteter Keyspace | Vitess 25 `vttestserver` in der CI |
+| SingleStore | 5.7.0 | **8.5** | 10.10 in der CI |
+| MariaDB Xpand, Aurora MySQL | 5.0.45, 8.0.0 | Xpand 6, Aurora MySQL 3 (nach der Dokumentation der Hersteller) | keine: nicht gemessen |
+| CockroachDB | 23.2 | **23.2** (`READ COMMITTED`) | 25.2 in der CI |
+| YugabyteDB | 11.2 (das PostgreSQL, auf dem es aufbaut) | **2.20** | 2.25 in der CI |
+| Neon, Supabase, Aurora PostgreSQL | 14.0, 14.0, 13.0 | wie das PostgreSQL des Dienstes | keine: nicht gemessen |
+| Firebird | 4.0 | **4.0** (Namen über 31 Zeichen, `CRYPT_HASH()`); PHP **8.4** für `pdo_firebird` | 4.0 und 5.0.4 in der CI |
+| DuckDB | 1.5 | **1.5** (die stabile C-API) | 1.5.6 und 2.0.1 in der CI |
 
 Verwenden Sie eine Serverversion, für die Ihr Anbieter noch Sicherheitskorrekturen liefert. Die Untergrenzen gibt es,
 damit der Assistent einen alten Server nicht von vornherein ablehnt; sie sind kein Versprechen, dass ein Server dieses
@@ -174,10 +196,13 @@ der empfohlene Webserver, braucht PHP 8.0. Siehe [Kapitel 2](../installation/02-
 ## PHP-Erweiterungen
 
 Eine Datenbankerweiterung ist erforderlich; der kritische Test `database_extensions` des Setup-Assistenten ist
-bestanden, wenn mindestens eine von `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv` und `pdo_sqlsrv` geladen
-ist (`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv`,
-`Require=one`).
-Installieren Sie nur die, die Ihre Site verwendet.
+bestanden, wenn mindestens eine von `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv` und
+`pdo_firebird` geladen ist (`settings/setup.ini`,
+`[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird`, `Require=one`).
+Die Datenbankseite des Assistenten bietet dann die Datenbanken von `sqlite3`, `mysqli`, `pgsql` (mit den Datenbanken
+des PostgreSQL-Protokolls), `mongodb`, `oci8` und `pdo_firebird` an; ein PHP, das nur `sqlsrv` oder `pdo_sqlsrv` hat,
+besteht den Test, bekommt dort aber keine Datenbank angeboten: Installieren Sie SQL Server mit dem Kickstarter oder
+`exp:install`. Installieren Sie nur die Erweiterung, die Ihre Site verwendet.
 
 | Datenbank | Erweiterung | Woher sie kommt |
 |---|---|---|
@@ -187,6 +212,12 @@ Installieren Sie nur die, die Ihre Site verwendet.
 | MariaDB, MySQL | `mysqli` | in PHP enthalten (mysqlnd); `php-mysqlnd`, `php<version>-mysql` |
 | SQL Server, Azure SQL | `sqlsrv` oder `pdo_sqlsrv` (PECL, Microsoft), oder `pdo_odbc` mit Microsofts ODBC Driver 17 oder 18, oder `pdo_dblib` (FreeTDS) | Microsofts Pakete für Linux und seine DLLs für Windows; `pdo_odbc` und `pdo_dblib` gehören zu PHP ([Schichten](../funktionen/6.0/sqlserver-datenbanktreiber.md)) |
 | Oracle | `oci8` (PECL) | PECL oci8 3.4 für PHP 8.4 und 8.5, 3.2 für PHP 8.1 bis 8.3, gebaut gegen einen Oracle-Client (der Instant Client genügt); EPEL, Remi oder Ihr Anbieter |
+| TiDB, Vitess, SingleStore, Xpand, Aurora MySQL | `mysqli` | wie MySQL |
+| CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Aurora PostgreSQL | `pgsql` | wie PostgreSQL |
+| Firebird | `pdo_firebird` ab **PHP 8.4** | mit PHP geliefert; braucht die Client-Bibliothek von Firebird (`libfbclient2`; `firebird-dev`, um PHP damit zu bauen). PHP 8.3 und älter: dessen `pdo_firebird` hält im Autocommit-Modus eine Transaktion offen und wird abgelehnt |
+| DuckDB | `ffi` und die C-Bibliothek `libduckdb` von DuckDB | `ffi` wird mit PHP geliefert (`php-ffi`, `php<version>-ffi`); `ffi.enable=true` im Pool des Web-PHP (der Standard `preload` erlaubt FFI nur auf der Kommandozeile); `libduckdb.so` aus den Releases von DuckDB |
+| ODBC | `pdo_odbc` (Standard) oder `odbc` | mit PHP geliefert; unter Linux unixODBC und der ODBC-Treiber der Datenbank |
+| MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine 2016 x64; Linux: die Programme von MDBTools (`mdb-tables`, `mdb-schema`, `mdb-json`) für den Import | das Redistributable von Microsoft; `mdbtools` (Debian, Ubuntu, EPEL) |
 
 Prüfen Sie mit `php -m`, welche Erweiterungen ein PHP hat, und denken Sie daran, dass das PHP des Webservers und das
 PHP der Kommandozeile getrennt konfiguriert sind: Prüfen Sie beide. Der optionale Test `database_all_extensions` des
@@ -207,6 +238,12 @@ Treiber mit einem Alias, den `ImplementationAlias[]` einer Klasse zuordnet:
 | `ezmysqli`, `mysqli`, `ezmysql`, `mysql` | `eZMySQLiDB` (`lib/ezdb/classes/ezmysqlidb.php`) |
 | `ezoracle`, `oracle` | `eZOracleDB` (in der Erweiterung `ezoracle`, registriert durch deren eigene `site.ini.append.php`) |
 | `duckdb` | `expDuckDBDB` (`lib/ezdb/classes/expduckdbdb.php`) |
+| `sqlserver`, `mssql`, `sqlsrv` | `expSQLServerDB` (`lib/ezdb/classes/expsqlserverdb.php`) |
+| `firebird`, `fb` | `expFirebirdDB` (`lib/ezdb/classes/expfirebirddb.php`) |
+| `tidb`; `vitess`, `planetscale`; `singlestore`, `memsql`; `xpand`; `aurora`, `auroramysql` | `expTiDBDB`, `expVitessDB`, `expSingleStoreDB`, `expXpandDB`, `expAuroraMySQLDB` (`expMySQLWireDB`) |
+| `cockroachdb`, `cockroach`, `crdb`; `yugabytedb`, `yugabyte`, `ysql`; `spanner`, `spannerpg`, `pgadapter`; `neon`, `neondb`; `supabase`; `aurorapostgresql`, `aurora-postgresql` | `expCockroachDB`, `expYugabyteDB`, `expSpannerPGDB`, `expNeonDB`, `expSupabaseDB`, `expAuroraPostgreSQLDB` (`expPostgreSQLWireDB`) |
+| `odbc` | `expODBCDB` (`lib/ezdb/classes/expodbcdb.php`) |
+| `msaccess`, `access` | `expMSAccessDB` (`lib/ezdb/classes/expmsaccessdb.php`) |
 | `db2`, `ibm_db2` | `expDb2DB` (`lib/ezdb/classes/expdb2db.php`) |
 | `informix`, `ifx` | `expInformixDB` (`lib/ezdb/classes/expinformixdb.php`) |
 
@@ -301,8 +338,10 @@ fehl. Lesen Sie zuerst `error.log`, wenn sich eine Site verhält, als wäre ihre
 
 ## Unterstützung durch die Installer
 
-Exponential hat drei Installer im Kernel. Alle drei unterstützen die ersten sechs Datenbanken; Microsoft SQL Server wird
-mit dem Kickstarter und `exp:install` installiert.
+Exponential hat drei Installer im Kernel. Alle drei unterstützen die ersten sechs Datenbanken, Firebird und die
+Datenbanken des PostgreSQL-Protokolls; Microsoft SQL Server, die Datenbanken des MySQL-Protokolls und DuckDB werden mit
+dem Kickstarter und `exp:install` installiert. ODBC, MS Access und Spanner sind keine Site-Datenbanken und haben keinen
+Eintrag in den Installern.
 
 | Datenbank | Setup-Assistent (Browser) | Kickstarter (`kickstart.ini`, `[database_choice] Type=`) | `exp:install --db=` |
 |---|---|---|---|
@@ -314,6 +353,9 @@ mit dem Kickstarter und `exp:install` installiert.
 | 6. MySQL | ja, als „MySQL Improved“ | `mysqli` (`mysql` wird akzeptiert) | `mysql` (auch `mysqli`) |
 | 7. SQL Server, Azure SQL | | `sqlserver` (`mssql`, `sqlsrv` werden akzeptiert), mit `Encrypt` und `TrustServerCertificate` | `sqlserver` (auch `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; die Datenbank muss existieren |
 | CockroachDB, YugabyteDB, Neon, Supabase, Aurora | ja, nach PostgreSQL aufgeführt, wenn `pgsql` geladen ist | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, mit `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | dieselben Namen; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
+| TiDB, Vitess / PlanetScale, SingleStore, Xpand, Aurora MySQL | | `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`), mit `SSL` und `SSLCA` | dieselben Namen; `--db-ssl=enabled` oder `verify`, `--db-ssl-ca`; auf Vitess muss der Keyspace bestehen |
+| Firebird | ja, wenn `pdo_firebird` geladen ist | `firebird` (auch `fb`, `pdo_firebird`) | `firebird` (auch `fb`); die Datenbank muss bestehen (`PAGE_SIZE 16384`, UTF8); Standardport 3050, Benutzer `SYSDBA` |
+| DuckDB | | `duckdb`; `Database` ist die Datei | `duckdb`; `--db-name` ist die Datei (Standard `var/storage/duckdb/exponential.duckdb`) |
 
 - Fehlt die Erweiterung `sqlite3`, wählt der Assistent die erste Datenbank, deren Erweiterung geladen ist, und weist
   darauf hin.
@@ -640,6 +682,16 @@ Das vollständige Verfahren steht in [Kapitel 10, Backups und Wiederherstellung]
 | 4. MariaDB | `mariadb-dump --single-transaction -u exponential -p exponential > exponential.sql` | `mariadb -u exponential -p exponential < exponential.sql` |
 | 5. Oracle | `php bin/php/console ext:ezoracle:datapump` (siehe dessen `--help`) oder Oracles `expdp` | Oracles `impdp` |
 | 6. MySQL | `mysqldump --single-transaction -u exponential -p exponential > exponential.sql` | `mysql -u exponential -p exponential < exponential.sql` |
+| 7. SQL Server, Azure SQL | `BACKUP DATABASE [site] TO DISK = '/backup/site.bak'` oder die automatischen Sicherungen des Dienstes | `RESTORE DATABASE` |
+| Firebird | `gbak -b -user SYSDBA exponential /backup/exponential.fbk` | `gbak -c` in eine neue Datenbank |
+| DuckDB | die Datei kopieren, solange kein Prozess schreibt, oder `EXPORT DATABASE '/backup/site'` im Programm `duckdb` | die Kopie oder `IMPORT DATABASE` |
+| YugabyteDB | `ysql_dump` (nicht `pg_dump` aus PostgreSQL 17, dessen Dump YugabyteDB 2.25 ablehnte) | `ysqlsh` |
+| TiDB, Vitess, SingleStore, CockroachDB, die Cloud-Dienste | die eigene Sicherung der Datenbank oder des Dienstes | dieselbe |
+
+Die Sicherheitskopie, die `exp:upgrade` vor dem Schreiben anlegt (`exp:upgrade:backup`), hat einen eingebauten Dump nur
+für SQLite, MySQL/MariaDB, PostgreSQL und MongoDB; auf Oracle, SQL Server, Firebird und DuckDB meldet sie „no built-in
+dump“, und die Aktualisierung läuft nach Ihrer eigenen Sicherung mit `--no-backup`
+([Eine Datenbank wählen](datenbank-waehlen.md#sicherungen-und-sicherungspunkte-vor-aktualisierungen)).
 
 `--single-transaction` erzeugt einen konsistenten Dump von InnoDB-Tabellen, ohne sie zu sperren. Befehle, die ein
 Passwort auf der Kommandozeile erhalten, zeigen es anderen Benutzern des Rechners; verwenden Sie lieber die
@@ -687,6 +739,10 @@ Wegwerf-Datenbank pro Test laufen.
 | Firebird | ja, Treiber-, Live- und Kernel-Schema-Tests | der Job „firebird“ mit `firebirdsql/firebird` 5 und 4 als Service-Container und `pdo_firebird`, PHP 8.4 und 8.5 |
 | IBM Db2, IBM Informix | ja, Treiber-, Live- und Kernel-Schema-Tests, eine ganze Site auf Db2 | der Job „db2“ mit Db2 Community Edition 12.1 und 11.5 und Informix Developer Edition 15 und 14.10 als Container, `pdo_ibm` und `ibm_db2`, PHP 8.5 und 8.3 |
 | 7. SQL Server | ja, Treiber-, Live- und DFS-Tests | der Job „sqlserver“ mit `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 und 2025 und ODBC Driver 18, auf `sqlsrv`, `pdo_sqlsrv` und `pdo_odbc` und PHP 8.1 bis 8.5; der Job „SQL Server LocalDB smoke“ unter Windows mit PHP 8.4 |
+| MySQL-Protokoll | ja, Treiber- und Live-Tests | die Testsuite `mysqlwire`; der Job `mysqlwire` führt `mysqlwire-live` gegen TiDB 8.5, Vitess (`vttestserver`) und SingleStore (Dev-Image) in Containern aus. Xpand und Aurora MySQL: nur Tests ohne Server |
+| DuckDB | ja, Treiber- und Live-Tests und eine ganze Site | der Job `duckdb` auf DuckDB 2.0.1 (PHP 8.5) und 1.5.6 (PHP 8.3); auf 2.0.1 installiert er eine Site und ruft ihre Startseite und die Anmeldung der Administration ab |
+| ODBC | ja, Treiber- und Live-Tests | der Job `odbc` unter Linux (SQL Server, PostgreSQL, MariaDB und SQLite, `pdo_odbc` und `odbc`); der Windows-Job „ODBC on Windows“ gegen LocalDB |
+| MS Access | Import und Treiber | der Live-Test des Imports unter Linux mit MDBTools; der Job `msaccess-windows` (windows-2022, windows-2025, Access Database Engine 2016 x64, PHP 8.4) für Treiber und Import |
 | PostgreSQL-Protokoll | ja, Treiber- und Live-Tests | die Testsuite `pgwire` im PHPUnit-Job; der Job „PostgreSQL wire protocol“ führt `pgwire-live` gegen CockroachDB 25.2, YugabyteDB 2.25 und den Spanner-Emulator hinter PGAdapter aus, PHP 8.1 und 8.5. Neon, Supabase und Aurora: nur Unit-Tests |
 
 PHP 8.0, die älteste unterstützte Version, und PHP 7.4 (ohne Support nutzbar) prüft der Quality-Workflow mit einer Syntaxprüfung jeder PHP-Datei und einem
@@ -705,15 +761,23 @@ Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, 
 
 - **Setup > Upgrade-Prüfung**, „Überprüfe Datenbankkonsistenz“, vergleicht die Tabellen, Felder und Indizes mit dem
   Schema des Release für MySQL und MariaDB, PostgreSQL, SQLite und MongoDB ([Die Upgrade-Prüfung](../anleitungen/upgrade-pruefung.md)).
-- Im Code: `eZDB::instance()->databaseName()` liefert `sqlite`, `postgresql`, `mongo`, `mysql`, `oracle` oder `SQLServer`.
+- Im Code: `eZDB::instance()->databaseName()` liefert `sqlite`, `postgresql`, `mongo`, `mysql`, `oracle`, `SQLServer`,
+  `firebird`, `duckdb`, `MSAccess` oder, für den allgemeinen ODBC-Dialekt, `odbc`. Die Datenbanken des MySQL-Protokolls
+  antworten `mysql`, die des PostgreSQL-Protokolls `postgresql`; bei letzteren nennt `databaseVariant()` die Datenbank
+  selbst.
 
 ## Verwandte Seiten
 
+- [Eine Datenbank wählen](datenbank-waehlen.md): jede Datenbank von 6.0.15 in einer Matrix, mit einer Hilfe je
+  Einsatzzweck.
 - [Kapitel 9, Datenbanken](../installation/09-datenbanken.md): die Referenz für den Betrieb jeder Engine.
 - [Kapitel 2, Anforderungen](../installation/02-voraussetzungen.md#26-datenbanken) und [Unterstützte Betriebssysteme](betriebssystemunterstuetzung.md).
 - [Weg von einer alten Datenbank](weg-von-einer-alten-datenbank.md), [Exponential unter Windows](exponential-unter-windows.md).
 - [Microsoft-SQL-Server-Treiber](../funktionen/6.0/sqlserver-datenbanktreiber.md),
   [Datenbanken mit dem PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md),
+  [Datenbanken, die das MySQL-Protokoll sprechen](../funktionen/6.0/mysql-wire-datenbanken.md),
+  [Firebird-Treiber](../funktionen/6.0/firebird-datenbanktreiber.md), [DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md),
+  [ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md), [MS-Access-Unterstützung](../funktionen/6.0/ms-access-unterstuetzung.md),
   [Clustering in Exponential 6.0](../funktionen/6.0/clustering-ueberblick.md).
 - [SQLite-Datenbankunterstützung](../funktionen/6.0/sqlite-datenbank.md),
   [SQLite: Transaktionen warten in einer Warteschlange auf die Schreibsperre](../bc/6.0/sqlite-transaktionen.md),
