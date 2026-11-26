@@ -110,6 +110,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Datenbanken, die das MySQL-Protokoll sprechen](mysql-wire-datenbanken.md): TiDB, Vitess und PlanetScale,
   SingleStore, MariaDB Xpand und Aurora MySQL auf dem MySQL-Treiber mit je einem Profil; was je Datenbank geht und was
   nicht
+- [DuckDB-Treiber](duckdb-datenbanktreiber.md): `expDuckDBDB`, eine ganze Site in einer DuckDB-Datei über PHPs
+  FFI-Erweiterung; es schreibt immer nur ein Prozess; was geht und was nicht
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
   Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)

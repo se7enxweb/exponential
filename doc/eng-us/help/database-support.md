@@ -89,6 +89,7 @@ What the order means in practice:
 | Microsoft SQL Server, Azure SQL | 2017, 2019, 2022, 2025; Azure SQL Database and Managed Instance | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` | kickstarter, `exp:install` | any number of servers (`expDFSFileHandlerSQLServerBackend`), Always On read replicas | 2017, 2019, 2022 and 2025 on PHP 8.1 to 8.5 across three PHP layers; LocalDB on Windows | supported (new in 6.0.15) |
 | TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (an unsharded keyspace), SingleStore 8.5+ | `mysqli` | kickstarter, `exp:install` | any number of servers (the MySQLi backend) | TiDB 8.5, Vitess and SingleStore in containers (job `mysqlwire`) | supported (new in 6.0.15): [the MySQL protocol](#databases-that-speak-the-mysql-protocol) |
 | MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | kickstarter, `exp:install` | the MySQLi backend | no (no image; a managed service) | drivers and profiles, not measured |
+| DuckDB | 1.5 and 2.0 (1.5.6 and 2.0.1 tested) | `ffi` with DuckDB's C library `libduckdb` | kickstarter, `exp:install` | none: one process writes at a time | driver and live tests on DuckDB 1.5.6 and 2.0.1, and a whole site installed | supported for small and read-mostly sites (new in 6.0.15); [what works and what does not](../features/6.0/duckdb-database-driver.md#what-works-and-what-does-not) |
 
 **In development.** Drivers for Microsoft Access and for databases reached through a generic ODBC connection are
 being built; they are not part of a release yet.
@@ -97,6 +98,10 @@ being built; they are not part of a release yet.
 `expFirebirdDB` (`DatabaseImplementation=firebird`, pdo_firebird of PHP 8.4 or later, `exp:install --db=firebird`),
 tested on every push against both versions. There is no DFS cluster backend for it yet and no read replicas: a site
 on Firebird runs on one web server. Details and limits: [Firebird driver](../features/6.0/firebird-database-driver.md).
+
+**DuckDB** (`DatabaseImplementation=duckdb`, `exp:install --db=duckdb`) keeps a whole site in one file, reached through
+PHP's FFI extension. DuckDB lets one process write at a time, so it suits small and read-mostly sites, single editors,
+build and demo sites; there is no DFS cluster on it. See [DuckDB driver](../features/6.0/duckdb-database-driver.md).
 
 Moving an existing site from one engine to another: [Moving off an old database](moving-off-an-old-database.md).
 
@@ -176,6 +181,7 @@ override for you. `DatabaseImplementation` names the driver by an alias that `Im
 | `mongodb` | `expMongoDB` (`lib/ezdb/classes/expmongodb.php`) |
 | `ezmysqli`, `mysqli`, `ezmysql`, `mysql` | `eZMySQLiDB` (`lib/ezdb/classes/ezmysqlidb.php`) |
 | `ezoracle`, `oracle` | `eZOracleDB` (in the `ezoracle` extension, registered by its own `site.ini.append.php`) |
+| `duckdb` | `expDuckDBDB` (`lib/ezdb/classes/expduckdbdb.php`) |
 
 The examples below use placeholder names and passwords; put your own values in your override file and never commit
 that file. Every key is explained in [9.1 How Exponential chooses a database driver](../install/09-databases.md#91-how-exponential-chooses-a-database-driver).

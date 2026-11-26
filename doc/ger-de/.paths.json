@@ -3579,6 +3579,7 @@
     "funktionen/6.0/firebird-datenbanktreiber.md": "features/6.0/firebird-database-driver.md",
     "funktionen/6.0/ms-access-unterstuetzung.md": "features/6.0/ms-access-support.md",
     "funktionen/6.0/mysql-wire-datenbanken.md": "features/6.0/mysql-wire-databases.md",
+    "funktionen/6.0/duckdb-datenbanktreiber.md": "features/6.0/duckdb-database-driver.md",
     "funktionen/6.0/sqlserver-dfs-cluster.md": "features/6.0/sqlserver-dfs-cluster.md",
     "funktionen/6.0/standard-extension-auslieferung.md": "features/6.0/default-extension-distribution.md",
     "funktionen/6.0/standardwerte-einer-sauberen-installation.md": "features/6.0/clean-install-defaults.md",
