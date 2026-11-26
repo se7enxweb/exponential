@@ -26,6 +26,26 @@ Please install responsibly and install (via composer) the software's php librari
 
 **Exponential has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9**
 
+# Exponential today
+
+Exponential is a modern content management system that runs where your organization already runs:
+
+- **Linux, macOS and Windows.** Windows is a first-class platform: the official PHP for Windows with IIS, Apache or
+  Exponential Velocity, on Windows Server 2022 and 2025 and on Windows 10 and 11
+  ([Exponential on Windows](doc/eng-us/help/exponential-on-windows.md)).
+- **Current PHP**: PHP 8.0 to 8.5 supported, PHP 7.4 usable without support
+  ([why 7.4](doc/eng-us/help/why-exponential-supports-php-7-4.md)).
+- **Seven databases on one kernel**: SQLite (no server at all), PostgreSQL 13 to 19, MongoDB, MariaDB, Oracle, MySQL,
+  and **Microsoft SQL Server 2017 to 2025 and Azure SQL**, new in 6.0.15 ([Databases](#databases)).
+- **Clustering in one command**: `exp:cluster:enable` turns a site into a DFS cluster whose file metadata lives on the
+  site's own database, with a metadata backend for every supported engine
+  ([Cluster mode](#cluster-mode-on-every-platform)).
+- **Exponential Velocity**, the application server that ships with Exponential, on Linux, macOS and Windows
+  ([How Exponential is served](#how-exponential-is-served)).
+
+Stuck on an old database? [Moving off an old database](doc/eng-us/help/moving-off-an-old-database.md) shows why and
+how to move a site to a current engine.
+
 # Who is 7x
 
 [7x](https://se7enx.com) is the North American corporation driving The Continued General Use, Support, Development, Hosting, Design of Exponential Enterprise Open Source Content Management System in 2025.
@@ -81,7 +101,12 @@ The 6.0.15 line also brings, among much else (the full list is in the
   currencies, for every inhabited country and territory; the administration in more than 150 languages, all of them
   complete (the current totals are at the top of [languages](doc/eng-us/languages.md)); right-to-left languages get
   `dir="rtl"` in content and in the administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
-- **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5 (PHP 7.4 usable without support), and the bundled
+- **Microsoft SQL Server and Azure SQL** on a driver of the kernel's own (`expSQLServerDB`), with installer entries
+  and a DFS cluster backend, tested on SQL Server 2017, 2019, 2022 and 2025 and on Windows
+  ([SQL Server driver](doc/eng-us/features/6.0/sqlserver-database-driver.md)).
+- **Velocity on Windows**: a portable worker pool (Velocity 0.0.4.63 and later) runs persistent PHP workers where
+  there is no `fork()`, tested on Windows Server 2022 and 2025 ([Exponential on Windows](doc/eng-us/help/exponential-on-windows.md)).
+- **MariaDB, MySQL, PostgreSQL, SQLite, Oracle, MongoDB and SQL Server** on one kernel, PHP 8.0 to 8.5 (PHP 7.4 usable without support), and the bundled
   application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.57`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).
 
@@ -296,10 +321,10 @@ being loaded from its archive: rebuild it first.
   bundled **Exponential Velocity**, which needs nothing installed beyond PHP.
 - (Optional) Database server. Used to store website content (and application information). SQLite needs none.
   **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-  3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-  at this time. Details: [Database support](doc/eng-us/help/database-support.md).
-- Operating system: almost any that runs PHP 8.0 or later (PHP 7.4 usable without support); see
-  [Operating system support](doc/eng-us/help/os-support.md).
+  3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL. Details:
+  [Databases](#databases) and [Database support](doc/eng-us/help/database-support.md).
+- Operating system: Linux, macOS, Windows and almost any other that runs PHP 8.0 or later (PHP 7.4 usable without
+  support); see [Platforms](#platforms) and [Operating system support](doc/eng-us/help/os-support.md).
 - Composer. Used to download Exponential software packages for installation, also notably installs the required Zeta Components php libraries and the extensions listed in `composer.json`.
 - (Optional) For Exponential Intelligence: an API key of a hosted AI provider, or a local open-weight model on the
   same server.
@@ -314,6 +339,74 @@ Please use the latest version of PHP available on your OS.
 PHP 8.0 is supported so that the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux / Rocky Linux 9) runs Exponential under Apache or PHP-FPM and under Exponential Velocity, the built-in application server, which runs on PHP 8.0 to 8.5 from its release 0.0.4.54 (until then it needed 8.1). See [PHP 8.0 support](doc/eng-us/bc/6.0/php-8.0-support.md) and the engine's [PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) page.
 
 PHP 7.4 is usable again from 6.0.15, without support, as a bridge for organizations that cannot change the PHP of their servers yet. The kernel and the bundled extensions run on it; Velocity, Exponential Layouts and a few extensions that need PHP 8 are left out. Composer chooses the right packages for each PHP version through the metapackage [se7enxweb/exponential-php-floor](https://github.com/se7enxweb/exponential-php-floor). Why the project does this, what works on PHP 7.4, how security is kept and the end-of-life stance: [Why Exponential supports PHP 7.4](doc/eng-us/help/why-exponential-supports-php-7-4.md). PHP 7.4 itself has had no security fixes from the PHP project since November 2022, so run it only where your operating system vendor or host still patches it, and plan the move to PHP 8.
+
+# Platforms
+
+Exponential is plain PHP and a database: no compiled code of its own and no tie to one operating system.
+
+| Platform | How it runs | Details |
+|---|---|---|
+| **Linux** (Red Hat Enterprise Linux 9 and 10 and their rebuilds, Debian 12 and 13, Ubuntu 22.04 and 24.04, Alpine, Plesk hosts) | the reference platform; PHP from the distribution or its usual repositories; Velocity ships `.deb` and `.rpm` packages | [Operating system support](doc/eng-us/help/os-support.md) |
+| **macOS** (Apple Silicon and Intel) | PHP from Homebrew; Velocity forks its workers as on Linux and publishes `macos-arm64` binaries | [macOS notes](doc/eng-us/help/os-support.md#macos) |
+| **Windows** (Windows Server 2022 and 2025, Windows 10 and 11) | the official PHP for Windows behind IIS (FastCGI and URL Rewrite, a ready `web.config`), Apache, or Velocity with its portable worker pool; SQL Server and every other engine | [Exponential on Windows](doc/eng-us/help/exponential-on-windows.md) |
+| **Containers** | Velocity images on `ghcr.io/se7enxweb/exponential-velocity` for amd64 and arm64 | [Containers](doc/eng-us/help/os-support.md#containers-cloud-and-hosting-panels) |
+
+**What the CI proves.** The kernel's test suites run on every push on PHP 8.1 to 8.5, with syntax and boot checks on
+PHP 8.0 and 7.4, against MySQL, PostgreSQL 13 to 19, MongoDB, Oracle and SQL Server 2017 to 2025; the SQL Server
+driver also runs on Windows against LocalDB. Velocity's own CI runs its portable pool on Windows Server 2022 and 2025
+(x64 and x86) on every push.
+
+## Web servers
+
+| Server | Configuration |
+|---|---|
+| Apache (Linux, Windows) | [virtual host](doc/eng-us/examples/web-servers/apache-virtual-host.md) |
+| nginx | [example](doc/eng-us/examples/web-servers/nginx.md) |
+| LiteSpeed, OpenLiteSpeed | [example](doc/eng-us/examples/web-servers/litespeed.md), [page cache](doc/eng-us/guides/litespeed-page-cache.md) |
+| Caddy | [example](doc/eng-us/examples/web-servers/caddy.md) |
+| Microsoft IIS | [example with `web.config`](doc/eng-us/examples/web-servers/iis.md) |
+| Exponential Velocity (built in; engines Qbix, FrankenPHP or PHP's built-in server) | [Velocity](doc/eng-us/examples/web-servers/velocity.md), [engines](doc/eng-us/bc/6.0/velocity-engines.md) |
+
+## Cluster mode on every platform
+
+One command makes a site a DFS cluster: the shared files live on a share every web server mounts, and their metadata
+lives in a database, by default the site's own.
+
+```bash
+./console exp:cluster:enable --share=/mnt/exp-dfs/example.com            # the plan
+./console exp:cluster:enable --share=/mnt/exp-dfs/example.com --apply    # do it
+```
+
+The metadata backends are all in the kernel: MySQL and MariaDB, PostgreSQL 13 to 19, Oracle 12.1 and later, SQL Server
+2017 and later and Azure SQL, MongoDB 5.0 and later (also a replica set), and SQLite for one machine. Cluster mode is
+plain PHP with no code tied to one operating system; it runs on Linux, macOS and the BSDs, every backend passes its
+tests in CI on every push, and Windows shares (drive letters and UNC paths) are being added to the setup commands.
+Read replicas carry the anonymous reads on PostgreSQL, MariaDB, MySQL, Oracle and SQL Server.
+[Clustering in Exponential 6.0](doc/eng-us/features/6.0/clustering-overview.md) covers every part.
+
+# Databases
+
+| Engine | Versions | Installers | Cluster metadata backend | Status |
+|---|---|---|---|---|
+| SQLite 3 | 3.33 and later | setup wizard (default), kickstarter, `exp:install` (default) | one machine | supported, the default |
+| PostgreSQL | 13 to 19 | setup wizard, kickstarter, `exp:install` | yes, with read replicas | supported, the recommended server |
+| MongoDB | 6.0 and later | setup wizard, kickstarter, `exp:install` | yes, also a replica set | supported |
+| MariaDB | releases your vendor supports | setup wizard, kickstarter, `exp:install` | yes, with read replicas | supported |
+| Oracle | 19c and later | setup wizard, kickstarter, `exp:install` | yes, with read replicas | supported |
+| MySQL | releases your vendor supports | setup wizard, kickstarter, `exp:install` | yes, with read replicas | supported |
+| Microsoft SQL Server, Azure SQL | 2017, 2019, 2022, 2025; Azure SQL Database and Managed Instance | kickstarter, `exp:install --db=sqlserver` | yes, with Always On read replicas | supported, new in 6.0.15 |
+
+Drivers for Microsoft Access and for databases reached through a generic ODBC connection are in development.
+
+- [Database support](doc/eng-us/help/database-support.md): the full support matrix, versions, PHP extensions,
+  settings, installers and test coverage of every engine.
+- [Moving off an old database](doc/eng-us/help/moving-off-an-old-database.md): why and how to move an existing site
+  off an old MySQL, an unsupported server or a one-machine SQLite onto a current engine, and the commands for each
+  step.
+- [Microsoft SQL Server driver](doc/eng-us/features/6.0/sqlserver-database-driver.md),
+  [PostgreSQL 18 and 19](doc/eng-us/features/6.0/postgresql-18-and-19.md),
+  [MongoDB as the database](doc/eng-us/features/6.0/mongodb-database-support.md),
+  [SQLite database support](doc/eng-us/features/6.0/sqlite-database.md).
 
 # Main Exponential features
 
@@ -629,6 +722,9 @@ cd exponential
 php bin/php/console exp:install --apply --random-password --url=http://localhost:8087
 php bin/php/console exp:velocity start --engine=php
 ```
+
+On Windows the same commands run in PowerShell or the command prompt (`php bin\php\console ...`); IIS, Apache and
+Velocity on Windows are covered in [Exponential on Windows](doc/eng-us/help/exponential-on-windows.md).
 
 Building websites with Exponential? The recommended way is to get the kernel and every se7enxweb extension as Git
 clones with their full history, so you can follow development, keep your changes on a branch and send fixes back as
