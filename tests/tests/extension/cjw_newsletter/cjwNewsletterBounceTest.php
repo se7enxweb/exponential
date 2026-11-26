@@ -8,6 +8,7 @@ class cjwNewsletterFakeMailTransport
     public $expunged = false;
     public $disconnected = false;
     public $failList = false;
+    public $deleted = array();
 
     public function __construct( array $messages ) { $this->messages = $messages; }
     public function listUniqueIdentifiers()
@@ -24,6 +25,7 @@ class cjwNewsletterFakeMailTransport
     {
         return new cjwNewsletterFakeMailLines( $this->messages[$nr] );
     }
+    public function delete( $nr ) { $this->deleted[] = $nr; }
     public function expunge() { $this->expunged = true; }
     public function disconnect() { $this->disconnected = true; }
 }
@@ -224,6 +226,7 @@ class cjwNewsletterBounceTest extends cjwNewsletterTestCase
         $box->setTransportObject( $transport );
         $status = $box->fetchMails();
         $this->assertCount( 2, $status['added'] );
+        $this->assertSame( array( 1, 2 ), $transport->deleted, 'the stored messages are deleted after storing' );
         $this->assertTrue( $transport->expunged );
         foreach ( CjwNewsletterMailboxItem::fetchAllMailboxItems( 0 ) as $item )
             if ( (int)$item->attribute( 'mailbox_id' ) === $mailboxId )
