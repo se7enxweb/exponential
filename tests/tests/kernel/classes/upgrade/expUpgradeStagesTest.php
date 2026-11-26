@@ -14,6 +14,8 @@
  *        (without SystemRoot PHP's curl extension does not start), elsewhere only the PATH and Composer's own
  *  US-08 the installation's own version for Composer: the kernel's in a release install (no git checkout), none in
  *        a git checkout; a COMPOSER_ROOT_VERSION of the process wins
+ *  US-09 Composer writing more to stderr than a pipe holds does not leave the upgrade waiting: output, errors and
+ *        the exit code are all collected
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -228,5 +230,19 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
         $given = function ( $name ) { return $name === 'COMPOSER_ROOT_VERSION' ? 'dev-main' : false; };
         $this->assertSame( 'dev-main', expUpgradeComposer::environment( $given, false, false, '6.0.15' )['COMPOSER_ROOT_VERSION'],
                            "the process's own wins" );
+    }
+
+    /** US-09 */
+    public function testComposerOutputCannotBlockTheUpgrade()
+    {
+        $started = microtime( true );
+        $result = expUpgradeComposer::runCommand( array( PHP_BINARY, __DIR__ . '/fixtures/composer_noisy.php' ), $this->dir,
+                                                  array( 'EXP_FIXTURE_MARK' => 'us09', 'PATH' => (string)getenv( 'PATH' ) )
+                                                  + expUpgradeComposer::environment( 'getenv' ) );
+        $this->assertNotNull( $result );
+        $this->assertSame( 3, $result['exit'] );
+        $this->assertSame( "done us09\n", $result['output'] );
+        $this->assertSame( 20000, substr_count( $result['errors'], "\n" ) );
+        $this->assertLessThan( 60, microtime( true ) - $started );
     }
 }

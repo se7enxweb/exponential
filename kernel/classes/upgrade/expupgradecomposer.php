@@ -51,7 +51,7 @@ class expUpgradeComposer
     }
 
     /** The variables of this process Composer gets as they are, when set. */
-    const PASSED_VARIABLES = array( 'HOME', 'COMPOSER_HOME', 'COMPOSER_CACHE_DIR', 'COMPOSER_AUTH', 'COMPOSER_ROOT_VERSION', 'PHPRC', 'PHP_INI_SCAN_DIR',
+    const PASSED_VARIABLES = array( 'HOME', 'COMPOSER_HOME', 'COMPOSER_CACHE_DIR', 'COMPOSER_AUTH', 'COMPOSER_ROOT_VERSION', 'COMPOSER_PROCESS_TIMEOUT', 'PHPRC', 'PHP_INI_SCAN_DIR',
                                     'TMPDIR', 'HTTP_PROXY', 'HTTPS_PROXY', 'NO_PROXY', 'SSL_CERT_FILE', 'SSL_CERT_DIR', 'OPENSSL_CONF' );
 
     /**
@@ -131,15 +131,49 @@ class expUpgradeComposer
         $root = (string)$context->option( 'root' );
         $command = array_merge( $command, $arguments, array( '--no-interaction', '--working-dir=' . $root ) );
         $env = self::environment( 'getenv', function_exists( 'posix_geteuid' ) && posix_geteuid() === 0, null, self::rootVersion( $root ) );
-        $process = proc_open( $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $root, $env );
-        if ( !is_resource( $process ) )
+        $result = self::runCommand( $command, $root, $env );
+        if ( $result === null )
             return array( 'exit' => 127, 'output' => '', 'errors' => 'cannot start composer' );
+        return $result;
+    }
+
+    /**
+     * Runs a command and collects what it writes: array( 'exit' => int, 'output' => stdout, 'errors' => stderr ),
+     * null when it cannot be started. Both streams go to temporary files, never to pipes read one after the other:
+     * Composer writes its progress to stderr, and with stdout read to the end first, a full stderr pipe (a few
+     * kilobytes on Windows) left Composer and the upgrade waiting for each other until the job was killed.
+     *
+     * @param string[] $command
+     * @param string $cwd
+     * @param array $env
+     * @return array|null
+     */
+    public static function runCommand( array $command, $cwd, array $env )
+    {
+        $dir = sys_get_temp_dir();
+        $out = tempnam( $dir, 'expcomposer-out-' );
+        $err = tempnam( $dir, 'expcomposer-err-' );
+        if ( $out === false || $err === false )
+        {
+            foreach ( array( $out, $err ) as $file )
+                if ( $file !== false )
+                    @unlink( $file );
+            return null;
+        }
+        $process = proc_open( $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'file', $out, 'w' ), 2 => array( 'file', $err, 'w' ) ),
+                              $pipes, $cwd, $env );
+        if ( !is_resource( $process ) )
+        {
+            @unlink( $out );
+            @unlink( $err );
+            return null;
+        }
         fclose( $pipes[0] );
-        $output = (string)stream_get_contents( $pipes[1] );
-        $errors = (string)stream_get_contents( $pipes[2] );
-        fclose( $pipes[1] );
-        fclose( $pipes[2] );
-        return array( 'exit' => proc_close( $process ), 'output' => $output, 'errors' => $errors );
+        $exit = proc_close( $process );
+        $result = array( 'exit' => $exit, 'output' => (string)@file_get_contents( $out ), 'errors' => (string)@file_get_contents( $err ) );
+        @unlink( $out );
+        @unlink( $err );
+        return $result;
     }
 
     /**
