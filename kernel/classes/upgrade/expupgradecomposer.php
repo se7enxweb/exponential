@@ -50,6 +50,44 @@ class expUpgradeComposer
         return array();
     }
 
+    /** The variables of this process Composer gets as they are, when set. */
+    const PASSED_VARIABLES = array( 'HOME', 'COMPOSER_HOME', 'COMPOSER_CACHE_DIR', 'COMPOSER_AUTH', 'PHPRC', 'PHP_INI_SCAN_DIR',
+                                    'TMPDIR', 'HTTP_PROXY', 'HTTPS_PROXY', 'NO_PROXY', 'SSL_CERT_FILE', 'SSL_CERT_DIR', 'OPENSSL_CONF' );
+
+    /**
+     * What Windows needs in the environment of a PHP process: without SystemRoot, PHP's curl extension does not start
+     * ("Unable to start curl module") and Composer fails before it does anything; the temporary folder, the profile
+     * folders and the program search follow the same variables.
+     */
+    const WINDOWS_VARIABLES = array( 'SystemRoot', 'SystemDrive', 'windir', 'TEMP', 'TMP', 'USERPROFILE', 'APPDATA', 'LOCALAPPDATA',
+                                     'ProgramData', 'ProgramFiles', 'PATHEXT', 'ComSpec', 'COMPUTERNAME', 'USERNAME' );
+
+    /**
+     * The environment Composer runs in: no interaction, the PATH, and the variables of PASSED_VARIABLES (on Windows
+     * also those of WINDOWS_VARIABLES) that this process has. Pure, with $getenv.
+     *
+     * @param callable $getenv name => value or false, as getenv()
+     * @param bool $superuser whether this process runs as root (COMPOSER_ALLOW_SUPERUSER)
+     * @param bool|null $windows whether this is Windows (null: PHP_OS_FAMILY)
+     * @return array
+     */
+    public static function environment( callable $getenv, $superuser = false, $windows = null )
+    {
+        if ( $windows === null )
+            $windows = PHP_OS_FAMILY === 'Windows';
+        $path = $getenv( 'PATH' );
+        $env = array( 'COMPOSER_NO_INTERACTION' => '1', 'PATH' => $path ? $path : ( $windows ? '' : '/usr/local/bin:/usr/bin:/bin' ) );
+        foreach ( $windows ? array_merge( self::PASSED_VARIABLES, self::WINDOWS_VARIABLES ) : self::PASSED_VARIABLES as $name )
+        {
+            $value = $getenv( $name );
+            if ( $value !== false && $value !== null && $value !== '' )
+                $env[$name] = (string)$value;
+        }
+        if ( $superuser )
+            $env['COMPOSER_ALLOW_SUPERUSER'] = '1';
+        return $env;
+    }
+
     /**
      * Runs Composer in the root: array( 'exit' => int, 'output' => stdout, 'errors' => stderr ).
      *
@@ -64,12 +102,7 @@ class expUpgradeComposer
             return array( 'exit' => 127, 'output' => '', 'errors' => 'no composer: give one with --composer=' );
         $root = (string)$context->option( 'root' );
         $command = array_merge( $command, $arguments, array( '--no-interaction', '--working-dir=' . $root ) );
-        $env = array( 'COMPOSER_NO_INTERACTION' => '1', 'PATH' => getenv( 'PATH' ) ?: '/usr/local/bin:/usr/bin:/bin' );
-        foreach ( array( 'HOME', 'COMPOSER_HOME', 'COMPOSER_CACHE_DIR' ) as $name )
-            if ( getenv( $name ) )
-                $env[$name] = getenv( $name );
-        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
-            $env['COMPOSER_ALLOW_SUPERUSER'] = '1';
+        $env = self::environment( 'getenv', function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 );
         $process = proc_open( $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $root, $env );
         if ( !is_resource( $process ) )
             return array( 'exit' => 127, 'output' => '', 'errors' => 'cannot start composer' );

@@ -25659,7 +25659,7 @@ f45e34d12ad6a7e1568acf45fa911975  kernel/classes/uiswitch/expuiswitchprovider.ph
 db01749d43797cb195a44fad8511aea4  kernel/classes/upgrade/expupgradebasestep.php
 3f5ce2b82e16de8075820c6ffd167c47  kernel/classes/upgrade/expupgradecaption.php
 4a5e064a94f4fc93dc157da9b90bc151  kernel/classes/upgrade/expupgradecatalog.php
-79690818270e01b35013cd901394b79b  kernel/classes/upgrade/expupgradecomposer.php
+8311dab30eead5dc37f51ef92aa0d871  kernel/classes/upgrade/expupgradecomposer.php
 f32e5c9ced19378ae45cab2e980662a4  kernel/classes/upgrade/expupgradecontext.php
 7345d98b55be90282eb99450410536c1  kernel/classes/upgrade/expupgradefinishstep.php
 40f00678849c999f571a4d8adc4f285e  kernel/classes/upgrade/expupgradegit.php
@@ -28992,7 +28992,7 @@ bbf1056a2362f3aa6c8cceea081afffb  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 433535bbea030ca66be73ed16d242a2e  tests/suite.php
-d56f444135f255593ed7ecd9efe90d75  tests/test-map.json
+8e624bdd354eeb2010fc1087dedfcf10  tests/test-map.json
 9917402d25f8419adb652d9a634bac4a  tests/tests/bin/CiWorkflowPullRequestTest.php
 aab68864c45774a2a976dbdc7ba53f78  tests/tests/bin/ConsoleExtensionAliasTest.php
 b93b286979fa3eef6b6b03fd1197dd31  tests/tests/bin/CopyrightNoticeTest.php
@@ -30216,7 +30216,7 @@ b78f30c542438fe4894167ffd0e9e9ca  tests/tests/kernel/classes/updatesql/SixZeroPa
 6cb8de81e320beb570bd2ab0c5b8c1ff  tests/tests/kernel/classes/upgrade/expUpgradeKernelTablesTest.php
 ec314851f8b7fb97fad8af6bd4e2b596  tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php
 15d206ad872d8022b137f001b0be1624  tests/tests/kernel/classes/upgrade/expUpgradeSqliteCompositeKeysTest.php
-115f63f59b4c6450d60e87776c5f1079  tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php
+d5b1a0330b505b22f727d4f04055adb4  tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php
 a74487bb309f2275c4112a388b3dce4a  tests/tests/kernel/classes/urlalias/eZURLAliasMLHistoryLiveTest.php
 d42c3ea27251dc307d33fde92f941624  tests/tests/kernel/classes/urlalias/eZURLAliasMLMongoStorePathTest.php
 15a8ac408a60bdc12f397bb6ee177531  tests/tests/kernel/classes/urlalias/eZURLAliasMLNameGenerationTest.php

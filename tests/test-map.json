@@ -2753,6 +2753,9 @@
       "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php"
     ],
+    "kernel/classes/upgrade/expupgradecomposer.php": [
+      "tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php"
+    ],
     "kernel/classes/upgrade/expupgradelock.php": [
       "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
       "tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php"

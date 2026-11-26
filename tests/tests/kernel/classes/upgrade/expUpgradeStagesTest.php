@@ -10,6 +10,8 @@
  *  US-04 production: [AdminEnvironment] Level, auto with EXP_ENV
  *  US-05 the rollback refuses an unknown backup or part (usage, exit 2) before it touches anything
  *  US-06 the audit events of the upgrade are in the taxonomy
+ *  US-07 Composer's environment: on Windows SystemRoot, TEMP and the other variables PHP needs there are passed on
+ *        (without SystemRoot PHP's curl extension does not start), elsewhere only the PATH and Composer's own
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -181,5 +183,29 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
         $source = file_get_contents( self::$root . '/kernel/classes/audit/expaudittaxonomy.php' );
         foreach ( array( 'system.upgrade.run', 'system.upgrade.step', 'system.upgrade.backup', 'system.upgrade.rollback', 'system.upgrade.caption', 'system.upgrade.verify' ) as $name )
             $this->assertStringContainsString( "'$name' =>", $source );
+    }
+
+    /** US-07 */
+    public function testComposerEnvironment()
+    {
+        $vars = array( 'PATH' => 'C:\\tools\\php;C:\\Windows\\system32', 'SystemRoot' => 'C:\\Windows', 'TEMP' => 'D:\\a\\_temp',
+                       'TMP' => 'D:\\a\\_temp', 'APPDATA' => 'C:\\Users\\runner\\AppData\\Roaming', 'COMPOSER_HOME' => 'C:\\composer',
+                       'OPENSSL_CONF' => 'C:\\ssl\\openssl.cnf', 'SECRET_TOKEN' => 'never', 'EMPTY' => '' );
+        $getenv = function ( $name ) use ( $vars ) {
+            return isset( $vars[$name] ) ? $vars[$name] : false;
+        };
+        $windows = expUpgradeComposer::environment( $getenv, false, true );
+        foreach ( array( 'PATH', 'SystemRoot', 'TEMP', 'TMP', 'APPDATA', 'COMPOSER_HOME', 'OPENSSL_CONF' ) as $name )
+            $this->assertSame( $vars[$name], $windows[$name], "$name on Windows" );
+        $this->assertSame( '1', $windows['COMPOSER_NO_INTERACTION'] );
+        $this->assertArrayNotHasKey( 'SECRET_TOKEN', $windows, 'only the variables named are passed' );
+        $this->assertArrayNotHasKey( 'COMPOSER_ALLOW_SUPERUSER', $windows );
+
+        $linux = expUpgradeComposer::environment( $getenv, true, false );
+        $this->assertArrayNotHasKey( 'SystemRoot', $linux, 'the Windows variables only on Windows' );
+        $this->assertSame( 'C:\\composer', $linux['COMPOSER_HOME'] );
+        $this->assertSame( '1', $linux['COMPOSER_ALLOW_SUPERUSER'] );
+        $none = expUpgradeComposer::environment( function () { return false; }, false, false );
+        $this->assertSame( array( 'COMPOSER_NO_INTERACTION' => '1', 'PATH' => '/usr/local/bin:/usr/bin:/bin' ), $none );
     }
 }
