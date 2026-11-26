@@ -177,13 +177,34 @@ jobs:
           coverage: none
           tools: composer:v2
 
-      # LocalDB and Microsoft's ODBC driver come with the runner image: the newest driver it has is the one tested
+      # LocalDB and Microsoft's ODBC driver come with the runner image: the newest driver it has is the one tested.
+      # The automatic instance MSSQLLocalDB sometimes fails to start on a fresh runner ("Cannot create an automatic
+      # instance") while sqllocaldb still exits 0, so the job makes a named instance of its own, checks that it is
+      # running, and tries again a few times; if it never runs, the Application event log says why.
       - name: Start LocalDB and pick the ODBC driver
         shell: pwsh
         run: |
-          sqllocaldb start MSSQLLocalDB
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          sqllocaldb info MSSQLLocalDB
+          $name = 'ExpCI'
+          $running = $false
+          for ($attempt = 1; $attempt -le 4; $attempt++) {
+            sqllocaldb create $name 2>&1 | Write-Output
+            sqllocaldb start $name 2>&1 | Write-Output
+            $info = (sqllocaldb info $name 2>&1) -join "`n"
+            Write-Output $info
+            if ($info -match 'State:\s+Running') { $running = $true; break }
+            Write-Output "::warning::LocalDB instance $name is not running (attempt $attempt of 4)"
+            sqllocaldb stop $name -k 2>&1 | Out-Null
+            sqllocaldb delete $name 2>&1 | Out-Null
+            Start-Sleep -Seconds (5 * $attempt)
+          }
+          if (-not $running) {
+            Get-WinEvent -LogName Application -MaxEvents 500 -ErrorAction SilentlyContinue |
+              Where-Object { $_.ProviderName -match 'LocalDB|SQL' -or $_.Message -match 'LocalDB' } |
+              Select-Object -First 40 | Format-List TimeCreated, ProviderName, Id, LevelDisplayName, Message
+            Write-Output '::error::SQL Server LocalDB did not start'
+            exit 1
+          }
+          $global:LASTEXITCODE = 0
           $drivers = Get-OdbcDriver -Platform '64-bit' | Where-Object Name -like 'ODBC Driver * for SQL Server' | Sort-Object Name -Descending
           $drivers | Format-Table Name
           if (-not $drivers) { Write-Output '::error::no Microsoft ODBC driver for SQL Server on this runner'; exit 1 }
@@ -204,7 +225,7 @@ jobs:
         shell: bash
         env:
           EXP_TEST_ODBC_LAYER: ${{ matrix.layer }}
-          EXP_TEST_ODBC_SQLSERVER: 'Server=(localdb)\MSSQLLocalDB;Database=master;Trusted_Connection=yes;Encrypt=no'
+          EXP_TEST_ODBC_SQLSERVER: 'Server=(localdb)\ExpCI;Database=master;Trusted_Connection=yes;Encrypt=no'
         run: |
           php vendor/bin/phpunit --colors=always --testsuite odbc
           php vendor/bin/phpunit --colors=always --display-skipped tests/tests/lib/ezdb/odbc/live/expODBCLiveTest.php
