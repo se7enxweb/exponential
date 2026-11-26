@@ -1047,6 +1047,10 @@ jobs:
       - name: Install a site on DuckDB
         if: matrix.install
         run: |
+          # the help manuals are built by a background worker for 20 to 30 minutes, which holds the DuckDB file to
+          # write: the page checks below would wait for it, so the CI site builds none
+          mkdir -p settings/override
+          printf '<?php /* #?ini charset="utf-8"?\n[ManualSettings]\nBuildOnInstall=disabled\n*/ ?>\n' > settings/override/exphelp.ini.append.php
           php bin/php/install.php --db=duckdb --apply --password=Ci-DuckDB-2026 --no-crontab
           ls -l var/storage/duckdb/
           php -S 127.0.0.1:8080 -t . index.php >var/log/php-server.log 2>&1 &
