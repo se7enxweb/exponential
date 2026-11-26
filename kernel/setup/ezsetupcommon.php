@@ -112,6 +112,13 @@ function eZSetupDatabaseMap()
                                        'required_version' => '4.0',
                                        'has_demo_data' => false,
                                        'supports_unicode' => true ),
+                  // expDuckDBDB in the kernel: one DuckDB file, through PHP's FFI extension and libduckdb
+                  'duckdb' => array( 'type' => 'duckdb',
+                                     'driver' => 'duckdb',
+                                     'name' => 'DuckDB',
+                                     'required_version' => '1.5',
+                                     'has_demo_data' => false,
+                                     'supports_unicode' => true ),
                   // the driver lives in an extension, activated for the
                   // installation by eZSetupActivateDatabaseExtension()
                   'oci8' => array( 'type' => 'oci8',

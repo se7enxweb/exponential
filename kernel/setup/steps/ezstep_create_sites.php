@@ -1083,8 +1083,8 @@ class eZStepCreateSites extends eZStepInstaller
             // cleanup() drops only the kernel's own tables (ez*); the tables of extensions
             // (expaudit_*, explayouts_* ...) stayed and the schema load failed with "table
             // already exists" on a second install. A SQLite database is a file that is
-            // emptied completely, as a removed MySQL or PostgreSQL database would be.
-            if ( strtolower( $db->databaseName() ) === 'sqlite' && method_exists( $db, 'removeDatabase' ) )
+            // emptied completely, as a removed MySQL or PostgreSQL database would be; a DuckDB file the same.
+            if ( in_array( strtolower( $db->databaseName() ), array( 'sqlite', 'duckdb' ), true ) && method_exists( $db, 'removeDatabase' ) )
                 $db->removeDatabase( $dbName );
             // MongoDB and Oracle the same way: the collections and tables of extensions (expuser_session,
             // expaudit_*, explayouts_* ...) kept the previous installation's rows, which the new one then read

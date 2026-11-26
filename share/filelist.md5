@@ -217,7 +217,7 @@ a99f95dd0196c0752d279cda73078d84  bin/php/ezwebinupgrade.php
 3f68d477c3ae4afa9d4513c59a084fd9  bin/php/frankenphp.php
 2bf2f0e6e3dafee7232596d4e3937bee  bin/php/i18n.php
 e4e5a5e9f65cd8f42323b653a152439d  bin/php/ini.php
-53e7782301d9bc37050b7e8608d3e075  bin/php/install.php
+680fc0285d1d97afd9f69dbd677d199d  bin/php/install.php
 f697eeec2a6fe364ac62feff76673996  bin/php/installcrontab.php
 f5773e8f312c969b9080b83fe1ae4ac3  bin/php/kickstarter.php
 d480f36c84716affe53b3e064d52e58c  bin/php/mailbounces.php
@@ -26936,7 +26936,7 @@ b9ae2b6d7c11dfc7cbfb230f9990940e  kernel/setup/expradsurvey.php
 20d19e4c6c386a4751b600fa8fac28e2  kernel/setup/extensions.php
 391d37b4620a6745a2bd442560d6484d  kernel/setup/ezsetup.php
 433e78c97aa0c3fcafabd033470f397c  kernel/setup/ezsetup_summary.php
-cf968622ab42df5984328986095e4086  kernel/setup/ezsetupcommon.php
+2f1c0468ac6060a6d84d94a7009f2426  kernel/setup/ezsetupcommon.php
 38297052a8fa01c39f6209d85873376c  kernel/setup/ezsetupfunctioncollection.php
 ce305a0b7ac2b4a067d9a16aaebac547  kernel/setup/ezsetuptests.php
 f61e6339faf21fad7164647b5a7070e7  kernel/setup/function_definition.php
@@ -26968,13 +26968,13 @@ a456b6cd95469b00072d6d6008005d78  kernel/setup/settingsextension.php
 e1f1e3367eaa39f82acad5c70b42286e  kernel/setup/setupmenu.php
 fe14b77184ccbafe5fdbd76a0bea9428  kernel/setup/sitedata.php
 72be9314636b1a293c5be6efa675cd04  kernel/setup/staticcachestream.php
-70e7ae73ea97c3f3451791cc2ac6b1f4  kernel/setup/steps/ezstep_create_sites.php
+8ed1b6863f8973512f143f64ec19d572  kernel/setup/steps/ezstep_create_sites.php
 df68e5e07841432d9e6e51b23e5ae234  kernel/setup/steps/ezstep_data.php
-5dd5b728e7873b5a91071f903edb110c  kernel/setup/steps/ezstep_database_choice.php
-e2138c0807e0b356157ea1a3e4348dab  kernel/setup/steps/ezstep_database_init.php
+875a7229fe1126ed7bc7b07fd90c8e21  kernel/setup/steps/ezstep_database_choice.php
+8b47065a502e87c52f8193467f77d3c1  kernel/setup/steps/ezstep_database_init.php
 1eb7cf0835903b23ffeeda25b7e8bf6a  kernel/setup/steps/ezstep_email_settings.php
 d252c1fdbb70b34ee56f05351fb1ad10  kernel/setup/steps/ezstep_final.php
-713511ab0437efe83714734190a6f3fd  kernel/setup/steps/ezstep_installer.php
+a1a7669c04044bf39408b10d588c9a11  kernel/setup/steps/ezstep_installer.php
 354ef133bd7fb328e3e815febc5e6530  kernel/setup/steps/ezstep_language_options.php
 0b0e15cf920388c3361a4778b61018b5  kernel/setup/steps/ezstep_package_language_options.php
 15a86df69632da17559f29833414bdfc  kernel/setup/steps/ezstep_registration.php
@@ -30142,7 +30142,7 @@ cf8be805ae4c110abc4bbd547249a7e8  tests/tests/kernel/classes/setup/SetupContentF
 cbcb871b0c8ee1997d8cdcde3b30e2cc  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 ff16951947f561095e82a782732322f0  tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php
 c9d7f04ca55c0d534e3521802d1dafdc  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
-9195133e873654a37ba8cac29433fafc  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
+ae6c4df43bea1710273f53574fef2d65  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 d51526ae21e250767031d78014d6101a  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
 b1770edc81acb748f08277804bbcf641  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
 34e4df0b59c0edca6965f591f0c23e90  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php

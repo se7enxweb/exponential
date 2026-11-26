@@ -134,6 +134,7 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'auroramysql' => 'aurora',
                           'fb' => 'firebird',
                           'pdo_firebird' => 'firebird',
+                          'duckdb' => 'duckdb',
                           'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];

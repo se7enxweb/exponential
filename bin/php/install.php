@@ -31,6 +31,8 @@ $databaseTypes = array(
     'aurora'      => array( 'type' => 'aurora',      'port' => '3306', 'name' => 'exponential', 'user' => 'admin' ),
     // Firebird 4/5: the database must exist; the name is an alias of databases.conf or the file's path on the server
     'firebird' => array( 'type' => 'firebird', 'port' => '3050', 'name' => 'exponential', 'user' => 'SYSDBA' ),
+    // DuckDB: one file (var/storage/duckdb/<name>), no server; needs PHP's FFI extension and libduckdb
+    'duckdb'  => array( 'type' => 'duckdb',  'port' => '',      'name' => 'exponential.duckdb', 'user' => '' ),
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
                           'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
@@ -126,7 +128,7 @@ if ( isset( $databaseAliases[$db] ) )
     $db = $databaseAliases[$db];
 if ( !isset( $databaseTypes[$db] ) )
 {
-    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora or firebird\n" );
+    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird or duckdb\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
@@ -395,7 +397,7 @@ $summary = array(
     'Username'       => 'admin',
     'Password'       => $options['password'],
     'E-mail'         => $options['email'],
-    'Database'       => $db . ' ' . $dbName . ( $db === 'sqlite' ? '' : ' at ' . ( $options['db-socket'] !== '' ? $options['db-socket'] : $options['db-host'] . ( $dbPort !== '' ? ':' . $dbPort : '' ) ) )
+    'Database'       => $db . ' ' . $dbName . ( $db === 'sqlite' || $db === 'duckdb' ? '' : ' at ' . ( $options['db-socket'] !== '' ? $options['db-socket'] : $options['db-host'] . ( $dbPort !== '' ? ':' . $dbPort : '' ) ) )
                         . ( $dbUser !== '' ? ', user ' . $dbUser : '' ),
     'Package'        => $options['package'] . ', ' . $options['language'] . ( $languages ? ' + ' . implode( ',', $languages ) : '' ),
     'Time zone'      => $timeZone['zone'] . ' (' . $timeZoneReasons[$timeZone['reason']] . ')',
@@ -452,7 +454,7 @@ register_shutdown_function( function () use ( $kickstart, $aside, $sections, $lo
 } );
 
 echo "exp:install" . ( $flags['dry-run'] ? ' (dry run, --apply installs)' : '' ) . ": {$options['package']} on $db"
-    . ( $db === 'sqlite' ? " ($dbName)" : " ({$dbName} at {$options['db-host']}" . ( $dbPort !== '' ? ":$dbPort" : '' ) . ')' )
+    . ( $db === 'sqlite' || $db === 'duckdb' ? " ($dbName)" : " ({$dbName} at {$options['db-host']}" . ( $dbPort !== '' ? ":$dbPort" : '' ) . ')' )
     . ", $url, access by " . ( $accessType === 'hostname' ? 'host' : $accessType )
     . ", time zone {$timeZone['zone']} (" . $timeZoneReasons[$timeZone['reason']] . ')'
     . ", administrator admin / " . ( $passwordGiven ? '(as given)' : '(generated, shown at the end)' ) . "\n";
@@ -473,7 +475,7 @@ the package, the siteaccesses, the files), checks the database and the remote
 packages, and ends with "PASS: ... (dry run, nothing changed; --apply writes)".
 
 Database (default: SQLite, no server needed)
-  --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle, sqlserver or firebird
+  --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle, sqlserver, firebird or duckdb
                          (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
                          (firebird: needs pdo_firebird of PHP 8.4 or later, Firebird 4 or 5, and an
                          existing database, PAGE_SIZE 16384 and UTF8)
@@ -481,10 +483,12 @@ Database (default: SQLite, no server needed)
                          MySQL protocol, with mysqli: tidb, vitess (planetscale),
                          singlestore (memsql), xpand, aurora (aurora-mysql)
                          (vitess: the keyspace must exist)
+                         (duckdb: needs PHP's FFI extension and libduckdb, see [DuckDBSettings])
   --db-host=<host>       default localhost
   --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
                          1521 (oracle), 1433 (sqlserver), 4000 (tidb), 3050 (firebird)
-  --db-name=<name>       default exponential (exponential.db for sqlite);
+  --db-name=<name>       default exponential (exponential.db for sqlite,
+                         exponential.duckdb for duckdb);
                          oracle: the service name, default FREEPDB1, used as
                          host:port/service; a full connect string (with / or
                          a descriptor) or @alias (a TNS alias) is used as it is;
