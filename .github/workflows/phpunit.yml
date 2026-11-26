@@ -986,6 +986,78 @@ jobs:
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
 
+  # The databases of the PostgreSQL wire protocol (expPostgreSQLWireDB): CockroachDB, YugabyteDB, and Google Cloud
+  # Spanner's emulator behind PGAdapter, each in a container started here (a service container cannot be given the
+  # command these images need). The DB-less tests run in the PHPUnit job above (testsuite pgwire); these are the live
+  # ones (testsuite pgwire-live). Neon, Supabase and Aurora are services without a container: they have no live job.
+  pgwire:
+    name: PostgreSQL wire protocol (CockroachDB, YugabyteDB, Spanner emulator; PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '8.1', '8.5' ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Start CockroachDB, YugabyteDB and PGAdapter with the Spanner emulator
+        run: |
+          docker run -d --name crdb -p 26257:26257 cockroachdb/cockroach:v25.2.4 start-single-node --insecure
+          docker run -d --name yugabyte -p 5433:5433 yugabytedb/yugabyte:2.25.2.0-b359 bin/yugabyted start --background=false
+          docker run -d --name spanner -p 15432:5432 gcr.io/cloud-spanner-pg-adapter/pgadapter-emulator:latest
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, pdo, pgsql, pdo_pgsql, pcntl, posix, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          case "${{ matrix.php }}" in
+            8.1) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^10.5" ;;
+          esac
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            sleep $((attempt * 15))
+          done
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Wait for the servers and make the test databases
+        run: |
+          ready() { psql "$1" -Atc 'SELECT 1' >/dev/null 2>&1; }
+          for i in $(seq 1 60); do ready "host=127.0.0.1 port=26257 user=root dbname=defaultdb sslmode=disable" && break; sleep 3; done
+          psql "host=127.0.0.1 port=26257 user=root dbname=defaultdb sslmode=disable" -c 'CREATE DATABASE IF NOT EXISTS exp_pgwire_test'
+          for i in $(seq 1 100); do ready "host=127.0.0.1 port=5433 user=yugabyte dbname=yugabyte sslmode=disable" && break; sleep 3; done
+          psql "host=127.0.0.1 port=5433 user=yugabyte dbname=yugabyte sslmode=disable" -c 'CREATE DATABASE exp_pgwire_test'
+          for i in $(seq 1 60); do ready "host=127.0.0.1 port=15432 dbname=exp_pgwire_test sslmode=disable" && break; sleep 3; done
+          ready "host=127.0.0.1 port=15432 dbname=exp_pgwire_test sslmode=disable" || { docker logs --tail 40 spanner; echo "::error::PGAdapter did not answer"; exit 1; }
+
+      - name: Run the PostgreSQL wire protocol tests
+        env:
+          EXP_TEST_PGWIRE_COCKROACHDB_HOST: 127.0.0.1
+          EXP_TEST_PGWIRE_COCKROACHDB_PORT: 26257
+          EXP_TEST_PGWIRE_YUGABYTEDB_HOST: 127.0.0.1
+          EXP_TEST_PGWIRE_YUGABYTEDB_PORT: 5433
+          EXP_TEST_PGWIRE_SPANNER_HOST: 127.0.0.1
+          EXP_TEST_PGWIRE_SPANNER_PORT: 15432
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite pgwire
+          php vendor/bin/phpunit --colors=always --fail-on-skipped --testsuite pgwire-live
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: |
+          rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+          docker rm -f crdb yugabyte spanner || true
+
   # DuckDB (expDuckDBDB): the DB-less tests, the live tests against libduckdb through PHP's FFI extension, and a
   # whole site installed on DuckDB (exp:install --db=duckdb) with its front page and admin login rendered. DuckDB is
   # embedded: the library is downloaded from DuckDB's releases, no service runs.

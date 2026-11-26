@@ -13,7 +13,7 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 83ebb7a0d04f421bdff8ef89b268e003  .github/workflows/ci-health.yml
 dcd2c18968f0d52e402cd003ab6e2c67  .github/workflows/codeql.yml
 ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
-f9a18b8fe468557272dd89ee0a74affb  .github/workflows/phpunit.yml
+406dff147e9d5f226042633301c27ed6  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 d1aab434bba70daffc2e48e5224d082f  .github/workflows/windows.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
@@ -30795,6 +30795,10 @@ f4abb0436986621e32c7f7864fbd6e27  tests/tests/lib/ezdb/odbc/live/expODBCLiveTest
 3ecf09089c92668ee0ccd54264755058  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireDBTest.php
 b1fe0f4929ffde2b3086aa32381d173c  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireProfileTest.php
 a12fcf68656f1554048619978095bc0f  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireSchemaTest.php
+619cf2486e9a9b3b0fcb095ebc9bf496  tests/tests/lib/ezdb/pgwire/live/expCockroachDBLiveTest.php
+9aff98eefed3447bd0d520664d129989  tests/tests/lib/ezdb/pgwire/live/expPostgreSQLWireLiveTestCase.php
+eeb545192c7f69066c2cdeac837cb446  tests/tests/lib/ezdb/pgwire/live/expSpannerPGLiveTest.php
+fd58ef74a16748ba1db297409bfbba14  tests/tests/lib/ezdb/pgwire/live/expYugabyteDBLiveTest.php
 f40f3832378c387d480f1c50678e6c9b  tests/tests/lib/ezdb/suite.php
 ca35100b2f790091e5a176ef768a01b1  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
 bf56cd696b1c3561ffb9158f765ac630  tests/tests/lib/ezdbschema/expInsertSchemaDataOnlyTest.php
