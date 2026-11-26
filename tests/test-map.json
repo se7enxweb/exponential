@@ -3329,6 +3329,14 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasPagePlaceholderTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php"
     ],
+    "lib/ezdb/classes/expfirebird*.php": [
+      "tests/tests/lib/ezdb/firebird/expFirebirdDialectTest.php",
+      "tests/tests/lib/ezdb/firebird/expFirebirdDBTest.php",
+      "tests/tests/lib/ezdbschema/expFirebirdSchemaTest.php"
+    ],
+    "lib/ezdbschema/classes/expfirebirdschema.php": [
+      "tests/tests/lib/ezdbschema/expFirebirdSchemaTest.php"
+    ],
     "lib/ezdb/classes/expodbc*.php": [
       "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
       "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"

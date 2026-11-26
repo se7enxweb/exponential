@@ -779,6 +779,85 @@ jobs:
             echo "::warning::No LocalDB on this runner: the live tests did not run"
           fi
 
+  # The Firebird driver (expFirebirdDB) against the official Firebird 5 and 4 images: the DB-less tests (testsuite
+  # firebird, also in the PHPUnit job above) and the live ones (testsuite firebird-live: the driver, and the kernel
+  # schema with its data, read back and upgraded), which fail here instead of skipping. pdo_firebird of PHP 8.4 and
+  # later only: the earlier pdo_firebird cannot open a transaction in autocommit mode. The database is made by the
+  # image (FIREBIRD_DATABASE) with pages of 16 KB and UTF8, as the driver's documentation asks.
+  firebird:
+    name: Firebird ${{ matrix.server }} (PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { server: '5', php: '8.5' }
+          - { server: '5', php: '8.4' }
+          - { server: '4', php: '8.4' }
+    services:
+      firebird:
+        image: firebirdsql/firebird:${{ matrix.server }}
+        env:
+          FIREBIRD_ROOT_PASSWORD: Ci-Firebird-2026
+          FIREBIRD_DATABASE: exp_test.fdb
+          FIREBIRD_DATABASE_PAGE_SIZE: '16384'
+          FIREBIRD_DATABASE_DEFAULT_CHARSET: UTF8
+        ports:
+          - 3050:3050
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, pdo, pdo_firebird, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          test -x vendor/bin/phpunit
+
+      - name: Generate autoloads
+        run: php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Wait for Firebird
+        run: |
+          php -m | grep -qi pdo_firebird || { echo "::error::PHP has no pdo_firebird"; exit 1; }
+          for i in $(seq 1 60); do
+            php -r 'try { new PDO("firebird:dbname=127.0.0.1:/var/lib/firebird/data/exp_test.fdb;charset=UTF8", "SYSDBA", "Ci-Firebird-2026"); exit(0); } catch (Exception $e) { fwrite(STDERR, $e->getMessage() . PHP_EOL); exit(1); }' 2>last-error.txt && exit 0
+            sleep 3
+          done
+          cat last-error.txt; docker ps -a; docker logs --tail 40 "${{ job.services.firebird.id }}" || true
+          echo "::error::Firebird did not answer"; exit 1
+
+      - name: Run the Firebird tests
+        env:
+          EXP_TEST_FIREBIRD_HOST: 127.0.0.1
+          EXP_TEST_FIREBIRD_PORT: 3050
+          EXP_TEST_FIREBIRD_USER: SYSDBA
+          EXP_TEST_FIREBIRD_PASSWORD: Ci-Firebird-2026
+          EXP_TEST_FIREBIRD_DATABASE: /var/lib/firebird/data/exp_test.fdb
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite firebird
+          php vendor/bin/phpunit --colors=always tests/tests/lib/ezdbschema/expFirebirdSchemaTest.php
+          php vendor/bin/phpunit --colors=always --fail-on-skipped --testsuite firebird-live
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
   # The generic ODBC driver (expODBCDB) through unixODBC against SQL Server, PostgreSQL, MariaDB and SQLite, on each of
   # PHP's two ODBC layers, and the MS Access import with MDBTools (read only) from MDBTools' own test files. The live
   # tests fail here instead of skipping: every target is configured.

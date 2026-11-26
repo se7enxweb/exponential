@@ -109,6 +109,8 @@
             <exclude>tests/tests/lib/ezdb/odbc</exclude>
             <!-- in the suites mysqlwire and mysqlwire-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/mysqlwire</exclude>
+            <!-- in the suites firebird and firebird-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/firebird</exclude>
         </testsuite>
 
         <!--
@@ -167,6 +169,21 @@
             <directory suffix="Test.php">tests/tests/kernel/classes/msaccess</directory>
             <exclude>tests/tests/lib/ezdb/odbc/live</exclude>
             <exclude>tests/tests/kernel/classes/msaccess/live</exclude>
+        </testsuite>
+
+        <!--
+          The Firebird driver (expFirebirdDB): the DB-less tests, and the live tests against Firebird 4 or 5
+          (EXP_TEST_FIREBIRD_HOST, _PORT, _USER, _PASSWORD or _PASSWORD_FILE, _DATABASE; they skip without one).
+          The schema handler's DB-less test is in the suite lib (tests/tests/lib/ezdbschema).
+          Run: php vendor/bin/phpunit - -testsuite firebird | firebird-live
+        -->
+        <testsuite name="firebird">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/firebird</directory>
+            <exclude>tests/tests/lib/ezdb/firebird/live</exclude>
+        </testsuite>
+
+        <testsuite name="firebird-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/firebird/live</directory>
         </testsuite>
 
         <testsuite name="odbc-live">
