@@ -956,6 +956,8 @@ class expKickstarter
         $rootUser = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 ? array( '--allow-root-user' ) : array();
         $command = array_merge( array( PHP_BINARY, getcwd() . '/bin/php/expclusterenable.php', '--apply' ),
                                 $choice['share'] !== '' ? array( '--share=' . $choice['share'] ) : array(), $rootUser );
+        // a DuckDB site: the child process opens the file, which only one process may write
+        expDuckDBDB::releaseForChildProcess();
         $process = proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes, getcwd() );
         if ( !is_resource( $process ) )
         {
@@ -988,6 +990,8 @@ class expKickstarter
         $rootUser = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 ? array( '--allow-root-user' ) : array();
         // --apply: without it the command only says it would queue the job
         $command = array_merge( array( PHP_BINARY, $script, 'build-manuals', '--queue', '--apply', '-s', 'admin' ), $rootUser );
+        // a DuckDB site: the child process opens the file, which only one process may write
+        expDuckDBDB::releaseForChildProcess();
         $process = proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes, getcwd() );
         if ( !is_resource( $process ) )
         {

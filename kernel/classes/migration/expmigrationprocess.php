@@ -79,6 +79,8 @@ class expMigrationProcess
         if ( !function_exists( 'proc_open' ) )
             return array( 127, 'proc_open() is not available in this PHP' );
         $pipes = array();
+        // a DuckDB site: the child process opens the file, which only one process may write
+        expDuckDBDB::releaseForChildProcess();
         $process = proc_open( $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes, (string)$root );
         if ( !is_resource( $process ) )
             return array( 127, 'the process could not be started' );
