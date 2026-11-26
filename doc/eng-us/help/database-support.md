@@ -93,6 +93,11 @@ What the order means in practice:
 **In development.** Drivers for Microsoft Access and for databases reached through a generic ODBC connection are
 being built; they are not part of a release yet.
 
+**Firebird** (new in 6.0.15, not in the order above): Firebird 4.0 and 5.0 run a whole site on the kernel's
+`expFirebirdDB` (`DatabaseImplementation=firebird`, pdo_firebird of PHP 8.4 or later, `exp:install --db=firebird`),
+tested on every push against both versions. There is no DFS cluster backend for it yet and no read replicas: a site
+on Firebird runs on one web server. Details and limits: [Firebird driver](../features/6.0/firebird-database-driver.md).
+
 Moving an existing site from one engine to another: [Moving off an old database](moving-off-an-old-database.md).
 
 ## At a glance
@@ -669,6 +674,7 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | 4. MariaDB | no | covered indirectly by the MySQL job (same driver) |
 | 5. Oracle | the DFS cluster backend | the job "cluster-oracle" runs the Oracle DFS backend's tests against Oracle Free 23 with `oci8`; Oracle-specific kernel tests skip on other engines |
 | 6. MySQL | yes, database tests | the job "Database tests (mysql, PHP 8.3)" with a `mysql:8.0` service |
+| Firebird | yes, driver, live and kernel schema tests | the job "firebird" with `firebirdsql/firebird` 5 and 4 as service containers and `pdo_firebird`, PHP 8.4 and 8.5 |
 | 7. SQL Server | yes, driver, live and DFS tests | the job "sqlserver" with `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 and 2025 and ODBC Driver 18, on `sqlsrv`, `pdo_sqlsrv` and `pdo_odbc` and PHP 8.1 to 8.5; the job "SQL Server LocalDB smoke" on Windows with PHP 8.4 |
 
 PHP 8.0, the oldest supported version, and PHP 7.4 (usable without support) are checked by the Quality workflow with a syntax check of every PHP file and a

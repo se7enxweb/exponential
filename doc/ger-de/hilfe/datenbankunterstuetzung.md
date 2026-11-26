@@ -97,6 +97,12 @@ Was die Reihenfolge in der Praxis bedeutet:
 **In Entwicklung.** Treiber für Microsoft Access und für Datenbanken, die über eine allgemeine ODBC-Verbindung erreicht
 werden, entstehen gerade; sie sind noch in keinem Release enthalten.
 
+**Firebird** (neu in 6.0.15, nicht in der Reihenfolge oben): Firebird 4.0 und 5.0 tragen eine ganze Site mit
+`expFirebirdDB` aus dem Kernel (`DatabaseImplementation=firebird`, pdo_firebird ab PHP 8.4, `exp:install
+--db=firebird`), bei jedem Push gegen beide Versionen getestet. Ein DFS-Cluster-Backend gibt es dafür noch nicht und
+keine Lesereplikate: eine Site mit Firebird läuft auf einem Webserver. Einzelheiten und Grenzen:
+[Firebird-Treiber](../funktionen/6.0/firebird-datenbanktreiber.md).
+
 Eine bestehende Website von einer Engine auf eine andere umziehen: [Weg von einer alten Datenbank](weg-von-einer-alten-datenbank.md).
 
 ## Auf einen Blick
@@ -634,6 +640,7 @@ Wegwerf-Datenbank pro Test laufen.
 | 4. MariaDB | nein | indirekt durch den MySQL-Job abgedeckt (derselbe Treiber) |
 | 5. Oracle | das DFS-Cluster-Backend | der Job „cluster-oracle“ führt die Tests des Oracle-DFS-Backends gegen Oracle Free 23 mit `oci8` aus; Oracle-spezifische Kernel-Tests werden auf anderen Engines übersprungen |
 | 6. MySQL | ja, Datenbanktests | der Job „Database tests (mysql, PHP 8.3)“ mit einem `mysql:8.0`-Service |
+| Firebird | ja, Treiber-, Live- und Kernel-Schema-Tests | der Job „firebird“ mit `firebirdsql/firebird` 5 und 4 als Service-Container und `pdo_firebird`, PHP 8.4 und 8.5 |
 | 7. SQL Server | ja, Treiber-, Live- und DFS-Tests | der Job „sqlserver“ mit `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 und 2025 und ODBC Driver 18, auf `sqlsrv`, `pdo_sqlsrv` und `pdo_odbc` und PHP 8.1 bis 8.5; der Job „SQL Server LocalDB smoke“ unter Windows mit PHP 8.4 |
 
 PHP 8.0, die älteste unterstützte Version, und PHP 7.4 (ohne Support nutzbar) prüft der Quality-Workflow mit einer Syntaxprüfung jeder PHP-Datei und einem

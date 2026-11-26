@@ -103,6 +103,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
   SQL, PHP-Schichten, Einstellungen, der Installer und Tests
 - [ODBC-Treiber](odbc-datenbanktreiber.md): `expODBCDB` für jede Datenbank mit ODBC-Treiber, der SQL-Dialekt in den
   Einstellungen; was je Dialekt geht (SQL Server, PostgreSQL, MariaDB, SQLite) mit PDO_ODBC und der odbc-Erweiterung
+- [Firebird-Treiber](firebird-datenbanktreiber.md): `expFirebirdDB` für Firebird 4 und 5 über pdo_firebird ab PHP
+  8.4; eine ganze Site, wie das SQL des Kernels umgeschrieben wird, was geht und was nicht
 - [MS-Access-Unterstützung](ms-access-unterstuetzung.md): `exp:access:import` (MDBTools unter Linux, der
   Access-ODBC-Treiber unter Windows) und der kleine Treiber `expMSAccessDB`; was Access kann und was nicht
 - [Datenbanken, die das MySQL-Protokoll sprechen](mysql-wire-datenbanken.md): TiDB, Vitess und PlanetScale,

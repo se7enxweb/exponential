@@ -97,6 +97,8 @@ nginx with PHP-FPM keep working as before.
   SQL, its PHP layers, settings, the installer, tests and the traceability of the old extension's problems
 - [ODBC driver](odbc-database-driver.md): `expODBCDB` for any database with an ODBC driver, the SQL dialect in the
   settings; what works per dialect (SQL Server, PostgreSQL, MariaDB, SQLite) on PDO_ODBC and PHP's odbc extension
+- [Firebird driver](firebird-database-driver.md): `expFirebirdDB` for Firebird 4 and 5 over pdo_firebird of PHP 8.4
+  and later; a whole site, how the kernel's SQL is rewritten, what works and what does not
 - [MS Access support](ms-access-support.md): `exp:access:import` (MDBTools on Linux, the Access ODBC driver on
   Windows) and the small `expMSAccessDB` driver; what Access can and cannot do
 - [Databases that speak the MySQL protocol](mysql-wire-databases.md): TiDB, Vitess and PlanetScale, SingleStore,
