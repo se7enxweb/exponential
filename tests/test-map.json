@@ -3181,7 +3181,8 @@
     ],
     "lib/ezdbschema/classes/ezpgsqlschema.php": [
       "tests/tests/lib/ezdbschema/expPgsqlSchemaEngineOnlyTypesTest.php",
-      "tests/tests/lib/ezdbschema/expPgsqlSchemaAddFieldTest.php"
+      "tests/tests/lib/ezdbschema/expPgsqlSchemaAddFieldTest.php",
+      "tests/tests/lib/ezdb/pgwire/expPostgreSQLWireSchemaTest.php"
     ],
     "lib/ezdb/classes/expmongodb.php": [
       "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php",
@@ -3193,7 +3194,8 @@
     ],
     "lib/ezdb/classes/ezpostgresqldb.php": [
       "tests/tests/lib/ezdb/expDBDriverCloseAndForkTest.php",
-      "tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php"
+      "tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php",
+      "tests/tests/lib/ezdb/pgwire/expPostgreSQLWireDBTest.php"
     ],
     "lib/ezdbschema/classes/expmongoschema.php": [
       "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php"
@@ -3400,13 +3402,22 @@
       "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
     ],
     "kernel/classes/datatable/expdataconnections.php": [
-      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
+      "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php",
+      "tests/tests/kernel/classes/datatable/expDataConnectionsTest.php"
     ],
     "kernel/classes/cluster/expclustersetup.php": [
       "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
     ],
     "kernel/classes/migration/expmigrationcaption.php": [
       "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php"
+    ],
+    "lib/ezdb/classes/exppostgresqlwire*.php": [
+      "tests/tests/lib/ezdb/pgwire/expPostgreSQLWireProfileTest.php",
+      "tests/tests/lib/ezdb/pgwire/expPostgreSQLWireDBTest.php",
+      "tests/tests/lib/ezdb/pgwire/expPostgreSQLWireSchemaTest.php"
+    ],
+    "kernel/setup/ezsetupcommon.php": [
+      "tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php"
     ]
   },
   "generated": {
