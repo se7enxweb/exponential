@@ -435,6 +435,9 @@ class expMigrationCaption
                 }
                 return 'postgresql:' . hash( 'sha256', implode( "\n", $lines ) );
             case 'mysql':
+                // TiDB, Vitess and SingleStore speak MySQL's protocol but refuse CHECKSUM TABLE: no exact marker
+                if ( $db instanceof expMySQLWireDB && !$db->mysqlWireFacts()['checksum_table'] )
+                    return null;
                 $tables = array_values( array_filter( (array)expKernelTableSchema::tables( $db ), $keep ) );
                 if ( !$tables )
                     return null;

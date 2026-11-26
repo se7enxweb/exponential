@@ -25372,7 +25372,7 @@ c98fcef51c957d1c64d795ff2da47c30  kernel/classes/mailpreferences/expmailsuppress
 3b3547c2957f4a2399506a6de05c5699  kernel/classes/migration/expmigration.php
 55002b5e32f60d189c8e02ae05806808  kernel/classes/migration/expmigrationadmin.php
 b9a30a660ee03260ef169edd5dad58b4  kernel/classes/migration/expmigrationafterrun.php
-0cdb5ff6e9a17ad141cf4a5f9e832fe4  kernel/classes/migration/expmigrationcaption.php
+6eef96e45dacbb419a134ae327cc4a41  kernel/classes/migration/expmigrationcaption.php
 593c4651debbd870682073b8a356a5c5  kernel/classes/migration/expmigrationcheck.php
 9481cc9b5f940a6a3bfd4351a7a75e51  kernel/classes/migration/expmigrationcheckpoint.php
 7bee36f64b25fd6e26dbe5a8176f93fa  kernel/classes/migration/expmigrationcondition.php
