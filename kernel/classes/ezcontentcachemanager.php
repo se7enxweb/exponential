@@ -903,11 +903,12 @@ class eZContentCacheManager
      */
     public static function clearTemplateBlockCache( $objectID, $checkViewCacheClassSettings = false )
     {
-        // ordinary template block cache
-        eZContentObject::expireTemplateBlockCache();
-
         if ( empty( $objectID ) )
+        {
+            // ordinary template block cache
+            eZContentObject::expireTemplateBlockCache();
             return;
+        }
 
         // subtree template block cache
         $nodeList = false;
@@ -922,19 +923,17 @@ class eZContentCacheManager
         }
 
         $ini = eZINI::instance( 'viewcache.ini' );
+        $classIdentifiers = array();
         foreach ( $objects as $object )
         {
             if ( $object instanceof eZContentObject )
             {
+                $objectClassIdentifier = $object->attribute( 'class_identifier' );
+                $classIdentifiers[] = $objectClassIdentifier;
                 $getAssignedNodes = true;
-                if ( $checkViewCacheClassSettings )
+                if ( $checkViewCacheClassSettings && self::classKeepsCacheBlocks( $ini, $objectClassIdentifier ) )
                 {
-                    $objectClassIdentifier = $object->attribute('class_identifier');
-                    if ( $ini->hasVariable( $objectClassIdentifier, 'ClearCacheBlocks' )
-                      && $ini->variable( $objectClassIdentifier, 'ClearCacheBlocks' ) === 'disabled' )
-                    {
-                        $getAssignedNodes = false;
-                    }
+                    $getAssignedNodes = false;
                 }
 
                 if ( $getAssignedNodes )
@@ -942,9 +941,59 @@ class eZContentCacheManager
                     $nodeList = array_merge( ( $nodeList !== false ? $nodeList : array() ), $object->assignedNodes() );
                 }
             }
+            else
+            {
+                // an object that could not be read: nothing can be said about its class
+                $classIdentifiers[] = null;
+            }
+        }
+
+        // ordinary template block cache: every block without ignore_content_expiry, unless only objects of classes with
+        // viewcache.ini [<class>] ClearCacheBlocks=disabled changed, as that setting says (6.0.15: before, those classes
+        // skipped only the subtree_expiry blocks, so a site whose comments or tickets are content objects still lost
+        // every cache-block of the installation on each new comment)
+        $keeps = function ( $classIdentifier ) use ( $ini ) { return self::classKeepsCacheBlocks( $ini, $classIdentifier ); };
+        if ( !$checkViewCacheClassSettings || self::changeExpiresAllCacheBlocks( $classIdentifiers, $keeps ) )
+        {
+            eZContentObject::expireTemplateBlockCache();
         }
 
         eZSubtreeCache::cleanup( $nodeList );
+    }
+
+    /**
+     * Whether viewcache.ini [<class>] ClearCacheBlocks=disabled is set for a class: its objects never show in a
+     * cache-block, so a change of them expires none.
+     *
+     * @param eZINI $ini viewcache.ini
+     * @param string|null $classIdentifier
+     * @return bool
+     */
+    public static function classKeepsCacheBlocks( $ini, $classIdentifier )
+    {
+        return is_string( $classIdentifier ) && $classIdentifier !== ''
+            && $ini->hasVariable( $classIdentifier, 'ClearCacheBlocks' )
+            && $ini->variable( $classIdentifier, 'ClearCacheBlocks' ) === 'disabled';
+    }
+
+    /**
+     * Whether a change of objects of these classes expires every ordinary cache-block (pure): yes when one of them is
+     * of a class that does not keep the cache-blocks, or of an unknown class, or when nothing is known.
+     *
+     * @param array $classIdentifiers class identifiers of the changed objects (null for an object that was not found)
+     * @param callable $keeps function ( string|null $classIdentifier ): bool, classKeepsCacheBlocks() of the site
+     * @return bool
+     */
+    public static function changeExpiresAllCacheBlocks( array $classIdentifiers, $keeps )
+    {
+        if ( !$classIdentifiers )
+            return true;
+        foreach ( $classIdentifiers as $classIdentifier )
+        {
+            if ( !$keeps( $classIdentifier ) )
+                return true;
+        }
+        return false;
     }
 
     /*!

@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7b56ad1adba082966fefe08a9b45d929  doc/changelogs/6.0/6.0.15.md
+1d0313223c50d3543ef1e1ab0d0040b2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -25059,7 +25059,7 @@ b22e1e9f1ac79c653fdfcf5addde6d46  kernel/classes/ezconfirmorderhandler.php
 c3ff052eca276df0e552ecf9a302e364  kernel/classes/ezcontentbrowsebookmarkfolder.php
 7bd50a3be9cbaecc62a22505ce119232  kernel/classes/ezcontentbrowserecent.php
 238c19452fe20158acf28056749739d7  kernel/classes/ezcontentcache.php
-627aa6952b49518e18bc416038de3115  kernel/classes/ezcontentcachemanager.php
+a805a781c45079f64241662ebe8f6e6c  kernel/classes/ezcontentcachemanager.php
 4f8a52b43846c9179bd8a5570ee3e188  kernel/classes/ezcontentclass.php
 f8572197691316f4a6bb1f4c9259e770  kernel/classes/ezcontentclassattribute.php
 1104433f7ae6125061fbd743617a75dd  kernel/classes/ezcontentclassclassgroup.php
@@ -26370,9 +26370,9 @@ bb22146ba89ac105febf760ff22ccecf  kernel/private/classes/ezscriptclusterpurge.ph
 57f615fa54ec6a47863ab5f18f228a77  kernel/private/classes/ezscripttrashpurge.php
 d25cdb6f4a610221b4c182060506a838  kernel/private/classes/global_functions.php
 bd72c374868a1e4b37e6b5b3595e8c73  kernel/private/classes/httpcache/exprenderswitch.php
-7afd811bdeee3b875092b29f4022a938  kernel/private/classes/httpcache/ezphttpcachecontract.php
+ebf10ec474bec837bdfc10a5544c5404  kernel/private/classes/httpcache/ezphttpcachecontract.php
 92e8779fda4f87fd8fb93638822e96b1  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
-30ed949d4ace8214b11fcaf986aca8f7  kernel/private/classes/httpcache/ezphttpcachelistener.php
+81bf935f167abfad7881111c97f6f1c2  kernel/private/classes/httpcache/ezphttpcachelistener.php
 fd4a2dbdf56f759504388d14823bd41f  kernel/private/classes/httpcache/ezphttpcacheworkerdebug.php
 3d8d94db15749c646d6ce41b9a5333e7  kernel/private/classes/requestrules/ezprequestcontext.php
 82656be600befd671158bc8567268934  kernel/private/classes/requestrules/ezprequestrule.php
@@ -27581,7 +27581,7 @@ e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
 5d07de6f4954ad62af07d0cbeb5b9660  settings/file.ini
 48030b94ca3f24f7ace0b42095a051d7  settings/graphql.ini
-058058109fbec70badf325e6c3f799c3  settings/httpcache.ini
+dbf595563aaff6035bb474fb7b00247d  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
 23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
 cb1b4696dd76b14348c3fb0717259e02  settings/image.ini
@@ -27635,7 +27635,7 @@ f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 216946aacfde7678708b64e2a8a9075a  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 57408e0e581cf61071d354afce3f0c5c  settings/velocity.ini
-4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
+380fa6bba7e1925e3de10802434a26e5  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
 6f773749b4c713e99a244a801d9d1b66  settings/wordtoimage.ini
@@ -29482,6 +29482,7 @@ c422bd54833fafdf1fe14e11961efaeb  tests/tests/kernel/classes/eZCacheValkeyINICle
 b7c94a10c78d740486528c0b3bc50c60  tests/tests/kernel/classes/eZCollaborationItemTest.php
 118715711ab7c5dac5f8950688696439  tests/tests/kernel/classes/eZContentBrowseEditReturnTargetTest.php
 1438ae55518818babdb4d3dea6f1c2c1  tests/tests/kernel/classes/eZContentCacheEventSendersTest.php
+89b7014b9cbc03b7b2f759c178eca43c  tests/tests/kernel/classes/eZContentCacheManagerClearCacheBlocksTest.php
 2d886a23bb823f9a3a84d5f3eb142f02  tests/tests/kernel/classes/eZContentCacheManagerThresholdWarningTest.php
 47792ce4dd5ab0c92f29870e72456d36  tests/tests/kernel/classes/eZContentClassAttributeSQLiteIDsTest.php
 f335bfe75bd11a596bbee2a34429e099  tests/tests/kernel/classes/eZContentClassAttributeTest.php
