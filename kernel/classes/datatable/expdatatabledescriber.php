@@ -98,6 +98,13 @@ class expDataTableDescriber
                 break;
             case 'mongodb':
                 return self::mongoColumns( $db, $table );
+            case 'msaccess':
+                // SQLColumns: Access's catalogue is not readable through ODBC
+                $access = method_exists( $db, 'tableColumns' ) ? $db->tableColumns( $table ) : null;
+                $columns = array();
+                foreach ( (array)$access as $name => $column )
+                    $columns[strtolower( (string)$name )] = array( 'type' => strtolower( (string)$column['type'] ), 'nullable' => (bool)$column['nullable'], 'default' => null );
+                return $columns;
         }
         if ( $sql === null )
             return array();

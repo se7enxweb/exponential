@@ -205,7 +205,7 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
     public function testEngines()
     {
         $engines = expDataConnections::engines();
-        $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb' ), array_keys( $engines ) );
+        $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess' ), array_keys( $engines ) );
         foreach ( $engines as $key => $engine )
         {
             foreach ( array( 'label', 'kind', 'ez', 'pdo', 'port', 'file', 'enabled', 'available', 'via', 'handler', 'pdo_driver', 'why', 'untested' ) as $field )

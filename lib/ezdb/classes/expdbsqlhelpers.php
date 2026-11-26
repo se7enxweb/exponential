@@ -10,7 +10,7 @@
 /**
  * The SQL of the portable helpers every driver offers (eZDBInterface::sqlLimit(), sqlUpsert(), sqlGroupConcat(),
  * sqlUnixTimestamp(), sqlFromUnixTimestamp(), sqlQuoteIdentifier()), per SQL dialect: mysql (MySQL and MariaDB),
- * postgresql, sqlite, oracle, sqlserver; generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
+ * postgresql, sqlite, oracle, sqlserver, msaccess (MS Access through ODBC, expMSAccessDB); generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
  * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code
  * branches on the database it runs on.
  *
@@ -19,7 +19,7 @@
  */
 class expDBSQLHelpers
 {
-    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'generic' );
+    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'generic' );
 
     /**
      * The limit and offset as integers: limit false for "no limit" (false, null, '', negative or not a number).
@@ -44,6 +44,8 @@ class expDBSQLHelpers
     {
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::quoteName( $name );
+        if ( $dialect === 'msaccess' )
+            return expMSAccessDialect::quoteName( $name );
         $out = array();
         foreach ( explode( '.', (string)$name ) as $part )
         {
@@ -67,6 +69,8 @@ class expDBSQLHelpers
     {
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::applyLimit( $sql, $limit, $offset );
+        if ( $dialect === 'msaccess' )
+            return expMSAccessDialect::applyLimit( $sql, $limit, $offset );
         list( $limit, $offset ) = self::normalizeLimit( $limit, $offset );
         $sql = rtrim( (string)$sql, " \t\r\n;" );
         if ( $limit === 0 )
@@ -109,6 +113,8 @@ class expDBSQLHelpers
         foreach ( $keyColumns as $key )
             if ( !array_key_exists( $key, $row ) )
                 throw new InvalidArgumentException( "The key column '$key' has no value" );
+        if ( $dialect === 'msaccess' )
+            throw new expDBUnsupportedException( 'msaccess', 'upsert', 'run an UPDATE and, when it changed no row, an INSERT' );
         if ( $updateColumns === null )
             $updateColumns = array_values( array_diff( array_keys( $row ), $keyColumns ) );
         $q = function ( $name ) use ( $dialect ) { return expDBSQLHelpers::quoteIdentifier( $dialect, $name ); };
@@ -156,7 +162,8 @@ class expDBSQLHelpers
 
     /**
      * A SELECT that locks the rows it reads until the end of the transaction: FOR UPDATE (MySQL, PostgreSQL, Oracle,
-     * generic), table hints on SQL Server, the statement as it is on SQLite (whose write transaction locks the database).
+     * generic), table hints on SQL Server, the statement as it is on SQLite (whose write transaction locks the database)
+     * and MS Access (whose engine locks pages itself).
      *
      * @param string $dialect
      * @param string $sql a SELECT without FOR UPDATE
@@ -165,7 +172,7 @@ class expDBSQLHelpers
     public static function forUpdate( $dialect, $sql )
     {
         $sql = rtrim( (string)$sql, " \t\r\n;" );
-        if ( $dialect === 'sqlite' )
+        if ( $dialect === 'sqlite' || $dialect === 'msaccess' )
             return $sql;
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::forUpdate( $sql );
@@ -187,6 +194,8 @@ class expDBSQLHelpers
     {
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::groupConcat( $expression, $separator, $orderBy );
+        if ( $dialect === 'msaccess' )
+            throw new expDBUnsupportedException( 'msaccess', 'GROUP_CONCAT', 'join the rows in PHP' );
         $order = ( $orderBy !== null && trim( (string)$orderBy ) !== '' ) ? trim( (string)$orderBy ) : null;
         $sep = $literal( (string)$separator );
         switch ( $dialect )
@@ -215,6 +224,8 @@ class expDBSQLHelpers
         {
             case 'sqlserver':
                 return expSQLServerDialect::unixTimestamp( $expression );
+            case 'msaccess':
+                return expMSAccessDialect::unixTimestamp( $expression );
             case 'mysql':
                 return $expression === null ? 'UNIX_TIMESTAMP()' : "UNIX_TIMESTAMP($expression)";
             case 'sqlite':
@@ -240,6 +251,8 @@ class expDBSQLHelpers
         {
             case 'sqlserver':
                 return expSQLServerDialect::fromUnixTimestamp( $expression );
+            case 'msaccess':
+                return expMSAccessDialect::fromUnixTimestamp( $expression );
             case 'mysql':
                 return "FROM_UNIXTIME($expression)";
             case 'sqlite':

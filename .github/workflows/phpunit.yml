@@ -687,3 +687,212 @@ jobs:
           else
             echo "::warning::No LocalDB on this runner: the live tests did not run"
           fi
+
+  # The generic ODBC driver (expODBCDB) through unixODBC against SQL Server, PostgreSQL, MariaDB and SQLite, on each of
+  # PHP's two ODBC layers, and the MS Access import with MDBTools (read only) from MDBTools' own test files. The live
+  # tests fail here instead of skipping: every target is configured.
+  odbc:
+    name: ODBC (${{ matrix.layer }}, PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { layer: pdo_odbc, php: '8.5' }
+          - { layer: odbc, php: '8.4' }
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: 'Y'
+          MSSQL_PID: Developer
+          MSSQL_SA_PASSWORD: Ci-SqlServer-2026!
+          MSSQL_MEMORY_LIMIT_MB: '2048'
+        ports:
+          - 1433:1433
+        options: >-
+          --health-cmd "/opt/mssql-tools18/bin/sqlcmd -C -No -S localhost -U sa -P Ci-SqlServer-2026! -Q 'SELECT 1'"
+          --health-interval=10s
+          --health-timeout=10s
+          --health-start-period=20s
+          --health-retries=30
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: ci-odbc
+          POSTGRES_DB: odbctest
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+      mariadb:
+        image: mariadb:11.4
+        env:
+          MARIADB_ROOT_PASSWORD: ci-odbc
+          MARIADB_DATABASE: odbctest
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "healthcheck.sh --connect --innodb_initialized"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Install the ODBC drivers and MDBTools
+        run: |
+          if ! ls /opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.*.so.* >/dev/null 2>&1; then
+            if ! grep -rqs packages.microsoft.com /etc/apt/sources.list /etc/apt/sources.list.d/; then
+              curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --batch --yes --dearmor -o /usr/share/keyrings/microsoft-prod.gpg
+              echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/mssql-release.list
+            fi
+          fi
+          sudo apt-get -o Acquire::Retries=3 update
+          sudo ACCEPT_EULA=Y apt-get -o Acquire::Retries=3 install -y msodbcsql18 unixodbc unixodbc-dev odbcinst \
+            odbc-postgresql odbc-mariadb libsqliteodbc mdbtools odbc-mdbtools
+          odbcinst -q -d
+
+      - name: MDBTools' test files (Access 97, 2000 and 2007 formats)
+        run: |
+          mkdir -p "$RUNNER_TEMP/mdbtestdata"
+          cd "$RUNNER_TEMP/mdbtestdata"
+          git init -q
+          git fetch -q --depth 1 https://github.com/mdbtools/mdbtestdata.git 5ebf2d685ec628df72f4774b78abee96a866b837
+          git checkout -q FETCH_HEAD
+          ls -l data
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, pdo, pdo_odbc, odbc, pdo_sqlite, sqlite3, pcntl, posix, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            sleep $((attempt * 15))
+          done
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Wait for SQL Server
+        run: |
+          for i in $(seq 1 100); do
+            php -r 'try { new PDO("odbc:Driver={ODBC Driver 18 for SQL Server};Server=127.0.0.1,1433;Encrypt=yes;TrustServerCertificate=yes;LoginTimeout=5", "sa", "Ci-SqlServer-2026!"); exit(0); } catch (Exception $e) { exit(1); }' && exit 0
+            sleep 3
+          done
+          echo "::error::SQL Server did not answer"; exit 1
+
+      - name: Run the ODBC and MS Access tests
+        env:
+          EXP_TEST_ODBC_LAYER: ${{ matrix.layer }}
+          EXP_TEST_ODBC_SQLSERVER: Server=127.0.0.1,1433;Encrypt=yes;TrustServerCertificate=yes
+          EXP_TEST_ODBC_SQLSERVER_USER: sa
+          EXP_TEST_ODBC_SQLSERVER_PASSWORD: Ci-SqlServer-2026!
+          EXP_TEST_ODBC_POSTGRESQL: Server=127.0.0.1;Port=5432;Database=odbctest
+          EXP_TEST_ODBC_POSTGRESQL_USER: postgres
+          EXP_TEST_ODBC_POSTGRESQL_PASSWORD: ci-odbc
+          EXP_TEST_ODBC_MYSQL: Server=127.0.0.1;Port=3306;Database=odbctest
+          EXP_TEST_ODBC_MYSQL_USER: root
+          EXP_TEST_ODBC_MYSQL_PASSWORD: ci-odbc
+          EXP_TEST_ODBC_SQLITE: '1'
+          EXP_TEST_ACCESS_FIXTURES: ${{ runner.temp }}/mdbtestdata/data
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite odbc
+          php vendor/bin/phpunit --colors=always --display-skipped --testsuite odbc-live
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
+  # MS Access on Windows: Microsoft's Access Database Engine 2016 (x64) ODBC driver, an empty .accdb made with ADOX,
+  # the driver's live tests, the import through ODBC, and the probe of a minimal site on Access (its report is an
+  # artifact). The engine is a download from Microsoft, not part of the runner image, so the job may not fail the run.
+  msaccess-windows:
+    name: MS Access (ACE x64, ${{ matrix.os }}, PHP 8.4)
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ windows-2022, windows-2025 ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, sockets, pdo, pdo_odbc, odbc, pdo_sqlite, sqlite3, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install the Access Database Engine (x64)
+        shell: pwsh
+        run: |
+          if (-not (Get-OdbcDriver -Name 'Microsoft Access Driver (*.mdb, *.accdb)' -Platform '64-bit' -ErrorAction SilentlyContinue)) {
+            $exe = Join-Path $env:RUNNER_TEMP 'accessdatabaseengine_X64.exe'
+            Invoke-WebRequest -Uri 'https://download.microsoft.com/download/3/5/C/35C84C36-661A-44E6-9324-8786B8DBE231/accessdatabaseengine_X64.exe' -OutFile $exe
+            $p = Start-Process -FilePath $exe -ArgumentList '/quiet', '/norestart' -Wait -PassThru
+            Write-Output "installer exit code: $($p.ExitCode)"
+          }
+          Get-OdbcDriver -Platform '64-bit' | Where-Object Name -like '*Access*' | Format-List Name, Attribute
+
+      - name: Make empty Access files
+        shell: pwsh
+        run: |
+          foreach ($name in 'exp-test', 'exp-kernel') {
+            $file = Join-Path $env:RUNNER_TEMP "$name.accdb"
+            $catalog = New-Object -ComObject ADOX.Catalog
+            $catalog.Create("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=$file") | Out-Null
+            $catalog.ActiveConnection.Close()
+            Get-Item $file | Format-List FullName, Length
+          }
+          "EXP_TEST_MSACCESS_FILE=$(Join-Path $env:RUNNER_TEMP 'exp-test.accdb')" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          "EXP_TEST_MSACCESS_KERNEL_FILE=$(Join-Path $env:RUNNER_TEMP 'exp-kernel.accdb')" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+
+      - name: MDBTools' test files
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/mdbtestdata" && cd "$RUNNER_TEMP/mdbtestdata"
+          git init -q
+          git fetch -q --depth 1 https://github.com/mdbtools/mdbtestdata.git 5ebf2d685ec628df72f4774b78abee96a866b837
+          git checkout -q FETCH_HEAD
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req='ext-*'
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Run the MS Access tests
+        shell: bash
+        env:
+          EXP_TEST_ACCESS_FIXTURES: ${{ runner.temp }}/mdbtestdata/data
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite odbc
+          php vendor/bin/phpunit --colors=always --display-skipped tests/tests/lib/ezdb/odbc/live/expMSAccessLiveTest.php
+          php vendor/bin/phpunit --colors=always --display-skipped tests/tests/kernel/classes/msaccess/live/expAccessImportLiveTest.php
+          php vendor/bin/phpunit --colors=always --display-skipped tests/tests/lib/ezdb/odbc/live/expMSAccessKernelSchemaTest.php
+
+      - name: Keep the probe report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: msaccess-kernel-probe-${{ matrix.os }}
+          path: var/tmp/msaccess-kernel-probe.json
+          if-no-files-found: ignore

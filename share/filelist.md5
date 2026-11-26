@@ -13,7 +13,7 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 83ebb7a0d04f421bdff8ef89b268e003  .github/workflows/ci-health.yml
 dcd2c18968f0d52e402cd003ab6e2c67  .github/workflows/codeql.yml
 ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
-6d251c9cdcdf359f5a748aa71961e1d3  .github/workflows/phpunit.yml
+47e25f09becf64a179f2d3fd724a376a  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 1942bd02f05e39a47b6f0c82d826f841  .htaccess_root
@@ -28,7 +28,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 445c26385a719c51e415113c585597ad  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 a07e962e98509dfc0bb9bca56771410e  autoload.php
-c3763a17bf9b5252a9bc57ab90f05d69  autoload/ezp_kernel.php
+2ae2efe0c02c33c37e7642de68f957fd  autoload/ezp_kernel.php
 4f5aae97c4777e3d9fe309fc409be8d6  benchmarks/classes/ezbenchmark.php
 9c88f2cf9ede23d32cabee36659239f2  benchmarks/classes/ezbenchmarkcase.php
 dbc264cff80d6c4b0b5fd393d1b45297  benchmarks/classes/ezbenchmarkclirunner.php
@@ -79,6 +79,7 @@ ff862ee85a08a2d2b2151f2bd59042cf  bin/php/console
 003c25fdbc11658544c790c78821525c  bin/php/convertezenumtoezselection.php
 18bb95de50aab045451c9738e2ce5a2e  bin/php/convertprice2multiprice.php
 c527088ea1272cd1981b299019c75373  bin/php/dfscleanup.php
+1567e8da8ad61a29e1bed969bb31b0ec  bin/php/expaccessimport.php
 db795025ef01da564bb30256a15d732b  bin/php/expbackfillordersiteaccess.php
 d7ab6bd76c196b775998b653518cdfe6  bin/php/expclusterdisable.php
 d01ef6972bc412267da2aa264e4c2001  bin/php/expclusterenable.php
@@ -3583,7 +3584,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-1d0313223c50d3543ef1e1ab0d0040b2  doc/changelogs/6.0/6.0.15.md
+be8c3d0e8bde4faf1f2929f1e5d191a1  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6968,7 +6969,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-4a21d6184a1fb68a21191c40f2d5592e  doc/eng-us/features/6.0/README.md
+b69e0717f1199c3e714c8e246b8cdb4c  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7098,10 +7099,12 @@ edf63d0c3d2620ae2f29a5a96f1c6fa1  doc/eng-us/features/6.0/moderation.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 257a4b8dfc81f1f632e0e64362e2bda1  doc/eng-us/features/6.0/mongodb-database-support.md
 43eb9edddbd9d2c729d83050685b781a  doc/eng-us/features/6.0/mongodb-dfs-cluster.md
+16ed678b657616b4d999119a6bda6d2d  doc/eng-us/features/6.0/ms-access-support.md
 3bd8e093800aafdb91540e9466fa4756  doc/eng-us/features/6.0/multi-site-ini-overrides.md
 8c507b215068aeb519298aebe32659da  doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md
 89aef2cbcbbeb2e4a7246cd080448bae  doc/eng-us/features/6.0/multisite-cross-site-links.md
 1e5257640f8fa49f18f0eebd491884c2  doc/eng-us/features/6.0/notifications.md
+d24ff1f036341a36babb0a634f735484  doc/eng-us/features/6.0/odbc-database-driver.md
 328d31cb3c5429d428bb28e53e460208  doc/eng-us/features/6.0/online-editor-tinymce8.md
 3c4fe94e91ca4bfc49f165feb3b805f7  doc/eng-us/features/6.0/oracle-dfs-cluster.md
 e510905150884893d3af084b35ddf870  doc/eng-us/features/6.0/order-list-sorting.md
@@ -13673,7 +13676,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-3b05002b1cf908d968034d84e8201e25  doc/ger-de/.paths.json
+7edf4586a4004e8ee445aefc163a744d  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17106,7 +17109,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-92f24aa46588b11d17618d8e8ae88a01  doc/ger-de/funktionen/6.0/README.md
+c84a98fc6ad00421cc44f2970df60919  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17245,7 +17248,9 @@ ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaend
 298bb86f3a6c50d18a8fd5252f6d84ec  doc/ger-de/funktionen/6.0/modulueberschreibung-durch-extensions.md
 b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunterstuetzung.md
 5cd14f4f8fc482ab2989f3cd0b7d9dba  doc/ger-de/funktionen/6.0/mongodb-dfs-cluster.md
+22a168e5fb2d2468f8af574f7bc3d63f  doc/ger-de/funktionen/6.0/ms-access-unterstuetzung.md
 a0bd58357b09d6587778742acec9e033  doc/ger-de/funktionen/6.0/oberster-knoten-des-inhaltsbaums-im-admin.md
+1d6a2a545022ebc703e340e26b9d1d74  doc/ger-de/funktionen/6.0/odbc-datenbanktreiber.md
 99269121eb54ff615dc17139eec01ac3  doc/ger-de/funktionen/6.0/online-editor-tinymce8.md
 53e924c6d8365234e1bcd4525bf25bb2  doc/ger-de/funktionen/6.0/optionen-der-unterelementtabelle.md
 2eeed3b957a41e78505c209937ec2070  doc/ger-de/funktionen/6.0/oracle-dfs-cluster.md
@@ -24821,14 +24826,14 @@ a4eaa659eda324dae71e98320dd1b9d2  kernel/classes/contentjob/expcontentjobtransfe
 360ff8975b148bb0361cb0b98d62b7c2  kernel/classes/contentjob/expcontentjobworker.php
 474ea1a861aee819acdab722cee2f5e0  kernel/classes/contentwriter/expcontentwriter.php
 53190e2e0d73d0c7b0aa4a2eecd4ada8  kernel/classes/datatable/expdataconnection.php
-9f2348da33f93c96bd6bcd29b05eb162  kernel/classes/datatable/expdataconnections.php
+8eb1a4e222348a869994b80f33254e29  kernel/classes/datatable/expdataconnections.php
 73b8c1e625a3f79814d488687aba7215  kernel/classes/datatable/expdatatablecatalogue.php
-a6482a49f0bad92300c77d9e259ee6f2  kernel/classes/datatable/expdatatabledescriber.php
+0d56ee2f117111cdabf68a647bb4bb3b  kernel/classes/datatable/expdatatabledescriber.php
 8f34c0dd424871274d7553e6345b0f3e  kernel/classes/datatable/expdatatablefieldsource.php
 cb612f8996b5c06f76a46f5c2c637eb2  kernel/classes/datatable/expdatatablefieldsources.php
 04edd6ae39fdcec23ea22da16dd1b3fc  kernel/classes/datatable/expdatatablefunctioncollection.php
 1f45e671c855697eeafe2b251e3182f2  kernel/classes/datatable/expdatatablerelation.php
-0d34fd48cdae6330b8554bce2a152010  kernel/classes/datatable/expdatatableschema.php
+5591251216f87aea3431f2cc173fad80  kernel/classes/datatable/expdatatableschema.php
 91b9df4ebff53c60639bd53d03b05cdc  kernel/classes/datatable/expdatatablewriter.php
 e377eb86c225e7f4fe09cfaf28ab23ff  kernel/classes/datatable/expkerneltableschema.php
 7cfd05ade5443f91c9060c2ec2abb3af  kernel/classes/datatable/sync/expdatasync.php
@@ -25474,6 +25479,10 @@ df355786c6d8e9c4c8ec093b4a0fc50a  kernel/classes/migration/steps/expmigrationste
 393f60f989776b9aed843bdb38dc9715  kernel/classes/moderation/expmoderationaction.php
 eff462292e500a93458972e5df55fc28  kernel/classes/moderation/expmoderationadmin.php
 224c233caa6954da72672c5aece28940  kernel/classes/moderation/expmoderationlist.php
+6fd653685d98b0093ffae6373f1492ff  kernel/classes/msaccess/expaccessimport.php
+a917f1bad771633b1b74c1179d16af24  kernel/classes/msaccess/expaccessmdbtoolsreader.php
+7eef23a27e9ded7eed32883bd56c58f0  kernel/classes/msaccess/expaccessodbcreader.php
+c58a09e022c5dae262fa50cb760e7d46  kernel/classes/msaccess/expaccessreader.php
 aff9b72fb6b474edede0a27b9303971a  kernel/classes/notification/event/ezcollaboration/ezcollaborationtype.php
 ddf552f2a7883b7e428d69337f0a0bcd  kernel/classes/notification/event/ezcurrenttime/ezcurrenttimetype.php
 39b61e5734ddbf6a9bea0d12f898a480  kernel/classes/notification/event/ezpublish/ezpublishtype.php
@@ -26087,6 +26096,7 @@ d85d70892cffae75bdd44150ca095e54  kernel/private/classes/commands/configphp.php
 b9d38fa5bf962d67ef4040f3177f0752  kernel/private/classes/commands/convertezenumtoezselection.php
 5bc7cc16625af671c9bb0cbd3b9441fc  kernel/private/classes/commands/convertprice2multiprice.php
 648ceb089a6da55fc7c37bba271384e9  kernel/private/classes/commands/dfscleanup.php
+b55fbde9cba144bb2ea35e7342952883  kernel/private/classes/commands/expaccessimport.php
 c51639e76d6a75c9439bfe335fa93d6c  kernel/private/classes/commands/expbackfillordersiteaccess.php
 2e742bbc5f37c07bf764d55e83226720  kernel/private/classes/commands/expclusterdisable.php
 41160b23ff908a7037a79d47e0d09b37  kernel/private/classes/commands/expclusterenable.php
@@ -27133,7 +27143,12 @@ efbd0eec92f8ae73766639a072611217  kernel/workflow/view.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
 1f7a195d56755dbc47ff0c22eebf8cc9  kickstart.ini-dist
 d3b3cc96820c0e4630d0f05e27fc21bf  lib/ezdb/classes/expdbinlist.php
+13493200fa1e3c5cb49613ca1b0bb108  lib/ezdb/classes/expdbunsupportedexception.php
 a162439dfcb945c46a4f863817de574a  lib/ezdb/classes/expmongodb.php
+82dacdc47ff2d6c14cd326158ac73770  lib/ezdb/classes/expmsaccessdb.php
+9afa971652dc119ca6265d26806281c6  lib/ezdb/classes/expmsaccessdialect.php
+810ca7915a155991e12bf9fc236beeb2  lib/ezdb/classes/expodbcdb.php
+3687389380c409a5d7b4d565c9c34baf  lib/ezdb/classes/expodbcnativeconnection.php
 2aae707eee7e3e7a7d991052fec0c5bb  lib/ezdb/classes/exppdodb.php
 b34a55ee1c8c8d1ef91a3dadce357ebe  lib/ezdb/classes/ezdb.php
 370eb86a5bd19f63bc4ebb8fefa31097  lib/ezdb/classes/ezdbinterface.php
@@ -27150,7 +27165,7 @@ def9593c25997ce85b9c0340b343f14f  lib/ezdbschema/classes/ezdbschemachecker.php
 0c1f993e74e6303a470564c81007e2bd  lib/ezdbschema/classes/ezdbschemainterface.php
 431c44fadd89d4faf8d94951ba9f7dc4  lib/ezdbschema/classes/ezlintschema.php
 e7a94ecfdac0f1710582b880182e4cac  lib/ezdbschema/classes/ezmysqlschema.php
-b7169b45711e91b63a770364bf013ff3  lib/ezdbschema/classes/ezpgsqlschema.php
+4aa27af1b0f9365388a62634d9e593b4  lib/ezdbschema/classes/ezpgsqlschema.php
 a19adc3c2e169f64cd9351e39584b017  lib/ezdbschema/classes/ezsqliteschema.php
 d7126b3acb82bb59c2a37e362deb2e6d  lib/ezdiff/classes/ezdiff.php
 b4ee49ddeef44648695d632cf71f4deb  lib/ezdiff/classes/ezdiffcontainerobject.php
@@ -27545,7 +27560,7 @@ cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.m
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 6c02e4e777784dc458582238e073cb10  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
-d6641b9953a26c77c6059b88d98e5863  phpunit.xml
+b11fb380fbce9e57d45e0caef1e7a89f  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 80009f76b1b56385601f4e610872f8d2  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -27565,7 +27580,7 @@ de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 ee38fe027250131e8952f8dacf0f18c9  settings/countrygroups.ini
 35ccc7907d59d54e6a6dfa8f48560bb1  settings/cronjob.ini
 bd5b3823ca4e81603f9fc446e6ab4e66  settings/dashboard.ini
-1dc1ef94d1fa90f311786af722de75af  settings/datatable.ini
+3c989a3c5db8dde859695794197ad0d1  settings/datatable.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 63a446cda33ad9cc222b973654a0bf8d  settings/dbschema.ini
@@ -27611,7 +27626,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 1acacb7361cdafaf7c456b105e0b534f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-11f45f940f36e5576f81ee3641730bd6  settings/site.ini
+e0787582d1a397520d2f4638368e3ebe  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -28977,7 +28992,7 @@ bbf1056a2362f3aa6c8cceea081afffb  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 433535bbea030ca66be73ed16d242a2e  tests/suite.php
-40c6c67ebc946d3bc937a7eeab0d42e0  tests/test-map.json
+3b93cc13b0630be05d09a82c1ac4c6ca  tests/test-map.json
 9917402d25f8419adb652d9a634bac4a  tests/tests/bin/CiWorkflowPullRequestTest.php
 aab68864c45774a2a976dbdc7ba53f78  tests/tests/bin/ConsoleExtensionAliasTest.php
 b93b286979fa3eef6b6b03fd1197dd31  tests/tests/bin/CopyrightNoticeTest.php
@@ -29432,7 +29447,7 @@ be60639f26f353c955a39d9763a1c2ff  tests/tests/kernel/classes/contentmodel/eZSeri
 0c3e5eb5563703f81e0f593edf4319df  tests/tests/kernel/classes/contentmodel/eZUserAndRoleLiveTest.php
 403b91bcf2e3751015ed0f2487465ddc  tests/tests/kernel/classes/contentmodel/expContentModelLiveTestCase.php
 c3d2d62204d86bfb196b30b0e041268d  tests/tests/kernel/classes/contentwriter/expContentWriterTest.php
-204d75541bc7d8455a35d6ec1be0ceb6  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
+7f3fa6d478595eb6b000a15e3f99644d  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
 56b4423a241440a1c49ed53ed9a70a9d  tests/tests/kernel/classes/datatable/expDataSyncTest.php
 18bf88b86ab4a799dec24ffb65c350da  tests/tests/kernel/classes/datatable/expDataTableCatalogueTest.php
 0f551db5c1351eebecd1eaa5bf4f9e44  tests/tests/kernel/classes/datatable/expDataTableDescriberTest.php
@@ -29974,6 +29989,8 @@ b99a3fed714866a9627bcc15e1c807c5  tests/tests/kernel/classes/moderation/expModer
 644eb11fd757002bee806d88110b7b5f  tests/tests/kernel/classes/moderation/expModerationEngineChecks.php
 18ddfaad171bca6f2797dfb843888b74  tests/tests/kernel/classes/moderation/expModerationSqliteTest.php
 254e6e4ad2b2e7f49ea08c0eb3e58c69  tests/tests/kernel/classes/moderation/expModerationTest.php
+b50129071543223aa68ad109f15ceec6  tests/tests/kernel/classes/msaccess/expAccessImportTest.php
+9116d1e72da43e6271fbe3c08b1ca265  tests/tests/kernel/classes/msaccess/live/expAccessImportLiveTest.php
 0ba5e77068844a645ce399e0ba9e8234  tests/tests/kernel/classes/namelists/eZSerializedObjectNameListMappingTest.php
 03d707f5d416a1823332e9decaea010e  tests/tests/kernel/classes/notification/NotificationSystemTest.php
 4c5c13662404ff237911d83d8a26d15b  tests/tests/kernel/classes/notification/eZNotificationScheduleTest.php
@@ -30745,6 +30762,12 @@ ffb2e96684d7f3e0f4fb2a262d6ccb38  tests/tests/lib/ezdb/mongodb/expMongoDBEscapeS
 9f0de1d8ffad17d1c48d5f1a403cff83  tests/tests/lib/ezdb/mongodb/sevenxMongoDBAdapterTest.php
 e88a8be5f0a7515c331a4377a1bc95e2  tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php
 79532c4f656b21f148701db946e38be2  tests/tests/lib/ezdb/mongodb/stubs.php
+5410a08a13115d8c4949dd33dc9d82c0  tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php
+3d8298b69483b8ec8790405041a1d763  tests/tests/lib/ezdb/odbc/expODBCDBTest.php
+83a4b8b614bc59df722168d8aea2c183  tests/tests/lib/ezdb/odbc/expODBCTestKit.php
+4f18a4d46062af4b1727ca2325b3a0fb  tests/tests/lib/ezdb/odbc/live/expMSAccessKernelSchemaTest.php
+5e12ac39b96d56e497178efa4ff578ac  tests/tests/lib/ezdb/odbc/live/expMSAccessLiveTest.php
+f4abb0436986621e32c7f7864fbd6e27  tests/tests/lib/ezdb/odbc/live/expODBCLiveTest.php
 f40f3832378c387d480f1c50678e6c9b  tests/tests/lib/ezdb/suite.php
 ca35100b2f790091e5a176ef768a01b1  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
 bf56cd696b1c3561ffb9158f765ac630  tests/tests/lib/ezdbschema/expInsertSchemaDataOnlyTest.php
@@ -31221,7 +31244,7 @@ af00774e16040304aa81e575d62c700c  tests/tests/lib/ezdb/sqlserver/expSQLServerTes
 5f722cfd7d4db43486ab8a35be21d36b  doc/eng-us/features/6.0/sqlserver-database-driver.md
 d8fa547244dd7f8b736075189a239661  doc/ger-de/funktionen/6.0/sqlserver-datenbanktreiber.md
 72873eb2cfa278acf66adb1fc7f5b311  kernel/sql/sqlserver/kernel_schema.sql
-abf5704c864e3198b48f7adaf062cfb6  lib/ezdb/classes/expdbsqlhelpers.php
+04b1f6758a962bc56bc8ee28a44d052e  lib/ezdb/classes/expdbsqlhelpers.php
 c084ea39716e256afe17bbbeb3b64ca2  lib/ezdbschema/classes/expsqlserverschema.php
 049c4f13e87d2c3d1b06aaff9020c322  tests/tests/lib/ezdb/expDBSQLHelpersTest.php
 7f28e20aa6bead0443f63ec06bbdf75c  tests/tests/lib/ezdb/sqlserver/live/expSQLServerSchemaLiveTest.php

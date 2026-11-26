@@ -3318,6 +3318,27 @@
     "bin/php/expimagealiasdrain.php": [
       "tests/tests/kernel/classes/imagealias/expImageAliasPagePlaceholderTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasDrainerTest.php"
+    ],
+    "lib/ezdb/classes/expodbc*.php": [
+      "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
+      "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"
+    ],
+    "lib/ezdb/classes/expmsaccess*.php": [
+      "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
+      "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"
+    ],
+    "lib/ezdb/classes/expdbunsupportedexception.php": [
+      "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
+      "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"
+    ],
+    "kernel/classes/msaccess/*": [
+      "tests/tests/kernel/classes/msaccess/expAccessImportTest.php"
+    ],
+    "kernel/private/classes/commands/expaccessimport.php": [
+      "tests/tests/kernel/classes/msaccess/expAccessImportTest.php"
+    ],
+    "bin/php/expaccessimport.php": [
+      "tests/tests/kernel/classes/msaccess/expAccessImportTest.php"
     ]
   },
   "generated": {

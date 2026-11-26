@@ -101,6 +101,10 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
   Aktualisieren und ein Cluster auf 18 und 19
 - [Microsoft-SQL-Server-Treiber](sqlserver-datenbanktreiber.md): `expSQLServerDB` für SQL Server 2017 bis 2025 und Azure
   SQL, PHP-Schichten, Einstellungen, der Installer und Tests
+- [ODBC-Treiber](odbc-datenbanktreiber.md): `expODBCDB` für jede Datenbank mit ODBC-Treiber, der SQL-Dialekt in den
+  Einstellungen; was je Dialekt geht (SQL Server, PostgreSQL, MariaDB, SQLite) mit PDO_ODBC und der odbc-Erweiterung
+- [MS-Access-Unterstützung](ms-access-unterstuetzung.md): `exp:access:import` (MDBTools unter Linux, der
+  Access-ODBC-Treiber unter Windows) und der kleine Treiber `expMSAccessDB`; was Access kann und was nicht
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
   Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)

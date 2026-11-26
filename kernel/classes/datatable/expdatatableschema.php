@@ -21,7 +21,7 @@
  * Engines: MySQL/MariaDB, PostgreSQL and SQLite through the kernel's schema handlers (CREATE from them, the upgrade
  * from eZDbSchemaChecker and the handler's upgrade SQL); Oracle through ezoracle's handler when it is active, else
  * through the statements here (a sequence and a trigger for the counted key, named as expPDODB reads them); SQL Server
- * through the statements here (IDENTITY); MongoDB through its schema handler (collections and indexes). An upgrade
+ * through the statements here (IDENTITY); MS Access through expMSAccessDialect (COUNTER); MongoDB through its schema handler (collections and indexes). An upgrade
  * adds columns and indexes; it drops or changes one only when asked ('drop', 'alter').
  *
  * @since 6.0.15
@@ -193,6 +193,8 @@ class expDataTableSchema
         {
             case 'sqlserver':
                 return self::sqlServerCreate( $table, $definition );
+            case 'msaccess':
+                return expMSAccessDialect::createTable( $table, $definition, $db instanceof expODBCDB ? $db->ansi92() : true );
             case 'oracle':
                 if ( self::hasHandler( 'oracle' ) && !$db instanceof expPDODB )
                     return self::split( expKernelTableSchema::sql( array( $table => $definition ), 'oracle' ) );
@@ -471,15 +473,19 @@ class expDataTableSchema
         }
         else
         {
-            // Oracle through PDO, SQL Server: add the missing columns and indexes
+            // Oracle through PDO, SQL Server, MS Access: add the missing columns and indexes
             $columns = expDataTableDescriber::columns( $db, $table );
             foreach ( isset( $wanted['fields'] ) ? $wanted['fields'] : array() as $name => $field )
             {
                 if ( isset( $columns[strtolower( $name )] ) )
                     continue;
-                $step['statements'][] = $engine === 'sqlserver'
-                    ? 'ALTER TABLE ' . self::quoteSqlServer( $table ) . ' ADD ' . self::quoteSqlServer( $name ) . ' ' . self::sqlServerType( $field )
-                    : 'ALTER TABLE ' . $table . ' ADD ( ' . $name . ' ' . self::oracleType( $field ) . ' )';
+                if ( $engine === 'msaccess' )
+                    $step['statements'][] = 'ALTER TABLE ' . expMSAccessDialect::quoteName( $table ) . ' ADD COLUMN ' . expMSAccessDialect::quoteName( $name ) . ' '
+                                          . expMSAccessDialect::columnType( $field, $db instanceof expODBCDB ? $db->ansi92() : true );
+                else
+                    $step['statements'][] = $engine === 'sqlserver'
+                        ? 'ALTER TABLE ' . self::quoteSqlServer( $table ) . ' ADD ' . self::quoteSqlServer( $name ) . ' ' . self::sqlServerType( $field )
+                        : 'ALTER TABLE ' . $table . ' ADD ( ' . $name . ' ' . self::oracleType( $field ) . ' )';
             }
             $known = array_map( 'strtolower', array_keys( $wanted['fields'] ) );
             foreach ( array_keys( $columns ) as $name )

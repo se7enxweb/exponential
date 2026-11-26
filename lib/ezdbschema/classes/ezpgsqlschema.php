@@ -136,7 +136,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
             }
 
             $field['not_null'] = 0;
-            if ( $row['attnotnull'] == 't' )
+            if ( self::isTrue( $row['attnotnull'] ) )
             {
                 $field['not_null'] = '1';
             }
@@ -249,7 +249,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
             $kn = $row['relname'];
 
             $column_id_array = explode( ' ', $row['indkey'] );
-            if ( $row['indisprimary'] == 't' )
+            if ( self::isTrue( $row['indisprimary'] ) )
             {
                 // If the name of the key matches our primary key naming standard
                 // we change the name to PRIMARY, this makes it 100% similar to
@@ -275,7 +275,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
             }
             else
             {
-                $indexes[$kn]['type'] = $row['indisunique'] == 't' ? 'unique' : 'non-unique';
+                $indexes[$kn]['type'] = self::isTrue( $row['indisunique'] ) ? 'unique' : 'non-unique';
             }
 
             /* getting fieldnames requires yet another query and it doesn't return it 'in order' either.
@@ -1364,6 +1364,17 @@ class eZPgsqlSchema extends eZDBSchemaInterface
                       'write',
                       'year',
                       'zone' );
+    }
+
+    /**
+     * A boolean of the catalogue as true or false: 't' from pgsql, '1' (or -1) from psqlODBC through expODBCDB.
+     *
+     * @param mixed $value
+     * @return bool
+     */
+    protected static function isTrue( $value )
+    {
+        return $value === true || in_array( strtolower( trim( (string)$value ) ), array( 't', 'true', '1', '-1' ), true );
     }
 }
 ?>

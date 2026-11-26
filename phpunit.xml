@@ -52,6 +52,8 @@
             <exclude>tests/tests/kernel/classes/upgrade</exclude>
             <exclude>tests/tests/kernel/classes/help/expHelpSearchContractTest.php</exclude>
             <exclude>tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php</exclude>
+            <!-- live: real Access files (EXP_TEST_ACCESS_FIXTURES), in the suite odbc-live -->
+            <exclude>tests/tests/kernel/classes/msaccess/live</exclude>
         </testsuite>
 
         <testsuite name="kernel-content">
@@ -102,6 +104,7 @@
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>
             <exclude>tests/tests/lib/ezdb/sqlserver/live</exclude>
+            <exclude>tests/tests/lib/ezdb/odbc/live</exclude>
         </testsuite>
 
         <!--
@@ -132,6 +135,24 @@
 
         <testsuite name="sqlserver-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/sqlserver/live</directory>
+        </testsuite>
+
+        <!--
+          The ODBC driver (expODBCDB), the MS Access driver (expMSAccessDB) and the Access import: the DB-less tests,
+          and the live tests against databases through their ODBC drivers (EXP_TEST_ODBC_<DIALECT>), an Access file
+          (EXP_TEST_MSACCESS_FILE, Windows) and Access files to import (EXP_TEST_ACCESS_FIXTURES); they skip without.
+          Run: php vendor/bin/phpunit - -testsuite odbc | odbc-live
+        -->
+        <testsuite name="odbc">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/odbc</directory>
+            <directory suffix="Test.php">tests/tests/kernel/classes/msaccess</directory>
+            <exclude>tests/tests/lib/ezdb/odbc/live</exclude>
+            <exclude>tests/tests/kernel/classes/msaccess/live</exclude>
+        </testsuite>
+
+        <testsuite name="odbc-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/odbc/live</directory>
+            <directory suffix="Test.php">tests/tests/kernel/classes/msaccess/live</directory>
         </testsuite>
 
         <testsuite name="mongodb-live">

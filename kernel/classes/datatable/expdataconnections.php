@@ -15,8 +15,9 @@
  *                 declares in datatable.ini [Connection_<identifier>] (read-only in the administration)
  *
  * Engines: SQLite (a file in one of [ConnectionSettings] SQLiteDirectories), MySQL/MariaDB, PostgreSQL, Oracle (the
- * ezoracle handler when active, else PDO oci), Microsoft SQL Server (PDO sqlsrv, dblib or odbc), MongoDB; a server may
- * be remote. The password is the name of a secret of the kernel's secret store (expSecrets).
+ * ezoracle handler when active, else PDO oci), Microsoft SQL Server (PDO sqlsrv, dblib or odbc), MongoDB, any database
+ * through ODBC (expODBCDB; the SQL dialect in the options), MS Access through ODBC (expMSAccessDB; the file in one of
+ * the SQLiteDirectories); a server may be remote. The password is the name of a secret of the kernel's secret store (expSecrets).
  *
  *   $db = expDataConnections::db( 'archive' );          // an eZDBInterface of its own, one per connection and request
  *   $result = expDataConnections::test( 'archive' );    // ok, engine, version, tables, ms, error (secrets masked)
@@ -55,7 +56,8 @@ class expDataConnections
     /**
      * Every engine a connection can use, and what it takes.
      *
-     * @return array key => array( label, kind (relational, document), ez (the site.ini alias), pdo (drivers), port, file )
+     * @return array key => array( label, kind (relational, document), ez (the site.ini alias), pdo (drivers), port, file,
+     *               and class: the driver class of an engine reached through ODBC (PDO_ODBC or PHP's odbc extension) )
      */
     public static function engineTypes()
     {
@@ -66,6 +68,8 @@ class expDataConnections
             'oracle' => array( 'label' => 'Oracle', 'kind' => 'relational', 'ez' => 'ezoracle', 'pdo' => array( 'oci' ), 'port' => 1521, 'file' => false ),
             'sqlserver' => array( 'label' => 'Microsoft SQL Server', 'kind' => 'relational', 'ez' => '', 'pdo' => array( 'sqlsrv', 'dblib', 'odbc' ), 'port' => 1433, 'file' => false ),
             'mongodb' => array( 'label' => 'MongoDB', 'kind' => 'document', 'ez' => 'mongodb', 'pdo' => array(), 'port' => 27017, 'file' => false ),
+            'odbc' => array( 'label' => 'ODBC (any driver)', 'kind' => 'relational', 'ez' => '', 'pdo' => array( 'odbc' ), 'port' => 0, 'file' => false, 'class' => 'expODBCDB' ),
+            'msaccess' => array( 'label' => 'Microsoft Access (ODBC)', 'kind' => 'relational', 'ez' => '', 'pdo' => array( 'odbc' ), 'port' => 0, 'file' => true, 'class' => 'expMSAccessDB' ),
         );
     }
 
@@ -103,17 +107,21 @@ class expDataConnections
                     break;
                 }
             }
+            // an ODBC engine also opens through PHP's odbc extension
+            $viaClass = !empty( $type['class'] ) && ( $pdoDriver !== '' || ( class_exists( 'expODBCNativeConnection' ) && expODBCNativeConnection::available() ) );
             $why = '';
             if ( !in_array( $key, $enabled, true ) )
                 $why = 'switched off in datatable.ini [ConnectionSettings] Engines[]';
-            elseif ( !$viaEZ && $pdoDriver === '' )
+            elseif ( !empty( $type['class'] ) && !$viaClass )
+                $why = 'no driver on this server (pdo_odbc or the odbc extension)';
+            elseif ( !$viaEZ && $pdoDriver === '' && empty( $type['class'] ) )
                 $why = $type['pdo'] ? 'no driver on this server (' . implode( ', ', array_merge( $type['ez'] !== '' ? array( $type['ez'] . ' handler' ) : array(), array_map( function ( $d ) { return 'pdo_' . $d; }, $type['pdo'] ) ) ) . ')'
                                     : 'no driver on this server (' . $type['ez'] . ')';
             $engines[$key] = $type + array(
                 'enabled' => in_array( $key, $enabled, true ),
                 'available' => $why === '',
-                'via' => $viaEZ ? 'ez' : ( $pdoDriver !== '' ? 'pdo' : '' ),
-                'handler' => $viaEZ ? $handler : ( $pdoDriver !== '' ? 'expPDODB' : '' ),
+                'via' => !empty( $type['class'] ) ? ( $viaClass ? 'odbc' : '' ) : ( $viaEZ ? 'ez' : ( $pdoDriver !== '' ? 'pdo' : '' ) ),
+                'handler' => !empty( $type['class'] ) ? ( $viaClass ? $type['class'] : '' ) : ( $viaEZ ? $handler : ( $pdoDriver !== '' ? 'expPDODB' : '' ) ),
                 'pdo_driver' => $pdoDriver,
                 'why' => $why,
                 'untested' => $key === 'sqlserver',
@@ -183,7 +191,8 @@ class expDataConnections
                     continue;
                 $get = function ( $name, $default = '' ) use ( $values ) { return isset( $values[$name] ) ? $values[$name] : $default; };
                 $options = array();
-                foreach ( array( 'Charset' => 'charset', 'Socket' => 'socket', 'DSN' => 'dsn', 'Dialect' => 'dialect', 'Driver' => 'driver' ) as $key => $option )
+                foreach ( array( 'Charset' => 'charset', 'Socket' => 'socket', 'DSN' => 'dsn', 'Dialect' => 'dialect', 'Driver' => 'driver',
+                                 'ODBCDriver' => 'odbc_driver', 'ODBCDataSourceName' => 'odbc_dsn', 'ConnectionString' => 'connection_string', 'Layer' => 'layer' ) as $key => $option )
                     if ( isset( $values[$key] ) && trim( (string)$values[$key] ) !== '' )
                         $options[$option] = trim( (string)$values[$key] );
                 $declared[$id] = self::normalize( array(
@@ -214,7 +223,7 @@ class expDataConnections
         };
         $options = isset( $c['options'] ) && is_array( $c['options'] ) ? $c['options'] : array();
         $clean = array();
-        foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver' ) as $key )
+        foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver', 'odbc_driver', 'odbc_dsn', 'connection_string', 'layer' ) as $key )
             if ( isset( $options[$key] ) && is_scalar( $options[$key] ) && trim( (string)$options[$key] ) !== '' )
                 $clean[$key] = mb_substr( trim( (string)$options[$key] ), 0, 1000 );
         $engine = strtolower( $text( 'engine', 32 ) );
@@ -226,6 +235,8 @@ class expDataConnections
             $engine = 'mongodb';
         if ( $engine === 'mssql' )
             $engine = 'sqlserver';
+        if ( $engine === 'access' )
+            $engine = 'msaccess';
         return array(
             'identifier' => strtolower( $text( 'identifier', 64 ) ),
             'name' => $text( 'name' ),
@@ -427,7 +438,12 @@ class expDataConnections
         @ini_set( 'default_socket_timeout', (string)$timeout );
         try
         {
-            if ( $plan['via'] === 'pdo' )
+            if ( $plan['via'] === 'odbc' )
+            {
+                $class = $plan['implementation'];
+                $db = new $class( $plan['parameters'] );
+            }
+            elseif ( $plan['via'] === 'pdo' )
                 $db = new expPDODB( $plan['parameters'] );
             else
                 $db = eZDB::instance( $plan['implementation'], $plan['parameters'], true );
@@ -483,7 +499,7 @@ class expDataConnections
         $database = $c['database'];
         if ( $engine['file'] )
         {
-            $database = self::sqlitePath( $c['database'] );
+            $database = $c['engine'] === 'msaccess' ? self::sqlitePath( $c['database'], '/\.(accdb|mdb)$/i' ) : self::sqlitePath( $c['database'] );
             if ( $database === null )
             {
                 $plan['error'] = 'the database file is not in an allowed directory';
@@ -496,7 +512,17 @@ class expDataConnections
                              'charset' => isset( $c['options']['charset'] ) ? $c['options']['charset'] : 'utf-8' );
         if ( isset( $c['options']['socket'] ) )
             $parameters['socket'] = $c['options']['socket'];
-        if ( $engine['via'] === 'ez' )
+        if ( $engine['via'] === 'odbc' )
+        {
+            $plan['via'] = 'odbc';
+            $plan['implementation'] = $engine['handler'];
+            $odbc = array();
+            foreach ( array( 'dialect' => 'Dialect', 'odbc_driver' => 'Driver', 'odbc_dsn' => 'DataSourceName', 'connection_string' => 'ConnectionString', 'layer' => 'Layer' ) as $option => $setting )
+                if ( isset( $c['options'][$option] ) )
+                    $odbc[$setting] = $c['options'][$option];
+            $parameters[$c['engine'] === 'msaccess' ? 'msaccess' : 'odbc'] = $odbc;
+        }
+        elseif ( $engine['via'] === 'ez' )
         {
             $plan['via'] = 'ez';
             $plan['implementation'] = $engine['ez'];
@@ -581,7 +607,7 @@ class expDataConnections
             $plan = self::plan( $c, $password );
             $result['via'] = $plan['via'];
             // a server that does not answer fails within the timeout, not the driver's minute
-            if ( $plan['error'] === '' && $c['server'] !== '' && empty( $c['options']['dsn'] ) && !self::reachable( $c['server'], $plan['parameters']['port'] ?: self::engineTypes()[$c['engine']]['port'] ) )
+            if ( $plan['error'] === '' && $c['server'] !== '' && empty( $c['options']['dsn'] ) && $plan['via'] !== 'odbc' && !self::reachable( $c['server'], $plan['parameters']['port'] ?: self::engineTypes()[$c['engine']]['port'] ) )
             {
                 $result['error'] = 'The server ' . $c['server'] . ' does not answer on port ' . ( $plan['parameters']['port'] ?: self::engineTypes()[$c['engine']]['port'] ) . ' within ' . self::connectTimeout() . ' s.';
                 $result['ms'] = (int)round( ( microtime( true ) - $started ) * 1000 );
@@ -627,15 +653,17 @@ class expDataConnections
     }
 
     /**
-     * The absolute path of a SQLite connection's file, or null when it is not allowed.
+     * The absolute path of a SQLite (or, with its pattern, MS Access) connection's file, or null when it is not allowed:
+     * the file must be in one of the SQLiteDirectories and its name must match the pattern.
      *
      * @param string $file relative to the installation, or absolute
+     * @param string $pattern the file names allowed
      * @return string|null
      */
-    public static function sqlitePath( $file )
+    public static function sqlitePath( $file, $pattern = '/\.(db|sqlite|sqlite3)$/i' )
     {
         $file = trim( (string)$file );
-        if ( $file === '' || strpos( $file, "\0" ) !== false || !preg_match( '/\.(db|sqlite|sqlite3)$/i', $file ) )
+        if ( $file === '' || strpos( $file, "\0" ) !== false || !preg_match( $pattern, $file ) )
             return null;
         $root = rtrim( eZSys::rootDir(), '/' );
         $path = $file[0] === '/' ? $file : $root . '/' . $file;
