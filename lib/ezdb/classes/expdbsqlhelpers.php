@@ -10,7 +10,8 @@
 /**
  * The SQL of the portable helpers every driver offers (eZDBInterface::sqlLimit(), sqlUpsert(), sqlGroupConcat(),
  * sqlUnixTimestamp(), sqlFromUnixTimestamp(), sqlQuoteIdentifier()), per SQL dialect: mysql (MySQL and MariaDB),
- * postgresql, sqlite, oracle, sqlserver, msaccess (MS Access through ODBC, expMSAccessDB); generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
+ * postgresql, sqlite, oracle, sqlserver, msaccess (MS Access through ODBC, expMSAccessDB), firebird (expFirebirdDB);
+ * generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
  * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code
  * branches on the database it runs on.
  *
@@ -19,7 +20,7 @@
  */
 class expDBSQLHelpers
 {
-    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'generic' );
+    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'generic' );
 
     /**
      * The limit and offset as integers: limit false for "no limit" (false, null, '', negative or not a number).
@@ -46,6 +47,8 @@ class expDBSQLHelpers
             return expSQLServerDialect::quoteName( $name );
         if ( $dialect === 'msaccess' )
             return expMSAccessDialect::quoteName( $name );
+        if ( $dialect === 'firebird' )
+            return expFirebirdDialect::quoteName( $name );
         $out = array();
         foreach ( explode( '.', (string)$name ) as $part )
         {
@@ -71,6 +74,8 @@ class expDBSQLHelpers
             return expSQLServerDialect::applyLimit( $sql, $limit, $offset );
         if ( $dialect === 'msaccess' )
             return expMSAccessDialect::applyLimit( $sql, $limit, $offset );
+        if ( $dialect === 'firebird' )
+            return expFirebirdDialect::applyLimit( $sql, $limit, $offset );
         list( $limit, $offset ) = self::normalizeLimit( $limit, $offset );
         $sql = rtrim( (string)$sql, " \t\r\n;" );
         if ( $limit === 0 )
@@ -108,6 +113,8 @@ class expDBSQLHelpers
     {
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::upsert( $table, $row, $keyColumns, $updateColumns );
+        if ( $dialect === 'firebird' )
+            return expFirebirdDialect::upsert( $table, $row, $keyColumns, $updateColumns );
         if ( !$row || !$keyColumns )
             throw new InvalidArgumentException( 'An upsert needs at least one column and one key column' );
         foreach ( $keyColumns as $key )
@@ -162,7 +169,7 @@ class expDBSQLHelpers
 
     /**
      * A SELECT that locks the rows it reads until the end of the transaction: FOR UPDATE (MySQL, PostgreSQL, Oracle,
-     * generic), table hints on SQL Server, the statement as it is on SQLite (whose write transaction locks the database)
+     * generic), FOR UPDATE WITH LOCK on Firebird, table hints on SQL Server, the statement as it is on SQLite (whose write transaction locks the database)
      * and MS Access (whose engine locks pages itself).
      *
      * @param string $dialect
@@ -176,6 +183,8 @@ class expDBSQLHelpers
             return $sql;
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::forUpdate( $sql );
+        if ( $dialect === 'firebird' )
+            return expFirebirdDialect::forUpdate( $sql );
         return $sql . ' FOR UPDATE';
     }
 
@@ -196,6 +205,8 @@ class expDBSQLHelpers
             return expSQLServerDialect::groupConcat( $expression, $separator, $orderBy );
         if ( $dialect === 'msaccess' )
             throw new expDBUnsupportedException( 'msaccess', 'GROUP_CONCAT', 'join the rows in PHP' );
+        if ( $dialect === 'firebird' )
+            return expFirebirdDialect::groupConcat( $expression, $separator, $orderBy );
         $order = ( $orderBy !== null && trim( (string)$orderBy ) !== '' ) ? trim( (string)$orderBy ) : null;
         $sep = $literal( (string)$separator );
         switch ( $dialect )
@@ -226,6 +237,8 @@ class expDBSQLHelpers
                 return expSQLServerDialect::unixTimestamp( $expression );
             case 'msaccess':
                 return expMSAccessDialect::unixTimestamp( $expression );
+            case 'firebird':
+                return expFirebirdDialect::unixTimestamp( $expression );
             case 'mysql':
                 return $expression === null ? 'UNIX_TIMESTAMP()' : "UNIX_TIMESTAMP($expression)";
             case 'sqlite':
@@ -253,6 +266,8 @@ class expDBSQLHelpers
                 return expSQLServerDialect::fromUnixTimestamp( $expression );
             case 'msaccess':
                 return expMSAccessDialect::fromUnixTimestamp( $expression );
+            case 'firebird':
+                return expFirebirdDialect::fromUnixTimestamp( $expression );
             case 'mysql':
                 return "FROM_UNIXTIME($expression)";
             case 'sqlite':

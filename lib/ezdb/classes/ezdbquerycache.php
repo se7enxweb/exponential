@@ -1973,6 +1973,7 @@ class eZDBQueryCache
             case 'oracle':
             case 'sqlite':
             case 'SQLServer':
+            case 'firebird':
                 return false;
         }
         return null;
