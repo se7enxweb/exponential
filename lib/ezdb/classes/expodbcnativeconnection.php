@@ -236,9 +236,17 @@ class expODBCNativeConnection
     {
         if ( $this->link )
         {
-            if ( $this->inTransaction )
-                @odbc_rollback( $this->link );
-            @odbc_close( $this->link );
+            // PHP 8 throws for a link the odbc extension closed already (it hands the same link to every
+            // odbc_connect() with the same connection string and user, and one close() ends it for all)
+            try
+            {
+                if ( $this->inTransaction )
+                    @odbc_rollback( $this->link );
+                @odbc_close( $this->link );
+            }
+            catch ( Throwable $e )
+            {
+            }
         }
         $this->link = null;
         $this->inTransaction = false;
