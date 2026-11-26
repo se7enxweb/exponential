@@ -25017,7 +25017,7 @@ a70c7033fc74fd1cfa553dcc3effdc8f  kernel/classes/expsystemreport.php
 004f61c2ffe717623433b8cf4bcf206c  kernel/classes/expsystemreportmask.php
 163a7c4dd2536cd2b37fdf0296d3ebe7  kernel/classes/exptestlanguage.php
 720f1d6c03631c707711655967633b24  kernel/classes/expuserloginintegrity.php
-7ac487bc9a148010ef434a217637cc3f  kernel/classes/expvelocity.php
+79046d364173c2a7ab57164679738614  kernel/classes/expvelocity.php
 db86d785d5355ddc034913715fa846de  kernel/classes/expvelocityconfig.php
 22a42e255746f53ad48eee794363d589  kernel/classes/expvelocityconfiglayout.php
 0d90e12eea8ef60ca94584e177850608  kernel/classes/expvelocitydeploy.php
@@ -26268,7 +26268,7 @@ d6366db4ab6f52e8c49adf188126a999  kernel/private/classes/commands/upgradesteps.p
 833da3d5c1006e8d72ad4c5ed57682b2  kernel/private/classes/commands/userlogincheck.php
 0829f44fc35b683e221856e5d2110c4f  kernel/private/classes/commands/userpasswordchangerequired.php
 b4ebd4dc59a37ffb118c10be27b72005  kernel/private/classes/commands/velocity-router.php
-e1e0e881bb7f10985bec30c5f4c3c00b  kernel/private/classes/commands/velocity-warmup.php
+be9f79c3b80dc80230d42ef38b34ffd9  kernel/private/classes/commands/velocity-warmup.php
 ea0001fd8b1f1bdd88f2627ee693e36c  kernel/private/classes/commands/velocity.php
 459ade5685b7da3718f61d04bfc8f83a  kernel/private/classes/commands/verify_aliases.php
 7ed95c640df6728875ffdf6dcd82dcd1  kernel/private/classes/commands/warm.php
@@ -27630,7 +27630,7 @@ c80250dec48448bcda0865588dfc740c  settings/twig.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 216946aacfde7678708b64e2a8a9075a  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-36b07ea522767dd9ddc62b6c380e062d  settings/velocity.ini
+57408e0e581cf61071d354afce3f0c5c  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
