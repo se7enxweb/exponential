@@ -117,6 +117,9 @@ class expKernelTableSchema
                 break;
             case 'postgresql':
                 $sql = "SELECT tablename AS name FROM pg_tables WHERE schemaname = current_schema()";
+                // Spanner (PGAdapter) has no pg_tables: its information_schema lists the tables
+                if ( $db instanceof expPostgreSQLWireDB && $db->wireProfile()['catalog'] === 'information_schema' )
+                    $sql = "SELECT table_name AS name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE'";
                 break;
             case 'oracle':
                 $sql = "SELECT table_name AS name FROM user_tables";

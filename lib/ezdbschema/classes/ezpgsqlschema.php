@@ -33,7 +33,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
              LEFT JOIN pg_catalog.pg_user u ON u.usesysid = c.relowner
              LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
         WHERE c.relkind IN (\'r\',\'\')
-              AND n.nspname NOT IN (\'pg_catalog\', \'pg_toast\')
+              AND n.nspname NOT IN (\'pg_catalog\', \'pg_toast\', \'information_schema\', \'crdb_internal\', \'pg_extension\')
               AND pg_catalog.pg_table_is_visible(c.oid)
         ORDER BY 1, 2';
 
@@ -80,7 +80,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
 
         if ( $this->Schema === false )
         {
-            $resultArray = $this->DBInstance->arrayQuery( eZPgsqlSchema::SHOW_TABLES_QUERY );
+            $resultArray = $this->tableListRows();
 
             foreach( $resultArray as $row )
             {
@@ -108,6 +108,77 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         return $schema;
     }
 
+    /**
+     * The tables of the database, rows with "Name": from pg_class, or from information_schema where the database has
+     * no real pg_catalog (Spanner, whose PGAdapter emulates pg_class only as far as psql needs it).
+     *
+     * @return array
+     * @since 6.0.15
+     */
+    protected function tableListRows()
+    {
+        $profile = $this->wireProfile();
+        if ( $profile && $profile['catalog'] === 'information_schema' )
+            return (array)$this->DBInstance->arrayQuery( "SELECT table_name AS \"Name\" FROM information_schema.tables"
+                                                       . " WHERE table_schema = 'public' AND table_type = 'BASE TABLE' ORDER BY table_name" );
+        return (array)$this->DBInstance->arrayQuery( eZPgsqlSchema::SHOW_TABLES_QUERY );
+    }
+
+    /**
+     * The columns of a table, rows with attname, format_type, default and attnotnull, in their order.
+     *
+     * @param string $table
+     * @return array
+     * @since 6.0.15
+     */
+    protected function tableDefinitionRows( $table )
+    {
+        $profile = $this->wireProfile();
+        if ( $profile && $profile['catalog'] === 'information_schema' )
+        {
+            $name = $this->DBInstance->escapeString( $table );
+            return (array)$this->DBInstance->arrayQuery( "SELECT column_name AS attname, spanner_type AS format_type, column_default AS \"default\","
+                                                       . " CASE WHEN is_nullable = 'NO' THEN 't' ELSE 'f' END AS attnotnull"
+                                                       . " FROM information_schema.columns WHERE table_schema = 'public' AND table_name = '$name'"
+                                                       . " ORDER BY ordinal_position" );
+        }
+        $resultArray = $this->DBInstance->arrayQuery( str_replace( '<<tablename>>', $table, eZPgsqlSchema::FETCH_TABLE_OID_QUERY ) );
+        if ( empty( $resultArray[0]['oid'] ) )
+            return array();
+        return (array)$this->DBInstance->arrayQuery( str_replace( '<<oid>>', $resultArray[0]['oid'], eZPgsqlSchema::FETCH_TABLE_DEF_QUERY ) );
+    }
+
+    /**
+     * The indexes of a table from information_schema.indexes and index_columns (Spanner): the primary key as PRIMARY.
+     *
+     * @param string $table
+     * @param array $params
+     * @return array
+     * @since 6.0.15
+     */
+    protected function informationSchemaIndexes( $table, $params )
+    {
+        $name = $this->DBInstance->escapeString( $table );
+        $indexes = array();
+        $rows = (array)$this->DBInstance->arrayQuery( "SELECT i.index_name, i.index_type, i.is_unique, c.column_name, c.ordinal_position"
+                                                    . " FROM information_schema.indexes i JOIN information_schema.index_columns c"
+                                                    . " ON c.table_schema = i.table_schema AND c.table_name = i.table_name AND c.index_name = i.index_name"
+                                                    . " WHERE i.table_schema = 'public' AND i.table_name = '$name' AND c.ordinal_position IS NOT NULL"
+                                                    . " ORDER BY i.index_name, c.ordinal_position" );
+        foreach ( $rows as $row )
+        {
+            $primary = $row['index_type'] === 'PRIMARY_KEY';
+            $key = $primary ? 'PRIMARY' : $row['index_name'];
+            if ( !isset( $indexes[$key] ) )
+                $indexes[$key] = array( 'type' => $primary ? 'primary' : ( self::isTrue( $row['is_unique'] ) || $row['is_unique'] === 'YES' ? 'unique' : 'non-unique' ),
+                                        'fields' => array() );
+            $indexes[$key]['fields'][] = $row['column_name'];
+        }
+        if ( !empty( $params['sort_indexes'] ) )
+            ksort( $indexes );
+        return $indexes;
+    }
+
     /*!
      * \private
      */
@@ -115,11 +186,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
     {
         $fields = array();
 
-        $resultArray = $this->DBInstance->arrayQuery( str_replace( '<<tablename>>', $table, eZPgsqlSchema::FETCH_TABLE_OID_QUERY ) );
-        $row = $resultArray[0];
-        $oid = $row['oid'];
-
-        $resultArray = $this->DBInstance->arrayQuery( str_replace( '<<oid>>', $oid, eZPgsqlSchema::FETCH_TABLE_DEF_QUERY ) );
+        $resultArray = $this->tableDefinitionRows( $table );
         foreach( $resultArray as $row )
         {
             if ( $this->isEngineOnlyType( $row['format_type'] ) )
@@ -236,6 +303,11 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         }
 
         $indexes = array();
+
+        // Spanner: no pg_index; its information_schema names the indexes and their columns
+        $profile = $this->wireProfile();
+        if ( $profile && $profile['catalog'] === 'information_schema' )
+            return $this->informationSchemaIndexes( $table, $params );
 
         $resultArray = $this->DBInstance->arrayQuery( str_replace( '<<tablename>>', $table, eZPgsqlSchema::FETCH_TABLE_OID_QUERY ) );
         $row = $resultArray[0];
@@ -464,6 +536,9 @@ class eZPgsqlSchema extends eZDBSchemaInterface
 
             case 'timestamp without time zone':
             case 'timestamp':
+            // Spanner's only timestamp
+            case 'timestamp with time zone':
+            case 'timestamptz':
                 return 'timestamp';
 
             case 'date':
@@ -488,7 +563,9 @@ class eZPgsqlSchema extends eZDBSchemaInterface
 
         // postgresql 7.x: nextval('ezbasket_id_seq'::text)
         // postgresql 8.x: nextval(('ezbasket_id_seq'::text)::regclass)
-        if ( preg_match( "@^nextval\(\(?'([a-z_]+_id_seq)'::text\)@", $default, $matches ) )
+        // CockroachDB: nextval('public.ezbasket_id_seq'::REGCLASS); Spanner: nextval('ezbasket_id_seq')
+        if ( preg_match( "@^nextval\(\(?'([a-z0-9_]+_id_seq)'::text\)@", $default, $matches ) ||
+             preg_match( "@^nextval\('(?:[a-z0-9_]+\.)?([a-z0-9_]+_id_seq)'(?:::regclass)?\)$@i", $default, $matches ) )
         {
             $autoinc = 1;
             return '';
@@ -572,17 +649,18 @@ class eZPgsqlSchema extends eZDBSchemaInterface
                 {
                     eZDebug::writeError( "The primary key '$pkeyName' (" . strlen( $pkeyName ) . ") exceeds 63 characters which is the PostgreSQL limit for names" );
                 }
-                $sql = "ALTER TABLE ONLY $table_name" . $spacing . "ADD CONSTRAINT $pkeyName PRIMARY KEY";
+                $profile = $this->wireProfile( $params );
+                $sql = "ALTER TABLE " . ( ( !$profile || $profile['alter_table_only'] ) ? 'ONLY ' : '' ) . $table_name . $spacing . "ADD CONSTRAINT $pkeyName PRIMARY KEY";
             } break;
 
             case 'non-unique':
             {
-                $sql = "CREATE INDEX " . $this->physicalIndexName( $table_name, $index_name ) . " ON $table_name USING btree";
+                $sql = "CREATE INDEX " . $this->physicalIndexName( $table_name, $index_name ) . " ON $table_name" . $this->indexMethod( $params );
             } break;
 
             case 'unique':
             {
-                $sql = "CREATE UNIQUE INDEX " . $this->physicalIndexName( $table_name, $index_name ) . " ON $table_name USING btree";
+                $sql = "CREATE UNIQUE INDEX " . $this->physicalIndexName( $table_name, $index_name ) . " ON $table_name" . $this->indexMethod( $params );
             } break;
         }
 
@@ -655,8 +733,13 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         if ( $def['type'] != 'auto_increment' )
         {
             $pgType = eZPgsqlSchema::convertFromStandardType( $def['type'], $def['length'] );
+            // the length belongs to PostgreSQL's type; the database's own name for it (int4, bigint) takes none
+            $lengthSupported = eZPgsqlSchema::isTypeLengthSupported( $pgType );
+            $profile = $this->wireProfile( $params );
+            if ( $profile )
+                $pgType = expPostgreSQLWireProfile::mapType( $profile, $pgType );
             $sql_def .= $pgType;
-            if ( eZPgsqlSchema::isTypeLengthSupported( $pgType ) and isset( $def['length'] ) && $def['length'] )
+            if ( $lengthSupported and isset( $def['length'] ) && $def['length'] )
             {
                 $sql_def .= "({$def['length']})";
             }
@@ -675,6 +758,12 @@ class eZPgsqlSchema extends eZDBSchemaInterface
                     $sql_def .= trim( $nullDef );
                 }
             }
+        }
+        else if ( ( $profile = $this->wireProfile( $params ) ) && $profile['sequences'] === 'bit_reversed' )
+        {
+            // Spanner: a bit-reversed sequence, 64-bit numbers
+            $sql_def .= "bigint" . ( $diffFriendly ? "\n    " : " " ) . "DEFAULT nextval('{$table_name}_{$field_name}_seq')"
+                      . ( $diffFriendly ? "\n    " : " " ) . "NOT NULL";
         }
         else
         {
@@ -849,6 +938,60 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         return $sql;
     }
 
+    /**
+     * The profile of the database the DDL is for (expPostgreSQLWireProfile): the connected driver's, or the one
+     * $params['wire_profile'] names (an SQL file written without a connection); null for PostgreSQL itself.
+     *
+     * @param array $params
+     * @return array|null
+     * @since 6.0.15
+     */
+    function wireProfile( $params = array() )
+    {
+        if ( is_array( $params ) && !empty( $params['wire_profile'] ) )
+        {
+            $profile = expPostgreSQLWireProfile::get( $params['wire_profile'] );
+            return ( $profile && $profile['name'] !== 'postgresql' ) ? $profile : null;
+        }
+        if ( $this->DBInstance instanceof expPostgreSQLWireDB )
+        {
+            $profile = $this->DBInstance->wireProfile();
+            return $profile['name'] !== 'postgresql' ? $profile : null;
+        }
+        return null;
+    }
+
+    /**
+     * " USING btree", or nothing where the database has an access method of its own (YugabyteDB's lsm) or no
+     * USING clause (Spanner).
+     *
+     * @param array $params
+     * @return string
+     */
+    protected function indexMethod( $params )
+    {
+        $profile = $this->wireProfile( $params );
+        $method = $profile ? $profile['index_method'] : 'btree';
+        return $method !== '' ? " USING $method" : '';
+    }
+
+    /**
+     * The column names of an index definition, a reserved word in quotes.
+     *
+     * @param array $fields
+     * @return string[]
+     */
+    protected function indexFieldNames( array $fields )
+    {
+        $names = array();
+        foreach ( $fields as $fieldDef )
+        {
+            $name = is_array( $fieldDef ) ? $fieldDef['name'] : $fieldDef;
+            $names[] = in_array( $name, $this->reservedKeywordList() ) ? '"' . $name . '"' : $name;
+        }
+        return $names;
+    }
+
     function generateTableSchema( $table, $table_def, $params )
     {
         $arrays = $this->generateTableArrays( $table, $table_def, $params, true );
@@ -896,7 +1039,11 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         // sequences need to exist before we use them
         foreach ( $table_def['fields'] as $field_name => $field_def )
         {
-            if ( $field_def['type'] == 'auto_increment' )
+            if ( $field_def['type'] == 'auto_increment' && ( $profile = $this->wireProfile( $params ) ) && $profile['sequences'] === 'bit_reversed' )
+            {
+                $arrays['sequences'][] = "CREATE SEQUENCE IF NOT EXISTS {$table}_{$field_name}_seq BIT_REVERSED_POSITIVE" . ( $withClosure ? ';' : '' );
+            }
+            else if ( $field_def['type'] == 'auto_increment' )
             {
                 $sequenceFields = array( "CREATE SEQUENCE IF NOT EXISTS {$table}_{$field_name}_seq",
                                          "START 1",
@@ -914,6 +1061,19 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         {
             $sql_fields[] = $spacing . eZPgsqlSchema::generateFieldDef( $table, $field_name, $field_def, true, $params );
         }
+        // CockroachDB, YugabyteDB and Spanner: the primary key belongs in CREATE TABLE. Added afterwards it replaces
+        // CockroachDB's hidden rowid key, rewrites a YugabyteDB table, and Spanner does not take it at all.
+        $inlinePrimaryKey = ( $profile = $this->wireProfile( $params ) ) && $profile['inline_primary_key'];
+        if ( $inlinePrimaryKey )
+        {
+            foreach ( $table_def['indexes'] as $index_name => $index_def )
+            {
+                // Spanner takes no name for the key
+                if ( $index_def['type'] == 'primary' )
+                    $sql_fields[] = $spacing . ( $profile['named_primary_key'] ? 'CONSTRAINT ' . $this->primaryKeyIndexName( $table, $index_name, $index_def['fields'] ) . ' ' : '' )
+                                  . 'PRIMARY KEY ( ' . implode( ', ', $this->indexFieldNames( $index_def['fields'] ) ) . ' )';
+            }
+        }
         $sql .= join( ",\n", $sql_fields ) . ( $withClosure ? "\n);" : "\n)" );
         $arrays['tables'][] = $sql;
 
@@ -926,7 +1086,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         }
         foreach ( $table_def['indexes'] as $index_name => $index_def )
         {
-            if ( $index_def['type'] == 'primary' )
+            if ( $index_def['type'] == 'primary' && !$inlinePrimaryKey )
             {
                 $arrays['constraints'][] = eZPgsqlSchema::generateAddIndexSql( $table, $index_name, $index_def, $params, $withClosure );
             }
@@ -945,9 +1105,11 @@ class eZPgsqlSchema extends eZDBSchemaInterface
     {
         $sqlList = eZDBSchemaInterface::generateTableInsertSQLList( $tableName, $tableDef, $dataEntries, $params, $withClosure );
 
+        $profile = $this->wireProfile( $params );
         foreach ( $tableDef['fields'] as $fieldName => $fieldDef )
         {
-            if ( $fieldDef['type'] == 'auto_increment' )
+            // a bit-reversed sequence (Spanner) has no order to move past the rows
+            if ( $fieldDef['type'] == 'auto_increment' && ( !$profile || $profile['sequences'] === 'sql' ) )
             {
                 $sql = "SELECT setval('" . $tableName . "_{$fieldName}_seq',max(" . $fieldName . ")+1) FROM " . $tableName;
                 if ( $withClosure )

@@ -24838,7 +24838,7 @@ cb612f8996b5c06f76a46f5c2c637eb2  kernel/classes/datatable/expdatatablefieldsour
 1f45e671c855697eeafe2b251e3182f2  kernel/classes/datatable/expdatatablerelation.php
 7a9f48519d593b7e3f0ed9def565accf  kernel/classes/datatable/expdatatableschema.php
 91b9df4ebff53c60639bd53d03b05cdc  kernel/classes/datatable/expdatatablewriter.php
-03fc28720a09c7b1d375c8df2aa2c051  kernel/classes/datatable/expkerneltableschema.php
+918218e22a7ffa8364516b16728f71aa  kernel/classes/datatable/expkerneltableschema.php
 7cfd05ade5443f91c9060c2ec2abb3af  kernel/classes/datatable/sync/expdatasync.php
 9cfbf9d290ceee62c9bddb997b1b0cff  kernel/classes/datatable/sync/expdatasyncdefinition.php
 3aa20a9d2e3cb7dcd2f7d62d9bae030b  kernel/classes/datatable/sync/expdatasynclistener.php
@@ -27183,7 +27183,7 @@ def9593c25997ce85b9c0340b343f14f  lib/ezdbschema/classes/ezdbschemachecker.php
 0c1f993e74e6303a470564c81007e2bd  lib/ezdbschema/classes/ezdbschemainterface.php
 431c44fadd89d4faf8d94951ba9f7dc4  lib/ezdbschema/classes/ezlintschema.php
 e7a94ecfdac0f1710582b880182e4cac  lib/ezdbschema/classes/ezmysqlschema.php
-4aa27af1b0f9365388a62634d9e593b4  lib/ezdbschema/classes/ezpgsqlschema.php
+883e6a05f3603b97eafa9b0e83af2856  lib/ezdbschema/classes/ezpgsqlschema.php
 a19adc3c2e169f64cd9351e39584b017  lib/ezdbschema/classes/ezsqliteschema.php
 d7126b3acb82bb59c2a37e362deb2e6d  lib/ezdiff/classes/ezdiff.php
 b4ee49ddeef44648695d632cf71f4deb  lib/ezdiff/classes/ezdiffcontainerobject.php
@@ -30794,6 +30794,7 @@ e89ea00071ff5d039ebb4c2e3749e9c4  tests/tests/lib/ezdb/odbc/expMSAccessDialectTe
 f4abb0436986621e32c7f7864fbd6e27  tests/tests/lib/ezdb/odbc/live/expODBCLiveTest.php
 3ecf09089c92668ee0ccd54264755058  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireDBTest.php
 b1fe0f4929ffde2b3086aa32381d173c  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireProfileTest.php
+a12fcf68656f1554048619978095bc0f  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireSchemaTest.php
 f40f3832378c387d480f1c50678e6c9b  tests/tests/lib/ezdb/suite.php
 ca35100b2f790091e5a176ef768a01b1  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
 bf56cd696b1c3561ffb9158f765ac630  tests/tests/lib/ezdbschema/expInsertSchemaDataOnlyTest.php
