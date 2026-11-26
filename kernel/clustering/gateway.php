@@ -414,6 +414,26 @@ EOF;
     }
 
     /**
+     * The gateway class that kernel/clustering/<backend>.php registers, by CLUSTER_STORAGE_BACKEND
+     *
+     * @param string $backend
+     * @return string|null null for a backend the kernel does not ship
+     */
+    public static function gatewayClassForBackend( $backend )
+    {
+        $backendClasses = array(
+            'dfsmysqli' => 'ezpDfsMySQLiClusterGateway',
+            'dfspostgresql' => 'expDfsPostgresqlClusterGateway',
+            'dfspostgres' => 'expDfsPostgresqlClusterGateway',
+            'dfsoracle' => 'expDfsOracleClusterGateway',
+            'dfssqlite' => 'expDfsSQLiteClusterGateway',
+            'dfsmongodb' => 'expDfsMongoDBClusterGateway',
+            'dfssqlserver' => 'expDfsSQLServerClusterGateway',
+        );
+        return isset( $backendClasses[$backend] ) ? $backendClasses[$backend] : null;
+    }
+
+    /**
      * Returns an instance of the gateway class depending on {@link setGatewayClass()}
      *
      * @return ezpClusterGateway
@@ -421,6 +441,27 @@ EOF;
     public static function getGateway()
     {
         $gatewayClass = self::$gatewayClass;
+
+        // A persistent worker (Velocity) serves many requests in one process: the backend file is
+        // loaded once (require_once), so its setGatewayClass() call does not run again on a later
+        // request whose statics were reset. Find the class from the configured backend instead.
+        if ( !$gatewayClass && defined( 'CLUSTER_STORAGE_BACKEND' ) )
+        {
+            $backendClass = self::gatewayClassForBackend( CLUSTER_STORAGE_BACKEND );
+            if ( $backendClass !== null && class_exists( $backendClass, false ) )
+            {
+                $gatewayClass = $backendClass;
+                self::$gatewayClass = $gatewayClass;
+            }
+        }
+
+        if ( !$gatewayClass || !class_exists( $gatewayClass, false ) )
+        {
+            header( ( isset( $_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.1' ) . " 500 Internal Server Error" );
+            echo "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>500 Internal Server Error</title>\n</head><body>\n<h1>An error has occured</h1>\n</body></html>";
+            error_log( 'ezpClusterGateway: no gateway class is set for backend ' . ( defined( 'CLUSTER_STORAGE_BACKEND' ) ? CLUSTER_STORAGE_BACKEND : '(none)' ) );
+            exit;
+        }
 
         return new $gatewayClass(
             array(

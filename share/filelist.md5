@@ -25811,7 +25811,7 @@ a9a5f5ba16f75b7ad093703fc8ba739b  kernel/clustering/dfsmongodb.php
 0cf7dd68dfb4d175d71ca1e4f1f3e224  kernel/clustering/dfspostgres.php
 4600cd520f52e4cbd69b6c1a2dde7683  kernel/clustering/dfspostgresql.php
 24fd7cd116183be85da148c4bb7c4ea3  kernel/clustering/dfssqlite.php
-a5ee0e0115df46b0f6036e7794d6bd4d  kernel/clustering/gateway.php
+bcc54e810d52dd316efd4139bb4421c9  kernel/clustering/gateway.php
 0d8b0a1a1feb2b0e932af65759bcf1c1  kernel/collaboration/action.php
 3f822017e083a6d9062ef2d93054c9ec  kernel/collaboration/ezcollaborationfunctioncollection.php
 68304fa8d6614851cb2d2e0f939df209  kernel/collaboration/function_definition.php
@@ -28992,7 +28992,7 @@ bbf1056a2362f3aa6c8cceea081afffb  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 433535bbea030ca66be73ed16d242a2e  tests/suite.php
-e42814102c450eac13aa5e6fd171252a  tests/test-map.json
+8bf0c63c78cefdc5e7afe977e0678b0f  tests/test-map.json
 9917402d25f8419adb652d9a634bac4a  tests/tests/bin/CiWorkflowPullRequestTest.php
 aab68864c45774a2a976dbdc7ba53f78  tests/tests/bin/ConsoleExtensionAliasTest.php
 b93b286979fa3eef6b6b03fd1197dd31  tests/tests/bin/CopyrightNoticeTest.php
@@ -31258,3 +31258,4 @@ a634bffdf8152394b45a6a208110b0aa  kernel/private/classes/clusterfilehandlers/dfs
 a20b71b5d7782e541968bceb3658dbb8  kernel/sql/sqlserver/cluster_dfs_schema.sql
 d6bfabe565a38ac00ad802e5912aa41c  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSFileHandlerSQLServerBackendTest.php
 e7db846eee724c360f88cc47a4dfac19  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSSQLServerBackendIntegrationTest.php
+5c8415808e9d8ab9ee50569060253419  tests/tests/kernel/classes/cluster/expClusterGatewayBackendClassTest.php
