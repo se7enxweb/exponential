@@ -36,3 +36,6 @@ dist/
 /var/*/secrets/
 __pycache__/
 *.pyc
+
+# The database password of the docker/compose.*.yml examples
+/docker/db_password.txt

@@ -1,0 +1,34 @@
+# What the image build never needs (BuildKit reads this file for
+# docker/Dockerfile). The installation's own Composer packages come from
+# composer install in the build, never from a local checkout.
+.git
+.github
+.githooks
+.devtools
+.idea
+ai
+vendor
+composer.lock
+composer.ci-phpunit.*
+coverage
+dist
+node_modules
+var/cache
+var/log
+var/storage
+var/autoload
+var/vc
+var/*/cache
+var/*/log
+var/*/storage
+var/*_site
+var/test*
+# A local installation's settings (database credentials) never go into an image
+settings/override/*
+settings/siteaccess/*
+!settings/siteaccess/mysite
+!settings/siteaccess/plain
+config.env.php
+kickstart.ini
+**/*.md~
+docker/db_password.txt

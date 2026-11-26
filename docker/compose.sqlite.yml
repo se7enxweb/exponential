@@ -1,0 +1,29 @@
+# Exponential 6 on SQLite in a single container: a demo or a small site.
+#
+#   docker compose -f docker/compose.sqlite.yml up -d
+#   docker compose -f docker/compose.sqlite.yml exec web cat var/log/initial-admin-password
+#
+# The site answers on http://localhost:8080/ (administration: /admin). The
+# database file lives on the var volume. SQLite takes one writing container:
+# never scale this service; for more, use compose.postgresql.yml. Guide:
+# doc/eng-us/help/hosting/models/containers-docker-and-podman.md
+name: exponential-sqlite
+
+services:
+  web:
+    image: ghcr.io/se7enxweb/exponential:${EXP_TAG:-edge}
+    environment:
+      EXP_SITE_URL: ${EXP_SITE_URL:-localhost:8080}
+      EXP_ADMIN_EMAIL: ${EXP_ADMIN_EMAIL:-admin@example.com}
+    ports:
+      - "${EXP_PORT:-8080}:8080"
+    volumes:
+      - var:/var/www/exponential/var
+      - override:/var/www/exponential/settings/override
+      - siteaccess:/var/www/exponential/settings/siteaccess
+    restart: unless-stopped
+
+volumes:
+  var:
+  override:
+  siteaccess:

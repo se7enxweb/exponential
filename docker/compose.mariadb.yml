@@ -1,0 +1,78 @@
+# Exponential 6 with MariaDB: the site (Apache with PHP-FPM), its cron
+# runner and the database server, each in its own container.
+#
+#   printf '%s' "$(openssl rand -hex 24)" > docker/db_password.txt
+#   docker compose -f docker/compose.mariadb.yml up -d
+#   docker compose -f docker/compose.mariadb.yml exec web cat var/log/initial-admin-password
+#
+# The site answers on http://localhost:8080/ (administration: /admin). The
+# database password is a secret read from docker/db_password.txt, never an
+# image layer or a variable in this file. For Velocity instead of Apache, use
+# the image tag edge-velocity (or <version>-velocity). Guide:
+# doc/eng-us/help/hosting/models/containers-docker-and-podman.md
+name: exponential
+
+x-exponential: &exponential
+  image: ghcr.io/se7enxweb/exponential:${EXP_TAG:-edge}
+  environment:
+    EXP_DB: mysql
+    EXP_DB_HOST: db
+    EXP_DB_NAME: exponential
+    EXP_DB_USER: exponential
+    EXP_DB_PASSWORD_FILE: /run/secrets/db_password
+    EXP_SITE_URL: ${EXP_SITE_URL:-localhost:8080}
+    EXP_ADMIN_EMAIL: ${EXP_ADMIN_EMAIL:-admin@example.com}
+  secrets: [db_password]
+  volumes:
+    - var:/var/www/exponential/var
+    - override:/var/www/exponential/settings/override
+    - siteaccess:/var/www/exponential/settings/siteaccess
+  depends_on:
+    db:
+      condition: service_healthy
+  restart: unless-stopped
+
+services:
+  web:
+    <<: *exponential
+    ports:
+      - "${EXP_PORT:-8080}:8080"
+
+  # runcronjobs.php every five minutes, on the same volumes and database
+  cron:
+    <<: *exponential
+    command: ["cron"]
+    environment:
+      EXP_INSTALL: never
+      EXP_CRON_INTERVAL: "300"
+    depends_on:
+      web:
+        condition: service_healthy
+
+  db:
+    image: mariadb:11.8
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    environment:
+      MARIADB_DATABASE: exponential
+      MARIADB_USER: exponential
+      MARIADB_PASSWORD_FILE: /run/secrets/db_password
+      MARIADB_RANDOM_ROOT_PASSWORD: "1"
+    secrets: [db_password]
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+secrets:
+  db_password:
+    file: ./db_password.txt
+
+volumes:
+  var:
+  override:
+  siteaccess:
+  db:
