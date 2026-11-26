@@ -76,8 +76,11 @@ class expMSAccessKernelSchemaTest extends PHPUnit\Framework\TestCase
         // AK-02
         include $root . '/share/db_data.dba';
         /** @var array $data */
+        unset( $data['_info'] );
         foreach ( $data as $table => $content )
         {
+            if ( !is_array( $content ) || !isset( $content['fields'], $content['rows'] ) )
+                continue;
             $columns = implode( ', ', array_map( array( 'expMSAccessDialect', 'quoteName' ), $content['fields'] ) );
             $written = 0;
             $failed = array();

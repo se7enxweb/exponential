@@ -113,21 +113,21 @@ PHP 8.4). Linux: gemessen am 25. November 2026 mit MDBTools 1.0.0 (Ubuntu 24.04)
 
 | Was | Windows, ACE x64 (`msaccess-windows`) | Linux, MDBTools |
 |---|---|---|
-| Import (`exp:access:import`) | über den ODBC-Leser | **geht**: die Programme von MDBTools, JET3-, JET4- und ACE-Dateien (oben) |
-| `expMSAccessDB` verbinden, Tabellen auflisten (`SQLTables`), Spalten beschreiben | AL-01 | **geht nicht**: der ODBC-Treiber von MDBTools verbindet über PDO_ODBC, kann aber keine Zeilen holen ("Driver does not support this function", SQLFetchScroll), und sein SQL-Parser lehnt `TOP`, `COUNT(*)`, `JOIN` und `INSERT` ab; mit der odbc-Erweiterung von PHP endete der Prozess ohne Meldung. Den Import nehmen |
-| DDL aus `.dba` (COUNTER, TEXT(n), LONGTEXT, DECIMAL, DEFAULT, Indizes) | AL-02 | - |
-| Einfügen und `@@IDENTITY` | AL-03 | - |
-| Seiten (TOP, Offset in PHP verworfen; Gleichstände bei TOP) | AL-04 | - |
-| `&`, `IIf`, `Mid`, `Len`, Datumswerte, Zeitstempel nach 2038, BAND/BOR und die Nachbildung | AL-05 | - |
-| Transaktionen | AL-06 | - |
-| Unicode, 1 MB langer Text | AL-07 | - |
-| Skripte aus mehreren Anweisungen, Kommentare | AL-08 | - |
-| abgelehnt: `LIMIT`, `OFFSET FETCH`, `FOR UPDATE`, `MERGE`, Upsert, `GROUP_CONCAT`, `MD5`, `TEXT(300)`; ein zweiter Schreiber auf einer gesperrten Zeile | AL-09 | - |
-| Datentabellen-Verbindung (Engine `msaccess`) | AL-10 | - |
+| Import (`exp:access:import`) | **geht** über den ODBC-Leser für Dateien ab Access 2000 (JET4 `.mdb`, ACE `.accdb`: DateTestDatabase.mdb, ASampleDatabase.accdb); **nicht** für Access-97-Dateien (JET3: ACE 2016 lehnt nwind.mdb ab, "created with a previous version"): diese mit MDBTools importieren | **geht**: die Programme von MDBTools, JET3-, JET4- und ACE-Dateien (oben) |
+| `expMSAccessDB` verbinden, Tabellen auflisten (`SQLTables`), Spalten beschreiben | geht (AL-01) | **geht nicht**: der ODBC-Treiber von MDBTools verbindet über PDO_ODBC, kann aber keine Zeilen holen ("Driver does not support this function", SQLFetchScroll), und sein SQL-Parser lehnt `TOP`, `COUNT(*)`, `JOIN` und `INSERT` ab; mit der odbc-Erweiterung von PHP endete der Prozess ohne Meldung. Den Import nehmen |
+| DDL aus `.dba` (COUNTER, TEXT(n), LONGTEXT, DECIMAL, DEFAULT, Indizes) | geht (AL-02) | - |
+| Einfügen und `@@IDENTITY` | geht (AL-03); DECIMAL(19,0) behält 2^53 + 1 | - |
+| Seiten (TOP, Offset in PHP verworfen; Gleichstände bei TOP) | geht (AL-04); ein bloßes `TOP 3` lieferte 4 Zeilen (Gleichstände), `arrayQuery()` 3 | - |
+| `&`, `IIf`, `Mid`, `Len`, Datumswerte, Zeitstempel nach 2038, BAND/BOR und die Nachbildung | geht (AL-05); nach 2038 seit der Form mit Tagen als Double (DateDiff/DateAdd in Sekunden scheiterten: "Numeric value out of range") | - |
+| Transaktionen | geht (AL-06) | - |
+| Unicode, 1 MB langer Text | geht (AL-07) | - |
+| Skripte aus mehreren Anweisungen, Kommentare | geht (AL-08) | - |
+| abgelehnt: `LIMIT`, `OFFSET FETCH`, `FOR UPDATE`, `MERGE`, Upsert, `GROUP_CONCAT`, `MD5`, `TEXT(300)`; ein zweiter Schreiber auf einer gesperrten Zeile | alle abgelehnt (AL-09): "Syntax error in FROM clause" (LIMIT, FOR UPDATE), "Reserved error (-1001)" (OFFSET FETCH), "Invalid SQL statement" (MERGE), "Size of field is too long" (TEXT(300)), "Could not update; currently locked" (zweiter Schreiber) | - |
+| Datentabellen-Verbindung (Engine `msaccess`) | nicht gemessen: die CI-Datei liegt außerhalb von `SQLiteDirectories` (AL-10 wird übersprungen) | - |
 
-Die Windows-Spalte nennt den Test aus `expMSAccessLiveTest`, der es misst: der Job führt ihn mit jedem Push nach main
-auf windows-2022 und windows-2025 aus, und sein Protokoll listet, was Access abgelehnt hat. Als Ergebnis steht er
-noch nicht auf dieser Seite: der Job läuft zum ersten Mal mit der Änderung, die ihn einführt.
+Gemessen am 26. November 2026 von `expMSAccessLiveTest` im Job `msaccess-windows` auf windows-2022 und windows-2025
+(auf beiden dasselbe Ergebnis); der Job läuft mit jedem Push nach main, und sein Protokoll listet, was Access abgelehnt
+hat.
 
 **Grenzen von Access selbst** (Microsofts Spezifikationen, hier nicht gemessen): 2 GB je Datei einschließlich
 Systemobjekten; 255 Spalten je Tabelle; 255 Zeichen in einem Kurzen Text; 32 Indizes je Tabelle; 255 gleichzeitige

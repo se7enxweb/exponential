@@ -110,21 +110,20 @@ PHP 8.4). Linux: measured on 2026-11-25 with MDBTools 1.0.0 (Ubuntu 24.04).
 
 | What | Windows, ACE x64 (`msaccess-windows`) | Linux, MDBTools |
 |---|---|---|
-| import (`exp:access:import`) | through the ODBC reader | **works**: MDBTools' programs, JET3, JET4 and ACE files (above) |
-| `expMSAccessDB` connect, list tables (`SQLTables`), describe columns | AL-01 | **does not**: the MDBTools ODBC driver connects through PDO_ODBC, but cannot fetch rows ("Driver does not support this function", SQLFetchScroll) and its SQL parser refuses `TOP`, `COUNT(*)`, `JOIN` and `INSERT`; with PHP's odbc extension the process ended without a message. Use the import |
-| DDL from `.dba` (COUNTER, TEXT(n), LONGTEXT, DECIMAL, DEFAULT, indexes) | AL-02 | - |
-| insert and `@@IDENTITY` | AL-03 | - |
-| paging (TOP, offset dropped in PHP; TOP's ties) | AL-04 | - |
-| `&`, `IIf`, `Mid`, `Len`, dates, time stamps past 2038, BAND/BOR and the emulation | AL-05 | - |
-| transactions | AL-06 | - |
-| Unicode, 1 MB long text | AL-07 | - |
-| scripts of several statements, comments | AL-08 | - |
-| refused: `LIMIT`, `OFFSET FETCH`, `FOR UPDATE`, `MERGE`, upsert, `GROUP_CONCAT`, `MD5`, `TEXT(300)`; a second writer on a locked row | AL-09 | - |
-| data table connection (engine `msaccess`) | AL-10 | - |
+| import (`exp:access:import`) | **works** through the ODBC reader for Access 2000 and later files (JET4 `.mdb`, ACE `.accdb`: DateTestDatabase.mdb, ASampleDatabase.accdb); **not** Access 97 files (JET3: ACE 2016 refuses nwind.mdb, "created with a previous version"): import those with MDBTools | **works**: MDBTools' programs, JET3, JET4 and ACE files (above) |
+| `expMSAccessDB` connect, list tables (`SQLTables`), describe columns | works (AL-01) | **does not**: the MDBTools ODBC driver connects through PDO_ODBC, but cannot fetch rows ("Driver does not support this function", SQLFetchScroll) and its SQL parser refuses `TOP`, `COUNT(*)`, `JOIN` and `INSERT`; with PHP's odbc extension the process ended without a message. Use the import |
+| DDL from `.dba` (COUNTER, TEXT(n), LONGTEXT, DECIMAL, DEFAULT, indexes) | works (AL-02) | - |
+| insert and `@@IDENTITY` | works (AL-03); DECIMAL(19,0) keeps 2^53 + 1 | - |
+| paging (TOP, offset dropped in PHP; TOP's ties) | works (AL-04); a bare `TOP 3` returned 4 rows (ties), `arrayQuery()` 3 | - |
+| `&`, `IIf`, `Mid`, `Len`, dates, time stamps past 2038, BAND/BOR and the emulation | works (AL-05); past 2038 since the days-as-Double form (DateDiff/DateAdd in seconds failed: "Numeric value out of range") | - |
+| transactions | works (AL-06) | - |
+| Unicode, 1 MB long text | works (AL-07) | - |
+| scripts of several statements, comments | works (AL-08) | - |
+| refused: `LIMIT`, `OFFSET FETCH`, `FOR UPDATE`, `MERGE`, upsert, `GROUP_CONCAT`, `MD5`, `TEXT(300)`; a second writer on a locked row | all refused (AL-09): "Syntax error in FROM clause" (LIMIT, FOR UPDATE), "Reserved error (-1001)" (OFFSET FETCH), "Invalid SQL statement" (MERGE), "Size of field is too long" (TEXT(300)), "Could not update; currently locked" (second writer) | - |
+| data table connection (engine `msaccess`) | not measured: the CI file is outside `SQLiteDirectories` (AL-10 skips) | - |
 
-The Windows column names the test of `expMSAccessLiveTest` that measures it: the job runs it on windows-2022 and
-windows-2025 with every push to main, and its log lists what Access refused. It is not in this page as a result yet:
-the job runs for the first time with the change that adds it.
+Measured on 2026-11-26 by `expMSAccessLiveTest` in the job `msaccess-windows` on windows-2022 and windows-2025 (the
+same result on both); the job runs with every push to main, and its log lists what Access refused.
 
 **Limits of Access itself** (Microsoft's specifications, not measured here): 2 GB per file including system objects;
 255 columns per table; 255 characters in a Short Text; 32 indexes per table; 255 concurrent users in theory, far fewer
