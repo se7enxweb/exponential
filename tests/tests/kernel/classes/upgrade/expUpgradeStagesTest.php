@@ -12,6 +12,8 @@
  *  US-06 the audit events of the upgrade are in the taxonomy
  *  US-07 Composer's environment: on Windows SystemRoot, TEMP and the other variables PHP needs there are passed on
  *        (without SystemRoot PHP's curl extension does not start), elsewhere only the PATH and Composer's own
+ *  US-08 the installation's own version for Composer: the kernel's in a release install (no git checkout), none in
+ *        a git checkout; a COMPOSER_ROOT_VERSION of the process wins
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -207,5 +209,24 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '1', $linux['COMPOSER_ALLOW_SUPERUSER'] );
         $none = expUpgradeComposer::environment( function () { return false; }, false, false );
         $this->assertSame( array( 'COMPOSER_NO_INTERACTION' => '1', 'PATH' => '/usr/local/bin:/usr/bin:/bin' ), $none );
+    }
+
+    /** US-08 */
+    public function testComposerRootVersion()
+    {
+        $this->assertSame( '6.0.15', expUpgradeComposer::rootVersion( $this->dir, '6.0.15' ), 'a release install: the kernel version' );
+        $this->assertNull( expUpgradeComposer::rootVersion( $this->dir, '6.0.15alpha' ), 'only MAJOR.MINOR.RELEASE' );
+        $kernel = expUpgradeComposer::rootVersion( $this->dir );
+        $this->assertSame( eZPublishSDK::VERSION_MAJOR . '.' . eZPublishSDK::VERSION_MINOR . '.' . eZPublishSDK::VERSION_RELEASE, $kernel );
+        @mkdir( $this->dir . '/.git' );
+        $this->assertNull( expUpgradeComposer::rootVersion( $this->dir, '6.0.15' ), 'a git checkout: Composer reads the branch' );
+        @rmdir( $this->dir . '/.git' );
+
+        $none = function () { return false; };
+        $this->assertSame( '6.0.15', expUpgradeComposer::environment( $none, false, true, '6.0.15' )['COMPOSER_ROOT_VERSION'] );
+        $this->assertArrayNotHasKey( 'COMPOSER_ROOT_VERSION', expUpgradeComposer::environment( $none, false, false, null ) );
+        $given = function ( $name ) { return $name === 'COMPOSER_ROOT_VERSION' ? 'dev-main' : false; };
+        $this->assertSame( 'dev-main', expUpgradeComposer::environment( $given, false, false, '6.0.15' )['COMPOSER_ROOT_VERSION'],
+                           "the process's own wins" );
     }
 }

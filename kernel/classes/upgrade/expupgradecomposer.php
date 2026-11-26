@@ -51,7 +51,7 @@ class expUpgradeComposer
     }
 
     /** The variables of this process Composer gets as they are, when set. */
-    const PASSED_VARIABLES = array( 'HOME', 'COMPOSER_HOME', 'COMPOSER_CACHE_DIR', 'COMPOSER_AUTH', 'PHPRC', 'PHP_INI_SCAN_DIR',
+    const PASSED_VARIABLES = array( 'HOME', 'COMPOSER_HOME', 'COMPOSER_CACHE_DIR', 'COMPOSER_AUTH', 'COMPOSER_ROOT_VERSION', 'PHPRC', 'PHP_INI_SCAN_DIR',
                                     'TMPDIR', 'HTTP_PROXY', 'HTTPS_PROXY', 'NO_PROXY', 'SSL_CERT_FILE', 'SSL_CERT_DIR', 'OPENSSL_CONF' );
 
     /**
@@ -69,9 +69,11 @@ class expUpgradeComposer
      * @param callable $getenv name => value or false, as getenv()
      * @param bool $superuser whether this process runs as root (COMPOSER_ALLOW_SUPERUSER)
      * @param bool|null $windows whether this is Windows (null: PHP_OS_FAMILY)
+     * @param string|null $rootVersion the version of the installation's own package (COMPOSER_ROOT_VERSION) where
+     *                                 this process sets none: see rootVersion()
      * @return array
      */
-    public static function environment( callable $getenv, $superuser = false, $windows = null )
+    public static function environment( callable $getenv, $superuser = false, $windows = null, $rootVersion = null )
     {
         if ( $windows === null )
             $windows = PHP_OS_FAMILY === 'Windows';
@@ -85,7 +87,33 @@ class expUpgradeComposer
         }
         if ( $superuser )
             $env['COMPOSER_ALLOW_SUPERUSER'] = '1';
+        if ( !isset( $env['COMPOSER_ROOT_VERSION'] ) && $rootVersion !== null && $rootVersion !== '' )
+            $env['COMPOSER_ROOT_VERSION'] = (string)$rootVersion;
         return $env;
+    }
+
+    /**
+     * The version Composer gives the installation's own package (se7enxweb/exponential) in $root: the kernel's
+     * version (6.0.15) where $root is no git checkout, null in one (Composer reads the branch and its alias there).
+     * Composer cannot tell the version of a release install, which has neither a git checkout nor a "version" in
+     * composer.json, and took 1.0.0: a package that requires se7enxweb/exponential ^6.0.14 (expai, through
+     * exponential-php-floor 1.3 on PHP 8.4 and later) could then not be installed, and the libraries stage failed.
+     *
+     * @param string $root
+     * @param string|null $version MAJOR.MINOR.RELEASE (null: eZPublishSDK's)
+     * @return string|null
+     */
+    public static function rootVersion( $root, $version = null )
+    {
+        if ( file_exists( rtrim( (string)$root, '/\\' ) . '/.git' ) )
+            return null;
+        if ( $version === null )
+        {
+            if ( !class_exists( 'eZPublishSDK' ) )
+                return null;
+            $version = eZPublishSDK::VERSION_MAJOR . '.' . eZPublishSDK::VERSION_MINOR . '.' . eZPublishSDK::VERSION_RELEASE;
+        }
+        return preg_match( '/^[0-9]+\.[0-9]+\.[0-9]+$/', (string)$version ) ? (string)$version : null;
     }
 
     /**
@@ -102,7 +130,7 @@ class expUpgradeComposer
             return array( 'exit' => 127, 'output' => '', 'errors' => 'no composer: give one with --composer=' );
         $root = (string)$context->option( 'root' );
         $command = array_merge( $command, $arguments, array( '--no-interaction', '--working-dir=' . $root ) );
-        $env = self::environment( 'getenv', function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 );
+        $env = self::environment( 'getenv', function_exists( 'posix_geteuid' ) && posix_geteuid() === 0, null, self::rootVersion( $root ) );
         $process = proc_open( $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $root, $env );
         if ( !is_resource( $process ) )
             return array( 'exit' => 127, 'output' => '', 'errors' => 'cannot start composer' );
