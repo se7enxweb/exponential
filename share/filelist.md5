@@ -8606,7 +8606,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-cc40ac3a23961967e7b067fd0ded49ca  doc/eng-us/help/database-support.md
+bf7ded028957d0232cc342dbca0c5aea  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -18514,7 +18514,7 @@ a5a807f6683e34c696f32b0aacc76b15  doc/ger-de/hilfe/datenbankadministratoren/unte
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 0fd3f75c7c74b4cf244e7d5448f3c417  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-bc801632e00b55b42a057c634efcb422  doc/ger-de/hilfe/datenbankunterstuetzung.md
+17a76eafb2a5bc445a00a54e2424ee1c  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md

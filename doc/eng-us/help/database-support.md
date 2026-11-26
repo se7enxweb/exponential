@@ -3,8 +3,8 @@ title: Database support
 audience: admin, developer
 category: install-upgrade
 order: 10
-summary: Which databases Exponential 6.0.x supports and in which order (SQLite first, then PostgreSQL, MongoDB, MariaDB, Oracle and MySQL), with the versions, PHP extensions, settings, installers, character sets, performance, backup and restore, limits, migration and test coverage of each, and what it would take to run on Microsoft SQL Server.
-keywords: database, databases, supported databases, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
+summary: Which databases Exponential 6.0.x supports and in which order (SQLite first, then PostgreSQL, MongoDB, MariaDB, Oracle, MySQL and Microsoft SQL Server with Azure SQL), with a support matrix and the versions, PHP extensions, settings, installers, clustering, character sets, performance, backup and restore, limits, migration and test coverage of each.
+keywords: database, databases, supported databases, support matrix, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
 featured: true
 context: setup/info, setup/systemupgrade, dse
 type: help
@@ -24,37 +24,36 @@ support statement; it links to that chapter wherever the details are.
 ## Contents
 
 1. [The supported databases, in order](#the-supported-databases-in-order)
-2. [At a glance](#at-a-glance)
-3. [Versions, checked against the code](#versions-checked-against-the-code)
-4. [PHP extensions](#php-extensions)
-5. [The settings: DatabaseSettings in site.ini](#the-settings-databasesettings-in-siteini)
-6. [Installer support per path](#installer-support-per-path)
-7. [SQLite 3, the default](#1-sqlite-3-the-default)
-8. [PostgreSQL](#2-postgresql)
-9. [MongoDB](#3-mongodb)
-10. [MariaDB](#4-mariadb)
-11. [Oracle](#5-oracle)
-12. [MySQL](#6-mysql)
-13. [Microsoft SQL Server: possible with additional work](#microsoft-sql-server-possible-with-additional-work)
-    - [A starting point: the xrowmssql extension](#a-starting-point-the-xrowmssql-extension)
-14. [Character sets and collations](#character-sets-and-collations)
-15. [Performance and scaling](#performance-and-scaling)
-16. [Backup and restore](#backup-and-restore)
-17. [Moving a site to another database](#moving-a-site-to-another-database)
-18. [Engine parity, measured](#engine-parity-measured)
-19. [Test coverage (CI)](#test-coverage-ci)
-20. [Which database is my site using?](#which-database-is-my-site-using)
-21. [Related pages](#related-pages)
+2. [Support matrix](#support-matrix)
+3. [At a glance](#at-a-glance)
+4. [Versions, checked against the code](#versions-checked-against-the-code)
+5. [PHP extensions](#php-extensions)
+6. [The settings: DatabaseSettings in site.ini](#the-settings-databasesettings-in-siteini)
+7. [Installer support per path](#installer-support-per-path)
+8. [SQLite 3, the default](#1-sqlite-3-the-default)
+9. [PostgreSQL](#2-postgresql)
+10. [MongoDB](#3-mongodb)
+11. [MariaDB](#4-mariadb)
+12. [Oracle](#5-oracle)
+13. [MySQL](#6-mysql)
+14. [Microsoft SQL Server and Azure SQL](#7-microsoft-sql-server-and-azure-sql)
+15. [Character sets and collations](#character-sets-and-collations)
+16. [Performance and scaling](#performance-and-scaling)
+17. [Backup and restore](#backup-and-restore)
+18. [Moving a site to another database](#moving-a-site-to-another-database)
+19. [Engine parity, measured](#engine-parity-measured)
+20. [Test coverage (CI)](#test-coverage-ci)
+21. [Which database is my site using?](#which-database-is-my-site-using)
+22. [Related pages](#related-pages)
 
 ## The supported databases, in order
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time.
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL.
 
 This is the project's official order for Exponential 6.0.x. It is the order in which the databases are recommended,
-documented and listed throughout the documentation. All six are supported: every one of them has a driver in the
-kernel or in a shipped extension, an entry in the setup wizard, and a path in the command-line installers.
+documented and listed throughout the documentation. All seven are supported: every one of them has a driver in the
+kernel or in a shipped extension, a path in the command-line installers and a DFS cluster backend in the kernel.
 
 What the order means in practice:
 
@@ -72,27 +71,43 @@ What the order means in practice:
 6. **MySQL** is supported on the same driver as MariaDB and is tested in CI. It is last in the order, not because
    it works less well, but because the project recommends the others first for new sites.
 
-Microsoft SQL Server has no driver in Exponential 6.0.x. It is known to be possible: the database layer is a small,
-documented interface, and everything that would have to be written is listed in
-[Microsoft SQL Server](#microsoft-sql-server-possible-with-additional-work). An extension written for the 4.x line,
-`se7enxweb/xrowmssql`, is the natural starting point for that work.
+7. **Microsoft SQL Server and Azure SQL** (SQL Server 2017 to 2025, Azure SQL Database and Managed Instance) run on
+   the kernel's own driver, `expSQLServerDB`, new in 6.0.15, on Linux and on Windows. It is the choice for
+   organizations standardized on Microsoft's database ([section 7](#7-microsoft-sql-server-and-azure-sql)).
+
+## Support matrix
+
+| Engine | Versions | PHP extension | Installers | Cluster (DFS metadata) | Tested in CI on every push | Status |
+|---|---|---|---|---|---|---|
+| SQLite 3 | 3.33 and later | `sqlite3` | setup wizard (the default), kickstarter, `exp:install` (the default) | one machine only (`expDFSFileHandlerSQLiteBackend`) | driver tests on PHP 8.1 to 8.5; the DFS backend | supported, the default |
+| PostgreSQL | 13 to 19 | `pgsql` | setup wizard, kickstarter, `exp:install` | any number of servers (`expDFSFileHandlerPostgresqlBackend`), read replicas | 13, 15, 18 and 19 for the site, 13 to 19 for the DFS backend | supported, the recommended server |
+| MongoDB | 6.0 and later, PHP 8.2 and later | `mongodb` and the library `mongodb/mongodb` | setup wizard, kickstarter, `exp:install` | any number of servers, one server or a replica set (`expDFSFileHandlerMongoDBBackend`, 5.0 and later) | adapter tests; MongoDB 7 and 8.0 in the database and DFS jobs | supported |
+| MariaDB | releases your vendor supports | `mysqli` | setup wizard, kickstarter, `exp:install` | any number of servers (MySQLi backend), read replicas | through the MySQL jobs (the same driver) | supported |
+| Oracle | 19c and later | `oci8` | setup wizard, kickstarter, `exp:install` (driver from `ezoracle`) | any number of servers (`expDFSFileHandlerOracleBackend`, 12.1 and later), read replicas | the DFS backend on Oracle Free 23 | supported |
+| MySQL | releases your vendor supports | `mysqli` | setup wizard, kickstarter, `exp:install` | any number of servers (the default backend), read replicas | MySQL 8.0 | supported |
+| Microsoft SQL Server, Azure SQL | 2017, 2019, 2022, 2025; Azure SQL Database and Managed Instance | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` | kickstarter, `exp:install` | any number of servers (`expDFSFileHandlerSQLServerBackend`), Always On read replicas | 2017, 2019, 2022 and 2025 on PHP 8.1 to 8.5 across three PHP layers; LocalDB on Windows | supported (new in 6.0.15) |
+
+**In development.** Drivers for Microsoft Access and for databases reached through a generic ODBC connection are
+being built; they are not part of a release yet.
+
+Moving an existing site from one engine to another: [Moving off an old database](moving-off-an-old-database.md).
 
 ## At a glance
 
-| | 1. SQLite 3 | 2. PostgreSQL | 3. MongoDB | 4. MariaDB | 5. Oracle | 6. MySQL |
-|---|---|---|---|---|---|---|
-| `DatabaseImplementation` | `sqlite3` | `ezpostgresql` | `mongodb` | `ezmysqli` | `ezoracle` | `ezmysqli` |
-| Driver class | `eZSQLite3DB` | `eZPostgreSQLDB` | `expMongoDB` | `eZMySQLiDB` | `eZOracleDB` | `eZMySQLiDB` |
-| PHP extension | `sqlite3` | `pgsql` | `mongodb` + library `mongodb/mongodb` | `mysqli` | `oci8` | `mysqli` |
-| Database server | none (one file) | yes | yes | yes | yes | yes |
-| Installer default | yes | | | | | |
-| Setup wizard | yes | yes | yes (slow step) | yes | yes | yes |
-| `exp:install --db=` | `sqlite` (default) | `pgsql` | `mongodb` | `mariadb` | `oracle` | `mysql` |
-| Several web servers on one database | no | yes | yes | yes | yes | yes |
-| Character set | UTF-8 | `UTF8` | UTF-8 (BSON) | `utf8mb4` | `AL32UTF8` | `utf8mb4` |
-| Schema update files | `update/database/sqlite/` | `update/database/postgresql/` | none (no SQL) | `update/database/mysql/` | in `ezoracle` | `update/database/mysql/` |
-| Tested in the project's CI | driver unit tests | yes (PostgreSQL 13, 15, 18 and 19) | adapter unit tests | no | no | yes (MySQL 8.0) |
-| DFS cluster metadata backend (several web servers) | one machine only: in the kernel (`expDFSFileHandlerSQLiteBackend`) for a one-node cluster and tests | yes, in the kernel (`expDFSFileHandlerPostgresqlBackend`, PostgreSQL 13-19 in CI) | yes, in the kernel (`expDFSFileHandlerMongoDBBackend`, MongoDB 5.0 and later) | yes, in the kernel (MySQLi backend) | yes, in the kernel (`expDFSFileHandlerOracleBackend`, Oracle 12.1 and later) | yes, in the kernel (MySQLi backend) |
+| | 1. SQLite 3 | 2. PostgreSQL | 3. MongoDB | 4. MariaDB | 5. Oracle | 6. MySQL | 7. SQL Server |
+|---|---|---|---|---|---|---| --- |
+| `DatabaseImplementation` | `sqlite3` | `ezpostgresql` | `mongodb` | `ezmysqli` | `ezoracle` | `ezmysqli` | `sqlserver` |
+| Driver class | `eZSQLite3DB` | `eZPostgreSQLDB` | `expMongoDB` | `eZMySQLiDB` | `eZOracleDB` | `eZMySQLiDB` | `expSQLServerDB` |
+| PHP extension | `sqlite3` | `pgsql` | `mongodb` + library `mongodb/mongodb` | `mysqli` | `oci8` | `mysqli` | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` |
+| Database server | none (one file) | yes | yes | yes | yes | yes | yes |
+| Installer default | yes | | | | | |  |
+| Setup wizard | yes | yes | yes (slow step) | yes | yes | yes | no (kickstarter and `exp:install`) |
+| `exp:install --db=` | `sqlite` (default) | `pgsql` | `mongodb` | `mariadb` | `oracle` | `mysql` | `sqlserver` |
+| Several web servers on one database | no | yes | yes | yes | yes | yes | yes |
+| Character set | UTF-8 | `UTF8` | UTF-8 (BSON) | `utf8mb4` | `AL32UTF8` | `utf8mb4` | UTF-8 collation (`_UTF8`, 2019 and later) or `NVARCHAR` |
+| Schema update files | `update/database/sqlite/` | `update/database/postgresql/` | none (no SQL) | `update/database/mysql/` | in `ezoracle` | `update/database/mysql/` | none yet (the schema is `kernel/sql/sqlserver/`) |
+| Tested in the project's CI | driver unit tests | yes (PostgreSQL 13, 15, 18 and 19) | adapter unit tests | no | no | yes (MySQL 8.0) | yes (2017, 2019, 2022, 2025; LocalDB on Windows) |
+| DFS cluster metadata backend (several web servers) | one machine only: in the kernel (`expDFSFileHandlerSQLiteBackend`) for a one-node cluster and tests | yes, in the kernel (`expDFSFileHandlerPostgresqlBackend`, PostgreSQL 13-19 in CI) | yes, in the kernel (`expDFSFileHandlerMongoDBBackend`, MongoDB 5.0 and later) | yes, in the kernel (MySQLi backend) | yes, in the kernel (`expDFSFileHandlerOracleBackend`, Oracle 12.1 and later) | yes, in the kernel (MySQLi backend) | yes, in the kernel (`expDFSFileHandlerSQLServerBackend`, SQL Server 2017 and later, Azure SQL) |
 
 ## Versions, checked against the code
 
@@ -118,13 +133,13 @@ refuse an old server outright; they are not a promise that a server of that age 
 
 **PHP.** Exponential 6.0.x runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support) (`composer.json`, `"php": "^7.4 || ... || ^8.8"`). The database
 drivers follow that range, with one exception: the MongoDB adapter needs PHP 8.2 or later. Velocity, the recommended
-web server, needs PHP 8.1. See [chapter 2](../install/02-requirements.md#22-php).
+web server, needs PHP 8.0. See [chapter 2](../install/02-requirements.md#22-php).
 
 ## PHP extensions
 
 One database extension is required; the setup wizard's critical test `database_extensions` passes when at least one
-of `sqlite3`, `mysqli`, `pgsql`, `mongodb` and `oci8` is loaded (`settings/setup.ini`,
-`[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8`, `Require=one`). Install only the one your site
+of `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv` and `pdo_sqlsrv` is loaded (`settings/setup.ini`,
+`[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv`, `Require=one`). Install only the one your site
 uses.
 
 | Database | Extension | Where it comes from |
@@ -133,6 +148,7 @@ uses.
 | PostgreSQL | `pgsql` | bundled with PHP; `php-pgsql`, `php<version>-pgsql` |
 | MongoDB | `mongodb` (PECL) and the Composer library `mongodb/mongodb` | `pecl install mongodb` or `php-pecl-mongodb`; the library with `composer require mongodb/mongodb` (`composer.json` only suggests it). CI installs `mongodb/mongodb` `^1.21 || ^2.0`. |
 | MariaDB, MySQL | `mysqli` | bundled with PHP (mysqlnd); `php-mysqlnd`, `php<version>-mysql` |
+| SQL Server, Azure SQL | `sqlsrv` or `pdo_sqlsrv` (PECL, Microsoft), or `pdo_odbc` with Microsoft's ODBC Driver 17 or 18, or `pdo_dblib` (FreeTDS) | Microsoft's packages for Linux and its DLLs for Windows; `pdo_odbc` and `pdo_dblib` ship with PHP ([layers](../features/6.0/sqlserver-database-driver.md#supported-servers-and-php-layers)) |
 | Oracle | `oci8` (PECL) | PECL oci8 3.4 for PHP 8.4 and 8.5, 3.2 for PHP 8.1 to 8.3, built against an Oracle client (the Instant Client is enough); EPEL, Remi or your vendor |
 
 Check what a PHP has with `php -m`, and remember that the web server's PHP and the command line PHP are configured
@@ -243,7 +259,8 @@ a site behaves as if its database were down.
 
 ## Installer support per path
 
-Exponential has three installers in the kernel. All three support all six databases.
+Exponential has three installers in the kernel. All three support the first six databases; Microsoft SQL Server is
+installed with the kickstarter and `exp:install`.
 
 | Database | Setup wizard (browser) | Kickstarter (`kickstart.ini`, `[database_choice] Type=`) | `exp:install --db=` |
 |---|---|---|---|
@@ -253,6 +270,7 @@ Exponential has three installers in the kernel. All three support all six databa
 | 4. MariaDB | yes, as "MySQL Improved"; checks that the database is UTF-8 | `mysqli` (`mysql` accepted) | `mariadb` (the same as `mysql`) |
 | 5. Oracle | yes, when `oci8` is loaded and `extension/ezoracle` is present; activates the extension for the new site | `oci8` (`oracle` accepted); `Database` is the connect string | `oracle` (also `oci8`, `ezoracle`); `--db-name` is the service name, default `FREEPDB1` |
 | 6. MySQL | yes, as "MySQL Improved" | `mysqli` (`mysql` accepted) | `mysql` (also `mysqli`) |
+| 7. SQL Server, Azure SQL | | `sqlserver` (`mssql`, `sqlsrv` accepted), with `Encrypt` and `TrustServerCertificate` | `sqlserver` (also `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; the database must exist |
 
 - If the `sqlite3` extension is missing, the wizard chooses the first database whose extension is loaded and says
   so.
@@ -464,103 +482,31 @@ Basic Multilingual Plane, such as emoji, cannot pass through the connection even
 
 Details: [9.3 MySQL and MariaDB](../install/09-databases.md#93-mysql-and-mariadb).
 
-## Microsoft SQL Server: possible with additional work
+<a id="microsoft-sql-server-possible-with-additional-work"></a>
 
-> **In progress (6.0.15):** the kernel has a SQL Server driver of its own, `expSQLServerDB`
-> (`DatabaseImplementation=sqlserver`), written anew and not derived from xrowmssql. The driver and its tests are in
-> place; the schema handler, installer entries and the DFS cluster backend follow. See
-> [Microsoft SQL Server driver](../features/6.0/sqlserver-database-driver.md).
+## 7. Microsoft SQL Server and Azure SQL
 
-**The statement.** Microsoft SQL Server is known to be possible with additional work at this time. It is not
-supported in Exponential 6.0.x: there is no driver, no schema handler and no installer entry for it, and nothing on
-this page should be read as a promise of a release that has one.
+Exponential 6.0.15 has a SQL Server driver of its own in the kernel, `expSQLServerDB`
+(`DatabaseImplementation=sqlserver`; `mssql` and `sqlsrv` name the same driver), written anew under the GPL, with its
+schema handler `expSQLServerSchema`, the kernel schema in `kernel/sql/sqlserver/`, installer entries and a DFS cluster
+backend.
 
-**What exists today.**
+- **Servers**: SQL Server 2017, 2019, 2022 and 2025, Azure SQL Database and Azure SQL Managed Instance (transient
+  errors are retried). Azure SQL Edge, which Microsoft retired, and SQL Server 2016 and older are not supported.
+- **PHP layers**: Microsoft's `sqlsrv` (recommended) or `pdo_sqlsrv`, PHP's `pdo_odbc` with ODBC Driver 17 or 18, or
+  `pdo_dblib` over FreeTDS; `[SQLServerSettings] Layer=auto` takes the first one that is loaded. On Linux and on
+  Windows.
+- **Installing**: create the database first (a UTF-8 collation, `READ_COMMITTED_SNAPSHOT`), then
+  `exp:install --apply --db=sqlserver` or the kickstarter with `Type=sqlserver`. Measured on SQL Server 2022: 16
+  steps, no errors, 323 content objects.
+- **Clustering**: `expDFSFileHandlerSQLServerBackend` keeps the DFS metadata on SQL Server or Azure SQL for any
+  number of web servers; `exp:cluster:enable --backend=sqlserver` makes a one-node cluster.
+- **Read replicas**: Always On availability groups with `ApplicationIntent=ReadOnly`.
+- **Tested**: on every push, on SQL Server 2017, 2019, 2022 and 2025 with `sqlsrv`, `pdo_sqlsrv` and `pdo_odbc` and
+  PHP 8.1 to 8.5, and on SQL Server LocalDB on Windows.
 
-- **A small driver interface.** Every database is reached through `eZDBInterface` (`lib/ezdb/classes/ezdbinterface.php`),
-  and the five existing drivers show how to implement it for engines as different as a file database, three SQL
-  servers and a document store. The MongoDB adapter in particular proves that the kernel does not depend on one SQL
-  dialect.
-- **An engine-neutral schema.** The kernel's schema and initial data are kept in the generic `.dba` format
-  (`share/db_schema.dba`, `share/db_data.dba`), which a schema handler turns into the engine's own DDL.
-- **Pluggable schema handlers.** `settings/dbschema.ini` maps a type to a handler class (`SchemaPaths[]`,
-  `SchemaHandlerClasses[]`), so a new engine is registered by settings, not by changing the kernel.
-- **Pluggable driver aliases.** `site.ini [DatabaseSettings] ImplementationAlias[]` is extended from an extension's
-  `site.ini.append.php`, the way `ezoracle` adds `ezoracle` and `oracle`.
-- **Pluggable installer types.** The kickstarter template says "other values are possible if provided by extension".
-- **Tools that already read SQL Server.** The database manager of the `sevenx_dse` extension (AdminNeo, a fork of
-  Adminer) ships an MS SQL driver for browsing and editing tables, and the generic SQLAlchemy exporter in section 18.6
-  of the [MongoDB porting reference](../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md) can read SQL Server through
-  `pyodbc`. Neither is a way to run a site on SQL Server.
-- **PHP drivers.** Microsoft publishes the `sqlsrv` and `pdo_sqlsrv` extensions for PHP on Linux and Windows. Check
-  Microsoft's support matrix for the PHP versions a release covers; this has not been tested with Exponential.
-
-### A starting point: the xrowmssql extension
-
-A SQL Server extension already exists, written for earlier editions of the database API:
-[se7enxweb/xrowmssql](https://github.com/se7enxweb/xrowmssql), "A full-featured open source Microsoft SQL Server
-database plugin" (repository description). Its README calls it the "Microsoft SQL Server database extension for eZ
-Publish 4.x and SQL Server 2005/2008", "Developed by xrow GmbH", and says it includes a database driver and a database
-schema definition. The repository holds the code as copied from `xrow/xrowmssql` in October 2013; since then only
-funding files were added (its `git log`). It has not been run on Exponential 6, and this page does not claim that it
-works there.
-
-**What it provided** (read from its `classes/`, `settings/`, `sql/`, `patch/` and `docs/` on 18 October 2026):
-
-| Part | File | What it did |
-|---|---|---|
-| Driver | `classes/ezmssqldb.php` (`eZMSSQLDB`) | An `eZDBInterface` driver: connect, query, `arrayQuery()`, transactions, `lastSerialID()` through `SELECT @@identity`, `escapeString()` (doubled quotes), `subString()` (`substring()`), `concatString()` (the `+` operator), `md5()` (`HashBytes('md5', ...)` converted to hex), `eZTableList()` from `sysobjects`, database lists and server version |
-| Connection layer | `classes/ezmssqlconnector.php` (`eZMSSQLFunctions`) | Two back ends: Microsoft's `sqlsrv` extension on Windows, and the old `mssql_*` functions over FreeTDS (`dblib`) on Linux |
-| Unicode literals | `eZMSSQLDB::_appendN()` | Prefixed non-numeric string literals with `N`, so text went into `NVARCHAR` columns as Unicode |
-| Identity inserts | `eZMSSQLDB::query()` | Switched `IDENTITY_INSERT` on and off around inserts that set the key column |
-| Schema handler | `classes/ezmssqlschema.php` (`eZMssqlSchema`) | Turned `.dba` into SQL Server DDL (`nvarchar`, `ntext`, `int IDENTITY(0,1)`, primary keys and indexes, insert triggers) and read an existing database back into a schema |
-| Settings | `settings/site.ini.append`, `settings/dbschema.ini.append` | The aliases `mssql` and `ezmssql` for `ImplementationAlias[]`, port 1433, the schema handler under `SchemaHandlerClasses[mssql]`, and per-column type and `NOT NULL` translations for long text columns |
-| Server objects | `sql/PROCEDURE.sql`, `sql/FUNCTION.sql`, `sql/clustering.sql` | A stored procedure and function to create in SQL Server first; `clustering.sql` holds the table `ezdbfile` of the old eZDB cluster handler (file contents kept in the database), not the metadata table `ezdfsfile` of today's DFS cluster |
-| Kernel patch | `patch/4.3/kernel.patch` | A change to `kernel/classes/ezcontentlanguage.php` for SQL Server's arithmetic on language masks |
-| Install notes | `README`, `docs/` | Client setup (SQL Server Native Client on Windows, FreeTDS on Linux), loading the schema with `ezsqlinsertschema.php --type=mssql`, troubleshooting and known bugs |
-
-Its `extension.xml` names version 1.0.0 and "GNU General Public License v2.0", while the repository's `LICENSE` file
-is the GPL version 3; check both before reusing code. The settings expect the extension directory to be named
-`extension/mssql`.
-
-**How it maps to the work list below, and what would need modernizing:**
-
-| Work list row | What xrowmssql already has | What would need to change |
-|---|---|---|
-| A driver class | Most methods of `eZDBInterface` | PHP 8: its PHP 4 style constructor (`function eZMSSQLDB()` calling `$this->eZDBInterface()`) does not run on PHP 8, where `eZDBInterface` has only `__construct()`; `connect()` lacks the `$port` parameter of today's drivers; the `mssql_*` functions were removed from PHP 7 on, so only `sqlsrv` remains as a back end, on Linux too |
-| Offset and limit | Applied wrongly, not ignored: the `ROW_NUMBER()` rewrite in `arrayQuery()` is commented out, and instead the whole result is fetched through a static cursor, read from its first row and cut at `limit`, with the rows keyed from `offset`; no row is skipped, so every page after the first repeats the first rows | `ORDER BY ... OFFSET n ROWS FETCH NEXT m ROWS ONLY`, which needs SQL Server 2012 or later |
-| `lastSerialID()` | `@@identity` | `SCOPE_IDENTITY()`, which is not changed by triggers, or `OUTPUT inserted.id` |
-| `md5()`, `subString()`, `concatString()` | Present | `CONVERT(VARCHAR(32), HASHBYTES('MD5', ...), 2)` instead of `master.dbo.fn_varbintohexstr`; `NVARCHAR(MAX)` instead of the 8000 character cap |
-| `bitAnd()`/`bitOr()` | The kernel's defaults (the bitwise AND and OR operators) already fit SQL Server | Nothing |
-| The `BIT_OR` aggregate | Not present | Still to do, as described below |
-| `UPDATE ... JOIN` | Not present | Still to do (`UPDATE t SET ... FROM t JOIN ...`) |
-| A schema handler | `eZMssqlSchema`, both directions | PHP 8 constructor; `NVARCHAR(MAX)` instead of the deprecated `ntext`; a review of the column translations against today's `share/db_schema.dba` |
-| SQL files, installer entries, extensions, tests and CI | Install notes only | All still to do |
-| Session statements, case and collation | Not handled | Still to do |
-
-Taken together, xrowmssql shows how each piece was solved once for SQL Server and gives a schema handler and a
-driver skeleton to start from; making it run on Exponential 6 means porting it to PHP 8 and `sqlsrv`, replacing its
-SQL Server 2005 idioms, and adding the rows it never covered.
-
-**What is missing, the work list.**
-
-| Piece | Where | What it involves |
-|---|---|---|
-| A driver class | `lib/ezdb/classes/` or an extension (as `ezoracle` does it) | implement `eZDBInterface` on `sqlsrv`: connect, query, `arrayQuery()` with offset and limit (`OFFSET ... FETCH`, SQL Server 2012 and later), transactions, `lastSerialID()` (identity columns, `SCOPE_IDENTITY()`), `escapeString()`, `subString()`, `concatString()` (`+` or `CONCAT()`), `md5()` (`HASHBYTES('MD5', ...)` converted to hex), `bitAnd()`/`bitOr()` (the `&` and `|` operators), table and sequence lists for `eZTableList()` |
-| The `BIT_OR` aggregate | the driver | SQL Server has no `BIT_OR` aggregate; the content engine folds language masks with it. The SQLite driver solved the same gap by registering an aggregate; on SQL Server it needs a rewrite of those queries or a CLR aggregate |
-| `UPDATE ... JOIN` | the driver | SQL Server writes it as `UPDATE t SET ... FROM t JOIN ...`; the SQLite driver's `rewriteJoinedUpdate()` shows the pattern |
-| A schema handler | `lib/ezdbschema/classes/` and `settings/dbschema.ini` | turn `.dba` into `CREATE TABLE` with SQL Server types (`NVARCHAR`, `NVARCHAR(MAX)`, `INT IDENTITY`), indexes (within SQL Server's index key size limits), and back again for the upgrade check |
-| SQL files | `kernel/sql/<engine>/`, `update/database/<engine>/` | the generated schema and the update files of every later release |
-| Installer entries | `eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php`, `settings/setup.ini [database_extensions]`, `bin/php/install.php` | the wizard choice, the extension check, the `--db` alias |
-| Session statements | the driver | ignore MySQL-only `SET` statements, as the SQLite driver does |
-| Case and collation | the database | SQL Server's default collations compare without case, like MySQL's; choose a UTF-8 collation (SQL Server 2019 and later) or `NVARCHAR` columns |
-| Extensions | every extension with its own SQL | the same review the PostgreSQL and Oracle ports needed: backticks, `LIMIT`, MySQL functions |
-| Tests and CI | `tests/`, `.github/workflows/` | a CI job with a SQL Server container, as the MySQL and PostgreSQL jobs have |
-
-How large that work is has not been measured, and no estimate is given here. Anyone who wants to take it on is
-welcome: start from [xrowmssql](#a-starting-point-the-xrowmssql-extension) for the SQL Server specifics and from the
-`ezoracle` extension as the model of a current driver shipped outside the kernel, and open an issue on the
-[software tracker](https://github.com/se7enxweb/exponential/issues) to coordinate.
+Details: [Microsoft SQL Server driver](../features/6.0/sqlserver-database-driver.md) and
+[Clustering on SQL Server](../features/6.0/sqlserver-dfs-cluster.md).
 
 ## Character sets and collations
 
@@ -644,7 +590,8 @@ window: nothing may be published between the dump and the switch.
   `ezcontentobject_attribute` on both sides; on PostgreSQL correct the sequences; sign in and publish a test object.
 - **Later upgrades** use the update files of the engine the site runs on now, not the one it was installed on.
 
-The step-by-step version is [9.9 Switching an existing site to another engine](../install/09-databases.md#99-switching-an-existing-site-to-another-engine).
+The step-by-step version is [9.9 Switching an existing site to another engine](../install/09-databases.md#99-switching-an-existing-site-to-another-engine);
+why and when to move, and which engine to move to: [Moving off an old database](moving-off-an-old-database.md).
 
 ## Engine parity, measured
 
@@ -699,8 +646,9 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | 2. PostgreSQL | yes, database tests | the jobs "Database tests (postgresql 13, 15, 18 and 19, PHP 8.3)" with a `postgres:<version>` service, the PGDG client of that version and `pgcrypto`, `tests/runtests.php --dsn postgresql://... --db-per-test` |
 | 3. MongoDB | adapter unit tests | the PHPUnit job loads `mongodb` and installs `mongodb/mongodb`; the `mongodb` suite (adapter tests without a server) runs; the `mongodb-live` group needs running MongoDB and MySQL servers and is excluded from CI |
 | 4. MariaDB | no | covered indirectly by the MySQL job (same driver) |
-| 5. Oracle | no | Oracle-specific kernel tests skip on other engines; the `ezoracle` extension has no workflow of its own in the installed copy (not verified upstream) |
+| 5. Oracle | the DFS cluster backend | the job "cluster-oracle" runs the Oracle DFS backend's tests against Oracle Free 23 with `oci8`; Oracle-specific kernel tests skip on other engines |
 | 6. MySQL | yes, database tests | the job "Database tests (mysql, PHP 8.3)" with a `mysql:8.0` service |
+| 7. SQL Server | yes, driver, live and DFS tests | the job "sqlserver" with `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 and 2025 and ODBC Driver 18, on `sqlsrv`, `pdo_sqlsrv` and `pdo_odbc` and PHP 8.1 to 8.5; the job "SQL Server LocalDB smoke" on Windows with PHP 8.4 |
 
 PHP 8.0, the oldest supported version, and PHP 7.4 (usable without support) are checked by the Quality workflow with a syntax check of every PHP file and a
 boot smoke test without a database. The test suites and how to run them locally are described in
@@ -718,12 +666,15 @@ boot smoke test without a database. The test suites and how to run them locally 
 
 - **Setup > Upgrade check**, "Check database consistency", compares the tables, fields and indexes with the schema
   of the release for MySQL and MariaDB, PostgreSQL, SQLite and MongoDB ([The upgrade check](../guides/upgrade-check.md)).
-- In code: `eZDB::instance()->databaseName()` returns `sqlite`, `postgresql`, `mongo`, `mysql` or `oracle`.
+- In code: `eZDB::instance()->databaseName()` returns `sqlite`, `postgresql`, `mongo`, `mysql`, `oracle` or `SQLServer`.
 
 ## Related pages
 
 - [Chapter 9, Databases](../install/09-databases.md): the operator's reference for every engine.
 - [Chapter 2, Requirements](../install/02-requirements.md#26-databases) and [OS support](os-support.md).
+- [Moving off an old database](moving-off-an-old-database.md), [Exponential on Windows](exponential-on-windows.md).
+- [Microsoft SQL Server driver](../features/6.0/sqlserver-database-driver.md),
+  [Clustering in Exponential 6.0](../features/6.0/clustering-overview.md).
 - [SQLite database support](../features/6.0/sqlite-database.md),
   [SQLite: transactions queue for the write lock](../bc/6.0/sqlite-transactions.md),
   [The SQLite3 database driver](../specifications/6.0/sqlite3-database-driver.md).
