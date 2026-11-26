@@ -127,7 +127,7 @@ class eZStepDatabaseInit extends eZStepInstaller
         // Oracle the same: Database is the connect string of the schema to use
         // SQL Server and Firebird the same: the login is tested against the named database
         // DuckDB the same: the database is the file named
-        if ( ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver', 'firebird', 'duckdb' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
+        if ( ( in_array( eZSetupDatabaseFamily( $databaseInfo['type'] ), array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver', 'firebird', 'duckdb' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
              !empty( $databaseInfo['dbname'] ) )
         {
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
@@ -206,6 +206,16 @@ class eZStepDatabaseInit extends eZStepInstaller
                     if ( isset( $data[$key] ) && trim( (string)$data[$key] ) !== '' )
                         $options[$key] = trim( (string)$data[$key] );
                 $this->PersistenceList['database_info']['sqlserver'] = $options;
+            }
+            // The databases of the PostgreSQL wire protocol: TLS and the pooler ([PostgreSQLWireSettings] of the site)
+            if ( isset( $this->PersistenceList['database_info']['type'] ) && eZSetupDatabaseFamily( $this->PersistenceList['database_info']['type'] ) == 'pgsql'
+                 && $this->PersistenceList['database_info']['type'] != 'pgsql' )
+            {
+                $options = array();
+                foreach ( array( 'SSLMode', 'SSLRootCert', 'Pooler', 'Endpoint' ) as $key )
+                    if ( isset( $data[$key] ) && trim( (string)$data[$key] ) !== '' )
+                        $options[$key] = trim( (string)$data[$key] );
+                $this->PersistenceList['database_info']['postgresql_wire'] = $options;
             }
 
             $result = $this->checkDatabaseRequirements( false );

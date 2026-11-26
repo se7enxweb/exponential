@@ -419,6 +419,8 @@ class eZStepInstaller
             $dbParameters['mysqlwire'] = $databaseInfo['mysqlwire'];
         if ( !empty( $databaseInfo['sqlserver'] ) )
             $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
+        if ( !empty( $databaseInfo['postgresql_wire'] ) )
+            $dbParameters['postgresql_wire'] = $databaseInfo['postgresql_wire'];
         $dbParameters = array_merge( $dbParameters, $overrideDBParameters );
 
         // SQLite requires us to specifiy a database name
@@ -447,7 +449,7 @@ class eZStepInstaller
         // nothing else, the owner of one database, gets through), and the
         // digest() check below runs in it. Without a name, template1, which
         // exists on all PostgreSQL installations, is used to list the others.
-        if( ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) and $this->PersistenceList['database_info']['type'] == 'pgsql' )
+        if( ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) and eZSetupDatabaseFamily( $this->PersistenceList['database_info']['type'] ) == 'pgsql' )
             $dbParameters['database'] = trim( (string)$databaseInfo['dbname'] ) !== '' ? trim( $databaseInfo['dbname'] ) : 'template1';
 
         // MySQL: if the user provided a database name, connect directly to it.
@@ -541,8 +543,9 @@ class eZStepInstaller
             }
         }
 
-        // If we have PostgreSQL we need to make sure we have the 'digest' procedure available.
-        if ( $db->databaseName() == 'postgresql' and $dbParameters['database'] != 'template1' )
+        // If we have PostgreSQL we need to make sure we have the 'digest' procedure available. The drivers of the
+        // PostgreSQL wire protocol (CockroachDB, YugabyteDB, Neon ...) use the built-in md5() instead.
+        if ( $db->databaseName() == 'postgresql' and $dbParameters['database'] != 'template1' and !( $db instanceof expPostgreSQLWireDB ) )
         {
             $sql = "SELECT count(*) AS count FROM pg_proc WHERE proname='digest'";
             $rows = $db->arrayQuery( $sql );
@@ -837,7 +840,7 @@ class eZStepInstaller
             }
             case self::DB_ERROR_CONNECTION_FAILED:
             {
-                if ( $errorInfo['database_info']['type'] == 'pgsql' )
+                if ( eZSetupDatabaseFamily( $errorInfo['database_info']['type'] ) == 'pgsql' )
                 {
                     $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
                                                         'Could not connect to the PostgreSQL database. Please make sure that the server name, port, username and password are correct, that the database named on this page exists and that this user may connect to it. The server has to accept connections from this host (listen_addresses in postgresql.conf, and pg_hba.conf).' ),

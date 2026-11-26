@@ -263,7 +263,10 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
 
     public static function kickstartDatabaseProvider()
     {
-        return array( array( 'postgresql', 'pgsql' ), array( 'mysql', 'mysqli' ), array( 'sqlite', 'sqlite3' ), array( 'oracle', 'oci8' ), array( 'ezoracle', 'oci8' ), array( 'mongodb', 'mongodb' ) );
+        return array( array( 'postgresql', 'pgsql' ), array( 'mysql', 'mysqli' ), array( 'sqlite', 'sqlite3' ), array( 'oracle', 'oci8' ), array( 'ezoracle', 'oci8' ), array( 'mongodb', 'mongodb' ),
+                      // the databases of the PostgreSQL wire protocol
+                      array( 'cockroachdb', 'cockroachdb' ), array( 'crdb', 'cockroachdb' ), array( 'yugabyte', 'yugabytedb' ), array( 'neon', 'neon' ),
+                      array( 'supabase', 'supabase' ), array( 'aurorapostgresql', 'aurora' ) );
     }
 
     #[\PHPUnit\Framework\Attributes\DataProvider('kickstartDatabaseProvider')]
@@ -272,6 +275,31 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         $step = $this->step( 'eZStepDatabaseChoice', array(), array( 'database_choice' => array( 'Type' => $given, 'Continue' => 'true' ) ) );
         $this->assertTrue( $step->init() );
         $this->assertSame( $type, $step->PersistenceList['database_info']['type'] );
+    }
+
+    public function testPostgreSQLWireDatabases()
+    {
+        $map = eZSetupDatabaseMap();
+        foreach ( array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurora' ) as $type )
+        {
+            $this->assertSame( $type, $map[$type]['type'] );
+            $this->assertSame( $type, $map[$type]['driver'], 'the site.ini alias of its driver' );
+            $this->assertSame( 'pgsql', eZSetupDatabaseFamily( $type ), "$type is PostgreSQL to the installer" );
+        }
+        $this->assertArrayNotHasKey( 'spanner', $map, 'Spanner holds no site' );
+        $this->assertSame( 'pgsql', eZSetupDatabaseFamily( 'pgsql' ) );
+        $this->assertSame( 'mysqli', eZSetupDatabaseFamily( 'mysqli' ) );
+
+        // listed after PostgreSQL when pgsql is there, never chosen on their own
+        $step = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => array( 'sqlite3', 'pgsql' ) ) ) );
+        $this->assertSame( array( 'sqlite3', 'pgsql' ), $step->foundDatabaseTypes() );
+        $step->display();
+        $list = array_column( $this->variable( 'database_list' ), 'type' );
+        $this->assertSame( array( 'pgsql', 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurora' ), array_slice( $list, array_search( 'pgsql', $list ), 6 ) );
+        $_POST = array( 'eZSetupDatabaseType' => 'cockroachdb' );
+        $this->assertTrue( $step->processPostData() );
+        $this->assertSame( 'cockroachdb', $step->PersistenceList['database_info']['driver'] );
+        $_POST = array();
     }
 
     public function testDatabaseChoicePageListsTheDefaultFirst()

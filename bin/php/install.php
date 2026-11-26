@@ -33,13 +33,22 @@ $databaseTypes = array(
     'firebird' => array( 'type' => 'firebird', 'port' => '3050', 'name' => 'exponential', 'user' => 'SYSDBA' ),
     // DuckDB: one file (var/storage/duckdb/<name>), no server; needs PHP's FFI extension and libduckdb
     'duckdb'  => array( 'type' => 'duckdb',  'port' => '',      'name' => 'exponential.duckdb', 'user' => '' ),
+    // the databases of the PostgreSQL wire protocol (expPostgreSQLWireDB): PHP's pgsql extension
+    'cockroachdb' => array( 'type' => 'cockroachdb', 'port' => '26257', 'name' => 'exponential', 'user' => 'root' ),
+    'yugabytedb'  => array( 'type' => 'yugabytedb',  'port' => '5433',  'name' => 'exponential', 'user' => 'yugabyte' ),
+    'neon'        => array( 'type' => 'neon',        'port' => '5432',  'name' => 'neondb',      'user' => '' ),
+    'supabase'    => array( 'type' => 'supabase',    'port' => '5432',  'name' => 'postgres',    'user' => 'postgres' ),
+    'aurorapostgresql' => array( 'type' => 'aurorapostgresql', 'port' => '5432', 'name' => 'exponential', 'user' => 'postgres' ),
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
                           'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
                           'oci8' => 'oracle', 'ezoracle' => 'oracle',
                           'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver',
                           'planetscale' => 'vitess', 'memsql' => 'singlestore', 'aurora-mysql' => 'aurora', 'auroramysql' => 'aurora',
-                          'fb' => 'firebird', 'pdo_firebird' => 'firebird' );
+                          'fb' => 'firebird', 'pdo_firebird' => 'firebird',
+                          'cockroach' => 'cockroachdb', 'crdb' => 'cockroachdb', 'yugabyte' => 'yugabytedb', 'ysql' => 'yugabytedb',
+                          'aurora-postgresql' => 'aurorapostgresql' );
+$pgWireTypes = array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql' );
 
 $options = array(
     'db'             => 'sqlite',
@@ -52,6 +61,10 @@ $options = array(
     'db-encrypt'     => '',
     'db-ssl'         => '',
     'db-ssl-ca'      => '',
+    'db-sslmode'     => '',
+    'db-sslrootcert' => '',
+    'db-pooler'      => '',
+    'db-endpoint'    => '',
     'db-action'      => 'remove',
     'package'        => 'sevenx_multisite',
     'language'       => 'eng-US',
@@ -128,7 +141,8 @@ if ( isset( $databaseAliases[$db] ) )
     $db = $databaseAliases[$db];
 if ( !isset( $databaseTypes[$db] ) )
 {
-    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird or duckdb\n" );
+    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird,"
+                  . " duckdb, cockroachdb, yugabytedb, neon, supabase or aurorapostgresql\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
@@ -314,7 +328,9 @@ $sections = array(
                           + ( $db === 'sqlserver' ? array( 'Encrypt' => $options['db-encrypt'] !== '' ? $options['db-encrypt'] : 'yes',
                                                            'TrustServerCertificate' => $flags['db-trust-server-certificate'] ? 'enabled' : 'disabled' ) : array() )
                           + ( in_array( $db, array( 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), true ) && $options['db-ssl'] !== ''
-                              ? array_filter( array( 'SSL' => $options['db-ssl'], 'SSLCA' => $options['db-ssl-ca'] ), 'strlen' ) : array() ),
+                              ? array_filter( array( 'SSL' => $options['db-ssl'], 'SSLCA' => $options['db-ssl-ca'] ), 'strlen' ) : array() )
+                          + ( in_array( $db, $pgWireTypes, true ) ? array_filter( array( 'SSLMode' => $options['db-sslmode'], 'SSLRootCert' => $options['db-sslrootcert'],
+                                                                                         'Pooler' => $options['db-pooler'], 'Endpoint' => $options['db-endpoint'] ), 'strlen' ) : array() ),
     'language_options' => array( 'Primary' => $options['language'], 'Languages' => $languages, 'TimeZone' => $timeZone['zone'] ),
     'site_types'       => array( 'Site_package' => $options['package'] ),
     'site_access'      => array( 'Access' => $accessType ),
@@ -475,8 +491,10 @@ the package, the siteaccesses, the files), checks the database and the remote
 packages, and ends with "PASS: ... (dry run, nothing changed; --apply writes)".
 
 Database (default: SQLite, no server needed)
-  --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle, sqlserver, firebird or duckdb
+  --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle, sqlserver, firebird or duckdb;
+                         cockroachdb, yugabytedb, neon, supabase or aurorapostgresql (PostgreSQL wire protocol)
                          (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
+                         (neon, supabase, aurorapostgresql: the database must exist; TLS required by default)
                          (firebird: needs pdo_firebird of PHP 8.4 or later, Firebird 4 or 5, and an
                          existing database, PAGE_SIZE 16384 and UTF8)
                          (oracle: needs oci8 and extension/ezoracle)
@@ -486,7 +504,8 @@ Database (default: SQLite, no server needed)
                          (duckdb: needs PHP's FFI extension and libduckdb, see [DuckDBSettings])
   --db-host=<host>       default localhost
   --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
-                         1521 (oracle), 1433 (sqlserver), 4000 (tidb), 3050 (firebird)
+                         1521 (oracle), 1433 (sqlserver), 4000 (tidb), 3050 (firebird),
+                         26257 (cockroachdb), 5433 (yugabytedb)
   --db-name=<name>       default exponential (exponential.db for sqlite,
                          exponential.duckdb for duckdb);
                          oracle: the service name, default FREEPDB1, used as
@@ -494,8 +513,8 @@ Database (default: SQLite, no server needed)
                          a descriptor) or @alias (a TNS alias) is used as it is;
                          firebird: an alias of the server's databases.conf or the
                          path of the database file on the server
-  --db-user=<user>       default root (mysql), postgres (pgsql), sa (sqlserver),
-                         SYSDBA (firebird), none otherwise
+  --db-user=<user>       default root (mysql, cockroachdb), postgres (pgsql, supabase, aurorapostgresql),
+                         sa (sqlserver), SYSDBA (firebird), yugabyte (yugabytedb), none otherwise
   --db-password=<pass>   default none; or set EXP_INSTALL_DB_PASSWORD, which
                          keeps it out of the process list and shell history
   --db-socket=<path>     MySQL socket, instead of host and port
@@ -506,6 +525,11 @@ Database (default: SQLite, no server needed)
   --db-ssl=<mode>        tidb, vitess, singlestore, xpand, aurora: enabled (TLS),
                          verify (TLS, certificate checked) or disabled (default)
   --db-ssl-ca=<file>     the CA file for --db-ssl=verify (default: the system's)
+  --db-sslmode=<mode>    cockroachdb, yugabytedb, neon, supabase, aurorapostgresql: disable, require, verify-ca
+                         or verify-full (default: the database's; require for neon, supabase, aurorapostgresql)
+  --db-sslrootcert=<file>  the CA file for verify-ca and verify-full
+  --db-pooler=<mode>     auto (default: from the host and port), none, session or transaction
+  --db-endpoint=<id>     neon: the endpoint id, for a libpq without SNI
   --db-action=<action>   remove (default: empty the database first), ignore, skip
 
 Site

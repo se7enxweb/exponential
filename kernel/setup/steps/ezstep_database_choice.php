@@ -135,6 +135,11 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'fb' => 'firebird',
                           'pdo_firebird' => 'firebird',
                           'duckdb' => 'duckdb',
+                          'cockroach' => 'cockroachdb',
+                          'crdb' => 'cockroachdb',
+                          'yugabyte' => 'yugabytedb',
+                          'ysql' => 'yugabytedb',
+                          'aurora-postgresql' => 'aurorapostgresql',
                           'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];
@@ -190,11 +195,21 @@ class eZStepDatabaseChoice extends eZStepInstaller
             $database['recommended'] = ( $type === $preferred );
             $databaseList[] = $database;
             $availableDatabases[$type] = true;
+            // the databases of the PostgreSQL wire protocol go with PHP's pgsql extension, after PostgreSQL
+            foreach ( $databaseMap as $variant => $entry )
+            {
+                if ( isset( $entry['php_extension'] ) && $entry['php_extension'] === $type && !isset( $availableDatabases[$variant] ) )
+                {
+                    $entry['recommended'] = false;
+                    $databaseList[] = $entry;
+                    $availableDatabases[$variant] = true;
+                }
+            }
         }
 
         $databaseInfo = $choice['type'] !== null ? $databaseMap[$choice['type']] : false;
         if ( isset( $this->PersistenceList['database_info']['type'] ) &&
-             in_array( $this->PersistenceList['database_info']['type'], $types ) )
+             isset( $availableDatabases[$this->PersistenceList['database_info']['type']] ) )
         {
             // Coming back to this page keeps what was chosen before.
             $databaseInfo = $this->PersistenceList['database_info'];

@@ -128,7 +128,46 @@ function eZSetupDatabaseMap()
                                    'required_version' => '19.0',
                                    'has_demo_data' => false,
                                    'supports_unicode' => true )
-                   );
+                   ) + eZSetupPostgreSQLWireDatabaseMap();
+}
+}
+
+if ( !function_exists( 'eZSetupPostgreSQLWireDatabaseMap' ) ) {
+/**
+ * The databases of the PostgreSQL wire protocol a site can be installed into (expPostgreSQLWireDB): PHP's pgsql
+ * extension, and the PostgreSQL schema with the changes of each database's profile. Their 'family' is pgsql: every
+ * step that treats PostgreSQL in its own way treats them the same (eZSetupDatabaseFamily()). Spanner is not listed:
+ * it holds data-table connections and imports, not a site.
+ *
+ * @return array
+ */
+function eZSetupPostgreSQLWireDatabaseMap()
+{
+    $entry = function ( $type, $name, $version ) {
+        return array( 'type' => $type, 'driver' => $type, 'family' => 'pgsql', 'php_extension' => 'pgsql',
+                      'name' => $name, 'required_version' => $version, 'has_demo_data' => false, 'supports_unicode' => true );
+    };
+    // required_version: what version() says (YugabyteDB: the PostgreSQL it is built on, 11.2 for 2.20)
+    return array( 'cockroachdb' => $entry( 'cockroachdb', 'CockroachDB', '23.2' ),
+                  'yugabytedb' => $entry( 'yugabytedb', 'YugabyteDB', '11.2' ),
+                  'neon' => $entry( 'neon', 'Neon (PostgreSQL)', '14.0' ),
+                  'supabase' => $entry( 'supabase', 'Supabase (PostgreSQL)', '14.0' ),
+                  'aurora' => $entry( 'aurora', 'Amazon Aurora PostgreSQL', '13.0' ) );
+}
+}
+
+if ( !function_exists( 'eZSetupDatabaseFamily' ) ) {
+/**
+ * The family of a database type of eZSetupDatabaseMap(): pgsql for PostgreSQL and the databases of its wire
+ * protocol, the type itself for every other.
+ *
+ * @param string $type
+ * @return string
+ */
+function eZSetupDatabaseFamily( $type )
+{
+    $map = eZSetupDatabaseMap();
+    return isset( $map[$type]['family'] ) ? $map[$type]['family'] : (string)$type;
 }
 }
 

@@ -383,7 +383,7 @@ class eZStepSiteDetails extends eZStepInstaller
         // exists on all PostgreSQL installations) opened to list the databases,
         // and the list is then offered. Listing them otherwise put the server's
         // first database in the field, not the one that was typed.
-        if( $databaseInfo['info']['type'] == 'pgsql' )
+        if( eZSetupDatabaseFamily( $databaseInfo['info']['type'] ) == 'pgsql' )
         {
             $explicitName = isset( $databaseInfo['dbname'] ) ? trim( (string)$databaseInfo['dbname'] ) : '';
             $dbParameters['database'] = $explicitName !== '' ? $explicitName : 'template1';
@@ -397,6 +397,8 @@ class eZStepSiteDetails extends eZStepInstaller
             $dbParameters['mysqlwire'] = $databaseInfo['mysqlwire'];
         if ( !empty( $databaseInfo['sqlserver'] ) )
             $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
+        if ( !empty( $databaseInfo['postgresql_wire'] ) )
+            $dbParameters['postgresql_wire'] = $databaseInfo['postgresql_wire'];
 
         try
         {
@@ -422,7 +424,7 @@ class eZStepSiteDetails extends eZStepInstaller
         // For MySQL/MariaDB, use the named database directly and skip the
         // SHOW DATABASES call (which requires global privileges and may access
         // the 'mysql' system database). This makes shared-hosting installs work.
-        if ( ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli', 'pgsql' ) ) || eZSetupIsMySQLFamily( $databaseInfo['info']['type'] ) ) &&
+        if ( in_array( eZSetupDatabaseFamily( $databaseInfo['info']['type'] ), array( 'mysql', 'mysqli', 'pgsql' ) ) &&
              isset( $databaseInfo['dbname'] ) && trim( $databaseInfo['dbname'] ) !== '' )
         {
             $this->PersistenceList['database_info_available'] = array( trim( $databaseInfo['dbname'] ) );

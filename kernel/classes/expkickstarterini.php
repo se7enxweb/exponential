@@ -38,6 +38,11 @@ class expKickstarterIni
                 'pgsql'   => 'PostgreSQL (pgsql)',
                 'mongodb' => 'MongoDB',
                 'oci8'    => 'Oracle (oci8, needs the ezoracle extension)',
+                'cockroachdb' => 'CockroachDB (pgsql)',
+                'yugabytedb'  => 'YugabyteDB (pgsql)',
+                'neon'        => 'Neon PostgreSQL (pgsql)',
+                'supabase'    => 'Supabase PostgreSQL (pgsql)',
+                'aurora'      => 'Amazon Aurora PostgreSQL (pgsql)',
             ),
         ),
         'email_settings' => array(
