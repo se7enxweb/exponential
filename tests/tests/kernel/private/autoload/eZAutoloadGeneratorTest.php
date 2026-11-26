@@ -311,6 +311,57 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
                                   "$p/vendor/acme/tool/tests_data/Data.php", "$p/vendor/tests/x/y.php" ), $files );
     }
 
+    /**
+     * The tests/ exclusions hold for Windows paths (GitHub issue #377): backslashes, forward slashes or both, and
+     * the drive letter in either case; only the tests directory of that extension itself, as on Linux.
+     */
+    public function testTestsExclusionsMatchWindowsPathsWithEitherSeparator()
+    {
+        $exclusions = eZAutoloadGenerator::testsExclusions( eZAutoloadGenerator::pathExpression( 'D:\a\xne\site\extension\ezmbpaex' ) );
+        $excluded = function ( $path ) use ( $exclusions ) {
+            foreach ( $exclusions as $expression )
+            {
+                $result = preg_match( $expression, $path );
+                $this->assertNotFalse( $result, "$expression is a valid expression" );
+                if ( $result )
+                    return true;
+            }
+            return false;
+        };
+        foreach ( array( 'D:\a\xne\site\extension\ezmbpaex\tests',
+                         'D:\a\xne\site\extension\ezmbpaex\tests\ezmbpaexforgotpasswordviewtest.php',
+                         'd:\a\xne\site\extension\ezmbpaex\tests\ezmbpaexforgotpasswordviewtest.php',
+                         'D:/a/xne/site/extension/ezmbpaex/tests/ezmbpaexforgotpasswordviewtest.php',
+                         'D:\a\xne\site\extension\ezmbpaex/tests\unit\FooTest.php',
+                         'D:\a\xne\site\extension\ezmbpaex\vendor\acme\tool\tests\ToolTest.php',
+                         'D:\a\xne\site\extension\ezmbpaex\vendor\acme\tool\Tests\Fixtures\Fixture.php' ) as $path )
+        {
+            $this->assertTrue( $excluded( $path ), "$path is left out" );
+        }
+        foreach ( array( 'D:\a\xne\site\extension\ezmbpaex\classes\ezmbpaex.php',
+                         'D:\a\xne\site\extension\ezmbpaex\tests_old\old.php',
+                         'D:\a\xne\site\extension\ezmbpaex\testsuite\suite.php',
+                         'D:\a\xne\site\extension\ezmbpaex\tests.php',
+                         'D:\a\xne\site\extension\ezmbpaex\classes\tests\helper.php',
+                         'D:\a\xne\site\extension\ezmbpaex2\tests\other.php',
+                         'D:\a\xne\site\extension\ezmbpaex\vendor\tests\x\y.php' ) as $path )
+        {
+            $this->assertFalse( $excluded( $path ), "$path stays in" );
+        }
+    }
+
+    public function testPathExpressionQuotesThePathAndAcceptsEitherSeparator()
+    {
+        $expression = '@^' . eZAutoloadGenerator::pathExpression( 'C:\inetpub\www (1)\site+x\\' ) . '$@';
+        $this->assertSame( 1, preg_match( $expression, 'C:\inetpub\www (1)\site+x' ) );
+        $this->assertSame( 1, preg_match( $expression, 'c:/inetpub/www (1)/site+x' ) );
+        $this->assertSame( 0, preg_match( $expression, 'C:\inetpub\www 1\site+x' ) );
+        $expression = '@^' . eZAutoloadGenerator::pathExpression( '/var/www/site' ) . '@';
+        $this->assertSame( 1, preg_match( $expression, '/var/www/site/extension' ) );
+        $this->assertSame( 1, preg_match( $expression, '\var\www\site' ) );
+        $this->assertSame( 0, preg_match( $expression, '/var/www-site' ) );
+    }
+
     public function testTestsClassMapReadsATestsDirectoryWithoutWriting()
     {
         $p = $this->name;

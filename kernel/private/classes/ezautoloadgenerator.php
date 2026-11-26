@@ -444,7 +444,6 @@ class eZAutoloadGenerator
     protected function buildExtensionFileList( array $extraExcludeDirs )
     {
         $files = array();
-        $dirSep = preg_quote( DIRECTORY_SEPARATOR, '@' );
         foreach ( $this->collectExtensionPackages() as $packagePath )
         {
             // buildFileList() reports the files under the real path of the package, so the exclusions are anchored
@@ -453,10 +452,7 @@ class eZAutoloadGenerator
             // false for it), so it is skipped instead of getting an expression that could only match by accident.
             if ( realpath( $packagePath ) === false )
                 continue;
-            $base = self::exclusionBase( $packagePath );
-            $extraExcludeExtensionDirs = $extraExcludeDirs;
-            $extraExcludeExtensionDirs[] = "@^{$base}{$dirSep}tests($|{$dirSep})@";
-            $extraExcludeExtensionDirs[] = "@^{$base}{$dirSep}vendor{$dirSep}[^{$dirSep}]+{$dirSep}[^{$dirSep}]+{$dirSep}(tests|Tests)($|{$dirSep})@";
+            $extraExcludeExtensionDirs = array_merge( $extraExcludeDirs, self::testsExclusions( self::exclusionBase( $packagePath ) ) );
             $packageFiles = $this->buildFileList( $packagePath, $extraExcludeExtensionDirs );
             if ( is_array( $packageFiles ) )
             {
@@ -477,7 +473,56 @@ class eZAutoloadGenerator
     protected static function exclusionBase( $path )
     {
         $realPath = realpath( $path );
-        return preg_quote( $realPath !== false ? $realPath : $path, '@' );
+        return self::pathExpression( $realPath !== false ? $realPath : $path );
+    }
+
+    /**
+     * A directory separator in an exclusion expression: "/" or "\", whichever the platform or a path given in a
+     * setting uses. On Windows the walker reports "\" while paths from settings, getcwd() of some shells and
+     * Composer use "/", so an expression built for one separator only left the tests/ folders of every extension
+     * in the arrays there (and their files were loaded during an upgrade).
+     */
+    const EXCLUSION_SEPARATOR = '[\\\\/]';
+
+    /**
+     * $path quoted for an exclusion expression delimited by "@", matching it with either separator between its
+     * parts, and with the drive letter of a Windows path ("D:") in either case. A trailing separator is dropped.
+     *
+     * @param string $path
+     * @return string
+     */
+    public static function pathExpression( $path )
+    {
+        $normalised = strtr( (string)$path, '\\', '/' );
+        if ( strlen( $normalised ) > 1 )
+            $normalised = rtrim( $normalised, '/' );
+        $parts = array();
+        foreach ( explode( '/', $normalised ) as $part )
+            $parts[] = preg_quote( $part, '@' );
+        $expression = implode( self::EXCLUSION_SEPARATOR, $parts );
+        if ( preg_match( '@^([A-Za-z])\\\\?:@', $expression, $drive ) )
+        {
+            $expression = '[' . strtoupper( $drive[1] ) . strtolower( $drive[1] ) . ']' . substr( $expression, 1 );
+        }
+        return $expression;
+    }
+
+    /**
+     * The exclusion expressions for the test directories of the extension or package whose path expression
+     * (pathExpression()) is $base: its own tests/, and tests/ or Tests/ of a Composer package vendored in it
+     * (vendor/<vendor>/<package>/tests). Only that directory: tests_old/, testsuite/ and a file tests.php stay in.
+     * Either separator matches, so they hold on Windows as on Linux.
+     *
+     * @param string $base
+     * @return string[]
+     */
+    public static function testsExclusions( $base )
+    {
+        $sep = self::EXCLUSION_SEPARATOR;
+        return array(
+            "@^{$base}{$sep}tests($|{$sep})@",
+            "@^{$base}{$sep}vendor{$sep}[^\\\\/]+{$sep}[^\\\\/]+{$sep}(tests|Tests)($|{$sep})@",
+        );
     }
 
     /**
@@ -552,7 +597,7 @@ class eZAutoloadGenerator
         // make sure ezcBaseFile::findRecursive and the exclusion filters we pass to it
         // work correctly on systems with another file seperator than the forward slash
         $sanitisedBasePath = DIRECTORY_SEPARATOR == '/' ? $path : strtr( $path, DIRECTORY_SEPARATOR, '/' );
-        $dirSep = preg_quote( DIRECTORY_SEPARATOR, '@' );
+        $dirSep = self::EXCLUSION_SEPARATOR;
 
         // The files are found under the real path of the base (buildFileList() resolves it), so
         // the exclusions are anchored there too: with an extension given by a relative path
@@ -581,9 +626,9 @@ class eZAutoloadGenerator
                     $extraExcludeKernelDirs = $extraExcludeDirs;
                     foreach ( $this->getExtensionRoots() as $root )
                     {
-                        $extraExcludeKernelDirs[] = "@^{$sanitisedBasePath}{$dirSep}" . preg_quote( $root, '@' ) . "@";
+                        $extraExcludeKernelDirs[] = "@^{$excludeBase}{$dirSep}" . self::pathExpression( $root ) . "@";
                     }
-                    $extraExcludeKernelDirs[] = "@^{$sanitisedBasePath}{$dirSep}tests@";
+                    $extraExcludeKernelDirs[] = "@^{$excludeBase}{$dirSep}tests@";
                     $retFiles[$modusOperandi] = $this->buildFileList( $sanitisedBasePath, $extraExcludeKernelDirs );
                     break;
 
@@ -638,8 +683,9 @@ class eZAutoloadGenerator
         $path = realpath( $path );
         if ( $path === false )
             return false;
-        $dirSep = preg_quote( DIRECTORY_SEPARATOR, '@' );
-        $exclusionFilter = array( "@^{$path}{$dirSep}(var|settings|benchmarks|bin|autoload|port_info|update|templates|tmp|UnitTest|lib{$dirSep}ezc)($|{$dirSep})@" );
+        $dirSep = self::EXCLUSION_SEPARATOR;
+        $base = self::pathExpression( $path );
+        $exclusionFilter = array( "@^{$base}{$dirSep}(var|settings|benchmarks|bin|autoload|port_info|update|templates|tmp|UnitTest|lib{$dirSep}ezc)($|{$dirSep})@" );
 
         if ( !empty( $extraFilter ) and is_array( $extraFilter ) )
         {
