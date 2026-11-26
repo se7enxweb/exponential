@@ -175,12 +175,18 @@ class expKickstarter
         elseif ( $createSitesIndex !== false && $startIndex <= $createSitesIndex && $stopIndex >= $createSitesIndex )
         {
             expSetupLog::finish( 'installed', true );
+            // DuckDB lets one process write at a time, and the manuals are built by a worker in the background for 20
+            // to 30 minutes: there the migrations and the cluster go first, the manuals last
+            $singleWriter = eZDB::hasInstance() && eZDB::instance()->databaseName() === 'duckdb';
             // still in maintenance: the help's content classes and the manuals made from the Markdown help
-            $this->installHelpManuals();
+            if ( !$singleWriter )
+                $this->installHelpManuals();
             // and the migrations of the site, its extensions and packages (migration.ini [InstallSettings] RunOnKickstart)
             $migrationsFailed = !$this->runMigrations();
             // a one-node DFS cluster when kickstart.ini asks for it ([cluster] Mode=one-node; exp:cluster:enable)
             $migrationsFailed = !$this->enableCluster() || $migrationsFailed;
+            if ( $singleWriter )
+                $this->installHelpManuals();
         }
         else
             expSetupLog::finish( 'stopped after ' . $this->stopStep . ' (nothing installed)' );
