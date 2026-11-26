@@ -1981,6 +1981,7 @@ class eZDBQueryCache
             case 'informix':
             case 'duckdb':
             case 'hana':
+            case 'ase':
                 return false;
         }
         return null;

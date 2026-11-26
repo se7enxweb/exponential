@@ -15,6 +15,7 @@
  * couchbase (expCouchbaseDB: MySQL's forms, which its driver turns into SQL++; a LIMIT without a number is an OFFSET
  * alone, as DuckDB's), monetdb (expMonetDBDB), clickhouse (expClickHouseDB);
  * hana (SAP HANA, expHANADB);
+ * hana (SAP HANA, expHANADB), ase (SAP ASE, expASEDB);
  * generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
  * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code
  * branches on the database it runs on.
@@ -25,7 +26,7 @@
 class expDBSQLHelpers
 {
     const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'duckdb', 'db2', 'informix', 'cassandra', 'couchbase',
-                            'monetdb', 'clickhouse', 'hana', 'generic' );
+                            'monetdb', 'clickhouse', 'hana', 'ase', 'generic' );
 
     /**
      * The limit and offset as integers: limit false for "no limit" (false, null, '', negative or not a number).
@@ -62,6 +63,8 @@ class expDBSQLHelpers
             return expInformixDialect::quoteName( $name );
         if ( $dialect === 'hana' )
             return expHANADialect::quoteName( $name );
+        if ( $dialect === 'ase' )
+            return expASEDialect::quoteName( $name );
         $out = array();
         foreach ( explode( '.', (string)$name ) as $part )
         {
@@ -97,6 +100,8 @@ class expDBSQLHelpers
             return expInformixDialect::applyLimit( $sql, $limit, $offset );
         if ( $dialect === 'hana' )
             return expHANADialect::applyLimit( $sql, $limit, $offset );
+        if ( $dialect === 'ase' )
+            return expASEDialect::limitStatement( $sql, $limit, $offset );
         list( $limit, $offset ) = self::normalizeLimit( $limit, $offset );
         $sql = rtrim( (string)$sql, " \t\r\n;" );
         if ( $limit === 0 )
@@ -151,6 +156,8 @@ class expDBSQLHelpers
             return expCassandraDialect::upsert( $table, $row, $keyColumns, $updateColumns );
         if ( $dialect === 'hana' )
             return expHANADialect::upsert( $table, $row, $keyColumns, $updateColumns );
+        if ( $dialect === 'ase' )
+            return expASEDialect::upsert( $table, $row, $keyColumns, $updateColumns );
         if ( !$row || !$keyColumns )
             throw new InvalidArgumentException( 'An upsert needs at least one column and one key column' );
         foreach ( $keyColumns as $key )
@@ -238,6 +245,8 @@ class expDBSQLHelpers
             return expInformixDialect::forUpdate( $sql );
         if ( $dialect === 'hana' )
             return expHANADialect::forUpdate( $sql );
+        if ( $dialect === 'ase' )
+            return expASEDialect::forUpdate( $sql );
         return $sql . ' FOR UPDATE';
     }
 
@@ -270,6 +279,8 @@ class expDBSQLHelpers
             return expInformixDialect::groupConcat( $expression, $separator, $orderBy );
         if ( $dialect === 'hana' )
             return expHANADialect::groupConcat( $expression, $separator, $orderBy );
+        if ( $dialect === 'ase' )
+            return expASEDialect::groupConcat( $expression, $separator, $orderBy );
         $order = ( $orderBy !== null && trim( (string)$orderBy ) !== '' ) ? trim( (string)$orderBy ) : null;
         $sep = $literal( (string)$separator );
         switch ( $dialect )
@@ -321,6 +332,8 @@ class expDBSQLHelpers
                 return $expression === null ? 'UNIX_TIMESTAMP()' : "UNIX_TIMESTAMP($expression)";
             case 'hana':
                 return expHANADialect::unixTimestamp( $expression );
+            case 'ase':
+                return expASEDialect::unixTimestamp( $expression );
             case 'mysql':
                 return $expression === null ? 'UNIX_TIMESTAMP()' : "UNIX_TIMESTAMP($expression)";
             case 'sqlite':
@@ -364,6 +377,8 @@ class expDBSQLHelpers
                 return "FROM_UNIXTIME($expression)";
             case 'hana':
                 return expHANADialect::fromUnixTimestamp( $expression );
+            case 'ase':
+                return expASEDialect::fromUnixTimestamp( $expression );
             case 'mysql':
                 return "FROM_UNIXTIME($expression)";
             case 'sqlite':
