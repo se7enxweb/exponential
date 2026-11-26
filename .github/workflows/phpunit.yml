@@ -636,6 +636,97 @@ jobs:
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
 
+  # The drivers of databases that speak the MySQL protocol (expMySQLWireDB) against their servers in containers:
+  # TiDB, Vitess (vttestserver, one unsharded keyspace, foreign keys disallowed as on PlanetScale) and SingleStore
+  # (the dev image, free without a license key). The DB-less tests run in the PHPUnit job above (testsuite
+  # mysqlwire); these are the live ones (testsuite mysqlwire-live). Xpand publishes no image and Aurora runs only at
+  # AWS: their live tests skip.
+  mysqlwire:
+    name: ${{ matrix.label }} (PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { db: tidb, label: 'TiDB 8.5', php: '8.5' }
+          - { db: vitess, label: 'Vitess (vttestserver)', php: '8.4' }
+          - { db: singlestore, label: 'SingleStore (dev image)', php: '8.3' }
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Start the database
+        run: |
+          case "${{ matrix.db }}" in
+            tidb)
+              docker run -d --name ci-mysqlwire -p 4000:4000 pingcap/tidb:v8.5.1
+              echo "EXP_TEST_TIDB_HOST=127.0.0.1" >> "$GITHUB_ENV"
+              echo "EXP_TEST_TIDB_PORT=4000" >> "$GITHUB_ENV"
+              echo "CI_DB_PORT=4000" >> "$GITHUB_ENV" ;;
+            vitess)
+              docker run -d --name ci-mysqlwire -p 33577:33577 vitess/vttestserver:mysql80 /vt/bin/vttestserver \
+                --alsologtostderr --port=33574 --mysql_bind_host=0.0.0.0 --keyspaces=exptest_mysqlwire --num_shards=1 \
+                --foreign_key_mode=disallow --queryserver-config-transaction-timeout=600s
+              echo "EXP_TEST_VITESS_HOST=127.0.0.1" >> "$GITHUB_ENV"
+              echo "EXP_TEST_VITESS_PORT=33577" >> "$GITHUB_ENV"
+              echo "CI_DB_PORT=33577" >> "$GITHUB_ENV" ;;
+            singlestore)
+              docker run -d --name ci-mysqlwire -p 3306:3306 -e ROOT_PASSWORD=Ci-SingleStore-2026 ghcr.io/singlestore-labs/singlestoredb-dev:latest
+              echo "EXP_TEST_SINGLESTORE_HOST=127.0.0.1" >> "$GITHUB_ENV"
+              echo "EXP_TEST_SINGLESTORE_PORT=3306" >> "$GITHUB_ENV"
+              echo "EXP_TEST_SINGLESTORE_PASSWORD=Ci-SingleStore-2026" >> "$GITHUB_ENV"
+              echo "CI_DB_PASSWORD=Ci-SingleStore-2026" >> "$GITHUB_ENV"
+              echo "CI_DB_PORT=3306" >> "$GITHUB_ENV" ;;
+          esac
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, mysqli, pdo, pdo_mysql, pcntl, posix, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          case "${{ matrix.php }}" in
+            8.1) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^10.5" ;;
+            8.2|8.3) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^11.5" ;;
+          esac
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          test -x vendor/bin/phpunit
+
+      - name: Generate autoloads
+        run: php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Wait for the database
+        run: |
+          for i in $(seq 1 100); do
+            php -r 'mysqli_report(MYSQLI_REPORT_OFF); $c = @mysqli_connect("127.0.0.1", "root", (string)getenv("CI_DB_PASSWORD"), "", (int)getenv("CI_DB_PORT")); if ($c && mysqli_query($c, "SELECT 1")) exit(0); fwrite(STDERR, mysqli_connect_error() . PHP_EOL); exit(1);' 2>last-error.txt && exit 0
+            sleep 3
+          done
+          cat last-error.txt; docker ps -a; docker logs --tail 60 ci-mysqlwire || true
+          echo "::error::the database did not answer"; exit 1
+
+      - name: Run the MySQL-wire tests
+        env:
+          EXP_TEST_VITESS_DATABASE: exptest_mysqlwire
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite mysqlwire
+          php vendor/bin/phpunit --colors=always --display-skipped --testsuite mysqlwire-live
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
   # A smoke run on Windows: Microsoft's sqlsrv extension against SQL Server Express LocalDB, when the runner image
   # has LocalDB (it is not a promise of the image, so the job may not fail the run).
   sqlserver-windows-localdb:
