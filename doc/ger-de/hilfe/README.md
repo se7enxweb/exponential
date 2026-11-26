@@ -110,7 +110,8 @@ Für Administratoren und Entwickler, die die Maschine und die Datenbank einer Si
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
-| [Datenbankunterstützung](datenbankunterstuetzung.md) | Eine Datenbank unter den unterstützten wählen, in ihrer offiziellen Reihenfolge (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), und wissen, was jede braucht |
+| [Eine Datenbank wählen](datenbank-waehlen.md) | Jede Datenbank, die 6.0.15 erreicht, in einer Matrix sehen (Site-Datenbank, Cluster, Replikate, Installer, Datentabellen, Importe, PHP-Erweiterung, Tests, Aktualisierungen) und je Einsatzzweck eine wählen: ein Server, ein Cluster, die Cloud, eine Demo, Auswertungen, Windows, weg von MS Access |
+| [Datenbankunterstützung](datenbankunterstuetzung.md) | Die unterstützten Datenbanken in ihrer offiziellen Reihenfolge kennen (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, SQL Server und Azure SQL) und die in 6.0.15 hinzugekommenen, mit Versionen, Erweiterungen, Einstellungen und Tests |
 | [Betriebssystemunterstützung](betriebssystemunterstuetzung.md) | Prüfen, ob ein Betriebssystem, ein Prozessor und ein Webserver Exponential ausführen können, von Linux bis Windows und darüber hinaus |
 | [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md) | Eine Website auf einem LiteSpeed- oder OpenLiteSpeed-Server für anonyme Besucher und Crawler schnell machen: Der Server antwortet aus gespeicherten Seiten ohne PHP, ohne Plugin und ohne Code |
 

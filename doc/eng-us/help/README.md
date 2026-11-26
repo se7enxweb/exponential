@@ -106,7 +106,8 @@ For administrators and developers who choose the machine and the database of a s
 
 | Page | What it helps you do |
 |---|---|
-| [Database support](database-support.md) | Choose a database from the supported ones, in their official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and know what each needs |
+| [Choosing a database](choosing-a-database.md) | See every database 6.0.15 reaches in one matrix (site database, cluster, replicas, installers, data tables, imports, PHP extension, tests, upgrades) and pick one per use case: one server, a cluster, the cloud, a demo, analytics, Windows, moving off MS Access |
+| [Database support](database-support.md) | Know the supported databases in their official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, SQL Server and Azure SQL) and the ones added in 6.0.15, with their versions, extensions, settings and tests |
 | [Operating system support](os-support.md) | Check whether an operating system, processor and web server can run Exponential, from Linux to Windows and beyond |
 | [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md) | Make a site on a LiteSpeed or OpenLiteSpeed server fast for anonymous visitors and crawlers: the server answers from stored pages without PHP, with no plugin and no code |
 

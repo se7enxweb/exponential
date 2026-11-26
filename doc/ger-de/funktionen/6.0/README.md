@@ -95,6 +95,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 
 ## Datenbanken
 
+- [Eine Datenbank wählen](../../hilfe/datenbank-waehlen.md): jede Datenbank von 6.0.15 in einer Matrix und welche
+  für einen Server, einen Cluster, eine verwaltete Cloud-Datenbank, eine Demo, Auswertungen und Importe, Windows passt
 - [Unterstützung für die Datenbank SQLite](sqlite-datenbank.md)
 - [MongoDB als Datenbank](mongodb-datenbankunterstuetzung.md)
 - [PostgreSQL 18 und 19](postgresql-18-und-19.md): unterstützte Versionen und ihre Tests, Client-Versionen,

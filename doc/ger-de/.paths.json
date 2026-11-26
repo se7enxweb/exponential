@@ -4235,6 +4235,7 @@
     "hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md": "help/database-administrators/upgrades-and-sql-update-files.md",
     "hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md": "help/database-administrators/character-sets-and-collations.md",
     "hilfe/datenbankadministratoren/zwischen-engines-wechseln.md": "help/database-administrators/moving-between-engines.md",
+    "hilfe/datenbank-waehlen.md": "help/choosing-a-database.md",
     "hilfe/datenbankunterstuetzung.md": "help/database-support.md",
     "hilfe/demomodus-faq.md": "help/demo-mode-faq.md",
     "hilfe/demomodus.md": "help/demo-mode.md",

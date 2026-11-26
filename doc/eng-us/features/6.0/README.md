@@ -89,6 +89,8 @@ nginx with PHP-FPM keep working as before.
 
 ## Databases
 
+- [Choosing a database](../../help/choosing-a-database.md): every database of 6.0.15 in one matrix, and which one
+  to take for one server, a cluster, a managed cloud database, a demo, analytics and imports, Windows
 - [SQLite database support](sqlite-database.md)
 - [MongoDB as the database](mongodb-database-support.md)
 - [PostgreSQL 18 and 19](postgresql-18-and-19.md): supported versions and their tests, client versions, upgrading,
