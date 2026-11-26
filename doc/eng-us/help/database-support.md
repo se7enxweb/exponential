@@ -37,14 +37,15 @@ support statement; it links to that chapter wherever the details are.
 12. [Oracle](#5-oracle)
 13. [MySQL](#6-mysql)
 14. [Microsoft SQL Server and Azure SQL](#7-microsoft-sql-server-and-azure-sql)
-15. [Character sets and collations](#character-sets-and-collations)
-16. [Performance and scaling](#performance-and-scaling)
-17. [Backup and restore](#backup-and-restore)
-18. [Moving a site to another database](#moving-a-site-to-another-database)
-19. [Engine parity, measured](#engine-parity-measured)
-20. [Test coverage (CI)](#test-coverage-ci)
-21. [Which database is my site using?](#which-database-is-my-site-using)
-22. [Related pages](#related-pages)
+15. [Databases that speak the MySQL protocol: TiDB, Vitess, SingleStore, Xpand, Aurora](#databases-that-speak-the-mysql-protocol)
+16. [Character sets and collations](#character-sets-and-collations)
+17. [Performance and scaling](#performance-and-scaling)
+18. [Backup and restore](#backup-and-restore)
+19. [Moving a site to another database](#moving-a-site-to-another-database)
+20. [Engine parity, measured](#engine-parity-measured)
+21. [Test coverage (CI)](#test-coverage-ci)
+22. [Which database is my site using?](#which-database-is-my-site-using)
+23. [Related pages](#related-pages)
 
 ## The supported databases, in order
 
@@ -86,6 +87,8 @@ What the order means in practice:
 | Oracle | 19c and later | `oci8` | setup wizard, kickstarter, `exp:install` (driver from `ezoracle`) | any number of servers (`expDFSFileHandlerOracleBackend`, 12.1 and later), read replicas | the DFS backend on Oracle Free 23 | supported |
 | MySQL | releases your vendor supports | `mysqli` | setup wizard, kickstarter, `exp:install` | any number of servers (the default backend), read replicas | MySQL 8.0 | supported |
 | Microsoft SQL Server, Azure SQL | 2017, 2019, 2022, 2025; Azure SQL Database and Managed Instance | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` | kickstarter, `exp:install` | any number of servers (`expDFSFileHandlerSQLServerBackend`), Always On read replicas | 2017, 2019, 2022 and 2025 on PHP 8.1 to 8.5 across three PHP layers; LocalDB on Windows | supported (new in 6.0.15) |
+| TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (an unsharded keyspace), SingleStore 8.5+ | `mysqli` | kickstarter, `exp:install` | any number of servers (the MySQLi backend) | TiDB 8.5, Vitess and SingleStore in containers (job `mysqlwire`) | supported (new in 6.0.15): [the MySQL protocol](#databases-that-speak-the-mysql-protocol) |
+| MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | kickstarter, `exp:install` | the MySQLi backend | no (no image; a managed service) | drivers and profiles, not measured |
 
 **In development.** Drivers for Microsoft Access and for databases reached through a generic ODBC connection are
 being built; they are not part of a release yet.
@@ -507,6 +510,24 @@ backend.
 
 Details: [Microsoft SQL Server driver](../features/6.0/sqlserver-database-driver.md) and
 [Clustering on SQL Server](../features/6.0/sqlserver-dfs-cluster.md).
+
+## Databases that speak the MySQL protocol
+
+TiDB, Vitess and PlanetScale, SingleStore, MariaDB Xpand and Amazon Aurora MySQL run on drivers of their own from
+6.0.15: each is the MySQL driver with a profile of what its database does differently (`expTiDBDB`, `expVitessDB`,
+`expSingleStoreDB`, `expXpandDB`, `expAuroraMySQLDB`; `DatabaseImplementation` `tidb`, `vitess`, `singlestore`, `xpand`,
+`aurora`). They need `mysqli`, install with `exp:install --db=<name>` or the kickstarter, and use the MySQL DFS backend.
+
+| Database | Level reached | Works | Does not, or differently |
+|---|---|---|---|
+| TiDB | full site, measured on 8.5.1 | a whole site, DFS cluster, foreign keys, savepoints | `READ UNCOMMITTED`, `SERIALIZABLE`, `XA`; shared locks become `FOR UPDATE`; `LOCK TABLES` becomes `GET_LOCK()`; no full-text index |
+| Vitess, PlanetScale | full site in an unsharded keyspace, measured on Vitess 25 | a whole site, DFS cluster, everything MySQL 8 does | no foreign keys (left out); transactions are killed after the tablet's timeout (PlanetScale 20 s): install with a longer one; sharded keyspaces not for a site |
+| SingleStore | full site, measured on 10.10 | a whole site (reference tables), DFS cluster, timestamps past 2038 | no foreign keys, no `FULLTEXT` on rowstore, `SAVEPOINT` does nothing, `READ COMMITTED` only, no `GET_LOCK()` |
+| MariaDB Xpand | driver and profile, not measured | expected: as MySQL | no `FULLTEXT`; ids not in insert order |
+| Aurora MySQL | driver and profile, not measured | expected: as MySQL 8.0 | after a failover the driver connects again to a writer that turned read-only |
+
+Details, the settings (`[MySQLWireSettings]`) and every rule the drivers apply:
+[Databases that speak the MySQL protocol](../features/6.0/mysql-wire-databases.md).
 
 ## Character sets and collations
 

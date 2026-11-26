@@ -105,6 +105,9 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
   Einstellungen; was je Dialekt geht (SQL Server, PostgreSQL, MariaDB, SQLite) mit PDO_ODBC und der odbc-Erweiterung
 - [MS-Access-Unterstützung](ms-access-unterstuetzung.md): `exp:access:import` (MDBTools unter Linux, der
   Access-ODBC-Treiber unter Windows) und der kleine Treiber `expMSAccessDB`; was Access kann und was nicht
+- [Datenbanken, die das MySQL-Protokoll sprechen](mysql-wire-datenbanken.md): TiDB, Vitess und PlanetScale,
+  SingleStore, MariaDB Xpand und Aurora MySQL auf dem MySQL-Treiber mit je einem Profil; was je Datenbank geht und was
+  nicht
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
   Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)

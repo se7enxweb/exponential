@@ -37,13 +37,14 @@ Aussage zur Unterstützung; überall, wo es um Einzelheiten geht, verweist sie a
 12. [Oracle](#5-oracle)
 13. [MySQL](#6-mysql)
 14. [Microsoft SQL Server und Azure SQL](#7-microsoft-sql-server-und-azure-sql)
-15. [Zeichensätze und Kollationen](#zeichensätze-und-kollationen)
-16. [Performance und Skalierung](#performance-und-skalierung)
-17. [Backup und Wiederherstellung](#backup-und-wiederherstellung)
-18. [Eine Site auf eine andere Datenbank umziehen](#eine-site-auf-eine-andere-datenbank-umziehen)
-19. [Testabdeckung (CI)](#testabdeckung-ci)
-20. [Welche Datenbank verwendet meine Site?](#welche-datenbank-verwendet-meine-site)
-21. [Verwandte Seiten](#verwandte-seiten)
+15. [Datenbanken, die das MySQL-Protokoll sprechen: TiDB, Vitess, SingleStore, Xpand, Aurora](#datenbanken-die-das-mysql-protokoll-sprechen)
+16. [Zeichensätze und Kollationen](#zeichensätze-und-kollationen)
+17. [Performance und Skalierung](#performance-und-skalierung)
+18. [Backup und Wiederherstellung](#backup-und-wiederherstellung)
+19. [Eine Site auf eine andere Datenbank umziehen](#eine-site-auf-eine-andere-datenbank-umziehen)
+20. [Testabdeckung (CI)](#testabdeckung-ci)
+21. [Welche Datenbank verwendet meine Site?](#welche-datenbank-verwendet-meine-site)
+22. [Verwandte Seiten](#verwandte-seiten)
 
 ## Die unterstützten Datenbanken in ihrer Reihenfolge
 
@@ -90,6 +91,8 @@ Was die Reihenfolge in der Praxis bedeutet:
 | Oracle | 19c und neuer | `oci8` | Setup-Assistent, Kickstarter, `exp:install` (Treiber aus `ezoracle`) | beliebig viele Server (`expDFSFileHandlerOracleBackend`, 12.1 und neuer), Lesereplikate | das DFS-Backend auf Oracle Free 23 | unterstützt |
 | MySQL | Versionen, die Ihr Anbieter noch pflegt | `mysqli` | Setup-Assistent, Kickstarter, `exp:install` | beliebig viele Server (das Standard-Backend), Lesereplikate | MySQL 8.0 | unterstützt |
 | Microsoft SQL Server, Azure SQL | 2017, 2019, 2022, 2025; Azure SQL Database und Managed Instance | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` oder `pdo_dblib` | Kickstarter, `exp:install` | beliebig viele Server (`expDFSFileHandlerSQLServerBackend`), Lesereplikate mit Always On | 2017, 2019, 2022 und 2025 auf PHP 8.1 bis 8.5 über drei PHP-Schichten; LocalDB unter Windows | unterstützt (neu in 6.0.15) |
+| TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (ein ungesplitteter Keyspace), SingleStore 8.5+ | `mysqli` | Kickstarter, `exp:install` | beliebig viele Server (das MySQLi-Backend) | TiDB 8.5, Vitess und SingleStore in Containern (Job `mysqlwire`) | unterstützt (neu in 6.0.15): [das MySQL-Protokoll](#datenbanken-die-das-mysql-protokoll-sprechen) |
+| MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | Kickstarter, `exp:install` | das MySQLi-Backend | nein (kein Image; ein verwalteter Dienst) | Treiber und Profile, nicht gemessen |
 
 **In Entwicklung.** Treiber für Microsoft Access und für Datenbanken, die über eine allgemeine ODBC-Verbindung erreicht
 werden, entstehen gerade; sie sind noch in keinem Release enthalten.
@@ -499,6 +502,25 @@ Installern und einem DFS-Cluster-Backend.
 
 Einzelheiten: [Microsoft-SQL-Server-Treiber](../funktionen/6.0/sqlserver-datenbanktreiber.md) und
 [Clustering auf SQL Server](../funktionen/6.0/sqlserver-dfs-cluster.md).
+
+## Datenbanken, die das MySQL-Protokoll sprechen
+
+TiDB, Vitess und PlanetScale, SingleStore, MariaDB Xpand und Amazon Aurora MySQL laufen ab 6.0.15 auf eigenen
+Treibern: jeder ist der MySQL-Treiber mit einem Profil dessen, was seine Datenbank anders macht (`expTiDBDB`,
+`expVitessDB`, `expSingleStoreDB`, `expXpandDB`, `expAuroraMySQLDB`; `DatabaseImplementation` `tidb`, `vitess`,
+`singlestore`, `xpand`, `aurora`). Sie brauchen `mysqli`, installieren sich mit `exp:install --db=<name>` oder dem
+Kickstarter und nutzen das MySQL-DFS-Backend.
+
+| Datenbank | Erreichte Stufe | Geht | Geht nicht oder anders |
+|---|---|---|---|
+| TiDB | ganze Site, gemessen auf 8.5.1 | eine ganze Site, DFS-Cluster, Fremdschlüssel, Savepoints | `READ UNCOMMITTED`, `SERIALIZABLE`, `XA`; Lesesperren werden `FOR UPDATE`; `LOCK TABLES` wird `GET_LOCK()`; kein Volltextindex |
+| Vitess, PlanetScale | ganze Site in einem ungesplitteten Keyspace, gemessen auf Vitess 25 | eine ganze Site, DFS-Cluster, alles, was MySQL 8 kann | keine Fremdschlüssel (weggelassen); Transaktionen werden nach der Zeitgrenze des Tablets abgebrochen (PlanetScale 20 s): mit einer längeren installieren; gesplittete Keyspaces nicht für eine Site |
+| SingleStore | ganze Site, gemessen auf 10.10 | eine ganze Site (Referenztabellen), DFS-Cluster, Zeitstempel nach 2038 | keine Fremdschlüssel, kein `FULLTEXT` auf Rowstore, `SAVEPOINT` tut nichts, nur `READ COMMITTED`, kein `GET_LOCK()` |
+| MariaDB Xpand | Treiber und Profil, nicht gemessen | erwartet: wie MySQL | kein `FULLTEXT`; IDs nicht in Einfügereihenfolge |
+| Aurora MySQL | Treiber und Profil, nicht gemessen | erwartet: wie MySQL 8.0 | nach einem Failover verbindet sich der Treiber neu, wenn der Writer nur noch lesbar ist |
+
+Einzelheiten, die Einstellungen (`[MySQLWireSettings]`) und jede Regel der Treiber:
+[Datenbanken, die das MySQL-Protokoll sprechen](../funktionen/6.0/mysql-wire-datenbanken.md).
 
 ## Zeichensätze und Kollationen
 

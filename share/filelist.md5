@@ -3585,7 +3585,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-be8c3d0e8bde4faf1f2929f1e5d191a1  doc/changelogs/6.0/6.0.15.md
+00e8e5b93931377f29918569dcc1b669  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6970,7 +6970,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-b69e0717f1199c3e714c8e246b8cdb4c  doc/eng-us/features/6.0/README.md
+f1cb48a84cf84c1e77a21bbe9287ee3a  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7104,6 +7104,7 @@ edf63d0c3d2620ae2f29a5a96f1c6fa1  doc/eng-us/features/6.0/moderation.md
 3bd8e093800aafdb91540e9466fa4756  doc/eng-us/features/6.0/multi-site-ini-overrides.md
 8c507b215068aeb519298aebe32659da  doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md
 89aef2cbcbbeb2e4a7246cd080448bae  doc/eng-us/features/6.0/multisite-cross-site-links.md
+752e997c1f986e0cb168e368f600fc4b  doc/eng-us/features/6.0/mysql-wire-databases.md
 1e5257640f8fa49f18f0eebd491884c2  doc/eng-us/features/6.0/notifications.md
 d24ff1f036341a36babb0a634f735484  doc/eng-us/features/6.0/odbc-database-driver.md
 328d31cb3c5429d428bb28e53e460208  doc/eng-us/features/6.0/online-editor-tinymce8.md
@@ -8610,7 +8611,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-bf7ded028957d0232cc342dbca0c5aea  doc/eng-us/help/database-support.md
+a4edce6861118d121f025614c7414a19  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -13677,7 +13678,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-7edf4586a4004e8ee445aefc163a744d  doc/ger-de/.paths.json
+a59f70289f7d5d653d8056dd3b17257e  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17110,7 +17111,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-c84a98fc6ad00421cc44f2970df60919  doc/ger-de/funktionen/6.0/README.md
+16a4e0abb0b8680c3d60083839659895  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17250,6 +17251,7 @@ ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaend
 b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunterstuetzung.md
 5cd14f4f8fc482ab2989f3cd0b7d9dba  doc/ger-de/funktionen/6.0/mongodb-dfs-cluster.md
 3b4c5d672fe0938a97d336a784e4cf90  doc/ger-de/funktionen/6.0/ms-access-unterstuetzung.md
+c91e4372d1a8c672def11bb922ecea3b  doc/ger-de/funktionen/6.0/mysql-wire-datenbanken.md
 a0bd58357b09d6587778742acec9e033  doc/ger-de/funktionen/6.0/oberster-knoten-des-inhaltsbaums-im-admin.md
 1d6a2a545022ebc703e340e26b9d1d74  doc/ger-de/funktionen/6.0/odbc-datenbanktreiber.md
 99269121eb54ff615dc17139eec01ac3  doc/ger-de/funktionen/6.0/online-editor-tinymce8.md
@@ -18520,7 +18522,7 @@ a5a807f6683e34c696f32b0aacc76b15  doc/ger-de/hilfe/datenbankadministratoren/unte
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 0fd3f75c7c74b4cf244e7d5448f3c417  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-17a76eafb2a5bc445a00a54e2424ee1c  doc/ger-de/hilfe/datenbankunterstuetzung.md
+ec6bb2e4a1407366b9877d35581de44c  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
