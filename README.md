@@ -743,6 +743,28 @@ composer install
 Optional extensions that `composer.json` brings but leaves inactive, such as Exponential Intelligence and the job
 queue, are switched on afterwards; [doc/eng-us/INSTALL.md](doc/eng-us/INSTALL.md#10-after-installing) says how.
 
+## Containers
+
+Official images for amd64 and arm64 are published on the GitHub Container Registry as
+`ghcr.io/se7enxweb/exponential`, built from [`docker/`](docker/Dockerfile) on the official PHP images (PHP 8.0 to 8.5,
+8.5 by default). Each image runs as `www-data`, listens on port 8080, installs a site on its first start and keeps
+nothing secret inside:
+
+```bash
+docker run -d --name exponential -p 8080:8080 \
+  -v exp-var:/var/www/exponential/var \
+  -v exp-override:/var/www/exponential/settings/override \
+  -v exp-siteaccess:/var/www/exponential/settings/siteaccess \
+  ghcr.io/se7enxweb/exponential:edge
+docker exec exponential cat var/log/initial-admin-password    # the administrator's password
+```
+
+That is a single-container site on SQLite, served by Apache with PHP-FPM. `-velocity` tags serve the same
+installation with Velocity, and [`docker/compose.mariadb.yml`](docker/compose.mariadb.yml) and
+[`docker/compose.postgresql.yml`](docker/compose.postgresql.yml) run it with a database server. `edge` follows the
+main branch; each release gets fixed tags (`<version>-php<php>-apache`, `<version>-php<php>-velocity`). Tags,
+variables, volumes and secrets: [Containers: Docker and Podman](doc/eng-us/help/hosting/models/containers-docker-and-podman.md).
+
 # Issue tracker
 
 ## Exponential (6.x) Issue tracker

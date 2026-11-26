@@ -3,8 +3,8 @@ title: Container: Docker und Podman
 audience: hosting, admin
 category: hosting
 order: 60
-summary: Exponential in Docker- oder Podman-Containern betreiben - was die Quellen sagen (Stufe 2, die veröffentlichten Images von Velocity), was auf ein persistentes Volume gehört, die Regel eines einzigen Schreibers für SQLite, ein Entry Point, der einmal installiert und Velocity im Vordergrund hält, und Geheimnisse.
-keywords: Container, Docker, Podman, Image, Volume, persistentes Volume, Entry Point, exp:install, Velocity, ghcr.io, SQLite, WAL, ein Schreiber, PostgreSQL, EXP_INSTALL_DB_PASSWORD, Geheimnisse, containers, image, volume, persistent volume, entry point, one writer, secrets
+summary: Exponential in Docker- oder Podman-Containern betreiben - die offiziellen Images (ghcr.io/se7enxweb/exponential, Apache mit PHP-FPM oder Velocity, amd64 und arm64), was die Quellen sagen (Stufe 2, die veröffentlichten Images von Velocity), was auf ein persistentes Volume gehört, die Regel eines einzigen Schreibers für SQLite, ein Entry Point, der einmal installiert und Velocity im Vordergrund hält, und Geheimnisse.
+keywords: Container, Docker, Podman, offizielles Image, ghcr.io/se7enxweb/exponential, Compose, edge, Tags, Image, Volume, persistentes Volume, Entry Point, exp:install, Velocity, ghcr.io, SQLite, WAL, ein Schreiber, PostgreSQL, EXP_INSTALL_DB_PASSWORD, Geheimnisse, containers, image, volume, persistent volume, entry point, one writer, secrets
 type: help
 ---
 # Container: Docker und Podman
@@ -31,14 +31,127 @@ installiert und den Server laufen lässt und wie Sie Geheimnisse aus Images hera
 
 ## Inhalt
 
-1. [Was die Quellen sagen](#was-die-quellen-sagen)
-2. [Images](#images)
-3. [Volumes: was erhalten bleiben muss](#volumes-was-erhalten-bleiben-muss)
-4. [Die Datenbank und die Regel eines einzigen Schreibers](#die-datenbank-und-die-regel-eines-einzigen-schreibers)
-5. [Ein Entry Point, der einmal installiert](#ein-entry-point-der-einmal-installiert)
-6. [Geheimnisse](#geheimnisse)
-7. [Betrieb in Containern](#betrieb-in-containern)
-8. [Checkliste](#checkliste)
+1. [Offizielle Images](#offizielle-images)
+2. [Was die Quellen sagen](#was-die-quellen-sagen)
+3. [Images](#images)
+4. [Volumes: was erhalten bleiben muss](#volumes-was-erhalten-bleiben-muss)
+5. [Die Datenbank und die Regel eines einzigen Schreibers](#die-datenbank-und-die-regel-eines-einzigen-schreibers)
+6. [Ein Entry Point, der einmal installiert](#ein-entry-point-der-einmal-installiert)
+7. [Geheimnisse](#geheimnisse)
+8. [Betrieb in Containern](#betrieb-in-containern)
+9. [Checkliste](#checkliste)
+
+## Offizielle Images
+
+Exponential veröffentlicht eigene Images in der GitHub Container Registry, `ghcr.io/se7enxweb/exponential`, für amd64
+und arm64. Sie werden aus [`docker/`](../../../../../docker/Dockerfile) im Kernel-Repository auf den offiziellen
+PHP-Images (Debian) gebaut, mit jeder PHP-Erweiterung, die Exponential und Velocity nutzen, und der mit
+`composer install` erstellten Installation. Jedes Image:
+
+- läuft als `www-data` (uid 33), nie als root; der Code gehört root und kann vom Server nicht geändert werden:
+  `var/`, `settings/override`, `settings/siteaccess` und `autoload/` gehören `www-data`, und im Wurzelverzeichnis der
+  Installation, in `design/`, `extension/` und `settings/` darf er eigene Dateien anlegen (Sticky-Bit), wie es der
+  Installer braucht;
+- lauscht auf Port **8080** (veröffentlichen Sie ihn nach Bedarf: `-p 80:8080`);
+- installiert beim ersten Start mit `exp:install` eine Website aus der Umgebung und enthält keine Geheimnisse;
+- beantwortet einen Health-Check (Apache: eine statische Datei und der PHP-FPM-Ping; Velocity: `/Q/health`).
+
+### Tags
+
+| Tag | Was es ist | Bewegt sich? |
+|---|---|---|
+| `<version>-php<php>-apache` | ein Release auf PHP `<php>`, ausgeliefert von Apache mit PHP-FPM | fest |
+| `<version>-php<php>-velocity` | ein Release auf PHP `<php>`, ausgeliefert von Velocity (ab 6.0.15) | fest |
+| `<version>`, `<version>-velocity` | ein Release auf dem Standard-PHP (8.5) | fest |
+| `latest`, `latest-velocity` | das neueste Release auf dem Standard-PHP | mit jedem Release |
+| `edge-php<php>-apache`, `edge-php<php>-velocity` | der Branch main, jede Nacht neu gebaut | immer |
+| `edge`, `main`, `edge-velocity` | der Branch main auf dem Standard-PHP | immer |
+
+`<version>` ist das Release ohne sein `v` (`6.0.14`). `<php>` ist 8.0 bis 8.5 ab 6.0.15 und 8.1 bis 8.5 für 6.0.14,
+das PHP 8.1 braucht. PHP 8.5 ist der Standard, weil es das neueste ist; wählen Sie ein älteres nur, wenn eine Ihrer
+Erweiterungen es braucht. Jeder Tag ist für mehrere Architekturen.
+
+**Ein fester Tag ändert sich nie.** Die Images werden per Digest hochgeladen und erst getaggt, wenn jeder Build des
+Laufs seine Tests bestanden hat; der Workflow hält an, bevor er einen vorhandenen festen Tag überschreiben würde. Ein
+Image, das sich nach seinem Release als fehlerhaft erweist, wird nicht unter demselben Tag ersetzt: Der nächste Build
+bringt die Korrektur, und seine Notizen sagen, was falsch war. Legen Sie in der Produktion einen festen Tag (oder
+einen Digest) fest; nehmen Sie `edge`, um Kommendes auszuprobieren.
+
+### Eine Website starten
+
+Ein einzelner Container auf SQLite, ausgeliefert von Apache mit PHP-FPM:
+
+```bash
+docker run -d --name exponential -p 8080:8080 \
+  -v exp-var:/var/www/exponential/var \
+  -v exp-override:/var/www/exponential/settings/override \
+  -v exp-siteaccess:/var/www/exponential/settings/siteaccess \
+  -e EXP_SITE_URL=localhost:8080 -e EXP_ADMIN_EMAIL=you@example.com \
+  ghcr.io/se7enxweb/exponential:edge
+docker logs -f exponential                                  # die Installation, dann der Server
+docker exec exponential cat var/log/initial-admin-password  # das Passwort des Administrators
+```
+
+Die Website antwortet unter `http://localhost:8080/`, die Administration unter `http://localhost:8080/admin`
+(Benutzer `admin`). Podman nimmt denselben Befehl (`podman run ...`). Für Velocity nehmen Sie den `-velocity`-Tag
+desselben Releases.
+
+Mit einem Datenbankserver bringt das Kernel-Repository Compose-Dateien mit:
+[`docker/compose.mariadb.yml`](../../../../../docker/compose.mariadb.yml) und
+[`docker/compose.postgresql.yml`](../../../../../docker/compose.postgresql.yml) (die Website, ein Cron-Container und
+die Datenbank, das Passwort als Secret-Datei) sowie [`docker/compose.sqlite.yml`](../../../../../docker/compose.sqlite.yml)
+für den einzelnen Container:
+
+```bash
+printf '%s' "$(openssl rand -hex 24)" > docker/db_password.txt
+docker compose -f docker/compose.postgresql.yml up -d
+```
+
+### Variablen
+
+| Variable | Standard | Bedeutung |
+|---|---|---|
+| `EXP_SERVER` | `apache` (`velocity` in `-velocity`-Images) | der Server: Apache mit PHP-FPM oder Velocity |
+| `EXP_INSTALL` | `auto` | `auto` installiert beim ersten Start, wenn `settings/override/site.ini.append.php` keinen Block `[DatabaseSettings]` hat; `never` nicht |
+| `EXP_DB` | `sqlite` | `sqlite`, `mysql` (MariaDB und MySQL), `pgsql` und die anderen Werte von `exp:install --db` |
+| `EXP_DB_HOST`, `EXP_DB_PORT`, `EXP_DB_NAME`, `EXP_DB_USER` | wie `exp:install` | der Datenbankserver |
+| `EXP_DB_PASSWORD_FILE` | | eine Datei mit dem Datenbankpasswort (ein Docker- oder Podman-Secret); `EXP_DB_PASSWORD` geht auch, erscheint aber in `docker inspect` |
+| `EXP_DB_ACTION` | `remove` für SQLite, `ignore` für einen Server | was `exp:install` mit einer vorhandenen Datenbank macht; eine Server-Datenbank wird nur geleert, wenn Sie `remove` setzen |
+| `EXP_DB_WAIT` | `90` | Sekunden, in denen erneut versucht wird, solange der Datenbankserver startet |
+| `EXP_SITE_URL`, `EXP_SITE_TITLE`, `EXP_LANGUAGE`, `EXP_TIMEZONE` | | Adresse, Titel, Hauptsprache und Zeitzone der Website |
+| `EXP_ADMIN_EMAIL`, `EXP_ADMIN_PASSWORD_FILE` | | der Administrator; ohne Passwort wird eines erzeugt und in `var/log/initial-admin-password` geschrieben |
+| `EXP_INSTALL_ARGS` | | weitere Optionen für `exp:install`, zum Beispiel `--package=... --languages=ger-DE` |
+| `EXP_VELOCITY_WORKERS` | `4` | die Zahl der Worker von Velocity, beim ersten Start in `settings/override/velocity.ini.append.php` geschrieben |
+| `EXP_CRON_INTERVAL` | `300` | Sekunden zwischen zwei Läufen von `runcronjobs.php` in einem Container mit dem Befehl `cron` |
+
+Der Befehl bestimmt, was der Container tut: `serve` (der Standard), `install` (installieren und beenden), `cron` (die
+Cronjobs nach Zeitplan ausführen, für einen zweiten Container auf denselben Volumes) oder ein beliebiger Befehl, zum
+Beispiel `docker exec exponential bin/php/console exp:velocity ext check`.
+
+Eigene PHP-Einstellungen binden Sie in `/usr/local/etc/php/conf.d/` ein (mit einem Namen nach `zz-exponential.ini`,
+etwa `zzz-site.ini`). Der Code im Image ist nur lesbar; ein neues Image ist der Weg, ihn zu ändern.
+
+### Releases vor 6.0.15
+
+Die Images von 6.0.14 liefern das Release so aus, wie es veröffentlicht wurde: Es hat weder `exp:install` noch
+Velocity, daher gibt es keinen `-velocity`-Tag, und ein neuer Container zeigt im Browser den Setup-Assistenten, der
+in dieselben Volumes schreibt.
+
+### Eigene Images bauen und testen
+
+Aus einem Klon des Kernel-Repositorys:
+
+```bash
+docker build -f docker/Dockerfile -t exponential:local .                       # Apache mit PHP-FPM, PHP 8.5
+docker build -f docker/Dockerfile --target velocity -t exponential:velocity .  # Velocity
+docker build -f docker/Dockerfile --build-arg PHP_VERSION=8.3 -t exponential:php8.3 .
+docker/test-image.sh exponential:local sqlite mysql pgsql                       # Installation, Startseite, Anmeldeseite
+```
+
+`PHP_VERSION` ist 8.0 bis 8.5 und `DEBIAN` das Basis-Release (`bookworm`; `bullseye` für 8.0). Der Build liest nie
+`settings/override` oder `vendor/` aus Ihrem Arbeitsverzeichnis, daher lässt sich auch eine Arbeitskopie mit
+Zugangsdaten gefahrlos bauen. Der Workflow `.github/workflows/docker.yml` baut genauso auf nativen amd64- und
+arm64-Runnern, führt `docker/test-image.sh` aus und veröffentlicht.
 
 ## Was die Quellen sagen
 
@@ -53,10 +166,11 @@ installiert und den Server laufen lässt und wie Sie Geheimnisse aus Images hera
 
 ## Images
 
-Zwei Wege:
+Drei Wege:
 
 | Weg | Was Sie bekommen | Worauf Sie achten |
 |---|---|---|
+| Das offizielle Image, `ghcr.io/se7enxweb/exponential` ([oben](#offizielle-images)) | eine getestete Installation, Apache mit PHP-FPM oder Velocity, beim ersten Start installiert | legen Sie einen festen Tag fest; eigene Erweiterungen kommen in ein Image, das darauf aufbaut (`FROM`) |
 | Ihr eigenes Image auf einer Basis mit PHP 8.0+ | die PHP-Erweiterungen, die Sie wählen, Composer, die mit `composer install` gebaute Installation | installieren Sie jede erforderliche Erweiterung: `dom`, `xsl`, `intl`, `mbstring`, `iconv`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick und für Velocity `sockets`, `pcntl`, `openssl` |
 | Das veröffentlichte Image von Velocity als Basis | den Server und ein PHP mit einer festgelegten Erweiterungsausstattung | prüfen Sie die Variante gegen das, was Exponential braucht |
 
@@ -174,7 +288,7 @@ Was das Kapitel dazu erklärt:
 
 ## Checkliste
 
-- [ ] Image mit PHP 8.0+ und jeder erforderlichen Erweiterung; `exp:velocity ext check` besteht in der Pipeline.
+- [ ] Das offizielle Image oder ein Image mit PHP 8.0+ und jeder erforderlichen Erweiterung; `exp:velocity ext check` besteht in der Pipeline.
 - [ ] Feste Image-Tags in der Produktion.
 - [ ] `var/`, `settings/override`, `settings/siteaccess` auf persistenten Volumes, im Eigentum des PHP-Benutzers des Containers.
 - [ ] Ein schreibender Container für SQLite, oder ein Datenbankserver für mehr.
