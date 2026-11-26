@@ -388,6 +388,50 @@ class VelocityWarmup extends \Exponential\Runnable\Command
             unset($__cluster);
         }
 
+        // Every Redis/Valkey connection a class keeps in a static property (a Valkey cache handler's own client,
+        // directly or as a property of the instance): closed and the static emptied, so each worker opens its own.
+        // Shared by every worker, one socket hung uncached pages until the worker was killed.
+        if (class_exists('Redis', false)) {
+            foreach (get_declared_classes() as $__class) {
+                try {
+                    $__rc = new \ReflectionClass($__class);
+                    if ($__rc->isInternal()) {
+                        continue;
+                    }
+                    foreach ($__rc->getProperties(\ReflectionProperty::IS_STATIC) as $__prop) {
+                        if ($__prop->getDeclaringClass()->getName() !== $__class) {
+                            continue;
+                        }
+                        if (PHP_VERSION_ID < 80100) {
+                            $__prop->setAccessible(true);
+                        }
+                        if (!$__prop->isInitialized()) {
+                            continue;
+                        }
+                        $__value = $__prop->getValue();
+                        $__held = array();
+                        if ($__value instanceof \Redis) {
+                            $__held[] = $__value;
+                        } elseif (is_object($__value)) {
+                            foreach ((array) $__value as $__inner) {
+                                if ($__inner instanceof \Redis) {
+                                    $__held[] = $__inner;
+                                }
+                            }
+                        }
+                        if (!$__held) {
+                            continue;
+                        }
+                        foreach ($__held as $__redis) {
+                            try { $__redis->close(); } catch (\Throwable $e) {}
+                        }
+                        try { $__prop->setValue(null); } catch (\Throwable $e) {}
+                    }
+                } catch (\Throwable $e) {}
+            }
+            unset($__class, $__rc, $__prop, $__value, $__held, $__inner, $__redis);
+        }
+
         // Every other global the render left. A pool worker removes the globals a
         // request added before its next request, keeping only the server's own and
         // the ones named in Q.webserver.keepGlobals (the datatype and workflow

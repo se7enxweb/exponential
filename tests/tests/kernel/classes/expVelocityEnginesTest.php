@@ -388,6 +388,18 @@ class expVelocityEnginesTest extends ezpTestCase
     }
 
     /**
+     * Nothing the warm-up connected is inherited by the workers: the cluster file handler's database and every
+     * Redis/Valkey client kept in a static are closed before the fork (shared, a Valkey socket hung uncached pages)
+     */
+    public function testTheWarmUpClosesTheClusterAndValkeyConnectionsBeforeTheFork()
+    {
+        $source = file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/commands/velocity-warmup.php' );
+        $this->assertNotFalse( strpos( $source, '$__cluster->disconnect()' ) );
+        $this->assertNotFalse( strpos( $source, '$__redis->close()' ) );
+        $this->assertNotFalse( strpos( $source, '$__prop->setValue(null)' ) );
+    }
+
+    /**
      * The warm-up renders a site in the parent process; the log and INI cache directories that site set
      * (eZSiteAccess::change()) are put back before the globals are swept, so no request starts with them
      */
