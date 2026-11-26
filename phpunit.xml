@@ -107,6 +107,8 @@
             <exclude>tests/tests/lib/ezdb/sqlserver</exclude>
             <!-- in the suites odbc and odbc-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/odbc</exclude>
+            <!-- in the suites duckdb and duckdb-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/duckdb</exclude>
             <!-- in the suites mysqlwire and mysqlwire-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/mysqlwire</exclude>
             <!-- in the suites firebird and firebird-live; a file can be in one suite only -->
@@ -189,6 +191,20 @@
         <testsuite name="odbc-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/odbc/live</directory>
             <directory suffix="Test.php">tests/tests/kernel/classes/msaccess/live</directory>
+        </testsuite>
+
+        <!--
+          The DuckDB driver (expDuckDBDB): the DB-less tests, and the live tests against libduckdb through PHP's FFI
+          extension (EXP_TEST_DUCKDB_LIBRARY: the library file; they skip without it or without FFI).
+          Run: php vendor/bin/phpunit - -testsuite duckdb | duckdb-live
+        -->
+        <testsuite name="duckdb">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/duckdb</directory>
+            <exclude>tests/tests/lib/ezdb/duckdb/live</exclude>
+        </testsuite>
+
+        <testsuite name="duckdb-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/duckdb/live</directory>
         </testsuite>
 
         <testsuite name="mongodb-live">

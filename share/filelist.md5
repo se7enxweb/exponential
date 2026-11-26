@@ -27570,7 +27570,7 @@ cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.m
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 6c02e4e777784dc458582238e073cb10  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
-0acf056b20a8dcb8f7a8cdb3b35aa2ce  phpunit.xml
+d21eaacb1eaaebead6f9d8455ddd3c06  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 80009f76b1b56385601f4e610872f8d2  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -29002,7 +29002,7 @@ bbf1056a2362f3aa6c8cceea081afffb  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 433535bbea030ca66be73ed16d242a2e  tests/suite.php
-1a843c3103fdbe69ee6d99f44732cc3a  tests/test-map.json
+95c9240bdb3a95e96f4d85461e12e7ea  tests/test-map.json
 9917402d25f8419adb652d9a634bac4a  tests/tests/bin/CiWorkflowPullRequestTest.php
 aab68864c45774a2a976dbdc7ba53f78  tests/tests/bin/ConsoleExtensionAliasTest.php
 b93b286979fa3eef6b6b03fd1197dd31  tests/tests/bin/CopyrightNoticeTest.php
@@ -31293,3 +31293,8 @@ c0e1d34a3b541f2906e2577dd3859045  tests/tests/lib/ezdb/firebird/expFirebirdTestK
 8361fefa08a013be989fc6c508ce4bc9  tests/tests/lib/ezdb/firebird/live/expFirebirdSchemaLiveTest.php
 f16e60da83135f08f1a99b7114ccb35c  tests/tests/lib/ezdbschema/expFirebirdSchemaTest.php
 932d399f3f6d4789b117f91a9fbc974c  kernel/sql/duckdb/kernel_schema.sql
+82c692bb873d3a0addcd4dc655c0c7f3  tests/tests/lib/ezdb/duckdb/expDuckDBDBTest.php
+911ce52bfdb2f7a03d24a200d28bb9fd  tests/tests/lib/ezdb/duckdb/expDuckDBDialectTest.php
+88eec905156e8f825e404e302e577151  tests/tests/lib/ezdb/duckdb/expDuckDBSchemaTest.php
+044f719a8988bd624dca055500092aad  tests/tests/lib/ezdb/duckdb/expDuckDBTestKit.php
+92d4cd94ad1b3e7a26737bb4616fffdb  tests/tests/lib/ezdb/duckdb/live/expDuckDBLiveTest.php

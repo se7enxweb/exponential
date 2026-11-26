@@ -3341,6 +3341,17 @@
       "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
       "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"
     ],
+    "lib/ezdb/classes/expduckdb*.php": [
+      "tests/tests/lib/ezdb/duckdb/expDuckDBDBTest.php",
+      "tests/tests/lib/ezdb/duckdb/expDuckDBDialectTest.php",
+      "tests/tests/lib/ezdb/duckdb/expDuckDBSchemaTest.php"
+    ],
+    "lib/ezdbschema/classes/expduckdbschema.php": [
+      "tests/tests/lib/ezdb/duckdb/expDuckDBSchemaTest.php"
+    ],
+    "kernel/sql/duckdb/*": [
+      "tests/tests/lib/ezdb/duckdb/expDuckDBSchemaTest.php"
+    ],
     "lib/ezdb/classes/expmsaccess*.php": [
       "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
       "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"
