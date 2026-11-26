@@ -24,7 +24,7 @@ class Mailbounces extends \Exponential\Runnable\Command
                                  "Reads the mailbox of mailpreferences.ini [BounceSettings] (IMAP or POP3, set in a settings\n" .
                                  "override): hard bounces (delivery status notifications with a permanent failure of\n" .
                                  "HardStatusCodes[]) and spam complaints (feedback loop reports) put the address on the\n" .
-                                 "suppression list. Soft bounces and other mail are counted only. No address is shown in full.\n" .
+                                 "suppression list. Soft bounces, delay notices (delayed) and other mail are counted only. No address is shown in full.\n" .
                                  "\n" .
                                  "Without --apply nothing is changed: the messages are read and reported, no address is suppressed,\n" .
                                  "no message is marked or deleted and the status is not written. --dry-run is still accepted and\n" .
@@ -110,8 +110,8 @@ class Mailbounces extends \Exponential\Runnable\Command
             return;
         }
         $c = $r['counts'];
-        $cli->output( sprintf( '%d messages: %d hard bounces, %d soft bounces, %d complaints, %d other%s',
-                               $c['messages'], $c['hard'], $c['soft'], $c['complaints'], $c['other'], $dryRun ? '' : '; ' . $c['suppressed'] . ' addresses newly suppressed' ) );
+        $cli->output( sprintf( '%d messages: %d hard bounces, %d soft bounces, %d delayed, %d complaints, %d other%s',
+                               $c['messages'], $c['hard'], $c['soft'], $c['delayed'], $c['complaints'], $c['other'], $dryRun ? '' : '; ' . $c['suppressed'] . ' addresses newly suppressed' ) );
         if ( $dryRun )
         {
             $would = 0;
@@ -147,8 +147,8 @@ class Mailbounces extends \Exponential\Runnable\Command
         if ( $s['last_error'] !== '' )
             $cli->output( sprintf( '  %-24s %s', 'last error', $s['last_error'] ) );
         foreach ( array( 'last run' => $s['last'], 'all runs' => $s['total'] ) as $label => $c )
-            $cli->output( sprintf( '  %-24s %d messages, %d hard, %d soft, %d complaints, %d suppressed', $label,
-                                   $c['messages'], $c['hard'], $c['soft'], $c['complaints'], $c['suppressed'] ) );
+            $cli->output( sprintf( '  %-24s %d messages, %d hard, %d soft, %d delayed, %d complaints, %d suppressed', $label,
+                                   $c['messages'], $c['hard'], $c['soft'], isset( $c['delayed'] ) ? $c['delayed'] : 0, $c['complaints'], $c['suppressed'] ) );
     }
 }
 

@@ -282,6 +282,15 @@ uses it to send soft-bounced editions again and to answer subscribe and unsubscr
 lists. `./console exp:mail:bounces --dry-run` shows what would happen, and a message a listener took counts as
 understood for `AfterRead=delete`.
 
+**Kinds of bounce.** The reader sorts every notification into `hard`, `soft`, `delay`, `complaint` or none. Only `hard`
+and `complaint` suppress an address. `delay` is new: a delivery status notification that says `delayed` (the receiving
+server is still trying, for example status 4.2.2) is no longer counted as soft. The run counts and the output of
+`exp:mail:bounces` and `exp:mail:status` show it as "delayed", and listeners receive the kind `delay`.
+
+> **BREAKING:** code that reads the kind from a listener or from the run counts and only knows `hard`, `soft` and
+> `complaint` must handle `delay` (an older newsletter treats it like `soft`, as before). The counts array has a new key
+> `delayed`.
+
 ## 8. The consent log
 
 Setup > E-mail preferences > **Consent log**: every change, newest first, with the person, the category, the change, the

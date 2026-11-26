@@ -1,4 +1,15 @@
 <?php
+class MailPreferencesIntegrationDelayListener
+{
+    public static $kinds = array();
+
+    public static function mailMessage( $raw, $classification, $dryRun )
+    {
+        self::$kinds[] = $classification['kind'];
+        return false;
+    }
+}
+
 /**
  * The e-mail preferences joined to the rest of the system: the notification categories, the essential senders,
  * the bounce reader, the cjw_newsletter bridge, the suppression list export, the sender details of the footer and
@@ -150,7 +161,8 @@ class MailPreferencesIntegrationTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'a', 'b', 'c', 'nl', 'nl2', 'bl', 'sup', 'user', 'user-new', 'user-pub' ) as $k )
             $out[] = self::address( $k );
         foreach ( array( 'mpbounce-hard', 'mpbounce-soft', 'mpbounce-policy', 'mpbounce-ok', 'mpbounce-gone', 'mpbounce-nodomain',
-                         'mpcomplaint', 'mpcomplaint-headers', 'mpcomplaint-notspam', 'mpbounce-holiday', 'mpbounce-notreal' ) as $k )
+                         'mpcomplaint', 'mpcomplaint-headers', 'mpcomplaint-notspam', 'mpbounce-holiday', 'mpbounce-notreal',
+                         'mpbounce-slow', 'mpbounce-delayhard', 'mpbounce-delaysoft' ) as $k )
             $out[] = $k . '@mptest.invalid';
         return $out;
     }
@@ -425,7 +437,12 @@ class MailPreferencesIntegrationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'hard', $kinds['dsn-mixed-recipients.eml']['kind'] );
         $this->assertSame( array( 'mpbounce-gone@mptest.invalid', 'mpbounce-nodomain@mptest.invalid' ), $kinds['dsn-mixed-recipients.eml']['addresses'],
                            'the delivered recipient is not a bounce; addresses in lower case' );
-        $this->assertSame( 'soft', $kinds['dsn-soft-delayed.eml']['kind'] );
+        $this->assertSame( 'delay', $kinds['dsn-soft-delayed.eml']['kind'] );
+        $this->assertSame( '4.2.2', $kinds['dsn-soft-delayed.eml']['detail'] );
+        $this->assertSame( array(), $kinds['dsn-soft-delayed.eml']['addresses'] );
+        $this->assertSame( 'hard', $kinds['dsn-delayed-and-hard.eml']['kind'], 'a delayed recipient does not hide a final failure' );
+        $this->assertSame( array( 'mpbounce-delayhard@mptest.invalid' ), $kinds['dsn-delayed-and-hard.eml']['addresses'] );
+        $this->assertSame( 'soft', $kinds['dsn-delayed-and-soft.eml']['kind'], 'a final soft failure outranks a delay' );
         $this->assertSame( 'soft', $kinds['dsn-failed-policy.eml']['kind'], '5.7.1 is not in HardStatusCodes' );
         $this->assertSame( array(), $kinds['dsn-failed-policy.eml']['addresses'] );
         $this->assertSame( 'complaint', $kinds['arf-abuse.eml']['kind'] );
@@ -439,18 +456,33 @@ class MailPreferencesIntegrationTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( expMailBounceReader::isHardStatus( '5.2.2' ) );
     }
 
+    public function testDelayNoticeIsCountedAndNotSuppressed()
+    {
+        $dir = $this->fixtures();
+        MailPreferencesIntegrationDelayListener::$kinds = array();
+        $this->setIni( 'mailpreferences.ini', 'BounceSettings', 'MessageListeners', array( 'MailPreferencesIntegrationDelayListener' ) );
+        $run = expMailBounceReader::runFiles( array( $dir . '/dsn-soft-delayed.eml', $dir . '/dsn-hard-user-unknown.eml' ), false );
+        $this->assertSame( 1, $run['counts']['delayed'] );
+        $this->assertSame( 1, $run['counts']['hard'] );
+        $this->assertSame( 0, $run['counts']['soft'] );
+        $this->assertSame( 1, $run['counts']['suppressed'] );
+        $this->assertTrue( expMailSuppression::isSuppressed( 'mpbounce-hard@mptest.invalid' ) );
+        $this->assertFalse( expMailSuppression::isSuppressed( 'mpbounce-soft@mptest.invalid' ), 'a delay suppresses nothing' );
+        $this->assertSame( array( 'delay', 'hard' ), MailPreferencesIntegrationDelayListener::$kinds );
+    }
+
     // ------------------------------------------------------------------ INT-07
 
     public function testBounceReaderSuppressesAndReports()
     {
         $dry = expMailBounceReader::runFiles( array( $this->fixtures() ), true );
         $this->assertTrue( $dry['ok'] );
-        $this->assertSame( 8, $dry['counts']['messages'] );
+        $this->assertSame( 10, $dry['counts']['messages'] );
         $this->assertSame( 0, $dry['counts']['suppressed'] );
         $this->assertFalse( expMailSuppression::isSuppressed( 'mpbounce-hard@mptest.invalid' ), 'a dry run changes nothing' );
 
         $run = expMailBounceReader::runFiles( array( $this->fixtures() ), false );
-        $this->assertSame( array( 'messages' => 8, 'hard' => 2, 'soft' => 2, 'complaints' => 2, 'other' => 2, 'suppressed' => 5, 'errors' => 0 ), $run['counts'] );
+        $this->assertSame( array( 'messages' => 10, 'hard' => 3, 'soft' => 2, 'delayed' => 1, 'complaints' => 2, 'other' => 2, 'suppressed' => 6, 'errors' => 0 ), $run['counts'] );
         $this->assertSame( 'bounce', expMailSuppression::reason( 'mpbounce-hard@mptest.invalid' ) );
         $this->assertSame( 'bounce', expMailSuppression::reason( 'mpbounce-gone@mptest.invalid' ) );
         $this->assertSame( 'complaint', expMailSuppression::reason( 'mpcomplaint@mptest.invalid' ) );
@@ -488,7 +520,7 @@ class MailPreferencesIntegrationTest extends PHPUnit\Framework\TestCase
 
         list( $code, $out ) = $this->command( 'mailbounces', array( '--dry-run', '--file=' . $this->fixtures() ) );
         $this->assertSame( 0, $code, $out );
-        $this->assertStringContainsString( '8 messages: 2 hard bounces', $out );
+        $this->assertStringContainsString( '10 messages: 3 hard bounces', $out );
         $this->assertStringContainsString( 'PASS', $out );
         $this->assertStringNotContainsString( 'mpbounce-hard@', $out );
     }
