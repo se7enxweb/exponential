@@ -124,6 +124,41 @@ class expVelocity
     }
 
     /**
+     * Q.web.static.roots: directories laid out like the document root where a static path is looked for when the
+     * document root does not have it (an engine from v0.0.4.65; older ones ignore the key).
+     *
+     * A cluster on eZDFSFileHandler keeps the public cache (packed scripts and stylesheets, text images) on the shared
+     * mount, file.ini [eZDFSClusteringSettings] MountPointPath: what another node made is sent from there, as Apache
+     * hands it to index_cluster.php. [ServerSettings] StaticRoots[] adds directories, each "dir" or "dir;regex"
+     * (the regex limits it to the paths it matches).
+     *
+     * @return array
+     */
+    public function staticRoots()
+    {
+        $roots = array();
+        $fileIni = eZINI::instance( 'file.ini' );
+        if ( $fileIni->variable( 'ClusteringSettings', 'FileHandler' ) === 'eZDFSFileHandler'
+             && $fileIni->hasVariable( 'eZDFSClusteringSettings', 'MountPointPath' ) )
+        {
+            $mount = rtrim( trim( (string)$fileIni->variable( 'eZDFSClusteringSettings', 'MountPointPath' ) ), '/' );
+            if ( $mount !== '' && is_dir( $mount ) )
+                $roots[$mount] = array( 'dir' => $mount, 'match' => '^/var/([^/]+/)?cache/(texttoimage|public)/' );
+        }
+        foreach ( (array)$this->setting( 'ServerSettings', 'StaticRoots', array() ) as $entry )
+        {
+            $parts = explode( ';', trim( (string)$entry ), 2 );
+            $dir = rtrim( trim( $parts[0] ), '/' );
+            if ( $dir === '' || $dir[0] !== '/' || !is_dir( $dir ) )
+                continue;
+            $roots[$dir] = array( 'dir' => $dir );
+            if ( isset( $parts[1] ) && trim( $parts[1] ) !== '' && @preg_match( '#' . str_replace( '#', '\#', trim( $parts[1] ) ) . '#', '' ) !== false )
+                $roots[$dir]['match'] = trim( $parts[1] );
+        }
+        return array_values( $roots );
+    }
+
+    /**
      * Every value of site.ini [FileSettings] CacheVarDir: the global one and that of each siteaccess.
      *
      * The settings of a siteaccess are read as eZSiteAccess::getIni() reads them -- the global extension and override
@@ -1585,6 +1620,12 @@ class expVelocity
         }
         if ( $this->setting( 'ServerSettings', 'AllowRootWorkers', 'disabled' ) === 'enabled' )
             $arguments[] = '--allow-root-workers';
+        // [ServerSettings] DropMaster: root only for the start. The server binds its ports and reads the
+        // certificate as root, then becomes User/Group for good before the warm-up and the workers (an
+        // engine from v0.0.4.65; a start that cannot drop stops with an error, it never goes on as root).
+        if ( $this->isEnabled( $this->setting( 'ServerSettings', 'DropMaster', 'disabled' ) )
+             && trim( (string)$this->setting( 'ServerSettings', 'User', '' ) ) !== '' )
+            $arguments[] = '--drop-master';
 
         $keepGlobals = $this->keepGlobals();
         if ( $keepGlobals )
@@ -2056,6 +2097,69 @@ class expVelocity
         // document root, named by its full path so no other index.js below it matches.
         $web['static']['revalidate'] = array( eZSys::rootDir() . '/index.js', 'sw.js', 'service-worker.js',
                                               '*.webmanifest', 'manifest.json' );
+        $roots = $this->staticRoots();
+        if ( $roots )
+            $web['static']['roots'] = $roots;
+
+        // [ServerSettings] MimeTypes, DefaultCharset -> Q.web.mimeTypes, Q.web.defaultCharset: the content types
+        // Apache gives (its TypesConfig, /etc/mime.types) before the server's own list, and Apache's
+        // AddDefaultCharset. Empty leaves the server's own.
+        $mimeTypes = trim( (string)$this->setting( 'ServerSettings', 'MimeTypes', '' ) );
+        if ( $mimeTypes !== '' && is_readable( $mimeTypes ) )
+            $web['mimeTypes'] = $mimeTypes;
+        $charset = trim( (string)$this->setting( 'ServerSettings', 'DefaultCharset', '' ) );
+        if ( $charset !== '' )
+            $web['defaultCharset'] = $charset;
+
+        // [ServerSettings] TrustedProxies[] -> Q.webserver.proxy.trusted: the addresses (or CIDR ranges) whose
+        // X-Forwarded-For and X-Forwarded-Proto are believed, such as the web server in front. Empty leaves the
+        // server's own (loopback only).
+        $trusted = array_values( array_filter( array_map( 'trim', (array)$this->setting( 'ServerSettings', 'TrustedProxies', array() ) ),
+                                               function ( $range ) { return $range !== ''; } ) );
+        if ( $trusted )
+            $webserver['proxy'] = array( 'trusted' => $trusted );
+
+        // [ErrorDocumentSettings] Hosts[], Documents[<status>] -> Q.webserver.hosts.<host>.errorDocuments: the
+        // body the server sends for an answer of its own (403 for a path it refuses, 404 ...), as Apache's
+        // ErrorDocument (Plesk's error_docs). Pages the application renders are not touched.
+        $documents = array();
+        foreach ( (array)$this->setting( 'ErrorDocumentSettings', 'Documents', array() ) as $status => $file )
+        {
+            $file = trim( (string)$file );
+            if ( ctype_digit( (string)$status ) && $file !== '' && is_readable( $file ) )
+                $documents[(string)$status] = $file;
+        }
+        if ( $documents )
+        {
+            foreach ( (array)$this->setting( 'ErrorDocumentSettings', 'Hosts', array() ) as $host )
+            {
+                $host = strtolower( trim( (string)$host ) );
+                if ( $host !== '' )
+                    $webserver['hosts'][$host]['errorDocuments'] = $documents;
+            }
+        }
+
+        // [HostFallbackSettings] -> Q.webserver.hostFallback: a host whose answers turn into a storm of 5xx (or
+        // that a tool flagged in StateDir) goes back to the server that served it before, Upstream (a plain
+        // HTTP address or unix:/path), or, with no Upstream, answers a 503 that says why
+        // (X-Vc-Fallback: unavailable) for the web server in front to hand to the previous server.
+        if ( $this->isEnabled( $this->setting( 'HostFallbackSettings', 'Enabled', 'disabled' ) ) )
+        {
+            $fallback = array( 'upstream' => trim( (string)$this->setting( 'HostFallbackSettings', 'Upstream', '' ) ) );
+            foreach ( array( 'Errors' => 'errors', 'Window' => 'window', 'Hold' => 'hold' ) as $variable => $key )
+            {
+                $value = trim( (string)$this->setting( 'HostFallbackSettings', $variable, '' ) );
+                if ( $value !== '' && ctype_digit( $value ) )
+                    $fallback[$key] = (int)$value;
+            }
+            foreach ( array( 'StateDir' => 'stateDir', 'Report' => 'report' ) as $variable => $key )
+            {
+                $value = trim( (string)$this->setting( 'HostFallbackSettings', $variable, '' ) );
+                if ( $value !== '' )
+                    $fallback[$key] = $value;
+            }
+            $webserver['hostFallback'] = $fallback;
+        }
 
         // The server's access and error log.
         //
@@ -2592,6 +2696,8 @@ class expVelocity
      */
     protected function isAlive( $pid )
     {
+        if ( class_exists( 'expOsRuntime' ) && expOsRuntime::isWindows() )
+            return expOsRuntime::driver()->isProcessAlive( $pid );
         if ( function_exists( 'posix_kill' ) )
             return @posix_kill( $pid, 0 );
 
@@ -3944,6 +4050,11 @@ class expVelocity
      */
     protected function signal( $pid, $signal )
     {
+        // Windows has no signals: SIGTERM and SIGINT ask the process to end, SIGKILL ends it (taskkill /F), the
+        // others are not delivered
+        if ( class_exists( 'expOsRuntime' ) && expOsRuntime::isWindows() )
+            return in_array( (int)$signal, array( 2, 9, 15 ), true )
+                && expOsRuntime::driver()->terminateProcess( (int)$pid, (int)$signal === 9 );
         if ( function_exists( 'posix_kill' ) )
             return @posix_kill( (int)$pid, (int)$signal );
 
