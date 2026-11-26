@@ -373,6 +373,21 @@ class VelocityWarmup extends \Exponential\Runnable\Command
         }
         $GLOBALS['eZDBGlobalInstance'] = null;
 
+        // The cluster file handler's own connection (eZDFSFileHandler keeps its database in a static backend), for
+        // the same reason: the render read cache metadata through it, and every forked worker inherited that one
+        // socket. On a cluster the first worker to close it (or the server ending an idle connection) left every
+        // other worker failing each uncached page with "server closed the connection unexpectedly". Disconnected
+        // here, each worker connects on its first use.
+        if (class_exists('eZClusterFileHandler', false)) {
+            try {
+                $__cluster = \eZClusterFileHandler::instance();
+                if (is_object($__cluster) and method_exists($__cluster, 'disconnect')) {
+                    $__cluster->disconnect();
+                }
+            } catch (\Throwable $e) {}
+            unset($__cluster);
+        }
+
         // Every other global the render left. A pool worker removes the globals a
         // request added before its next request, keeping only the server's own and
         // the ones named in Q.webserver.keepGlobals (the datatype and workflow
