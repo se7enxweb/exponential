@@ -37,6 +37,7 @@ Aussage zur Unterstützung; überall, wo es um Einzelheiten geht, verweist sie a
 12. [Oracle](#5-oracle)
 13. [MySQL](#6-mysql)
 14. [Microsoft SQL Server und Azure SQL](#7-microsoft-sql-server-und-azure-sql)
+    - [Datenbanken mit dem PostgreSQL-Protokoll](#datenbanken-mit-dem-postgresql-protokoll)
 15. [Datenbanken, die das MySQL-Protokoll sprechen: TiDB, Vitess, SingleStore, Xpand, Aurora](#datenbanken-die-das-mysql-protokoll-sprechen)
 16. [Zeichensätze und Kollationen](#zeichensätze-und-kollationen)
 17. [Performance und Skalierung](#performance-und-skalierung)
@@ -94,6 +95,10 @@ Was die Reihenfolge in der Praxis bedeutet:
 | TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (ein ungesplitteter Keyspace), SingleStore 8.5+ | `mysqli` | Kickstarter, `exp:install` | beliebig viele Server (das MySQLi-Backend) | TiDB 8.5, Vitess und SingleStore in Containern (Job `mysqlwire`) | unterstützt (neu in 6.0.15): [das MySQL-Protokoll](#datenbanken-die-das-mysql-protokoll-sprechen) |
 | MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | Kickstarter, `exp:install` | das MySQLi-Backend | nein (kein Image; ein verwalteter Dienst) | Treiber und Profile, nicht gemessen |
 | DuckDB | 1.5 und 2.0 (1.5.6 und 2.0.1 getestet) | `ffi` mit DuckDBs C-Bibliothek `libduckdb` | Kickstarter, `exp:install` | keiner: es schreibt immer nur ein Prozess | Treiber- und Live-Tests auf DuckDB 1.5.6 und 2.0.1 und eine ganz installierte Site | unterstützt für kleine Sites, die vor allem gelesen werden (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/duckdb-datenbanktreiber.md#was-geht-und-was-nicht) |
+| CockroachDB (PostgreSQL-Protokoll) | 23.2 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`cockroachdb`) | nicht getestet | die Live-Suite `pgwire-live` auf CockroachDB 25.2, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
+| YugabyteDB (PostgreSQL-Protokoll) | 2.20 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`yugabytedb`) | nicht getestet | die Live-Suite `pgwire-live` auf YugabyteDB 2.25, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
+| Google Cloud Spanner, PostgreSQL-Dialekt (PGAdapter) | der Spanner-Emulator, PGAdapter | `pgsql` | keiner: keine Site-Datenbank | keins | die Live-Suite `pgwire-live` auf dem Emulator hinter PGAdapter | Datentabellen-Verbindung und Import (neu in 6.0.15) |
+| Neon, Supabase, Amazon Aurora PostgreSQL | das PostgreSQL der Dienste (13 und neuer) | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`neon`, `supabase`, `aurora`) | wie PostgreSQL, nicht getestet | nur Profile und Unit-Tests; **nicht live getestet** | vollständige Site-Datenbank wie PostgreSQL; Profile neu in 6.0.15 |
 
 **In Entwicklung.** Treiber für Microsoft Access und für Datenbanken, die über eine allgemeine ODBC-Verbindung erreicht
 werden, entstehen gerade; sie sind noch in keinem Release enthalten.
@@ -295,6 +300,7 @@ mit dem Kickstarter und `exp:install` installiert.
 | 5. Oracle | ja, wenn `oci8` geladen und `extension/ezoracle` vorhanden ist; aktiviert die Erweiterung für die neue Site | `oci8` (`oracle` wird akzeptiert); `Database` ist der Connect-String | `oracle` (auch `oci8`, `ezoracle`); `--db-name` ist der Dienstname, Standard `FREEPDB1` |
 | 6. MySQL | ja, als „MySQL Improved“ | `mysqli` (`mysql` wird akzeptiert) | `mysql` (auch `mysqli`) |
 | 7. SQL Server, Azure SQL | | `sqlserver` (`mssql`, `sqlsrv` werden akzeptiert), mit `Encrypt` und `TrustServerCertificate` | `sqlserver` (auch `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; die Datenbank muss existieren |
+| CockroachDB, YugabyteDB, Neon, Supabase, Aurora | ja, nach PostgreSQL aufgeführt, wenn `pgsql` geladen ist | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurora`, mit `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | dieselben Namen; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
 
 - Fehlt die Erweiterung `sqlite3`, wählt der Assistent die erste Datenbank, deren Erweiterung geladen ist, und weist
   darauf hin.
@@ -516,6 +522,23 @@ Installern und einem DFS-Cluster-Backend.
 Einzelheiten: [Microsoft-SQL-Server-Treiber](../funktionen/6.0/sqlserver-datenbanktreiber.md) und
 [Clustering auf SQL Server](../funktionen/6.0/sqlserver-dfs-cluster.md).
 
+### Datenbanken mit dem PostgreSQL-Protokoll
+
+Sechs Datenbanken, die das Protokoll von PostgreSQL sprechen, laufen mit einem Treiber, `expPostgreSQLWireDB` (neu in
+6.0.15), einer Unterklasse des PostgreSQL-Treibers mit einem Profil je Datenbank. Für den Kernel ist jede von ihnen
+PostgreSQL (`databaseName()` ist `postgresql`); das Profil ändert, was anders sein muss: Sperren, Wiederholungen,
+Sequenzen, DDL, Pooler, TLS und Kaltstarts.
+
+| Datenbank | `DatabaseImplementation` | Stufe | Live getestet | Geht | Geht nicht oder anders |
+|---|---|---|---|---|---|
+| CockroachDB 23.2+ | `cockroachdb` | vollständige Site-Datenbank | ja, 25.2 | Kernel-Schema und ein Site-Paket, Inhalte, Administration; `READ COMMITTED`; Sequenzen; Datentabellen-Verbindungen | kein `LOCK TABLE` (Zeilensperren in `exp_wire_lock`); Advisory Locks sperren nichts; `SERIALIZABLE`-Transaktionen müssen eventuell wiederholt werden (`40001`); langsames DDL |
+| YugabyteDB 2.20+ | `yugabytedb` | vollständige Site-Datenbank | ja, 2.25 | Kernel-Schema und ein Site-Paket, Inhalte, Administration; Sequenzen, temporäre Tabellen; Datentabellen-Verbindungen | kein `LOCK TABLE ... ACCESS EXCLUSIVE` (Zeilensperren); Advisory Locks nur als Preview-Flag; kein pgcrypto; IDs nicht in Einfügereihenfolge; langsames DDL |
+| Google Cloud Spanner (PostgreSQL-Dialekt) | `spanner` | Datentabellen-Verbindung und Import | ja, der Emulator hinter PGAdapter | Tabellen, Indizes, Upserts, 64-Bit-IDs aus bit-umgekehrten Sequenzen (`RETURNING`), persistente Klassen auf der Verbindung | keine Site: keine gewöhnlichen Sequenzen, keine temporären Tabellen, kein `LOCK`, keine Advisory Locks, kein `md5()`, kein `smallint` |
+| Neon | `neon` | vollständige Site-Datenbank (PostgreSQL) | **nein** | wie PostgreSQL; Kaltstarts werden wiederholt; TLS | der `-pooler`-Host ist Transaktionsmodus: kein Sitzungszustand |
+| Supabase | `supabase` | vollständige Site-Datenbank (PostgreSQL) | **nein** | wie PostgreSQL; TLS; Supavisor im Sitzungsmodus | Port 6543 ist Transaktionsmodus; der direkte Host nur über IPv6 |
+| Amazon Aurora PostgreSQL | `aurora` | vollständige Site-Datenbank (PostgreSQL) | **nein** | wie PostgreSQL; Neuverbindung beim Failover außerhalb von Transaktionen; Reader-Endpunkt als Replikat | eine Transaktion während eines Failovers ist verloren; IAM-Tokens laufen ab |
+
+Einzelheiten: [Datenbanken mit dem PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md).
 ## Datenbanken, die das MySQL-Protokoll sprechen
 
 TiDB, Vitess und PlanetScale, SingleStore, MariaDB Xpand und Amazon Aurora MySQL laufen ab 6.0.15 auf eigenen
@@ -649,6 +672,7 @@ Wegwerf-Datenbank pro Test laufen.
 | 6. MySQL | ja, Datenbanktests | der Job „Database tests (mysql, PHP 8.3)“ mit einem `mysql:8.0`-Service |
 | Firebird | ja, Treiber-, Live- und Kernel-Schema-Tests | der Job „firebird“ mit `firebirdsql/firebird` 5 und 4 als Service-Container und `pdo_firebird`, PHP 8.4 und 8.5 |
 | 7. SQL Server | ja, Treiber-, Live- und DFS-Tests | der Job „sqlserver“ mit `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 und 2025 und ODBC Driver 18, auf `sqlsrv`, `pdo_sqlsrv` und `pdo_odbc` und PHP 8.1 bis 8.5; der Job „SQL Server LocalDB smoke“ unter Windows mit PHP 8.4 |
+| PostgreSQL-Protokoll | ja, Treiber- und Live-Tests | die Testsuite `pgwire` im PHPUnit-Job; der Job „PostgreSQL wire protocol“ führt `pgwire-live` gegen CockroachDB 25.2, YugabyteDB 2.25 und den Spanner-Emulator hinter PGAdapter aus, PHP 8.1 und 8.5. Neon, Supabase und Aurora: nur Unit-Tests |
 
 PHP 8.0, die älteste unterstützte Version, und PHP 7.4 (ohne Support nutzbar) prüft der Quality-Workflow mit einer Syntaxprüfung jeder PHP-Datei und einem
 Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, beschreibt
@@ -674,6 +698,7 @@ Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, 
 - [Kapitel 2, Anforderungen](../installation/02-voraussetzungen.md#26-datenbanken) und [Unterstützte Betriebssysteme](betriebssystemunterstuetzung.md).
 - [Weg von einer alten Datenbank](weg-von-einer-alten-datenbank.md), [Exponential unter Windows](exponential-unter-windows.md).
 - [Microsoft-SQL-Server-Treiber](../funktionen/6.0/sqlserver-datenbanktreiber.md),
+  [Datenbanken mit dem PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md),
   [Clustering in Exponential 6.0](../funktionen/6.0/clustering-ueberblick.md).
 - [SQLite-Datenbankunterstützung](../funktionen/6.0/sqlite-datenbank.md),
   [SQLite: Transaktionen warten in einer Warteschlange auf die Schreibsperre](../bc/6.0/sqlite-transaktionen.md),

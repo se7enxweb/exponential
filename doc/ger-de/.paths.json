@@ -3575,6 +3575,7 @@
     "funktionen/6.0/sqlite-datenbank.md": "features/6.0/sqlite-database.md",
     "funktionen/6.0/sqlite-dfs-cluster.md": "features/6.0/sqlite-dfs-cluster.md",
     "funktionen/6.0/sqlserver-datenbanktreiber.md": "features/6.0/sqlserver-database-driver.md",
+    "funktionen/6.0/postgresql-wire-datenbanken.md": "features/6.0/postgresql-wire-databases.md",
     "funktionen/6.0/odbc-datenbanktreiber.md": "features/6.0/odbc-database-driver.md",
     "funktionen/6.0/firebird-datenbanktreiber.md": "features/6.0/firebird-database-driver.md",
     "funktionen/6.0/ms-access-unterstuetzung.md": "features/6.0/ms-access-support.md",

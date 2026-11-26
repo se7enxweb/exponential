@@ -101,6 +101,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
   Aktualisieren und ein Cluster auf 18 und 19
 - [Microsoft-SQL-Server-Treiber](sqlserver-datenbanktreiber.md): `expSQLServerDB` für SQL Server 2017 bis 2025 und Azure
   SQL, PHP-Schichten, Einstellungen, der Installer und Tests
+- [Datenbanken mit dem PostgreSQL-Protokoll](postgresql-wire-datenbanken.md): `expPostgreSQLWireDB` und seine Profile
+  für CockroachDB, YugabyteDB, Spanner (PGAdapter), Neon, Supabase und Aurora; was je Datenbank geht und was nicht
 - [ODBC-Treiber](odbc-datenbanktreiber.md): `expODBCDB` für jede Datenbank mit ODBC-Treiber, der SQL-Dialekt in den
   Einstellungen; was je Dialekt geht (SQL Server, PostgreSQL, MariaDB, SQLite) mit PDO_ODBC und der odbc-Erweiterung
 - [Firebird-Treiber](firebird-datenbanktreiber.md): `expFirebirdDB` für Firebird 4 und 5 über pdo_firebird ab PHP

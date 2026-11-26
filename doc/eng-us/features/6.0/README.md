@@ -95,6 +95,8 @@ nginx with PHP-FPM keep working as before.
   and a cluster on 18 and 19
 - [Microsoft SQL Server driver](sqlserver-database-driver.md): `expSQLServerDB` for SQL Server 2017 to 2025 and Azure
   SQL, its PHP layers, settings, the installer, tests and the traceability of the old extension's problems
+- [Databases of the PostgreSQL wire protocol](postgresql-wire-databases.md): `expPostgreSQLWireDB` and its profiles
+  for CockroachDB, YugabyteDB, Spanner (PGAdapter), Neon, Supabase and Aurora; what works and what does not per database
 - [ODBC driver](odbc-database-driver.md): `expODBCDB` for any database with an ODBC driver, the SQL dialect in the
   settings; what works per dialect (SQL Server, PostgreSQL, MariaDB, SQLite) on PDO_ODBC and PHP's odbc extension
 - [Firebird driver](firebird-database-driver.md): `expFirebirdDB` for Firebird 4 and 5 over pdo_firebird of PHP 8.4

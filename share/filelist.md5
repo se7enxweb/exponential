@@ -6970,7 +6970,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-b6cdb569c63a187382ab6e56e3a45c56  doc/eng-us/features/6.0/README.md
+1e568cce522081a3e989c4acd001838e  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7128,6 +7128,7 @@ e72286bc83884f1eb24b2ee9034f6481  doc/eng-us/features/6.0/platform-layouts-core-
 cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.md
 2e6216a45844e2f3da0b09fbbea87102  doc/eng-us/features/6.0/platform-sqlite-install.md
 373ebb262160b5f12df484121bc564cf  doc/eng-us/features/6.0/postgresql-dfs-cluster.md
+100a349064646ca2e6aca0369db3e19a  doc/eng-us/features/6.0/postgresql-wire-databases.md
 90c5f27d343a57526bf016d4e13900ef  doc/eng-us/features/6.0/preload-sites-view.md
 c07c4366ceda3d30c77c453388701333  doc/eng-us/features/6.0/preview-in-owning-siteaccess.md
 ae08ede3efea95365e6dbc15478de7cf  doc/eng-us/features/6.0/preview-links.md
@@ -8611,7 +8612,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-2e7e089bff48c4c9f545c3885538b52c  doc/eng-us/help/database-support.md
+f5536c0d92d7bc724cbe05ec44f46f1d  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -13678,7 +13679,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-4d352c8eab1c1a446db00615f42d1cb3  doc/ger-de/.paths.json
+ab1a190ea0ff1a47ff190d011418c16b  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17111,7 +17112,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-1ec3a1bc2f0e40c27e42fad979e199e3  doc/ger-de/funktionen/6.0/README.md
+54ae1fdb2c1c42c99b677f5feffc44b9  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17273,6 +17274,7 @@ fe5869bd6e0ab614f9de91892d6c9895  doc/ger-de/funktionen/6.0/plattform-nexus-star
 04a57e6e4790f4c646e57c18412a6b61  doc/ger-de/funktionen/6.0/plattform-sqlite-installation.md
 2624cae468b076c31b77ae21176969b5  doc/ger-de/funktionen/6.0/postfaecher-lesen.md
 93fef405e91996b098ddbe8bbb4dd06c  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
+730d1abcda49a9adcbb01b024ed7d406  doc/ger-de/funktionen/6.0/postgresql-wire-datenbanken.md
 566dbc8ab28ae074d810044f0c1b0bc8  doc/ger-de/funktionen/6.0/pruefprotokoll.md
 1b7d415eb35e75914386eae1e439cd70  doc/ger-de/funktionen/6.0/pruefung-umgekehrter-beziehungen.md
 bfdf9614f228d2134214a6c544a02e91  doc/ger-de/funktionen/6.0/qualitaetspruefungen.md
@@ -18522,7 +18524,7 @@ a5a807f6683e34c696f32b0aacc76b15  doc/ger-de/hilfe/datenbankadministratoren/unte
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 0fd3f75c7c74b4cf244e7d5448f3c417  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-de4fef3d06d5a0131740f1924f5e6dff  doc/ger-de/hilfe/datenbankunterstuetzung.md
+dda339ba93650f618aa82ea8594ea03f  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md

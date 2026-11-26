@@ -37,6 +37,7 @@ support statement; it links to that chapter wherever the details are.
 12. [Oracle](#5-oracle)
 13. [MySQL](#6-mysql)
 14. [Microsoft SQL Server and Azure SQL](#7-microsoft-sql-server-and-azure-sql)
+    - [Databases of the PostgreSQL wire protocol](#databases-of-the-postgresql-wire-protocol)
 15. [Databases that speak the MySQL protocol: TiDB, Vitess, SingleStore, Xpand, Aurora](#databases-that-speak-the-mysql-protocol)
 16. [Character sets and collations](#character-sets-and-collations)
 17. [Performance and scaling](#performance-and-scaling)
@@ -90,6 +91,10 @@ What the order means in practice:
 | TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (an unsharded keyspace), SingleStore 8.5+ | `mysqli` | kickstarter, `exp:install` | any number of servers (the MySQLi backend) | TiDB 8.5, Vitess and SingleStore in containers (job `mysqlwire`) | supported (new in 6.0.15): [the MySQL protocol](#databases-that-speak-the-mysql-protocol) |
 | MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | kickstarter, `exp:install` | the MySQLi backend | no (no image; a managed service) | drivers and profiles, not measured |
 | DuckDB | 1.5 and 2.0 (1.5.6 and 2.0.1 tested) | `ffi` with DuckDB's C library `libduckdb` | kickstarter, `exp:install` | none: one process writes at a time | driver and live tests on DuckDB 1.5.6 and 2.0.1, and a whole site installed | supported for small and read-mostly sites (new in 6.0.15); [what works and what does not](../features/6.0/duckdb-database-driver.md#what-works-and-what-does-not) |
+| CockroachDB (PostgreSQL wire protocol) | 23.2 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`cockroachdb`) | not tested | the live suite `pgwire-live` on CockroachDB 25.2, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
+| YugabyteDB (PostgreSQL wire protocol) | 2.20 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`yugabytedb`) | not tested | the live suite `pgwire-live` on YugabyteDB 2.25, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
+| Google Cloud Spanner, PostgreSQL dialect (PGAdapter) | the Spanner emulator, PGAdapter | `pgsql` | none: not a site database | none | the live suite `pgwire-live` on the emulator behind PGAdapter | data-table connection and import (new in 6.0.15) |
+| Neon, Supabase, Amazon Aurora PostgreSQL | the services' PostgreSQL (13 and later) | `pgsql` | setup wizard, kickstarter, `exp:install` (`neon`, `supabase`, `aurora`) | as PostgreSQL, not tested | profiles and unit tests only; **not live-tested** | full site database as PostgreSQL; profiles new in 6.0.15 |
 
 **In development.** Drivers for Microsoft Access and for databases reached through a generic ODBC connection are
 being built; they are not part of a release yet.
@@ -285,6 +290,7 @@ installed with the kickstarter and `exp:install`.
 | 5. Oracle | yes, when `oci8` is loaded and `extension/ezoracle` is present; activates the extension for the new site | `oci8` (`oracle` accepted); `Database` is the connect string | `oracle` (also `oci8`, `ezoracle`); `--db-name` is the service name, default `FREEPDB1` |
 | 6. MySQL | yes, as "MySQL Improved" | `mysqli` (`mysql` accepted) | `mysql` (also `mysqli`) |
 | 7. SQL Server, Azure SQL | | `sqlserver` (`mssql`, `sqlsrv` accepted), with `Encrypt` and `TrustServerCertificate` | `sqlserver` (also `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; the database must exist |
+| CockroachDB, YugabyteDB, Neon, Supabase, Aurora | yes, listed after PostgreSQL when `pgsql` is loaded | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurora`, with `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | the same names; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
 
 - If the `sqlite3` extension is missing, the wizard chooses the first database whose extension is loaded and says
   so.
@@ -522,6 +528,22 @@ backend.
 Details: [Microsoft SQL Server driver](../features/6.0/sqlserver-database-driver.md) and
 [Clustering on SQL Server](../features/6.0/sqlserver-dfs-cluster.md).
 
+### Databases of the PostgreSQL wire protocol
+
+Six databases that speak PostgreSQL's protocol run on one driver, `expPostgreSQLWireDB` (new in 6.0.15), a subclass of
+the PostgreSQL driver with one profile per database. To the kernel each of them is PostgreSQL (`databaseName()` is
+`postgresql`); the profile changes what has to differ: locks, retries, sequences, DDL, poolers, TLS and cold starts.
+
+| Database | `DatabaseImplementation` | Level | Tested live | Works | Does not, or differently |
+|---|---|---|---|---|---|
+| CockroachDB 23.2+ | `cockroachdb` | full site database | yes, 25.2 | the kernel schema and a site package, content, the admin; `READ COMMITTED`; sequences; data-table connections | no `LOCK TABLE` (row locks in `exp_wire_lock`); advisory locks lock nothing; `SERIALIZABLE` transactions may have to be run again (`40001`); slow DDL |
+| YugabyteDB 2.20+ | `yugabytedb` | full site database | yes, 2.25 | the kernel schema and a site package, content, the admin; sequences, temporary tables; data-table connections | no `LOCK TABLE ... ACCESS EXCLUSIVE` (row locks); advisory locks a preview flag; no pgcrypto; ids not in insertion order; slow DDL |
+| Google Cloud Spanner (PostgreSQL dialect) | `spanner` | data-table connection and import | yes, the emulator behind PGAdapter | tables, indexes, upserts, 64-bit ids from bit-reversed sequences (`RETURNING`), persistent classes on the connection | no site: no plain sequences, no temporary tables, no `LOCK`, no advisory locks, no `md5()`, no `smallint` |
+| Neon | `neon` | full site database (PostgreSQL) | **no** | as PostgreSQL; cold starts retried; TLS | the `-pooler` host is transaction mode: no session state |
+| Supabase | `supabase` | full site database (PostgreSQL) | **no** | as PostgreSQL; TLS; Supavisor session mode | port 6543 is transaction mode; the direct host is IPv6 only |
+| Amazon Aurora PostgreSQL | `aurora` | full site database (PostgreSQL) | **no** | as PostgreSQL; failover reconnects outside transactions; reader endpoint as replica | a transaction in flight during a failover is lost; IAM tokens expire |
+
+Details: [Databases of the PostgreSQL wire protocol](../features/6.0/postgresql-wire-databases.md).
 ## Databases that speak the MySQL protocol
 
 TiDB, Vitess and PlanetScale, SingleStore, MariaDB Xpand and Amazon Aurora MySQL run on drivers of their own from
@@ -682,6 +704,7 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | 6. MySQL | yes, database tests | the job "Database tests (mysql, PHP 8.3)" with a `mysql:8.0` service |
 | Firebird | yes, driver, live and kernel schema tests | the job "firebird" with `firebirdsql/firebird` 5 and 4 as service containers and `pdo_firebird`, PHP 8.4 and 8.5 |
 | 7. SQL Server | yes, driver, live and DFS tests | the job "sqlserver" with `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 and 2025 and ODBC Driver 18, on `sqlsrv`, `pdo_sqlsrv` and `pdo_odbc` and PHP 8.1 to 8.5; the job "SQL Server LocalDB smoke" on Windows with PHP 8.4 |
+| PostgreSQL wire protocol | yes, driver and live tests | the testsuite `pgwire` in the PHPUnit job; the job "PostgreSQL wire protocol" runs `pgwire-live` against CockroachDB 25.2, YugabyteDB 2.25 and the Spanner emulator behind PGAdapter, PHP 8.1 and 8.5. Neon, Supabase and Aurora: unit tests only |
 
 PHP 8.0, the oldest supported version, and PHP 7.4 (usable without support) are checked by the Quality workflow with a syntax check of every PHP file and a
 boot smoke test without a database. The test suites and how to run them locally are described in
@@ -707,6 +730,7 @@ boot smoke test without a database. The test suites and how to run them locally 
 - [Chapter 2, Requirements](../install/02-requirements.md#26-databases) and [OS support](os-support.md).
 - [Moving off an old database](moving-off-an-old-database.md), [Exponential on Windows](exponential-on-windows.md).
 - [Microsoft SQL Server driver](../features/6.0/sqlserver-database-driver.md),
+  [Databases of the PostgreSQL wire protocol](../features/6.0/postgresql-wire-databases.md),
   [Clustering in Exponential 6.0](../features/6.0/clustering-overview.md).
 - [SQLite database support](../features/6.0/sqlite-database.md),
   [SQLite: transactions queue for the write lock](../bc/6.0/sqlite-transactions.md),
