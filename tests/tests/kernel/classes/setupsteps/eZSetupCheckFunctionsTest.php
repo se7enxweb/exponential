@@ -205,7 +205,9 @@ class eZSetupCheckFunctionsTest extends PHPUnit\Framework\TestCase
     public function testDatabaseMap()
     {
         $map = eZSetupDatabaseMap();
-        $this->assertSame( array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'sqlserver', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora', 'firebird', 'duckdb', 'oci8' ),
+        // after Oracle the databases of the PostgreSQL wire protocol, which go with PHP's pgsql extension
+        $this->assertSame( array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'sqlserver', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora', 'firebird', 'duckdb', 'oci8',
+                                  'cockroachdb', 'yugabytedb', 'neon', 'supabase' ),
                            array_keys( $map ) );
         // databases that speak the MySQL protocol: set up as MySQL, each with its own driver
         foreach ( array( 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ) as $type )

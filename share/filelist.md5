@@ -30152,7 +30152,7 @@ cf8be805ae4c110abc4bbd547249a7e8  tests/tests/kernel/classes/setup/SetupContentF
 cbcb871b0c8ee1997d8cdcde3b30e2cc  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 ff16951947f561095e82a782732322f0  tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php
 c9d7f04ca55c0d534e3521802d1dafdc  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
-ae6c4df43bea1710273f53574fef2d65  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
+98f2fa32f57b40a31cdfd13ab9b1a914  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 d51526ae21e250767031d78014d6101a  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
 8f9142b09c34deee3ece4d7d68d58871  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
 34e4df0b59c0edca6965f591f0c23e90  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php
