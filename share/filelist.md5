@@ -16,7 +16,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 a1e011c0551dd9187d5da30784bfbe54  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 933a7ef557e65a163d840cbec705a4fc  .github/workflows/windows.yml
-1378291033e16daa1ef6e265447a2201  .gitignore
+4d0253977e439c014ee12602a2095d56  .gitignore
 1942bd02f05e39a47b6f0c82d826f841  .htaccess_root
 611220d94480211641f3087b69ad7c11  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
@@ -26,7 +26,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 761c87979ac8e92df40378abdecee23c  LICENSE
 70a6fb77793402ca3a6cb15cb42d56f2  LICENSE.md
 480b67b6ce7d69d1e98ab8179c0102cc  Makefile
-445c26385a719c51e415113c585597ad  README.md
+0d7690af9ec0ab034cdec5f7bae6b092  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 fec8e184c046898f71a24fa2008c767f  autoload.php
 f3d4d4c53fbeaf5533bf0d127e5edf99  autoload/ezp_kernel.php
@@ -10251,7 +10251,7 @@ d532ac736a14d9cba5083f3a7e0d44a9  doc/eng-us/help/hosting/migrations/from-ez-pla
 9c56018dfcf3aa2d7af8d09c44db7bf9  doc/eng-us/help/hosting/migrations/moving-a-site-between-hosts.md
 89eb98615e4edf660b4a83d6b28f2ae0  doc/eng-us/help/hosting/models/README.md
 a55f6bf278d9e1f276a1996eb0bcd6fd  doc/eng-us/help/hosting/models/choosing-a-hosting-model.md
-09ef4e474181d6cdf8ea5215314c0af0  doc/eng-us/help/hosting/models/containers-docker-and-podman.md
+2ed09745677caa23dd6e2fb691a9deab  doc/eng-us/help/hosting/models/containers-docker-and-podman.md
 b50fe14308e3494e0ac3b97076e78b1c  doc/eng-us/help/hosting/models/dedicated-servers.md
 139f8c1c2f631974df64ea0bd458d67a  doc/eng-us/help/hosting/models/kubernetes.md
 a75f7d3a4b28ce23cdcd16ea07154ab0  doc/eng-us/help/hosting/models/managed-hosting.md
@@ -19703,7 +19703,7 @@ f5bf15d86d89866c1983d11bff0f426b  doc/ger-de/hilfe/hosting/migrationen/kunden-vo
 cddec2bf97a73e40270836240d2c2b85  doc/ger-de/hilfe/hosting/migrationen/kunden-von-ez-platform-und-ibexa-migrieren.md
 c422173cb5479ecc319b264824fa7f33  doc/ger-de/hilfe/hosting/migrationen/kunden-zu-ihrem-hosting-migrieren.md
 8dc0f85207c1ff17387e393d4a7c2531  doc/ger-de/hilfe/hosting/modelle/README.md
-33cf7519119e5b5e6074f9be41ec8249  doc/ger-de/hilfe/hosting/modelle/container-docker-und-podman.md
+cc9047a5e48e7ff13ae4c50fa498b5b7  doc/ger-de/hilfe/hosting/modelle/container-docker-und-podman.md
 9f9fb73008f9cb041c3af2436ad23188  doc/ger-de/hilfe/hosting/modelle/dedizierte-server.md
 1c7a9e6f3795121cbd2b2afe035bfb24  doc/ger-de/hilfe/hosting/modelle/ein-hosting-modell-waehlen.md
 5d8113f4c4da9f05073643f106be5c99  doc/ger-de/hilfe/hosting/modelle/kubernetes.md
@@ -31317,3 +31317,16 @@ f16e60da83135f08f1a99b7114ccb35c  tests/tests/lib/ezdbschema/expFirebirdSchemaTe
 524c42491a5e181555e0f54749156549  tests/tests/lib/ezdb/duckdb/expDuckDBSchemaTest.php
 ee4a8315e7992d3485225e286e4527ab  tests/tests/lib/ezdb/duckdb/expDuckDBTestKit.php
 dad18aef64bd8021f413046018d795a0  tests/tests/lib/ezdb/duckdb/live/expDuckDBLiveTest.php
+3a51ec9cd0549ff665f30827675297df  .github/workflows/docker.yml
+bd546d30b9a2a4d00bb06960812f4c35  docker/Dockerfile
+ab51a8bca81f10abe0d938af084c72af  docker/Dockerfile.dockerignore
+eaa472aeb7d3100960df2d0d7ddcb9c2  docker/apache/exponential.conf
+254806f13923641d549da94da6597d8d  docker/apache/ports.conf
+e0aba334a4f1cea7db1fd910b55385b8  docker/compose.mariadb.yml
+bade6c8305e3f4d1d6a374bacddb199b  docker/compose.postgresql.yml
+c5cb040be82f6221f6cbeecaa83a5d3e  docker/compose.sqlite.yml
+2cd3cc39f917fe129961ba61a5f9dacb  docker/entrypoint.sh
+ef7566ae328ce9a9bc1059c957e694e5  docker/healthcheck.sh
+db6d92c5c7e9450239663c7b4cad0c31  docker/php/exponential.ini
+8195ab19b32135f6de2e4c1e3a4a3d6c  docker/php/zzz-exponential-fpm.conf
+1a9f5e4d12bdb5610a3bfea2e9a36183  docker/test-image.sh
