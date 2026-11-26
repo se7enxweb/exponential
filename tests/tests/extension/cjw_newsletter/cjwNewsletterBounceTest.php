@@ -87,8 +87,8 @@ class cjwNewsletterBounceTest extends cjwNewsletterTestCase
         $this->assertSame( $this->plainBounce( 'x' ), $item->getRawMailMessageContent() );
         $this->assertIsArray( $item->getRawMailMessageContent( true ) );
         $this->assertSame( strlen( $this->plainBounce( 'x' ) ), (int)$item->attribute( 'message_size' ) );
-        $this->assertSame( $item->attribute( 'id' ), CjwNewsletterMailboxItem::fetch( $item->attribute( 'id' ) )->attribute( 'id' ) );
-        $this->assertSame( $item->attribute( 'id' ), CjwNewsletterMailboxItem::fetchByMailboxIdMessageIdentifier( 999000, 'nltest-store' )->attribute( 'id' ) );
+        $this->assertSame( (int)$item->attribute( 'id' ), (int)CjwNewsletterMailboxItem::fetch( $item->attribute( 'id' ) )->attribute( 'id' ) );
+        $this->assertSame( (int)$item->attribute( 'id' ), (int)CjwNewsletterMailboxItem::fetchByMailboxIdMessageIdentifier( 999000, 'nltest-store' )->attribute( 'id' ) );
         $this->assertFalse( CjwNewsletterMailboxItem::addMailboxItem( 999000, 'nltest-store', 1, 'again' ), 'the same message is stored once' );
     }
 
