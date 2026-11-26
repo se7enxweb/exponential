@@ -31193,9 +31193,9 @@ db5c5bde251c17a9563d3b4fe25346ef  tests/tests/kernel/classes/upgrade/expUpgradeB
 e09b15007c15dfaf1ea969200328d422  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
 520f09719053749ec73c645597be90cf  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php
 9c23f17cc7d045ce9ef5292bc2667e67  doc/eng-us/features/6.0/postgresql-18-and-19.md
-25f07f1aca76e1bef74e3aaabd34355e  doc/eng-us/features/6.0/clustering-overview.md
+da344741822614ae073f6f9c3b044f16  doc/eng-us/features/6.0/clustering-overview.md
 61552fbac72d12b60971fd0fcb07e667  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
-84b6d814308d1aac58ccd7eb6b1a0a51  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
+6af7b1da80d987eb9a2de4b1be46fb7c  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
 eb2a615521e7869416ea66616d62af9a  lib/ezdb/classes/expsqlserverlexer.php
 afeaad9855d22026c4ad080cd4eafd72  lib/ezdb/classes/expsqlserverdialect.php
 e44d29160e3279c76ae9b6d53dcc1f76  lib/ezdb/classes/expsqlservererrormap.php

@@ -19,7 +19,8 @@ hier gehört zum Kernel von Exponential 6.0.15; eine Erweiterung ist nur nötig,
 9. [Befehle und Wartung](#befehle-und-wartung)
 10. [Den Datenbankserver unter einem laufenden Cluster aktualisieren](#den-datenbankserver-unter-einem-laufenden-cluster-aktualisieren)
 11. [Einen Cluster Schritt für Schritt einrichten](#einen-cluster-schritt-für-schritt-einrichten)
-12. [Alle Cluster-Seiten](#alle-cluster-seiten)
+12. [Betriebssysteme](#betriebssysteme)
+13. [Alle Cluster-Seiten](#alle-cluster-seiten)
 
 ## Die Teile eines Clusters
 
@@ -262,7 +263,7 @@ nicht.
 
 | Befehl | Was er tut |
 |---|---|
-| `./console exp:cluster:enable` / `exp:cluster:disable` | eine Installation zu einem DFS-Cluster mit einem Knoten machen und zurück (Share, Tabellen in der Datenbank der Website, Einstellungen, Dateien verschoben), ein Probelauf ohne `--apply`; `--backend` (`mysqli`, `postgresql`, `sqlite`, `mongodb`, `oracle`), `--share`, `--no-move` ([Seite](cluster-befehle.md)) |
+| `./console exp:cluster:enable` / `exp:cluster:disable` | eine Installation zu einem DFS-Cluster mit einem Knoten machen und zurück (Share, Tabellen in der Datenbank der Website, Einstellungen, Dateien verschoben), ein Probelauf ohne `--apply`; `--backend` (`mysqli`, `postgresql`, `sqlite`, `mongodb`, `oracle`, `sqlserver`), `--share`, `--no-move` ([Seite](cluster-befehle.md)) |
 | `php bin/php/clusterize.php` (`./console exp:clusterize`) | die Dateien von `var/` in den Cluster verschieben; `-u` verschiebt sie zurück ([Beispiel](../../beispiele/befehle/clusterize.md)) |
 | `php bin/php/clusterpurge.php` (`./console exp:clusterpurge`) | abgelaufene Cluster-Dateien physisch entfernen, ein Probelauf ohne `--apply`; auch der Cronjob-Teil `cluster_maintenance`, den `cronjob.ini [AdminSettings] ForbiddenParts[]` von den Schaltflächen der Administration fernhält ([Beispiel](../../beispiele/befehle/clusterpurge.md)) |
 | `php bin/php/dfscleanup.php` | das Share mit den Metadaten vergleichen (`-S`, `-B`), löschen, was nicht existiert (`-D`) |
@@ -321,6 +322,23 @@ alten Datenverzeichnis des Standbys der Weg zurück.
 6. Stellen Sie beide hinter den Load Balancer, mit der Zustandsprüfung auf `/ezinfo/is_alive`.
 7. Prüfen Sie: auf einem Server veröffentlichen und die Seite auf dem anderen laden (der HTTP-Cache muss sie sofort
    zeigen); ein Bild über jeden Server laden; `dfscleanup.php -S` und `-B` melden keine Unterschiede.
+
+## Betriebssysteme
+
+Der Cluster-Modus ist reines PHP. Der DFS-Datei-Handler, seine sechs Metadaten-Backends, das Cluster-Gateway und die
+Cluster-Befehle haben keinen eigenen Code für ein bestimmtes Betriebssystem: Sie bilden Pfade mit `/` und dem
+Verzeichnistrenner des Systems und machen aus `\` in den gespeicherten Pfaden ein `/`. Was ein Cluster vom
+Betriebssystem braucht, ist ein gemeinsamer Ordner, den jeder Server unter demselben Pfad einhängt, mit funktionierenden
+Dateisperren, und PHP mit der Erweiterung der Datenbank.
+
+| System | Der Share | Stand |
+|---|---|---|
+| Linux (Red Hat Enterprise Linux und seine Nachbauten, Debian, Ubuntu und die anderen unter [Betriebssystemunterstützung](../../hilfe/betriebssystemunterstuetzung.md)) | NFSv4 oder NFSv3 mit `lockd`, auf jedem Server unter demselben Pfad eingehängt | die Referenzplattform: Jedes Metadaten-Backend (MySQL 8.0, PostgreSQL 13 bis 19, MongoDB 8.0, SQLite, Oracle Free 23, SQL Server 2017 bis 2025) besteht bei jedem Push seine Paritäts- und Integrationstests in der CI des Projekts |
+| macOS, FreeBSD und die anderen BSDs | ein NFS-Mount unter demselben Pfad auf jedem Server | dieselben Codepfade wie unter Linux: absolute `/`-Pfade für den Share, ein für die Gruppe beschreibbarer Share |
+| Windows | ein SMB-Share, erreicht über einen Laufwerksbuchstaben oder einen UNC-Pfad | **in Arbeit**: `exp:cluster:enable --share` und `install.php --cluster-share` nehmen heute einen absoluten `/`-Pfad; Laufwerksbuchstaben und UNC-Pfade kommen hinzu. Der SQL-Server-Treiber wird in der CI unter Windows gegen SQL Server LocalDB getestet |
+
+Die Datenbankserver müssen nicht dasselbe System wie die Webserver haben: Ein Cluster aus Linux-Webservern hält seine
+Metadaten auf SQL Server, PostgreSQL oder Oracle, wo immer diese laufen, und umgekehrt.
 
 ## Alle Cluster-Seiten
 

@@ -19,7 +19,8 @@ extension is needed unless a row says so.
 9. [Commands and maintenance](#commands-and-maintenance)
 10. [Upgrading the database server under a running cluster](#upgrading-the-database-server-under-a-running-cluster)
 11. [Setting up a cluster, step by step](#setting-up-a-cluster-step-by-step)
-12. [Every cluster page](#every-cluster-page)
+12. [Operating systems](#operating-systems)
+13. [Every cluster page](#every-cluster-page)
 
 ## The parts of a cluster
 
@@ -253,7 +254,7 @@ Velocity checks its own workers and its cluster peers on an endpoint of its own;
 
 | Command | What it does |
 |---|---|
-| `./console exp:cluster:enable` / `exp:cluster:disable` | make an installation a one-node DFS cluster and back (share, tables in the site's database, settings, files moved), a dry run unless `--apply`; `--backend` (`mysqli`, `postgresql`, `sqlite`, `mongodb`, `oracle`), `--share`, `--no-move` ([page](cluster-commands.md)) |
+| `./console exp:cluster:enable` / `exp:cluster:disable` | make an installation a one-node DFS cluster and back (share, tables in the site's database, settings, files moved), a dry run unless `--apply`; `--backend` (`mysqli`, `postgresql`, `sqlite`, `mongodb`, `oracle`, `sqlserver`), `--share`, `--no-move` ([page](cluster-commands.md)) |
 | `php bin/php/clusterize.php` (`./console exp:clusterize`) | move the files of `var/` into the cluster; `-u` moves them back ([example](../../examples/commands/clusterize.md)) |
 | `php bin/php/clusterpurge.php` (`./console exp:clusterpurge`) | physically remove expired cluster files, a dry run unless `--apply`; also the cronjob part `cluster_maintenance`, which `cronjob.ini [AdminSettings] ForbiddenParts[]` keeps off the admin buttons ([example](../../examples/commands/clusterpurge.md)) |
 | `php bin/php/dfscleanup.php` | compare the share with the metadata (`-S`, `-B`), delete what does not exist (`-D`) |
@@ -309,6 +310,23 @@ with the standby's old data directory.
 6. Put both behind the load balancer with the health check on `/ezinfo/is_alive`.
 7. Check: publish on one server and load the page on the other (the HTTP cache must show it at once); load an image
    through each server; `dfscleanup.php -S` and `-B` report no differences.
+
+## Operating systems
+
+Cluster mode is plain PHP. The DFS file handler, its six metadata backends, the cluster gateway and the cluster
+commands have no code of their own for one operating system: they build paths with `/` and the system's directory
+separator, and they turn `\` into `/` in the paths they store. What a cluster needs from the operating system is a
+shared folder that every server mounts at the same path, with working file locks, and PHP with the database's
+extension.
+
+| System | The share | Status |
+|---|---|---|
+| Linux (Red Hat Enterprise Linux and its rebuilds, Debian, Ubuntu and the others on [Operating system support](../../help/os-support.md)) | NFSv4, or NFSv3 with `lockd`, mounted at the same path on every server | the reference platform: every metadata backend (MySQL 8.0, PostgreSQL 13 to 19, MongoDB 8.0, SQLite, Oracle Free 23, SQL Server 2017 to 2025) passes its parity and integration tests in the project's CI on every push |
+| macOS, FreeBSD and the other BSDs | an NFS mount at the same path on every server | the same code paths as on Linux: absolute `/` paths for the share, a group-writable share |
+| Windows | an SMB share, reached by a drive letter or a UNC path | **in progress**: `exp:cluster:enable --share` and `install.php --cluster-share` take an absolute `/` path today; accepting drive letters and UNC paths is being added. The SQL Server driver is tested against SQL Server LocalDB on Windows in CI |
+
+The database servers do not have to run the same system as the web servers: a cluster of Linux web servers keeps its
+metadata on SQL Server, PostgreSQL or Oracle wherever they run, and the other way round.
 
 ## Every cluster page
 
