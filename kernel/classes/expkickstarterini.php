@@ -42,7 +42,7 @@ class expKickstarterIni
                 'yugabytedb'  => 'YugabyteDB (pgsql)',
                 'neon'        => 'Neon PostgreSQL (pgsql)',
                 'supabase'    => 'Supabase PostgreSQL (pgsql)',
-                'aurora'      => 'Amazon Aurora PostgreSQL (pgsql)',
+                'aurorapostgresql' => 'Amazon Aurora PostgreSQL (pgsql)',
             ),
         ),
         'email_settings' => array(

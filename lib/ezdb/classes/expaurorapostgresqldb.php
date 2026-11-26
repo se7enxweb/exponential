@@ -8,12 +8,12 @@
  */
 
 /**
- * The Amazon Aurora PostgreSQL driver: DatabaseImplementation=aurora (also aurorapostgresql) in site.ini.
- * What differs from PostgreSQL is the profile 'aurora' (expPostgreSQLWireProfile); the driver is expPostgreSQLWireDB.
+ * The Amazon Aurora PostgreSQL driver: DatabaseImplementation=aurorapostgresql (also aurora-postgresql; aurora alone is Aurora MySQL) in site.ini.
+ * What differs from PostgreSQL is the profile 'aurorapostgresql' (expPostgreSQLWireProfile); the driver is expPostgreSQLWireDB.
  *
  * @since 6.0.15
  */
 class expAuroraPostgreSQLDB extends expPostgreSQLWireDB
 {
-    const PROFILE = 'aurora';
+    const PROFILE = 'aurorapostgresql';
 }

@@ -152,7 +152,7 @@ function eZSetupPostgreSQLWireDatabaseMap()
                   'yugabytedb' => $entry( 'yugabytedb', 'YugabyteDB', '11.2' ),
                   'neon' => $entry( 'neon', 'Neon (PostgreSQL)', '14.0' ),
                   'supabase' => $entry( 'supabase', 'Supabase (PostgreSQL)', '14.0' ),
-                  'aurora' => $entry( 'aurora', 'Amazon Aurora PostgreSQL', '13.0' ) );
+                  'aurorapostgresql' => $entry( 'aurorapostgresql', 'Amazon Aurora PostgreSQL', '13.0' ) );
 }
 }
 

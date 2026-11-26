@@ -224,7 +224,7 @@ class expPostgreSQLWireDB extends eZPostgreSQLDB
     }
 
     /**
-     * The name of the database this driver talks to (cockroachdb, yugabytedb, spanner, neon, supabase, aurora).
+     * The name of the database this driver talks to (cockroachdb, yugabytedb, spanner, neon, supabase, aurorapostgresql).
      * databaseName() stays "postgresql", which the kernel branches on.
      *
      * @return string

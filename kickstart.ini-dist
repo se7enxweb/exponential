@@ -111,7 +111,8 @@
 ##          Connect) or a TNS alias; Server and Port are not used
 ## - cockroachdb - CockroachDB 23.2 or later (cockroach, crdb are accepted too)
 ## - yugabytedb - YugabyteDB 2.20 or later (yugabyte, ysql are accepted too)
-## - neon, supabase, aurora - PostgreSQL at Neon, Supabase or Amazon Aurora;
+## - neon, supabase, aurorapostgresql - PostgreSQL at Neon, Supabase or Amazon
+##   Aurora (aurora alone is Aurora MySQL);
 ##   SSLMode, Pooler and Endpoint of [database_init] set TLS and the pooler
 ##   ([PostgreSQLWireSettings] of the new site)
 ## other values are possible if provided by extension
@@ -139,7 +140,7 @@
 ## Path to socket or empty for no socket
 #Socket=
 ## SSLMode=<disable|require|verify-ca|verify-full>
-## cockroachdb, yugabytedb, neon, supabase, aurora: TLS of the connection
+## cockroachdb, yugabytedb, neon, supabase, aurorapostgresql: TLS of the connection
 ## (empty: the database's default, require for Neon, Supabase and Aurora)
 #SSLMode=
 ## SSLRootCert=<file>

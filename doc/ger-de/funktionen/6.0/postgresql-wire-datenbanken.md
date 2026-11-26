@@ -13,7 +13,7 @@ alle, die am Treiber mitarbeiten. Exponential 6.0.15 hat für sie alle einen Tre
 | Google Cloud Spanner, PostgreSQL-Dialekt | `spanner` (`spannerpg`, `pgadapter`) | `expSpannerPGDB` | Datentabellen-Verbindung und Import | ja: der Spanner-Emulator hinter PGAdapter |
 | Neon | `neon` | `expNeonDB` | vollständige Site-Datenbank (PostgreSQL) | **nein**: Verbindungsprofil, Unit-Tests und diese Seite |
 | Supabase | `supabase` | `expSupabaseDB` | vollständige Site-Datenbank (PostgreSQL) | **nein**: Verbindungsprofil, Unit-Tests und diese Seite |
-| Amazon Aurora PostgreSQL | `aurora` (`aurorapostgresql`) | `expAuroraPostgreSQLDB` | vollständige Site-Datenbank (PostgreSQL) | **nein**: Verbindungsprofil, Unit-Tests und diese Seite |
+| Amazon Aurora PostgreSQL | `aurorapostgresql` (`aurora-postgresql`; `aurora` ist Aurora MySQL) | `expAuroraPostgreSQLDB` | vollständige Site-Datenbank (PostgreSQL) | **nein**: Verbindungsprofil, Unit-Tests und diese Seite |
 
 "Vollständige Site-Datenbank" heißt dasselbe wie bei PostgreSQL selbst: Der Installer legt darin das Kernel-Schema und
 die Daten eines Site-Pakets an, und die Site läuft daraus. Neon, Supabase und Aurora sind PostgreSQL-Server; eine Site
@@ -224,20 +224,20 @@ darf.
 ./console exp:install --apply --db=yugabytedb --db-host=yb1 --db-user=yugabyte
 ./console exp:install --apply --db=neon --db-host=ep-cool-1.eu-central-1.aws.neon.tech --db-user=app --db-name=neondb
 ./console exp:install --apply --db=supabase --db-host=db.abcd.supabase.co --db-name=postgres
-./console exp:install --apply --db=aurora --db-host=site.cluster-x.eu-west-1.rds.amazonaws.com \
+./console exp:install --apply --db=aurorapostgresql --db-host=site.cluster-x.eu-west-1.rds.amazonaws.com \
     --db-sslmode=verify-full --db-sslrootcert=/etc/ssl/rds-global-bundle.pem
 ```
 
 `--db-sslmode`, `--db-sslrootcert`, `--db-pooler` und `--db-endpoint` setzen `[PostgreSQLWireSettings]`. Der Kickstarter
 nimmt `Type=cockroachdb` (auch `cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase` oder
-`aurora`, mit `SSLMode`, `SSLRootCert`, `Pooler` und `Endpoint` in `[database_init]`. Der Setup-Assistent listet sie nach
+`aurorapostgresql`, mit `SSLMode`, `SSLRootCert`, `Pooler` und `Endpoint` in `[database_init]`. Der Setup-Assistent listet sie nach
 PostgreSQL, wenn PHP die Erweiterung `pgsql` hat. Installieren Sie über eine direkte Verbindung oder einen
 Sitzungs-Pooler: Das Schema entsteht Anweisung für Anweisung, ein Transaktions-Pooler bringt dabei nichts.
 
 ## Datentabellen-Verbindungen
 
 `datatable.ini [ConnectionSettings] Engines[]` enthält `cockroachdb`, `yugabytedb`, `spanner`, `neon`, `supabase` und
-`aurora`. Eine Verbindung öffnet sich über den Treiber (PHPs `pgsql`); ihre Optionen `sslmode` und `pooler` werden zu den
+`aurorapostgresql`. Eine Verbindung öffnet sich über den Treiber (PHPs `pgsql`); ihre Optionen `sslmode` und `pooler` werden zu den
 `[PostgreSQLWireSettings]` der Verbindung. Neon, Supabase und Aurora sind in der Liste der Engines als "hier nicht
 getestet" markiert.
 

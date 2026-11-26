@@ -98,7 +98,7 @@ Was die Reihenfolge in der Praxis bedeutet:
 | CockroachDB (PostgreSQL-Protokoll) | 23.2 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`cockroachdb`) | nicht getestet | die Live-Suite `pgwire-live` auf CockroachDB 25.2, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
 | YugabyteDB (PostgreSQL-Protokoll) | 2.20 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`yugabytedb`) | nicht getestet | die Live-Suite `pgwire-live` auf YugabyteDB 2.25, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
 | Google Cloud Spanner, PostgreSQL-Dialekt (PGAdapter) | der Spanner-Emulator, PGAdapter | `pgsql` | keiner: keine Site-Datenbank | keins | die Live-Suite `pgwire-live` auf dem Emulator hinter PGAdapter | Datentabellen-Verbindung und Import (neu in 6.0.15) |
-| Neon, Supabase, Amazon Aurora PostgreSQL | das PostgreSQL der Dienste (13 und neuer) | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`neon`, `supabase`, `aurora`) | wie PostgreSQL, nicht getestet | nur Profile und Unit-Tests; **nicht live getestet** | vollständige Site-Datenbank wie PostgreSQL; Profile neu in 6.0.15 |
+| Neon, Supabase, Amazon Aurora PostgreSQL | das PostgreSQL der Dienste (13 und neuer) | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | wie PostgreSQL, nicht getestet | nur Profile und Unit-Tests; **nicht live getestet** | vollständige Site-Datenbank wie PostgreSQL; Profile neu in 6.0.15 |
 
 **In Entwicklung.** Treiber für Microsoft Access und für Datenbanken, die über eine allgemeine ODBC-Verbindung erreicht
 werden, entstehen gerade; sie sind noch in keinem Release enthalten.
@@ -300,7 +300,7 @@ mit dem Kickstarter und `exp:install` installiert.
 | 5. Oracle | ja, wenn `oci8` geladen und `extension/ezoracle` vorhanden ist; aktiviert die Erweiterung für die neue Site | `oci8` (`oracle` wird akzeptiert); `Database` ist der Connect-String | `oracle` (auch `oci8`, `ezoracle`); `--db-name` ist der Dienstname, Standard `FREEPDB1` |
 | 6. MySQL | ja, als „MySQL Improved“ | `mysqli` (`mysql` wird akzeptiert) | `mysql` (auch `mysqli`) |
 | 7. SQL Server, Azure SQL | | `sqlserver` (`mssql`, `sqlsrv` werden akzeptiert), mit `Encrypt` und `TrustServerCertificate` | `sqlserver` (auch `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; die Datenbank muss existieren |
-| CockroachDB, YugabyteDB, Neon, Supabase, Aurora | ja, nach PostgreSQL aufgeführt, wenn `pgsql` geladen ist | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurora`, mit `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | dieselben Namen; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
+| CockroachDB, YugabyteDB, Neon, Supabase, Aurora | ja, nach PostgreSQL aufgeführt, wenn `pgsql` geladen ist | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, mit `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | dieselben Namen; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
 
 - Fehlt die Erweiterung `sqlite3`, wählt der Assistent die erste Datenbank, deren Erweiterung geladen ist, und weist
   darauf hin.
@@ -536,9 +536,10 @@ Sequenzen, DDL, Pooler, TLS und Kaltstarts.
 | Google Cloud Spanner (PostgreSQL-Dialekt) | `spanner` | Datentabellen-Verbindung und Import | ja, der Emulator hinter PGAdapter | Tabellen, Indizes, Upserts, 64-Bit-IDs aus bit-umgekehrten Sequenzen (`RETURNING`), persistente Klassen auf der Verbindung | keine Site: keine gewöhnlichen Sequenzen, keine temporären Tabellen, kein `LOCK`, keine Advisory Locks, kein `md5()`, kein `smallint` |
 | Neon | `neon` | vollständige Site-Datenbank (PostgreSQL) | **nein** | wie PostgreSQL; Kaltstarts werden wiederholt; TLS | der `-pooler`-Host ist Transaktionsmodus: kein Sitzungszustand |
 | Supabase | `supabase` | vollständige Site-Datenbank (PostgreSQL) | **nein** | wie PostgreSQL; TLS; Supavisor im Sitzungsmodus | Port 6543 ist Transaktionsmodus; der direkte Host nur über IPv6 |
-| Amazon Aurora PostgreSQL | `aurora` | vollständige Site-Datenbank (PostgreSQL) | **nein** | wie PostgreSQL; Neuverbindung beim Failover außerhalb von Transaktionen; Reader-Endpunkt als Replikat | eine Transaktion während eines Failovers ist verloren; IAM-Tokens laufen ab |
+| Amazon Aurora PostgreSQL | `aurorapostgresql` | vollständige Site-Datenbank (PostgreSQL) | **nein** | wie PostgreSQL; Neuverbindung beim Failover außerhalb von Transaktionen; Reader-Endpunkt als Replikat | eine Transaktion während eines Failovers ist verloren; IAM-Tokens laufen ab |
 
 Einzelheiten: [Datenbanken mit dem PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md).
+
 ## Datenbanken, die das MySQL-Protokoll sprechen
 
 TiDB, Vitess und PlanetScale, SingleStore, MariaDB Xpand und Amazon Aurora MySQL laufen ab 6.0.15 auf eigenen

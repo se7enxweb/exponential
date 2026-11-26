@@ -28,7 +28,7 @@
  *    or more); the "-pooler" host is PgBouncer in transaction mode; TLS is required. Not tested live.
  *  - supabase: Supabase PostgreSQL. The direct host (db.<ref>.supabase.co, IPv6) is plain PostgreSQL; the
  *    Supavisor pooler is transaction mode on port 6543 and session mode on 5432; TLS is required. Not tested live.
- *  - aurora: Amazon Aurora PostgreSQL. The cluster endpoint is the writer, the reader endpoint the replicas; a
+ *  - aurorapostgresql: Amazon Aurora PostgreSQL. The cluster endpoint is the writer, the reader endpoint the replicas; a
  *    failover drops every connection (57P01, 08006); a reader is in recovery but has no WAL receiver. Not tested live.
  *
  * @since 6.0.15
@@ -190,8 +190,9 @@ class expPostgreSQLWireProfile
                                   'The pooler takes the user as postgres.<project ref>',
                                   'The direct host db.<project ref>.supabase.co answers on IPv6 only, unless the IPv4 add-on is bought' ),
             ),
-            'aurora' => array(
-                'label' => 'Amazon Aurora PostgreSQL', 'alias' => 'aurora', 'aliases' => array( 'aurorapostgresql', 'aurora-postgresql' ),
+            // aurora alone is Aurora MySQL (expMySQLWireDB)
+            'aurorapostgresql' => array(
+                'label' => 'Amazon Aurora PostgreSQL', 'alias' => 'aurorapostgresql', 'aliases' => array( 'aurora-postgresql' ),
                 'port' => 5432, 'user' => 'postgres', 'database' => 'postgres', 'sslmode' => 'require',
                 'connect_attempts' => 5, 'connect_wait_ms' => 1000, 'connect_timeout' => 10,
                 'replica_check' => 'in_recovery', 'pgcrypto' => false,
@@ -301,7 +302,7 @@ class expPostgreSQLWireProfile
                 if ( (int)$port === 6543 )
                     return self::POOLER_TRANSACTION;
                 return strpos( $host, 'pooler.supabase.com' ) !== false ? self::POOLER_SESSION : self::POOLER_NONE;
-            case 'aurora':
+            case 'aurorapostgresql':
                 // RDS Proxy pins a client to one server connection as soon as it sets session state: session mode
                 return strpos( $host, '.proxy-' ) !== false ? self::POOLER_SESSION : self::POOLER_NONE;
         }

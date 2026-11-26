@@ -266,7 +266,7 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         return array( array( 'postgresql', 'pgsql' ), array( 'mysql', 'mysqli' ), array( 'sqlite', 'sqlite3' ), array( 'oracle', 'oci8' ), array( 'ezoracle', 'oci8' ), array( 'mongodb', 'mongodb' ),
                       // the databases of the PostgreSQL wire protocol
                       array( 'cockroachdb', 'cockroachdb' ), array( 'crdb', 'cockroachdb' ), array( 'yugabyte', 'yugabytedb' ), array( 'neon', 'neon' ),
-                      array( 'supabase', 'supabase' ), array( 'aurorapostgresql', 'aurora' ) );
+                      array( 'supabase', 'supabase' ), array( 'aurora-postgresql', 'aurorapostgresql' ) );
     }
 
     #[\PHPUnit\Framework\Attributes\DataProvider('kickstartDatabaseProvider')]
@@ -280,7 +280,7 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
     public function testPostgreSQLWireDatabases()
     {
         $map = eZSetupDatabaseMap();
-        foreach ( array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurora' ) as $type )
+        foreach ( array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql' ) as $type )
         {
             $this->assertSame( $type, $map[$type]['type'] );
             $this->assertSame( $type, $map[$type]['driver'], 'the site.ini alias of its driver' );
@@ -295,7 +295,7 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'sqlite3', 'pgsql' ), $step->foundDatabaseTypes() );
         $step->display();
         $list = array_column( $this->variable( 'database_list' ), 'type' );
-        $this->assertSame( array( 'pgsql', 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurora' ), array_slice( $list, array_search( 'pgsql', $list ), 6 ) );
+        $this->assertSame( array( 'pgsql', 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql' ), array_slice( $list, array_search( 'pgsql', $list ), 6 ) );
         $_POST = array( 'eZSetupDatabaseType' => 'cockroachdb' );
         $this->assertTrue( $step->processPostData() );
         $this->assertSame( 'cockroachdb', $step->PersistenceList['database_info']['driver'] );

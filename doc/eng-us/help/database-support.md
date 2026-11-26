@@ -94,7 +94,7 @@ What the order means in practice:
 | CockroachDB (PostgreSQL wire protocol) | 23.2 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`cockroachdb`) | not tested | the live suite `pgwire-live` on CockroachDB 25.2, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
 | YugabyteDB (PostgreSQL wire protocol) | 2.20 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`yugabytedb`) | not tested | the live suite `pgwire-live` on YugabyteDB 2.25, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
 | Google Cloud Spanner, PostgreSQL dialect (PGAdapter) | the Spanner emulator, PGAdapter | `pgsql` | none: not a site database | none | the live suite `pgwire-live` on the emulator behind PGAdapter | data-table connection and import (new in 6.0.15) |
-| Neon, Supabase, Amazon Aurora PostgreSQL | the services' PostgreSQL (13 and later) | `pgsql` | setup wizard, kickstarter, `exp:install` (`neon`, `supabase`, `aurora`) | as PostgreSQL, not tested | profiles and unit tests only; **not live-tested** | full site database as PostgreSQL; profiles new in 6.0.15 |
+| Neon, Supabase, Amazon Aurora PostgreSQL | the services' PostgreSQL (13 and later) | `pgsql` | setup wizard, kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | as PostgreSQL, not tested | profiles and unit tests only; **not live-tested** | full site database as PostgreSQL; profiles new in 6.0.15 |
 
 **In development.** Drivers for Microsoft Access and for databases reached through a generic ODBC connection are
 being built; they are not part of a release yet.
@@ -290,7 +290,7 @@ installed with the kickstarter and `exp:install`.
 | 5. Oracle | yes, when `oci8` is loaded and `extension/ezoracle` is present; activates the extension for the new site | `oci8` (`oracle` accepted); `Database` is the connect string | `oracle` (also `oci8`, `ezoracle`); `--db-name` is the service name, default `FREEPDB1` |
 | 6. MySQL | yes, as "MySQL Improved" | `mysqli` (`mysql` accepted) | `mysql` (also `mysqli`) |
 | 7. SQL Server, Azure SQL | | `sqlserver` (`mssql`, `sqlsrv` accepted), with `Encrypt` and `TrustServerCertificate` | `sqlserver` (also `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; the database must exist |
-| CockroachDB, YugabyteDB, Neon, Supabase, Aurora | yes, listed after PostgreSQL when `pgsql` is loaded | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurora`, with `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | the same names; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
+| CockroachDB, YugabyteDB, Neon, Supabase, Aurora | yes, listed after PostgreSQL when `pgsql` is loaded | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, with `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | the same names; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
 
 - If the `sqlite3` extension is missing, the wizard chooses the first database whose extension is loaded and says
   so.
@@ -541,9 +541,10 @@ the PostgreSQL driver with one profile per database. To the kernel each of them 
 | Google Cloud Spanner (PostgreSQL dialect) | `spanner` | data-table connection and import | yes, the emulator behind PGAdapter | tables, indexes, upserts, 64-bit ids from bit-reversed sequences (`RETURNING`), persistent classes on the connection | no site: no plain sequences, no temporary tables, no `LOCK`, no advisory locks, no `md5()`, no `smallint` |
 | Neon | `neon` | full site database (PostgreSQL) | **no** | as PostgreSQL; cold starts retried; TLS | the `-pooler` host is transaction mode: no session state |
 | Supabase | `supabase` | full site database (PostgreSQL) | **no** | as PostgreSQL; TLS; Supavisor session mode | port 6543 is transaction mode; the direct host is IPv6 only |
-| Amazon Aurora PostgreSQL | `aurora` | full site database (PostgreSQL) | **no** | as PostgreSQL; failover reconnects outside transactions; reader endpoint as replica | a transaction in flight during a failover is lost; IAM tokens expire |
+| Amazon Aurora PostgreSQL | `aurorapostgresql` | full site database (PostgreSQL) | **no** | as PostgreSQL; failover reconnects outside transactions; reader endpoint as replica | a transaction in flight during a failover is lost; IAM tokens expire |
 
 Details: [Databases of the PostgreSQL wire protocol](../features/6.0/postgresql-wire-databases.md).
+
 ## Databases that speak the MySQL protocol
 
 TiDB, Vitess and PlanetScale, SingleStore, MariaDB Xpand and Amazon Aurora MySQL run on drivers of their own from

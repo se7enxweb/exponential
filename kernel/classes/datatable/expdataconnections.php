@@ -79,7 +79,7 @@ class expDataConnections
             'spanner' => array( 'label' => 'Google Cloud Spanner (PostgreSQL, PGAdapter)', 'kind' => 'relational', 'ez' => 'spanner', 'pdo' => array(), 'port' => 5432, 'file' => false ),
             'neon' => array( 'label' => 'Neon (PostgreSQL)', 'kind' => 'relational', 'ez' => 'neon', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
             'supabase' => array( 'label' => 'Supabase (PostgreSQL)', 'kind' => 'relational', 'ez' => 'supabase', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
-            'aurora' => array( 'label' => 'Amazon Aurora PostgreSQL', 'kind' => 'relational', 'ez' => 'aurora', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
+            'aurorapostgresql' => array( 'label' => 'Amazon Aurora PostgreSQL', 'kind' => 'relational', 'ez' => 'aurorapostgresql', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
         );
     }
 
@@ -135,7 +135,7 @@ class expDataConnections
                 'pdo_driver' => $pdoDriver,
                 'why' => $why,
                 // not run against a server of its own here: the managed PostgreSQL services
-                'untested' => in_array( $key, array( 'sqlserver', 'neon', 'supabase', 'aurora' ), true ),
+                'untested' => in_array( $key, array( 'sqlserver', 'neon', 'supabase', 'aurorapostgresql' ), true ),
             );
         }
         return $engines;
@@ -1010,7 +1010,7 @@ class expDataConnections
             case 'spanner':
             case 'neon':
             case 'supabase':
-            case 'aurora':
+            case 'aurorapostgresql':
                 return extension_loaded( 'pgsql' );
             case 'duckdb':
                 return class_exists( 'expDuckDBFFI' ) && expDuckDBFFI::ffiUsable();

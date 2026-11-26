@@ -12,7 +12,7 @@ the PostgreSQL driver `eZPostgreSQLDB`, with one profile per database in `expPos
 | Google Cloud Spanner, PostgreSQL dialect | `spanner` (`spannerpg`, `pgadapter`) | `expSpannerPGDB` | data-table connection and import | yes: the Spanner emulator behind PGAdapter |
 | Neon | `neon` | `expNeonDB` | full site database (PostgreSQL) | **no**: connection profile, unit tests and this page |
 | Supabase | `supabase` | `expSupabaseDB` | full site database (PostgreSQL) | **no**: connection profile, unit tests and this page |
-| Amazon Aurora PostgreSQL | `aurora` (`aurorapostgresql`) | `expAuroraPostgreSQLDB` | full site database (PostgreSQL) | **no**: connection profile, unit tests and this page |
+| Amazon Aurora PostgreSQL | `aurorapostgresql` (`aurora-postgresql`; `aurora` is Aurora MySQL) | `expAuroraPostgreSQLDB` | full site database (PostgreSQL) | **no**: connection profile, unit tests and this page |
 
 "Full site database" means what it means for PostgreSQL itself: the installer creates the kernel schema and the data
 of a site package in it, and the site runs from it. Neon, Supabase and Aurora are PostgreSQL servers, so a site runs
@@ -210,12 +210,12 @@ and Aurora. The database must exist, except on CockroachDB and YugabyteDB, where
 ./console exp:install --apply --db=yugabytedb --db-host=yb1 --db-user=yugabyte
 ./console exp:install --apply --db=neon --db-host=ep-cool-1.eu-central-1.aws.neon.tech --db-user=app --db-name=neondb
 ./console exp:install --apply --db=supabase --db-host=db.abcd.supabase.co --db-name=postgres
-./console exp:install --apply --db=aurora --db-host=site.cluster-x.eu-west-1.rds.amazonaws.com \
+./console exp:install --apply --db=aurorapostgresql --db-host=site.cluster-x.eu-west-1.rds.amazonaws.com \
     --db-sslmode=verify-full --db-sslrootcert=/etc/ssl/rds-global-bundle.pem
 ```
 
 `--db-sslmode`, `--db-sslrootcert`, `--db-pooler` and `--db-endpoint` set `[PostgreSQLWireSettings]`. The kickstarter
-takes `Type=cockroachdb` (also `cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase` or `aurora`,
+takes `Type=cockroachdb` (also `cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase` or `aurorapostgresql`,
 with `SSLMode`, `SSLRootCert`, `Pooler` and `Endpoint` in `[database_init]`. The setup wizard lists them after
 PostgreSQL when PHP has the `pgsql` extension. Install through a direct connection or a session pooler: the schema is
 created statement by statement and a transaction pooler does not change that, but nothing gains from it.
@@ -223,7 +223,7 @@ created statement by statement and a transaction pooler does not change that, bu
 ## Data-table connections
 
 `datatable.ini [ConnectionSettings] Engines[]` has `cockroachdb`, `yugabytedb`, `spanner`, `neon`, `supabase` and
-`aurora`. A connection opens through the driver (PHP's `pgsql`), its options `sslmode` and `pooler` become the
+`aurorapostgresql`. A connection opens through the driver (PHP's `pgsql`), its options `sslmode` and `pooler` become the
 connection's `[PostgreSQLWireSettings]`. Neon, Supabase and Aurora are marked "untested here" in the list of engines.
 
 ## Tests

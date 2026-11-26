@@ -27,7 +27,7 @@ class expPostgreSQLWireProfileTest extends PHPUnit\Framework\TestCase
     public function testEveryProfileIsThere()
     {
         $all = expPostgreSQLWireProfile::all();
-        $this->assertSame( array( 'postgresql', 'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurora' ), array_keys( $all ) );
+        $this->assertSame( array( 'postgresql', 'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurorapostgresql' ), array_keys( $all ) );
         foreach ( $all as $name => $profile )
         {
             $this->assertSame( $name, $profile['name'] );
@@ -41,7 +41,7 @@ class expPostgreSQLWireProfileTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $all['spanner']['live_tested'] );
         $this->assertFalse( $all['neon']['live_tested'] );
         $this->assertFalse( $all['supabase']['live_tested'] );
-        $this->assertFalse( $all['aurora']['live_tested'] );
+        $this->assertFalse( $all['aurorapostgresql']['live_tested'] );
         $this->assertSame( 'datatable', $all['spanner']['level'] );
     }
 
@@ -51,7 +51,7 @@ class expPostgreSQLWireProfileTest extends PHPUnit\Framework\TestCase
             array( 'cockroachdb', 'cockroachdb' ), array( 'CockroachDB', 'cockroachdb' ), array( 'crdb', 'cockroachdb' ),
             array( 'cockroach', 'cockroachdb' ), array( 'yugabyte', 'yugabytedb' ), array( 'ysql', 'yugabytedb' ),
             array( 'spannerpg', 'spanner' ), array( 'pgadapter', 'spanner' ), array( ' neon ', 'neon' ), array( 'neondb', 'neon' ),
-            array( 'supabase', 'supabase' ), array( 'aurorapostgresql', 'aurora' ), array( 'aurora-postgresql', 'aurora' ),
+            array( 'supabase', 'supabase' ), array( 'aurorapostgresql', 'aurorapostgresql' ), array( 'aurora-postgresql', 'aurorapostgresql' ),
             array( 'postgresql', 'postgresql' ),
         );
     }
@@ -68,6 +68,7 @@ class expPostgreSQLWireProfileTest extends PHPUnit\Framework\TestCase
     {
         $this->assertNull( expPostgreSQLWireProfile::get( 'oracle' ) );
         $this->assertNull( expPostgreSQLWireProfile::get( '' ) );
+        $this->assertNull( expPostgreSQLWireProfile::get( 'aurora' ), 'aurora alone is Aurora MySQL' );
         $names = expPostgreSQLWireProfile::names();
         $this->assertSame( array( 'cockroachdb', 'cockroach', 'crdb' ), $names['cockroachdb'] );
     }
@@ -76,7 +77,7 @@ class expPostgreSQLWireProfileTest extends PHPUnit\Framework\TestCase
     {
         $ini = file_get_contents( __DIR__ . '/../../../../../settings/site.ini' );
         $classes = array( 'cockroachdb' => 'expCockroachDB', 'yugabytedb' => 'expYugabyteDB', 'spanner' => 'expSpannerPGDB',
-                          'neon' => 'expNeonDB', 'supabase' => 'expSupabaseDB', 'aurora' => 'expAuroraPostgreSQLDB' );
+                          'neon' => 'expNeonDB', 'supabase' => 'expSupabaseDB', 'aurorapostgresql' => 'expAuroraPostgreSQLDB' );
         foreach ( expPostgreSQLWireProfile::names() as $name => $aliases )
         {
             if ( $name === 'postgresql' )
@@ -115,8 +116,8 @@ class expPostgreSQLWireProfileTest extends PHPUnit\Framework\TestCase
             'supabase direct' => array( 'supabase', 'db.abcd.supabase.co', 5432, array(), 'none' ),
             'supabase transaction' => array( 'supabase', 'aws-0-eu-central-1.pooler.supabase.com', 6543, array(), 'transaction' ),
             'supabase session' => array( 'supabase', 'aws-0-eu-central-1.pooler.supabase.com', 5432, array(), 'session' ),
-            'aurora cluster' => array( 'aurora', 'c.cluster-abc.eu-west-1.rds.amazonaws.com', 5432, array(), 'none' ),
-            'aurora proxy' => array( 'aurora', 'p.proxy-abc.eu-west-1.rds.amazonaws.com', 5432, array(), 'session' ),
+            'aurora cluster' => array( 'aurorapostgresql', 'c.cluster-abc.eu-west-1.rds.amazonaws.com', 5432, array(), 'none' ),
+            'aurora proxy' => array( 'aurorapostgresql', 'p.proxy-abc.eu-west-1.rds.amazonaws.com', 5432, array(), 'session' ),
             'cockroach' => array( 'cockroachdb', 'crdb1', 26257, array(), 'none' ),
             'setting wins' => array( 'cockroachdb', 'pgbouncer1', 6432, array( 'Pooler' => 'transaction' ), 'transaction' ),
             'setting none wins' => array( 'neon', 'ep-1-pooler.x.neon.tech', 5432, array( 'Pooler' => 'none' ), 'none' ),
@@ -145,7 +146,7 @@ class expPostgreSQLWireProfileTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'sslmode', $s );
         $this->assertStringNotContainsString( 'password', $s, 'an empty password is left out' );
 
-        $a = expPostgreSQLWireProfile::apply( expPostgreSQLWireProfile::get( 'aurora' ), array( 'SSLMode' => 'verify-full', 'SSLRootCert' => '/etc/ssl/rds.pem' ) );
+        $a = expPostgreSQLWireProfile::apply( expPostgreSQLWireProfile::get( 'aurorapostgresql' ), array( 'SSLMode' => 'verify-full', 'SSLRootCert' => '/etc/ssl/rds.pem' ) );
         $s = expPostgreSQLWireProfile::connectString( $a, 'c.cluster-x.rds.amazonaws.com', false, 'exponential', 'postgres', 'x' );
         $this->assertStringContainsString( "sslmode='verify-full' sslrootcert='/etc/ssl/rds.pem'", $s );
         $this->assertStringNotContainsString( 'port=', $s );
@@ -215,7 +216,7 @@ class expPostgreSQLWireProfileTest extends PHPUnit\Framework\TestCase
         $this->assertSame( expPostgreSQLWireProfile::LOCK_ROW, expPostgreSQLWireProfile::lockMethod( expPostgreSQLWireProfile::get( 'cockroachdb' ) ) );
         $this->assertSame( expPostgreSQLWireProfile::LOCK_ROW, expPostgreSQLWireProfile::lockMethod( expPostgreSQLWireProfile::get( 'yugabytedb' ) ) );
         $this->assertSame( expPostgreSQLWireProfile::LOCK_NONE, expPostgreSQLWireProfile::lockMethod( expPostgreSQLWireProfile::get( 'spanner' ) ) );
-        $this->assertSame( expPostgreSQLWireProfile::LOCK_TABLE, expPostgreSQLWireProfile::lockMethod( expPostgreSQLWireProfile::get( 'aurora' ) ) );
+        $this->assertSame( expPostgreSQLWireProfile::LOCK_TABLE, expPostgreSQLWireProfile::lockMethod( expPostgreSQLWireProfile::get( 'aurorapostgresql' ) ) );
         $this->assertSame( 'CREATE TABLE IF NOT EXISTS exp_wire_lock ( name VARCHAR(255) NOT NULL PRIMARY KEY )', expPostgreSQLWireProfile::lockTableDDL() );
         $literal = function ( $v ) { return "'" . str_replace( "'", "''", $v ) . "'"; };
         $this->assertSame( array( "INSERT INTO exp_wire_lock ( name ) VALUES ( 'ezurlalias_ml' ) ON CONFLICT ( name ) DO NOTHING",

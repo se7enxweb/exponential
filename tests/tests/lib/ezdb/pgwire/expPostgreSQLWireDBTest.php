@@ -109,7 +109,7 @@ class expPostgreSQLWireDBTest extends PHPUnit\Framework\TestCase
 
     public function testMd5()
     {
-        foreach ( array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurora' ) as $profile )
+        foreach ( array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql' ) as $profile )
         {
             $md5 = expPostgreSQLWireDBTestDouble::make( $profile )->md5( 'name' );
             $this->assertSame( ' md5( name ) ', $md5, $profile );
@@ -181,14 +181,14 @@ class expPostgreSQLWireDBTest extends PHPUnit\Framework\TestCase
 
     public function testLostConnectionIsOpenedAgain()
     {
-        $db = expPostgreSQLWireDBTestDouble::make( 'aurora' );
+        $db = expPostgreSQLWireDBTestDouble::make( 'aurorapostgresql' );
         $db->script = array( 'result' );
         $this->assertSame( 'result', $db->retry( 'SELECT 1', '57P01', 'FATAL:  57P01: terminating connection due to administrator command' ) );
         $this->assertSame( 1, $db->connects );
         $this->assertSame( 'connection', $db->DBConnection );
         $this->assertTrue( $db->isConnected() );
 
-        $off = expPostgreSQLWireDBTestDouble::make( 'aurora', array( 'ReconnectOnLoss' => 'disabled' ) );
+        $off = expPostgreSQLWireDBTestDouble::make( 'aurorapostgresql', array( 'ReconnectOnLoss' => 'disabled' ) );
         $off->script = array( 'result' );
         $this->assertFalse( $off->retry( 'SELECT 1', '08006' ) );
         $this->assertSame( 0, $off->connects );
@@ -210,7 +210,7 @@ class expPostgreSQLWireDBTest extends PHPUnit\Framework\TestCase
     public function testReplicaStatus()
     {
         $this->assertSame( "SELECT CASE WHEN pg_is_in_recovery() THEN 'streaming' ELSE 'primary' END",
-                           expPostgreSQLWireDBTestDouble::make( 'aurora' )->replicaStatus() );
+                           expPostgreSQLWireDBTestDouble::make( 'aurorapostgresql' )->replicaStatus() );
         $this->assertStringContainsString( 'pg_stat_wal_receiver', expPostgreSQLWireDBTestDouble::make( 'neon' )->replicaStatus() );
     }
 
