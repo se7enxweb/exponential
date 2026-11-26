@@ -1102,6 +1102,11 @@ jobs:
       - name: Install dependencies
         run: |
           cp composer.json "${CI_COMPOSER_FILE}"
+          # the PHPUnit this PHP runs (Composer would pick PHPUnit 13, which needs 8.4, past --ignore-platform-req=php)
+          case "${{ matrix.php }}" in
+            8.1) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^10.5" ;;
+            8.2|8.3) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^11.5" ;;
+          esac
           for attempt in 1 2 3; do
             COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
             [ "$attempt" = 3 ] && exit 1
