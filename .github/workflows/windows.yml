@@ -1,0 +1,262 @@
+name: Windows
+
+# Exponential on Windows Server, as an administrator would use it:
+#
+#   windows   Windows Server 2022 and 2025, PHP 8.1 and 8.5: composer, the autoloads, the DB-less PHPUnit suites,
+#             a site installed on SQLite with exp:install, then requests through PHP's built-in web server (the
+#             router of exp:velocity's php engine, bin/php/velocity-router.php): the front page, the siteaccesses,
+#             the admin login form, a static file and a 404.
+#   odbc      the generic ODBC driver (expODBCDB) on Windows, on both of PHP's ODBC layers, against SQL Server
+#             LocalDB through Microsoft's ODBC driver; its DB-less tests too. MS Access (the ACE driver) is the
+#             msaccess-windows job of phpunit.yml, SQL Server through sqlsrv its sqlserver-windows-localdb job.
+#   upgrade   a real 6.0.14 release installed on SQLite and upgraded to main through xne, the tool that upgrades
+#             installations (the full upgrade needs the fix of #377: the autoload generator leaves out the tests/
+#             folders of extensions on Windows too).
+#
+# The Linux jobs are in phpunit.yml and quality.yml.
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+# See phpunit.yml: the root package resolves as main, and the overlay keeps composer.json untouched.
+env:
+  COMPOSER_ROOT_VERSION: dev-main
+  CI_COMPOSER_FILE: composer.ci-windows.json
+  COMPOSER_NO_INTERACTION: '1'
+
+jobs:
+  windows:
+    name: Windows (${{ matrix.os }}, PHP ${{ matrix.php }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ windows-2022, windows-2025 ]
+        php: [ '8.1', '8.5' ]
+    steps:
+      # The tree as it is in the repository: no CRLF conversion (the tests read templates, settings and scripts
+      # byte for byte), and paths longer than 260 characters for the vendor tree.
+      - name: Git settings
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.longpaths true
+
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, xsl, fileinfo, exif, curl, openssl, sockets, pdo_sqlite, sqlite3, zip
+          ini-values: memory_limit=1G
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          # Velocity's Linux-only extensions (pcntl, posix) and the MongoDB driver do not exist here; PHPUnit is the
+          # newest the PHP of the leg takes (10.5 on 8.1)
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req='ext-*' && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          test -f vendor/bin/phpunit
+
+      - name: Generate autoloads
+        shell: bash
+        run: php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: DB-less PHPUnit suites
+        shell: bash
+        env:
+          CI: '1'
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite security,upgrade-smoke,kernel-classes,lib
+
+      - name: Install a site on SQLite (exp:install)
+        shell: pwsh
+        run: |
+          $pw = 'Ci9-' + [guid]::NewGuid().ToString('N') + '-x'
+          Write-Output "::add-mask::$pw"
+          php bin/php/console exp:install --apply --db=sqlite "--password=$pw" --url=http://127.0.0.1:18431 --email=nospam@exponential.earth
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $db = Get-ChildItem -Path var -Recurse -Filter *.db -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $db) { Write-Output '::error::exp:install left no SQLite database in var'; exit 1 }
+          "database: $($db.FullName), $([int]($db.Length / 1KB)) KB"
+          foreach ($sa in 'site', 'admin') {
+            if (-not (Test-Path "settings\siteaccess\$sa")) { Write-Output "::error::no siteaccess $sa"; exit 1 }
+          }
+
+      - name: Requests through PHP's built-in web server
+        shell: pwsh
+        run: |
+          $log = Join-Path $env:RUNNER_TEMP 'php-server'
+          $server = Start-Process -FilePath php -ArgumentList '-S', '127.0.0.1:18431', '-t', '.', 'bin/php/velocity-router.php' `
+            -PassThru -NoNewWindow -RedirectStandardOutput "$log.out" -RedirectStandardError "$log.err"
+          $up = $false
+          for ($i = 0; $i -lt 60 -and -not $up; $i++) {
+            try { $c = [System.Net.Sockets.TcpClient]::new('127.0.0.1', 18431); $c.Close(); $up = $true } catch { Start-Sleep -Milliseconds 500 }
+          }
+          function Get-Page([string]$path) {
+            try {
+              $r = Invoke-WebRequest -UseBasicParsing -TimeoutSec 120 -SkipHttpErrorCheck -Uri "http://127.0.0.1:18431$path"
+              return @{ Status = [int]$r.StatusCode; Body = [string]$r.Content }
+            } catch { return @{ Status = 0; Body = $_.Exception.Message } }
+          }
+          $fail = 0
+          function Check([string]$what, [bool]$ok, [string]$detail = '') {
+            if ($ok) { Write-Output "  PASS  $what" } else { Write-Output "  FAIL  $what $detail"; $script:fail++ }
+          }
+          Check 'the server listens on 18431' $up
+          if ($up) {
+            foreach ($p in '/', '/site/', '/editor/', '/admin/user/login') {
+              $r = Get-Page $p
+              Check "$p answers 200" ($r.Status -eq 200) "(got $($r.Status))"
+            }
+            $r = Get-Page '/site/'
+            Check '/site/ is an Exponential page' ($r.Body -match '<html' -and $r.Body -match '</html>') "($($r.Body.Length) bytes)"
+            $r = Get-Page '/admin/user/login'
+            Check 'the admin login page has the login form' ($r.Body -match 'name="Login"' -and $r.Body -match 'name="Password"')
+            $r = Get-Page '/design/standard/stylesheets/core.css'
+            Check 'a static file is served' ($r.Status -eq 200) "(got $($r.Status))"
+            $r = Get-Page ('/no-such-page-' + [guid]::NewGuid().ToString('N').Substring(0, 6))
+            Check 'an unknown path answers 404' ($r.Status -eq 404) "(got $($r.Status))"
+          }
+          if (-not $server.HasExited) { Stop-Process -Id $server.Id -Force }
+          if ($fail -gt 0) {
+            Get-Content "$log.out", "$log.err" -Tail 60 -ErrorAction SilentlyContinue
+            Get-ChildItem var -Recurse -Filter *.log -ErrorAction SilentlyContinue | ForEach-Object { "=== $($_.FullName)"; Get-Content $_.FullName -Tail 40 }
+            exit 1
+          }
+
+      - name: Clean CI Composer overlay
+        if: always()
+        shell: bash
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
+  odbc:
+    name: ODBC on Windows (${{ matrix.layer }}, SQL Server LocalDB, PHP ${{ matrix.php }})
+    runs-on: windows-2022
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { layer: pdo_odbc, php: '8.5' }
+          - { layer: odbc, php: '8.1' }
+    steps:
+      - name: Git settings
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.longpaths true
+
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, sockets, pdo, pdo_odbc, odbc, pdo_sqlite, sqlite3, zip
+          coverage: none
+          tools: composer:v2
+
+      # LocalDB and Microsoft's ODBC driver come with the runner image: the newest driver it has is the one tested
+      - name: Start LocalDB and pick the ODBC driver
+        shell: pwsh
+        run: |
+          sqllocaldb start MSSQLLocalDB
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          sqllocaldb info MSSQLLocalDB
+          $drivers = Get-OdbcDriver -Platform '64-bit' | Where-Object Name -like 'ODBC Driver * for SQL Server' | Sort-Object Name -Descending
+          $drivers | Format-Table Name
+          if (-not $drivers) { Write-Output '::error::no Microsoft ODBC driver for SQL Server on this runner'; exit 1 }
+          "EXP_TEST_ODBC_SQLSERVER_DRIVER=$($drivers[0].Name)" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req='ext-*' && break
+            [ "$attempt" = 3 ] && exit 1
+            sleep $((attempt * 15))
+          done
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Run the ODBC tests
+        shell: bash
+        env:
+          EXP_TEST_ODBC_LAYER: ${{ matrix.layer }}
+          EXP_TEST_ODBC_SQLSERVER: 'Server=(localdb)\MSSQLLocalDB;Database=master;Trusted_Connection=yes;Encrypt=no'
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite odbc
+          php vendor/bin/phpunit --colors=always --display-skipped tests/tests/lib/ezdb/odbc/live/expODBCLiveTest.php
+
+      - name: Clean CI Composer overlay
+        if: always()
+        shell: bash
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
+  upgrade:
+    name: Upgrade 6.0.14 -> main on Windows (${{ matrix.os }}, PHP 8.5, xne)
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ windows-2022, windows-2025 ]
+    env:
+      XNE_IT_DIR: ${{ github.workspace }}\..\xne-it
+      XNE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Git settings
+        run: git config --global core.longpaths true
+
+      - name: Checkout xne
+        uses: actions/checkout@v7
+        with:
+          repository: se7enxweb/xne
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          extensions: pdo_sqlite, sqlite3, zlib, openssl, curl, mbstring, intl, gd, xsl, zip, fileinfo, exif
+          coverage: none
+          ini-values: date.timezone=UTC, memory_limit=1G
+
+      - name: composer.phar for the installs
+        shell: pwsh
+        run: |
+          $phar = Join-Path $env:RUNNER_TEMP 'composer.phar'
+          Invoke-WebRequest https://getcomposer.org/download/latest-stable/composer.phar -OutFile $phar
+          "XNE_IT_COMPOSER=$phar" >> $env:GITHUB_ENV
+          "XNE_IT_PHP=$((Get-Command php).Source)" >> $env:GITHUB_ENV
+
+      - name: 6.0.14 on SQLite, plan, dry run, upgrade to main, rollback
+        run: 'php tests/run.php "sqlite: plan --json, dry run, upgrade 6.0.14 -> main"'
+
+      - name: Kernel logs of the test installs (on failure)
+        if: failure()
+        shell: pwsh
+        run: |
+          Get-ChildItem -Path "$env:XNE_IT_DIR\installs" -Recurse -Include *.log -ErrorAction SilentlyContinue |
+            Where-Object { $_.FullName -match '\\var\\log\\' } |
+            ForEach-Object { "=== $($_.FullName)"; Get-Content $_.FullName -Tail 60 }
