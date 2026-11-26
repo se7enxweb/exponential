@@ -27162,7 +27162,7 @@ fd1c8576538037dab8a7ca0a1f318394  lib/ezdb/classes/expsinglestoredb.php
 b0ec48eddd6650b3be7b84dd6ebd2e7b  lib/ezdb/classes/expxpanddb.php
 b34a55ee1c8c8d1ef91a3dadce357ebe  lib/ezdb/classes/ezdb.php
 370eb86a5bd19f63bc4ebb8fefa31097  lib/ezdb/classes/ezdbinterface.php
-58b7e320debd3eff881ac0b44da6d363  lib/ezdb/classes/ezdbquerycache.php
+d4df41ebfdc3ec67268298c055a80e32  lib/ezdb/classes/ezdbquerycache.php
 99c3359017655e38dd2900a8a09c982b  lib/ezdb/classes/ezdbtool.php
 f23bc6203fe8986719ddb0ba848d9cb6  lib/ezdb/classes/ezmysqlcharset.php
 dbe216a38e95222f789554504cf2fd38  lib/ezdb/classes/ezmysqlidb.php
@@ -27636,7 +27636,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 3b4150f3b2e07a0dd743d4f24a5b92ec  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-7cb91868c07960e2ece562ede47e9074  settings/site.ini
+ebeff7cdeee86694ef579e03fdf73f94  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -31260,7 +31260,7 @@ af00774e16040304aa81e575d62c700c  tests/tests/lib/ezdb/sqlserver/expSQLServerTes
 5f722cfd7d4db43486ab8a35be21d36b  doc/eng-us/features/6.0/sqlserver-database-driver.md
 d8fa547244dd7f8b736075189a239661  doc/ger-de/funktionen/6.0/sqlserver-datenbanktreiber.md
 72873eb2cfa278acf66adb1fc7f5b311  kernel/sql/sqlserver/kernel_schema.sql
-c06ca3747706449a403df37828904a66  lib/ezdb/classes/expdbsqlhelpers.php
+9311d30cb0dae5140f349f48a749afc8  lib/ezdb/classes/expdbsqlhelpers.php
 c084ea39716e256afe17bbbeb3b64ca2  lib/ezdbschema/classes/expsqlserverschema.php
 049c4f13e87d2c3d1b06aaff9020c322  tests/tests/lib/ezdb/expDBSQLHelpersTest.php
 7f28e20aa6bead0443f63ec06bbdf75c  tests/tests/lib/ezdb/sqlserver/live/expSQLServerSchemaLiveTest.php
@@ -31281,6 +31281,9 @@ e7db846eee724c360f88cc47a4dfac19  tests/tests/kernel/classes/clusterfilehandlers
 354f06b4537aa64055468e79453411d6  lib/ezdb/classes/expfirebirddialect.php
 3e43cb66c0e0ca3c0e14008ea42a1182  lib/ezdb/classes/expfirebirdpdotransport.php
 357fc9b6c95ba895ffe4dc9b92cffc9f  lib/ezdb/classes/expfirebirdtransport.php
+a76826a8d85d9a77897a350456212a2e  lib/ezdb/classes/expduckdbdb.php
+7bd7f0d33dc8d033748dcef5acba7e6e  lib/ezdb/classes/expduckdbdialect.php
+1d38427f09908e22a6ce8ad440d805f7  lib/ezdb/classes/expduckdbffi.php
 dba4f5a4de1bd427fdf750b886018364  lib/ezdbschema/classes/expfirebirdschema.php
 82c7209b099f627541bbe394cde86da4  tests/tests/lib/ezdb/firebird/expFirebirdDBTest.php
 ab1162bd23135c5cb793e10459410663  tests/tests/lib/ezdb/firebird/expFirebirdDialectTest.php

@@ -9,7 +9,7 @@
 
 /**
  * The SQL of the portable helpers every driver offers (eZDBInterface::sqlLimit(), sqlUpsert(), sqlGroupConcat(),
- * sqlUnixTimestamp(), sqlFromUnixTimestamp(), sqlQuoteIdentifier()), per SQL dialect: mysql (MySQL and MariaDB),
+ * sqlUnixTimestamp(), sqlFromUnixTimestamp(), sqlQuoteIdentifier()), per SQL dialect: mysql (MySQL and MariaDB), duckdb,
  * postgresql, sqlite, oracle, sqlserver, msaccess (MS Access through ODBC, expMSAccessDB), firebird (expFirebirdDB);
  * generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
  * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code
@@ -20,7 +20,7 @@
  */
 class expDBSQLHelpers
 {
-    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'generic' );
+    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'duckdb', 'generic' );
 
     /**
      * The limit and offset as integers: limit false for "no limit" (false, null, '', negative or not a number).
@@ -91,6 +91,9 @@ class expDBSQLHelpers
                 return $sql . "\nLIMIT " . ( $limit === false ? '18446744073709551615' : $limit ) . ( $offset ? " OFFSET $offset" : '' );
             case 'sqlite':
                 return $sql . "\nLIMIT " . ( $limit === false ? '-1' : $limit ) . ( $offset ? " OFFSET $offset" : '' );
+            case 'duckdb':
+                // DuckDB has no LIMIT ALL: an offset alone is OFFSET without LIMIT
+                return $sql . ( $limit === false ? "\nOFFSET $offset" : "\nLIMIT $limit" . ( $offset ? " OFFSET $offset" : '' ) );
             default:
                 return $sql . "\nLIMIT " . ( $limit === false ? 'ALL' : $limit ) . ( $offset ? " OFFSET $offset" : '' );
         }
@@ -169,8 +172,9 @@ class expDBSQLHelpers
 
     /**
      * A SELECT that locks the rows it reads until the end of the transaction: FOR UPDATE (MySQL, PostgreSQL, Oracle,
-     * generic), FOR UPDATE WITH LOCK on Firebird, table hints on SQL Server, the statement as it is on SQLite (whose write transaction locks the database)
-     * and MS Access (whose engine locks pages itself).
+     * generic), FOR UPDATE WITH LOCK on Firebird, table hints on SQL Server, the statement as it is on SQLite (whose write
+     * transaction locks the database), MS Access (whose engine locks pages itself) and DuckDB (one process writes at a
+     * time; it has no row locks).
      *
      * @param string $dialect
      * @param string $sql a SELECT without FOR UPDATE
@@ -179,7 +183,7 @@ class expDBSQLHelpers
     public static function forUpdate( $dialect, $sql )
     {
         $sql = rtrim( (string)$sql, " \t\r\n;" );
-        if ( $dialect === 'sqlite' || $dialect === 'msaccess' )
+        if ( $dialect === 'sqlite' || $dialect === 'msaccess' || $dialect === 'duckdb' )
             return $sql;
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::forUpdate( $sql );
