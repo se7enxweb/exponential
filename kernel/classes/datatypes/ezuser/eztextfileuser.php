@@ -30,6 +30,37 @@ class eZTextFileUser extends eZUser
     {
     }
 
+    /**
+     * Whether the login column $uid of a line of the text file is the login $login. Strings, compared as they are:
+     * == compared two numeric strings as numbers ("1e3" == "1000").
+     *
+     * @param mixed $login the login the visitor gave
+     * @param mixed $uid the login column of a line
+     * @return bool
+     */
+    static function lineMatchesLogin( $login, $uid )
+    {
+        return is_string( $login ) && is_string( $uid ) && $login !== '' && $login === $uid;
+    }
+
+    /**
+     * Whether the password $password the visitor gave is the password column $pass of the user's line. Never an
+     * empty password, and compared in constant time (hash_equals()): == took "1000" for a password "1e3" (two
+     * numeric strings compare as numbers), let an empty column sign in with an empty password, and stopped at the
+     * first differing byte.
+     *
+     * @param mixed $password the password the visitor gave
+     * @param mixed $pass the password column of the user's line
+     * @return bool
+     */
+    static function passwordMatches( $password, $pass )
+    {
+        if ( !is_string( $password ) || !is_string( $pass ) )
+            return false;
+        $pass = trim( $pass );
+        return $password !== '' && $pass !== '' && hash_equals( $pass, $password );
+    }
+
     /*!
     \static
      Logs in the user if applied username and password is
@@ -224,9 +255,9 @@ class eZTextFileUser extends eZUser
                 $pass = $userArray[$passwordColumnNr-1];
                 $firstName = $userArray[ $firstNameColumnNr-1];
                 $lastName = $userArray[$lastNameColumnNr-1];
-                if ( $login == $uid )
+                if ( self::lineMatchesLogin( $login, $uid ) )
                 {
-                    if ( trim( $pass ) == $password )
+                    if ( self::passwordMatches( $password, $pass ) )
                     {
                         $createNewUser = true;
                         $existUser = eZUser::fetchByName( $login );

@@ -2447,7 +2447,10 @@ WHERE user_id = '" . $userID . "' AND
             return false;
         }
 
-        return eZUser::createHash( $user, $password, $site, $type, $hash ) === $hash;
+        // hash_equals(): === stopped at the first byte that differed, so the time of a refusal told how much of
+        // the stored hash a guess had right
+        $computed = eZUser::createHash( $user, $password, $site, $type, $hash );
+        return is_string( $computed ) && hash_equals( $hash, $computed );
     }
 
     /*!

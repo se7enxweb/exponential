@@ -505,8 +505,8 @@ class eZLDAPUserTest extends ezpDatabaseTestCase
         return array(
             array( 'foobar', false, 'foobar' ),
             array( 'foobar', true, 'foobar' ),
-            array( 'f*o(o)b\ar', false, 'f\5c2ao\5c28o\5c29b\5car' ),
-            array( 'f,o=o+b<a>r;b\a"r#foo', true, 'f\5c2co\5c3do\5c2bb\5c3ca\5c3er\5c3bb\5ca\22r\23foo' ),
+            array( 'f*o(o)b\ar', false, 'f\2ao\28o\29b\5car' ),
+            array( 'f,o=o+b<a>r;b\a"r#foo', true, 'f\2co\3do\2bb\3ca\3er\3bb\5ca\22r\23foo' ),
             array( 'f,o=o+b<a>r;"', false, 'f,o=o+b<a>r;"' ),
             array( 'f*o(o)bar', true, 'f*o(o)bar' )
         );

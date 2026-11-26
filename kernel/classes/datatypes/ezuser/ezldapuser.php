@@ -465,7 +465,7 @@ class eZLDAPUser extends eZUser
 
                     $groupsTree = array();
                     $stack = array();
-                    $newfilter = '(&(objectClass=' . $LDAPGroupClass . ')(' . $LDAPGroupMemberAttribute . '=' . $userData['dn'] . '))';
+                    $newfilter = self::groupMemberFilter( $LDAPGroupClass, $LDAPGroupMemberAttribute, $userData['dn'] );
 
                     $groupsTree[ $userData['dn'] ] = array( 'data' => & $userData,
                                                                 'parents' => array(),
@@ -1291,8 +1291,6 @@ class eZLDAPUser extends eZUser
         if ( is_array( $entries ) and
              isset( $entries[ 'count' ] ) and $entries[ 'count' ] > 0 )
         {
-            $newfilter = '(&(objectClass=' . $LDAPGroupClass . ')';
-
             for ( $i = 0; $i < $entries[ 'count' ]; $i++ )
             {
                 $parent =& $entries[ $i ];
@@ -1317,7 +1315,7 @@ class eZLDAPUser extends eZUser
                 }
                 $groupsTree[ $parentDN ][ 'children' ][ $curDN ] =& $current;
                 $current[ 'parents' ][ $parentDN ] =& $groupsTree[ $parentDN ];
-                $newfilter1 = $newfilter . '(' . $LDAPGroupMemberAttribute . '=' . $parentDN . '))';
+                $newfilter1 = self::groupMemberFilter( $LDAPGroupClass, $LDAPGroupMemberAttribute, $parentDN );
                 $ret = eZLDAPUser::getUserGroupsTree( $requiredParams,
                                                       $newfilter1,
                                                       $parentDN,
@@ -1455,18 +1453,36 @@ class eZLDAPUser extends eZUser
         // http://msdn.microsoft.com/en-us/library/ms675768(VS.85).aspx
         // http://www-03.ibm.com/systems/i/software/ldap/underdn.html
 
+        // One pass (strtr): str_replace() replaced the characters one after the other, so the backslash of
+        // every escape made before it was escaped again ("(" became "\5c28", a search for "\28" that never
+        // matched the login it was made from)
         if ( $for_dn )
         {
-            $metaChars = array( ',', '=', '+', '<', '>', ';', '\\', '"', '#' );
-            $quotedMetaChars = array( '\2c', '\3d', '\2b', '\3c', '\3e', '\3b', '\5c', '\22', '\23' );
+            $map = array( ',' => '\2c', '=' => '\3d', '+' => '\2b', '<' => '\3c', '>' => '\3e', ';' => '\3b',
+                          '\\' => '\5c', '"' => '\22', '#' => '\23' );
         }
         else
         {
-            $metaChars = array( '*', '(', ')', '\\', chr(0) );
-            $quotedMetaChars = array( '\2a', '\28', '\29', '\5c', '\00' );
+            $map = array( '*' => '\2a', '(' => '\28', ')' => '\29', '\\' => '\5c', chr( 0 ) => '\00' );
         }
 
-        return str_replace( $metaChars, $quotedMetaChars, $str );
+        return strtr( (string)$str, $map );
+    }
+
+    /**
+     * The LDAP filter that finds the groups of class $groupClass whose member attribute $memberAttribute holds the
+     * DN $memberDN. The DN is a value of the filter and is escaped as one (RFC 4515): a DN is written by whoever
+     * may name an entry in the directory, and "(", ")" or "*" in it (cn=x)(objectClass=*) changed the filter, so
+     * the user was mapped to groups that do not list them.
+     *
+     * @param string $groupClass ldap.ini LDAPGroupClass
+     * @param string $memberAttribute ldap.ini LDAPGroupMemberAttribute
+     * @param string $memberDN the DN of the user or of a group, as the directory returned it
+     * @return string
+     */
+    static function groupMemberFilter( $groupClass, $memberAttribute, $memberDN )
+    {
+        return '(&(objectClass=' . $groupClass . ')(' . $memberAttribute . '=' . self::ldap_escape( (string)$memberDN ) . '))';
     }
 
 }
