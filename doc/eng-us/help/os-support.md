@@ -106,7 +106,7 @@ If you run Exponential on a tier 3 system, please tell the project on the
 |---|---|
 | **FreeBSD 14**, **DragonFly BSD** | Velocity's CI boots and serves on real BSD kernels in a VM; PHP 8 from `pkg` (`php83-*`). Exponential itself is not run there by the project. |
 | **macOS** on Apple Silicon (arm64) and Intel | PHP 8 from Homebrew; Velocity publishes a `macos-arm64` binary and forks workers with `pcntl` as on Linux |
-| **Windows** (x64) | Official PHP for Windows builds; Apache or IIS with FastCGI. The kernel knows Windows paths (ImageMagick's `convert.exe`, server variables of IIS and nginx on Windows in its tests). See [Windows](#windows) for what is missing. |
+| **Windows** (x64; x86 for Velocity) | Official PHP for Windows builds; IIS with FastCGI, Apache, or Velocity with its portable worker pool (Velocity's CI runs it on Windows Server 2022 and 2025 on every push). The kernel knows Windows paths (ImageMagick's `convert.exe`, server variables of IIS and nginx on Windows in its tests), and the SQL Server driver's tests run on Windows against LocalDB in CI. The whole story: [Exponential on Windows](exponential-on-windows.md). |
 | **Docker and Podman** (Linux containers) | Velocity publishes images on `ghcr.io/se7enxweb/exponential-velocity` for amd64 and arm64, one per PHP version and variant |
 
 ## Tier 3: expected to work
@@ -211,7 +211,7 @@ up is the subject of [chapter 8, Serving the site](../install/08-serving-the-sit
 | **FPM** (`fpm-fcgi`) | the usual way behind Apache, nginx, Caddy and the others; one pool per site |
 | **CLI** | Composer, the installers, the console (`bin/php/console`), cronjobs, and Velocity itself, whose workers are CLI processes |
 | **Apache module** (`apache2handler`, mod_php) | works; ties PHP to Apache's prefork model, so PHP-FPM is preferred |
-| **CGI / FastCGI** (`cgi-fcgi`) | IIS on Windows; Velocity's workers on Windows are `php-cgi` processes |
+| **CGI / FastCGI** (`cgi-fcgi`) | IIS on Windows |
 | **LiteSpeed** (`litespeed`, LSAPI) | LiteSpeed's own SAPI |
 | **FrankenPHP** | its own embedded SAPI |
 | **built-in web server** (`cli-server`) | development only |
@@ -255,10 +255,12 @@ development, SQLite and Velocity (or PHP's built-in server) need nothing else.
 - Use the official PHP 8 builds for Windows (x64, non-thread-safe for FastCGI) with Apache or IIS. They include the
   extensions Exponential needs, `intl` among them.
 - `pcntl` and `posix` do not exist on Windows: asynchronous publishing (`bin/php/ezasynchronouspublisher.php`) is not
-  available, and Velocity runs its workers as `php-cgi` subprocesses without copy-on-write memory sharing.
+  available. Velocity (0.0.4.63 and later) runs its workers there in its **portable pool**: each worker is a PHP
+  process of its own that boots the application once and serves request after request, without copy-on-write memory
+  sharing.
 - Velocity's single-file Windows binaries are built **without `intl`**, which Exponential's setup requires, so run
-  Velocity on Windows through the phar with the official PHP rather than through its binary (the phar path on Windows
-  is expected to work but untested, according to the Velocity engine's own platform notes).
+  Velocity for an Exponential site with the official PHP for Windows (`php.exe` and the server script in `vendor\`),
+  as [Exponential on Windows](exponential-on-windows.md#exponential-velocity-on-windows) shows.
 - The documentation and the shell commands in this help are written for Linux; translate paths and permissions.
 - WSL2 runs the Linux tiers above and is the simpler path for development on Windows.
 
@@ -282,6 +284,7 @@ which run the same critical tests and print the fix for each failure. With Veloc
 
 - [Chapter 2, Requirements](../install/02-requirements.md) and [Chapter 8, Serving the site](../install/08-serving-the-site.md).
 - [Database support](database-support.md): the supported databases, in order.
+- [Exponential on Windows](exponential-on-windows.md): IIS, Apache, Velocity and the databases on Windows.
 - [Velocity packages and binaries](../features/6.0/velocity-packages-and-binaries.md),
   [Velocity web server](../features/6.0/velocity-web-server.md), [Velocity engines](../bc/6.0/velocity-engines.md).
 - [PHP 8.0 support](../bc/6.0/php-8.0-support.md), [Continuous integration](../specifications/6.0/continuous-integration.md).

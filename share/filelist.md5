@@ -9081,6 +9081,7 @@ ded36e07c2a5f292b535e32d022009d8  doc/eng-us/help/ecosystem/products/exponential
 19a6bc57fd6fdbfebd28c892691987bb  doc/eng-us/help/ecosystem/products/the-platform-line.md
 8bf4e8c5a7f1d6b2cbffa80078d3d011  doc/eng-us/help/ecosystem/what-the-ecosystem-is.md
 df5716c4c652a9bae4b149c996357e7c  doc/eng-us/help/editing-content.md
+328cb8142760a11a4a2a5787645e00e6  doc/eng-us/help/exponential-on-windows.md
 10ed514dfe3b09481ebf5338ef67084b  doc/eng-us/help/extension-development/README.md
 bc5fbe8f251cf7443d4894cee53ff16a  doc/eng-us/help/extension-development/index-of-topics.md
 8ad730ed0f4ffa925b283d3179710b3b  doc/eng-us/help/extension-development/part-1-from-user-to-developer/README.md
@@ -11500,7 +11501,7 @@ a35ab542c06677d676137a04361130e5  doc/eng-us/help/non-technical-people/words/ext
 1a347509c57ffe6a37b75a78500c1e27  doc/eng-us/help/non-technical-people/words/hosting-domains-and-https-explained.md
 df2d2e801d3bae3023d2a35f9013dcf3  doc/eng-us/help/non-technical-people/words/roles-and-permissions-explained.md
 9b4774907a23c3d0fbfcb1550b3b066d  doc/eng-us/help/non-technical-people/words/the-site-and-the-administration.md
-d7f4cf8c3c3680a2ea25d36c77f8cb6d  doc/eng-us/help/os-support.md
+eddf9ff8de6ff0c275146e705164447a  doc/eng-us/help/os-support.md
 1f576afa9b39498c85031c5fcb7a5256  doc/eng-us/help/partners/application-checklist.md
 433db12cd9b3d09e2ce7506a9f484617  doc/eng-us/help/partners/case-study-template.md
 1e273ddf01aadc0d0035d6cf6f73b143  doc/eng-us/help/partners/certification-proposals.md
@@ -13671,7 +13672,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-d29d8bd915b57bb01aca43c168662aa7  doc/ger-de/.paths.json
+5f87a166b868f20406b1d7b1fb4501c1  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17740,7 +17741,7 @@ e209be2d9a956dea528d114f9b069d85  doc/ger-de/hilfe/benutzerverwaltung-von-der-ko
 b0dab238fd660a80d57f170c1c839412  doc/ger-de/hilfe/benutzerverwaltung-von-der-konsole/sitzungen-und-anmeldesicherheit.md
 db45fc747e4ec82e1d98c464c3e9b806  doc/ger-de/hilfe/benutzerverwaltung-von-der-konsole/wenn-ein-befehl-fehlschlaegt.md
 fb3c7fbec3ab24a8a562f408d5b32581  doc/ger-de/hilfe/benutzerverwaltung-von-der-konsole/zweistufige-anmeldung-nach-verlorenem-telefon-zuruecksetzen.md
-b1e060439d1fcc2d70b29b08015aa8a9  doc/ger-de/hilfe/betriebssystemunterstuetzung.md
+55aa6d322b0337c0426181801dfc4d78  doc/ger-de/hilfe/betriebssystemunterstuetzung.md
 e68aeca639602c78f8676cee29a84085  doc/ger-de/hilfe/bild-aliase.md
 cbf7ba8232f687a882a70f3393cb32b0  doc/ger-de/hilfe/bilder/accounts/admin-tour-header-dark.webp
 1d5fa27c0bd41dd15ffa08c3dbf25bd4  doc/ger-de/hilfe/bilder/accounts/change-password-form.webp
@@ -19298,6 +19299,7 @@ bdf341a1f64569a264438985584a93d4  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 a358501163c5e58c8c8e0a995f727669  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/referenz-der-template-operatoren.md
 0a21940bb3599e7d52f3666aa5b8844f  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/verzeichnisse-unter-var.md
 1e904199f78ca2143db55a3cbdf91304  doc/ger-de/hilfe/erweiterungsentwicklung/themenindex.md
+e39a7de6cc3f6ee061aa6f6e5f3cb584  doc/ger-de/hilfe/exponential-unter-windows.md
 2f8e2492023ff8a8aa225e9e8f307622  doc/ger-de/hilfe/freie-dokumentation.md
 d4db7cfdf757be6e99cbfc6181123e23  doc/ger-de/hilfe/fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md
 8955c6882a8accf2b64cafa2182ecc86  doc/ger-de/hilfe/fuehrung/community-leiter-werden.md

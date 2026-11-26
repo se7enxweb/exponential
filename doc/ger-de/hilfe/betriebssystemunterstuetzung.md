@@ -111,7 +111,7 @@ eine Stufe auf.
 |---|---|
 | **FreeBSD 14**, **DragonFly BSD** | Velocitys CI startet und liefert auf echten BSD-Kerneln in einer VM aus; PHP 8 aus `pkg` (`php83-*`). Exponential selbst betreibt das Projekt dort nicht. |
 | **macOS** auf Apple Silicon (arm64) und Intel | PHP 8 aus Homebrew; Velocity veröffentlicht ein `macos-arm64`-Binary und forkt Worker mit `pcntl` wie unter Linux |
-| **Windows** (x64) | Offizielle Builds von PHP für Windows; Apache oder IIS mit FastCGI. Der Kernel kennt Windows-Pfade (ImageMagicks `convert.exe`, Servervariablen von IIS und nginx unter Windows in seinen Tests). Was fehlt, steht unter [Windows](#windows). |
+| **Windows** (x64; x86 für Velocity) | Offizielle Builds von PHP für Windows; IIS mit FastCGI, Apache oder Velocity mit seinem portablen Worker-Pool (Velocitys CI betreibt ihn bei jedem Push unter Windows Server 2022 und 2025). Der Kernel kennt Windows-Pfade (ImageMagicks `convert.exe`, Servervariablen von IIS und nginx unter Windows in seinen Tests), und die Tests des SQL-Server-Treibers laufen in der CI unter Windows gegen LocalDB. Alles zusammen: [Exponential unter Windows](exponential-unter-windows.md). |
 | **Docker und Podman** (Linux-Container) | Velocity veröffentlicht Images unter `ghcr.io/se7enxweb/exponential-velocity` für amd64 und arm64, eines pro PHP-Version und Variante |
 
 ## Stufe 3: voraussichtlich lauffähig
@@ -220,7 +220,7 @@ aus. Die Einrichtung der einzelnen Server ist Thema von [Kapitel 8, Die Site aus
 | **FPM** (`fpm-fcgi`) | der übliche Weg hinter Apache, nginx, Caddy und den anderen; ein Pool pro Site |
 | **CLI** | Composer, die Installer, die Konsole (`bin/php/console`), Cronjobs und Velocity selbst, dessen Worker CLI-Prozesse sind |
 | **Apache-Modul** (`apache2handler`, mod_php) | funktioniert; bindet PHP an das Prefork-Modell von Apache, daher wird PHP-FPM bevorzugt |
-| **CGI / FastCGI** (`cgi-fcgi`) | IIS unter Windows; Velocitys Worker unter Windows sind `php-cgi`-Prozesse |
+| **CGI / FastCGI** (`cgi-fcgi`) | IIS unter Windows |
 | **LiteSpeed** (`litespeed`, LSAPI) | die eigene SAPI von LiteSpeed |
 | **FrankenPHP** | seine eigene eingebettete SAPI |
 | **Eingebauter Webserver** (`cli-server`) | nur für die Entwicklung |
@@ -266,12 +266,13 @@ wie unter Linux. Für die Entwicklung brauchen SQLite und Velocity (oder der ein
 - Verwenden Sie die offiziellen PHP-8-Builds für Windows (x64, nicht threadsicher für FastCGI) mit Apache oder IIS.
   Sie enthalten die Erweiterungen, die Exponential braucht, darunter `intl`.
 - `pcntl` und `posix` gibt es unter Windows nicht: Asynchrones Veröffentlichen (`bin/php/ezasynchronouspublisher.php`)
-  ist nicht verfügbar, und Velocity betreibt seine Worker als `php-cgi`-Unterprozesse ohne gemeinsame Nutzung des
-  Speichers per Copy-on-Write.
+  ist nicht verfügbar. Velocity (0.0.4.63 und neuer) betreibt seine Worker dort in seinem **portablen Pool**: Jeder
+  Worker ist ein eigener PHP-Prozess, der die Anwendung einmal startet und Anfrage um Anfrage beantwortet, ohne
+  gemeinsame Nutzung des Speichers per Copy-on-Write.
 - Velocitys Windows-Binaries aus einer einzigen Datei werden **ohne `intl`** gebaut, das das Setup von Exponential
-  voraussetzt; betreiben Sie Velocity unter Windows daher über das Phar mit dem offiziellen PHP statt über sein Binary
-  (der Phar-Weg unter Windows ist laut den eigenen Plattformhinweisen der Velocity-Engine voraussichtlich lauffähig,
-  aber ungetestet).
+  voraussetzt; betreiben Sie Velocity für eine Exponential-Website daher mit dem offiziellen PHP für Windows
+  (`php.exe` und das Serverskript in `vendor\`), wie [Exponential unter Windows](exponential-unter-windows.md#exponential-velocity-unter-windows)
+  zeigt.
 - Die Dokumentation und die Shell-Befehle in dieser Hilfe sind für Linux geschrieben; übertragen Sie Pfade und
   Berechtigungen entsprechend.
 - WSL2 führt die obigen Linux-Stufen aus und ist unter Windows der einfachere Weg für die Entwicklung.
@@ -297,6 +298,7 @@ Erweiterungen, den Velocity erwartet.
 
 - [Kapitel 2, Voraussetzungen](../installation/02-voraussetzungen.md) und [Kapitel 8, Die Site ausliefern](../installation/08-die-website-ausliefern.md).
 - [Unterstützte Datenbanken](datenbankunterstuetzung.md): die unterstützten Datenbanken, in Reihenfolge.
+- [Exponential unter Windows](exponential-unter-windows.md): IIS, Apache, Velocity und die Datenbanken unter Windows.
 - [Velocity-Pakete und -Binaries](../funktionen/6.0/velocity-pakete-und-binaerdateien.md),
   [Der Webserver Velocity](../funktionen/6.0/velocity-webserver.md), [Velocity-Engines](../bc/6.0/velocity-engines.md).
 - [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md), [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md).
