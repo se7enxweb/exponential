@@ -2,7 +2,7 @@
 /**
  * Shared pieces of the SAP HANA driver tests: the driver's files, a recording transport that answers from rules
  * instead of a server, the eZDB parameters of a test connection, and the live server's settings
- * (EXP_TEST_HANA_HOST, _PORT, _USER, _PASSWORD or _PASSWORD_FILE, _SCHEMA, _DRIVER, _LAYER).
+ * (EXP_TEST_HANA_HOST, _PORT, _USER, _PASSWORD or _PASSWORD_FILE, _SCHEMA, _DRIVER, _LAYER, _TABLE_TYPE).
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -248,6 +248,7 @@ class expHANATestKit
             'schema' => getenv( 'EXP_TEST_HANA_SCHEMA' ) ?: 'EXP_LIVE_TEST',
             'driver' => getenv( 'EXP_TEST_HANA_DRIVER' ) ?: 'HDBODBC',
             'layer' => getenv( 'EXP_TEST_HANA_LAYER' ) ?: 'auto',
+            'table_type' => getenv( 'EXP_TEST_HANA_TABLE_TYPE' ) ?: 'column',
         );
     }
 
@@ -265,7 +266,7 @@ class expHANATestKit
             return 'No SAP HANA for the live tests: set EXP_TEST_HANA_HOST (and _PORT, _USER, _PASSWORD or _PASSWORD_FILE, _SCHEMA, _DRIVER)';
         if ( expHANATransport::availableLayer( $live['layer'] ) === null )
             return 'PHP has neither the odbc extension nor PDO_ODBC';
-        $settings += array( 'DeadlockRetryWait' => 10, 'Driver' => $live['driver'], 'Layer' => $live['layer'] );
+        $settings += array( 'DeadlockRetryWait' => 10, 'Driver' => $live['driver'], 'Layer' => $live['layer'], 'TableType' => $live['table_type'] );
         try
         {
             return new expHANADB( self::parameters( $parameters + array( 'server' => $live['host'], 'port' => $live['port'], 'user' => $live['user'],

@@ -60,6 +60,7 @@ class expHANADB extends eZDBInterface
         'InListChunkSize' => 5000,
         'CreateSchema' => 'enabled',
         'BindLiterals' => 'enabled',
+        'TableType' => 'column',
     );
 
     /** @var array the NCLOB column names per schema, shared by the connections of a process: key => string[] */

@@ -432,7 +432,7 @@ class expHANASchema extends eZDBSchemaInterface
                 foreach ( $this->autoIncrementSQLList( $table, $field ) as $statement )
                     $arrays['sequences'][] = $statement . $end;
         }
-        $arrays['tables'][] = 'CREATE COLUMN TABLE ' . $this->quoteSchemaIdentifier( $table ) . " (\n" . implode( ",\n", $lines ) . "\n)" . $end;
+        $arrays['tables'][] = 'CREATE ' . $this->tableType() . ' TABLE ' . $this->quoteSchemaIdentifier( $table ) . " (\n" . implode( ",\n", $lines ) . "\n)" . $end;
         foreach ( isset( $tableDef['indexes'] ) ? $tableDef['indexes'] : array() as $index => $def )
         {
             $sql = $this->generateAddIndexSql( $table, $index, $def, $params, false, $tableDef['fields'] );
@@ -442,6 +442,16 @@ class expHANASchema extends eZDBSchemaInterface
                 $arrays['indexes'][] = $sql . $end;
         }
         return $arrays;
+    }
+
+    /**
+     * COLUMN, or ROW with [HANASettings] TableType=row (HANA's row store: faster single-row writes, all in memory).
+     *
+     * @return string
+     */
+    function tableType()
+    {
+        return $this->DBInstance instanceof expHANADB && strtolower( trim( (string)$this->DBInstance->Settings['TableType'] ) ) === 'row' ? 'ROW' : 'COLUMN';
     }
 
     function generateTableSQLList( $table, $tableDef, $params, $separateTypes )
