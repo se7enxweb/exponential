@@ -29,7 +29,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 445c26385a719c51e415113c585597ad  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 fec8e184c046898f71a24fa2008c767f  autoload.php
-5e30a6277fdfcdf875b37f42028ebe82  autoload/ezp_kernel.php
+f3d4d4c53fbeaf5533bf0d127e5edf99  autoload/ezp_kernel.php
 4f5aae97c4777e3d9fe309fc409be8d6  benchmarks/classes/ezbenchmark.php
 9c88f2cf9ede23d32cabee36659239f2  benchmarks/classes/ezbenchmarkcase.php
 dbc264cff80d6c4b0b5fd393d1b45297  benchmarks/classes/ezbenchmarkclirunner.php
@@ -27146,6 +27146,8 @@ efbd0eec92f8ae73766639a072611217  kernel/workflow/view.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
 1f7a195d56755dbc47ff0c22eebf8cc9  kickstart.ini-dist
 157e117f76f8407ee97deab2dfc91924  lib/ezdb/classes/expauroramysqldb.php
+e51d4ec6e03d65b7341725ef1967c944  lib/ezdb/classes/expaurorapostgresqldb.php
+77caed9863481da63d2b05e2dc3cc13e  lib/ezdb/classes/expcockroachdb.php
 d3b3cc96820c0e4630d0f05e27fc21bf  lib/ezdb/classes/expdbinlist.php
 13493200fa1e3c5cb49613ca1b0bb108  lib/ezdb/classes/expdbunsupportedexception.php
 a162439dfcb945c46a4f863817de574a  lib/ezdb/classes/expmongodb.php
@@ -27153,13 +27155,19 @@ a162439dfcb945c46a4f863817de574a  lib/ezdb/classes/expmongodb.php
 0495ea859056918e7ff81852975f3d0e  lib/ezdb/classes/expmsaccessdialect.php
 de67ec1ad99d4513b70e584fda4ff18b  lib/ezdb/classes/expmysqlwiredb.php
 af24c32511bcd81c49a2a2829d0b22d3  lib/ezdb/classes/expmysqlwireprofile.php
+9768ec44ef2c9752582bd80e282c8202  lib/ezdb/classes/expneondb.php
 810ca7915a155991e12bf9fc236beeb2  lib/ezdb/classes/expodbcdb.php
 3687389380c409a5d7b4d565c9c34baf  lib/ezdb/classes/expodbcnativeconnection.php
 2aae707eee7e3e7a7d991052fec0c5bb  lib/ezdb/classes/exppdodb.php
+68567ff2df46b1c592e11c0f5f11e7bb  lib/ezdb/classes/exppostgresqlwiredb.php
+590353f097f7cca8f3036397fe278b70  lib/ezdb/classes/exppostgresqlwireprofile.php
 fd1c8576538037dab8a7ca0a1f318394  lib/ezdb/classes/expsinglestoredb.php
+a91e4d1e4d31f8a94b68b386bd7500dc  lib/ezdb/classes/expspannerpgdb.php
+f4aa9d75ce60274d973c0b6ac8e18484  lib/ezdb/classes/expsupabasedb.php
 2272da049ffd9626c284ce97278dcc8d  lib/ezdb/classes/exptidbdb.php
 1452aaca7dffe6b92d640413b37970b6  lib/ezdb/classes/expvitessdb.php
 b0ec48eddd6650b3be7b84dd6ebd2e7b  lib/ezdb/classes/expxpanddb.php
+f43f382da35a63493ef1772e1f3fbe0e  lib/ezdb/classes/expyugabytedb.php
 b34a55ee1c8c8d1ef91a3dadce357ebe  lib/ezdb/classes/ezdb.php
 370eb86a5bd19f63bc4ebb8fefa31097  lib/ezdb/classes/ezdbinterface.php
 d4df41ebfdc3ec67268298c055a80e32  lib/ezdb/classes/ezdbquerycache.php
@@ -27167,7 +27175,7 @@ d4df41ebfdc3ec67268298c055a80e32  lib/ezdb/classes/ezdbquerycache.php
 f23bc6203fe8986719ddb0ba848d9cb6  lib/ezdb/classes/ezmysqlcharset.php
 dbe216a38e95222f789554504cf2fd38  lib/ezdb/classes/ezmysqlidb.php
 1294af6ed556779b6624f3decf5476d4  lib/ezdb/classes/eznulldb.php
-b5cbc1ed8072e334ec5221c9106ee1f4  lib/ezdb/classes/ezpostgresqldb.php
+33588f170133b69d41eae42a889bb748  lib/ezdb/classes/ezpostgresqldb.php
 18a6e2d24b3cafda0b0c7d17844c7764  lib/ezdb/classes/ezsqlite3db.php
 ac6df8d4565b779eff3ff9c41b2da301  lib/ezdbschema/classes/expmongoschema.php
 f523c567ac0aa2e12b3d911dcb49ec4d  lib/ezdbschema/classes/ezdbschema.php
@@ -27570,7 +27578,7 @@ cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.m
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 6c02e4e777784dc458582238e073cb10  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
-d21eaacb1eaaebead6f9d8455ddd3c06  phpunit.xml
+1ce958bb687574837107df49f50ef5d0  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 80009f76b1b56385601f4e610872f8d2  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -27636,7 +27644,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 3b4150f3b2e07a0dd743d4f24a5b92ec  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-ebeff7cdeee86694ef579e03fdf73f94  settings/site.ini
+6d6bf853c58c957029b39543dfc79f49  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -30784,6 +30792,8 @@ e89ea00071ff5d039ebb4c2e3749e9c4  tests/tests/lib/ezdb/odbc/expMSAccessDialectTe
 21bdfc7553afb0c4a1c68562e80a10c3  tests/tests/lib/ezdb/odbc/live/expMSAccessKernelSchemaTest.php
 5e12ac39b96d56e497178efa4ff578ac  tests/tests/lib/ezdb/odbc/live/expMSAccessLiveTest.php
 f4abb0436986621e32c7f7864fbd6e27  tests/tests/lib/ezdb/odbc/live/expODBCLiveTest.php
+3ecf09089c92668ee0ccd54264755058  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireDBTest.php
+b1fe0f4929ffde2b3086aa32381d173c  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireProfileTest.php
 f40f3832378c387d480f1c50678e6c9b  tests/tests/lib/ezdb/suite.php
 ca35100b2f790091e5a176ef768a01b1  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
 bf56cd696b1c3561ffb9158f765ac630  tests/tests/lib/ezdbschema/expInsertSchemaDataOnlyTest.php

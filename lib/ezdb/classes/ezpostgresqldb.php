@@ -273,6 +273,14 @@ class eZPostgreSQLDB extends eZDBInterface
             if ( !$result )
             {
                 $this->setError();
+                // A driver for a database of the PostgreSQL protocol may send the statement again (a serialization
+                // failure, a lost connection): expPostgreSQLWireDB
+                $retried = $this->retryFailedQuery( $sql, $server );
+                if ( $retried )
+                    $result = $retried;
+            }
+            if ( !$result )
+            {
                 eZDebug::writeError( self::failedQueryMessage( $this->ErrorMessage, $sql ), "eZPostgreSQLDB" );
                 if ( $this->errorHandling == eZDB::ERROR_HANDLING_EXCEPTIONS )
                 {
@@ -289,6 +297,21 @@ class eZPostgreSQLDB extends eZDBInterface
         return $result;
     }
 
+
+    /**
+     * A failed statement's second chance: the result of running it again, or false. PostgreSQL itself gives none
+     * (an error there is the statement's); expPostgreSQLWireDB repeats a statement outside a transaction after a
+     * serialization failure or a lost connection. setError() has run: ErrorNumber is the SQLSTATE.
+     *
+     * @param string $sql
+     * @param int|bool $server
+     * @return resource|object|false
+     * @since 6.0.15
+     */
+    protected function retryFailedQuery( $sql, $server )
+    {
+        return false;
+    }
 
     function arrayQuery( $sql, $params = array(), $server = false )
     {
@@ -765,8 +788,7 @@ class eZPostgreSQLDB extends eZDBInterface
                 $this->ReplicaConnection = $this->connectReplica();
             if ( !$this->ReplicaConnection )
                 return false;
-            $status = $this->replicaQueryValue( "SELECT CASE WHEN NOT pg_is_in_recovery() THEN 'primary'"
-                                              . " ELSE (SELECT status FROM pg_stat_wal_receiver) END" );
+            $status = $this->replicaQueryValue( $this->replicaStatusQuery() );
             if ( $status !== 'streaming' && $status !== 'primary' )
             {
                 eZDebug::writeWarning( "The read replica {$this->SlaveServer}:{$this->SlavePort} is not streaming ("
@@ -776,6 +798,20 @@ class eZPostgreSQLDB extends eZDBInterface
             $this->ReplicaState = 'on';
         }
         return $this->ReplicaConnection;
+    }
+
+    /**
+     * The statement that tells whether the replica may be read: 'primary', 'streaming', or anything else (not read).
+     * A PostgreSQL standby must be streaming from its primary; Amazon Aurora's readers replicate in the storage and
+     * have no WAL receiver (expPostgreSQLWireDB asks pg_is_in_recovery() alone there).
+     *
+     * @return string
+     * @since 6.0.15
+     */
+    protected function replicaStatusQuery()
+    {
+        return "SELECT CASE WHEN NOT pg_is_in_recovery() THEN 'primary'"
+             . " ELSE (SELECT status FROM pg_stat_wal_receiver) END";
     }
 
     /**

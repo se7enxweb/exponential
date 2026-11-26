@@ -1,0 +1,19 @@
+<?php
+/**
+ * File containing the expYugabyteDB class.
+ *
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package lib
+ */
+
+/**
+ * The YugabyteDB (YSQL) driver: DatabaseImplementation=yugabytedb (also yugabyte, ysql) in site.ini.
+ * What differs from PostgreSQL is the profile 'yugabytedb' (expPostgreSQLWireProfile); the driver is expPostgreSQLWireDB.
+ *
+ * @since 6.0.15
+ */
+class expYugabyteDB extends expPostgreSQLWireDB
+{
+    const PROFILE = 'yugabytedb';
+}

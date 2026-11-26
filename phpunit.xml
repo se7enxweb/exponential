@@ -109,6 +109,8 @@
             <exclude>tests/tests/lib/ezdb/odbc</exclude>
             <!-- in the suites duckdb and duckdb-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/duckdb</exclude>
+            <!-- in the suites pgwire and pgwire-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/pgwire</exclude>
             <!-- in the suites mysqlwire and mysqlwire-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/mysqlwire</exclude>
             <!-- in the suites firebird and firebird-live; a file can be in one suite only -->
@@ -158,6 +160,22 @@
 
         <testsuite name="sqlserver-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/sqlserver/live</directory>
+        </testsuite>
+
+        <!--
+          The databases of the PostgreSQL wire protocol (expPostgreSQLWireDB: CockroachDB, YugabyteDB, Spanner through
+          PGAdapter, Neon, Supabase, Aurora): the DB-less tests, and the live tests against servers
+          (EXP_TEST_PGWIRE_<PROFILE>_HOST, _PORT, _USER, _PASSWORD, _DATABASE for COCKROACHDB, YUGABYTEDB, SPANNER;
+          they skip without one).
+          Run: php vendor/bin/phpunit - -testsuite pgwire | pgwire-live
+        -->
+        <testsuite name="pgwire">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/pgwire</directory>
+            <exclude>tests/tests/lib/ezdb/pgwire/live</exclude>
+        </testsuite>
+
+        <testsuite name="pgwire-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/pgwire/live</directory>
         </testsuite>
 
         <!--
