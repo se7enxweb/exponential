@@ -11397,6 +11397,7 @@ f0559498dcd382721582d01118209c59  doc/eng-us/help/mobile-app-developers/rest-api
 e68fe2eced95ad725375c49248ceb1b0  doc/eng-us/help/mobile-app-developers/testing/testing-against-a-demo.md
 dc777094adafe123b287158888d993c6  doc/eng-us/help/mobile-app-developers/what-the-apis-do-not-do.md
 40b3beb49fe248b49dc7cde32fcd6b10  doc/eng-us/help/mobile-app-developers/which-api-for-your-app.md
+9462ab2fe8482b7f25eab4bf899df06d  doc/eng-us/help/moving-off-an-old-database.md
 fe33ef220e0e4638cf118a887a4a0d03  doc/eng-us/help/non-profits/a-free-website-for-your-nonprofit.md
 c49ff3f06466b607fd9d2ead0f6ef129  doc/eng-us/help/non-profits/accessibility/README.md
 40bbecb67bd5b35dc0945c4719d515c6  doc/eng-us/help/non-profits/accessibility/accessibility-basics-for-non-profits.md
@@ -13672,7 +13673,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-5f87a166b868f20406b1d7b1fb4501c1  doc/ger-de/.paths.json
+3b05002b1cf908d968034d84e8201e25  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -22862,6 +22863,7 @@ ca1ea14d3eeffd304cbafdadd00d4109  doc/ger-de/hilfe/web-framework-entwickler/vali
 ade2b299ea4758eec7012128c5bb1b69  doc/ger-de/hilfe/web-framework-entwickler/warteschlangen-und-hintergrundjobs.md
 d92aa1a4f092003d7c2edce44b709677  doc/ger-de/hilfe/web-framework-entwickler/web-framework-entwickler-hier-beginnen.md
 968536d25059db38ef30de64fba10479  doc/ger-de/hilfe/web-framework-entwickler/workflows-trigger-und-domain-events.md
+337ea4b003208e95f35d63923de64b8c  doc/ger-de/hilfe/weg-von-einer-alten-datenbank.md
 4d4694aa37fa95c9637b738561e6764a  doc/ger-de/hilfe/wenn-etwas-schiefgeht.md
 6ff87b8ce1b18727d176c6bfaeae30e3  doc/ger-de/hilfe/wer-ist-7x.md
 0cbd6a1db798ee397bd490e8943fdc0e  doc/ger-de/hilfe/wer-ist-die-exponential-foundation.md
