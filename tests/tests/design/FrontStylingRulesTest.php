@@ -5,7 +5,9 @@
  *
  * - No <style> block and no style="" attribute in the templates of the front designs: every design/<name> that is
  *   not an admin design (AdminStylingRulesTest::DESIGNS) and every extension/<ext>/design/<name> of this repository
- *   whose name does not start with "admin". Template comments {* ... *} are not read.
+ *   whose name does not start with "admin". Only the templates this repository tracks count (git ls-files): extensions
+ *   Composer installs into extension/ are packages of their own, with their own CI. Without a git checkout, the
+ *   extensions listed in vendor/composer/installed.json are left out instead. Template comments {* ... *} are not read.
  * - The templates that still carry inline CSS are in ALLOWLIST, which only shrinks: a listed file that has no inline
  *   CSS any more, or no longer exists, fails the test until it is taken off the list. A new template, or a template
  *   not on the list, with inline CSS fails the test. Never add an entry to make a change pass: move the CSS to the
@@ -112,9 +114,10 @@ class FrontStylingRulesTest extends PHPUnit\Framework\TestCase
                 $dirs[] = substr( $dir, strlen( self::$root ) + 1 );
             }
         }
+        $installed = self::composerInstalledExtensions();
         foreach ( (array)glob( self::$root . '/extension/*/design/*', GLOB_ONLYDIR ) as $dir )
         {
-            if ( strpos( basename( $dir ), 'admin' ) !== 0 )
+            if ( strpos( basename( $dir ), 'admin' ) !== 0 && !isset( $installed[basename( dirname( dirname( $dir ) ) )] ) )
             {
                 $dirs[] = substr( $dir, strlen( self::$root ) + 1 );
             }
@@ -124,19 +127,76 @@ class FrontStylingRulesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * Returns the extensions Composer installed into extension/ (name => true). They are packages of their own, with
+     * their own CI, and not files of this repository: a checkout with its dependencies installed (CI, a site) holds
+     * them next to the extensions this repository ships, which are the ones this test checks.
+     */
+    public static function composerInstalledExtensions()
+    {
+        $names = array();
+        $file = self::$root . '/vendor/composer/installed.json';
+        $data = is_file( $file ) ? json_decode( (string)file_get_contents( $file ), true ) : null;
+        $packages = is_array( $data ) ? ( isset( $data['packages'] ) ? $data['packages'] : $data ) : array();
+        foreach ( $packages as $package )
+        {
+            if ( !is_array( $package ) || !isset( $package['install-path'] ) )
+            {
+                continue;
+            }
+            $path = realpath( self::$root . '/vendor/composer/' . $package['install-path'] );
+            if ( $path !== false && dirname( $path ) === realpath( self::$root . '/extension' ) )
+            {
+                $names[basename( $path )] = true;
+            }
+        }
+        return $names;
+    }
+
+    /**
      * Returns the front templates (paths from the root) that carry inline CSS
      */
+    /**
+     * Returns the .tpl files this repository tracks (path => true), from git ls-files; null without a git checkout
+     * (an archive), where the scan falls back to leaving out the extensions Composer installed.
+     */
+    public static function trackedTemplates()
+    {
+        if ( !is_dir( self::$root . '/.git' ) && !is_file( self::$root . '/.git' ) )
+        {
+            return null;
+        }
+        $out = array();
+        $code = 1;
+        exec( 'git -C ' . escapeshellarg( self::$root ) . " ls-files -z -- '*.tpl' 2>/dev/null", $out, $code );
+        if ( $code !== 0 )
+        {
+            return null;
+        }
+        $tracked = array();
+        foreach ( explode( "\0", implode( "\n", $out ) ) as $path )
+        {
+            if ( $path !== '' )
+            {
+                $tracked[$path] = true;
+            }
+        }
+        return $tracked;
+    }
+
     private static function templatesWithInlineCss()
     {
+        $tracked = self::trackedTemplates();
         $found = array();
         foreach ( self::frontDesignDirectories() as $dir )
         {
             $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::$root . '/' . $dir, FilesystemIterator::SKIP_DOTS ) );
             foreach ( $files as $file )
             {
-                if ( substr( $file->getFilename(), -4 ) === '.tpl' && AdminStylingRulesTest::inlineCssCount( AdminFiles::read( $file->getPathname() ) ) > 0 )
+                $path = substr( $file->getPathname(), strlen( self::$root ) + 1 );
+                if ( substr( $file->getFilename(), -4 ) === '.tpl' && ( $tracked === null || isset( $tracked[$path] ) )
+                     && AdminStylingRulesTest::inlineCssCount( AdminFiles::read( $file->getPathname() ) ) > 0 )
                 {
-                    $found[] = substr( $file->getPathname(), strlen( self::$root ) + 1 );
+                    $found[] = $path;
                 }
             }
         }

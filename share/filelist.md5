@@ -29097,7 +29097,7 @@ ea17f28b84072767e23ca4184b304295  tests/tests/design/CopyrightFooterNoticeTest.p
 1e44dc25b928bd8994552ab6ea2e0cfc  tests/tests/design/DemoModeUserTemplatesTest.php
 a2241aa25c9f142e964048f33a8a2c07  tests/tests/design/ExtensionInlineScriptsTest.php
 608d90ba6f149cc0d69838ba1a460382  tests/tests/design/FormSubmitButtonDisableTest.php
-317bfbe8e17a0c52260b9546d8791113  tests/tests/design/FrontStylingRulesTest.php
+2912e4a7664cd2ced7a364bfa39c06c8  tests/tests/design/FrontStylingRulesTest.php
 a8e3a4290f571b7fac059c9087858076  tests/tests/design/LogViewerCopyMessagesTest.php
 19ba4c5245190eb2d468de53a68766d6  tests/tests/design/LogViewerNavTest.php
 83eed17bce724684076d1925445580d4  tests/tests/design/OpenspecIndexTest.php
