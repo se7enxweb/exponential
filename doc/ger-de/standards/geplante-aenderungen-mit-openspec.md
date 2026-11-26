@@ -54,9 +54,23 @@ Ist die Änderung gemergt, wandert sie nach `openspec/changes/archive/`, und ihr
 |---|---|
 | `add-workflow-definitions`, `add-workflow-runtime`, `add-workflow-jobs-and-timers`, `add-workflow-admin-ui`, `add-workflow-review-options`, `add-workflow-integrations`, `add-workflow-webhooks-and-importers`, `add-workflow-reference-cases` | Geplant: die grafischen redaktionellen Workflows der Erweiterung `expworkflow`; Entwurfsquelle `openspec/handoff/expworkflow-16702-spec.md` |
 | `add-workflow-outward-action-safeguards`, `add-channel-posts`, `add-newsletter-welcome-series`, `add-form-destinations`, `add-ai-field-provenance`, `add-newsletter-segments`, `add-share-metadata` | Geplant: Marketing-Automatisierung auf dem Workflow-Designer (Schutz für Aktionen nach außen, Beiträge in Kanäle, Willkommensserie im Newsletter, Ziele für Formulare, Herkunft von KI-Feldern, Segmente im Newsletter, Metadaten zum Teilen); Entwurfsquelle und Bauanleitung `openspec/handoff/marketing-automation-16741.md` |
+| `add-mail-delivery-reports`, `add-mail-imap-processing`, `add-mail-starttls-stream-context`, `add-mail-xoauth2-configuration`, `add-newsletter-mailbox-settings` | Geplant: die Empfangsseite von Mail (Zustellberichte, IMAP-Verarbeitung, STARTTLS-Stream-Kontext, XOAUTH2, die Postfach-Einstellungen des Newsletters); die gemeinsamen Regeln zum Lesen kamen zuerst als `expMailReceive` |
+| `fix-newsletter-bounce-handling`, `remove-newsletter-legacy-bounce-parser` | In Arbeit: fünf Fehler des Bounce-Postfachs des Newsletters und eine Einordnung für zurückgekommene Mails; das Passwort im Log und die Bounce-Art `delay` sind behoben (cjw_newsletter 4.3.1, Pull Requests #375 und #376) |
+| `adopt-admin4-tailwind-palette` | In Arbeit: die admin4-Farben aus der Tailwind-3.4-Palette und das Orange des Logos sind gemergt (Pull Request #369); zwei Aufgaben sind offen |
 | `archive/2026-11-02-add-admin-search` | Fertig: Suchvorschläge beim Tippen und die Suchseite mit ihrer Filterleiste; Specs in `openspec/specs/admin/` |
 
 Die Artefakte von OpenSpec selbst sind auf Englisch geschrieben.
+
+Diese Tabelle ist der eine Index von `openspec/changes/`. Ein Änderungsverzeichnis bekommt seine Zeile im Pull Request,
+der es anlegt. Der Pull Request, der eine Änderung fertigstellt, verschiebt das Verzeichnis nach
+`archive/<datum>-<name>/`, führt ihre Specs in `openspec/specs/` zusammen und setzt die Zeile auf Fertig; eine fertige
+Änderung bleibt nicht unter den geplanten. Die englische Seite listet dieselben Verzeichnisse.
+`tests/tests/design/OpenspecIndexTest.php` schlägt fehl, wenn ein Verzeichnis keine Zeile hat oder eine Zeile ein
+Verzeichnis nennt, das es nicht gibt.
+
+`openspec/` in diesem Repository enthält die Pläne von Änderungen am Kernel und an den Erweiterungen, die er
+mitbringt. Ein Paket mit eigenem Repository plant seine Änderungen dort; eine Änderung, die Kernel und ein solches
+Paket umfasst, wird hier geplant und nennt die Pull Requests des Pakets als „Depends on“.
 
 ## Verwandte Seiten
 

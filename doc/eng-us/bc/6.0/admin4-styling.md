@@ -526,6 +526,21 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
 set the width only (`--left-sidebar-width`): the column's text keeps the body's size at every width
 (`AdminLeftColumnFontTest`).
 
+## Front designs
+
+Rule 1 applies to the front designs too: no `<style>` block and no `style=""` attribute in a template of
+`design/standard`, `design/base`, `design/plain`, `design/mysite`, `design/editor` or any other design that is not an
+administration design, nor in an extension's design shipped with Exponential (`extension/*/design/*` whose name does
+not start with `admin`). The CSS goes into the design's stylesheets; a value per element goes in a `data-*` attribute
+or a class that a stylesheet reads (for example a slider's slides per view as `data-slides-per-view`, matched by
+attribute selectors, instead of `style="--n: 4"`).
+
+`tests/tests/design/FrontStylingRulesTest.php` (testsuite `design`) checks it. The 62 templates that carried inline CSS
+when the rule was extended (2026-11-26) are in its `ALLOWLIST`, which only shrinks: a new template or a template
+not on the list with inline CSS fails, and a listed template that no longer has any fails until it is taken off the
+list. Never add an entry to make a change pass. Extension and theme repositories of their own check the same rule in
+their CI workflow.
+
 ## Checked in CI
 
 `tests/tests/design/AdminStylingRulesTest.php` (testsuite `design`, no database) fails when:

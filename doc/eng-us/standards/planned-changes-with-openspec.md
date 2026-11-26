@@ -50,7 +50,20 @@ When the change is merged it moves to `openspec/changes/archive/` and its specs 
 |---|---|
 | `add-workflow-definitions`, `add-workflow-runtime`, `add-workflow-jobs-and-timers`, `add-workflow-admin-ui`, `add-workflow-review-options`, `add-workflow-integrations`, `add-workflow-webhooks-and-importers`, `add-workflow-reference-cases` | Planned: the graphical editorial workflows of the extension `expworkflow`; design source `openspec/handoff/expworkflow-16702-spec.md` |
 | `add-workflow-outward-action-safeguards`, `add-channel-posts`, `add-newsletter-welcome-series`, `add-form-destinations`, `add-ai-field-provenance`, `add-newsletter-segments`, `add-share-metadata` | Planned: marketing automation on top of the workflow designer (outward-action safeguards, posts to channels, newsletter welcome series, form destinations, AI field provenance, newsletter segments, share metadata); design source and build guide `openspec/handoff/marketing-automation-16741.md` |
+| `add-mail-delivery-reports`, `add-mail-imap-processing`, `add-mail-starttls-stream-context`, `add-mail-xoauth2-configuration`, `add-newsletter-mailbox-settings` | Planned: the receiving side of mail (delivery reports, IMAP processing, STARTTLS stream context, XOAUTH2, the newsletter's mailbox settings); the shared reader rules landed first as `expMailReceive` |
+| `fix-newsletter-bounce-handling`, `remove-newsletter-legacy-bounce-parser` | In progress: five defects of the newsletter's bounce mailbox and one classification for returned mail; the password in the log and the bounce kind `delay` are fixed (cjw_newsletter 4.3.1, pull requests #375 and #376) |
+| `adopt-admin4-tailwind-palette` | In progress: the admin4 colours from the Tailwind 3.4 palette and the logo orange are merged (pull request #369); two tasks are open |
 | `archive/2026-11-02-add-admin-search` | Finished: search suggestions while typing and the search page with its filter bar; specs in `openspec/specs/admin/` |
+
+This table is the one index of `openspec/changes/`. A change directory gets its row in the pull request that adds it.
+The pull request that finishes a change moves the directory to `archive/<date>-<name>/`, merges its specs into
+`openspec/specs/` and marks the row Finished; a finished change is not left among the planned ones. The German page
+lists the same directories. `tests/tests/design/OpenspecIndexTest.php` fails when a directory has no row or a row
+names a directory that does not exist.
+
+`openspec/` in this repository holds the plans of changes to the kernel and to the extensions shipped in it. A
+package with its own repository plans its own changes there; a change that spans the kernel and such a package is
+planned here and names the package's pull requests as "Depends on".
 
 ## Related pages
 

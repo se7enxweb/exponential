@@ -553,6 +553,21 @@ Die voreingestellten Größen der linken Spalte (klein, mittel, groß) sind Rege
 `pagelayout.css`. Sie setzen nur die Breite (`--left-sidebar-width`): Der Text der Spalte behält bei jeder Breite die
 Größe des Fließtexts (`AdminLeftColumnFontTest`).
 
+## Front-Designs
+
+Regel 1 gilt auch für die Front-Designs: kein `<style>`-Block und kein `style=""`-Attribut in einem Template von
+`design/standard`, `design/base`, `design/plain`, `design/mysite`, `design/editor` oder einem anderen Design, das kein
+Administrations-Design ist, und auch nicht im Design einer mit Exponential ausgelieferten Erweiterung
+(`extension/*/design/*`, dessen Name nicht mit `admin` beginnt). Das CSS gehört in die Stylesheets des Designs; ein
+Wert je Element steht in einem `data-*`-Attribut oder einer Klasse, die ein Stylesheet liest (etwa die Zahl der
+Slides je Ansicht eines Sliders als `data-slides-per-view`, über Attributselektoren, statt `style="--n: 4"`).
+
+`tests/tests/design/FrontStylingRulesTest.php` (Testsuite `design`) prüft das. Die 62 Templates, die beim Ausweiten
+der Regel (2026-11-26) Inline-CSS hatten, stehen in seiner `ALLOWLIST`, die nur kürzer wird: ein neues Template oder
+ein nicht gelistetes Template mit Inline-CSS schlägt fehl, und ein gelistetes Template ohne Inline-CSS schlägt fehl,
+bis es von der Liste genommen ist. Nie einen Eintrag hinzufügen, damit eine Änderung durchgeht. Erweiterungs- und
+Theme-Repositories mit eigenem Repository prüfen dieselbe Regel in ihrem CI-Workflow.
+
 ## In der CI geprüft
 
 `tests/tests/design/AdminStylingRulesTest.php` (Testsuite `design`, ohne Datenbank) schlägt fehl, wenn:

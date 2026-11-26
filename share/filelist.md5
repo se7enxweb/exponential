@@ -3583,7 +3583,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-e7d077f6559b1365cfc1963182240a18  doc/changelogs/6.0/6.0.15.md
+3cc37ca9aa211475896ca5a1525cdf9e  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3715,7 +3715,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/eng-us/bc/5.90/relation_indexing.md
 2caa3bcb7212945a93a3859ef2ca51b9  doc/eng-us/bc/6.0/LAYOUTS.md
 6512bd5f0c96ea7c62f78b88d0ca6213  doc/eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
-dd29e1204e9172c693db002271ceaf0c  doc/eng-us/bc/6.0/admin4-styling.md
+5d781af084a8ef54a29f3ca45c04b413  doc/eng-us/bc/6.0/admin4-styling.md
 a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
 2fdc25f2d9a0e0d333eec6045a319e6a  doc/eng-us/bc/6.0/anonymous-public-policies.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
@@ -13598,7 +13598,7 @@ f9c1b32a75bd2edbc8184732bf534afa  doc/eng-us/standards/patterns/module-view.md
 aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 96f72b089201975aefdf81972c112f5a  doc/eng-us/standards/patterns/workflow-event.md
 49cc6c1ef75a73b42e0c552d8dd8fd39  doc/eng-us/standards/php-and-composer.md
-dacdb6cd9fcfaac9730c667774e8736f  doc/eng-us/standards/planned-changes-with-openspec.md
+57e57587c312e9ed78e3ee47c70ed5eb  doc/eng-us/standards/planned-changes-with-openspec.md
 31a8b4b37b1e81858be9ab41d77db05a  doc/eng-us/standards/privacy.md
 fa9c3a0063330326492d2e26107df05b  doc/eng-us/standards/security.md
 965ab8e3c5a29dc3c29e89f7f5a9c31c  doc/eng-us/standards/source-control-and-releases.md
@@ -13870,7 +13870,7 @@ b11036b869ecce50514c58fd208067d5  doc/ger-de/bc/5.2/aenderungen-5.2.txt
 9a2363742ead21d40c5d8a8741b42385  doc/ger-de/bc/5.90/indizierung-von-beziehungen.md
 dcf1b0b94d93bc43a5091638826844ee  doc/ger-de/bc/5.90/passwortlaenge.md
 039ce123c1a0a75a7c9e730e577e0136  doc/ger-de/bc/5.90/php7.md
-d9d109f142e6f564656a10864e217a2e  doc/ger-de/bc/6.0/admin4-gestaltung.md
+f89f3ec979ee56ec02a130d58e43e6d1  doc/ger-de/bc/6.0/admin4-gestaltung.md
 5a4621981bfe41d7b35285f2ddc481b7  doc/ger-de/bc/6.0/admin4l.md
 4e78fa65819106fb7b5ad9c32bbd555c  doc/ger-de/bc/6.0/anonymous-rolle-richtlinien.md
 693eca963756cd0b335bee8289bc4022  doc/ger-de/bc/6.0/antwort-cache-und-navigation.md
@@ -23316,7 +23316,7 @@ abde9c42a1d4341895fe65062fdf54ff  doc/ger-de/spezifikationen/trunk/webdav/design
 de6054b2c0bbcdd143775e13e0a7f745  doc/ger-de/standards/datenbanken-und-sql.md
 182aa838e35c4d7562910e0049130398  doc/ger-de/standards/datenschutz.md
 169104cdf8d670bcd81533d69c602ca6  doc/ger-de/standards/dokumentation-und-veroeffentlichung.md
-2fa8b2ae9f36d243a1fe473012ee9240  doc/ger-de/standards/geplante-aenderungen-mit-openspec.md
+8c688527a67ba93ba446ef1e83255c8d  doc/ger-de/standards/geplante-aenderungen-mit-openspec.md
 fa3f046274916cda2ef3f9d4f2556b93  doc/ger-de/standards/internationalisierung.md
 0444013fc600f0d335708909c9f869ce  doc/ger-de/standards/kopfzeile.txt
 cb1b1be62c82c33a8d2e77dc6ef248f4  doc/ger-de/standards/muster/README.md
@@ -27541,7 +27541,7 @@ cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.m
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 6c02e4e777784dc458582238e073cb10  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
-f0a7ce391777bf19d57b25dcd7cbe5e5  phpunit.xml
+d6641b9953a26c77c6059b88d98e5863  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 242b474556fa73a01c4a1cc2b0348abb  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -29093,8 +29093,10 @@ c0c0f5eb8bbcd4ba17e6dac25d579b6b  tests/tests/design/AdminTokenUsageTest.php
 6c4036c2046598332b612498521588cf  tests/tests/design/DemoModeUserTemplatesTest.php
 104b9fae8cb4b38de695950b7dd7e010  tests/tests/design/ExtensionInlineScriptsTest.php
 0710fd0f4116c01a9a299beba675c049  tests/tests/design/FormSubmitButtonDisableTest.php
+dc7634815d5be89d619b6b4e57ed9294  tests/tests/design/FrontStylingRulesTest.php
 8e8452be9fc384ea01e7f33ad8dc1183  tests/tests/design/LogViewerCopyMessagesTest.php
 6daf7c6280369c901a6b348253f70dae  tests/tests/design/LogViewerNavTest.php
+4d220255fa277d9f7ff6d9ace4a85b4b  tests/tests/design/OpenspecIndexTest.php
 99ab3a3c3209b08677582574e8a9a4c4  tests/tests/design/PageLayoutHooksTest.php
 592daf629179528f5fdafd6c8c593a79  tests/tests/design/StandardClassAttributeNameEscapingTest.php
 85daef76e773824aa1ce1d4a83b8b72b  tests/tests/design/StandardContentEditAccessibleNamesTest.php
