@@ -70,6 +70,7 @@ class expDataConnections
             'mongodb' => array( 'label' => 'MongoDB', 'kind' => 'document', 'ez' => 'mongodb', 'pdo' => array(), 'port' => 27017, 'file' => false ),
             'odbc' => array( 'label' => 'ODBC (any driver)', 'kind' => 'relational', 'ez' => '', 'pdo' => array( 'odbc' ), 'port' => 0, 'file' => false, 'class' => 'expODBCDB' ),
             'msaccess' => array( 'label' => 'Microsoft Access (ODBC)', 'kind' => 'relational', 'ez' => '', 'pdo' => array( 'odbc' ), 'port' => 0, 'file' => true, 'class' => 'expMSAccessDB' ),
+            'firebird' => array( 'label' => 'Firebird', 'kind' => 'relational', 'ez' => 'firebird', 'pdo' => array( 'firebird' ), 'port' => 3050, 'file' => false ),
         );
     }
 
@@ -251,6 +252,8 @@ class expDataConnections
             $engine = 'sqlserver';
         if ( $engine === 'access' )
             $engine = 'msaccess';
+        if ( $engine === 'fb' || $engine === 'interbase' )
+            $engine = 'firebird';
         return array(
             'identifier' => strtolower( $text( 'identifier', 64 ) ),
             'name' => $text( 'name' ),
@@ -972,6 +975,8 @@ class expDataConnections
                 return extension_loaded( 'oci8' );
             case 'mongodb':
                 return extension_loaded( 'mongodb' ) && class_exists( 'MongoDB\\Client' );
+            case 'firebird':
+                return class_exists( 'expFirebirdTransport' ) && expFirebirdTransport::availableLayer() !== null;
         }
         return false;
     }

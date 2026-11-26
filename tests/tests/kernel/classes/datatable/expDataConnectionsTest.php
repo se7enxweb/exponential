@@ -205,7 +205,7 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
     public function testEngines()
     {
         $engines = expDataConnections::engines();
-        $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess' ), array_keys( $engines ) );
+        $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird' ), array_keys( $engines ) );
         foreach ( $engines as $key => $engine )
         {
             foreach ( array( 'label', 'kind', 'ez', 'pdo', 'port', 'file', 'enabled', 'available', 'via', 'handler', 'pdo_driver', 'why', 'untested' ) as $field )
@@ -218,6 +218,7 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'document', $engines['mongodb']['kind'] );
         $this->assertTrue( $engines['sqlite']['available'], 'SQLite is available here' );
         $this->assertSame( 'ez', $engines['sqlite']['via'] );
+        $this->assertSame( array( 'firebird', 3050, 'relational' ), array( $engines['firebird']['ez'], $engines['firebird']['port'], $engines['firebird']['kind'] ) );
     }
 
     /** DC-07 */

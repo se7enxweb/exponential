@@ -29,12 +29,15 @@ $databaseTypes = array(
     'singlestore' => array( 'type' => 'singlestore', 'port' => '3306', 'name' => 'exponential', 'user' => 'root' ),
     'xpand'       => array( 'type' => 'xpand',       'port' => '3306', 'name' => 'exponential', 'user' => 'root' ),
     'aurora'      => array( 'type' => 'aurora',      'port' => '3306', 'name' => 'exponential', 'user' => 'admin' ),
+    // Firebird 4/5: the database must exist; the name is an alias of databases.conf or the file's path on the server
+    'firebird' => array( 'type' => 'firebird', 'port' => '3050', 'name' => 'exponential', 'user' => 'SYSDBA' ),
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
                           'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
                           'oci8' => 'oracle', 'ezoracle' => 'oracle',
                           'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver',
-                          'planetscale' => 'vitess', 'memsql' => 'singlestore', 'aurora-mysql' => 'aurora', 'auroramysql' => 'aurora' );
+                          'planetscale' => 'vitess', 'memsql' => 'singlestore', 'aurora-mysql' => 'aurora', 'auroramysql' => 'aurora',
+                          'fb' => 'firebird', 'pdo_firebird' => 'firebird' );
 
 $options = array(
     'db'             => 'sqlite',
@@ -123,7 +126,7 @@ if ( isset( $databaseAliases[$db] ) )
     $db = $databaseAliases[$db];
 if ( !isset( $databaseTypes[$db] ) )
 {
-    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand or aurora\n" );
+    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora or firebird\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
@@ -470,20 +473,25 @@ the package, the siteaccesses, the files), checks the database and the remote
 packages, and ends with "PASS: ... (dry run, nothing changed; --apply writes)".
 
 Database (default: SQLite, no server needed)
-  --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle or sqlserver
+  --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle, sqlserver or firebird
                          (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
+                         (firebird: needs pdo_firebird of PHP 8.4 or later, Firebird 4 or 5, and an
+                         existing database, PAGE_SIZE 16384 and UTF8)
                          (oracle: needs oci8 and extension/ezoracle)
                          MySQL protocol, with mysqli: tidb, vitess (planetscale),
                          singlestore (memsql), xpand, aurora (aurora-mysql)
                          (vitess: the keyspace must exist)
   --db-host=<host>       default localhost
   --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
-                         1521 (oracle), 1433 (sqlserver), 4000 (tidb)
+                         1521 (oracle), 1433 (sqlserver), 4000 (tidb), 3050 (firebird)
   --db-name=<name>       default exponential (exponential.db for sqlite);
                          oracle: the service name, default FREEPDB1, used as
                          host:port/service; a full connect string (with / or
-                         a descriptor) or @alias (a TNS alias) is used as it is
-  --db-user=<user>       default root (mysql), postgres (pgsql), sa (sqlserver), none otherwise
+                         a descriptor) or @alias (a TNS alias) is used as it is;
+                         firebird: an alias of the server's databases.conf or the
+                         path of the database file on the server
+  --db-user=<user>       default root (mysql), postgres (pgsql), sa (sqlserver),
+                         SYSDBA (firebird), none otherwise
   --db-password=<pass>   default none; or set EXP_INSTALL_DB_PASSWORD, which
                          keeps it out of the process list and shell history
   --db-socket=<path>     MySQL socket, instead of host and port

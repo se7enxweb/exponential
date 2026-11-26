@@ -195,6 +195,10 @@ class expDataTableSchema
                 return self::sqlServerCreate( $table, $definition );
             case 'msaccess':
                 return expMSAccessDialect::createTable( $table, $definition, $db instanceof expODBCDB ? $db->ansi92() : true );
+            case 'firebird':
+                // statement by statement: a trigger's body holds semicolons, which a split of the SQL text would cut
+                $handler = new expFirebirdSchema( array( 'instance' => $db instanceof expFirebirdDB ? $db : expKernelTableSchema::nullDB() ) );
+                return $handler->generateTableSQLList( $table, $definition, array(), false );
             case 'oracle':
                 if ( self::hasHandler( 'oracle' ) && !$db instanceof expPDODB )
                     return self::split( expKernelTableSchema::sql( array( $table => $definition ), 'oracle' ) );
@@ -435,7 +439,7 @@ class expDataTableSchema
             }
             return $step;
         }
-        if ( in_array( $engine, array( 'mysql', 'postgresql', 'sqlite' ), true ) || ( $engine === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
+        if ( in_array( $engine, array( 'mysql', 'postgresql', 'sqlite', 'firebird' ), true ) || ( $engine === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
         {
             $handler = expKernelTableSchema::handler( $db, array() );
             if ( !$handler )

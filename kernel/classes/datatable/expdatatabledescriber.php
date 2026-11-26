@@ -98,6 +98,13 @@ class expDataTableDescriber
                 break;
             case 'mongodb':
                 return self::mongoColumns( $db, $table );
+            case 'firebird':
+                $columns = array();
+                foreach ( method_exists( $db, 'tableColumns' ) ? (array)$db->tableColumns( $table ) : array() as $column )
+                    $columns[(string)$column['name']] = array( 'type' => expFirebirdDialect::typeName( $column['type'], $column['sub_type'], $column['scale'] ),
+                                                               'nullable' => (string)$column['not_null'] !== '1',
+                                                               'default' => $column['default_source'] !== null ? preg_replace( '/^DEFAULT\s+/i', '', (string)$column['default_source'] ) : null );
+                return $columns;
             case 'msaccess':
                 // SQLColumns: Access's catalogue is not readable through ODBC
                 $access = method_exists( $db, 'tableColumns' ) ? $db->tableColumns( $table ) : null;

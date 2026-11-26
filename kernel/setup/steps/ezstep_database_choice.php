@@ -87,6 +87,9 @@ class eZStepDatabaseChoice extends eZStepInstaller
         {
             foreach ( (array)$this->PersistenceList['database_extensions']['found'] as $extension )
             {
+                // the PHP extension of a driver in the kernel, by the type it gives
+                if ( $extension === 'pdo_firebird' )
+                    $extension = 'firebird';
                 if ( isset( $databaseMap[$extension] ) && !in_array( $extension, $types ) )
                     $types[] = $extension;
             }
@@ -129,6 +132,8 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'memsql' => 'singlestore',
                           'aurora-mysql' => 'aurora',
                           'auroramysql' => 'aurora',
+                          'fb' => 'firebird',
+                          'pdo_firebird' => 'firebird',
                           'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];

@@ -105,6 +105,13 @@ function eZSetupDatabaseMap()
                                      'required_version' => '8.0.0',
                                      'has_demo_data' => true,
                                      'supports_unicode' => true ),
+                  // expFirebirdDB in the kernel: pdo_firebird of PHP 8.4 or later, Firebird 4 or 5
+                  'firebird' => array( 'type' => 'firebird',
+                                       'driver' => 'firebird',
+                                       'name' => 'Firebird',
+                                       'required_version' => '4.0',
+                                       'has_demo_data' => false,
+                                       'supports_unicode' => true ),
                   // the driver lives in an extension, activated for the
                   // installation by eZSetupActivateDatabaseExtension()
                   'oci8' => array( 'type' => 'oci8',
