@@ -9,7 +9,7 @@
  *  RD-3 RE-3 rollback with down()
  *  RD-4 RE-4 batches() with a checkpoint: a failed run goes on from the last committed batch
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group database

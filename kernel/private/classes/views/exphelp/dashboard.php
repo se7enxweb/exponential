@@ -9,7 +9,7 @@
  * can act on, reviewSummary()), help_waiting (the topics waiting for release the user may release, waitingSummary();
  * paged by the view parameter (offset), view_parameters).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

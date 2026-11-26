@@ -8,7 +8,7 @@
  *  US-8 to US-14: UE-8 to UE-14 of expUserGroupsBulkEngineChecks (groups, roles, unlock, check-login, import and
  *  export, bulk, the read-only tools)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

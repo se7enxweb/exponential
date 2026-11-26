@@ -13,7 +13,7 @@
  *  CE-3 [RunSettings] Reindex as an option: disabled queues nothing; a dry run clears and queues nothing
  *  CE-4 a rollback of a migration with a cache step lists the caches again
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

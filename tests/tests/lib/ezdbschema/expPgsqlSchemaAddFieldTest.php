@@ -11,7 +11,7 @@
  *  PA-03 - A nullable column, and a NOT NULL column without a default, get no UPDATE
  *  PA-04 - A column named by a reserved word is quoted in the UPDATE
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

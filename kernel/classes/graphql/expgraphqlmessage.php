@@ -12,7 +12,7 @@
  * The language is set at the start of every request (useLanguage()), so a persistent worker (Velocity) never answers
  * in the language of an earlier request.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

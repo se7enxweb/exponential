@@ -9,7 +9,7 @@
  *  UE-03 what the page gets: text formats with their text, spreadsheets without, Open in the import only for text,
  *        with the example's format
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

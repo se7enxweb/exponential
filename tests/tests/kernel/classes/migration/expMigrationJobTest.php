@@ -19,7 +19,7 @@
  *        rollback, edit and the simulation (and never for seeing), the dashboard block with its policy and fetch
  *        function, the two designs' templates and page script the same
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

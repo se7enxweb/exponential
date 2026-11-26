@@ -8,7 +8,7 @@
  *  CD-2 CE-2 steps that undo themselves, rolled back
  *  CD-3 CE-3 a failing migration: its object is rolled back on PostgreSQL and MySQL alike
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group database

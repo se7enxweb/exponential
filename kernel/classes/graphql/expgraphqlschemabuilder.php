@@ -15,7 +15,7 @@
  * The schema hash (schemaHash()) changes when a class, an attribute, the naming or the mutations change; it is sent with every
  * answer (header X-GraphQL-Schema, siteaccess { schemaHash }). Loaded only after webonyx/graphql-php.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

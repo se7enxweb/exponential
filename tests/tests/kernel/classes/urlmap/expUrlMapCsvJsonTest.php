@@ -12,7 +12,7 @@
  *  UC-07 - JSON that is not a URL map throws: invalid JSON, another schema, an object without rows
  *  UC-08 - The JSON writer: schema header, all keys, unescaped slashes and Unicode
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

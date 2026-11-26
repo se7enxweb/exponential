@@ -9,7 +9,7 @@
  *  UR-04 a smoke address that does not answer (a server restarting) is asked again; a real error status is not
  *  UR-05 an address that never answers still fails the check
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

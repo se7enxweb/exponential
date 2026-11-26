@@ -7,7 +7,7 @@
  *  EC-01  off for a new request, on once cleanup() started, off again for the next request (a persistent worker)
  *  EC-02  the kernel's fatal error handler writes a notice for it, and still the "Fatal error" line for a real one
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

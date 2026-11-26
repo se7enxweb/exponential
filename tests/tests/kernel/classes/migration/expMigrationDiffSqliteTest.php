@@ -8,7 +8,7 @@
  *  DS-2 DF-2 a caption with settings
  *  DS-3 DF-3 no differences, an unknown source
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

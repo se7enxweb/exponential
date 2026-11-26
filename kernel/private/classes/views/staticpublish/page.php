@@ -4,7 +4,7 @@
  * Target), the path of the page (Setup > Static publishing > ...), the messages of a job that was not started and of
  * an action, and the template.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -18,7 +18,7 @@
  *  GQ-07 the service shapes a status report, a record and a page of runs
  *  GQ-08 REST: three GET routes, the scope migration:read for each, no application cache
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

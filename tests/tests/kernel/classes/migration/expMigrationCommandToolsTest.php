@@ -17,7 +17,7 @@
  *        another signature, no up()) without loading the file; expMigrationPhp's own methods are final
  *  MT-06 expMigrationResume::pick(): the newest failed or interrupted run, a run still running, a finished run
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

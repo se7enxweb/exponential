@@ -9,7 +9,7 @@
  * of the meter classes, offset), line (text: one line of the progress, level), done (exit: the report's exit code, or
  * null without a report) or info. Policy staticpublish/read for the job's target.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

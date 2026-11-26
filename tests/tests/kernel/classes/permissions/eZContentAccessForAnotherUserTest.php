@@ -17,7 +17,7 @@
  * content languages the checks look up are empty for the test (that handler has none to give), not what an earlier
  * test of the process left in memory.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

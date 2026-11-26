@@ -6,7 +6,7 @@
  * code example of an imported documentation site, and every block an editor saved). A reference shown as text in
  * a block ("&amp;#1234;") was decoded twice and stored as the character. No database.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

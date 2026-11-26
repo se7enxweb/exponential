@@ -4,7 +4,7 @@
  * content that ran as the content job 'moderation'. Its owner, and users with content/jobs, see it; the job's progress
  * page (content/job/<id>) opens it when the job is done. Policy moderation/act.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

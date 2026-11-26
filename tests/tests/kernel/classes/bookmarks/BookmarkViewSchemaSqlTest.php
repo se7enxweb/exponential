@@ -18,7 +18,7 @@
  * The parsed columns (module_name, view_name, view_parameters) and their index expbookmark_view_module are in every
  * definition; the MySQL and PostgreSQL updates add them to a table that lacks them, guarded (BV-S3).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group bookmarks

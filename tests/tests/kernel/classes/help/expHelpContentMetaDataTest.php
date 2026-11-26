@@ -9,7 +9,7 @@
  *  HMD-05  the provider: xrowmetadata only when it can be limited to the help classes (1.4.24), never all classes
  *  HMD-06  the upgrade step is registered in the scripts stage, after the help read policy
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

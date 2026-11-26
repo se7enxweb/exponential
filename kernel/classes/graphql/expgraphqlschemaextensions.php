@@ -4,7 +4,7 @@
  * there that implements expGraphQLSchemaExtension and says it is available. A class that is missing or not an
  * extension is reported to the debug log and left out, so a removed extension never breaks the API.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

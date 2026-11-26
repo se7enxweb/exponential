@@ -49,7 +49,7 @@ The page does not describe what the sources do not say. Where a fact could not b
 - **7x is its main contributor.** The Foundation names 7x "the current leader in contributions both financial, code,
   extension development, new features, infrastructure, maintenance and much much more back to the project"
   (<https://foundation.exponential.earth/>).
-- **It shares the copyright.** The kernel's notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
+- **It shares the copyright.** The kernel's notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved."
   ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **Everything is free software.** The code is GPL v2 or later, the documentation GFDL 1.3 or later
   ([The license of this documentation](../README-LICENSE.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
@@ -529,6 +529,6 @@ mid-2027: please become a partner today to speed up our growth rate and land new
 
 Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
 Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
-"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved." Who holds it and why, what the
 GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
 [Copyright and copyleft](copyright-and-copyleft.md).

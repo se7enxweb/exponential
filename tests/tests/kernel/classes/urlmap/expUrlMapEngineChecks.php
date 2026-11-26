@@ -19,7 +19,7 @@
  *  UE-6 an entry changed after the import is kept by the undo (partly-undone), force undoes it too; an undone batch
  *       cannot be undone again
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

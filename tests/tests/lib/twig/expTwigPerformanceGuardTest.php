@@ -11,7 +11,7 @@
  * active Xdebug (any xdebug.mode but off) it is skipped too: Xdebug slows Twig's many small calls far more than the
  * compiled .tpl, so the ratio would measure Xdebug. CI runs it in a step of its own with php -d xdebug.mode=off.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group lib

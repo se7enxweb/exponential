@@ -9,7 +9,7 @@
  *  QD-2 QE-3      a CREATE TABLE before a failing statement: undone or kept, as the engine does
  *  QD-3 QE-4      an INI migration writes settings/override and a siteaccess with a backup; a dry run writes nothing
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group database

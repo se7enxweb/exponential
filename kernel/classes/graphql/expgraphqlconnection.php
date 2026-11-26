@@ -7,7 +7,7 @@
  * A cursor is the position of an item in the whole list, base64 encoded; after a cursor the list goes on at the
  * next position. Cursors stay valid while the list does not change.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -1,4 +1,6 @@
 # 1.8.8 (unreleased)
+- Updated: the copyright notice in every file header and in the metadata reads "Copyright (C) 1998 - 2026
+  Exponential Foundation and 7x; All rights reserved.", with a semicolon after the holders instead of a full stop.
 - Updated: ezjscore.ini [ezjscServer_ezjscnode] HardLimit is 500 instead of false, so ezjscnode::subtree and the
   admin's expsubitems rows return at most 500 items per request, the largest page size the sub-items list offers;
   a request for more is cut to 500. false or 0 switches the limit off as before.

@@ -29,7 +29,7 @@
  * Exit codes of run(): 0 done or cancelled, 1 failed, 2 not runnable (another worker runs it, or its state is
  * final), 3 unknown job.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -14,7 +14,7 @@
  *  MC-08 the caches the steps touch
  *  MC-09 every registered step type has its generated reference page, English and German
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

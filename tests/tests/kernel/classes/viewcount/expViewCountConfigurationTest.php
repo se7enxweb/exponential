@@ -5,7 +5,7 @@
  * logfile.ini names none, the state directory, and siteaccesses that cannot be counted. Siteaccesses that share a
  * log are one job, matched per line; a siteaccess with a log of its own is not matched.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

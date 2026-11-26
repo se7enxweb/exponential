@@ -20,7 +20,7 @@
  *  ML-11 mail goes through the file transport into a folder of the test, with its mail category (admin by default)
  *  ML-12 the caches: layout steps content and template-block; http, mail and command none
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

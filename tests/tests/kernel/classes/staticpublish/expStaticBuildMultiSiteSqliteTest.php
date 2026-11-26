@@ -13,7 +13,7 @@
  *  SM-03 --siteaccess: only the German pages are built, the English ones of the last build stay; --nodes builds a
  *        node's page in each siteaccess
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

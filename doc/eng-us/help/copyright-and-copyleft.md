@@ -17,7 +17,7 @@ page, the help, the console) it reads, word for word:
 In the source files, in the metadata of extensions and in the license files, the same notice is written in the form
 programmers have always used for file headers:
 
-> **Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.**
+> **Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.**
 
 The software is free software under the **GNU General Public License, version 2 or (at your option) any later
 version** (GPL-2.0-or-later). The copyright says *who* owns the work; the license says *what everybody else may do*
@@ -54,7 +54,7 @@ are what count.
 | Since when does the notice read this way? | Since **29 October 2026** (the 6.0.15 line). |
 | Which years does it name? | **1998 to 2026**. The end year moves with the releases. |
 | What does a user see? | "Exponential Copyright © 1998-2026 Exponential Foundation and 7x" |
-| What does a file header say? | "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." |
+| What does a file header say? | "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved." |
 | Under which license is the software? | GNU General Public License, version 2 or any later version (GPL-2.0-or-later). |
 | Under which license is this documentation? | GNU Free Documentation License, version 1.3 or any later version. |
 | Is the original developer still named? | Yes: "Copyright (C) 1999 - 2014 eZ Systems AS", the developer of eZ Publish, the discontinued product Exponential grew from. |
@@ -110,6 +110,15 @@ The extensions that live in repositories of their own (the se7enxweb extensions 
 Exponential Velocity, the installers and site packages) follow in their next releases, each with its version raised
 in `ezinfo.php` and `extension.xml`.
 
+### The semicolon: 25 November 2026
+
+On **25 November 2026** the header form took a semicolon after the holders: "Copyright (C) 1998 - 2026 Exponential
+Foundation and 7x; All rights reserved." It was written with a full stop before ("...and 7x. All rights reserved.").
+Only the punctuation changed; the holders, the years and the license stayed the same. Where a line also states the
+license, that follows as a second sentence: "...; All rights reserved. Licensed under the GNU General Public License
+v2.0 (or any later version)." The kernel, the extensions shipped in it and the extensions in their own repositories
+were changed together, and `CopyrightNoticeTest` now fails on the form with the full stop.
+
 ## Why the Exponential Foundation is named first
 
 The order of the names is deliberate. The **Exponential Foundation** is named first because it is the steward of the
@@ -153,7 +162,7 @@ Foundation" and "7x"), but the text a reader sees is always exactly the notice.
 
 ### The header form
 
-> Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+> Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 
 Used in files and metadata: the `@copyright` line of PHP docblocks, the `// COPYRIGHT NOTICE:` line of JavaScript
 and C++ sources, comment headers of templates, style sheets and scripts, `<copyright>` of `extension.xml`,
@@ -205,7 +214,7 @@ Exponential's license is the **GNU General Public License, version 2 or any late
   on Exponential, so when you **distribute** it, distribute it under the GPL version 2 or later, or a license
   compatible with it. Extensions you keep for your own sites need no license at all.
 - If your extension contains code copied from Exponential, keep the notice of that code
-  ("Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.") next to yours. See
+  ("Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.") next to yours. See
   [Attribution and copyright notices](extension-development/part-5-extend-fork-contribute/attribution-and-copyright-notices.md).
 
 ### If you fork or redistribute Exponential
@@ -302,7 +311,7 @@ the surrounding files: the `@copyright` line, then the `@license` line.
 /**
  * File containing the expExampleThing class
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -311,7 +320,7 @@ the surrounding files: the `@copyright` line, then the `@license` line.
 A file that also contains code of eZ Systems AS keeps their line directly below:
 
 ```php
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
 ```
@@ -322,7 +331,7 @@ A file that also contains code of eZ Systems AS keeps their line directly below:
 /**
  * Exponential: the bookmark button of the page header.
  *
- * Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * GNU General Public License v2.0 (or any later version).
  */
 ```
@@ -330,7 +339,7 @@ A file that also contains code of eZ Systems AS keeps their line directly below:
 Older JavaScript and C++ files use the `// COPYRIGHT NOTICE:` style; keep it in those files:
 
 ```js
-// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 ```
 
@@ -338,21 +347,21 @@ Older JavaScript and C++ files use the `// COPYRIGHT NOTICE:` style; keep it in 
 
 ```
 {* The footer of the example page.
-   Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+   Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
    GNU General Public License v2.0 (or any later version) *}
 ```
 
 ### INI files, shell and Python scripts
 
 ```ini
-# Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+# Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 # GNU General Public License v2.0 (or any later version)
 ```
 
 ### Style sheets
 
 ```css
-/* Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+/* Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
    GNU General Public License v2.0 (or any later version) */
 ```
 
@@ -375,7 +384,7 @@ Rules for all of them:
 ```php
 <?php
 /**
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  */
 class exampleextInfo
@@ -384,7 +393,7 @@ class exampleextInfo
     {
         return array( 'Name' => "Example extension",
                       'Version' => "1.0.0",
-                      'Copyright' => "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.",
+                      'Copyright' => "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.",
                       'License' => "GNU General Public License v2.0 (or any later version)",
                       'Info_url' => "https://github.com/se7enxweb/exampleext" );
     }
@@ -397,7 +406,7 @@ class exampleextInfo
 <metadata>
     <name>Example extension</name>
     <version>1.0.0</version>
-    <copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.</copyright>
+    <copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.</copyright>
     <license>GNU General Public License v2.0 (or any later version)</license>
     <info_url>https://github.com/se7enxweb/exampleext</info_url>
 </metadata>
@@ -406,7 +415,7 @@ class exampleextInfo
 An extension that contains code of eZ Systems AS keeps both notices in one value, the project's first:
 
 ```xml
-<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. Copyright (C) eZ Systems AS. All rights reserved.</copyright>
+<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved. Copyright (C) eZ Systems AS. All rights reserved.</copyright>
 ```
 
 `./console exp:ini:move` writes exactly these files when it creates a settings extension.

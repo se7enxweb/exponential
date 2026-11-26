@@ -8,7 +8,7 @@
  *                   priority is HIGH, so the test's session is the victim.
  *   hold-row        BEGIN; UPDATE row 1; wait 3 s; ROLLBACK (the test runs into its lock timeout meanwhile)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

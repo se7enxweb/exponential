@@ -4,7 +4,7 @@
  * answers every request from the static export as expStaticServe::resolve() decides. The export's folder and the
  * mount come from the environment: EXP_STATIC_ROOT and EXP_STATIC_MOUNT (default /). It loads no installation.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

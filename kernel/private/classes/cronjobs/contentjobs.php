@@ -13,7 +13,7 @@
  * failed for a temporary error is resumed at most MaxAttempts times in a row (the count starts again after every
  * batch done); after that it waits for a person (bin/php/expcontentjob.php list --resume).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

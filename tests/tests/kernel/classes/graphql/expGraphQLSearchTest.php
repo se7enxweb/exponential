@@ -5,7 +5,7 @@
  * search without text or filter, and the facets of an engine that has them (ezfind's SearchExtras). No database: a
  * repository that searches the names of fixture content.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

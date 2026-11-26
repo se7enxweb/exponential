@@ -17,7 +17,7 @@
  *  CF-07 the run form: MaxMigrations, MaxTime, Throttle and Nice checked as the command checks them, passed to the
  *        background job (--nice too)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

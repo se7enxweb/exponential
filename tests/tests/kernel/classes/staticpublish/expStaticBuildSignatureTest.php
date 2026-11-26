@@ -13,7 +13,7 @@
  *  SG-06 the template debug switches are given back at the next request (a persistent worker)
  *  SG-07 the build sends a fresh signature with every request; debugOutput() finds what the server should not send
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

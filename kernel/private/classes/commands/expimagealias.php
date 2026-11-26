@@ -11,7 +11,7 @@
  * Started as root, the command becomes the owner of the installation's var/ directory first (as the content job
  * worker does), so every alias file, lock and log line it writes belongs to the user the web server writes as.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

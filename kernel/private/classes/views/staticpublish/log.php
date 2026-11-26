@@ -5,7 +5,7 @@
  * followed live while the job runs, the job's report once it has ended, and the run's record (state, counts, commit,
  * tag, push state, who ran it). Policy staticpublish/read for the job's target.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

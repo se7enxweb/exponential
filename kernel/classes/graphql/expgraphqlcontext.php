@@ -4,7 +4,7 @@
  * address the URLs of the answer start with), the content it reads (the repository) and an id for the request.
  * Made for each request and never kept: a persistent worker (Velocity) starts every request with a new one.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

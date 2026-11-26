@@ -17,7 +17,7 @@
  *          too little disk space stop it
  *  TH-09 — a deploy to an FTP remote through its trigger: sent, verified by a dry run there, switched, taken back
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

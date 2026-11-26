@@ -18,7 +18,7 @@
  *  SR-13 - One walk of a directory also adds up each directory of a directory inside it (var/ and its caches)
  *  SR-14 - A site without a time zone of its own is a note when PHP has one, a warning when neither has one
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

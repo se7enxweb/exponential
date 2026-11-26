@@ -14,7 +14,7 @@
  *  SC-06 - Read back: defaults as SQL Server stores them, tables and indexes from sys.* (over a recording driver)
  *  SC-07 - The kernel's share/db_schema.dba as SQL Server DDL: every table, no index on a MAX key
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

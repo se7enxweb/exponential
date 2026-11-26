@@ -3,7 +3,7 @@
  * the session end point graphql/query and shows the answer. The form token of the page goes in the header
  * X-CSRF-Token, as every POST of a signed-in session needs it. Ctrl+Enter (Cmd+Enter) runs the query.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  */
 ( function () {

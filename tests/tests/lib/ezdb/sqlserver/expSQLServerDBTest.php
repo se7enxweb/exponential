@@ -21,7 +21,7 @@
  *          an unreadable replica keep the primary; a failing replica falls back
  *  DB-10 - Relations, versions, helpers (sqlLimit, sqlUpsert, sqlGroupConcat, unix timestamps, IN lists)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

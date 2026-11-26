@@ -19,7 +19,7 @@
  *  SC-10 a job started from the administration (--siteaccess=admin, the script option: whose settings are read) is
  *        accepted: no exp:static command declares --siteaccess itself, and every option a job passes is declared
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

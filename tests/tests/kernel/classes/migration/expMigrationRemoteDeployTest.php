@@ -15,7 +15,7 @@
  *  RD-08 — the preflight stops everything: a lock, a version, captions off, a missing secret
  *  RD-09 — retries of a connection failure, never of the switch; status and in-sync check; parallel processes
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

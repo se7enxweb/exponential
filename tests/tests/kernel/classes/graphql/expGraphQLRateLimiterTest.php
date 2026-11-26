@@ -4,7 +4,7 @@
  * identity counted in a file, the headers a client gets, the identity and limit of each kind of request. No database:
  * the counters are a directory of their own under var/tmp.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

@@ -17,7 +17,7 @@
  *  BWH-03  a writer alone sees nobody waiting (no hand-off pause), and a waiting writer is seen
  *  BWH-04  indexcontent indexes a moved subtree in one transaction per object, not inside the moved object's
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

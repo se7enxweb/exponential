@@ -7,7 +7,7 @@
  * with a GraphQL error instead of a fatal error. The library's absence is simulated with expGraphQL::useLibraryClasses(),
  * so this runs alike with and without the library; tests/bin/bootsmoke.php checks the real absence on PHP 7.4 and 8.0.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

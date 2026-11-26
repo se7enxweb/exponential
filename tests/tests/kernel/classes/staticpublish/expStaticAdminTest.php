@@ -29,7 +29,7 @@
  *  SA-09 several siteaccesses in the wizard: the ticked ones into SiteAccess (one) or SiteAccessList[] with
  *        DefaultSiteAccess (several), the review form posted back keeps them, the lines written, the list shown
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -4,7 +4,7 @@
  * requests of each row, the statistics, the verdict against the hard limit and the targets, and a whole measurement
  * with a transport that answers without HTTP. No database, no network.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

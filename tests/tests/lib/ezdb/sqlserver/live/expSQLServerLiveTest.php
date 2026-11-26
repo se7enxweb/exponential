@@ -32,7 +32,7 @@
  *  LV-16 - Temporary tables: #tables of the session, invisible to others, dropped at the request reset
  *  LV-17 - Helpers: upsert (MERGE) insert then update, STRING_AGG past 8,000, CONCAT, charLength
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

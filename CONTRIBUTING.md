@@ -163,7 +163,7 @@ git checkout -b feature/your-feature
    (`eZContentObject`, `eZINI`, `ezp*`) are never renamed.
 
 7. A new file of the kernel starts with the project's copyright line, exactly
-   `@copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.` (or the same text in the
+   `@copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.` (or the same text in the
    comment style of its language), followed by the license line. Never remove or change another holder's line (eZ
    Systems AS and the other authors); put the project's line above it. A notice shown to users reads
    `Exponential Copyright © 1998-2026 Exponential Foundation and 7x` and is never translated.

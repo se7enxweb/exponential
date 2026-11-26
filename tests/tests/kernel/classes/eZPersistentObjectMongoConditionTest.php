@@ -9,7 +9,7 @@
  *  PM-03 the operators >=, <=, <, >, =, <>, != and like
  *  PM-04 a filter written for MongoDB and an unknown operator are kept as they are; scalars are cast as before
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

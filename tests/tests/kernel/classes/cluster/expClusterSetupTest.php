@@ -11,7 +11,7 @@
  *  CS-05 - The schema statements, the default share, the web server rules, the aliases of the commands
  *  CS-06 - The share is writable for its group (the other nodes write as the group over NFS), keeps owner and setgid
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

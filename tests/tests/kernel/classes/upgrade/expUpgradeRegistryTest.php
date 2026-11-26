@@ -14,7 +14,7 @@
  *  UP-07 the record table exp_migration in share/db_schema.dba and the kernel schemas, never the pre-release table
  *        expupgrade_step; the 6.0.15 update files copy expupgrade_step and drop it
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

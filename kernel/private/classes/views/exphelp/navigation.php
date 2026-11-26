@@ -12,7 +12,7 @@
  *
  * Template variables: help_folder (path, title, count, index_id), help_nav_html (safe HTML, not washed), help_i18n_json.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

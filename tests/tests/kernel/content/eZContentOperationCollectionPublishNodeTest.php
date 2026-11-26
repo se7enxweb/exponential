@@ -8,7 +8,7 @@
  * made findNode() decide every time, and removing only the semicolon would have let the last case change the other
  * object's node.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group database

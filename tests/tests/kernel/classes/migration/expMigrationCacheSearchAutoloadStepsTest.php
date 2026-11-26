@@ -18,7 +18,7 @@
  *  MC-10 autoload runs the generator with the scope's option and checks the file; a failing generator fails the step
  *  MC-11 [RunSettings] ClearCaches and Reindex, and the options that override them
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

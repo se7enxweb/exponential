@@ -53,7 +53,7 @@ class myextensionInfo
         return array(
             'Name'      => "My Extension",
             'Version'   => "1.2.3",
-            'Copyright' => "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.",
+            'Copyright' => "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.",
             'License'   => "GNU General Public License v2.0 (or any later version)",
             'Info_url'  => "https://github.com/se7enxweb/myextension"
         );
@@ -80,7 +80,7 @@ Rules the Exponential releases follow:
     <metadata>
         <name>Exponential Website Interface LS</name>
         <version>6.0.16</version>
-        <copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.</copyright>
+        <copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.</copyright>
         <license>GNU General Public License v2.0 (or any later version)</license>
         <info_url>https://github.com/se7enxweb/ezwebin</info_url>
     </metadata>
@@ -146,6 +146,6 @@ the new version.
 
 Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
 Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
-"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved." Who holds it and why, what the
 GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
 [Copyright and copyleft](../../help/copyright-and-copyleft.md).

@@ -4,8 +4,12 @@
  * the project's own holders (7x, the Exponential Foundation) next to a notice marker uses one of the two approved
  * forms:
  *
- *   files and metadata:  Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ *   files and metadata:  Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  *   shown to users:      Exponential Copyright © 1998-2026 Exponential Foundation and 7x
+ *
+ * The holders are followed by a semicolon, not a full stop (owner order 2026-11-25); a license sentence may follow
+ * as a second sentence ("...; All rights reserved. Licensed under the GNU General Public License v2.0 (or any later
+ * version)."). The earlier form with a full stop after "7x" is an old notice and fails.
  *
  * A notice marker is "(C)", the copyright sign (also as &copy;), a year, "@copyright", "<copyright>",
  * "'Copyright' =>" or "Copyright=" / "Copyright:" on a line that has the word copyright. Lines that name only other
@@ -18,13 +22,13 @@
  *
  * Run: php vendor/bin/phpunit tests/tests/bin/CopyrightNoticeTest.php
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
 class CopyrightNoticeTest extends PHPUnit\Framework\TestCase
 {
-    const HEADER = 'Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.';
+    const HEADER = 'Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.';
     const VISIBLE = 'Exponential Copyright © 1998-2026 Exponential Foundation and 7x';
 
     const OWN = '/(?<![0-9A-Za-z])7x(?![0-9A-Za-z])|exponential foundation/i';
@@ -126,15 +130,18 @@ class CopyrightNoticeTest extends PHPUnit\Framework\TestCase
     public static function classifyProvider()
     {
         return array(
-            'approved header' => array( ' * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.', 'header' ),
-            'approved header in COPYRIGHT NOTICE' => array( '// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.', 'header' ),
-            'approved header in extension.xml' => array( '<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. Copyright (C) eZ Systems AS. All rights reserved.</copyright>', 'header' ),
+            'approved header' => array( ' * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.', 'header' ),
+            'approved header in COPYRIGHT NOTICE' => array( '// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.', 'header' ),
+            'approved header in extension.xml' => array( '<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved. Copyright (C) eZ Systems AS. All rights reserved.</copyright>', 'header' ),
+            'approved header with the license' => array( ' * Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved. Licensed under the GNU General Public License v2.0 (or any later version).', 'header' ),
             'visible notice in a template' => array( '{\'<a href="%ezpublish_link">Exponential</a> Copyright &copy; 1998-2026 <a href="%foundation_link">Exponential Foundation</a> and <a href="%7x_link">7x</a>\'|i18n( \'design/admin/page_copyright\' )}', 'visible' ),
             'visible notice in a catalogue' => array( '<source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>', 'visible' ),
             'visible notice plain' => array( 'Exponential Copyright © 1998-2026 Exponential Foundation and 7x', 'visible' ),
             'old: 7x & Exponential Foundation' => array( ' * @copyright Copyright (C) 1998 - 2026 7x ' . '& Exponential Foundation. All rights reserved.', 'own-other' ),
             'old: 7x and the Exponential Foundation' => array( ' * @copyright Copyright (C) 1998 - 2026 7x ' . 'and the Exponential Foundation. All rights reserved.', 'own-other' ),
             'old: 7x / Exponential Foundation' => array( 'Copyright (C) 1998 - 2026 7x / Exponential Foundation. All rights reserved.', 'own-other' ),
+            'old: full stop after the holders' => array( ' * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x' . '. All rights reserved.', 'own-other' ),
+            'old: full stop in extension.xml' => array( '<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x' . '. All rights reserved.</copyright>', 'own-other' ),
             'old: 7x alone' => array( ' * @copyright Copyright (C) ' . '7x. All rights reserved.', 'own-other' ),
             'old: 7x and others' => array( 'Exponential Copyright &copy; 1998-2026 <a href="https://se7enx.com">7x</a> and others.', 'own-other' ),
             'old order of the holders' => array( 'Exponential Copyright © 1998-2026 7x and Exponential Foundation', 'own-other' ),
@@ -170,7 +177,7 @@ class CopyrightNoticeTest extends PHPUnit\Framework\TestCase
         {
             $this->assertNotSame( '', trim( (string)$row['reason'] ), $row['contains'] . ' has a reason' );
             // an allowlist entry may never let one of the project's own old notices through
-            foreach ( array( '7x & Exponential Foundation', '7x and the Exponential Foundation', '7x / Exponential Foundation', '7x and others' ) as $old )
+            foreach ( array( 'Exponential Foundation and 7x' . '. All rights reserved', '7x & Exponential Foundation', '7x and the Exponential Foundation', '7x / Exponential Foundation', '7x and others' ) as $old )
                 $this->assertStringNotContainsString( $old, $row['contains'], 'the allowlist does not excuse an old own notice' );
         }
     }

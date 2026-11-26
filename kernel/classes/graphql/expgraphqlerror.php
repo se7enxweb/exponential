@@ -4,7 +4,7 @@
  * (doc/eng-us/features/6.0/graphql.md, "Errors"). It needs no library: the codes are used before the library is
  * loaded (a switched-off end point), and expGraphQLServer::formatError() shows its message to the client.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

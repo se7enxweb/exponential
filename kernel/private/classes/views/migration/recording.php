@@ -8,7 +8,7 @@
  * changes are recorded (design:parts/exp_migration_recording_bar.tpl) posts its Stop here with a RedirectURI back.
  * Policy migration/edit.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

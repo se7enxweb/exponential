@@ -66,7 +66,7 @@ From [Free documentation](../../free-documentation.md):
 need an editable copy as well, or a note where to get one; more than 100 printed copies need a cover with the full
 title and you as publisher (section 3 of the license).
 
-The copyright notice of the documentation is "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.",
+The copyright notice of the documentation is "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.",
 with no Invariant Sections, no Front-Cover Texts and no Back-Cover Texts
 ([The license of this documentation](../../../README-LICENSE.md)).
 
@@ -86,7 +86,7 @@ a chapter is independent or derived is a question for counsel when in doubt.
 A short notice in the manual covers most of it:
 
 ```text
-This manual is based on the Exponential documentation, Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+This manual is based on the Exponential documentation, Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 Used under the GNU Free Documentation License 1.3 or later.
 Changes: Copyright (C) <year> <Your company>. History: <version>, <date>, <what changed>, <by whom>.
 The license is included at the end of this manual.

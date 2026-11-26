@@ -13,7 +13,7 @@
  * Without GRAPHQL_BUDGET_DB it is skipped (the DB-less suite of CI). The statements are counted from the start of the
  * query to its answer, in a schema built before; the anonymous user is the reader.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

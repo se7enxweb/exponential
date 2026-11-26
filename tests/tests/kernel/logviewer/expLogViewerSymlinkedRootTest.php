@@ -6,7 +6,7 @@
  * link folder and Setup > Log files showed none (found on exponential.earth, 2026-11-12). A link out of the
  * installation is still never followed.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

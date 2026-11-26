@@ -12,7 +12,7 @@
  *
  * No database: the methods exercised are pure, and the rest is read from the source files.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  * @group security

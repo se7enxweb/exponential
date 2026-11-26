@@ -19,7 +19,7 @@
  *  SV-13 - sanitizeStoredUpload(): an SVG upload (by its name, the uploader's name or its content) is sanitized in
  *          place, a .svg that is no SVG is refused, any other file is left alone
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

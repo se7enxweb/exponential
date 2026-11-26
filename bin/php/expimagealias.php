@@ -8,7 +8,7 @@
  *
  * @alias exp:image:alias
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  * @description Image aliases made on demand: status, generate, regenerate, purge, resync and test, in the process or as jobs

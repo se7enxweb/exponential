@@ -18,7 +18,7 @@
  *  UA-11 - The alias and wildcard searches and kinds are query conditions, with %, _ and ! matched as themselves; the
  *          redirecting wildcards are both forward types (301 and the temporary 302)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

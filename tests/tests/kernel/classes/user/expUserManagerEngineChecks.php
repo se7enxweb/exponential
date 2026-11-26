@@ -24,7 +24,7 @@
  *       with its locations; find() names the account by id, login and e-mail address
  *  UE-7 list: the filters search, group, enabled and disabled, the paging, and show() never holds a password hash
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

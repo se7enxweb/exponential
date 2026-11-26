@@ -17,7 +17,7 @@
  *        disabled; a protected account in the selection is refused, never changed
  *  UE-14 the read-only tools: hygiene counts, sessions (untracked here), two-step sign-in state, the audit rows
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -9,7 +9,7 @@
  *  CD-2 CE-2 the simulation: PostgreSQL runs it and rolls it back, MySQL/MariaDB lists the plan with a warning
  *  CD-3 CE-3 resume of an interrupted run
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group database

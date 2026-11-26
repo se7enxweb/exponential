@@ -27,7 +27,7 @@
  * it's you" (site.ini [ReauthGroup_system] content/urlimport ImportButton). The import itself is expUrlMapImporter's:
  * one batch, listed and undone on content/urlimporthistory.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  * @since 6.0.15

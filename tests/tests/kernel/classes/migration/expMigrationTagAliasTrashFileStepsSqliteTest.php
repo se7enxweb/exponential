@@ -10,7 +10,7 @@
  *  ST-3 TE-3 files and images, with the focal point and crop rectangle
  *  ST-4 TE-4 tags with eztags (or the step failing cleanly without it)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

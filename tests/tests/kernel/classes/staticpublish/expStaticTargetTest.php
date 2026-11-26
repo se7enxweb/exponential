@@ -17,7 +17,7 @@
  *        folders, the URI prefixes from the matching settings, a copy path to its siteaccess, and the checks (front
  *        siteaccesses only, a URI prefix for each one not at the root, the default among them, folders of their own)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

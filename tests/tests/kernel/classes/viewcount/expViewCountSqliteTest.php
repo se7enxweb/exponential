@@ -4,7 +4,7 @@
  * an access log next to it, the real URL alias lookup (eZURLAliasML), the real node check and the real write
  * (eZViewCounter::addCounts()), which raises an existing row and adds the missing ones in one transaction.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

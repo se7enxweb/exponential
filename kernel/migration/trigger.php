@@ -2,7 +2,7 @@
 /**
  * Entry point of kernel/migration/trigger.php: the signed HTTP trigger of a deploy over FTP.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

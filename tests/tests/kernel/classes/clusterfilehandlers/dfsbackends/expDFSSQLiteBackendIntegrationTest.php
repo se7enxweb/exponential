@@ -12,7 +12,7 @@
  * SQLite is one file on one machine: the processes of the tests share it as the PHP servers of one host would. A
  * cluster of several machines is not something SQLite can be (doc/eng-us/features/6.0/sqlite-dfs-cluster.md).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group cluster-live

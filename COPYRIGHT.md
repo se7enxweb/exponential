@@ -6,7 +6,7 @@ This file is part of Exponential.
 
 ## Copyright notice
 
-Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 
 ## Original developer
 
@@ -34,7 +34,7 @@ together**, and every notice of the project was replaced by one notice in two fo
 | Form | Text | Used in |
 |---|---|---|
 | Visible notice | `Exponential Copyright © 1998-2026 Exponential Foundation and 7x` | every footer, sign-in page, about and copyright page, the help, the setup wizard, error pages, `./console --version` |
-| Header notice | `Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.` | file headers, `ezinfo.php`, `extension.xml`, `LICENSE`, this file |
+| Header notice | `Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.` | file headers, `ezinfo.php`, `extension.xml`, `LICENSE`, this file |
 
 Before that date the project's own notice was written in several ways, among them "7x and others",
 "7x / Exponential Foundation", "7x & Exponential Foundation", "7x and the Exponential Foundation" and "7x" alone.

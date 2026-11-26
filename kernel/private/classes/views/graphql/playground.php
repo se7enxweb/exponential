@@ -12,7 +12,7 @@
  * and it lists the keys of every user, not only the user's own. The webhooks, their recent deliveries and the state of
  * the subscriptions (open now, their limits) are shown to every user of the page.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

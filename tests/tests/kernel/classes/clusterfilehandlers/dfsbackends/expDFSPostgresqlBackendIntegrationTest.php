@@ -10,7 +10,7 @@
  *   EXP_TEST_PGCLUSTER_DSN=pgsql://postgres@127.0.0.20:54313/postgres php vendor/bin/phpunit \
  *       tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSPostgresqlBackendIntegrationTest.php
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group cluster-live

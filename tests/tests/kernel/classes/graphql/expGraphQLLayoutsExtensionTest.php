@@ -5,7 +5,7 @@
  * collections in one batch per level, the content of a manual collection as the user may read it, and blocks in a
  * container. No database, no explayouts: a source of a fixture layout.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

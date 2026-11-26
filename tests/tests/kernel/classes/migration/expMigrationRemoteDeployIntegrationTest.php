@@ -15,7 +15,7 @@
  *  RI-02 — one remote fails: the two that applied are taken back over ssh, all three end where they were
  *  RI-03 — FTP: the files sent (--transfer-only) and read back unchanged; a wrong password is refused, nothing sent
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

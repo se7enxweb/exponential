@@ -6,7 +6,7 @@
  * half to add to the repository with write access (GitHub: Settings > Deploy keys). The public half stays readable as
  * the secret's description; the private half is never shown. Replacing a key needs the tick "Replace the key".
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

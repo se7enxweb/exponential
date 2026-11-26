@@ -16,7 +16,7 @@
  *  ILO-05 — exp:ini's --root setup (expIniCommand::useRoot()) reads ActiveExtensions[] and each siteaccess's
  *           ActiveAccessExtensions[] apart
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group ini

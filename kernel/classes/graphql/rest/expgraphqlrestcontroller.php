@@ -10,7 +10,7 @@
  *   404  the API is switched off in this siteaccess (graphql.ini [GraphQLSettings] Enabled, SiteAccessList[])
  *   503  the library is missing
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

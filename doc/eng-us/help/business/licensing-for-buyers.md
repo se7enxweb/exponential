@@ -168,9 +168,9 @@ Before you tell a buyer that "everything is GPL", check the About page of the in
 
 | Notice | Where |
 |---|---|
-| "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." | `COPYRIGHT.md` |
+| "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved." | `COPYRIGHT.md` |
 | "Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved." | `COPYRIGHT.md` |
-| "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." | the documentation ([The license of this documentation](../../README-LICENSE.md)) |
+| "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved." | the documentation ([The license of this documentation](../../README-LICENSE.md)) |
 
 "All rights reserved" in a notice does not take away the GPL's permissions; the license grants them on top of
 the copyright. Copy these notices exactly when you quote them.
@@ -252,6 +252,6 @@ Notes              This summary is not legal advice. License texts: LICENSE.md, 
 
 Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
 Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
-"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved." Who holds it and why, what the
 GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
 [Copyright and copyleft](../copyright-and-copyleft.md).

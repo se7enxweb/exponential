@@ -15,7 +15,7 @@
  * EXP_MIGRATION_PERF_COUNT changes the number of migrations of PF-1 (default 1000), EXP_MIGRATION_PERF_ROWS the rows
  * of PF-2 and PF-3 (default 5000).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

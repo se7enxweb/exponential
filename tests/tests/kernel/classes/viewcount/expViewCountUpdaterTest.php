@@ -6,7 +6,7 @@
  * the state, so the lines are counted by the next run; the earlier cronjob's updateview.log is taken over; the
  * maintenance actions (--skip-to-end, --reset-state) and --from-start behave.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

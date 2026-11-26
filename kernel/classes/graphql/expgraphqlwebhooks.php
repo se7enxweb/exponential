@@ -37,7 +37,7 @@
  * Files under var/<site>/graphql/webhooks/: cursor.json (where in the journal the next run reads), outbox/ (the
  * deliveries waiting), failed/ (given up), deliveries.jsonl (the log).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

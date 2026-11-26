@@ -7,7 +7,7 @@
  * [StaticPublishSettings] Enabled, written through expIniEditor) for users with staticpublish/setup on every target; a
  * POST that asks "Verify it's you". Policy staticpublish/read.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

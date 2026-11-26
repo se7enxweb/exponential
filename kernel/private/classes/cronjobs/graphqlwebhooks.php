@@ -5,7 +5,7 @@
  * run stopped, puts a delivery in the outbox for every end point that wants an event, and sends the deliveries that
  * are due (expGraphQLWebhooks). Does nothing while no end point is configured or the API is switched off.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

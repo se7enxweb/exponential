@@ -3,7 +3,7 @@
  * The value of an image field (the type Image): the image in an alias of image.ini, made by the kernel's image
  * system when it is first asked for, as on the site.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

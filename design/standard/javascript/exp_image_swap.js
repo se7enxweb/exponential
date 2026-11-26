@@ -14,7 +14,7 @@
  * grows while nothing comes; after a minute without any image made the script gives up (the placeholders stay until
  * the page is loaded again).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  */
 (function () {

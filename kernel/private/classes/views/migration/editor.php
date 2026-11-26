@@ -9,7 +9,7 @@
  * migrations folder or an extension's, never over a file and never outside those folders. The state of the page is
  * the posted form; the view parameter names the migration. Policy migration/edit.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

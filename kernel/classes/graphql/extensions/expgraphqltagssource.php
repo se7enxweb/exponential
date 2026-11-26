@@ -6,7 +6,7 @@
  * A tag: id, parentId, mainTagId, keyword, remoteId, depth, pathString, modified, url (the module address of the tag,
  * tags/view/<keywords>), language (the translation of the keyword), languages.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

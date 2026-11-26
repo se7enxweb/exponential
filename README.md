@@ -914,7 +914,7 @@ This effectively makes Exponential GNU GPLv2-or-later ONLY.
 
 Exponential Copyright © 1998-2026 Exponential Foundation and 7x
 
-In source files: `Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.`
+In source files: `Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.`
 Originally developed by eZ Systems AS as eZ Publish: Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved.
 
 On 29 October 2026 the copyright of Exponential moved from 7x alone to the Exponential Foundation and 7x together,

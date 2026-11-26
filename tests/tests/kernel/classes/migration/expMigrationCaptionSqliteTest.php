@@ -7,7 +7,7 @@
  *  CS-1 CE-1 a failed run restored to its pre caption (expMigrationCaptionEngineChecks)
  *  CS-2 CE-2 the post caption, and its reuse while nothing changed
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

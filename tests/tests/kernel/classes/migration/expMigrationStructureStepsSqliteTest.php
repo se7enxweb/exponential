@@ -8,7 +8,7 @@
  *  SS-2 SE-2 steps that undo themselves, rolled back
  *  SS-3 SE-3 the deletes
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

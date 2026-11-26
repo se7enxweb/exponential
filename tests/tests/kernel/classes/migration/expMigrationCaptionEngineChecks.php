@@ -21,7 +21,7 @@
  *       first migration's table and record stay, the failed one is recorded failed, the run row has no caption.
  *       CE-2's run succeeds without captions.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -21,7 +21,7 @@
  *  UP-07 a target path as the siteaccess serves it (below its PathPrefix first, PathPrefixExclude[] honored, then
  *        as it is), and the export of an alias below the prefix in the visitor's form with its siteaccess
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

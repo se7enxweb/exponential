@@ -5,7 +5,7 @@
  * no run of their own); resume (a failed or interrupted run) and rollback buttons for users with migration/run and
  * migration/rollback. Policy migration/read.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

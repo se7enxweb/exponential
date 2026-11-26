@@ -12,7 +12,7 @@
  *  HR-05  the anchor exists: "Security problems" on the English page, the heading in the same position on the German one
  *  HR-06  the dashboard view, the fetch function and the help templates use it; none links exphelp/report itself
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -66,7 +66,7 @@
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  * @group querycache

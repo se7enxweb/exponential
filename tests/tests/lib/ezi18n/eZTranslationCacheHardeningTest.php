@@ -11,7 +11,7 @@
  * The cache globals are saved in setUp() and restored in tearDown(); files go to a directory of the test's own
  * below var/tmp, removed afterwards.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group lib

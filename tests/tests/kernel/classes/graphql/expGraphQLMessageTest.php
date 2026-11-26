@@ -4,7 +4,7 @@
  * Accept-Language header chooses, the parameters of a message, the library's limit messages in the kernel's own
  * words, and that every message the code sends has a translation in the German catalogue. No database.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

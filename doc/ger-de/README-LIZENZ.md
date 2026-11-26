@@ -10,7 +10,7 @@ type: reference
 
 ## Copyright- und Erlaubnishinweis
 
-Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 
 Es ist erlaubt, dieses Dokument unter den Bedingungen der GNU Free Documentation License, Version 1.3 oder einer
 späteren, von der Free Software Foundation veröffentlichten Version, zu kopieren, zu verbreiten und/oder zu verändern;
@@ -87,7 +87,7 @@ kopiert wurde), muss das in seinem Pull Request angeben.
 
 Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
 Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
-„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“ Wer es hält und warum, was die
 GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
 [Urheberrecht und Copyleft](hilfe/urheberrecht-und-copyleft.md).
 

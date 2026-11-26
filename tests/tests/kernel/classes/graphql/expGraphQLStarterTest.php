@@ -5,7 +5,7 @@
  * placeholder is filled; a template named _env becomes .env; every generated query fits the schema it was made from;
  * a field that needs an argument is left out; writing refuses a directory with files and a path that leaves the kit.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

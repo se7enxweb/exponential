@@ -6,7 +6,7 @@
  *  SC-02 matching: lists, ranges, steps, Sunday as 0 and 7, day of month or day of week when both are restricted
  *  SC-03 the last match and when a target is due (once per matching time, caught up within a day)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

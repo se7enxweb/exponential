@@ -27,7 +27,7 @@
  *        never a copy of the page it sends to; the page sent to is fetched once, under its own address; loops are
  *        skipped; redirects_followed counts the stubs
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

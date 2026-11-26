@@ -11,7 +11,7 @@
  *  PT-03 - Only tsvector and tsquery count as PostgreSQL's own types; a standard type still converts, and an
  *          unknown type still fails
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

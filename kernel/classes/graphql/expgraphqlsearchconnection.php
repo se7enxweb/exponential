@@ -5,7 +5,7 @@
  * The search runs once, when the first of its fields is asked for; the pagination is that of every list (limit/offset
  * and first/after, expGraphQLConnection).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -4,7 +4,7 @@
  * language) whose ExportButton answers with the file, written by expUrlMapExporter and expUrlMapFormats (CSV, JSON,
  * .xlsx, .ods, Apache or nginx rules). Nothing is read from the query string; the form posts.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  * @since 6.0.15

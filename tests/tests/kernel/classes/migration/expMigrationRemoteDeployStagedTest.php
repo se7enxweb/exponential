@@ -21,7 +21,7 @@
  *  RS-08 the module: the views and policies, "Verify it's you" for saving, removing, deploying, approving and rolling
  *        back, never for the lists, Test connection or the preflight
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

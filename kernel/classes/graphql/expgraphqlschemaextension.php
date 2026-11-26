@@ -13,7 +13,7 @@
  * user may not read is null or left out. A resolver that needs many values of a level asks a batch loader
  * ($ctx->loader( kind, language, batch )).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

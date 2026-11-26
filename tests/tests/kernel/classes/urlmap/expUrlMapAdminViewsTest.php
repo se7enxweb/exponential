@@ -17,7 +17,7 @@
  *  UV-07 the helper tabs: the form of a helper within its limits, the tab addresses, the site address the test after
  *        an import requests, the kept results of an import (dry run, import, test) and its rows
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

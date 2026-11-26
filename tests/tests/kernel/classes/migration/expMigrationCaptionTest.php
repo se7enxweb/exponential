@@ -30,7 +30,7 @@
  *  MC-11 expMigrationRollback: a caption restored only with expert and the typed confirmation
  *  MC-12 expUpgradeBackup::runWithEnv() drains stdout and stderr together (mongorestore's progress blocked it)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

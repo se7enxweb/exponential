@@ -12,7 +12,7 @@
  * exp:migration:deploy --rollback=<deploy id> takes every one of them back to the caption taken before its run.
  * Policy migration/read; approving and rolling back need migration/deploy.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -12,7 +12,7 @@
  * ("Block/Variable" => value, null when unset). The "-" siteaccess is none: only the extensions of
  * ActiveExtensions[] are activated, as before a siteaccess is chosen.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

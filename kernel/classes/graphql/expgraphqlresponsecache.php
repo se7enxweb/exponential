@@ -16,7 +16,7 @@
  * its ETag, schema hash and the anonymous rate limit) and the answer. var/cache/graphql/expired holds the time of the
  * last expiry; an entry made before it is stale. Nothing is kept in memory between requests.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

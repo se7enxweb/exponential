@@ -16,7 +16,7 @@
  *  RT-9  the file of running recordings: written, read, matched by user, removed when empty; start problems; ids
  *  RT-10 the admin view: redirect targets, who may stop; the generator's missing step types
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -22,7 +22,7 @@
  * No MySQL server is needed: the driver is created without connecting, and the cases that need a replica use a
  * driver whose replica answers are given (the live proof against a real primary and replica pair is separate).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group lib

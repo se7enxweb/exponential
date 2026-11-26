@@ -5,7 +5,7 @@
  * (expModuleTableCode::jsonView()). A filter form is posted (FilterButton) and answered with a 303 to /(name)/value.
  * Reads the files; no database.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

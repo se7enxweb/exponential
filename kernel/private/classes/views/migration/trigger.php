@@ -8,7 +8,7 @@
  * user and releases the session at once; the signature, the source address (REMOTE_ADDR) and the nonce are the
  * permission (migration.ini [TriggerSettings]). Each request that reaches the checks is audited as system.migration.deploy (verb trigger-<action>, object migration_trigger).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

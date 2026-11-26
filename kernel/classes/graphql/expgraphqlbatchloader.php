@@ -10,7 +10,7 @@
  * One loader per kind of value and per request (expGraphQLContext::loader()); never kept between requests, so a
  * persistent worker (Velocity) never answers from another request's memory. Loaded only after webonyx/graphql-php.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

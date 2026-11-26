@@ -4,7 +4,7 @@
             $document = $document->getArrayCopy();
  * File containing the expMongoDB class.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 3d18f47551), Copyright (C) Mugo Web, GPL v2
  * @version //autogentag//

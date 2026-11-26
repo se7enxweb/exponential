@@ -3,7 +3,7 @@
  * A location (a node of the content tree) as the GraphQL schema sees it. The resolvers read only through these
  * methods; a test extends the class to answer them without a database.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

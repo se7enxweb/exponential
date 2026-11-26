@@ -7,7 +7,7 @@
  * list before anything uses it, so no design shows them and no posted value for them is read, validated or stored.
  * An editor who edits another person's account still gets them.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

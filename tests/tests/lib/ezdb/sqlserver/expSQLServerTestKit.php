@@ -4,7 +4,7 @@
  * script instead of a server, the eZDB parameters of a test connection, and the live server's settings
  * (EXP_TEST_SQLSERVER_HOST, _PORT, _USER, _PASSWORD or _PASSWORD_FILE, _DATABASE, _LAYER, _ODBC_DRIVER).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

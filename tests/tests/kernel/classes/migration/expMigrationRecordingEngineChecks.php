@@ -20,7 +20,7 @@
  *  RC-5 a site-wide window of time: its end kept while it runs, nothing matched after it, stopped by closeEnded()
  *       with the end as its stop, a new window may start; an end in the past is refused
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

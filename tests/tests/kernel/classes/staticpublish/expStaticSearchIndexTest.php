@@ -8,7 +8,7 @@
  *  SI-04 a partial build keeps the entries of the pages it did not build
  *  SI-05 the search page names the indexes, reads SearchText, loads the script and style sheet below the root
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

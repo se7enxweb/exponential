@@ -18,7 +18,7 @@
  * No database: the user is a stand-in object with the methods the view cache reads; the discounts (a query) are
  * left out with the tweak ignore_discountlist.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

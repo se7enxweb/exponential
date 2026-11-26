@@ -26,7 +26,7 @@
  *        down() or not applied is refused
  *  RN-13 settings: migration.ini [RunSettings], the six audit events in the catalogue and in audit.ini
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -13,7 +13,7 @@
  *  MV-5 run(): a folder converted, the date of the old name kept, the manual list in the header, written with apply,
  *       never over a file
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

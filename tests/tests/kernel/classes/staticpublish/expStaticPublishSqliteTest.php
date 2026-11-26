@@ -20,7 +20,7 @@
  *  SP-08 the preview and Discard: a build before the first publish is all new and thrown away without a trace; after a
  *        publish a new build's diff (added, changed, removed) and Discard bring the publish back; the tags and commits
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -13,7 +13,7 @@
  *  PR-06 - inList(): every value appears once, in chunks no larger than the chunk size
  *  PR-07 - isReplicaReadable() never says yes to a statement with a write outside literals and comments
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

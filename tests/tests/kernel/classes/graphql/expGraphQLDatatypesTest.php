@@ -6,7 +6,7 @@
  * (no database, no extension), and a schema extension that maps a datatype of its own and adds a root query and a
  * field of Location.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

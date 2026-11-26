@@ -13,7 +13,7 @@
  *  CE-3 resume: an interrupted run (its row says running, the lock is free) is closed as failed and the pending
  *       migrations run in a new run; afterwards nothing is left to resume
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -17,7 +17,7 @@
  *       made by the test): a tag in two languages, a child with a synonym, ensured again, updated, moved, merged,
  *       deleted, and a create rolled back. Without eztags: the step fails and says so, missing: skip passes
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -6,7 +6,7 @@
  * kept, an ETag and 304 for every answer. No database: fixture content (expGraphQLSchemaTest) and directories of
  * their own under var/tmp.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

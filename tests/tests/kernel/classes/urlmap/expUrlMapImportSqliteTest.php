@@ -6,7 +6,7 @@
  *  US-1 UE-1 the upgrade step 6.0.15-url-map
  *  US-2 UE-2 to UE-6 import, resolve, export, overwrite, undo
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -16,7 +16,7 @@
  *  PP-11 no preg_* pattern written as a double-quoted literal in kernel/ or lib/ holds a NUL byte (a PCRE escape
  *        such as '#\\x00#' in single quotes works on every PHP version)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

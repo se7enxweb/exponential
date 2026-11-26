@@ -29,7 +29,7 @@
  *  GH-13 the opt-in check of the real test repository's public Pages site: downloaded below /repo/, no broken link;
  *        only with EXP_STATIC_GITHUB_TEST_REPO set
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

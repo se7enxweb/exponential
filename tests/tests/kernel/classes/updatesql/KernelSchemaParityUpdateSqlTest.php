@@ -6,7 +6,7 @@
  * columns of ezpdf_export, and the index ezcontentobject_modified, which the 6.0.0 to 6.0.15 update file of each
  * engine creates only when it is missing. Reads the files only; needs no database.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group updatesql

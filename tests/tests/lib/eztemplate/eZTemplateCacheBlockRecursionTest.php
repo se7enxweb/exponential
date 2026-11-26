@@ -12,7 +12,7 @@
  * Each case is rendered interpreted and compiled, without template errors and without PHP notices. Cache files go to
  * the installation's template-block cache under a key unique to the run and are removed in tearDown().
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group lib

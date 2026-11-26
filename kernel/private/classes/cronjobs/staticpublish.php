@@ -9,7 +9,7 @@
  * since their last scheduled run (expStaticSchedule; remembered in <WorkDir>/.schedule.json). Does nothing while
  * static publishing is switched off or nothing waits.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

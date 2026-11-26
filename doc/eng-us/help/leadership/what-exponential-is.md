@@ -58,7 +58,7 @@ The whole story: [Velocity is part of Exponential 6.0.15](../velocity-is-part-of
 
 ## Where it comes from
 
-- **Nearly thirty years of one code base.** The copyright notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
+- **Nearly thirty years of one code base.** The copyright notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved."
   next to "Copyright (C) 1999 - 2014 eZ Systems AS" (`COPYRIGHT.md`). The oldest commit in the repository
   is from 2 September 2002 ([Who is 7x?](../who-is-7x.md#7x-in-numbers)).
 - **A continuation, not a fork for its own sake.** Exponential continues the code base of eZ Publish, a product its

@@ -6,7 +6,7 @@
  *  RF-01  neither the missing feed nor a missing feed name is written with eZDebug::writeError(); a feed that
  *         exists but cannot be produced still is
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

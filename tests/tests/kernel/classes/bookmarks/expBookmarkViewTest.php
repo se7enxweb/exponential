@@ -24,7 +24,7 @@
  *  BV-15 parsedFields(): what the columns module_name, view_name and view_parameters hold
  *  BV-16 renamedURI(): a renamed module or view, parameters and query string kept; other modules and bad names refused
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group bookmarks

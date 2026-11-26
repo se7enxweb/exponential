@@ -16,7 +16,7 @@
  *  SA-07 - "Secure your account": the (secure) parameter, "Verify it's you" first, every other session signed out; the
  *          templates of every design and the links of the security mails
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

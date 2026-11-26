@@ -29,7 +29,7 @@ compatible with either, such as the GNU Affero GPL version 3, as the website not
 ### Who holds the copyright?
 
 The kernel's notice names the "Exponential Foundation and 7x" for the years from 1998 and eZ Systems AS for 1999 to
-2014 (`COPYRIGHT.md`): "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Since
+2014 (`COPYRIGHT.md`): "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved." Since
 29 October 2026 the Foundation and 7x hold the copyright together, the Foundation named first; see
 [Copyright and copyleft](../copyright-and-copyleft.md). The code also contains the work of many contributors over the years. The website's FAQ explains
 the rule: contributors agree to release their code under the same license as Exponential.

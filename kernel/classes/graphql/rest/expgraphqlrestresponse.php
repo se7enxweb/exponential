@@ -3,7 +3,7 @@
  * The HTTP answer of the GraphQL end point: a status, headers and the answer as JSON (UTF-8 as it is, slashes not
  * escaped, a broken byte sequence replaced rather than the whole answer lost).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -11,7 +11,7 @@
  *  RD-05 a redirect the crawl met: where its chain ends, a loop, a chain too long, no Location; a Location header
  *        made absolute
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -8,7 +8,7 @@
  * stand-in for the extension's class records the calls; it reports itself disabled outside these tests, so eZINI
  * ignores it in every other test of the same process.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests

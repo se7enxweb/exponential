@@ -13,7 +13,7 @@
  *  FE-08 a preflight: 204 with the CORS headers for a target's origin, 403 for another; only POST and OPTIONS
  *  FE-09 every refusal and post is an audit event system.staticpublish.form
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -14,7 +14,7 @@
  *       transactions). The record says failed.
  *  RE-3 rollback: down() of both, the last first; the folder and the table are gone, the record is empty again
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

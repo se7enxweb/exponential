@@ -10,7 +10,7 @@
  *       removed since
  *  DF-3 no differences: nothing generated, exit 0; an unknown source: a usage error
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

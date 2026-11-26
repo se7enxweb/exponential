@@ -56,7 +56,7 @@ says so instead of choosing one. Where something could not be checked, it is lef
 - **7x used to be Brookins Consulting.** Brookins Consulting was an eZ Publish partner in the USA
   (<https://se7enx.com/about/exponential-hosting-usa>). 7x grew from it in three stages: the idea in 2014, the start
   of the project in 2022 and its launch in December 2023 ([From Brookins Consulting to 7x](#from-brookins-consulting-to-7x-in-three-stages)).
-- **Nearly thirty years.** The copyright notice of Exponential reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
+- **Nearly thirty years.** The copyright notice of Exponential reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved."
   next to "Copyright (C) 1999 - 2014 eZ Systems AS"
   ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **One code base, kept alive.** "Exponential has made it beyond it's end of life in 2021 and survived" (README,
@@ -88,7 +88,7 @@ Nexus, Legacy), Winter CMS and Concrete CMS (<https://se7enx.com/>).
 The copyright holder named in every file of the kernel is "Exponential Foundation and 7x", together since
 29 October 2026 ([Copyright and copyleft](copyright-and-copyleft.md)): see [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md),
 [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) and the header of almost every PHP file, for
-example `autoload.php`. The documentation carries "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
+example `autoload.php`. The documentation carries "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved."
 ([The license of this documentation](../README-LICENSE.md)).
 
 The two are not the same organization. 7x is the company; the Exponential Foundation is a nonprofit corporation,

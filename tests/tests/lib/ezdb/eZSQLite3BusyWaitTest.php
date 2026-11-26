@@ -23,7 +23,7 @@
  *  SBW-08  a single INSERT gets in between the back-to-back transactions of a background loop (the import's link
  *          pass) within 2 s
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

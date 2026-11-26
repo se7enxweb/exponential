@@ -19,7 +19,7 @@
  *  LR-10 a run at installation makes the installer read the default object states again (a state group the run added
  *        reaches the objects the installer creates afterwards)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

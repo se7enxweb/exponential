@@ -8,7 +8,7 @@
  * and opens its page, migration/log/<run id>, which shows it live. Resume (from the history or a run's page) starts
  * exp:migration:resume for a failed or interrupted run the same way. Policy migration/run.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

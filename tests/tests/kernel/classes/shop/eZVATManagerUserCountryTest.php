@@ -6,7 +6,7 @@
  *
  * No database: the users, the content object and its attribute are mocks; shop.ini is set for the test and put back.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

@@ -19,7 +19,7 @@
  * A time is from the request being sent to the last byte of the answer: one connection is kept for all requests, so
  * connecting and the TLS handshake are not in it. The first requests of a row warm it up and are not counted.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

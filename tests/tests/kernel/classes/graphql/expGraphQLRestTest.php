@@ -4,7 +4,7 @@
  * /api/graphql (credentials when the request presents some, the anonymous user otherwise), the API key scope
  * graphql:read and the JSON of an answer.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

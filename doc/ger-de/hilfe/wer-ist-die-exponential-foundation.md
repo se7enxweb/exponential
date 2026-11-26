@@ -53,7 +53,7 @@ ließ, sagt die Seite das.
   code, extension development, new features, infrastructure, maintenance and much much more back to the project“
   (<https://foundation.exponential.earth/>).
 - **Sie teilt sich das Urheberrecht.** Der Copyright-Vermerk des Kernels lautet
-  „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
+  „Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“ ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **Alles ist freie Software.** Der Code steht unter der GPL v2 oder später, die Dokumentation unter der GFDL 1.3 oder
   später ([Die Lizenz dieser Dokumentation](../README-LIZENZ.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 
@@ -535,6 +535,6 @@ Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
 
 Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
 Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
-„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“ Wer es hält und warum, was die
 GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
 [Urheberrecht und Copyleft](urheberrecht-und-copyleft.md).

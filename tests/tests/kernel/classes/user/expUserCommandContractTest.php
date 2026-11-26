@@ -20,7 +20,7 @@
  *  UC-11 the pure parts of the second commands: the import file read (formula cells, a password column refused), an
  *        export row (never a hash), the --confirm check of bulk, a role target, the audit filters
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

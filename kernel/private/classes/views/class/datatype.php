@@ -12,7 +12,7 @@
  * help page, and every main node of the content using it, a page at a time (sorted, by class). The data is built by
  * expDataTypeInventory; the counts are kept five minutes.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -17,7 +17,7 @@
  * The step types wp9_note and wp9_node (expMigrationYamlFakes.php) are registered in migration.ini [StepSettings]
  * StepTypeList for the test, as an extension registers its own.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

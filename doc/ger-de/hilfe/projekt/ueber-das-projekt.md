@@ -125,6 +125,6 @@ Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 
 Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
 Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
-„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“ Wer es hält und warum, was die
 GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
 [Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

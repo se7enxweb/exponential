@@ -16,7 +16,7 @@
  *  QE-4 an INI migration through the runner writes settings/override of a settings tree of the test, with a backup;
  *       its dry run writes nothing
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

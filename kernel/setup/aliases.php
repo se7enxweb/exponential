@@ -3,7 +3,7 @@
  * File containing the setup/aliases view: Setup > Image aliases, the image aliases made on demand (dashboard,
  * settings, bulk runs as jobs, test tools, run history).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

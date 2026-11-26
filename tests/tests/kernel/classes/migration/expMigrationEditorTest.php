@@ -13,7 +13,7 @@
  *  ME-5 saving: a new migration into the folder (never over a file), an existing file in the folder, an applied one
  *       refused, a text that does not pass refused; find() only inside the searched folders; the view's step target
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

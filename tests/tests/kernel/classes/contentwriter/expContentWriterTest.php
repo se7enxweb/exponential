@@ -13,7 +13,7 @@
  *  CW-05 a file value is "<url>" or "<url>|<alternative text or file name>"
  *  CW-06 file attributes are the image, file and media datatypes
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

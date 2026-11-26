@@ -1,7 +1,7 @@
 {
     "_about": "Copyright lines that name 7x or the Exponential Foundation and may keep a form other than the two approved ones (CopyrightNoticeTest, owner rule 2026-10-29, #284). 'skip' holds paths whose lines are history or test data (fnmatch, * also matches /); 'lines' holds a path pattern and a text the line contains, each with its reason. Notices that name only other holders (eZ Systems AS, Mugo Web, Moxiecode, the Free Software Foundation, Unicode ...) need no entry: they are third-party notices, never changed. Add an entry only for a notice of another author or a quote of history, never to let an old notice of the project's own pass.",
     "approved": {
-        "header": "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.",
+        "header": "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.",
         "visible": "Exponential Copyright © 1998-2026 Exponential Foundation and 7x"
     },
     "skip": {

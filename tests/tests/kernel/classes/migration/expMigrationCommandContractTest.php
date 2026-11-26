@@ -12,7 +12,7 @@
  *        the contract's
  *  MC-06 the text output of a run report names every migration and ends with the summary (runLines())
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

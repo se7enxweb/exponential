@@ -11,7 +11,7 @@
  *  LI-05 - The old extension's regular expression for N'' (bug 5) failed on an odd number of quotes, on a
  *          backslash before a quote and on numeric text; the lexer handles each of them
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

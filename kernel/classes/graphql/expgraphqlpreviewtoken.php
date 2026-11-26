@@ -13,7 +13,7 @@
  *
  *   exp1.<base64url of {"o":58,"v":4,"l":"eng-GB","u":14,"e":1767229200}>.<base64url of the HMAC>
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

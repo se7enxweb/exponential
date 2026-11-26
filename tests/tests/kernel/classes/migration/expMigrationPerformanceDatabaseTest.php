@@ -8,7 +8,7 @@
  *  PD-2 PF-2 a large data step: 5,000 rows inserted, updated and deleted
  *  PD-3 PF-3 a long run with checkpoints, stopped and resumed
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group database

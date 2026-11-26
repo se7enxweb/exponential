@@ -10,7 +10,7 @@
  * step of the meter classes, offset), log (text: one line of the run log, level, offset), done (exit: the report's
  * exit code, or null without a report) or info. Policy migration/read.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

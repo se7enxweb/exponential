@@ -19,7 +19,7 @@ Der Hinweis wird nicht übersetzt: Er ist eine rechtliche Angabe mit Namen und s
 In den Quelldateien, in den Metadaten von Erweiterungen und in den Lizenzdateien steht derselbe Hinweis in der Form,
 die für Dateiköpfe üblich ist:
 
-> **Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.**
+> **Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.**
 
 Die Software ist freie Software unter der **GNU General Public License, Version 2 oder (nach Ihrer Wahl) jeder
 späteren Version** (GPL-2.0-or-later). Das Copyright sagt, *wem* das Werk gehört; die Lizenz sagt, *was alle anderen*
@@ -57,7 +57,7 @@ und die Hinweise in `COPYRIGHT.md`.
 | Seit wann lautet der Hinweis so? | Seit dem **29. Oktober 2026** (Linie 6.0.15). |
 | Welche Jahre nennt er? | **1998 bis 2026**. Das Endjahr geht mit den Releases mit. |
 | Was sieht ein Benutzer? | „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“ |
-| Was steht in einem Dateikopf? | „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ |
+| Was steht in einem Dateikopf? | „Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“ |
 | Unter welcher Lizenz steht die Software? | GNU General Public License, Version 2 oder jede spätere Version (GPL-2.0-or-later). |
 | Unter welcher Lizenz steht diese Dokumentation? | GNU Free Documentation License, Version 1.3 oder jede spätere Version. |
 | Wird der ursprüngliche Hersteller weiter genannt? | Ja: „Copyright (C) 1999 - 2014 eZ Systems AS“, der Hersteller von eZ Publish, dem eingestellten Produkt, aus dem Exponential hervorging. |
@@ -117,6 +117,15 @@ Die Erweiterungen mit eigenen Repositories (die Erweiterungen von se7enxweb und 
 Exponential Velocity, die Installer und Seitenpakete) folgen mit ihren nächsten Releases, jeweils mit erhöhter
 Version in `ezinfo.php` und `extension.xml`.
 
+### Das Semikolon: 25. November 2026
+
+Am **25. November 2026** erhielt die Form für Dateien ein Semikolon nach den Inhabern: „Copyright (C) 1998 - 2026
+Exponential Foundation and 7x; All rights reserved.“ Vorher stand dort ein Punkt („…and 7x. All rights reserved.“).
+Geändert hat sich nur das Satzzeichen; Inhaber, Jahre und Lizenz blieben gleich. Nennt eine Zeile auch die Lizenz,
+folgt diese als zweiter Satz: „…; All rights reserved. Licensed under the GNU General Public License v2.0 (or any
+later version).“ Der Kernel, die darin ausgelieferten Erweiterungen und die Erweiterungen mit eigenen Repositories
+wurden gemeinsam geändert, und `CopyrightNoticeTest` schlägt nun bei der Form mit dem Punkt fehl.
+
 ## Warum die Exponential Foundation zuerst genannt wird
 
 Die Reihenfolge ist Absicht. Die **Exponential Foundation** steht zuerst, weil sie die Treuhänderin des Projekts ist:
@@ -161,7 +170,7 @@ In HTML steht das Zeichen als `&copy;`. Links dürfen auf den Wörtern liegen (d
 
 ### Die Form für Dateien
 
-> Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+> Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 
 In Dateien und Metadaten: die Zeile `@copyright` von PHP-Docblocks, die Zeile `// COPYRIGHT NOTICE:` von
 JavaScript- und C++-Quellen, Kommentarköpfe von Templates, Stylesheets und Skripten, `<copyright>` in
@@ -210,7 +219,7 @@ Die Lizenz von Exponential ist die **GNU General Public License, Version 2 oder 
   Exponential beruhendes Werk; **verbreiten** Sie sie also unter der GPL Version 2 oder später oder einer mit ihr
   verträglichen Lizenz. Erweiterungen, die Sie nur für Ihre eigenen Websites behalten, brauchen gar keine Lizenz.
 - Enthält Ihre Erweiterung aus Exponential kopierten Code, behalten Sie den Hinweis dieses Codes
-  („Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“) neben Ihrem eigenen.
+  („Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“) neben Ihrem eigenen.
 
 ### Wenn Sie Exponential forken oder weiterverbreiten
 
@@ -309,7 +318,7 @@ der umliegenden Dateien bei: die Zeile `@copyright`, dann die Zeile `@license`.
 /**
  * File containing the expExampleThing class
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -318,7 +327,7 @@ der umliegenden Dateien bei: die Zeile `@copyright`, dann die Zeile `@license`.
 Eine Datei, die auch Code von eZ Systems AS enthält, behält deren Zeile direkt darunter:
 
 ```php
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
 ```
 
@@ -328,7 +337,7 @@ Eine Datei, die auch Code von eZ Systems AS enthält, behält deren Zeile direkt
 /**
  * Exponential: the bookmark button of the page header.
  *
- * Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * GNU General Public License v2.0 (or any later version).
  */
 ```
@@ -336,7 +345,7 @@ Eine Datei, die auch Code von eZ Systems AS enthält, behält deren Zeile direkt
 Ältere JavaScript- und C++-Dateien nutzen den Stil `// COPYRIGHT NOTICE:`; in diesen Dateien bleibt er:
 
 ```js
-// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 ```
 
@@ -344,14 +353,14 @@ Eine Datei, die auch Code von eZ Systems AS enthält, behält deren Zeile direkt
 
 ```
 {* Die Fußzeile der Beispielseite.
-   Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+   Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
    GNU General Public License v2.0 (or any later version) *}
 ```
 
 ### INI-Dateien, Shell- und Python-Skripte
 
 ```ini
-# Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+# Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
 # GNU General Public License v2.0 (or any later version)
 ```
 
@@ -373,21 +382,21 @@ Regeln für alle:
 `ezinfo.php`:
 
 ```php
-'Copyright' => "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.",
+'Copyright' => "Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.",
 'License' => "GNU General Public License v2.0 (or any later version)",
 ```
 
 `extension.xml`:
 
 ```xml
-<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.</copyright>
+<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.</copyright>
 <license>GNU General Public License v2.0 (or any later version)</license>
 ```
 
 Eine Erweiterung mit Code von eZ Systems AS behält beide Hinweise in einem Wert, den des Projekts zuerst:
 
 ```xml
-<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. Copyright (C) eZ Systems AS. All rights reserved.</copyright>
+<copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved. Copyright (C) eZ Systems AS. All rights reserved.</copyright>
 ```
 
 `./console exp:ini:move` schreibt genau diese Dateien, wenn es eine Einstellungs-Erweiterung anlegt.

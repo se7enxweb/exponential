@@ -4,7 +4,7 @@
  * common, combined and vhost_combined, IPv6 clients, quotes inside a quoted field, fields after the user agent, and
  * a format of its own (LineRegexp). Lines that are not requests give null.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

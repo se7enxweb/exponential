@@ -8,7 +8,7 @@
  * Plain PHP with no kernel class: the response cache uses it at the very start of index_rest.php, before the
  * settings are read, to count a request it answers from the cache.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

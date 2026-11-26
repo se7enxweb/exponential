@@ -11,7 +11,7 @@
  *          readers and writers by name, a .tsv written with tabs, unknown formats refused
  *  RT-04 - 10,000 rows through every format in reasonable time, with every row back
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

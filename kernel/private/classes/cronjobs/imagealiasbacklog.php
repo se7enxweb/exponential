@@ -6,7 +6,7 @@
  * while it worked on an entry) is made here, waiting for a conversion slot as a job does. Each alias as the
  * siteaccess the page was shown in defines it. Nothing in render mode or with an empty backlog.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -58,7 +58,7 @@ ließ, wurde weggelassen.
   (<https://se7enx.com/about/exponential-hosting-usa>). 7x ist daraus in drei Stufen hervorgegangen: die Idee 2014, der
   Start des Projekts 2022 und sein Launch im Dezember 2023 ([Von Brookins Consulting zu 7x](#von-brookins-consulting-zu-7x-in-drei-stufen)).
 - **Fast dreißig Jahre.** Der Copyright-Vermerk von Exponential lautet
-  „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“, daneben steht „Copyright (C) 1999 - 2014 eZ Systems AS“
+  „Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“, daneben steht „Copyright (C) 1999 - 2014 eZ Systems AS“
   ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **Eine Codebasis, am Leben erhalten.** „Exponential has made it beyond it's end of life in 2021 and survived“
   (README, „Exponential Project Status“). Seit Dezember 2023 hat 7x die Releases 6.0.x veröffentlicht, von 6.0.0 am
@@ -89,7 +89,7 @@ Nexus, Legacy), Winter CMS und Concrete CMS an (<https://se7enx.com/>).
 Der Inhaber des Copyrights, der in jeder Datei des Kernels genannt wird, ist „Exponential Foundation and 7x“, gemeinsam
 seit dem 29. Oktober 2026 ([Urheberrecht und Copyleft](urheberrecht-und-copyleft.md)): siehe [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md),
 [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) und den Kopf fast jeder PHP-Datei, zum Beispiel
-`autoload.php`. Die Dokumentation trägt „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“
+`autoload.php`. Die Dokumentation trägt „Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“
 ([Die Lizenz dieser Dokumentation](../README-LIZENZ.md)).
 
 Die beiden sind nicht dieselbe Organisation. 7x ist das Unternehmen; die Exponential Foundation ist eine gemeinnützige

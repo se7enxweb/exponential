@@ -13,7 +13,7 @@
  *  MR-E3 write and read: a migration row and a run row, replaced by a second write, listed, removed
  *  MR-E4 exp:upgrade's record: written to exp_migration as source "kernel" and read from it only
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

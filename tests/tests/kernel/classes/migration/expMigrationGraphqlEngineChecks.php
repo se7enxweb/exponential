@@ -12,7 +12,7 @@
  *  GE-2 events: none leaves the journal empty; a failing graphql step fails its migration; where the engine has
  *       transactions the folder it made and its events are undone, on MongoDB both stay (the changes are real)
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

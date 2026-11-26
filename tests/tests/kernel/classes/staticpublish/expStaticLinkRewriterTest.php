@@ -32,7 +32,7 @@
  *        siteaccess not in the export is outside (unlink), on a SiteURL origin of its own too; the language switcher
  *        (switchlanguage/to/<siteaccess>) goes to the same page in the other siteaccess, else its front page
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

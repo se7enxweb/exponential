@@ -8,7 +8,7 @@
  *  UD-1 UE-1 the status lists kernel steps and site migrations together (expMigrationUpgradeSourceEngineChecks)
  *  UD-2 UE-2 migrate runs the pending kernel steps first, copies expupgrade_step once and drops it, and is idempotent
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group database

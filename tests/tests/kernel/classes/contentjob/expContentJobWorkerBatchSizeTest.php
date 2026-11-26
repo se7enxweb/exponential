@@ -10,7 +10,7 @@
  *  CJB-03  other databases keep the configured BatchSize
  *  CJB-04  the worker sizes each batch with it and measures from begin() done to commit
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

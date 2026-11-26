@@ -7,7 +7,7 @@
  * as on the live site. Anyone may post (site.ini PolicyOmitList[]=staticpublish/form); the information collection
  * runs as the current user, the anonymous user for a visitor of a static copy, with its policies.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

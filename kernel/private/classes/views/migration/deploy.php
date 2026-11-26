@@ -11,7 +11,7 @@
  * exp:migration:deploy) and opens its page, migration/deployment/<deploy id>, which follows it live. Policy
  * migration/read for the page; starting needs migration/deploy.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

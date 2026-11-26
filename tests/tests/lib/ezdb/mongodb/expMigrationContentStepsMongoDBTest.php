@@ -11,7 +11,7 @@
  * Needs a MongoDB server: EXP_TEST_MONGO_URI (a mongodb:// connection string), and symfony/yaml; skipped without.
  * Run: php vendor/bin/phpunit --testsuite mongodb-live
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group mongodb-live

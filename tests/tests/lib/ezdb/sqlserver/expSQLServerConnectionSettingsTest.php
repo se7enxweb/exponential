@@ -15,7 +15,7 @@
  *  CN-07 - replicaUsable(): a readable secondary (READ_ONLY) or a primary (READ_WRITE); not offline/unknown; lag
  *  CN-08 - expSQLServerTransport: chooseLayer() order and aliases, normalizeRow() as MySQL gives values
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

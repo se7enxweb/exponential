@@ -9,7 +9,7 @@
  *  NT-05 the notice is made like the kernel's other notices to administrators: plain text from its template,
  *        sender EmailSender (else AdminEmail), category admin; a failed run never reads "unchanged"
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

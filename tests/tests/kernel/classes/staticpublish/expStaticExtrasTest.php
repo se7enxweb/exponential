@@ -9,7 +9,7 @@
  *  EX-04 the missing path and the plain 404 page
  *  EX-05 README.md names the target, the public address, the counts and the license; LICENSE from an SPDX id or the text
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

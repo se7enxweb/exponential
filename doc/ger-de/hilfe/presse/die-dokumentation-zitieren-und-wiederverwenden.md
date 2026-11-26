@@ -24,7 +24,7 @@ erklärt, was, und wie Sie die Quelle angeben. Sie ist eine praktische Orientier
 
 ## Die Lizenz in einem Absatz
 
-Die Dokumentation in `doc/`, einschließlich dieser Hilfe, ist „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“
+Die Dokumentation in `doc/`, einschließlich dieser Hilfe, ist „Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“
 und steht unter der GNU Free Documentation License, Version 1.3 oder jeder späteren
 Version, „with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts“, also ohne unveränderliche
 Abschnitte und ohne Umschlagtexte ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)). Die Erklärung in
@@ -46,7 +46,7 @@ einfachen Worten steht auf [Freie Dokumentation](../freie-dokumentation.md).
 
 Wenn Sie eine Seite oder einen wesentlichen Teil davon weitergeben:
 
-1. Der Urheberrechtshinweis: „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“
+1. Der Urheberrechtshinweis: „Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.“
 2. Der Lizenzhinweis oder ein klarer Verweis auf die GNU FDL 1.3 mit Link
    (<https://www.gnu.org/licenses/fdl-1.3.html>); bei einem gedruckten Abdruck eines großen Teils fügen Sie den
    Lizenztext bei, wie es die Lizenz verlangt.

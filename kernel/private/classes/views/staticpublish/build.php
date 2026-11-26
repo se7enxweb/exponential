@@ -6,7 +6,7 @@
  * and, once it has ended, its report and the way on to the preview. Nothing is published by a build: the build goes
  * into the target's folder, and the preview shows it before Publish. Policy staticpublish/build.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -8,7 +8,7 @@
  *  GD-1 GE-1 a persisted query and a mutation from a migration, tagged events, the status API
  *  GD-2 GE-2 events: none; a failing graphql step rolls its migration back with its events
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group database
