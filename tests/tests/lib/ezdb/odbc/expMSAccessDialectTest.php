@@ -132,9 +132,9 @@ class expMSAccessDialectTest extends PHPUnit\Framework\TestCase
         $this->assertSame( ' Mid( name, 2 ) ', expMSAccessDialect::subString( 'name', 2 ) );
         $this->assertSame( 'Len( name )', expMSAccessDialect::charLength( 'name' ) );
         $this->assertSame( 'IIf( a > 1, 1, 0 )', expMSAccessDialect::iif( 'a > 1', '1', '0' ) );
-        $this->assertSame( "DateDiff( 's', #1970-01-01 00:00:00#, Now() )", expMSAccessDialect::unixTimestamp() );
-        $this->assertSame( "DateDiff( 's', #1970-01-01 00:00:00#, created )", expMSAccessDialect::unixTimestamp( 'created' ) );
-        $this->assertSame( "DateAdd( 's', ts, #1970-01-01 00:00:00# )", expMSAccessDialect::fromUnixTimestamp( 'ts' ) );
+        $this->assertSame( 'Round( ( CDbl( Now() ) - CDbl( #1970-01-01 00:00:00# ) ) * 86400, 0 )', expMSAccessDialect::unixTimestamp() );
+        $this->assertSame( 'Round( ( CDbl( created ) - CDbl( #1970-01-01 00:00:00# ) ) * 86400, 0 )', expMSAccessDialect::unixTimestamp( 'created' ) );
+        $this->assertSame( 'CDate( CDbl( #1970-01-01 00:00:00# ) + ( ts ) / 86400 )', expMSAccessDialect::fromUnixTimestamp( 'ts' ) );
     }
 
     /**
@@ -207,8 +207,8 @@ class expMSAccessDialectTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'SELECT TOP 3 * FROM t', expDBSQLHelpers::limit( 'msaccess', 'SELECT * FROM t', 3 ) );
         $this->assertNull( expDBSQLHelpers::limit( 'msaccess', 'SELECT * FROM t', 0 ) );
         $this->assertSame( 'SELECT * FROM t WHERE id = 1', expDBSQLHelpers::forUpdate( 'msaccess', 'SELECT * FROM t WHERE id = 1' ) );
-        $this->assertSame( "DateDiff( 's', #1970-01-01 00:00:00#, Now() )", expDBSQLHelpers::unixTimestamp( 'msaccess' ) );
-        $this->assertSame( "DateAdd( 's', 5, #1970-01-01 00:00:00# )", expDBSQLHelpers::fromUnixTimestamp( 'msaccess', '5' ) );
+        $this->assertSame( expMSAccessDialect::unixTimestamp(), expDBSQLHelpers::unixTimestamp( 'msaccess' ) );
+        $this->assertSame( 'CDate( CDbl( #1970-01-01 00:00:00# ) + ( 5 ) / 86400 )', expDBSQLHelpers::fromUnixTimestamp( 'msaccess', '5' ) );
         foreach ( array( function () use ( $literal ) { expDBSQLHelpers::upsert( 'msaccess', $literal, 't', array( 'id' => 1, 'v' => 'x' ), array( 'id' ) ); },
                          function () use ( $literal ) { expDBSQLHelpers::groupConcat( 'msaccess', $literal, 'name' ); },
                          function () { expDBSQLHelpers::limit( 'msaccess', 'SELECT * FROM t', 10, 5 ); } ) as $refused )

@@ -101,7 +101,7 @@ Der Access-Dialekt (`expMSAccessDialect`):
 | `` `name` `` | `[name]` (ein Name darf kein `]` enthalten, höchstens 64 Zeichen) |
 | mehrere Anweisungen | eine je Aufruf: `query()` teilt ein Skript an den Semikolons und führt die Teile nacheinander aus (nicht atomar außer in einer Transaktion) |
 | Kommentare | entfernt (Access nimmt keine) |
-| `UNIX_TIMESTAMP()` | `DateDiff('s', #1970-01-01#, ...)`; `Now()` ist die Ortszeit des Rechners |
+| `UNIX_TIMESTAMP()` | die Tage des Datums als Double mal 86400 (DateDiff in Sekunden läuft nach 2038 über); `Now()` ist die Ortszeit des Rechners |
 | `&`, `\|` (Bits) | `BAND`/`BOR` im ANSI-92-Modus; ohne ihn exakte Ganzzahl-Arithmetik für eine konstante Maske |
 | Upsert, `GROUP_CONCAT`, `MD5()` | gibt es nicht: `expDBUnsupportedException` (in PHP erledigen) |
 | `FOR UPDATE` | entfällt: die Engine sperrt Seiten selbst |

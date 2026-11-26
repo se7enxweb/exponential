@@ -52,8 +52,8 @@
             <exclude>tests/tests/kernel/classes/upgrade</exclude>
             <exclude>tests/tests/kernel/classes/help/expHelpSearchContractTest.php</exclude>
             <exclude>tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php</exclude>
-            <!-- live: real Access files (EXP_TEST_ACCESS_FIXTURES), in the suite odbc-live -->
-            <exclude>tests/tests/kernel/classes/msaccess/live</exclude>
+            <!-- in the suites odbc and odbc-live (the GitHub job odbc); a file can be in one suite only -->
+            <exclude>tests/tests/kernel/classes/msaccess</exclude>
         </testsuite>
 
         <testsuite name="kernel-content">
@@ -104,7 +104,8 @@
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>
             <exclude>tests/tests/lib/ezdb/sqlserver/live</exclude>
-            <exclude>tests/tests/lib/ezdb/odbc/live</exclude>
+            <!-- in the suites odbc and odbc-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/odbc</exclude>
         </testsuite>
 
         <!--

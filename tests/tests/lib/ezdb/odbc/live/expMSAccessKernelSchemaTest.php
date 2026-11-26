@@ -27,7 +27,7 @@ class expMSAccessKernelSchemaTest extends PHPUnit\Framework\TestCase
      * @param callable $step
      * @return array ok, ms, error
      */
-    private static function attempt( callable $step )
+    private static function probe( callable $step )
     {
         $started = microtime( true );
         try
@@ -64,7 +64,7 @@ class expMSAccessKernelSchemaTest extends PHPUnit\Framework\TestCase
             $errors = array();
             foreach ( expMSAccessDialect::createTable( $table, $definition, $db->ansi92() ) as $sql )
             {
-                $result = self::attempt( function () use ( $db, $sql ) { return $db->query( $sql ); } );
+                $result = self::probe( function () use ( $db, $sql ) { return $db->query( $sql ); } );
                 if ( !$result['ok'] )
                     $errors[] = $result['error'] . ' [' . mb_substr( $sql, 0, 160 ) . ']';
             }
@@ -87,7 +87,7 @@ class expMSAccessKernelSchemaTest extends PHPUnit\Framework\TestCase
                 foreach ( $row as $value )
                     $values[] = $value === null ? 'NULL' : ( preg_match( '/^-?\d+$/', (string)$value ) && strlen( (string)$value ) < 10 ? (string)$value : $db->sqlLiteral( (string)$value ) );
                 $sql = 'INSERT INTO ' . expMSAccessDialect::quoteName( $table ) . " ($columns) VALUES (" . implode( ', ', $values ) . ')';
-                $result = self::attempt( function () use ( $db, $sql ) { return $db->query( $sql ); } );
+                $result = self::probe( function () use ( $db, $sql ) { return $db->query( $sql ); } );
                 if ( $result['ok'] )
                     $written++;
                 elseif ( count( $failed ) < 3 )
@@ -117,7 +117,7 @@ class expMSAccessKernelSchemaTest extends PHPUnit\Framework\TestCase
             },
         );
         foreach ( $steps as $name => $step )
-            $report['kernel'][$name] = self::attempt( $step );
+            $report['kernel'][$name] = self::probe( $step );
         if ( $previous === null )
             unset( $GLOBALS['eZDBGlobalInstance'] );
         else

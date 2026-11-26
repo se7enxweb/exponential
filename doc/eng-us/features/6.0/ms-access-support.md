@@ -98,7 +98,7 @@ The Access dialect (`expMSAccessDialect`):
 | `` `name` `` | `[name]` (a name cannot hold `]`, at most 64 characters) |
 | several statements | one per call: `query()` cuts a script at its semicolons and runs them in turn (not atomic unless in a transaction) |
 | comments | removed (Access takes none) |
-| `UNIX_TIMESTAMP()` | `DateDiff('s', #1970-01-01#, ...)`; `Now()` is the machine's local time |
+| `UNIX_TIMESTAMP()` | the date's days as a Double times 86400 (DateDiff in seconds overflows after 2038); `Now()` is the machine's local time |
 | `&`, `\|` (bits) | `BAND`/`BOR` in ANSI-92 mode; without it exact integer arithmetic for a constant mask |
 | upsert, `GROUP_CONCAT`, `MD5()` | none: `expDBUnsupportedException` (do it in PHP) |
 | `FOR UPDATE` | left out: the engine locks pages itself |

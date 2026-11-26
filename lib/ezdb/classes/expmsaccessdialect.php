@@ -412,14 +412,15 @@ class expMSAccessDialect
     }
 
     /**
-     * Seconds since 1970 of now or of a date expression. Access keeps no time zone: Now() is the server's local time.
+     * Seconds since 1970 of now or of a date expression, from the date's days as a Double (DateDiff in seconds is a
+     * Long and overflows after 2038). Access keeps no time zone: Now() is the server's local time.
      *
      * @param string|null $expression
      * @return string
      */
     public static function unixTimestamp( $expression = null )
     {
-        return "DateDiff( 's', #1970-01-01 00:00:00#, " . ( $expression === null ? 'Now()' : $expression ) . ' )';
+        return 'Round( ( CDbl( ' . ( $expression === null ? 'Now()' : $expression ) . ' ) - CDbl( #1970-01-01 00:00:00# ) ) * 86400, 0 )';
     }
 
     /**
@@ -430,7 +431,8 @@ class expMSAccessDialect
      */
     public static function fromUnixTimestamp( $expression )
     {
-        return "DateAdd( 's', $expression, #1970-01-01 00:00:00# )";
+        // days as a Double: DateAdd in seconds takes a Long and overflows after 2038
+        return "CDate( CDbl( #1970-01-01 00:00:00# ) + ( $expression ) / 86400 )";
     }
 
     /**
