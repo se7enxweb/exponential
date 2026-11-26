@@ -9,6 +9,8 @@
  *  UK-04 the error log: fatal lines from a moment on, by the timestamps of eZLog
  *  UK-05 the smoke addresses given win
  *  UK-06 git_manager takes captions only as an active extension (inactive, its settings are not loaded)
+ *  UK-07 an older git_manager without backupPath() or createFullCaption() (2.0.1) is treated as absent: the caption
+ *        folders are exp:upgrade's own, and listing them no longer crashes on the error path of a failed upgrade
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -118,6 +120,60 @@ class expUpgradeCaptionTest extends PHPUnit\Framework\TestCase
     {
         $this->assertFalse( expUpgradeCaption::managerActive( array( 'ezjscore', 'ezoe' ) ),
                             'an installed but inactive git_manager takes no captions' );
-        $this->assertSame( class_exists( 'BackupManager' ), expUpgradeCaption::managerActive( array( 'ezjscore', 'git_manager' ) ) );
+        $this->assertSame( expUpgradeCaption::managerUsable( 'BackupManager' ), expUpgradeCaption::managerActive( array( 'ezjscore', 'git_manager' ) ) );
+    }
+
+    /** UK-07 */
+    public function testAnOlderGitManagerIsNotUsable()
+    {
+        $this->assertFalse( expUpgradeCaption::managerUsable( 'expUpgradeCaptionTestOldBackupManager' ), 'git_manager 2.0.1: no backupPath()' );
+        $this->assertTrue( expUpgradeCaption::managerUsable( 'expUpgradeCaptionTestBackupManager' ) );
+        $this->assertFalse( expUpgradeCaption::managerUsable( 'expUpgradeCaptionTestNoSuchManager' ) );
+    }
+
+    /**
+     * UK-07: with git_manager 2.0.1's BackupManager loaded and git_manager active, the caption folders are
+     * exp:upgrade's own, and every caption is listed without a call to backupPath(). In a process of its own, as
+     * the stand-in takes the name BackupManager.
+     */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState(false)]
+    public function testFoldersWithAnOlderGitManagerListOnlyTheOwnCaptions()
+    {
+        // not autoloaded: a git_manager installed next to the tests is never loaded once the stand-in has its name
+        if ( class_exists( 'BackupManager', false ) )
+            $this->markTestSkipped( 'a BackupManager is already loaded' );
+        class_alias( 'expUpgradeCaptionTestOldBackupManager', 'BackupManager' );
+        // git_manager active, as on the installation where the upgrade failed
+        $GLOBALS['eZActiveExtensions'] = array( 'git_manager' );
+        $this->assertContains( 'git_manager', eZExtension::activeExtensions() );
+        $this->assertFalse( expUpgradeCaption::managerActive() );
+        $this->assertNull( expUpgradeCaption::manager() );
+        $this->assertSame( array( 'exp:upgrade' => $this->dir ), expUpgradeCaption::folders( $this->dir . '/' ) );
+        $this->assertSame( array(), expUpgradeCaption::all( $this->dir . '/none' ) );
+        $this->assertNull( expUpgradeCaption::find( 'missing', $this->dir ) );
+    }
+}
+
+/** git_manager 2.0.1's BackupManager: no backupPath(), no createFullCaption() */
+class expUpgradeCaptionTestOldBackupManager
+{
+    public function createBackup()
+    {
+        return array( 'success' => true );
+    }
+}
+
+/** A git_manager with what captions need */
+class expUpgradeCaptionTestBackupManager
+{
+    public function backupPath()
+    {
+        return '/nonexistent';
+    }
+
+    public function createFullCaption( $label )
+    {
+        return array( 'success' => false );
     }
 }

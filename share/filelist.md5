@@ -25657,7 +25657,7 @@ f45e34d12ad6a7e1568acf45fa911975  kernel/classes/uiswitch/expuiswitchprovider.ph
 51e9ee8e681ebba7723fb56ece34bccc  kernel/classes/upgrade/expupgrade.php
 048acfdfdb4ac84160d8f2c1dde8730d  kernel/classes/upgrade/expupgradebackup.php
 db01749d43797cb195a44fad8511aea4  kernel/classes/upgrade/expupgradebasestep.php
-6d62fa5def65a671d3ff6066b9e713d7  kernel/classes/upgrade/expupgradecaption.php
+3f5ce2b82e16de8075820c6ffd167c47  kernel/classes/upgrade/expupgradecaption.php
 4a5e064a94f4fc93dc157da9b90bc151  kernel/classes/upgrade/expupgradecatalog.php
 79690818270e01b35013cd901394b79b  kernel/classes/upgrade/expupgradecomposer.php
 f32e5c9ced19378ae45cab2e980662a4  kernel/classes/upgrade/expupgradecontext.php
@@ -30210,7 +30210,7 @@ b78f30c542438fe4894167ffd0e9e9ca  tests/tests/kernel/classes/updatesql/SixZeroPa
 545bca455dbcd25517864554667cff29  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
 01d22171590d540b9ab561500fcc0037  tests/tests/kernel/classes/upgrade/expUpgradeActiveExtensionTablesTest.php
 45af94ebd995ddb3435b382aab9ebf6f  tests/tests/kernel/classes/upgrade/expUpgradeApplyResultTest.php
-3613fd8372566bc0bc19e9c0c859633e  tests/tests/kernel/classes/upgrade/expUpgradeCaptionTest.php
+79ef603f88ee6ced3b66a0811be28517  tests/tests/kernel/classes/upgrade/expUpgradeCaptionTest.php
 801789759a174f95f1de79cf9d038bcb  tests/tests/kernel/classes/upgrade/expUpgradeCommandContractTest.php
 6cb8de81e320beb570bd2ab0c5b8c1ff  tests/tests/kernel/classes/upgrade/expUpgradeKernelTablesTest.php
 ec314851f8b7fb97fad8af6bd4e2b596  tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php

@@ -49,7 +49,7 @@ class expUpgradeCaption
      */
     public static function managerActive( $activeExtensions = null )
     {
-        if ( !class_exists( 'BackupManager' ) )
+        if ( !self::managerUsable( 'BackupManager' ) )
             return false;
         if ( $activeExtensions === null )
         {
@@ -58,6 +58,30 @@ class expUpgradeCaption
             $activeExtensions = eZExtension::activeExtensions();
         }
         return in_array( 'git_manager', (array)$activeExtensions, true );
+    }
+
+    /**
+     * The methods of git_manager's BackupManager that captions need: its backup folder and a full caption.
+     * git_manager 2.0.1 has neither, and calling backupPath() there crashed the listing of the captions (folders(),
+     * all()) on the error path of a failed upgrade, so the real error was never shown.
+     */
+    const MANAGER_METHODS = array( 'backupPath', 'createFullCaption' );
+
+    /**
+     * Whether $class is a backup manager captions can use: it exists and has every method of MANAGER_METHODS.
+     * An older git_manager is treated as absent, so exp:upgrade makes its own captions.
+     *
+     * @param string $class
+     * @return bool
+     */
+    public static function managerUsable( $class )
+    {
+        if ( !class_exists( $class ) )
+            return false;
+        foreach ( self::MANAGER_METHODS as $method )
+            if ( !method_exists( $class, $method ) )
+                return false;
+        return true;
     }
 
     /** @return BackupManager|null git_manager's backup manager, when git_manager is active */
@@ -618,6 +642,8 @@ class expUpgradeCaption
             if ( !$apply )
                 continue;
             $manager = $c['source'] === 'git_manager' ? self::manager() : null;
+            if ( $manager && !method_exists( $manager, 'deleteCaption' ) )
+                $manager = null;
             $ok = $manager ? !empty( $manager->deleteCaption( $c['id'] )['success'] ) : eZDir::recursiveDelete( $c['dir'], false );
             if ( !$ok )
                 $result['failed'][] = $c['id'];
