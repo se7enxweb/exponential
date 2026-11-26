@@ -1,0 +1,264 @@
+name: Container images
+
+# Exponential on the official PHP image, one image per PHP version and server
+# (Apache with PHP-FPM, or Velocity), for amd64 and arm64:
+# ghcr.io/se7enxweb/exponential. docker/ builds them, and
+# doc/eng-us/help/hosting/models/containers-docker-and-podman.md documents the
+# tags and the variables.
+#
+# Every run builds both architectures natively and tests each image
+# (docker/test-image.sh: a SQLite installation and its pages, and on amd64
+# with the newest PHP also MariaDB and PostgreSQL). Images are pushed by
+# digest, untagged; tags are only set once every build of the run passed.
+#
+# - main (nightly, and on a change to docker/ or this file): the moving tags
+#   edge, main, edge-velocity and edge-php<ver>-<server>.
+# - a release v<x.y.z> published on GitHub (or a manual run with ref = an
+#   existing release's tag): the fixed tags <x.y.z>-php<ver>-<server>, <x.y.z> and
+#   <x.y.z>-velocity, and latest when it is the newest release. A fixed tag is
+#   never moved: when it already exists the run stops before it is touched.
+# - a pull request: build and test only.
+
+on:
+  release:
+    types: [published]
+  push:
+    branches: [main]
+    paths:
+      - 'docker/**'
+      - '.github/workflows/docker.yml'
+  pull_request:
+    paths:
+      - 'docker/**'
+      - '.github/workflows/docker.yml'
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Release tag to build, for example v6.0.14 (empty: this branch, published as edge)'
+        default: ''
+      php:
+        description: 'PHP versions, comma-separated (empty: every version the release supports)'
+        default: ''
+      push:
+        description: 'Publish the images (true/false)'
+        default: 'false'
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE: ghcr.io/se7enxweb/exponential
+  NEWEST_PHP: '8.5'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.inputs.ref || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'release' && github.event.inputs.ref == '' }}
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      source: ${{ steps.plan.outputs.source }}
+      version: ${{ steps.plan.outputs.version }}
+      channel: ${{ steps.plan.outputs.channel }}
+      push: ${{ steps.plan.outputs.push }}
+      latest: ${{ steps.plan.outputs.latest }}
+      velocity: ${{ steps.plan.outputs.velocity }}
+      matrix: ${{ steps.plan.outputs.matrix }}
+      php: ${{ steps.plan.outputs.php }}
+      composer_version: ${{ steps.plan.outputs.composer_version }}
+    steps:
+      - name: Plan
+        id: plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_REF: ${{ github.event.inputs.ref }}
+          INPUT_PHP: ${{ github.event.inputs.php }}
+          INPUT_PUSH: ${{ github.event.inputs.push }}
+        run: |
+          set -euo pipefail
+          ref="${INPUT_REF:-}"
+          if [ "$GITHUB_EVENT_NAME" = release ]; then ref="$GITHUB_REF_NAME"; fi
+          if [ -n "$ref" ]; then
+            # Version tags are only made for released versions: a tag on
+            # GitHub with a published (not draft) release
+            gh release view "$ref" -R "$GITHUB_REPOSITORY" --json isDraft --jq '.isDraft' | grep -qx false \
+              || { echo "::error::$ref is not a published release"; exit 1; }
+            version="${ref#v}"; channel=release; source="$ref"; composer_version="$version"
+            newest=$(gh release list -R "$GITHUB_REPOSITORY" --exclude-drafts --exclude-pre-releases --limit 100 --json tagName --jq '.[].tagName' | grep -E '^v[0-9]' | sed 's/^v//' | sort -V | tail -1)
+            latest=false; [ "$newest" = "$version" ] && latest=true
+          else
+            version=edge; channel=edge; source="$GITHUB_SHA"; composer_version=dev-main; latest=false
+          fi
+          push=false
+          case "$GITHUB_EVENT_NAME" in
+            release) push=true ;;
+            push|schedule) [ "$GITHUB_REF_NAME" = main ] && push=true ;;
+            workflow_dispatch) [ "${INPUT_PUSH:-false}" = true ] && push=true ;;
+          esac
+          [ "$GITHUB_EVENT_NAME" = pull_request ] && push=false
+          # The PHP versions of the release: 8.0 to 8.5, as far as its
+          # composer.json allows
+          constraint=$(gh api "repos/$GITHUB_REPOSITORY/contents/composer.json?ref=$source" -H 'Accept: application/vnd.github.raw' | jq -r '.require.php')
+          php=""
+          for v in 8.0 8.1 8.2 8.3 8.4 8.5; do
+            if echo "$constraint" | grep -qE "\^${v//./\\.}( |\||$)"; then php="$php,$v"; fi
+          done
+          php="${php#,}"
+          if [ -n "${INPUT_PHP:-}" ]; then php="$INPUT_PHP"; fi
+          # Velocity is part of Exponential from 6.0.15
+          velocity=false
+          gh api "repos/$GITHUB_REPOSITORY/contents/kernel/classes/expvelocity.php?ref=$source" --silent 2>/dev/null && velocity=true
+          matrix=$(jq -cn --arg php "$php" '[($php | split(",")[]) as $p | ("amd64","arm64") as $a | {php: $p, arch: $a}]')
+          {
+            echo "source=$source"; echo "version=$version"; echo "channel=$channel"; echo "push=$push"
+            echo "latest=$latest"; echo "velocity=$velocity"; echo "php=$php"; echo "matrix=$matrix"
+            echo "composer_version=$composer_version"
+          } | tee -a "$GITHUB_OUTPUT"
+
+  build:
+    needs: plan
+    name: PHP ${{ matrix.php }} ${{ matrix.arch }}
+    runs-on: ${{ matrix.arch == 'arm64' && 'ubuntu-24.04-arm' || 'ubuntu-latest' }}
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    env:
+      DEBIAN: ${{ matrix.php == '8.0' && 'bullseye' || 'bookworm' }}
+    steps:
+      - name: Check out the workflow's docker/ files
+        uses: actions/checkout@v7
+        with:
+          path: workflow
+      - name: Check out the sources to build
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.plan.outputs.source }}
+          path: src
+      # A release made before docker/ existed is built with today's docker/
+      - name: docker/ from the workflow
+        run: rm -rf src/docker && cp -a workflow/docker src/docker
+      - uses: docker/setup-buildx-action@v3
+      - name: Build for the test
+        run: |
+          set -euo pipefail
+          targets="apache"
+          [ '${{ needs.plan.outputs.velocity }}' = true ] && targets="apache velocity"
+          for t in $targets; do
+            docker buildx build src -f src/docker/Dockerfile --target "$t" --load -t "exp-test:$t" \
+              --build-arg PHP_VERSION=${{ matrix.php }} --build-arg DEBIAN=$DEBIAN \
+              --build-arg COMPOSER_ROOT_VERSION=${{ needs.plan.outputs.composer_version }} \
+              --build-arg EXP_IMAGE_VERSION=${{ needs.plan.outputs.version }} \
+              --cache-from type=gha,scope=php${{ matrix.php }}-${{ matrix.arch }} \
+              --cache-to type=gha,mode=max,scope=php${{ matrix.php }}-${{ matrix.arch }}
+          done
+          docker image ls exp-test
+      - name: Test
+        run: |
+          set -euo pipefail
+          dbs="sqlite"
+          if [ '${{ matrix.arch }}' = amd64 ] && [ '${{ matrix.php }}' = "$NEWEST_PHP" ] && [ '${{ needs.plan.outputs.velocity }}' = true ]; then
+            dbs="sqlite mysql pgsql"
+          fi
+          bash src/docker/test-image.sh exp-test:apache $dbs
+          if [ '${{ needs.plan.outputs.velocity }}' = true ]; then
+            bash src/docker/test-image.sh exp-test:velocity sqlite
+          fi
+      - name: Log in to GHCR
+        if: needs.plan.outputs.push == 'true'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      # The tested build, pushed by digest without a tag (from the build cache)
+      - name: Push by digest
+        if: needs.plan.outputs.push == 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p digests
+          targets="apache"
+          [ '${{ needs.plan.outputs.velocity }}' = true ] && targets="apache velocity"
+          for t in $targets; do
+            docker buildx build src -f src/docker/Dockerfile --target "$t" \
+              --platform linux/${{ matrix.arch }} \
+              --build-arg PHP_VERSION=${{ matrix.php }} --build-arg DEBIAN=$DEBIAN \
+              --build-arg COMPOSER_ROOT_VERSION=${{ needs.plan.outputs.composer_version }} \
+              --build-arg EXP_IMAGE_VERSION=${{ needs.plan.outputs.version }} \
+              --cache-from type=gha,scope=php${{ matrix.php }}-${{ matrix.arch }} \
+              --output "type=image,name=$IMAGE,push-by-digest=true,name-canonical=true,push=true" \
+              --metadata-file "meta-$t.json"
+            jq -r '."containerimage.digest"' "meta-$t.json" > "digests/php${{ matrix.php }}-$t-${{ matrix.arch }}"
+          done
+          head digests/*
+      - uses: actions/upload-artifact@v4
+        if: needs.plan.outputs.push == 'true'
+        with:
+          name: digests-php${{ matrix.php }}-${{ matrix.arch }}
+          path: digests/*
+          retention-days: 7
+
+  publish:
+    needs: [plan, build]
+    if: needs.plan.outputs.push == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: digests-*
+          merge-multiple: true
+          path: digests
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Tag
+        run: |
+          set -euo pipefail
+          v='${{ needs.plan.outputs.version }}'
+          channel='${{ needs.plan.outputs.channel }}'
+          servers="apache"
+          [ '${{ needs.plan.outputs.velocity }}' = true ] && servers="apache velocity"
+          plan=""
+          for p in $(echo '${{ needs.plan.outputs.php }}' | tr ',' ' '); do
+            for s in $servers; do
+              tags="$v-php$p-$s"
+              if [ "$p" = "$NEWEST_PHP" ]; then
+                if [ "$s" = apache ]; then tags="$tags $v"; else tags="$tags $v-velocity"; fi
+                if [ "$channel" = edge ] && [ "$s" = apache ]; then tags="$tags main"; fi
+                if [ '${{ needs.plan.outputs.latest }}' = true ]; then
+                  if [ "$s" = apache ]; then tags="$tags latest"; else tags="$tags latest-velocity"; fi
+                fi
+              fi
+              plan="$plan$p $s $tags"$'\n'
+            done
+          done
+          echo "$plan"
+          # A release's tags are fixed: refuse before anything is written
+          if [ "$channel" = release ]; then
+            while read -r p s tags; do
+              [ -n "$p" ] || continue
+              for t in $tags; do
+                case "$t" in latest|latest-velocity) continue ;; esac
+                if docker buildx imagetools inspect "$IMAGE:$t" >/dev/null 2>&1; then
+                  echo "::error::$IMAGE:$t exists already; a published version tag is never moved"; exit 1
+                fi
+              done
+            done <<< "$plan"
+          fi
+          while read -r p s tags; do
+            [ -n "$p" ] || continue
+            args=""
+            for t in $tags; do args="$args -t $IMAGE:$t"; done
+            docker buildx imagetools create $args \
+              "$IMAGE@$(cat "digests/php$p-$s-amd64")" "$IMAGE@$(cat "digests/php$p-$s-arm64")"
+            first=$(echo "$tags" | cut -d' ' -f1)
+            echo "$IMAGE:$first  $(docker buildx imagetools inspect "$IMAGE:$first" --format '{{json .Manifest.Digest}}')  tags: $tags" | tee -a "$GITHUB_STEP_SUMMARY"
+          done <<< "$plan"
