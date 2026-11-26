@@ -307,8 +307,8 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-9c5f1c207f5118108894fca9b8496f71  composer.json
-a180ccab56cfc079f1e8da6819229745  composer.json.dist
+d192259507ec8e94bfde891902e89307  composer.json
+c6a8ab130bde48b99099f2ddac0c1720  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 41291f5ed06ef9f1031d746a24f7c112  config.php-RECOMMENDED
 3be3d7ac52263ec84d8a70dfa1f7821e  cronjobs/audit.php
