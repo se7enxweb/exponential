@@ -404,8 +404,10 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         }
         // libSQL and Turso are installed with the kickstarter and exp:install: the wizard's database page has no
         // fields for their server URL, TLS and token yet. MonetDB the same: it needs no PHP extension the system check
-        // could find, so the wizard has nothing to offer it by (exp:install --db=monetdb)
-        $notInTheWizard = array( 'libsql', 'turso', 'monetdb' );
+        // could find, so the wizard has nothing to offer it by (exp:install --db=monetdb). SAP HANA and SAP ASE have no
+        // PHP extension of their own to detect (they go through odbc, pdo_odbc or pdo_dblib) and are installed with the
+        // kickstarter too
+        $notInTheWizard = array( 'libsql', 'turso', 'monetdb', 'hana', 'ase' );
         foreach ( eZSetupDatabaseMap() as $type => $entry )
         {
             if ( in_array( $type, $notInTheWizard, true ) )

@@ -3361,6 +3361,22 @@
     "kernel/sql/informix/*": [
       "tests/tests/lib/ezdbschema/expDb2SchemaTest.php"
     ],
+    "lib/ezdb/classes/exphana*.php": [
+      "tests/tests/lib/ezdb/hana/expHANADialectTest.php",
+      "tests/tests/lib/ezdb/hana/expHANADBTest.php",
+      "tests/tests/lib/ezdbschema/expHANASchemaTest.php"
+    ],
+    "lib/ezdbschema/classes/exphanaschema.php": [
+      "tests/tests/lib/ezdbschema/expHANASchemaTest.php"
+    ],
+    "lib/ezdb/classes/expase*.php": [
+      "tests/tests/lib/ezdb/ase/expASEDialectTest.php",
+      "tests/tests/lib/ezdb/ase/expASEDBTest.php",
+      "tests/tests/lib/ezdbschema/expASESchemaTest.php"
+    ],
+    "lib/ezdbschema/classes/expaseschema.php": [
+      "tests/tests/lib/ezdbschema/expASESchemaTest.php"
+    ],
     "lib/ezdb/classes/expodbc*.php": [
       "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
       "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"

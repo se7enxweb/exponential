@@ -129,6 +129,9 @@
             <exclude>tests/tests/lib/ezdb/couch</exclude>
             <!-- in the suites columnar and columnar-live (MonetDB, ClickHouse); a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/columnar</exclude>
+            <!-- in the suites hana, hana-live and ase; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/hana</exclude>
+            <exclude>tests/tests/lib/ezdb/ase</exclude>
         </testsuite>
 
         <!--
@@ -319,6 +322,27 @@
 
         <testsuite name="columnar-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/columnar/live</directory>
+        </testsuite>
+
+        <!--
+          The SAP HANA driver (expHANADB): the DB-less tests, and the live tests against SAP HANA 2.0 or HANA Cloud
+          through SAP's HANA ODBC driver (EXP_TEST_HANA_HOST, _PORT, _USER, _PASSWORD or _PASSWORD_FILE, _SCHEMA,
+          _DRIVER, _LAYER; they skip without one; the schema EXP_TEST_HANA_SCHEMA is emptied).
+          The SAP ASE driver (expASEDB): DB-less tests only (no ASE server for live tests).
+          The schema handlers' DB-less tests are in the suite lib (tests/tests/lib/ezdbschema).
+          Run: php vendor/bin/phpunit - -testsuite hana | hana-live | ase
+        -->
+        <testsuite name="hana">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/hana</directory>
+            <exclude>tests/tests/lib/ezdb/hana/live</exclude>
+        </testsuite>
+
+        <testsuite name="hana-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/hana/live</directory>
+        </testsuite>
+
+        <testsuite name="ase">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/ase</directory>
         </testsuite>
 
         <testsuite name="mongodb-live">

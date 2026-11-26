@@ -1370,6 +1370,14 @@ jobs:
       fail-fast: false
       matrix:
         php: [ '8.1', '8.5' ]
+  # SAP HANA and SAP ASE: the DB-less tests of both drivers, then the HANA live tests (the driver, and the kernel schema
+  # with its data, read back and upgraded) against SAP HANA, express edition, through SAP's HANA ODBC driver taken from
+  # the same image. Running the image accepts SAP's developer license of HANA express (--agree-to-sap-license). There is
+  # no SAP ASE image to test against: the ASE driver has DB-less tests only.
+  hana:
+    name: SAP HANA express and SAP ASE (PHP 8.5)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
 
     steps:
       - name: Checkout code
@@ -1381,6 +1389,21 @@ jobs:
             -e "JVM_EXTRA_OPTS=-XX:MaxDirectMemorySize=512M" cassandra:5.0
           docker run -d --name scylladb -p 9043:9042 scylladb/scylla:2025.1 --smp 1 --memory 1G --reserve-memory 0M \
             --overprovisioned 1 --developer-mode 1 --authenticator PasswordAuthenticator --authorizer CassandraAuthorizer
+      - name: Make room for the HANA image
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          df -h /
+
+      - name: Start SAP HANA, express edition
+        run: |
+          mkdir -p "$RUNNER_TEMP/hana"
+          printf '{"master_password" : "Ci-Hana-2026x"}' > "$RUNNER_TEMP/hana/password.json"
+          sudo chown -R 12000:79 "$RUNNER_TEMP/hana"
+          sudo chmod 600 "$RUNNER_TEMP/hana/password.json"
+          docker run -d --name hana --hostname hxehost -p 39041:39041 -p 39013:39013 -p 39017:39017 \
+            --ulimit nofile=1048576:1048576 --sysctl kernel.shmmax=1073741824 --sysctl net.ipv4.ip_local_port_range='40000 60999' \
+            --sysctl kernel.shmall=8388608 -v "$RUNNER_TEMP/hana:/hana/mounts" \
+            saplabs/hanaexpress --passwords-url file:///hana/mounts/password.json --agree-to-sap-license
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -1424,6 +1447,55 @@ jobs:
         run: |
           php vendor/bin/phpunit --colors=always --testsuite cassandra
           php vendor/bin/phpunit --colors=always --fail-on-skipped --testsuite cassandra-live
+          php-version: '8.5'
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, pdo, odbc, pdo_odbc, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y -q unixodbc >/dev/null
+          cp composer.json "${CI_COMPOSER_FILE}"
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            sleep $((attempt * 15))
+          done
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Run the DB-less tests of both drivers
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite hana
+          php vendor/bin/phpunit --colors=always --testsuite ase
+          php vendor/bin/phpunit --colors=always tests/tests/lib/ezdbschema/expHANASchemaTest.php
+          php vendor/bin/phpunit --colors=always tests/tests/lib/ezdbschema/expASESchemaTest.php
+
+      - name: Wait for SAP HANA and take its ODBC driver
+        run: |
+          for i in $(seq 1 180); do
+            docker logs hana 2>&1 | grep -q 'Startup finished' && break
+            docker ps -q -f name=hana | grep -q . || { docker logs --tail 60 hana; echo "::error::HANA stopped"; exit 1; }
+            sleep 10
+          done
+          docker logs hana 2>&1 | grep -q 'Startup finished' || { docker logs --tail 60 hana; echo "::error::HANA did not start"; exit 1; }
+          mkdir -p "$RUNNER_TEMP/hdbclient"
+          docker cp -L hana:/usr/sap/HXE/HDB90/exe/libodbcHDB.so "$RUNNER_TEMP/hdbclient/libodbcHDB.so"
+          printf '[HDBODBC]\nDriver=%s/hdbclient/libodbcHDB.so\n' "$RUNNER_TEMP" > "$RUNNER_TEMP/odbcinst.ini"
+          echo "ODBCSYSINI=$RUNNER_TEMP" >> "$GITHUB_ENV"
+          ODBCSYSINI="$RUNNER_TEMP" php -r '$c = odbc_connect("DRIVER=HDBODBC;SERVERNODE=127.0.0.1:39041;CHAR_AS_UTF8=TRUE", "SYSTEM", "Ci-Hana-2026x");
+            foreach (array("CREATE USER EXPTEST PASSWORD \"Ci-Test-2026x\" NO FORCE_FIRST_PASSWORD_CHANGE", "ALTER USER EXPTEST DISABLE PASSWORD LIFETIME", "GRANT CREATE SCHEMA TO EXPTEST") as $sql)
+              if (!odbc_exec($c, $sql)) { fwrite(STDERR, odbc_errormsg($c) . PHP_EOL); exit(1); }'
+
+      - name: Run the SAP HANA live tests
+        env:
+          EXP_TEST_HANA_HOST: 127.0.0.1
+          EXP_TEST_HANA_PORT: 39041
+          EXP_TEST_HANA_USER: EXPTEST
+          EXP_TEST_HANA_PASSWORD: Ci-Test-2026x
+          EXP_TEST_HANA_SCHEMA: EXP_CI
+        run: |
+          php vendor/bin/phpunit --colors=always --fail-on-skipped --testsuite hana-live
+          EXP_TEST_HANA_LAYER=pdo_odbc php vendor/bin/phpunit --colors=always --fail-on-skipped tests/tests/lib/ezdb/hana/live/expHANALiveTest.php
 
       - name: Logs
         if: failure()
@@ -1436,6 +1508,12 @@ jobs:
         run: |
           rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
           docker rm -f cassandra scylladb || true
+          docker logs --tail 80 hana 2>&1 || true
+          tail -n 120 var/log/error.log 2>/dev/null || true
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
 
   # libSQL (sqld, the libsql-server container): the driver's tests without a server and against one, then a whole site
   # installed on the server over its HTTP API, its front page and the admin login. sqld 0.24.33, pinned by digest.
