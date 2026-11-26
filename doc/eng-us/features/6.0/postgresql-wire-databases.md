@@ -116,7 +116,8 @@ The installer writes the TLS and pooler settings it was given (`--db-sslmode`, `
 
 **Measured** (CockroachDB 25.2.4, one node in a container, 2 CPUs; PHP 8.5): `exp:install --apply --db=cockroachdb`
 installed `sevenx_multisite` in 16 steps, all 9 checks passed, in 47 minutes (most of it DDL and catalogue reads).
-The site then had 2100 content objects, 2101 nodes and 3890 URL aliases; publishing an article, its URL alias, the
+The site then held the package's 291 objects (and the help manuals, which are built in the background
+afterwards: 2100 objects in all half an hour later); publishing an article, its URL alias, the
 search, moving it to the trash and the transaction counter were checked on it. The errors of that run came from
 extensions the test tree did not have (xrowmetadata, eztags, explayouts ...), none from the database.
 
@@ -131,6 +132,13 @@ extensions the test tree did not have (xrowmetadata, eztags, explayouts ...), no
 | | `INTEGER` is `INT8`: the schema writes `int4`; `DROP DATABASE` needs `CASCADE` (the driver adds it) |
 
 ## YugabyteDB
+
+**Measured** (YugabyteDB 2.25.2, `yugabyted` in a container, 2 CPUs; PHP 8.5): `exp:install --apply --db=yugabytedb`
+installed `sevenx_multisite` in 16 steps, all 9 checks passed, in 42 minutes; 310 content objects, 311 nodes; the
+same article, URL alias, search and trash checks passed. The errors of the run came from extensions the test tree did
+not have, as on CockroachDB. One thing to know: the upgrade's safety copy ("caption") is made with the server's
+`pg_dump`; a dump from PostgreSQL 17's client sets `transaction_timeout`, which YugabyteDB 2.25 (PostgreSQL 15) does
+not know, so restoring it failed. Use YugabyteDB's own `ysql_dump` for backups.
 
 | Works | Does not, or differently |
 |---|---|

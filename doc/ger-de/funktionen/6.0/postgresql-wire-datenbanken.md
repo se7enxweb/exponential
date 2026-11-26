@@ -125,7 +125,8 @@ Server tut.
 
 **Gemessen** (CockroachDB 25.2.4, ein Knoten in einem Container, 2 CPUs; PHP 8.5): `exp:install --apply
 --db=cockroachdb` installierte `sevenx_multisite` in 16 Schritten, alle 9 Prüfungen bestanden, in 47 Minuten (vor
-allem DDL und Katalogabfragen). Die Site hatte danach 2100 Inhaltsobjekte, 2101 Knoten und 3890 URL-Aliase; geprüft
+allem DDL und Katalogabfragen). Die Site enthielt danach die 291 Objekte des Pakets (und die Hilfe-Handbücher, die danach im Hintergrund entstehen:
+eine halbe Stunde später 2100 Objekte insgesamt); geprüft
 wurden das Veröffentlichen eines Artikels, sein URL-Alias, die Suche, das Verschieben in den Papierkorb und der
 Transaktionszähler. Die Fehler dieses Laufs stammten von Erweiterungen, die der Testbaum nicht hatte (xrowmetadata,
 eztags, explayouts ...), keiner von der Datenbank.
@@ -141,6 +142,14 @@ eztags, explayouts ...), keiner von der Datenbank.
 | | `INTEGER` ist `INT8`: Das Schema schreibt `int4`; `DROP DATABASE` braucht `CASCADE` (der Treiber ergänzt es) |
 
 ## YugabyteDB
+
+**Gemessen** (YugabyteDB 2.25.2, `yugabyted` in einem Container, 2 CPUs; PHP 8.5): `exp:install --apply
+--db=yugabytedb` installierte `sevenx_multisite` in 16 Schritten, alle 9 Prüfungen bestanden, in 42 Minuten; 310
+Inhaltsobjekte, 311 Knoten; dieselben Prüfungen von Artikel, URL-Alias, Suche und Papierkorb bestanden. Die Fehler des
+Laufs stammten wie bei CockroachDB von Erweiterungen, die der Testbaum nicht hatte. Wichtig: Die Sicherungskopie eines
+Upgrades ("Sicherungspunkt") entsteht mit `pg_dump` des Servers; ein Dump des Clients von PostgreSQL 17 setzt
+`transaction_timeout`, das YugabyteDB 2.25 (PostgreSQL 15) nicht kennt, und ließ sich nicht zurückspielen. Nutzen Sie
+für Backups YugabyteDBs eigenes `ysql_dump`.
 
 | Geht | Geht nicht oder anders |
 |---|---|
