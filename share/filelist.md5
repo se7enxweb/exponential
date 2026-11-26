@@ -29,7 +29,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 445c26385a719c51e415113c585597ad  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 fec8e184c046898f71a24fa2008c767f  autoload.php
-fc2c5ceeafc6e77d33f3252482b8d1e1  autoload/ezp_kernel.php
+5e30a6277fdfcdf875b37f42028ebe82  autoload/ezp_kernel.php
 4f5aae97c4777e3d9fe309fc409be8d6  benchmarks/classes/ezbenchmark.php
 9c88f2cf9ede23d32cabee36659239f2  benchmarks/classes/ezbenchmarkcase.php
 dbc264cff80d6c4b0b5fd393d1b45297  benchmarks/classes/ezbenchmarkclirunner.php
@@ -27593,7 +27593,7 @@ bd5b3823ca4e81603f9fc446e6ab4e66  settings/dashboard.ini
 37e2f93364dc7460fb79037b8c0bed14  settings/datatable.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
-50ba478c1cf314f225de19399952cc15  settings/dbschema.ini
+994dce3925a4c373d3e09ef2f6c00c69  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
 db2bae948264a3a4af9be5be6760321b  settings/debugbar.ini
 68d143fe1de8620b59c0a74d45d2d1d2  settings/design.ini
@@ -31285,9 +31285,11 @@ a76826a8d85d9a77897a350456212a2e  lib/ezdb/classes/expduckdbdb.php
 7bd7f0d33dc8d033748dcef5acba7e6e  lib/ezdb/classes/expduckdbdialect.php
 1d38427f09908e22a6ce8ad440d805f7  lib/ezdb/classes/expduckdbffi.php
 dba4f5a4de1bd427fdf750b886018364  lib/ezdbschema/classes/expfirebirdschema.php
+de265f357e97d3d78947ea7db88d81c3  lib/ezdbschema/classes/expduckdbschema.php
 82c7209b099f627541bbe394cde86da4  tests/tests/lib/ezdb/firebird/expFirebirdDBTest.php
 ab1162bd23135c5cb793e10459410663  tests/tests/lib/ezdb/firebird/expFirebirdDialectTest.php
 c0e1d34a3b541f2906e2577dd3859045  tests/tests/lib/ezdb/firebird/expFirebirdTestKit.php
 9af2a6e65831e50c40d7d842200facfe  tests/tests/lib/ezdb/firebird/live/expFirebirdLiveTest.php
 8361fefa08a013be989fc6c508ce4bc9  tests/tests/lib/ezdb/firebird/live/expFirebirdSchemaLiveTest.php
 f16e60da83135f08f1a99b7114ccb35c  tests/tests/lib/ezdbschema/expFirebirdSchemaTest.php
+932d399f3f6d4789b117f91a9fbc974c  kernel/sql/duckdb/kernel_schema.sql
