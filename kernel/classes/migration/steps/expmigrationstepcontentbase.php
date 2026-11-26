@@ -120,11 +120,88 @@ abstract class expMigrationStepContentBase extends expMigrationStepTypeBase
             if ( $value === null )
                 continue;
             $attribute = $byIdentifier[(string)$identifier];
-            $attribute->fromString( self::fieldText( $value ) );
+            $attribute->fromString( self::attributeText( $attribute, $value, "$where.$identifier" ) );
             $attribute->store();
             $written[] = (string)$identifier;
         }
         return $written;
+    }
+
+    /** The datatypes whose value names objects: one (ezobjectrelation) or a list (ezobjectrelationlist). */
+    const RELATION_DATATYPES = array( 'ezobjectrelation', 'ezobjectrelationlist' );
+
+    /**
+     * The text fromString() gets for a value of "fields:" in an attribute: the related objects of an object relation
+     * resolved to their ids on this installation (exp:migration:generate writes them as remote:<remote id>, and
+     * fromString() reads ids only, so they were stored empty), every other value as fieldText() gives it.
+     *
+     * @param eZContentObjectAttribute $attribute
+     * @param mixed $value
+     * @param string $where for messages
+     * @return string
+     * @throws RuntimeException for an object that is not here, or a list for an attribute that takes none
+     */
+    protected static function attributeText( $attribute, $value, $where )
+    {
+        $datatype = (string)$attribute->attribute( 'data_type_string' );
+        if ( in_array( $datatype, self::RELATION_DATATYPES, true ) )
+        {
+            return self::relationText( $datatype, $value, function ( $identifier ) {
+                return expMigrationIdentifier::resolve( 'object', $identifier );
+            }, $where );
+        }
+        if ( is_array( $value ) )
+            throw new RuntimeException( "$where: a list is the value of an object relation list only, not of $datatype" );
+        return self::fieldText( $value );
+    }
+
+    /**
+     * The text fromString() of an object relation (list) reads: object ids, joined by "-". The value is an object
+     * identifier (remote:<remote id>, path:<url>, an id), a list of them, or a text of several separated by ",";
+     * ids as fromString() takes them ("12-34") stay as they are, an empty value clears the attribute. Pure, with
+     * $resolve.
+     *
+     * @param string $datatype ezobjectrelation or ezobjectrelationlist
+     * @param mixed $value
+     * @param callable $resolve object identifier => object id; throws RuntimeException when it names nothing
+     * @param string $where for messages
+     * @return string
+     * @throws RuntimeException
+     */
+    public static function relationText( $datatype, $value, callable $resolve, $where )
+    {
+        if ( $value === '' || $value === false || $value === array() )
+            return '';
+        if ( !is_array( $value ) )
+        {
+            $text = trim( self::fieldText( $value ) );
+            if ( $text === '' )
+                return '';
+            if ( preg_match( '/^[0-9]+([-,][0-9]+)*$/', $text ) )
+                $value = preg_split( '/[-,]/', $text );
+            else
+                $value = $datatype === 'ezobjectrelationlist' ? explode( ',', $text ) : array( $text );
+        }
+        $ids = array();
+        foreach ( $value as $item )
+        {
+            if ( is_array( $item ) || is_object( $item ) )
+                throw new RuntimeException( "$where: an object is named by an identifier (remote:<remote id>, path:<url> or its id)" );
+            $item = trim( self::fieldText( $item ) );
+            if ( $item === '' )
+                continue;
+            try
+            {
+                $ids[] = ctype_digit( $item ) ? (int)$item : (int)$resolve( $item );
+            }
+            catch ( RuntimeException $e )
+            {
+                throw new RuntimeException( "$where: " . $e->getMessage() );
+            }
+        }
+        if ( $datatype !== 'ezobjectrelationlist' && count( $ids ) > 1 )
+            throw new RuntimeException( "$where: an object relation names one object, not " . count( $ids ) );
+        return implode( '-', $ids );
     }
 
     /**
@@ -156,10 +233,26 @@ abstract class expMigrationStepContentBase extends expMigrationStepTypeBase
         {
             if ( !is_string( $identifier ) || !preg_match( '/^[a-z0-9_]+$/', $identifier ) )
                 $errors[] = "$where: $identifier is not an attribute identifier (lower case letters, digits and _)";
-            else if ( is_array( $value ) )
-                $errors[] = "$where.$identifier: a value is a text, a number, true/false or null, not a list or a map";
+            else if ( is_array( $value ) && !self::scalarList( $value ) )
+                $errors[] = "$where.$identifier: a value is a text, a number, true/false, null or a list of object identifiers (an object relation list), not a map";
         }
         return $errors;
+    }
+
+    /**
+     * Whether $value is a list of texts and numbers (the objects of an object relation list). Pure.
+     *
+     * @param array $value
+     * @return bool
+     */
+    protected static function scalarList( array $value )
+    {
+        if ( array_values( $value ) !== $value )
+            return false;
+        foreach ( $value as $item )
+            if ( !is_scalar( $item ) )
+                return false;
+        return true;
     }
 
     /**

@@ -7,6 +7,7 @@
  *  CS-1 CE-1 content, location and content_version steps through the runner
  *  CS-2 CE-2 steps that undo themselves, rolled back
  *  CS-3 CE-3 a failing migration: its object is rolled back with it
+ *  CS-4 CE-4 object relations through generate and migrate
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -65,5 +66,11 @@ class expMigrationContentStepsSqliteTest extends PHPUnit\Framework\TestCase
     public function testContentTransactions()
     {
         $this->checkContentTransactions( $this->db );
+    }
+
+    /** CS-4 CE-4 */
+    public function testRelationsRoundTrip()
+    {
+        $this->checkRelationsRoundTrip( $this->db );
     }
 }

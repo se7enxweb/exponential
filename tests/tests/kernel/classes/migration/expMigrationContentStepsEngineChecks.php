@@ -15,6 +15,9 @@
  *       migration deletes the folder with its subtree
  *  CE-3 transactions: a migration that creates an object and then fails an assert. PostgreSQL, SQLite and
  *       MySQL/MariaDB roll the object back; MongoDB keeps it (no transactions)
+ *  CE-4 object relations round-trip: an object relation and an object relation list written by remote ids (a YAML
+ *       list for the list) hold the related objects; exp:migration:generate --from-content writes them as remote ids
+ *       and its migration passes its own check; with the relations cleared, the generated migration restores them
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -330,5 +333,84 @@ YAML
             $this->assertNull( self::contentObject( 'wp10a-fail' ), "$engine: the folder was rolled back" );
         $this->assertSame( 0, $db->transactionCounter(), 'no transaction left open' );
         $this->contentClean( $db, array( 'wp10a-fail' ) );
+    }
+
+    /**
+     * The ids an object's relation attributes hold, fresh from the database.
+     *
+     * @param string $remoteId
+     * @return array single => text, many => text
+     */
+    protected static function contentRelations( $remoteId )
+    {
+        $dataMap = self::contentObject( $remoteId )->fetchDataMap( false, 'eng-US' );
+        return array( 'single' => (string)$dataMap['single']->toString(), 'many' => (string)$dataMap['many']->toString() );
+    }
+
+    /**
+     * CE-4
+     *
+     * @param eZDBInterface $db
+     */
+    protected function checkRelationsRoundTrip( $db )
+    {
+        $this->contentClean( $db, array( 'wp92-front', 'wp92-b', 'wp92-c' ) );
+        $db->query( 'DELETE FROM ' . expMigrationRecord::TABLE . " WHERE migration_id LIKE '20261126%wp92%'" );
+        $migrations = $this->contentMigrations( 'relations', array( '20261126100000_wp92_relations.yml' => <<<'YAML'
+# description: A class with an object relation and an object relation list, and an object relating two folders
+steps:
+    - type: content_class
+      mode: ensure
+      identifier: wp92_rel
+      language: eng-US
+      name: WP92 related
+      name_pattern: "<title>"
+      groups: [ Content ]
+      attributes:
+          - { identifier: title, type: ezstring, name: Title }
+          - { identifier: single, type: ezobjectrelation, name: Single }
+          - { identifier: many, type: ezobjectrelationlist, name: Many }
+    - { type: content, mode: create, class: folder, parent: 2, remote_id: wp92-b, fields: { name: WP92 B } }
+    - { type: content, mode: create, class: folder, parent: 2, remote_id: wp92-c, fields: { name: WP92 C } }
+    - type: content
+      mode: create
+      class: wp92_rel
+      parent: 2
+      remote_id: wp92-front
+      fields: { title: WP92 front, single: "remote:wp92-b", many: [ "remote:wp92-b", "remote:wp92-c" ] }
+YAML
+        ) );
+        $report = ( new expMigrationRunner( $this->runnerContext( $db ) ) )->run( $migrations );
+        $this->assertSame( 0, $report['exit'], implode( '; ', $report['errors'] ) . ' ' . json_encode( $report['migrations'] ) );
+        $b = (string)self::contentObject( 'wp92-b' )->attribute( 'id' );
+        $c = (string)self::contentObject( 'wp92-c' )->attribute( 'id' );
+        $related = array( 'single' => $b, 'many' => "$b-$c" );
+        $this->assertSame( $related, self::contentRelations( 'wp92-front' ), 'remote ids written as the related objects' );
+
+        // generated from the content: remote ids, and the migration passes its own check
+        $front = self::contentObject( 'wp92-front' );
+        $generated = expMigrationRecordingGenerator::fromExisting( array( 'content' => array( (string)$front->attribute( 'main_node_id' ) ) ),
+                                                                   array( 'name' => 'wp92_generated', 'time' => strtotime( '2026-11-26 11:00:00' ) ) );
+        $this->assertSame( expUpgrade::EXIT_OK, $generated['exit'], implode( '; ', $generated['errors'] ) );
+        $yaml = $generated['generated']['content'];
+        $this->assertStringContainsString( 'remote:wp92-b', $yaml );
+        $this->assertStringContainsString( 'remote:wp92-c', $yaml );
+
+        // cleared, then restored by the generated migration
+        $clear = $this->contentMigrations( 'relations', array( '20261126100100_wp92_clear.yml' => <<<'YAML'
+# description: The relations cleared
+# requires: 20261126100000_wp92_relations
+steps:
+    - { type: content, mode: update, object: "remote:wp92-front", fields: { single: "", many: [] } }
+YAML
+        ) );
+        $report = ( new expMigrationRunner( $this->runnerContext( $db ) ) )->run( $clear );
+        $this->assertSame( 0, $report['exit'], implode( '; ', $report['errors'] ) );
+        $this->assertSame( array( 'single' => '', 'many' => '' ), self::contentRelations( 'wp92-front' ) );
+
+        $again = $this->contentMigrations( 'relations', array( $generated['generated']['id'] . '.yml' => $yaml ) );
+        $report = ( new expMigrationRunner( $this->runnerContext( $db ) ) )->run( $again );
+        $this->assertSame( 0, $report['exit'], implode( '; ', $report['errors'] ) . ' ' . json_encode( $report['migrations'] ) );
+        $this->assertSame( $related, self::contentRelations( 'wp92-front' ), 'the generated migration restores the relations' );
     }
 }

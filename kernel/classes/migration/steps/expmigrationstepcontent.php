@@ -439,7 +439,17 @@ class expMigrationStepContent extends expMigrationStepContentBase implements exp
                 $changed[$identifier] = $value;
                 continue;
             }
-            if ( (string)$dataMap[$identifier]->toString() !== self::fieldText( $value ) )
+            try
+            {
+                $text = self::attributeText( $dataMap[$identifier], $value, $identifier );
+            }
+            catch ( RuntimeException $e )
+            {
+                // written, the value fails with this message
+                $changed[$identifier] = $value;
+                continue;
+            }
+            if ( (string)$dataMap[$identifier]->toString() !== $text )
                 $changed[$identifier] = $value;
         }
         return $changed;

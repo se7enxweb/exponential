@@ -7,6 +7,7 @@
  *  CD-1 CE-1 content, location and content_version steps through the runner
  *  CD-2 CE-2 steps that undo themselves, rolled back
  *  CD-3 CE-3 a failing migration: its object is rolled back on PostgreSQL and MySQL alike
+ *  CD-4 CE-4 object relations through generate and migrate
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -54,5 +55,11 @@ class expMigrationContentStepsDatabaseTest extends ezpDatabaseTestCase
     public function testContentTransactions()
     {
         $this->checkContentTransactions( eZDB::instance() );
+    }
+
+    /** CD-4 */
+    public function testRelationsRoundTrip()
+    {
+        $this->checkRelationsRoundTrip( eZDB::instance() );
     }
 }

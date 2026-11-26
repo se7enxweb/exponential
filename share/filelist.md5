@@ -24887,7 +24887,7 @@ d59d2ffb32d6b60f7134c0303eb1cdb1  kernel/classes/datatypes/ezmultioption/ezmulti
 615012888f8e9017d3d57fbea3f14374  kernel/classes/datatypes/ezmultioption2/ezmultioption2type.php
 d33095aa5fc11e9c6ef92f853918ea45  kernel/classes/datatypes/ezmultiprice/ezmultiprice.php
 77e657fec66e2363048a689b5759df4f  kernel/classes/datatypes/ezmultiprice/ezmultipricetype.php
-e4f644304cce1b5e7764df324da19cd4  kernel/classes/datatypes/ezobjectrelation/ezobjectrelationtype.php
+372c8f73dfd00ed38bddb4498d63ea95  kernel/classes/datatypes/ezobjectrelation/ezobjectrelationtype.php
 372e9cecf92c090c9ca75c5588f9aa34  kernel/classes/datatypes/ezobjectrelationlist/ezobjectrelationlisttype.php
 2c1ffc747d33b0ed1d04e7b4c4685c77  kernel/classes/datatypes/ezoption/ezoption.php
 83fe8ed40c79233c0d2a6a195c4b47d6  kernel/classes/datatypes/ezoption/ezoptiontype.php
@@ -25445,8 +25445,8 @@ f3e36803639785d3450c62730a5960e0  kernel/classes/migration/steps/expmigrationste
 ff1eab95d21b0f0c20f660093c0227d8  kernel/classes/migration/steps/expmigrationstepcache.php
 336fb339211b143687ef837f2e2b7991  kernel/classes/migration/steps/expmigrationstepcodefile.php
 36e623f6b3bc6b7805a77eec24b8c860  kernel/classes/migration/steps/expmigrationstepcommand.php
-8c59164b091c23d5dafb557a2b6a71aa  kernel/classes/migration/steps/expmigrationstepcontent.php
-c5802223778c7dd690cc2a376d5b0cb5  kernel/classes/migration/steps/expmigrationstepcontentbase.php
+1121599217233ee14270ea5b7a42c92d  kernel/classes/migration/steps/expmigrationstepcontent.php
+3bbb2bb5a8e3b027d49f249cf25d8089  kernel/classes/migration/steps/expmigrationstepcontentbase.php
 e1841c5df0e820d94dbf6a1a566190b8  kernel/classes/migration/steps/expmigrationstepcontentclass.php
 de69cb54957ad2d2a083ddabe4a0f892  kernel/classes/migration/steps/expmigrationstepcontentclassgroup.php
 63c7f8feb041bc813336c94abfaea6ed  kernel/classes/migration/steps/expmigrationstepcontentversion.php
@@ -28992,7 +28992,7 @@ bbf1056a2362f3aa6c8cceea081afffb  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 433535bbea030ca66be73ed16d242a2e  tests/suite.php
-3b93cc13b0630be05d09a82c1ac4c6ca  tests/test-map.json
+e42814102c450eac13aa5e6fd171252a  tests/test-map.json
 9917402d25f8419adb652d9a634bac4a  tests/tests/bin/CiWorkflowPullRequestTest.php
 aab68864c45774a2a976dbdc7ba53f78  tests/tests/bin/ConsoleExtensionAliasTest.php
 b93b286979fa3eef6b6b03fd1197dd31  tests/tests/bin/CopyrightNoticeTest.php
@@ -29885,10 +29885,10 @@ f44f820b32123898faf161cf2eabfd3e  tests/tests/kernel/classes/migration/expMigrat
 85adc9ff7b05cbb78e5d48b83caedccd  tests/tests/kernel/classes/migration/expMigrationCommandEngineChecks.php
 fe7dc9e4a64ef24edf06a076b2112587  tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php
 9c4fafa0abb0b827f1c6ef9f703eeafd  tests/tests/kernel/classes/migration/expMigrationCommandToolsTest.php
-6ddbaeb1f7caf65170673db9aa73da69  tests/tests/kernel/classes/migration/expMigrationContentStepsDatabaseTest.php
-1fff6a7b63766647a6993a0e7211532e  tests/tests/kernel/classes/migration/expMigrationContentStepsEngineChecks.php
-ce02b6af636d46a768ef9677456f8b2a  tests/tests/kernel/classes/migration/expMigrationContentStepsSqliteTest.php
-0f9e6b0c4ed72f51ee22fda1c2a691e6  tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php
+0b31611e2a15aa7252e25c0e45d132b2  tests/tests/kernel/classes/migration/expMigrationContentStepsDatabaseTest.php
+e6a5f44f33094ecec19494baa314ed81  tests/tests/kernel/classes/migration/expMigrationContentStepsEngineChecks.php
+139d1be67d955ee4343f95c758180818  tests/tests/kernel/classes/migration/expMigrationContentStepsSqliteTest.php
+dca8c89543902c871b56c5d925e44896  tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php
 af026cd2694c55b5c23baaf2e652a63d  tests/tests/kernel/classes/migration/expMigrationConverterTest.php
 21a457cf72743272cee4fc1a08821292  tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php
 bb17e38fd7efadebf074c84e34ab22b9  tests/tests/kernel/classes/migration/expMigrationDiffDatabaseTest.php
@@ -29921,6 +29921,7 @@ c45c92ae68d121a36853727cec7fb2bb  tests/tests/kernel/classes/migration/expMigrat
 342ae7d4389464a8df65c143cd9c5c82  tests/tests/kernel/classes/migration/expMigrationRecordingEngineChecks.php
 b1ebcad14ef981ef0e665c4851f3a4b3  tests/tests/kernel/classes/migration/expMigrationRecordingSqliteTest.php
 ea9a0fbd419b712c1ad7d62a9adc050c  tests/tests/kernel/classes/migration/expMigrationRecordingTest.php
+aaf700c8cadda9e40f040aacf2294030  tests/tests/kernel/classes/migration/expMigrationRelationFieldsTest.php
 7960d27036eada96f3dc34dd6edc0ad5  tests/tests/kernel/classes/migration/expMigrationRemoteDeployInstallationTest.php
 15893407e9bfd562c9997834fe128252  tests/tests/kernel/classes/migration/expMigrationRemoteDeployIntegrationTest.php
 691b0043d290f0150b1a6b603f2f35fe  tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php

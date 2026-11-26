@@ -13,6 +13,8 @@
  *  MC-07 identifiers of the kinds class, section, language, user, role and state: names and forms
  *  MC-08 the caches the steps touch
  *  MC-09 every registered step type has its generated reference page, English and German
+ *  MC-10 object relations: the identifiers exp:migration:generate writes (remote:<remote id>, a list of them for an
+ *        object relation list) pass the check
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -76,9 +78,9 @@ class expMigrationContentStepsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'steps[0] (content).class: "Not a class!" is no identifier of a class',
                                            implode( "\n", self::errors( "- type: content\n  mode: create\n  class: 'Not a class!'\n  parent: 2\n" ) ) );
         $errors = implode( "\n", self::errors( "- type: content\n  mode: create\n  class: folder\n  parent: 2\n  language: english\n"
-                                               . "  fields: { Name: X, tags: [ a, b ] }\n  translations: { german: { name: Y }, ger-DE: { name: [ x ] } }\n" ) );
+                                               . "  fields: { Name: X, tags: { a: b } }\n  translations: { german: { name: Y }, ger-DE: { name: [ [ x ] ] } }\n" ) );
         foreach ( array( 'language: "english" is no identifier of a language', 'fields: Name is not an attribute identifier',
-                         'fields.tags: a value is a text, a number, true/false or null', 'translations: german is not a language code',
+                         'fields.tags: a value is a text, a number, true/false, null or a list of object identifiers', 'translations: german is not a language code',
                          'translations.ger-DE.name: a value is a text' ) as $expected )
             $this->assertStringContainsString( $expected, $errors );
         $this->assertStringContainsString( 'translations.eng-US: the language of fields:',
@@ -211,5 +213,13 @@ class expMigrationContentStepsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'content' ), ( new expMigrationStepContent() )->caches( array( 'mode' => 'create' ) ) );
         $this->assertSame( array( 'content', 'template-block' ), ( new expMigrationStepLocation() )->caches( array( 'mode' => 'move' ) ) );
         $this->assertSame( array( 'content' ), ( new expMigrationStepContentVersion() )->caches( array( 'mode' => 'cleanup' ) ) );
+    }
+
+    /** MC-10 */
+    public function testObjectRelationsTakeIdentifiers()
+    {
+        $this->assertSame( array(), self::errors( "- type: content\n  mode: ensure\n  class: frontpage\n  parent: 2\n  remote_id: front\n"
+                                                 . "  fields: { billboard: 'remote:abc-1', related: [ 'remote:abc-1', 'remote:def', 42 ] }\n" ) );
+        // the ids they resolve to: expMigrationRelationFieldsTest, without symfony/yaml
     }
 }

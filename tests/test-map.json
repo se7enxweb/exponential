@@ -2618,6 +2618,10 @@
       "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php",
       "tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php"
     ],
+    "kernel/classes/datatypes/ezobjectrelation/ezobjectrelationtype.php": [
+      "tests/tests/kernel/classes/migration/expMigrationContentStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationContentStepsDatabaseTest.php"
+    ],
     "kernel/classes/migration/steps/*": [
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php",
@@ -2628,6 +2632,7 @@
       "tests/tests/kernel/classes/migration/expMigrationYamlDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php",
       "tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRelationFieldsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationContentStepsSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationContentStepsDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php",
