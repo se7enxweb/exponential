@@ -115,6 +115,8 @@
             <exclude>tests/tests/lib/ezdb/mysqlwire</exclude>
             <!-- in the suites firebird and firebird-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/firebird</exclude>
+            <!-- in the suites db2 and db2-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/db2</exclude>
         </testsuite>
 
         <!--
@@ -204,6 +206,22 @@
 
         <testsuite name="firebird-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/firebird/live</directory>
+        </testsuite>
+
+        <!--
+          The Db2 and Informix drivers (expDb2DB, expInformixDB): the DB-less tests, and the live tests against Db2 11.5
+          or 12.1 (EXP_TEST_DB2_HOST, _PORT, _USER, _PASSWORD or _PASSWORD_FILE, _DATABASE) and Informix 14.10 or 15
+          through its DRDA listener (EXP_TEST_INFORMIX_...); each skips without its server, both need pdo_ibm.
+          The schema handlers' DB-less test is in the suite lib (tests/tests/lib/ezdbschema).
+          Run: php vendor/bin/phpunit - -testsuite db2 | db2-live
+        -->
+        <testsuite name="db2">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/db2</directory>
+            <exclude>tests/tests/lib/ezdb/db2/live</exclude>
+        </testsuite>
+
+        <testsuite name="db2-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/db2/live</directory>
         </testsuite>
 
         <testsuite name="odbc-live">

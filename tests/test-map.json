@@ -3339,6 +3339,28 @@
     "lib/ezdbschema/classes/expfirebirdschema.php": [
       "tests/tests/lib/ezdbschema/expFirebirdSchemaTest.php"
     ],
+    "lib/ezdb/classes/expdb2*.php": [
+      "tests/tests/lib/ezdb/db2/expDb2DialectTest.php",
+      "tests/tests/lib/ezdb/db2/expDb2DBTest.php",
+      "tests/tests/lib/ezdbschema/expDb2SchemaTest.php"
+    ],
+    "lib/ezdb/classes/expinformix*.php": [
+      "tests/tests/lib/ezdb/db2/expDb2DialectTest.php",
+      "tests/tests/lib/ezdb/db2/expDb2DBTest.php",
+      "tests/tests/lib/ezdbschema/expDb2SchemaTest.php"
+    ],
+    "lib/ezdbschema/classes/expdb2schema.php": [
+      "tests/tests/lib/ezdbschema/expDb2SchemaTest.php"
+    ],
+    "lib/ezdbschema/classes/expinformixschema.php": [
+      "tests/tests/lib/ezdbschema/expDb2SchemaTest.php"
+    ],
+    "kernel/sql/db2/*": [
+      "tests/tests/lib/ezdbschema/expDb2SchemaTest.php"
+    ],
+    "kernel/sql/informix/*": [
+      "tests/tests/lib/ezdbschema/expDb2SchemaTest.php"
+    ],
     "lib/ezdb/classes/expodbc*.php": [
       "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
       "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"
