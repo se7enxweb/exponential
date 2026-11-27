@@ -409,7 +409,8 @@ INI;
                          'ActiveExtensions[]=expnews', 'SMTPPassword=hidden-value' ) as $expected )
             $this->assertStringContainsString( $expected, $written );
         $this->assertStringNotContainsString( 'DebugOutput', $written );
-        $this->assertSame( 0640, fileperms( $root . 'settings/override/site.ini.append.php' ) & 0777, 'the mode is kept' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0640, fileperms( $root . 'settings/override/site.ini.append.php' ) & 0777, 'the mode is kept' );
         $backups = glob( $root . 'var/backup/ini/*/settings/override/site.ini.append.php' );
         $this->assertCount( 1, $backups );
         $this->assertStringContainsString( 'SiteName=Old', file_get_contents( $backups[0] ) );

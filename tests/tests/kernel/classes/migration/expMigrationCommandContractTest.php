@@ -163,7 +163,8 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         {
             $path = self::$root . "/bin/php/$file.php";
             $this->assertFileExists( $path );
-            $this->assertTrue( is_executable( $path ), "$file.php is executable" );
+            if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no executable bit: is_executable() knows .exe, .bat and .cmd
+                $this->assertTrue( is_executable( $path ), "$file.php is executable" );
             $text = file_get_contents( $path );
             $this->assertStringStartsWith( "#!/usr/bin/env php\n", $text );
             $this->assertStringContainsString( "@alias $command\n", $text );

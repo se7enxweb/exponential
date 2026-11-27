@@ -76,7 +76,8 @@ class InstallPasswordTest extends PHPUnit\Framework\TestCase
         $file = self::dir() . '/installer-format.txt';
         $this->assertTrue( $class::writeRecordedPassword( $file, 'abcDEF123./abcDEF123./', 'test' ) );
         $this->assertSame( 'abcDEF123./abcDEF123./', $class::readRecordedPassword( $file, filemtime( $file ) ) );
-        $this->assertSame( '0600', substr( sprintf( '%o', fileperms( $file ) ), -4 ) );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( '0600', substr( sprintf( '%o', fileperms( $file ) ), -4 ) );
     }
 
     public function testInsertAfter()

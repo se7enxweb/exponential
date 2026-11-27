@@ -24,6 +24,8 @@ class eZINISaveFilePermissionsTest extends ezpTestCase
 
     protected function setUp(): void
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'Unix file modes and the umask, which Windows does not have' );
         parent::setUp();
         $this->relDir = 'var/tmp/ezini_save_perm_' . getmypid() . '_' . bin2hex( random_bytes( 4 ) );
         $this->dir = getcwd() . '/' . $this->relDir;

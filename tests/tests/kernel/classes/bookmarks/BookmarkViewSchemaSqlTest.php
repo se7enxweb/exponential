@@ -203,7 +203,8 @@ class BookmarkViewSchemaSqlTest extends PHPUnit\Framework\TestCase
     {
         $file = self::$root . '/update/common/scripts/6.0/createbookmarkviewtable.php';
         $this->assertFileExists( $file );
-        $this->assertTrue( is_executable( $file ), 'the update script is executable' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no executable bit: is_executable() knows .exe, .bat and .cmd
+            $this->assertTrue( is_executable( $file ), 'the update script is executable' );
         $code = file_get_contents( $file );
         $this->assertStringStartsWith( "#!/usr/bin/env php\n", $code );
         $this->assertStringContainsString( 'expBookmarkView::install(', $code );

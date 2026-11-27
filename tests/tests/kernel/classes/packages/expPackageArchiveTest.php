@@ -160,7 +160,8 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $target = $this->dir . '/out';
         $this->assertTrue( expPackageJson::extractArchive( $path, $target, $error ), (string)$error );
         $this->assertSame( 'deep template', file_get_contents( $target . '/' . $deep . '/full.tpl' ) );
-        $this->assertSame( sprintf( '%04o', eZFile::fileMode( 0644 ) ), sprintf( '%04o', fileperms( $target . '/' . $deep . '/full.tpl' ) & 07777 ) );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( sprintf( '%04o', eZFile::fileMode( 0644 ) ), sprintf( '%04o', fileperms( $target . '/' . $deep . '/full.tpl' ) & 07777 ) );
     }
 
     public function testV7ArchivePassesTheScan()
@@ -471,6 +472,8 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
 
     public function testExtractedModesAreMasked()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'Windows has no Unix file modes to mask' );
         $tar = self::definition()
              . self::dir( 'open/', '0000777' )
              . self::dir( 'closed/', '0000000' )
@@ -484,9 +487,11 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $fileMode = eZFile::fileMode( 0644 );
         $dirMode = eZDir::dirMode( 0755 );
         foreach ( array( 'setuid.sh', 'open/world.txt', 'closed/inside.txt', 'package.xml' ) as $file )
-            $this->assertSame( sprintf( '%04o', $fileMode ), sprintf( '%04o', fileperms( "$target/$file" ) & 07777 ), $file );
+            if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+                $this->assertSame( sprintf( '%04o', $fileMode ), sprintf( '%04o', fileperms( "$target/$file" ) & 07777 ), $file );
         foreach ( array( 'open', 'closed' ) as $dir )
-            $this->assertSame( sprintf( '%04o', $dirMode ), sprintf( '%04o', fileperms( "$target/$dir" ) & 07777 ), $dir );
+            if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+                $this->assertSame( sprintf( '%04o', $dirMode ), sprintf( '%04o', fileperms( "$target/$dir" ) & 07777 ), $dir );
         $this->assertSame( 'inside', file_get_contents( "$target/closed/inside.txt" ) );
 
         // the same for a single entry of the archive expPackageArchive::open() hands out (extractCurrent(), as

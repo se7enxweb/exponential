@@ -135,7 +135,8 @@ class RepairQueueTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'abc$hash', $s['KeyHash'] );
         $this->assertSame( '/usr/local/bin/composer', $s['Composer'] );
         $file = self::$root . '/' . $c::SETTINGS;
-        $this->assertSame( 0, fileperms( $file ) & 0007, 'not readable by others' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0, fileperms( $file ) & 0007, 'not readable by others' );
         $this->assertStringStartsWith( '<?php /* #?ini', file_get_contents( $file ) );
 
         $c::writeSettings( array( 'Enabled' => false, 'KeyHash' => '', 'Composer' => '' ) );

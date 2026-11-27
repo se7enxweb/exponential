@@ -48,6 +48,8 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'Unix file modes and the umask, which Windows does not have' );
         chdir( dirname( __DIR__, 5 ) );
         $this->dir = getcwd() . '/var/tmp/expfilemode_' . getmypid() . '_' . bin2hex( random_bytes( 4 ) );
         mkdir( $this->dir, 0755, true );

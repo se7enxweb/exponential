@@ -73,7 +73,8 @@ class expImageAliasCommandTest extends PHPUnit\Framework\TestCase
     public function testTheContract()
     {
         $this->assertFileExists( self::SCRIPT );
-        $this->assertTrue( is_executable( self::SCRIPT ), self::SCRIPT . ' is executable' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no executable bit: is_executable() knows .exe, .bat and .cmd
+            $this->assertTrue( is_executable( self::SCRIPT ), self::SCRIPT . ' is executable' );
         $this->assertStringStartsWith( "#!/usr/bin/env php\n", file_get_contents( self::SCRIPT ) );
         foreach ( array( self::SCRIPT, self::CLASS_FILE ) as $file )
         {

@@ -304,8 +304,10 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
         $method->invoke( null, $path );
         clearstatcache();
         $this->assertFileExists( $path . '.before-expwt' );
-        $this->assertSame( fileperms( $path ) & 0777, fileperms( $path . '.before-expwt' ) & 0777, 'the backup has the mode of the file' );
-        $this->assertSame( 0, fileperms( $path . '.before-expwt' ) & 0007, 'the backup is not readable by others' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( fileperms( $path ) & 0777, fileperms( $path . '.before-expwt' ) & 0777, 'the backup has the mode of the file' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0, fileperms( $path . '.before-expwt' ) & 0007, 'the backup is not readable by others' );
         unlink( $path . '.before-expwt' );
         unlink( $path );
         rmdir( $dir );

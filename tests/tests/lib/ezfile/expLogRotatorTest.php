@@ -144,6 +144,8 @@ class expLogRotatorTest extends PHPUnit\Framework\TestCase
 
     public function testTheNewFileKeepsTheModeOfTheOldOne()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'Windows has no Unix file modes' );
         $log = $this->put( 'warning.log', 'now' );
         chmod( $log, 0640 );
         $old = umask( 0077 );

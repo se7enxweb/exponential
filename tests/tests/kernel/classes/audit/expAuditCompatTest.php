@@ -160,7 +160,8 @@ class expAuditCompatTest extends PHPUnit\Framework\TestCase
         expAudit::event( 'access.session.login' );
         $file = $dir . 'keys/audit.ini.append.php';
         $this->assertFileExists( $file );
-        $this->assertSame( 0640, fileperms( $file ) & 0777 );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0640, fileperms( $file ) & 0777 );
         $values = expIniWriter::fromFile( $file )->values()['AuditKeySettings'];
         $this->assertMatchesRegularExpression( '/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/', $values['InstallationID'] );
         $this->assertMatchesRegularExpression( '/^k1-\d{8}-[0-9a-f]{8}$/', $values['ActiveSigningKey'] );
@@ -197,7 +198,8 @@ class expAuditCompatTest extends PHPUnit\Framework\TestCase
         {
             $this->assertSame( $site['uid'], fileowner( $d ), $d );
             $this->assertSame( $site['gid'], filegroup( $d ), $d );
-            $this->assertSame( 0, fileperms( $d ) & 0007, "$d is not world readable" );
+            if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+                $this->assertSame( 0, fileperms( $d ) & 0007, "$d is not world readable" );
         }
         foreach ( glob( $parent . 'var/log/audit/{,.}*', GLOB_BRACE ) as $f )
         {
@@ -205,7 +207,8 @@ class expAuditCompatTest extends PHPUnit\Framework\TestCase
                 continue;
             $this->assertSame( $site['uid'], fileowner( $f ), $f );
             $this->assertSame( $site['gid'], filegroup( $f ), $f );
-            $this->assertSame( 0640, fileperms( $f ) & 0777, $f );
+            if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+                $this->assertSame( 0640, fileperms( $f ) & 0777, $f );
         }
     }
 

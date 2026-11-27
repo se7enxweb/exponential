@@ -178,7 +178,8 @@ class expImageAliasDrainerTest extends PHPUnit\Framework\TestCase
         $entry = (string)file_get_contents( $root . '/bin/php/expimagealiasdrain.php' );
         $this->assertStringStartsWith( "#!/usr/bin/env php\n", $entry );
         $this->assertStringContainsString( 'Expimagealiasdrain::main( __FILE__ )', $entry );
-        $this->assertTrue( is_executable( $root . '/bin/php/expimagealiasdrain.php' ) );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no executable bit: is_executable() knows .exe, .bat and .cmd
+            $this->assertTrue( is_executable( $root . '/bin/php/expimagealiasdrain.php' ) );
         $command = (string)file_get_contents( $root . '/kernel/private/classes/commands/expimagealiasdrain.php' );
         $this->assertStringContainsString( 'dropPrivileges', $command, 'started by root, it becomes the owner of var/' );
         $this->assertStringContainsString( 'expImageAliasBacklog::runDrainer( $slot )', $command );

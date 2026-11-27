@@ -98,7 +98,8 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         foreach ( self::COMMANDS as $script => $aliases )
         {
             $this->assertFileExists( "bin/php/$script.php" );
-            $this->assertTrue( is_executable( "bin/php/$script.php" ), "bin/php/$script.php is executable" );
+            if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no executable bit: is_executable() knows .exe, .bat and .cmd
+                $this->assertTrue( is_executable( "bin/php/$script.php" ), "bin/php/$script.php is executable" );
             foreach ( array( "bin/php/$script.php", "kernel/private/classes/commands/$script.php" ) as $file )
             {
                 preg_match_all( '/^\s*\*\s*@alias\s+(\S+)$/m', file_get_contents( $file ), $m );

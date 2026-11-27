@@ -378,6 +378,8 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
      */
     private static function fork( callable $body )
     {
+        if ( !function_exists( 'pcntl_fork' ) )
+            self::markTestSkipped( 'needs pcntl_fork(), which PHP has on Unix only' );
         $pid = pcntl_fork();
         if ( $pid === -1 )
             self::fail( 'could not fork' );
@@ -995,6 +997,8 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
     /** CJ-21 */
     public function testSpawnDetachesAndReturnsBeforeTheWorkerEnds()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the background worker is started through a POSIX shell (/bin/sh and setsid), which Windows does not have' );
         $job = $this->create( '/1/2/42/', 10 );
         $marker = $this->dir . '/worker-ended';
         expContentJob::$spawnArgv = function ( $job ) use ( $marker ) {
@@ -1024,6 +1028,8 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
     /** CJ-26 */
     public function testFailedStartFailsTheJobWithTheReasonAndGivesBackItsLock()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the background worker is started through a POSIX shell (/bin/sh and setsid), which Windows does not have' );
         $job = $this->create( '/1/2/42/', 10 );
         expContentJob::$spawnArgv = function ( $job ) {
             return array( '/nonexistent/php-binary', 'x' );

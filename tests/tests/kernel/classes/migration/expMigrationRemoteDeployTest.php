@@ -162,7 +162,8 @@ class expMigrationRemoteDeployTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', $credential->problem() );
         $ssh = $credential->ssh( $this->dir . '/work/kh' );
         $file = $ssh['options'][array_search( '-i', $ssh['options'], true ) + 1];
-        $this->assertSame( 0600, fileperms( $file ) & 0777 );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0600, fileperms( $file ) & 0777 );
         $this->assertSame( $key . "\n", file_get_contents( $file ) );
         $this->assertStringNotContainsString( 'secretkeymaterial', implode( ' ', $ssh['options'] ) );
         $this->assertContains( 'StrictHostKeyChecking=accept-new', $ssh['options'] );

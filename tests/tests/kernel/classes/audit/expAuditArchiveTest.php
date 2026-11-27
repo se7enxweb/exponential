@@ -232,7 +232,8 @@ class expAuditArchiveTest extends PHPUnit\Framework\TestCase
                 $this->assertSame( expAuditTestFixtures::KEY_ID, $m['key_id'] );
                 $this->assertStringStartsWith( 'hmac-sha256:', $m['hmac'] );
                 $this->assertSame( $before["content-$date.jsonl"], $m['files'][0]['sha256'] );
-                $this->assertSame( 0440, fileperms( dirname( $day['manifest'] ) . '/' . $m['files'][0]['archive'] ) & 0777 );
+                if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+                    $this->assertSame( 0440, fileperms( dirname( $day['manifest'] ) . '/' . $m['files'][0]['archive'] ) & 0777 );
             }
             $this->assertSame( array( 'content-2026-10-05.jsonl', 'content-2026-10-06.jsonl' ), expAuditWriter::channelFiles( $this->dir . 'log', 'content' ) );
             $v = $archiver->verifyArchives( 'content' );

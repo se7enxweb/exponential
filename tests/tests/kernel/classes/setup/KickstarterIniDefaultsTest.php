@@ -75,7 +75,8 @@ class KickstarterIniDefaultsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $file, $generator->writeNonInteractive() );
 
         clearstatcache();
-        $this->assertSame( '600', sprintf( '%o', fileperms( $file ) & 0777 ), 'the file holds passwords' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( '600', sprintf( '%o', fileperms( $file ) & 0777 ), 'the file holds passwords' );
         $content = (string)file_get_contents( $file );
         $this->assertStringContainsString( "\nDatabaseAction=ignore\n", $content, 'an action that installs and drops nothing' );
         $this->assertStringNotContainsString( 'DatabaseAction=skip', $content );
