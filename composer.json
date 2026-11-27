@@ -24,6 +24,7 @@
         "ext-sqlite3": "SQLite 3 is the default database of Exponential (DatabaseImplementation=ezsqlite3); the supported databases in order of preference: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL (doc/eng-us/help/database-support.md)",
         "ext-pgsql": "PostgreSQL, the recommended database server (DatabaseImplementation=ezpostgresql)",
         "webonyx/graphql-php": "The GraphQL API (/api/graphql, Setup > GraphQL, exp:graphql:*) runs on webonyx/graphql-php ^15.32.3. It is optional: without it the API reports the library missing and every other part of Exponential works as before. Install it with: composer require webonyx/graphql-php:^15.32.3 (doc/eng-us/features/6.0/graphql.md)",
+        "mroosz/php-cassandra": "Apache Cassandra and ScyllaDB as data table connections and import sources (expCassandraDB, expScyllaDB, exp:cassandra:import) speak CQL through this library (PHP 8.1 or later, no extension). Install it with: composer require mroosz/php-cassandra:^1.2 (doc/eng-us/features/6.0/cassandra-scylladb-driver.md)",
         "mongodb/mongodb": "The MongoDB database handler (DatabaseImplementation=mongodb) connects through MongoDB\\Client from this library, on top of the PHP mongodb extension",
         "ext-mysqli": "Mysqli is the database handler for MariaDB and MySQL (DatabaseImplementation=ezmysqli)",
         "ext-openssl": "OpenSSL provides cryptographically secure random bytes, which is used in certain parts of the product to greatly improve security",

@@ -11,7 +11,7 @@
  * The SQL of the portable helpers every driver offers (eZDBInterface::sqlLimit(), sqlUpsert(), sqlGroupConcat(),
  * sqlUnixTimestamp(), sqlFromUnixTimestamp(), sqlQuoteIdentifier()), per SQL dialect: mysql (MySQL and MariaDB), duckdb,
  * postgresql, sqlite, oracle, sqlserver, msaccess (MS Access through ODBC, expMSAccessDB), firebird (expFirebirdDB),
- * db2 (expDb2DB), informix (expInformixDB);
+ * db2 (expDb2DB), informix (expInformixDB), cassandra (expCassandraDB: the SQL its driver answers on CQL);
  * generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
  * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code
  * branches on the database it runs on.
@@ -21,7 +21,7 @@
  */
 class expDBSQLHelpers
 {
-    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'duckdb', 'db2', 'informix', 'generic' );
+    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'duckdb', 'db2', 'informix', 'cassandra', 'generic' );
 
     /**
      * The limit and offset as integers: limit false for "no limit" (false, null, '', negative or not a number).
@@ -131,6 +131,8 @@ class expDBSQLHelpers
             return expDb2Dialect::upsert( $table, $row, $keyColumns, $updateColumns );
         if ( $dialect === 'informix' )
             return expInformixDialect::upsert( $table, $row, $keyColumns, $updateColumns );
+        if ( $dialect === 'cassandra' )
+            return expCassandraDialect::upsert( $table, $row, $keyColumns, $updateColumns );
         if ( !$row || !$keyColumns )
             throw new InvalidArgumentException( 'An upsert needs at least one column and one key column' );
         foreach ( $keyColumns as $key )
@@ -226,6 +228,8 @@ class expDBSQLHelpers
             return expSQLServerDialect::groupConcat( $expression, $separator, $orderBy );
         if ( $dialect === 'msaccess' )
             throw new expDBUnsupportedException( 'msaccess', 'GROUP_CONCAT', 'join the rows in PHP' );
+        if ( $dialect === 'cassandra' )
+            throw new expDBUnsupportedException( 'cassandra', 'GROUP_CONCAT', 'CQL has no aggregate of text: join the rows in PHP' );
         if ( $dialect === 'firebird' )
             return expFirebirdDialect::groupConcat( $expression, $separator, $orderBy );
         if ( $dialect === 'db2' )
@@ -268,6 +272,8 @@ class expDBSQLHelpers
                 return expDb2Dialect::unixTimestamp( $expression );
             case 'informix':
                 return expInformixDialect::unixTimestamp( $expression );
+            case 'cassandra':
+                return $expression === null ? 'UNIX_TIMESTAMP()' : "UNIX_TIMESTAMP($expression)";
             case 'mysql':
                 return $expression === null ? 'UNIX_TIMESTAMP()' : "UNIX_TIMESTAMP($expression)";
             case 'sqlite':
@@ -301,6 +307,8 @@ class expDBSQLHelpers
                 return expDb2Dialect::fromUnixTimestamp( $expression );
             case 'informix':
                 return expInformixDialect::fromUnixTimestamp( $expression );
+            case 'cassandra':
+                return "FROM_UNIXTIME($expression)";
             case 'mysql':
                 return "FROM_UNIXTIME($expression)";
             case 'sqlite':
