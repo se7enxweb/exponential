@@ -4,7 +4,7 @@ audience: admin, developer, dba
 category: install-upgrade
 order: 9
 summary: Jede Datenbank, die Exponential 6.0.15 erreicht, in einer Matrix (Stand in 6.0.14 und 6.0.15, Site-Datenbank, DFS-Cluster, Lesereplikate, Installer, Datentabellen-Engine, Importquelle, PHP-Erweiterung, Betriebssystem, CI, getestete Aktualisierungen), mit den gemessenen Zeiten und einer Entscheidungshilfe je Einsatzzweck - ein Server, ein Cluster, eine verwaltete Cloud-Datenbank, eingebettete und Demo-Sites, Auswertungen und Importe, Windows sowie der Umzug weg von MS Access oder einer anderen alten Datenbank.
-keywords: Datenbank wählen, Datenbankmatrix, welche Datenbank, choosing a database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, libSQL, sqld, Turso, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, Datentabellen, sqliimport, DFS-Cluster, Lesereplikate, xne, Aktualisierung, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc
+keywords: Datenbank wählen, Datenbankmatrix, welche Datenbank, choosing a database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, libSQL, sqld, Turso, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, Datentabellen, sqliimport, DFS-Cluster, Lesereplikate, xne, Aktualisierung, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import
 featured: true
 context: setup/info, setup/systemupgrade
 type: help
@@ -83,6 +83,8 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | [Jede Datenbank über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md) | nein | neu | **nein**: Datentabellen und Import | nein | nein | keiner |
 | [MS Access (`.accdb`, `.mdb`)](../funktionen/6.0/ms-access-unterstuetzung.md) | nein | neu | **nein**: Import, unter Windows auch Datentabellen | nein | nein | keiner (`exp:access:import`) |
 | [Apache Cassandra 4.0 bis 5.0, ScyllaDB 2025.1](../funktionen/6.0/cassandra-scylladb-treiber.md) | nein | neu | **nein**: Datentabellen und Import ([warum](../funktionen/6.0/cassandra-scylladb-treiber.md#warum-keine-site-auf-cassandra-läuft)) | nein | nein | keiner (`exp:cassandra:import`) |
+| [Couchbase 7.2 und neuer](../funktionen/6.0/couchbase-treiber.md) | nein | neu | **nein** (gemessen): Datentabellen und Import | nein | nein | keiner (`exp:couchbase:import`) |
+| [Apache CouchDB 3.3 und 3.4](../funktionen/6.0/couchdb-treiber.md) | nein | neu | **nein** (gemessen): Datentabellen und Import | nein | nein | keiner (`exp:couchdb:import`) |
 
 Anmerkungen zur Tabelle:
 
@@ -130,6 +132,8 @@ nimmt die Aktualisierung wieder zurück.
 | MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine (x64); Linux: die Programme von MDBTools (nur Import) | `msaccess` (Windows) | `exp:access:import`; SQL-Quelle über eine benannte Verbindung (Windows) | Windows (Treiber und Import), Linux und macOS (Import mit MDBTools) | der Import unter Linux; Treiber und Import auf windows-2022 und windows-2025 (Job `msaccess-windows`) | entfällt |
 | libSQL (sqld), Turso | `curl` (oder `allow_url_fopen`); `sqlite3` nicht nötig | `libsql`, `turso` | eine Datentabellen-Verbindung | Linux (sqld in einem Container); die PHP-Seite auf jedem System mit curl | Tests ohne Server, Live-Tests auf sqld 0.24.33 und eine ganze Site installiert (Job `libsql`); Turso nicht getestet | noch nicht; kein eingebauter Sicherungspunkt (unten) |
 | Cassandra, ScyllaDB | PHP 8.1 und die Bibliothek `mroosz/php-cassandra` (keine Erweiterung) | `cassandra`, `scylladb` | eine Datentabellen-Verbindung; `exp:cassandra:import` eines Keyspace | Linux | Live-Tests auf Cassandra 5.0 und ScyllaDB 2025.1, PHP 8.1 und 8.5 (Job `cassandra`) | entfällt |
+| Couchbase | `curl` (die REST-API des Query-Dienstes; kein SDK) | `couchbase` | `exp:couchbase:import`; eine Datentabellen-Verbindung | Linux | Live-Tests auf Couchbase Community 7.6.2 und 7.2.4 (Job `couch`) | entfällt |
+| Apache CouchDB | `curl` und `sqlite3` | `couchdb` | `exp:couchdb:import`; eine Datentabellen-Verbindung | Linux | Live-Tests auf CouchDB 3.4.3 und 3.3.3 (Job `couch`) | entfällt |
 
 Die Tests des Aktualisierungswerkzeugs sind in seiner eigenen Dokumentation beschrieben; eine Aktualisierung von 6.0.14
 gibt es nur für die Datenbanken, die 6.0.14 hatte. Eine Site auf einer der neuen Datenbanken wird zum ersten Mal von dem
@@ -258,6 +262,12 @@ legen, oder die DFS-Metadaten in eine der Datenbanken oben.
   oder SQL Server direkt und über eine benannte Verbindung aus jeder relationalen Engine der Datentabellen-Verbindungen
   (auch den Datenbanken mit dem PostgreSQL- und MySQL-Protokoll, Spanner, Firebird, DuckDB, Db2, Informix, ODBC und
   MS Access); der Treiber des Kernels öffnet sie, und die Abfrage wird im Dialekt dieser Engine geprüft.
+- **Couchbase und CouchDB**, die Dokumentenspeicher, sind Datentabellen-Verbindungen (ein Scope eines Buckets; eine
+  CouchDB-Datenbank) und Importquellen: `exp:couchbase:import` und `exp:couchdb:import` kopieren ihre Dokumente in
+  Tabellen, die Felder einer Stichprobe als Spalten und den Schlüssel des Dokuments als `doc_id`. Keine von beiden trägt
+  eine Site: Couchbase beantwortet das SQL des Kernels über SQL++, aber zu langsam, und CouchDB hat gar kein SQL
+  ([Couchbase](../funktionen/6.0/couchbase-treiber.md#warum-keine-site-auf-couchbase-läuft),
+  [CouchDB](../funktionen/6.0/couchdb-treiber.md#warum-keine-site-auf-couchdb-läuft)).
 
 ### Windows
 
@@ -295,7 +305,8 @@ sind in keinem Release enthalten, und nichts auf dieser Seite beschreibt sie.
   [PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md),
   [Firebird](../funktionen/6.0/firebird-datenbanktreiber.md), [DuckDB](../funktionen/6.0/duckdb-datenbanktreiber.md),
   [libSQL und Turso](../funktionen/6.0/libsql-datenbanktreiber.md),
-  [ODBC](../funktionen/6.0/odbc-datenbanktreiber.md), [MS Access](../funktionen/6.0/ms-access-unterstuetzung.md).
+  [ODBC](../funktionen/6.0/odbc-datenbanktreiber.md), [MS Access](../funktionen/6.0/ms-access-unterstuetzung.md),
+  [Couchbase](../funktionen/6.0/couchbase-treiber.md), [Apache CouchDB](../funktionen/6.0/couchdb-treiber.md).
 - [Clustering in Exponential 6.0](../funktionen/6.0/clustering-ueberblick.md), [Datentabellen](../funktionen/6.0/datentabellen.md).
 - [PHP-Erweiterungen je Engine](datenbankadministratoren/php-erweiterungen-je-engine.md),
   [Eine Engine wählen](datenbankadministratoren/eine-engine-waehlen.md) (die Fragen des Datenbankadministrators).

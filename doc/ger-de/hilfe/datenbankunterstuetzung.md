@@ -4,7 +4,7 @@ audience: admin, developer
 category: install-upgrade
 order: 10
 summary: Welche Datenbanken Exponential 6.0.x unterstützt und in welcher Reihenfolge (zuerst SQLite, dann PostgreSQL, MongoDB, MariaDB, Oracle, MySQL sowie Microsoft SQL Server mit Azure SQL), die in 6.0.15 hinzugekommenen Datenbanken (Firebird, DuckDB, libSQL und Turso, die Familien des MySQL- und des PostgreSQL-Protokolls, ODBC und MS Access), mit einer Unterstützungsmatrix und jeweils mit Versionen, PHP-Erweiterungen, Einstellungen, Installern, Clustering, Zeichensätzen, Performance, Backup und Wiederherstellung, Grenzen, Migration und Testabdeckung.
-keywords: Datenbank, Datenbanken, unterstützte Datenbanken, Unterstützungsmatrix, support matrix, Firebird, pdo_firebird, DuckDB, FFI, libSQL, sqld, Turso, Hrana, ODBC, MS Access, exp:access:import, TiDB, Vitess, PlanetScale, SingleStore, Xpand, Aurora, CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, Datenbanktreiber, Sicherung, Wiederherstellung, Migration, Zeichensatz, Anforderungen, Versionen, Testabdeckung, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, database, databases, supported databases, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
+keywords: Datenbank, Datenbanken, unterstützte Datenbanken, Unterstützungsmatrix, support matrix, Firebird, pdo_firebird, DuckDB, FFI, libSQL, sqld, Turso, Hrana, ODBC, MS Access, exp:access:import, TiDB, Vitess, PlanetScale, SingleStore, Xpand, Aurora, CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, Datenbanktreiber, Sicherung, Wiederherstellung, Migration, Zeichensatz, Anforderungen, Versionen, Testabdeckung, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, database, databases, supported databases, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import
 featured: true
 context: setup/info, setup/systemupgrade, dse
 type: help
@@ -108,6 +108,8 @@ Was die Reihenfolge in der Praxis bedeutet:
 | IBM Db2 | 11.5 und 12.1 (11.5.9 und 12.1.6 getestet) | `pdo_ibm` oder `ibm_db2` mit IBMs Data Server Driver | Setup-Assistent, Kickstarter, `exp:install` (`db2`) | noch keiner: ein Webserver | Treiber- und Live-Tests auf Db2 12.1 und 11.5, auf beiden PHP-Schichten, und eine ganz installierte Site | vollständige Site-Datenbank (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/db2-datenbanktreiber.md#was-geht-und-was-nicht) |
 | IBM Informix | 14.10 und 15 (14.10.FC9W1 und 15.0.1 getestet) | `ibm_db2` mit IBMs Data Server Driver, über den DRDA-Listener | Setup-Assistent, Kickstarter, `exp:install` (`informix`) | noch keiner: ein Webserver | Treiber- und Live-Tests auf Informix 15 und 14.10; eine ganze Site außerhalb der CI auf 15 installiert | vollständige Site-Datenbank (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/informix-datenbanktreiber.md#was-geht-und-was-nicht) |
 | Apache Cassandra, ScyllaDB (CQL) | Cassandra 4.0 bis 5.0, ScyllaDB ab 2025.1 (5.0.9 und 2025.1.17 getestet) | PHP 8.1 und die Bibliothek `mroosz/php-cassandra` | keiner: keine Site-Datenbank | keins | die Live-Suite `cassandra-live` auf Cassandra 5.0 und ScyllaDB 2025.1, PHP 8.1 und 8.5 | Datentabellen-Verbindung und Import (neu in 6.0.15); [warum keine Site](../funktionen/6.0/cassandra-scylladb-treiber.md#warum-keine-site-auf-cassandra-läuft) |
+| Couchbase | Server 7.2 und neuer, Community oder Enterprise (7.6.2 und 7.2.4 getestet) | `curl` (die REST-API des Query-Dienstes) | keiner: keine Site-Datenbank | keins | Treiber- und Live-Tests auf Community 7.6.2 und 7.2.4 (Job `couch`) | Datentabellen-Verbindungen und Import (neu in 6.0.15): [Couchbase-Treiber](../funktionen/6.0/couchbase-treiber.md) |
+| Apache CouchDB | 3.3 und 3.4 (3.4.3 und 3.3.3 getestet) | `curl` und `sqlite3` | keiner: keine Site-Datenbank | keins | Treiber- und Live-Tests auf 3.4.3 und 3.3.3 (Job `couch`) | Datentabellen-Verbindungen und Import (neu in 6.0.15): [CouchDB-Treiber](../funktionen/6.0/couchdb-treiber.md) |
 
 **ODBC und MS Access** (neu in 6.0.15) tragen keine Site. Der allgemeine ODBC-Treiber `expODBCDB`
 (`DatabaseImplementation=odbc`, der SQL-Dialekt in `[ODBCSettings]`) erreicht jede Datenbank mit ODBC-Treiber als
@@ -115,6 +117,14 @@ Datentabellen-Verbindung; `exp:access:import` kopiert die Tabellen einer Access-
 eine Datentabellen-Verbindung, und unter Windows liest und schreibt der kleine Treiber `expMSAccessDB` Access-Dateien an
 Ort und Stelle. Siehe [ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md) und
 [MS-Access-Unterstützung](../funktionen/6.0/ms-access-unterstuetzung.md).
+
+**Couchbase und Apache CouchDB** (neu in 6.0.15) tragen ebenfalls keine Site; beide wurden dafür gemessen.
+`expCouchbaseDB` (`couchbase`) macht aus dem SQL des Kernels das SQL++ von Couchbase und beantwortet es in einem Scope
+eines Buckets, über die REST-API des Query-Dienstes; `expCouchDBDB` (`couchdb`) hält Tabellen als Dokumente einer
+CouchDB-Datenbank und beantwortet SQL auf einer SQLite-Kopie der Dokumente, die eine Anweisung braucht, im Speicher.
+Beide sind Datentabellen-Verbindungen und Importquellen (`exp:couchbase:import`, `exp:couchdb:import`), mit PHPs `curl`
+(und `sqlite3` für CouchDB). Siehe [Couchbase-Treiber](../funktionen/6.0/couchbase-treiber.md) und
+[Apache-CouchDB-Treiber](../funktionen/6.0/couchdb-treiber.md).
 
 **In Entwicklung.** Treiber für Datenbanken von SAP, für Cassandra und ScyllaDB sowie für ClickHouse und
 MonetDB entstehen gerade; sie sind noch in keinem Release enthalten.
@@ -236,6 +246,7 @@ fehlend melden kann, eine Erklärungsseite. Installieren Sie nur die Erweiterung
 | libSQL (sqld), Turso | `curl`, oder ohne curl `allow_url_fopen=On` | wird mit PHP geliefert (`php-curl`, `php<version>-curl`); PHPs `sqlite3` ist für eine Site auf einem libSQL-Server nicht nötig |
 | ODBC | `pdo_odbc` (Standard) oder `odbc` | mit PHP geliefert; unter Linux unixODBC und der ODBC-Treiber der Datenbank |
 | MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine 2016 x64; Linux: die Programme von MDBTools (`mdb-tables`, `mdb-schema`, `mdb-json`) für den Import | das Redistributable von Microsoft; `mdbtools` (Debian, Ubuntu, EPEL) |
+| Couchbase, Apache CouchDB | `curl`; CouchDB zusätzlich `sqlite3` | mit PHP ausgeliefert (`php-curl`, `php<version>-curl`); weder ein Couchbase-SDK noch eine CouchDB-Erweiterung ist nötig |
 
 Prüfen Sie mit `php -m`, welche Erweiterungen ein PHP hat, und denken Sie daran, dass das PHP des Webservers und das
 PHP der Kommandozeile getrennt konfiguriert sind: Prüfen Sie beide. Der optionale Test `database_all_extensions` des
@@ -266,6 +277,8 @@ Treiber mit einem Alias, den `ImplementationAlias[]` einer Klasse zuordnet:
 | `db2`, `ibm_db2` | `expDb2DB` (`lib/ezdb/classes/expdb2db.php`) |
 | `informix`, `ifx` | `expInformixDB` (`lib/ezdb/classes/expinformixdb.php`) |
 | `cassandra`; `scylladb`, `scylla` | `expCassandraDB`; `expScyllaDB` (`lib/ezdb/classes/expcassandradb.php`, `expscylladb.php`; nur Datentabellen-Verbindungen) |
+| `couchbase` | `expCouchbaseDB` (`lib/ezdb/classes/expcouchbasedb.php`), nur für Datentabellen-Verbindungen |
+| `couchdb` | `expCouchDBDB` (`lib/ezdb/classes/expcouchdbdb.php`), nur für Datentabellen-Verbindungen |
 
 Die folgenden Beispiele verwenden Platzhalter für Namen und Passwörter; tragen Sie Ihre eigenen Werte in Ihre
 Überschreibungsdatei ein und committen Sie diese Datei nie. Jeder Schlüssel wird in
@@ -775,6 +788,7 @@ Wegwerf-Datenbank pro Test laufen.
 | MS Access | Import und Treiber | der Live-Test des Imports unter Linux mit MDBTools; der Job `msaccess-windows` (windows-2022, windows-2025, Access Database Engine 2016 x64, PHP 8.4) für Treiber und Import |
 | PostgreSQL-Protokoll | ja, Treiber- und Live-Tests | die Testsuite `pgwire` im PHPUnit-Job; der Job „PostgreSQL wire protocol“ führt `pgwire-live` gegen CockroachDB 25.2, YugabyteDB 2.25 und den Spanner-Emulator hinter PGAdapter aus, PHP 8.1 und 8.5. Neon, Supabase und Aurora: nur Unit-Tests |
 | Cassandra und ScyllaDB | ja, Treiber-, Datentabellen- und Importtests | die Testsuite `cassandra` im PHPUnit-Job; der Job „Cassandra and ScyllaDB“ führt `cassandra-live` gegen Cassandra 5.0 und ScyllaDB 2025.1 (mit Anmeldung) aus, PHP 8.1 und 8.5 |
+| Couchbase, Apache CouchDB | ja, Treiber-, Datentabellen- und Importtests | der Job `couch` führt die Testsuiten `couch` und `couch-live` gegen Couchbase Server Community 7.6.2 und CouchDB 3.4.3 (PHP 8.5) sowie 7.2.4 und 3.3.3 (PHP 8.1) in Containern aus |
 
 PHP 8.0, die älteste unterstützte Version, und PHP 7.4 (ohne Support nutzbar) prüft der Quality-Workflow mit einer Syntaxprüfung jeder PHP-Datei und einem
 Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, beschreibt

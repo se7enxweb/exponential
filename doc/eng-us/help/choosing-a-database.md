@@ -4,7 +4,7 @@ audience: admin, developer, dba
 category: install-upgrade
 order: 9
 summary: Every database Exponential 6.0.15 reaches, in one matrix (status in 6.0.14 and 6.0.15, site database, DFS cluster, read replicas, installers, data table engine, import source, PHP extension, operating system, CI, tested upgrades), with the measured timings and a decision guide per use case - one server, a cluster, a managed cloud database, embedded and demo sites, analytics and imports, Windows, and moving off MS Access or another old database.
-keywords: choosing a database, database matrix, which database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, libSQL, sqld, Turso, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, data tables, sqliimport, DFS cluster, read replicas, xne, upgrade, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc
+keywords: choosing a database, database matrix, which database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, libSQL, sqld, Turso, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, data tables, sqliimport, DFS cluster, read replicas, xne, upgrade, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import
 featured: true
 context: setup/info, setup/systemupgrade
 type: help
@@ -82,6 +82,8 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | [Any database through ODBC](../features/6.0/odbc-database-driver.md) | no | new | **no**: data tables and import | no | no | none |
 | [MS Access (`.accdb`, `.mdb`)](../features/6.0/ms-access-support.md) | no | new | **no**: import, and data tables on Windows | no | no | none (`exp:access:import`) |
 | [Apache Cassandra 4.0 to 5.0, ScyllaDB 2025.1](../features/6.0/cassandra-scylladb-driver.md) | no | new | **no**: data tables and import ([why](../features/6.0/cassandra-scylladb-driver.md#why-no-site-runs-on-cassandra)) | no | no | none (`exp:cassandra:import`) |
+| [Couchbase 7.2 and later](../features/6.0/couchbase-driver.md) | no | new | **no** (measured): data tables and import | no | no | none (`exp:couchbase:import`) |
+| [Apache CouchDB 3.3 and 3.4](../features/6.0/couchdb-driver.md) | no | new | **no** (measured): data tables and import | no | no | none (`exp:couchdb:import`) |
 
 Notes on the table:
 
@@ -126,6 +128,8 @@ real 6.0.14 site, upgrades it to the current code and rolls it back.
 | MS Access | Windows: `odbc` and `pdo_odbc` with the Access Database Engine (x64); Linux: the MDBTools programs (import only) | `msaccess` (Windows) | `exp:access:import`; SQL source through a named connection (Windows) | Windows (driver and import), Linux and macOS (import with MDBTools) | the import on Linux; the driver and the import on windows-2022 and windows-2025 (job `msaccess-windows`) | not applicable |
 | libSQL (sqld), Turso | `curl` (or `allow_url_fopen`); `sqlite3` not needed | `libsql`, `turso` | a data table connection | Linux (sqld in a container); the PHP side on any system with curl | tests without a server, live tests on sqld 0.24.33 and a whole site installed (job `libsql`); Turso not tested | not yet; no built-in caption (below) |
 | Cassandra, ScyllaDB | PHP 8.1 and the library `mroosz/php-cassandra` (no extension) | `cassandra`, `scylladb` | a data table connection; `exp:cassandra:import` of a keyspace | Linux | live tests on Cassandra 5.0 and ScyllaDB 2025.1, PHP 8.1 and 8.5 (job `cassandra`) | not applicable |
+| Couchbase | `curl` (the Query service's REST API; no SDK) | `couchbase` | `exp:couchbase:import`; a data table connection | Linux | live tests on Couchbase Community 7.6.2 and 7.2.4 (job `couch`) | not applicable |
+| Apache CouchDB | `curl` and `sqlite3` | `couchdb` | `exp:couchdb:import`; a data table connection | Linux | live tests on CouchDB 3.4.3 and 3.3.3 (job `couch`) | not applicable |
 
 The upgrade tool's tests are described in its own documentation; an upgrade from 6.0.14 exists only for the
 databases 6.0.14 had. A site installed on one of the new databases is first upgraded by the release after 6.0.15, and
@@ -246,6 +250,12 @@ DFS metadata in one of the databases above.
   directly, and through a named connection from every relational engine of the data table connections (also the
   PostgreSQL and MySQL protocol databases, Spanner, Firebird, DuckDB, Db2, Informix, ODBC and MS Access), opened by
   the kernel's driver and checked in that engine's dialect.
+- **Couchbase and CouchDB**, the document stores, are data table connections (a scope of a bucket; a CouchDB database)
+  and import sources: `exp:couchbase:import` and `exp:couchdb:import` copy their documents into tables, the fields of a
+  sample as columns and the document's key as `doc_id`. Neither carries a site: Couchbase answers the kernel's SQL
+  through SQL++, but too slowly, and CouchDB has no SQL at all
+  ([Couchbase](../features/6.0/couchbase-driver.md#why-no-site-runs-on-couchbase),
+  [CouchDB](../features/6.0/couchdb-driver.md#why-no-site-runs-on-couchdb)).
 
 ### Windows
 
@@ -279,7 +289,8 @@ part of any release, and nothing on this page describes them.
   [PostgreSQL protocol](../features/6.0/postgresql-wire-databases.md),
   [Firebird](../features/6.0/firebird-database-driver.md), [DuckDB](../features/6.0/duckdb-database-driver.md),
   [libSQL and Turso](../features/6.0/libsql-database-driver.md),
-  [ODBC](../features/6.0/odbc-database-driver.md), [MS Access](../features/6.0/ms-access-support.md).
+  [ODBC](../features/6.0/odbc-database-driver.md), [MS Access](../features/6.0/ms-access-support.md),
+  [Couchbase](../features/6.0/couchbase-driver.md), [Apache CouchDB](../features/6.0/couchdb-driver.md).
 - [Clustering in Exponential 6.0](../features/6.0/clustering-overview.md), [Data tables](../features/6.0/data-tables.md).
 - [PHP extensions per engine](database-administrators/php-extensions-per-engine.md),
   [Choosing an engine](database-administrators/choosing-an-engine.md) (the DBA's questions).

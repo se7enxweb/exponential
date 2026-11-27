@@ -125,6 +125,11 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [libSQL- und Turso-Treiber](libsql-datenbanktreiber.md): `expLibSQLDB` und `expTursoDB`, der SQLite-Treiber über die
   HTTP-API eines libSQL-Servers (sqld, Turso); eine ganze Site auf einem Server, den sich mehrere Webserver teilen; was
   geht und was nicht
+- [Couchbase-Treiber](couchbase-treiber.md): `expCouchbaseDB`, das SQL des Kernels als SQL++ über die REST-API des
+  Query-Dienstes; Datentabellen-Verbindungen und `exp:couchbase:import`; warum keine Site auf Couchbase läuft, gemessen
+- [Apache-CouchDB-Treiber](couchdb-treiber.md): `expCouchDBDB`, Tabellen als CouchDB-Dokumente, SQL auf einer
+  SQLite-Kopie im Speicher beantwortet; Datentabellen-Verbindungen und `exp:couchdb:import`; warum keine Site auf CouchDB
+  läuft, gemessen
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
   Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
