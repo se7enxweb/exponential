@@ -101,6 +101,7 @@ What the order means in practice:
 | MS Access (`.accdb`, `.mdb`) | Access 97 (JET3) to ACE | Windows: `odbc`, `pdo_odbc` with the Access Database Engine x64; Linux: MDBTools programs | none: `exp:access:import` | none | the import on Linux; driver and import on Windows (job `msaccess-windows`) | import, and on Windows a small driver for data tables (new in 6.0.15): [MS Access](../features/6.0/ms-access-support.md) |
 | IBM Db2 | 11.5 and 12.1 (11.5.9 and 12.1.6 tested) | `pdo_ibm` or `ibm_db2` with IBM's Data Server Driver | setup wizard, kickstarter, `exp:install` (`db2`) | none yet: one web server | driver and live tests on Db2 12.1 and 11.5, on both PHP layers, and a whole site installed | full site database (new in 6.0.15); [what works and what does not](../features/6.0/db2-database-driver.md#what-works-and-what-does-not) |
 | IBM Informix | 14.10 and 15 (14.10.FC9W1 and 15.0.1 tested) | `ibm_db2` with IBM's Data Server Driver, through the DRDA listener | setup wizard, kickstarter, `exp:install` (`informix`) | none yet: one web server | driver and live tests on Informix 15 and 14.10; a whole site installed on 15 outside CI | full site database (new in 6.0.15); [what works and what does not](../features/6.0/informix-database-driver.md#what-works-and-what-does-not) |
+| Apache Cassandra, ScyllaDB (CQL) | Cassandra 4.0 to 5.0, ScyllaDB 2025.1 and later (5.0.9 and 2025.1.17 tested) | PHP 8.1 and the library `mroosz/php-cassandra` | none: not a site database | none | the live suite `cassandra-live` on Cassandra 5.0 and ScyllaDB 2025.1, PHP 8.1 and 8.5 | data-table connection and import (new in 6.0.15); [why no site](../features/6.0/cassandra-scylladb-driver.md#why-no-site-runs-on-cassandra) |
 
 **ODBC and MS Access** (new in 6.0.15) do not carry a site. The generic ODBC driver `expODBCDB`
 (`DatabaseImplementation=odbc`, the SQL dialect in `[ODBCSettings]`) reaches any database with an ODBC driver as a
@@ -127,6 +128,10 @@ build and demo sites; there is no DFS cluster on it. See [DuckDB driver](../feat
 measured). There is no DFS
 cluster backend for them and no read replicas. Details, the server preparation and limits:
 [IBM Db2 driver](../features/6.0/db2-database-driver.md), [IBM Informix driver](../features/6.0/informix-database-driver.md).
+
+**Apache Cassandra and ScyllaDB** (`cassandra`, `scylladb`, new in 6.0.15) are data table connections and an import
+source (`exp:cassandra:import`), not site databases: CQL has no joins, no sub-selects and no transactions across
+rows, and the kernel resolves every URL with a join. See [Cassandra and ScyllaDB driver](../features/6.0/cassandra-scylladb-driver.md).
 
 Moving an existing site from one engine to another: [Moving off an old database](moving-off-an-old-database.md).
 
@@ -234,6 +239,7 @@ override for you. `DatabaseImplementation` names the driver by an alias that `Im
 | `msaccess`, `access` | `expMSAccessDB` (`lib/ezdb/classes/expmsaccessdb.php`) |
 | `db2`, `ibm_db2` | `expDb2DB` (`lib/ezdb/classes/expdb2db.php`) |
 | `informix`, `ifx` | `expInformixDB` (`lib/ezdb/classes/expinformixdb.php`) |
+| `cassandra`; `scylladb`, `scylla` | `expCassandraDB`; `expScyllaDB` (`lib/ezdb/classes/expcassandradb.php`, `expscylladb.php`; data table connections only) |
 
 The examples below use placeholder names and passwords; put your own values in your override file and never commit
 that file. Every key is explained in [9.1 How Exponential chooses a database driver](../install/09-databases.md#91-how-exponential-chooses-a-database-driver).
@@ -771,6 +777,7 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | ODBC | yes, driver and live tests | the job `odbc` on Linux (SQL Server, PostgreSQL, MariaDB and SQLite, `pdo_odbc` and `odbc`); the Windows job "ODBC on Windows" against LocalDB |
 | MS Access | import and driver | the import's live test on Linux with MDBTools; the job `msaccess-windows` (windows-2022, windows-2025, Access Database Engine 2016 x64, PHP 8.4) for the driver and the import |
 | PostgreSQL wire protocol | yes, driver and live tests | the testsuite `pgwire` in the PHPUnit job; the job "PostgreSQL wire protocol" runs `pgwire-live` against CockroachDB 25.2, YugabyteDB 2.25 and the Spanner emulator behind PGAdapter, PHP 8.1 and 8.5. Neon, Supabase and Aurora: unit tests only |
+| Cassandra and ScyllaDB | yes, driver, data table and import tests | the testsuite `cassandra` in the PHPUnit job; the job "Cassandra and ScyllaDB" runs `cassandra-live` against Cassandra 5.0 and ScyllaDB 2025.1 (with authentication), PHP 8.1 and 8.5 |
 
 PHP 8.0, the oldest supported version, and PHP 7.4 (usable without support) are checked by the Quality workflow with a syntax check of every PHP file and a
 boot smoke test without a database. The test suites and how to run them locally are described in

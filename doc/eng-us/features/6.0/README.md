@@ -113,6 +113,8 @@ nginx with PHP-FPM keep working as before.
   the DRDA listener; preparing the server, what works and what does not
 - [DuckDB driver](duckdb-database-driver.md): `expDuckDBDB`, a whole site in one DuckDB file through PHP's FFI
   extension; one process writes at a time; what works and what does not
+- [Apache Cassandra and ScyllaDB driver](cassandra-scylladb-driver.md): `expCassandraDB` and `expScyllaDB`, data table
+  connections and `exp:cassandra:import` over CQL; why no site runs on them, with measurements
 - [Clustering in Exponential 6.0](clustering-overview.md): application servers, shared files, primary and replicas,
   caches, purges and health checks in one place, with every cluster page
 - [Clustering on PostgreSQL: the DFS backend in the kernel](postgresql-dfs-cluster.md)

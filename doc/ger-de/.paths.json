@@ -3583,6 +3583,7 @@
     "funktionen/6.0/duckdb-datenbanktreiber.md": "features/6.0/duckdb-database-driver.md",
     "funktionen/6.0/db2-datenbanktreiber.md": "features/6.0/db2-database-driver.md",
     "funktionen/6.0/informix-datenbanktreiber.md": "features/6.0/informix-database-driver.md",
+    "funktionen/6.0/cassandra-scylladb-treiber.md": "features/6.0/cassandra-scylladb-driver.md",
     "funktionen/6.0/sqlserver-dfs-cluster.md": "features/6.0/sqlserver-dfs-cluster.md",
     "funktionen/6.0/standard-extension-auslieferung.md": "features/6.0/default-extension-distribution.md",
     "funktionen/6.0/standardwerte-einer-sauberen-installation.md": "features/6.0/clean-install-defaults.md",
