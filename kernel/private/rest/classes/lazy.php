@@ -65,6 +65,12 @@ class ezpRestDbConfig implements ezcBaseConfigurationInitializer
         $dsnHost = $dbHost . ( $dbPort != '' ? ":$dbPort" : '' );
         // ezcDbFactory::parseDSN() rawurldecodes the user and the password, and splits them at the first colon
         $dsn = "{$dbType}://" . rawurlencode( (string)$dbUser ) . ":" . rawurlencode( (string)$dbPass ) . "@{$dsnHost}/{$dbName}";
+        if ( $dbType === 'mysql' )
+        {
+            // The site's own connections speak this charset; without the option
+            // the connection takes the server's default instead.
+            $dsn .= '?charset=' . rawurlencode( eZMySQLCharset::mapTo( 'utf-8' ) );
+        }
 
         return $dsn;
     }
