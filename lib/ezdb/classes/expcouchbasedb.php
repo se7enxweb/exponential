@@ -356,12 +356,22 @@ class expCouchbaseDB extends eZDBInterface
     {
         if ( $this->Definitions !== null && !$reload )
             return $this->Definitions;
-        $this->Definitions = array();
-        $this->Dialect = null;
         if ( !$this->IsConnected )
-            return $this->Definitions;
+            return $this->Definitions = array();
         $rows = $this->send( 'SELECT META(d).id AS name, d.definition FROM ' . expCouchbaseDialect::quoteName( self::SCHEMA_COLLECTION ) . ' AS d WHERE META(d).id IS NOT MISSING',
                              array( 'report' => false, 'tx' => false, 'consistency' => 'request_plus' ) );
+        if ( $rows === false && $this->ErrorNumber !== 1146 )
+        {
+            // the service did not answer: the catalogue read before is kept (an empty one would turn every
+            // literal into the wrong type and every table into an unknown one)
+            if ( class_exists( 'eZDebug' ) )
+                eZDebug::writeWarning( 'The table definitions could not be read: ' . $this->ErrorMessage, __METHOD__ );
+            if ( $this->Definitions === null )
+                $this->Definitions = array();
+            return $this->Definitions;
+        }
+        $this->Definitions = array();
+        $this->Dialect = null;
         if ( is_array( $rows ) )
             foreach ( $rows as $row )
                 if ( isset( $row['name'], $row['definition'] ) && is_array( $row['definition'] ) )

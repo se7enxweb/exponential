@@ -124,7 +124,7 @@ class expCouchbaseDBTest extends PHPUnit\Framework\TestCase
                                                                          array( 'id' => 2, 'name' => array( 'a' => 1 ) ) ) ) );
         $rows = $db->arrayQuery( "SELECT * FROM ezpreferences WHERE user_id = '14'" );
         $request = $this->service->requests[count( $this->service->requests ) - 1];
-        $this->assertSame( 'SELECT `ezpreferences`.* FROM `ezpreferences` AS `ezpreferences` WHERE `user_id` = 14', $request['statement'] );
+        $this->assertSame( 'SELECT `ezpreferences`.* FROM `ezpreferences` AS `ezpreferences` WHERE `ezpreferences`.`user_id` = 14', $request['statement'] );
         $this->assertSame( 'default:`exponential`.`site`', $request['query_context'] );
         $this->assertSame( 'request_plus', $request['scan_consistency'] );
         $this->assertSame( array( array( 'id' => 1, 'user_id' => 14, 'name' => 1, 'value' => 'v' ),
@@ -189,7 +189,7 @@ class expCouchbaseDBTest extends PHPUnit\Framework\TestCase
         };
         $this->service->requests = array();
         $this->assertTrue( $db->query( "INSERT INTO ezpreferences (id, name) VALUES (5, 'n') ON DUPLICATE KEY UPDATE name = VALUES(name), user_id = user_id + 1" ) );
-        $this->assertSame( 'UPDATE `ezpreferences` USE KEYS "5" SET `ezpreferences`.`name` = "n", `ezpreferences`.`user_id` = `user_id` + 1', $this->last() );
+        $this->assertSame( 'UPDATE `ezpreferences` USE KEYS "5" SET `ezpreferences`.`name` = "n", `ezpreferences`.`user_id` = `ezpreferences`.`user_id` + 1', $this->last() );
         $this->service->requests = array();
         $this->assertTrue( $db->query( "INSERT IGNORE INTO ezpreferences (id, name) VALUES (5, 'n')" ) );
         $this->assertStringStartsWith( 'INSERT INTO', $this->last() );
@@ -212,7 +212,7 @@ class expCouchbaseDBTest extends PHPUnit\Framework\TestCase
         };
         $this->service->requests = array();
         $this->assertTrue( $db->query( 'UPDATE ezpreferences SET id = 30 WHERE id = 3' ) );
-        $this->assertSame( array( 'UPDATE `ezpreferences` AS `ezpreferences` USE KEYS ["3"] SET `ezpreferences`.`id` = 30 WHERE `id` = 3 RETURNING META(`ezpreferences`).id AS _k, `ezpreferences`.* ',
+        $this->assertSame( array( 'UPDATE `ezpreferences` AS `ezpreferences` USE KEYS ["3"] SET `ezpreferences`.`id` = 30 WHERE `ezpreferences`.`id` = 3 RETURNING META(`ezpreferences`).id AS _k, `ezpreferences`.* ',
                                   'INSERT INTO `ezpreferences` (KEY, VALUE) VALUES ("30", {"id":30,"user_id":1,"name":"x","value":null})',
                                   'DELETE FROM `ezpreferences` USE KEYS "3"' ), array_slice( $this->service->statements(), -3 ) );
     }

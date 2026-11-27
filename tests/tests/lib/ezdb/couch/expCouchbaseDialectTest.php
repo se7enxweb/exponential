@@ -105,7 +105,7 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
     /** CB-04 */
     public function testNamesStringsAndStar()
     {
-        $this->assertSame( 'SELECT `ezpreferences`.* FROM `ezpreferences` AS `ezpreferences` WHERE `name` = "a\"b"',
+        $this->assertSame( 'SELECT `ezpreferences`.* FROM `ezpreferences` AS `ezpreferences` WHERE `ezpreferences`.`name` = "a\"b"',
                            $this->sql( "SELECT * FROM ezpreferences WHERE Name = 'a\"b'" ) );
         $out = $this->dialect()->select( 'SELECT p.*, COUNT( * ), MAX(p.id) AS top, p.Value FROM ezpreferences p GROUP BY p.user_id' );
         $this->assertSame( 'SELECT `p`.*, COUNT(*) AS `COUNT(*)`, MAX(`p`.`id`) AS `top`, `p`.`value` AS `value` FROM `ezpreferences` AS `p` GROUP BY `p`.`user_id`', $out['sql'] );
@@ -117,13 +117,14 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
     /** CB-05 */
     public function testTypes()
     {
-        $this->assertSame( 'SELECT `id` AS `id` FROM `ezcontentobject` AS `ezcontentobject` WHERE `section_id` = 3 AND `remote_id` = "17"',
+        // a column of a one-table statement is written with its table (CB-08: a sub-select would read it from the enclosing query)
+        $this->assertSame( 'SELECT `ezcontentobject`.`id` AS `id` FROM `ezcontentobject` AS `ezcontentobject` WHERE `ezcontentobject`.`section_id` = 3 AND `ezcontentobject`.`remote_id` = "17"',
                            $this->sql( "SELECT id FROM ezcontentobject WHERE section_id = '3' AND remote_id = 17" ) );
-        $this->assertStringContainsString( 'WHERE `section_id` IN [1, 2, 0]', $this->sql( "SELECT id FROM ezcontentobject WHERE section_id IN ('1', 2, 'x')" ) );
-        $this->assertStringContainsString( 'WHERE `section_id` NOT IN [1]', $this->sql( "SELECT id FROM ezcontentobject WHERE section_id NOT IN ('1')" ) );
-        $this->assertStringContainsString( '`section_id` BETWEEN 1 AND 5', $this->sql( "SELECT id FROM ezcontentobject WHERE section_id BETWEEN '1' AND '5'" ) );
-        $this->assertStringContainsString( 'WHERE 4 = `section_id`', $this->sql( "SELECT id FROM ezcontentobject WHERE '4' = section_id" ) );
-        $this->assertStringContainsString( 'WHERE `name` LIKE "Fo%"', $this->sql( "SELECT id FROM ezcontentobject WHERE name LIKE 'Fo%'" ) );
+        $this->assertStringContainsString( 'WHERE `ezcontentobject`.`section_id` IN [1, 2, 0]', $this->sql( "SELECT id FROM ezcontentobject WHERE section_id IN ('1', 2, 'x')" ) );
+        $this->assertStringContainsString( 'WHERE `ezcontentobject`.`section_id` NOT IN [1]', $this->sql( "SELECT id FROM ezcontentobject WHERE section_id NOT IN ('1')" ) );
+        $this->assertStringContainsString( '`ezcontentobject`.`section_id` BETWEEN 1 AND 5', $this->sql( "SELECT id FROM ezcontentobject WHERE section_id BETWEEN '1' AND '5'" ) );
+        $this->assertStringContainsString( 'WHERE 4 = `ezcontentobject`.`section_id`', $this->sql( "SELECT id FROM ezcontentobject WHERE '4' = section_id" ) );
+        $this->assertStringContainsString( 'WHERE `ezcontentobject`.`name` LIKE "Fo%"', $this->sql( "SELECT id FROM ezcontentobject WHERE name LIKE 'Fo%'" ) );
         $this->assertSame( 12, expCouchbaseDialect::coerce( '12abc', 'int' ) );
         $this->assertSame( 0, expCouchbaseDialect::coerce( 'abc', 'int' ) );
         $this->assertSame( 2.5, expCouchbaseDialect::coerce( ' 2.5', 'float' ) );
@@ -137,14 +138,14 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
     /** CB-06 */
     public function testNullBitsAndMd5()
     {
-        $this->assertStringContainsString( 'WHERE `name` IS NOT VALUED AND `remote_id` IS VALUED',
+        $this->assertStringContainsString( 'WHERE `ezcontentobject`.`name` IS NOT VALUED AND `ezcontentobject`.`remote_id` IS VALUED',
                                            $this->sql( 'SELECT id FROM ezcontentobject WHERE name IS NULL AND remote_id IS NOT NULL' ) );
-        $this->assertStringContainsString( 'WHERE BITAND(`language_mask`, 3) > 0 AND BITOR(`section_id`, 1) = 1',
-                                           $this->sql( 'SELECT id FROM ezcontentobject WHERE language_mask & 3 > 0 AND section_id | 1 = 1' ) );
+        $this->assertStringContainsString( 'WHERE BITAND(`o`.`language_mask`, 3) > 0 AND BITOR(`o`.`section_id`, 1) = 1',
+                                           $this->sql( 'SELECT id FROM ezcontentobject o WHERE language_mask & 3 > 0 AND section_id | 1 = 1' ) );
         $this->assertStringContainsString( 'WHERE (BITAND(`e0`.`lang_mask`, 3) > 0)', $this->sql( 'SELECT e0.id FROM ezurlalias_ml e0 WHERE (e0.lang_mask & 3 > 0)' ) );
-        $this->assertStringContainsString( '`text_md5` = "' . md5( 'fit-healthy' ) . '"',
-                                           $this->sql( "SELECT id FROM ezurlalias_ml WHERE text_md5 = MD5( 'fit-healthy' )" ) );
-        $this->assertStringContainsString( 'BITAND(`language_mask`, 2)', $this->sql( 'SELECT id FROM ezcontentobject WHERE BITAND( language_mask, 2 ) > 0' ) );
+        $this->assertStringContainsString( '`e`.`text_md5` = "' . md5( 'fit-healthy' ) . '"',
+                                           $this->sql( "SELECT id FROM ezurlalias_ml e WHERE text_md5 = MD5( 'fit-healthy' )" ) );
+        $this->assertStringContainsString( 'BITAND(`o`.`language_mask`, 2)', $this->sql( 'SELECT id FROM ezcontentobject o WHERE BITAND( language_mask, 2 ) > 0' ) );
     }
 
     /** CB-07 */
@@ -158,26 +159,27 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'INNER' === 'x' ? '' : 'JOIN `ezcontentobject_tree` AS `t` ON `o`.`id` = `t`.`id`',
                                            $this->sql( 'SELECT o.id FROM ezcontentobject o INNER JOIN ezcontentobject_tree t USING (id)' ) );
         // SQLite's INDEXED BY and MySQL's index hints are left out
-        $this->assertSame( 'SELECT `id` AS `id` FROM `ezcontentobject` AS `ezcontentobject`', $this->sql( 'SELECT id FROM ezcontentobject INDEXED BY x' ) );
-        $this->assertSame( 'SELECT `id` AS `id` FROM `ezcontentobject` AS `ezcontentobject`', $this->sql( 'SELECT id FROM ezcontentobject USE INDEX (a, b)' ) );
+        $this->assertSame( 'SELECT `o`.`id` AS `id` FROM `ezcontentobject` AS `o`', $this->sql( 'SELECT id FROM ezcontentobject o INDEXED BY x' ) );
+        $this->assertSame( 'SELECT `o`.`id` AS `id` FROM `ezcontentobject` AS `o`', $this->sql( 'SELECT id FROM ezcontentobject AS o USE INDEX (a, b)' ) );
     }
 
     /** CB-08 */
     public function testSubSelectsAndUnion()
     {
-        $this->assertStringContainsString( '`id` IN (SELECT RAW `contentobject_id` FROM `ezcontentobject_tree` AS `ezcontentobject_tree` WHERE `depth` = 2)',
-                                           $this->sql( "SELECT id FROM ezcontentobject WHERE id IN (SELECT contentobject_id FROM ezcontentobject_tree WHERE depth = '2')" ) );
+        $this->assertStringContainsString( '`o`.`id` IN (SELECT RAW `t`.`contentobject_id` FROM `ezcontentobject_tree` AS `t` WHERE `t`.`depth` = 2)',
+                                           $this->sql( "SELECT id FROM ezcontentobject o WHERE id IN (SELECT contentobject_id FROM ezcontentobject_tree t WHERE depth = '2')" ) );
         $this->assertStringContainsString( '(SELECT RAW COUNT(*) FROM `ezcontentobject_tree` AS `t` WHERE `t`.`contentobject_id` = `o`.`id`)[0] AS `n`',
                                            $this->sql( 'SELECT o.id, (SELECT COUNT(*) FROM ezcontentobject_tree t WHERE t.contentobject_id = o.id) AS n FROM ezcontentobject o' ) );
         $this->assertStringContainsString( 'EXISTS (SELECT 1 AS `1` FROM',
                                            $this->sql( 'SELECT o.id FROM ezcontentobject o WHERE EXISTS (SELECT 1 FROM ezcontentobject_tree t WHERE t.contentobject_id = o.id)' ) );
-        $this->assertSame( 'SELECT `id` AS `id` FROM `ezcontentobject` AS `ezcontentobject` UNION ALL SELECT `node_id` AS `node_id` FROM `ezcontentobject_tree` AS `ezcontentobject_tree`',
-                           $this->sql( 'SELECT id FROM ezcontentobject UNION ALL SELECT node_id FROM ezcontentobject_tree' ) );
+        $this->assertSame( 'SELECT `o`.`id` AS `id` FROM `ezcontentobject` AS `o` UNION ALL SELECT `t`.`node_id` AS `node_id` FROM `ezcontentobject_tree` AS `t`',
+                           $this->sql( 'SELECT id FROM ezcontentobject o UNION ALL SELECT node_id FROM ezcontentobject_tree t' ) );
         $derived = $this->sql( 'SELECT x.n FROM (SELECT COUNT(*) AS n FROM ezcontentobject) x' );
         $this->assertStringContainsString( 'FROM (SELECT COUNT(*) AS `n` FROM `ezcontentobject` AS `ezcontentobject` WHERE META(`ezcontentobject`).id IS NOT MISSING) AS `x`', $derived );
         // a sub-select that repeats a name of the enclosing query gets its own (SQL++ refuses a repeated name)
-        $this->assertSame( 'SELECT `name` AS `name` FROM `ezcontentobject` AS `ezcontentobject` WHERE `id` = (SELECT RAW MAX(`ezcontentobject_2`.`id`) '
-                           . 'FROM `ezcontentobject` AS `ezcontentobject_2` WHERE `ezcontentobject_2`.`section_id` = `section_id`)[0]',
+        // (a column without its table is the inner table's, as in SQL)
+        $this->assertSame( 'SELECT `ezcontentobject`.`name` AS `name` FROM `ezcontentobject` AS `ezcontentobject` WHERE `ezcontentobject`.`id` = (SELECT RAW MAX(`ezcontentobject_2`.`id`) '
+                           . 'FROM `ezcontentobject` AS `ezcontentobject_2` WHERE `ezcontentobject_2`.`section_id` = `ezcontentobject_2`.`section_id`)[0]',
                            $this->sql( 'SELECT name FROM ezcontentobject WHERE id = (SELECT MAX(ezcontentobject.id) FROM ezcontentobject WHERE ezcontentobject.section_id = section_id)' ) );
         // and a statement refused halfway leaves nothing for the next one
         try
@@ -187,24 +189,27 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
         catch ( expDBUnsupportedException $e )
         {
         }
-        $this->assertSame( 'SELECT `id` AS `id` FROM `ezcontentobject` AS `ezcontentobject`', $this->sql( 'SELECT id FROM ezcontentobject' ) );
+        $this->assertSame( 'SELECT `ezcontentobject`.`id` AS `id` FROM `ezcontentobject` AS `ezcontentobject`', $this->sql( 'SELECT id FROM ezcontentobject' ) );
+        // the sub-select's own column, not the enclosing row's (SQL++ would take qty of the outer row)
+        $this->assertStringContainsString( '(SELECT RAW MAX(`ezcontentobject_2`.`section_id`) FROM `ezcontentobject` AS `ezcontentobject_2`',
+                                           $this->sql( 'SELECT name FROM ezcontentobject WHERE section_id = (SELECT MAX(section_id) FROM ezcontentobject)' ) );
     }
 
     /** CB-09 */
     public function testLimitGroupOrder()
     {
-        $this->assertStringEndsWith( 'ORDER BY `id` DESC LIMIT 10 OFFSET 20', $this->sql( 'SELECT id FROM ezcontentobject ORDER BY id DESC LIMIT 20, 10' ) );
+        $this->assertStringEndsWith( 'ORDER BY `o`.`id` DESC LIMIT 10 OFFSET 20', $this->sql( 'SELECT id FROM ezcontentobject o ORDER BY id DESC LIMIT 20, 10' ) );
         $this->assertStringEndsWith( 'LIMIT 5 OFFSET 2', $this->sql( 'SELECT id FROM ezcontentobject LIMIT 5 OFFSET 2' ) );
-        $this->assertStringEndsWith( 'GROUP BY `section_id` HAVING COUNT(*) > 1 ORDER BY `Total` DESC',
-                                     $this->sql( 'SELECT section_id, COUNT(*) AS Total FROM ezcontentobject GROUP BY section_id HAVING COUNT(*) > 1 ORDER BY total DESC' ) );
+        $this->assertStringEndsWith( 'GROUP BY `o`.`section_id` HAVING COUNT(*) > 1 ORDER BY `Total` DESC',
+                                     $this->sql( 'SELECT section_id, COUNT(*) AS Total FROM ezcontentobject o GROUP BY section_id HAVING COUNT(*) > 1 ORDER BY total DESC' ) );
         // FOR UPDATE is left out
-        $this->assertStringEndsWith( 'WHERE `section_id` = 1', $this->sql( 'SELECT id FROM ezcontentobject WHERE section_id = 1 FOR UPDATE' ) );
+        $this->assertStringEndsWith( 'WHERE `o`.`section_id` = 1', $this->sql( 'SELECT id FROM ezcontentobject o WHERE section_id = 1 FOR UPDATE' ) );
     }
 
     /** CB-10 */
     public function testKeyLookups()
     {
-        $this->assertStringContainsString( 'AS `ezcontentobject` USE KEYS ["5"] WHERE `id` = 5', $this->sql( "SELECT name FROM ezcontentobject WHERE id = '5'" ) );
+        $this->assertStringContainsString( 'AS `ezcontentobject` USE KEYS ["5"] WHERE `ezcontentobject`.`id` = 5', $this->sql( "SELECT name FROM ezcontentobject WHERE id = '5'" ) );
         $this->assertStringContainsString( 'USE KEYS ["1","2"]', $this->sql( 'SELECT name FROM ezcontentobject WHERE id IN (1, 2, 2) AND section_id = 1' ) );
         $md5 = md5( 'x' );
         $this->assertStringContainsString( 'USE KEYS ["[\"0\",\"' . $md5 . '\"]"]',
@@ -227,12 +232,12 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
     public function testFunctions()
     {
         $sql = $this->sql( "SELECT CONCAT(name, '-', id) AS a, SUBSTRING(name, 2, 3) AS b, IFNULL(name, 'x') AS c, COALESCE(name, remote_id, '') AS d, "
-                         . "CAST(remote_id AS UNSIGNED) AS e, IF(id > 1, 'y', 'n') AS f, LENGTH(name) AS g, UNIX_TIMESTAMP() AS h FROM ezcontentobject" );
-        foreach ( array( 'CONCAT(TOSTRING(`name`), "-", TOSTRING(`id`)) AS `a`', 'SUBSTR1(TOSTRING(`name`), 2, 3) AS `b`', 'IFMISSINGORNULL(`name`, "x") AS `c`',
-                         'IFMISSINGORNULL(`name`, `remote_id`, "") AS `d`', 'TRUNC(TONUMBER(`remote_id`)) AS `e`', 'CASE WHEN `id` > 1 THEN "y" ELSE "n" END AS `f`',
-                         'LENGTH(TOSTRING(`name`)) AS `g`', 'TRUNC(NOW_MILLIS() / 1000) AS `h`' ) as $part )
+                         . "CAST(remote_id AS UNSIGNED) AS e, IF(id > 1, 'y', 'n') AS f, LENGTH(name) AS g, UNIX_TIMESTAMP() AS h FROM ezcontentobject o" );
+        foreach ( array( 'CONCAT(TOSTRING(`o`.`name`), "-", TOSTRING(`o`.`id`)) AS `a`', 'SUBSTR1(TOSTRING(`o`.`name`), 2, 3) AS `b`', 'IFMISSINGORNULL(`o`.`name`, "x") AS `c`',
+                         'IFMISSINGORNULL(`o`.`name`, `o`.`remote_id`, "") AS `d`', 'TRUNC(TONUMBER(`o`.`remote_id`)) AS `e`', 'CASE WHEN `o`.`id` > 1 THEN "y" ELSE "n" END AS `f`',
+                         'LENGTH(TOSTRING(`o`.`name`)) AS `g`', 'TRUNC(NOW_MILLIS() / 1000) AS `h`' ) as $part )
             $this->assertStringContainsString( $part, $sql );
-        $this->assertStringContainsString( 'CONCAT2(";", ARRAY_AGG(TOSTRING(`name`)))', $this->sql( "SELECT GROUP_CONCAT(name SEPARATOR ';') AS n FROM ezcontentobject" ) );
+        $this->assertStringContainsString( 'CONCAT2(";", ARRAY_AGG(TOSTRING(`o`.`name`)))', $this->sql( "SELECT GROUP_CONCAT(name SEPARATOR ';') AS n FROM ezcontentobject o" ) );
     }
 
     /** CB-13 */
@@ -263,10 +268,10 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
     {
         $w = $this->dialect()->write( "UPDATE ezcontentobject SET name = 'n', section_id = '2', current_version = current_version + 1 WHERE id = 7" );
         $this->assertSame( 'UPDATE `ezcontentobject` AS `ezcontentobject` USE KEYS ["7"] SET `ezcontentobject`.`name` = "n", `ezcontentobject`.`section_id` = 2, '
-                           . '`ezcontentobject`.`current_version` = `current_version` + 1 WHERE `id` = 7', $w['sql'] );
+                           . '`ezcontentobject`.`current_version` = `ezcontentobject`.`current_version` + 1 WHERE `ezcontentobject`.`id` = 7', $w['sql'] );
         $this->assertFalse( $w['keys_changed'] );
         $this->assertTrue( $this->dialect()->write( 'UPDATE ezcontentobject SET id = 9 WHERE id = 7' )['keys_changed'] );
-        $this->assertSame( 'DELETE FROM `ezpreferences` AS `ezpreferences` WHERE `user_id` = 14 LIMIT 1',
+        $this->assertSame( 'DELETE FROM `ezpreferences` AS `ezpreferences` WHERE `ezpreferences`.`user_id` = 14 LIMIT 1',
                            $this->dialect()->write( "DELETE FROM ezpreferences WHERE user_id = '14' LIMIT 1" )['sql'] );
         $this->assertSame( 'DELETE FROM `ezpreferences`', $this->dialect()->write( 'TRUNCATE TABLE ezpreferences' )['sql'] );
         foreach ( array( 'UPDATE a, b SET a.x = 1', 'DELETE a FROM a JOIN b ON a.id = b.id' ) as $sql )
@@ -297,9 +302,9 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'ignore', $this->dialect()->insert( "INSERT IGNORE INTO ezpreferences (id) VALUES (1)" )['mode'] );
         $this->assertSame( 'replace', $this->dialect()->insert( "INSERT OR REPLACE INTO ezpreferences (id) VALUES (1)" )['mode'] );
         $p = $this->dialect()->insert( "INSERT INTO `ezpreferences` (`id`, `value`) VALUES (1, 'v') ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), user_id = user_id + 1" );
-        $this->assertSame( array( 'value' => array( 'values' => 'value' ), 'user_id' => array( 'sql' => '`user_id` + 1' ) ), $p['update'] );
-        $p = $this->dialect()->insert( 'INSERT INTO ezpreferences (user_id, name) SELECT id, name FROM ezcontentobject WHERE section_id = 1' );
-        $this->assertSame( 'SELECT `id` AS `id`, `name` AS `name` FROM `ezcontentobject` AS `ezcontentobject` WHERE `section_id` = 1', $p['select'] );
+        $this->assertSame( array( 'value' => array( 'values' => 'value' ), 'user_id' => array( 'sql' => '`ezpreferences`.`user_id` + 1' ) ), $p['update'] );
+        $p = $this->dialect()->insert( 'INSERT INTO ezpreferences (user_id, name) SELECT id, name FROM ezcontentobject o WHERE section_id = 1' );
+        $this->assertSame( 'SELECT `o`.`id` AS `id`, `o`.`name` AS `name` FROM `ezcontentobject` AS `o` WHERE `o`.`section_id` = 1', $p['select'] );
         // the catalogue's columns when the statement names none
         $this->assertSame( array( 'id', 'user_id', 'name', 'value' ), $this->dialect()->insert( "INSERT INTO ezpreferences VALUES (1, 2, 'n', 'v')" )['columns'] );
     }
@@ -354,8 +359,8 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
                            expDBSQLHelpers::upsert( 'couchbase', $literal, 't', array( 'id' => 1, 'v' => 'x' ), array( 'id' ) ) );
         $this->assertSame( "GROUP_CONCAT(name SEPARATOR ',')", expDBSQLHelpers::groupConcat( 'couchbase', $literal, 'name' ) );
         // and the driver understands what the helpers write
-        $this->assertStringContainsString( 'CONCAT2(",", ARRAY_AGG(TOSTRING(`name`)))',
-                                           $this->sql( 'SELECT ' . expDBSQLHelpers::groupConcat( 'couchbase', $literal, 'name' ) . ' AS n FROM ezcontentobject' ) );
+        $this->assertStringContainsString( 'CONCAT2(",", ARRAY_AGG(TOSTRING(`o`.`name`)))',
+                                           $this->sql( 'SELECT ' . expDBSQLHelpers::groupConcat( 'couchbase', $literal, 'name' ) . ' AS n FROM ezcontentobject o' ) );
     }
 }
 ?>

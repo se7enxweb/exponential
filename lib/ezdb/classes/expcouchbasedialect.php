@@ -1000,7 +1000,10 @@ class expCouchbaseDialect
                 }
                 $column = strtolower( $name );
                 $kind = $this->columnKind( null, $column, $scope );
-                $owner = count( $scope ) > 1 ? $this->ownerOf( $column, $scope ) : null;
+                // the table of this query level: in a sub-select SQL++ would otherwise take a field of the same name
+                // of the enclosing query (MAX(qty) of the outer row), where SQL takes the inner table's column
+                $aliases = array_keys( $scope );
+                $owner = count( $aliases ) > 1 ? $this->ownerOf( $column, $scope ) : ( $aliases ? $aliases[0] : null );
                 $out[] = array( 'col', ( $owner !== null ? self::quoteName( $owner ) . '.' : '' ) . self::quoteName( $column ), $kind );
                 $pending = $this->pendingAfter( $tokens, $i, $kind );
                 $pendingUntil = $pending !== null ? 1 : 0;
