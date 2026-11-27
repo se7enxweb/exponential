@@ -25662,7 +25662,7 @@ f15de844a6f48039d87fced91d51c2c3  kernel/classes/transfer/expkerneltransferrunsc
 f45e34d12ad6a7e1568acf45fa911975  kernel/classes/uiswitch/expuiswitchprovider.php
 4825d31b955a10f61cc0471d83819048  kernel/classes/uiswitch/expuiswitchproviderinterface.php
 51e9ee8e681ebba7723fb56ece34bccc  kernel/classes/upgrade/expupgrade.php
-048acfdfdb4ac84160d8f2c1dde8730d  kernel/classes/upgrade/expupgradebackup.php
+7bc9ac2a7090af65ebeaca8262bdea8d  kernel/classes/upgrade/expupgradebackup.php
 db01749d43797cb195a44fad8511aea4  kernel/classes/upgrade/expupgradebasestep.php
 3f5ce2b82e16de8075820c6ffd167c47  kernel/classes/upgrade/expupgradecaption.php
 4a5e064a94f4fc93dc157da9b90bc151  kernel/classes/upgrade/expupgradecatalog.php
@@ -25673,7 +25673,7 @@ f32e5c9ced19378ae45cab2e980662a4  kernel/classes/upgrade/expupgradecontext.php
 50322945130ef8b052b873e5c5575cb9  kernel/classes/upgrade/expupgradelock.php
 aa972cdb030e7d20263d7f010ca1c95a  kernel/classes/upgrade/expupgraderecord.php
 06aa91febd94800d7d122368fd33e110  kernel/classes/upgrade/expupgraderegistry.php
-4690b0bf36b566016aca1988827d269a  kernel/classes/upgrade/expupgraderollback.php
+f5e5fc4b959c6639a29ea2ced84345c6  kernel/classes/upgrade/expupgraderollback.php
 75631a8287189a63e30a02b161743f50  kernel/classes/upgrade/expupgradeschemastep.php
 c82aa283628d800244510cc82cc771e0  kernel/classes/upgrade/expupgradescriptstep.php
 a20ef0c5bfdccb72081e9d37df57c19c  kernel/classes/upgrade/expupgradestep.php

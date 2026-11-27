@@ -66,7 +66,11 @@ class expUpgradeBackup
             switch ( $engine )
             {
                 case 'sqlite':
-                    $ok = self::sqlite( $db, $target, $result );
+                    // libSQL and Turso speak SQLite's SQL from a server: VACUUM INTO would write the file on the server
+                    if ( $db instanceof expLibSQLDB )
+                        $result['messages'][] = 'no built-in dump for a libSQL server: back it up with the server\'s own tools (a copy of sqld\'s data directory, Turso\'s point-in-time restore) and run with --no-backup';
+                    else
+                        $ok = self::sqlite( $db, $target, $result );
                     break;
                 case 'mysql':
                     $ok = self::mysql( $db, $target, $result );

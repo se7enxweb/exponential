@@ -256,6 +256,9 @@ class expUpgradeRollback
         $engine = expKernelTableSchema::type( $db );
         if ( !empty( $meta['engine'] ) && $meta['engine'] !== $engine )
             throw new RuntimeException( "the caption is of a {$meta['engine']} database, this one is $engine" );
+        // libSQL and Turso: SQLite's SQL, but the database is on a server, not a file to write back
+        if ( $db instanceof expLibSQLDB )
+            throw new RuntimeException( 'no built-in restore for a libSQL server: restore it with the server\'s own tools (sqld\'s data directory, Turso\'s point-in-time restore)' );
         if ( !in_array( $engine, self::RESTORE_ENGINES, true ) )
             throw new RuntimeException( "no built-in restore for $engine; restore it by hand:\n"
                                         . implode( "\n", self::manualSteps( $engine, $db, $dir, isset( $meta['tables'] ) ? (array)$meta['tables'] : array() ) ) );
