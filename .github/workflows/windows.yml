@@ -38,7 +38,8 @@ jobs:
   windows:
     name: Windows (${{ matrix.os }}, PHP ${{ matrix.php }})
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 60
+    # the PHPUnit steps have time limits of their own (10 + 45 + 30 minutes); the job's covers them and the install
+    timeout-minutes: 100
     strategy:
       fail-fast: false
       matrix:
@@ -82,14 +83,46 @@ jobs:
         shell: bash
         run: php bin/php/ezpgenerateautoloads.php -s -e
 
-      - name: DB-less PHPUnit suites
+      # One step per suite, each with its own time limit and an event log (every test's start and end): a test that
+      # hangs stops its step, not the job, and the step "PHPUnit events" names it, with the failed tests
+      - name: DB-less PHPUnit suites (security, upgrade-smoke)
         shell: bash
+        timeout-minutes: 10
         env:
           CI: '1'
+        run: php vendor/bin/phpunit --colors=always --log-events-text "$RUNNER_TEMP/events-smoke.txt" --testsuite security,upgrade-smoke
+
+      - name: DB-less PHPUnit suite kernel-classes
+        if: ${{ !cancelled() }}
+        shell: bash
+        timeout-minutes: 45
+        env:
+          CI: '1'
+        run: php vendor/bin/phpunit --colors=always --log-events-text "$RUNNER_TEMP/events-kernel-classes.txt" --testsuite kernel-classes
+
+      - name: DB-less PHPUnit suite lib
+        if: ${{ !cancelled() }}
+        shell: bash
+        timeout-minutes: 30
+        env:
+          CI: '1'
+        run: php vendor/bin/phpunit --colors=always --log-events-text "$RUNNER_TEMP/events-lib.txt" --testsuite lib
+
+      - name: PHPUnit events
+        if: always()
+        shell: bash
         run: |
-          php vendor/bin/phpunit --colors=always --testsuite security,upgrade-smoke,kernel-classes,lib
+          for f in "$RUNNER_TEMP"/events-*.txt; do
+            [ -f "$f" ] || continue
+            echo "=== $(basename "$f"): $(grep -c 'Test Prepared' "$f") tests started, $(grep -c 'Test Finished' "$f") finished"
+            grep -E 'Test (Failed|Errored)' "$f" | cut -c1-400 | head -80
+            echo '--- last events'
+            tail -n 8 "$f" | cut -c1-400
+          done
 
       - name: Install a site on SQLite (exp:install)
+        id: install
+        if: ${{ !cancelled() }}
         shell: pwsh
         run: |
           $pw = 'Ci9-' + [guid]::NewGuid().ToString('N') + '-x'
@@ -104,6 +137,7 @@ jobs:
           }
 
       - name: Requests through PHP's built-in web server
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         shell: pwsh
         run: |
           $log = Join-Path $env:RUNNER_TEMP 'php-server'
