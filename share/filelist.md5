@@ -3185,7 +3185,7 @@ a9e0d8890cffe0019cf46dd2158397cf  design/standard/templates/setup/db/pgsql_conne
 33471de3ee7aa009ab822f7900679e83  design/standard/templates/setup/debug_toolbar.tpl
 647d19fbe66b955edea5f5e4ac16c024  design/standard/templates/setup/extensions.tpl
 5a7a2dbc5de8f4914d3d8c3b9b4a533a  design/standard/templates/setup/info.tpl
-f82f0dd5aab91cbd31962752326edf44  design/standard/templates/setup/init/confirm_reinstall.tpl
+03783c4b268b35660e7c4a75e4a05d72  design/standard/templates/setup/init/confirm_reinstall.tpl
 305f673d8fe83fa9c18588c69b403b0d  design/standard/templates/setup/init/create_sites.tpl
 ca8a63c304c25e3634e5fa0854d09fdb  design/standard/templates/setup/init/create_sites_help.tpl
 c0219421895a4cf5b88e26960960baac  design/standard/templates/setup/init/database_check.tpl
@@ -3202,7 +3202,7 @@ a02008c87dd24fbfbfb101bbeb1399aa  design/standard/templates/setup/init/email_set
 c567b256954ddda4ebd770f35f6fbd9d  design/standard/templates/setup/init/final.tpl
 aafea629f775ef9a8e9043d52b7fd16e  design/standard/templates/setup/init/final_help.tpl
 371b031f800c532659953c4a587eb0c0  design/standard/templates/setup/init/finished.tpl
-48cb2262fd315446231730ad08b00aad  design/standard/templates/setup/init/installed.tpl
+9508c873a25048405216b05dcdffc62b  design/standard/templates/setup/init/installed.tpl
 9de8bf6a661290cd41f9fb8f456a9378  design/standard/templates/setup/init/language_options.tpl
 0ba26e00bd66e5dd5de92bc75b8b0ab7  design/standard/templates/setup/init/language_options_help.tpl
 d3261404c421eb4f2458eca7c614914f  design/standard/templates/setup/init/navigation.tpl
@@ -3592,7 +3592,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b0f7881284de535b5a5727d62e129bf2  doc/changelogs/6.0/6.0.15.md
+4f659da1673bc392458f0193dcaa05a5  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -5659,7 +5659,7 @@ f28588e05ec0e35f21c7961596721b67  doc/eng-us/examples/ini-settings/site/RequestL
 18308ceff84326f966bf76d2a0ac90a1  doc/eng-us/examples/ini-settings/site/SearchSettings.md
 e48642eee4dbd6e70732b2362277b641  doc/eng-us/examples/ini-settings/site/Session.md
 5070c9d5ae4fdbe45aa19dbdf9cbefc8  doc/eng-us/examples/ini-settings/site/SettingsViewSettings.md
-9ea662af35016255e2bf43b4d5011026  doc/eng-us/examples/ini-settings/site/SetupSettings.md
+134ddc13e2f3cc95127a75d210e2b5ab  doc/eng-us/examples/ini-settings/site/SetupSettings.md
 94c8a3269ae0216f9bb8c244676c3164  doc/eng-us/examples/ini-settings/site/ShopSettings.md
 14a2d46327c1841a0bb5225cb6fd8ad2  doc/eng-us/examples/ini-settings/site/SignInSecondFactorSettings.md
 f919ae53a39eb0dbdae8797d7dc8691e  doc/eng-us/examples/ini-settings/site/SiteAccessRules.md
@@ -11930,7 +11930,7 @@ a5222d6181149b9dc971b6b0e7f50ec8  doc/eng-us/help/resellers/sales/naming-and-bra
 41ae0d0facf25f9c806d6926bbc62138  doc/eng-us/help/resellers/sales/pre-sales-questions-and-answers.md
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
 c70361337ad5dd16f517a0ade52890a6  doc/eng-us/help/searching.md
-9a9a1ad91691d8037146fd5041c1e0cf  doc/eng-us/help/security-hardening.md
+f76ca05be9ce01210ffcdf81ced61bd2  doc/eng-us/help/security-hardening.md
 0e664fa25d750b89071708b2406b538c  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
 91942493ef5ce934473bb7e67e280b77  doc/eng-us/help/site-packages/admin-gui/README.md
@@ -13294,7 +13294,7 @@ bc4db0183deb0089e58c6eaea3a5ff1f  doc/eng-us/install/01-introduction.md
 d5c2d19a767ca9e245baded77a66621d  doc/eng-us/install/02-requirements.md
 efcb7e6e422a7d33b312c844e73c7efb  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
-abf1b7ea00f800c3e37c051e0d1af5b7  doc/eng-us/install/05-setup-wizard.md
+d0836635035feee9ce75fa8222d227e9  doc/eng-us/install/05-setup-wizard.md
 83261f15db4694059d061715d1d33f37  doc/eng-us/install/06-kickstarter.md
 78817715b73b51d31d08d87bfbff8b20  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
@@ -13688,7 +13688,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-8dcca1638f86524a1aaf1c2d602d0e55  doc/ger-de/.paths.json
+67cf934a976845131c77e00d32e08264  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -15796,7 +15796,7 @@ b1bbd5b632dffcbf06fde8214877c824  doc/ger-de/beispiele/ini-einstellungen/site/Re
 3d51a2f37c53f10f7d29266e969bb321  doc/ger-de/beispiele/ini-einstellungen/site/SearchSettings.md
 6c6a788f8f8b0d0f590d03f0545f958d  doc/ger-de/beispiele/ini-einstellungen/site/Session.md
 fcad2a9141871c1b2031263cf684ae7f  doc/ger-de/beispiele/ini-einstellungen/site/SettingsViewSettings.md
-3171d7499731ff93b9e7cbbbc56ce25e  doc/ger-de/beispiele/ini-einstellungen/site/SetupSettings.md
+5d38de2dd9869a612d6b537b2b08742a  doc/ger-de/beispiele/ini-einstellungen/site/SetupSettings.md
 20025c05a82e1ac5b21fd3d3231e342a  doc/ger-de/beispiele/ini-einstellungen/site/ShopSettings.md
 9f93a2a06b58369321c32dc53867ba77  doc/ger-de/beispiele/ini-einstellungen/site/SignInSecondFactorSettings.md
 68280efa8ec9398045e4676359d4441a  doc/ger-de/beispiele/ini-einstellungen/site/SiteAccessRules.md
@@ -20930,7 +20930,7 @@ c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite
 b0200212398d100a07f395dcecc75e21  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/siteaccesses-und-sprachen-von-sevenx-multisite.md
 c3a61289ca948e9b152733bd800f252a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md
 27f30d5a9f89ed9593b599f2582c1bdc  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/woraus-sevenx-multisite-besteht.md
-1b7c747ddde1fd48d28a2c152e9cf8b8  doc/ger-de/hilfe/sicherheitshaertung.md
+9884729077d7caff01f1aaf5ae6cc701  doc/ger-de/hilfe/sicherheitshaertung.md
 c702aca91ab21f76627d538e4011e007  doc/ger-de/hilfe/softwareingenieure/abhaengigkeitsverwaltung-mit-composer.md
 476e52a10fdca789926b377d7d701538  doc/ger-de/hilfe/softwareingenieure/anwendungsserver.md
 f6d7722fd05bb14f5012d2a44023f56f  doc/ger-de/hilfe/softwareingenieure/api-design-rest-ezjscore-headless.md
@@ -23231,7 +23231,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 fa0c94d942047738800834a0095c0907  doc/ger-de/installation/02-voraussetzungen.md
 e8a1d89728201585d1cb6850cad1ce36  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
-83bed6e4c7e3f819b4203c13823ad2c3  doc/ger-de/installation/05-setup-assistent.md
+39c81c9217b060c6c7769b621a4a1faf  doc/ger-de/installation/05-setup-assistent.md
 00ff5b63c49005d825b5c7d213ba05ea  doc/ger-de/installation/06-kickstarter.md
 62fc3d902513eb0bddc5a4e103ed78d7  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
@@ -25035,7 +25035,7 @@ afb2513e75fc4aac5845415fcb286b09  kernel/classes/expscriptstatus.php
 fca699a4c3df7cff3d9c09dbb2ef3e28  kernel/classes/expsecretrule.php
 9f97a60176a20903e12d18fc338f76a8  kernel/classes/expsetupfilecopy.php
 25bf89dd759779a3963825271ebb5475  kernel/classes/expsetuplog.php
-05789280aa3ec1b3c7f0f97a930eee63  kernel/classes/expsetupwizardguard.php
+a391817942065805c3ebf135d4fae2c1  kernel/classes/expsetupwizardguard.php
 db9f242bb5c064641868a67dd67c3064  kernel/classes/expsiteaccessfornode.php
 c45fe45f4c305e95e5ffdf4b7bf29503  kernel/classes/expsiteaccessoverview.php
 5420c565e6304001c44671bd9cbd6d7d  kernel/classes/expsystemreport.php
@@ -26377,7 +26377,7 @@ e6144e472a2c4552d0be9718564e8b4c  kernel/private/classes/ezpkernel.php
 be8cdbb5b8fe8e504850e689e21def82  kernel/private/classes/ezpkernelredirect.php
 cae1daaf1de53266d1073fd3a76faa21  kernel/private/classes/ezpkernelresult.php
 cfb368b88c619b389425dee03f10b9c0  kernel/private/classes/ezpkerneltreemenu.php
-df5a73974bc9e586d63e676218048526  kernel/private/classes/ezpkernelweb.php
+584b512fd2cf64b7942e6c66e0c71c5f  kernel/private/classes/ezpkernelweb.php
 5c244f8105822a81124a48dcf75f657f  kernel/private/classes/ezplanguageswitcher.php
 69d8850cc8d71b9a27d3ddc558d04268  kernel/private/classes/ezpmail.php
 8dcd128ae32ce6b90bb3bd055edaaeda  kernel/private/classes/ezpmobiledevicedetect.php
@@ -26611,7 +26611,7 @@ b3bdcdc24bb02063bdaa0029435ade1c  kernel/private/classes/views/setup/cachetoolba
 14b4b85b145bcf760912bb817150bbce  kernel/private/classes/views/setup/datatype.php
 52dd9789d560b405889c88f5bacd9a32  kernel/private/classes/views/setup/designextension.php
 00e81dd6654ca58068a8749a822ad504  kernel/private/classes/views/setup/extensions.php
-ac6309e0e916d9e6bc9415620879404f  kernel/private/classes/views/setup/ezsetup.php
+0439b6ee55e05141b9e4578bdf706e18  kernel/private/classes/views/setup/ezsetup.php
 ae11e7010436d30804244b58f892c156  kernel/private/classes/views/setup/handlerextension.php
 a72243fd530cc0f2c7a4bad6c4709082  kernel/private/classes/views/setup/info.php
 145b00435bed599bec736dee0133ebc6  kernel/private/classes/views/setup/kerneloverride.php
@@ -27662,7 +27662,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 6c938fbb1ab82364ff3f504feab59139  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-928dba1d0b108785ce9a8e1a95f2c837  settings/site.ini
+bdb6f0564b3fb8606f7a952b6880d622  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -28753,7 +28753,7 @@ f47289fd54396e5664da34ea9a9ae48d  share/translations/ful-SN/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-3bca737c43b5477077088c45a28f297e  share/translations/ger-DE/translation.ts
+32fecf3085d550269bf82b3fd039445e  share/translations/ger-DE/translation.ts
 1663811be417a845709468b796268b8e  share/translations/gla-GB/GUIDE.md
 9d09cab968893cf4e8bdf9298f75d0fe  share/translations/gla-GB/translation.ts
 c9c96be6fea59b4e6e70919f636e2de8  share/translations/gle-IE/GUIDE.md
@@ -28950,7 +28950,7 @@ f0862410ce252e9892e34a0370766534  share/translations/tur-TR/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
 7f6928d835f8d4ccbf748f020b11301e  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-1bf66052078d3c80dde2893e9e84ef2a  share/translations/untranslated/translation.ts
+3a6b65987714b89038d8138eb7e9e86a  share/translations/untranslated/translation.ts
 50c0423066d265dc70107a85555ec431  share/translations/urd-PK/GUIDE.md
 42a5e9b8bcf0e1cd9fc476981afdba5d  share/translations/urd-PK/translation.ts
 9e9e7eefce4bcdac8cdf37ea44206f6e  share/translations/uzb-UZ/GUIDE.md
@@ -30165,7 +30165,7 @@ cf8be805ae4c110abc4bbd547249a7e8  tests/tests/kernel/classes/setup/SetupContentF
 866007765df415bc0fa1c5ba884b19d5  tests/tests/kernel/classes/setup/SetupPhpVersionTest.php
 1a309404167d3bf08eab4bc81308bb16  tests/tests/kernel/classes/setup/SetupRemoteIndexSanitizingTest.php
 5dcf377fe99f8d8c6e6adcde9f3142bd  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
-cbcb871b0c8ee1997d8cdcde3b30e2cc  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
+45c81627f1279e7ade4d72297aa65a60  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 ff16951947f561095e82a782732322f0  tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php
 c9d7f04ca55c0d534e3521802d1dafdc  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
 6d1076e66921fe31f959b4ce5276927e  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
@@ -31395,3 +31395,5 @@ f1d35f3249f3b26801bdabfeced5a1e0  tests/tests/lib/ezdb/cassandra/expCassandraSch
 f2d585f076c3d7278c3a89a66822a152  tests/tests/lib/ezdb/cassandra/live/expCassandraLiveTest.php
 e7d826525e4006ac99bff5398a6124eb  tests/tests/lib/ezdb/cassandra/live/expCassandraLiveTestBase.php
 0cebc8c90ab97fa841af284dd569771d  tests/tests/lib/ezdb/cassandra/live/expScyllaDBLiveTest.php
+922522b4d1826c5eecf1ddafb2dec66e  doc/eng-us/bc/6.0/setup-wizard-on-installed-site.md
+4689910b2c5bfa0348365c40d01e5433  doc/ger-de/bc/6.0/setup-assistent-auf-installierter-website.md
