@@ -4,7 +4,7 @@ audience: admin, developer, dba
 category: install-upgrade
 order: 9
 summary: Every database Exponential 6.0.15 reaches, in one matrix (status in 6.0.14 and 6.0.15, site database, DFS cluster, read replicas, installers, data table engine, import source, PHP extension, operating system, CI, tested upgrades), with the measured timings and a decision guide per use case - one server, a cluster, a managed cloud database, embedded and demo sites, analytics and imports, Windows, and moving off MS Access or another old database.
-keywords: choosing a database, database matrix, which database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, ODBC, MS Access, exp:access:import, data tables, sqliimport, DFS cluster, read replicas, xne, upgrade, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc
+keywords: choosing a database, database matrix, which database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, data tables, sqliimport, DFS cluster, read replicas, xne, upgrade, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc
 featured: true
 context: setup/info, setup/systemupgrade
 type: help
@@ -80,6 +80,7 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | [IBM Informix 14.10 and 15](../features/6.0/informix-database-driver.md) | no | new | yes (measured on 15) | **no** | no | wizard (with `ibm_db2` or `pdo_ibm`), kickstarter, `informix` |
 | [Any database through ODBC](../features/6.0/odbc-database-driver.md) | no | new | **no**: data tables and import | no | no | none |
 | [MS Access (`.accdb`, `.mdb`)](../features/6.0/ms-access-support.md) | no | new | **no**: import, and data tables on Windows | no | no | none (`exp:access:import`) |
+| [Apache Cassandra 4.0 to 5.0, ScyllaDB 2025.1](../features/6.0/cassandra-scylladb-driver.md) | no | new | **no**: data tables and import ([why](../features/6.0/cassandra-scylladb-driver.md#why-no-site-runs-on-cassandra)) | no | no | none (`exp:cassandra:import`) |
 
 Notes on the table:
 
@@ -120,6 +121,7 @@ real 6.0.14 site, upgrades it to the current code and rolls it back.
 | IBM Db2, IBM Informix | `pdo_ibm` or `ibm_db2` (PECL) with IBM's Data Server Driver; Informix needs `ibm_db2` for a site | `db2`, `informix` | a data table connection | Linux | live tests on Db2 12.1 and 11.5 and Informix 15 and 14.10 (job `db2`) | not yet |
 | ODBC | `pdo_odbc` or `odbc`, and the database's ODBC driver | `odbc` | a data table connection; `exp:access:import` into it | Linux, Windows | live tests on SQL Server, PostgreSQL, MariaDB and SQLite, both layers (job `odbc`); LocalDB on Windows | not applicable |
 | MS Access | Windows: `odbc` and `pdo_odbc` with the Access Database Engine (x64); Linux: the MDBTools programs (import only) | `msaccess` (Windows) | `exp:access:import` | Windows (driver and import), Linux and macOS (import with MDBTools) | the import on Linux; the driver and the import on windows-2022 and windows-2025 (job `msaccess-windows`) | not applicable |
+| Cassandra, ScyllaDB | PHP 8.1 and the library `mroosz/php-cassandra` (no extension) | `cassandra`, `scylladb` | a data table connection; `exp:cassandra:import` of a keyspace | Linux | live tests on Cassandra 5.0 and ScyllaDB 2025.1, PHP 8.1 and 8.5 (job `cassandra`) | not applicable |
 
 The upgrade tool's tests are described in its own documentation; an upgrade from 6.0.14 exists only for the
 databases 6.0.14 had. A site installed on one of the new databases is first upgraded by the release after 6.0.15, and
@@ -144,6 +146,7 @@ the database's tool and run the upgrade with `--no-backup`.
 | Firebird | **none** | `gbak` or `nbackup` |
 | IBM Db2, IBM Informix | **none** | the database's own backup |
 | DuckDB | **none** ("no built-in dump for duckdb") | copy the file while no process writes, or `EXPORT DATABASE` from the `duckdb` program |
+| Cassandra, ScyllaDB (data tables only) | **none** | `nodetool snapshot`, or the vendor's backup tool |
 
 The full procedure per engine: [Backups per engine](database-administrators/backups-per-engine.md).
 
@@ -169,6 +172,8 @@ they measured, so the numbers say how long something took there, not how two dat
 | | DuckDB, a row read by its key / inserted with a commit / inside a transaction | 2.7 ms / 7.4 ms / 2.7 ms |
 | A front page | DuckDB, view cache filled / empty | 2.3 to 3.5 s / 17 s |
 | An Access file imported (4,103 rows, `exp:access:import`) | into SQLite, MariaDB, PostgreSQL, SQL Server over ODBC | 0.4 s, 2.5 s, 2.6 s, 31 s |
+| One statement | Cassandra 5.0 / ScyllaDB 2025.1, a row read by its key / inserted with a new id | 2.2 ms / 0.6 ms; 17.6 ms / 17.8 ms |
+| A keyspace table imported (2,000 rows, `exp:cassandra:import`) | from Cassandra / ScyllaDB into SQLite | 0.20 s / 0.51 s |
 
 SQLite and MySQL answer a lookup by key in tens of microseconds; DuckDB and Firebird in milliseconds, which is why a
 page with hundreds of statements needs the view cache on those two.
@@ -206,6 +211,7 @@ the PostgreSQL protocol databases (no backend offered by `exp:cluster:enable`).
 | TiDB Cloud, SingleStore Helios | `tidb`, `singlestore` | measured on the self-hosted servers; TLS with `--db-ssl=verify` |
 | CockroachDB, YugabyteDB (self-hosted or cloud) | `cockroachdb`, `yugabytedb` | measured on one node each; slow DDL, no DFS backend |
 | Google Cloud Spanner | `spanner` as a data table connection | not a site database |
+| DataStax Astra DB, ScyllaDB Cloud, Amazon Keyspaces | `cassandra` or `scylladb` as a data table connection (TLS) | not a site database; the services themselves not tried |
 
 ### Embedded, demo and build sites
 
@@ -218,7 +224,7 @@ the PostgreSQL protocol databases (no backend offered by `exp:cluster:enable`).
 
 - **A DuckDB file as a data table connection** (`Engine=duckdb`) keeps analytics next to a site on any database;
   SQLI Import's DuckDB source reads Parquet, CSV and JSON files through DuckDB.
-- **Spanner** (through PGAdapter), **Firebird** and **any ODBC database** reach a site as data table connections:
+- **Spanner** (through PGAdapter), **Firebird**, **Cassandra and ScyllaDB** and **any ODBC database** reach a site as data table connections:
   tables are made, read and written there, and rows go into content through the data table tools.
 - **SQLI Import's SQL source** reads a single `SELECT` from MySQL or MariaDB, PostgreSQL, SQLite, Oracle or SQL Server,
   directly or through a named connection of one of those engines.
@@ -243,7 +249,7 @@ Firebird and DuckDB have not been tried on Windows. See [Exponential on Windows]
 
 ## In development
 
-Drivers for SAP databases, for Cassandra and ScyllaDB and for ClickHouse and MonetDB are being built. They are not
+Drivers for SAP databases and for ClickHouse and MonetDB are being built. They are not
 part of any release, and nothing on this page describes them.
 
 ## Related pages

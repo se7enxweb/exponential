@@ -4,7 +4,7 @@ audience: admin, developer, dba
 category: install-upgrade
 order: 9
 summary: Jede Datenbank, die Exponential 6.0.15 erreicht, in einer Matrix (Stand in 6.0.14 und 6.0.15, Site-Datenbank, DFS-Cluster, Lesereplikate, Installer, Datentabellen-Engine, Importquelle, PHP-Erweiterung, Betriebssystem, CI, getestete Aktualisierungen), mit den gemessenen Zeiten und einer Entscheidungshilfe je Einsatzzweck - ein Server, ein Cluster, eine verwaltete Cloud-Datenbank, eingebettete und Demo-Sites, Auswertungen und Importe, Windows sowie der Umzug weg von MS Access oder einer anderen alten Datenbank.
-keywords: Datenbank wählen, Datenbankmatrix, welche Datenbank, choosing a database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, ODBC, MS Access, exp:access:import, Datentabellen, sqliimport, DFS-Cluster, Lesereplikate, xne, Aktualisierung, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc
+keywords: Datenbank wählen, Datenbankmatrix, welche Datenbank, choosing a database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, Datentabellen, sqliimport, DFS-Cluster, Lesereplikate, xne, Aktualisierung, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc
 featured: true
 context: setup/info, setup/systemupgrade
 type: help
@@ -81,6 +81,7 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | [IBM Informix 14.10 und 15](../funktionen/6.0/informix-datenbanktreiber.md) | nein | neu | ja (auf 15 gemessen) | **nein** | nein | Assistent (mit `ibm_db2` oder `pdo_ibm`), Kickstarter, `informix` |
 | [Jede Datenbank über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md) | nein | neu | **nein**: Datentabellen und Import | nein | nein | keiner |
 | [MS Access (`.accdb`, `.mdb`)](../funktionen/6.0/ms-access-unterstuetzung.md) | nein | neu | **nein**: Import, unter Windows auch Datentabellen | nein | nein | keiner (`exp:access:import`) |
+| [Apache Cassandra 4.0 bis 5.0, ScyllaDB 2025.1](../funktionen/6.0/cassandra-scylladb-treiber.md) | nein | neu | **nein**: Datentabellen und Import ([warum](../funktionen/6.0/cassandra-scylladb-treiber.md#warum-keine-site-auf-cassandra-läuft)) | nein | nein | keiner (`exp:cassandra:import`) |
 
 Anmerkungen zur Tabelle:
 
@@ -124,6 +125,7 @@ nimmt die Aktualisierung wieder zurück.
 | IBM Db2, IBM Informix | `pdo_ibm` oder `ibm_db2` (PECL) mit dem Data Server Driver von IBM; Informix braucht für eine Site `ibm_db2` | `db2`, `informix` | eine Datentabellen-Verbindung | Linux | Live-Tests auf Db2 12.1 und 11.5 sowie Informix 15 und 14.10 (Job `db2`) | noch nicht |
 | ODBC | `pdo_odbc` oder `odbc` und der ODBC-Treiber der Datenbank | `odbc` | eine Datentabellen-Verbindung; `exp:access:import` in sie hinein | Linux, Windows | Live-Tests auf SQL Server, PostgreSQL, MariaDB und SQLite, beide Schichten (Job `odbc`); LocalDB unter Windows | entfällt |
 | MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine (x64); Linux: die Programme von MDBTools (nur Import) | `msaccess` (Windows) | `exp:access:import` | Windows (Treiber und Import), Linux und macOS (Import mit MDBTools) | der Import unter Linux; Treiber und Import auf windows-2022 und windows-2025 (Job `msaccess-windows`) | entfällt |
+| Cassandra, ScyllaDB | PHP 8.1 und die Bibliothek `mroosz/php-cassandra` (keine Erweiterung) | `cassandra`, `scylladb` | eine Datentabellen-Verbindung; `exp:cassandra:import` eines Keyspace | Linux | Live-Tests auf Cassandra 5.0 und ScyllaDB 2025.1, PHP 8.1 und 8.5 (Job `cassandra`) | entfällt |
 
 Die Tests des Aktualisierungswerkzeugs sind in seiner eigenen Dokumentation beschrieben; eine Aktualisierung von 6.0.14
 gibt es nur für die Datenbanken, die 6.0.14 hatte. Eine Site auf einer der neuen Datenbanken wird zum ersten Mal von dem
@@ -149,6 +151,7 @@ jeder anderen Datenbank sichern Sie selbst mit dem Werkzeug der Datenbank und f�
 | Firebird | **keiner** | `gbak` oder `nbackup` |
 | IBM Db2, IBM Informix | **keiner** | die eigene Sicherung der Datenbank |
 | DuckDB | **keiner** („no built-in dump for duckdb“) | die Datei kopieren, solange kein Prozess schreibt, oder `EXPORT DATABASE` aus dem Programm `duckdb` |
+| Cassandra, ScyllaDB (nur Datentabellen) | **keiner** | `nodetool snapshot` oder das Backup-Werkzeug des Herstellers |
 
 Das vollständige Verfahren je Engine: [Sicherungen je Engine](datenbankadministratoren/sicherungen-je-engine.md).
 
@@ -175,6 +178,8 @@ nicht, wie zwei Datenbanken im Vergleich abschneiden.
 | | DuckDB, eine Zeile über ihren Schlüssel gelesen / mit Commit eingefügt / innerhalb einer Transaktion | 2,7 ms / 7,4 ms / 2,7 ms |
 | Eine Startseite | DuckDB, Ansichts-Cache gefüllt / leer | 2,3 bis 3,5 s / 17 s |
 | Eine Access-Datei importiert (4.103 Zeilen, `exp:access:import`) | in SQLite, MariaDB, PostgreSQL, SQL Server über ODBC | 0,4 s, 2,5 s, 2,6 s, 31 s |
+| Eine Anweisung | Cassandra 5.0 / ScyllaDB 2025.1, eine Zeile über ihren Schlüssel gelesen / mit neuer ID eingefügt | 2,2 ms / 0,6 ms; 17,6 ms / 17,8 ms |
+| Eine Keyspace-Tabelle importiert (2.000 Zeilen, `exp:cassandra:import`) | aus Cassandra / ScyllaDB nach SQLite | 0,20 s / 0,51 s |
 
 SQLite und MySQL beantworten einen Zugriff über den Schlüssel in einigen zehn Mikrosekunden, DuckDB und Firebird in
 Millisekunden; deshalb braucht eine Seite mit Hunderten von Anweisungen auf diesen beiden den Ansichts-Cache.
@@ -214,6 +219,7 @@ PostgreSQL-Protokoll (kein Backend in `exp:cluster:enable`).
 | TiDB Cloud, SingleStore Helios | `tidb`, `singlestore` | auf den selbst betriebenen Servern gemessen; TLS mit `--db-ssl=verify` |
 | CockroachDB, YugabyteDB (selbst betrieben oder in der Cloud) | `cockroachdb`, `yugabytedb` | je auf einem Knoten gemessen; langsame DDL, kein DFS-Backend |
 | Google Cloud Spanner | `spanner` als Datentabellen-Verbindung | keine Site-Datenbank |
+| DataStax Astra DB, ScyllaDB Cloud, Amazon Keyspaces | `cassandra` oder `scylladb` als Datentabellen-Verbindung (TLS) | keine Site-Datenbank; die Dienste selbst nicht ausprobiert |
 
 ### Eingebettete, Demo- und Build-Sites
 
@@ -227,8 +233,8 @@ PostgreSQL-Protokoll (kein Backend in `exp:cluster:enable`).
 
 - **Eine DuckDB-Datei als Datentabellen-Verbindung** (`Engine=duckdb`) hält Auswertungen neben einer Site auf jeder
   Datenbank; die DuckDB-Quelle von SQLI Import liest Parquet-, CSV- und JSON-Dateien über DuckDB.
-- **Spanner** (über PGAdapter), **Firebird** und **jede ODBC-Datenbank** erreichen eine Site als
-  Datentabellen-Verbindungen: Dort werden Tabellen angelegt, gelesen und geschrieben, und Zeilen gelangen über die
+- **Spanner** (über PGAdapter), **Firebird**, **Cassandra und ScyllaDB** und **jede ODBC-Datenbank** erreichen eine
+  Site als Datentabellen-Verbindungen: Dort werden Tabellen angelegt, gelesen und geschrieben, und Zeilen gelangen über die
   Werkzeuge der Datentabellen in Inhalte.
 - **Die SQL-Quelle von SQLI Import** liest ein einzelnes `SELECT` aus MySQL oder MariaDB, PostgreSQL, SQLite, Oracle
   oder SQL Server, direkt oder über eine benannte Verbindung einer dieser Engines.
@@ -256,7 +262,7 @@ Siehe [Exponential unter Windows](exponential-unter-windows.md).
 
 ## In Entwicklung
 
-Treiber für Datenbanken von SAP, für Cassandra und ScyllaDB sowie für ClickHouse und MonetDB entstehen gerade. Sie
+Treiber für Datenbanken von SAP sowie für ClickHouse und MonetDB entstehen gerade. Sie
 sind in keinem Release enthalten, und nichts auf dieser Seite beschreibt sie.
 
 ## Verwandte Seiten
