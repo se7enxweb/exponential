@@ -38,7 +38,20 @@ fragen Sie Ihren Administrator.
 | Den Audit-Trail einem Prüfer übergeben | **Audit export** | Export | Audit-Einträge | CSV, JSON Lines, JSON | **Audit > Export** |
 | Die alten Adressen einer Website nach einem Umzug erhalten: viele Weiterleitungen, Aliase und Platzhalter aus einer Datei, als Ganzes rückgängig zu machen, und für den Webserver wieder herausgeschrieben | **URL-Zuordnungen** | beide | URL-Übersetzer, URL-Platzhalter, Weiterleitungen | CSV, XLSX, ODS, JSON, Apache- und nginx-Regeln | **Setup > URL-Übersetzer** (oder **URL Platzhalter**) **> Importieren** und **Exportieren**; [URLs migrieren](urls-migrieren.md) |
 | Die Tabelle eines Moduls auf einer anderen Datenbank anlegen oder aktualisieren, ihre Zeilen ansehen, eine Verbindung zu einer externen Datenbank einrichten | **Data tables** (Datentabellen) | beide | Datentabellen, Klassen | SQL, .dba | **Setup > Datentabellen** |
+| Die Tabellen einer MS-Access-Datei (`.accdb`, `.mdb`) in die Datenbank der Site oder eine Datentabelle kopieren | **`exp:access:import`** (6.0.15) | Import | die Datenbank der Site, Datentabellen | Access 97 bis ACE | die Konsole: `./console exp:access:import datei.accdb --list`, dann `--apply` ([MS Access](../funktionen/6.0/ms-access-unterstuetzung.md)) |
 | Eine Datentabelle und die Inhalte einer Klasse abgleichen, einmal, nach Zeitplan oder live, in jede Richtung | **Data tables** (Synchronisationen) | beide | Datentabellen, eine Klasse und ein Ordner | (zwischen Tabelle und Inhalten) | **Setup > Datentabellen > Synchronisationen**, oder die Gruppe **Data tables** im Katalog von Imports |
+
+## Datenbanken als Importquelle
+
+| Die Daten liegen in | Lesen Sie sie mit |
+|---|---|
+| MySQL oder MariaDB, PostgreSQL, SQLite, Oracle, SQL Server | der Quelle **SQL** von Imports: ein `SELECT`, nur lesend, direkt (`pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `oci8`, `pdo_sqlsrv`/`pdo_dblib`/PDO_ODBC) oder über eine benannte Verbindung einer dieser Engines (eine Datenbank des MySQL-Protokolls zählt als `mysql`) |
+| Parquet-, CSV- oder JSON-Dateien oder einer DuckDB-Datenbankdatei | der Quelle **DuckDB** von Imports (das Programm `duckdb` oder FFI mit `libduckdb`) |
+| MongoDB; einem Supabase-Projekt (seiner REST-API) | den Quellen **MongoDB** und **Supabase** von Imports |
+| Firebird, Spanner, CockroachDB, YugabyteDB, jeder Datenbank hinter einem ODBC-Treiber | einer **Datentabellen-Verbindung** dieser Engine, dann einer Synchronisation in Inhalte (die SQL-Quelle von Imports nimmt diese Engines nicht) |
+| einer MS-Access-Datei | **`exp:access:import`** in die Datenbank der Site oder eine Datentabellen-Verbindung |
+
+Welche Datenbank eine Site wie erreicht: [Eine Datenbank wählen](datenbank-waehlen.md#auswertungen-berichte-und-importe).
 
 ## Hin- und Rückwege: was liest was
 

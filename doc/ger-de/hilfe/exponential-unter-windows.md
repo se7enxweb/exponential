@@ -128,8 +128,12 @@ dem offiziellen PHP für Windows.
 | MySQL, MariaDB | `mysqli` (im offiziellen PHP) |
 | Oracle 19c und neuer | `oci8` mit Oracle Instant Client für Windows |
 | MongoDB 6.0 und neuer | die DLL der Erweiterung `mongodb` von PECL, PHP 8.2 oder neuer |
+| Jede Datenbank über ODBC (6.0.15) | `expODBCDB` über `pdo_odbc` oder `odbc` (im offiziellen PHP), für Datentabellen-Verbindungen und Importe; in der CI gegen LocalDB getestet ([ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md)) |
+| MS-Access-Dateien (6.0.15) | `exp:access:import` und der kleine Treiber `expMSAccessDB` über die Access Database Engine 2016 x64 und `odbc`/`pdo_odbc`; Dateien ab Access 2000 (Dateien von Access 97: unter Linux mit MDBTools importieren); auf windows-2022 und windows-2025 getestet ([MS Access](../funktionen/6.0/ms-access-unterstuetzung.md)) |
+| Firebird, DuckDB, die Datenbanken des MySQL- und des PostgreSQL-Protokolls (6.0.15) | ihre PHP-Erweiterungen gibt es für Windows (`pdo_firebird`, `ffi` mit `duckdb.dll`, `mysqli`, `pgsql`), aber keine davon wurde unter Windows ausprobiert |
 
-Jede Engine, ihre Versionen und ihre Installer: [Unterstützte Datenbanken](datenbankunterstuetzung.md).
+Jede Engine, ihre Versionen und ihre Installer: [Unterstützte Datenbanken](datenbankunterstuetzung.md) und
+[Eine Datenbank wählen](datenbank-waehlen.md#windows).
 
 ## Was die CI des Projekts unter Windows ausführt
 
@@ -141,6 +145,12 @@ Jede Engine, ihre Versionen und ihre Installer: [Unterstützte Datenbanken](date
   (81 Prüfungen) und den Windows-Smoke-Test aus (15 Prüfungen: Anfragen, die persistente Worker beantworten,
   Wiederverwendung der Worker, ein beendeter Worker wird ersetzt, ein fataler PHP-Fehler wird mit 500 beantwortet, ein
   geordnetes Beenden mit danach freiem Port).
+- **Exponential** (`.github/workflows/windows.yml`, bei jedem Push): Windows Server 2022 und 2025 mit PHP 8.1 und 8.5
+  führen die PHPUnit-Suiten ohne Datenbank aus, installieren eine Site auf SQLite mit `exp:install` und rufen ihre
+  Seiten ab; der Job „ODBC on Windows“ führt den ODBC-Treiber gegen LocalDB auf beiden Schichten aus; der Job „Upgrade
+  6.0.14 -> main on Windows“ führt das SQLite-Szenario des Aktualisierungswerkzeugs xne aus (Plan, Probelauf,
+  Aktualisierung, Zurücknahme). Der Job `msaccess-windows` aus `phpunit.yml` testet MS Access auf windows-2022 und
+  windows-2025 mit der Access Database Engine.
 - Die gesamte PHPUnit-Suite des Kernels läuft unter Linux auf PHP 8.1 bis 8.5; der Code, den sie testet, ist dasselbe
   PHP, das unter Windows läuft.
 

@@ -124,8 +124,12 @@ above.
 | MySQL, MariaDB | `mysqli` (in the official PHP) |
 | Oracle 19c and later | `oci8` with Oracle Instant Client for Windows |
 | MongoDB 6.0 and later | the `mongodb` extension DLL from PECL, PHP 8.2 or later |
+| Any database through ODBC (6.0.15) | `expODBCDB` over `pdo_odbc` or `odbc` (in the official PHP), for data table connections and imports; tested against LocalDB in CI ([ODBC driver](../features/6.0/odbc-database-driver.md)) |
+| MS Access files (6.0.15) | `exp:access:import` and the small driver `expMSAccessDB` through the Access Database Engine 2016 x64 and `odbc`/`pdo_odbc`; Access 2000 and later files (Access 97 files: import them with MDBTools on Linux); tested on windows-2022 and windows-2025 ([MS Access](../features/6.0/ms-access-support.md)) |
+| Firebird, DuckDB, the MySQL and PostgreSQL protocol databases (6.0.15) | their PHP extensions exist for Windows (`pdo_firebird`, `ffi` with `duckdb.dll`, `mysqli`, `pgsql`), but none of them has been tried on Windows |
 
-Every engine, its versions and its installers: [Database support](database-support.md).
+Every engine, its versions and its installers: [Database support](database-support.md) and
+[Choosing a database](choosing-a-database.md#windows).
 
 ## What the project's CI runs on Windows
 
@@ -136,6 +140,11 @@ Every engine, its versions and its installers: [Database support](database-suppo
   8.1, 8.3 and 8.5 (x64), and Windows Server 2022 with PHP 8.3 (x86, 32-bit), run the portable pool's unit test
   (81 checks) and the Windows smoke test (15 checks: requests answered by persistent workers, worker reuse, a killed
   worker replaced, a PHP fatal error answered with 500, a graceful stop with the port free afterwards).
+- **Exponential** (`.github/workflows/windows.yml`, on every push): Windows Server 2022 and 2025 with PHP 8.1 and 8.5
+  run the DB-less PHPUnit suites, install a site on SQLite with `exp:install` and request its pages; the job "ODBC on
+  Windows" runs the ODBC driver against LocalDB on both layers; the job "Upgrade 6.0.14 -> main on Windows" runs the
+  upgrade tool xne's SQLite scenario (plan, dry run, upgrade, rollback). `phpunit.yml`'s job `msaccess-windows`
+  tests MS Access on windows-2022 and windows-2025 with the Access Database Engine.
 - The kernel's whole PHPUnit suite runs on Linux on PHP 8.1 to 8.5; the code it tests is the same PHP that runs on
   Windows.
 

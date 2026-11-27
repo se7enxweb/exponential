@@ -37,7 +37,20 @@ use. So a tool in this table may be missing from your menus: then it is not acti
 | Hand the audit trail to an auditor | **Audit export** | export | audit records | CSV, JSON lines, JSON | **Audit > Export** |
 | Keep the old addresses of a site working after a move: many redirects, aliases and wildcards from a file, undone as one, and written out again for the web server | **URL maps** | both | URL translator, URL wildcards, redirects | CSV, XLSX, ODS, JSON, Apache and nginx rules | **Setup > URL translator** (or **URL wildcards**) **> Import** and **Export**; [Migrating URLs](migrating-urls.md) |
 | Create or upgrade a module's table on another database, browse its rows, or set up a connection to an external database | **Data tables** | both | data tables, classes | SQL, .dba | **Setup > Data tables** |
+| Copy the tables of an MS Access file (`.accdb`, `.mdb`) into the site's database or a data table | **`exp:access:import`** (6.0.15) | import | the site's database, data tables | Access 97 to ACE | the console: `./console exp:access:import file.accdb --list`, then `--apply` ([MS Access](../features/6.0/ms-access-support.md)) |
 | Keep a data table and content of one class in step, once, on a schedule or live, in either direction | **Data tables** (synchronisations) | both | data tables, a class and a folder | (between a table and content) | **Setup > Data tables > Synchronisations**, or the group **Data tables** of the Imports catalogue |
+
+## Databases as an import source
+
+| The data is in | Read it with |
+|---|---|
+| MySQL or MariaDB, PostgreSQL, SQLite, Oracle, SQL Server | Imports' **SQL** source: one `SELECT`, read-only, directly (`pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `oci8`, `pdo_sqlsrv`/`pdo_dblib`/PDO_ODBC) or through a named connection of one of these engines (a MySQL protocol database counts as `mysql`) |
+| Parquet, CSV or JSON files, or a DuckDB database file | Imports' **DuckDB** source (the `duckdb` program or FFI with `libduckdb`) |
+| MongoDB; a Supabase project (its REST API) | Imports' **MongoDB** and **Supabase** sources |
+| Firebird, Spanner, CockroachDB, YugabyteDB, any database behind an ODBC driver | a **data table connection** of that engine, then a synchronisation into content (Imports' SQL source does not take these engines) |
+| An MS Access file | **`exp:access:import`** into the site's database or a data table connection |
+
+Which database reaches a site how: [Choosing a database](choosing-a-database.md#analytics-reporting-and-imports).
 
 ## Round trips: what reads what
 
