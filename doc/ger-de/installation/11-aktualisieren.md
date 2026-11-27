@@ -131,6 +131,7 @@ Version **auf** die nächste, und die Kette muss der Reihe nach durchlaufen werd
 | SQLite | `update/database/sqlite/` | nur `6.0/dbupdate-6.0.0-6.0.15.sql`: Die SQLite-Unterstützung beginnt mit 6.0.1 |
 | Oracle | `extension/ezoracle/update/database/` (in der Extension `ezoracle`): `ezpublish/` für die Kernel-Kette, `ezoracle/` für die eigenen Tabellen des Treibers | die Kernel-Kette bis 5.3 |
 | MongoDB | keine | der MongoDB-Treiber kam mit 6.0.14; die Audit-Tabellen von 6.0.15 legt `createaudittables.php` an (unten); die Papierkorbfelder `trashed_by` und `trashed_via` brauchen kein Update ([Papierkorb](../bc/6.0/papierkorb.md#wo-verschoben-von-gehalten-wird)) |
+| SQL Server, Firebird, DuckDB, die Datenbanken des MySQL- und des PostgreSQL-Protokolls | keine | neu in 6.0.15: Eine Site darauf wird mit dem Schema von 6.0.15 installiert (`kernel/sql/sqlserver/`, `kernel/sql/firebird/`, `kernel/sql/duckdb/`; die Protokoll-Datenbanken nehmen das Schema von MySQL oder PostgreSQL), es gibt also nichts von 6.0.14 zu aktualisieren |
 
 ### Die Kette von 4.0 bis 5.4 (Dateinamen für MySQL; PostgreSQL hat dieselben Namen)
 
@@ -223,6 +224,7 @@ Sein Schema hatte die Spalte schon immer, und es hat keine Sequenzen.
 | SQLite | Jedes `ALTER TABLE` fügt eine Spalte hinzu, weil SQLite nur eine je Anweisung annimmt, und SQLite kennt kein `ADD COLUMN IF NOT EXISTS`: Bei einem zweiten Lauf schlägt jedes `ALTER TABLE` für eine bereits vorhandene Spalte fehl („duplicate column name“). Führen Sie die Datei einmal aus, nach der Online-Sicherung von SQLite. |
 | Oracle | Die Extension `ezoracle` bringt eigene Update-Dateien bis 5.3 mit; wenden Sie sie mit Ihrem Oracle-Client an. Die Audit-Tabellen von 6.0.15 kommen von `createaudittables.php`. |
 | MongoDB | Keine SQL-Dateien. `createaudittables.php` legt die Collections des Audit-Index über den Schema-Handler des Treibers an. Die Papierkorbdokumente erhalten `trashed_by` und `trashed_via` beim Schreiben, und ein älteres Dokument wird mit deren Standardwerten gelesen, sodass `movetrashrecords.php` wie bei den anderen Engines läuft. |
+| Die in 6.0.15 hinzugekommenen Datenbanken | **Auf ihnen wurde noch kein Aktualisierungsweg getestet**: Der erste führt von 6.0.15 zum nächsten Release. Das Aktualisierungswerkzeug xne testet eine ganze Aktualisierung von 6.0.14 auf main mit Zurücknahme nur auf SQLite, MySQL und PostgreSQL (und Sichern, Prüfen und Wiederherstellen auf MongoDB und Oracle). Die Sicherheitskopie von `exp:upgrade` sichert SQLite, MySQL/MariaDB, PostgreSQL und MongoDB; auf SQL Server, Firebird und DuckDB sichern Sie selbst und führen mit `--no-backup` aus. Auf TiDB, Vitess und SingleStore nehmen die Migrationen keine genaue Datenbankmarke (sie lehnen `CHECKSUM TABLE` ab). DuckDB lehnt es ab, den Typ einer Spalte zu ändern, eine Tabelle umzubenennen oder eine Spalte zu löschen, wenn die Tabelle einen Index hat; die mitgelieferten Dateien in `update/database/` sind für MySQL, PostgreSQL und SQLite ([Eine Datenbank wählen](../hilfe/datenbank-waehlen.md)) |
 
 ## 11.4 Von 3.10 bis 5.3: die alte Kette
 

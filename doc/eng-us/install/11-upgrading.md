@@ -123,6 +123,7 @@ further: [14. from the 4.x line](14-migrating-from-4x.md), [15. from the 5.x leg
 | SQLite | `update/database/sqlite/` | only `6.0/dbupdate-6.0.0-6.0.15.sql`: SQLite support starts with 6.0.1 |
 | Oracle | `extension/ezoracle/update/database/` (in the `ezoracle` extension): `ezpublish/` for the kernel chain, `ezoracle/` for the driver's own tables | the kernel chain up to 5.3 |
 | MongoDB | none | the MongoDB driver arrived in 6.0.14; the audit tables of 6.0.15 are created by `createaudittables.php` (below); the trash fields `trashed_by` and `trashed_via` need no update ([trash](../bc/6.0/trash.md#where-trashed-by-is-kept)) |
+| SQL Server, Firebird, DuckDB, the MySQL and PostgreSQL protocol databases | none | new in 6.0.15: a site on them is installed at the 6.0.15 schema (`kernel/sql/sqlserver/`, `kernel/sql/firebird/`, `kernel/sql/duckdb/`; the protocol databases take the MySQL or PostgreSQL schema), so there is nothing to upgrade from 6.0.14 |
 
 ### The 4.0 to 5.4 chain (MySQL file names; PostgreSQL has the same names)
 
@@ -211,6 +212,7 @@ its schema has always had the column and it has no sequences.
 | SQLite | Each `ALTER TABLE` adds one column, because SQLite takes only one per statement, and SQLite has no `ADD COLUMN IF NOT EXISTS`: on a second run, every `ALTER TABLE` for a column that is already there fails ("duplicate column name"). Run the file once, after SQLite's online backup. |
 | Oracle | The `ezoracle` extension carries its own update files up to 5.3; apply them with your Oracle client. The 6.0.15 audit tables come from `createaudittables.php`. |
 | MongoDB | No SQL files. `createaudittables.php` creates the audit index collections through the driver's schema handler. The trash documents get `trashed_by` and `trashed_via` when written, and an older one reads as their defaults, so `movetrashrecords.php` runs as on the other engines. |
+| The databases added in 6.0.15 | **No upgrade path has been tested on them yet**: the first one is from 6.0.15 to the next release. The upgrade tool xne tests a whole 6.0.14 to main upgrade with rollback on SQLite, MySQL and PostgreSQL only (and dump, verify and restore on MongoDB and Oracle). The safety copy of `exp:upgrade` dumps SQLite, MySQL/MariaDB, PostgreSQL and MongoDB; on SQL Server, Firebird and DuckDB make your own backup and run with `--no-backup`. On TiDB, Vitess and SingleStore the migrations take no exact database marker (they refuse `CHECKSUM TABLE`). DuckDB refuses to change a column's type, rename a table or drop a column on a table with an index; the shipped `update/database/` files are for MySQL, PostgreSQL and SQLite ([Choosing a database](../help/choosing-a-database.md)) |
 
 ## 11.4 From 3.10 to 5.3: the old chain
 
