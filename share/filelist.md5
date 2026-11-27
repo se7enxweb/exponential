@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-87913e177e782e6201e917f505653616  doc/changelogs/6.0/6.0.15.md
+adaead4b84f54a5710088d6285773ad3  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -7002,7 +7002,7 @@ dabff75a311362f40ae3a24bf5b55b51  doc/eng-us/features/6.0/cache-until.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
 86597994d5677dec2673d4953564c126  doc/eng-us/features/6.0/cluster-commands.md
-6d83c7eeaa21f6005b0740d06cc54154  doc/eng-us/features/6.0/columnar-databases.md
+4e6e7434a2303521a641911c062d246a  doc/eng-us/features/6.0/columnar-databases.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
 b10b8f6d48a35a112fc60abd882b4869  doc/eng-us/features/6.0/content-jobs.md
@@ -17312,7 +17312,7 @@ f5fb128cb0497fa6c520ac09a69c23a3  doc/ger-de/funktionen/6.0/sichere-weiterleitun
 b11a1cfe5de18bae37f762fc4deab69f  doc/ger-de/funktionen/6.0/smarty-templates.md
 048b85449fe4f1d1f763247b12b53ae7  doc/ger-de/funktionen/6.0/soap-client-tls.md
 c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-bestellliste.md
-af7daad5ddccb66c134881698974f9b4  doc/ger-de/funktionen/6.0/spaltenorientierte-datenbanken.md
+3634aad45a547c83ee364727590014f0  doc/ger-de/funktionen/6.0/spaltenorientierte-datenbanken.md
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 d6385bbaa2c6dc5931603b6e4af56e47  doc/ger-de/funktionen/6.0/sqlite-dfs-cluster.md
 4585ca572191483a19c48897dd985efc  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
@@ -25046,7 +25046,7 @@ c45fe45f4c305e95e5ffdf4b7bf29503  kernel/classes/expsiteaccessoverview.php
 5420c565e6304001c44671bd9cbd6d7d  kernel/classes/expsystemreport.php
 081263f3f5b5287aa06b317887315747  kernel/classes/expsystemreportmask.php
 934aaeadfec3042824997c2ba2340c61  kernel/classes/exptestlanguage.php
-c9b7569bfd3d09e84405dd16283dc3b1  kernel/classes/expuserloginintegrity.php
+a6b32c02eac02ad5e5f60eeebec0f065  kernel/classes/expuserloginintegrity.php
 5f7c436bd716ba54f7a13f8164e7d591  kernel/classes/expvelocity.php
 19e11caccded54f40d509fb860ec029e  kernel/classes/expvelocityconfig.php
 c6d0dd156c86b1fa03d195490e8603ba  kernel/classes/expvelocityconfiglayout.php
@@ -25087,7 +25087,7 @@ c3ff052eca276df0e552ecf9a302e364  kernel/classes/ezcontentbrowsebookmarkfolder.p
 238c19452fe20158acf28056749739d7  kernel/classes/ezcontentcache.php
 a805a781c45079f64241662ebe8f6e6c  kernel/classes/ezcontentcachemanager.php
 4f8a52b43846c9179bd8a5570ee3e188  kernel/classes/ezcontentclass.php
-eed5609363027a0e53ab72790ec38b41  kernel/classes/ezcontentclassattribute.php
+fb7d7c877d815cb6f5fd7f9c47dd71bd  kernel/classes/ezcontentclassattribute.php
 1104433f7ae6125061fbd743617a75dd  kernel/classes/ezcontentclassclassgroup.php
 3c8136e7ba3042b764de1566cf27dee6  kernel/classes/ezcontentclassedithandler.php
 faa32c5012edc5d2ba3ae4f76b9c2a7f  kernel/classes/ezcontentclassgroup.php
@@ -25383,7 +25383,7 @@ e45645ab94549855a7a1948b73284e11  kernel/classes/mailpreferences/expmailcategory
 f64f675bef68262b4e9808a91210e430  kernel/classes/mailpreferences/expmailpendingrow.php
 f28c9c40ad591643de17c76bfeb11904  kernel/classes/mailpreferences/expmailpreferencerow.php
 80bbc553ff0faf6f429173bc0ccec8e4  kernel/classes/mailpreferences/expmailpreferences.php
-069c7b65170ef79e05c12c2bb321e53f  kernel/classes/mailpreferences/expmailpreferencesservice.php
+e4f73ed30441a2d629e9a03af598050c  kernel/classes/mailpreferences/expmailpreferencesservice.php
 352aaea4a2cf4f1113355da8a48514c3  kernel/classes/mailpreferences/expmailrecipient.php
 5b22c027a9f562b208b981c8b7060c55  kernel/classes/mailpreferences/expmailsecret.php
 81df4317cd9a271bd0bb76d79792a519  kernel/classes/mailpreferences/expmailsenderdetails.php
@@ -26955,7 +26955,7 @@ b9ae2b6d7c11dfc7cbfb230f9990940e  kernel/setup/expradsurvey.php
 20d19e4c6c386a4751b600fa8fac28e2  kernel/setup/extensions.php
 391d37b4620a6745a2bd442560d6484d  kernel/setup/ezsetup.php
 433e78c97aa0c3fcafabd033470f397c  kernel/setup/ezsetup_summary.php
-a577f4676c43955ac71da4de00c4987d  kernel/setup/ezsetupcommon.php
+08795ee8bcc14c44b5d2d53aee0bf7dc  kernel/setup/ezsetupcommon.php
 38297052a8fa01c39f6209d85873376c  kernel/setup/ezsetupfunctioncollection.php
 999d5b394368b0aa34d61ef681142354  kernel/setup/ezsetuptests.php
 f61e6339faf21fad7164647b5a7070e7  kernel/setup/function_definition.php
@@ -26989,7 +26989,7 @@ fe14b77184ccbafe5fdbd76a0bea9428  kernel/setup/sitedata.php
 72be9314636b1a293c5be6efa675cd04  kernel/setup/staticcachestream.php
 9c50ad2c92af4dc15a1e19aa4bac6f0a  kernel/setup/steps/ezstep_create_sites.php
 df68e5e07841432d9e6e51b23e5ae234  kernel/setup/steps/ezstep_data.php
-a803fa8888d3e58120d6ace11ccaa7be  kernel/setup/steps/ezstep_database_choice.php
+c1e7bbac5f6efcec93422df12e825521  kernel/setup/steps/ezstep_database_choice.php
 bb5e30f8b8aea95fd7c9566e8b2262be  kernel/setup/steps/ezstep_database_init.php
 1eb7cf0835903b23ffeeda25b7e8bf6a  kernel/setup/steps/ezstep_email_settings.php
 d252c1fdbb70b34ee56f05351fb1ad10  kernel/setup/steps/ezstep_final.php
@@ -27179,7 +27179,7 @@ fed6401ffa6fc1e202a5002bf3a073b3  lib/ezdb/classes/explibsqlprofile.php
 7da76532d1bbe4ab8b3e99e942c7a1bc  lib/ezdb/classes/explibsqlresult.php
 eb2b45bde670ca431269a9a1029316cf  lib/ezdb/classes/expmonetdbdb.php
 6971b2da2e0ceb61a2af132ea5573f6a  lib/ezdb/classes/expmonetdbdialect.php
-92cfc724494e6c34d864bba10624ae24  lib/ezdb/classes/expmonetdbmapi.php
+19d3e7c858fde68d35caf56c5130efbf  lib/ezdb/classes/expmonetdbmapi.php
 a162439dfcb945c46a4f863817de574a  lib/ezdb/classes/expmongodb.php
 82dacdc47ff2d6c14cd326158ac73770  lib/ezdb/classes/expmsaccessdb.php
 0495ea859056918e7ff81852975f3d0e  lib/ezdb/classes/expmsaccessdialect.php
@@ -27200,7 +27200,7 @@ cf770a21f2421d6963c230bca65552e0  lib/ezdb/classes/exptursodb.php
 b0ec48eddd6650b3be7b84dd6ebd2e7b  lib/ezdb/classes/expxpanddb.php
 f43f382da35a63493ef1772e1f3fbe0e  lib/ezdb/classes/expyugabytedb.php
 cb00203f753364ef5deb1ab8fd4b90ec  lib/ezdb/classes/ezdb.php
-370eb86a5bd19f63bc4ebb8fefa31097  lib/ezdb/classes/ezdbinterface.php
+20d4e548c94c2f272786d55fdfa0b95c  lib/ezdb/classes/ezdbinterface.php
 582827cb0cfb30f80aaa6a8218e8b4e8  lib/ezdb/classes/ezdbquerycache.php
 99c3359017655e38dd2900a8a09c982b  lib/ezdb/classes/ezdbtool.php
 f23bc6203fe8986719ddb0ba848d9cb6  lib/ezdb/classes/ezmysqlcharset.php
@@ -27674,7 +27674,7 @@ ed3939b3ee8263c326063584d635acc9  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 0e25e6140fca0aab71d94cdb05352146  settings/secrets.ini
-e10306e7876793ebce3d4604b2440b1f  settings/setup.ini
+d90940aaed082e22b8356eca7e84228e  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
 0e7ee54db4ce9cdc4736f42a778dbb40  settings/site.ini
@@ -30185,7 +30185,7 @@ ff16951947f561095e82a782732322f0  tests/tests/kernel/classes/setup/SiteInstaller
 c9d7f04ca55c0d534e3521802d1dafdc  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
 757e4dce76a9500aa9c22bdebcc8662c  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 d51526ae21e250767031d78014d6101a  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
-3082d765983e430871db5ea48b9678b0  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
+9adab0b49e559682f5b918fae96e6c2b  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
 34e4df0b59c0edca6965f591f0c23e90  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php
 ec981e9fe7bb2ce62d42a30253a179d1  tests/tests/kernel/classes/shop/eZCurrencyConverterRoundingTest.php
 267a5d25f057b7bf16b43121114ebac9  tests/tests/kernel/classes/shop/eZVATManagerUserCountryTest.php
@@ -30768,7 +30768,7 @@ d1be0474d26d0296eb5ec6979a203130  tests/tests/lib/ezdb/columnar/expClickHouseSch
 53c2eeb65641eb89977516a75ec7f10a  tests/tests/lib/ezdb/columnar/expColumnarTestKit.php
 024ee0e17ca0f2850e57943067d2de6d  tests/tests/lib/ezdb/columnar/expMonetDBDBTest.php
 f41ef6a1b2cda0a7d205054b454a2fa3  tests/tests/lib/ezdb/columnar/expMonetDBDialectTest.php
-834447717ececb6978b93cd792e53932  tests/tests/lib/ezdb/columnar/expMonetDBMapiTest.php
+d01ee9288e0d3308514766d9f4f54f56  tests/tests/lib/ezdb/columnar/expMonetDBMapiTest.php
 1e54f7685e1e352fc994776d1dd7891d  tests/tests/lib/ezdb/columnar/expMonetDBSchemaTest.php
 e03cdf8bb3eed515e32cad6709bd266c  tests/tests/lib/ezdb/columnar/live/expClickHouseLiveTest.php
 e87872ac16a99e34f15c5318249019ee  tests/tests/lib/ezdb/columnar/live/expMonetDBLiveTest.php
@@ -31350,7 +31350,7 @@ b82ce7e2eb8836a245236a445e574f63  doc/ger-de/funktionen/6.0/duckdb-datenbanktrei
 354f06b4537aa64055468e79453411d6  lib/ezdb/classes/expfirebirddialect.php
 3e43cb66c0e0ca3c0e14008ea42a1182  lib/ezdb/classes/expfirebirdpdotransport.php
 357fc9b6c95ba895ffe4dc9b92cffc9f  lib/ezdb/classes/expfirebirdtransport.php
-f043ce790358edf2cf28071ff03de3b0  lib/ezdb/classes/expduckdbdb.php
+d146d600ce001f494963208fae5fab1e  lib/ezdb/classes/expduckdbdb.php
 b75adc92e675d883099975b22ce31e44  lib/ezdb/classes/expduckdbdialect.php
 daa97fbdd750e999460f934e30ca24b7  lib/ezdb/classes/expduckdbffi.php
 dba4f5a4de1bd427fdf750b886018364  lib/ezdbschema/classes/expfirebirdschema.php
@@ -31362,7 +31362,7 @@ c0e1d34a3b541f2906e2577dd3859045  tests/tests/lib/ezdb/firebird/expFirebirdTestK
 8361fefa08a013be989fc6c508ce4bc9  tests/tests/lib/ezdb/firebird/live/expFirebirdSchemaLiveTest.php
 f16e60da83135f08f1a99b7114ccb35c  tests/tests/lib/ezdbschema/expFirebirdSchemaTest.php
 932d399f3f6d4789b117f91a9fbc974c  kernel/sql/duckdb/kernel_schema.sql
-7bc5ba2a2f6061e5e73110a07aa37dd8  tests/tests/lib/ezdb/duckdb/expDuckDBDBTest.php
+ca2edd7518efd920fad847af48fee7c7  tests/tests/lib/ezdb/duckdb/expDuckDBDBTest.php
 445fa0022d997eef42996de95d35b3f0  tests/tests/lib/ezdb/duckdb/expDuckDBDialectTest.php
 524c42491a5e181555e0f54749156549  tests/tests/lib/ezdb/duckdb/expDuckDBSchemaTest.php
 ee4a8315e7992d3485225e286e4527ab  tests/tests/lib/ezdb/duckdb/expDuckDBTestKit.php
@@ -31451,24 +31451,24 @@ ed83b7a378a034ae8c228924bcd6ff4b  tests/tests/lib/ezdb/couch/expCouchTestKit.php
 dd7304db60f86dd09402a65c20da8c97  tests/tests/lib/ezdb/couch/expCouchbaseDialectTest.php
 9eb0a825e05ed0c1d8eb19903e03e5f6  tests/tests/lib/ezdb/couch/live/expCouchLiveTest.php
 d34149f05d71980f6bd60ea451ff9e6b  doc/eng-us/features/6.0/ase-database-driver.md
-0a371bbb8c47a29df5465fe123bed87c  doc/eng-us/features/6.0/hana-database-driver.md
+5d6c869878e810b1d79dc169dc63244e  doc/eng-us/features/6.0/hana-database-driver.md
 0ccb60238fb881f1fc94eba4484f8236  doc/ger-de/funktionen/6.0/ase-datenbanktreiber.md
-b0542a5e3933ba51b1f9431ab877f109  doc/ger-de/funktionen/6.0/hana-datenbanktreiber.md
+99a636980de802fdcf03ace3d7a7fdd1  doc/ger-de/funktionen/6.0/hana-datenbanktreiber.md
 8f41c354b7b37a91d7427d6cb971c369  kernel/sql/ase/kernel_schema.sql
 c704370cac0759ffa289198ca1c4dcbd  kernel/sql/hana/kernel_schema.sql
 226766f33aa938c8c652ccf75460daf9  lib/ezdb/classes/expasedb.php
 fb37a1864fc304db7942c08a825913e0  lib/ezdb/classes/expasedialect.php
 0f17e7646964a58c30650054ee1bc675  lib/ezdb/classes/expasepdotransport.php
-a75db45529423908d1525afa71431fc6  lib/ezdb/classes/exphanadb.php
+b45db5e02c789248545f2746f6fbc9c1  lib/ezdb/classes/exphanadb.php
 54f0c1fb2d5553ba165e8305c22b0185  lib/ezdb/classes/exphanadialect.php
-adb3f956f11f0ba25f948f9b6d6d9e6b  lib/ezdb/classes/exphanaodbctransport.php
+9430d0b9b95fecbc51797fdc8ac7a2bf  lib/ezdb/classes/exphanaodbctransport.php
 1876693762f270e1b711f7a8227e9a48  lib/ezdb/classes/exphanatransport.php
 e91eb7861ec70f87fce644d6bcbcbde5  lib/ezdbschema/classes/expaseschema.php
 f6c0d376ceef01cf8e756ca6886f9e52  lib/ezdbschema/classes/exphanaschema.php
 4c380cec443e50cf52d7a6ccdedd36cf  tests/tests/lib/ezdb/ase/expASEDBTest.php
 02fd93517e22825c10651ca028df62b6  tests/tests/lib/ezdb/ase/expASEDialectTest.php
 fe76a0a357f1cfd4276b6c3e3202af4e  tests/tests/lib/ezdb/ase/expASETestKit.php
-d810c00d7ca146823f2df6e620e7c49c  tests/tests/lib/ezdb/hana/expHANADBTest.php
+dfca67199476701e5cb05839cd33128a  tests/tests/lib/ezdb/hana/expHANADBTest.php
 b0eb7e7b907428f3928d7796b81aa8e8  tests/tests/lib/ezdb/hana/expHANADialectTest.php
 9fc249173e1fcec551bd3e383a14275e  tests/tests/lib/ezdb/hana/expHANATestKit.php
 71f6771b806d5e72b00699284b7f6a4e  tests/tests/lib/ezdb/hana/live/expHANALiveTest.php
