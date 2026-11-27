@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>启动安装向导</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>仍然运行安装向导</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>或者使用安装向导，它会先要求确认。</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>

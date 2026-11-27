@@ -51441,6 +51441,14 @@ Laba olupapula lw'ebyetaagisa olabe ebisingawo.</translation>
         <translation>Tandika omuyambi w'okuteekateeka</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Tandika omuyambi w'okuteekateeka newankubadde</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Oba n'omuyambi w'okuteekateeka, asooka okusaba okukakasa.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Sazaamu</translation>
     </message>

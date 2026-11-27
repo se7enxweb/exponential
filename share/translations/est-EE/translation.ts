@@ -51380,6 +51380,14 @@ Lisateavet leiate nõuete lehelt.</translation>
         <translation>Käivita häälestusviisard</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Käivita häälestusviisard ikkagi</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Või häälestusviisardiga, mis küsib esmalt kinnitust.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Loobu</translation>
     </message>

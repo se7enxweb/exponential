@@ -51441,6 +51441,14 @@ Consulte a páxina de requisitos para obter máis información.</translation>
         <translation>Iniciar o asistente de configuración</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Executar o asistente de configuración igualmente</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ou co asistente de configuración, que pide primeiro unha confirmación.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>

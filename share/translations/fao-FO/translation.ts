@@ -51441,6 +51441,14 @@ Sí síðuna um krøv fyri fleiri upplýsingar.</translation>
         <translation>Byrja uppsetingarhjálpina</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Koyr uppsetingarhjálpina allíkavæl</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ella við uppsetingarhjálpini, sum fyrst biður um váttan.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Ógilda</translation>
     </message>

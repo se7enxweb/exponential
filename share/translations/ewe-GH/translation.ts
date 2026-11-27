@@ -51441,6 +51441,14 @@ Kpɔ nu siwo hiã ƒe axa la be nàkpɔ nyatakaka geɖe.</translation>
         <translation>Dze ɖoɖowɔwɔ ƒe mɔfiala la gɔme</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Zã ɖoɖowɔwɔ ƒe mɔfiala la ko</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Alo kple ɖoɖowɔwɔ ƒe mɔfiala, si bia kakaɖedzi gbã.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Ɖe asi le eŋu</translation>
     </message>

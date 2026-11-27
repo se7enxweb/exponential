@@ -51380,6 +51380,14 @@ Plašāku informāciju skatiet prasību lapā.</translation>
         <translation>Palaist instalēšanas vedni</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Tomēr palaist instalēšanas vedni</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Vai ar instalēšanas vedni, kas vispirms prasa apstiprinājumu.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Atcelt</translation>
     </message>

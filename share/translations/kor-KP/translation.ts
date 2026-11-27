@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>설정 마법사 시작</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>그래도 설정 마법사 실행</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>또는 먼저 확인을 요청하는 설정 마법사로.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>

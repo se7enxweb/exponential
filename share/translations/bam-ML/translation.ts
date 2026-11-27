@@ -51441,6 +51441,14 @@ A filɛ nafaw ɲɛ la walasa ka kunnafoni caman sɔrɔ.</translation>
         <translation>Labɛnni ɲɛminɛbaga daminɛ</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Labɛnni ɲɛminɛbaga baara kɛ hali o cogo</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Walima ni labɛnni ɲɛminɛbaga ye, a bɛ sɔnni ɲini fɔlɔ.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Dabila</translation>
     </message>

@@ -51380,6 +51380,14 @@ Paasissutissat amerlanerusut piumasaqaatinut quppernermi takukkit.</translation>
         <translation>Aaqqissuussinermut ilitsersuut aallartiguk</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Aaqqissuussinermut ilitsersuut taamaattoq aallartiguk</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Imaluunniit aaqqissuussinermut ilitsersuummik, siullermik uppernarsaanissamik piumasaqartumik.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Taamaatiguk</translation>
     </message>

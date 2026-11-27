@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>د جوړونې لارښود پیلول</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>په هر حال د جوړونې لارښود چلول</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>یا د جوړونې لارښود سره، چې لومړی تایید غواړي.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>لغوه کول</translation>
     </message>

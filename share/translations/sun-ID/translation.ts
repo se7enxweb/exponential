@@ -51441,6 +51441,14 @@ Tingali kaca sarat pikeun émbaran nu langkung lengkep.</translation>
         <translation>Mimitian pituduh panyetélan</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Tetep jalankeun pituduh panyetélan</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Atawa ku pituduh panyetélan, anu ménta konfirmasi heula.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Bolaykeun</translation>
     </message>

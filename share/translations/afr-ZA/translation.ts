@@ -51380,6 +51380,14 @@ Raadpleeg die vereistebladsy vir meer inligting.</translation>
         <translation>Begin die opstellingsgids</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Voer die opstellingsgids tog uit</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Of met die opstellingsgids, wat eers om bevestiging vra.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Kanselleer</translation>
     </message>

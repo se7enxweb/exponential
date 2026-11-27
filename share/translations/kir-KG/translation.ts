@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Жөндөө чеберин баштоо</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Баары бир жөндөө чеберин иштетүү</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Же адегенде ырастоону сураган жөндөө чебери менен.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Жокко чыгаруу</translation>
     </message>

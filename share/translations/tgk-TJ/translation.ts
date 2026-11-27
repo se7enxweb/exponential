@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Оғоз кардани устоди насб</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ба ҳар ҳол устоди насбро иҷро кунед</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ё бо устоди насб, ки аввал тасдиқ мепурсад.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Бекор кардан</translation>
     </message>

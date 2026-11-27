@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ເລີ່ມຕົວຊ່ວຍສ້າງການຕັ້ງຄ່າລະບົບ</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ແລ່ນຕົວຊ່ວຍສ້າງການຕັ້ງຄ່າຢູ່ດີ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ຫຼື ດ້ວຍຕົວຊ່ວຍສ້າງການຕັ້ງຄ່າ ເຊິ່ງຈະຂໍການຢືນຢັນກ່ອນ.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ຍົກເລີກ</translation>
     </message>

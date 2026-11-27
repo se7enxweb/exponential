@@ -53279,6 +53279,14 @@ Consulte a página de requisitos para obter mais informações.</translation>
         <translation>Iniciar o assistente de configuração</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Executar o assistente de configuração mesmo assim</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ou com o assistente de configuração, que pede uma confirmação primeiro.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>

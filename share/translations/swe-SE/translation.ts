@@ -44485,6 +44485,14 @@ Se sidan med krav för mer information.</translation>
         <translation>Starta installationsguiden</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Kör installationsguiden ändå</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Eller med installationsguiden, som först ber om en bekräftelse.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>

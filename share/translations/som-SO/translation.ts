@@ -51439,6 +51439,14 @@ Fadlan eeg bogga shuruudaha si aad macluumaad dheeraad ah u hesho.</translation>
         <translation>Bilow wizard-ka habeynta</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Si kastaba ha ahaatee wad wizard-ka habeynta</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ama wizard-ka habeynta, oo marka hore weydiiya xaqiijin.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Jooji</translation>
     </message>

@@ -51380,6 +51380,14 @@ Féach ar leathanach na riachtanas le haghaidh tuilleadh faisnéise.</translatio
         <translation>Tosaigh an draoi suiteála</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Rith an draoi suiteála ar aon nós</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Nó leis an draoi suiteála, a iarrann dearbhú ar dtús.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Cealaigh</translation>
     </message>

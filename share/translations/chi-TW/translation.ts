@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>啟動安裝精靈</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>仍然執行安裝精靈</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>或者使用安裝精靈，它會先要求確認。</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>

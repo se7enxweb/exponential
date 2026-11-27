@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>سیٹ اپ وزرڈ شروع کرو</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>فیر وی سیٹ اپ وزرڈ چلاؤ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>یا سیٹ اپ وزرڈ نال، جیہڑا پہلاں تصدیق منگدا اے۔</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>رد کرو</translation>
     </message>

@@ -44401,6 +44401,14 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
         <translation>Uruchomić kreator instalacji</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Mimo to uruchom kreator instalacji</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Albo kreatorem instalacji, który najpierw prosi o potwierdzenie.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Anulować</translation>
     </message>

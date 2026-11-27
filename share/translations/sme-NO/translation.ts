@@ -51441,6 +51441,14 @@ Geahča gáibádussiidda eambbo dieđuid dihte.</translation>
         <translation>Álggat ásahanveahki</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Álggat ásahanveahki dattetge</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Dahje ásahanveahkiin, mii vuos bivdá duođaštusa.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Gaskkalduhttit</translation>
     </message>

@@ -51441,6 +51441,14 @@ Tirohia te whārangi whāinga mō ētahi atu mōhiohio.</translation>
         <translation>Tīmata i te ruānuku whakarite</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Whakahaere tonu i te ruānuku whakarite</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Mā te ruānuku whakarite rānei, ka tono tuatahi i tētahi whakaūnga.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Whakakore</translation>
     </message>

@@ -51380,6 +51380,14 @@ Pentru mai multe informații, consultați pagina cu cerințe.</translation>
         <translation>Pornire expert de configurare</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Rulați totuși expertul de configurare</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Sau cu expertul de configurare, care cere mai întâi o confirmare.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Anulare</translation>
     </message>

@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Көйләү остасын эшләтеп җибәрү</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Барыбер көйләү остасын эшләтеп җибәрү</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Яки башта раслау сораучы көйләү остасы ярдәмендә.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Баш тарту</translation>
     </message>

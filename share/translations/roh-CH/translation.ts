@@ -51441,6 +51441,14 @@ Pli bler infurmaziuns chattais Vus sin la pagina dals requisits.</translation>
         <translation>Cumenzar l'assistent da configuraziun</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Lantschar tuttina l'assistent da configuraziun</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>U cun l'assistent da configuraziun, che dumonda l'emprim ina confermaziun.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Interrumper</translation>
     </message>

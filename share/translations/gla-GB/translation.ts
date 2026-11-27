@@ -51441,6 +51441,14 @@ Faicibh duilleag nan riatanasan airson tuilleadh fiosrachaidh.</translation>
         <translation>Tòisich draoidh an t-suidheachaidh</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ruith draoidh an t-suidheachaidh co-dhiù</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>No le draoidh an t-suidheachaidh, a dh'iarras dearbhadh an toiseach.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Sguir dheth</translation>
     </message>

@@ -51441,6 +51441,14 @@ Weider Informatiounen fannt Dir op der Säit mat den Ufuerderungen.</translation
         <translation>De Konfiguratiounsassistent starten</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>De Konfiguratiounsassistent trotzdeem starten</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Oder mam Konfiguratiounsassistent, deen als éischt eng Bestätegung freet.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Ofbriechen</translation>
     </message>

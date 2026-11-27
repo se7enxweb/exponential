@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ចាប់ផ្តើមអ្នកជំនួយការរៀបចំ</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ដំណើរការអ្នកជំនួយការរៀបចំទោះយ៉ាងណាក៏ដោយ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ឬដោយប្រើអ្នកជំនួយការរៀបចំ ដែលសុំការបញ្ជាក់ជាមុនសិន។</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>បោះបង់</translation>
     </message>

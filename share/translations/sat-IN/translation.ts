@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ᱥᱮᱴᱟᱯ ᱣᱤᱡᱟᱨᱰ ᱮᱛᱠᱟᱣ</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ᱡᱟᱦᱟᱸ ᱦᱩᱭ ᱥᱮᱴᱟᱯ ᱣᱤᱡᱟᱨᱰ ᱪᱟᱞᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ᱥᱮ ᱥᱮᱴᱟᱯ ᱣᱤᱡᱟᱨᱰ ᱛᱮ, ᱡᱟᱦᱟᱸ ᱯᱩᱭᱞᱩ ᱥᱟᱹᱨᱤᱭᱟᱹᱣ ᱠᱩᱞᱤᱭᱟᱭ ᱾</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ᱵᱟᱛᱟᱞ</translation>
     </message>

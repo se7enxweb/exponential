@@ -51441,6 +51441,14 @@ Yiy hello ko haani ngam anndude ɓuri.</translation>
         <translation>Fuɗɗo ballal teeltugol</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Dognin ballal teeltugol koo fof</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Walla e ballal teeltugol, ngal naamnata teeŋtingol adan.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Haaytu</translation>
     </message>

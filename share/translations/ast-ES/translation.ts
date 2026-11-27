@@ -51441,6 +51441,14 @@ Mira la páxina de requisitos pa más información.</translation>
         <translation>Aniciar l'asistente de configuración</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Executar l'asistente de configuración de toes maneres</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>O col asistente de configuración, que pide una confirmación primero.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Encaboxar</translation>
     </message>

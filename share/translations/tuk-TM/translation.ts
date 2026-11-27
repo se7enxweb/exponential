@@ -51441,6 +51441,14 @@ Goşmaça maglumat üçin talaplar sahypasyna serediň.</translation>
         <translation>Gurnama ussadyny başla</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Her niçik-de bolsa gurnama ussadyny işlet</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ýa-da ilki tassyklama soraýan gurnama ussady bilen.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Ýatyr</translation>
     </message>

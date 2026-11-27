@@ -51441,6 +51441,14 @@ E nānā i ka ʻaoʻao koi no ka ʻike hou aku.</translation>
         <translation>Hoʻomaka i ke kōkua hana hoʻonohonoho</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>E holo nō i ke kōkua hana hoʻonohonoho</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>A i ʻole me ke kōkua hana hoʻonohonoho, e noi mua ana i ka hōʻoia.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Kāpae</translation>
     </message>

@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>یاریدەدەری دامەزراندن دەستپێ بکە</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>هەر چۆنێک بێت یاریدەدەری دامەزراندن کار پێ بکە</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>یان بە یاریدەدەری دامەزراندن، کە سەرەتا داوای پشتڕاستکردنەوە دەکات.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>هەڵوەشاندنەوە</translation>
     </message>

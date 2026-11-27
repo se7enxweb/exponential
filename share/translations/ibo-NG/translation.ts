@@ -51439,6 +51439,14 @@ Hụ ibe ihe ndị a chọrọ maka ozi ndị ọzọ.</translation>
         <translation>Malite onye nduzi nrụnye</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Gbaa onye nduzi nrụnye n'agbanyeghị</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ma ọ bụ site n'onye nduzi nrụnye, nke na-ebu ụzọ rịọ nkwenye.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Kagbuo</translation>
     </message>

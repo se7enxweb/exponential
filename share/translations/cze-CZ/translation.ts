@@ -44464,6 +44464,14 @@ Další informace najdete na stránce požadavků.</translation>
         <translation>Spustit průvodce instalací</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Přesto spustit průvodce instalací</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Nebo průvodcem instalací, který si nejprve vyžádá potvrzení.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>

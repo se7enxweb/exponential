@@ -51441,6 +51441,14 @@ Talá lokasa ya bosɛnga mpo na maloba mingi.</translation>
         <translation>Bandá assistant ya bobongisi</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Bandá assistant ya bobongisi ata bongo</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>To na assistant ya bobongisi, oyo esengaka liboso bondimi.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Tiká</translation>
     </message>

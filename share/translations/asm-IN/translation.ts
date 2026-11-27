@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ছেটআপ উইজাৰ্ড আৰম্ভ কৰক</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>তথাপিও ছেটআপ উইজাৰ্ড চলাওক</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>অথবা ছেটআপ উইজাৰ্ডৰ সহায়ত, যিয়ে প্ৰথমে নিশ্চিতকৰণ বিচাৰে।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>বাতিল কৰক</translation>
     </message>

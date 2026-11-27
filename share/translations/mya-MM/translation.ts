@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>စနစ်ထည့်သွင်းမှု လမ်းညွှန်အကူကို စတင်ရန်</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>မည်သို့ပင်ဖြစ်စေ စနစ်ထည့်သွင်းမှု လမ်းညွှန်အကူကို လုပ်ဆောင်ရန်</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>သို့မဟုတ် ဦးစွာ အတည်ပြုချက်တောင်းသော စနစ်ထည့်သွင်းမှု လမ်းညွှန်အကူဖြင့်။</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ပယ်ဖျက်ရန်</translation>
     </message>

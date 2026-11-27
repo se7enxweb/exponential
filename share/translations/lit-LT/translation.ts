@@ -51380,6 +51380,14 @@ Daugiau informacijos rasite reikalavimų puslapyje.</translation>
         <translation>Paleisti sąrankos vedlį</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Vis tiek paleisti sąrankos vedlį</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Arba sąrankos vedliu, kuris pirmiausia paprašo patvirtinimo.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Atšaukti</translation>
     </message>

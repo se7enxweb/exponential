@@ -51380,6 +51380,14 @@ Več informacij najdete na strani z zahtevami.</translation>
         <translation>Zaženi čarovnika za nastavitev</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Vseeno zaženi čarovnika za nastavitev</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ali s čarovnikom za nastavitev, ki najprej zahteva potrditev.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Prekliči</translation>
     </message>

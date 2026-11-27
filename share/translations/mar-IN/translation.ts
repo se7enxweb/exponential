@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>सेटअप विझार्ड सुरू करा</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>तरीही सेटअप विझार्ड चालवा</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>किंवा सेटअप विझार्डने, जो आधी पुष्टी मागतो.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>रद्द करा</translation>
     </message>

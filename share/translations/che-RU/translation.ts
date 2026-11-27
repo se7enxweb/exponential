@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ДӀахӀоттаран гӀоьнча доло</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ДӀахӀоттаран гӀоьнча цкъачул а доло</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Я дӀахӀоттаран гӀоьнчица, цо хьалха тӀечIагӀдар деха.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Юхадаккха</translation>
     </message>

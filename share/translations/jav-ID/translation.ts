@@ -51441,6 +51441,14 @@ Deleng kaca syarat kanggo katrangan luwih lengkap.</translation>
         <translation>Wiwiti panuntun panyiapan</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Tetep lakokna panuntun panyiapan</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Utawa nganggo panuntun panyiapan, sing njaluk konfirmasi dhisik.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Batal</translation>
     </message>

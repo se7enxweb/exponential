@@ -51380,6 +51380,14 @@ Ara l-paġna tar-rekwiżiti għal aktar informazzjoni.</translation>
         <translation>Ibda l-assistent tal-installazzjoni</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ħaddem l-assistent tal-installazzjoni xorta waħda</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Jew bl-assistent tal-installazzjoni, li l-ewwel jitlob konferma.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Ikkanċella</translation>
     </message>

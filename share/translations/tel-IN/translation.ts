@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>సెటప్ విజార్డ్‌ను ప్రారంభించండి</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>అయినా సెటప్ విజార్డ్‌ను అమలు చేయండి</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>లేదా ముందుగా నిర్ధారణ అడిగే సెటప్ విజార్డ్‌తో.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>రద్దు చేయండి</translation>
     </message>

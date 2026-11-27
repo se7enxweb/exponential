@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>सेटआप उइजार्ड सुरु खालाम</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>जायखिजायाबो सेटआप उइजार्ड खामानि मावफुं</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>एबा सेटआप उइजार्ड जों, जाय गिबियाव थार खालामनाय सोंनो।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>बन्द</translation>
     </message>

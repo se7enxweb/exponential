@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>সেটআপ উইজার্ড শুরু করুন</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>তবুও সেটআপ উইজার্ড চালান</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>অথবা সেটআপ উইজার্ড দিয়ে, যা প্রথমে নিশ্চিতকরণ চায়।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>বাতিল করুন</translation>
     </message>

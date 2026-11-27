@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>පිහිටුවීමේ විශාරදය අරඹන්න</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>කෙසේ වෙතත් පිහිටුවීමේ විශාරදය ධාවනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>නැතහොත් පළමුව තහවුරු කිරීමක් ඉල්ලන පිහිටුවීමේ විශාරදය සමඟ.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>අවලංගු කරන්න</translation>
     </message>

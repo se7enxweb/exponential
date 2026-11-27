@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Стартувај го волшебникот за конфигурација</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Сепак стартувај го волшебникот за конфигурација</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Или со волшебникот за конфигурација, кој прво бара потврда.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Откажи</translation>
     </message>

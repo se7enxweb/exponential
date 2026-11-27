@@ -51441,6 +51441,14 @@ Xehetasun gehiagorako, ikusi eskakizunen orria.</translation>
         <translation>Hasi konfigurazio-morroia</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Exekutatu konfigurazio-morroia hala ere</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Edo konfigurazio-morroiarekin, lehenik berrespena eskatzen duena.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Utzi</translation>
     </message>

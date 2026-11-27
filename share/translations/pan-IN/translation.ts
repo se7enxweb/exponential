@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>ਸੈੱਟਅੱਪ ਵਿਜ਼ਰਡ ਸ਼ੁਰੂ ਕਰੋ</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ਫਿਰ ਵੀ ਸੈੱਟਅੱਪ ਵਿਜ਼ਰਡ ਚਲਾਓ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ਜਾਂ ਸੈੱਟਅੱਪ ਵਿਜ਼ਰਡ ਨਾਲ, ਜੋ ਪਹਿਲਾਂ ਪੁਸ਼ਟੀ ਮੰਗਦਾ ਹੈ।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ਰੱਦ ਕਰੋ</translation>
     </message>

@@ -51439,6 +51439,14 @@ Ji bo bêtir agahiyan li rûpela pêdiviyan binêrin.</translation>
         <translation>Destpêkirina sêrbazê sazkirinê</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Dîsa jî sêrbazê sazkirinê bixebitîne</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>An jî bi sêrbazê sazkirinê, ku pêşî piştrastkirinê dixwaze.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Betal</translation>
     </message>

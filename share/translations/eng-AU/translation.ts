@@ -51380,6 +51380,14 @@ See the requirements page for more information.</translation>
         <translation>Start the setup wizard</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Run the setup wizard anyway</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Or with the setup wizard, which asks for a confirmation first.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>

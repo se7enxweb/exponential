@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>स्थापनासहायकस्य प्रारम्भः</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>तथापि स्थापनासहायकं चालयतु</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>अथवा स्थापनासहायकेन, यः प्रथमं पुष्टिं याचते।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>रद्दीकरणम्</translation>
     </message>

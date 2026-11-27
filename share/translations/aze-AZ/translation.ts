@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Quraşdırma sihirbazını başlat</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Quraşdırma sihirbazını yenə də işə sal</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Və ya əvvəlcə təsdiq istəyən quraşdırma sihirbazı ilə.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Ləğv et</translation>
     </message>

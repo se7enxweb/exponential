@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>เริ่มตัวช่วยสร้างการตั้งค่า</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>เรียกใช้ตัวช่วยสร้างการตั้งค่าต่อไป</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>หรือด้วยตัวช่วยสร้างการตั้งค่า ซึ่งจะขอการยืนยันก่อน</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ยกเลิก</translation>
     </message>

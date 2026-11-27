@@ -51441,6 +51441,14 @@ Jereo ny pejin'ny fepetra raha mila fanazavana fanampiny.</translation>
         <translation>Atombohy ny mpanampy fametrahana</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Alefaso ihany ny mpanampy fametrahana</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Na amin'ny mpanampy fametrahana, izay mangataka fanamafisana aloha.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Foano</translation>
     </message>

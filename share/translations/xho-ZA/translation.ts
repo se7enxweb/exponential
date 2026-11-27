@@ -51439,6 +51439,14 @@ Jongani iphepha lezinto ezifunekayo ukuze nifumane ulwazi oluthe kratya.</transl
         <translation>Qalisa umncedisi wokuseta</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Qhuba umncedisi wokuseta noko</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Okanye ngomncedisi wokuseta, ocela uqinisekiso kuqala.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Rhoxisa</translation>
     </message>

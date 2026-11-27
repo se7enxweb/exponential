@@ -52630,6 +52630,14 @@ Se siden med krav for mer informasjon.</translation>
         <translation>Start installasjonsveiviseren</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Kjør installasjonsveiviseren likevel</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Eller med installasjonsveiviseren, som først ber om en bekreftelse.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>

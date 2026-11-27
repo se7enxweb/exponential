@@ -51441,6 +51441,14 @@ Aswan willaypaq mañasqakunap raphinta qhaway.</translation>
         <translation>Wakichiy pusaqta qallariy</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Chaynapas wakichiy pusaqta purichiy</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Utaq wakichiy pusaqwan, ñawpaqta takyachiyta mañakuq.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Qhisachay</translation>
     </message>

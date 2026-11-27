@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>ಸೆಟಪ್ ವಿಝಾರ್ಡ್ ಪ್ರಾರಂಭಿಸು</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ಹಾಗಿದ್ದರೂ ಸೆಟಪ್ ವಿಝಾರ್ಡ್ ಚಲಾಯಿಸು</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ಅಥವಾ ಸೆಟಪ್ ವಿಝಾರ್ಡ್ ಮೂಲಕ, ಅದು ಮೊದಲು ದೃಢೀಕರಣವನ್ನು ಕೇಳುತ್ತದೆ.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ರದ್ದುಮಾಡು</translation>
     </message>

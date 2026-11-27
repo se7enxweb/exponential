@@ -51441,6 +51441,14 @@ Wali asebter n yimeḥtaǧen i wugar n telɣut.</translation>
         <translation>Sekker amarag n usbadu</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Sekker amarag n usbadu ula d acu</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Neɣ s umarag n usbadu, ara isutren asentem di tazwara.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Sefsex</translation>
     </message>

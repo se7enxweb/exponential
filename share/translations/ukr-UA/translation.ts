@@ -51392,6 +51392,14 @@ See the requirements page for more information.</source>
         <translation>Запустити майстер встановлення</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Усе одно запустити майстер встановлення</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Або за допомогою майстра встановлення, який спершу просить підтвердження.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>

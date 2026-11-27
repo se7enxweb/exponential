@@ -51380,6 +51380,14 @@ Za više informacija pogledajte stranicu sa zahtjevima.</translation>
         <translation>Pokreni čarobnjak za instalaciju</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ipak pokreni čarobnjak za instalaciju</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ili čarobnjakom za instalaciju, koji prvo traži potvrdu.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Otkaži</translation>
     </message>

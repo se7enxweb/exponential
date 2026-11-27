@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>அமைவு வழிகாட்டியைத் தொடங்கு</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>இருப்பினும் அமைவு வழிகாட்டியை இயக்கு</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>அல்லது முதலில் உறுதிப்படுத்தலைக் கேட்கும் அமைவு வழிகாட்டியுடன்.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ரத்துசெய்</translation>
     </message>

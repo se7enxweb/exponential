@@ -44288,6 +44288,14 @@ Više podataka potražite na stranici sa zahtjevima.</translation>
         <translation>Pokreni čarobnjak za postavljanje</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ipak pokreni čarobnjak za postavljanje</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ili čarobnjakom za postavljanje, koji najprije traži potvrdu.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Odustani</translation>
     </message>

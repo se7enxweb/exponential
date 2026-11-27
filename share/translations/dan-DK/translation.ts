@@ -51772,6 +51772,14 @@ Se siden med krav for at få flere oplysninger.</translation>
         <translation>Start installationsguiden</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Kør installationsguiden alligevel</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Eller med installationsguiden, som først beder om en bekræftelse.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>

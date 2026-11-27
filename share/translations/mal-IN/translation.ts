@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>സജ്ജീകരണ വിസാർഡ് ആരംഭിക്കുക</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>എന്നാലും സജ്ജീകരണ വിസാർഡ് പ്രവർത്തിപ്പിക്കുക</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>അല്ലെങ്കിൽ ആദ്യം സ്ഥിരീകരണം ചോദിക്കുന്ന സജ്ജീകരണ വിസാർഡ് ഉപയോഗിച്ച്.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>റദ്ദാക്കുക</translation>
     </message>

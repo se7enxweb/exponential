@@ -44596,6 +44596,14 @@ Consulta la pagina dei requisiti per maggiori informazioni.</translation>
         <translation>Avvia la procedura guidata di installazione</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Avvia comunque la procedura guidata di installazione</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Oppure con la procedura guidata di installazione, che chiede prima una conferma.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>

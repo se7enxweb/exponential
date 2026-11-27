@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Тохируулгын шидтэнг эхлүүлэх</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Тохируулгын шидтэнг ямар ч байсан ажиллуулах</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Эсвэл эхлээд баталгаажуулалт хүсдэг тохируулгын шидтэнгээр.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Цуцлах</translation>
     </message>

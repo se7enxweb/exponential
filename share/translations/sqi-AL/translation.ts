@@ -51380,6 +51380,14 @@ Për më shumë informacion shihni faqen e kërkesave.</translation>
         <translation>Nis magjistarin e konfigurimit</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Nis megjithatë magjistarin e konfigurimit</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ose me magjistarin e konfigurimit, që kërkon fillimisht një konfirmim.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Anulo</translation>
     </message>

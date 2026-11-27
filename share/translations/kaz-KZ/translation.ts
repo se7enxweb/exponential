@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Орнату шеберін іске қосу</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Орнату шеберін бәрібір іске қосу</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Немесе алдымен растауды сұрайтын орнату шеберімен.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Бас тарту</translation>
     </message>

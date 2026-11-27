@@ -51439,6 +51439,14 @@ Daha fazla bilgi için gereksinimler sayfasına bakın.</translation>
         <translation>Kurulum sihirbazını başlat</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Kurulum sihirbazını yine de çalıştır</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ya da önce onay isteyen kurulum sihirbazıyla.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>

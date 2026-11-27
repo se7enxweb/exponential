@@ -51380,6 +51380,14 @@ Consulta la pàgina de requisits per obtenir-ne més informació.</translation>
         <translation>Inicia l&apos;assistent de configuració</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Executa l'assistent de configuració igualment</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>O amb l'assistent de configuració, que primer demana una confirmació.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>

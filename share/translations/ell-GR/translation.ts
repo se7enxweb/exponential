@@ -51380,6 +51380,14 @@ See the requirements page for more information.</source>
         <translation>Εκκίνηση του οδηγού εγκατάστασης</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Εκτέλεση του οδηγού εγκατάστασης παρ' όλα αυτά</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ή με τον οδηγό εγκατάστασης, που ζητά πρώτα επιβεβαίωση.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>

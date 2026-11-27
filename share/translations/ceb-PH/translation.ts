@@ -51441,6 +51441,14 @@ Tan-awa ang panid sa mga gikinahanglan alang sa dugang nga impormasyon.</transla
         <translation>Sugdi ang setup wizard</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Padagana gihapon ang setup wizard</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>O pinaagi sa setup wizard, nga mangayo una og kumpirmasyon.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Kanselaha</translation>
     </message>

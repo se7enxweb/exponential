@@ -51441,6 +51441,14 @@ Batafsil maʼlumot uchun talablar sahifasiga qarang.</translation>
         <translation>Sozlash sehrgarini ishga tushirish</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Baribir sozlash sehrgarini ishga tushirish</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Yoki avval tasdiqlashni soʻraydigan sozlash sehrgari bilan.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Bekor qilish</translation>
     </message>

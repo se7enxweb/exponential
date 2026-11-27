@@ -51441,6 +51441,14 @@ Check di requirements page for more information.</translation>
         <translation>Start di setup wizard</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Run di setup wizard anyhow</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Or wit di setup wizard, wey go first ask you to confam.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>

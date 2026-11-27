@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>Bẹ̀rẹ̀ alámọ̀ràn ìgbékalẹ̀</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ṣiṣẹ́ alámọ̀ràn ìgbékalẹ̀ bákan náà</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Tàbí pẹ̀lú alámọ̀ràn ìgbékalẹ̀, tí ó kọ́kọ́ béèrè ìfìdímúlẹ̀.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Fagilé</translation>
     </message>

@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Запусціць майстар усталявання</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Усё роўна запусціць майстар усталявання</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Або з дапамогай майстра ўсталявання, які спачатку просіць пацвярджэння.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Скасаваць</translation>
     </message>

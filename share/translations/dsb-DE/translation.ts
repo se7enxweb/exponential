@@ -51380,6 +51380,14 @@ Dalšne informacije namakajośo na boku z pominanjami.</translation>
         <translation>Instalaciskego asistenta startowaś</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Instalaciskego asistenta wšakorunjeju startowaś</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Abo z instalaciskim asistentom, kótaryž nejpjerwjej wobkšuśenje pšosy.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Pśetergnuś</translation>
     </message>

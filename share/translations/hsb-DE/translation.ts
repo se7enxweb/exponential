@@ -51441,6 +51441,14 @@ Dalše informacije namakaće na stronje z požadanjemi.</translation>
         <translation>Instalaciskeho asistenta startować</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Instalaciskeho asistenta najebać startować</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Abo z instalaciskim asistentom, kotryž najprjedy wobkrućenje žada.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Přetorhnyć</translation>
     </message>

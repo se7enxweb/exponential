@@ -51441,6 +51441,14 @@ Sjoch de side mei systeemeasken foar mear ynformaasje.</translation>
         <translation>De ynstelassistint starte</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>De ynstelassistint dochs útfiere</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Of mei de ynstelassistint, dy't earst om in befêstiging freget.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Annulearje</translation>
     </message>

@@ -51380,6 +51380,14 @@ See the requirements page for more information.</source>
         <translation>Покрени чаробњак за подешавање</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ипак покрени чаробњак за подешавање</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Или чаробњаком за подешавање, који прво тражи потврду.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Одустани</translation>
     </message>

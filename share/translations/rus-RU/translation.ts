@@ -51380,6 +51380,14 @@ See the requirements page for more information.</source>
         <translation>Запустить мастер установки</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Всё равно запустить мастер установки</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Или с помощью мастера установки, который сначала запрашивает подтверждение.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>

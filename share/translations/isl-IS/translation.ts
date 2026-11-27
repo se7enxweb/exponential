@@ -51380,6 +51380,14 @@ Nánari upplýsingar eru á síðunni um kerfiskröfur.</translation>
         <translation>Ræsa leiðsagnarforrit uppsetningar</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Keyra leiðsagnarforrit uppsetningar samt</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Eða með leiðsagnarforriti uppsetningar, sem biður fyrst um staðfestingu.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Hætta við</translation>
     </message>

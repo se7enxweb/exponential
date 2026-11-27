@@ -51441,6 +51441,14 @@ Onai peji yezvinodiwa kuti muwane ruzivo rwakawanda.</translation>
         <translation>Tanga mubatsiri wegadziriro</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Mhanyisa mubatsiri wegadziriro zvakadaro</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Kana nemubatsiri wegadziriro, anotanga akumbira kusimbisa.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Kanzura</translation>
     </message>

@@ -51395,6 +51395,14 @@ Plura vide in pagina postulatorum.</translation>
         <translation>Ductorem configurationis incohare</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ductorem configurationis tamen incohare</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Aut ductore configurationis, qui prius confirmationem petit.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Abrogare</translation>
     </message>

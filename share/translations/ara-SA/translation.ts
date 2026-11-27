@@ -51380,6 +51380,14 @@ See the requirements page for more information.</source>
         <translation>بدء معالج الإعداد</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>تشغيل معالج الإعداد على أي حال</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>أو باستخدام معالج الإعداد، الذي يطلب التأكيد أولاً.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>

@@ -51441,6 +51441,14 @@ Xoolal xëtu lu ñu laaj yi ngir yeneen xibaar.</translation>
         <translation>Tambali gindikatu defar bi</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Doxal gindikatu defar bi ba tey</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Walla ak gindikatu defar bi, mu jëkk a laaj ndigal.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Neenal</translation>
     </message>

@@ -51382,6 +51382,14 @@ See the requirements page for more information.</source>
         <translation>הפעלת אשף ההתקנה</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>להפעיל בכל זאת את אשף ההתקנה</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>או באמצעות אשף ההתקנה, שמבקש אישור תחילה.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ביטול</translation>
     </message>

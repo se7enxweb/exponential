@@ -51380,6 +51380,14 @@ See the requirements page for more information.</source>
         <translation>सेटअप विज़ार्ड शुरू करें</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>फिर भी सेटअप विज़ार्ड चलाएँ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>या सेटअप विज़ार्ड से, जो पहले पुष्टि माँगता है।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>रद्द करें</translation>
     </message>

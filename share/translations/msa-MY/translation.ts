@@ -51441,6 +51441,14 @@ Lihat halaman keperluan untuk maklumat lanjut.</translation>
         <translation>Mulakan wizard persediaan</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Jalankan wizard persediaan juga</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Atau dengan wizard persediaan, yang meminta pengesahan terlebih dahulu.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Batal</translation>
     </message>

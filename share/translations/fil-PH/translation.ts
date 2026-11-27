@@ -51441,6 +51441,14 @@ Tingnan ang pahina ng mga kinakailangan para sa karagdagang impormasyon.</transl
         <translation>Simulan ang setup wizard</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Patakbuhin pa rin ang setup wizard</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>O gamit ang setup wizard, na humihingi muna ng kumpirmasyon.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Kanselahin</translation>
     </message>

@@ -51437,6 +51437,14 @@ Ehecha tekotevẽ kuatiarogue marandu hetave peg̃uarã.</translation>
         <translation>Eñepyrũ ñemboheko pytyvõhára</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Embopu ñemboheko pytyvõhára jepéramo</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Térã ñemboheko pytyvõhára rupive, ojeruréva raẽ jehechajey.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Heja</translation>
     </message>

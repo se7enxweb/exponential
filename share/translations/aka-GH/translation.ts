@@ -51441,6 +51441,14 @@ Hwɛ nneɛma a ɛhia krataafa no so na hunu nsɛm pii.</translation>
         <translation>Fi ahosiesie boafoɔ no ase</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Fa ahosiesie boafoɔ no di dwuma ara</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Anaa ahosiesie boafoɔ no, a ɛdi kan bisa sɛ wopene so.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Gyae</translation>
     </message>

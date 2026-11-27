@@ -51380,6 +51380,14 @@ See the requirements page for more information.</source>
         <translation>セットアップウィザードの開始</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>それでもセットアップウィザードを実行</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>または、最初に確認を求めるセットアップウィザードを使用します。</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>

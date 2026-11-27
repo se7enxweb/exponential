@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>የዝግጅት ረዳቱን ጀምር</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>የዝግጅት ረዳቱን ለማንኛውም አሂድ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ወይም በዝግጅት ረዳቱ፣ እሱም በመጀመሪያ ማረጋገጫ ይጠይቃል።</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ሰርዝ</translation>
     </message>

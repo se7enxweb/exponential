@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ئورنىتىش يېتەكچىسىنى باشلا</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>يەنىلا ئورنىتىش يېتەكچىسىنى ئىجرا قىل</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ياكى ئالدى بىلەن جەزملەشنى سورايدىغان ئورنىتىش يېتەكچىسى بىلەن.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ۋاز كەچ</translation>
     </message>

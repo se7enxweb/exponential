@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>سیٹ اَپ وِزرڈ شُروٗع کٔرِو</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>پَتہٕ تہِ سیٹ اَپ وِزرڈ چَلٲوِو</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>یا سیٹ اَپ وِزرڈ سٟتۍ، یُس گۄڑَن تَصدیٖق مَنگان چھُ۔</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>منسوٗخ کٔرِو</translation>
     </message>

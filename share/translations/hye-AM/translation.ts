@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>Գործարկել կարգաբերման վարպետը</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Միևնույն է գործարկել կարգաբերման վարպետը</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Կամ կարգաբերման վարպետով, որը նախ հաստատում է խնդրում։</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Չեղարկել</translation>
     </message>

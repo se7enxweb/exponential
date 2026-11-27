@@ -51441,6 +51441,14 @@ Rora ũrũa wa ũhoro wa ũrĩa ũbataranagio nĩguo ũmenye ũhoro ũngĩ.</tra
         <translation>Ambĩrĩria mũteithia wa mwambĩrĩria</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Hũthũkia mũteithia wa mwambĩrĩria o na kũrĩ ũguo</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Kana na mũteithia wa mwambĩrĩria, ũrĩa ũũragia gĩtĩkĩro mbere.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Tiga</translation>
     </message>

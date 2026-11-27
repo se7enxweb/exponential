@@ -51441,6 +51441,14 @@ Sellit ouzh pajenn ar goulennoù evit gouzout hiroc'h.</translation>
         <translation>Loc'hañ skoazeller ar c'hefluniañ</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Loc'hañ skoazeller ar c'hefluniañ memes tra</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Pe gant skoazeller ar c'hefluniañ, a c'houlenn ur gadarnadur da gentañ.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Nullañ</translation>
     </message>

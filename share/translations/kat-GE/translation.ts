@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ინსტალაციის ოსტატის გაშვება</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>მაინც გაუშვით ინსტალაციის ოსტატი</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ან ინსტალაციის ოსტატით, რომელიც ჯერ დადასტურებას ითხოვს.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>გაუქმება</translation>
     </message>

@@ -44407,6 +44407,14 @@ Zie de pagina met systeemeisen voor meer informatie.</translation>
         <translation>De installatiewizard starten</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>De installatiewizard toch uitvoeren</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Of met de installatiewizard, die eerst om een bevestiging vraagt.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>

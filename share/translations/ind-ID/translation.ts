@@ -51441,6 +51441,14 @@ Lihat halaman persyaratan untuk informasi lebih lanjut.</translation>
         <translation>Mulai wisaya penyiapan</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Tetap jalankan wisaya penyiapan</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Atau dengan wisaya penyiapan, yang meminta konfirmasi terlebih dahulu.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Batal</translation>
     </message>

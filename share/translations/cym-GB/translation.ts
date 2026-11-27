@@ -51441,6 +51441,14 @@ Gweler y dudalen gofynion am ragor o wybodaeth.</translation>
         <translation>Cychwyn y dewin gosod</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Rhedeg y dewin gosod beth bynnag</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Neu gyda'r dewin gosod, sy'n gofyn am gadarnhad yn gyntaf.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Canslo</translation>
     </message>

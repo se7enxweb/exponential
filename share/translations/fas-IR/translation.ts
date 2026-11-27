@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>شروع ویزارد نصب</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ویزارد نصب را به هر حال اجرا کن</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>یا با ویزارد نصب، که ابتدا تأیید می‌خواهد.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>لغو</translation>
     </message>

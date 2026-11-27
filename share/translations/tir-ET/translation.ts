@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ነቲ መሕለፊ ምድላው ጀምር</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ብዝኾነ መሕለፊ ምድላው ኣካይድ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ወይ ብመሕለፊ ምድላው፣ እዚ ቅድም ምርግጋጽ ዝሓትት።</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ሰርዝ</translation>
     </message>

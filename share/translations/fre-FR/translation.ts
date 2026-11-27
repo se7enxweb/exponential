@@ -44549,6 +44549,14 @@ Consultez la page des prérequis pour plus d&apos;informations.</translation>
         <translation>Démarrer l&apos;assistant d&apos;installation</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Lancer quand même l'assistant d'installation</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ou avec l'assistant d'installation, qui demande d'abord une confirmation.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>

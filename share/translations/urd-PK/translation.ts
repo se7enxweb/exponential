@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>سیٹ اپ وزرڈ شروع کریں</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>پھر بھی سیٹ اپ وزرڈ چلائیں</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>یا سیٹ اپ وزرڈ کے ذریعے، جو پہلے تصدیق مانگتا ہے۔</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>منسوخ کریں</translation>
     </message>

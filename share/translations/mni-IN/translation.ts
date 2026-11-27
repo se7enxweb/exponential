@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>সেটআপ উইজার্দ শুরু তৌবা</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>মসিগুম্বা ওইরবসু সেটআপ উইজার্দ চলাউ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>নত্রগা সেটআপ উইজার্দগা লোয়ননা, মসিনা অহানবদা থাজবা পুশিনবা হায়জৈ।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>কেন্সেল তৌবা</translation>
     </message>

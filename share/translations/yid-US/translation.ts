@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>אָנהייבן דעם אייַנריכטונג־אַסיסטענט</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>לאָזט פֿאָרט לויפֿן דעם אייַנריכטונג־אַסיסטענט</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>אָדער מיטן אייַנריכטונג־אַסיסטענט, וואָס בעט קודם אַ באַשטעטיקונג.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>אַנולירן</translation>
     </message>

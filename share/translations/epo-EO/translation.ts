@@ -51441,6 +51441,14 @@ Legu la paĝon pri postuloj por pliaj informoj.</translation>
         <translation>Starti la agordan asistanton</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Tamen lanĉi la agordan asistanton</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Aŭ per la agorda asistanto, kiu unue petas konfirmon.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Nuligi</translation>
     </message>

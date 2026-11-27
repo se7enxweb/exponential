@@ -51439,6 +51439,14 @@ Duba shafin buƙatu don ƙarin bayani.</translation>
         <translation>Fara mai jagorar saiti</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Gudanar da jagorar saiti duk da haka</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Ko da jagorar saiti, wanda ke neman tabbatarwa da farko.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Soke</translation>
     </message>

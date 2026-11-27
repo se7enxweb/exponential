@@ -51439,6 +51439,14 @@ See the requirements page for more information.</source>
         <translation>ସେଟଅପ୍ ୱିଜାର୍ଡ ଆରମ୍ଭ କରନ୍ତୁ</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ତଥାପି ସେଟଅପ୍ ୱିଜାର୍ଡ ଚଲାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>କିମ୍ବା ସେଟଅପ୍ ୱିଜାର୍ଡ ସହିତ, ଯାହା ପ୍ରଥମେ ନିଶ୍ଚିତକରଣ ମାଗେ।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ବାତିଲ କରନ୍ତୁ</translation>
     </message>

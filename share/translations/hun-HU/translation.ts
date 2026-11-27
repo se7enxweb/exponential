@@ -51380,6 +51380,14 @@ További információt a követelményeket ismertető oldalon talál.</translati
         <translation>Telepítővarázsló indítása</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Telepítővarázsló futtatása mégis</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Vagy a telepítővarázslóval, amely először megerősítést kér.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Mégse</translation>
     </message>

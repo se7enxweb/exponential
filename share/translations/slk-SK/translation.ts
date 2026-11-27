@@ -51380,6 +51380,14 @@ See the requirements page for more information.</source>
         <translation>Spustiť sprievodcu nastavením</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Napriek tomu spustiť sprievodcu nastavením</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Alebo sprievodcom nastavením, ktorý si najprv vyžiada potvrdenie.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Zrušiť</translation>
     </message>

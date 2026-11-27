@@ -51439,6 +51439,14 @@ Bhekani ikhasi lezidingo ukuze nithole ulwazi olwengeziwe.</translation>
         <translation>Qalani isiphathi sokumisa</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Qhuba isiphathi sokumisa noma kunjalo</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Noma ngesiphathi sokumisa, esicela ukuqinisekisa kuqala.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Khansela</translation>
     </message>

@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>سيٽ اپ وزرڊ شروع ڪريو</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>تڏهن به سيٽ اپ وزرڊ هلايو</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>يا سيٽ اپ وزرڊ سان، جيڪو پهريان تصديق گهري ٿو.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>رد ڪريو</translation>
     </message>

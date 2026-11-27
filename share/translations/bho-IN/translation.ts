@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>सेटअप विज़ार्ड सुरू करीं</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>तबो सेटअप विज़ार्ड चलाईं</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>भा सेटअप विज़ार्ड से, जवन पहिले पुष्टि माँगेला।</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>रद्द करीं</translation>
     </message>

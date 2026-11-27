@@ -51395,6 +51395,14 @@ latlh De&apos; DaneHchugh, poQghachmey nav yIlegh.</translation>
         <translation>SeHlaw DevwI&apos; yItagh</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>SeHlaw DevwI' yItagh 'ach</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>pagh SeHlaw DevwI' yIlo'; wa'DIch 'ol'eghmeH tlhob.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>yIqIl</translation>
     </message>

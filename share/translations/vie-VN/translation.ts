@@ -51441,6 +51441,14 @@ Xem trang yêu cầu hệ thống để biết thêm thông tin.</translation>
         <translation>Khởi động trình hướng dẫn thiết lập</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Vẫn chạy trình hướng dẫn thiết lập</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Hoặc bằng trình hướng dẫn thiết lập, vốn yêu cầu xác nhận trước.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Hủy</translation>
     </message>

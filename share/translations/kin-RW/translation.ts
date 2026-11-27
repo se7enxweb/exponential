@@ -51441,6 +51441,14 @@ Murebe urupapuro rw'ibisabwa kugira ngo mumenye byinshi.</translation>
         <translation>Gutangira umufasha wo gutunganya</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Koresha umufasha wo gutunganya uko byagenda kose</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Cyangwa ukoresheje umufasha wo gutunganya, ubanza gusaba kwemeza.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Kureka</translation>
     </message>

@@ -51441,6 +51441,14 @@ Ibsa dabalataaf fuula barbaachisummaa ilaalaa.</translation>
         <translation>Qopheessaa jalqabi</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Haa ta'u malee qopheessaa hojjechiisi</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Yookaan qopheessaan, kan dura mirkaneessa gaafatuun.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Dhiisi</translation>
     </message>

@@ -51380,6 +51380,14 @@ Lisätietoja on vaatimussivulla.</translation>
         <translation>Käynnistä ohjattu asennus</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Suorita ohjattu asennus silti</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Tai ohjatulla asennuksella, joka pyytää ensin vahvistuksen.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>

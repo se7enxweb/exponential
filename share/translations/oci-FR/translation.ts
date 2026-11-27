@@ -51441,6 +51441,14 @@ Consultatz la pagina dels prerequesits per mai d'informacions.</translation>
         <translation>Aviar l'assistent de configuracion</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Aviar l'assistent de configuracion pasmens</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>O amb l'assistent de configuracion, que demanda d'en primièr una confirmacion.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Anullar</translation>
     </message>

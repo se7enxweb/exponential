@@ -51441,6 +51441,14 @@ Vakai ki he peesi ʻo e ngaahi fiemaʻu ki he fakamatala lahi ange.</translation
         <translation>Kamata ʻa e tataki fokotuʻu</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Fakaʻaongaʻi pē ʻa e tataki fokotuʻu</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Pe ʻaki ʻa e tataki fokotuʻu, ʻa ia ʻoku ne kole ʻuluaki ha fakapapau.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Kaniseli</translation>
     </message>

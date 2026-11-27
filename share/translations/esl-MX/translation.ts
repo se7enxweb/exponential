@@ -54778,6 +54778,14 @@ Esta funcionalidad queda también disponible más adelante desde la interfaz de 
         <translation>Iniciar el asistente de instalación</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Ejecutar el asistente de instalación de todos modos</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>O con el asistente de instalación, que primero pide una confirmación.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>

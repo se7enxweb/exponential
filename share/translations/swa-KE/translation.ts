@@ -51439,6 +51439,14 @@ Tazama ukurasa wa mahitaji kwa taarifa zaidi.</translation>
         <translation>Anzisha msaidizi wa usanidi</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Endesha msaidizi wa usanidi hata hivyo</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Au kwa msaidizi wa usanidi, ambao huomba uthibitisho kwanza.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Ghairi</translation>
     </message>

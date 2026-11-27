@@ -51380,6 +51380,14 @@ See the requirements page for more information.</source>
         <translation>Стартирай съветника за инсталация</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Все пак стартирай съветника за инсталация</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>Или със съветника за инсталация, който първо иска потвърждение.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Отказ</translation>
     </message>

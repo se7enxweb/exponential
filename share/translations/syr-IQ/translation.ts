@@ -51441,6 +51441,14 @@ See the requirements page for more information.</source>
         <translation>ܫܘܪܝܐ ܕܡܥܕܪܢܐ ܕܛܘܝܒܐ</translation>
     </message>
     <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>ܣܪܗܒ ܡܥܕܪܢܐ ܕܛܘܝܒܐ ܒܟܠ ܐܘܪܚ</translation>
+    </message>
+    <message>
+        <source>Or with the setup wizard, which asks for a confirmation first.</source>
+        <translation>ܐܘ ܒܡܥܕܪܢܐ ܕܛܘܝܒܐ، ܕܫܐܠ ܫܘܪܪܐ ܠܩܕܡܝܢ.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>ܒܘܛܠܐ</translation>
     </message>
