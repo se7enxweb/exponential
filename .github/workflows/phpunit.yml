@@ -1474,6 +1474,94 @@ jobs:
       - name: Clean CI Composer overlay
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+  # Couchbase and Apache CouchDB: the drivers (expCouchbaseDB over the Query service's SQL++, expCouchDBDB over CouchDB's
+  # HTTP API), the data table connections and the imports, against Couchbase Server Community and CouchDB in containers.
+  # Neither is a site database (see their driver pages), so no site is installed here.
+  couch:
+    name: Couchbase ${{ matrix.couchbase }} and CouchDB ${{ matrix.couchdb }} (PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { couchbase: 'community-7.6.2', couchdb: '3.4.3', php: '8.5' }
+          - { couchbase: 'community-7.2.4', couchdb: '3.3.3', php: '8.1' }
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Start Couchbase and CouchDB
+        run: |
+          docker run -d --name couchbase -p 8091:8091 -p 8093:8093 couchbase/server:${{ matrix.couchbase }}
+          docker run -d --name couchdb -p 5984:5984 -e COUCHDB_USER=exp -e COUCHDB_PASSWORD=Ci-Couch-2026 couchdb:${{ matrix.couchdb }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, xsl, curl, zlib, pdo, pdo_sqlite, sqlite3, pcntl, posix, zip
+          ini-values: memory_limit=1G
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          # the PHPUnit this PHP runs (Composer would pick PHPUnit 13, which needs 8.4, past --ignore-platform-req=php)
+          case "${{ matrix.php }}" in
+            8.1) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^10.5" ;;
+            8.2|8.3) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^11.5" ;;
+          esac
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            sleep $((attempt * 15))
+          done
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Run the DB-less Couchbase and CouchDB tests
+        run: php vendor/bin/phpunit --colors=always --testsuite couch
+
+      # Couchbase: one node with the data, index and query services, a bucket without replicas (a transaction's writes
+      # are then durable on the one node); CouchDB: its system databases, as a single node needs them
+      - name: Set up the servers
+        run: |
+          for i in $(seq 1 60); do curl -sf -o /dev/null http://127.0.0.1:8091/ui/index.html && break; sleep 3; done
+          docker exec couchbase couchbase-cli cluster-init -c 127.0.0.1 --cluster-username exp --cluster-password Ci-Couchbase-2026 \
+            --services data,index,query --cluster-ramsize 512 --cluster-index-ramsize 256 --index-storage-setting default
+          docker exec couchbase couchbase-cli bucket-create -c 127.0.0.1 -u exp -p Ci-Couchbase-2026 --bucket exponential \
+            --bucket-type couchbase --bucket-ramsize 256 --bucket-replica 0 --wait
+          for i in $(seq 1 60); do curl -sf -u exp:Ci-Couchbase-2026 http://127.0.0.1:8093/query/service -d 'statement=SELECT RAW 1' | grep -q success && break; sleep 3; done
+          for i in $(seq 1 30); do curl -sf -o /dev/null http://127.0.0.1:5984/ && break; sleep 2; done
+          for db in _users _replicator; do curl -sf -u exp:Ci-Couch-2026 -X PUT "http://127.0.0.1:5984/$db" || true; done
+          curl -s -u exp:Ci-Couchbase-2026 http://127.0.0.1:8093/query/service -d 'statement=SELECT RAW ds_version()'
+          curl -s -u exp:Ci-Couch-2026 http://127.0.0.1:5984/
+
+      - name: Run the live tests
+        env:
+          EXP_TEST_COUCHBASE_HOST: 127.0.0.1
+          EXP_TEST_COUCHBASE_PORT: 8093
+          EXP_TEST_COUCHBASE_USER: exp
+          EXP_TEST_COUCHBASE_PASSWORD: Ci-Couchbase-2026
+          EXP_TEST_COUCHBASE_BUCKET: exponential
+          EXP_TEST_COUCHDB_HOST: 127.0.0.1
+          EXP_TEST_COUCHDB_PORT: 5984
+          EXP_TEST_COUCHDB_USER: exp
+          EXP_TEST_COUCHDB_PASSWORD: Ci-Couch-2026
+        run: php vendor/bin/phpunit --colors=always --fail-on-skipped --testsuite couch-live
+
+      - name: Logs
+        if: failure()
+        run: |
+          docker logs --tail 60 couchbase || true
+          docker logs --tail 60 couchdb || true
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
   # MS Access on Windows: Microsoft's Access Database Engine 2016 (x64) ODBC driver, an empty .accdb made with ADOX,
   # the driver's live tests, the import through ODBC, and the probe of a minimal site on Access (its report is an
   # artifact). The engine is a download from Microsoft, not part of the runner image, so the job may not fail the run.

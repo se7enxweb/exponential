@@ -3383,6 +3383,32 @@
     "lib/ezdb/classes/exptursodb.php": [
       "tests/tests/lib/ezdb/libsql/expLibSQLDBTest.php"
     ],
+    "lib/ezdb/classes/expcouchsqllexer.php": [
+      "tests/tests/lib/ezdb/couch/expCouchbaseDialectTest.php",
+      "tests/tests/lib/ezdb/couch/expCouchDBDBTest.php"
+    ],
+    "lib/ezdb/classes/expcouchbase*.php": [
+      "tests/tests/lib/ezdb/couch/expCouchbaseDialectTest.php",
+      "tests/tests/lib/ezdb/couch/expCouchbaseDBTest.php",
+      "tests/tests/kernel/classes/couch/expCouchReadersTest.php"
+    ],
+    "lib/ezdb/classes/expcouchdb*.php": [
+      "tests/tests/lib/ezdb/couch/expCouchDBDBTest.php",
+      "tests/tests/kernel/classes/couch/expCouchReadersTest.php"
+    ],
+    "lib/ezdbschema/classes/expcouch*schema.php": [
+      "tests/tests/lib/ezdb/couch/expCouchbaseDBTest.php",
+      "tests/tests/lib/ezdb/couch/expCouchDBDBTest.php"
+    ],
+    "kernel/classes/couch/*": [
+      "tests/tests/kernel/classes/couch/expCouchReadersTest.php"
+    ],
+    "kernel/private/classes/commands/expcouch*import.php": [
+      "tests/tests/kernel/classes/couch/expCouchReadersTest.php"
+    ],
+    "bin/php/expcouch*import.php": [
+      "tests/tests/kernel/classes/couch/expCouchReadersTest.php"
+    ],
     "lib/ezdb/classes/expmsaccess*.php": [
       "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
       "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"

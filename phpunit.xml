@@ -56,6 +56,8 @@
             <exclude>tests/tests/kernel/classes/msaccess</exclude>
             <!-- in the suites cassandra and cassandra-live; a file can be in one suite only -->
             <exclude>tests/tests/kernel/classes/cassandra</exclude>
+            <!-- in the suites couch and couch-live; a file can be in one suite only -->
+            <exclude>tests/tests/kernel/classes/couch</exclude>
         </testsuite>
 
         <testsuite name="kernel-content">
@@ -123,6 +125,8 @@
             <exclude>tests/tests/lib/ezdb/db2</exclude>
             <!-- in the suites cassandra and cassandra-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/cassandra</exclude>
+            <!-- in the suites couch and couch-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/couch</exclude>
         </testsuite>
 
         <!--
@@ -246,6 +250,24 @@
         <testsuite name="cassandra-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/cassandra/live</directory>
             <directory suffix="Test.php">tests/tests/kernel/classes/cassandra/live</directory>
+        </testsuite>
+
+        <!--
+          The Couchbase and CouchDB drivers (expCouchbaseDB, expCouchDBDB), their imports and data table connections: the
+          DB-less tests (stand-ins for both servers), and the live tests against servers (EXP_TEST_COUCHBASE_HOST, _PORT,
+          _USER, _PASSWORD, _BUCKET; EXP_TEST_COUCHDB_HOST, _PORT, _USER, _PASSWORD; each skips without its server).
+          Run: php vendor/bin/phpunit - -testsuite couch | couch-live
+        -->
+        <testsuite name="couch">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/couch</directory>
+            <directory suffix="Test.php">tests/tests/kernel/classes/couch</directory>
+            <exclude>tests/tests/lib/ezdb/couch/live</exclude>
+            <exclude>tests/tests/kernel/classes/couch/live</exclude>
+        </testsuite>
+
+        <testsuite name="couch-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/couch/live</directory>
+            <directory suffix="Test.php">tests/tests/kernel/classes/couch/live</directory>
         </testsuite>
 
         <testsuite name="odbc-live">
