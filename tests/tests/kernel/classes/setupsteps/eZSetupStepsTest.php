@@ -392,6 +392,10 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
                 $reachable[$type] = true;
                 if ( in_array( $type, array( 'pdo_ibm', 'ibm_db2' ), true ) )
                     $reachable['db2'] = $reachable['informix'] = true;
+                // PDO_ODBC and the odbc extension give a site over ODBC, one type per dialect
+                if ( in_array( $type, array( 'pdo_odbc', 'odbc' ), true ) )
+                    foreach ( array_keys( eZSetupODBCDatabaseMap() ) as $odbcType )
+                        $reachable[$odbcType] = true;
             }
         }
         finally
