@@ -131,6 +131,10 @@ class eZPackageUploadInspector
         {
             $count++;
             $path = $entry->getPath();
+            // ezcArchive joins the ustar prefix and name with DIRECTORY_SEPARATOR, a backslash on Windows, where it is
+            // a separator like the slash. The names as the archive has them were checked by expPackageArchive::open().
+            if ( DIRECTORY_SEPARATOR === '\\' && is_string( $path ) )
+                $path = str_replace( '\\', '/', $path );
             if ( $count > $limits['max_entries'] )
                 return array( 'code' => 'too_many_entries', 'path' => '' );
             if ( !self::safeEntryPath( $path ) )

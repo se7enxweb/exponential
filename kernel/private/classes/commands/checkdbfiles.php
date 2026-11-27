@@ -437,8 +437,10 @@ class Checkdbfiles extends \Exponential\Runnable\Command
                 $unknown = array();
                 foreach ( $iterator as $file )
                 {
+                    // the names below $branchDir with slashes, as the other files of the list: the iterator joins
+                    // with DIRECTORY_SEPARATOR, a backslash on Windows
                     if ( $file->isFile() )
-                        $unknown[] = $file->getPathname();
+                        $unknown[] = $branchDir . str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $branchDir ) ) );
                 }
                 sort( $unknown );
                 $fileList = array_merge( $fileList, $unknown );

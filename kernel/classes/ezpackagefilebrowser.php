@@ -28,7 +28,11 @@ class eZPackageFileBrowser
         {
             if ( !$file->isFile() )
                 continue;
-            $relative = ltrim( str_replace( $base, '', $file->getPathname() ), '/' );
+            $relative = str_replace( $base, '', $file->getPathname() );
+            // the iterator joins with DIRECTORY_SEPARATOR, a backslash on Windows
+            if ( DIRECTORY_SEPARATOR === '\\' )
+                $relative = str_replace( '\\', '/', $relative );
+            $relative = ltrim( $relative, '/' );
             // A hidden file or one under a hidden directory (.cache/, ...) is the kernel's own
             // bookkeeping for the package, not one of its own install items - never part of what
             // this browser shows, downloadable or otherwise, even though it is still safely inside
@@ -114,7 +118,7 @@ class eZPackageFileBrowser
         if ( $base === false )
             return false;
         $real = realpath( $base . '/' . $relativePath );
-        if ( $real === false || !is_file( $real ) || strpos( $real . '/', $base . '/' ) !== 0 )
+        if ( $real === false || !is_file( $real ) || !eZDir::isInside( $real, $base ) )
             return false;
         return $real;
     }
