@@ -95,7 +95,72 @@
   {$database_info.info.name|wash}
   </td>
 </tr>
-{if and( $database_info.info.type|ne('sqlite3'), $database_info.info.type|ne('duckdb') )}
+{if or( $database_info.info.type|eq('libsql'), $database_info.info.type|eq('turso') )}
+<tr>
+  <td class="normal" colspan="3"><input type="hidden" name="eZSetupLibSQLPage" value="1" />
+  {if $libsql.turso}
+  <p>{"Turso keeps the database in its cloud and is reached over HTTPS with the database's auth token. Give the database URL Turso shows (libsql://...), and the token."|i18n("design/standard/setup/init")}</p>
+  {else}
+  <p>{"libSQL is SQLite's fork: the site uses SQLite's schema, either on a libSQL server (sqld) reached over HTTP, or in a local file (the embedded file mode, no server)."|i18n("design/standard/setup/init")}</p>
+  {/if}
+  </td>
+</tr>
+{if $libsql.turso|not}
+<tr>
+  <td class="normal"><label class="textfield">{"Mode"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal">
+  <label><input type="radio" name="eZSetupLibSQLMode" value="remote"{if $libsql.mode|eq('remote')} checked="checked"{/if} /> {"A libSQL server (sqld)"|i18n("design/standard/setup/init")}</label><br />
+  <label><input type="radio" name="eZSetupLibSQLMode" value="file"{if $libsql.mode|eq('file')} checked="checked"{/if} /> {"The embedded file mode: a local file, no server"|i18n("design/standard/setup/init")}</label>
+  </td>
+</tr>
+{/if}
+<tr>
+  <th class="label" colspan="3">{"Server"|i18n("design/standard/setup/init")}</th>
+</tr>
+<tr>
+  <td class="normal"><label class="textfield" for="eZSetupLibSQLURL">{"Server URL"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" id="eZSetupLibSQLURL" name="eZSetupLibSQLURL" size="40" value="{$libsql.url|wash}" placeholder="http://127.0.0.1:8080" /><br />
+  <small>{"Optional: replaces the server name and port (http://host:port, https://host, libsql://host)."|i18n("design/standard/setup/init")}</small></td>
+</tr>
+<tr>
+  <td class="normal"><label class="textfield">{"Servername"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" name="eZSetupDatabaseServer" size="24" value="{$database_info.server|wash}" /></td>
+</tr>
+<tr>
+  <td class="normal"><label class="textfield">{"Port"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" name="eZSetupDatabasePort" size="8" value="{$database_info.port|wash}" /></td>
+</tr>
+{if $libsql.turso|not}
+<tr>
+  <td class="normal"><label class="textfield" for="eZSetupLibSQLTLS">{"TLS (https)"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="checkbox" id="eZSetupLibSQLTLS" name="eZSetupLibSQLTLS" value="1"{if $libsql.tls} checked="checked"{/if} /></td>
+</tr>
+{/if}
+<tr>
+  <td class="normal"><label class="textfield" for="eZSetupLibSQLCAFile">{"CA file (optional)"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" id="eZSetupLibSQLCAFile" name="eZSetupLibSQLCAFile" size="40" value="{$libsql.cafile|wash}" /><br />
+  <small>{"The full path of a PEM file that checks the server's certificate; empty: the system's certificate authorities."|i18n("design/standard/setup/init")}</small></td>
+</tr>
+<tr>
+  <td class="normal"><label class="textfield" for="eZSetupLibSQLToken">{"Auth token"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="password" id="eZSetupLibSQLToken" name="eZSetupLibSQLToken" size="40" value="" autocomplete="new-password" /><br />
+  <small>{if $libsql.token_kept}{"A token was given before and is kept; leave the field empty to keep it."|i18n("design/standard/setup/init")}{else}{"Empty when the server needs none (sqld without --auth-jwt-key-file)."|i18n("design/standard/setup/init")}{/if}</small></td>
+</tr>
+<tr>
+  <td class="normal"><label class="textfield">{"Database name"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" name="eZSetupDatabaseName" size="24" value="{$database_info.dbname|wash}" /></td>
+</tr>
+{if $libsql.turso|not}
+<tr>
+  <th class="label" colspan="3">{"Embedded file mode"|i18n("design/standard/setup/init")}</th>
+</tr>
+<tr>
+  <td class="normal"><label class="textfield" for="eZSetupLibSQLFile">{"Database file name"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" id="eZSetupLibSQLFile" name="eZSetupLibSQLFile" size="24" value="{$libsql.file|wash}" /><br />
+  <small>{"In the directory %directory of this installation, as an SQLite site's file; created if it does not exist. Needs PHP's sqlite3 extension."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}</small></td>
+</tr>
+{/if}
+{elseif and( $database_info.info.type|ne('sqlite3'), $database_info.info.type|ne('duckdb') )}
 <tr>
   <td class="normal"><label class="textfield">{"Servername"|i18n("design/standard/setup/init")}:</label></td>
   <td class="normal"><input type="text" name="eZSetupDatabaseServer" size="16" value="{$database_info.server|wash}" /></td>

@@ -120,7 +120,8 @@ class eZStepDatabaseChoice extends eZStepInstaller
     /**
      * The database type a PHP extension of setup.ini [database_extensions] gives, '' for none: the extension's name
      * when it is a type itself (mysqli, pgsql, sqlite3, mongodb, oci8), else the type of the kernel's driver that uses
-     * it. sqlsrv and pdo_sqlsrv give SQL Server (expSQLServerDB). ffi gives DuckDB (expDuckDBDB reaches libduckdb
+     * it. sqlsrv and pdo_sqlsrv give SQL Server (expSQLServerDB), curl libSQL (expLibSQLDB, Turso listed after it). ffi
+     * gives DuckDB (expDuckDBDB reaches libduckdb
      * through FFI) only when FFI may be used in this process: ffi.enable=preload, PHP's default, allows it on the
      * command line only, so a wizard in the web server would offer a database it cannot open.
      *
@@ -130,7 +131,7 @@ class eZStepDatabaseChoice extends eZStepInstaller
     static function typeOfExtension( $extension )
     {
         $extension = strtolower( (string)$extension );
-        $types = array( 'pdo_firebird' => 'firebird', 'sqlsrv' => 'sqlserver', 'pdo_sqlsrv' => 'sqlserver' );
+        $types = array( 'pdo_firebird' => 'firebird', 'sqlsrv' => 'sqlserver', 'pdo_sqlsrv' => 'sqlserver', 'curl' => 'libsql' );
         if ( isset( $types[$extension] ) )
             return $types[$extension];
         if ( $extension === 'ffi' )

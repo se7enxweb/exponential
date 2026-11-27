@@ -76,6 +76,18 @@ class eZStepDatabaseInit extends eZStepInstaller
         $this->Error = 0;
         $dbStatus = false;
 
+        // libSQL and Turso: the page's own fields (the server or the embedded file, TLS, the CA file, the auth token),
+        // checked before the connection test below
+        if ( in_array( $this->PersistenceList['database_info']['type'], array( 'libsql', 'turso' ), true )
+             && $this->Http->hasPostVariable( 'eZSetupLibSQLPage' ) )
+        {
+            if ( !$this->readLibSQLFields() )
+            {
+                $this->Error = eZStepInstaller::DB_ERROR_LIBSQL_SETTINGS;
+                eZLog::write( "eZStepDatabaseInit: libSQL settings refused (" . $this->PersistenceList['database_info']['libsql_problem'] . ")", 'setup.log' );
+                return false;
+            }
+        }
         // Get password
         $password = $this->PersistenceList['database_info']['password'];
 
@@ -242,7 +254,7 @@ class eZStepDatabaseInit extends eZStepInstaller
             if ( isset( $this->PersistenceList['database_info']['type'] ) && in_array( $this->PersistenceList['database_info']['type'], array( 'libsql', 'turso' ), true ) )
             {
                 $options = array();
-                foreach ( array( 'URL', 'TLS' ) as $key )
+                foreach ( array( 'URL', 'TLS', 'Mode', 'CAFile' ) as $key )
                     if ( isset( $data[$key] ) && trim( (string)$data[$key] ) !== '' )
                         $options[$key] = trim( (string)$data[$key] );
                 $this->PersistenceList['database_info']['libsql'] = $options;
@@ -343,6 +355,23 @@ class eZStepDatabaseInit extends eZStepInstaller
         $this->Tpl->setVariable( 'regional_info', $regionalInfo );
         $this->Tpl->setVariable( 'db_not_empty', $dbNotEmpty );
         $this->Tpl->setVariable( 'database_directory', $databaseInfo['type'] == 'duckdb' ? expDuckDBDB::STORAGE_DIRECTORY : eZSQLite3DB::STORAGE_DIRECTORY );
+        // libSQL and Turso: the page's own fields, never the token itself (only whether one is kept)
+        if ( in_array( $databaseInfo['type'], array( 'libsql', 'turso' ), true ) )
+        {
+            $setupIni = eZINI::instance( 'setup.ini' );
+            $libsql = isset( $databaseInfo['libsql'] ) && is_array( $databaseInfo['libsql'] ) ? $databaseInfo['libsql'] : array();
+            $defaultMode = $setupIni->hasVariable( 'DatabaseSettings', 'DefaultMode_libsql' ) ? $setupIni->variable( 'DatabaseSettings', 'DefaultMode_libsql' ) : 'remote';
+            $defaultFile = $setupIni->hasVariable( 'DatabaseSettings', 'DefaultFile_libsql' ) ? $setupIni->variable( 'DatabaseSettings', 'DefaultFile_libsql' ) : self::LIBSQL_DEFAULT_FILE_NAME;
+            $mode = $databaseInfo['type'] === 'turso' ? 'remote' : ( isset( $libsql['Mode'] ) ? $libsql['Mode'] : $defaultMode );
+            $this->Tpl->setVariable( 'libsql', array(
+                'mode' => $mode === 'file' ? 'file' : 'remote',
+                'url' => isset( $libsql['URL'] ) ? $libsql['URL'] : '',
+                'tls' => $databaseInfo['type'] === 'turso' || ( isset( $libsql['TLS'] ) ? $libsql['TLS'] === 'enabled' : (string)$databaseInfo['port'] === '443' ),
+                'cafile' => isset( $libsql['CAFile'] ) ? $libsql['CAFile'] : '',
+                'file' => $mode === 'file' && (string)$databaseInfo['dbname'] !== '' ? $databaseInfo['dbname'] : $defaultFile,
+                'token_kept' => !empty( $databaseInfo['libsql_token_sealed'] ),
+                'turso' => $databaseInfo['type'] === 'turso' ) );
+        }
 
         $result = array();
         // Display template
@@ -353,6 +382,86 @@ class eZStepDatabaseInit extends eZStepInstaller
         return $result;
     }
 
+    /**
+     * Reads the libSQL / Turso fields of the database page into database_info: libsql (Mode, URL, TLS, CAFile, as
+     * exp:install writes [LibSQLSettings]), the file name of the embedded mode (dbname), and the auth token, sealed
+     * (expSetupSecret) into libsql_token_sealed. The token is never kept in clear text in the answers, which go back to
+     * the browser in hidden fields: an empty token field keeps the one given before. False with libsql_problem (url,
+     * server, port, cafile, token, sealing, sqlite3) when a value is not valid.
+     *
+     * @return bool
+     */
+    function readLibSQLFields()
+    {
+        $info =& $this->PersistenceList['database_info'];
+        $post = function ( $name ) {
+            return $this->Http->hasPostVariable( $name ) ? trim( (string)$this->Http->postVariable( $name ) ) : '';
+        };
+        $turso = $info['type'] === 'turso';
+        $mode = !$turso && $post( 'eZSetupLibSQLMode' ) === 'file' ? 'file' : 'remote';
+        $settings = array( 'Mode' => $mode );
+        $info['libsql_problem'] = '';
+        unset( $info['connect_error'] );
+        // the token never stays in the answers in clear text
+        $info['password'] = '';
+        $problem = '';
+        if ( $mode === 'file' )
+        {
+            if ( !class_exists( 'SQLite3' ) )
+                $problem = 'sqlite3';
+            $file = $post( 'eZSetupLibSQLFile' );
+            $this->resetSQLiteServerFields();
+            $info['dbname'] = $file !== '' ? $file : self::LIBSQL_DEFAULT_FILE_NAME;
+            $info['database'] = $info['dbname'];
+            unset( $info['libsql_token_sealed'] );
+        }
+        else
+        {
+            $url = $post( 'eZSetupLibSQLURL' );
+            $server = trim( (string)$info['server'] );
+            $port = trim( (string)$info['port'] );
+            if ( $url !== '' )
+            {
+                if ( !preg_match( '#^(https?|libsql|wss?)://[A-Za-z0-9.\-\[\]:]+(:\d{1,5})?/?$#i', $url ) )
+                    $problem = 'url';
+                $settings['URL'] = $url;
+            }
+            elseif ( $server === '' || !preg_match( '/^[A-Za-z0-9.:_\[\]-]{1,253}$/', $server ) )
+                $problem = 'server';
+            if ( $problem === '' && $port !== '' && ( !ctype_digit( $port ) || (int)$port < 1 || (int)$port > 65535 ) )
+                $problem = 'port';
+            $settings['TLS'] = $turso || $post( 'eZSetupLibSQLTLS' ) === '1' ? 'enabled' : 'disabled';
+            $ca = $post( 'eZSetupLibSQLCAFile' );
+            if ( $ca !== '' )
+            {
+                if ( $problem === '' && ( $ca[0] !== '/' || !is_file( $ca ) || !is_readable( $ca ) ) )
+                    $problem = 'cafile';
+                $settings['CAFile'] = $ca;
+            }
+            $token = $this->Http->hasPostVariable( 'eZSetupLibSQLToken' ) ? (string)$this->Http->postVariable( 'eZSetupLibSQLToken' ) : '';
+            if ( trim( $token ) !== '' )
+            {
+                $sealed = expSetupSecret::seal( trim( $token ), eZStepInstaller::LIBSQL_TOKEN_PURPOSE );
+                if ( $sealed === null )
+                    $problem = $problem !== '' ? $problem : 'sealing';
+                else
+                    $info['libsql_token_sealed'] = $sealed;
+            }
+            if ( $problem === '' && $turso && empty( $info['libsql_token_sealed'] ) )
+                $problem = 'token';
+            $name = trim( (string)$info['dbname'] );
+            $info['dbname'] = $name !== '' ? $name : 'exponential';
+            $info['database'] = $info['dbname'];
+            $info['user'] = '';
+            $info['socket'] = '';
+        }
+        $info['libsql'] = $settings;
+        $info['libsql_problem'] = $problem;
+        return $problem === '';
+    }
+
+    /** The file of libSQL's embedded mode when none is named (setup.ini [DatabaseSettings] DefaultFile_libsql) */
+    const LIBSQL_DEFAULT_FILE_NAME = 'exponential-libsql.db';
     /** The file of a DuckDB site when none is named (install.php and setup.ini [DatabaseSettings] DefaultName_duckdb) */
     const DUCKDB_DEFAULT_FILE_NAME = 'exponential.duckdb';
 

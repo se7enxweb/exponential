@@ -152,18 +152,19 @@ function eZSetupDatabaseMap()
                                      'has_demo_data' => false,
                                      'supports_unicode' => true ),
                   // expLibSQLDB in the kernel: the SQLite driver over a libSQL server's HTTP API (curl or allow_url_fopen);
-                  // required_version is the SQLite the server is built on (sqlite_version())
+                  // required_version: the SQLite the server is built on (sqlite_version()), or PHP's in the embedded file
+                  // mode: SQLite's own floor (3.33, UPDATE ... FROM)
                   'libsql' => array( 'type' => 'libsql',
                                      'driver' => 'libsql',
                                      'name' => 'libSQL server (sqld)',
-                                     'required_version' => '3.35',
+                                     'required_version' => '3.33',
                                      'has_demo_data' => false,
                                      'supports_unicode' => true ),
-                  // expTursoDB: the same in Turso's cloud (HTTPS, a database token)
+                  // expTursoDB: the same in Turso's cloud (HTTPS, a database token); listed after libSQL ('php_extension')
                   'turso' => array( 'type' => 'turso',
-                                    'driver' => 'turso',
+                                    'driver' => 'turso', 'php_extension' => 'libsql',
                                     'name' => 'Turso',
-                                    'required_version' => '3.35',
+                                    'required_version' => '3.33',
                                     'has_demo_data' => false,
                                     'supports_unicode' => true ),
                   // expMonetDBDB in the kernel: a MonetDB server, over MAPI in plain PHP (no extension; not offered by

@@ -56165,6 +56165,10 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
 <context>
     <name>design/standard/setup/db</name>
     <message>
+        <source>A libSQL server (sqld) or Turso is reached over HTTP; without curl the driver also works through PHP&apos;s HTTP stream wrapper (allow_url_fopen=On), but the setup wizard offers libSQL only when curl is loaded. The embedded file mode needs PHP&apos;s sqlite3 extension as well.</source>
+        <translation>Ein libSQL-Server (sqld) oder Turso wird über HTTP erreicht; ohne curl arbeitet der Treiber auch über den HTTP-Stream-Wrapper von PHP (allow_url_fopen=On), der Einrichtungsassistent bietet libSQL aber nur an, wenn curl geladen ist. Der eingebettete Dateimodus braucht zusätzlich die PHP-Erweiterung sqlite3.</translation>
+    </message>
+    <message>
         <source>%1 is reached through the PHP %2 extension. Install it, enable it in php.ini and start the setup wizard again.</source>
         <translation>%1 wird über die PHP-Erweiterung %2 angesprochen. Installieren Sie sie, aktivieren Sie sie in der php.ini und starten Sie den Einrichtungsassistenten erneut.</translation>
     </message>
@@ -56378,6 +56382,110 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
 </context>
 <context>
     <name>design/standard/setup/init</name>
+    <message>
+        <source>Turso keeps the database in its cloud and is reached over HTTPS with the database&apos;s auth token. Give the database URL Turso shows (libsql://...), and the token.</source>
+        <translation>Turso hält die Datenbank in seiner Cloud und wird über HTTPS mit dem Auth-Token der Datenbank erreicht. Geben Sie die Datenbank-URL an, die Turso anzeigt (libsql://...), und das Token.</translation>
+    </message>
+    <message>
+        <source>libSQL is SQLite&apos;s fork: the site uses SQLite&apos;s schema, either on a libSQL server (sqld) reached over HTTP, or in a local file (the embedded file mode, no server).</source>
+        <translation>libSQL ist ein Fork von SQLite: die Site benutzt das Schema von SQLite, entweder auf einem libSQL-Server (sqld), der über HTTP erreicht wird, oder in einer lokalen Datei (der eingebettete Dateimodus, ohne Server).</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modus</translation>
+    </message>
+    <message>
+        <source>A libSQL server (sqld)</source>
+        <translation>Ein libSQL-Server (sqld)</translation>
+    </message>
+    <message>
+        <source>The embedded file mode: a local file, no server</source>
+        <translation>Der eingebettete Dateimodus: eine lokale Datei, kein Server</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Server URL</source>
+        <translation>Server-URL</translation>
+    </message>
+    <message>
+        <source>Optional: replaces the server name and port (http://host:port, https://host, libsql://host).</source>
+        <translation>Optional: ersetzt Servername und Port (http://host:port, https://host, libsql://host).</translation>
+    </message>
+    <message>
+        <source>TLS (https)</source>
+        <translation>TLS (https)</translation>
+    </message>
+    <message>
+        <source>CA file (optional)</source>
+        <translation>CA-Datei (optional)</translation>
+    </message>
+    <message>
+        <source>The full path of a PEM file that checks the server&apos;s certificate; empty: the system&apos;s certificate authorities.</source>
+        <translation>Der vollständige Pfad einer PEM-Datei, die das Zertifikat des Servers prüft; leer: die Zertifizierungsstellen des Systems.</translation>
+    </message>
+    <message>
+        <source>Auth token</source>
+        <translation>Auth-Token</translation>
+    </message>
+    <message>
+        <source>A token was given before and is kept; leave the field empty to keep it.</source>
+        <translation>Ein Token wurde bereits angegeben und wird behalten; lassen Sie das Feld leer, um es zu behalten.</translation>
+    </message>
+    <message>
+        <source>Empty when the server needs none (sqld without --auth-jwt-key-file).</source>
+        <translation>Leer, wenn der Server keines braucht (sqld ohne --auth-jwt-key-file).</translation>
+    </message>
+    <message>
+        <source>Embedded file mode</source>
+        <translation>Eingebetteter Dateimodus</translation>
+    </message>
+    <message>
+        <source>In the directory %directory of this installation, as an SQLite site&apos;s file; created if it does not exist. Needs PHP&apos;s sqlite3 extension.</source>
+        <translation>Im Verzeichnis %directory dieser Installation, wie die Datei einer SQLite-Site; sie wird angelegt, falls sie nicht existiert. Braucht die PHP-Erweiterung sqlite3.</translation>
+    </message>
+    <message>
+        <source>The libSQL server did not accept the connection: %reason. Check the server URL or name and port, TLS, the CA file and the auth token, and that the server is running.</source>
+        <translation>Der libSQL-Server hat die Verbindung nicht angenommen: %reason. Prüfen Sie die Server-URL oder Servername und Port, TLS, die CA-Datei und das Auth-Token, und ob der Server läuft.</translation>
+    </message>
+    <message>
+        <source>libSQL server documentation</source>
+        <translation>Dokumentation des libSQL-Servers</translation>
+    </message>
+    <message>
+        <source>The server URL is not valid. Give http://host:port, https://host or libsql://host, or leave it empty and give the server name and port.</source>
+        <translation>Die Server-URL ist ungültig. Geben Sie http://host:port, https://host oder libsql://host an, oder lassen Sie sie leer und geben Sie Servername und Port an.</translation>
+    </message>
+    <message>
+        <source>Give the libSQL server: its name or address and port, or its URL.</source>
+        <translation>Geben Sie den libSQL-Server an: seinen Namen oder seine Adresse und den Port, oder seine URL.</translation>
+    </message>
+    <message>
+        <source>The port must be a number from 1 to 65535.</source>
+        <translation>Der Port muss eine Zahl von 1 bis 65535 sein.</translation>
+    </message>
+    <message>
+        <source>The CA file cannot be read by the web server. Give the full path of a PEM file, or leave it empty to use the system&apos;s certificate authorities.</source>
+        <translation>Der Webserver kann die CA-Datei nicht lesen. Geben Sie den vollständigen Pfad einer PEM-Datei an, oder lassen Sie das Feld leer, um die Zertifizierungsstellen des Systems zu benutzen.</translation>
+    </message>
+    <message>
+        <source>Turso needs an auth token (made with: turso db tokens create, followed by the database&apos;s name).</source>
+        <translation>Turso braucht ein Auth-Token (erstellt mit: turso db tokens create, gefolgt vom Namen der Datenbank).</translation>
+    </message>
+    <message>
+        <source>The auth token cannot be kept safely between the pages of the wizard: PHP has neither libsodium nor OpenSSL, or var/setup cannot be written. Install with exp:install instead.</source>
+        <translation>Das Auth-Token kann zwischen den Seiten des Assistenten nicht sicher aufbewahrt werden: PHP hat weder libsodium noch OpenSSL, oder var/setup ist nicht beschreibbar. Installieren Sie stattdessen mit exp:install.</translation>
+    </message>
+    <message>
+        <source>The embedded file mode needs PHP&apos;s sqlite3 extension. Enable it, or choose the server mode.</source>
+        <translation>Der eingebettete Dateimodus braucht die PHP-Erweiterung sqlite3. Aktivieren Sie sie, oder wählen Sie den Servermodus.</translation>
+    </message>
+    <message>
+        <source>The libSQL settings are not valid.</source>
+        <translation>Die libSQL-Einstellungen sind ungültig.</translation>
+    </message>
     <message>
         <source>DuckDB keeps the whole database in one file, in the directory %directory of this installation. It needs no server, user or password, but PHP&apos;s FFI extension with ffi.enable=true and the libduckdb library ([DuckDBSettings] Library in site.ini). The file is created if it does not exist.</source>
         <translation>DuckDB hält die gesamte Datenbank in einer Datei im Verzeichnis %directory dieser Installation. Es benötigt keinen Server, Benutzer oder Passwort, aber die PHP-Erweiterung FFI mit ffi.enable=true und die Bibliothek libduckdb ([DuckDBSettings] Library in site.ini). Die Datei wird angelegt, falls sie nicht existiert.</translation>

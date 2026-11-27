@@ -402,12 +402,12 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         {
             eZStepDatabaseChoice::$FFIUsable = null;
         }
-        // libSQL and Turso are installed with the kickstarter and exp:install: the wizard's database page has no
-        // fields for their server URL, TLS and token yet. MonetDB the same: it needs no PHP extension the system check
-        // could find, so the wizard has nothing to offer it by (exp:install --db=monetdb). SAP HANA and SAP ASE have no
-        // PHP extension of their own to detect (they go through odbc, pdo_odbc or pdo_dblib) and are installed with the
-        // kickstarter too
-        $notInTheWizard = array( 'libsql', 'turso', 'monetdb', 'hana', 'ase' );
+        // curl gives libSQL, and Turso is listed after it
+        $this->assertSame( 'libsql', eZStepDatabaseChoice::typeOfExtension( 'curl' ) );
+        // MonetDB needs no PHP extension the system check could find, so the wizard has nothing to offer it by
+        // (exp:install --db=monetdb). SAP HANA and SAP ASE have no PHP extension of their own to detect (they go
+        // through odbc, pdo_odbc or pdo_dblib) and are installed with the kickstarter too
+        $notInTheWizard = array( 'monetdb', 'hana', 'ase' );
         foreach ( eZSetupDatabaseMap() as $type => $entry )
         {
             if ( in_array( $type, $notInTheWizard, true ) )
@@ -417,6 +417,82 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * The libSQL and Turso fields of the database page: the server mode with a URL, TLS and a token that is kept only
+     * sealed (never in the answers in clear text, never in the page), the checks of each field, Turso's token, and the
+     * embedded file mode.
+     */
+    public function testLibSQLDatabasePage()
+    {
+        $post = function ( array $fields ) {
+            $_POST = $fields + array( 'eZSetupLibSQLPage' => '1' );
+        };
+        $info = array( 'type' => 'libsql', 'server' => '127.0.0.1', 'port' => '8080', 'user' => 'root', 'password' => '',
+                       'dbname' => 'exponential', 'socket' => '' );
+        $post( array( 'eZSetupLibSQLMode' => 'remote', 'eZSetupLibSQLURL' => 'http://10.0.0.5:8080', 'eZSetupLibSQLToken' => 'tok-123' ) );
+        $step = $this->step( 'eZStepDatabaseInit', array( 'database_info' => $info ) );
+        $this->assertTrue( $step->readLibSQLFields() );
+        $answers = $step->PersistenceList['database_info'];
+        $this->assertSame( array( 'Mode' => 'remote', 'URL' => 'http://10.0.0.5:8080', 'TLS' => 'disabled' ), $answers['libsql'] );
+        $this->assertSame( '', $answers['password'] );
+        $this->assertSame( '', $answers['user'] );
+        $this->assertStringNotContainsString( 'tok-123', serialize( $answers ) );
+        $this->assertSame( 'tok-123', eZStepInstaller::databasePassword( $answers ) );
+        $this->assertFalse( eZStepInstaller::libSQLEmbedded( $answers ) );
+
+        // an empty token field keeps the token given before; TLS on
+        $post( array( 'eZSetupLibSQLMode' => 'remote', 'eZSetupLibSQLTLS' => '1', 'eZSetupLibSQLToken' => '' ) );
+        $step = $this->step( 'eZStepDatabaseInit', array( 'database_info' => $answers ) );
+        $this->assertTrue( $step->readLibSQLFields() );
+        $this->assertSame( 'enabled', $step->PersistenceList['database_info']['libsql']['TLS'] );
+        $this->assertSame( 'tok-123', eZStepInstaller::databasePassword( $step->PersistenceList['database_info'] ) );
+
+        // the checks
+        foreach ( array( array( array( 'eZSetupLibSQLURL' => 'ftp://x' ), $info, 'url' ),
+                         array( array(), array( 'server' => '' ) + $info, 'server' ),
+                         array( array(), array( 'port' => '99999' ) + $info, 'port' ),
+                         array( array( 'eZSetupLibSQLCAFile' => '/nonexistent/ca.pem' ), $info, 'cafile' ),
+                         array( array( 'eZSetupLibSQLCAFile' => 'relative.pem' ), $info, 'cafile' ),
+                         array( array(), array( 'type' => 'turso', 'server' => 'exp-acme.turso.io', 'port' => '443' ) + $info, 'token' ) ) as $case )
+        {
+            list( $fields, $answersBefore, $problem ) = $case;
+            $post( $fields + array( 'eZSetupLibSQLMode' => 'remote' ) );
+            $step = $this->step( 'eZStepDatabaseInit', array( 'database_info' => $answersBefore ) );
+            $this->assertFalse( $step->readLibSQLFields(), $problem );
+            $this->assertSame( $problem, $step->PersistenceList['database_info']['libsql_problem'] );
+        }
+
+        // Turso: always remote and TLS, whatever is posted
+        $post( array( 'eZSetupLibSQLMode' => 'file', 'eZSetupLibSQLURL' => 'libsql://exp-acme.turso.io', 'eZSetupLibSQLToken' => 't' ) );
+        $step = $this->step( 'eZStepDatabaseInit', array( 'database_info' => array( 'type' => 'turso' ) + $info ) );
+        $this->assertTrue( $step->readLibSQLFields() );
+        $this->assertSame( array( 'Mode' => 'remote', 'URL' => 'libsql://exp-acme.turso.io', 'TLS' => 'enabled' ), $step->PersistenceList['database_info']['libsql'] );
+
+        // the embedded file mode: a file, no server, no token
+        $post( array( 'eZSetupLibSQLMode' => 'file', 'eZSetupLibSQLFile' => 'site-libsql.db' ) );
+        $step = $this->step( 'eZStepDatabaseInit', array( 'database_info' => $answers ) );
+        $this->assertSame( class_exists( 'SQLite3' ), $step->readLibSQLFields() );
+        $file = $step->PersistenceList['database_info'];
+        $this->assertSame( array( 'Mode' => 'file' ), $file['libsql'] );
+        $this->assertSame( 'site-libsql.db', $file['dbname'] );
+        $this->assertSame( '', $file['server'] );
+        $this->assertArrayNotHasKey( 'libsql_token_sealed', $file );
+        $this->assertTrue( eZStepInstaller::libSQLEmbedded( $file ) );
+    }
+
+    /** expSetupSecret: sealed and opened with the same key and purpose only; the sealed text is not the value */
+    public function testSetupSecret()
+    {
+        $key = str_repeat( 'k', 32 );
+        $sealed = expSetupSecret::seal( 'the token', 'purpose', $key );
+        $this->assertIsString( $sealed );
+        $this->assertStringNotContainsString( 'the token', $sealed );
+        $this->assertSame( 'the token', expSetupSecret::unseal( $sealed, 'purpose', $key ) );
+        $this->assertNull( expSetupSecret::unseal( $sealed, 'another purpose', $key ) );
+        $this->assertNull( expSetupSecret::unseal( $sealed, 'purpose', str_repeat( 'x', 32 ) ) );
+        $this->assertNull( expSetupSecret::unseal( substr( $sealed, 0, -2 ) . 'AA', 'purpose', $key ) );
+        $this->assertNotSame( $sealed, expSetupSecret::seal( 'the token', 'purpose', $key ) );
+    }
     // ---------------------------------------------------------------- security, finetune, final
 
     public function testSecurityStep()

@@ -344,7 +344,7 @@ class eZStepSiteDetails extends eZStepInstaller
         // SQLite: the database is the file chosen on the Database page, and
         // nothing has to be opened to know it. The page asks for a file name
         // (it may be a new one); the files already there are shown beside it.
-        if ( $databaseInfo['info']['type'] == 'sqlite3' )
+        if ( $databaseInfo['info']['type'] == 'sqlite3' || eZStepInstaller::libSQLEmbedded( $databaseInfo ) )
         {
             $this->PersistenceList['database_info']['database'] = $databaseInfo['dbname'];
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
@@ -389,7 +389,7 @@ class eZStepSiteDetails extends eZStepInstaller
             $dbParameters['database'] = $explicitName !== '' ? $explicitName : 'template1';
         }
 
-        if( $dbParameters['database'] != '' && $databaseInfo['info']['type'] == 'sqlite3' )
+        if( $dbParameters['database'] != '' && ( $databaseInfo['info']['type'] == 'sqlite3' || eZStepInstaller::libSQLEmbedded( $databaseInfo ) ) )
             $dbParameters['database'] = $dbName;
 
         $this->PersistenceList['database_info']['database'] = $dbParameters['database'];
@@ -470,7 +470,8 @@ class eZStepSiteDetails extends eZStepInstaller
 
         // SQLite: the file named on the Database page, unless this page was
         // answered with another one already (shown again after an error)
-        $isSQLite = $this->PersistenceList['database_info']['type'] == 'sqlite3';
+        // libSQL's embedded file mode the same: a file in var/storage/sqlite3
+        $isSQLite = $this->PersistenceList['database_info']['type'] == 'sqlite3' || eZStepInstaller::libSQLEmbedded( $this->PersistenceList['database_info'] );
         $sqliteFileName = $isSQLite && trim( (string)$this->PersistenceList['database_info']['dbname'] ) !== ''
                         ? $this->PersistenceList['database_info']['dbname']
                         : eZStepInstaller::SQLITE_DEFAULT_FILE_NAME;

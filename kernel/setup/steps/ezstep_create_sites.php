@@ -1030,7 +1030,8 @@ class eZStepCreateSites extends eZStepInstaller
         $dbName = $databaseInfo['dbname'] ?? $databaseInfo['database'] ?? '';
         $dbSocket = $databaseInfo['socket'];
         $dbUser = $databaseInfo['user'];
-        $dbPwd = $databaseInfo['password'];
+        // libSQL and Turso: the auth token the database page keeps sealed, written as the Password exp:install writes
+        $dbPwd = eZStepInstaller::databasePassword( $databaseInfo );
         $dbCharset = $charset;
         $dbDriver = $databaseInfo['info']['driver'];
         // a driver kept in an extension (Oracle: ezoracle): its settings (schema
@@ -1038,7 +1039,7 @@ class eZStepCreateSites extends eZStepInstaller
         eZSetupActivateDatabaseExtension( $databaseInfo['info'] );
 
         $dbName = $siteType['database'];
-        if ( $databaseInfo['type'] == 'sqlite3' )
+        if ( $databaseInfo['type'] == 'sqlite3' || eZStepInstaller::libSQLEmbedded( $databaseInfo ) )
         {
             // A file, not a server: the siteaccesses get Server=, Port=, User=,
             // Password=, Socket=disabled whatever kickstart.ini or an earlier

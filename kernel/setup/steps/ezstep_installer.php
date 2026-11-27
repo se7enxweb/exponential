@@ -30,6 +30,8 @@ class eZStepInstaller
     const DB_ERROR_SQLITE_DIRECTORY_NOT_WRITABLE = 22;
     const DB_ERROR_SQLITE_FILE_NOT_WRITABLE = 23;
     const DB_ERROR_SQLITE_NOT_A_DATABASE = 24;
+    /// libSQL and Turso: a setting of the database page is not valid (database_info libsql_problem says which)
+    const DB_ERROR_LIBSQL_SETTINGS = 30;
 
     /**
      * The name a SQLite database file may have in the wizard: a plain file
@@ -411,7 +413,7 @@ class eZStepInstaller
         $dbParameters = array( 'server' => $databaseInfo['server'],
                                'port' => $databaseInfo['port'],
                                'user' => $databaseInfo['user'],
-                               'password' => $databaseInfo['password'],
+                               'password' => self::databasePassword( $databaseInfo ),
                                'socket' => trim( $databaseInfo['socket'] ) == '' ? false : $databaseInfo['socket'],
                                'database' => $databaseInfo['database'],
                                'charset' => $dbCharset );
@@ -429,13 +431,13 @@ class eZStepInstaller
         $dbParameters = array_merge( $dbParameters, $overrideDBParameters );
 
         // SQLite requires us to specifiy a database name
-        if( $dbParameters['database'] == '' and $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+        if( $dbParameters['database'] == '' and ( $this->PersistenceList['database_info']['type'] == 'sqlite3' || self::libSQLEmbedded( $databaseInfo ) ) )
             $dbParameters['database'] = $databaseInfo['dbname'];
 
         // SQLite: the file is checked before the driver opens it, which would
         // otherwise create it wherever the name points, and fail on a directory
         // it cannot write with no more than "unable to open database file"
-        if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+        if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' || self::libSQLEmbedded( $databaseInfo ) )
         {
             $fileCheck = $this->checkSQLiteDatabaseFile( $dbParameters['database'] );
             $this->PersistenceList['database_info']['sqlite_file'] = $fileCheck['path'];
@@ -522,6 +524,9 @@ class eZStepInstaller
             if ( (string)$dbParameters['password'] !== '' )
                 $reason = str_replace( (string)$dbParameters['password'], '***', $reason );
             eZLog::write( "eZStepInstaller: connecting with driver '$dbDriver' failed: " . preg_replace( '/\s+/', ' ', $reason ), 'setup.log' );
+            // libSQL and Turso: the page says why (the server's answer; the token is never in it)
+            if ( in_array( $this->PersistenceList['database_info']['type'], array( 'libsql', 'turso' ), true ) )
+                $this->PersistenceList['database_info']['connect_error'] = mb_substr( preg_replace( '/\s+/', ' ', $reason ), 0, 300 );
             $result['error_code'] = self::DB_ERROR_CONNECTION_FAILED;
             return $result;
         }
@@ -776,6 +781,39 @@ class eZStepInstaller
             $this->PersistenceList['database_info'][$key] = '';
     }
 
+    /** What the auth token of libSQL and Turso is sealed for (expSetupSecret) */
+    const LIBSQL_TOKEN_PURPOSE = 'libsql-auth-token';
+
+    /**
+     * The password a connection to the chosen database uses: for libSQL and Turso the auth token the database page
+     * keeps sealed (expSetupSecret; never in the page in clear text), else the password of the answers.
+     *
+     * @param array $databaseInfo the wizard's database_info
+     * @return string
+     */
+    static function databasePassword( array $databaseInfo )
+    {
+        if ( isset( $databaseInfo['type'] ) && in_array( $databaseInfo['type'], array( 'libsql', 'turso' ), true )
+             && !empty( $databaseInfo['libsql_token_sealed'] ) )
+        {
+            $token = expSetupSecret::unseal( $databaseInfo['libsql_token_sealed'], self::LIBSQL_TOKEN_PURPOSE );
+            return $token === null ? '' : $token;
+        }
+        return isset( $databaseInfo['password'] ) ? (string)$databaseInfo['password'] : '';
+    }
+
+    /**
+     * Whether the answers choose libSQL's embedded file mode (a local file in var/storage/sqlite3, no server).
+     *
+     * @param array $databaseInfo
+     * @return bool
+     */
+    static function libSQLEmbedded( array $databaseInfo )
+    {
+        return isset( $databaseInfo['type'] ) && $databaseInfo['type'] === 'libsql'
+               && isset( $databaseInfo['libsql']['Mode'] ) && $databaseInfo['libsql']['Mode'] === 'file';
+    }
+
     /**
      * The user PHP runs as, the one that has to be able to write a directory.
      *
@@ -843,6 +881,23 @@ class eZStepInstaller
                                   'number' => $code );
                 break;
             }
+            case self::DB_ERROR_LIBSQL_SETTINGS:
+            {
+                $problem = isset( $errorInfo['database_info']['libsql_problem'] ) ? (string)$errorInfo['database_info']['libsql_problem'] : '';
+                $texts = array(
+                    'url' => ezpI18n::tr( 'design/standard/setup/init', 'The server URL is not valid. Give http://host:port, https://host or libsql://host, or leave it empty and give the server name and port.' ),
+                    'server' => ezpI18n::tr( 'design/standard/setup/init', 'Give the libSQL server: its name or address and port, or its URL.' ),
+                    'port' => ezpI18n::tr( 'design/standard/setup/init', 'The port must be a number from 1 to 65535.' ),
+                    'cafile' => ezpI18n::tr( 'design/standard/setup/init', 'The CA file cannot be read by the web server. Give the full path of a PEM file, or leave it empty to use the system\'s certificate authorities.' ),
+                    'token' => ezpI18n::tr( 'design/standard/setup/init', 'Turso needs an auth token (made with: turso db tokens create, followed by the database\'s name).' ),
+                    'sealing' => ezpI18n::tr( 'design/standard/setup/init', 'The auth token cannot be kept safely between the pages of the wizard: PHP has neither libsodium nor OpenSSL, or var/setup cannot be written. Install with exp:install instead.' ),
+                    'sqlite3' => ezpI18n::tr( 'design/standard/setup/init', 'The embedded file mode needs PHP\'s sqlite3 extension. Enable it, or choose the server mode.' ),
+                );
+                $dbError = array( 'text' => isset( $texts[$problem] ) ? $texts[$problem] : ezpI18n::tr( 'design/standard/setup/init', 'The libSQL settings are not valid.' ),
+                                  'url' => false,
+                                  'number' => $code );
+                break;
+            }
             case self::DB_ERROR_CONNECTION_FAILED:
             {
                 if ( eZSetupDatabaseFamily( $errorInfo['database_info']['type'] ) == 'pgsql' )
@@ -859,6 +914,16 @@ class eZStepInstaller
                                                         'The SQLite database file %file could not be opened. See var/log/setup.log and var/log/error.log for the reason.',
                                                         null, $sqliteArguments ),
                                       'url' => false,
+                                      'number' => self::DB_ERROR_CONNECTION_FAILED );
+                }
+                else if ( in_array( $errorInfo['database_info']['type'], array( 'libsql', 'turso' ), true ) )
+                {
+                    $reason = isset( $errorInfo['database_info']['connect_error'] ) ? (string)$errorInfo['database_info']['connect_error'] : '';
+                    $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
+                                                        'The libSQL server did not accept the connection: %reason. Check the server URL or name and port, TLS, the CA file and the auth token, and that the server is running.',
+                                                        null, array( '%reason' => htmlspecialchars( $reason !== '' ? $reason : '?', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) ) ),
+                                      'url' => array( 'href' => 'https://github.com/tursodatabase/libsql/tree/main/libsql-server',
+                                                      'text' => ezpI18n::tr( 'design/standard/setup/init', 'libSQL server documentation' ) ),
                                       'number' => self::DB_ERROR_CONNECTION_FAILED );
                 }
                 else

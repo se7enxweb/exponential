@@ -1895,6 +1895,7 @@ return array(
       'expSettingsTarget'                                            => 'kernel/classes/ini/expsettingstarget.php',
       'expSetupFileCopy'                                             => 'kernel/classes/expsetupfilecopy.php',
       'expSetupLog'                                                  => 'kernel/classes/expsetuplog.php',
+      'expSetupSecret'                                               => 'kernel/setup/expsetupsecret.php',
       'expSetupWizardGuard'                                          => 'kernel/classes/expsetupwizardguard.php',
       'expSignInSecondFactor'                                        => 'kernel/classes/user/expsigninsecondfactor.php',
       'expSignInSecondFactorHandler'                                 => 'kernel/classes/user/expsigninsecondfactorhandler.php',
