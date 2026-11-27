@@ -26,11 +26,13 @@ class eZSQLite3DBReadReplicaTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        if ( !class_exists( 'SQLite3' ) )
-            $this->markTestSkipped( 'The SQLite3 extension is not loaded' );
+        // saved before the skip: tearDown() runs after a skip too and would set $_SERVER and $_COOKIE to null for every
+        // later test of the run when the extension is missing
         $this->globalInstance = isset( $GLOBALS['eZDBGlobalInstance'] ) ? $GLOBALS['eZDBGlobalInstance'] : null;
         $this->server = $_SERVER;
         $this->cookies = $_COOKIE;
+        if ( !class_exists( 'SQLite3' ) )
+            $this->markTestSkipped( 'The SQLite3 extension is not loaded' );
     }
 
     protected function tearDown(): void

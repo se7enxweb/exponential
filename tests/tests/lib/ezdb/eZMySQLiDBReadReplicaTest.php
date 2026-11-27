@@ -39,11 +39,13 @@ class eZMySQLiDBReadReplicaTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        if ( !class_exists( 'mysqli' ) )
-            $this->markTestSkipped( 'The mysqli extension is not loaded' );
+        // saved before the skip: tearDown() runs after a skip too and would set $_SERVER and $_COOKIE to null for every
+        // later test of the run (Windows has no mysqli)
         $this->globalInstance = isset( $GLOBALS['eZDBGlobalInstance'] ) ? $GLOBALS['eZDBGlobalInstance'] : null;
         $this->server = $_SERVER;
         $this->cookies = $_COOKIE;
+        if ( !class_exists( 'mysqli' ) )
+            $this->markTestSkipped( 'The mysqli extension is not loaded' );
     }
 
     protected function tearDown(): void
