@@ -90,6 +90,14 @@ class eZStepDatabaseChoice extends eZStepInstaller
                 // the PHP extension of a driver in the kernel, by the type it gives
                 if ( $extension === 'pdo_firebird' )
                     $extension = 'firebird';
+                // pdo_ibm and ibm_db2 reach Db2 and, over DRDA, Informix
+                if ( $extension === 'pdo_ibm' || $extension === 'ibm_db2' )
+                {
+                    foreach ( array( 'db2', 'informix' ) as $type )
+                        if ( isset( $databaseMap[$type] ) && !in_array( $type, $types ) )
+                            $types[] = $type;
+                    continue;
+                }
                 if ( isset( $databaseMap[$extension] ) && !in_array( $extension, $types ) )
                     $types[] = $extension;
             }
@@ -140,6 +148,8 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'yugabyte' => 'yugabytedb',
                           'ysql' => 'yugabytedb',
                           'aurora-postgresql' => 'aurorapostgresql',
+                          'ibm_db2' => 'db2',
+                          'ifx' => 'informix',
                           'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];

@@ -112,6 +112,20 @@ function eZSetupDatabaseMap()
                                        'required_version' => '4.0',
                                        'has_demo_data' => false,
                                        'supports_unicode' => true ),
+                  // expDb2DB in the kernel: pdo_ibm, Db2 for LUW 11.5 or 12.1
+                  'db2' => array( 'type' => 'db2',
+                                  'driver' => 'db2',
+                                  'name' => 'IBM Db2',
+                                  'required_version' => '11.5',
+                                  'has_demo_data' => false,
+                                  'supports_unicode' => true ),
+                  // expInformixDB in the kernel: pdo_ibm over DRDA, Informix 14.10 or 15
+                  'informix' => array( 'type' => 'informix',
+                                       'driver' => 'informix',
+                                       'name' => 'IBM Informix',
+                                       'required_version' => '14.10',
+                                       'has_demo_data' => false,
+                                       'supports_unicode' => true ),
                   // expDuckDBDB in the kernel: one DuckDB file, through PHP's FFI extension and libduckdb
                   'duckdb' => array( 'type' => 'duckdb',
                                      'driver' => 'duckdb',

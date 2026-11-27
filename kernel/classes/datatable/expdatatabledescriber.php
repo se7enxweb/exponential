@@ -106,6 +106,23 @@ class expDataTableDescriber
                                                                'nullable' => (string)$column['not_null'] !== '1',
                                                                'default' => $column['default_source'] !== null ? preg_replace( '/^DEFAULT\s+/i', '', (string)$column['default_source'] ) : null );
                 return $columns;
+            case 'db2':
+                $columns = array();
+                foreach ( method_exists( $db, 'tableColumns' ) ? (array)$db->tableColumns( $table ) : array() as $column )
+                    $columns[(string)$column['name']] = array( 'type' => strtolower( trim( (string)$column['type'] ) ),
+                                                               'nullable' => (string)$column['nullable'] !== 'N',
+                                                               'default' => $column['default_value'] );
+                return $columns;
+            case 'informix':
+                $columns = array();
+                $handler = new expInformixSchema( array( 'instance' => $db ) );
+                foreach ( method_exists( $db, 'tableColumns' ) ? (array)$db->tableColumns( $table ) : array() as $column )
+                {
+                    $type = $handler->informixStandardType( $column['type_code'], $column['length'], $column['extended_id'], $length );
+                    $columns[strtolower( (string)$column['name'] )] = array( 'type' => $type, 'nullable' => !( (int)$column['type_code'] & 256 ),
+                                                                            'default' => $column['default_type'] === 'L' ? rtrim( (string)$column['default_value'] ) : null );
+                }
+                return $columns;
             case 'msaccess':
                 // SQLColumns: Access's catalogue is not readable through ODBC
                 $access = method_exists( $db, 'tableColumns' ) ? $db->tableColumns( $table ) : null;

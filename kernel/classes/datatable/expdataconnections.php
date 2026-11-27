@@ -80,6 +80,9 @@ class expDataConnections
             'neon' => array( 'label' => 'Neon (PostgreSQL)', 'kind' => 'relational', 'ez' => 'neon', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
             'supabase' => array( 'label' => 'Supabase (PostgreSQL)', 'kind' => 'relational', 'ez' => 'supabase', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
             'aurorapostgresql' => array( 'label' => 'Amazon Aurora PostgreSQL', 'kind' => 'relational', 'ez' => 'aurorapostgresql', 'pdo' => array( 'pgsql' ), 'port' => 5432, 'file' => false ),
+            // expDb2DB and expInformixDB: pdo_ibm (Informix through its DRDA listener)
+            'db2' => array( 'label' => 'IBM Db2', 'kind' => 'relational', 'ez' => 'db2', 'pdo' => array( 'ibm' ), 'port' => 50000, 'file' => false ),
+            'informix' => array( 'label' => 'IBM Informix (DRDA)', 'kind' => 'relational', 'ez' => 'informix', 'pdo' => array( 'ibm' ), 'port' => 9089, 'file' => false ),
         );
     }
 
@@ -267,6 +270,10 @@ class expDataConnections
         $wire = expPostgreSQLWireProfile::get( $engine );
         if ( $wire && $wire['name'] !== 'postgresql' )
             $engine = $wire['name'];
+        if ( $engine === 'ibm_db2' )
+            $engine = 'db2';
+        if ( $engine === 'ifx' )
+            $engine = 'informix';
         return array(
             'identifier' => strtolower( $text( 'identifier', 64 ) ),
             'name' => $text( 'name' ),
@@ -1020,6 +1027,9 @@ class expDataConnections
                 return extension_loaded( 'mongodb' ) && class_exists( 'MongoDB\\Client' );
             case 'firebird':
                 return class_exists( 'expFirebirdTransport' ) && expFirebirdTransport::availableLayer() !== null;
+            case 'db2':
+            case 'informix':
+                return class_exists( 'expDb2Transport' ) && expDb2Transport::availableLayer() !== null;
         }
         return false;
     }

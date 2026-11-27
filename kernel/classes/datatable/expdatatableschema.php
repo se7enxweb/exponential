@@ -199,6 +199,12 @@ class expDataTableSchema
                 // statement by statement: a trigger's body holds semicolons, which a split of the SQL text would cut
                 $handler = new expFirebirdSchema( array( 'instance' => $db instanceof expFirebirdDB ? $db : expKernelTableSchema::nullDB() ) );
                 return $handler->generateTableSQLList( $table, $definition, array(), false );
+            case 'db2':
+            case 'informix':
+                // statement by statement, as the schema handler writes them (sequence, its description, the trigger)
+                $class = $engine === 'db2' ? 'expDb2Schema' : 'expInformixSchema';
+                $handler = new $class( array( 'instance' => $db instanceof expDb2DB ? $db : expKernelTableSchema::nullDB() ) );
+                return $handler->generateTableSQLList( $table, $definition, array(), false );
             case 'oracle':
                 if ( self::hasHandler( 'oracle' ) && !$db instanceof expPDODB )
                     return self::split( expKernelTableSchema::sql( array( $table => $definition ), 'oracle' ) );
@@ -439,7 +445,7 @@ class expDataTableSchema
             }
             return $step;
         }
-        if ( in_array( $engine, array( 'mysql', 'postgresql', 'sqlite', 'firebird', 'duckdb' ), true ) || ( $engine === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
+        if ( in_array( $engine, array( 'mysql', 'postgresql', 'sqlite', 'firebird', 'duckdb', 'db2', 'informix' ), true ) || ( $engine === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
         {
             $handler = expKernelTableSchema::handler( $db, array() );
             if ( !$handler )

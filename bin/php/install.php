@@ -31,6 +31,10 @@ $databaseTypes = array(
     'aurora'      => array( 'type' => 'aurora',      'port' => '3306', 'name' => 'exponential', 'user' => 'admin' ),
     // Firebird 4/5: the database must exist; the name is an alias of databases.conf or the file's path on the server
     'firebird' => array( 'type' => 'firebird', 'port' => '3050', 'name' => 'exponential', 'user' => 'SYSDBA' ),
+    // Db2 for LUW 11.5/12.1 over pdo_ibm: the database must exist (PAGESIZE 32 K, UTF-8, a user temporary tablespace)
+    'db2'      => array( 'type' => 'db2',      'port' => '50000', 'name' => 'EXP',         'user' => 'db2inst1' ),
+    // Informix 14.10/15 over pdo_ibm through the DRDA listener: the database must exist, logged, UTF-8
+    'informix' => array( 'type' => 'informix', 'port' => '9089',  'name' => 'exponential', 'user' => 'informix' ),
     // DuckDB: one file (var/storage/duckdb/<name>), no server; needs PHP's FFI extension and libduckdb
     'duckdb'  => array( 'type' => 'duckdb',  'port' => '',      'name' => 'exponential.duckdb', 'user' => '' ),
     // the databases of the PostgreSQL wire protocol (expPostgreSQLWireDB): PHP's pgsql extension
@@ -47,7 +51,8 @@ $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' 
                           'planetscale' => 'vitess', 'memsql' => 'singlestore', 'aurora-mysql' => 'aurora', 'auroramysql' => 'aurora',
                           'fb' => 'firebird', 'pdo_firebird' => 'firebird',
                           'cockroach' => 'cockroachdb', 'crdb' => 'cockroachdb', 'yugabyte' => 'yugabytedb', 'ysql' => 'yugabytedb',
-                          'aurora-postgresql' => 'aurorapostgresql' );
+                          'aurora-postgresql' => 'aurorapostgresql',
+                          'ibm_db2' => 'db2', 'pdo_ibm' => 'db2', 'ifx' => 'informix' );
 $pgWireTypes = array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql' );
 
 $options = array(
@@ -142,7 +147,7 @@ if ( isset( $databaseAliases[$db] ) )
 if ( !isset( $databaseTypes[$db] ) )
 {
     fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird,"
-                  . " duckdb, cockroachdb, yugabytedb, neon, supabase or aurorapostgresql\n" );
+                  . " duckdb, cockroachdb, yugabytedb, neon, supabase, aurorapostgresql, db2 or informix\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
@@ -493,6 +498,7 @@ packages, and ends with "PASS: ... (dry run, nothing changed; --apply writes)".
 Database (default: SQLite, no server needed)
   --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle, sqlserver, firebird or duckdb;
                          cockroachdb, yugabytedb, neon, supabase or aurorapostgresql (PostgreSQL wire protocol)
+                         db2 or informix (IBM, over pdo_ibm or ibm_db2)
                          (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
                          (neon, supabase, aurorapostgresql: the database must exist; TLS required by default)
                          (firebird: needs pdo_firebird of PHP 8.4 or later, Firebird 4 or 5, and an
@@ -502,19 +508,23 @@ Database (default: SQLite, no server needed)
                          singlestore (memsql), xpand, aurora (aurora-mysql)
                          (vitess: the keyspace must exist)
                          (duckdb: needs PHP's FFI extension and libduckdb, see [DuckDBSettings])
+                         (db2, informix: need pdo_ibm and an existing database, see the
+                         Db2 and Informix driver pages)
   --db-host=<host>       default localhost
   --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
                          1521 (oracle), 1433 (sqlserver), 4000 (tidb), 3050 (firebird),
-                         26257 (cockroachdb), 5433 (yugabytedb)
+                         26257 (cockroachdb), 5433 (yugabytedb),
+                         50000 (db2), 9089 (informix, DRDA)
   --db-name=<name>       default exponential (exponential.db for sqlite,
-                         exponential.duckdb for duckdb);
+                         exponential.duckdb for duckdb, EXP for db2);
                          oracle: the service name, default FREEPDB1, used as
                          host:port/service; a full connect string (with / or
                          a descriptor) or @alias (a TNS alias) is used as it is;
                          firebird: an alias of the server's databases.conf or the
                          path of the database file on the server
   --db-user=<user>       default root (mysql, cockroachdb), postgres (pgsql, supabase, aurorapostgresql),
-                         sa (sqlserver), SYSDBA (firebird), yugabyte (yugabytedb), none otherwise
+                         sa (sqlserver), SYSDBA (firebird), yugabyte (yugabytedb), db2inst1 (db2),
+                         informix (informix), none otherwise
   --db-password=<pass>   default none; or set EXP_INSTALL_DB_PASSWORD, which
                          keeps it out of the process list and shell history
   --db-socket=<path>     MySQL socket, instead of host and port

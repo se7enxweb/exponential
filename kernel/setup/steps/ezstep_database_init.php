@@ -127,7 +127,8 @@ class eZStepDatabaseInit extends eZStepInstaller
         // Oracle the same: Database is the connect string of the schema to use
         // SQL Server and Firebird the same: the login is tested against the named database
         // DuckDB the same: the database is the file named
-        if ( ( in_array( eZSetupDatabaseFamily( $databaseInfo['type'] ), array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver', 'firebird', 'duckdb' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
+        // Db2 and Informix the same: the login is tested against the named database
+        if ( ( in_array( eZSetupDatabaseFamily( $databaseInfo['type'] ), array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
              !empty( $databaseInfo['dbname'] ) )
         {
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );

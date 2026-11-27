@@ -211,7 +211,8 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
     {
         $engines = expDataConnections::engines();
         $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird', 'duckdb',
-                                  'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurorapostgresql' ), array_keys( $engines ) );
+                                  'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurorapostgresql', 'db2', 'informix' ),
+                           array_keys( $engines ) );
         foreach ( $engines as $key => $engine )
         {
             foreach ( array( 'label', 'kind', 'ez', 'pdo', 'port', 'file', 'enabled', 'available', 'via', 'handler', 'pdo_driver', 'why', 'untested' ) as $field )
@@ -230,6 +231,8 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $engines['sqlite']['available'], 'SQLite is available here' );
         $this->assertSame( 'ez', $engines['sqlite']['via'] );
         $this->assertSame( array( 'firebird', 3050, 'relational' ), array( $engines['firebird']['ez'], $engines['firebird']['port'], $engines['firebird']['kind'] ) );
+        $this->assertSame( array( 'db2', 50000, array( 'ibm' ) ), array( $engines['db2']['ez'], $engines['db2']['port'], $engines['db2']['pdo'] ) );
+        $this->assertSame( array( 'informix', 9089, array( 'ibm' ) ), array( $engines['informix']['ez'], $engines['informix']['port'], $engines['informix']['pdo'] ) );
     }
 
     /** DC-07 */
