@@ -84,6 +84,12 @@ class VelocityRouter
         {
             $velocityRealRoot = realpath( $velocityRoot );
             $velocityReal = realpath( $velocityRoot . $velocityPath );
+            // realpath() answers with backslashes on Windows; the checks below compare and match "/" paths
+            if ( DIRECTORY_SEPARATOR === '\\' )
+            {
+                $velocityRealRoot = $velocityRealRoot === false ? false : str_replace( '\\', '/', $velocityRealRoot );
+                $velocityReal = $velocityReal === false ? false : str_replace( '\\', '/', $velocityReal );
+            }
             $velocityRelative = ( $velocityReal !== false && $velocityRealRoot !== false
                                   && strpos( $velocityReal, $velocityRealRoot . '/' ) === 0 )
                               ? substr( $velocityReal, strlen( $velocityRealRoot ) ) : false;
