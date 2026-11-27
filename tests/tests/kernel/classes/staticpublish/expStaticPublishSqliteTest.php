@@ -102,7 +102,7 @@ class expStaticPublishSqliteTest extends PHPUnit\Framework\TestCase
     {
         $pipes = array();
         $p = proc_open( array_merge( array( 'git' ), $args ), array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $cwd,
-                        array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin', 'HOME' => getenv( 'HOME' ) ?: '/tmp', 'LC_ALL' => 'C' ) );
+                        expTestChildEnvironment::with( array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin', 'HOME' => getenv( 'HOME' ) ?: '/tmp', 'LC_ALL' => 'C' ) ) );
         fclose( $pipes[0] );
         $out = stream_get_contents( $pipes[1] );
         $err = stream_get_contents( $pipes[2] );

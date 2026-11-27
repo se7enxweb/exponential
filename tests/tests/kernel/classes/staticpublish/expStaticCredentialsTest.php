@@ -63,7 +63,7 @@ class expStaticCredentialsTest extends PHPUnit\Framework\TestCase
     private static function git( $cwd, array $args, array $env = array(), $input = '' )
     {
         $pipes = array();
-        $base = array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin', 'HOME' => getenv( 'HOME' ) ?: '/tmp', 'LC_ALL' => 'C', 'GIT_TERMINAL_PROMPT' => '0' );
+        $base = expTestChildEnvironment::with( array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin', 'HOME' => getenv( 'HOME' ) ?: '/tmp', 'LC_ALL' => 'C', 'GIT_TERMINAL_PROMPT' => '0' ) );
         $p = proc_open( array_merge( array( 'git' ), $args ), array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $cwd, $env + $base );
         fwrite( $pipes[0], $input );
         fclose( $pipes[0] );

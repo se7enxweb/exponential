@@ -25,7 +25,7 @@ class cjwNewsletterCommandsTest extends cjwNewsletterTestCase
         $line = array_merge( array( PHP_BINARY, 'extension/cjw_newsletter/bin/php/' . $name . '.php', '-s', 'admin', '--allow-root-user' ), $arguments );
         // the mails of the child go to the directory of this test too
         $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, eZSys::rootDir(),
-                              array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin' ) );
+                              expTestChildEnvironment::with( array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin' ) ) );
         $this->assertIsResource( $process );
         $out = stream_get_contents( $pipes[1] ) . stream_get_contents( $pipes[2] );
         fclose( $pipes[1] );

@@ -133,7 +133,7 @@ class expApplyFlagCommandsTest extends PHPUnit\Framework\TestCase
     {
         $line = array_merge( array( PHP_BINARY, 'bin/php/' . $name . '.php', '--allow-root-user' ), $arguments );
         $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, eZSys::rootDir(),
-                              array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin' ) );
+                              expTestChildEnvironment::with( array( 'PATH' => getenv( 'PATH' ) ?: '/usr/bin:/bin' ) ) );
         $out = stream_get_contents( $pipes[1] ) . stream_get_contents( $pipes[2] );
         fclose( $pipes[1] );
         fclose( $pipes[2] );

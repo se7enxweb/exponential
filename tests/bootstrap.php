@@ -330,6 +330,7 @@ $optional = [
     'ezpthrowawaydatabase.php',
     'ezpliveinstallation.php',
     'ezploopbackserver.php',
+    'exptestchildenvironment.php',
 ];
 foreach ( $optional as $file )
 {

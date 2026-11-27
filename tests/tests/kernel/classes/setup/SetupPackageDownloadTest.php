@@ -30,9 +30,10 @@ class SetupPackageDownloadTest extends PHPUnit\Framework\TestCase
         file_put_contents( self::$docRoot . '/router.php', self::routerSource() );
 
         self::$port = self::freePort();
-        $command = escapeshellarg( PHP_BINARY ) . ' -S 127.0.0.1:' . self::$port . ' -t ' . escapeshellarg( self::$docRoot ) .
-                   ' ' . escapeshellarg( self::$docRoot . '/router.php' );
-        self::$server = proc_open( 'exec ' . $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'file', $root . '/server.log', 'a' ),
+        // the command as an array: no shell in between (exec of sh on Unix, cmd.exe on Windows), so the process
+        // proc_terminate() ends is the server itself
+        $command = array( PHP_BINARY, '-S', '127.0.0.1:' . self::$port, '-t', self::$docRoot, self::$docRoot . '/router.php' );
+        self::$server = proc_open( $command, array( 0 => array( 'pipe', 'r' ), 1 => array( 'file', $root . '/server.log', 'a' ),
                                                              2 => array( 'file', $root . '/server.log', 'a' ) ), self::$pipes );
 
         // Wait until it accepts connections
