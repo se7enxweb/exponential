@@ -43,3 +43,10 @@ parameters:
                 - kernel/classes/migration/expmigrationqueuehandler.php
                 - kernel/classes/transfer/expkerneltransferqueuehandler.php
             reportUnmatched: false
+        # mroosz/php-cassandra is suggested, not required (CI's analysis does not install it): where it is missing its
+        # classes are unknown to the layer that uses it; where it is installed the entry matches nothing
+        -
+            message: '#Cassandra\\#'
+            paths:
+                - lib/ezdb/classes/expcassandraphptransport.php
+            reportUnmatched: false
