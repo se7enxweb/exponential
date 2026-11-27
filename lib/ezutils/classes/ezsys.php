@@ -597,7 +597,7 @@ class eZSys
     {
         $dir = (string)$dir;
         // substr(), not $dir[0]: an empty setting raised a warning on PHP 8
-        if ( substr( $dir, 0, 1 ) === '/' )
+        if ( eZDir::isAbsolutePath( $dir ) )
         {
             return eZDir::path( array( $dir ) );
         }
@@ -616,7 +616,7 @@ class eZSys
     {
         $varDir = eZDir::path( array( (string)$varDir ) );
         $varRoot = rtrim( (string)$varRoot, '/' );
-        if ( $varRoot === '' || $varDir === '' || $varDir[0] === '/' )
+        if ( $varRoot === '' || $varDir === '' || eZDir::isAbsolutePath( $varDir ) )
         {
             return $varDir;
         }

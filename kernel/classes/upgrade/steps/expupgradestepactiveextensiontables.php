@@ -88,7 +88,7 @@ class expUpgradeStepActiveExtensionTables extends expUpgradeBaseStep
             $file = "$root/$extension/share/db_schema.dba";
             if ( !is_file( $file ) )
                 continue;
-            if ( $file[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $file ) )
                 $file = rtrim( eZSys::rootDir(), '/' ) . '/' . $file;
             $schema = expKernelTableSchema::read( $file );
             if ( $schema )

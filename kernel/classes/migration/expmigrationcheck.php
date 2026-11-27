@@ -57,7 +57,7 @@ class expMigrationCheck
             $directories = array();
             foreach ( $paths as $path )
             {
-                $absolute = $path[0] === '/' ? rtrim( $path, '/' ) : $root . '/' . rtrim( strpos( $path, './' ) === 0 ? substr( $path, 2 ) : $path, '/' );
+                $absolute = eZDir::isAbsolutePath( $path ) ? rtrim( $path, '/' ) : $root . '/' . rtrim( strpos( $path, './' ) === 0 ? substr( $path, 2 ) : $path, '/' );
                 if ( is_file( $absolute ) )
                 {
                     $files[] = realpath( $absolute );

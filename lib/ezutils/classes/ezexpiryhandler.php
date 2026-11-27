@@ -42,7 +42,7 @@ class eZExpiryHandler
         {
             return eZSys::cacheDirectory() . '/' . 'expiry.php';
         }
-        if ( $expiryDir[0] == '/' )
+        if ( eZDir::isAbsolutePath( $expiryDir ) )
         {
             return eZDir::path( array( $expiryDir, 'expiry.php' ) );
         }

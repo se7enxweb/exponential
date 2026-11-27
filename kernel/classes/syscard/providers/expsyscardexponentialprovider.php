@@ -45,7 +45,7 @@ class expSysCardExponentialProvider extends expSysCardBaseProvider
         if ( $pointer !== null && preg_match( '/^gitdir:\s*(.+)$/m', $pointer, $m ) )
         {
             $gitDir = trim( $m[1] );
-            if ( $gitDir !== '' && $gitDir[0] !== '/' )
+            if ( $gitDir !== '' && !eZDir::isAbsolutePath( $gitDir ) )
                 $gitDir = $context->root . '/' . $gitDir;
         }
         $head = $context->file( $gitDir . '/HEAD', 4096 );
@@ -57,7 +57,7 @@ class expSysCardExponentialProvider extends expSysCardBaseProvider
         if ( $commonDir !== null && trim( $commonDir ) !== '' )
         {
             $common = trim( $commonDir );
-            if ( $common[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $common ) )
                 $common = $gitDir . '/' . $common;
         }
         if ( preg_match( '/^[0-9a-f]{40}$/', $head ) )

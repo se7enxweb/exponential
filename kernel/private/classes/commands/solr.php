@@ -130,12 +130,12 @@ function solrEnsureDirs()
     {
         $dir = trim( (string)solrSetting( $key, $default ) );
         if ( $dir === '' ) $dir = $default;
-        $abs = ( $dir[0] === '/' ) ? $dir : $root . '/' . $dir;
+        $abs = ( \eZDir::isAbsolutePath( $dir ) ) ? $dir : $root . '/' . $dir;
         if ( !is_dir( $abs ) ) @mkdir( $abs, \eZDir::dirMode( 0755 ), true );
     }
     $logDir = trim( (string)solrSetting( 'LogDir', 'var/vc/solr/log' ) );
     if ( $logDir === '' ) $logDir = 'var/vc/solr/log';
-    return ( $logDir[0] === '/' ) ? $logDir : $root . '/' . $logDir;
+    return ( \eZDir::isAbsolutePath( $logDir ) ) ? $logDir : $root . '/' . $logDir;
 }
 
 /**

@@ -107,7 +107,7 @@ class expMigrationGenerator
             $result['errors'][] = 'no migrations directory: [MigrationSettings] DirectoryList in migration.ini names none';
             return $result;
         }
-        if ( $directory[0] !== '/' )
+        if ( !eZDir::isAbsolutePath( $directory ) )
             $directory = $root . '/' . $directory;
         $timestamp = date( 'YmdHis', isset( $options['time'] ) ? (int)$options['time'] : time() );
         $id = $timestamp . '_' . $slug;

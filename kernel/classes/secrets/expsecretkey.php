@@ -207,7 +207,7 @@ class expSecretKey
         }
         if ( strpos( $file, '..' ) !== false )
             $file = 'var/secrets/exp_secret.key';
-        return $file[0] === '/' ? $file : eZSys::rootDir() . '/' . ltrim( $file, '/' );
+        return eZDir::isAbsolutePath( $file ) ? $file : eZSys::rootDir() . '/' . ltrim( $file, '/' );
     }
 
     /**

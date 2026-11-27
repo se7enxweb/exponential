@@ -214,9 +214,9 @@ class expMigrationHeal
         $settings = expMigrationLocator::settings( eZINI::instance( 'migration.ini' ) );
         $root = rtrim( (string)eZSys::rootDir(), '/' );
         foreach ( $settings['directories'] as $dir )
-            $dirs[] = $dir[0] === '/' ? rtrim( $dir, '/' ) : $root . '/' . trim( $dir, '/' );
+            $dirs[] = eZDir::isAbsolutePath( $dir ) ? rtrim( $dir, '/' ) : $root . '/' . trim( $dir, '/' );
         $var = rtrim( (string)eZSys::varDirectory(), '/' );
-        $dirs[] = ( $var !== '' && $var[0] === '/' ? $var : $root . '/' . $var ) . '/migration';
+        $dirs[] = ( eZDir::isAbsolutePath( $var ) ? $var : $root . '/' . $var ) . '/migration';
         return $dirs;
     }
 

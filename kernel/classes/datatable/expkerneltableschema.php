@@ -58,7 +58,7 @@ class expKernelTableSchema
     public static function read( $file = null )
     {
         $file = $file ?: 'share/db_schema.dba';
-        if ( $file[0] !== '/' )
+        if ( !eZDir::isAbsolutePath( $file ) )
             $file = rtrim( eZSys::rootDir(), '/' ) . '/' . $file;
         if ( !is_readable( $file ) )
             return array();

@@ -73,7 +73,7 @@ class expPreloadHistory
      */
     public function errorFile( $id )
     {
-        $dir = $this->dir[0] === '/' ? $this->dir : getcwd() . '/' . $this->dir;
+        $dir = eZDir::isAbsolutePath( $this->dir ) ? $this->dir : getcwd() . '/' . $this->dir;
         return $dir . '/' . $id . '.err';
     }
 

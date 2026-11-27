@@ -253,7 +253,7 @@ class expSysCardContext
     public function path( $path )
     {
         $path = (string)$path;
-        return $path !== '' && $path[0] === '/' ? $path : $this->root . '/' . $path;
+        return eZDir::isAbsolutePath( $path ) ? $path : $this->root . '/' . $path;
     }
 
     /**

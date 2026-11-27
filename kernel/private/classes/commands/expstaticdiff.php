@@ -47,7 +47,7 @@ class Expstaticdiff extends ExpstaticBase
         $format = $this->format( $options );
         $mounts = isset( $options['mount'] ) && $options['mount'] !== false ? self::listOption( $options['mount'] ) : array();
         foreach ( $mounts as $mount )
-            if ( $mount[0] !== '/' )
+            if ( !\eZDir::isAbsolutePath( $mount ) )
                 $this->usage( "--mount takes paths starting with /, not $mount" );
         if ( $mounts && empty( $options['check-links'] ) )
             $this->usage( '--mount goes with --check-links' );

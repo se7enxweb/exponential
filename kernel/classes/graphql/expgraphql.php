@@ -233,7 +233,7 @@ class expGraphQL
      */
     private static function registerLibraryPath( $libraryPath )
     {
-        if ( $libraryPath[0] !== '/' )
+        if ( !eZDir::isAbsolutePath( $libraryPath ) )
             $libraryPath = self::rootDir() . '/' . $libraryPath;
         $libraryPath = rtrim( $libraryPath, '/' );
         foreach ( array( $libraryPath . '/vendor/autoload.php', $libraryPath . '/autoload.php' ) as $autoload )

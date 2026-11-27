@@ -76,7 +76,7 @@ class expSettingsChain
         $layers = array();
         foreach ( $inputFiles as $path )
         {
-            $absolute = $path !== '' && $path[0] === '/' ? $path : $root . $path;
+            $absolute = eZDir::isAbsolutePath( $path ) ? $path : $root . $path;
             if ( !is_file( $absolute ) )
                 continue;
             $unreadable = !is_readable( $absolute );
@@ -111,7 +111,7 @@ class expSettingsChain
             if ( $prefix !== '/' && strpos( $path, $prefix ) === 0 )
                 return substr( $path, strlen( $prefix ) );
         }
-        $real = $path !== '' && $path[0] === '/' ? realpath( $path ) : false;
+        $real = eZDir::isAbsolutePath( $path ) ? realpath( $path ) : false;
         $realRoot = realpath( $root );
         if ( $real !== false && $realRoot !== false && strpos( $real, $realRoot . '/' ) === 0 )
             return substr( $real, strlen( $realRoot ) + 1 );

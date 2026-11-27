@@ -833,11 +833,11 @@ class expDataConnections
         if ( $file === '' || strpos( $file, "\0" ) !== false || !preg_match( $pattern, $file ) )
             return null;
         $root = rtrim( eZSys::rootDir(), '/' );
-        $path = $file[0] === '/' ? $file : $root . '/' . $file;
+        $path = eZDir::isAbsolutePath( $file ) ? $file : $root . '/' . $file;
         $allowedDirs = array();
         foreach ( self::sqliteDirectories() as $allowed )
         {
-            $allowedReal = self::realDirectory( $allowed[0] === '/' ? $allowed : $root . '/' . $allowed, true );
+            $allowedReal = self::realDirectory( eZDir::isAbsolutePath( $allowed ) ? $allowed : $root . '/' . $allowed, true );
             if ( $allowedReal !== null )
                 $allowedDirs[] = $allowedReal;
         }

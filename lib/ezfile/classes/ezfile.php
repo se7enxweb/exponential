@@ -296,8 +296,9 @@ class eZFile
      */
     static function rename( $srcFile, $destFile, $mkdir = false, $flags = 0 )
     {
-        /* On windows we need to unlink the destination file first */
-        if ( strtolower( substr( PHP_OS, 0, 3 ) ) == 'win' )
+        /* On windows we need to unlink the destination file first. Only an existing one: a failed unlink() raised a
+           warning that an error handler sees in spite of the @ (every first write of a cache file on Windows). */
+        if ( strtolower( substr( PHP_OS, 0, 3 ) ) == 'win' && is_file( $destFile ) )
         {
             @unlink( $destFile );
         }

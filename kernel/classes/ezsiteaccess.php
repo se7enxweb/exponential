@@ -862,7 +862,7 @@ class eZSiteAccess
         if ( $ini->hasVariable( 'FileSettings', 'INICacheDir' ) && $ini->variable( 'FileSettings', 'INICacheDir' ) === 'site' )
         {
             $cacheDirectory = eZSys::cacheDirectory();
-            if ( $cacheDirectory === '' || $cacheDirectory[0] !== '/' )
+            if ( $cacheDirectory === '' || !eZDir::isAbsolutePath( $cacheDirectory ) )
             {
                 // The installation root, as eZINI::loadCache() puts it before var/cache/ini/
                 $cacheDirectory = ( defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : dirname( __DIR__, 2 ) ) . '/' . $cacheDirectory;

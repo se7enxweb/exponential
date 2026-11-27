@@ -220,7 +220,7 @@ class expIniLocator
 
     protected static function absolute( $path, $root )
     {
-        return $path !== '' && $path[0] === '/' ? $path : $root . $path;
+        return eZDir::isAbsolutePath( $path ) ? $path : $root . $path;
     }
 
     protected static function relative( $path, $root )

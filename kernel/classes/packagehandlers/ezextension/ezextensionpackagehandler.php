@@ -275,7 +275,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
             if ( !is_array( $composerPackage ) || !isset( $composerPackage['install-path'] ) || !is_string( $composerPackage['install-path'] ) )
                 continue;
             $path = $composerPackage['install-path'];
-            $path = ( $path !== '' && $path[0] === '/' ) ? $path : $rootDir . '/vendor/composer/' . $path;
+            $path = ( eZDir::isAbsolutePath( $path ) ) ? $path : $rootDir . '/vendor/composer/' . $path;
             if ( realpath( $path ) === $real )
                 return 'composer';
         }

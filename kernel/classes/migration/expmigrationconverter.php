@@ -84,7 +84,7 @@ class expMigrationConverter
             $report['errors'][] = 'name the file or folder to convert';
             return $report;
         }
-        $absolute = $path[0] === '/' ? $path : "$root/$path";
+        $absolute = eZDir::isAbsolutePath( $path ) ? $path : "$root/$path";
         $sources = array();
         if ( is_dir( $absolute ) )
         {

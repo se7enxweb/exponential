@@ -294,6 +294,91 @@ class eZDir
     }
 
     /**
+     * Whether $path is an absolute file system path, rather than one relative to the working directory.
+     *
+     * A path beginning with "/" is absolute everywhere. On Windows a path with a drive ("C:\dir", "C:/dir") and a
+     * path beginning with a backslash ("\dir", "\\server\share") are absolute too. Elsewhere they are names like
+     * any other: "C:" is a valid directory name on Linux.
+     *
+     * The kernel tested "$path[0] === '/'" in many places, which on Windows took D:\site\var for a relative path
+     * and put it below the installation: var/storage/sqlite3/D:/site/... for an SQLite file, var/C:/... for a
+     * cache directory.
+     *
+     * @param string $path
+     * @param bool|null $windows the rules of Windows (true) or of the other systems (false); null: of this system
+     * @return bool
+     */
+    static function isAbsolutePath( $path, $windows = null )
+    {
+        $path = (string)$path;
+        if ( $path === '' )
+            return false;
+        if ( $path[0] === '/' )
+            return true;
+        if ( $windows === null )
+            $windows = self::isWindows();
+        if ( !$windows )
+            return false;
+        return $path[0] === '\\' || preg_match( '#^[A-Za-z]:[\\\\/]#', $path ) === 1;
+    }
+
+    /**
+     * Whether this PHP runs on Windows.
+     *
+     * @return bool
+     */
+    static function isWindows()
+    {
+        return DIRECTORY_SEPARATOR === '\\';
+    }
+
+    /**
+     * Whether $path is $directory or inside it, comparing them as paths: "/" and "\" are the same separator on
+     * Windows, and so are the upper and lower case of a drive letter. /srv/cache holds /srv/cache/x, never
+     * /srv/cache-other/x.
+     *
+     * Both are taken as they are given: use realpath() first where links or ".." may be involved.
+     *
+     * @param string $path
+     * @param string $directory
+     * @param bool|null $windows see isAbsolutePath()
+     * @return bool
+     */
+    static function isInside( $path, $directory, $windows = null )
+    {
+        if ( $windows === null )
+            $windows = self::isWindows();
+        $path = (string)$path;
+        $directory = (string)$directory;
+        if ( $directory === '' )
+            return false;
+        if ( $windows )
+        {
+            $path = self::normalizeWindowsPath( $path );
+            $directory = self::normalizeWindowsPath( $directory );
+        }
+        $directory = rtrim( $directory, '/' );
+        // the root itself: "/" or "C:/"
+        if ( $directory === '' || ( $windows && preg_match( '#^[A-Z]:$#', $directory ) ) )
+            return strpos( $path, $directory . '/' ) === 0;
+        return $path === $directory || strpos( $path, $directory . '/' ) === 0;
+    }
+
+    /**
+     * $path with "/" for every "\" and an upper case drive letter, for comparing Windows paths.
+     *
+     * @param string $path
+     * @return string
+     */
+    protected static function normalizeWindowsPath( $path )
+    {
+        $path = str_replace( '\\', '/', (string)$path );
+        if ( preg_match( '#^[a-z]:#', $path ) )
+            $path = strtoupper( $path[0] ) . substr( $path, 1 );
+        return $path;
+    }
+
+    /**
      * The directories the current site writes its caches and logs to, as site.ini [FileSettings] configures them:
      * the cache directory, the log directory, eZDebug's log directory, the directory of expiry.php and the INI cache
      * directory, as real paths. recursiveDelete() may delete inside them also when they are outside the root.

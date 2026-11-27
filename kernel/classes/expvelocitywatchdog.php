@@ -470,7 +470,7 @@ class expVelocityWatchdog
         $file = trim( (string)$this->setting( 'LockFile', '' ) );
         if ( $file === '' )
             return '';
-        return $file[0] === '/' ? $file : $this->rootDir . '/' . $file;
+        return eZDir::isAbsolutePath( $file ) ? $file : $this->rootDir . '/' . $file;
     }
 
     /**

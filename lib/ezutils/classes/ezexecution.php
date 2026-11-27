@@ -532,7 +532,7 @@ class eZExecution
             if ( $file !== '' )
             {
                 $root = self::$eZDocumentRoot !== null ? self::$eZDocumentRoot : getcwd();
-                $path = ( $file[0] === '/' ) ? $file : $root . '/' . $file;
+                $path = ( eZDir::isAbsolutePath( $file ) ) ? $file : $root . '/' . $file;
                 if ( is_file( $path ) && is_readable( $path ) )
                     $template = (string) file_get_contents( $path );
             }
@@ -639,7 +639,7 @@ class eZExecution
                 if ( is_file( "$root/$ini" ) && preg_match( '/^StaticErrorPage\[' . preg_quote( $case, '/' ) . '\]=(.+)$/m', (string) file_get_contents( "$root/$ini" ), $m ) )
                 {
                     $file = trim( $m[1] );
-                    $path = $file[0] === '/' ? $file : "$root/$file";
+                    $path = eZDir::isAbsolutePath( $file ) ? $file : "$root/$file";
                     if ( is_file( $path ) && is_readable( $path ) )
                         $template = (string) file_get_contents( $path );
                     break;

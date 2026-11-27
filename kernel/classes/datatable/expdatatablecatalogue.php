@@ -372,7 +372,7 @@ class expDataTableCatalogue
                 // tests and namespaced view classes are not persistent classes
                 if ( strpos( $class, '\\' ) !== false || strpos( $file, 'tests/' ) !== false )
                     continue;
-                $path = $file[0] === '/' ? $file : $root . $file;
+                $path = eZDir::isAbsolutePath( $file ) ? $file : $root . $file;
                 if ( !isset( $seenFiles[$path] ) )
                 {
                     $source = is_readable( $path ) ? (string)@file_get_contents( $path ) : '';

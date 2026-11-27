@@ -274,7 +274,7 @@ class expCacheCatalogue
         {
             $ini = eZINI::instance( 'audit.ini' );
             $logDir = $ini->hasVariable( 'AuditSettings', 'LogDir' ) ? trim( (string)$ini->variable( 'AuditSettings', 'LogDir' ) ) : 'log/audit';
-            if ( $logDir !== '' && $logDir[0] !== '/' )
+            if ( $logDir !== '' && !eZDir::isAbsolutePath( $logDir ) )
             {
                 $root = rtrim( (string)eZSys::rootDir(), '/' );
                 foreach ( array( (string)eZSys::varDirectory(), 'var' ) as $var )
@@ -282,7 +282,7 @@ class expCacheCatalogue
                     $var = rtrim( $var, '/' );
                     if ( $var === '' )
                         continue;
-                    $dirs[] = ( $var[0] === '/' ? $var : $root . '/' . $var ) . '/' . rtrim( $logDir, '/' );
+                    $dirs[] = ( eZDir::isAbsolutePath( $var ) ? $var : $root . '/' . $var ) . '/' . rtrim( $logDir, '/' );
                 }
             }
         }

@@ -287,7 +287,7 @@ class expMigrationCaption
         $storage = $this->context->option( 'storage-dir' );
         if ( $storage === null )
             $storage = eZSys::storageDirectory();
-        if ( $storage !== '' && $storage[0] !== '/' )
+        if ( $storage !== '' && !eZDir::isAbsolutePath( $storage ) )
             $storage = "$root/$storage";
         $code = '';
         if ( file_exists( "$root/.git" ) && $this->gitAvailable() )
@@ -312,7 +312,7 @@ class expMigrationCaption
         if ( $dir === null )
             return "$root/settings/override";
         $dir = (string)$dir;
-        return ( $dir === '' || $dir[0] === '/' ) ? $dir : "$root/$dir";
+        return ( $dir === '' || eZDir::isAbsolutePath( $dir ) ) ? $dir : "$root/$dir";
     }
 
     /**
@@ -401,7 +401,7 @@ class expMigrationCaption
         {
             case 'sqlite':
                 $file = eZSQLite3DB::filePath( (string)$db->DB );
-                if ( $file !== '' && $file[0] !== '/' )
+                if ( $file !== '' && !eZDir::isAbsolutePath( $file ) )
                     $file = rtrim( $this->context->root(), '/' ) . '/' . $file;
                 if ( is_file( $file ) && filesize( $file ) > self::SQLITE_MARKER_MAX_BYTES )
                     return null;

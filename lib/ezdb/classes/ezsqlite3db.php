@@ -152,7 +152,7 @@ class eZSQLite3DB extends eZDBInterface
         $fileName = (string)$fileName;
         if ( $fileName === ':memory:' )
             return $fileName;
-        if ( strlen( $fileName ) > 0 && $fileName[0] === '/' )
+        if ( eZDir::isAbsolutePath( $fileName ) )
             return $fileName;
         return eZDir::path( array( self::STORAGE_DIRECTORY, $fileName ) );
     }

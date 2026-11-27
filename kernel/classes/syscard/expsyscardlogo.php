@@ -66,7 +66,7 @@ class expSysCardLogo
         {
             $dir = trim( (string)$dir );
             if ( $dir !== '' )
-                $absolute[] = $dir[0] === '/' ? $dir : rtrim( $root, '/' ) . '/' . $dir;
+                $absolute[] = eZDir::isAbsolutePath( $dir ) ? $dir : rtrim( $root, '/' ) . '/' . $dir;
         }
         return new self( $absolute, $name, $unicode );
     }

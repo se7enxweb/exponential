@@ -101,7 +101,7 @@ class expSmartyRenderer
     {
         if ( !self::isSmartyTemplate( $file ) )
             return self::failure( "not a Smarty template: $file" );
-        $path = ( $file !== '' && $file[0] === '/' ) ? $file : eZSys::rootDir() . '/' . $file;
+        $path = ( eZDir::isAbsolutePath( $file ) ) ? $file : eZSys::rootDir() . '/' . $file;
         if ( !is_file( $path ) )
             return self::failure( "template not found: $file" );
 
@@ -405,7 +405,7 @@ class expSmartyRenderer
      */
     public static function renderSubtemplate( \Smarty\Template $parent, $file, array $parameters, $uri = null, $templateName = null )
     {
-        $path = ( $file !== '' && $file[0] === '/' ) ? $file : eZSys::rootDir() . '/' . $file;
+        $path = ( eZDir::isAbsolutePath( $file ) ) ? $file : eZSys::rootDir() . '/' . $file;
         $treeIndex = false;
         try
         {
@@ -460,7 +460,7 @@ class expSmartyRenderer
             $libraryPath = trim( (string)eZINI::instance( 'smarty.ini' )->variable( 'SmartySettings', 'LibraryPath' ) );
             if ( $libraryPath !== '' )
             {
-                if ( $libraryPath[0] !== '/' )
+                if ( !eZDir::isAbsolutePath( $libraryPath ) )
                     $libraryPath = eZSys::rootDir() . '/' . $libraryPath;
                 $src = rtrim( $libraryPath, '/' ) . '/src/';
                 if ( is_file( $src . 'Smarty.php' ) )

@@ -163,7 +163,7 @@ class expDFSFileHandlerSQLiteBackend implements eZClusterEventNotifier, expDFSFi
         $dbName = trim( (string)$dbName );
         if ( $dbName === '' || $dbName === ':memory:' || strpos( $dbName, "\0" ) !== false )
             return '';
-        if ( $dbName[0] === '/' )
+        if ( eZDir::isAbsolutePath( $dbName ) )
             return $dbName;
         return self::STORAGE_DIRECTORY . '/' . $dbName;
     }

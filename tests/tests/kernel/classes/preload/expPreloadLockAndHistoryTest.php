@@ -132,7 +132,7 @@ class expPreloadLockAndHistoryTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'from the shell', $late['message'] );
 
         // what the run wrote to its error file before it could write its status is the reason given
-        $this->assertStringStartsWith( '/', $history->errorFile( $id ) );
+        $this->assertTrue( eZDir::isAbsolutePath( $history->errorFile( $id ) ), 'an absolute path' );
         file_put_contents( $history->errorFile( $id ), "PHP Fatal error:  <b>Something</b> broke\n" );
         $late = $history->read( $id, (int)$created['started'] + expPreloadHistory::START_GRACE + 5 );
         $this->assertSame( 'The preload did not start: PHP Fatal error: Something broke', $late['message'] );

@@ -47,7 +47,7 @@ class ezpRestDbConfig implements ezcBaseConfigurationInitializer
             {
                 return array( 'phptype' => 'sqlite', 'port' => 'memory' );
             }
-            if ( $file[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $file ) )
             {
                 $file = getcwd() . '/' . $file;
             }

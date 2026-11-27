@@ -188,7 +188,7 @@ class eZDBQueryCache
                 return '';
             $path = rtrim( $mount, '/' ) . '/querycache';
         }
-        if ( $path[0] !== '/' )
+        if ( !eZDir::isAbsolutePath( $path ) )
             $path = eZSys::rootDir() . '/' . $path;
         return rtrim( $path, '/' );
     }

@@ -117,11 +117,11 @@ class expViewCountConfiguration
         if ( isset( $overrides['state_dir'] ) && trim( (string)$overrides['state_dir'] ) !== '' )
             $settings['state_dir'] = trim( (string)$overrides['state_dir'] );
         $logOverride = isset( $overrides['log_file'] ) ? trim( (string)$overrides['log_file'] ) : '';
-        if ( $logOverride !== '' && $logOverride[0] !== '/' )
+        if ( $logOverride !== '' && !eZDir::isAbsolutePath( $logOverride ) )
             $logOverride = eZSys::rootDir() . '/' . $logOverride;
         if ( $settings['state_dir'] === '' )
             $settings['state_dir'] = eZSys::varDirectory() . '/viewcount';
-        elseif ( $settings['state_dir'][0] !== '/' )
+        elseif ( !eZDir::isAbsolutePath( $settings['state_dir'] ) )
             $settings['state_dir'] = eZSys::rootDir() . '/' . $settings['state_dir'];
 
         $current = eZSiteAccess::current();
@@ -243,7 +243,7 @@ class expViewCountConfiguration
         $name = $logINI->hasVariable( 'AccessLogFileSettings', 'LogFileName' ) ? trim( (string)$logINI->variable( 'AccessLogFileSettings', 'LogFileName' ) ) : '';
         if ( $dir === '' || $name === '' )
             return '';
-        if ( $dir[0] !== '/' )
+        if ( !eZDir::isAbsolutePath( $dir ) )
             $dir = eZSys::rootDir() . '/' . $dir;
         return rtrim( $dir, '/' ) . '/' . ltrim( $name, '/' );
     }

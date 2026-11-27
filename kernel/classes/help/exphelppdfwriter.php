@@ -162,7 +162,7 @@ class expHelpPdfWriter
                 $file = trim( (string)$file );
                 if ( $file === '' || strtolower( substr( $file, -4 ) ) !== '.ttf' )
                     continue;
-                if ( $file[0] !== '/' && $root !== '' )
+                if ( !eZDir::isAbsolutePath( $file ) && $root !== '' )
                     $file = $root . '/' . $file;
                 if ( is_file( $file ) && is_readable( $file ) )
                 {

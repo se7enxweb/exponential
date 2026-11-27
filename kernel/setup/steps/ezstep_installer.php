@@ -708,7 +708,7 @@ class eZStepInstaller
     function checkSQLiteDatabaseFile( $fileName )
     {
         $fileName = trim( (string)$fileName );
-        $isAbsolute = strlen( $fileName ) > 0 && $fileName[0] === '/';
+        $isAbsolute = eZDir::isAbsolutePath( $fileName );
         $check = array( 'error_code' => false,
                         'path' => eZSQLite3DB::filePath( $fileName ),
                         'tables' => 0 );

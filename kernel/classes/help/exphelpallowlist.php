@@ -622,7 +622,7 @@ class expHelpAllowlist
         if ( is_file( $gitdir . '/commondir' ) )
         {
             $common = trim( (string)@file_get_contents( $gitdir . '/commondir' ) );
-            $dirs[] = $common !== '' && $common[0] === '/' ? $common : $gitdir . '/' . $common;
+            $dirs[] = eZDir::isAbsolutePath( $common ) ? $common : $gitdir . '/' . $common;
         }
         foreach ( $dirs as $dir )
         {
@@ -764,7 +764,7 @@ class expHelpAllowlist
             $content = (string)file_get_contents( $dotGit );
             if ( preg_match( '/^gitdir:\s*(.+?)\s*$/m', $content, $m ) )
             {
-                $dir = $m[1][0] === '/' ? $m[1] : $top . '/' . $m[1];
+                $dir = eZDir::isAbsolutePath( $m[1] ) ? $m[1] : $top . '/' . $m[1];
                 return is_file( $dir . '/index' ) ? rtrim( $dir, '/' ) : null;
             }
         }

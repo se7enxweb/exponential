@@ -356,7 +356,7 @@ class Job extends \Exponential\Runnable\ModuleView
         $varDir = \eZSys::varDirectory();
         if ( $varDir === '' || $varDir === null )
             $varDir = 'var';
-        if ( $varDir[0] !== '/' )
+        if ( !\eZDir::isAbsolutePath( $varDir ) )
             $varDir = \eZSys::rootDir() . '/' . $varDir;
         $file = $varDir . '/jobs/content/locks.json';
         if ( !is_file( $file ) )

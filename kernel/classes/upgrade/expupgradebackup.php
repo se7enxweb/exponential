@@ -136,7 +136,7 @@ class expUpgradeBackup
         catch ( Throwable $e )
         {
             $source = eZSQLite3DB::filePath( (string)$db->DB );
-            if ( $source[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $source ) )
                 $source = rtrim( eZSys::rootDir(), '/' ) . '/' . $source;
             if ( !is_file( $source ) || !copy( $source, $file ) )
             {

@@ -148,7 +148,7 @@ class expTwigRenderer
      */
     public static function absolutePath( $file )
     {
-        return ( $file !== '' && $file[0] === '/' ) ? $file : self::rootDir() . '/' . $file;
+        return ( eZDir::isAbsolutePath( $file ) ) ? $file : self::rootDir() . '/' . $file;
     }
 
     /**
@@ -733,7 +733,7 @@ class expTwigRenderer
 
     private static function registerLibraryPath( $libraryPath )
     {
-        if ( $libraryPath[0] !== '/' )
+        if ( !eZDir::isAbsolutePath( $libraryPath ) )
             $libraryPath = self::rootDir() . '/' . $libraryPath;
         $libraryPath = rtrim( $libraryPath, '/' );
         foreach ( array( $libraryPath . '/vendor/autoload.php', $libraryPath . '/autoload.php', dirname( $libraryPath, 2 ) . '/autoload.php' ) as $autoload )

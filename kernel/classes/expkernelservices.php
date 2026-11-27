@@ -235,7 +235,7 @@ class expKernelServices
     {
         $settings = self::settings();
         $dir = rtrim( $settings['CacheDir'] !== '' ? $settings['CacheDir'] : self::DEFAULT_CACHE_DIR, '/' );
-        if ( $dir[0] !== '/' )
+        if ( !eZDir::isAbsolutePath( $dir ) )
             $dir = self::installationRoot() . '/' . $dir;
         return $dir;
     }

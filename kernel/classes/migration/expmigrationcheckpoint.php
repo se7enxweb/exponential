@@ -70,7 +70,7 @@ class expMigrationCheckpoint
     public static function directory()
     {
         $directory = rtrim( (string)eZSys::varDirectory(), '/' ) . '/migration/checkpoints';
-        if ( $directory[0] !== '/' )
+        if ( !eZDir::isAbsolutePath( $directory ) )
             $directory = rtrim( (string)eZSys::rootDir(), '/' ) . '/' . $directory;
         return $directory;
     }

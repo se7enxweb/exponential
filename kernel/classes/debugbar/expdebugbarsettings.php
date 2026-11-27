@@ -130,7 +130,7 @@ class expDebugBarSettings
         $files = array();
         foreach ( $inputFiles as $path )
         {
-            $abs = $path !== '' && $path[0] === '/' ? $path : $root . $path;
+            $abs = eZDir::isAbsolutePath( $path ) ? $path : $root . $path;
             if ( !is_file( $abs ) )
                 continue;
             $rel = self::relative( $abs, $root );

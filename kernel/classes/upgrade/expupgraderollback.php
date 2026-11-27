@@ -277,7 +277,7 @@ class expUpgradeRollback
             {
                 case 'sqlite':
                     $live = eZSQLite3DB::filePath( (string)$db->DB );
-                    if ( $live[0] !== '/' )
+                    if ( !eZDir::isAbsolutePath( $live ) )
                         $live = "$root/$live";
                     $lines[] = 'write ' . basename( $dump['path'] ) . " back into $live (SQLite backup API)";
                     if ( $apply )

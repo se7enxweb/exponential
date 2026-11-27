@@ -62,7 +62,7 @@ class Expstaticbuild extends ExpstaticBase
         if ( !empty( $options['full'] ) && ( $paths || $nodes ) )
             $this->usage( '--full builds the whole site; leave it out with --paths or --nodes' );
         foreach ( $paths as $path )
-            if ( $path[0] !== '/' )
+            if ( !\eZDir::isAbsolutePath( $path ) )
                 $this->usage( "--paths takes paths of the site starting with /, not $path" );
         foreach ( $nodes as $node )
             if ( !ctype_digit( $node ) )

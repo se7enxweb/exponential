@@ -114,7 +114,7 @@ class expMigrationLocator
         $root = rtrim( (string)$root, '/' );
         $absolute = function ( $path ) use ( $root ) {
             $path = rtrim( (string)$path, '/' );
-            return $path !== '' && $path[0] === '/' ? $path : "$root/$path";
+            return eZDir::isAbsolutePath( $path ) ? $path : "$root/$path";
         };
         $sub = $settings['extension_directory'];
 

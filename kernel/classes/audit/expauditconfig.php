@@ -290,7 +290,7 @@ class expAuditConfig
         else
         {
             $logDir = trim( (string)$v['AuditSettings/LogDir'] ) !== '' ? trim( $v['AuditSettings/LogDir'] ) : 'log/audit';
-            if ( $logDir[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $logDir ) )
             {
                 $logDir = self::varPath( isset( $v['varDir'] ) ? $v['varDir'] : '' ) . '/' . $logDir;
             }
@@ -472,7 +472,7 @@ class expAuditConfig
     public static function path( $value )
     {
         $value = trim( (string)$value );
-        if ( $value !== '' && $value[0] === '/' )
+        if ( eZDir::isAbsolutePath( $value ) )
             return rtrim( $value, '/' );
         $config = self::get();
         if ( self::$override !== null || self::$testLogDir !== null )
@@ -506,7 +506,7 @@ class expAuditConfig
     protected static function varPath( $varDir )
     {
         $varDir = trim( (string)$varDir );
-        if ( $varDir !== '' && $varDir[0] === '/' )
+        if ( eZDir::isAbsolutePath( $varDir ) )
             return rtrim( $varDir, '/' );
         $varDir = trim( preg_replace( '#^(\./)+#', '', $varDir ), '/ ' );
         return self::root() . ( $varDir !== '' ? $varDir : 'var' );

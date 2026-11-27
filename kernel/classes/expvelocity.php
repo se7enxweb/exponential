@@ -149,7 +149,7 @@ class expVelocity
         {
             $parts = explode( ';', trim( (string)$entry ), 2 );
             $dir = rtrim( trim( $parts[0] ), '/' );
-            if ( $dir === '' || $dir[0] !== '/' || !is_dir( $dir ) )
+            if ( $dir === '' || !eZDir::isAbsolutePath( $dir ) || !is_dir( $dir ) )
                 continue;
             $roots[$dir] = array( 'dir' => $dir );
             if ( isset( $parts[1] ) && trim( $parts[1] ) !== '' && @preg_match( '#' . str_replace( '#', '\#', trim( $parts[1] ) ) . '#', '' ) !== false )
@@ -537,7 +537,7 @@ class expVelocity
                 $sources = array_merge( (array)$data['files'], isset( $data['includes'] ) ? (array)$data['includes'] : array() );
                 foreach ( $sources as $source )
                 {
-                    $path = ( $source !== '' && $source[0] === '/' ) ? $source : $root . '/' . $source;
+                    $path = ( eZDir::isAbsolutePath( $source ) ) ? $source : $root . '/' . $source;
                     clearstatcache( true, $path );
                     $mtime = @filemtime( $path );
                     if ( $mtime === false || $mtime > $created )
@@ -1081,7 +1081,7 @@ class expVelocity
         if ( $path === '' )
             return $this->rootDir;
 
-        return $path[0] === '/' ? $path : $this->rootDir . '/' . $path;
+        return eZDir::isAbsolutePath( $path ) ? $path : $this->rootDir . '/' . $path;
     }
 
     /**
@@ -2229,7 +2229,7 @@ class expVelocity
         // stream of the same path (the GraphQL subscriptions). An engine
         // without the bridge ignores them.
         $graphqlWs = array( 'paths' => array_values( array_filter( array_map( 'trim', (array)$this->setting( 'ServerSettings', 'GraphQLWebSocketPaths', array() ) ),
-                                                                   function ( $path ) { return $path !== '' && $path[0] === '/'; } ) ) );
+                                                                   function ( $path ) { return eZDir::isAbsolutePath( $path ); } ) ) );
         foreach ( array( 'GraphQLWebSocketInitTimeout' => 'initTimeout', 'GraphQLWebSocketIdleTimeout' => 'idleTimeout',
                          'GraphQLWebSocketPingInterval' => 'pingInterval', 'GraphQLWebSocketMaxSubscriptions' => 'maxSubscriptions' ) as $iniName => $engineName )
         {

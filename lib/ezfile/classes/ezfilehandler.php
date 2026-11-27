@@ -224,10 +224,10 @@ class eZFileHandler
     static function symlinkTarget( $sourceFilename, $linkFilename )
     {
         $source = eZDir::cleanPath( $sourceFilename, eZDir::SEPARATOR_UNIX );
-        if ( $source !== '' and $source[0] === '/' )
+        if ( eZDir::isAbsolutePath( $source ) )
             return $source;
         $linkDir = eZDir::cleanPath( dirname( $linkFilename ), eZDir::SEPARATOR_UNIX );
-        if ( $linkDir !== '' and $linkDir[0] === '/' )
+        if ( eZDir::isAbsolutePath( $linkDir ) )
             return eZDir::cleanPath( getcwd() . '/' . $source, eZDir::SEPARATOR_UNIX );
 
         $sourceParts = $source === '.' ? array() : explode( '/', $source );

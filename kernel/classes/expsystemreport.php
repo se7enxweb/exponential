@@ -662,7 +662,7 @@ class expSystemReport
     protected static function collectStorage( $root, $withSizes, $deadline )
     {
         $var = class_exists( 'eZSys' ) ? (string)eZSys::varDirectory() : 'var';
-        $absolute = function ( $path ) use ( $root ) { return $path !== '' && $path[0] === '/' ? $path : $root . '/' . $path; };
+        $absolute = function ( $path ) use ( $root ) { return eZDir::isAbsolutePath( $path ) ? $path : $root . '/' . $path; };
         $varPath = $absolute( $var );
         $facts = array(
             'var' => $varPath,
@@ -790,7 +790,7 @@ class expSystemReport
         $facts = array( 'last' => null, 'source' => '', 'part' => '' );
         $var = class_exists( 'eZSys' ) ? rtrim( (string)eZSys::varDirectory(), '/' ) : 'var';
         $root = class_exists( 'eZSys' ) ? rtrim( (string)eZSys::rootDir(), '/' ) : '.';
-        if ( $var !== '' && $var[0] !== '/' )
+        if ( $var !== '' && !eZDir::isAbsolutePath( $var ) )
             $var = $root . '/' . $var;
         // Runs started from Setup > Cronjobs (read as it is; the page that keeps it settles finished runs)
         $history = $var . '/cronjobs/history.json';
@@ -822,7 +822,7 @@ class expSystemReport
         // Runs from a crontab write their output to a log of their own
         // (var/log, and the log directory of the site: site.ini [FileSettings] LogDir, LogVarDir)
         $siteLog = class_exists( 'eZSys' ) ? rtrim( (string)eZSys::logDirectory(), '/' ) : $var . '/log';
-        if ( $siteLog !== '' && $siteLog[0] !== '/' )
+        if ( $siteLog !== '' && !eZDir::isAbsolutePath( $siteLog ) )
             $siteLog = $root . '/' . $siteLog;
         $logs = array_merge( (array)glob( $root . '/var/log/cronjob*.log' ), (array)glob( $siteLog . '/cronjob*.log' ), (array)glob( $var . '/cronjobs/*.log' ) );
         foreach ( array_filter( $logs ) as $log )

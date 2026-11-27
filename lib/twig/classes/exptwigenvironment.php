@@ -76,7 +76,7 @@ class expTwigEnvironment extends \Twig\Environment
         {
             return $class;
         }
-        if ( $file === '' || $file[0] !== '/' )
+        if ( $file === '' || !eZDir::isAbsolutePath( $file ) )
             $file = $this->expRoot . '/' . $file;
         // another process writes the file: the worker's stat cache must not answer for it
         clearstatcache( true, $file );

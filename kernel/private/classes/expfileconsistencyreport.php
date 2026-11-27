@@ -634,7 +634,8 @@ class expFileConsistencyReport
     /** A path of a manifest as a path on disk: relative ones are relative to the root */
     private function full( $path )
     {
-        if ( $path !== '' && $path[0] === '/' )
+        // bin/php/checkmanifest.php runs this class without the autoloader: eZDir::isAbsolutePath() written out
+        if ( $path !== '' && ( $path[0] === '/' || ( DIRECTORY_SEPARATOR === '\\' && ( $path[0] === '\\' || preg_match( '#^[A-Za-z]:[\\\\/]#', $path ) ) ) ) )
             return $path;
         return $this->root . '/' . $path;
     }

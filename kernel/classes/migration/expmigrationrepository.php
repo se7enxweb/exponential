@@ -120,7 +120,7 @@ class expMigrationRepository
         $path = rtrim( (string)$this->settings['path'], '/' );
         if ( $path === '' )
             $path = 'migrations';
-        return $path[0] === '/' ? $path : $this->root . '/' . $path;
+        return eZDir::isAbsolutePath( $path ) ? $path : $this->root . '/' . $path;
     }
 
     /** @return string the working tree git runs in: the installation's root (site) or the folder (separate) */

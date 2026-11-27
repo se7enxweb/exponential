@@ -33,7 +33,8 @@ class expDfsSQLiteClusterGateway extends ezpClusterGateway
         $name = trim( (string)$name );
         if ( $name === '' || $name === ':memory:' || strpos( $name, "\0" ) !== false )
             return '';
-        if ( $name[0] === '/' )
+        // the gateway runs without the autoloader: eZDir::isAbsolutePath() written out
+        if ( $name[0] === '/' || ( DIRECTORY_SEPARATOR === '\\' && ( $name[0] === '\\' || preg_match( '#^[A-Za-z]:[\\\\/]#', $name ) ) ) )
             return $name;
         return rtrim( (string)$root, '/' ) . '/' . self::STORAGE_DIRECTORY . '/' . $name;
     }

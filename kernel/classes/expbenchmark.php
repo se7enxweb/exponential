@@ -352,7 +352,7 @@ class expBenchmark
         if ( is_file( $git ) and preg_match( '/^gitdir:\s*(.+)$/m', (string)@file_get_contents( $git ), $m ) )
         {
             $git = trim( $m[1] );
-            if ( $git !== '' and $git[0] !== '/' )
+            if ( $git !== '' and !eZDir::isAbsolutePath( $git ) )
                 $git = rtrim( (string)$root, '/' ) . '/' . $git;
         }
         $sha = '';
@@ -367,7 +367,7 @@ class expBenchmark
             if ( is_file( $git . '/commondir' ) )
             {
                 $common = trim( (string)@file_get_contents( $git . '/commondir' ) );
-                $dirs[] = $common !== '' && $common[0] === '/' ? $common : $git . '/' . $common;
+                $dirs[] = eZDir::isAbsolutePath( $common ) ? $common : $git . '/' . $common;
             }
             foreach ( $dirs as $dir )
             {

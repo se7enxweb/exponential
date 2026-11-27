@@ -729,7 +729,7 @@ class expMigrationDiff
                         $settingsDir = $dir;
                 return self::fromDump( $dump, $kinds, $snapshotOptions + array( 'settings_dir' => $settingsDir ), $tmp, $report );
             }
-            $path = $from[0] === '/' ? $from : "$root/$from";
+            $path = eZDir::isAbsolutePath( $from ) ? $from : "$root/$from";
             if ( !is_file( $path ) )
             {
                 $report['errors'][] = "no caption, address or dump $from (./console exp:migration:caption --list lists the captions)";

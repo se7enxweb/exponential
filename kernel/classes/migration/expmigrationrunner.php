@@ -270,7 +270,7 @@ class expMigrationRunner
             $path = rtrim( (string)$path, '/' );
             if ( $path === '' )
                 return '';
-            if ( $path[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $path ) )
                 $path = $root . '/' . ( strpos( $path, './' ) === 0 ? substr( $path, 2 ) : $path );
             $real = realpath( $path );
             return $real !== false ? $real : $path;

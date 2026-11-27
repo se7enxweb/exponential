@@ -65,7 +65,7 @@ class expMigrationRepoSplit
             $report['errors'][] = 'no migrations folder: name it with --directory or in [MigrationSettings] DirectoryList';
             return $report;
         }
-        $absolute = $directory[0] === '/' ? $directory : "$root/$directory";
+        $absolute = eZDir::isAbsolutePath( $directory ) ? $directory : "$root/$directory";
         $report['directory'] = expMigrationCheck::relative( $absolute, $root );
         if ( !is_dir( $absolute ) )
         {
@@ -78,7 +78,7 @@ class expMigrationRepoSplit
             $report['errors'][] = 'the remote is a URL (https://, ssh://, git@host:path) or a path, without spaces';
         if ( $report['to'] !== '' )
         {
-            $to = $report['to'][0] === '/' ? $report['to'] : "$root/" . $report['to'];
+            $to = eZDir::isAbsolutePath( $report['to'] ) ? $report['to'] : "$root/" . $report['to'];
             if ( file_exists( $to ) && ( !is_dir( $to ) || count( array_diff( (array)scandir( $to ), array( '.', '..' ) ) ) > 0 ) )
                 $report['errors'][] = $report['to'] . ' exists and is not empty: the new repository goes into a new or empty folder';
             $real = realpath( $absolute );
@@ -164,7 +164,7 @@ class expMigrationRepoSplit
         }
         if ( $report['to'] !== '' )
         {
-            $to = $report['to'][0] === '/' ? $report['to'] : "$root/" . $report['to'];
+            $to = eZDir::isAbsolutePath( $report['to'] ) ? $report['to'] : "$root/" . $report['to'];
             if ( !is_dir( $to ) && !eZDir::mkdir( $to, false, true ) && !is_dir( $to ) )
             {
                 $report['errors'][] = 'cannot make the folder ' . $report['to'];

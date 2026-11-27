@@ -340,7 +340,7 @@ class expLogFileLocator
             $path = str_replace( '\\', '/', trim( (string)$paths[$key] ) );
             if ( strpos( $path, "\0" ) !== false )
                 continue;
-            if ( $path[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $path ) )
                 $path = $this->config->root() . '/' . $path;
             $real = realpath( $path );
             if ( $real === false || !is_file( $real ) )

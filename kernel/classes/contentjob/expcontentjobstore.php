@@ -47,7 +47,7 @@ class expContentJobStore
             $varDir = eZSys::varDirectory();
             if ( $varDir === '' || $varDir === null )
                 $varDir = 'var';
-            if ( $varDir[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $varDir ) )
                 $varDir = eZSys::rootDir() . '/' . $varDir;
             $dir = $varDir . '/jobs/content';
         }
@@ -365,7 +365,7 @@ class expContentJobStore
             else
             {
                 $varDir = eZSys::varDirectory();
-                if ( $varDir && $varDir[0] !== '/' )
+                if ( $varDir && !eZDir::isAbsolutePath( $varDir ) )
                     $varDir = eZSys::rootDir() . '/' . $varDir;
                 $candidates[] = $varDir;
                 $candidates[] = eZSys::rootDir() . '/var';

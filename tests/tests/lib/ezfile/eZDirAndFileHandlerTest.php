@@ -140,9 +140,56 @@ class eZDirAndFileHandlerTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'a/', eZDir::filenamePath( 'abc', 2 ) );
         $this->assertSame( '', eZDir::filenamePath( 'ab' ) );
         $this->assertSame( 'a/b/c/d/', eZDir::filenamePath( 'abcde', 1 ) );
-        $this->assertSame( '/1/2/3', eZDir::createMultiLevelPath( '123' ) );
-        $this->assertSame( '/1/23', eZDir::createMultiLevelPath( '123', 2 ) );
-        $this->assertSame( '/7', eZDir::createMultiLevelPath( 7 ) );
+        // the separator of this system
+        $s = DIRECTORY_SEPARATOR;
+        $this->assertSame( "{$s}1{$s}2{$s}3", eZDir::createMultiLevelPath( '123' ) );
+        $this->assertSame( "{$s}1{$s}23", eZDir::createMultiLevelPath( '123', 2 ) );
+        $this->assertSame( "{$s}7", eZDir::createMultiLevelPath( 7 ) );
+    }
+
+    public static function absolutePathProvider()
+    {
+        return array(
+            'root'                    => array( '/', true, true ),
+            'unix path'               => array( '/srv/site/var', true, true ),
+            'relative'                => array( 'var/cache', false, false ),
+            'dot relative'            => array( './var', false, false ),
+            'empty'                   => array( '', false, false ),
+            'drive with backslash'    => array( 'D:\\a\\site\\var', false, true ),
+            'drive with slash'        => array( 'C:/Users/x/AppData/Local/Temp', false, true ),
+            'lower case drive'        => array( 'c:\\temp', false, true ),
+            'drive relative'          => array( 'C:var', false, false ),
+            'leading backslash'       => array( '\\var', false, true ),
+            'unc share'               => array( '\\\\server\\share\\db.sqlite', false, true ),
+            'a name with a colon'     => array( 'C:', false, false ),
+        );
+    }
+
+    /**
+     * Windows paths are absolute only under the rules of Windows: elsewhere "C:" and "\\" are characters of a name.
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('absolutePathProvider')]
+    public function testIsAbsolutePath( $path, $elsewhere, $onWindows )
+    {
+        $this->assertSame( $elsewhere, eZDir::isAbsolutePath( $path, false ), 'the rules of Linux' );
+        $this->assertSame( $onWindows, eZDir::isAbsolutePath( $path, true ), 'the rules of Windows' );
+        $this->assertSame( eZDir::isWindows() ? $onWindows : $elsewhere, eZDir::isAbsolutePath( $path ), 'this system' );
+    }
+
+    public function testIsInside()
+    {
+        $this->assertTrue( eZDir::isInside( '/srv/cache/x', '/srv/cache', false ) );
+        $this->assertTrue( eZDir::isInside( '/srv/cache', '/srv/cache/', false ) );
+        $this->assertFalse( eZDir::isInside( '/srv/cache-other/x', '/srv/cache', false ) );
+        $this->assertTrue( eZDir::isInside( '/srv', '/', false ) );
+        $this->assertFalse( eZDir::isInside( '/srv/x', '', false ) );
+        $this->assertFalse( eZDir::isInside( 'D:\\a\\site\\var\\x', 'D:/a/site/var', false ), 'one separator on Linux' );
+
+        $this->assertTrue( eZDir::isInside( 'D:\\a\\site\\var\\x', 'D:/a/site/var', true ) );
+        $this->assertTrue( eZDir::isInside( 'd:/a/site/var/x', 'D:\\a\\site\\var\\', true ) );
+        $this->assertTrue( eZDir::isInside( 'D:\\a', 'D:\\', true ) );
+        $this->assertFalse( eZDir::isInside( 'D:\\a\\site\\var-other', 'D:/a/site/var', true ) );
+        $this->assertFalse( eZDir::isInside( 'C:\\a', 'D:\\', true ) );
     }
 
     public function testPathFromFilenameUsesTheDirDepthSetting()
@@ -361,7 +408,7 @@ class eZDirAndFileHandlerTest extends PHPUnit\Framework\TestCase
 
     public function testSymlinkTargetForAnAbsoluteLink()
     {
-        $this->assertSame( getcwd() . '/a/file', eZFileHandler::symlinkTarget( 'a/file', '/srv/link' ) );
+        $this->assertSame( eZDir::cleanPath( getcwd() . '/a/file' ), eZFileHandler::symlinkTarget( 'a/file', '/srv/link' ) );
     }
 
     /**
@@ -370,6 +417,8 @@ class eZDirAndFileHandlerTest extends PHPUnit\Framework\TestCase
      */
     public function testSymlinkFromAnotherDirectoryResolves()
     {
+        if ( eZDir::isWindows() )
+            $this->markTestSkipped( 'Windows: PHP resolves a relative symbolic link target from the working directory, not from the directory of the link' );
         $source = $this->put( 'from/s.txt', 'linked' );
         mkdir( $this->dir . '/to/deeper', 0777, true );
         $this->assertTrue( eZFileHandler::symlink( $source, $this->dir . '/to/deeper/l.txt' ) );
@@ -391,7 +440,10 @@ class eZDirAndFileHandlerTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( eZFileHandler::linkCopy( $source, $this->dir . '/lcd/sym.txt' ) );
         $this->assertSame( 'lc', file_get_contents( $this->dir . '/lcd/sym.txt' ) );
         $this->assertTrue( eZFileHandler::linkCopy( $source, $this->dir . '/lcd/hard.txt', false ) );
-        $this->assertSame( fileinode( $source ), fileinode( $this->dir . '/lcd/hard.txt' ) );
+        $this->assertSame( 'lc', file_get_contents( $this->dir . '/lcd/hard.txt' ) );
+        // linkCopy() links on Unix only, and copies on Windows
+        if ( !eZDir::isWindows() )
+            $this->assertSame( fileinode( $source ), fileinode( $this->dir . '/lcd/hard.txt' ) );
     }
 
     public function testZlibHandlerRoundTrip()

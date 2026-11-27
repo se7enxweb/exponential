@@ -49,7 +49,7 @@ class expUserGeoIP
         $file = $ini->hasVariable( 'UserSessionSettings', 'GeoIPDatabase' ) ? trim( (string)$ini->variable( 'UserSessionSettings', 'GeoIPDatabase' ) ) : '';
         if ( $file === '' )
             return '';
-        if ( $file[0] !== '/' && class_exists( 'eZSys' ) )
+        if ( !eZDir::isAbsolutePath( $file ) && class_exists( 'eZSys' ) )
             $file = eZSys::rootDir() . '/' . $file;
         return $file;
     }

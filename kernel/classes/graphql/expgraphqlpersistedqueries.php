@@ -50,7 +50,7 @@ class expGraphQLPersistedQueries
     {
         $shipped = array();
         foreach ( expGraphQL::listSetting( 'PersistedQueryDirectoryList' ) as $dir )
-            $shipped[] = $dir[0] === '/' ? $dir : expGraphQL::rootDir() . '/' . $dir;
+            $shipped[] = eZDir::isAbsolutePath( $dir ) ? $dir : expGraphQL::rootDir() . '/' . $dir;
         return new self( eZSys::varDirectory() . '/graphql/persisted', $shipped );
     }
 

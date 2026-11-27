@@ -99,7 +99,7 @@ class expMigrationJob
         {
             $directory = rtrim( (string)eZSys::varDirectory(), '/' ) . '/migration/jobs';
             // absolute: the run is given the path of its progress file and runs in the root, a reader may not
-            if ( $directory[0] !== '/' )
+            if ( !eZDir::isAbsolutePath( $directory ) )
                 $directory = rtrim( (string)eZSys::rootDir(), '/' ) . '/' . $directory;
         }
         $directory = rtrim( (string)$directory, '/' );

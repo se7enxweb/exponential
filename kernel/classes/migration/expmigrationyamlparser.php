@@ -171,7 +171,7 @@ class expMigrationYamlParser
      */
     private static function registerLibraryPath( $path )
     {
-        if ( $path[0] !== '/' && class_exists( 'eZSys' ) )
+        if ( !eZDir::isAbsolutePath( $path ) && class_exists( 'eZSys' ) )
             $path = rtrim( (string)eZSys::rootDir(), '/' ) . '/' . $path;
         $path = rtrim( $path, '/' );
         foreach ( array( $path . '/vendor/autoload.php', $path . '/autoload.php' ) as $autoload )

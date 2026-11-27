@@ -2032,7 +2032,7 @@ class eZINI
         if ( $path === false || $path === null )
             return '';
 
-        if ( strlen( $path ) > 0 && $path[0] !== '/' )
+        if ( ( $path !== '' && !eZDir::isAbsolutePath( $path ) ) )
         {
             $path = self::installationRoot() . $path;
         }

@@ -486,7 +486,7 @@ class expModuleTableWizard extends expExtensionWizard
             $array = is_file( $root . $file ) ? @include $root . $file : array();
             if ( is_array( $array ) )
                 foreach ( $array as $name => $path )
-                    if ( strcasecmp( (string)$name, $class ) === 0 && is_string( $path ) && is_file( ( $path[0] === '/' ? '' : $root ) . $path ) )
+                    if ( strcasecmp( (string)$name, $class ) === 0 && is_string( $path ) && is_file( ( eZDir::isAbsolutePath( $path ) ? '' : $root ) . $path ) )
                         return true;
         }
         return false;
