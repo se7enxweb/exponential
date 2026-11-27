@@ -291,7 +291,8 @@ if ( !in_array( $options['cluster'], array( 'single', 'one-node' ), true ) || ( 
     fwrite( STDERR, "--cluster is single or one-node, and --cluster-share an absolute path\n" );
     exit( 1 );
 }
-if ( $options['cluster'] === 'one-node' && !in_array( $db, array( 'mysql', 'mysqli', 'pgsql', 'postgresql', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), true ) )
+if ( $options['cluster'] === 'one-node' && !in_array( $db, array( 'mysql', 'mysqli', 'pgsql', 'postgresql', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), true )
+     && !( $db === 'odbc' && in_array( $odbcDialect, array( 'postgresql', 'sqlserver', 'mysql' ), true ) ) )
 {
     fwrite( STDERR, "--cluster=one-node needs --db=mysql (or pgsql once the kernel has its PostgreSQL cluster backend)\n" );
     exit( 1 );

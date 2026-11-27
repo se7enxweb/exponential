@@ -34,7 +34,9 @@
  * Settings: file.ini [eZDFSClusteringSettings] DBBackend=expDFSFileHandlerPostgresqlBackend (the earlier name
  * eZDFSFileHandlerPostgresqlBackend names this class too, unless the old extension is still installed), DBHost,
  * DBPort (5432 when empty), DBSocket (a directory: the Unix socket), DBName, DBUser, DBPassword, DBConnectRetries,
- * DBExecuteRetries, optional DBLockTimeout.
+ * DBExecuteRetries, optional DBLockTimeout. Optional DBODBCDriver: the PostgreSQL ODBC driver's name (psqlODBC,
+ * "PostgreSQL Unicode"): the backend then connects through PDO_ODBC instead of pdo_pgsql, for a site whose database
+ * is reached over ODBC (DatabaseImplementation=odbc, Dialect=postgresql) on a PHP without pdo_pgsql.
  *
  * @package kernel
  */
@@ -134,6 +136,8 @@ class expDFSFileHandlerPostgresqlBackend implements eZClusterEventNotifier, expD
      */
     public static function buildDsn( array $params )
     {
+        if ( isset( $params['odbc_driver'] ) && trim( (string)$params['odbc_driver'] ) !== '' )
+            return self::buildOdbcDsn( $params );
         $parts = array();
         $socket = isset( $params['socket'] ) ? trim( (string)$params['socket'] ) : '';
         $host = isset( $params['host'] ) ? trim( (string)$params['host'] ) : '';
@@ -148,6 +152,50 @@ class expDFSFileHandlerPostgresqlBackend implements eZClusterEventNotifier, expD
         if ( isset( $params['connect_timeout'] ) && (int)$params['connect_timeout'] > 0 )
             $parts[] = 'connect_timeout=' . (int)$params['connect_timeout'];
         return 'pgsql:' . implode( ';', $parts );
+    }
+
+    /**
+     * The PDO_ODBC DSN for the connection parameters (pure): the PostgreSQL ODBC driver named in odbc_driver, the
+     * host (or the socket directory), the port (5432 when empty) and the database, in psqlODBC's keywords.
+     *
+     * @param array $params
+     * @return string
+     */
+    public static function buildOdbcDsn( array $params )
+    {
+        $socket = isset( $params['socket'] ) ? trim( (string)$params['socket'] ) : '';
+        $host = isset( $params['host'] ) ? trim( (string)$params['host'] ) : '';
+        $port = isset( $params['port'] ) ? trim( (string)$params['port'] ) : '';
+        $parts = array( 'Driver={' . str_replace( '}', '}}', trim( (string)$params['odbc_driver'] ) ) . '}' );
+        if ( $socket !== '' || $host !== '' )
+            $parts[] = 'Server=' . self::dsnValue( $socket !== '' ? $socket : $host );
+        $parts[] = 'Port=' . ( preg_match( '/^[0-9]+$/', $port ) ? $port : self::DEFAULT_PORT );
+        if ( isset( $params['dbname'] ) && (string)$params['dbname'] !== '' )
+            $parts[] = 'Database=' . self::dsnValue( $params['dbname'] );
+        return 'odbc:' . implode( ';', $parts );
+    }
+
+    /**
+     * The PDO options of the connection (pure). pdo_pgsql binds the values client-side (they are only integers,
+     * strings and nulls), so a statement is one round trip to the server instead of three (prepare, execute, and the
+     * DEALLOCATE when the statement is freed); PDO_ODBC has no such attribute and binds through the driver.
+     *
+     * @param bool $persistent DBPersistentConnection=enabled: the PHP worker keeps its connection between requests (a
+     *                         new one costs several round trips for the login); an open transaction is rolled back
+     * @param bool $odbc
+     * @return array
+     */
+    public static function connectionOptions( $persistent, $odbc = false )
+    {
+        $options = array(
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            // strings, as the MySQLi backend returns them: the handler compares and prints them as such
+            PDO::ATTR_STRINGIFY_FETCHES => true,
+            PDO::ATTR_PERSISTENT => (bool)$persistent,
+        );
+        if ( !$odbc )
+            $options[PDO::ATTR_EMULATE_PREPARES] = true;
+        return $options;
     }
 
     /**
@@ -288,6 +336,9 @@ class expDFSFileHandlerPostgresqlBackend implements eZClusterEventNotifier, expD
             self::$dbparams['lock_timeout'] = $fileINI->hasVariable( 'eZDFSClusteringSettings', 'DBLockTimeout' )
                 ? $fileINI->variable( 'eZDFSClusteringSettings', 'DBLockTimeout' )
                 : self::DEFAULT_LOCK_TIMEOUT;
+            self::$dbparams['odbc_driver'] = $fileINI->hasVariable( 'eZDFSClusteringSettings', 'DBODBCDriver' )
+                ? trim( (string)$fileINI->variable( 'eZDFSClusteringSettings', 'DBODBCDriver' ) )
+                : '';
             self::$dbparams['persistent_connection'] = $fileINI->hasVariable( 'eZDFSClusteringSettings', 'DBPersistentConnection' )
                 && $fileINI->variable( 'eZDFSClusteringSettings', 'DBPersistentConnection' ) == 'enabled';
 
@@ -306,18 +357,8 @@ class expDFSFileHandlerPostgresqlBackend implements eZClusterEventNotifier, expD
         {
             try
             {
-                $this->db = new PDO( $dsn, (string)self::$dbparams['user'], (string)self::$dbparams['pass'], array(
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    // strings, as the MySQLi backend returns them: the handler compares and prints them as such
-                    PDO::ATTR_STRINGIFY_FETCHES => true,
-                    // the values are bound client-side (they are only integers, strings and nulls), so a statement
-                    // is one round trip to the server instead of three (prepare, execute, and the DEALLOCATE when
-                    // the statement is freed): a cache file check costs a third of the time over a slow network
-                    PDO::ATTR_EMULATE_PREPARES => true,
-                    // DBPersistentConnection=enabled: the PHP worker keeps its connection between requests (a new
-                    // one costs several round trips for the login); an open transaction is rolled back by PDO
-                    PDO::ATTR_PERSISTENT => !empty( self::$dbparams['persistent_connection'] ),
-                ) );
+                $this->db = new PDO( $dsn, (string)self::$dbparams['user'], (string)self::$dbparams['pass'],
+                                     self::connectionOptions( !empty( self::$dbparams['persistent_connection'] ), strpos( $dsn, 'odbc:' ) === 0 ) );
                 break;
             }
             catch ( PDOException $e )

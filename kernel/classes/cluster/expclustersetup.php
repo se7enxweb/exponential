@@ -124,6 +124,9 @@ class expClusterSetup
             $db = array();
             foreach ( array( 'DatabaseImplementation', 'Server', 'Port', 'Socket', 'User', 'Password', 'Database' ) as $k )
                 $db[$k] = $si->hasVariable( 'DatabaseSettings', $k ) ? (string)$si->variable( 'DatabaseSettings', $k ) : '';
+            // a database reached over ODBC (DatabaseImplementation=odbc): the engine is its dialect
+            foreach ( array( 'Dialect' => 'ODBCDialect', 'Driver' => 'ODBCDriver' ) as $k => $name )
+                $db[$name] = $si->hasVariable( 'ODBCSettings', $k ) ? (string)$si->variable( 'ODBCSettings', $k ) : '';
             $facts['siteaccesses'][$sa] = array( 'db' => $db, 'var' => (string)$si->variable( 'FileSettings', 'VarDir' ),
                                                  'handler' => (string)$fi->variable( 'ClusteringSettings', 'FileHandler' ) );
         }
@@ -156,7 +159,7 @@ class expClusterSetup
         }
         $vardirs[$facts['siteaccesses'][$default]['var']] = (string)$default;
         $impl = (string)$db['DatabaseImplementation'];
-        $engine = self::engineOf( $impl );
+        $engine = self::engineOf( class_exists( 'expODBCDB' ) ? expODBCDB::engineImplementation( $impl, isset( $db['ODBCDialect'] ) ? $db['ODBCDialect'] : '' ) : $impl );
         if ( $engine === '' )
             return 'the database (' . ( $impl !== '' ? $impl : 'none' ) . ') has no cluster backend; a one-node cluster needs '
                    . implode( ', ', array_map( array( __CLASS__, 'engineName' ), array_slice( array_keys( self::backends() ), 0, -1 ) ) )
@@ -192,6 +195,23 @@ class expClusterSetup
         return (string)$schema;
     }
 
+    /**
+     * The ODBC driver the PostgreSQL backend connects with (pure): for a site on PostgreSQL over ODBC
+     * (DatabaseImplementation=odbc) the site's [ODBCSettings] Driver, else psqlODBC's usual name; '' for every other
+     * site. SQL Server over ODBC needs none: its backend takes the layer from [SQLServerSettings] (Layer=pdo_odbc,
+     * which the installer writes). MariaDB/MySQL over ODBC keeps the MySQLi backend, which needs PHP's mysqli.
+     *
+     * @param array $plan
+     * @return string
+     */
+    public static function odbcDriver( array $plan )
+    {
+        if ( $plan['engine'] !== 'postgresql' || strtolower( trim( (string)$plan['db']['DatabaseImplementation'] ) ) !== 'odbc' )
+            return '';
+        $driver = isset( $plan['db']['ODBCDriver'] ) ? trim( (string)$plan['db']['ODBCDriver'] ) : '';
+        return $driver !== '' ? $driver : expODBCDB::defaultDriver( 'postgresql' );
+    }
+
     /** The schema file name of a backend (pure), in kernel/sql/<sql>/. */
     public static function schemaFile( array $backend )
     {
@@ -212,8 +232,11 @@ class expClusterSetup
                         '[ClusteringSettings]', 'FileHandler=eZDFSFileHandler', '',
                         '[eZDFSClusteringSettings]', 'MountPointPath=' . $share, 'DBBackend=' . $plan['backend_class'], 'DFSBackend=eZDFSFileHandlerDFSBackend',
                         'DBHost=' . $plan['host'], 'DBPort=' . ( (int)$plan['port'] > 0 ? (int)$plan['port'] : '' ), 'DBSocket=' . $plan['socket'], 'DBName=' . $plan['db']['Database'],
-                        'DBUser=' . $plan['db']['User'], 'DBPassword=' . $plan['db']['Password'], 'MetaDataTableNameCache=ezdfsfile_cache',
-                        '# END ' . self::MARK_INI );
+                        'DBUser=' . $plan['db']['User'], 'DBPassword=' . $plan['db']['Password'], 'MetaDataTableNameCache=ezdfsfile_cache' );
+        // PostgreSQL over ODBC: the backend connects through PDO_ODBC with the site's ODBC driver
+        if ( isset( $plan['odbc_driver'] ) && $plan['odbc_driver'] !== '' )
+            $lines[] = 'DBODBCDriver=' . $plan['odbc_driver'];
+        $lines[] = '# END ' . self::MARK_INI;
         return implode( "\n", $lines ) . "\n";
     }
 
@@ -268,6 +291,8 @@ class expClusterSetup
         $defs = array( 'CLUSTER_STORAGE_BACKEND' => $plan['gateway'], 'CLUSTER_STORAGE_HOST' => $plan['host'], 'CLUSTER_STORAGE_PORT' => (int)$plan['port'],
                        'CLUSTER_STORAGE_USER' => $plan['db']['User'], 'CLUSTER_STORAGE_PASS' => $plan['db']['Password'], 'CLUSTER_STORAGE_DB' => $plan['db']['Database'],
                        'CLUSTER_STORAGE_CHARSET' => 'utf8', 'CLUSTER_MOUNT_POINT_PATH' => $share, 'CLUSTER_METADATA_TABLE_CACHE' => 'ezdfsfile_cache' );
+        if ( isset( $plan['odbc_driver'] ) && $plan['odbc_driver'] !== '' )
+            $defs['CLUSTER_STORAGE_ODBC_DRIVER'] = (string)$plan['odbc_driver'];
         // SQL Server: the PHP layer and the encryption of the site's connection (site.ini [SQLServerSettings])
         if ( isset( $plan['sqlserver'] ) && is_array( $plan['sqlserver'] ) )
             foreach ( array( 'Layer' => 'CLUSTER_SQLSERVER_LAYER', 'ODBCDriver' => 'CLUSTER_SQLSERVER_ODBC_DRIVER', 'Encrypt' => 'CLUSTER_SQLSERVER_ENCRYPT',
@@ -430,7 +455,8 @@ class expClusterSetup
             return array( 'ok' => false, 'error' => $plan );
         if ( $plan['engine'] === 'sqlserver' && class_exists( 'expSQLServerDB' ) )
             $plan['sqlserver'] = array_intersect_key( expSQLServerDB::settings(), array_flip( array( 'Layer', 'ODBCDriver', 'Encrypt', 'TrustServerCertificate' ) ) );
-        foreach ( array( $plan['host'], $plan['socket'], $plan['db']['Database'], $plan['db']['User'], $plan['db']['Password'], $plan['backend_class'], $share ) as $v )
+        $plan['odbc_driver'] = self::odbcDriver( $plan );
+        foreach ( array( $plan['host'], $plan['odbc_driver'], $plan['socket'], $plan['db']['Database'], $plan['db']['User'], $plan['db']['Password'], $plan['backend_class'], $share ) as $v )
             if ( !self::iniSafe( (string)$v ) )
                 return array( 'ok' => false, 'error' => 'a database setting cannot be written into file.ini safely (a line break, */ or ?>)' );
         $newIni = self::iniText( $iniText, self::iniBlock( $plan, $share ) );

@@ -21,15 +21,10 @@ class expDfsPostgresqlClusterGateway extends ezpClusterGateway
 
     public function connect()
     {
-        $parts = array();
-        if ( $this->host !== null && $this->host !== '' )
-            $parts[] = 'host=' . str_replace( ';', '', (string)$this->host );
-        $parts[] = 'port=' . ( $this->port ? (int)$this->port : 5432 );
-        $parts[] = 'dbname=' . str_replace( ';', '', (string)$this->name );
-        $parts[] = 'connect_timeout=10';
         try
         {
-            $this->db = new PDO( 'pgsql:' . implode( ';', $parts ), (string)$this->user, (string)$this->password,
+            $this->db = new PDO( self::dsn( $this->host, $this->port, $this->name, defined( 'CLUSTER_STORAGE_ODBC_DRIVER' ) ? (string)constant( 'CLUSTER_STORAGE_ODBC_DRIVER' ) : '' ),
+                (string)$this->user, (string)$this->password,
                 self::connectionOptions( defined( 'CLUSTER_PERSISTENT_CONNECTION' ) && constant( 'CLUSTER_PERSISTENT_CONNECTION' ) ) );
             $charset = trim( (string)$this->charset );
             $encoding = ( $charset === '' || strtolower( str_replace( array( '-', '_' ), '', $charset ) ) === 'utf8' )
@@ -42,6 +37,37 @@ class expDfsPostgresqlClusterGateway extends ezpClusterGateway
             $this->db = null;
             throw new RuntimeException( "Failed connecting to the PostgreSQL cluster database: " . $e->getMessage() );
         }
+    }
+
+    /**
+     * The PDO DSN of the gateway's connection (pure): pdo_pgsql, or PDO_ODBC with the PostgreSQL ODBC driver named in
+     * config.cluster.php's CLUSTER_STORAGE_ODBC_DRIVER (a site whose database is reached over ODBC).
+     *
+     * @param string|null $host
+     * @param int|null $port
+     * @param string $name
+     * @param string $odbcDriver
+     * @return string
+     */
+    public static function dsn( $host, $port, $name, $odbcDriver = '' )
+    {
+        $clean = function ( $value ) { return str_replace( ';', '', (string)$value ); };
+        $parts = array();
+        if ( trim( (string)$odbcDriver ) !== '' )
+        {
+            $parts[] = 'Driver={' . str_replace( '}', '}}', trim( (string)$odbcDriver ) ) . '}';
+            if ( $host !== null && $host !== '' )
+                $parts[] = 'Server=' . $clean( $host );
+            $parts[] = 'Port=' . ( $port ? (int)$port : 5432 );
+            $parts[] = 'Database=' . $clean( $name );
+            return 'odbc:' . implode( ';', $parts );
+        }
+        if ( $host !== null && $host !== '' )
+            $parts[] = 'host=' . $clean( $host );
+        $parts[] = 'port=' . ( $port ? (int)$port : 5432 );
+        $parts[] = 'dbname=' . $clean( $name );
+        $parts[] = 'connect_timeout=10';
+        return 'pgsql:' . implode( ';', $parts );
     }
 
     /**

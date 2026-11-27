@@ -42,6 +42,17 @@ class expDFSFileHandlerPostgresqlBackendTest extends ezpTestCase
         // an empty port is PostgreSQL's, a socket directory replaces the host, ; cannot inject a parameter
         $this->assertSame( 'pgsql:host=/run/postgresql;port=5432;dbname=clusterx',
             expDFSFileHandlerPostgresqlBackend::buildDsn( array( 'host' => 'localhost', 'port' => null, 'socket' => '/run/postgresql', 'dbname' => 'cluster;x' ) ) );
+        // DBODBCDriver: PDO_ODBC with psqlODBC, for a site on PostgreSQL over ODBC
+        $this->assertSame( 'odbc:Driver={PostgreSQL Unicode};Server=db.example;Port=5433;Database=cluster',
+            expDFSFileHandlerPostgresqlBackend::buildDsn( array( 'host' => 'db.example', 'port' => '5433', 'socket' => '', 'dbname' => 'cluster;', 'connect_timeout' => 10,
+                                                                 'odbc_driver' => 'PostgreSQL Unicode' ) ) );
+        $this->assertArrayNotHasKey( PDO::ATTR_EMULATE_PREPARES, expDFSFileHandlerPostgresqlBackend::connectionOptions( false, true ) );
+        $this->assertTrue( expDFSFileHandlerPostgresqlBackend::connectionOptions( true )[PDO::ATTR_EMULATE_PREPARES] );
+        $this->assertTrue( expDFSFileHandlerPostgresqlBackend::connectionOptions( true )[PDO::ATTR_PERSISTENT] );
+        require_once dirname( __DIR__, 6 ) . '/kernel/clustering/gateway.php';
+        require_once dirname( __DIR__, 6 ) . '/kernel/clustering/dfspostgresql.php';
+        $this->assertSame( 'pgsql:host=h;port=5432;dbname=d;connect_timeout=10', expDfsPostgresqlClusterGateway::dsn( 'h', null, 'd' ) );
+        $this->assertSame( 'odbc:Driver={PostgreSQL Unicode(x64)};Server=h;Port=6432;Database=d', expDfsPostgresqlClusterGateway::dsn( 'h', 6432, 'd', 'PostgreSQL Unicode(x64)' ) );
     }
 
     public function testClientEncoding()

@@ -144,6 +144,40 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
                     $this->assertSame( 'postgresql', expClusterSetup::engineOf( $name ), $name );
     }
 
+    /** A site over ODBC: the engine is the dialect; PostgreSQL's backend gets the ODBC driver, SQL Server's its layer */
+    public function testThePlanOverODBC()
+    {
+        $backends = array( 'postgresql' => 'expDFSFileHandlerPostgresqlBackend', 'sqlserver' => 'expDFSFileHandlerSQLServerBackend',
+                           'mysqli' => 'eZDFSFileHandlerMySQLiBackend' );
+        $f = self::facts( 'odbc', $backends );
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db'] += array( 'ODBCDialect' => 'postgresql', 'ODBCDriver' => '' );
+        $p = expClusterSetup::plan( $f );
+        $this->assertSame( array( 'postgresql', 'dfspostgresql', 5432 ), array( $p['engine'], $p['gateway'], $p['port'] ) );
+        $p['odbc_driver'] = expClusterSetup::odbcDriver( $p );
+        $this->assertSame( expODBCDB::defaultDriver( 'postgresql' ), $p['odbc_driver'] );
+        $this->assertStringContainsString( "DBODBCDriver=" . $p['odbc_driver'] . "\n# END", expClusterSetup::iniBlock( $p, '/srv/dfs' ) );
+        $this->assertStringContainsString( "define( 'CLUSTER_STORAGE_ODBC_DRIVER', '" . $p['odbc_driver'] . "' );", expClusterSetup::gatewayText( $p, '/srv/dfs' ) );
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db']['ODBCDriver'] = 'PostgreSQL Unicode(x64)';
+        $this->assertSame( 'PostgreSQL Unicode(x64)', expClusterSetup::odbcDriver( expClusterSetup::plan( $f ) ) );
+        foreach ( array( 'sqlserver' => 'sqlserver', 'mssql' => 'sqlserver', 'mariadb' => 'mysqli', 'mysql' => 'mysqli' ) as $dialect => $engine )
+        {
+            foreach ( $f['siteaccesses'] as $sa => $s )
+                $f['siteaccesses'][$sa]['db']['ODBCDialect'] = $dialect;
+            $p = expClusterSetup::plan( $f );
+            $this->assertSame( $engine, $p['engine'], $dialect );
+            $this->assertSame( '', expClusterSetup::odbcDriver( $p ), $dialect );
+            $this->assertStringNotContainsString( 'DBODBCDriver', expClusterSetup::iniBlock( $p + array( 'odbc_driver' => '' ), '/srv/dfs' ) );
+        }
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db']['ODBCDialect'] = 'generic';
+        $this->assertStringContainsString( 'has no cluster backend', expClusterSetup::plan( $f ) );
+        // a native PostgreSQL site never gets an ODBC driver
+        $pg = expClusterSetup::plan( self::facts( 'ezpostgresql', $backends ) );
+        $this->assertSame( '', expClusterSetup::odbcDriver( $pg ) );
+    }
+
     /** Oracle: the connect string is the database, no host or port; the tables of kernel/sql/oracle */
     public function testThePlanOnOracle()
     {
