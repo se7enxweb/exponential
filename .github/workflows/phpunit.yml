@@ -965,15 +965,25 @@ jobs:
             done
             return 1
           }
+          # what the server itself says, and the runner's disk, memory and shared memory limits
+          ifx_diag() {
+            echo "::group::Informix diagnostics"
+            docker exec ifx bash -lc 'tail -n 80 $INFORMIX_DATA_DIR/logs/online.log; onstat -' || true
+            df -h / /var/lib/docker || true; free -m || true; ipcs -l || true
+            docker stats --no-stream || true
+            echo "::endgroup::"
+          }
           ifx_up() {
             since=$1
-            for attempt in 1 2 3; do
+            for attempt in 1 2; do
               ifx_ready "$since" && return 0
               echo "::warning::Informix did not come up (attempt $attempt), starting it again"
+              ifx_diag
               since=$(date -u +%Y-%m-%dT%H:%M:%SZ)
               docker restart ifx >/dev/null
             done
-            docker logs --tail 60 ifx; return 1
+            ifx_ready "$since" && return 0
+            ifx_diag; docker logs --tail 60 ifx; return 1
           }
           ifx_up 1970-01-01T00:00:00Z
           docker exec ifx bash -lc 'for f in /opt/ibm/config/onconfig $INFORMIXDIR/etc/$ONCONFIG; do [ -f "$f" ] || continue; sed -i "s/^PHYSBUFF .*/PHYSBUFF 512/; s/^LOGBUFF .*/LOGBUFF 256/" "$f"; grep -q "size=16k" "$f" || echo "BUFFERPOOL size=16k,buffers=6000,lrus=8,lru_min_dirty=50,lru_max_dirty=60" >> "$f"; done'
