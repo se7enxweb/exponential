@@ -62,6 +62,9 @@ class eZStepDatabaseChoice extends eZStepInstaller
      *
      * @return string
      */
+    /// The databases the wizard has offered longest; they head the list, the rest come below Oracle.
+    const ESTABLISHED_TYPES = array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'oci8' );
+
     static function preferredDatabaseType()
     {
         $type = 'sqlite3';
@@ -155,6 +158,10 @@ class eZStepDatabaseChoice extends eZStepInstaller
         $preferred = self::preferredDatabaseType();
         if ( in_array( $preferred, $types ) )
             return array( 'type' => $preferred, 'preferred_missing' => false );
+        // without the recommended one, the first established database found, else the first one found
+        $established = array_values( array_intersect( $types, self::ESTABLISHED_TYPES ) );
+        if ( count( $established ) > 0 )
+            return array( 'type' => $established[0], 'preferred_missing' => true );
         return array( 'type' => count( $types ) > 0 ? $types[0] : null,
                       'preferred_missing' => true );
     }
@@ -247,16 +254,42 @@ class eZStepDatabaseChoice extends eZStepInstaller
             array_unshift( $types, $choice['type'] );
         }
 
+        // The long-standing databases come first (MySQL/MariaDB, PostgreSQL, SQLite, MongoDB, Oracle), then, below
+        // Oracle, the databases of the MySQL protocol (TiDB, Vitess, SingleStore, Xpand, Aurora MySQL) and of the
+        // PostgreSQL wire protocol (CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL), then every database
+        // added later, in the order setup.ini gives them.
+        $first = array_values( array_intersect( $types, self::ESTABLISHED_TYPES ) );
+        $later = array_values( array_diff( $types, self::ESTABLISHED_TYPES ) );
+
         $availableDatabases = array();
         $databaseList = array();
-        foreach ( $types as $type )
+        foreach ( $first as $type )
         {
             $database = $databaseMap[$type];
             $database['recommended'] = ( $type === $preferred );
             $databaseList[] = $database;
             $availableDatabases[$type] = true;
-            // the databases of the PostgreSQL wire protocol go with PHP's pgsql extension, after PostgreSQL, and
-            // those of the MySQL protocol (TiDB, Vitess, SingleStore, Xpand, Aurora MySQL) with mysqli, after MySQL
+        }
+        foreach ( $first as $type )
+        {
+            foreach ( $databaseMap as $variant => $entry )
+            {
+                if ( isset( $entry['php_extension'] ) && $entry['php_extension'] === $type && !isset( $availableDatabases[$variant] ) )
+                {
+                    $entry['recommended'] = false;
+                    $databaseList[] = $entry;
+                    $availableDatabases[$variant] = true;
+                }
+            }
+        }
+        foreach ( $later as $type )
+        {
+            if ( isset( $availableDatabases[$type] ) )
+                continue;
+            $database = $databaseMap[$type];
+            $database['recommended'] = ( $type === $preferred );
+            $databaseList[] = $database;
+            $availableDatabases[$type] = true;
             foreach ( $databaseMap as $variant => $entry )
             {
                 if ( isset( $entry['php_extension'] ) && $entry['php_extension'] === $type && !isset( $availableDatabases[$variant] ) )

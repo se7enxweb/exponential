@@ -331,13 +331,29 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'sqlite3', 'mysqli' ), $step->foundDatabaseTypes(), 'never chosen on their own' );
         $step->display();
         $list = array_column( $this->variable( 'database_list' ), 'type' );
-        $this->assertSame( array( 'mysqli', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), array_slice( $list, array_search( 'mysqli', $list ), 6 ) );
+        $this->assertSame( array( 'sqlite3', 'mysqli', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), array_slice( $list, 0, 7 ),
+                           'the established databases first, the MySQL protocol ones below them' );
         foreach ( array( 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ) as $type )
             $this->assertTrue( eZSetupIsMySQLFamily( $type ), $type );
         $_POST = array( 'eZSetupDatabaseType' => 'tidb' );
         $this->assertTrue( $step->processPostData() );
         $this->assertSame( 'tidb', $step->PersistenceList['database_info']['driver'] );
         $_POST = array();
+    }
+
+    public function testDatabasesAddedLaterComeBelowOracle()
+    {
+        $step = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => array( 'sqlsrv', 'oci8', 'pgsql', 'mysqli' ) ) ) );
+        $step->display();
+        $list = array_column( $this->variable( 'database_list' ), 'type' );
+        $first = array_slice( $list, 0, 3 );
+        sort( $first );
+        $this->assertSame( array( 'mysqli', 'oci8', 'pgsql' ), $first, 'the established databases first' );
+        $this->assertNotSame( 'sqlserver', $step->defaultChoice( $step->foundDatabaseTypes() )['type'], 'without SQLite, an established database is the default' );
+        $this->assertSame( 'sqlserver', end( $list ), 'a database added later comes last' );
+        $oracle = array_search( 'oci8', $list );
+        foreach ( array( 'tidb', 'aurora', 'cockroachdb', 'aurorapostgresql', 'sqlserver' ) as $type )
+            $this->assertGreaterThan( $oracle, array_search( $type, $list ), "$type is below Oracle" );
     }
 
     public static function databaseExtensionProvider()
