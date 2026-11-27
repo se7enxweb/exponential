@@ -14,6 +14,10 @@
  *  OD-08 - The SQL expressions of MS Access: & concat, Mid, BAND with ExtendedAnsiSQL, emulation without it, no MD5
  *  OD-09 - A failed connection throws eZDBNoConnectionException without the password
  *  OD-10 - settings(): the defaults, then the parameters; MS Access reads [MSAccessSettings]
+ *  OD-11 - normalizeDialect() and nativeImplementation(): SQL Server and Db2 run on their own drivers over ODBC
+ *  OD-12 - resolve() and nativeParameters(): DatabaseImplementation=odbc opens expSQLServerDB or expDb2DB on PDO_ODBC
+ *          with the ODBC driver and keywords carried over; PostgreSQL and MySQL stay on expODBCDB
+ *  OD-13 - engineImplementation(): the engine of an ODBC site is its dialect
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -177,6 +181,56 @@ class expODBCDBTest extends PHPUnit\Framework\TestCase
         $this->assertArrayHasKey( 'ExtendedAnsiSQL', $access );
         $this->assertSame( 'MSAccessSettings', expMSAccessDB::settingsGroup() );
         $this->assertSame( 'ODBCSettings', expODBCDB::settingsGroup() );
+    }
+
+    /** OD-11 */
+    public function testNativeImplementation()
+    {
+        $this->assertSame( 'sqlserver', expODBCDB::normalizeDialect( ' MSSQL ' ) );
+        $this->assertSame( 'postgresql', expODBCDB::normalizeDialect( 'pgsql' ) );
+        $this->assertSame( 'mysql', expODBCDB::normalizeDialect( 'MariaDB' ) );
+        $this->assertSame( 'db2', expODBCDB::normalizeDialect( 'ibm_db2' ) );
+        $this->assertSame( 'sqlserver', expODBCDB::nativeImplementation( 'sqlsrv' ) );
+        $this->assertSame( 'db2', expODBCDB::nativeImplementation( 'db2' ) );
+        $this->assertNull( expODBCDB::nativeImplementation( 'postgresql' ) );
+        $this->assertNull( expODBCDB::nativeImplementation( 'mysql' ) );
+        $this->assertNull( expODBCDB::nativeImplementation( 'generic' ) );
+        foreach ( expODBCDB::SITE_DIALECTS as $dialect )
+            $this->assertSame( $dialect, expODBCDB::normalizeDialect( $dialect ) );
+    }
+
+    /** OD-12 */
+    public function testResolve()
+    {
+        $params = array( 'server' => 'db', 'database' => 'exp', 'sqlserver' => array( 'Encrypt' => 'no', 'Layer' => 'sqlsrv' ),
+                         'odbc' => array( 'Dialect' => 'sqlserver', 'Driver' => 'ODBC Driver 17 for SQL Server' ) );
+        list( $impl, $resolved ) = expODBCDB::resolve( 'odbc', $params );
+        $this->assertSame( 'sqlserver', $impl );
+        $this->assertSame( 'pdo_odbc', $resolved['sqlserver']['Layer'] );
+        $this->assertSame( 'ODBC Driver 17 for SQL Server', $resolved['sqlserver']['ODBCDriver'] );
+        $this->assertSame( 'no', $resolved['sqlserver']['Encrypt'] );
+        $this->assertSame( 'db', $resolved['server'] );
+
+        list( $impl, $resolved ) = expODBCDB::resolve( 'ODBC', array( 'odbc' => array( 'Dialect' => 'db2', 'Driver' => 'IBM DB2 ODBC DRIVER', 'ConnectionString' => 'CurrentSchema=EXP;' ) ) );
+        $this->assertSame( 'db2', $impl );
+        $this->assertSame( 'pdo_odbc', $resolved['db2']['Layer'] );
+        $this->assertSame( 'IBM DB2 ODBC DRIVER', $resolved['db2']['Driver'] );
+        $this->assertSame( 'CurrentSchema=EXP', $resolved['db2']['ConnectionOptions'] );
+
+        $pg = array( 'odbc' => array( 'Dialect' => 'postgresql' ) );
+        $this->assertSame( array( 'odbc', $pg ), expODBCDB::resolve( 'odbc', $pg ) );
+        $this->assertSame( array( 'mysqli', $pg ), expODBCDB::resolve( 'mysqli', $pg ) );
+    }
+
+    /** OD-13 */
+    public function testEngineImplementation()
+    {
+        $this->assertSame( 'sqlserver', expODBCDB::engineImplementation( 'odbc', 'mssql' ) );
+        $this->assertSame( 'postgresql', expODBCDB::engineImplementation( 'odbc', 'postgresql' ) );
+        $this->assertSame( 'mysql', expODBCDB::engineImplementation( 'odbc', 'mariadb' ) );
+        $this->assertSame( 'odbc', expODBCDB::engineImplementation( 'odbc', 'generic' ) );
+        $this->assertSame( 'odbc', expODBCDB::engineImplementation( 'odbc', '' ) );
+        $this->assertSame( 'ezpostgresql', expODBCDB::engineImplementation( 'ezpostgresql', 'mysql' ) );
     }
 }
 ?>

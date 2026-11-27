@@ -46,6 +46,25 @@ class expODBCDB extends expPDODB
     /** The dialects this driver writes SQL for */
     const ODBC_DIALECTS = array( 'sqlserver', 'postgresql', 'mysql', 'sqlite', 'oracle', 'msaccess', 'generic' );
 
+    /**
+     * The dialects a site can be installed on over ODBC: SQL Server and Db2 on their own drivers with ODBC as the
+     * transport (nativeImplementation()), PostgreSQL and MariaDB/MySQL on this driver with their schema handlers
+     */
+    const SITE_DIALECTS = array( 'sqlserver', 'postgresql', 'mysql', 'db2' );
+
+    /**
+     * The dialects whose native driver has an ODBC layer of its own (expSQLServerTransport, expDb2Transport), and the
+     * kernel implementation that driver is: with DatabaseImplementation=odbc the site runs on that driver over
+     * PDO_ODBC, so SQL Server over ODBC behaves as expSQLServerDB does (identity inserts, locks, the schema handler)
+     */
+    const NATIVE_DRIVERS = array( 'sqlserver' => 'sqlserver', 'db2' => 'db2' );
+
+    /** Other names of the dialects (what a person may type for --db-dialect or Dialect=) */
+    const DIALECT_ALIASES = array( 'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver', 'azuresql' => 'sqlserver',
+                                   'pgsql' => 'postgresql', 'postgres' => 'postgresql',
+                                   'mariadb' => 'mysql', 'mysqli' => 'mysql',
+                                   'sqlite3' => 'sqlite', 'ibm_db2' => 'db2', 'access' => 'msaccess', 'oci8' => 'oracle' );
+
     /** The [ODBCSettings] and their defaults */
     const DEFAULT_SETTINGS = array(
         'Dialect' => 'generic',
@@ -82,7 +101,7 @@ class expODBCDB extends expPDODB
         // the grandparent: expPDODB's constructor opens a PDO connection of its own
         eZDBInterface::__construct( $parameters );
         $this->Settings = static::settings( isset( $parameters['odbc'] ) && is_array( $parameters['odbc'] ) ? $parameters['odbc'] : array() );
-        $dialect = strtolower( trim( (string)$this->Settings['Dialect'] ) );
+        $dialect = static::normalizeDialect( $this->Settings['Dialect'] );
         $this->Dialect = in_array( $dialect, self::ODBC_DIALECTS, true ) ? $dialect : 'generic';
         $this->PDODriver = 'odbc';
         $this->ConnectionString = static::connectionString( $this->Dialect, $this->Settings, (string)$this->Server, $this->Port, (string)$this->DB );
@@ -351,6 +370,102 @@ class expODBCDB extends expPDODB
                 return $dialect;
         }
         return 'odbc';
+    }
+
+    /**
+     * A dialect by its name or one of its other names (pure), lower case; '' for none.
+     *
+     * @param string $dialect
+     * @return string
+     */
+    public static function normalizeDialect( $dialect )
+    {
+        $dialect = strtolower( trim( (string)$dialect ) );
+        return isset( self::DIALECT_ALIASES[$dialect] ) ? self::DIALECT_ALIASES[$dialect] : $dialect;
+    }
+
+    /**
+     * The kernel implementation that serves a dialect when ODBC is only its transport (pure): sqlserver, db2, or null
+     * when this driver serves it itself.
+     *
+     * @param string $dialect
+     * @return string|null
+     */
+    public static function nativeImplementation( $dialect )
+    {
+        $dialect = static::normalizeDialect( $dialect );
+        return isset( self::NATIVE_DRIVERS[$dialect] ) ? self::NATIVE_DRIVERS[$dialect] : null;
+    }
+
+    /**
+     * The parameters of the native driver for an ODBC connection (pure): the driver's own settings ('sqlserver',
+     * 'db2') with its layer set to PDO_ODBC and the ODBC driver, the extra keywords and the DSN carried over. What
+     * the parameters already give for the native driver stays, except the layer.
+     *
+     * @param array $parameters eZDB parameters
+     * @param string $dialect sqlserver or db2
+     * @param array $settings the effective [ODBCSettings]
+     * @return array
+     */
+    public static function nativeParameters( array $parameters, $dialect, array $settings )
+    {
+        $dialect = static::normalizeDialect( $dialect );
+        $driver = isset( $settings['Driver'] ) ? trim( (string)$settings['Driver'] ) : '';
+        $extra = isset( $settings['ConnectionString'] ) ? trim( (string)$settings['ConnectionString'], " ;\t\r\n" ) : '';
+        $own = isset( $parameters[$dialect] ) && is_array( $parameters[$dialect] ) ? $parameters[$dialect] : array();
+        if ( $dialect === 'sqlserver' )
+        {
+            $own['Layer'] = 'pdo_odbc';
+            if ( $driver !== '' )
+                $own['ODBCDriver'] = $driver;
+        }
+        elseif ( $dialect === 'db2' )
+        {
+            $own['Layer'] = 'pdo_odbc';
+            if ( $driver !== '' )
+                $own['Driver'] = $driver;
+            if ( $extra !== '' )
+                $own['ConnectionOptions'] = trim( ( isset( $own['ConnectionOptions'] ) ? (string)$own['ConnectionOptions'] . ';' : '' ) . $extra, ';' );
+        }
+        $parameters[$dialect] = $own;
+        return $parameters;
+    }
+
+    /**
+     * The implementation and parameters eZDB::instance() opens for DatabaseImplementation=odbc: the native driver
+     * over its ODBC layer for SQL Server and Db2 (nativeImplementation()), this driver for every other dialect. The
+     * dialect comes from the parameters ('odbc' => array( 'Dialect' => ... )), else from site.ini [ODBCSettings].
+     *
+     * @param string $implementation odbc (anything else is given back as it is)
+     * @param array|false $parameters
+     * @return array( implementation, parameters )
+     */
+    public static function resolve( $implementation, $parameters )
+    {
+        if ( strtolower( trim( (string)$implementation ) ) !== 'odbc' )
+            return array( $implementation, $parameters );
+        $parameters = is_array( $parameters ) ? $parameters : array();
+        $settings = static::settings( isset( $parameters['odbc'] ) && is_array( $parameters['odbc'] ) ? $parameters['odbc'] : array() );
+        $native = static::nativeImplementation( (string)$settings['Dialect'] );
+        if ( $native === null )
+            return array( $implementation, $parameters );
+        return array( $native, static::nativeParameters( $parameters, $native, $settings ) );
+    }
+
+    /**
+     * The engine a database configuration runs on (pure): the dialect for DatabaseImplementation=odbc, else the
+     * implementation as it is; for the cluster setup, the upgrade and backup tools, which choose by engine.
+     *
+     * @param string $implementation [DatabaseSettings] DatabaseImplementation
+     * @param string $dialect [ODBCSettings] Dialect
+     * @return string
+     */
+    public static function engineImplementation( $implementation, $dialect )
+    {
+        if ( strtolower( trim( (string)$implementation ) ) !== 'odbc' )
+            return (string)$implementation;
+        $dialect = static::normalizeDialect( $dialect );
+        return $dialect !== '' && $dialect !== 'generic' ? $dialect : 'odbc';
     }
 
     /** @return string the kernel's name of the dialect's engine (postgresql, mysql, sqlite, oracle, SQLServer, MSAccess, odbc) */

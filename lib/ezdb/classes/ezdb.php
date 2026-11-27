@@ -263,6 +263,11 @@ class eZDB
                     if ( !array_key_exists( $key, $databaseParameters ) )
                         $databaseParameters[$key] = $value;
 
+            // ODBC is a transport: a dialect whose own driver has an ODBC layer (SQL Server, Db2) opens that driver
+            // over PDO_ODBC; every other dialect stays on expODBCDB
+            if ( is_string( $databaseImplementation ) && strtolower( trim( $databaseImplementation ) ) === 'odbc' && class_exists( 'expODBCDB' ) )
+                list( $databaseImplementation, $databaseParameters ) = expODBCDB::resolve( $databaseImplementation, $databaseParameters );
+
             $optionArray = array( 'iniFile'       => 'site.ini',
                                   'iniSection'    => 'DatabaseSettings',
                                   'iniVariable'   => 'ImplementationAlias',
