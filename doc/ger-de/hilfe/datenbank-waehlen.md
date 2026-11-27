@@ -77,6 +77,8 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | [Google Cloud Spanner, PostgreSQL-Dialekt](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neu | **nein**: Datentabellen und Import | nein | nein | keiner |
 | [Firebird 4.0 und 5.0](../funktionen/6.0/firebird-datenbanktreiber.md) | nein | neu | ja | **noch nicht** | nein | Assistent (mit `pdo_firebird`), Kickstarter, `firebird` |
 | [DuckDB 1.5 und 2.0](../funktionen/6.0/duckdb-datenbanktreiber.md) | nein | neu | ja, immer nur ein schreibender Prozess | **nein** | nein | Kickstarter, `duckdb` |
+| [IBM Db2 11.5 und 12.1](../funktionen/6.0/db2-datenbanktreiber.md) | nein | neu | ja | **noch nicht** | nein | Assistent (mit `pdo_ibm` oder `ibm_db2`), Kickstarter, `db2` |
+| [IBM Informix 14.10 und 15](../funktionen/6.0/informix-datenbanktreiber.md) | nein | neu | ja (auf 15 gemessen) | **nein** | nein | Assistent (mit `ibm_db2` oder `pdo_ibm`), Kickstarter, `informix` |
 | [Jede Datenbank über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md) | nein | neu | **nein**: Datentabellen und Import | nein | nein | keiner |
 | [MS Access (`.accdb`, `.mdb`)](../funktionen/6.0/ms-access-unterstuetzung.md) | nein | neu | **nein**: Import, unter Windows auch Datentabellen | nein | nein | keiner (`exp:access:import`) |
 
@@ -84,7 +86,7 @@ Anmerkungen zur Tabelle:
 
 - **Der Setup-Assistent** führt eine Datenbank auf, wenn das PHP, das ihn ausführt, die Erweiterung der Datenbank hat:
   `sqlite3`, `mysqli`, `pgsql` (mit CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL nach PostgreSQL),
-  `mongodb`, `oci8` und `pdo_firebird`. SQL Server, die Datenbanken mit dem MySQL-Protokoll und DuckDB werden mit dem
+  `mongodb`, `oci8`, `pdo_firebird` sowie `pdo_ibm` oder `ibm_db2` (Db2, Informix). SQL Server, die Datenbanken mit dem MySQL-Protokoll und DuckDB werden mit dem
   Kickstarter oder `exp:install` installiert ([Setup-Assistent](../installation/05-setup-assistent.md)).
 - **DFS auf den Datenbanken mit dem MySQL-Protokoll**: Das Backend öffnet seine eigene `mysqli`-Verbindung ohne TLS. Bei
   PlanetScale, TiDB Cloud und SingleStore Helios, die TLS verlangen, liegen die DFS-Metadaten besser in einer anderen
@@ -119,6 +121,7 @@ nimmt die Aktualisierung wieder zurück.
 | Spanner (PGAdapter) | `pgsql` | `spanner` | eine Datentabellen-Verbindung (`table_to_content`) | Linux | Live-Tests gegen den Emulator hinter PGAdapter | entfällt |
 | Firebird | `pdo_firebird` ab **PHP 8.4** und die Client-Bibliothek von Firebird | `firebird` | eine Datentabellen-Verbindung | Linux | Live-Tests auf Firebird 4 und 5, PHP 8.4 und 8.5 (Job `firebird`) | noch nicht |
 | DuckDB | `ffi` (mit `ffi.enable=true` für das Web) und `libduckdb` | `duckdb` | eine Datentabellen-Verbindung; die DuckDB-Quelle von SQLI Import (Parquet-, CSV-, JSON- und DuckDB-Dateien) | Linux (`libduckdb.so`); Windows und macOS nicht getestet | Live-Tests auf DuckDB 1.5.6 und 2.0.1 und eine ganz installierte Site (Job `duckdb`) | noch nicht; kein eingebauter Sicherungspunkt (unten) |
+| IBM Db2, IBM Informix | `pdo_ibm` oder `ibm_db2` (PECL) mit dem Data Server Driver von IBM; Informix braucht für eine Site `ibm_db2` | `db2`, `informix` | eine Datentabellen-Verbindung | Linux | Live-Tests auf Db2 12.1 und 11.5 sowie Informix 15 und 14.10 (Job `db2`) | noch nicht |
 | ODBC | `pdo_odbc` oder `odbc` und der ODBC-Treiber der Datenbank | `odbc` | eine Datentabellen-Verbindung; `exp:access:import` in sie hinein | Linux, Windows | Live-Tests auf SQL Server, PostgreSQL, MariaDB und SQLite, beide Schichten (Job `odbc`); LocalDB unter Windows | entfällt |
 | MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine (x64); Linux: die Programme von MDBTools (nur Import) | `msaccess` (Windows) | `exp:access:import` | Windows (Treiber und Import), Linux und macOS (Import mit MDBTools) | der Import unter Linux; Treiber und Import auf windows-2022 und windows-2025 (Job `msaccess-windows`) | entfällt |
 
@@ -144,6 +147,7 @@ jeder anderen Datenbank sichern Sie selbst mit dem Werkzeug der Datenbank und f�
 | Oracle | **keiner**: mit `--no-backup` ausführen | `expdp` / `impdp` oder `ext:ezoracle:datapump` |
 | SQL Server, Azure SQL | **keiner** | `BACKUP DATABASE` oder die Sicherungen des Dienstes |
 | Firebird | **keiner** | `gbak` oder `nbackup` |
+| IBM Db2, IBM Informix | **keiner** | die eigene Sicherung der Datenbank |
 | DuckDB | **keiner** („no built-in dump for duckdb“) | die Datei kopieren, solange kein Prozess schreibt, oder `EXPORT DATABASE` aus dem Programm `duckdb` |
 
 Das vollständige Verfahren je Engine: [Sicherungen je Engine](datenbankadministratoren/sicherungen-je-engine.md).
@@ -166,6 +170,7 @@ nicht, wie zwei Datenbanken im Vergleich abschneiden.
 | | DuckDB 2.0.1 | 31 Minuten |
 | | YugabyteDB 2.25 | 42 Minuten (langsame DDL) |
 | | CockroachDB 25.2 | 47 Minuten (langsame DDL) |
+| | Informix 15 | 2.016 s |
 | Eine Anweisung | Firebird, in eigener Transaktion / innerhalb einer Transaktion | etwa 20 ms / etwa 4 ms |
 | | DuckDB, eine Zeile über ihren Schlüssel gelesen / mit Commit eingefügt / innerhalb einer Transaktion | 2,7 ms / 7,4 ms / 2,7 ms |
 | Eine Startseite | DuckDB, Ansichts-Cache gefüllt / leer | 2,3 bis 3,5 s / 17 s |
@@ -183,6 +188,7 @@ Millisekunden; deshalb braucht eine Seite mit Hunderten von Anweisungen auf dies
   Schlange.
 - **PostgreSQL**, wenn Sie von Anfang an einen Datenbankserver wollen oder später einen zweiten Webserver erwarten.
 - **MariaDB oder MySQL**, wenn der Hoster sie und nichts anderes anbietet.
+- **IBM Db2 oder Informix**, wenn Ihre Organisation sie betreibt: eine ganze Site auf einem Webserver (kein DFS-Backend).
 - **Firebird 4 oder 5**, wenn Ihre Organisation Firebird betreibt; es braucht PHP 8.4 oder neuer und hat noch kein
   Cluster-Backend, bleibt also auf einem Webserver.
 
@@ -250,8 +256,8 @@ Siehe [Exponential unter Windows](exponential-unter-windows.md).
 
 ## In Entwicklung
 
-Treiber für Datenbanken von IBM und SAP, für Cassandra und ScyllaDB sowie für ClickHouse und MonetDB entstehen gerade.
-Sie sind in keinem Release enthalten, und nichts auf dieser Seite beschreibt sie.
+Treiber für Datenbanken von SAP, für Cassandra und ScyllaDB sowie für ClickHouse und MonetDB entstehen gerade. Sie
+sind in keinem Release enthalten, und nichts auf dieser Seite beschreibt sie.
 
 ## Verwandte Seiten
 

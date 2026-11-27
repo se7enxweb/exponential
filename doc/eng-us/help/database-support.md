@@ -108,7 +108,7 @@ data table connection; `exp:access:import` copies the tables of an Access file i
 table connection, and on Windows the small driver `expMSAccessDB` reads and writes Access files in place. See
 [ODBC driver](../features/6.0/odbc-database-driver.md) and [MS Access support](../features/6.0/ms-access-support.md).
 
-**In development.** Drivers for IBM and SAP databases, for Cassandra and ScyllaDB and for ClickHouse and MonetDB are
+**In development.** Drivers for SAP databases, for Cassandra and ScyllaDB and for ClickHouse and MonetDB are
 being built; they are not part of a release yet.
 
 **Firebird** (new in 6.0.15, not in the order above): Firebird 4.0 and 5.0 run a whole site on the kernel's
@@ -186,10 +186,10 @@ web server, needs PHP 8.0. See [chapter 2](../install/02-requirements.md#22-php)
 ## PHP extensions
 
 One database extension is required; the setup wizard's critical test `database_extensions` passes when at least one
-of `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv` and `pdo_firebird` is loaded
-(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird`,
+of `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv`, `pdo_firebird`, `pdo_ibm` and `ibm_db2` is loaded
+(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2`,
 `Require=one`). The wizard's database page then offers the databases of `sqlite3`, `mysqli`, `pgsql` (with the
-PostgreSQL protocol databases), `mongodb`, `oci8` and `pdo_firebird`; a PHP with only `sqlsrv` or `pdo_sqlsrv` passes
+PostgreSQL protocol databases), `mongodb`, `oci8`, `pdo_firebird` and, from the IBM drivers, `pdo_ibm` or `ibm_db2`; a PHP with only `sqlsrv` or `pdo_sqlsrv` passes
 the test but is offered no database there, so install SQL Server with the kickstarter or `exp:install`. Install only
 the extension your site uses.
 

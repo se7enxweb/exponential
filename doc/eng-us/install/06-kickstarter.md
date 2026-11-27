@@ -331,7 +331,7 @@ masked in the logs.
 | Key | Type | Default | Effect |
 |---|---|---|---|
 | `Continue` | bool | `false` | |
-| `Type` | choice | `setup.ini [DatabaseSettings] DefaultType` (`sqlite3`) | `sqlite3` (alias `sqlite`), `mysqli` (alias `mysql`), `pgsql` (alias `postgresql`), `mongodb`, `oci8` (aliases `oracle`, `ezoracle`; needs `extension/ezoracle`); from 6.0.15 also `sqlserver` (`mssql`, `sqlsrv`), `firebird` (`fb`, `pdo_firebird`), `duckdb`, the MySQL protocol databases `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`) and the PostgreSQL protocol databases `cockroachdb` (`cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase`, `aurorapostgresql` (`aurora-postgresql`). An unknown value is ignored and the step falls back to asking |
+| `Type` | choice | `setup.ini [DatabaseSettings] DefaultType` (`sqlite3`) | `sqlite3` (alias `sqlite`), `mysqli` (alias `mysql`), `pgsql` (alias `postgresql`), `mongodb`, `oci8` (aliases `oracle`, `ezoracle`; needs `extension/ezoracle`); from 6.0.15 also `sqlserver` (`mssql`, `sqlsrv`), `firebird` (`fb`, `pdo_firebird`), `duckdb`, `db2`, `informix`, the MySQL protocol databases `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`) and the PostgreSQL protocol databases `cockroachdb` (`cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase`, `aurorapostgresql` (`aurora-postgresql`). An unknown value is ignored and the step falls back to asking |
 
 **`[database_init]`**
 

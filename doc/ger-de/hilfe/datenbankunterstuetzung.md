@@ -114,7 +114,7 @@ eine Datentabellen-Verbindung, und unter Windows liest und schreibt der kleine T
 Ort und Stelle. Siehe [ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md) und
 [MS-Access-Unterstützung](../funktionen/6.0/ms-access-unterstuetzung.md).
 
-**In Entwicklung.** Treiber für Datenbanken von IBM und SAP, für Cassandra und ScyllaDB sowie für ClickHouse und
+**In Entwicklung.** Treiber für Datenbanken von SAP, für Cassandra und ScyllaDB sowie für ClickHouse und
 MonetDB entstehen gerade; sie sind noch in keinem Release enthalten.
 
 **Firebird** (neu in 6.0.15, nicht in der Reihenfolge oben): Firebird 4.0 und 5.0 tragen eine ganze Site mit
@@ -196,11 +196,11 @@ der empfohlene Webserver, braucht PHP 8.0. Siehe [Kapitel 2](../installation/02-
 ## PHP-Erweiterungen
 
 Eine Datenbankerweiterung ist erforderlich; der kritische Test `database_extensions` des Setup-Assistenten ist
-bestanden, wenn mindestens eine von `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv` und
-`pdo_firebird` geladen ist (`settings/setup.ini`,
-`[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird`, `Require=one`).
+bestanden, wenn mindestens eine von `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv`,
+`pdo_firebird`, `pdo_ibm` und `ibm_db2` geladen ist (`settings/setup.ini`,
+`[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2`, `Require=one`).
 Die Datenbankseite des Assistenten bietet dann die Datenbanken von `sqlite3`, `mysqli`, `pgsql` (mit den Datenbanken
-des PostgreSQL-Protokolls), `mongodb`, `oci8` und `pdo_firebird` an; ein PHP, das nur `sqlsrv` oder `pdo_sqlsrv` hat,
+des PostgreSQL-Protokolls), `mongodb`, `oci8`, `pdo_firebird` und, für die IBM-Treiber, `pdo_ibm` oder `ibm_db2` an; ein PHP, das nur `sqlsrv` oder `pdo_sqlsrv` hat,
 besteht den Test, bekommt dort aber keine Datenbank angeboten: Installieren Sie SQL Server mit dem Kickstarter oder
 `exp:install`. Installieren Sie nur die Erweiterung, die Ihre Site verwendet.
 

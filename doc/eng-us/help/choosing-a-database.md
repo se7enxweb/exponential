@@ -76,6 +76,8 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | [Google Cloud Spanner, PostgreSQL dialect](../features/6.0/postgresql-wire-databases.md#google-cloud-spanner-postgresql-dialect) | no | new | **no**: data tables and import | no | no | none |
 | [Firebird 4.0 and 5.0](../features/6.0/firebird-database-driver.md) | no | new | yes | **not yet** | no | wizard (with `pdo_firebird`), kickstarter, `firebird` |
 | [DuckDB 1.5 and 2.0](../features/6.0/duckdb-database-driver.md) | no | new | yes, one writer at a time | **no** | no | kickstarter, `duckdb` |
+| [IBM Db2 11.5 and 12.1](../features/6.0/db2-database-driver.md) | no | new | yes | **not yet** | no | wizard (with `pdo_ibm` or `ibm_db2`), kickstarter, `db2` |
+| [IBM Informix 14.10 and 15](../features/6.0/informix-database-driver.md) | no | new | yes (measured on 15) | **no** | no | wizard (with `ibm_db2` or `pdo_ibm`), kickstarter, `informix` |
 | [Any database through ODBC](../features/6.0/odbc-database-driver.md) | no | new | **no**: data tables and import | no | no | none |
 | [MS Access (`.accdb`, `.mdb`)](../features/6.0/ms-access-support.md) | no | new | **no**: import, and data tables on Windows | no | no | none (`exp:access:import`) |
 
@@ -83,7 +85,7 @@ Notes on the table:
 
 - **The setup wizard** lists a database when the PHP running it has the database's extension: `sqlite3`, `mysqli`,
   `pgsql` (with CockroachDB, YugabyteDB, Neon, Supabase and Aurora PostgreSQL listed after PostgreSQL), `mongodb`,
-  `oci8` and `pdo_firebird`. SQL Server, the MySQL protocol databases and DuckDB are installed with the kickstarter or
+  `oci8`, `pdo_firebird` and `pdo_ibm` or `ibm_db2` (Db2, Informix). SQL Server, the MySQL protocol databases and DuckDB are installed with the kickstarter or
   `exp:install` ([setup wizard](../install/05-setup-wizard.md)).
 - **DFS on the MySQL protocol databases**: the backend opens its own `mysqli` connection without TLS. On PlanetScale,
   TiDB Cloud and SingleStore Helios, which require TLS, keep the DFS metadata in another database.
@@ -115,6 +117,7 @@ real 6.0.14 site, upgrades it to the current code and rolls it back.
 | Spanner (PGAdapter) | `pgsql` | `spanner` | a data table connection (`table_to_content`) | Linux | live tests against the emulator behind PGAdapter | not applicable |
 | Firebird | `pdo_firebird` of **PHP 8.4 or later** and Firebird's client library | `firebird` | a data table connection | Linux | live tests on Firebird 4 and 5, PHP 8.4 and 8.5 (job `firebird`) | not yet |
 | DuckDB | `ffi` (with `ffi.enable=true` for the web) and `libduckdb` | `duckdb` | a data table connection; SQLI Import's DuckDB source (Parquet, CSV, JSON and DuckDB files) | Linux (`libduckdb.so`); Windows and macOS not tested | live tests on DuckDB 1.5.6 and 2.0.1, and a whole site installed (job `duckdb`) | not yet; no built-in caption (below) |
+| IBM Db2, IBM Informix | `pdo_ibm` or `ibm_db2` (PECL) with IBM's Data Server Driver; Informix needs `ibm_db2` for a site | `db2`, `informix` | a data table connection | Linux | live tests on Db2 12.1 and 11.5 and Informix 15 and 14.10 (job `db2`) | not yet |
 | ODBC | `pdo_odbc` or `odbc`, and the database's ODBC driver | `odbc` | a data table connection; `exp:access:import` into it | Linux, Windows | live tests on SQL Server, PostgreSQL, MariaDB and SQLite, both layers (job `odbc`); LocalDB on Windows | not applicable |
 | MS Access | Windows: `odbc` and `pdo_odbc` with the Access Database Engine (x64); Linux: the MDBTools programs (import only) | `msaccess` (Windows) | `exp:access:import` | Windows (driver and import), Linux and macOS (import with MDBTools) | the import on Linux; the driver and the import on windows-2022 and windows-2025 (job `msaccess-windows`) | not applicable |
 
@@ -139,6 +142,7 @@ the database's tool and run the upgrade with `--no-backup`.
 | Oracle | **none**: run with `--no-backup` | `expdp` / `impdp`, or `ext:ezoracle:datapump` |
 | SQL Server, Azure SQL | **none** | `BACKUP DATABASE`, or the service's backups |
 | Firebird | **none** | `gbak` or `nbackup` |
+| IBM Db2, IBM Informix | **none** | the database's own backup |
 | DuckDB | **none** ("no built-in dump for duckdb") | copy the file while no process writes, or `EXPORT DATABASE` from the `duckdb` program |
 
 The full procedure per engine: [Backups per engine](database-administrators/backups-per-engine.md).
@@ -160,6 +164,7 @@ they measured, so the numbers say how long something took there, not how two dat
 | | DuckDB 2.0.1 | 31 minutes |
 | | YugabyteDB 2.25 | 42 minutes (slow DDL) |
 | | CockroachDB 25.2 | 47 minutes (slow DDL) |
+| | Informix 15 | 2,016 s |
 | One statement | Firebird, in its own transaction / inside a transaction | about 20 ms / about 4 ms |
 | | DuckDB, a row read by its key / inserted with a commit / inside a transaction | 2.7 ms / 7.4 ms / 2.7 ms |
 | A front page | DuckDB, view cache filled / empty | 2.3 to 3.5 s / 17 s |
@@ -176,6 +181,7 @@ page with hundreds of statements needs the view cache on those two.
   site served from one machine. Writers queue.
 - **PostgreSQL** when you want a database server from the start, or expect a second web server later.
 - **MariaDB or MySQL** when the host offers them and nothing else.
+- **IBM Db2 or Informix** when that is what your organization runs: a whole site on one web server (no DFS backend).
 - **Firebird 4 or 5** when Firebird is what your organization runs; it needs PHP 8.4 or later and has no cluster
   backend yet, so it stays on one web server.
 
@@ -237,8 +243,8 @@ Firebird and DuckDB have not been tried on Windows. See [Exponential on Windows]
 
 ## In development
 
-Drivers for IBM and SAP databases, for Cassandra and ScyllaDB and for ClickHouse and MonetDB are being built. They
-are not part of any release, and nothing on this page describes them.
+Drivers for SAP databases, for Cassandra and ScyllaDB and for ClickHouse and MonetDB are being built. They are not
+part of any release, and nothing on this page describes them.
 
 ## Related pages
 

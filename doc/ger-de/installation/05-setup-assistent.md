@@ -195,7 +195,7 @@ Die kritischen Tests stehen in `settings/site.ini [SetupSettings] CriticalTests`
 |---|---|---|
 | `directory_permissions` | der Webserver kann die aufgeführten Verzeichnisse beschreiben | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` und seine Unterverzeichnisse, `var/log`, `var/storage`, `var/storage/original`, `var/storage/reference`, `var/storage/variations`, `var/autoload` |
 | `phpversion` | die PHP-Version | `[phpversion] MinimumVersion` |
-| `database_extensions` | mindestens eine Datenbank-Extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird`, `Require=one` |
+| `database_extensions` | mindestens eine Datenbank-Extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2`, `Require=one` |
 | `image_conversion` | GD oder ImageMagick | `[image_conversion] TestList=imagegd_extension;imagemagick_program`, `Require=one` |
 | `safe_mode`, `magic_quotes_runtime` | veraltete PHP-Einstellungen, die ausgeschaltet sein müssen | |
 | `memory_limit` | `memory_limit` | `[memory_limit] MinMemoryLimit=64M` (`-1` besteht) |
@@ -283,6 +283,7 @@ Systemtest gefunden hat, beschränkt auf diejenigen, die der Installer kennt (`e
 | `mongodb` | MongoDB | `mongodb` | 4.0 |
 | `oci8` | Oracle | `ezoracle` (braucht die Extension `ezoracle` in `extension/`) | 19.0 |
 | `firebird` | Firebird (angezeigt, wenn `pdo_firebird` geladen ist) | `firebird` | 4.0 |
+| `db2`, `informix` | IBM Db2, IBM Informix (angezeigt, wenn `pdo_ibm` oder `ibm_db2` geladen ist) | der Typ | siehe ihre Seiten |
 | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` | CockroachDB, YugabyteDB, Neon (PostgreSQL), Supabase (PostgreSQL), Amazon Aurora PostgreSQL; nach PostgreSQL aufgeführt, wenn `pgsql` geladen ist | der Typ | 23.2, 11.2, 14.0, 14.0, 13.0 |
 
 Die Zuordnung enthält auch `sqlserver`, `duckdb` und die Datenbanken des MySQL-Protokolls (`tidb`, `vitess`,

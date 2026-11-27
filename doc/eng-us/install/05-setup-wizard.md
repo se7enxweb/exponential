@@ -176,7 +176,7 @@ The critical tests are listed in `settings/site.ini [SetupSettings] CriticalTest
 |---|---|---|
 | `directory_permissions` | the web server can write the listed directories | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` and its subdirectories, `var/log`, `var/storage`, `var/storage/original`, `var/storage/reference`, `var/storage/variations`, `var/autoload` |
 | `phpversion` | the PHP version | `[phpversion] MinimumVersion` |
-| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird`, `Require=one` |
+| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2`, `Require=one` |
 | `image_conversion` | GD or ImageMagick | `[image_conversion] TestList=imagegd_extension;imagemagick_program`, `Require=one` |
 | `safe_mode`, `magic_quotes_runtime` | legacy PHP settings that must be off | |
 | `memory_limit` | `memory_limit` | `[memory_limit] MinMemoryLimit=64M` (`-1` passes) |
@@ -257,6 +257,7 @@ found, limited to the ones the installer knows (`eZSetupDatabaseMap()` in `kerne
 | `mongodb` | MongoDB | `mongodb` | 4.0 |
 | `oci8` | Oracle | `ezoracle` (needs the `ezoracle` extension in `extension/`) | 19.0 |
 | `firebird` | Firebird (shown when `pdo_firebird` is loaded) | `firebird` | 4.0 |
+| `db2`, `informix` | IBM Db2, IBM Informix (shown when `pdo_ibm` or `ibm_db2` is loaded) | the type | see their pages |
 | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` | CockroachDB, YugabyteDB, Neon (PostgreSQL), Supabase (PostgreSQL), Amazon Aurora PostgreSQL; listed after PostgreSQL when `pgsql` is loaded | the type | 23.2, 11.2, 14.0, 14.0, 13.0 |
 
 The map also holds `sqlserver`, `duckdb` and the MySQL protocol databases (`tidb`, `vitess`, `singlestore`, `xpand`,

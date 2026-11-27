@@ -345,7 +345,7 @@ Typen: *bool* ist `true`/`false`, *Auswahl* eines der aufgeführten Wörter, *in
 | Schlüssel | Typ | Standard | Wirkung |
 |---|---|---|---|
 | `Continue` | bool | `false` | |
-| `Type` | Auswahl | `setup.ini [DatabaseSettings] DefaultType` (`sqlite3`) | `sqlite3` (Alias `sqlite`), `mysqli` (Alias `mysql`), `pgsql` (Alias `postgresql`), `mongodb`, `oci8` (Aliase `oracle`, `ezoracle`; braucht `extension/ezoracle`); ab 6.0.15 auch `sqlserver` (`mssql`, `sqlsrv`), `firebird` (`fb`, `pdo_firebird`), `duckdb`, die Datenbanken des MySQL-Protokolls `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`) und die des PostgreSQL-Protokolls `cockroachdb` (`cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase`, `aurorapostgresql` (`aurora-postgresql`). Ein unbekannter Wert wird ignoriert, und der Schritt fällt auf Nachfragen zurück |
+| `Type` | Auswahl | `setup.ini [DatabaseSettings] DefaultType` (`sqlite3`) | `sqlite3` (Alias `sqlite`), `mysqli` (Alias `mysql`), `pgsql` (Alias `postgresql`), `mongodb`, `oci8` (Aliase `oracle`, `ezoracle`; braucht `extension/ezoracle`); ab 6.0.15 auch `sqlserver` (`mssql`, `sqlsrv`), `firebird` (`fb`, `pdo_firebird`), `duckdb`, `db2`, `informix`, die Datenbanken des MySQL-Protokolls `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`) und die des PostgreSQL-Protokolls `cockroachdb` (`cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase`, `aurorapostgresql` (`aurora-postgresql`). Ein unbekannter Wert wird ignoriert, und der Schritt fällt auf Nachfragen zurück |
 
 **`[database_init]`**
 

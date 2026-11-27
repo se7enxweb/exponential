@@ -29,6 +29,7 @@ ist dasselbe wie `php bin/php/install.php --apply`.
 | `oracle` | `oci8`, `ezoracle` | 1521 | Service `FREEPDB1` |
 | `sqlserver` (6.0.15) | `mssql`, `sqlsrv` | 1433 | `exponential` (Benutzer `sa`); die Datenbank muss bestehen |
 | `firebird` (6.0.15) | `fb`, `pdo_firebird` | 3050 | `exponential` (Benutzer `SYSDBA`); die Datenbank muss bestehen |
+| `db2`, `informix` (6.0.15) | | 50000, 9089 | `EXP` (Benutzer `db2inst1`), `exponential` (Benutzer `informix`); siehe [Db2](db2-datenbanktreiber.md), [Informix](informix-datenbanktreiber.md) |
 | `duckdb` (6.0.15) | | keiner | `exponential.duckdb` in `var/storage/duckdb/` |
 | `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` (6.0.15) | `planetscale`, `memsql`, `aurora-mysql`, `auroramysql` | 4000 (tidb), 3306 | `exponential` |
 | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` (6.0.15) | `cockroach`, `crdb`, `yugabyte`, `ysql`, `aurora-postgresql` | 26257, 5433, 5432 | `exponential` |
