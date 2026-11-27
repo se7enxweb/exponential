@@ -350,10 +350,17 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         sort( $first );
         $this->assertSame( array( 'mysqli', 'oci8', 'pgsql' ), $first, 'the established databases first' );
         $this->assertNotSame( 'sqlserver', $step->defaultChoice( $step->foundDatabaseTypes() )['type'], 'without SQLite, an established database is the default' );
-        $this->assertSame( 'sqlserver', end( $list ), 'a database added later comes last' );
+        $this->assertSame( 'sqlserver', $list[3], 'SQL Server comes right below the established databases' );
         $oracle = array_search( 'oci8', $list );
         foreach ( array( 'tidb', 'aurora', 'cockroachdb', 'aurorapostgresql', 'sqlserver' ) as $type )
             $this->assertGreaterThan( $oracle, array_search( $type, $list ), "$type is below Oracle" );
+        $step = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => array( 'pdo_firebird', 'pdo_odbc', 'sqlsrv', 'oci8', 'mysqli' ) ) ) );
+        $step->display();
+        $list = array_column( $this->variable( 'database_list' ), 'type' );
+        $next = array_values( array_intersect( $list, array( 'sqlserver', 'odbc_sqlserver', 'firebird', 'duckdb' ) ) );
+        $this->assertSame( array_values( array_intersect( array( 'sqlserver', 'odbc_sqlserver', 'firebird', 'duckdb' ), $next ) ), $next, 'SQL Server, SQL Server (ODBC), Firebird, DuckDB in that order' );
+        $this->assertSame( $next, array_slice( $list, 2, count( $next ) ), 'right below Oracle' );
+        $this->assertGreaterThan( array_search( 'firebird', $list ), array_search( 'tidb', $list ), 'the rest after them' );
     }
 
     public static function databaseExtensionProvider()

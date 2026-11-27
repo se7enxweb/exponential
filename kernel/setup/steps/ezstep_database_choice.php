@@ -65,6 +65,9 @@ class eZStepDatabaseChoice extends eZStepInstaller
     /// The databases the wizard has offered longest; they head the list, the rest come below Oracle.
     const ESTABLISHED_TYPES = array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'oci8' );
 
+    /// The databases listed right below Oracle, in this order.
+    const NEXT_TYPES = array( 'sqlserver', 'odbc_sqlserver', 'firebird', 'duckdb' );
+
     static function preferredDatabaseType()
     {
         $type = 'sqlite3';
@@ -254,16 +257,26 @@ class eZStepDatabaseChoice extends eZStepInstaller
             array_unshift( $types, $choice['type'] );
         }
 
-        // The long-standing databases come first (MySQL/MariaDB, PostgreSQL, SQLite, MongoDB, Oracle), then, below
-        // Oracle, the databases of the MySQL protocol (TiDB, Vitess, SingleStore, Xpand, Aurora MySQL) and of the
-        // PostgreSQL wire protocol (CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL), then every database
-        // added later, in the order setup.ini gives them.
+        // The long-standing databases come first (MySQL/MariaDB, PostgreSQL, SQLite, MongoDB, Oracle), then SQL
+        // Server, SQL Server over ODBC, Firebird and DuckDB, then the databases of the MySQL protocol (TiDB, Vitess,
+        // SingleStore, Xpand, Aurora MySQL) and of the PostgreSQL wire protocol (CockroachDB, YugabyteDB, Neon,
+        // Supabase, Aurora PostgreSQL), then every database added later, in the order setup.ini gives them.
         $first = array_values( array_intersect( $types, self::ESTABLISHED_TYPES ) );
         $later = array_values( array_diff( $types, self::ESTABLISHED_TYPES ) );
+        // right below Oracle: SQL Server (native, then over ODBC), Firebird and DuckDB, then the rest
+        $next = array_values( array_intersect( self::NEXT_TYPES, $later ) );
+        $later = array_values( array_diff( $later, self::NEXT_TYPES ) );
 
         $availableDatabases = array();
         $databaseList = array();
         foreach ( $first as $type )
+        {
+            $database = $databaseMap[$type];
+            $database['recommended'] = ( $type === $preferred );
+            $databaseList[] = $database;
+            $availableDatabases[$type] = true;
+        }
+        foreach ( $next as $type )
         {
             $database = $databaseMap[$type];
             $database['recommended'] = ( $type === $preferred );
