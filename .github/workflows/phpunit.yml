@@ -891,6 +891,14 @@ jobs:
           grep -q -- '-lt 600 ]' informix_init.sh || echo "::warning::Informix's sysadmin wait was not found, left as it is"
           docker cp informix_init.sh ifx:/opt/ibm/scripts/informix_init.sh
           rm -f informix_init.sh
+          # The entrypoint writes onconfig and sqlhosts through sudo. On the runner's kernel sudo's PAM account
+          # check fails ("PAM account management error"), every edit is lost and oninit stops at "Bad DBSERVERNAME":
+          # the account phase of sudo is allowed outright, as it is a throwaway container
+          if docker cp ifx:/etc/pam.d/sudo pam-sudo; then
+            grep -q pam_permit pam-sudo || sed -i '0,/^account/s//account    sufficient   pam_permit.so\naccount/' pam-sudo
+            docker cp pam-sudo ifx:/etc/pam.d/sudo
+            rm -f pam-sudo
+          fi
           docker start ifx >/dev/null
 
       - name: Setup PHP
@@ -969,21 +977,8 @@ jobs:
           ifx_diag() {
             echo "::group::Informix diagnostics"
             docker exec ifx bash -lc 'tail -n 80 $INFORMIX_DATA_DIR/logs/online.log; onstat -' || true
-            # online.log stays empty when oninit ends at once: its own output, and one run of it in the foreground
-            # oninit ends with "Bad DBSERVERNAME" on the runner: the names it resolves, then one run per sqlhosts host form
-            docker exec -i ifx bash -l <<'PROBE' || true
-          hn=$(hostname); f=$INFORMIXSQLHOSTS
-          echo "hostname=$hn INFORMIXSERVER=$INFORMIXSERVER ONCONFIG=$ONCONFIG SQLHOSTS=$f"; uname -r
-          grep -E '^(DBSERVERNAME|DBSERVERALIASES|NETTYPE)' $INFORMIXDIR/etc/$ONCONFIG; cat $f; cat /etc/hosts
-          getent hosts "$hn"; getent ahosts "$hn"; getent hosts localhost; cat /etc/nsswitch.conf | grep hosts
-          cp $f /tmp/sqlhosts.orig
-          for host in "*$hn" "$hn" "*localhost" localhost 127.0.0.1 "*0.0.0.0"; do
-            sed "/^#/!s/[*]*$hn/$host/" /tmp/sqlhosts.orig > $f
-            echo "== $host"; timeout 90 oninit -ivy; rc=$?; echo "oninit exit $rc"
-            if [ $rc = 0 ]; then sleep 30; onstat - ; onmode -ky; sleep 5; fi
-          done
-          cp /tmp/sqlhosts.orig $f
-          PROBE
+            # online.log stays empty when oninit ends at once: the set-up the entrypoint wrote, and whether sudo works
+            docker exec ifx bash -lc 'grep -E "^(DBSERVERNAME|DBSERVERALIASES)" $INFORMIXDIR/etc/$ONCONFIG; cat $INFORMIXSQLHOSTS; sudo -n true && echo "sudo works"; tail -n 20 "$INIT_LOG"' || true
             df -h / /var/lib/docker || true; free -m || true; ipcs -l || true
             docker stats --no-stream || true
             echo "::endgroup::"
