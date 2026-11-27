@@ -299,12 +299,15 @@ class expUserLoginIntegrity
     public static function isDuplicateKeyError( $db, $code, $message )
     {
         $message = (string)$message;
+        // a driver that knows its own errors answers for itself (eZDBInterface::isUniqueViolation())
+        $answer = $db instanceof eZDBInterface ? $db->isUniqueViolation( $code, $message ) : null;
+        if ( $answer !== null )
+            return (bool)$answer;
         switch ( (string)$db->databaseName() )
         {
             case 'mysql':
                 return (int)$code === 1062 || stripos( $message, 'Duplicate entry' ) !== false;
             case 'postgresql':
-            case 'duckdb':
                 return (string)$code === '23505' || stripos( $message, 'duplicate key' ) !== false;
             case 'sqlite':
                 return stripos( $message, 'UNIQUE constraint failed' ) !== false || stripos( $message, 'is not unique' ) !== false;

@@ -15,6 +15,8 @@
  *  DB-11 - databaseName(), sqlHelperDialect(), relation list queries, version strings, close() rolls back
  *  DB-12 - correctSequenceValues(): setval() where DuckDB has it, nextval() over range() where it has not
  *  DB-13 - release() at the end of a request lets the file go; a later statement opens it again, close() does not
+ *  DB-14 - What the kernel asks the driver instead of its name: isUniqueViolation(), tableExistsInSchema(),
+ *          supportsUpdateFrom(); kernel core no longer names DuckDB in the three places that did
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -320,5 +322,41 @@ class expDuckDBDBTest extends PHPUnit\Framework\TestCase
         $db->close();
         $this->assertFalse( $db->query( 'SELECT 1' ) );
         $this->assertFalse( expDuckDBDB::isWebProcess() );
+    }
+
+    /** DB-14 */
+    public function testTheKernelAsksTheDriverNotItsName()
+    {
+        $engine = new expDuckDBFakeEngine();
+        $engine->Answers = array( "/information_schema\.tables WHERE table_schema = current_schema\(\) AND table_name = 'expmail_preference'/"
+                                      => array( 'columns' => array( 'c' ), 'rows' => array( array( 'c' => 1 ) ) ),
+                                  "/information_schema\.tables/" => array( 'columns' => array( 'c' ), 'rows' => array( array( 'c' => 0 ) ) ) );
+        $db = expDuckDBTestKit::driver( $engine, array(), $this->existing );
+
+        // a refused unique key: the SQLSTATE the driver gives, or DuckDB's message
+        $this->assertTrue( $db->isUniqueViolation( '23505', '' ) );
+        $this->assertTrue( $db->isUniqueViolation( 0, 'Constraint Error: Duplicate key "login: anna" violates unique constraint' ) );
+        $this->assertFalse( $db->isUniqueViolation( '42P01', 'Catalog Error: Table with name ezuser does not exist!' ) );
+        $this->assertTrue( expUserLoginIntegrity::isDuplicateKeyError( $db, '23505', 'duplicate key' ) );
+        $this->assertFalse( expUserLoginIntegrity::isDuplicateKeyError( $db, '42P01', 'no such table' ) );
+
+        // a table of the current schema, from information_schema
+        $this->assertTrue( $db->tableExistsInSchema( 'expmail_preference' ) );
+        $this->assertFalse( $db->tableExistsInSchema( "nothing'here" ) );
+        $this->assertStringContainsString( "table_name = 'nothing''here'", end( $engine->Sent ) );
+
+        // PostgreSQL's UPDATE ... FROM
+        $this->assertTrue( $db->supportsUpdateFrom() );
+
+        // every other driver leaves the answer to the caller, as before
+        $this->assertNull( ( new ReflectionMethod( 'eZDBInterface', 'isUniqueViolation' ) )->invoke( $db, '23505', '' ) );
+        $this->assertNull( ( new ReflectionMethod( 'eZDBInterface', 'tableExistsInSchema' ) )->invoke( $db, 'ezuser' ) );
+        $this->assertFalse( ( new ReflectionMethod( 'eZDBInterface', 'supportsUpdateFrom' ) )->invoke( $db ) );
+
+        // kernel core does not branch on DuckDB's name in these places any more
+        $root = dirname( __DIR__, 5 );
+        foreach ( array( 'kernel/classes/expuserloginintegrity.php', 'kernel/classes/ezcontentclassattribute.php',
+                         'kernel/classes/mailpreferences/expmailpreferencesservice.php' ) as $file )
+            $this->assertDoesNotMatchRegularExpression( "/'duckdb'/i", file_get_contents( $root . '/' . $file ), $file );
     }
 }

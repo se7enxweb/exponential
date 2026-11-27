@@ -1902,6 +1902,47 @@ class eZDBInterface
     }
 
     /**
+     * Whether an error is the refusal of a unique index or primary key, as this driver tells it: true or false when
+     * the driver knows its errors, null (here) when it leaves the answer to the caller, which then reads the error by
+     * the database's name (expUserLoginIntegrity::isDuplicateKeyError()).
+     *
+     * @param int|string $code the error number (errorNumber(), or an eZDBException's code)
+     * @param string $message the error message
+     * @return bool|null
+     * @since 6.0.15
+     */
+    public function isUniqueViolation( $code, $message )
+    {
+        return null;
+    }
+
+    /**
+     * Whether the current schema has a table of this name, as this driver asks its catalogue: true or false when the
+     * driver answers it, null (here) when it leaves the question to the caller (expMailPreferencesService::tableExists()).
+     *
+     * @param string $table
+     * @return bool|null
+     * @since 6.0.15
+     */
+    public function tableExistsInSchema( $table )
+    {
+        return null;
+    }
+
+    /**
+     * Whether the database runs PostgreSQL's UPDATE <table> SET ... FROM ( <subquery> ) <alias> WHERE ..., an update
+     * that joins another relation; false here. PostgreSQL's driver is asked by its name; a driver of another
+     * database that takes the same statement says true.
+     *
+     * @return bool
+     * @since 6.0.15
+     */
+    public function supportsUpdateFrom()
+    {
+        return false;
+    }
+
+    /**
      * Returns true if the database handler support the insertion of default values, false if not
      *
      * @return bool

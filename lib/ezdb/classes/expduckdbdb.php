@@ -844,6 +844,42 @@ class expDuckDBDB extends eZDBInterface
     }
 
     /**
+     * A refused unique index or key: the driver gives PostgreSQL's SQLSTATE 23505 (expDuckDBDialect::errorCode()),
+     * DuckDB's message says "duplicate key".
+     *
+     * @param int|string $code
+     * @param string $message
+     * @return bool
+     */
+    public function isUniqueViolation( $code, $message )
+    {
+        return (string)$code === '23505' || stripos( (string)$message, 'duplicate key' ) !== false;
+    }
+
+    /**
+     * A table of the current schema, from information_schema as on PostgreSQL.
+     *
+     * @param string $table
+     * @return bool
+     */
+    public function tableExistsInSchema( $table )
+    {
+        $name = $this->escapeString( (string)$table );
+        $r = $this->arrayQuery( "SELECT COUNT(*) AS c FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = '$name'" );
+        return isset( $r[0]['c'] ) && (int)$r[0]['c'] > 0;
+    }
+
+    /**
+     * DuckDB runs PostgreSQL's UPDATE ... FROM.
+     *
+     * @return bool
+     */
+    public function supportsUpdateFrom()
+    {
+        return true;
+    }
+
+    /**
      * Closes the file, which lets other processes open it to write. A transaction left open is rolled back.
      */
     function close()
