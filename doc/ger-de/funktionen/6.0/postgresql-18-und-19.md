@@ -19,7 +19,8 @@ bekannten Grenzen liegen.
 7. [Nachweis aus dem Produktivbetrieb](#nachweis-aus-dem-produktivbetrieb)
 8. [Fehlerbehebung](#fehlerbehebung)
 9. [Bekannte Grenzen](#bekannte-grenzen)
-10. [Verwandte Seiten](#verwandte-seiten)
+10. [Datenbanken, die das PostgreSQL-Protokoll sprechen](#datenbanken-die-das-postgresql-protokoll-sprechen)
+11. [Verwandte Seiten](#verwandte-seiten)
 
 ## Kurz gesagt
 
@@ -707,6 +708,16 @@ diese Passwörter aber mit `scram-sha-256` neu (siehe [Bekannte Grenzen](#bekann
   mehr streamt.
 - **Der Einrichtungsassistent prüft auf PostgreSQL 8.0.** Nutzen Sie trotzdem 13 oder neuer; ältere Versionen sind
   nicht getestet, und ihnen fehlt das vertrauenswürdige `pgcrypto`.
+
+## Datenbanken, die das PostgreSQL-Protokoll sprechen
+
+CockroachDB, YugabyteDB, Neon, Supabase, Amazon Aurora PostgreSQL und Google Cloud Spanner (über PGAdapter) sprechen
+das Protokoll von PostgreSQL und laufen mit `expPostgreSQLWireDB`, dem PostgreSQL-Treiber mit einem Profil je Datenbank
+(`DatabaseImplementation` `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, `spanner`). Die
+Versionen auf dieser Seite sind die von PostgreSQL selbst; was jede dieser Datenbanken anders macht (Sperren,
+Wiederholungen, Pooler, TLS, DDL) und welche davon ungetestet sind (Neon, Supabase, Aurora), steht auf
+[Datenbanken mit dem PostgreSQL-Protokoll](postgresql-wire-datenbanken.md). Ein verwaltetes PostgreSQL, das PostgreSQL selbst ist (Amazon RDS,
+Google Cloud SQL, Azure Database for PostgreSQL), verwendet wie hier `ezpostgresql`.
 
 ## Verwandte Seiten
 

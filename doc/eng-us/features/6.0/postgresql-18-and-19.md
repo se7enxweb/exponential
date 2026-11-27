@@ -18,7 +18,8 @@ known limits are.
 7. [Proof from production](#proof-from-production)
 8. [Troubleshooting](#troubleshooting)
 9. [Known limits](#known-limits)
-10. [Related pages](#related-pages)
+10. [Databases that speak PostgreSQL's protocol](#databases-that-speak-postgresqls-protocol)
+11. [Related pages](#related-pages)
 
 ## In short
 
@@ -674,6 +675,16 @@ the same parent hung too, until the site's PHP processes were restarted.
   standby is gone. Watch the standby and empty `synchronous_standby_names` automatically when it stops streaming.
 - **The setup wizard checks for PostgreSQL 8.0.** Use 13 or later regardless; older releases are not tested and lack
   the trusted `pgcrypto`.
+
+## Databases that speak PostgreSQL's protocol
+
+CockroachDB, YugabyteDB, Neon, Supabase, Amazon Aurora PostgreSQL and Google Cloud Spanner (through PGAdapter) speak
+PostgreSQL's protocol and run on `expPostgreSQLWireDB`, the PostgreSQL driver with a profile per database
+(`DatabaseImplementation` `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, `spanner`). The
+versions on this page are PostgreSQL's own; what each of those databases does differently (locks, retries, poolers,
+TLS, DDL) and which of them are untested (Neon, Supabase, Aurora) is on
+[Databases of the PostgreSQL wire protocol](postgresql-wire-databases.md). A managed PostgreSQL that is PostgreSQL itself (Amazon RDS, Google
+Cloud SQL, Azure Database for PostgreSQL) uses `ezpostgresql` as here.
 
 ## Related pages
 

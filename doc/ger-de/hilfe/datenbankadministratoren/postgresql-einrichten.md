@@ -127,6 +127,16 @@ psql -U exponential -d exponential -c '\dt' | wc -l               # the kernel's
 - [ ] Das Konto ist kein Superuser.
 - [ ] Sicherungen mit `pg_dump -Fc` sind eingeplant ([Sicherungen je Engine](sicherungen-je-engine.md)).
 
+## Datenbanken, die das PostgreSQL-Protokoll sprechen
+
+CockroachDB, YugabyteDB, Neon, Supabase, Amazon Aurora PostgreSQL und Google Cloud Spanner (über PGAdapter) sprechen
+das Protokoll von PostgreSQL und laufen mit `expPostgreSQLWireDB`, dem PostgreSQL-Treiber mit einem Profil je Datenbank
+(`DatabaseImplementation` `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, `spanner`). Die
+Versionen auf dieser Seite sind die von PostgreSQL selbst; was jede dieser Datenbanken anders macht (Sperren,
+Wiederholungen, Pooler, TLS, DDL) und welche davon ungetestet sind (Neon, Supabase, Aurora), steht auf
+[Datenbanken mit dem PostgreSQL-Protokoll](../../funktionen/6.0/postgresql-wire-datenbanken.md). Ein verwaltetes PostgreSQL, das PostgreSQL selbst ist (Amazon RDS,
+Google Cloud SQL, Azure Database for PostgreSQL), verwendet wie hier `ezpostgresql`.
+
 ## Verwandte Seiten
 
 - [PostgreSQL betreiben: Sequenzen, Groß-/Kleinschreibung und Stolperfallen](postgresql-betrieb.md)

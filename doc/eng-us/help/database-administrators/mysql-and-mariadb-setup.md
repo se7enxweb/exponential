@@ -122,6 +122,15 @@ server version and the character set.
 - [ ] Backups with `--single-transaction` are scheduled ([Backups per engine](backups-per-engine.md)).
 - [ ] `AlwaysLog[]=warning` was enabled while you set up the site, to catch charset warnings.
 
+## Databases that speak MySQL's protocol
+
+TiDB, Vitess and PlanetScale, SingleStore, MariaDB Xpand and Amazon Aurora MySQL run on the MySQL driver with a
+profile each (`DatabaseImplementation` `tidb`, `vitess`, `singlestore`, `xpand`, `aurora`), over `mysqli`. Create the
+database as here, with `utf8mb4`; on Vitess and PlanetScale create the keyspace in their own tools. TiDB, Vitess and
+SingleStore installed a whole site; Xpand and Aurora MySQL are untested. What each refuses or does differently
+(foreign keys, `FULLTEXT`, isolation levels, table locks, transaction timeouts):
+[Databases that speak the MySQL protocol](../../features/6.0/mysql-wire-databases.md).
+
 ## Related pages
 
 - [MySQL and MariaDB: utf8mb4, the connection charset and InnoDB](mysql-and-mariadb-charset-and-innodb.md)

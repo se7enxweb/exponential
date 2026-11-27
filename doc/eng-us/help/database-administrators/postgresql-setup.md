@@ -124,6 +124,16 @@ Then open **Setup > System information**: the Database card shows PostgreSQL, th
 - [ ] The account is not a superuser.
 - [ ] Backups with `pg_dump -Fc` are scheduled ([Backups per engine](backups-per-engine.md)).
 
+## Databases that speak PostgreSQL's protocol
+
+CockroachDB, YugabyteDB, Neon, Supabase, Amazon Aurora PostgreSQL and Google Cloud Spanner (through PGAdapter) speak
+PostgreSQL's protocol and run on `expPostgreSQLWireDB`, the PostgreSQL driver with a profile per database
+(`DatabaseImplementation` `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, `spanner`). The
+versions on this page are PostgreSQL's own; what each of those databases does differently (locks, retries, poolers,
+TLS, DDL) and which of them are untested (Neon, Supabase, Aurora) is on
+[Databases of the PostgreSQL wire protocol](../../features/6.0/postgresql-wire-databases.md). A managed PostgreSQL that is PostgreSQL itself (Amazon RDS, Google
+Cloud SQL, Azure Database for PostgreSQL) uses `ezpostgresql` as here.
+
 ## Related pages
 
 - [Operating PostgreSQL: sequences, case and gotchas](postgresql-operations.md)

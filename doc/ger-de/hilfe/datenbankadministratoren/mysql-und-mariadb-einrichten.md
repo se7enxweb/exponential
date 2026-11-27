@@ -123,6 +123,15 @@ die Serverversion und den Zeichensatz.
 - [ ] Sicherungen mit `--single-transaction` sind eingeplant ([Sicherungen je Engine](sicherungen-je-engine.md)).
 - [ ] `AlwaysLog[]=warning` war eingeschaltet, während Sie die Website eingerichtet haben, um Zeichensatzwarnungen zu sehen.
 
+## Datenbanken, die das MySQL-Protokoll sprechen
+
+TiDB, Vitess und PlanetScale, SingleStore, MariaDB Xpand und Amazon Aurora MySQL laufen mit dem MySQL-Treiber und je
+einem Profil (`DatabaseImplementation` `tidb`, `vitess`, `singlestore`, `xpand`, `aurora`), über `mysqli`. Legen Sie die
+Datenbank wie hier mit `utf8mb4` an; auf Vitess und PlanetScale legen Sie den Keyspace mit deren eigenen Werkzeugen an.
+TiDB, Vitess und SingleStore haben eine ganze Site installiert; Xpand und Aurora MySQL sind ungetestet. Was jede ablehnt
+oder anders macht (Fremdschlüssel, `FULLTEXT`, Isolationsstufen, Tabellensperren, Transaktions-Timeouts):
+[Datenbanken, die das MySQL-Protokoll sprechen](../../funktionen/6.0/mysql-wire-datenbanken.md).
+
 ## Verwandte Seiten
 
 - [MySQL und MariaDB: utf8mb4, der Verbindungszeichensatz und InnoDB](mysql-und-mariadb-zeichensatz-und-innodb.md)
