@@ -69,7 +69,10 @@ PHP-Images (Debian) gebaut, mit jeder PHP-Erweiterung, die Exponential und Veloc
 
 `<version>` ist das Release ohne sein `v` (`6.0.14`). `<php>` ist 8.0 bis 8.5 ab 6.0.15 und 8.1 bis 8.5 für 6.0.14,
 das PHP 8.1 braucht. PHP 8.5 ist der Standard, weil es das neueste ist; wählen Sie ein älteres nur, wenn eine Ihrer
-Erweiterungen es braucht. Jeder Tag ist für mehrere Architekturen.
+Erweiterungen es braucht. Jeder Tag ist für mehrere Architekturen. Die Images mit PHP 8.0 werden auf Debian 11 gebaut,
+der einzigen Basis des offiziellen PHP-8.0-Images; Debian 11 hat sein Lebensende erreicht, seine Pakete kommen von
+archive.debian.org, daher erhalten weder PHP 8.0 noch das System Sicherheitsupdates. Nutzen Sie sie für
+Kompatibilitätstests, nicht für eine öffentliche Website.
 
 **Ein fester Tag ändert sich nie.** Die Images werden per Digest hochgeladen und erst getaggt, wenn jeder Build des
 Laufs seine Tests bestanden hat; der Workflow hält an, bevor er einen vorhandenen festen Tag überschreiben würde. Ein

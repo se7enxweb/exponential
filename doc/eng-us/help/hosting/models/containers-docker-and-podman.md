@@ -67,7 +67,9 @@ images (Debian), with every PHP extension Exponential and Velocity use, and the 
 
 `<version>` is the release without its `v` (`6.0.14`). `<php>` is 8.0 to 8.5 for 6.0.15 and later, and 8.1 to 8.5 for
 6.0.14, which needs PHP 8.1. PHP 8.5 is the default because it is the newest; pick an older one only when an
-extension of yours needs it. Every tag is multi-architecture.
+extension of yours needs it. Every tag is multi-architecture. The PHP 8.0 images are built on Debian 11, the only base
+the official PHP 8.0 image has; Debian 11 has reached its end of life and its packages come from archive.debian.org, so
+neither PHP 8.0 nor the system gets security updates. Use them to test compatibility, not to serve a public site.
 
 **A fixed tag never changes.** Images are pushed by digest and tagged only after every build of the run passed its
 tests; the workflow stops before it would overwrite a fixed tag that exists. An image found wrong after its release

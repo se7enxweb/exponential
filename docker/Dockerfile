@@ -26,6 +26,17 @@ FROM php:${PHP_VERSION}-fpm-${DEBIAN} AS base
 
 COPY --from=extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN set -eux; \
+    # Debian 11 (bullseye, the only base of PHP 8.0) has reached its end of
+    # life and its packages moved to archive.debian.org: read them there
+    . /etc/os-release; \
+    if [ "$VERSION_CODENAME" = bullseye ]; then \
+        printf '%s\n' \
+            'deb http://archive.debian.org/debian bullseye main' \
+            'deb http://archive.debian.org/debian-security bullseye-security main' \
+            > /etc/apt/sources.list; \
+        rm -f /etc/apt/sources.list.d/debian.sources; \
+        echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive; \
+    fi; \
     apt-get update; \
     apt-get install -y --no-install-recommends apache2 tini curl ca-certificates unzip; \
     install-php-extensions \
