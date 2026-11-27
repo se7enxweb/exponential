@@ -4,7 +4,7 @@ audience: admin, developer, dba
 category: install-upgrade
 order: 9
 summary: Every database Exponential 6.0.15 reaches, in one matrix (status in 6.0.14 and 6.0.15, site database, DFS cluster, read replicas, installers, data table engine, import source, PHP extension, operating system, CI, tested upgrades), with the measured timings and a decision guide per use case - one server, a cluster, a managed cloud database, embedded and demo sites, analytics and imports, Windows, and moving off MS Access or another old database.
-keywords: choosing a database, database matrix, which database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, libSQL, sqld, Turso, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, data tables, sqliimport, DFS cluster, read replicas, xne, upgrade, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import
+keywords: choosing a database, database matrix, which database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, libSQL, sqld, Turso, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, data tables, sqliimport, DFS cluster, read replicas, xne, upgrade, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import, SAP HANA, SAP ASE, Sybase
 featured: true
 context: setup/info, setup/systemupgrade
 type: help
@@ -81,6 +81,8 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | [IBM Informix 14.10 and 15](../features/6.0/informix-database-driver.md) | no | new | yes (measured on 15) | **no** | no | wizard (with `ibm_db2` or `pdo_ibm`), kickstarter, `informix` |
 | [MonetDB Dec2023 and later](../features/6.0/columnar-databases.md#monetdb) | no | new | yes, one writer at a time | **no** | no | kickstarter, `monetdb` |
 | [ClickHouse 24.8 and later](../features/6.0/columnar-databases.md#clickhouse) | no | new | **no**: data tables and import ([why](../features/6.0/columnar-databases.md#why-not-a-site-database)) | no | no | none |
+| [SAP HANA 2.0 SPS 05 and later](../features/6.0/hana-database-driver.md) | no | new | yes (measured on HANA express 2.00.088) | **no** | no | kickstarter, `hana` |
+| [SAP ASE 15.7 and 16.0](../features/6.0/ase-database-driver.md) | no | new | **untested**: written, no server to test | **no** | no | kickstarter, `ase` |
 | [Any database through ODBC](../features/6.0/odbc-database-driver.md) | no | new | yes on SQL Server, PostgreSQL, MariaDB/MySQL and Db2 ([a site over ODBC](../features/6.0/odbc-database-driver.md#a-site-over-odbc)); data tables and import on any | yes: SQL Server's and PostgreSQL's over PDO_ODBC, MariaDB's through `mysqli` | no | wizard, kickstarter, `odbc` with `--db-dialect` |
 | [MS Access (`.accdb`, `.mdb`)](../features/6.0/ms-access-support.md) | no | new | **no**: import, and data tables on Windows | no | no | none (`exp:access:import`) |
 | [Apache Cassandra 4.0 to 5.0, ScyllaDB 2025.1](../features/6.0/cassandra-scylladb-driver.md) | no | new | **no**: data tables and import ([why](../features/6.0/cassandra-scylladb-driver.md#why-no-site-runs-on-cassandra)) | no | no | none (`exp:cassandra:import`) |
@@ -126,6 +128,8 @@ real 6.0.14 site, upgrades it to the current code and rolls it back.
 | Firebird | `pdo_firebird` of **PHP 8.4 or later** and Firebird's client library | `firebird` | a data table connection; SQL source through a named connection | Linux | live tests on Firebird 4 and 5, PHP 8.4 and 8.5 (job `firebird`) | not yet |
 | DuckDB | `ffi` (with `ffi.enable=true` for the web) and `libduckdb` | `duckdb` | a data table connection; SQL source through a named connection; SQLI Import's DuckDB source (Parquet, CSV, JSON and DuckDB files) | Linux (`libduckdb.so`); Windows and macOS not tested | live tests on DuckDB 1.5.6 and 2.0.1, and a whole site installed (job `duckdb`) | not yet; no built-in caption (below) |
 | IBM Db2, IBM Informix | `pdo_ibm` or `ibm_db2` (PECL) with IBM's Data Server Driver; Informix needs `ibm_db2` for a site | `db2`, `informix` | a data table connection; SQL source through a named connection | Linux | live tests on Db2 12.1 and 11.5 and Informix 15 and 14.10 (job `db2`) | not yet |
+| SAP HANA | `odbc` (or `pdo_odbc`, with `odbc` for the schema's triggers) and SAP's HANA ODBC driver | `hana` | a data table connection | Linux | live tests on HANA express 2.00.088, both ODBC layers (job `hana`) | not yet |
+| SAP ASE | `pdo_dblib` (FreeTDS) or `pdo_odbc` | `ase` | a data table connection (untested) | none tested | DB-less tests only (job `hana`) | not yet |
 | ODBC | `pdo_odbc` or `odbc`, and the database's ODBC driver | `odbc` | a data table connection; SQL source through a named connection; `exp:access:import` into it | Linux, Windows | live tests on SQL Server, PostgreSQL, MariaDB and SQLite, both layers, whole sites installed (job `odbc`); LocalDB on Windows | the upgrade stages over ODBC measured on MariaDB (`exp:upgrade:database`); xne as PostgreSQL or MySQL |
 | MS Access | Windows: `odbc` and `pdo_odbc` with the Access Database Engine (x64); Linux: the MDBTools programs (import only) | `msaccess` (Windows) | `exp:access:import`; SQL source through a named connection (Windows) | Windows (driver and import), Linux and macOS (import with MDBTools) | the import on Linux; the driver and the import on windows-2022 and windows-2025 (job `msaccess-windows`) | not applicable |
 | libSQL (sqld), Turso | `curl` (or `allow_url_fopen`); `sqlite3` not needed | `libsql`, `turso` | a data table connection | Linux (sqld in a container); the PHP side on any system with curl | tests without a server, live tests on sqld 0.24.33 and a whole site installed (job `libsql`); Turso not tested | not yet; no built-in caption (below) |
@@ -157,6 +161,7 @@ the database's tool and run the upgrade with `--no-backup`.
 | SQL Server, Azure SQL | **none** | `BACKUP DATABASE`, or the service's backups |
 | Firebird | **none** | `gbak` or `nbackup` |
 | IBM Db2, IBM Informix | **none** | the database's own backup |
+| SAP HANA, SAP ASE | **none** | `BACKUP DATA` (HANA), `dump database` (ASE) |
 | DuckDB | **none** ("no built-in dump for duckdb") | copy the file while no process writes, or `EXPORT DATABASE` from the `duckdb` program |
 | Cassandra, ScyllaDB (data tables only) | **none** | `nodetool snapshot`, or the vendor's backup tool |
 | libSQL (sqld), Turso | **none** ("no built-in dump for a libSQL server") | a copy of sqld's data directory while it is stopped, Turso's point-in-time restore |
@@ -184,11 +189,13 @@ they measured, so the numbers say how long something took there, not how two dat
 | | YugabyteDB 2.25 | 42 minutes (slow DDL) |
 | | CockroachDB 25.2 | 47 minutes (slow DDL) |
 | | Informix 15 | 2,016 s |
+| | SAP HANA express 2.00.088 (a test server under load 20 to 40) | 109 minutes (the search index, word by word) |
 | One statement | Firebird, in its own transaction / inside a transaction | about 20 ms / about 4 ms |
 | | DuckDB, a row read by its key / inserted with a commit / inside a transaction | 2.7 ms / 7.4 ms / 2.7 ms |
 | | libSQL (sqld over HTTP), a row read by its key / written with a commit / inside a transaction | 2.1 ms / 76 to 101 ms / 2.3 to 6.7 ms |
 | | MonetDB, a row read by its key / inserted with the write lock and a commit / inside a transaction | 3.7 to 4.2 ms / 22 ms / 3.9 ms |
 | | ClickHouse, a row read by its key / one row inserted / a million rows inserted | 30 to 48 ms / 9 to 18 ms / 214 ms |
+| | SAP HANA, `SELECT 1` / a single-row insert into a column table with its trigger | about 3 ms / 6 to 14 ms |
 | A front page | DuckDB, view cache filled / empty | 2.3 to 3.5 s / 17 s |
 | | MonetDB, view cache filled / empty | 0.05 to 0.09 s / 2.6 s |
 | An Access file imported (4,103 rows, `exp:access:import`) | into SQLite, MariaDB, PostgreSQL, SQL Server over ODBC | 0.4 s, 2.5 s, 2.6 s, 31 s |

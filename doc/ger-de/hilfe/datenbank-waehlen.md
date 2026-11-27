@@ -4,7 +4,7 @@ audience: admin, developer, dba
 category: install-upgrade
 order: 9
 summary: Jede Datenbank, die Exponential 6.0.15 erreicht, in einer Matrix (Stand in 6.0.14 und 6.0.15, Site-Datenbank, DFS-Cluster, Lesereplikate, Installer, Datentabellen-Engine, Importquelle, PHP-Erweiterung, Betriebssystem, CI, getestete Aktualisierungen), mit den gemessenen Zeiten und einer Entscheidungshilfe je Einsatzzweck - ein Server, ein Cluster, eine verwaltete Cloud-Datenbank, eingebettete und Demo-Sites, Auswertungen und Importe, Windows sowie der Umzug weg von MS Access oder einer anderen alten Datenbank.
-keywords: Datenbank wählen, Datenbankmatrix, welche Datenbank, choosing a database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, libSQL, sqld, Turso, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, Datentabellen, sqliimport, DFS-Cluster, Lesereplikate, xne, Aktualisierung, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import
+keywords: Datenbank wählen, Datenbankmatrix, welche Datenbank, choosing a database, SQLite, PostgreSQL, MongoDB, MariaDB, MySQL, Oracle, Microsoft SQL Server, Azure SQL, TiDB, Vitess, PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL, CockroachDB, YugabyteDB, Spanner, PGAdapter, Neon, Supabase, Aurora PostgreSQL, Firebird, DuckDB, libSQL, sqld, Turso, ODBC, MS Access, exp:access:import, Cassandra, ScyllaDB, CQL, exp:cassandra:import, Datentabellen, sqliimport, DFS-Cluster, Lesereplikate, xne, Aktualisierung, Windows, pdo_firebird, FFI, sqlsrv, pdo_sqlsrv, pdo_odbc, odbc, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import, SAP HANA, SAP ASE, Sybase
 featured: true
 context: setup/info, setup/systemupgrade
 type: help
@@ -82,6 +82,8 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | [IBM Informix 14.10 und 15](../funktionen/6.0/informix-datenbanktreiber.md) | nein | neu | ja (auf 15 gemessen) | **nein** | nein | Assistent (mit `ibm_db2` oder `pdo_ibm`), Kickstarter, `informix` |
 | [MonetDB Dec2023 und später](../funktionen/6.0/spaltenorientierte-datenbanken.md#monetdb) | nein | neu | ja, immer nur ein Schreiber | **nein** | nein | Kickstarter, `monetdb` |
 | [ClickHouse 24.8 und später](../funktionen/6.0/spaltenorientierte-datenbanken.md#clickhouse) | nein | neu | **nein**: Datentabellen und Import ([warum](../funktionen/6.0/spaltenorientierte-datenbanken.md#warum-keine-site-datenbank)) | nein | nein | keiner |
+| [SAP HANA 2.0 ab SPS 05](../funktionen/6.0/hana-datenbanktreiber.md) | nein | neu | ja (an HANA Express 2.00.088 gemessen) | **nein** | nein | Kickstarter, `hana` |
+| [SAP ASE 15.7 und 16.0](../funktionen/6.0/ase-datenbanktreiber.md) | nein | neu | **ungetestet**: geschrieben, kein Server zum Testen | **nein** | nein | Kickstarter, `ase` |
 | [Jede Datenbank über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md) | nein | neu | ja auf SQL Server, PostgreSQL, MariaDB/MySQL und Db2 ([eine Site über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md#eine-site-über-odbc)); Datentabellen und Import auf jeder | ja: das von SQL Server und PostgreSQL über PDO_ODBC, das von MariaDB über `mysqli` | nein | Assistent, Kickstarter, `odbc` mit `--db-dialect` |
 | [MS Access (`.accdb`, `.mdb`)](../funktionen/6.0/ms-access-unterstuetzung.md) | nein | neu | **nein**: Import, unter Windows auch Datentabellen | nein | nein | keiner (`exp:access:import`) |
 | [Apache Cassandra 4.0 bis 5.0, ScyllaDB 2025.1](../funktionen/6.0/cassandra-scylladb-treiber.md) | nein | neu | **nein**: Datentabellen und Import ([warum](../funktionen/6.0/cassandra-scylladb-treiber.md#warum-keine-site-auf-cassandra-läuft)) | nein | nein | keiner (`exp:cassandra:import`) |
@@ -130,6 +132,8 @@ nimmt die Aktualisierung wieder zurück.
 | Firebird | `pdo_firebird` ab **PHP 8.4** und die Client-Bibliothek von Firebird | `firebird` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung | Linux | Live-Tests auf Firebird 4 und 5, PHP 8.4 und 8.5 (Job `firebird`) | noch nicht |
 | DuckDB | `ffi` (mit `ffi.enable=true` für das Web) und `libduckdb` | `duckdb` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung; die DuckDB-Quelle von SQLI Import (Parquet-, CSV-, JSON- und DuckDB-Dateien) | Linux (`libduckdb.so`); Windows und macOS nicht getestet | Live-Tests auf DuckDB 1.5.6 und 2.0.1 und eine ganz installierte Site (Job `duckdb`) | noch nicht; kein eingebauter Sicherungspunkt (unten) |
 | IBM Db2, IBM Informix | `pdo_ibm` oder `ibm_db2` (PECL) mit dem Data Server Driver von IBM; Informix braucht für eine Site `ibm_db2` | `db2`, `informix` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung | Linux | Live-Tests auf Db2 12.1 und 11.5 sowie Informix 15 und 14.10 (Job `db2`) | noch nicht |
+| SAP HANA | `odbc` (oder `pdo_odbc`, mit `odbc` für die Trigger des Schemas) und SAPs HANA-ODBC-Treiber | `hana` | eine Datentabellen-Verbindung | Linux | Live-Tests auf HANA Express 2.00.088, beide ODBC-Schichten (Job `hana`) | noch nicht |
+| SAP ASE | `pdo_dblib` (FreeTDS) oder `pdo_odbc` | `ase` | eine Datentabellen-Verbindung (ungetestet) | keines getestet | nur Tests ohne Server (Job `hana`) | noch nicht |
 | ODBC | `pdo_odbc` oder `odbc` und der ODBC-Treiber der Datenbank | `odbc` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung; `exp:access:import` in sie hinein | Linux, Windows | Live-Tests auf SQL Server, PostgreSQL, MariaDB und SQLite, beide Schichten, ganze Sites installiert (Job `odbc`); LocalDB unter Windows | die Upgrade-Stufen über ODBC auf MariaDB gemessen (`exp:upgrade:database`); xne wie PostgreSQL oder MySQL |
 | MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine (x64); Linux: die Programme von MDBTools (nur Import) | `msaccess` (Windows) | `exp:access:import`; SQL-Quelle über eine benannte Verbindung (Windows) | Windows (Treiber und Import), Linux und macOS (Import mit MDBTools) | der Import unter Linux; Treiber und Import auf windows-2022 und windows-2025 (Job `msaccess-windows`) | entfällt |
 | libSQL (sqld), Turso | `curl` (oder `allow_url_fopen`); `sqlite3` nicht nötig | `libsql`, `turso` | eine Datentabellen-Verbindung | Linux (sqld in einem Container); die PHP-Seite auf jedem System mit curl | Tests ohne Server, Live-Tests auf sqld 0.24.33 und eine ganze Site installiert (Job `libsql`); Turso nicht getestet | noch nicht; kein eingebauter Sicherungspunkt (unten) |
@@ -162,6 +166,7 @@ jeder anderen Datenbank sichern Sie selbst mit dem Werkzeug der Datenbank und f�
 | SQL Server, Azure SQL | **keiner** | `BACKUP DATABASE` oder die Sicherungen des Dienstes |
 | Firebird | **keiner** | `gbak` oder `nbackup` |
 | IBM Db2, IBM Informix | **keiner** | die eigene Sicherung der Datenbank |
+| SAP HANA, SAP ASE | **keiner** | `BACKUP DATA` (HANA), `dump database` (ASE) |
 | DuckDB | **keiner** („no built-in dump for duckdb“) | die Datei kopieren, solange kein Prozess schreibt, oder `EXPORT DATABASE` aus dem Programm `duckdb` |
 | Cassandra, ScyllaDB (nur Datentabellen) | **keiner** | `nodetool snapshot` oder das Backup-Werkzeug des Herstellers |
 | libSQL (sqld), Turso | **keiner** („no built-in dump for a libSQL server“) | eine Kopie des Datenverzeichnisses von sqld, während er angehalten ist; Turso's Point-in-Time-Restore |
@@ -190,11 +195,13 @@ nicht, wie zwei Datenbanken im Vergleich abschneiden.
 | | YugabyteDB 2.25 | 42 Minuten (langsame DDL) |
 | | CockroachDB 25.2 | 47 Minuten (langsame DDL) |
 | | Informix 15 | 2.016 s |
+| | SAP HANA Express 2.00.088 (ein Testserver unter Last 20 bis 40) | 109 Minuten (der Suchindex, Wort für Wort) |
 | Eine Anweisung | Firebird, in eigener Transaktion / innerhalb einer Transaktion | etwa 20 ms / etwa 4 ms |
 | | DuckDB, eine Zeile über ihren Schlüssel gelesen / mit Commit eingefügt / innerhalb einer Transaktion | 2,7 ms / 7,4 ms / 2,7 ms |
 | | libSQL (sqld über HTTP), eine Zeile über ihren Schlüssel gelesen / mit Commit geschrieben / innerhalb einer Transaktion | 2,1 ms / 76 bis 101 ms / 2,3 bis 6,7 ms |
 | | MonetDB, eine Zeile über ihren Schlüssel gelesen / mit Schreibsperre und Commit eingefügt / innerhalb einer Transaktion | 3,7 bis 4,2 ms / 22 ms / 3,9 ms |
 | | ClickHouse, eine Zeile über ihren Schlüssel gelesen / eine Zeile eingefügt / eine Million Zeilen eingefügt | 30 bis 48 ms / 9 bis 18 ms / 214 ms |
+| | SAP HANA, `SELECT 1` / ein Insert einer Zeile in eine Column-Tabelle mit ihrem Trigger | etwa 3 ms / 6 bis 14 ms |
 | Eine Startseite | DuckDB, Ansichts-Cache gefüllt / leer | 2,3 bis 3,5 s / 17 s |
 | | MonetDB, Ansichts-Cache gefüllt / leer | 0,05 bis 0,09 s / 2,6 s |
 | Eine Access-Datei importiert (4.103 Zeilen, `exp:access:import`) | in SQLite, MariaDB, PostgreSQL, SQL Server über ODBC | 0,4 s, 2,5 s, 2,6 s, 31 s |
