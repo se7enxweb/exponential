@@ -108,12 +108,26 @@ class ezpRestPoConfig implements ezcBaseConfigurationInitializer
 {
     public static function configureObject( $instance )
     {
+        $directories = self::definitionDirectories();
         return new ezcPersistentSession( ezcDbInstance::get(),
             new ezcPersistentMultiManager( array(
-                new ezcPersistentCodeManager( 'kernel/private/rest/classes/po_maps/' ),
-                new ezcPersistentCodeManager( 'kernel/private/oauth/classes/persistentobjects/' )
+                new ezcPersistentCodeManager( $directories[0] ),
+                new ezcPersistentCodeManager( $directories[1] )
             ))
         );
+    }
+
+    /**
+     * The directories holding the persistent-object definitions of the REST layer and of OAuth, as absolute
+     * paths below the installation root: they do not depend on the working directory of the process.
+     *
+     * @return string[]
+     */
+    public static function definitionDirectories()
+    {
+        $root = eZSys::rootDir();
+        return array( $root . '/kernel/private/rest/classes/po_maps/',
+                      $root . '/kernel/private/oauth/classes/persistentobjects/' );
     }
 }
 ezpRestDbConfig::registerCallbacks();

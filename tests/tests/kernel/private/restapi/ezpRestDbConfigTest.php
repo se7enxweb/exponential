@@ -3,7 +3,8 @@
  * ezpRestDbConfig::lazyDbHelper(), the database connection of the REST interface's persistent objects (OAuth tokens):
  * the DSN built from site.ini [DatabaseSettings] for each database implementation, SQLite files and memory, an
  * unknown implementation refused, and user names and passwords with characters that have a meaning in a DSN, which
- * must come back unchanged when the DSN is parsed, and the connection charset a MySQL DSN carries.
+ * must come back unchanged when the DSN is parsed, and the connection charset a MySQL DSN carries. Also the directories
+ * of the persistent-object definitions, which must not depend on the working directory.
  *
  * No database: nothing connects. The settings are set on the loaded site.ini and put back.
  *
@@ -151,5 +152,27 @@ class ezpRestDbConfigTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'db.k1.example.invalid', $parsed['hostspec'] );
         $this->assertSame( 'k1db', $parsed['database'] );
         $this->assertSame( eZMySQLCharset::mapTo( 'utf-8' ), $parsed['charset'] );
+    }
+
+    public function testDefinitionDirectoriesDoNotDependOnTheWorkingDirectory()
+    {
+        $before = getcwd();
+        chdir( sys_get_temp_dir() );
+        try
+        {
+            $directories = ezpRestPoConfig::definitionDirectories();
+            $this->assertCount( 2, $directories );
+            foreach ( $directories as $directory )
+            {
+                $this->assertStringStartsWith( eZSys::rootDir() . '/', $directory );
+                $this->assertTrue( is_dir( $directory ), "$directory is not a directory" );
+            }
+            $this->assertStringEndsWith( '/kernel/private/rest/classes/po_maps/', $directories[0] );
+            $this->assertStringEndsWith( '/kernel/private/oauth/classes/persistentobjects/', $directories[1] );
+        }
+        finally
+        {
+            chdir( $before );
+        }
     }
 }
