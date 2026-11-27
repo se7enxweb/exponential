@@ -217,7 +217,7 @@ a99f95dd0196c0752d279cda73078d84  bin/php/ezwebinupgrade.php
 3f68d477c3ae4afa9d4513c59a084fd9  bin/php/frankenphp.php
 2bf2f0e6e3dafee7232596d4e3937bee  bin/php/i18n.php
 e4e5a5e9f65cd8f42323b653a152439d  bin/php/ini.php
-d6bd85d4a57823089ec3c3031b9335a2  bin/php/install.php
+c99393ea2281244cfb7d92f49aab0c9c  bin/php/install.php
 f697eeec2a6fe364ac62feff76673996  bin/php/installcrontab.php
 f5773e8f312c969b9080b83fe1ae4ac3  bin/php/kickstarter.php
 d480f36c84716affe53b3e064d52e58c  bin/php/mailbounces.php
@@ -24994,7 +24994,7 @@ f9fd19d5ca053c89e0fc0f4ecdeefbea  kernel/classes/expinstalltimezone.php
 46648d085c5dc8403fbc21e98c15dba5  kernel/classes/expkernelservices.php
 7690004efd3e6ded067a772ed7d75f4e  kernel/classes/expkernelservicescope.php
 09e8739d339638f62c64fbe352430f0c  kernel/classes/expkickstarter.php
-28a2f0a373d396fe62062f4462b68b79  kernel/classes/expkickstarterini.php
+6282f6563f6992b52678c777ba5d6ed1  kernel/classes/expkickstarterini.php
 62c7d643204f1f1f5741e2da8f7acd9f  kernel/classes/explinkcheck.php
 0e7f961116e0722f10ded1ecd4ccdd35  kernel/classes/explovestack.php
 2a479e5ba2483267f8283128e0032198  kernel/classes/expmaintenance.php
@@ -26940,7 +26940,7 @@ b9ae2b6d7c11dfc7cbfb230f9990940e  kernel/setup/expradsurvey.php
 20d19e4c6c386a4751b600fa8fac28e2  kernel/setup/extensions.php
 391d37b4620a6745a2bd442560d6484d  kernel/setup/ezsetup.php
 433e78c97aa0c3fcafabd033470f397c  kernel/setup/ezsetup_summary.php
-66942fcc9bfed55cde6d06fee9abf0eb  kernel/setup/ezsetupcommon.php
+b62477d8577dbd60ae94b6e0bc1a720e  kernel/setup/ezsetupcommon.php
 38297052a8fa01c39f6209d85873376c  kernel/setup/ezsetupfunctioncollection.php
 ce305a0b7ac2b4a067d9a16aaebac547  kernel/setup/ezsetuptests.php
 f61e6339faf21fad7164647b5a7070e7  kernel/setup/function_definition.php
@@ -26972,13 +26972,13 @@ a456b6cd95469b00072d6d6008005d78  kernel/setup/settingsextension.php
 e1f1e3367eaa39f82acad5c70b42286e  kernel/setup/setupmenu.php
 fe14b77184ccbafe5fdbd76a0bea9428  kernel/setup/sitedata.php
 72be9314636b1a293c5be6efa675cd04  kernel/setup/staticcachestream.php
-c377091b368260b11a6e43c6cd143e61  kernel/setup/steps/ezstep_create_sites.php
+715755900afcefca1ebaf2e2016c367e  kernel/setup/steps/ezstep_create_sites.php
 df68e5e07841432d9e6e51b23e5ae234  kernel/setup/steps/ezstep_data.php
-634f2d29bc2e9bfdf1e52d497982a198  kernel/setup/steps/ezstep_database_choice.php
-7ff982be8c58c861698729284f8e68b5  kernel/setup/steps/ezstep_database_init.php
+cbcbf789a579aecff0a871564b227d57  kernel/setup/steps/ezstep_database_choice.php
+3c35ef2c4ff0a8471bccec06dcd00e40  kernel/setup/steps/ezstep_database_init.php
 1eb7cf0835903b23ffeeda25b7e8bf6a  kernel/setup/steps/ezstep_email_settings.php
 d252c1fdbb70b34ee56f05351fb1ad10  kernel/setup/steps/ezstep_final.php
-a991da0c53665b41bcae5ff9db71428f  kernel/setup/steps/ezstep_installer.php
+949a25bf2f7ffdf466d94980efc99c3d  kernel/setup/steps/ezstep_installer.php
 354ef133bd7fb328e3e815febc5e6530  kernel/setup/steps/ezstep_language_options.php
 0b0e15cf920388c3361a4778b61018b5  kernel/setup/steps/ezstep_package_language_options.php
 15a86df69632da17559f29833414bdfc  kernel/setup/steps/ezstep_registration.php
@@ -27148,7 +27148,7 @@ d2926eb6d0bbba17c4a83d5ff9cef05f  kernel/workflow/run.php
 efbd0eec92f8ae73766639a072611217  kernel/workflow/view.php
 28e71e28d84fae1cb1e31f9b668355f9  kernel/workflow/workflowlist.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
-63e47f555cba173d4327d31deb97967f  kickstart.ini-dist
+79f8b4ee1a281785e01eee94ff0a4157  kickstart.ini-dist
 157e117f76f8407ee97deab2dfc91924  lib/ezdb/classes/expauroramysqldb.php
 74a968316da8c3e0e30a859efbbfa4ec  lib/ezdb/classes/expaurorapostgresqldb.php
 77caed9863481da63d2b05e2dc3cc13e  lib/ezdb/classes/expcockroachdb.php

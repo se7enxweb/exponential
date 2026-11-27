@@ -115,6 +115,10 @@
 ##   Aurora (aurora alone is Aurora MySQL);
 ##   SSLMode, Pooler and Endpoint of [database_init] set TLS and the pooler
 ##   ([PostgreSQLWireSettings] of the new site)
+## - libsql - a libSQL server (sqld; sqld is accepted too), SQLite over HTTP with
+##   PHP's curl extension; turso - the same in Turso's cloud. Server and Port name
+##   the server (8080, 443 for turso), Password is the auth token; URL and TLS of
+##   [database_init] set [LibSQLSettings] of the new site
 ## other values are possible if provided by extension
 #Type=sqlite3
 
@@ -152,6 +156,13 @@
 ## Endpoint=<endpoint id>
 ## Neon: the endpoint id, for a libpq without SNI
 #Endpoint=
+## URL=<url>
+## libsql, turso: the server's URL instead of Server and Port (http://host:8080,
+## https://host, libsql://<db>-<org>.turso.io)
+#URL=
+## TLS=<auto|enabled|disabled>
+## libsql, turso: https (auto: turso, or port 443)
+#TLS=
 
 #[language_options]
 ## Continue=<true|false>

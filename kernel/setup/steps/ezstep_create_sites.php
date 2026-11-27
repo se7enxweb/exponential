@@ -378,6 +378,10 @@ class eZStepCreateSites extends eZStepInstaller
         if ( !empty( $this->PersistenceList['database_info']['postgresql_wire'] ) && is_array( $this->PersistenceList['database_info']['postgresql_wire'] ) )
             foreach ( $this->PersistenceList['database_info']['postgresql_wire'] as $name => $value )
                 $ini->setVariable( 'PostgreSQLWireSettings', $name, $value );
+        // libSQL and Turso the same: the server's URL and TLS
+        if ( !empty( $this->PersistenceList['database_info']['libsql'] ) && is_array( $this->PersistenceList['database_info']['libsql'] ) )
+            foreach ( $this->PersistenceList['database_info']['libsql'] as $name => $value )
+                $ini->setVariable( 'LibSQLSettings', $name, $value );
         // With this following line commented out, php default session management is used
         // $ini->setVariable( 'Session', 'SessionNameHandler', 'custom' );
         $ini->setVariable( 'MailSettings', 'AdminEmail', $this->PersistenceList['admin']['email'] );
@@ -1051,6 +1055,8 @@ class eZStepCreateSites extends eZStepInstaller
             $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
         if ( !empty( $databaseInfo['mysqlwire'] ) )
             $dbParameters['mysqlwire'] = $databaseInfo['mysqlwire'];
+        if ( !empty( $databaseInfo['libsql'] ) )
+            $dbParameters['libsql'] = $databaseInfo['libsql'];
         if ( !empty( $databaseInfo['postgresql_wire'] ) )
             $dbParameters['postgresql_wire'] = $databaseInfo['postgresql_wire'];
         try
@@ -1300,6 +1306,8 @@ class eZStepCreateSites extends eZStepInstaller
             $siteINIChanges['MySQLWireSettings'] = $databaseInfo['mysqlwire'];
         if ( !empty( $databaseInfo['postgresql_wire'] ) )
             $siteINIChanges['PostgreSQLWireSettings'] = $databaseInfo['postgresql_wire'];
+        if ( !empty( $databaseInfo['libsql'] ) )
+            $siteINIChanges['LibSQLSettings'] = $databaseInfo['libsql'];
         if ( trim( $dbSocket ) != '' )
             $siteINIChanges['DatabaseSettings']['Socket'] = $dbSocket;
         else

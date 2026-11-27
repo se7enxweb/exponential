@@ -128,7 +128,8 @@ class eZStepDatabaseInit extends eZStepInstaller
         // SQL Server and Firebird the same: the login is tested against the named database
         // DuckDB the same: the database is the file named
         // Db2 and Informix the same: the login is tested against the named database
-        if ( ( in_array( eZSetupDatabaseFamily( $databaseInfo['type'] ), array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
+        // libSQL and Turso the same: the server holds the one database the name stands for
+        if ( ( in_array( eZSetupDatabaseFamily( $databaseInfo['type'] ), array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix', 'libsql', 'turso' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
              !empty( $databaseInfo['dbname'] ) )
         {
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
@@ -217,6 +218,15 @@ class eZStepDatabaseInit extends eZStepInstaller
                     if ( isset( $data[$key] ) && trim( (string)$data[$key] ) !== '' )
                         $options[$key] = trim( (string)$data[$key] );
                 $this->PersistenceList['database_info']['postgresql_wire'] = $options;
+            }
+            // libSQL and Turso: the server's URL and TLS ([LibSQLSettings] of the site); the token is the Password
+            if ( isset( $this->PersistenceList['database_info']['type'] ) && in_array( $this->PersistenceList['database_info']['type'], array( 'libsql', 'turso' ), true ) )
+            {
+                $options = array();
+                foreach ( array( 'URL', 'TLS' ) as $key )
+                    if ( isset( $data[$key] ) && trim( (string)$data[$key] ) !== '' )
+                        $options[$key] = trim( (string)$data[$key] );
+                $this->PersistenceList['database_info']['libsql'] = $options;
             }
 
             $result = $this->checkDatabaseRequirements( false );

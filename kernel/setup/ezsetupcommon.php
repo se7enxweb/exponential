@@ -133,6 +133,21 @@ function eZSetupDatabaseMap()
                                      'required_version' => '1.5',
                                      'has_demo_data' => false,
                                      'supports_unicode' => true ),
+                  // expLibSQLDB in the kernel: the SQLite driver over a libSQL server's HTTP API (curl or allow_url_fopen);
+                  // required_version is the SQLite the server is built on (sqlite_version())
+                  'libsql' => array( 'type' => 'libsql',
+                                     'driver' => 'libsql',
+                                     'name' => 'libSQL server (sqld)',
+                                     'required_version' => '3.35',
+                                     'has_demo_data' => false,
+                                     'supports_unicode' => true ),
+                  // expTursoDB: the same in Turso's cloud (HTTPS, a database token)
+                  'turso' => array( 'type' => 'turso',
+                                    'driver' => 'turso',
+                                    'name' => 'Turso',
+                                    'required_version' => '3.35',
+                                    'has_demo_data' => false,
+                                    'supports_unicode' => true ),
                   // the driver lives in an extension, activated for the
                   // installation by eZSetupActivateDatabaseExtension()
                   'oci8' => array( 'type' => 'oci8',

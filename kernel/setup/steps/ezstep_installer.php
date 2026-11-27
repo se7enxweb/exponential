@@ -419,6 +419,8 @@ class eZStepInstaller
             $dbParameters['mysqlwire'] = $databaseInfo['mysqlwire'];
         if ( !empty( $databaseInfo['sqlserver'] ) )
             $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
+        if ( !empty( $databaseInfo['libsql'] ) )
+            $dbParameters['libsql'] = $databaseInfo['libsql'];
         if ( !empty( $databaseInfo['postgresql_wire'] ) )
             $dbParameters['postgresql_wire'] = $databaseInfo['postgresql_wire'];
         $dbParameters = array_merge( $dbParameters, $overrideDBParameters );
@@ -455,7 +457,7 @@ class eZStepInstaller
         // MySQL: if the user provided a database name, connect directly to it.
         // This avoids any attempt to select the system 'mysql' database and
         // means SHOW DATABASES / root access is not required.
-        if ( ( in_array( $this->PersistenceList['database_info']['type'], array( 'mysql', 'mysqli', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix' ) ) || eZSetupIsMySQLFamily( $this->PersistenceList['database_info']['type'] ) ) and
+        if ( ( in_array( $this->PersistenceList['database_info']['type'], array( 'mysql', 'mysqli', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix', 'libsql', 'turso' ) ) || eZSetupIsMySQLFamily( $this->PersistenceList['database_info']['type'] ) ) and
              ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) and
              !empty( $databaseInfo['dbname'] ) )
         {

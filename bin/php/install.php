@@ -43,6 +43,9 @@ $databaseTypes = array(
     'neon'        => array( 'type' => 'neon',        'port' => '5432',  'name' => 'neondb',      'user' => '' ),
     'supabase'    => array( 'type' => 'supabase',    'port' => '5432',  'name' => 'postgres',    'user' => 'postgres' ),
     'aurorapostgresql' => array( 'type' => 'aurorapostgresql', 'port' => '5432', 'name' => 'exponential', 'user' => 'postgres' ),
+    // libSQL over HTTP (expLibSQLDB, the SQLite driver): a libSQL server (sqld) or Turso's cloud; the password is the auth token
+    'libsql'   => array( 'type' => 'libsql',   'port' => '8080',  'name' => 'exponential', 'user' => '' ),
+    'turso'    => array( 'type' => 'turso',    'port' => '443',   'name' => 'exponential', 'user' => '' ),
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
                           'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
@@ -52,7 +55,7 @@ $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' 
                           'fb' => 'firebird', 'pdo_firebird' => 'firebird',
                           'cockroach' => 'cockroachdb', 'crdb' => 'cockroachdb', 'yugabyte' => 'yugabytedb', 'ysql' => 'yugabytedb',
                           'aurora-postgresql' => 'aurorapostgresql',
-                          'ibm_db2' => 'db2', 'pdo_ibm' => 'db2', 'ifx' => 'informix' );
+                          'ibm_db2' => 'db2', 'pdo_ibm' => 'db2', 'ifx' => 'informix', 'sqld' => 'libsql' );
 $pgWireTypes = array( 'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql' );
 
 $options = array(
@@ -70,6 +73,8 @@ $options = array(
     'db-sslrootcert' => '',
     'db-pooler'      => '',
     'db-endpoint'    => '',
+    'db-url'         => '',
+    'db-tls'         => '',
     'db-action'      => 'remove',
     'package'        => 'sevenx_multisite',
     'language'       => 'eng-US',
@@ -147,7 +152,7 @@ if ( isset( $databaseAliases[$db] ) )
 if ( !isset( $databaseTypes[$db] ) )
 {
     fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird,"
-                  . " duckdb, cockroachdb, yugabytedb, neon, supabase, aurorapostgresql, db2 or informix\n" );
+                  . " duckdb, cockroachdb, yugabytedb, neon, supabase, aurorapostgresql, db2, informix, libsql or turso\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
@@ -335,7 +340,8 @@ $sections = array(
                           + ( in_array( $db, array( 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), true ) && $options['db-ssl'] !== ''
                               ? array_filter( array( 'SSL' => $options['db-ssl'], 'SSLCA' => $options['db-ssl-ca'] ), 'strlen' ) : array() )
                           + ( in_array( $db, $pgWireTypes, true ) ? array_filter( array( 'SSLMode' => $options['db-sslmode'], 'SSLRootCert' => $options['db-sslrootcert'],
-                                                                                         'Pooler' => $options['db-pooler'], 'Endpoint' => $options['db-endpoint'] ), 'strlen' ) : array() ),
+                                                                                         'Pooler' => $options['db-pooler'], 'Endpoint' => $options['db-endpoint'] ), 'strlen' ) : array() )
+                          + ( in_array( $db, array( 'libsql', 'turso' ), true ) ? array_filter( array( 'URL' => $options['db-url'], 'TLS' => $options['db-tls'] ), 'strlen' ) : array() ),
     'language_options' => array( 'Primary' => $options['language'], 'Languages' => $languages, 'TimeZone' => $timeZone['zone'] ),
     'site_types'       => array( 'Site_package' => $options['package'] ),
     'site_access'      => array( 'Access' => $accessType ),
@@ -499,6 +505,8 @@ Database (default: SQLite, no server needed)
   --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle, sqlserver, firebird or duckdb;
                          cockroachdb, yugabytedb, neon, supabase or aurorapostgresql (PostgreSQL wire protocol)
                          db2 or informix (IBM, over pdo_ibm or ibm_db2)
+                         libsql (sqld) or turso: SQLite over HTTP, with curl or allow_url_fopen;
+                         the password is the server's auth token (turso: required)
                          (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
                          (neon, supabase, aurorapostgresql: the database must exist; TLS required by default)
                          (firebird: needs pdo_firebird of PHP 8.4 or later, Firebird 4 or 5, and an
@@ -514,7 +522,7 @@ Database (default: SQLite, no server needed)
   --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
                          1521 (oracle), 1433 (sqlserver), 4000 (tidb), 3050 (firebird),
                          26257 (cockroachdb), 5433 (yugabytedb),
-                         50000 (db2), 9089 (informix, DRDA)
+                         50000 (db2), 9089 (informix, DRDA), 8080 (libsql), 443 (turso)
   --db-name=<name>       default exponential (exponential.db for sqlite,
                          exponential.duckdb for duckdb, EXP for db2);
                          oracle: the service name, default FREEPDB1, used as
@@ -540,6 +548,10 @@ Database (default: SQLite, no server needed)
   --db-sslrootcert=<file>  the CA file for verify-ca and verify-full
   --db-pooler=<mode>     auto (default: from the host and port), none, session or transaction
   --db-endpoint=<id>     neon: the endpoint id, for a libpq without SNI
+  --db-url=<url>         libsql, turso: the server's URL instead of host and port (http://host:8080,
+                         https://host, libsql://<db>-<org>.turso.io)
+  --db-tls=<mode>        libsql, turso: enabled (https), disabled (http) or auto (default: turso,
+                         or port 443)
   --db-action=<action>   remove (default: empty the database first), ignore, skip
 
 Site

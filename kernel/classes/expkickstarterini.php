@@ -43,6 +43,8 @@ class expKickstarterIni
                 'neon'        => 'Neon PostgreSQL (pgsql)',
                 'supabase'    => 'Supabase PostgreSQL (pgsql)',
                 'aurorapostgresql' => 'Amazon Aurora PostgreSQL (pgsql)',
+                'libsql'      => 'libSQL server, sqld (SQLite over HTTP, curl)',
+                'turso'       => 'Turso (libSQL over HTTPS, curl)',
             ),
         ),
         'email_settings' => array(
