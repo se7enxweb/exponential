@@ -19,8 +19,10 @@
  * - LOCK TABLE / UNLOCK TABLES: nothing to lock; the statement is not sent.
  * - MySQL words the kernel's default branches may still write: `quoted` names ("quoted"), LIMIT offset, count (LIMIT
  *   count OFFSET offset).
- * - Two kernel columns are reserved words in MonetDB: day (ezgeneral_digest_user_settings) and records
- *   (expaudit_file). In statements on those tables they are quoted.
+ * - Some column names of the kernel and its extensions are reserved words in MonetDB: day
+ *   (ezgeneral_digest_user_settings), records (expaudit_file), chain and snapshot (expai_chain_run), details
+ *   (expai_probe_result) and next (sqliimport_scheduled). In statements on those tables they are quoted; NEXT of a
+ *   sequence's NEXT VALUE FOR is left as it is.
  *
  * String literals and quoted names are never changed. MonetDB reads C escapes in string literals ('a\nb'), so escape()
  * doubles a backslash as well as a quote.
@@ -30,8 +32,14 @@
  */
 class expMonetDBDialect
 {
-    /** Kernel columns that are reserved words in MonetDB, and the table whose statements quote them */
-    const RESERVED_COLUMNS = array( 'day' => 'ezgeneral_digest_user_settings', 'records' => 'expaudit_file' );
+    /**
+     * Columns of the kernel and its extensions that are reserved words in MonetDB, and the table whose statements quote
+     * them. MonetDB's sys.keywords does not list every reserved word (details and snapshot are missing from it): a
+     * name belongs here when CREATE TABLE t (<name> int) fails.
+     */
+    const RESERVED_COLUMNS = array( 'day' => 'ezgeneral_digest_user_settings', 'records' => 'expaudit_file',
+                                    'chain' => 'expai_chain_run', 'snapshot' => 'expai_chain_run',
+                                    'details' => 'expai_probe_result', 'next' => 'sqliimport_scheduled' );
 
     /** First words of statements that read only */
     const READ_WORDS = array( 'SELECT', 'SHOW', 'DESCRIBE', 'EXPLAIN', 'PLAN', 'TRACE', 'VALUES', 'WITH' );
@@ -118,7 +126,7 @@ class expMonetDBDialect
         {
             if ( stripos( $blank, $table ) === false || !preg_match( '/(?<![\w"])' . $column . '(?![\w"])/i', $blank ) )
                 continue;
-            $sql = self::replaceOutsideLiterals( $sql, $blank, '/(?<![\w"])' . $column . '(?![\w"(])/i', '"' . $column . '"' );
+            $sql = self::replaceOutsideLiterals( $sql, $blank, '/(?<![\w"])' . $column . '(?![\w"(])(?!\s+VALUE\s+FOR\b)/i', '"' . $column . '"' );
             $blank = self::blankLiterals( $sql );
         }
 

@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-5ee04b787b5340861d3be4641e59aba2  doc/changelogs/6.0/6.0.15.md
+87913e177e782e6201e917f505653616  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -7002,7 +7002,7 @@ dabff75a311362f40ae3a24bf5b55b51  doc/eng-us/features/6.0/cache-until.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
 86597994d5677dec2673d4953564c126  doc/eng-us/features/6.0/cluster-commands.md
-790218e007f8965787d78d469f4ba903  doc/eng-us/features/6.0/columnar-databases.md
+6d83c7eeaa21f6005b0740d06cc54154  doc/eng-us/features/6.0/columnar-databases.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
 b10b8f6d48a35a112fc60abd882b4869  doc/eng-us/features/6.0/content-jobs.md
@@ -17312,7 +17312,7 @@ f5fb128cb0497fa6c520ac09a69c23a3  doc/ger-de/funktionen/6.0/sichere-weiterleitun
 b11a1cfe5de18bae37f762fc4deab69f  doc/ger-de/funktionen/6.0/smarty-templates.md
 048b85449fe4f1d1f763247b12b53ae7  doc/ger-de/funktionen/6.0/soap-client-tls.md
 c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-bestellliste.md
-362095d33ff2325f52cefd94829b7632  doc/ger-de/funktionen/6.0/spaltenorientierte-datenbanken.md
+af7daad5ddccb66c134881698974f9b4  doc/ger-de/funktionen/6.0/spaltenorientierte-datenbanken.md
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 d6385bbaa2c6dc5931603b6e4af56e47  doc/ger-de/funktionen/6.0/sqlite-dfs-cluster.md
 4585ca572191483a19c48897dd985efc  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
@@ -27177,8 +27177,8 @@ d86fe9a614a2a99e348fe1a1005b29e6  lib/ezdb/classes/explibsqlconnection.php
 7f2b2becf32239055c2c9dac62ed04cd  lib/ezdb/classes/explibsqldb.php
 fed6401ffa6fc1e202a5002bf3a073b3  lib/ezdb/classes/explibsqlprofile.php
 7da76532d1bbe4ab8b3e99e942c7a1bc  lib/ezdb/classes/explibsqlresult.php
-1c7adef79e2490a41fc25b7ea6184e3a  lib/ezdb/classes/expmonetdbdb.php
-dd2112ed03be4dc50d41bd04b650d17d  lib/ezdb/classes/expmonetdbdialect.php
+eb2b45bde670ca431269a9a1029316cf  lib/ezdb/classes/expmonetdbdb.php
+6971b2da2e0ceb61a2af132ea5573f6a  lib/ezdb/classes/expmonetdbdialect.php
 92cfc724494e6c34d864bba10624ae24  lib/ezdb/classes/expmonetdbmapi.php
 a162439dfcb945c46a4f863817de574a  lib/ezdb/classes/expmongodb.php
 82dacdc47ff2d6c14cd326158ac73770  lib/ezdb/classes/expmsaccessdb.php
@@ -30767,11 +30767,11 @@ a34331cc3c8b53d9fb98ae744227955b  tests/tests/lib/ezdb/columnar/expClickHouseDia
 d1be0474d26d0296eb5ec6979a203130  tests/tests/lib/ezdb/columnar/expClickHouseSchemaTest.php
 53c2eeb65641eb89977516a75ec7f10a  tests/tests/lib/ezdb/columnar/expColumnarTestKit.php
 024ee0e17ca0f2850e57943067d2de6d  tests/tests/lib/ezdb/columnar/expMonetDBDBTest.php
-436a53343e19169e52ee82f5ffa33baa  tests/tests/lib/ezdb/columnar/expMonetDBDialectTest.php
+f41ef6a1b2cda0a7d205054b454a2fa3  tests/tests/lib/ezdb/columnar/expMonetDBDialectTest.php
 834447717ececb6978b93cd792e53932  tests/tests/lib/ezdb/columnar/expMonetDBMapiTest.php
 1e54f7685e1e352fc994776d1dd7891d  tests/tests/lib/ezdb/columnar/expMonetDBSchemaTest.php
 e03cdf8bb3eed515e32cad6709bd266c  tests/tests/lib/ezdb/columnar/live/expClickHouseLiveTest.php
-fbedc50d7a3350d0ed45af42e063971f  tests/tests/lib/ezdb/columnar/live/expMonetDBLiveTest.php
+e87872ac16a99e34f15c5318249019ee  tests/tests/lib/ezdb/columnar/live/expMonetDBLiveTest.php
 7849a6b87943976f5080a2b907d3ed7e  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 ec0b2fa1ea54fbe89dfb0108bcb21722  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 c9f8655269a6d767e56cc39b7544f715  tests/tests/lib/ezdb/eZDBInterfaceTest.php

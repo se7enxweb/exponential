@@ -161,7 +161,8 @@ allein ohne `LIMIT`), `MERGE INTO` für Upserts, `GROUP_CONCAT( ... ORDER BY ...
 | `LIMIT 20, 10` | `LIMIT 10 OFFSET 20` | |
 | `SELECT ... FOR UPDATE` (`FOR SHARE`, `LOCK IN SHARE MODE`) | das `SELECT` ohne | keine Zeilensperren; stattdessen die Schreibsperre |
 | `LOCK TABLE ...`, `UNLOCK TABLES` | nichts | stattdessen die Schreibsperre |
-| `day` in einer Anweisung auf `ezgeneral_digest_user_settings`, `records` auf `expaudit_file` | `"day"`, `"records"` | die einzigen Spalten des Kernels, die in MonetDB reservierte Wörter sind |
+| `day` in einer Anweisung auf `ezgeneral_digest_user_settings`, `records` auf `expaudit_file`, `chain` und `snapshot` auf `expai_chain_run`, `details` auf `expai_probe_result`, `next` auf `sqliimport_scheduled` | `"day"`, `"records"`, `"chain"`, `"snapshot"`, `"details"`, `"next"` | die Spalten des Kernels und seiner Erweiterungen, die in MonetDB reservierte Wörter sind (`sys.keywords` nennt `details` und `snapshot` nicht); `NEXT VALUE FOR` bleibt, wie es ist |
+| `DROP TABLE` | die Tabelle, dann die Sequenzen ihrer Serienspalten, die sonst nichts liest | in MonetDB überlebt die Sequenz einer Serienspalte ihre Tabelle, und die Tabelle ließ sich nicht wieder anlegen |
 
 Zeichenketten-Literale und Namen in Anführungszeichen werden nie verändert. MonetDB liest C-Escapes in
 Zeichenketten-Literalen (`'a\nb'` ist ein Zeilenumbruch), deshalb verdoppelt `escapeString()` einen Backslash wie ein

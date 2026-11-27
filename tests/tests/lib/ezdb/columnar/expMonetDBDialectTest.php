@@ -33,6 +33,12 @@ class expMonetDBDialectTest extends PHPUnit\Framework\TestCase
             'records on its table' => array( 'UPDATE expaudit_file SET records = records + 1', 'UPDATE expaudit_file SET "records" = "records" + 1' ),
             'records in a literal stays' => array( "INSERT INTO expaudit_file (records, channel) VALUES (1, 'records')",
                                                    "INSERT INTO expaudit_file (\"records\", channel) VALUES (1, 'records')" ),
+            'details on its table' => array( 'INSERT INTO expai_probe_result (created, details) VALUES (1, \'details\')',
+                                             'INSERT INTO expai_probe_result (created, "details") VALUES (1, \'details\')' ),
+            'chain and snapshot on their table' => array( 'SELECT id, chain, snapshot FROM expai_chain_run WHERE chain = \'a\'',
+                                                          'SELECT id, "chain", "snapshot" FROM expai_chain_run WHERE "chain" = \'a\'' ),
+            'next on its table, NEXT VALUE FOR stays' => array( 'CREATE TABLE sqliimport_scheduled ( id integer DEFAULT NEXT VALUE FOR sqliimport_scheduled_id_seq NOT NULL, next integer DEFAULT 0 NOT NULL )',
+                                                                'CREATE TABLE sqliimport_scheduled ( id integer DEFAULT NEXT VALUE FOR sqliimport_scheduled_id_seq NOT NULL, "next" integer DEFAULT 0 NOT NULL )' ),
             'backslash before a quote in a literal' => array( "SELECT 'a\\'`b' FROM `t`", "SELECT 'a\\'`b' FROM \"t\"" ),
             'trailing space' => array( "SELECT 1 \n", 'SELECT 1' ),
         );

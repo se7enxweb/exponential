@@ -230,6 +230,8 @@ class expMonetDBDB extends eZDBInterface
             $this->startTimer();
         $word = expMonetDBDialect::firstWord( $sent );
         $isWrite = expMonetDBDialect::isWrite( $sent );
+        // the sequences of a table's serial columns go with the table (see dropUnusedSequences())
+        $serialSequences = $word === 'DROP' ? $this->serialSequencesOfDroppedTable( $sent ) : array();
         if ( $isWrite && !$this->InSQLTransaction && $this->writeLockEnabled() )
         {
             // a write outside a transaction: in a transaction of its own that holds the write lock
@@ -291,7 +293,55 @@ class expMonetDBDB extends eZDBInterface
                 $this->InSQLTransaction = !$result['autocommit'];
         }
         eZDBQueryCache::noteWrite( $this, $sent );
+        if ( $serialSequences )
+            $this->dropUnusedSequences( $serialSequences );
         return $results;
+    }
+
+    /**
+     * The sequences the column defaults (NEXT VALUE FOR <sequence>) of the table a DROP TABLE statement drops read;
+     * none for any other statement, or a table of another schema.
+     *
+     * @param string $sql
+     * @return string[]
+     */
+    protected function serialSequencesOfDroppedTable( $sql )
+    {
+        if ( !preg_match( '/^\s*DROP\s+TABLE\s+(?:IF\s+EXISTS\s+)?(?:"([A-Za-z0-9_]+)"|([A-Za-z0-9_]+))(?:\s+(?:CASCADE|RESTRICT))?\s*;?\s*$/i', $sql, $m ) )
+            return array();
+        // an unquoted name is folded to lower case, a quoted one is taken as it is
+        $table = isset( $m[2] ) && $m[2] !== '' ? strtolower( $m[2] ) : $m[1];
+        list( $rows, $error, $state ) = $this->send( "SELECT c.\"default\" AS d FROM sys.columns c JOIN sys.tables t ON t.id = c.table_id
+                                                      WHERE t.schema_id = (SELECT id FROM sys.schemas WHERE name = CURRENT_SCHEMA)
+                                                      AND t.name = '" . expMonetDBDialect::escape( $table ) . "'
+                                                      AND c.\"default\" LIKE 'next value for %'" );
+        $sequences = array();
+        if ( $error === null && isset( $rows[0]['rows'] ) )
+            foreach ( $rows[0]['rows'] as $row )
+                if ( preg_match( '/next value for (?:"[^"]+"\.)?"?([A-Za-z0-9_]+)"?/i', (string)$row[0], $s ) )
+                    $sequences[] = $s[1];
+        return array_values( array_unique( $sequences ) );
+    }
+
+    /**
+     * Drops the sequences of a dropped table that nothing reads any more. In PostgreSQL a serial column owns its
+     * sequence and DROP TABLE drops both; in MonetDB the sequence of a serial column (see expMonetDBSchema) is an object
+     * of its own that outlives the table, and the next CREATE SEQUENCE of the same table (an extension schema inserted
+     * again after DROP TABLE IF EXISTS) failed with "name already in use". A sequence another table still reads is left.
+     *
+     * @param string[] $sequences
+     */
+    protected function dropUnusedSequences( array $sequences )
+    {
+        foreach ( $sequences as $sequence )
+        {
+            list( $rows, $error, $state ) = $this->send( "SELECT s.id FROM sys.sequences s
+                                                          WHERE s.schema_id = (SELECT id FROM sys.schemas WHERE name = CURRENT_SCHEMA)
+                                                          AND s.name = '" . expMonetDBDialect::escape( $sequence ) . "'
+                                                          AND NOT EXISTS (SELECT 1 FROM sys.dependencies d WHERE d.id = s.id)" );
+            if ( $error === null && !empty( $rows[0]['rows'] ) )
+                $this->run( 'DROP SEQUENCE ' . self::quoteName( $sequence ) );
+        }
     }
 
     /**

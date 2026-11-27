@@ -158,7 +158,8 @@ without `LIMIT`), `MERGE INTO` for upserts, `GROUP_CONCAT( ... ORDER BY ...)`, `
 | `LIMIT 20, 10` | `LIMIT 10 OFFSET 20` | |
 | `SELECT ... FOR UPDATE` (`FOR SHARE`, `LOCK IN SHARE MODE`) | the `SELECT` without it | no row locks; the write lock instead |
 | `LOCK TABLE ...`, `UNLOCK TABLES` | nothing | the write lock instead |
-| `day` in a statement on `ezgeneral_digest_user_settings`, `records` on `expaudit_file` | `"day"`, `"records"` | the only kernel columns that are reserved words in MonetDB |
+| `day` in a statement on `ezgeneral_digest_user_settings`, `records` on `expaudit_file`, `chain` and `snapshot` on `expai_chain_run`, `details` on `expai_probe_result`, `next` on `sqliimport_scheduled` | `"day"`, `"records"`, `"chain"`, `"snapshot"`, `"details"`, `"next"` | the columns of the kernel and its extensions that are reserved words in MonetDB (`sys.keywords` does not list `details` and `snapshot`); `NEXT VALUE FOR` stays as it is |
+| `DROP TABLE` | the table, then the sequences of its serial columns that nothing else reads | in MonetDB a serial column's sequence outlives its table, and the table could not be made again |
 
 String literals and quoted names are never changed. MonetDB reads C escapes in string literals (`'a\nb'` is a line
 break), so `escapeString()` doubles a backslash as well as a quote. Values come back as text, as from MySQL and

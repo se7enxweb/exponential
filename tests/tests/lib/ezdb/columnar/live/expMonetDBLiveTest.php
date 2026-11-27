@@ -18,6 +18,9 @@
  *  ML-12 - The write lock: a second writer waits (LockWait) and fails with 55P03, reads do not wait, a writer in another
  *          process writes after the commit; retryTransaction()
  *  ML-13 - Schema upgrades through the handler: a column added, a column's type changed (copied into a new column)
+ *  ML-14 - DROP TABLE drops the sequences of the table's serial columns (so the table can be made again), not one
+ *          another table still reads; the reserved extension columns chain, snapshot, details and next through the
+ *          schema handler and in statements
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -409,6 +412,62 @@ unlink( __FILE__ );
         $this->assertSame( 50, $back['code']['length'] );
         $this->assertSame( 'x', $back['code']['default'] );
         $this->assertSame( '1', $back['code']['not_null'] );
+    }
+
+    /** ML-14 */
+    public function testDropTableDropsSerialSequences()
+    {
+        $db = $this->db();
+        $handler = new expMonetDBSchema( array( 'instance' => $db ) );
+        $schema = array( 'ezx' => array( 'name' => 'ezx',
+                                         'fields' => array( 'id' => array( 'type' => 'auto_increment', 'default' => false ),
+                                                            'name' => array( 'type' => 'varchar', 'length' => 20, 'not_null' => '1', 'default' => '' ) ),
+                                         'indexes' => array( 'PRIMARY' => array( 'type' => 'primary', 'fields' => array( 'id' ) ) ) ) );
+        $statements = function () use ( $handler, $schema )
+        {
+            $arrays = $handler->generateTableArrays( 'ezx', $schema['ezx'], array(), false );
+            return array_merge( $arrays['sequences'], $arrays['tables'], $arrays['indexes'] );
+        };
+        foreach ( $statements() as $sql )
+            $this->assertTrue( $db->query( $sql ), $sql . ': ' . $db->errorMessage() );
+        $db->query( 'CREATE SEQUENCE shared_seq AS INTEGER START WITH 1' );
+        $db->query( 'CREATE TABLE eza (id INTEGER DEFAULT NEXT VALUE FOR shared_seq)' );
+        $db->query( 'CREATE TABLE ezb (id INTEGER DEFAULT NEXT VALUE FOR shared_seq)' );
+        $this->assertSame( array( 'ezx_id_seq', 'shared_seq' ), self::sorted( $db->relationList( eZDBInterface::RELATION_SEQUENCE ) ) );
+
+        $this->assertTrue( $db->query( 'DROP TABLE IF EXISTS ezx' ), (string)$db->errorMessage() );
+        $this->assertTrue( $db->query( 'DROP TABLE eza CASCADE' ), (string)$db->errorMessage() );
+        $this->assertSame( array( 'shared_seq' ), $db->relationList( eZDBInterface::RELATION_SEQUENCE ), 'ezb still reads shared_seq' );
+        $this->assertTrue( $db->query( 'DROP TABLE IF EXISTS ezx' ), 'a table that is gone: nothing to do' );
+
+        // made again, as an extension schema is inserted after its tables were dropped; in a transaction as well
+        foreach ( $statements() as $sql )
+            $this->assertTrue( $db->query( $sql ), $sql . ': ' . $db->errorMessage() );
+        $db->begin();
+        $this->assertTrue( $db->query( 'DROP TABLE ezx' ), (string)$db->errorMessage() );
+        foreach ( $statements() as $sql )
+            $this->assertTrue( $db->query( $sql ), $sql . ': ' . $db->errorMessage() );
+        $this->assertTrue( $db->commit() );
+        $db->query( "INSERT INTO ezx (name) VALUES ('a')" );
+        $this->assertSame( 1, $db->lastSerialID( 'ezx', 'id' ) );
+
+        // columns that are reserved words in MonetDB
+        $reserved = array( 'expai_chain_run' => array( 'chain', 'snapshot' ), 'expai_probe_result' => array( 'details' ),
+                           'sqliimport_scheduled' => array( 'next' ) );
+        foreach ( $reserved as $table => $columns )
+        {
+            $fields = array( 'id' => array( 'type' => 'auto_increment', 'default' => false ) );
+            foreach ( $columns as $column )
+                $fields[$column] = array( 'type' => 'varchar', 'length' => 20, 'not_null' => '1', 'default' => '' );
+            $arrays = $handler->generateTableArrays( $table, array( 'name' => $table, 'fields' => $fields,
+                                                                    'indexes' => array( 'PRIMARY' => array( 'type' => 'primary', 'fields' => array( 'id' ) ) ) ), array(), false );
+            foreach ( array_merge( $arrays['sequences'], $arrays['tables'] ) as $sql )
+                $this->assertTrue( $db->query( $sql ), $sql . ': ' . $db->errorMessage() );
+            $sql = "INSERT INTO $table (" . implode( ', ', $columns ) . ") VALUES ('" . implode( "', '", $columns ) . "')";
+            $this->assertTrue( $db->query( $sql ), $sql . ': ' . $db->errorMessage() );
+            $rows = $db->arrayQuery( 'SELECT ' . implode( ', ', $columns ) . " FROM $table WHERE {$columns[0]} = '{$columns[0]}'" );
+            $this->assertSame( array_combine( $columns, $columns ), $rows[0] );
+        }
     }
 
     /** ML-10 */
