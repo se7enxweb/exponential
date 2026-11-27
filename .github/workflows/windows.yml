@@ -150,6 +150,12 @@ jobs:
         shell: pwsh
         run: |
           $log = Join-Path $env:RUNNER_TEMP 'php-server'
+          # What exp:velocity hands its php engine (expVelocityPHPServer): the root, the paths served as files and
+          # the paths never served as files. Without them the router sends every request to index.php.
+          $env:EXP_VELOCITY_ROOT = (Get-Location).Path
+          $env:EXP_VELOCITY_STATIC_PATHS = '<?php require "kernel/classes/expvelocity.php"; echo expVelocity::STATIC_PATHS;' | php
+          $env:EXP_VELOCITY_NEVER_STATIC = '<?php require "kernel/classes/expvelocity.php"; echo expVelocity::NEVER_STATIC;' | php
+          if (-not $env:EXP_VELOCITY_STATIC_PATHS) { Write-Output '::error::no static paths from expVelocity'; exit 1 }
           $server = Start-Process -FilePath php -ArgumentList '-S', '127.0.0.1:18431', '-t', '.', 'bin/php/velocity-router.php' `
             -PassThru -NoNewWindow -RedirectStandardOutput "$log.out" -RedirectStandardError "$log.err"
           $up = $false
