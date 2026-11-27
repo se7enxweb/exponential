@@ -125,6 +125,8 @@ class expVelocityMarkersTest extends ezpTestCase
 
     public function testRestartInProgressReadsTheMarkerAndThePid()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'process markers, setsid, systemd-run and /proc are Unix features' );
         $markers = new expVelocityMarkers( $this->dir );
         $this->assertFalse( $markers->restartInProgress() );
 
@@ -138,6 +140,8 @@ class expVelocityMarkersTest extends ezpTestCase
 
     public function testPidAlive()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'process markers, setsid, systemd-run and /proc are Unix features' );
         $this->assertTrue( expVelocityMarkers::pidAlive( getmypid() ) );
         $this->assertFalse( expVelocityMarkers::pidAlive( 0 ) );
         $this->assertFalse( expVelocityMarkers::pidAlive( -1 ) );
@@ -191,6 +195,8 @@ class expVelocityMarkersTest extends ezpTestCase
 
     public function testDetachedCommandInATransientScope()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'process markers, setsid, systemd-run and /proc are Unix features' );
         $cmd = expVelocityRestartUnit::detachedCommand( '/usr/bin/php', '/srv/x/bin/php/velocity.php',
             array( 'restart', '--json', "--engine=it's" ), 'a1b2c3d4e5f60718', '/srv/x/var/run/restart-a1.log',
             '/usr/bin/setsid', '/usr/bin/systemd-run', 'vc-restart-20261017-074405-a1b2c3d4' );
@@ -202,6 +208,8 @@ class expVelocityMarkersTest extends ezpTestCase
 
     public function testDetachedCommandWithoutSystemd()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'process markers, setsid, systemd-run and /proc are Unix features' );
         foreach ( array( false, '' ) as $none )
         {
             $cmd = expVelocityRestartUnit::detachedCommand( '/usr/bin/php', '/v.php', array( 'restart' ), 'a1b2c3d4',
@@ -266,6 +274,8 @@ class expVelocityMarkersTest extends ezpTestCase
 
     public function testChildMarksAndUnmarks()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'process markers, setsid, systemd-run and /proc are Unix features' );
         putenv( expVelocityRestartUnit::TOKEN_ENV . '=d1b2c3d4e5f60718' );
         $markers = new expVelocityMarkers( $this->dir );
         expVelocityRestartUnit::beginChild( array( $this->dir, $this->dir ), 'deploy' );

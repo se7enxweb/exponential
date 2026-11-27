@@ -98,6 +98,8 @@ class expMigrationJobTest extends PHPUnit\Framework\TestCase
     /** JB-03 */
     public function testCommandLine()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the job runs through nohup and sh, which Windows does not have' );
         $line = expMigrationJob::commandLine( '/usr/bin/php', array( 'bin/php/expmigrationmigrate.php', "--reason=it's; rm -rf /" ), '/srv/site', '/srv/site/var/jobs/' . self::ID );
         $this->assertStringStartsWith( "cd '/srv/site' && nohup sh -c ", $line );
         $this->assertStringEndsWith( " > '/srv/site/var/jobs/" . self::ID . ".out' 2> '/srv/site/var/jobs/" . self::ID . ".err' < /dev/null &", $line );

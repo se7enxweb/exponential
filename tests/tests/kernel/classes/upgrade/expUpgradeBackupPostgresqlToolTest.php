@@ -29,6 +29,8 @@ class expUpgradeBackupPostgresqlToolTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the programs found on the PATH are shell scripts here, and the command lines are quoted for a POSIX shell' );
         $this->dir = self::$root . '/var/tmp/expUpgradeBackupPostgresqlToolTest-' . getmypid();
         foreach ( array( 13, 17, 18, 19 ) as $major )
             $this->fakeTool( $major, 'pg_dump' );

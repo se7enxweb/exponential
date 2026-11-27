@@ -17,6 +17,12 @@
 #[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expCrontabSetupTest extends PHPUnit\Framework\TestCase
 {
+    protected function setUp(): void
+    {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'crontab is a Unix feature, and its lines are quoted for a POSIX shell' );
+    }
+
     const ROOT = '/var/www/site';
 
     private static $tmp;
