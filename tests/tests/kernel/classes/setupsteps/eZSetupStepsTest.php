@@ -398,8 +398,13 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         {
             eZStepDatabaseChoice::$FFIUsable = null;
         }
+        // libSQL and Turso are installed with the kickstarter and exp:install: the wizard's database page has no
+        // fields for their server URL, TLS and token yet
+        $notInTheWizard = array( 'libsql', 'turso' );
         foreach ( eZSetupDatabaseMap() as $type => $entry )
         {
+            if ( in_array( $type, $notInTheWizard, true ) )
+                continue;
             $via = isset( $entry['php_extension'] ) ? $entry['php_extension'] : $type;
             $this->assertArrayHasKey( $via, $reachable, "$type is offered by the wizard when PHP has its extension" );
         }

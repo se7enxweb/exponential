@@ -30170,7 +30170,7 @@ ff16951947f561095e82a782732322f0  tests/tests/kernel/classes/setup/SiteInstaller
 c9d7f04ca55c0d534e3521802d1dafdc  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
 6d1076e66921fe31f959b4ce5276927e  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 d51526ae21e250767031d78014d6101a  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
-fcd83f78053ab43b8f81f62063d1c0f3  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
+11d3639ff490245497506b29607275ed  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
 34e4df0b59c0edca6965f591f0c23e90  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php
 ec981e9fe7bb2ce62d42a30253a179d1  tests/tests/kernel/classes/shop/eZCurrencyConverterRoundingTest.php
 267a5d25f057b7bf16b43121114ebac9  tests/tests/kernel/classes/shop/eZVATManagerUserCountryTest.php
