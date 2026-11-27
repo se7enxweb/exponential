@@ -846,7 +846,7 @@ class expDataConnections
             return null;
         foreach ( $allowedDirs as $allowedReal )
         {
-            if ( $dir === $allowedReal || strpos( $dir . '/', $allowedReal . '/' ) === 0 )
+            if ( $dir === $allowedReal || eZDir::isInside( $dir, $allowedReal ) )
                 return $dir . '/' . basename( $path );
         }
         return null;

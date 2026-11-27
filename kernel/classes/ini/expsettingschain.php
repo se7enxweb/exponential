@@ -113,8 +113,8 @@ class expSettingsChain
         }
         $real = eZDir::isAbsolutePath( $path ) ? realpath( $path ) : false;
         $realRoot = realpath( $root );
-        if ( $real !== false && $realRoot !== false && strpos( $real, $realRoot . '/' ) === 0 )
-            return substr( $real, strlen( $realRoot ) + 1 );
+        if ( $real !== false && $realRoot !== false && $real !== $realRoot && eZDir::isInside( $real, $realRoot ) )
+            return str_replace( DIRECTORY_SEPARATOR, '/', substr( $real, strlen( rtrim( $realRoot, '/\\' ) ) + 1 ) );
         while ( strpos( $path, './' ) === 0 )
             $path = substr( $path, 2 );
         return $path;

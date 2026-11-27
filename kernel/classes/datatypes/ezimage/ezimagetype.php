@@ -609,7 +609,7 @@ class eZImageType extends eZDataType
         foreach ( array( eZSys::rootDir(), eZSys::varDirectory(), sys_get_temp_dir() ) as $dir )
         {
             $dir = $dir ? realpath( $dir ) : false;
-            if ( $dir && strpos( $real, rtrim( $dir, '/' ) . '/' ) === 0 )
+            if ( $dir && $real !== $dir && eZDir::isInside( $real, $dir ) )
                 return true;
         }
         return false;

@@ -273,7 +273,7 @@ class eZCacheTrash
             return true;
         $realPath = realpath( $path );
         $realDir = realpath( $dir );
-        return $realPath !== false && $realDir !== false && strpos( $realPath, $realDir . '/' ) === 0;
+        return $realPath !== false && $realDir !== false && $realPath !== $realDir && eZDir::isInside( $realPath, $realDir );
     }
 
     /**

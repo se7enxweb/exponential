@@ -262,7 +262,7 @@ class Templateview extends \Exponential\Runnable\ModuleView
                     {
                         $real = realpath( $fileName );
                         $designRoot = realpath( 'design' );
-                        if ( $real !== false && $designRoot !== false && strpos( $real, $designRoot . '/' ) === 0 )
+                        if ( $real !== false && $designRoot !== false && $real !== $designRoot && \eZDir::isInside( $real, $designRoot ) )
                         {
                             if ( !unlink( $real ) )
                                 $notRemoved[] = array( 'filename' => $fileName );

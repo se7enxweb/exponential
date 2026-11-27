@@ -169,7 +169,7 @@ class expMigrationFiles
         while ( !is_dir( $dir ) && strlen( $dir ) > strlen( $installation ) )
             $dir = dirname( $dir );
         $dirReal = realpath( $dir );
-        if ( $dirReal === false || ( $dirReal !== $rootReal && strpos( $dirReal, $rootReal . '/' ) !== 0 ) )
+        if ( $dirReal === false || !eZDir::isInside( $dirReal, $rootReal ) )
             throw new RuntimeException( "path: $path leads out of " . self::rootOf( $path, $roots ) . ' (a link)' );
         if ( is_link( $file ) )
             throw new RuntimeException( "path: $path is a link; a migration writes files, not links" );

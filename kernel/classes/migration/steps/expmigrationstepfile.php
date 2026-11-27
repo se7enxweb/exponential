@@ -233,7 +233,7 @@ class expMigrationStepFile extends expMigrationStepContentBase
         $real = $folder !== false ? realpath( $folder . '/' . trim( $path ) ) : false;
         if ( $real === false || !is_file( $real ) || !is_readable( $real ) )
             throw new RuntimeException( "file: $path is not a readable file in " . ( $folder !== false ? $folder : dirname( $migration ) ) );
-        if ( strpos( $real, rtrim( $folder, '/' ) . '/' ) !== 0 )
+        if ( $real === $folder || !eZDir::isInside( $real, $folder ) )
             throw new RuntimeException( "file: $path leads out of the folder of the migration" );
         return $real;
     }

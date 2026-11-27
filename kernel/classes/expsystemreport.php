@@ -206,7 +206,7 @@ class expSystemReport
             foreach ( (array)@scandir( $cacheReal ) as $entry )
                 if ( $entry !== '.' && $entry !== '..' && is_dir( $cacheReal . '/' . $entry ) )
                     $entries[] = $entry;
-        $inside = $varReal !== '' && $cacheReal !== '' && strpos( $cacheReal . '/', rtrim( $varReal, '/' ) . '/' ) === 0;
+        $inside = $varReal !== '' && $cacheReal !== '' && eZDir::isInside( $cacheReal, $varReal );
 
         if ( $varReal !== '' )
         {

@@ -536,7 +536,7 @@ class expTemplateDesignConverter
                 $path = is_file( $file ) ? $file : $from . '/' . ltrim( $file, '/' );
                 $real = realpath( $path );
                 $realFrom = realpath( $from );
-                if ( $real === false || !is_file( $real ) || strpos( $real, $realFrom . '/' ) !== 0 || substr( $real, -strlen( $sourceSuffix ) ) !== $sourceSuffix )
+                if ( $real === false || !is_file( $real ) || $realFrom === false || $real === $realFrom || !eZDir::isInside( $real, $realFrom ) || substr( $real, -strlen( $sourceSuffix ) ) !== $sourceSuffix )
                 {
                     $err( "FAIL --file must be a $sourceSuffix file below --from: $file" );
                     return self::EXIT_USAGE;

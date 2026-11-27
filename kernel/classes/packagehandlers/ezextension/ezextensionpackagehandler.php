@@ -1075,7 +1075,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
         if ( $entry['type'] === 'link' )
         {
             $target = realpath( $full );
-            if ( $target === false || $realDir === false || ( $target !== $realDir && strpos( $target, $realDir . '/' ) !== 0 ) )
+            if ( $target === false || $realDir === false || !eZDir::isInside( $target, $realDir ) )
                 $found['link outside the extension'] = true;
             return array_keys( $found );
         }
