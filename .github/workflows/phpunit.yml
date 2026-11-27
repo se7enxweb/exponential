@@ -1366,6 +1366,90 @@ jobs:
           rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
           docker rm -f cassandra scylladb || true
 
+  # libSQL (sqld, the libsql-server container): the driver's tests without a server and against one, then a whole site
+  # installed on the server over its HTTP API, its front page and the admin login. sqld 0.24.33, pinned by digest.
+  libsql:
+    name: libSQL sqld 0.24 (PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { php: '8.5', install: true }
+          - { php: '8.3', install: false }
+
+    services:
+      libsql:
+        image: ghcr.io/tursodatabase/libsql-server@sha256:6dd3eb276d9d3604e4a48ac4a999a2e267814732d57d7e94c04ba71482333a67
+        ports:
+          - 8080:8080
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, xsl, curl, zlib, pdo, pdo_sqlite, sqlite3, pcntl, posix, zip
+          ini-values: memory_limit=1G, allow_url_fopen=On
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          # the PHPUnit this PHP runs (Composer would pick PHPUnit 13, which needs 8.4, past --ignore-platform-req=php)
+          case "${{ matrix.php }}" in
+            8.1) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^10.5" ;;
+            8.2|8.3) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^11.5" ;;
+          esac
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            sleep $((attempt * 15))
+          done
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Wait for sqld
+        run: |
+          for i in $(seq 1 30); do curl -fs http://127.0.0.1:8080/health >/dev/null && break; sleep 2; done
+          curl -fs http://127.0.0.1:8080/version; echo
+
+      - name: Run the libSQL tests
+        env:
+          EXP_TEST_LIBSQL_URL: http://127.0.0.1:8080
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite libsql
+          php vendor/bin/phpunit --colors=always --display-skipped --testsuite libsql-live
+
+      # The whole site: the kernel schema and data, the package, the siteaccesses, then the front page and the admin
+      # login through PHP's built-in server, the database on sqld
+      - name: Install a site on libSQL
+        if: matrix.install
+        run: |
+          # the help manuals are built by a background worker for a long time: the CI site builds none
+          mkdir -p settings/override
+          printf '<?php /* #?ini charset="utf-8"?\n[ManualSettings]\nBuildOnInstall=disabled\n*/ ?>\n' > settings/override/exphelp.ini.append.php
+          php bin/php/install.php --db=libsql --db-host=127.0.0.1 --db-port=8080 --apply --password=Ci-LibSQL-2026 --no-crontab
+          php -S 127.0.0.1:8090 -t . index.php >var/log/php-server.log 2>&1 &
+          sleep 2
+          code=$(curl -s -o front.html -w '%{http_code}' http://127.0.0.1:8090/)
+          echo "front page: $code"; head -c 600 front.html
+          test "$code" = 200
+          code=$(curl -s -o admin.html -w '%{http_code}' http://127.0.0.1:8090/admin/user/login)
+          echo "admin login: $code"
+          test "$code" = 200
+
+      - name: Logs
+        if: failure() && matrix.install
+        run: tail -n 200 var/log/error.log var/log/setup.log var/log/php-server.log 2>/dev/null || true
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
   # MS Access on Windows: Microsoft's Access Database Engine 2016 (x64) ODBC driver, an empty .accdb made with ADOX,
   # the driver's live tests, the import through ODBC, and the probe of a minimal site on Access (its report is an
   # artifact). The engine is a download from Microsoft, not part of the runner image, so the job may not fail the run.
