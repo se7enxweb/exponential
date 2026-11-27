@@ -24798,7 +24798,7 @@ b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_to
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
 0e1142d1d41cfa42edc3461be7e49ca7  kernel/classes/classicmenu/expclassicmenusettings.php
 b8ebd3a548e525d6a91dd2a594e32b2d  kernel/classes/classicmenu/expclassicmenusiteaccessinspector.php
-bad6d535916704d50d1ae20bcb42aeaa  kernel/classes/cluster/expclustersetup.php
+e48c8844a187d547c99acd39328fa2d6  kernel/classes/cluster/expclustersetup.php
 6b7db9abd89a682ec3b07f4d40e464a2  kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php
 92910b9b7865f9f0053271a1c67a2e0a  kernel/classes/clusterfilehandlers/ezfsfilehandler.php
 4c970b7c0217d8e0fcdb83fa82050d7f  kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php
@@ -29430,7 +29430,7 @@ fc583fcc499f9c4a9fe1915b043a682b  tests/tests/kernel/classes/bookmarks/expBookma
 749030e6e25d76c7858858e14c862b97  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
 89a4d84cf90433287afc8977a6bd3ecb  tests/tests/kernel/classes/cachesmore/fixtures/preload-demo-site-front-page-uri-matching.html
 180aaa4e8f6d2515d11d504bac3e02eb  tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php
-7b08a3e8b4b1fa99c31120e5c1971e80  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
+b0e21b253114211d5c284868696ff7c4  tests/tests/kernel/classes/cluster/expClusterSetupTest.php
 4109b7141cae6779c9d2a1edcac0363d  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/dfs_test.php
 aebfe90e7e620b06509b2a58312b4ea2  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/eZDFSFileHandlerDFSBackendTest.php
 43360e5087944ed55a8fab7124cbb3f5  tests/tests/kernel/classes/clusterfilehandlers/dfsbackends/expDFSBackendParityChecks.php
@@ -30817,9 +30817,12 @@ f4abb0436986621e32c7f7864fbd6e27  tests/tests/lib/ezdb/odbc/live/expODBCLiveTest
 1b6c9a48dbfddcb1b41b3d383f8e0476  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireDBTest.php
 2ff61561aac3325208ce124be9ef5575  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireProfileTest.php
 a12fcf68656f1554048619978095bc0f  tests/tests/lib/ezdb/pgwire/expPostgreSQLWireSchemaTest.php
+f5124b50c189fd9b9cf3e5750e2ae379  tests/tests/lib/ezdb/pgwire/live/expCockroachDBDFSClusterLiveTest.php
 619cf2486e9a9b3b0fcb095ebc9bf496  tests/tests/lib/ezdb/pgwire/live/expCockroachDBLiveTest.php
+f6497a003e8b1f2c989ccf57de2a165b  tests/tests/lib/ezdb/pgwire/live/expDFSPostgreSQLWireLiveSetup.php
 9aff98eefed3447bd0d520664d129989  tests/tests/lib/ezdb/pgwire/live/expPostgreSQLWireLiveTestCase.php
 eeb545192c7f69066c2cdeac837cb446  tests/tests/lib/ezdb/pgwire/live/expSpannerPGLiveTest.php
+2212f9b4a6e60a5b36d1b22fb6d8b9a4  tests/tests/lib/ezdb/pgwire/live/expYugabyteDBDFSClusterLiveTest.php
 fd58ef74a16748ba1db297409bfbba14  tests/tests/lib/ezdb/pgwire/live/expYugabyteDBLiveTest.php
 f40f3832378c387d480f1c50678e6c9b  tests/tests/lib/ezdb/suite.php
 ca35100b2f790091e5a176ef768a01b1  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php

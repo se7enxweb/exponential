@@ -52,12 +52,32 @@ class expClusterSetup
                           'singlestore' => 'mysqli', 'memsql' => 'mysqli', 'expsinglestoredb' => 'mysqli', 'xpand' => 'mysqli', 'expxpanddb' => 'mysqli',
                           'aurora' => 'mysqli', 'auroramysql' => 'mysqli', 'expauroramysqldb' => 'mysqli',
                           'ezpostgresql' => 'postgresql', 'postgresql' => 'postgresql', 'pgsql' => 'postgresql',
+                          // databases that speak the PostgreSQL protocol (their drivers' databaseName() is postgresql): the
+                          // PostgreSQL backend (doc/eng-us/features/6.0/postgresql-wire-databases.md); not Spanner, which
+                          // holds no site
+                          'cockroachdb' => 'postgresql', 'cockroach' => 'postgresql', 'crdb' => 'postgresql', 'expcockroachdb' => 'postgresql',
+                          'yugabytedb' => 'postgresql', 'yugabyte' => 'postgresql', 'ysql' => 'postgresql', 'expyugabytedb' => 'postgresql',
+                          'neon' => 'postgresql', 'neondb' => 'postgresql', 'expneondb' => 'postgresql',
+                          'supabase' => 'postgresql', 'expsupabasedb' => 'postgresql',
+                          'aurorapostgresql' => 'postgresql', 'aurora-postgresql' => 'postgresql', 'expaurorapostgresqldb' => 'postgresql',
                           'ezsqlite3' => 'sqlite', 'sqlite3' => 'sqlite',
                           'mongodb' => 'mongodb', 'expmongodb' => 'mongodb', 'mongo' => 'mongodb',
                           'ezoracle' => 'oracle', 'oracle' => 'oracle', 'ezoracledb' => 'oracle',
                           'sqlserver' => 'sqlserver', 'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver', 'expsqlserverdb' => 'sqlserver' );
         $implementation = strtolower( (string)$implementation );
         return isset( $engines[$implementation] ) ? $engines[$implementation] : '';
+    }
+
+    /**
+     * The port of a database without a Port setting (pure): its driver's, CockroachDB 26257 and YugabyteDB 5433 where
+     * the PostgreSQL backend would take 5432, else the backend's.
+     */
+    public static function defaultPort( $implementation, $backendPort )
+    {
+        $ports = array( 'cockroachdb' => 26257, 'cockroach' => 26257, 'crdb' => 26257, 'expcockroachdb' => 26257,
+                        'yugabytedb' => 5433, 'yugabyte' => 5433, 'ysql' => 5433, 'expyugabytedb' => 5433, 'tidb' => 4000, 'exptidbdb' => 4000 );
+        $implementation = strtolower( (string)$implementation );
+        return isset( $ports[$implementation] ) ? $ports[$implementation] : (int)$backendPort;
     }
 
     /** The name of an engine for people (pure). */
@@ -152,8 +172,24 @@ class expClusterSetup
         return array( 'engine' => $engine, 'backend_class' => (string)$facts['backends'][$engine], 'gateway' => $b['gateway'], 'sql' => $b['sql'],
                       'db' => $db, 'vardirs' => $vardirs, 'default' => (string)$default,
                       'host' => $b['port'] === 0 ? '' : ( $db['Server'] !== '' ? $db['Server'] : 'localhost' ),
-                      'port' => $b['port'] === 0 ? 0 : ( $db['Port'] !== '' ? (int)$db['Port'] : $b['port'] ),
+                      'port' => $b['port'] === 0 ? 0 : ( $db['Port'] !== '' ? (int)$db['Port'] : self::defaultPort( $impl, $b['port'] ) ),
                       'socket' => $b['port'] !== 0 && $db['Socket'] !== '' && $db['Socket'] !== 'disabled' ? $db['Socket'] : '' );
+    }
+
+    /**
+     * The cluster schema as a database of the PostgreSQL protocol takes it (pure). CockroachDB allows an operator class
+     * only on inverted and vector indexes; its indexes on text compare bytes, so the plain index serves the prefix
+     * searches (name LIKE 'var/site/cache/%') that text_pattern_ops is there for on PostgreSQL.
+     *
+     * @param string $schema the statements of kernel/sql/<sql>/cluster_dfs_schema.sql
+     * @param string $implementation [DatabaseSettings] DatabaseImplementation
+     * @return string
+     */
+    public static function schemaFor( $schema, $implementation )
+    {
+        if ( in_array( strtolower( (string)$implementation ), array( 'cockroachdb', 'cockroach', 'crdb', 'expcockroachdb' ), true ) )
+            $schema = preg_replace( '/\s+text_pattern_ops\b/i', '', (string)$schema );
+        return (string)$schema;
     }
 
     /** The schema file name of a backend (pure), in kernel/sql/<sql>/. */
@@ -434,7 +470,8 @@ class expClusterSetup
                                          function () use ( $root, $plan ) { return self::mongoCollections( $root, $plan, true, false ); } );
         }
         $db = eZDB::instance();
-        $schema = (string)@file_get_contents( $root . '/kernel/sql/' . $plan['sql'] . '/cluster_dfs_schema.sql' );
+        $schema = self::schemaFor( (string)@file_get_contents( $root . '/kernel/sql/' . $plan['sql'] . '/cluster_dfs_schema.sql' ),
+                                   (string)$plan['db']['DatabaseImplementation'] );
         foreach ( self::schemaStatements( $schema ) as $st )
         {
             if ( $st['kind'] === 'TABLE' && self::hasTable( $db, $st['name'] ) )

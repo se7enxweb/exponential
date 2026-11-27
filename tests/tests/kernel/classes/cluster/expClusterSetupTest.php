@@ -106,6 +106,44 @@ class expClusterSetupTest extends PHPUnit\Framework\TestCase
         $this->assertFileExists( dirname( __DIR__, 5 ) . '/kernel/sql/sqlserver/cluster_dfs_schema.sql' );
     }
 
+    /**
+     * The databases of the PostgreSQL protocol (their drivers' databaseName() is postgresql): the PostgreSQL backend and
+     * its gateway, with the database's own port when the site names none; Spanner holds no site and has no cluster
+     */
+    public function testThePlanOnThePostgreSQLWireDatabases()
+    {
+        $backends = array( 'postgresql' => 'eZDFSFileHandlerPostgresqlBackend' );
+        $cases = array( 'cockroachdb' => 26257, 'expCockroachDB' => 26257, 'crdb' => 26257, 'yugabytedb' => 5433, 'expYugabyteDB' => 5433,
+                        'neon' => 5432, 'expNeonDB' => 5432, 'supabase' => 5432, 'expSupabaseDB' => 5432, 'aurorapostgresql' => 5432,
+                        'expAuroraPostgreSQLDB' => 5432 );
+        foreach ( $cases as $implementation => $port )
+        {
+            $this->assertSame( 'postgresql', expClusterSetup::engineOf( $implementation ), $implementation );
+            $p = expClusterSetup::plan( self::facts( $implementation, $backends ) );
+            $this->assertIsArray( $p, $implementation );
+            $this->assertSame( array( 'postgresql', 'dfspostgresql', 'postgresql', $port ), array( $p['engine'], $p['gateway'], $p['sql'], $p['port'] ), $implementation );
+            $this->assertStringContainsString( "DBBackend=eZDFSFileHandlerPostgresqlBackend\n", expClusterSetup::iniBlock( $p, '/srv/dfs' ) );
+        }
+        // a Port of the site's settings wins
+        $f = self::facts( 'cockroachdb', $backends );
+        foreach ( $f['siteaccesses'] as $sa => $s )
+            $f['siteaccesses'][$sa]['db']['Port'] = '26300';
+        $this->assertSame( 26300, expClusterSetup::plan( $f )['port'] );
+        $this->assertSame( '', expClusterSetup::engineOf( 'spanner' ) );
+        // CockroachDB takes no operator class on a plain index: the schema leaves text_pattern_ops out there only
+        $schema = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/sql/postgresql/cluster_dfs_schema.sql' );
+        $this->assertStringNotContainsString( 'text_pattern_ops', expClusterSetup::schemaFor( $schema, 'cockroachdb' ) );
+        $this->assertStringContainsString( 'CREATE INDEX ezdfsfile_name ON ezdfsfile (name);', expClusterSetup::schemaFor( $schema, 'expCockroachDB' ) );
+        $this->assertSame( $schema, expClusterSetup::schemaFor( $schema, 'yugabytedb' ) );
+        $this->assertSame( $schema, expClusterSetup::schemaFor( $schema, 'ezpostgresql' ) );
+        $this->assertSame( 4000, expClusterSetup::plan( self::facts( 'tidb', array( 'mysqli' => 'eZDFSFileHandlerMySQLiBackend' ) ) )['port'] );
+        // every database of the wire protocol that a site can be installed on has its cluster
+        if ( class_exists( 'expPostgreSQLWireProfile' ) )
+            foreach ( expPostgreSQLWireProfile::all() as $name => $profile )
+                if ( ( $profile['level'] ?? 'site' ) !== 'datatable' )
+                    $this->assertSame( 'postgresql', expClusterSetup::engineOf( $name ), $name );
+    }
+
     /** Oracle: the connect string is the database, no host or port; the tables of kernel/sql/oracle */
     public function testThePlanOnOracle()
     {
