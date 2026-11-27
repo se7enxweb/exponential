@@ -3409,6 +3409,27 @@
     "bin/php/expcouch*import.php": [
       "tests/tests/kernel/classes/couch/expCouchReadersTest.php"
     ],
+    "lib/ezdb/classes/expmonetdb*.php": [
+      "tests/tests/lib/ezdb/columnar/expMonetDBMapiTest.php",
+      "tests/tests/lib/ezdb/columnar/expMonetDBDialectTest.php",
+      "tests/tests/lib/ezdb/columnar/expMonetDBDBTest.php",
+      "tests/tests/lib/ezdb/columnar/expMonetDBSchemaTest.php"
+    ],
+    "lib/ezdbschema/classes/expmonetdbschema.php": [
+      "tests/tests/lib/ezdb/columnar/expMonetDBSchemaTest.php"
+    ],
+    "kernel/sql/monetdb/*": [
+      "tests/tests/lib/ezdb/columnar/expMonetDBSchemaTest.php"
+    ],
+    "lib/ezdb/classes/expclickhouse*.php": [
+      "tests/tests/lib/ezdb/columnar/expClickHouseHttpTest.php",
+      "tests/tests/lib/ezdb/columnar/expClickHouseDialectTest.php",
+      "tests/tests/lib/ezdb/columnar/expClickHouseDBTest.php",
+      "tests/tests/lib/ezdb/columnar/expClickHouseSchemaTest.php"
+    ],
+    "lib/ezdbschema/classes/expclickhouseschema.php": [
+      "tests/tests/lib/ezdb/columnar/expClickHouseSchemaTest.php"
+    ],
     "lib/ezdb/classes/expmsaccess*.php": [
       "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
       "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"

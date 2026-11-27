@@ -127,6 +127,8 @@
             <exclude>tests/tests/lib/ezdb/cassandra</exclude>
             <!-- in the suites couch and couch-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/couch</exclude>
+            <!-- in the suites columnar and columnar-live (MonetDB, ClickHouse); a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/columnar</exclude>
         </testsuite>
 
         <!--
@@ -302,6 +304,21 @@
 
         <testsuite name="libsql-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/libsql/live</directory>
+        </testsuite>
+
+        <!--
+          The columnar drivers, MonetDB (expMonetDBDB, a whole site) and ClickHouse (expClickHouseDB, data tables and
+          imports): the DB-less tests, and the live tests against servers (EXP_TEST_MONETDB_HOST, EXP_TEST_CLICKHOUSE_HOST
+          and their _PORT, _USER, _PASSWORD, _DATABASE; each skips without its host).
+          Run: php vendor/bin/phpunit - -testsuite columnar | columnar-live
+        -->
+        <testsuite name="columnar">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/columnar</directory>
+            <exclude>tests/tests/lib/ezdb/columnar/live</exclude>
+        </testsuite>
+
+        <testsuite name="columnar-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/columnar/live</directory>
         </testsuite>
 
         <testsuite name="mongodb-live">

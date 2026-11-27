@@ -44,6 +44,10 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
             array( 'generic', false, 3, "SELECT a FROM t\nOFFSET 3 ROWS" ),
             array( 'sqlserver', 10, 20, "SELECT a FROM t\nORDER BY (SELECT NULL)\nOFFSET 20 ROWS FETCH NEXT 10 ROWS ONLY" ),
             array( 'mysql', '7', '-3', "SELECT a FROM t\nLIMIT 7" ),
+            array( 'monetdb', 10, 20, "SELECT a FROM t\nLIMIT 10 OFFSET 20" ),
+            array( 'monetdb', false, 5, "SELECT a FROM t\nOFFSET 5" ),
+            array( 'clickhouse', 10, 0, "SELECT a FROM t\nLIMIT 10" ),
+            array( 'clickhouse', false, 5, "SELECT a FROM t\nOFFSET 5" ),
         );
     }
 
@@ -100,6 +104,7 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
             'postgresql insert only' => array( 'postgresql', $row, array(), "INSERT INTO \"t\" (\"name\", \"value\") VALUES ('k', 'it''s') ON CONFLICT (\"name\") DO NOTHING" ),
             'sqlite update' => array( 'sqlite', $row, array( 'value' ), "INSERT INTO \"t\" (\"name\", \"value\") VALUES ('k', 'it''s') ON CONFLICT (\"name\") DO UPDATE SET \"value\" = excluded.\"value\"" ),
             'oracle merge' => array( 'oracle', $row, null, "MERGE INTO \"t\" t USING (SELECT 'k' AS \"name\", 'it''s' AS \"value\" FROM dual) s ON (t.\"name\" = s.\"name\") WHEN MATCHED THEN UPDATE SET t.\"value\" = s.\"value\" WHEN NOT MATCHED THEN INSERT (\"name\", \"value\") VALUES (s.\"name\", s.\"value\")" ),
+            'monetdb merge' => array( 'monetdb', $row, null, "MERGE INTO \"t\" USING (SELECT 'k' AS \"name\", 'it''s' AS \"value\") AS s ON (\"t\".\"name\" = s.\"name\") WHEN MATCHED THEN UPDATE SET \"value\" = s.\"value\" WHEN NOT MATCHED THEN INSERT (\"name\", \"value\") VALUES (s.\"name\", s.\"value\")" ),
             'sqlserver merge' => array( 'sqlserver', $row, null, "MERGE INTO [t] WITH (HOLDLOCK) AS t USING (SELECT N'k' AS [name], N'it''s' AS [value]) AS s ON (t.[name] = s.[name]) WHEN MATCHED THEN UPDATE SET t.[value] = s.[value] WHEN NOT MATCHED THEN INSERT ([name], [value]) VALUES (s.[name], s.[value]);" ),
         );
     }
@@ -117,6 +122,13 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
         expDBSQLHelpers::upsert( $dialect, array( __CLASS__, 'lit' ), 't', array( 'a' => 1 ), array( 'b' ) );
     }
 
+    /** ClickHouse enforces no key, so there is nothing an upsert could match on: refused, with what to do instead */
+    public function testClickHouseRefusesUpsert()
+    {
+        $this->expectException( expDBUnsupportedException::class );
+        expDBSQLHelpers::upsert( 'clickhouse', array( __CLASS__, 'lit' ), 't', array( 'name' => 'k', 'value' => 'v' ), array( 'name' ) );
+    }
+
     public static function groupConcats()
     {
         return array(
@@ -126,6 +138,9 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
             array( 'sqlite', 'name', '|', 'name', "GROUP_CONCAT(name, '|')" ),
             array( 'oracle', 'name', ',', null, "LISTAGG(name, ',') WITHIN GROUP (ORDER BY NULL)" ),
             array( 'sqlserver', 'name', ',', 'name', "STRING_AGG(CAST(name AS NVARCHAR(MAX)), N',') WITHIN GROUP (ORDER BY name)" ),
+            array( 'monetdb', 'name', ',', 'name DESC', "GROUP_CONCAT(CAST(name AS TEXT), ',' ORDER BY name DESC)" ),
+            array( 'clickhouse', 'name', ',', null, "arrayStringConcat(groupArray(toString(name)), ',')" ),
+            array( 'clickhouse', 'name', ',', 'id DESC', "arrayStringConcat(arrayMap(x -> x.2, arrayReverseSort(x -> x.1, groupArray(tuple(id, toString(name))))), ',')" ),
         );
     }
 
@@ -145,6 +160,8 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
             array( 'sqlite', 'd', "CAST(strftime('%s', d) AS INTEGER)", null ),
             array( 'oracle', null, "ROUND((CAST(SYS_EXTRACT_UTC(SYSTIMESTAMP) AS DATE) - DATE '1970-01-01') * 86400)", "(TIMESTAMP '1970-01-01 00:00:00' + NUMTODSINTERVAL(x, 'SECOND'))" ),
             array( 'sqlserver', null, 'DATEDIFF_BIG(SECOND, DATETIME2FROMPARTS(1970, 1, 1, 0, 0, 0, 0, 0), SYSUTCDATETIME())', null ),
+            array( 'monetdb', null, 'CAST(epoch(CURRENT_TIMESTAMP) AS BIGINT)', 'CAST(epoch(CAST(x AS BIGINT)) AS TIMESTAMP)' ),
+            array( 'clickhouse', 'd', "toUnixTimestamp(d, 'UTC')", "toDateTime(x, 'UTC')" ),
         );
     }
 
@@ -160,7 +177,8 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
     {
         return array( array( 'mysql', 'SELECT * FROM t WHERE id = 1 FOR UPDATE' ), array( 'postgresql', 'SELECT * FROM t WHERE id = 1 FOR UPDATE' ),
                       array( 'oracle', 'SELECT * FROM t WHERE id = 1 FOR UPDATE' ), array( 'generic', 'SELECT * FROM t WHERE id = 1 FOR UPDATE' ),
-                      array( 'sqlite', 'SELECT * FROM t WHERE id = 1' ), array( 'sqlserver', 'SELECT * FROM t WITH (UPDLOCK, ROWLOCK) WHERE id = 1' ) );
+                      array( 'sqlite', 'SELECT * FROM t WHERE id = 1' ), array( 'sqlserver', 'SELECT * FROM t WITH (UPDLOCK, ROWLOCK) WHERE id = 1' ),
+                      array( 'monetdb', 'SELECT * FROM t WHERE id = 1' ), array( 'clickhouse', 'SELECT * FROM t WHERE id = 1' ) );
     }
 
     #[\PHPUnit\Framework\Attributes\DataProvider('forUpdates')]
@@ -188,6 +206,7 @@ class expDBSQLHelpersTest extends PHPUnit\Framework\TestCase
             'postgresql' => array( 'eZPostgreSQLDB', 'postgresql' ),
             'sqlite' => array( 'eZSQLite3DB', 'sqlite' ),
             'sqlserver' => array( 'expSQLServerDB', 'sqlserver' ),
+            'monetdb' => array( 'expMonetDBDB', 'monetdb' ),
             'null' => array( 'eZNullDB', 'mysql' ),
         );
     }
