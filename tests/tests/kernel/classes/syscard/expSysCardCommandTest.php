@@ -114,7 +114,7 @@ class expSysCardCommandTest extends PHPUnit\Framework\TestCase
             $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $root . '/' . $dir, FilesystemIterator::SKIP_DOTS ) );
             foreach ( $iterator as $file )
                 if ( $file->isFile() )
-                    $files[] = substr( $file->getPathname(), strlen( $root ) + 1 );
+                    $files[] = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $root ) + 1 ) );
         }
         sort( $files );
         $this->assertGreaterThan( 25, count( $files ) );

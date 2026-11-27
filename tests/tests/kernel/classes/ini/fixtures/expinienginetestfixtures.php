@@ -117,7 +117,7 @@ class expIniEngineTestFixtures
             {
                 if ( !$f->isFile() || $f->isLink() )
                     continue;
-                $rel = substr( $f->getPathname(), strlen( $root ) );
+                $rel = str_replace( DIRECTORY_SEPARATOR, '/', substr( $f->getPathname(), strlen( $root ) ) );
                 // a siteaccess another test is writing at the same time (tests name their temporary ones x1...):
                 // it may be gone before it is read
                 if ( preg_match( '#^settings/siteaccess/x1#', $rel ) )

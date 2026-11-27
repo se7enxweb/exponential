@@ -136,7 +136,7 @@ class expHelpTranslatedDocumentationTest extends PHPUnit\Framework\TestCase
         $tracked = array();
         $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::$root, FilesystemIterator::SKIP_DOTS ) );
         foreach ( $iterator as $file )
-            $tracked[] = substr( $file->getPathname(), strlen( self::$root ) + 1 );
+            $tracked[] = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( self::$root ) + 1 ) );
         sort( $tracked );
         $allowlist = new expHelpAllowlist( array( 'root' => self::$root, 'roots' => array( 'doc' ), 'tracked' => $tracked ) );
         $audience = new expHelpAudience( array( 'audienceRules' => array( 'doc/eng-us/help/partners/*;partner' ),
