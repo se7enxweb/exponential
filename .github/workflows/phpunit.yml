@@ -970,7 +970,20 @@ jobs:
             echo "::group::Informix diagnostics"
             docker exec ifx bash -lc 'tail -n 80 $INFORMIX_DATA_DIR/logs/online.log; onstat -' || true
             # online.log stays empty when oninit ends at once: its own output, and one run of it in the foreground
-            docker exec ifx bash -lc 'echo "INIT_LOG=$INIT_LOG"; tail -n 60 "$INIT_LOG"; ls -la $INFORMIX_DATA_DIR/logs $INFORMIX_DATA_DIR/spaces; id; ulimit -a; uname -a; grep -m1 "model name" /proc/cpuinfo; timeout 120 oninit -ivy; echo "oninit exit $?"; tail -n 40 $INFORMIX_DATA_DIR/logs/online.log' || true
+            # oninit ends with "Bad DBSERVERNAME" on the runner: the names it resolves, then one run per sqlhosts host form
+            docker exec -i ifx bash -l <<'PROBE' || true
+          hn=$(hostname); f=$INFORMIXSQLHOSTS
+          echo "hostname=$hn INFORMIXSERVER=$INFORMIXSERVER ONCONFIG=$ONCONFIG SQLHOSTS=$f"; uname -r
+          grep -E '^(DBSERVERNAME|DBSERVERALIASES|NETTYPE)' $INFORMIXDIR/etc/$ONCONFIG; cat $f; cat /etc/hosts
+          getent hosts "$hn"; getent ahosts "$hn"; getent hosts localhost; cat /etc/nsswitch.conf | grep hosts
+          cp $f /tmp/sqlhosts.orig
+          for host in "*$hn" "$hn" "*localhost" localhost 127.0.0.1 "*0.0.0.0"; do
+            sed "/^#/!s/[*]*$hn/$host/" /tmp/sqlhosts.orig > $f
+            echo "== $host"; timeout 90 oninit -ivy; rc=$?; echo "oninit exit $rc"
+            if [ $rc = 0 ]; then sleep 30; onstat - ; onmode -ky; sleep 5; fi
+          done
+          cp /tmp/sqlhosts.orig $f
+          PROBE
             df -h / /var/lib/docker || true; free -m || true; ipcs -l || true
             docker stats --no-stream || true
             echo "::endgroup::"
