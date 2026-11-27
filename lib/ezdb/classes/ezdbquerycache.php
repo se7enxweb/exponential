@@ -1974,6 +1974,8 @@ class eZDBQueryCache
             case 'sqlite':
             case 'SQLServer':
             case 'firebird':
+            case 'db2':
+            case 'informix':
             case 'duckdb':
                 return false;
         }
