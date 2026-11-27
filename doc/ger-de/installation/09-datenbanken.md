@@ -1,8 +1,12 @@
 # 9. Datenbanken
 
-Exponential speichert sein Inhalts-Repository in einem von sechs Datenbanksystemen über fünf Treiber: SQLite 3,
-PostgreSQL, MongoDB, MariaDB, Oracle über die Extension `ezoracle` und MySQL (MariaDB und MySQL teilen sich einen
-Treiber). Dieses Kapitel erklärt jedes von ihnen so, wie ein
+Exponential speichert sein Inhalts-Repository in einem der unterstützten Datenbanksysteme: SQLite 3, PostgreSQL,
+MongoDB, MariaDB, Oracle über die Extension `ezoracle`, MySQL (MariaDB und MySQL teilen sich einen Treiber) und ab
+6.0.15 Microsoft SQL Server und Azure SQL. 6.0.15 bringt außerdem Firebird, DuckDB, die Datenbanken des MySQL-Protokolls
+(TiDB, Vitess und PlanetScale, SingleStore, Xpand, Aurora MySQL) und des PostgreSQL-Protokolls (CockroachDB,
+YugabyteDB, Neon, Supabase, Aurora PostgreSQL) sowie, nur für Datentabellen und Importe, Spanner, jede Datenbank über
+ODBC und MS Access ([Abschnitt 9.11](#911-die-in-6015-hinzugekommenen-datenbanken)). Dieses Kapitel erklärt jedes von
+ihnen so, wie ein
 Betreiber ihm begegnet: was der Treiber tut, wie Sie die Datenbank und ihren Benutzer anlegen, den genauen
 Einstellungsblock, was schiefgeht und woran Sie es erkennen. Die meisten Seiten widmet es SQLite, denn SQLite ist
 die Voreinstellung des Installers und mit dem Treiber, den Exponential mitliefert, eine vollwertige
@@ -26,12 +30,13 @@ Code oder Inhalte von einer Engine zu einer anderen wechseln.
 > **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md).
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Empfehlung:** 1. SQLite 3 (die
-> Voreinstellung) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit
-> bekanntermaßen mit zusätzlichem Aufwand möglich. Details: [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
+> Voreinstellung) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure
+> SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank wählen](../hilfe/datenbank-waehlen.md)). Details:
+> [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
 
 Die folgenden Abschnitte halten die Reihenfolge der Treiber ein (MariaDB und MySQL teilen sich Abschnitt 9.3); die
-oben genannte Unterstützungsseite nennt die gegen den Code geprüften Versionen, die Testabdeckung jeder Datenbank und
-was Microsoft SQL Server benötigen würde.
+oben genannte Unterstützungsseite nennt die gegen den Code geprüften Versionen und die Testabdeckung jeder Datenbank,
+und [Eine Datenbank wählen](../hilfe/datenbank-waehlen.md) stellt jede Datenbank von 6.0.15 in einer Matrix dar.
 
 [Inhalt](README.md) · Zurück: [8. Die Site ausliefern](08-die-website-ausliefern.md) · Weiter: [10. Nach der Installation](10-nach-der-installation.md)
 
@@ -58,6 +63,8 @@ was Microsoft SQL Server benötigen würde.
 - [9.7 Vergleich](#97-vergleich)
 - [9.8 Hinweise über Engines hinweg](#98-hinweise-über-engines-hinweg)
 - [9.9 Eine bestehende Site auf eine andere Engine umstellen](#99-eine-bestehende-site-auf-eine-andere-engine-umstellen)
+- [9.10 Microsoft SQL Server und Azure SQL](#910-microsoft-sql-server-und-azure-sql)
+- [9.11 Die in 6.0.15 hinzugekommenen Datenbanken](#911-die-in-6015-hinzugekommenen-datenbanken)
 - [Quellen](#quellen)
 
 ## 9.1 Wie Exponential einen Datenbanktreiber auswählt
@@ -1012,7 +1019,7 @@ Prüfung eine Zeile PASS/WARN/FAIL/INFO aus. Die Cronjob-Teile `ezoracle` (näch
 | Voreinstellung des Installers | ja | | | | |
 | Gleichzeitige Schreiber | einer zur Zeit, in der Warteschlange (`SQLiteTransactionWait`) | Zeilensperren (InnoDB) | Zeilensperren (MVCC) | auf Dokumentebene | Zeilensperren |
 | Mehrere Anwendungsserver | nein (ein Host) | ja | ja | ja | ja |
-| Replikate für Lesezugriffe | nein | `UseSlaveServer` | extern | Replica Sets | extern (Data Guard) |
+| Replikate für Lesezugriffe | nein | `UseSlaveServer` | `UseSlaveServer` | Replica Sets | `UseSlaveServer` (Active Data Guard) |
 | Persistente Verbindungen | nicht nötig (eine Datei) | `UsePersistentConnection` | `UsePersistentConnection` | Client pro Prozess vorgehalten | `Persistent`, DRCP |
 | SQL-Abfrage-Cache | ja | ja | ja | nein | ja |
 | Benutzer und Berechtigungen | Dateisystem | ja | ja | ja | ja |
@@ -1027,7 +1034,10 @@ Sie wissen sollten, wenn Sie solchen Code schreiben oder prüfen (es gibt kein e
 Abfragen über Engines hinweg; diese Punkte stammen aus den Treibern):
 
 - **Fragen Sie den Treiber, welche Engine er ist**: `eZDB::instance()->databaseName()` gibt `mysql`, `postgresql`,
-  `sqlite`, `mongo` oder `oracle` zurück.
+  `sqlite`, `mongo` oder `oracle` zurück, ab 6.0.15 auch `SQLServer`, `firebird`, `duckdb`, `MSAccess` oder `odbc`;
+  die Datenbanken des MySQL-Protokolls antworten `mysql`, die des PostgreSQL-Protokolls `postgresql`. Portables SQL
+  kommt aus den Hilfsfunktionen des Treibers (`sqlLimit()`, `sqlUpsert()`, `sqlGroupConcat()`, `sqlForUpdate()` ...),
+  nie aus einer Verzweigung je Engine.
 - **Keine Backticks.** MySQL und SQLite akzeptieren `` `column` ``; PostgreSQL und Oracle nicht, und der Parser des
   MongoDB-Adapters erwartet sie nicht. Benennen Sie Tabellen und Spalten ohne Quoting.
 - **Kein `AS` vor einem Tabellenalias** (Oracle lehnt es ab); `AS` vor einem Spaltenalias ist überall in Ordnung.
@@ -1100,16 +1110,159 @@ nach der Engine gewählt, auf der die Site jetzt läuft, nicht nach der, auf der
 der Extension `ezoracle`. MongoDB hat keine SQL-Update-Dateien. [Kapitel 11](11-aktualisieren.md#113-die-update-dateien)
 führt sie auf.
 
-## 9.10 Microsoft SQL Server
-
-Exponential 6.0.x hat keinen Treiber für Microsoft SQL Server; er ist derzeit bekanntermaßen mit zusätzlichem
-Aufwand möglich. Die Datenbankschicht ist die Schnittstelle `eZDBInterface` mit austauschbaren Treiber-Aliasen und
-Schema-Handlern; auf diesem Weg kamen auch die Unterstützung für Oracle und MongoDB hinzu. Die Liste der Arbeiten
-(ein Treiber auf Basis von `sqlsrv`, die Aggregatfunktion `BIT_OR`, die SQL Server fehlt, ein Schema-Handler, SQL-
-und Update-Dateien, Einträge in den Installern, Tests) steht unter
-[Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand).
-
 **SQLite für öffentliche Demos.** SQLite ist die übliche Datenbank einer öffentlichen Demo, die alle paar Stunden von Grund auf neu aufgebaut wird: `EXP_DEMO_MODE=1 ./console exp:install --apply --db=sqlite --password=<the published password>` installiert eine in etwa einer Minute, ohne dass zwischen den Builds etwas gelöscht werden muss. Der Demo-Modus selbst hängt nicht von der Datenbank-Engine ab ([Demo-Modus](../bc/6.0/demomodus.md)).
+
+<a id="910-microsoft-sql-server"></a>
+
+## 9.10 Microsoft SQL Server und Azure SQL
+
+Ab 6.0.15 hat der Kernel einen eigenen Treiber, `expSQLServerDB` (`DatabaseImplementation=sqlserver`; auch `mssql`
+und `sqlsrv`), für SQL Server 2017, 2019, 2022 und 2025, Azure SQL Database und Managed Instance, unter Linux und
+Windows. Er erreicht den Server über `sqlsrv` (empfohlen), `pdo_sqlsrv`, `pdo_odbc` mit dem ODBC Driver 17 oder 18
+von Microsoft oder `pdo_dblib` über FreeTDS.
+
+Legen Sie die Datenbank zuerst an; die Installer legen sie auf SQL Server nicht an:
+
+```sql
+CREATE DATABASE [site] COLLATE Latin1_General_100_CI_AS_SC_UTF8;
+ALTER DATABASE [site] SET READ_COMMITTED_SNAPSHOT ON;
+```
+
+```ini
+[DatabaseSettings]
+DatabaseImplementation=sqlserver
+Server=sql1.example.com
+Port=1433
+User=exponential
+Password=...
+Database=site
+
+[SQLServerSettings]
+# yes (Standard), no oder strict (TDS 8.0)
+Encrypt=yes
+TrustServerCertificate=disabled
+# ausgeschaltet lassen: eine gepoolte Verbindung erben abgespaltene Worker
+ConnectionPooling=disabled
+```
+
+```bash
+EXP_INSTALL_DB_PASSWORD=geheim ./console exp:install --apply --db=sqlserver --db-host=sql1.example.com \
+  --db-name=site --db-user=exponential --db-encrypt=yes
+```
+
+Der Kickstarter nimmt `Type=sqlserver` mit `Encrypt` und `TrustServerCertificate`; der Setup-Assistent im Browser
+führt SQL Server nicht auf. Lesereplikate: Always On mit `ApplicationIntent=ReadOnly`. Mehrere Webserver: das
+DFS-Backend `expDFSFileHandlerSQLServerBackend` (`exp:cluster:enable --backend=sqlserver`). Sicherungen:
+`BACKUP DATABASE`; die eigene Sicherheitskopie der Aktualisierung hat keinen Dump für SQL Server, führen Sie
+Aktualisierungen also nach Ihrer Sicherung mit `--no-backup` aus. Einzelheiten:
+[Microsoft-SQL-Server-Treiber](../funktionen/6.0/sqlserver-datenbanktreiber.md) und
+[Clustering auf SQL Server](../funktionen/6.0/sqlserver-dfs-cluster.md).
+
+## 9.11 Die in 6.0.15 hinzugekommenen Datenbanken
+
+Jede davon hat ihre eigene Seite mit dem, was geht und was nicht; dieser Abschnitt nennt das Wesentliche für den
+Betrieb. Die Matrix aller Datenbanken mit der Abdeckung in der CI und den gemessenen Zeiten steht auf
+[Eine Datenbank wählen](../hilfe/datenbank-waehlen.md).
+
+### Das MySQL-Protokoll: TiDB, Vitess und PlanetScale, SingleStore, Xpand, Aurora MySQL
+
+Der MySQL-Treiber mit einem Profil je Datenbank (`DatabaseImplementation` `tidb`, `vitess` oder `planetscale`,
+`singlestore` oder `memsql`, `xpand`, `aurora`), PHPs `mysqli`, `[MySQLWireSettings]` für TLS (`SSL`, `SSLCA`),
+Tabellensperren und die Failover-Prüfung von Aurora. TiDB 8.5.1, Vitess 25 und SingleStore 10.10 haben eine ganze Site
+installiert und einen DFS-Cluster aus einem Knoten auf dem MySQL-Backend betrieben; **Xpand und Aurora MySQL sind
+ungetestet**.
+
+```bash
+EXP_INSTALL_DB_PASSWORD=geheim ./console exp:install --apply --db=tidb --db-host=tidb.example.com --db-port=4000 \
+  --db-name=site --db-user=exponential
+EXP_INSTALL_DB_PASSWORD=geheim ./console exp:install --apply --db=singlestore --db-host=svc.example.com \
+  --db-name=site --db-user=admin --db-ssl=verify --db-ssl-ca=/etc/ssl/ca.pem
+```
+
+Legen Sie die Datenbank (auf Vitess und PlanetScale den Keyspace) zuerst an. Auf Vitess erhöhen Sie für die
+Installation das Transaktions-Timeout des Tablets (`--queryserver-config-transaction-timeout`); PlanetScale bricht
+Transaktionen nach 20 Sekunden ab, also anderswo installieren und importieren. Kickstarter: `Type=tidb` ... mit `SSL`
+und `SSLCA`; der Setup-Assistent führt sie nicht auf.
+[Datenbanken, die das MySQL-Protokoll sprechen](../funktionen/6.0/mysql-wire-datenbanken.md).
+
+### Das PostgreSQL-Protokoll: CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL, Spanner
+
+Der PostgreSQL-Treiber mit einem Profil je Datenbank (`cockroachdb`, `yugabytedb`, `neon`, `supabase`,
+`aurorapostgresql`, `spanner`), PHPs `pgsql`, `[PostgreSQLWireSettings]` für TLS, Pooler, Wiederholungen und
+Kaltstarts. CockroachDB 25.2 und YugabyteDB 2.25 haben eine ganze Site installiert; **Neon, Supabase und Aurora
+PostgreSQL sind ungetestet** (Profile nach der Dokumentation der Dienste). Spanner hält über PGAdapter
+Datentabellen-Verbindungen und Importe, keine Site. `exp:cluster:enable` bietet für keine von ihnen ein DFS-Backend an.
+
+```bash
+./console exp:install --apply --db=cockroachdb --db-host=crdb1 --db-user=root
+./console exp:install --apply --db=aurorapostgresql --db-host=site.cluster-x.eu-west-1.rds.amazonaws.com \
+    --db-sslmode=verify-full --db-sslrootcert=/etc/ssl/rds-global-bundle.pem
+./console exp:install --apply --db=neon --db-host=ep-x.eu-central-1.aws.neon.tech --db-name=neondb --db-pooler=none
+```
+
+`--db-sslmode` (disable, require, verify-ca, verify-full; `require` als Standard für Neon, Supabase und Aurora),
+`--db-sslrootcert`, `--db-pooler` (auto, none, session, transaction) und `--db-endpoint` (Neon ohne SNI) setzen
+`[PostgreSQLWireSettings]`. Installieren Sie über eine direkte Verbindung oder einen Session-Pooler. Sichern Sie
+YugabyteDB mit `ysql_dump`. [Datenbanken mit dem PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md).
+
+### Firebird 4.0 und 5.0
+
+`DatabaseImplementation=firebird` (`expFirebirdDB`) über `pdo_firebird` ab **PHP 8.4** (das `pdo_firebird` älterer
+PHP-Versionen hält im Autocommit-Modus eine Transaktion offen). Legen Sie die Datenbank zuerst mit `isql` an, mit
+Seiten von 16 KB und UTF8, die die Indexschlüssel des Kernels brauchen:
+
+```sql
+CREATE DATABASE 'exponential' USER 'SYSDBA' PASSWORD '...' PAGE_SIZE 16384 DEFAULT CHARACTER SET UTF8;
+```
+
+```bash
+EXP_INSTALL_DB_PASSWORD=... ./console exp:install --apply --db=firebird --db-host=db.example.com \
+  --db-name=exponential --db-user=EXPONENTIAL
+```
+
+Der Setup-Assistent bietet Firebird an, wenn PHP `pdo_firebird` hat; der Kickstarter nimmt `Type=firebird`. Ein
+Webserver: noch kein DFS-Backend und keine Lesereplikate. Sperrwartezeiten haben kein Zeitlimit (pdo_firebird bietet
+kein Sperr-Timeout). Sichern Sie mit `gbak`. [Firebird-Treiber](../funktionen/6.0/firebird-datenbanktreiber.md).
+
+### DuckDB
+
+`DatabaseImplementation=duckdb` (`expDuckDBDB`): eine ganze Site in einer DuckDB-Datei über PHPs Erweiterung `ffi`
+und DuckDBs C-Bibliothek `libduckdb` (1.5 oder 2.0). Das Web-PHP braucht `ffi.enable=true` in seinem Pool. Es schreibt
+immer nur ein Prozess; Leser teilen sich die Datei, ein Schreiber wartet bis zu `[DuckDBSettings] LockWait` Sekunden.
+
+```bash
+./console exp:install --apply --db=duckdb --db-name=/srv/sites/example/data/site.duckdb
+```
+
+```ini
+[DuckDBSettings]
+Library=/usr/local/lib/libduckdb.so
+AccessMode=auto
+Threads=2
+```
+
+Jede Anweisung kostet Millisekunden; lassen Sie den Ansichts-Cache eingeschaltet. Kein DFS-Cluster, keine
+Lesereplikate, kein Setup-Assistent im Browser; die Sicherheitskopie der Aktualisierung hat keinen Dump für DuckDB:
+Kopieren Sie die Datei, solange nichts schreibt, oder verwenden Sie `EXPORT DATABASE`.
+[DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md).
+
+### ODBC und MS Access: Daten und Importe
+
+Diese tragen keine Site. `expODBCDB` (`DatabaseImplementation=odbc` oder eine Datentabellen-Verbindung mit
+`Engine=odbc`) erreicht jede Datenbank über ihren ODBC-Treiber, den SQL-Dialekt in `[ODBCSettings] Dialect`
+(`sqlserver`, `postgresql`, `mysql`, `sqlite`, `oracle`, `msaccess`, `generic`), über `pdo_odbc` oder `odbc`.
+[ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md).
+
+`exp:access:import` kopiert die Tabellen einer `.accdb`- oder `.mdb`-Datei in die Datenbank der Site oder in eine
+Datentabellen-Verbindung, unter Linux mit MDBTools, unter Windows mit dem ODBC-Treiber von Access:
+
+```bash
+./console exp:access:import shop.accdb --list
+./console exp:access:import shop.accdb --prefix=shop_ --apply
+```
+
+Unter Windows liest und schreibt der kleine Treiber `expMSAccessDB` eine Access-Datei auch als Datentabellen-Verbindung
+(`Engine=msaccess`). [MS-Access-Unterstützung](../funktionen/6.0/ms-access-unterstuetzung.md).
 
 ## Quellen
 

@@ -303,8 +303,8 @@ change to the file the other PHP reads.
 ## 2.6 Databases
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time. Details: [Database support](../help/database-support.md).
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../help/choosing-a-database.md)). Details: [Database support](../help/database-support.md).
 
 | Database | `DatabaseImplementation` and aliases (`settings/site.ini`, `[DatabaseSettings] ImplementationAlias[]`) | Minimum server version the wizard checks | Practical minimum |
 |---|---|---|---|
@@ -331,8 +331,19 @@ the versions seen working on the development server and in CI.
   wizard wants, the wizard stops with "The database [...] cannot be used, the setup wizard wants to create the site in
   [...] but the database has been created using character set [...]". Create the database with
   `CHARACTER SET utf8mb4` and this cannot happen.
-- **Microsoft SQL Server** has no driver in 6.0.x; what it would take is listed in
-  [Database support](../help/database-support.md#microsoft-sql-server-possible-with-additional-work).
+- **Microsoft SQL Server and Azure SQL** (from 6.0.15): `sqlsrv` or `pdo_sqlsrv` from Microsoft, or `pdo_odbc` with
+  Microsoft's ODBC Driver 17 or 18, or `pdo_dblib`; the database must exist, with a UTF-8 collation and
+  `READ_COMMITTED_SNAPSHOT ON` ([SQL Server driver](../features/6.0/sqlserver-database-driver.md)).
+- **Firebird 4 or 5** (from 6.0.15): `pdo_firebird` of **PHP 8.4 or later** and Firebird's client library; the database
+  must exist, with `PAGE_SIZE 16384` and UTF8 ([Firebird driver](../features/6.0/firebird-database-driver.md)).
+- **DuckDB** (from 6.0.15): PHP's `ffi` extension with `ffi.enable=true` in the web PHP, and DuckDB's C library
+  `libduckdb` 1.5 or 2.0 ([DuckDB driver](../features/6.0/duckdb-database-driver.md)).
+- **TiDB, Vitess and PlanetScale, SingleStore, Xpand, Aurora MySQL**: `mysqli`, as MySQL. **CockroachDB, YugabyteDB,
+  Neon, Supabase, Aurora PostgreSQL**: `pgsql`, as PostgreSQL. Xpand, Aurora, Neon and Supabase are untested
+  ([Choosing a database](../help/choosing-a-database.md)).
+- **ODBC and MS Access** (data tables and imports, not a site): `pdo_odbc` or `odbc` and the database's ODBC driver;
+  for Access files on Linux the MDBTools programs, on Windows the Access Database Engine x64
+  ([ODBC](../features/6.0/odbc-database-driver.md), [MS Access](../features/6.0/ms-access-support.md)).
 
 For a database server, create the database and a user that may create tables in it before you install; the
 installers do not create databases or users. Choosing and tuning a database is the subject of

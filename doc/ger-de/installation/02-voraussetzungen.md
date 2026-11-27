@@ -313,8 +313,9 @@ liest; das Web-PHP liest unter Umständen andere (PHP-FPM-Pools haben ihre eigen
 ## 2.6 Datenbanken
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), nach Präferenz geordnet:** 1. SQLite 3 (Standard) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlichem
-> Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab
+> 6.0.15: [Eine Datenbank wählen](../hilfe/datenbank-waehlen.md)). Einzelheiten:
+> [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
 
 | Datenbank | `DatabaseImplementation` und Aliase (`settings/site.ini`, `[DatabaseSettings] ImplementationAlias[]`) | Vom Assistenten geprüfte Mindestversion des Servers | Praktisches Minimum |
 |---|---|---|---|
@@ -343,8 +344,19 @@ führt die Versionen auf, die auf dem Entwicklungsserver und in der CI nachweisl
   der Assistent möchte, hält der Assistent mit „The database [...] cannot be used, the setup wizard wants to create the
   site in [...] but the database has been created using character set [...]“ an. Legen Sie die Datenbank mit
   `CHARACTER SET utf8mb4` an, dann kann das nicht passieren.
-- **Microsoft SQL Server** hat in 6.0.x keinen Treiber; was dafür nötig wäre, steht in
-  [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand).
+- **Microsoft SQL Server und Azure SQL** (ab 6.0.15): `sqlsrv` oder `pdo_sqlsrv` von Microsoft, oder `pdo_odbc` mit dem
+  ODBC Driver 17 oder 18 von Microsoft, oder `pdo_dblib`; die Datenbank muss bestehen, mit einer UTF-8-Kollation und
+  `READ_COMMITTED_SNAPSHOT ON` ([SQL-Server-Treiber](../funktionen/6.0/sqlserver-datenbanktreiber.md)).
+- **Firebird 4 oder 5** (ab 6.0.15): `pdo_firebird` ab **PHP 8.4** und die Client-Bibliothek von Firebird; die Datenbank
+  muss bestehen, mit `PAGE_SIZE 16384` und UTF8 ([Firebird-Treiber](../funktionen/6.0/firebird-datenbanktreiber.md)).
+- **DuckDB** (ab 6.0.15): PHPs Erweiterung `ffi` mit `ffi.enable=true` im Web-PHP und DuckDBs C-Bibliothek `libduckdb`
+  1.5 oder 2.0 ([DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md)).
+- **TiDB, Vitess und PlanetScale, SingleStore, Xpand, Aurora MySQL**: `mysqli`, wie MySQL. **CockroachDB, YugabyteDB,
+  Neon, Supabase, Aurora PostgreSQL**: `pgsql`, wie PostgreSQL. Xpand, Aurora, Neon und Supabase sind ungetestet
+  ([Eine Datenbank wählen](../hilfe/datenbank-waehlen.md)).
+- **ODBC und MS Access** (Datentabellen und Importe, keine Site): `pdo_odbc` oder `odbc` und der ODBC-Treiber der
+  Datenbank; für Access-Dateien unter Linux die Programme von MDBTools, unter Windows die Access Database Engine x64
+  ([ODBC](../funktionen/6.0/odbc-datenbanktreiber.md), [MS Access](../funktionen/6.0/ms-access-unterstuetzung.md)).
 
 Legen Sie bei einem Datenbankserver vor der Installation die Datenbank und einen Benutzer an, der darin Tabellen anlegen
 darf; die Installer legen weder Datenbanken noch Benutzer an. Die Auswahl und das Tuning einer Datenbank sind Thema von
