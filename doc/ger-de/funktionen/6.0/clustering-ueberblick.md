@@ -105,6 +105,16 @@ dieselben Paritätsprüfungen:
 | MongoDB 5.0 und neuer | `expDFSFileHandlerMongoDBBackend` | `dfsmongodb` | beliebig viele, ein Server oder ein Replica Set | [Clustering mit MongoDB](mongodb-dfs-cluster.md) |
 | SQLite 3.24 und neuer | `expDFSFileHandlerSQLiteBackend` | `dfssqlite` | **nur eine Maschine** | [Clustering mit SQLite](sqlite-dfs-cluster.md) |
 
+**Die in 6.0.15 hinzugekommenen Datenbanken.** TiDB, Vitess und SingleStore nehmen das MySQL-Backend
+(`exp:cluster:enable` ordnet ihr `DatabaseImplementation` `mysqli` zu); auf jeder wurde ein Cluster aus einem Knoten
+gemessen. Die eigene `mysqli`-Verbindung des Backends hat kein TLS; bei PlanetScale, TiDB Cloud und SingleStore Helios
+liegen die Metadaten daher besser in einer anderen Datenbank. Xpand und Aurora MySQL werden demselben Backend
+zugeordnet, sind aber ungetestet. **Kein** DFS-Backend gibt es für Firebird (pdo_firebird kann eine Sperrwartezeit nicht
+begrenzen), DuckDB (ein schreibender Prozess, eine lokale Dateisperre), ODBC, MS Access und Spanner, und
+`exp:cluster:enable` bietet keins für CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL an; deren Sites
+können die Cluster-Metadaten trotzdem in einer anderen Datenbank der Tabelle oben halten
+([Eine Datenbank wählen](../../hilfe/datenbank-waehlen.md)).
+
 Die Datenbank der Website und die Cluster-Metadaten sind getrennte Entscheidungen: Eine Website auf MySQL kann ihre
 Cluster-Metadaten in PostgreSQL halten und umgekehrt. Die Einstellungen, die auf jedem SQL-Backend zählen:
 

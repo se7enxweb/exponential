@@ -134,8 +134,14 @@ Further keys of a declared connection: `Socket`, `DSN` (a PDO data source name),
 | `mysql` | the kernel's MySQL/MariaDB driver | `mariadb` is accepted as the same engine |
 | `postgresql` | the kernel's PostgreSQL driver | |
 | `oracle` | the ezoracle driver when the extension is active and PHP has oci8, else PDO `oci` | `Database` is the service name |
-| `sqlserver` | PDO `sqlsrv`, `dblib` or `odbc` (the first one PHP has, or the one named as driver) | untested here: the server this was built on has no SQL Server driver |
+| `sqlserver` | `expPDODB` over PDO `sqlsrv`, `dblib` or `odbc` (the first one PHP has, or the one named as driver), not the kernel's `expSQLServerDB` | marked untested in the list of engines. A connection to SQL Server through Microsoft's ODBC driver is tested as engine `odbc` with `Dialect=sqlserver` (GitHub job `odbc`) |
 | `mongodb` | the kernel's MongoDB driver (`expMongoDB`) | |
+| `odbc` (6.0.15) | `expODBCDB` over `pdo_odbc` or `odbc` | any database with an ODBC driver; options `dialect` (`sqlserver`, `postgresql`, `mysql`, `sqlite`, `oracle`, `msaccess`, `generic`), `odbc_driver`, `connection_string`, `layer` ([ODBC driver](odbc-database-driver.md)) |
+| `msaccess` (6.0.15) | `expMSAccessDB` over ODBC | Windows with the Access Database Engine; the file in one of `SQLiteDirectories[]`; on Linux use `exp:access:import` ([MS Access](ms-access-support.md)) |
+| `firebird` (6.0.15) | the kernel's `expFirebirdDB` (`pdo_firebird` of PHP 8.4 or later) | [Firebird driver](firebird-database-driver.md#data-table-connections) |
+| `duckdb` (6.0.15) | the kernel's `expDuckDBDB` (FFI and `libduckdb`) | a file in one of `SQLiteDirectories[]`, ending in `.duckdb`, `.ddb` or `.db` ([DuckDB driver](duckdb-database-driver.md#a-data-table-connection-to-a-duckdb-file)) |
+| `cockroachdb`, `yugabytedb`, `spanner`, `neon`, `supabase`, `aurorapostgresql` (6.0.15) | `expPostgreSQLWireDB` (`pgsql`) | options `sslmode` and `pooler`; Spanner through PGAdapter; Neon, Supabase and Aurora are marked untested ([PostgreSQL protocol](postgresql-wire-databases.md#data-table-connections)) |
+| `tidb`, `vitess`, `planetscale`, `singlestore`, `xpand`, `aurora` (6.0.15) | the profile's driver (`expMySQLWireDB`, `mysqli`) | stored as engine `mysql` with the option `profile`; options `ssl` and `ssl_ca` ([MySQL protocol](mysql-wire-databases.md#data-table-connections)) |
 
 An engine the kernel has no driver for goes through `expPDODB`, a generic database driver over PDO: queries, limit
 and offset in the engine's dialect, transactions, the last inserted id, escaping, the table list. So every connection
@@ -257,6 +263,9 @@ $sql = expDataTableSchema::installSql( $schema );             // engine => SQL, 
 | MySQL/MariaDB, PostgreSQL, SQLite | the kernel's schema handlers (`eZMysqlSchema`, `eZPgsqlSchema`, `eZSQLiteSchema`) | `eZDbSchemaChecker::diff()` against the live table and the handler's upgrade SQL |
 | Oracle | ezoracle's schema handler when the extension is active; otherwise (PDO oci) the statements of `oracleCreate()`: `VARCHAR2(n CHAR)`, `CLOB`, `BINARY_DOUBLE`, and a sequence with a `BEFORE INSERT` trigger for the counted-up key, named as `expPDODB::oracleSequence()` reads it | through ezoracle as above; through PDO the missing columns are added |
 | SQL Server | `sqlServerCreate()`: `INT IDENTITY(1,1)`, `NVARCHAR(n)`, `NVARCHAR(MAX)`, bracketed names | the missing columns are added |
+| Firebird, DuckDB | `expFirebirdSchema`, `expDuckDBSchema` | the handler's upgrade SQL |
+| The PostgreSQL protocol databases | `eZPgsqlSchema` with the profile's changes (primary key inside `CREATE TABLE`, no `USING btree` where refused) | as PostgreSQL |
+| ODBC, MS Access | the dialect's schema handler (MySQL, PostgreSQL, SQLite) or the driver's own statements (SQL Server, Oracle, Access) | the missing columns are added |
 | MongoDB | the collection is made by its first write; the indexes by the schema handler (`expMongoSchema`) | the indexes are made again when missing; documents need no column |
 
 The page **Setup > Data tables > Schema** (`datatable/schema`, policy `datatable/manage`) takes a class (of an

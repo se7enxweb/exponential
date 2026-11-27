@@ -140,8 +140,14 @@ Weitere Schlüssel einer angemeldeten Verbindung: `Socket`, `DSN` (ein PDO-Data-
 | `mysql` | den MySQL/MariaDB-Treiber des Kernels | `mariadb` gilt als dasselbe System |
 | `postgresql` | den PostgreSQL-Treiber des Kernels | |
 | `oracle` | den Treiber von ezoracle, wenn die Extension aktiv ist und PHP oci8 hat, sonst PDO `oci` | `Database` ist der Service-Name |
-| `sqlserver` | PDO `sqlsrv`, `dblib` oder `odbc` (der erste, den PHP hat, oder der als Treiber genannte) | hier nicht getestet: der Server, auf dem dies entstand, hat keinen SQL-Server-Treiber |
+| `sqlserver` | `expPDODB` über PDO `sqlsrv`, `dblib` oder `odbc` (der erste, den PHP hat, oder der als Treiber genannte), nicht `expSQLServerDB` des Kernels | in der Liste der Engines als ungetestet markiert. Eine Verbindung zu SQL Server über den ODBC-Treiber von Microsoft ist als Engine `odbc` mit `Dialect=sqlserver` getestet (GitHub-Job `odbc`) |
 | `mongodb` | den MongoDB-Treiber des Kernels (`expMongoDB`) | |
+| `odbc` (6.0.15) | `expODBCDB` über `pdo_odbc` oder `odbc` | jede Datenbank mit ODBC-Treiber; Optionen `dialect` (`sqlserver`, `postgresql`, `mysql`, `sqlite`, `oracle`, `msaccess`, `generic`), `odbc_driver`, `connection_string`, `layer` ([ODBC-Treiber](odbc-datenbanktreiber.md)) |
+| `msaccess` (6.0.15) | `expMSAccessDB` über ODBC | Windows mit der Access Database Engine; die Datei in einem der `SQLiteDirectories[]`; unter Linux `exp:access:import` verwenden ([MS Access](ms-access-unterstuetzung.md)) |
+| `firebird` (6.0.15) | `expFirebirdDB` des Kernels (`pdo_firebird` ab PHP 8.4) | [Firebird-Treiber](firebird-datenbanktreiber.md) |
+| `duckdb` (6.0.15) | `expDuckDBDB` des Kernels (FFI und `libduckdb`) | eine Datei in einem der `SQLiteDirectories[]`, mit der Endung `.duckdb`, `.ddb` oder `.db` ([DuckDB-Treiber](duckdb-datenbanktreiber.md)) |
+| `cockroachdb`, `yugabytedb`, `spanner`, `neon`, `supabase`, `aurorapostgresql` (6.0.15) | `expPostgreSQLWireDB` (`pgsql`) | Optionen `sslmode` und `pooler`; Spanner über PGAdapter; Neon, Supabase und Aurora sind als ungetestet markiert ([PostgreSQL-Protokoll](postgresql-wire-datenbanken.md)) |
+| `tidb`, `vitess`, `planetscale`, `singlestore`, `xpand`, `aurora` (6.0.15) | der Treiber des Profils (`expMySQLWireDB`, `mysqli`) | gespeichert als Engine `mysql` mit der Option `profile`; Optionen `ssl` und `ssl_ca` ([MySQL-Protokoll](mysql-wire-datenbanken.md)) |
 
 Ein System, für das der Kernel keinen Treiber hat, läuft über `expPDODB`, einen allgemeinen Datenbanktreiber über PDO:
 Abfragen, Limit und Offset im Dialekt des Systems, Transaktionen, die zuletzt vergebene ID, Maskierung, die
@@ -270,6 +276,9 @@ $sql = expDataTableSchema::installSql( $schema );             // System => SQL, 
 | MySQL/MariaDB, PostgreSQL, SQLite | die Schema-Handler des Kernels (`eZMysqlSchema`, `eZPgsqlSchema`, `eZSQLiteSchema`) | `eZDbSchemaChecker::diff()` gegen die bestehende Tabelle und das Upgrade-SQL des Handlers |
 | Oracle | der Schema-Handler von ezoracle, wenn die Extension aktiv ist; sonst (PDO oci) die Anweisungen von `oracleCreate()`: `VARCHAR2(n CHAR)`, `CLOB`, `BINARY_DOUBLE`, und für den hochgezählten Schlüssel eine Sequenz mit einem `BEFORE INSERT`-Trigger, benannt, wie `expPDODB::oracleSequence()` sie liest | über ezoracle wie oben; über PDO werden die fehlenden Spalten ergänzt |
 | SQL Server | `sqlServerCreate()`: `INT IDENTITY(1,1)`, `NVARCHAR(n)`, `NVARCHAR(MAX)`, Namen in eckigen Klammern | die fehlenden Spalten werden ergänzt |
+| Firebird, DuckDB | `expFirebirdSchema`, `expDuckDBSchema` | das Upgrade-SQL des Handlers |
+| Die Datenbanken des PostgreSQL-Protokolls | `eZPgsqlSchema` mit den Änderungen des Profils (Primärschlüssel in `CREATE TABLE`, kein `USING btree`, wo abgelehnt) | wie PostgreSQL |
+| ODBC, MS Access | der Schema-Handler des Dialekts (MySQL, PostgreSQL, SQLite) oder die eigenen Anweisungen des Treibers (SQL Server, Oracle, Access) | die fehlenden Spalten werden ergänzt |
 | MongoDB | die Collection entsteht beim ersten Schreiben; die Indizes legt der Schema-Handler an (`expMongoSchema`) | fehlende Indizes werden neu angelegt; Dokumente brauchen keine Spalten |
 
 Die Seite **Setup > Datentabellen > Schema** (`datatable/schema`, Richtlinie `datatable/manage`) nimmt eine Klasse
