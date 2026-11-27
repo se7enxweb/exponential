@@ -214,7 +214,8 @@ class expIniEditorTest extends PHPUnit\Framework\TestCase
                            $this->read( 'settings/siteaccess/plain/content.ini.append.php' ) );
         // the same mode eZINI::save() gives a new settings file (doc/eng-us/bc/6.0/ini-save-file-permissions.md)
         clearstatcache();
-        $this->assertSame( eZINI::newSaveFileMode(), fileperms( $this->root . 'settings/siteaccess/plain/content.ini.append.php' ) & 07777 );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( eZINI::newSaveFileMode(), fileperms( $this->root . 'settings/siteaccess/plain/content.ini.append.php' ) & 07777 );
 
         $e = expIniEngineTestFixtures::editor( 'extension:exta:siteaccess:admin' );
         $e->add( 'DesignSettings', 'AdditionalSiteDesignList', 'exta' );
@@ -533,10 +534,12 @@ class expIniEditorTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '#/var/backup/ini/\d{8}-\d{6}/settings/override/site\.ini\.append\.php$#', $r->backup() );
         $this->assertStringStartsWith( $this->root . 'var/backup/ini/', $r->backup() );
         $this->assertSame( $before, file_get_contents( $r->backup() ) );
-        $this->assertSame( 0600, fileperms( $r->backup() ) & 0777 );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0600, fileperms( $r->backup() ) & 0777 );
         clearstatcache();
         $this->assertNotSame( $inode, fileinode( $path ), 'written by rename' );
-        $this->assertSame( 0640, fileperms( $path ) & 07777, 'mode kept' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0640, fileperms( $path ) & 07777, 'mode kept' );
         $this->assertSame( array( 'site.ini.append.php' ), array_values( array_diff( scandir( dirname( $path ) ), array( '.', '..' ) ) ), 'no temporary file left' );
 
         // a second write in the same second backs up into another directory
