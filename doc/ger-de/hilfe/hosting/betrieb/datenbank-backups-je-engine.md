@@ -19,9 +19,10 @@ einzelnen Engines in [Kapitel 9](../../../installation/09-datenbanken.md). Benut
 (`exponential`); verwenden Sie Ihre eigenen.
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlicher Arbeit möglich (in 6.0.x gibt es keinen Treiber). Siehe [Datenbankunterstützung](../../datenbankunterstuetzung.md)
-> und [Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md).
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)). Siehe
+> [Datenbankunterstützung](../../datenbankunterstuetzung.md) und [Datenbanken in der offiziellen
+> Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md).
 
 ## Inhalt
 
@@ -153,10 +154,17 @@ anderen empfiehlt.
 
 ## Microsoft SQL Server
 
-In Exponential 6.0.x gibt es keinen Treiber, also gibt es über Exponential nichts zu sichern. Es ist derzeit bekanntermaßen mit
-zusätzlicher Arbeit möglich; siehe
-[Microsoft SQL Server: mit zusätzlicher Arbeit möglich](../../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)
-und [Stand von Microsoft SQL Server](../grundlagen/stand-von-microsoft-sql-server.md).
+Ab 6.0.15 unterstützt. Sichern Sie mit `BACKUP DATABASE [site] TO DISK = '...'` (oder den automatischen Sicherungen von
+Azure SQL) und stellen Sie mit `RESTORE DATABASE` wieder her. Die eigene Sicherheitskopie der Aktualisierung hat keinen
+Dump für SQL Server: Sichern Sie zuerst und führen Sie die Aktualisierung mit `--no-backup` aus
+([Stand von Microsoft SQL Server](../grundlagen/stand-von-microsoft-sql-server.md)).
+
+## Firebird, DuckDB und die übrigen Datenbanken von 6.0.15
+
+Firebird: `gbak` (oder `nbackup`). DuckDB: die Datei kopieren, solange kein Prozess schreibt, oder `EXPORT DATABASE`.
+YugabyteDB: `ysql_dump`. TiDB, Vitess, SingleStore, CockroachDB und die Cloud-Dienste: ihre eigenen Werkzeuge. Keine
+davon hat einen eingebauten Dump in der Sicherheitskopie der Aktualisierung, außer über `mysqldump` und `pg_dump`, die
+dort nicht gemessen sind ([Eine Datenbank wählen](../../datenbank-waehlen.md#sicherungen-und-sicherungspunkte-vor-aktualisierungen)).
 
 ## Passwörter und Berechtigungen
 

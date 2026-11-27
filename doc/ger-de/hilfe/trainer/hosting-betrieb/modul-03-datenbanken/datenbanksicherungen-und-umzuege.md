@@ -29,7 +29,7 @@ Datenbanksystem umzieht. Sicherungen der ganzen Website, Zeitpläne und Wiederhe
 
 Nach dieser Lektion können die Teilnehmenden:
 
-- den Befehl zum Sichern und Wiederherstellen für jedes der sechs unterstützten Datenbanksysteme nennen;
+- den Befehl zum Sichern und Wiederherstellen für jedes der unterstützten Datenbanksysteme nennen;
 - eine konsistente SQLite-Sicherung erstellen, während die Website läuft, und sie mit `PRAGMA integrity_check` prüfen;
 - eine SQLite-Datenbank mit `.restore` im Wartungsmodus wiederherstellen und danach die Caches leeren;
 - erklären, warum `--single-transaction` für Dumps von MariaDB und MySQL wichtig ist;

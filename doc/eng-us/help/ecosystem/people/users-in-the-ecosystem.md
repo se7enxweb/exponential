@@ -33,7 +33,7 @@ type: help
 | A maintained product | The 6.0 line with security fixes in the next release (`SECURITY.md`) |
 | Help | This help in the administration, the documentation, forums and chats |
 | Someone to do the work | 7x, partners, hosting companies ([Partners in the ecosystem](../organizations/partners-in-the-ecosystem.md)) |
-| Choice and no lock-in | Free software, six databases, many servers and operating systems ([The PHP stack](../php-stack/README.md)) |
+| Choice and no lock-in | Free software, seven databases, many servers and operating systems ([The PHP stack](../php-stack/README.md)) |
 | Ways to grow | Extensions, languages, sites, apps ([Growth (customers)](../../customers/growth/README.md)) |
 
 ## Users who become creators

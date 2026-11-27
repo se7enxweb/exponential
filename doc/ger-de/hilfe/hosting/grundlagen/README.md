@@ -3,7 +3,7 @@ title: Grundlagen des Hostings
 audience: hosting
 category: hosting
 order: 10
-summary: Der Überblick über den Bereich Grundlagen des Hostings - was ein Server braucht, um Exponential zu betreiben, die PHP-Versionen, Erweiterungen und Einstellungen, die sechs unterstützten Datenbanken in der offiziellen Reihenfolge, Betriebssysteme, Composer und Git, Berechtigungen, Dimensionierung, Bildverarbeitung und Suche.
+summary: Der Überblick über den Bereich Grundlagen des Hostings - was ein Server braucht, um Exponential zu betreiben, die PHP-Versionen, Erweiterungen und Einstellungen, die unterstützten Datenbanken in der offiziellen Reihenfolge, Betriebssysteme, Composer und Git, Berechtigungen, Dimensionierung, Bildverarbeitung und Suche.
 keywords: Hosting, Grundlagen, Überblick, Anforderungen, PHP, Erweiterungen, php.ini, Datenbanken, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, SQL Server, Betriebssysteme, Composer, Git, Berechtigungen, Dimensionierung, Bilder, Suche, Solr, hosting, basics, overview, requirements, extensions, databases, operating systems, permissions, sizing, images, search
 type: help
 ---
@@ -43,14 +43,14 @@ Zurück zum Anfang der Hilfe zum Hosting: [Hosting-Anbieter: hier beginnen](../h
 | [Anforderungen auf einen Blick](anforderungen-auf-einen-blick.md) | Eine Tabelle mit allem, was ein Server braucht, mit Minimum, Empfehlung und dem, was es prüft |
 | [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md) | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), die benötigten und empfohlenen Erweiterungen und die Paketnamen je Systemfamilie |
 | [PHP-Einstellungen für Exponential](php-einstellungen-fuer-exponential.md) | `php.ini`-Werte, die der Installer prüft, die Werte für einen Pool, OPcache und die Funktionen, die Sie nicht deaktivieren dürfen |
-| [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md) | Die sechs unterstützten Datenbanken, in Reihenfolge, nebeneinander, und wie Sie wählen, was Sie anbieten |
+| [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md) | Die unterstützten Datenbanken, in Reihenfolge, nebeneinander, und wie Sie wählen, was Sie anbieten |
 | [SQLite für Hoster](sqlite-fuer-hoster.md) | Die Standarddatenbank: eine Datei, ihre Berechtigungen, Backups und Grenzen |
 | [PostgreSQL für Hoster](postgresql-fuer-hoster.md) | Der empfohlene Datenbankserver: Eigentümer, `pgcrypto`, Backups |
 | [MongoDB für Hoster](mongodb-fuer-hoster.md) | Der MongoDB-Adapter: Anforderungen, der Benutzer, Indizes und Grenzen |
 | [MariaDB für Hoster](mariadb-fuer-hoster.md) | MariaDB über den Treiber `mysqli`: Zeichensatz, Rechte, Backups |
 | [Oracle für Hoster](oracle-fuer-hoster.md) | Oracle 19c und später über `ezoracle`: `oci8`, der Benutzer, DRCP |
 | [MySQL für Hoster](mysql-fuer-hoster.md) | MySQL über den Treiber `mysqli`: Rechte, InnoDB, Replikate |
-| [Stand von Microsoft SQL Server](stand-von-microsoft-sql-server.md) | Warum es in 6.0.x keinen Treiber gibt und was nötig wäre |
+| [Stand von Microsoft SQL Server](stand-von-microsoft-sql-server.md) | Ab 6.0.15 unterstützt: was ein Hoster braucht, um ihn anzubieten |
 | [Betriebssysteme für Hoster](betriebssysteme-fuer-hoster.md) | Die vier Stufen, die Referenzplattform, Control Panels und Container |
 | [Composer und Git auf Servern](composer-und-git-auf-servern.md) | Wie der Code ankommt, wie Erweiterungen Pakete sind, was Sie auf einer laufenden Website nicht ausführen sollten |
 | [Beschreibbare Verzeichnisse und Berechtigungen](beschreibbare-verzeichnisse-und-berechtigungen.md) | Was beschreibbar sein muss, ein Benutzer oder eine Gruppe, die gehärteten Dateimodi |
@@ -63,8 +63,8 @@ Zurück zum Anfang der Hilfe zum Hosting: [Hosting-Anbieter: hier beginnen](../h
 - **PHP 8.0 oder später** für den Kernel und für Exponential Velocity, den empfohlenen Webserver, mit `sockets`
   (ab Velocity 0.0.4.54; [Kapitel 2](../../../installation/02-voraussetzungen.md#22-php)).
 - **Datenbanken, in der offiziellen Reihenfolge:** 1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
-  5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich (kein Treiber
-  in 6.0.x). Siehe [Datenbankunterstützung](../../datenbankunterstuetzung.md).
+  5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank
+  wählen](../../datenbank-waehlen.md)). Siehe [Datenbankunterstützung](../../datenbankunterstuetzung.md).
 - **Beschreibbar:** immer `var/` und `settings/`; `design/` und `extension/`, solange Pakete aus der Administration
   installiert werden ([Kapitel 8](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)).
 - **Zugang zur Kommandozeile** ist wichtig: Composer, Cronjobs, das Leeren von Caches und die Konsole laufen alle mit dem

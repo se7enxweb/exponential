@@ -137,8 +137,9 @@ Details: [PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fu
 
 ## Datenbanken auf Shared Hosting
 
-In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
+In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle ·
+6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank
+wählen](../../datenbank-waehlen.md)).
 
 - **1. SQLite 3** braucht keinen Datenbankserver und kein Datenbankkonto: Die Datenbank ist eine Datei unter
   `var/storage/sqlite3/`. Auf Shared Hosting entfällt damit ein ganzer Bereitstellungsschritt. Es passt zu einer Website,

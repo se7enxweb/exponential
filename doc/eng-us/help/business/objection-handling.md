@@ -66,7 +66,7 @@ not state that" over a guess.
 | "Will it last?" | A code base kept since 1999, a company and a nonprofit behind it, and a GPL license that keeps the code available to everyone | `COPYRIGHT.md`, [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md) |
 | "Who supports us?" | Documented commitments for PHP, security fixes, releases and documentation; service contracts from 7x or any provider; community places | [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment) |
 | "Which PHP versions?" | PHP 8.0 to 8.5, Velocity included (from its release 0.0.4.54) | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
-| "We will be locked in." | GPL code, six databases, almost any operating system, documented moves between databases | [Comparing Exponential factually](comparing-exponential-factually.md#no-lock-in-point-by-point) |
+| "We will be locked in." | GPL code, seven databases, almost any operating system, documented moves between databases | [Comparing Exponential factually](comparing-exponential-factually.md#no-lock-in-point-by-point) |
 | "Nobody knows this system." | The sources do not count developers; they document the stack and a lot of free learning material | [Skills](#skills-can-we-find-people-who-know-it) |
 | "Upgrades are risky." | Published versions never change; update files per database; an upgrade check in the administration | [Upgrading](../../install/11-upgrading.md), [The upgrade check](../../guides/upgrade-check.md) |
 | "AI will publish nonsense or leak data." | Drafts only, a region per provider, rules per section and class, one switch to turn it off | [Exponential Intelligence](../../features/6.0/extensions/expai.md) |

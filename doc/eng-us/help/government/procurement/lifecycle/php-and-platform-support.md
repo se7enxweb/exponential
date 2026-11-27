@@ -43,9 +43,10 @@ offers.
 
 ## Databases
 
-Exponential 6.0 supports six database systems, in this official order of preference: SQLite 3 (the default),
-PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Database support](../../../database-support.md),
-[9. Databases](../../../../install/09-databases.md)). Microsoft SQL Server is described as possible with additional work.
+Exponential 6.0 supports these database systems, in this official order of preference: SQLite 3 (the default),
+PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, and from 6.0.15 Microsoft SQL Server and Azure SQL
+([Database support](../../../database-support.md), [9. Databases](../../../../install/09-databases.md)). 6.0.15 adds
+more, at different levels of testing ([Choosing a database](../../../choosing-a-database.md)).
 The database is part of the platform: plan its own upgrades, and its backup method
 ([Database backups per engine](../../../hosting/operations/database-backups-per-engine.md)).
 

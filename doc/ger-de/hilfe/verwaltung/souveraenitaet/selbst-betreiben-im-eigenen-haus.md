@@ -52,7 +52,7 @@ Zwei Wege, beide dokumentiert:
 ## Die Datenbank
 
 SQLite 3 ist die Voreinstellung und braucht keinen Datenbankserver; PostgreSQL ist der empfohlene Datenbankserver.
-Alle sechs unterstützten Datenbanken können auf Ihren eigenen Rechnern laufen
+Alle sieben unterstützten Datenbanken können auf Ihren eigenen Rechnern laufen
 ([Datenbankunterstützung](../../datenbankunterstuetzung.md)).
 
 ## Betriebsaufgaben, die Sie übernehmen

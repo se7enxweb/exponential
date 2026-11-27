@@ -3,7 +3,7 @@ title: Datenbanken in der offiziellen Reihenfolge
 audience: hosting, admin
 category: hosting
 order: 60
-summary: Die sechs Datenbanken, die Exponential 6.0.x unterstützt, in der offiziellen Reihenfolge des Projekts (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), für Hoster nebeneinander verglichen, mit der Wahl, welche Sie anbieten, und was jede im Betrieb kostet. Microsoft SQL Server ist bekanntermaßen mit zusätzlicher Arbeit möglich.
+summary: Die sieben Datenbanken, die Exponential 6.0.x unterstützt, in der offiziellen Reihenfolge des Projekts (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), für Hoster nebeneinander verglichen, mit der Wahl, welche Sie anbieten, und was jede im Betrieb kostet. Microsoft SQL Server ist bekanntermaßen mit zusätzlicher Arbeit möglich.
 keywords: Datenbank, Datenbanken, offizielle Reihenfolge, unterstützte Datenbanken, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, DatabaseImplementation, mysqli, pgsql, sqlite3, oci8, Hosting-Tarife, Datenbankangebot, verwaltete Datenbank, CI, database, databases, official order, supported databases, hosting plans, database offer, managed database
 featured: true
 type: help
@@ -29,13 +29,14 @@ das Kapitel für den Betrieb ist [Kapitel 9, Datenbanken](../../../installation/
 ## Die offizielle Reihenfolge
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlicher Arbeit möglich.
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)).
 
-Alle sechs haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung, einen Eintrag im Setup-Assistenten
-und einen Weg in den Installern für die Kommandozeile ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
+Alle sieben haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung
+und einen Weg in den Installern für die Kommandozeile ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)); alle außer SQL Server haben auch einen Eintrag im Setup-Assistenten.
 Die Reihenfolge ist die Reihenfolge der Empfehlung für neue Websites; sie bedeutet nicht, dass die späteren weniger gut
-funktionieren. Microsoft SQL Server hat in 6.0.x keinen Treiber ([Stand von Microsoft SQL Server](stand-von-microsoft-sql-server.md)).
+funktionieren. Microsoft SQL Server läuft ab 6.0.15 ([Stand von Microsoft SQL Server](stand-von-microsoft-sql-server.md)); die übrigen
+Datenbanken von 6.0.15 stehen auf [Eine Datenbank wählen](../../datenbank-waehlen.md).
 
 Verwenden Sie diese Reihenfolge überall, wo Ihr eigenes Material Datenbanken aufführt: Tarifbeschreibungen,
 Bestellformulare, Support-Artikel.
@@ -86,7 +87,7 @@ Typische Angebote, die ein Hoster daraus bauen kann:
 
 - **Einstiegstarife**: nur SQLite 3. Kein Datenbankkonto bereitzustellen, nichts abzustimmen, Backups pro Website.
 - **Business-Tarife**: SQLite 3 oder PostgreSQL, mit MariaDB, wo das Panel es bereitstellt.
-- **Enterprise- oder dedizierte Tarife**: jede der sechs, einschließlich des eigenen MongoDB oder Oracle des Kunden.
+- **Enterprise- oder dedizierte Tarife**: jede der sieben, einschließlich des eigenen MongoDB oder Oracle des Kunden.
 
 > **Tipp**
 > Was immer Sie anbieten: Schreiben Sie die Engine jeder Kunden-Website in Ihre Bestandsliste. Backups,

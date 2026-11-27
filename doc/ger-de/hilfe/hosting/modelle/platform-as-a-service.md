@@ -101,8 +101,9 @@ Innerhalb von `var/` bieten die Quellen feinere Steuerung (`site.ini [FileSettin
 
 ## Die Datenbank
 
-In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
+In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle ·
+6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank
+wählen](../../datenbank-waehlen.md)).
 
 Mit einem schreibgeschützten oder flüchtigen Dateisystem verlangen die Quellen einen Datenbankserver. Auch mit einer
 persistenten Festplatte kann eine Plattform, die vielleicht mehr als eine Instanz der Anwendung betreibt, keine SQLite-Datei

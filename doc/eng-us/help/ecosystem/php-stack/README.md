@@ -22,7 +22,7 @@ works with.
 | Page | What it answers |
 |---|---|
 | [PHP versions](php-versions.md) | Which PHP versions run which release |
-| [Databases](databases.md) | The six supported databases in the project's order |
+| [Databases](databases.md) | The supported databases in the project's order |
 | [Web servers and engines](web-servers-and-engines.md) | Velocity, FrankenPHP and the traditional servers |
 | [Operating systems](operating-systems.md) | The four tiers of operating system support |
 | [Upstream projects and forks](upstream-projects-and-forks.md) | What Exponential uses and gives back to |

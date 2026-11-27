@@ -3,13 +3,13 @@ title: "Lektion 3.1: Eine Datenbank wählen"
 audience: trainer, hosting, admin
 category: training
 order: 31
-summary: Die Teilnehmenden nennen die sechs unterstützten Datenbanken in der offiziellen Reihenfolge des Projekts, vergleichen sie für ein Hosting-Angebot und finden in der Administration und auf der Kommandozeile heraus, welche Datenbank eine Website verwendet. 40 Minuten.
+summary: Die Teilnehmenden nennen die unterstützten Datenbanken in der offiziellen Reihenfolge des Projekts, vergleichen sie für ein Hosting-Angebot und finden in der Administration und auf der Kommandozeile heraus, welche Datenbank eine Website verwendet. 40 Minuten.
 keywords: hosting und betrieb, datenbank, offizielle reihenfolge, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, DatabaseImplementation, exp:ini, systeminformationen, hosting and operations, database, official order, System information
 type: help
 ---
 # Lektion 3.1: Eine Datenbank wählen
 
-Exponential 6.x unterstützt sechs Datenbanken, und das Projekt empfiehlt sie in einer festen Reihenfolge.
+Exponential 6.x unterstützt sieben Datenbanken, und das Projekt empfiehlt sie in einer festen Reihenfolge.
 Hosting-Mitarbeitende müssen sagen können, welche ein Tarif enthält, was der Betrieb jeder kostet und welche Datenbank
 die Website eines Kunden tatsächlich verwendet. Diese Lektion gibt ihnen die Reihenfolge, den Vergleich und die zwei
 Prüfungen.
@@ -29,7 +29,7 @@ Prüfungen.
 
 Nach dieser Lektion können die Teilnehmenden:
 
-- die sechs unterstützten Datenbanken in der offiziellen Reihenfolge aufzählen und erklären, was die Reihenfolge
+- die unterstützten Datenbanken in der offiziellen Reihenfolge aufzählen und erklären, was die Reihenfolge
   bedeutet;
 - sie anhand der Fragen vergleichen, die für einen Hoster wichtig sind: ein zu betreibender Server, mehrere Webserver,
   PHP-Erweiterung, Sicherungswerkzeug;
@@ -44,10 +44,10 @@ Quelle: [Datenbankunterstützung](../../../datenbankunterstuetzung.md) und
 [Datenbanken in der offiziellen Reihenfolge](../../../hosting/grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md).
 
 1. **Die Reihenfolge** (4 Minuten). Lesen Sie die Unterstützungserklärung laut vor: 1. SQLite 3 (der Standard),
-   2. PostgreSQL, 3. MongoDB, 4. MariaDB, 5. Oracle, 6. MySQL. Microsoft SQL Server gilt als mit zusätzlichem Aufwand
-   möglich und hat in 6.0.x keinen Treiber. Die Reihenfolge ist die Reihenfolge der Empfehlung für neue Websites; sie
-   bedeutet nicht, dass die späteren weniger gut funktionieren. Bitten Sie die Teilnehmenden, in ihrem eigenen Material
-   dieselbe Reihenfolge zu verwenden.
+   2. PostgreSQL, 3. MongoDB, 4. MariaDB, 5. Oracle, 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+      Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../../datenbank-waehlen.md)). Die Reihenfolge ist die
+      Reihenfolge der Empfehlung für neue Websites; sie bedeutet nicht, dass die späteren weniger gut funktionieren.
+      Bitten Sie die Teilnehmenden, in ihrem eigenen Material dieselbe Reihenfolge zu verwenden.
 2. **Nebeneinander** (6 Minuten). Zeigen Sie die Vergleichstabelle der Hosting-Seite: Wert von
    `DatabaseImplementation`, PHP-Erweiterung, Wert für `exp:install --db=`, ob sich mehrere Webserver die Datenbank
    teilen können (alle außer SQLite), und das Sicherungswerkzeug.
@@ -65,8 +65,9 @@ Rechner ist: WAL, eine für einen Webserver eingerichtete Verbindung und eine Sc
 **Warum steht MySQL zuletzt?** Nicht, weil es weniger gut funktioniert, sondern weil das Projekt für neue Websites
 zuerst die anderen empfiehlt. Es wird in der CI des Projekts getestet.
 
-**Kann ich Microsoft SQL Server anbieten?** In 6.0.x gibt es keinen Treiber; es gilt als mit zusätzlichem Aufwand
-möglich. Setzen Sie es nicht auf ein Bestellformular.
+**Kann ich Microsoft SQL Server anbieten?** Ja, ab 6.0.15 (SQL Server 2017 bis 2025, Azure SQL); nicht für Sites auf
+6.0.14 oder älter. Die übrigen Datenbanken von 6.0.15 stehen mit ihrem Stand auf
+[Eine Datenbank wählen](../../../datenbank-waehlen.md).
 
 **Welcher Zeichensatz?** Überall UTF-8: `utf8mb4` für MySQL und MariaDB, `UTF8` für PostgreSQL, `AL32UTF8` für Oracle.
 

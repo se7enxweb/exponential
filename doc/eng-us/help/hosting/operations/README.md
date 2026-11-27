@@ -41,7 +41,7 @@ repository where they are described, so you can check each statement yourself. S
   that must never be lost.
 - [Backup schedules and retention](backup-schedules-and-retention.md): options for how often and how long, framed
   for a hosting offer.
-- [Database backups per engine](database-backups-per-engine.md): the backup and restore commands for each of the six
+- [Database backups per engine](database-backups-per-engine.md): the backup and restore commands for each of the
   supported databases, in the official order.
 - [Restore and restore tests](restore-and-restore-tests.md): the restore procedure and how to prove that a backup
   works.

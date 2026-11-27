@@ -102,8 +102,9 @@ More: [Velocity for hosts](../servers/velocity-for-hosts.md),
 
 ## The database
 
-In the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server is known to be possible with additional work at this time.
+In the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL ·
+7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+database](../../choosing-a-database.md)).
 
 A VPS serves one site from one machine, which is exactly where **1. SQLite 3** is "a full production database".
 Choose a server "when more than one machine must write the database", "when many editors publish large changes at

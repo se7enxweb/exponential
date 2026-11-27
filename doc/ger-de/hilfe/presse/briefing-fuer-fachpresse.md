@@ -45,7 +45,8 @@ bevor Sie veröffentlichen.
 |---|---|
 | SQLite braucht keinen Datenbankserver; "the whole content repository is one file" | [Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge) |
 | MongoDB funktioniert "through an adapter that translates the kernel's SQL-shaped calls into MongoDB operations", mit dokumentierten Grenzen; es kam mit 6.0.14 | Dieselbe Seite; [Changelog 6.0.14](../../../changelogs/6.0/6.0.14.md) |
-| Microsoft SQL Server hat keinen Treiber; er ist "known to be possible with additional work" | Dieselbe Seite |
+| Microsoft SQL Server und Azure SQL laufen ab 6.0.15 mit dem eigenen Treiber des Kernels, getestet auf SQL Server 2017 bis 2025 | Dieselbe Seite |
+| 6.0.15 bringt Firebird, DuckDB und die Familien des MySQL- und des PostgreSQL-Protokolls; manche sind ungemessene Profile (Xpand, Aurora, Neon, Supabase) | [Eine Datenbank wählen](../datenbank-waehlen.md) |
 
 ## Engines und Webserver
 

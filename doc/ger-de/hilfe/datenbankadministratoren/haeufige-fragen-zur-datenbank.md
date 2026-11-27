@@ -23,9 +23,11 @@ Jede Antwort verlinkt auf die Seite mit den Details.
 
 ## Wählen und installieren
 
-**Welche Datenbanken werden unterstützt?** Sechs, in dieser Reihenfolge der Präferenz: SQLite 3 (der Standard), PostgreSQL,
-MongoDB, MariaDB, Oracle, MySQL. Microsoft SQL Server ist bekanntermaßen mit zusätzlicher Arbeit möglich
-([Unterstützte Engines und Versionen](unterstuetzte-engines-und-versionen.md)).
+**Welche Datenbanken werden unterstützt?** Sieben, in dieser Reihenfolge der Präferenz: SQLite 3 (der Standard), PostgreSQL,
+MongoDB, MariaDB, Oracle, MySQL und ab 6.0.15 Microsoft SQL Server und Azure SQL
+([Unterstützte Engines und Versionen](unterstuetzte-engines-und-versionen.md)). 6.0.15 erreicht außerdem Firebird,
+DuckDB, die Familien des MySQL- und des PostgreSQL-Protokolls sowie ODBC und MS Access für Daten und Importe
+([Eine Datenbank wählen](../datenbank-waehlen.md)).
 
 **Taugt SQLite wirklich für die Produktion?** Für eine Website, die von einer Maschine ausgeliefert wird, ja: Der Treiber fügt
 WAL, Verbindungseinstellungen für einen Webserver und eine Schreibwarteschlange hinzu, und Caches beantworten die meisten

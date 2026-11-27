@@ -338,7 +338,7 @@ fehl. Lesen Sie zuerst `error.log`, wenn sich eine Site verhält, als wäre ihre
 
 ## Unterstützung durch die Installer
 
-Exponential hat drei Installer im Kernel. Alle drei unterstützen die ersten sechs Datenbanken, Firebird und die
+Exponential hat drei Installer im Kernel. Alle drei unterstützen die ersten sieben Datenbanken, Firebird und die
 Datenbanken des PostgreSQL-Protokolls; Microsoft SQL Server, die Datenbanken des MySQL-Protokolls und DuckDB werden mit
 dem Kickstarter und `exp:install` installiert. ODBC, MS Access und Spanner sind keine Site-Datenbanken und haben keinen
 Eintrag in den Installern.

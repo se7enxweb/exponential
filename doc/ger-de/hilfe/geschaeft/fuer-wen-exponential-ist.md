@@ -121,7 +121,7 @@ realer Personen.
 | **Rolle** | Leitung IT, Infrastruktur oder Hosting |
 | **Situation** | Hat Standardbetriebssysteme, eine bevorzugte Datenbank, Sicherheitsregeln, einen Upgrade-Kalender |
 | **Was ihnen wichtig ist** | Wo es läuft, mit welcher Datenbank, wie es gepatcht, abgesichert und überwacht wird |
-| **Einstieg mit** | Fast jedes Betriebssystem mit PHP 8.0 oder später; sechs Datenbanken; jeder gängige Webserver oder Velocity; klare Regeln für Releases und Sicherheit |
+| **Einstieg mit** | Fast jedes Betriebssystem mit PHP 8.0 oder später; sieben Datenbanken; jeder gängige Webserver oder Velocity; klare Regeln für Releases und Sicherheit |
 | **Zeigen** | **Setup > Systeminformationen**, **Setup > Logdateien**, den Tab **Audit** |
 | **Schicken** | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md), [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Sicherheitshärtung](../sicherheitshaertung.md), [Hosting, Datenbank und Betriebssystem auswählen](../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md) |
 
@@ -194,7 +194,7 @@ wo Sie als Nächstes nachsehen.
 | Wer ändert heute Seiten, und wie lange dauert das? | Redakteure warten auf Entwickler | [Der Layout-Editor](../layout-editor.md) |
 | Verkaufen Sie online, oder planen Sie es? | Ja, nah an den Inhalten | [Funktionshighlights](funktionshighlights-fuer-kunden.md) |
 | Wo muss die Site laufen: auf eigenen Servern, in einer Cloud, bei einem Hosting-Partner? | Sie wollen die Wahl haben oder haben einen festen Standard | [Hosting, Datenbank und Betriebssystem auswählen](../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md) |
-| Welche Datenbank und welches Betriebssystem betreibt Ihre IT? | Eine der sechs Datenbanken; ein Betriebssystem mit PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) | [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
+| Welche Datenbank und welches Betriebssystem betreibt Ihre IT? | Eine der sieben Datenbanken; ein Betriebssystem mit PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) | [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Wie wichtig sind Lizenzkosten und die Freiheit, den Anbieter zu wechseln? | Wichtig | [Lizenzen für Käufer erklärt](lizenzen-fuer-kaeufer.md) |
 | Betreiben Sie eine Site, die gebaut wurde, als die Software noch eZ Publish hieß, oder eine auf eZ Platform oder Ibexa? | Ja | [Upgrade](../../anleitungen/aktualisieren.md), Migrationskapitel 14 bis 16 |
 | Wer betreibt die Site nach dem Start: Ihre IT, eine Agentur, ein Hosting-Unternehmen? | Es ist jemand benannt | [Zusammenarbeiten](../fuehrung/zusammenarbeiten.md) |

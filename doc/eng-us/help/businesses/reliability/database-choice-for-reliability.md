@@ -27,11 +27,11 @@ The full technical comparison is [Database support](../../database-support.md); 
 ## The official order
 
 "**Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at
-this time" ([Database support](../../database-support.md#the-supported-databases-in-order), also in the
-[README, "Requirements"](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)).
+3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL" ([Database
+support](../../database-support.md#the-supported-databases-in-order), also in the [README,
+"Requirements"](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)).
 
-The order is a recommendation for new sites. All six are supported; the page notes that MySQL "is last in the order,
+The order is a recommendation for new sites. All seven are supported; the page notes that MySQL "is last in the order,
 not because it works less well, but because the project recommends the others first for new sites".
 
 ## What the choice affects
@@ -59,8 +59,8 @@ From [Database support](../../database-support.md#the-supported-databases-in-ord
 | **5. Oracle** | Supported (19c and later) through the `ezoracle` extension, present in every installation |
 | **6. MySQL** | Supported on the same driver as MariaDB, and tested in CI |
 
-Microsoft SQL Server has no driver in Exponential 6.0.x; it is "known to be possible" with additional work
-([Database support](../../database-support.md#microsoft-sql-server-possible-with-additional-work)).
+Microsoft SQL Server and Azure SQL run on the kernel's own driver from 6.0.15, with a DFS cluster backend and
+Always On read replicas ([Database support](../../database-support.md#7-microsoft-sql-server-and-azure-sql)).
 
 Several web servers on one database: every engine except SQLite supports it
 ([Database support, at a glance](../../database-support.md#at-a-glance)).

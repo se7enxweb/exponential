@@ -3,7 +3,7 @@ title: "Gesprächspunkte: Hosting, Datenbanken und Freiheit"
 audience: advocate
 category: advocacy
 order: 22
-summary: Belegte Gesprächspunkte zur Freiheit, zu wählen, wo Exponential läuft - sechs Datenbanken, Betriebssysteme in vier Stufen, Webserver und Engines, Container und Hosting-Panels, Umzug zwischen Datenbanken - und die ehrlichen Grenzen.
+summary: Belegte Gesprächspunkte zur Freiheit, zu wählen, wo Exponential läuft - sieben Datenbanken, Betriebssysteme in vier Stufen, Webserver und Engines, Container und Hosting-Panels, Umzug zwischen Datenbanken - und die ehrlichen Grenzen.
 keywords: Gesprächspunkte, Hosting, Datenbanken, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Betriebssysteme, Linux, BSD, macOS, Windows, Container, Shared Hosting, Anbieterbindung, Freiheit, Migration, talking points, hosting, databases, operating systems, containers, shared hosting, lock-in, freedom, migration
 type: help
 ---
@@ -60,7 +60,8 @@ Lesen Sie die Seite, bevor Sie tiefer gehen; jede Datenbank hat ihren eigenen Ab
 | MongoDB | „Unterstützt, mit dokumentierten Grenzen.“ ([Grenzen von MongoDB](../datenbankunterstuetzung.md#grenzen-von-mongodb)) |
 | MariaDB und MySQL | „Unterstützt; sie teilen sich einen Treiber.“ |
 | Oracle | „Unterstützt über die Erweiterung `ezoracle`.“ |
-| Microsoft SQL Server | „Mit zusätzlicher Arbeit möglich; nicht eine der sechs.“ ([Abschnitt](../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)) |
+| Microsoft SQL Server, Azure SQL | „Ab 6.0.15 mit dem eigenen Treiber des Kernels unterstützt.“ ([Abschnitt](../datenbankunterstuetzung.md#7-microsoft-sql-server-und-azure-sql)) |
+| Firebird, DuckDB, TiDB, CockroachDB und weitere | „Neu in 6.0.15, jede auf ihrer eigenen Stufe; manche ungetestet.“ ([Eine Datenbank wählen](../datenbank-waehlen.md)) |
 
 ## Die Stufen der Betriebssysteme
 
@@ -79,7 +80,7 @@ nur „es läuft auf X“.
 - **Shared Hosting**: Apache oder LiteSpeed mit `.htaccess` können es ausliefern, und der Setup-Assistent installiert es
   ohne Shell; Velocity kann dort meist nicht laufen.
 - **MongoDB** hat dokumentierte Grenzen; lesen Sie sie, bevor Sie es empfehlen.
-- **Microsoft SQL Server** gehört nicht zu den sechs unterstützten Datenbanken.
+- **Microsoft SQL Server** gehört nicht zu den sieben unterstützten Datenbanken.
 - Systeme der **Stufen 3 und 4** sind nicht getestet; sagen Sie das.
 
 ## Fragen, die Sie hören werden

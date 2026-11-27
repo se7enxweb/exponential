@@ -61,7 +61,7 @@ besten passt.
 Sagen Sie das selbst. Jeder Punkt ist dokumentiert in
 [Wo Exponential nicht passt](../geschaeft/exponential-sachlich-vergleichen.md#wo-exponential-nicht-die-richtige-wahl-ist):
 
-- Microsoft SQL Server ist vorgeschrieben: kein Treiber in 6.0.x.
+- Microsoft SQL Server ist auf einem Release vor 6.0.15 vorgeschrieben (ab 6.0.15 wird er unterstützt).
 - Ein reines Symfony-Projekt ohne den Legacy-Kernel: Dann ist Exponential Platform DXP das passende Familienmitglied.
 - Shared Hosting, das lang laufende Prozesse verbietet: Velocity kann dort meist nicht laufen.
 - Mehr als 62 Inhaltssprachen in einer Installation.

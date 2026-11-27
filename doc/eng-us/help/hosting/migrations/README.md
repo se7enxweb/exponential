@@ -29,7 +29,7 @@ the assessment, the plan, the move, the checks, and the responsibilities between
 | [From older Exponential versions](from-older-exponential-versions.md) | sites of the 3.x, 4.x and 5.x eras and older 6.0.x releases |
 | [From eZ Platform and Ibexa](from-ez-platform-and-ibexa.md) | Symfony-based sites and their two destinations |
 | [Moving a site between hosts](moving-a-site-between-hosts.md) | an Exponential 6 site that only changes servers |
-| [Changing the database engine](changing-the-database-engine.md) | moving a site to another of the six databases |
+| [Changing the database engine](changing-the-database-engine.md) | moving a site to another of the seven databases |
 
 ## Which page do I need?
 

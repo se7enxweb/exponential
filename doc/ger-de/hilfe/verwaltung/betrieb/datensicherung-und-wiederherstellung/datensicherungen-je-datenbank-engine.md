@@ -16,8 +16,8 @@ bestehendes Sicherungssystem der Organisation passen. Die vollständige Hosting-
 [Datenbanksicherungen je Engine](../../../hosting/betrieb/datenbank-backups-je-engine.md).
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlichem Aufwand möglich.
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../../datenbank-waehlen.md)).
 
 ## Inhalt
 

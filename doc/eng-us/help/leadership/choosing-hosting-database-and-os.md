@@ -3,7 +3,7 @@ title: Choosing hosting, database and operating system
 audience: project-manager, admin
 category: leadership
 order: 40
-summary: Decision tables for where an Exponential site runs: the six supported databases in order, operating system tiers, Velocity, FrankenPHP, Apache or nginx, install methods and a decision record.
+summary: Decision tables for where an Exponential site runs: the supported databases in order, operating system tiers, Velocity, FrankenPHP, Apache or nginx, install methods and a decision record.
 keywords: hosting, database, operating system, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Velocity, FrankenPHP, Apache, nginx, PHP-FPM, Plesk, containers, Docker, Kubernetes, install method, requirements, decision
 type: help
 ---
@@ -43,10 +43,10 @@ Each row is explained below with its source.
 ## Database
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time. ([Database support](../database-support.md))
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../choosing-a-database.md)). ([Database support](../database-support.md))
 
-All six have a driver, an entry in the setup wizard and a path in the command-line installers
+All seven have a driver and a path in the command-line installers; all but SQL Server have an entry in the setup wizard
 ([Database support](../database-support.md#the-supported-databases-in-order)).
 
 ### Decision table
@@ -76,7 +76,8 @@ Sources: "At a glance" and "Versions, checked against the code" on [Database sup
 - **Oracle** (19c and later) is supported through the `ezoracle` extension, present in every installation.
 - **MySQL** is last in the order "not because it works less well, but because the project recommends the others first
   for new sites".
-- **Microsoft SQL Server** has no driver in 6.0.x; nothing should be read as a promise of one.
+- **Microsoft SQL Server and Azure SQL** run on the kernel's own driver from 6.0.15, not in 6.0.14 and older. The other
+  databases 6.0.15 reaches, and which of them are untested, are on [Choosing a database](../choosing-a-database.md).
 
 > **Tip**
 > The project manager's question is not "which database is best" but "which database can our team run, back up and

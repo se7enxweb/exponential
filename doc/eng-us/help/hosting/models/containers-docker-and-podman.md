@@ -207,8 +207,9 @@ The backup set is the same as everywhere: the database and `var/storage`, `setti
 
 ## The database and the one-writer rule
 
-In the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server is known to be possible with additional work at this time.
+In the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL ·
+7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+database](../../choosing-a-database.md)).
 
 - **1. SQLite 3** works in a container when **one** container writes the database: "SQLite's WAL needs shared memory
   on one host, so several replicas cannot share one database file over a network volume."

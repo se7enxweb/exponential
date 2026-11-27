@@ -113,7 +113,7 @@ Vorlagen, keine Empfehlungen. Ersetzen Sie jedes `<...>` durch Ihre eigene Zahl.
 | | Shared | VPS | Dediziert | Verwaltet |
 |---|---|---|---|---|
 | Engine | Apache oder nginx + PHP-FPM | Velocity (oder klassisch) | Velocity | Velocity, vom Hoster abgestimmt |
-| Datenbank | SQLite 3 oder eine Datenbank auf einem geteilten Server | SQLite 3 oder ein Server auf dem VPS | jede der sechs | mit dem Kunden gewählt |
+| Datenbank | SQLite 3 oder eine Datenbank auf einem geteilten Server | SQLite 3 oder ein Server auf dem VPS | jede der sieben | mit dem Kunden gewählt |
 | Abschottung | Systembenutzer + PHP-FPM-Pool | virtuelle Maschine | Maschine | laut Vertrag |
 | Shell-Zugang | `<yes/no>` | ja | ja | für den Hoster; Kunde `<yes/no>` |
 | Speicherkontingent | `<GB>` | `<GB>` | `<disk>` | `<GB>` |

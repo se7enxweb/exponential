@@ -3,7 +3,7 @@ title: "exp:install for hosts"
 audience: hosting, admin
 category: hosting
 order: 30
-summary: The console install as a host uses it from scripts and panels: the options that matter, the database password from the environment, the administrator password rules, dry run and print, exit status, and examples for each of the six databases.
+summary: The console install as a host uses it from scripts and panels: the options that matter, the database password from the environment, the administrator password rules, dry run and print, exit status, and examples for each of the seven databases.
 keywords: exp:install, install.php, console install, unattended, options, --db, --db-action, EXP_INSTALL_DB_PASSWORD, --url, --access, --password, --random-password, --dry-run, --print, --force, exit status, initial-admin-password
 type: help
 ---

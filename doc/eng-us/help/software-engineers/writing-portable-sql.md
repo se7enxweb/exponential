@@ -9,7 +9,7 @@ type: help
 ---
 # Writing portable SQL
 
-This page is for engineers who write SQL in kernel or extension code. Exponential runs on six databases, so a query
+This page is for engineers who write SQL in kernel or extension code. Exponential runs on seven databases, so a query
 that works on your development database is not finished until it works on the others. The rules and the dialect table
 come from [Database and SQL standards](../../standards/databases-and-sql.md).
 

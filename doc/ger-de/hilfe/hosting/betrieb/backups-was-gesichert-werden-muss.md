@@ -39,7 +39,7 @@ eigenen Erweiterungen und Designs). Ein Backup besteht aus der Datenbank und den
 ([10.9](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung)). Ein Bild, das in der Datenbank existiert, aber
 nicht auf der Festplatte, erscheint als defektes Bild; eine Datei ohne ihre Datenbankzeile ist Ballast.
 
-Die Datenbankhälfte hängt von der Engine ab; die Befehle für jede der sechs unterstützten Datenbanken stehen auf
+Die Datenbankhälfte hängt von der Engine ab; die Befehle für jede der unterstützten Datenbanken stehen auf
 [Datenbank-Backups je Engine](datenbank-backups-je-engine.md).
 
 ## Die zu sichernden Dateien

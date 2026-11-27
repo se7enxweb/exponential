@@ -43,12 +43,13 @@ mitzureißen.
 
 ## Die Datenbank
 
-Eine Website mit mehreren Knoten braucht einen Datenbankserver. Von den unterstützten Datenbanken in der offiziellen Reihenfolge
-(1. SQLite 3, der Standard · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit
-bekanntermaßen mit zusätzlicher Arbeit möglich, ohne Treiber in 6.0.x) unterstützt jede Engine außer SQLite mehrere Webserver an
-einer Datenbank ([Datenbankunterstützung, auf einen Blick](../../datenbankunterstuetzung.md#auf-einen-blick)). Der WAL-Modus von SQLite nutzt
-gemeinsamen Speicher, alle Prozesse müssen also auf einer Maschine sein; mehrere Webserver, die sich eine Datenbankdatei über NFS
-teilen, werden nicht unterstützt ([Kapitel 9](../../../installation/09-datenbanken.md#wal-leser-und-schreiber-nebeneinander)).
+Eine Website mit mehreren Knoten braucht einen Datenbankserver. Von den unterstützten Datenbanken in der offiziellen
+Reihenfolge (1. SQLite 3, der Standard · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft
+SQL Server und Azure SQL; weitere Datenbanken ab 6.0.15 in [Eine Datenbank wählen](../../datenbank-waehlen.md))
+unterstützt jede Engine außer SQLite mehrere Webserver an einer Datenbank ([Datenbankunterstützung, auf einen
+Blick](../../datenbankunterstuetzung.md#auf-einen-blick)). Der WAL-Modus von SQLite nutzt gemeinsamen Speicher, alle
+Prozesse müssen also auf einer Maschine sein; mehrere Webserver, die sich eine Datenbankdatei über NFS teilen, werden
+nicht unterstützt ([Kapitel 9](../../../installation/09-datenbanken.md#wal-leser-und-schreiber-nebeneinander)).
 
 Für leselastige Websites auf MySQL oder MariaDB schickt `site.ini [DatabaseSettings] UseSlaveServer` lesende Abfragen an Replikate
 (`SlaveServerArray[]` und die zugehörigen Schlüssel); der mitgelieferte Wert ist `disabled`

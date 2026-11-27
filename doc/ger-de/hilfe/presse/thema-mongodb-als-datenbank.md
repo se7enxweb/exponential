@@ -3,7 +3,7 @@ title: "Thema: MongoDB als Datenbank"
 audience: press
 category: press-media
 order: 70
-summary: Ein Themenbeitrag darüber, dass Exponential 6.0.14 sein gesamtes Content-Repository in MongoDB speichert - was funktioniert, die dokumentierten Grenzen, wie es zu den sechs unterstützten Datenbanken passt - mit druckbaren Fakten, Quellen und den Aussagen, die Sie vermeiden sollten.
+summary: Ein Themenbeitrag darüber, dass Exponential 6.0.14 sein gesamtes Content-Repository in MongoDB speichert - was funktioniert, die dokumentierten Grenzen, wie es zu den sieben unterstützten Datenbanken passt - mit druckbaren Fakten, Quellen und den Aussagen, die Sie vermeiden sollten.
 keywords: Thema, MongoDB, Dokumentdatenbank, NoSQL, Datenbank, 6.0.14, Content-Repository, Grenzen, Datenbanken, PHP-Erweiterung mongodb, story, document database, database, content repository, limits, databases, PHP mongodb extension
 type: help
 ---
@@ -67,7 +67,7 @@ liefert nichts zurück.
 
 ## Verwandte Seiten
 
-- [Thema: sechs Datenbanken](thema-sechs-datenbanken.md)
+- [Thema: sieben Datenbanken](thema-sechs-datenbanken.md)
 - [Thema: SQLite als Standard](thema-sqlite-als-standard.md)
 - [Datenbankunterstützung](../datenbankunterstuetzung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

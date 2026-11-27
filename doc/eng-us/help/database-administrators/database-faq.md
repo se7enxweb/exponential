@@ -23,9 +23,11 @@ the page with the details.
 
 ## Choosing and installing
 
-**Which databases are supported?** Six, in this order of preference: SQLite 3 (the default), PostgreSQL, MongoDB,
-MariaDB, Oracle, MySQL. Microsoft SQL Server is known to be possible with additional work
-([Supported engines and versions](supported-engines-and-versions.md)).
+**Which databases are supported?** Seven, in this order of preference: SQLite 3 (the default), PostgreSQL, MongoDB,
+MariaDB, Oracle, MySQL, and from 6.0.15 Microsoft SQL Server and Azure SQL
+([Supported engines and versions](supported-engines-and-versions.md)). 6.0.15 also reaches Firebird, DuckDB, the
+MySQL and PostgreSQL protocol families, and ODBC and MS Access for data and imports
+([Choosing a database](../choosing-a-database.md)).
 
 **Is SQLite really fit for production?** For a site served from one machine, yes: the driver adds WAL, connection
 settings for a web server and a write queue, and caches answer most page views. Choose a server engine for several

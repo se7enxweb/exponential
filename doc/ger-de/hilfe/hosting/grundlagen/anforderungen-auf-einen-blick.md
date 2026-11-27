@@ -37,7 +37,7 @@ diese Seite ist seine Zusammenfassung für Hoster.
 | PHP für Exponential Velocity | 8.0 mit `sockets` (8.1 vor Release 0.0.4.54) | zusätzlich mit `pcntl` und `openssl` | Composer (das Velocity-Paket verlangt `"php": ">=8.0"` und `ext-sockets`) |
 | PHP-Erweiterungen | siehe [unten](#erforderliche-php-erweiterungen) | zusätzlich `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer (`ext-*`) und die kritischen Tests des Setup-Assistenten |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an, `allow_url_fopen` an | mehr Speicher für Importe und Bildarbeit; Upload-Grenzen für Ihre Kunden bemessen | die kritischen Tests des Setup-Assistenten |
-| Datenbank | eine der sechs, SQLite 3 braucht keinen Server | in der offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | der Datenbankschritt des Installers |
+| Datenbank | eine der sieben, SQLite 3 braucht keinen Server | in der offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | der Datenbankschritt des Installers |
 | Composer | 2.x | ein aktuelles 2.x (2.2 oder später liest `config.allow-plugins`) | Sie |
 | Webserver | keiner (Velocity oder der eingebaute Server von PHP) | Velocity, oder Apache oder nginx mit PHP-FPM | Sie |
 | Bildkonvertierung | GD (`imagegd2()`) oder `convert` von ImageMagick | beides | kritischer Test `image_conversion` |
@@ -69,8 +69,8 @@ Die vollständige Liste, die empfohlenen Erweiterungen und die Paketnamen je Sys
 ## Datenbanken
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlicher Arbeit möglich (kein Treiber in 6.0.x).
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)).
 
 | Datenbank | PHP-Erweiterung | Praktisches Minimum |
 |---|---|---|

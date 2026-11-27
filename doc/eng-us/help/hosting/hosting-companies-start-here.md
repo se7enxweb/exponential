@@ -65,7 +65,7 @@ they show you how to measure and decide.
 | Need | Minimum | Notes |
 |---|---|---|
 | PHP | 8.0 (Velocity included) | the newest 8.x your system offers; 8.5 is supported |
-| Database | one of the six | in the official order: 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at this time. |
+| Database | one of the seven | in the official order: 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a database](../choosing-a-database.md)). |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on | checked by the setup wizard |
 | Web server | none required | Velocity serves HTTP and HTTPS itself; or Apache/nginx with PHP-FPM |
 | Composer | 2.x | for installs and updates from source |
@@ -79,7 +79,7 @@ The full picture is on [Requirements at a glance](basics/requirements-at-a-glanc
 
 | Section | What it covers |
 |---|---|
-| [Hosting basics](basics/README.md) | requirements, PHP, the six databases in order, operating systems, Composer and Git, permissions, sizing, media, search |
+| [Hosting basics](basics/README.md) | requirements, PHP, the seven databases in order, operating systems, Composer and Git, permissions, sizing, media, search |
 | [Hosting models](models/README.md) | shared, VPS, dedicated, containers, Kubernetes, platform as a service, managed hosting |
 | [Control panels](panels/README.md) | Plesk (what the project's own development server runs), cPanel, DirectAdmin, ISPConfig, Webmin; PHP pools, cron, databases, certificates |
 | [Web servers and engines](servers/README.md) | Apache, nginx, Caddy, LiteSpeed, IIS, Exponential Velocity, FrankenPHP |

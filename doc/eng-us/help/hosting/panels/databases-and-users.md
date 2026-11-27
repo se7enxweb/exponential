@@ -10,13 +10,13 @@ type: help
 # Databases and users
 
 This page is for administrators and support staff at hosting companies who create databases and database users for
-Exponential sites, by hand or through a panel. It answers, for each of the six supported engines in the official
+Exponential sites, by hand or through a panel. It answers, for each of the supported engines in the official
 order, what must exist before the install, which privileges the site's user needs, and how the connection reaches the
 site's settings.
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time. ([Database support](../../database-support.md))
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../../choosing-a-database.md)). ([Database support](../../database-support.md))
 
 ## Contents
 
@@ -138,9 +138,10 @@ CI on MySQL 8.0.
 
 ## Microsoft SQL Server
 
-There is no driver in 6.0.x. It "is known to be possible with additional work at this time"; what would have to be
-written is listed in [Database support](../../database-support.md#microsoft-sql-server-possible-with-additional-work).
-Do not offer it as a database option for Exponential sites.
+Supported from 6.0.15 on the kernel's own driver (SQL Server 2017 to 2025, Azure SQL). Create the database and its
+login in the panel or with `sqlcmd` first, with a UTF-8 collation and `READ_COMMITTED_SNAPSHOT ON`; the installer does
+not create it ([Microsoft SQL Server status](../basics/microsoft-sql-server-status.md)). Do not offer it for sites that
+stay on 6.0.14 or older. The other databases of 6.0.15: [Choosing a database](../../choosing-a-database.md).
 
 ## Where the connection is stored
 

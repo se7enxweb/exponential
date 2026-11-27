@@ -22,7 +22,7 @@ auf denen Exponential läuft und mit denen es arbeitet.
 | Seite | Was sie beantwortet |
 |---|---|
 | [PHP-Versionen](php-versionen.md) | Welche PHP-Versionen welches Release betreiben |
-| [Datenbanken](datenbanken.md) | Die sechs unterstützten Datenbanken in der Reihenfolge des Projekts |
+| [Datenbanken](datenbanken.md) | Die unterstützten Datenbanken in der Reihenfolge des Projekts |
 | [Webserver und Engines](webserver-und-engines.md) | Velocity, FrankenPHP und die klassischen Server |
 | [Betriebssysteme](betriebssysteme.md) | Die vier Stufen der Unterstützung für Betriebssysteme |
 | [Upstream-Projekte und Forks](upstream-projekte-und-forks.md) | Was Exponential verwendet und wem es etwas zurückgibt |

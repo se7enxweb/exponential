@@ -88,8 +88,9 @@ Engine ([Worker-Pool von Velocity](../../../spezifikationen/6.0/velocity-worker-
 
 ## Die Datenbank auf einem dedizierten Server
 
-In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
+In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle ·
+6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank
+wählen](../../datenbank-waehlen.md)).
 
 - **1. SQLite 3** auf derselben Maschine skaliert Lesezugriffe mit der Anzahl der Prozesse; Schreibvorgänge stehen in
   einer Warteschlange. Es ist eine vollwertige Produktionsdatenbank für eine Maschine. Rechnen Sie mit bis zu 64 MB

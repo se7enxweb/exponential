@@ -25,7 +25,7 @@ welchem Format, und worauf Sie achten sollten.
 
 | Daten | Gespeichert als | Ohne Exponential lesbar |
 |---|---|---|
-| Inhaltsfelder | Zeilen in der Datenbank (eine von sechs Datenbanken) | ja, mit Datenbankwerkzeugen; das Schema liegt im Repository |
+| Inhaltsfelder | Zeilen in der Datenbank (eine von sieben Datenbanken) | ja, mit Datenbankwerkzeugen; das Schema liegt im Repository |
 | Rich Text | XML in einer Datenbankspalte | ja, es ist XML |
 | Hochgeladene Dateien und Bilder | Dateien unter `var/<site>/storage/` | ja, als Dateien; ihre Namen sind in der Datenbank Objekten zugeordnet |
 | Einstellungen | INI-Dateien in `settings/` und `extension/*/settings/` | ja, reiner Text |

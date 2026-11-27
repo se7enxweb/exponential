@@ -39,7 +39,7 @@ Source: [Handling objections](../../business/objection-handling.md#a-method-for-
 | "Open source is less secure." | Private vulnerability reporting with a first answer within one business day; fixes in the next 6.0.x release; a Content Security Policy, an audit trail, two-step sign-in and a hardening guide | `SECURITY.md`, [Security hardening](../../security-hardening.md) |
 | "Is it still maintained?" | Fifteen 6.0.x releases from 1 January 2024 to 7 June 2026, followed by the current 6.0.15 line | [Who is 7x?](../../who-is-7x.md#the-60x-releases) |
 | "Will it last?" | A code base kept since 1999, a company and a nonprofit behind it, and a GPL license that keeps the code available to everyone | [Who is the Exponential Foundation?](../../who-is-the-exponential-foundation.md) |
-| "We will be locked in." | GPL code, six databases, almost any operating system, documented moves between databases | [Comparing Exponential factually](../../business/comparing-exponential-factually.md#no-lock-in-point-by-point) |
+| "We will be locked in." | GPL code, seven databases, almost any operating system, documented moves between databases | [Comparing Exponential factually](../../business/comparing-exponential-factually.md#no-lock-in-point-by-point) |
 | "Nobody knows this system." | The sources do not count developers; they document the stack and provide free learning material | [Handling objections](../../business/objection-handling.md#skills-can-we-find-people-who-know-it) |
 | "Upgrades are risky." | Published versions never change; an upgrade check in the administration | [The upgrade check](../../../guides/upgrade-check.md) |
 | "Isn't it the old discontinued product?" | Exponential continues a code base whose original product its creator discontinued after almost 18 years; fifteen 6.0.x releases have followed since 1 January 2024 | [Who is 7x?](../../who-is-7x.md) |
@@ -60,7 +60,7 @@ Source: [Handling objections](../../business/objection-handling.md#a-method-for-
 
 Say these yourself; each is documented on [Comparing Exponential factually](../../business/comparing-exponential-factually.md#where-exponential-is-not-the-right-fit):
 
-- Microsoft SQL Server is required: no driver in 6.0.x.
+- Microsoft SQL Server is required on a release before 6.0.15 (it is supported from 6.0.15).
 - Several replicas sharing one SQLite file: not possible; use a database server.
 - More than 62 content languages in one installation: not possible.
 - A published project SLA document: the project publishes none; service terms come from a provider.

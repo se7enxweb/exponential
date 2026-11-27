@@ -3,7 +3,7 @@ title: "Thema: Freiheit beim Hosting"
 audience: press
 category: press-media
 order: 67
-summary: Ein Themenbeitrag darüber, wo Exponential laufen kann - jeder Webserver, der URLs umschreibt, oder das eigene Velocity, sechs Datenbanken, fast jedes Betriebssystem mit PHP 8.0, Shared Hosting mit Grenzen und keine Bindung an einen Anbieter - mit druckbaren Fakten, Quellen und den ehrlichen Grenzen.
+summary: Ein Themenbeitrag darüber, wo Exponential laufen kann - jeder Webserver, der URLs umschreibt, oder das eigene Velocity, sieben Datenbanken, fast jedes Betriebssystem mit PHP 8.0, Shared Hosting mit Grenzen und keine Bindung an einen Anbieter - mit druckbaren Fakten, Quellen und den ehrlichen Grenzen.
 keywords: Thema, Hosting, Freiheit beim Hosting, keine Anbieterbindung, Webserver, Datenbanken, Betriebssysteme, Shared Hosting, Container, Cloud, Presse, story, hosting freedom, no lock-in, web servers, databases, operating systems, shared hosting, containers, cloud, press
 type: help
 ---
@@ -45,7 +45,7 @@ dieser Auswahl. Diese Seite gibt beides, mit Quellen.
 einfachen PHP-Dateien plus einer Datenbank; es hat keinen eigenen kompilierten Code“
 ([Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md)). Es läuft hinter „jedem Webserver, der eine URL umschreiben kann“,
 oder unter seinem eigenen Server Velocity
-([README](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options)), auf sechs Datenbanken
+([README](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options)), auf sieben Datenbanken
 von SQLite bis Oracle ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)), und der Code
 steht unter der GPL, sodass jeder es hosten darf. 7x verkauft Managed Hosting, aber „jeder“ darf es hosten; „Sie
 wählen“ ([Gesprächspunkte: Hosting](../fuersprecher/gespraechspunkte-hosting-datenbanken-freiheit.md#fragen-die-sie-hören-werden)).
@@ -78,7 +78,8 @@ wählen“ ([Gesprächspunkte: Hosting](../fuersprecher/gespraechspunkte-hosting
 - Systeme der **Stufe 3** sind „eine begründete Erwartung, kein Testergebnis“
   ([Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md#die-vier-stufen)).
 - **MongoDB** hat dokumentierte Grenzen ([Grenzen von MongoDB](../datenbankunterstuetzung.md#grenzen-von-mongodb)).
-- **Microsoft SQL Server** ist „mit zusätzlicher Arbeit möglich“, aber keine der sechs.
+- **Microsoft SQL Server** wird ab 6.0.15 unterstützt, nicht vorher. Von den Datenbanken, die 6.0.15 bringt, sind Xpand,
+  Aurora, Neon und Supabase Profile, die nie liefen ([Eine Datenbank wählen](../datenbank-waehlen.md)).
 
 ## Was Sie nicht behaupten sollten
 
@@ -92,7 +93,7 @@ wählen“ ([Gesprächspunkte: Hosting](../fuersprecher/gespraechspunkte-hosting
 ```text
 „Ihr Server, Ihre Datenbank, Ihr Land: Freiheit beim Hosting in einem Open-Source-CMS“
 „Vier Stufen Ehrlichkeit: wie Exponential dokumentiert, wo es läuft“
-„Vom Laptop mit SQLite bis Oracle: ein CMS, sechs Datenbanken“
+„Vom Laptop mit SQLite bis Oracle: ein CMS, sieben Datenbanken“
 ```
 
 ## Wen Sie fragen
@@ -105,7 +106,7 @@ wählen“ ([Gesprächspunkte: Hosting](../fuersprecher/gespraechspunkte-hosting
 ## Verwandte Seiten
 
 - [Gesprächspunkte: Hosting, Datenbanken und Freiheit](../fuersprecher/gespraechspunkte-hosting-datenbanken-freiheit.md)
-- [Thema: sechs Datenbanken](thema-sechs-datenbanken.md)
+- [Thema: sieben Datenbanken](thema-sechs-datenbanken.md)
 - [Thema: Betriebssysteme](thema-betriebssysteme.md)
 - [Themenbeiträge: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

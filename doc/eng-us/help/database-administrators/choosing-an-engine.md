@@ -3,7 +3,7 @@ title: Choosing an engine
 audience: dba
 category: database-administration
 order: 4
-summary: A decision guide for database administrators - which of the six supported databases fits a given Exponential site, from one machine with SQLite to several web servers on PostgreSQL, MariaDB or MySQL, and when MongoDB or Oracle make sense, with the questions to ask and the costs of each choice.
+summary: A decision guide for database administrators - which of the supported databases fits a given Exponential site, from one machine with SQLite to several web servers on PostgreSQL, MariaDB or MySQL, and when MongoDB or Oracle make sense, with the questions to ask and the costs of each choice.
 keywords: choose database, which database, SQLite or PostgreSQL, MySQL or MariaDB, MongoDB, Oracle, decision, several web servers, replication, editorial load, writes, concurrency, comparison
 type: help
 ---

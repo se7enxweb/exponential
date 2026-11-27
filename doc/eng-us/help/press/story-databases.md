@@ -1,13 +1,13 @@
 ---
-title: "Story: six databases"
+title: "Story: seven databases"
 audience: press
 category: press-media
 order: 68
-summary: A feature story about the six databases Exponential supports - SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle and MySQL, in that official order - what each is for, how they are tested, and the limits, with printable facts and sources.
+summary: A feature story about the seven databases Exponential supports - SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle and MySQL, in that official order - what each is for, how they are tested, and the limits, with printable facts and sources.
 keywords: story, databases, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, database abstraction, press
 type: help
 ---
-# Story: six databases
+# Story: seven databases
 
 This page is for technology journalists who write about databases and about content management systems that run on
 more than one. Exponential documents six, in an official order of preference. This page gives that order, what the
@@ -27,10 +27,11 @@ sources say about each, and how they are tested.
 ## The story in one paragraph
 
 "Supported databases (Exponential 6.0.x), in order of preference: 1. SQLite 3 (the default) · 2. PostgreSQL ·
-3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at
-this time" ([README, Requirements](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)). The order is a statement in itself: a server-free
-file database first, a document database third, and MySQL, long the usual choice for PHP applications, last. One
-command installs a site on five of them ([Install in one command](../../features/6.0/install-in-one-command.md#choose-a-database)).
+3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL" ([README,
+Requirements](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)). The order is a statement in
+itself: a server-free file database first, a document database third, and MySQL, long the usual choice for PHP
+applications, last. One command installs a site on five of them ([Install in one
+command](../../features/6.0/install-in-one-command.md#choose-a-database)).
 
 ## The six, in order
 
@@ -59,11 +60,12 @@ dates are dates of the changes, not a release date.
 
 | Fact | Source |
 |---|---|
-| The official order is SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL. | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements) |
+| The official order is SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server and Azure SQL. | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements) |
 | The project's CI runs database tests on PostgreSQL 15 and MySQL 8.0; SQLite and MongoDB have driver or adapter unit tests; MariaDB and Oracle are not in CI. | [Database support, At a glance](../database-support.md#at-a-glance) |
 | SQLite cannot be shared by several web servers; the five servers can. | same |
 | Documented tools move a site from one database to another. | [Moving a site](../database-support.md#moving-a-site-to-another-database) |
-| Microsoft SQL Server is "possible with additional work", not one of the six. | [Database support](../database-support.md#microsoft-sql-server-possible-with-additional-work) |
+| Microsoft SQL Server and Azure SQL are the seventh database from 6.0.15. | [Database support](../database-support.md#7-microsoft-sql-server-and-azure-sql) |
+| 6.0.15 also adds Firebird, DuckDB and the MySQL and PostgreSQL protocol families, at different levels. | [Choosing a database](../choosing-a-database.md) |
 
 ## What not to claim
 

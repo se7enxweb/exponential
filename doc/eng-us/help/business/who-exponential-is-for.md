@@ -117,7 +117,7 @@ what to send. The quotes in "What they care about" are typical concerns, not quo
 | **Role** | Head of IT, infrastructure or hosting |
 | **Situation** | Has standard operating systems, a preferred database, security rules, an upgrade calendar |
 | **What they care about** | Where it runs, which database, how it is patched, how it is secured and monitored |
-| **Lead with** | Almost any OS with PHP 8.0 or later; six databases; any common web server or Velocity; a clear release and security policy |
+| **Lead with** | Almost any OS with PHP 8.0 or later; seven databases; any common web server or Velocity; a clear release and security policy |
 | **Show** | **Setup > System information**, **Setup > Log files**, the **Audit** tab |
 | **Send** | [Operating system support](../os-support.md), [Database support](../database-support.md), [Security hardening](../security-hardening.md), [Choosing hosting, database and operating system](../leadership/choosing-hosting-database-and-os.md) |
 
@@ -188,7 +188,7 @@ Ask these in discovery. The right column says which answer points to a good fit 
 | Who changes pages today, and how long does it take? | Editors wait for developers | [The layouts editor](../layouts-editor.md) |
 | Do you sell online, or plan to? | Yes, close to the content | [Feature highlights](feature-highlights-for-customers.md) |
 | Where must the site run: own servers, a cloud, a hosting partner? | They want the choice, or have a fixed standard | [Choosing hosting, database and operating system](../leadership/choosing-hosting-database-and-os.md) |
-| Which database and operating system does your IT run? | One of the six databases; an OS with PHP 8.0 or later (PHP 7.4 usable without support) | [Database support](../database-support.md), [Operating system support](../os-support.md) |
+| Which database and operating system does your IT run? | One of the seven databases; an OS with PHP 8.0 or later (PHP 7.4 usable without support) | [Database support](../database-support.md), [Operating system support](../os-support.md) |
 | How important are license costs and the freedom to change provider? | Important | [Licensing explained for buyers](licensing-for-buyers.md) |
 | Do you run a site built while the software was called eZ Publish, or on eZ Platform or Ibexa? | Yes | [Upgrading](../../guides/upgrading.md), migration chapters 14 to 16 |
 | Who will run the site after launch: your IT, an agency, a hosting company? | Someone is named | [Working together](../leadership/working-together.md) |

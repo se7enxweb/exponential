@@ -3,7 +3,7 @@ title: Zeichensätze und Sortierfolgen
 audience: dba
 category: database-administration
 order: 23
-summary: Wie Exponential Text auf jeder der sechs Engines als UTF-8 speichert, welchen Zeichensatz und welche Sortierfolge Sie anlegen, wie sich die Verbindung von MySQL und MariaDB von den Tabellen unterscheidet, wie sich Vergleiche mit und ohne Beachtung der Groß-/Kleinschreibung zwischen Engines unterscheiden und wie Sie eine laufende Website prüfen.
+summary: Wie Exponential Text auf jeder der sieben Engines als UTF-8 speichert, welchen Zeichensatz und welche Sortierfolge Sie anlegen, wie sich die Verbindung von MySQL und MariaDB von den Tabellen unterscheidet, wie sich Vergleiche mit und ohne Beachtung der Groß-/Kleinschreibung zwischen Engines unterscheiden und wie Sie eine laufende Website prüfen.
 keywords: Zeichensatz, Charset, Sortierfolge, Kollation, UTF-8, UTF8, utf8mb4, utf8mb3, AL32UTF8, BSON, template0, Groß-/Kleinschreibung, LIKE, lower, NLS_COMP, OracleCaseInsensitive, latin1, Systeminformationen, character set, collation, case sensitive, case insensitive, System information
 type: help
 ---

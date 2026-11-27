@@ -3,7 +3,7 @@ title: Eine Datenbank in der offiziellen Reihenfolge wählen
 audience: government, hosting, admin, project-manager
 category: public-sector
 order: 50
-summary: Für Architektinnen, Architekten und IT-Teams im öffentlichen Sektor, die die Datenbank einer Exponential-Website wählen. Die sechs unterstützten Datenbanken in der offiziellen Reihenfolge des Projekts, wie sie sich bei Verfügbarkeit, Datensicherungen und Beschaffung unterscheiden und wie Sie die Wahl dem Datenbankstandard Ihrer Organisation zuordnen.
+summary: Für Architektinnen, Architekten und IT-Teams im öffentlichen Sektor, die die Datenbank einer Exponential-Website wählen. Die unterstützten Datenbanken in der offiziellen Reihenfolge des Projekts, wie sie sich bei Verfügbarkeit, Datensicherungen und Beschaffung unterscheiden und wie Sie die Wahl dem Datenbankstandard Ihrer Organisation zuordnen.
 keywords: Datenbank, offizielle Reihenfolge, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, DatabaseImplementation, Datenbankstandard, Beschaffung, Replikation, Hochverfügbarkeit, Sicherungswerkzeuge, database, official order, database standard, procurement, replication, high availability, backup tools
 type: help
 ---
@@ -29,14 +29,14 @@ Unterstützung steht in [Datenbankunterstützung](../../../datenbankunterstuetzu
 ## Die offizielle Reihenfolge
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlichem Aufwand möglich.
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../../datenbank-waehlen.md)).
 
 Die Reihenfolge ist die Reihenfolge der Empfehlung für neue Websites; sie bedeutet nicht, dass die späteren weniger
 gut funktionieren ([Datenbanken in der offiziellen Reihenfolge](../../../hosting/grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)).
-Microsoft SQL Server hat in 6.0.x keinen Treiber ([Stand von Microsoft SQL Server](../../../hosting/grundlagen/stand-von-microsoft-sql-server.md));
-betreibt Ihre Organisation nur SQL Server, planen Sie diesen Aufwand ein oder wählen Sie für diese Anwendung eine
-andere Engine.
+Microsoft SQL Server und Azure SQL werden ab 6.0.15 unterstützt
+([Stand von Microsoft SQL Server](../../../hosting/grundlagen/stand-von-microsoft-sql-server.md)); eine Organisation, die nur
+SQL Server betreibt, kann ihn ab diesem Release verwenden.
 
 ## Gegenüberstellung für eine öffentliche Stelle
 
@@ -100,7 +100,7 @@ PostgreSQL zu wechseln, sobald ein zweiter Webserver nötig ist, ist ein dokumen
 
 ## Checkliste
 
-- [ ] Die gewählte Engine ist eine der sechs; es wird nicht angenommen, dass Microsoft SQL Server funktioniert.
+- [ ] Die gewählte Engine ist eine der sieben; es wird nicht angenommen, dass Microsoft SQL Server funktioniert.
 - [ ] Sie entspricht dem Datenbankstandard Ihrer Organisation, oder die Ausnahme ist dokumentiert.
 - [ ] Die Anforderungen an die Verfügbarkeit (mehrere Webserver, eine Bereitschaftsdatenbank) sind mit der Engine vereinbar.
 - [ ] Das Sicherungswerkzeug der Engine ist Teil Ihres Sicherungsplans.

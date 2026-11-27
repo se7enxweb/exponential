@@ -33,7 +33,7 @@ type: help
 | Ein gepflegtes Produkt | Die Linie 6.0 mit Sicherheitskorrekturen im nächsten Release (`SECURITY.md`) |
 | Hilfe | Diese Hilfe in der Administration, die Dokumentation, Foren und Chats |
 | Jemanden, der die Arbeit macht | 7x, Partner, Hosting-Unternehmen ([Partner im Ökosystem](../organisationen/partner-im-oekosystem.md)) |
-| Auswahl und keine Bindung | Freie Software, sechs Datenbanken, viele Server und Betriebssysteme ([Der PHP-Stack](../php-stack/README.md)) |
+| Auswahl und keine Bindung | Freie Software, sieben Datenbanken, viele Server und Betriebssysteme ([Der PHP-Stack](../php-stack/README.md)) |
 | Wege zu wachsen | Erweiterungen, Sprachen, Websites, Apps ([Wachstum (Kunden)](../../kunden/wachstum/README.md)) |
 
 ## Anwender, die zu Erstellern werden

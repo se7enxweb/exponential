@@ -3,7 +3,7 @@ title: "exp:install für Hoster"
 audience: hosting, admin
 category: hosting
 order: 30
-summary: Die Installation über die Konsole, wie ein Hoster sie aus Skripten und Panels nutzt - die Optionen, die zählen, das Datenbankpasswort aus der Umgebung, die Regeln für das Administratorpasswort, Probelauf und Ausgabe, Exit-Status und Beispiele für jede der sechs Datenbanken.
+summary: Die Installation über die Konsole, wie ein Hoster sie aus Skripten und Panels nutzt - die Optionen, die zählen, das Datenbankpasswort aus der Umgebung, die Regeln für das Administratorpasswort, Probelauf und Ausgabe, Exit-Status und Beispiele für jede der sieben Datenbanken.
 keywords: exp:install, install.php, Installation über die Konsole, unbeaufsichtigt, Optionen, --db, --db-action, EXP_INSTALL_DB_PASSWORD, --url, --access, --password, --random-password, --dry-run, --print, --force, Exit-Status, initial-admin-password, console install, unattended, options, exit status
 type: help
 ---

@@ -1,13 +1,13 @@
 ---
-title: "Thema: sechs Datenbanken"
+title: "Thema: sieben Datenbanken"
 audience: press
 category: press-media
 order: 68
-summary: Ein Themenbeitrag über die sechs Datenbanken, die Exponential unterstützt - SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle und MySQL, in dieser offiziellen Reihenfolge - wofür jede da ist, wie sie getestet werden und wo die Grenzen liegen, mit druckbaren Fakten und Quellen.
+summary: Ein Themenbeitrag über die sieben Datenbanken, die Exponential unterstützt - SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle und MySQL, in dieser offiziellen Reihenfolge - wofür jede da ist, wie sie getestet werden und wo die Grenzen liegen, mit druckbaren Fakten und Quellen.
 keywords: Thema, Datenbanken, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, Datenbankabstraktion, Presse, story, databases, database abstraction, press
 type: help
 ---
-# Thema: sechs Datenbanken
+# Thema: sieben Datenbanken
 
 Diese Seite ist für Technikjournalisten, die über Datenbanken schreiben und über Content-Management-Systeme, die auf
 mehr als einer laufen. Exponential dokumentiert sechs, in einer offiziellen Rangfolge. Diese Seite nennt diese
@@ -27,10 +27,9 @@ Reihenfolge, was die Quellen über jede sagen und wie sie getestet werden.
 ## Das Thema in einem Absatz
 
 „Supported databases (Exponential 6.0.x), in order of preference: 1. SQLite 3 (the default) · 2. PostgreSQL ·
-3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at
-this time“ ([README, Requirements](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)) – die
-unterstützten Datenbanken in der bevorzugten Reihenfolge, wobei Microsoft SQL Server derzeit mit zusätzlichem Aufwand
-möglich ist. Die Reihenfolge ist schon eine Aussage für sich: eine Dateidatenbank ohne Server zuerst, eine
+3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL“
+([README, Requirements](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)) – die unterstützten
+Datenbanken in der bevorzugten Reihenfolge, mit Microsoft SQL Server und Azure SQL ab 6.0.15 an siebter Stelle. Die Reihenfolge ist schon eine Aussage für sich: eine Dateidatenbank ohne Server zuerst, eine
 Dokumentendatenbank an dritter Stelle und MySQL, lange die übliche Wahl für PHP-Anwendungen, zuletzt. Ein Befehl
 installiert eine Website auf fünf davon ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md#eine-datenbank-wählen)).
 
@@ -61,11 +60,12 @@ Veröffentlichungsdaten; ob der Tag `v6.0.15` existiert, zeigt `git tag -l 'v6.0
 
 | Fakt | Quelle |
 |---|---|
-| Die offizielle Reihenfolge ist SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL. | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements) |
+| Die offizielle Reihenfolge ist SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server und Azure SQL. | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements) |
 | Die CI des Projekts führt Datenbanktests auf PostgreSQL 15 und MySQL 8.0 aus; SQLite und MongoDB haben Unit-Tests für Treiber oder Adapter; MariaDB und Oracle sind nicht in der CI. | [Datenbankunterstützung, Auf einen Blick](../datenbankunterstuetzung.md#auf-einen-blick) |
 | SQLite kann nicht von mehreren Webservern gemeinsam genutzt werden; die fünf Server können das. | ebenda |
 | Dokumentierte Werkzeuge ziehen eine Website von einer Datenbank in eine andere um. | [Eine Website umziehen](../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen) |
-| Microsoft SQL Server ist „possible with additional work“, mit zusätzlichem Aufwand möglich, und keine der sechs. | [Datenbankunterstützung](../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand) |
+| Microsoft SQL Server und Azure SQL sind ab 6.0.15 die siebte Datenbank. | [Datenbankunterstützung](../datenbankunterstuetzung.md#7-microsoft-sql-server-und-azure-sql) |
+| 6.0.15 bringt außerdem Firebird, DuckDB und die Familien des MySQL- und des PostgreSQL-Protokolls, auf unterschiedlichen Stufen. | [Eine Datenbank wählen](../datenbank-waehlen.md) |
 
 ## Was Sie nicht behaupten sollten
 

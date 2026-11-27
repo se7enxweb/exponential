@@ -3,19 +3,19 @@ title: Code for every supported database
 audience: php-developer, developer
 category: php-development
 order: 190
-summary: Writing PHP and SQL that works on all six databases Exponential supports - SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle and MySQL - the driver classes, the portable helpers of eZDBInterface, schema files instead of hand-written DDL, the MongoDB adapter's limits, and how to test across engines.
+summary: Writing PHP and SQL that works on all seven databases Exponential supports - SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle and MySQL - the driver classes, the portable helpers of eZDBInterface, schema files instead of hand-written DDL, the MongoDB adapter's limits, and how to test across engines.
 keywords: databases, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, DatabaseImplementation, eZSQLite3DB, eZPostgreSQLDB, expMongoDB, eZMySQLiDB, eZOracleDB, portable SQL, subString, concatString, bitAnd, dba schema, MONGO TODO
 type: help
 ---
 # Code for every supported database
 
-This page is for PHP developers whose code runs SQL. Exponential 6.0.x supports six databases, and an extension
+This page is for PHP developers whose code runs SQL. Exponential 6.0.x supports seven databases, and an extension
 that ships for the community may meet any of them. The support statement with versions and settings is
 [Database support](../database-support.md); this page is about writing code that works on all of them.
 
 ## Contents
 
-1. [The six databases and their drivers](#the-six-databases-and-their-drivers)
+1. [The seven databases and their drivers](#the-seven-databases-and-their-drivers)
 2. [Rules for portable SQL](#rules-for-portable-sql)
 3. [The portable helpers](#the-portable-helpers)
 4. [Schema: .dba files, not DDL](#schema-dba-files-not-ddl)
@@ -23,7 +23,7 @@ that ships for the community may meet any of them. The support statement with ve
 6. [Checking which database runs](#checking-which-database-runs)
 7. [Testing across engines](#testing-across-engines)
 
-## The six databases and their drivers
+## The seven databases and their drivers
 
 In the project's order of preference:
 
@@ -36,7 +36,13 @@ In the project's order of preference:
 | 5. Oracle | `ezoracle` | `eZOracleDB` (extension `ezoracle`) | `oci8` |
 | 6. MySQL | `ezmysqli` | `eZMySQLiDB` | `mysqli` |
 
-Microsoft SQL Server is possible with additional work ([Database support](../database-support.md#microsoft-sql-server-possible-with-additional-work)).
+| 7. Microsoft SQL Server, Azure SQL (6.0.15) | `sqlserver` | `expSQLServerDB` | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` |
+
+6.0.15 adds Firebird (`expFirebirdDB`), DuckDB (`expDuckDBDB`), the MySQL protocol databases (`expMySQLWireDB`,
+`databaseName()` `mysql`), the PostgreSQL protocol databases (`expPostgreSQLWireDB`, `databaseName()` `postgresql`),
+and ODBC and MS Access for data tables ([Choosing a database](../choosing-a-database.md)). Code that uses the
+driver's helpers (`sqlLimit()`, `sqlUpsert()`, `sqlGroupConcat()`, `sqlUnixTimestamp()`, `sqlForUpdate()`,
+`sqlQuoteIdentifier()`) runs on all of them; each driver writes its own dialect.
 
 ## Rules for portable SQL
 

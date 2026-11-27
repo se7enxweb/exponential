@@ -25,7 +25,7 @@ und Pflichten zur Kontinuität.
 | [Hosting im eigenen Rechenzentrum](hosting-im-eigenen-rechenzentrum.md) | Was eine Website von Ihren eigenen Servern braucht, welche Betriebssysteme getestet sind und wer was übernimmt. |
 | [Hosting in der Behörden- und souveränen Cloud](verwaltungs-und-souveraene-cloud.md) | Was eine Behörden- oder souveräne Cloud bieten muss und was Sie den Anbieter fragen sollten. |
 | [Container und Orchestrierung](container-und-orchestrierung.md) | Wie Sie es in Docker, Podman oder Kubernetes betreiben und warum die Produktion ein festes Image-Tag festlegt. |
-| [Eine Datenbank in der offiziellen Reihenfolge wählen](datenbankwahl-in-der-offiziellen-reihenfolge.md) | Die sechs unterstützten Datenbanken und wie Sie eine davon Ihrem Datenbankstandard zuordnen. |
+| [Eine Datenbank in der offiziellen Reihenfolge wählen](datenbankwahl-in-der-offiziellen-reihenfolge.md) | Die unterstützten Datenbanken und wie Sie eine davon Ihrem Datenbankstandard zuordnen. |
 | [Webserver für Websites des öffentlichen Sektors](wahl-des-webservers.md) | Velocity, FrankenPHP oder Apache und nginx mit PHP-FPM sowie Listen zugelassener Software. |
 | [Velocity für Teams im öffentlichen Sektor](velocity-fuer-teams-im-oeffentlichen-sektor.md) | Starten, Neustarten, Bereitstellen, Protokollieren und Bewerten der empfohlenen Engine. |
 | [Umgebungen für Entwicklung, Test und Produktion](umgebungen-entwicklung-test-produktion.md) | Wie `EXP_ENV` jeder Maschine ihre eigenen Einstellungen gibt und Testkopien still hält. |

@@ -50,7 +50,7 @@ Two ways, both documented:
 
 ## The database
 
-SQLite 3 is the default and needs no database server; PostgreSQL is the recommended database server. All six
+SQLite 3 is the default and needs no database server; PostgreSQL is the recommended database server. All seven
 supported databases can run on your own machines ([Database support](../../database-support.md)).
 
 ## Operations you take on

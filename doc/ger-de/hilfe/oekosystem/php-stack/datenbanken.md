@@ -10,20 +10,21 @@ type: help
 # Datenbanken im Ökosystem
 
 > "**Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time." ([Datenbankunterstützung](../../datenbankunterstuetzung.md))
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL."
+> ([Datenbankunterstützung](../../datenbankunterstuetzung.md))
 >
 > Also: unterstützte Datenbanken in der Reihenfolge der Bevorzugung sind SQLite 3 (Standard), PostgreSQL, MongoDB,
-> MariaDB, Oracle und MySQL; Microsoft SQL Server ist derzeit mit zusätzlicher Arbeit bekanntermaßen möglich.
+> MariaDB, Oracle, MySQL sowie Microsoft SQL Server und Azure SQL; weitere Datenbanken ab 6.0.15 stehen auf
+> [Eine Datenbank wählen](../../datenbank-waehlen.md).
 
 ## Inhalt
 
-1. [Die sechs Datenbanken](#die-sechs-datenbanken)
+1. [Die sieben Datenbanken](#die-sieben-datenbanken)
 2. [Microsoft SQL Server](#microsoft-sql-server)
 3. [Die Platform-Linie](#die-platform-linie)
 4. [Wo Sie mehr lesen](#wo-sie-mehr-lesen)
 
-## Die sechs Datenbanken
+## Die sieben Datenbanken
 
 | # | Datenbank | Gewählt für | Server nötig | In der CI getestet |
 |---|---|---|---|---|
@@ -33,15 +34,16 @@ type: help
 | 4 | MariaDB | "the MySQL-compatible server the project prefers", der MySQL-kompatible Server, den das Projekt bevorzugt | Ja | Nein |
 | 5 | Oracle | 19c und neuer, über `ezoracle`, in jeder Installation vorhanden | Ja | Nein |
 | 6 | MySQL | Unterstützt über denselben Treiber wie MariaDB | Ja | Ja (MySQL 8.0) |
+| 7 | Microsoft SQL Server, Azure SQL | Ab 6.0.15, mit dem eigenen Treiber des Kernels | Ja | Ja (2017 bis 2025) |
 
 Quelle: [Datenbankunterstützung](../../datenbankunterstuetzung.md).
 
 ## Microsoft SQL Server
 
-"Microsoft SQL Server has no driver in Exponential 6.0.x. It is known to be possible", es gibt also keinen Treiber,
-aber es ist bekanntermaßen möglich, und "An extension written for the 4.x line, `se7enxweb/xrowmssql`, is the natural
-starting point for that work", eine für die Linie 4.x geschriebene Erweiterung ist der natürliche Ausgangspunkt
-([Datenbankunterstützung](../../datenbankunterstuetzung.md)). Eine Gelegenheit für Beiträge aus dem Ökosystem.
+Microsoft SQL Server und Azure SQL laufen ab 6.0.15 mit einem eigenen, neu geschriebenen Treiber des Kernels; die alte
+Erweiterung `se7enxweb/xrowmssql` der Linie 4.x wurde nur auf ihre Probleme hin gelesen
+([Datenbankunterstützung](../../datenbankunterstuetzung.md)). 6.0.15 erreicht außerdem Firebird, DuckDB und die
+Familien des MySQL- und des PostgreSQL-Protokolls ([Eine Datenbank wählen](../../datenbank-waehlen.md)).
 
 ## Die Platform-Linie
 

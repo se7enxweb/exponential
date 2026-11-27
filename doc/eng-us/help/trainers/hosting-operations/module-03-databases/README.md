@@ -9,7 +9,7 @@ type: help
 ---
 # Module 3: Databases
 
-Exponential 6.x supports six databases, and a host must run, check and back up whichever one a plan includes. This
+Exponential 6.x supports seven databases, and a host must run, check and back up whichever one a plan includes. This
 module starts with the project's official order and how to choose, spends a lesson on SQLite (the default, and a
 production database for one machine), then covers database servers and ends with backups and moving a site between
 engines.

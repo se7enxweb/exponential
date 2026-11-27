@@ -3,7 +3,7 @@ title: Eine Engine wählen
 audience: dba
 category: database-administration
 order: 4
-summary: Eine Entscheidungshilfe für Datenbankadministratoren - welche der sechs unterstützten Datenbanken zu einer bestimmten Exponential-Website passt, von einer Maschine mit SQLite bis zu mehreren Webservern auf PostgreSQL, MariaDB oder MySQL, und wann MongoDB oder Oracle sinnvoll sind, mit den zu stellenden Fragen und den Kosten jeder Wahl.
+summary: Eine Entscheidungshilfe für Datenbankadministratoren - welche der unterstützten Datenbanken zu einer bestimmten Exponential-Website passt, von einer Maschine mit SQLite bis zu mehreren Webservern auf PostgreSQL, MariaDB oder MySQL, und wann MongoDB oder Oracle sinnvoll sind, mit den zu stellenden Fragen und den Kosten jeder Wahl.
 keywords: Datenbank wählen, welche Datenbank, SQLite oder PostgreSQL, MySQL oder MariaDB, MongoDB, Oracle, Entscheidung, mehrere Webserver, Replikation, redaktionelle Last, Schreibzugriffe, Nebenläufigkeit, Vergleich, choose database, which database, decision, several web servers, replication, concurrency, comparison
 type: help
 ---

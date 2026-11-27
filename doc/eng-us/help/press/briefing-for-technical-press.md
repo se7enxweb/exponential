@@ -44,7 +44,8 @@ your interview time on design decisions. Facts are as of 18 October 2026; check 
 |---|---|
 | SQLite needs no database server; "the whole content repository is one file" | [Database support](../database-support.md#the-supported-databases-in-order) |
 | MongoDB works "through an adapter that translates the kernel's SQL-shaped calls into MongoDB operations", with documented limits; it arrived with 6.0.14 | Same page; [6.0.14 changelog](../../../changelogs/6.0/6.0.14.md) |
-| Microsoft SQL Server has no driver; it is "known to be possible with additional work" | Same page |
+| Microsoft SQL Server and Azure SQL run on the kernel's own driver from 6.0.15, tested on SQL Server 2017 to 2025 | Same page |
+| 6.0.15 adds Firebird, DuckDB and the MySQL and PostgreSQL protocol families; some are profiles not measured (Xpand, Aurora, Neon, Supabase) | [Choosing a database](../choosing-a-database.md) |
 
 ## Engines and web servers
 

@@ -215,7 +215,8 @@ Der Backup-Satz ist derselbe wie überall: die Datenbank und `var/storage`, `set
 ## Die Datenbank und die Regel eines einzigen Schreibers
 
 In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle ·
-6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
+6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank
+wählen](../../datenbank-waehlen.md)).
 
 - **1. SQLite 3** funktioniert in einem Container, wenn **ein** Container in die Datenbank schreibt: Das WAL von SQLite
   braucht gemeinsamen Speicher auf einem Host, sodass mehrere Replikate keine Datenbankdatei über ein Netzwerk-Volume

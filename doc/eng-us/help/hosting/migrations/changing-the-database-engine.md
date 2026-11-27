@@ -3,7 +3,7 @@ title: Changing a customer site's database engine
 audience: hosting, admin
 category: hosting
 order: 60
-summary: How a host moves a customer site from one of the six supported databases to another (for example from SQLite 3 to PostgreSQL when a site outgrows one machine): when it is worth it, the engine-neutral .dba transfer, Oracle and MongoDB specifics, the settings to change, and the checks before reopening.
+summary: How a host moves a customer site from one of the supported databases to another (for example from SQLite 3 to PostgreSQL when a site outgrows one machine): when it is worth it, the engine-neutral .dba transfer, Oracle and MongoDB specifics, the settings to change, and the checks before reopening.
 keywords: database engine, switch database, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, ezsqldumpschema, ezsqlinsertschema, dba, DatabaseImplementation, maintenance window, row counts, sequences, ezoracle, mysql2oracle
 type: help
 ---
@@ -14,8 +14,8 @@ It answers: when is a switch worth it, how is the data transferred, what changes
 check the result?
 
 The supported databases, in the official order: 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
-5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at this time, without a driver
-in 6.0.x ([Database support](../../database-support.md)).
+5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+database](../../choosing-a-database.md)) ([Database support](../../database-support.md)).
 
 ## Contents
 

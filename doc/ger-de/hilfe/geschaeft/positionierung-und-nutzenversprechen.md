@@ -159,7 +159,7 @@ sie für Nachfragen bereit.
 >    frei unter der GNU Free Documentation License. [README, Freie Dokumentation]
 > 6. Es läuft auf fast jedem Betriebssystem mit PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar), hinter Apache, Nginx und anderen Webservern oder
 >    auf seinem eigenen Server Velocity. [Unterstützte Betriebssysteme, README]
-> 7. Es unterstützt sechs Datenbanken, mit SQLite als Standard, sodass eine Site überhaupt keinen Datenbankserver
+> 7. Es unterstützt sieben Datenbanken, mit SQLite als Standard, sodass eine Site überhaupt keinen Datenbankserver
 >    braucht. [Unterstützte Datenbanken]
 > 8. Sein Code führt eZ Publish fort, ein Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat, und die
 >    vollständige Git-Historie bis 2002 kommt mit. [Wer ist 7x?]

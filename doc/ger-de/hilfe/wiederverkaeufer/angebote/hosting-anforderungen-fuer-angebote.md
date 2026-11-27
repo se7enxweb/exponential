@@ -3,7 +3,7 @@ title: Hosting-Anforderungen für Ihre Angebote
 audience: reseller, hosting
 category: reselling
 order: 210
-summary: Die Serveranforderungen, die ein Wiederverkäufer prüfen muss, bevor er ein Exponential-Angebot verkauft - PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) und seine Erweiterungen, Werte in der php.ini, die sechs Datenbanken in der offiziellen Reihenfolge, Composer, die Engine, Bildkonvertierung, beschreibbare Verzeichnisse - und die Fragen an einen Hosting-Lieferanten.
+summary: Die Serveranforderungen, die ein Wiederverkäufer prüfen muss, bevor er ein Exponential-Angebot verkauft - PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) und seine Erweiterungen, Werte in der php.ini, die sieben Datenbanken in der offiziellen Reihenfolge, Composer, die Engine, Bildkonvertierung, beschreibbare Verzeichnisse - und die Fragen an einen Hosting-Lieferanten.
 keywords: Anforderungen, Hosting-Anforderungen, PHP 8, Erweiterungen, php.ini, memory_limit, Datenbank, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Composer, Velocity, ImageMagick, GD, Fragen an Lieferanten, requirements, hosting requirements, extensions, database, supplier questions
 type: help
 ---
@@ -40,8 +40,8 @@ Quelle: [Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-a
 ## Datenbanken
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (die
-> Voreinstellung) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit
-> bekanntermaßen mit zusätzlichem Aufwand möglich (kein Treiber in 6.0.x).
+> Voreinstellung) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure
+> SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)).
 
 Für ein Angebot bedeutet das:
 

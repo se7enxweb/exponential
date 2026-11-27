@@ -65,7 +65,7 @@ bereits beantwortet, zitieren Sie die Dokumentation und nutzen Sie Ihre Zeit fü
 | Für wen ist Exponential heute gedacht? | [Wer ist die Exponential Foundation?, Welches Produkt zu Ihnen passt](../wer-ist-die-exponential-foundation.md#welches-produkt-zu-ihnen-passt) |
 | Warum einen Webserver (Velocity) in PHP bauen? | Was er tut, ist dokumentiert ([Über Velocity-Releases berichten](ueber-velocity-releases-berichten.md)); die Entscheidung ist **offen** |
 | Warum schreibt der Schreibassistent nur Entwürfe? | Das Konzept ist dokumentiert ([Gesprächspunkte: Exponential Intelligence](../fuersprecher/gespraechspunkte-exponential-intelligence.md)); die Begründung ist **offen** |
-| Warum sechs Datenbanken, darunter SQLite und MongoDB? | [Unterstützte Datenbanken](../datenbankunterstuetzung.md); die Beweggründe sind **offen** |
+| Warum sieben Datenbanken, darunter SQLite und MongoDB? | [Unterstützte Datenbanken](../datenbankunterstuetzung.md); die Beweggründe sind **offen** |
 
 ## Sicherheit und Vertrauen
 

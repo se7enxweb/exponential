@@ -78,8 +78,9 @@ no separate web server and serves HTTPS itself
 
 1. **PHP** 8.0 or later (Velocity included) with the required extensions, for web and command line alike.
 2. **Database**, in the official order: 1. SQLite 3 (the default, no server) · 2. PostgreSQL · 3. MongoDB ·
-   4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server is known to be possible with additional work at this time.
-   Create the database and its user before installing ([Databases and users](databases-and-users.md)).
+   4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+   database](../../choosing-a-database.md)). Create the database and its user before installing ([Databases and
+   users](databases-and-users.md)).
 3. **Code**: `git clone` and `composer install`, as the site's user ([Chapter 3](../../../install/03-getting-the-code.md)).
 4. **Install**: `exp:install`, the kickstarter or the setup wizard
    ([Chapter 4](../../../install/04-choosing-an-install-method.md)).

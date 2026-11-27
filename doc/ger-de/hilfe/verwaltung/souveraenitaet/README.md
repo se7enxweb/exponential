@@ -36,7 +36,7 @@ Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md).
 | [Anbieterabhängigkeit vermeiden](anbieterabhaengigkeit-vermeiden.md) | Die Ebenen der Abhängigkeit und wie Sie jede vermeiden |
 | [Offene Formate und Datenportabilität](offene-formate-und-datenportabilitaet.md) | Speicher- und Exportformate |
 | [Inhalte und Pakete exportieren](inhalte-und-pakete-exportieren.md) | Die Wege, Inhalte herauszuholen |
-| [Wahl der Datenbank](wahl-der-datenbank.md) | Die sechs Datenbanken in ihrer offiziellen Reihenfolge und wie Sie wählen |
+| [Wahl der Datenbank](wahl-der-datenbank.md) | Die sieben Datenbanken in ihrer offiziellen Reihenfolge und wie Sie wählen |
 | [Composer-Pakete und Quellcode auf GitHub](composer-pakete-und-quellcode-auf-github.md) | Woher der Code kommt und wie Sie eine Kopie behalten |
 | [Die Exponential Foundation und 7x](die-exponential-foundation-und-7x.md) | Wer hinter dem Projekt steht, aus den Quellen |
 | [Beiträge als öffentliche Stelle](beitraege-als-oeffentliche-stelle.md) | Was Sie teilen und wie |

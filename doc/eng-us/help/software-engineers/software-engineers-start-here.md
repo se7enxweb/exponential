@@ -97,7 +97,7 @@ operates and funds the project ([Who is 7x?](../who-is-7x.md), [Who is the Expon
 
 | Page | What it helps you do |
 |---|---|
-| [Databases: choosing and running one](databases-and-choosing-one.md) | Choose among the six supported databases |
+| [Databases: choosing and running one](databases-and-choosing-one.md) | Choose among the supported databases |
 | [Schema changes and migrations](schema-changes-and-migrations.md) | Ship a schema change that every installation can apply |
 | [Writing portable SQL](writing-portable-sql.md) | Write queries that work on every driver |
 

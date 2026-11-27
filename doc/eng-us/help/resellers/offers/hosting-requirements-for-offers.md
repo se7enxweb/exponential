@@ -3,7 +3,7 @@ title: Hosting requirements for your offers
 audience: reseller, hosting
 category: reselling
 order: 210
-summary: The server requirements a reseller must check before selling an Exponential offer - PHP 8.0 to 8.5 (PHP 7.4 usable without support) and its extensions, php.ini values, the six databases in the official order, Composer, the engine, image conversion, writable directories - and the questions to ask a hosting supplier.
+summary: The server requirements a reseller must check before selling an Exponential offer - PHP 8.0 to 8.5 (PHP 7.4 usable without support) and its extensions, php.ini values, the seven databases in the official order, Composer, the engine, image conversion, writable directories - and the questions to ask a hosting supplier.
 keywords: requirements, hosting requirements, PHP 8, extensions, php.ini, memory_limit, database, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Composer, Velocity, ImageMagick, GD, supplier questions
 type: help
 ---
@@ -40,8 +40,8 @@ Source: [Requirements at a glance](../../hosting/basics/requirements-at-a-glance
 ## Databases
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time (no driver in 6.0.x).
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../../choosing-a-database.md)).
 
 For an offer this means:
 

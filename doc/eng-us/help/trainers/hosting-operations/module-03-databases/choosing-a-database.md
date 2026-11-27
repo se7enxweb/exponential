@@ -3,13 +3,13 @@ title: "Lesson 3.1: Choosing a database"
 audience: trainer, hosting, admin
 category: training
 order: 31
-summary: Learners name the six supported databases in the project's official order, compare them for a hosting offer, and find out which database a site uses in the administration and on the command line. 40 minutes.
+summary: Learners name the supported databases in the project's official order, compare them for a hosting offer, and find out which database a site uses in the administration and on the command line. 40 minutes.
 keywords: hosting and operations, database, official order, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, DatabaseImplementation, exp:ini, System information
 type: help
 ---
 # Lesson 3.1: Choosing a database
 
-Exponential 6.x supports six databases, and the project recommends them in a fixed order. Hosting staff must be able
+Exponential 6.x supports seven databases, and the project recommends them in a fixed order. Hosting staff must be able
 to say which one a plan includes, what each costs to run, and which database a customer's site actually uses. This
 lesson gives them the order, the comparison and the two checks.
 
@@ -28,7 +28,7 @@ lesson gives them the order, the comparison and the two checks.
 
 After this lesson, learners can:
 
-- list the six supported databases in the official order and explain what the order means;
+- list the supported databases in the official order and explain what the order means;
 - compare them on the questions that matter to a host: a server to run, several web servers, PHP extension, backup
   tool;
 - choose a database for a single-machine plan and for a plan with several web servers;
@@ -42,9 +42,9 @@ Source: [Database support](../../../database-support.md) and
 [Databases in the official order](../../../hosting/basics/databases-in-the-official-order.md).
 
 1. **The order** (4 minutes). Read the support statement aloud: 1. SQLite 3 (the default), 2. PostgreSQL,
-   3. MongoDB, 4. MariaDB, 5. Oracle, 6. MySQL. Microsoft SQL Server is known to be possible with additional work and
-   has no driver in 6.0.x. The order is the order of recommendation for new sites; it does not mean the later ones
-   work less well. Ask learners to use the same order in their own material.
+   3. MongoDB, 4. MariaDB, 5. Oracle, 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+      [Choosing a database](../../../choosing-a-database.md)). The order is the order of recommendation for new sites;
+      it does not mean the later ones work less well. Ask learners to use the same order in their own material.
 2. **Side by side** (6 minutes). Show the comparison table of the hosting page: `DatabaseImplementation` value, PHP
    extension, `exp:install --db=` value, whether several web servers can share the database (all but SQLite), and the
    backup tool.
@@ -62,8 +62,9 @@ connection set up for a web server and a write queue (lesson 3.2).
 **Why is MySQL last?** Not because it works less well, but because the project recommends the others first for new
 sites. It is tested in the project's CI.
 
-**Can I offer Microsoft SQL Server?** There is no driver in 6.0.x; it is known to be possible with additional work.
-Do not put it on an order form.
+**Can I offer Microsoft SQL Server?** Yes, from 6.0.15 (SQL Server 2017 to 2025, Azure SQL); not for sites on 6.0.14
+or older. The other databases 6.0.15 adds are listed with their status on
+[Choosing a database](../../../choosing-a-database.md).
 
 **Which character set?** UTF-8 everywhere: `utf8mb4` for MySQL and MariaDB, `UTF8` for PostgreSQL, `AL32UTF8` for
 Oracle.
@@ -131,8 +132,8 @@ Use your own training installation (installed with `exp:install`, SQLite by defa
 - [Chapter 9: Databases](../../../../install/09-databases.md): the operator's reference.
 - [Databases in the official order](../../../hosting/basics/databases-in-the-official-order.md): the comparison for
   hosts.
-- [Microsoft SQL Server status](../../../hosting/basics/microsoft-sql-server-status.md): what "possible with
-  additional work" means.
+- [Microsoft SQL Server status](../../../hosting/basics/microsoft-sql-server-status.md): what a host needs to
+  offer it.
 
 ## Related pages
 

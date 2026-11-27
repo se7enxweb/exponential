@@ -3,7 +3,7 @@ title: Wahl der Datenbank
 audience: government, admin, project-manager
 category: public-sector
 order: 140
-summary: Die sechs Datenbanken, die Exponential unterstützt, in der offiziellen Reihenfolge des Projekts (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), und worauf es für eine öffentliche Stelle bei der Wahl ankommt - Lizenzierung, vorhandene Kompetenzen, Betrieb, Größe und die Möglichkeit, später zu wechseln.
+summary: Die sieben Datenbanken, die Exponential unterstützt, in der offiziellen Reihenfolge des Projekts (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), und worauf es für eine öffentliche Stelle bei der Wahl ankommt - Lizenzierung, vorhandene Kompetenzen, Betrieb, Größe und die Möglichkeit, später zu wechseln.
 keywords: Datenbank, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, Wahl der Datenbank, offizielle Reihenfolge, Souveränität, Migration, database, database choice, official order, sovereignty
 type: help
 ---
@@ -22,13 +22,13 @@ Exponential auswählen. Die Aussage des Projekts und die Einzelheiten je Datenba
 
 ## Die offizielle Reihenfolge
 
-> **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (die Voreinstellung)
-> · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlichem Aufwand möglich.
+> **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (die
+> Voreinstellung) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure
+> SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)).
 
-Alle sechs haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung, einen Eintrag im
-Einrichtungsassistenten und einen Weg in den Installationsprogrammen für die Kommandozeile
-([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
+Alle sieben haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung und einen Weg in den Installationsprogrammen für die Kommandozeile
+([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)); alle außer SQL Server haben auch einen Eintrag im
+Einrichtungsassistenten.
 
 | Datenbank | Kurz gesagt |
 |---|---|

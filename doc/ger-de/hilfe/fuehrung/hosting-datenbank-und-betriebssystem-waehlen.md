@@ -3,7 +3,7 @@ title: Hosting, Datenbank und Betriebssystem wählen
 audience: project-manager, admin
 category: leadership
 order: 40
-summary: Entscheidungstabellen dafür, wo eine Exponential-Site läuft: die sechs unterstützten Datenbanken in ihrer Reihenfolge, Stufen der Betriebssysteme, Velocity, FrankenPHP, Apache oder nginx, Installationsmethoden und ein Entscheidungsprotokoll.
+summary: Entscheidungstabellen dafür, wo eine Exponential-Site läuft: die unterstützten Datenbanken in ihrer Reihenfolge, Stufen der Betriebssysteme, Velocity, FrankenPHP, Apache oder nginx, Installationsmethoden und ein Entscheidungsprotokoll.
 keywords: Hosting, Datenbank, Betriebssystem, Container, Installationsmethode, Voraussetzungen, Anforderungen, Entscheidung, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Velocity, FrankenPHP, Apache, nginx, PHP-FPM, Plesk, Docker, Kubernetes, database, operating system, containers, install method, requirements, decision
 type: help
 ---
@@ -42,12 +42,13 @@ Jede Zeile wird unten mit ihrer Quelle erläutert.
 
 ## Datenbank
 
-> **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (die Voreinstellung) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlichem Aufwand möglich. ([Datenbankunterstützung](../datenbankunterstuetzung.md))
+> **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (die
+> Voreinstellung) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure
+> SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank wählen](../datenbank-waehlen.md)).
+> ([Datenbankunterstützung](../datenbankunterstuetzung.md))
 
-Alle sechs haben einen Treiber, einen Eintrag im Setup-Assistenten und einen Weg in den Installern für die
-Kommandozeile ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
+Alle sieben haben einen Treiber und einen Weg in den Installern für die Kommandozeile; alle außer SQL Server haben
+auch einen Eintrag im Setup-Assistenten ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 
 ### Entscheidungstabelle
 
@@ -78,8 +79,9 @@ Quellen: „At a glance“ und „Versions, checked against the code“ unter [D
 - **Oracle** (19c und neuer) wird über die Erweiterung `ezoracle` unterstützt, die in jeder Installation vorhanden ist.
 - **MySQL** steht in der Reihenfolge an letzter Stelle, „nicht weil es weniger gut funktioniert, sondern weil das
   Projekt für neue Sites zuerst die anderen empfiehlt“.
-- **Microsoft SQL Server** hat in 6.0.x keinen Treiber; nichts davon sollte als Versprechen eines Treibers gelesen
-  werden.
+- **Microsoft SQL Server und Azure SQL** laufen ab 6.0.15 mit dem eigenen Treiber des Kernels, nicht in 6.0.14 und
+  älter. Die übrigen Datenbanken, die 6.0.15 erreicht, und welche davon ungetestet sind, stehen auf
+  [Eine Datenbank wählen](../datenbank-waehlen.md).
 
 > **Tipp**
 > Die Frage des Projektleiters lautet nicht „welche Datenbank ist die beste“, sondern „welche Datenbank kann unser Team

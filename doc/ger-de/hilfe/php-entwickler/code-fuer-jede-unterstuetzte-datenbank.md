@@ -9,14 +9,14 @@ type: help
 ---
 # Code für jede unterstützte Datenbank
 
-Diese Seite richtet sich an PHP-Entwickler, deren Code SQL ausführt. Exponential 6.0.x unterstützt sechs Datenbanken,
+Diese Seite richtet sich an PHP-Entwickler, deren Code SQL ausführt. Exponential 6.0.x unterstützt sieben Datenbanken,
 und eine Erweiterung, die für die Community ausgeliefert wird, kann auf jede von ihnen treffen. Die Aussage zur
 Unterstützung mit Versionen und Einstellungen finden Sie unter [Datenbankunterstützung](../datenbankunterstuetzung.md); diese
 Seite handelt davon, Code zu schreiben, der auf allen funktioniert.
 
 ## Inhalt
 
-1. [Die sechs Datenbanken und ihre Treiber](#die-sechs-datenbanken-und-ihre-treiber)
+1. [Die sieben Datenbanken und ihre Treiber](#die-sieben-datenbanken-und-ihre-treiber)
 2. [Regeln für portables SQL](#regeln-für-portables-sql)
 3. [Die portablen Hilfsfunktionen](#die-portablen-hilfsfunktionen)
 4. [Schema: .dba-Dateien, nicht DDL](#schema-dba-dateien-nicht-ddl)
@@ -24,7 +24,7 @@ Seite handelt davon, Code zu schreiben, der auf allen funktioniert.
 6. [Prüfen, welche Datenbank läuft](#prüfen-welche-datenbank-läuft)
 7. [Über Engines hinweg testen](#über-engines-hinweg-testen)
 
-## Die sechs Datenbanken und ihre Treiber
+## Die sieben Datenbanken und ihre Treiber
 
 In der Reihenfolge der Präferenz des Projekts:
 
@@ -37,7 +37,13 @@ In der Reihenfolge der Präferenz des Projekts:
 | 5. Oracle | `ezoracle` | `eZOracleDB` (Erweiterung `ezoracle`) | `oci8` |
 | 6. MySQL | `ezmysqli` | `eZMySQLiDB` | `mysqli` |
 
-Microsoft SQL Server ist mit zusätzlichem Aufwand möglich ([Datenbankunterstützung](../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)).
+| 7. Microsoft SQL Server, Azure SQL (6.0.15) | `sqlserver` | `expSQLServerDB` | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` oder `pdo_dblib` |
+
+6.0.15 bringt Firebird (`expFirebirdDB`), DuckDB (`expDuckDBDB`), die Datenbanken des MySQL-Protokolls
+(`expMySQLWireDB`, `databaseName()` `mysql`), die des PostgreSQL-Protokolls (`expPostgreSQLWireDB`, `databaseName()`
+`postgresql`) sowie ODBC und MS Access für Datentabellen ([Eine Datenbank wählen](../datenbank-waehlen.md)). Code, der
+die Hilfsfunktionen des Treibers verwendet (`sqlLimit()`, `sqlUpsert()`, `sqlGroupConcat()`, `sqlUnixTimestamp()`,
+`sqlForUpdate()`, `sqlQuoteIdentifier()`), läuft auf allen; jeder Treiber schreibt seinen eigenen Dialekt.
 
 ## Regeln für portables SQL
 

@@ -27,7 +27,7 @@ Lernen Sie die 30-Sekunden-Fassung auswendig; lesen Sie die anderen von einer Ka
 > „Exponential ist ein freies Open-Source-Content-Management-System und Anwendungsframework in PHP. Sein Code wird seit
 > 1999 entwickelt; als der ursprüngliche Hersteller es einstellte, hat 7x es am Leben erhalten und veröffentlicht seit
 > Januar 2024 Exponential 6. Eine gemeinnützige Organisation, die Exponential Foundation, betreibt heute das Projekt.
-> Es läuft auf PHP 8 und auf sechs Datenbanken, darunter SQLite, und unter der GNU GPL gehört es Ihnen.“
+> Es läuft auf PHP 8 und auf sieben Datenbanken, darunter SQLite, und unter der GNU GPL gehört es Ihnen.“
 
 ## Die Zwei-Minuten-Fassung
 

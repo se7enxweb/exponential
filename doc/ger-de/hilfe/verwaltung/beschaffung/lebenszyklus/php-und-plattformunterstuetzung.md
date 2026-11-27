@@ -44,10 +44,10 @@ das neueste PHP, das Ihr System bietet.
 
 ## Datenbanken
 
-Exponential 6.0 unterstützt sechs Datenbanksysteme, in dieser offiziellen Reihenfolge der Präferenz: SQLite 3 (der
-Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Datenbankunterstützung](../../../datenbankunterstuetzung.md),
-[9. Datenbanken](../../../../installation/09-datenbanken.md)). Microsoft SQL Server wird als mit zusätzlichem Aufwand möglich
-beschrieben. Die Datenbank ist Teil der Plattform: Planen Sie ihre eigenen Upgrades und ihre Sicherungsmethode
+Exponential 6.0 unterstützt diese Datenbanksysteme, in dieser offiziellen Reihenfolge der Präferenz: SQLite 3 (der
+Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL und ab 6.0.15 Microsoft SQL Server und Azure SQL
+([Datenbankunterstützung](../../../datenbankunterstuetzung.md), [9. Datenbanken](../../../../installation/09-datenbanken.md)).
+6.0.15 bringt weitere, unterschiedlich gründlich getestet ([Eine Datenbank wählen](../../../datenbank-waehlen.md)). Die Datenbank ist Teil der Plattform: Planen Sie ihre eigenen Upgrades und ihre Sicherungsmethode
 ([Datenbanksicherungen je Engine](../../../hosting/betrieb/datenbank-backups-je-engine.md)).
 
 ## Webserver und Engines

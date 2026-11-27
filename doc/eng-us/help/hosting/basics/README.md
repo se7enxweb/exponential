@@ -3,7 +3,7 @@ title: Hosting basics
 audience: hosting
 category: hosting
 order: 10
-summary: The overview of the hosting basics section: what a server needs to run Exponential, the PHP versions, extensions and settings, the six supported databases in the official order, operating systems, Composer and Git, permissions, sizing, image processing and search.
+summary: The overview of the hosting basics section: what a server needs to run Exponential, the PHP versions, extensions and settings, the supported databases in the official order, operating systems, Composer and Git, permissions, sizing, image processing and search.
 keywords: hosting, basics, overview, requirements, PHP, extensions, php.ini, databases, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, SQL Server, operating systems, Composer, Git, permissions, sizing, images, search, Solr
 type: help
 ---
@@ -42,14 +42,14 @@ Back to the start of the hosting help: [Hosting companies: start here](../hostin
 | [Requirements at a glance](requirements-at-a-glance.md) | One table of everything a server needs, with the minimum, the recommendation and what checks it |
 | [PHP versions and extensions](php-versions-and-extensions.md) | PHP 8.0 to 8.5 (PHP 7.4 usable without support), the required and recommended extensions, and the package names per system family |
 | [PHP settings for Exponential](php-settings-for-exponential.md) | `php.ini` values the installer checks, the values to give a pool, OPcache, and the functions not to disable |
-| [Databases in the official order](databases-in-the-official-order.md) | The six supported databases, in order, side by side, and how to choose what to offer |
+| [Databases in the official order](databases-in-the-official-order.md) | The supported databases, in order, side by side, and how to choose what to offer |
 | [SQLite for hosts](sqlite-for-hosts.md) | The default database: one file, its permissions, backups and limits |
 | [PostgreSQL for hosts](postgresql-for-hosts.md) | The recommended database server: owner, `pgcrypto`, backups |
 | [MongoDB for hosts](mongodb-for-hosts.md) | The MongoDB adapter: requirements, the user, indexes and limits |
 | [MariaDB for hosts](mariadb-for-hosts.md) | MariaDB on the `mysqli` driver: character set, grants, backups |
 | [Oracle for hosts](oracle-for-hosts.md) | Oracle 19c and later through `ezoracle`: `oci8`, the user, DRCP |
 | [MySQL for hosts](mysql-for-hosts.md) | MySQL on the `mysqli` driver: grants, InnoDB, replicas |
-| [Microsoft SQL Server status](microsoft-sql-server-status.md) | Why there is no driver in 6.0.x and what it would take |
+| [Microsoft SQL Server status](microsoft-sql-server-status.md) | Supported from 6.0.15: what a host needs to offer it |
 | [Operating systems for hosts](operating-systems-for-hosts.md) | The four tiers, the reference platform, panels and containers |
 | [Composer and Git on servers](composer-and-git-on-servers.md) | How the code arrives, how extensions are packages, what not to run on a live site |
 | [Writable directories and permissions](writable-directories-and-permissions.md) | What must be writable, one user or one group, the hardened file modes |
@@ -61,9 +61,9 @@ Back to the start of the hosting help: [Hosting companies: start here](../hostin
 
 - **PHP 8.0 or later** for the kernel, and for Exponential Velocity, the recommended web server, with `sockets`
   (from Velocity 0.0.4.54; [chapter 2](../../../install/02-requirements.md#22-php)).
-- **Databases, in the official order:** 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
-  5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at this time (no driver in
-  6.0.x). See [Database support](../../database-support.md).
+- **Databases, in the official order:** 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle ·
+  6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+  database](../../choosing-a-database.md)). See [Database support](../../database-support.md).
 - **Writable:** `var/` and `settings/` always; `design/` and `extension/` while packages are installed from the
   administration ([chapter 8](../../../install/08-serving-the-site.md#87-file-permissions-and-ownership)).
 - **Command line access** matters: Composer, cronjobs, cache clearing and the console all run with the command line

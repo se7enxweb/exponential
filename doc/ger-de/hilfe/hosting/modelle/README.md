@@ -43,9 +43,10 @@ Welches Modell auch immer: Eine Exponential-Website braucht dieselben wenigen Di
 ([Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md)):
 
 - **PHP 8.0 oder später** (einschließlich Exponential Velocity) mit den erforderlichen Erweiterungen;
-- **eine Datenbank** der sechs unterstützten, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL ·
-  3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit
-  möglich; in 6.0.x hat es keinen Treiber ([Datenbankunterstützung](../../datenbankunterstuetzung.md));
+- **eine Datenbank** der sieben unterstützten, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) ·
+  2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+  Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)); in 6.0.x hat es keinen Treiber
+  ([Datenbankunterstützung](../../datenbankunterstuetzung.md));
 - **beschreibbaren Speicher** für `var/` und die Verzeichnisse unter `settings/`, die das Setup schreibt;
 - **einen Weg, HTTP auszuliefern**: Exponential Velocity, FrankenPHP über Velocity oder einen klassischen Webserver wie
   Apache oder nginx mit PHP-FPM ([Kapitel 8](../../../installation/08-die-website-ausliefern.md));

@@ -21,7 +21,7 @@ site current. The main sources are [Source control and releases](../../../../sta
 |---|---|
 | [Release policy and version numbers](release-policy-and-version-numbers.md) | Published versions never change; fixes come as the next release; where changes are recorded |
 | [Supported versions](supported-versions.md) | 6.0.x is maintained; 5.x and older are not; how to require a supported version |
-| [PHP and platform support](php-and-platform-support.md) | PHP 8.0 to 8.5, six databases, the engines, and planning platform upgrades |
+| [PHP and platform support](php-and-platform-support.md) | PHP 8.0 to 8.5, seven databases, the engines, and planning platform upgrades |
 | [Reading the roadmap as a public body](reading-the-roadmap.md) | The roadmap is intent; the changelog is the record; how to request or fund a feature |
 | [Planning upgrades in the budget](planning-upgrades-in-the-budget.md) | Three kinds of upgrade, what drives the effort, a budget template |
 | [Security updates and patching cadence](security-updates-and-patching-cadence.md) | From report to fix, what the project promises, a patching clause |

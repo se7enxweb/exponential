@@ -33,7 +33,7 @@ type: help
 | Situation | What to check |
 |---|---|
 | Your team only knows Symfony and Twig | The Symfony-based Platform line may fit better ([Choosing a product](../../ecosystem/products/choosing-a-product.md)) |
-| You must use Microsoft SQL Server | No driver in 6.0.x; "known to be possible with additional work" ([Database support](../../database-support.md)) |
+| You must use Microsoft SQL Server | Supported from 6.0.15 (SQL Server 2017 to 2025, Azure SQL); not in 6.0.14 and older. Other databases: [Choosing a database](../../choosing-a-database.md) |
 | Your host does not allow long-lived processes | Use Apache or LiteSpeed instead of Velocity ([Web servers and engines](../../ecosystem/php-stack/web-servers-and-engines.md)) |
 | You need a feature you cannot find in the help | Assume it does not exist until a proof of concept shows it; check the extensions ([Finding an extension](../../ecosystem/packages/finding-an-extension.md)) |
 | You need guaranteed response times | Plan paid support from 7x or a partner ([Longevity and support](../deciding/longevity-and-support.md)) |

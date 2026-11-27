@@ -38,7 +38,7 @@ designs). "A backup is the database and the files, taken at the same moment"
 ([10.9](../../../install/10-after-installing.md#109-backups-and-restore)). An image that exists in the database but not
 on disk shows as a broken image; a file without its database row is dead weight.
 
-The database half depends on the engine; the commands for each of the six supported databases are on
+The database half depends on the engine; the commands for each of the supported databases are on
 [Database backups per engine](database-backups-per-engine.md).
 
 ## The files to back up

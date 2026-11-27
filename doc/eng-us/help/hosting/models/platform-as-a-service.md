@@ -98,8 +98,9 @@ Within `var/` the sources offer finer control (`site.ini [FileSettings]`,
 
 ## The database
 
-In the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server is known to be possible with additional work at this time.
+In the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL ·
+7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+database](../../choosing-a-database.md)).
 
 With a read-only or ephemeral file system the sources require a database server. Even with a persistent disk, a
 platform that may run more than one instance of the application cannot share one SQLite file between them. Use the

@@ -41,7 +41,7 @@ Quelle: [Einwandbehandlung](../../geschaeft/einwandbehandlung.md#eine-methode-f�
 | „Open Source ist weniger sicher.“ | Vertrauliche Meldung von Sicherheitslücken mit einer ersten Antwort innerhalb eines Werktags; Fehlerbehebungen im nächsten Release 6.0.x; eine Content Security Policy, ein Audit-Protokoll, Anmeldung in zwei Schritten und ein Leitfaden zur Härtung | `SECURITY.md`, [Sicherheitshärtung](../../sicherheitshaertung.md) |
 | „Wird es noch gepflegt?“ | Fünfzehn Releases 6.0.x vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 als aktuelle Linie | [Wer ist 7x?](../../wer-ist-7x.md#die-releases-60x) |
 | „Wird es Bestand haben?“ | Eine seit 1999 gepflegte Codebasis, ein Unternehmen und eine gemeinnützige Organisation dahinter und eine GPL-Lizenz, die den Code für alle verfügbar hält | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md) |
-| „Wir werden gebunden sein.“ | GPL-Code, sechs Datenbanken, fast jedes Betriebssystem, dokumentierte Umzüge zwischen Datenbanken | [Exponential sachlich vergleichen](../../geschaeft/exponential-sachlich-vergleichen.md#keine-herstellerbindung-punkt-für-punkt) |
+| „Wir werden gebunden sein.“ | GPL-Code, sieben Datenbanken, fast jedes Betriebssystem, dokumentierte Umzüge zwischen Datenbanken | [Exponential sachlich vergleichen](../../geschaeft/exponential-sachlich-vergleichen.md#keine-herstellerbindung-punkt-für-punkt) |
 | „Niemand kennt dieses System.“ | Die Quellen zählen keine Entwickler; sie dokumentieren den Stack und stellen freies Lernmaterial bereit | [Einwandbehandlung](../../geschaeft/einwandbehandlung.md#fachkräfte-finden-wir-leute-die-es-kennen) |
 | „Upgrades sind riskant.“ | Veröffentlichte Versionen ändern sich nie; eine Upgrade-Prüfung in der Administration | [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | „Ist das nicht das alte, eingestellte Produkt?“ | Exponential führt eine Codebasis fort, deren ursprüngliches Produkt sein Hersteller nach fast 18 Jahren eingestellt hat; seit dem 1. Januar 2024 sind fünfzehn Releases 6.0.x gefolgt | [Wer ist 7x?](../../wer-ist-7x.md) |
@@ -62,7 +62,7 @@ Quelle: [Einwandbehandlung](../../geschaeft/einwandbehandlung.md#eine-methode-f�
 
 Sagen Sie diese Punkte selbst; jeder ist unter [Exponential sachlich vergleichen](../../geschaeft/exponential-sachlich-vergleichen.md#wo-exponential-nicht-die-richtige-wahl-ist) dokumentiert:
 
-- Microsoft SQL Server ist erforderlich: kein Treiber in 6.0.x.
+- Microsoft SQL Server ist auf einem Release vor 6.0.15 erforderlich (ab 6.0.15 wird er unterstützt).
 - Mehrere Replikate, die sich eine SQLite-Datei teilen: nicht möglich; verwenden Sie einen Datenbankserver.
 - Mehr als 62 Inhaltssprachen in einer Installation: nicht möglich.
 - Ein veröffentlichtes SLA-Dokument des Projekts: Das Projekt veröffentlicht keines; Leistungsbedingungen kommen von

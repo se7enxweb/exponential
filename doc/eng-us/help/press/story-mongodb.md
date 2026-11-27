@@ -3,7 +3,7 @@ title: "Story: MongoDB as a database"
 audience: press
 category: press-media
 order: 70
-summary: A feature story about Exponential 6.0.14 storing its whole content repository in MongoDB - what works, the documented limits, how it fits the six supported databases - with printable facts, sources and the claims to avoid.
+summary: A feature story about Exponential 6.0.14 storing its whole content repository in MongoDB - what works, the documented limits, how it fits the supported databases - with printable facts, sources and the claims to avoid.
 keywords: story, MongoDB, document database, NoSQL, database, 6.0.14, content repository, limits, databases, PHP mongodb extension
 type: help
 ---
@@ -65,7 +65,7 @@ extensions returns nothing.
 
 ## Related pages
 
-- [Story: six databases](story-databases.md)
+- [Story: seven databases](story-databases.md)
 - [Story: SQLite by default](story-sqlite-by-default.md)
 - [Database support](../database-support.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

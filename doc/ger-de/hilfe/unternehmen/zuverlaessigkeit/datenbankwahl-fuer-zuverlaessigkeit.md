@@ -28,11 +28,11 @@ Zuverlässigkeit eines Unternehmens bedeutet und wie Sie entscheiden. Der vollst
 ## Die offizielle Reihenfolge
 
 „**Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (Standard) ·
-2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-zusätzlichem Aufwand möglich“ ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge),
-ebenso in der [README, „Requirements“](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)).
+2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL“
+([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge), ebenso
+in der [README, „Requirements“](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)).
 
-Die Reihenfolge ist eine Empfehlung für neue Websites. Alle sechs werden unterstützt; die Seite merkt an, dass MySQL „am
+Die Reihenfolge ist eine Empfehlung für neue Websites. Alle sieben werden unterstützt; die Seite merkt an, dass MySQL „am
 Ende der Reihenfolge steht, nicht weil es schlechter funktioniert, sondern weil das Projekt für neue Websites zuerst die
 anderen empfiehlt“.
 
@@ -61,8 +61,8 @@ Aus [Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützte
 | **5. Oracle** | Unterstützt (19c und neuer) über die Erweiterung `ezoracle`, die in jeder Installation vorhanden ist |
 | **6. MySQL** | Unterstützt mit demselben Treiber wie MariaDB und in der CI getestet |
 
-Microsoft SQL Server hat in Exponential 6.0.x keinen Treiber; er ist mit zusätzlichem Aufwand „bekanntermaßen möglich“
-([Datenbankunterstützung](../../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)).
+Microsoft SQL Server und Azure SQL laufen ab 6.0.15 mit dem eigenen Treiber des Kernels, mit einem DFS-Cluster-Backend
+und Lesereplikaten über Always On ([Datenbankunterstützung](../../datenbankunterstuetzung.md#7-microsoft-sql-server-und-azure-sql)).
 
 Mehrere Webserver an einer Datenbank: Jede Engine außer SQLite unterstützt das
 ([Datenbankunterstützung, auf einen Blick](../../datenbankunterstuetzung.md#auf-einen-blick)).

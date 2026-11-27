@@ -3,7 +3,7 @@ title: Database choice
 audience: government, admin, project-manager
 category: public-sector
 order: 140
-summary: The six databases Exponential supports, in the project's official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and what matters to a public body when choosing one: licensing, existing skills, operations, scale and the ability to move later.
+summary: The seven databases Exponential supports, in the project's official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and what matters to a public body when choosing one: licensing, existing skills, operations, scale and the ability to move later.
 keywords: database, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, database choice, official order, sovereignty, migration
 type: help
 ---
@@ -23,11 +23,11 @@ questions public bodies ask.
 ## The official order
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time.
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../../choosing-a-database.md)).
 
-All six have a driver in the kernel or a shipped extension, an entry in the setup wizard and a path in the
-command-line installers ([Database support](../../database-support.md#the-supported-databases-in-order)).
+All seven have a driver in the kernel or a shipped extension and a path in the command-line installers; all but SQL Server have an
+entry in the setup wizard ([Database support](../../database-support.md#the-supported-databases-in-order)).
 
 | Engine | In short |
 |---|---|

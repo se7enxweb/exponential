@@ -29,7 +29,7 @@ Hoster: die Bewertung, der Plan, der Umzug, die Prüfungen und die Zuständigkei
 | [Von älteren Exponential-Versionen](kunden-von-aelteren-versionen-migrieren.md) | Websites aus der Zeit von 3.x, 4.x und 5.x und ältere Releases 6.0.x |
 | [Von eZ Platform und Ibexa](kunden-von-ez-platform-und-ibexa-migrieren.md) | Symfony-basierte Websites und ihre zwei Ziele |
 | [Eine Website zwischen Hostern umziehen](eine-website-zwischen-hostern-umziehen.md) | eine Exponential-6-Website, die nur den Server wechselt |
-| [Die Datenbank-Engine wechseln](die-datenbank-engine-einer-kunden-website-wechseln.md) | eine Website auf eine andere der sechs Datenbanken umziehen |
+| [Die Datenbank-Engine wechseln](die-datenbank-engine-einer-kunden-website-wechseln.md) | eine Website auf eine andere der sieben Datenbanken umziehen |
 
 ## Welche Seite brauche ich?
 

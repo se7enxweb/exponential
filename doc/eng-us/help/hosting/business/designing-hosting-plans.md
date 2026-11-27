@@ -110,7 +110,7 @@ Templates, not recommendations. Replace every `<...>` with your own figure.
 | | Shared | VPS | Dedicated | Managed |
 |---|---|---|---|---|
 | Engine | Apache or nginx + PHP-FPM | Velocity (or traditional) | Velocity | Velocity, tuned by the host |
-| Database | SQLite 3, or a database on a shared server | SQLite 3 or a server on the VPS | any of the six | chosen with the customer |
+| Database | SQLite 3, or a database on a shared server | SQLite 3 or a server on the VPS | any of the seven | chosen with the customer |
 | Isolation | system user + PHP-FPM pool | virtual machine | machine | per the contract |
 | Shell access | `<yes/no>` | yes | yes | for the host; customer `<yes/no>` |
 | Storage quota | `<GB>` | `<GB>` | `<disk>` | `<GB>` |

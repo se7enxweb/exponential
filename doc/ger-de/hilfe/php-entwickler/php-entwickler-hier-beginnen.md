@@ -37,7 +37,7 @@ das sein Hersteller nach fast 18 Jahren eingestellt hat; 7x hat es am Leben erha
 Exponential Foundation geführt ([Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)).
 Für einen PHP-Entwickler ist es eine große, ausgereifte Codebasis mit eigenen Konventionen: PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), generierte
 Klassen-Maps statt PSR-4, geschichtete INI-Einstellungen, die über `eZINI` gelesen werden, `eZPersistentObject` für Tabellen,
-eine kompilierte Template-Sprache, sechs unterstützte Datenbanken (standardmäßig SQLite 3, PostgreSQL, MongoDB, MariaDB,
+eine kompilierte Template-Sprache, sieben unterstützte Datenbanken (standardmäßig SQLite 3, PostgreSQL, MongoDB, MariaDB,
 Oracle, MySQL) und Velocity, ein Anwendungsserver mit persistenten Workern, als Teil des Produkts
 ([Exponential für PHP-Entwickler](exponential-fuer-php-entwickler.md)).
 
@@ -163,7 +163,7 @@ Den gesamten Abschnitt in Reihenfolge finden Sie unter [Der Lesepfad für PHP-En
 | [Software-Ingenieure: hier beginnen](../softwareingenieure/softwareingenieure-hier-beginnen.md) | Architektur, Evaluierung und Engineering-Praxis rund um Exponential |
 | [Web-Framework-Entwickler: hier beginnen](../web-framework-entwickler/web-framework-entwickler-hier-beginnen.md) | Exponential im Vergleich zu und in Verbindung mit anderen Web-Frameworks |
 | [Die Template-Sprache](../template-sprache/README.md), [Template-Operatoren](../template-operatoren/README.md) | Die Templates, die Ihr PHP-Code mit Daten versorgt |
-| [Datenbankunterstützung](../datenbankunterstuetzung.md) | Die sechs Datenbanken, ihre Versionen, Einstellungen und Testabdeckung |
+| [Datenbankunterstützung](../datenbankunterstuetzung.md) | Die sieben Datenbanken, ihre Versionen, Einstellungen und Testabdeckung |
 | [Mit Git entwickeln](../mit-git-entwickeln.md) | Mit dem Repository arbeiten |
 | [Freie Dokumentation](../freie-dokumentation.md) | Was Sie mit diesen Seiten tun dürfen |
 

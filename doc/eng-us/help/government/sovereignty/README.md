@@ -36,7 +36,7 @@ Up: [Governments: start here](../government-start-here.md).
 | [Avoiding vendor lock-in](avoiding-vendor-lock-in.md) | The layers of lock-in and how to avoid each |
 | [Open formats and data portability](open-formats-and-data-portability.md) | Storage and export formats |
 | [Exporting content and packages](exporting-content-and-packages.md) | The ways to take content out |
-| [Database choice](database-choice.md) | The six databases in their official order and how to choose |
+| [Database choice](database-choice.md) | The seven databases in their official order and how to choose |
 | [Composer packages and source on GitHub](composer-packages-and-source-on-github.md) | Where the code comes from and how to keep a copy |
 | [The Exponential Foundation and 7x](the-exponential-foundation-and-7x.md) | Who stands behind the project, from the sources |
 | [Contributing back as a public body](contributing-back-as-a-public-body.md) | What to share and how |

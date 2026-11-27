@@ -73,7 +73,7 @@ kein Testergebnis: Behandeln Sie ISPConfig höchstens als Stufe 3, bis Sie es ge
 | PHP-Benutzer | PHP läuft als eigener Benutzer der Website | PHP-FPM-Pool pro Website ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)) |
 | Document Root | das Wurzelverzeichnis der Installation (mit `index.php`) | der Document Root der Website |
 | Rewrite-Regeln | Apache: `.htaccess` aus `.htaccess_root`; nginx: der abgeleitete Server-Block | die Webserver-Direktiven der Website ([8.5](../../../installation/08-die-website-ausliefern.md#85-apache-mit-php-fpm), [8.6](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm)) |
-| Datenbank | in der offiziellen Reihenfolge: 1. SQLite 3 (kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich | eine Datenbank und ein Benutzer, UTF-8 ([Datenbanken und Benutzer](datenbanken-und-benutzer.md)) |
+| Datenbank | in der offiziellen Reihenfolge: 1. SQLite 3 (kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)) | eine Datenbank und ein Benutzer, UTF-8 ([Datenbanken und Benutzer](datenbanken-und-benutzer.md)) |
 | Geplante Jobs | `runcronjobs.php` mit dem PHP der Website | die Cronjobs der Website ([Cron und Shell-Zugang](cron-und-shell-zugang.md)) |
 | HTTPS | ein Zertifikat für jeden Namen der Website | die Zertifikatseinstellungen der Website ([TLS-Zertifikate in Panels](tls-zertifikate-in-panels.md)) |
 

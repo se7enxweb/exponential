@@ -16,8 +16,9 @@ ist dasselbe wie `php bin/php/install.php --apply`.
 ## Eine Datenbank wählen
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlichem Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../../hilfe/datenbankunterstuetzung.md).
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../hilfe/datenbank-waehlen.md)). Einzelheiten:
+> [Datenbankunterstützung](../../hilfe/datenbankunterstuetzung.md).
 
 | `--db=` | Aliasse | Standardport | Standardname der Datenbank |
 |---|---|---|---|

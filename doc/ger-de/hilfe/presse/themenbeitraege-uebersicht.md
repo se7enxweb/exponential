@@ -78,7 +78,7 @@ nennen Sie ein Erscheinungsdatum nur mit dem Tag `v6.0.15` ([Über 6.0.15 berich
 | Thema | In einer Zeile |
 |---|---|
 | [Thema: Freiheit beim Hosting](thema-freiheit-beim-hosting.md) | Wo und wie es laufen kann |
-| [Thema: sechs Datenbanken](thema-sechs-datenbanken.md) | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
+| [Thema: sieben Datenbanken](thema-sechs-datenbanken.md) | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | [Thema: SQLite als Standard](thema-sqlite-als-standard.md) | Ein CMS, das keinen Datenbankserver braucht |
 | [Thema: MongoDB als Datenbank](thema-mongodb-als-datenbank.md) | Eine Dokumentendatenbank unter einem Inhaltsmodell |
 | [Thema: Betriebssysteme](thema-betriebssysteme.md) | Linux, BSD, macOS und Windows in Stufen |

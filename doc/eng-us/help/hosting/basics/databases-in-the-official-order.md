@@ -3,7 +3,7 @@ title: Databases in the official order
 audience: hosting, admin
 category: hosting
 order: 60
-summary: The six databases Exponential 6.0.x supports, in the project's official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), compared side by side for hosts, with how to choose which to offer and what each one costs to operate. Microsoft SQL Server is known to be possible with additional work.
+summary: The seven databases Exponential 6.0.x supports, in the project's official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), compared side by side for hosts, with how to choose which to offer and what each one costs to operate; Microsoft SQL Server and Azure SQL are the seventh from 6.0.15.
 keywords: database, databases, official order, supported databases, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, DatabaseImplementation, mysqli, pgsql, sqlite3, oci8, hosting plans, database offer, managed database, CI
 featured: true
 type: help
@@ -29,13 +29,14 @@ detail are in [Database support](../../database-support.md); the operator's chap
 ## The official order
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time.
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../../choosing-a-database.md)).
 
-All six have a driver in the kernel or in a shipped extension, an entry in the setup wizard and a path in the
-command-line installers ([Database support](../../database-support.md#the-supported-databases-in-order)). The order
-is the order of recommendation for new sites; it does not mean the later ones work less well. Microsoft SQL Server has
-no driver in 6.0.x ([Microsoft SQL Server status](microsoft-sql-server-status.md)).
+All seven have a driver in the kernel or in a shipped extension and a path in the command-line installers; all but SQL Server have an
+entry in the setup wizard ([Database support](../../database-support.md#the-supported-databases-in-order)). The order
+is the order of recommendation for new sites; it does not mean the later ones work less well. Microsoft SQL Server
+runs from 6.0.15 ([Microsoft SQL Server status](microsoft-sql-server-status.md)); the other databases of 6.0.15 are on
+[Choosing a database](../../choosing-a-database.md).
 
 Use this order wherever your own material lists databases: plan descriptions, order forms, support articles.
 
@@ -85,7 +86,7 @@ Typical offers a host can build from this:
 
 - **Entry plans**: SQLite 3 only. No database account to provision, nothing to tune, backups per site.
 - **Business plans**: SQLite 3 or PostgreSQL, with MariaDB where the panel provisions it.
-- **Enterprise or dedicated plans**: any of the six, including the customer's own MongoDB or Oracle.
+- **Enterprise or dedicated plans**: any of the seven, including the customer's own MongoDB or Oracle.
 
 > **Tip**
 > Whatever you offer, write the engine of each customer site into your inventory. Backups, restores, upgrades and

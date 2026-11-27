@@ -77,9 +77,10 @@ getrennten Webserver und liefert HTTPS selbst aus ([8.1](../../../installation/0
 ## Reihenfolge der Arbeit
 
 1. **PHP** 8.0 oder später (auch für Velocity) mit den erforderlichen Erweiterungen, für Web und Kommandozeile gleich.
-2. **Datenbank**, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard, kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
-   5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich. Legen Sie die Datenbank und
-   ihren Benutzer vor der Installation an ([Datenbanken und Benutzer](datenbanken-und-benutzer.md)).
+2. **Datenbank**, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard, kein Server) · 2. PostgreSQL ·
+   3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab
+   6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)). Legen Sie die Datenbank und ihren Benutzer vor der
+   Installation an ([Datenbanken und Benutzer](datenbanken-und-benutzer.md)).
 3. **Code**: `git clone` und `composer install`, als Benutzer der Website ([Kapitel 3](../../../installation/03-den-code-beschaffen.md)).
 4. **Installieren**: `exp:install`, der Kickstarter oder der Setup-Assistent ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md)).
 5. **Ausliefern**: Velocity mit einem Startdienst, oder Apache/nginx mit einem PHP-FPM-Pool, der als Benutzer der Website läuft.

@@ -79,7 +79,7 @@ Answer these for your own server build before writing a product description:
 | Document root | the installation root, where `index.php` is | [8.5.1](../../../install/08-serving-the-site.md#851-step-by-step) |
 | Rewrite rules | `.htaccess` copied from `.htaccess_root`; with a shell, as the account's user: `php bin/php/console exp:setup:htaccess --apply` | [13.2](../../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out), [from the console](../../../guides/setup-files-from-the-console.md) |
 | `config.php` (optional) | `config.php-RECOMMENDED` copied to `config.php`: `php bin/php/console exp:setup:config --apply`, values with `exp:config:set` | [from the console](../../../guides/setup-files-from-the-console.md#4-put-configphp-into-place) |
-| Database | in the official order: 1. SQLite 3 (no server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server is known to be possible with additional work at this time | [Databases and users](databases-and-users.md) |
+| Database | in the official order: 1. SQLite 3 (no server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a database](../../choosing-a-database.md)) | [Databases and users](databases-and-users.md) |
 | Cron | `runcronjobs.php` with the account's PHP, every few minutes for `frequent` | [Cron and shell access](cron-and-shell-access.md) |
 | Certificate | HTTPS for every name of the site, redirect from HTTP | [TLS certificates in panels](tls-certificates-in-panels.md) |
 

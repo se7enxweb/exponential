@@ -59,7 +59,7 @@ Then match the answers to Exponential's documented strengths, or say honestly th
 Say these yourself. Each is documented in
 [Where Exponential is not the right fit](../business/comparing-exponential-factually.md#where-exponential-is-not-the-right-fit):
 
-- Microsoft SQL Server is required: no driver in 6.0.x.
+- Microsoft SQL Server is required on a release before 6.0.15 (it is supported from 6.0.15).
 - A Symfony-only project without the legacy kernel: then Exponential Platform DXP is the family member.
 - Shared hosting that forbids long-running processes: Velocity usually cannot run there.
 - More than 62 content languages in one installation.

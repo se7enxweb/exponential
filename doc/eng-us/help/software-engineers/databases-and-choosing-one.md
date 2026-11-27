@@ -3,7 +3,7 @@ title: "Databases: choosing and running one"
 audience: software-engineer, admin
 category: software-engineering
 order: 200
-summary: The six databases Exponential 6.0.x supports, in the project's order of preference - SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL - compared as an engineer compares them - driver, CI coverage, multi-node use, transactions, character sets and limits - with a decision table and the commands that show which one a site uses.
+summary: The seven databases Exponential 6.0.x supports, in the project's order of preference - SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL - compared as an engineer compares them - driver, CI coverage, multi-node use, transactions, character sets and limits - with a decision table and the commands that show which one a site uses.
 keywords: database, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, DatabaseImplementation, driver, CI, transactions, character set, multi-node, choice, decision, software engineer
 type: help
 ---
@@ -24,10 +24,10 @@ condenses it into the questions an architecture decision needs.
 ## The official order
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work.
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../choosing-a-database.md)).
 
-All six have a driver in the kernel or a shipped extension, an entry in the setup wizard and a path in the command-line
-installers. The order is a recommendation for new sites, not a ranking of quality ([Database support](../database-support.md#the-supported-databases-in-order)).
+All seven have a driver in the kernel or a shipped extension and a path in the command-line installers; all but SQL Server have an entry in the setup wizard. The order is a recommendation for new sites, not a ranking of quality ([Database support](../database-support.md#the-supported-databases-in-order)).
 
 ## Compared for engineers
 
@@ -40,6 +40,10 @@ installers. The order is a recommendation for new sites, not a ranking of qualit
 | Transactions | yes, writers serialized | yes | no: each operation commits on its own | yes | yes | yes |
 | Tested in the project's CI | driver unit tests | yes (PostgreSQL 15) | adapter unit tests | no | no | yes (MySQL 8.0) |
 | SQL query cache | yes | yes | not used | yes | yes (ezoracle hooks) | yes |
+
+The seventh, **Microsoft SQL Server and Azure SQL** (from 6.0.15), runs on `expSQLServerDB` (`sqlserver`, PHP's
+`sqlsrv`, `pdo_sqlsrv` or `pdo_odbc`), with several web servers and transactions, tested in CI on SQL Server 2017 to
+2025. The databases 6.0.15 adds beyond the seven are compared on [Choosing a database](../choosing-a-database.md).
 
 Source: [Database support, At a glance](../database-support.md#at-a-glance), [Database and SQL standards](../../standards/databases-and-sql.md)
 and [The SQL query cache](../../bc/6.0/sql-query-cache.md).

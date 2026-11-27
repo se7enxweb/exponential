@@ -10,12 +10,13 @@ type: help
 # Datenbanken und Benutzer
 
 Diese Seite ist für Administratoren und Support-Mitarbeitende bei Hosting-Anbietern, die Datenbanken und Datenbankbenutzer für
-Exponential-Websites anlegen, von Hand oder über ein Panel. Sie beantwortet für jede der sechs unterstützten Engines in der
+Exponential-Websites anlegen, von Hand oder über ein Panel. Sie beantwortet für jede der unterstützten Engines in der
 offiziellen Reihenfolge, was vor der Installation existieren muss, welche Rechte der Benutzer der Website braucht und wie die
 Verbindung in die Einstellungen der Website gelangt.
 
-> **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
+> **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)).
 > ([Datenbankunterstützung](../../datenbankunterstuetzung.md))
 
 ## Inhalt

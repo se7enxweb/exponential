@@ -63,7 +63,7 @@ documentation and use your time for the follow-up. Open questions are marked **o
 | Who is Exponential for today? | [Who is the Exponential Foundation?, Which product is for you](../who-is-the-exponential-foundation.md#which-product-is-for-you) |
 | Why build a web server (Velocity) in PHP? | What it does is documented ([Covering Velocity releases](covering-velocity-releases.md)); the decision is **open** |
 | Why does the writing assistant write drafts only? | The design is documented ([Talking points: Exponential Intelligence](../advocates/talking-points-exponential-intelligence.md)); the reasoning is **open** |
-| Why six databases, including SQLite and MongoDB? | [Database support](../database-support.md); the motivation is **open** |
+| Why seven databases, including SQLite and MongoDB? | [Database support](../database-support.md); the motivation is **open** |
 
 ## Security and trust
 

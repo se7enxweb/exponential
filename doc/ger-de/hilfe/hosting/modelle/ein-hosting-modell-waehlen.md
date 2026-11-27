@@ -97,14 +97,14 @@ Details: [Einen Webserver wählen](../server/einen-webserver-waehlen.md) und
 
 ## Datenbank je Modell
 
-Die sechs unterstützten Datenbanken in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL ·
-3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit
-möglich.
+Die unterstützten Datenbanken in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL ·
+3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15:
+[Eine Datenbank wählen](../../datenbank-waehlen.md)).
 
 | Modell | Was passt | Warum |
 |---|---|---|
 | Shared Hosting | 1. SQLite 3 für kleine Websites; sonst der Datenbankserver, den das Panel anbietet (oft 4. MariaDB oder 6. MySQL) | SQLite braucht keinen Server und kein Konto; es ist eine vollwertige Produktionsdatenbank für eine Website, die von einer Maschine ausgeliefert wird |
-| VPS, dediziert | jede der sechs; zuerst 1. SQLite 3 oder 2. PostgreSQL | eine Maschine; der Standard des Kunden oder Ihrer entscheidet |
+| VPS, dediziert | jede der sieben; zuerst 1. SQLite 3 oder 2. PostgreSQL | eine Maschine; der Standard des Kunden oder Ihrer entscheidet |
 | Container | 1. SQLite 3 mit einem schreibenden Container oder ein Datenbankserver | das WAL von SQLite braucht gemeinsamen Speicher auf einem Host |
 | Kubernetes mit mehreren Replikaten | ein Datenbankserver, zuerst 2. PostgreSQL | mehrere Replikate können keine SQLite-Datei über ein Netzwerk-Volume teilen |
 

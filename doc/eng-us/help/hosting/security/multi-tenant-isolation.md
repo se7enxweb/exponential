@@ -95,9 +95,9 @@ Give each installation its own database and its own database user with rights on
 including the password, is in the installation's `settings/override/site.ini.append.php`; keep that file `0640` or
 stricter so other users cannot read it ([Databases and users](../panels/databases-and-users.md)). The supported
 databases, in the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle ·
-6. MySQL; Microsoft SQL Server is known to be possible with additional work at this time
-([Database support](../../database-support.md)). With SQLite 3 the database is a file below the installation
-(`var/storage/sqlite3/` by default), so file permissions are the whole boundary.
+6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+database](../../choosing-a-database.md)) ([Database support](../../database-support.md)). With SQLite 3 the database
+is a file below the installation (`var/storage/sqlite3/` by default), so file permissions are the whole boundary.
 
 ## Caches, sessions and logs
 

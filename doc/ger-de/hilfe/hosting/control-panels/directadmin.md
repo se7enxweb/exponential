@@ -78,7 +78,7 @@ Beantworten Sie diese für Ihren eigenen Server-Aufbau, bevor Sie eine Produktbe
 | Document Root | das Wurzelverzeichnis der Installation, wo `index.php` liegt | [8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt) |
 | Rewrite-Regeln | `.htaccess` aus `.htaccess_root` kopiert; mit Shell, als Benutzer des Kontos: `php bin/php/console exp:setup:htaccess --apply` | [13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf), [von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md) |
 | `config.php` (optional) | `config.php-RECOMMENDED` nach `config.php` kopiert: `php bin/php/console exp:setup:config --apply`, Werte mit `exp:config:set` | [von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md) |
-| Datenbank | in der offiziellen Reihenfolge: 1. SQLite 3 (kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich | [Datenbanken und Benutzer](datenbanken-und-benutzer.md) |
+| Datenbank | in der offiziellen Reihenfolge: 1. SQLite 3 (kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)) | [Datenbanken und Benutzer](datenbanken-und-benutzer.md) |
 | Cron | `runcronjobs.php` mit dem PHP des Kontos, alle paar Minuten für `frequent` | [Cron und Shell-Zugang](cron-und-shell-zugang.md) |
 | Zertifikat | HTTPS für jeden Namen der Website, Umleitung von HTTP | [TLS-Zertifikate in Panels](tls-zertifikate-in-panels.md) |
 

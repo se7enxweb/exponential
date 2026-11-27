@@ -72,7 +72,7 @@ test result: treat ISPConfig as at most tier 3 until you have tested it.
 | PHP user | PHP runs as the site's own user | per-site PHP-FPM pool ([8.7.2](../../../install/08-serving-the-site.md#872-one-user-or-one-group)) |
 | Document root | the installation root (with `index.php`) | the site's document root |
 | Rewrite rules | Apache: `.htaccess` from `.htaccess_root`; nginx: the derived server block | the site's web server directives ([8.5](../../../install/08-serving-the-site.md#85-apache-with-php-fpm), [8.6](../../../install/08-serving-the-site.md#86-nginx-with-php-fpm)) |
-| Database | in the official order: 1. SQLite 3 (no server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server is known to be possible with additional work at this time | a database and user, UTF-8 ([Databases and users](databases-and-users.md)) |
+| Database | in the official order: 1. SQLite 3 (no server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a database](../../choosing-a-database.md)) | a database and user, UTF-8 ([Databases and users](databases-and-users.md)) |
 | Scheduled jobs | `runcronjobs.php` with the site's PHP | the site's cron jobs ([Cron and shell access](cron-and-shell-access.md)) |
 | HTTPS | a certificate for every name of the site | the site's certificate settings ([TLS certificates in panels](tls-certificates-in-panels.md)) |
 

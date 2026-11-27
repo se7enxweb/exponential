@@ -3,7 +3,7 @@ title: Choosing a database in the official order
 audience: government, hosting, admin, project-manager
 category: public-sector
 order: 50
-summary: For public-sector architects and IT teams choosing the database of an Exponential site. The six supported databases in the project's official order, how they compare for availability, backups and procurement, and how to match the choice to your organization's database standard.
+summary: For public-sector architects and IT teams choosing the database of an Exponential site. The supported databases in the project's official order, how they compare for availability, backups and procurement, and how to match the choice to your organization's database standard.
 keywords: database, official order, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, DatabaseImplementation, database standard, procurement, replication, high availability, backup tools
 type: help
 ---
@@ -28,13 +28,13 @@ support statement is [Database support](../../../database-support.md); the hosti
 ## The official order
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time.
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../../../choosing-a-database.md)).
 
 The order is the order of recommendation for new sites; it does not mean the later ones work less well
 ([Databases in the official order](../../../hosting/basics/databases-in-the-official-order.md)). Microsoft SQL Server
-has no driver in 6.0.x ([Microsoft SQL Server status](../../../hosting/basics/microsoft-sql-server-status.md)); if your
-organization only runs SQL Server, plan for that work or choose another engine for this application.
+and Azure SQL are supported from 6.0.15 ([Microsoft SQL Server status](../../../hosting/basics/microsoft-sql-server-status.md));
+an organization that only runs SQL Server can use it from that release on.
 
 ## Side by side for a public body
 
@@ -97,7 +97,7 @@ web server is needed is a documented path.
 
 ## Checklist
 
-- [ ] The chosen engine is one of the six; Microsoft SQL Server is not assumed to work.
+- [ ] The chosen engine is one of the seven; Microsoft SQL Server is not assumed to work.
 - [ ] It matches your organization's database standard, or the exception is recorded.
 - [ ] Availability needs (several web servers, a standby) are compatible with the engine.
 - [ ] The backup tool of the engine is part of your backup plan.

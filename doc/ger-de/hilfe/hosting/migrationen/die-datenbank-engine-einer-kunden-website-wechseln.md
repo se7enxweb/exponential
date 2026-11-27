@@ -3,7 +3,7 @@ title: Die Datenbank-Engine einer Kunden-Website wechseln
 audience: hosting, admin
 category: hosting
 order: 60
-summary: Wie ein Hoster eine Kunden-Website von einer der sechs unterstützten Datenbanken auf eine andere umzieht (zum Beispiel von SQLite 3 auf PostgreSQL, wenn eine Website einer Maschine entwächst) - wann es sich lohnt, die von der Engine unabhängige Übertragung über .dba, Besonderheiten von Oracle und MongoDB, die zu ändernden Einstellungen und die Prüfungen vor dem Wiederöffnen.
+summary: Wie ein Hoster eine Kunden-Website von einer der unterstützten Datenbanken auf eine andere umzieht (zum Beispiel von SQLite 3 auf PostgreSQL, wenn eine Website einer Maschine entwächst) - wann es sich lohnt, die von der Engine unabhängige Übertragung über .dba, Besonderheiten von Oracle und MongoDB, die zu ändernden Einstellungen und die Prüfungen vor dem Wiederöffnen.
 keywords: Datenbank-Engine, Datenbank wechseln, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, ezsqldumpschema, ezsqlinsertschema, dba, DatabaseImplementation, Wartungsfenster, Zeilenzahlen, Sequenzen, ezoracle, mysql2oracle, database engine, switch database, maintenance window, row counts, sequences
 type: help
 ---
@@ -14,8 +14,8 @@ umziehen. Sie beantwortet: wann sich ein Wechsel lohnt, wie die Daten übertrage
 ändert und wie Sie das Ergebnis prüfen.
 
 Die unterstützten Datenbanken in der offiziellen Reihenfolge: 1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB ·
-4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich, ohne
-Treiber in 6.0.x ([Datenbankunterstützung](../../datenbankunterstuetzung.md)).
+4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine
+Datenbank wählen](../../datenbank-waehlen.md)) ([Datenbankunterstützung](../../datenbankunterstuetzung.md)).
 
 ## Inhalt
 

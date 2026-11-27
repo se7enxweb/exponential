@@ -3,7 +3,7 @@ title: "Story: hosting freedom"
 audience: press
 category: press-media
 order: 67
-summary: A feature story about where Exponential can run - any web server that rewrites URLs or its own Velocity, six databases, almost any operating system with PHP 8.0, shared hosting with limits, and no tie to one provider - with printable facts, sources and the honest limits.
+summary: A feature story about where Exponential can run - any web server that rewrites URLs or its own Velocity, seven databases, almost any operating system with PHP 8.0, shared hosting with limits, and no tie to one provider - with printable facts, sources and the honest limits.
 keywords: story, hosting, hosting freedom, no lock-in, web servers, databases, operating systems, shared hosting, containers, cloud, press
 type: help
 ---
@@ -43,7 +43,7 @@ page gives both, with sources.
 "Exponential 6.0.x runs on almost any operating system that has PHP 8.0 or later (PHP 7.4 usable without support) and a web server. It is plain PHP
 files plus a database; it has no compiled code of its own" ([Operating system support](../os-support.md)). It runs
 behind "any web server that can rewrite a URL", or under its own Velocity server
-([README](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options)), on six databases from SQLite to Oracle
+([README](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options)), on seven databases from SQLite to Oracle
 ([Database support](../database-support.md#the-supported-databases-in-order)), and the code is GPL, so anyone may
 host it. 7x sells managed hosting, but "Anyone" may host it; "you choose"
 ([Talking points: hosting](../advocates/talking-points-hosting-databases-and-freedom.md#questions-you-will-hear)).
@@ -75,7 +75,8 @@ host it. 7x sells managed hosting, but "Anyone" may host it; "you choose"
   shell; Velocity usually cannot run there.
 - **Tier 3** systems are "a reasoned expectation, not a test result" ([Operating system support](../os-support.md#the-four-tiers)).
 - **MongoDB** has documented limits ([MongoDB limits](../database-support.md#mongodb-limits)).
-- **Microsoft SQL Server** is "possible with additional work", not one of the six.
+- **Microsoft SQL Server** is supported from 6.0.15, not before. Of the databases 6.0.15 adds, Xpand, Aurora,
+  Neon and Supabase are profiles that were never run ([Choosing a database](../choosing-a-database.md)).
 
 ## What not to claim
 
@@ -89,7 +90,7 @@ host it. 7x sells managed hosting, but "Anyone" may host it; "you choose"
 ```text
 "Your server, your database, your country: hosting freedom in an open source CMS"
 "Four tiers of honesty: how Exponential documents where it runs"
-"From a laptop with SQLite to Oracle: one CMS, six databases"
+"From a laptop with SQLite to Oracle: one CMS, seven databases"
 ```
 
 ## Who to ask
@@ -102,7 +103,7 @@ host it. 7x sells managed hosting, but "Anyone" may host it; "you choose"
 ## Related pages
 
 - [Talking points: hosting, databases and freedom](../advocates/talking-points-hosting-databases-and-freedom.md)
-- [Story: six databases](story-databases.md)
+- [Story: seven databases](story-databases.md)
 - [Story: operating systems](story-operating-systems.md)
 - [Feature stories: index](feature-stories-index.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

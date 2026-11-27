@@ -78,7 +78,7 @@ and headline ideas, and who to ask. Pick the area your audience cares about.
 | Story | In one line |
 |---|---|
 | [Story: hosting freedom](story-hosting-freedom.md) | Where and how it can run |
-| [Story: six databases](story-databases.md) | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
+| [Story: seven databases](story-databases.md) | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | [Story: SQLite by default](story-sqlite-by-default.md) | A CMS that needs no database server |
 | [Story: MongoDB as a database](story-mongodb.md) | A document database under a content model |
 | [Story: operating systems](story-operating-systems.md) | Linux, BSD, macOS and Windows in tiers |

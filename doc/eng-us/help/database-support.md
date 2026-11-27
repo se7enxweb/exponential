@@ -325,7 +325,7 @@ a site behaves as if its database were down.
 
 ## Installer support per path
 
-Exponential has three installers in the kernel. All three support the first six databases, Firebird and the
+Exponential has three installers in the kernel. All three support the first seven databases, Firebird and the
 PostgreSQL protocol databases; Microsoft SQL Server, the MySQL protocol databases and DuckDB are installed with the
 kickstarter and `exp:install`. ODBC, MS Access and Spanner are not site databases and have no installer entry.
 

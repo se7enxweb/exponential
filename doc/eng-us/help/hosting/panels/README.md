@@ -80,7 +80,7 @@ Whatever the panel, an Exponential site needs ([Chapter 2](../../../install/02-r
 | `php.ini`: `memory_limit` 64M or more, `max_execution_time` 30 or more, `date.timezone`, `file_uploads`, `allow_url_fopen` | the panel's per-site PHP settings |
 | Rewrite rules: only listed asset paths served as files, everything else to `index.php` | `.htaccess` from `.htaccess_root` under Apache or LiteSpeed; for nginx the derived server block ([8.6](../../../install/08-serving-the-site.md#86-nginx-with-php-fpm)) |
 | The document root at the installation root | the panel's document root setting for the domain |
-| One database of the six, in the official order: 1. SQLite 3 (the default, no server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server is known to be possible with additional work at this time | the panel's database page, or nothing for SQLite |
+| One database of the seven, in the official order: 1. SQLite 3 (the default, no server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a database](../../choosing-a-database.md)) | the panel's database page, or nothing for SQLite |
 | Writable `var/` and `settings/` for the site's user | the account's own user |
 | Scheduled `runcronjobs.php` | the panel's cron page |
 | HTTPS | the panel's certificate management |

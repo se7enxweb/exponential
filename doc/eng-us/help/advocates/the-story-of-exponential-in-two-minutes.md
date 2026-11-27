@@ -27,7 +27,7 @@ by heart; read the others from a card until you know them.
 > "Exponential is a free, open source PHP content management system and application framework. Its code has been
 > developed since 1999; when its original vendor discontinued it, 7x kept it alive, and since January 2024 has
 > released Exponential 6. A nonprofit, the Exponential Foundation, now operates the project. It runs on PHP 8, on
-> six databases including SQLite, and it is yours under the GNU GPL."
+> seven databases including SQLite, and it is yours under the GNU GPL."
 
 ## The two-minute version
 

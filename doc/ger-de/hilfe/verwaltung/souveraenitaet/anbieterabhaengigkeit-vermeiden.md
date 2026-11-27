@@ -40,7 +40,7 @@ nur die erste. Die anderen vermeiden Sie dadurch, wie Sie bauen, hosten und Vert
 | Code | öffentlicher Quellcode auf GitHub, Composer-Pakete auf Packagist, vollständige Git-Historie | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md), [Mit Git entwickeln](../../mit-git-entwickeln.md) |
 | Daten | Exporte als CSV, JSON, XML; Pakete als `.ezpkg`; REST-API; Datenbank-Dumps je Datenbank | siehe „Inhalte und Pakete exportieren“ |
 | Hosting | viele Betriebssysteme und Hostingmodelle, mit Stufen dokumentiert | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
-| Datenbank | sechs unterstützte Datenbanken, darunter drei Server aus freier Software und SQLite | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
+| Datenbank | sieben unterstützte Datenbanken, darunter drei Server aus freier Software und SQLite | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
 | Kompetenzen | freie Dokumentation, Schulungsmaterial, ein Partnerprogramm, das jedem Unternehmen offensteht | [Kurskatalog](../../trainer/kurskatalog.md), [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) |
 | Vertrag | überhaupt kein Lizenzvertrag | die Lizenz |
 

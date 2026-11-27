@@ -37,7 +37,7 @@ creator discontinued after almost 18 years; 7x kept it alive, and it is led by 7
 Foundation ([Who is 7x?](../who-is-7x.md), [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md)).
 For a PHP developer it is a large, mature code base with its own conventions: PHP 8.0 to 8.5 (PHP 7.4 usable without support), generated class maps
 instead of PSR-4, layered INI settings read through `eZINI`, `eZPersistentObject` for tables, a compiled template
-language, six supported databases (SQLite 3 by default, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and Velocity, an
+language, seven supported databases (SQLite 3 by default, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and Velocity, an
 application server with persistent workers, as part of the product
 ([Exponential for PHP developers](exponential-for-php-developers.md)).
 
@@ -163,7 +163,7 @@ The whole section in order is [The PHP developer's reading path](php-developer-r
 | [Software Engineers: start here](../software-engineers/software-engineers-start-here.md) | Architecture, evaluation and engineering practice around Exponential |
 | [Web Framework Developers: start here](../web-framework-developers/web-framework-developers-start-here.md) | Exponential compared with and connected to other web frameworks |
 | [The template language](../template-language/README.md), [Template operators](../template-operators/README.md) | The templates your PHP code feeds |
-| [Database support](../database-support.md) | The six databases, their versions, settings and test coverage |
+| [Database support](../database-support.md) | The seven databases, their versions, settings and test coverage |
 | [Develop with Git](../develop-with-git.md) | Working with the repository |
 | [Free documentation](../free-documentation.md) | What you may do with these pages |
 

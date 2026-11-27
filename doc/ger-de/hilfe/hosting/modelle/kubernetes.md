@@ -61,7 +61,7 @@ abbilden müssen.
 
 | | Ein Replikat | Mehrere Replikate |
 |---|---|---|
-| Datenbank | jede der sechs, einschließlich 1. SQLite 3 | ein Datenbankserver |
+| Datenbank | jede der sieben, einschließlich 1. SQLite 3 | ein Datenbankserver |
 | `var/` | ein persistentes Volume | gemeinsamer Speicher für `var/storage`; Caches pro Replikat oder gemeinsam, nach Entscheidung |
 | Sitzungen | die Standarddateien von PHP funktionieren | gemeinsamer Sitzungsspeicher erforderlich |
 | Cron | im Pod oder ein CronJob | genau ein Planer, nicht einer pro Replikat |
@@ -72,8 +72,9 @@ einzigen Schreibers. Planen Sie den Schritt zu mehreren Replikaten als eigenes P
 
 ## Die Datenbank
 
-In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
+In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle ·
+6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank
+wählen](../../datenbank-waehlen.md)).
 
 Mit mehreren Replikaten scheidet SQLite aus: Das WAL von SQLite braucht gemeinsamen Speicher auf einem Host, sodass mehrere
 Replikate keine Datenbankdatei über ein Netzwerk-Volume teilen können. Die Quellen empfehlen zuerst **2. PostgreSQL**; jede

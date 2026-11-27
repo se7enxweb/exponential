@@ -23,10 +23,10 @@ detail are on [Database support](../database-support.md); this page applies it t
 ## The official order
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time. Details: [Database support](../database-support.md).
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../choosing-a-database.md)). Details: [Database support](../database-support.md).
 
-"All six are supported: every one of them has a driver in the kernel or in a shipped extension, an entry in the setup
+"All seven are supported: every one of them has a driver in the kernel or in a shipped extension, an entry in the setup
 wizard, and a path in the command-line installers" ([The supported databases, in order](../database-support.md#the-supported-databases-in-order)).
 
 ## What each needs in the bundle
@@ -75,8 +75,9 @@ panel does that.
 
 ## Things a bundle must not promise
 
-- **Microsoft SQL Server.** "Microsoft SQL Server has no driver in Exponential 6.0.x"; it is "known to be possible"
-  with additional work ([Database support](../database-support.md#microsoft-sql-server-possible-with-additional-work)).
+- **Microsoft SQL Server.** Supported from 6.0.15, but the setup wizard does not offer it and the database must exist
+  before the install: a bundle installs it with `exp:install --db=sqlserver`
+  ([Database support](../database-support.md#7-microsoft-sql-server-and-azure-sql)).
 - **Several web servers on one SQLite file.** "Several web servers on one database: no" for SQLite.
 - **Untested combinations.** CI tests PostgreSQL 15 and MySQL 8.0 and the drivers' unit tests; test the database your
   bundle ships ([Testing a bundle](testing-a-bundle.md)).

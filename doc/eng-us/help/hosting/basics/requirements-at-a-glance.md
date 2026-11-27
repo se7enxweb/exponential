@@ -37,7 +37,7 @@ summary for hosts.
 | PHP for Exponential Velocity | 8.0 with `sockets` (8.1 before release 0.0.4.54) | with `pcntl` and `openssl` as well | Composer (the Velocity package requires `"php": ">=8.0"` and `ext-sockets`) |
 | PHP extensions | see [below](#required-php-extensions) | plus `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer (`ext-*`) and the setup wizard's critical tests |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | more memory for imports and image work; upload limits sized for your customers | the setup wizard's critical tests |
-| Database | one of the six, SQLite 3 needs no server | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | the installer's database step |
+| Database | one of the seven, SQLite 3 needs no server | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | the installer's database step |
 | Composer | 2.x | a current 2.x (2.2 or later reads `config.allow-plugins`) | you |
 | Web server | none (Velocity or PHP's built-in server) | Velocity, or Apache or nginx with PHP-FPM | you |
 | Image conversion | GD (`imagegd2()`) or ImageMagick's `convert` | both | critical test `image_conversion` |
@@ -69,8 +69,8 @@ The full list, the recommended extensions and the package names per system are o
 ## Databases
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time (no driver in 6.0.x).
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../../choosing-a-database.md)).
 
 | Database | PHP extension | Practical minimum |
 |---|---|---|

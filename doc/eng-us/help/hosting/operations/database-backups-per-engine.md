@@ -19,8 +19,8 @@ of [chapter 9](../../../install/09-databases.md). User and database names below 
 use your own.
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time (there is no driver in 6.0.x). See [Database support](../../database-support.md) and
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../../choosing-a-database.md)). See [Database support](../../database-support.md) and
 > [Databases in the official order](../basics/databases-in-the-official-order.md).
 
 ## Contents
@@ -148,10 +148,16 @@ last in the order "not because it works less well, but because the project recom
 
 ## Microsoft SQL Server
 
-There is no driver in Exponential 6.0.x, so there is nothing to back up through Exponential. It is "known to be
-possible with additional work at this time"; see
-[Microsoft SQL Server: possible with additional work](../../database-support.md#microsoft-sql-server-possible-with-additional-work)
-and [Microsoft SQL Server status](../basics/microsoft-sql-server-status.md).
+Supported from 6.0.15. Back up with `BACKUP DATABASE [site] TO DISK = '...'` (or the automated backups of Azure SQL)
+and restore with `RESTORE DATABASE`. The upgrade's own safety copy has no SQL Server dump: back up first and run the
+upgrade with `--no-backup` ([Microsoft SQL Server status](../basics/microsoft-sql-server-status.md)).
+
+## Firebird, DuckDB and the other databases of 6.0.15
+
+Firebird: `gbak` (or `nbackup`). DuckDB: copy the file while no process writes, or `EXPORT DATABASE`. YugabyteDB:
+`ysql_dump`. TiDB, Vitess, SingleStore, CockroachDB and the cloud services: their own backup tools. None of them has a
+built-in dump in the upgrade's safety copy except through `mysqldump` and `pg_dump`, which are not measured there
+([Choosing a database](../../choosing-a-database.md#backups-and-upgrade-captions)).
 
 ## Passwords and permissions
 

@@ -24,10 +24,11 @@ Seite wendet sie auf Bundles an.
 ## Die offizielle Reihenfolge
 
 > **Unterstützte Datenbanken (Exponential 6.0.x) in der Reihenfolge der Empfehlung:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit nachweislich mit
-> zusätzlichem Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../datenbankunterstuetzung.md).
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../datenbank-waehlen.md)). Einzelheiten:
+> [Datenbankunterstützung](../datenbankunterstuetzung.md).
 
-"Alle sechs werden unterstützt: Jede hat einen Treiber im Kernel oder in einer mitgelieferten Erweiterung, einen
+"Alle sieben werden unterstützt: Jede hat einen Treiber im Kernel oder in einer mitgelieferten Erweiterung, einen
 Eintrag im Einrichtungsassistenten und einen Weg in den Kommandozeilen-Installern"
 ([Die unterstützten Datenbanken, in Reihenfolge](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 
@@ -77,9 +78,9 @@ Ihres Bundles oder Ihr Panel.
 
 ## Was ein Bundle nicht versprechen darf
 
-- **Microsoft SQL Server.** "Microsoft SQL Server hat in Exponential 6.0.x keinen Treiber"; er ist mit zusätzlichem
-  Aufwand "nachweislich möglich"
-  ([Datenbankunterstützung](../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)).
+- **Microsoft SQL Server.** Ab 6.0.15 unterstützt, aber der Setup-Assistent bietet ihn nicht an, und die Datenbank muss
+  vor der Installation bestehen: Ein Bundle installiert ihn mit `exp:install --db=sqlserver`
+  ([Datenbankunterstützung](../datenbankunterstuetzung.md#7-microsoft-sql-server-und-azure-sql)).
 - **Mehrere Webserver auf einer SQLite-Datei.** "Mehrere Webserver auf einer Datenbank: nein" für SQLite.
 - **Ungetestete Kombinationen.** Die CI testet PostgreSQL 15 und MySQL 8.0 sowie die Unit-Tests der Treiber; testen Sie
   die Datenbank, die Ihr Bundle ausliefert ([Ein Bundle testen](ein-bundle-testen.md)).

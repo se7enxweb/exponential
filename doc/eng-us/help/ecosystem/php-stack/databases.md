@@ -10,17 +10,17 @@ type: help
 # Databases in the ecosystem
 
 > "**Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time." ([Database support](../../database-support.md))
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../../choosing-a-database.md))." ([Database support](../../database-support.md))
 
 ## Contents
 
-1. [The six databases](#the-six-databases)
+1. [The seven databases](#the-seven-databases)
 2. [Microsoft SQL Server](#microsoft-sql-server)
 3. [The platform line](#the-platform-line)
 4. [Where to read more](#where-to-read-more)
 
-## The six databases
+## The seven databases
 
 | # | Database | Chosen for | Server needed | Tested in CI |
 |---|---|---|---|---|
@@ -30,14 +30,16 @@ type: help
 | 4 | MariaDB | "the MySQL-compatible server the project prefers" | Yes | No |
 | 5 | Oracle | 19c and later, through `ezoracle`, present in every installation | Yes | No |
 | 6 | MySQL | Supported on the same driver as MariaDB | Yes | Yes (MySQL 8.0) |
+| 7 | Microsoft SQL Server, Azure SQL | From 6.0.15, on the kernel's own driver | Yes | Yes (2017 to 2025) |
 
 Source: [Database support](../../database-support.md).
 
 ## Microsoft SQL Server
 
-"Microsoft SQL Server has no driver in Exponential 6.0.x. It is known to be possible", and "An extension written for
-the 4.x line, `se7enxweb/xrowmssql`, is the natural starting point for that work" ([Database support](../../database-support.md)).
-A contribution opportunity for the ecosystem.
+Microsoft SQL Server and Azure SQL run on a driver of the kernel's own from 6.0.15, written anew; the old 4.x
+extension `se7enxweb/xrowmssql` was read only for its problems ([Database support](../../database-support.md)). 6.0.15
+also reaches Firebird, DuckDB and the MySQL and PostgreSQL protocol families
+([Choosing a database](../../choosing-a-database.md)).
 
 ## The platform line
 

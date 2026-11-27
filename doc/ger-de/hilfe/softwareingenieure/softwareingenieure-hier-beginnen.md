@@ -100,7 +100,7 @@ Foundation betreibt und finanziert das Projekt ([Wer ist 7x?](../wer-ist-7x.md),
 
 | Seite | Wobei sie Ihnen hilft |
 |---|---|
-| [Datenbanken: eine wählen und betreiben](datenbanken-und-die-wahl-einer-datenbank.md) | unter den sechs unterstützten Datenbanken wählen |
+| [Datenbanken: eine wählen und betreiben](datenbanken-und-die-wahl-einer-datenbank.md) | unter den sieben unterstützten Datenbanken wählen |
 | [Schemaänderungen und Migrationen](schemaaenderungen-und-migrationen.md) | eine Schemaänderung ausliefern, die jede Installation anwenden kann |
 | [Portables SQL schreiben](portables-sql-schreiben.md) | Abfragen schreiben, die auf jedem Treiber funktionieren |
 

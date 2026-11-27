@@ -3,7 +3,7 @@ title: Unterstützte Engines und Versionen
 audience: dba
 category: database-administration
 order: 3
-summary: Die sechs Datenbanken, die Exponential 6.0.x unterstützt, in der offiziellen Reihenfolge des Projekts, mit den drei Versionsnummern, auf die es bei jeder ankommt (die Untergrenze des Einrichtungsassistenten, das praktische Minimum der aktuellen Treiber und die Versionen, die nachweislich funktionieren), dem PHP-Bereich und dem, was die kontinuierliche Integration wirklich testet.
+summary: Die sieben Datenbanken, die Exponential 6.0.x unterstützt, in der offiziellen Reihenfolge des Projekts, mit den drei Versionsnummern, auf die es bei jeder ankommt (die Untergrenze des Einrichtungsassistenten, das praktische Minimum der aktuellen Treiber und die Versionen, die nachweislich funktionieren), dem PHP-Bereich und dem, was die kontinuierliche Integration wirklich testet.
 keywords: unterstützte Datenbanken, Versionen, Mindestversion, SQLite 3.33, PostgreSQL 13, PostgreSQL 15, MongoDB 6.0, MariaDB, MySQL 8.0, Oracle 19c, AL32UTF8, Untergrenze des Assistenten, CI, Testabdeckung, PHP 8.0, PHP 8.5, supported databases, versions, minimum version, wizard floor, test coverage
 type: help
 ---
@@ -29,11 +29,11 @@ geprüft wurde.
 ## Die offizielle Reihenfolge
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlicher Arbeit möglich.
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../datenbank-waehlen.md)).
 
-Alle sechs haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung, einen Eintrag im Einrichtungsassistenten
-und einen Weg in den Kommandozeilen-Installern. Die Reihenfolge ist eine Empfehlung für neue Websites, keine Rangliste der
+Alle sieben haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung
+und einen Weg in den Kommandozeilen-Installern; alle außer SQL Server haben auch einen Eintrag im Einrichtungsassistenten. Die Reihenfolge ist eine Empfehlung für neue Websites, keine Rangliste der
 Qualität. MySQL steht zuletzt, weil das Projekt die anderen zuerst empfiehlt, nicht weil es schlechter funktioniert
 ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 
@@ -94,10 +94,15 @@ Staging-Kopie aus und halten Sie die Wiederherstellung getestet ([Eine Datenbank
 
 ## Nicht unterstützte Engines
 
-- **Microsoft SQL Server**: kein Treiber, kein Schema-Handler, kein Installer-Eintrag in 6.0.x. Er ist bekanntermaßen mit
-  zusätzlicher Arbeit möglich ([Microsoft SQL Server: Stand für Datenbankadministratoren](stand-von-microsoft-sql-server.md)).
+- **Microsoft SQL Server und Azure SQL** werden ab 6.0.15 mit dem eigenen Treiber des Kernels unterstützt
+  ([Microsoft SQL Server: Stand für Datenbankadministratoren](stand-von-microsoft-sql-server.md)); 6.0.14 und älter haben
+  keinen Treiber.
+- **Die in 6.0.15 hinzugekommenen Datenbanken** (Firebird, DuckDB, TiDB, Vitess, SingleStore, Xpand, Aurora MySQL,
+  CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL sowie Spanner, ODBC und MS Access für Datentabellen) stehen
+  mit Stufe und Tests auf [Eine Datenbank wählen](../datenbank-waehlen.md); Xpand, Aurora MySQL, Neon, Supabase und
+  Aurora PostgreSQL sind ungetestet.
 - **Jede andere Engine** (zum Beispiel eine Cloud-Datenbank, die keines dieser Protokolle spricht): nicht unterstützt.
-  Verwaltete Dienste, die eine der sechs Engines betreiben (ein verwaltetes PostgreSQL oder MySQL), sind für Exponential
+  Verwaltete Dienste, die eine der sieben Engines betreiben (ein verwaltetes PostgreSQL oder MySQL), sind für Exponential
   dieselbe Engine; prüfen Sie, dass sie die Rechte erlauben, die unter
   [Datenbankkonten und Rechte](datenbankkonten-und-rechte.md) aufgeführt sind, und bei PostgreSQL, dass `pgcrypto`
   angelegt werden kann.

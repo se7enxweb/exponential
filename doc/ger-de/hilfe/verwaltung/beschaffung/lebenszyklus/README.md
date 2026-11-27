@@ -22,7 +22,7 @@ Quellen sind [Quellcodeverwaltung und Releases](../../../../standards/versionsve
 |---|---|
 | [Release-Richtlinie und Versionsnummern](release-richtlinie-und-versionsnummern.md) | Veröffentlichte Versionen ändern sich nie; Korrekturen kommen als nächstes Release; wo Änderungen festgehalten werden |
 | [Unterstützte Versionen](unterstuetzte-versionen.md) | 6.0.x wird gepflegt; 5.x und älter nicht; wie Sie eine unterstützte Version verlangen |
-| [Unterstützung von PHP und Plattform](php-und-plattformunterstuetzung.md) | PHP 8.0 bis 8.5, sechs Datenbanken, die Engines und die Planung von Plattform-Upgrades |
+| [Unterstützung von PHP und Plattform](php-und-plattformunterstuetzung.md) | PHP 8.0 bis 8.5, sieben Datenbanken, die Engines und die Planung von Plattform-Upgrades |
 | [Die Roadmap als öffentliche Stelle lesen](die-roadmap-lesen.md) | Die Roadmap ist eine Absicht; das Changelog ist der Nachweis; wie Sie eine Funktion anfragen oder finanzieren |
 | [Upgrades im Haushalt planen](upgrades-im-haushalt-planen.md) | Drei Arten von Upgrades, was den Aufwand treibt, eine Budgetvorlage |
 | [Sicherheitsupdates und Patch-Rhythmus](sicherheitsupdates-und-patch-rhythmus.md) | Von der Meldung zur Korrektur, was das Projekt verspricht, eine Klausel zu Patches |

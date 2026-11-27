@@ -212,7 +212,7 @@ Use these as a starting point. Each sentence is built only from the sources abov
 
 > Exponential is an open source PHP content management system with a content model you define yourself, versions,
 > approval workflows, multisite, many languages and a built-in shop. It is licensed under the GPL v2 or later, installs
-> with Composer or as Git clones, and runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support) with six supported databases, SQLite first. The company 7x
+> with Composer or as Git clones, and runs on PHP 8.0 to 8.5 (PHP 7.4 usable without support) with seven supported databases, SQLite first. The company 7x
 > leads its development and the nonprofit Exponential Foundation operates the project.
 
 **For a steering committee.** Add, from this page: the product family table, the database order, the support

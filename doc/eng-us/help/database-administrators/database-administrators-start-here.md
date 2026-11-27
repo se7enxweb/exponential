@@ -34,8 +34,8 @@ Each page names its sources.
 database reached through the kernel class `eZDB` and one of five drivers. Six databases are supported, in this order
 of preference: **1. SQLite 3** (the default, one file, for a site on one machine) · **2. PostgreSQL** (the recommended
 server) · **3. MongoDB** (through an adapter, with documented limits) · **4. MariaDB** · **5. Oracle** (19c and later,
-through the `ezoracle` extension) · **6. MySQL**. Microsoft SQL Server is known to be possible with additional work at
-this time. The schema is kept in an engine-neutral `.dba` format and changed by per-engine update files. Uploaded
+through the `ezoracle` extension) · **6. MySQL** · **7. Microsoft SQL Server and Azure SQL** (from 6.0.15). 6.0.15 also
+reaches Firebird, DuckDB and the MySQL and PostgreSQL protocol families ([Choosing a database](../choosing-a-database.md)). The schema is kept in an engine-neutral `.dba` format and changed by per-engine update files. Uploaded
 files, settings and caches are not in the database.
 
 ## Your first fifteen minutes

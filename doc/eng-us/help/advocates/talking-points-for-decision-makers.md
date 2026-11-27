@@ -38,7 +38,7 @@ buyer-facing material, the sales pages go deeper: [Handling objections](../busin
 | "The software has outlived its original vendor once already. Its code base goes back to 1999." | [Handling objections, Longevity](../business/objection-handling.md#longevity-will-it-still-be-here-in-ten-years), [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | "A company, 7x, leads development; a nonprofit, the Exponential Foundation, operates the project." | [The Foundation and 7x](../who-is-the-exponential-foundation.md#the-foundation-and-7x) |
 | "Fifteen 6.0.x releases since 1 January 2024; you can check the release history yourself." | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases) |
-| "No hosting lock-in: six databases, many operating systems, documented moves between databases." | [Comparing Exponential factually, No lock-in](../business/comparing-exponential-factually.md#no-lock-in-point-by-point) |
+| "No hosting lock-in: seven databases, many operating systems, documented moves between databases." | [Comparing Exponential factually, No lock-in](../business/comparing-exponential-factually.md#no-lock-in-point-by-point) |
 | "Security has a written process: private reports, a first answer within one business day, fixes in the next release." | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 | "Support comes from documented commitments, the community and paid providers of your choice." | [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment) |
 | "Your staff get help inside the tool: documentation and context help in the administration." | [The help system](../../features/6.0/help-system.md) |

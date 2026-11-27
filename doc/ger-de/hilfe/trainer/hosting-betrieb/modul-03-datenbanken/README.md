@@ -9,7 +9,7 @@ type: help
 ---
 # Modul 3: Datenbanken
 
-Exponential 6.x unterstützt sechs Datenbanken, und ein Hoster muss diejenige betreiben, prüfen und sichern, die ein
+Exponential 6.x unterstützt sieben Datenbanken, und ein Hoster muss diejenige betreiben, prüfen und sichern, die ein
 Tarif enthält. Dieses Modul beginnt mit der offiziellen Reihenfolge des Projekts und der Wahl, widmet SQLite (dem
 Standard und einer Produktivdatenbank für einen Rechner) eine Lektion, behandelt dann Datenbankserver und endet mit
 Sicherungen und dem Umzug einer Website zwischen Datenbanksystemen.

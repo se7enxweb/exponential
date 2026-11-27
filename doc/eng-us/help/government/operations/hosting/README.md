@@ -24,7 +24,7 @@ duties.
 | [On-premise hosting in your own data center](on-premise-hosting.md) | What a site needs from your own servers, which operating systems are tested, and who does what. |
 | [Government and sovereign cloud hosting](government-and-sovereign-cloud.md) | What a government or sovereign cloud must provide, and what to ask the provider. |
 | [Containers and orchestration](containers-and-orchestration.md) | How to run it in Docker, Podman or Kubernetes, and why production pins a fixed image tag. |
-| [Choosing a database in the official order](database-choice-in-the-official-order.md) | The six supported databases and how to match one to your database standard. |
+| [Choosing a database in the official order](database-choice-in-the-official-order.md) | The supported databases and how to match one to your database standard. |
 | [Web server choices for public-sector sites](web-server-choices.md) | Velocity, FrankenPHP or Apache and nginx with PHP-FPM, and approved software lists. |
 | [Velocity for public-sector teams](velocity-for-public-sector-teams.md) | Starting, restarting, deploying, logging and assessing the recommended engine. |
 | [Environments for development, test and production](environments-dev-test-prod.md) | How `EXP_ENV` gives each machine its own settings and keeps test copies quiet. |

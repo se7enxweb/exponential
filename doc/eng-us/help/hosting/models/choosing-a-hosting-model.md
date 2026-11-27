@@ -95,13 +95,14 @@ Details: [Choosing a web server](../servers/choosing-a-web-server.md) and
 
 ## Database per model
 
-The six supported databases, in the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB ·
-4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at this time.
+The supported databases, in the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB ·
+4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+database](../../choosing-a-database.md)).
 
 | Model | What fits | Why |
 |---|---|---|
 | Shared hosting | 1. SQLite 3 for small sites; otherwise the database server the panel offers (often 4. MariaDB or 6. MySQL) | SQLite needs no server and no account; it is "a full production database for a site served from one machine" |
-| VPS, dedicated | any of the six; 1. SQLite 3 or 2. PostgreSQL first | one machine; the customer's or your standard decides |
+| VPS, dedicated | any of the seven; 1. SQLite 3 or 2. PostgreSQL first | one machine; the customer's or your standard decides |
 | Containers | 1. SQLite 3 with one writing container, or a database server | "SQLite's WAL needs shared memory on one host" |
 | Kubernetes with several replicas | a database server, 2. PostgreSQL first | several replicas cannot share one SQLite file over a network volume |
 

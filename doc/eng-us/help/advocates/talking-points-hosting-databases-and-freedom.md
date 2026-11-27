@@ -3,7 +3,7 @@ title: "Talking points: hosting, databases and freedom"
 audience: advocate
 category: advocacy
 order: 22
-summary: Sourced talking points about the freedom to choose where Exponential runs - six databases, operating systems in four tiers, web servers and engines, containers and hosting panels, moving between databases - and the honest limits.
+summary: Sourced talking points about the freedom to choose where Exponential runs - seven databases, operating systems in four tiers, web servers and engines, containers and hosting panels, moving between databases - and the honest limits.
 keywords: talking points, hosting, databases, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, operating systems, Linux, BSD, macOS, Windows, containers, shared hosting, lock-in, freedom, migration
 type: help
 ---
@@ -59,7 +59,8 @@ Read the page before you go deeper; each database has its own section and limits
 | MongoDB | "Supported, with documented limits." ([MongoDB limits](../database-support.md#mongodb-limits)) |
 | MariaDB and MySQL | "Supported; they share one driver." |
 | Oracle | "Supported through the `ezoracle` extension." |
-| Microsoft SQL Server | "Possible with additional work; not one of the six." ([section](../database-support.md#microsoft-sql-server-possible-with-additional-work)) |
+| Microsoft SQL Server, Azure SQL | "Supported from 6.0.15 on the kernel's own driver." ([section](../database-support.md#7-microsoft-sql-server-and-azure-sql)) |
+| Firebird, DuckDB, TiDB, CockroachDB and more | "New in 6.0.15, each at its own level; some untested." ([Choosing a database](../choosing-a-database.md)) |
 
 ## The operating system tiers
 
@@ -78,7 +79,7 @@ runs on X".
 - **Shared hosting**: Apache or LiteSpeed with `.htaccess` can serve it, and the setup wizard installs it without a
   shell; Velocity usually cannot run there.
 - **MongoDB** has documented limits; read them before recommending it.
-- **Microsoft SQL Server** is not one of the six supported databases.
+- **Microsoft SQL Server** is supported from 6.0.15 only; Xpand, Aurora, Neon and Supabase are profiles never run.
 - **Tier 3 and 4** systems are not tested; say so.
 
 ## Questions you will hear

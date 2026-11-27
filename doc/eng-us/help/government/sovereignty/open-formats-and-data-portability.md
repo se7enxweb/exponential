@@ -24,7 +24,7 @@ Exponential. It lists where each kind of data lives and in which format, and wha
 
 | Data | Stored as | Readable without Exponential |
 |---|---|---|
-| Content fields | rows in the database (one of six engines) | yes, with database tools; the schema is in the repository |
+| Content fields | rows in the database (one of seven engines) | yes, with database tools; the schema is in the repository |
 | Rich text | XML in a database column | yes, it is XML |
 | Uploaded files and images | files below `var/<site>/storage/` | yes, as files; their names map to objects in the database |
 | Settings | INI files in `settings/` and `extension/*/settings/` | yes, plain text |

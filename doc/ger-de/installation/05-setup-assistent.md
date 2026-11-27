@@ -267,8 +267,9 @@ oder `Transport=SMTP` mit `TransportServer`, `TransportUser` und `TransportPassw
 ### 5.3.5 Datenbanksystem auswählen
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Empfehlung:** 1. SQLite 3 (der Standard) ·
-> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlichem Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
+> 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere
+> Datenbanken ab 6.0.15: [Eine Datenbank wählen](../hilfe/datenbank-waehlen.md)). Einzelheiten:
+> [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
 
 **Zweck.** Welches Datenbanksystem die Site verwendet. Die Liste enthält die Systeme, deren PHP-Extension der
 Systemtest gefunden hat, beschränkt auf diejenigen, die der Installer kennt (`eZSetupDatabaseMap()` in

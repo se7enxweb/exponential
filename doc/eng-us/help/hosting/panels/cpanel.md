@@ -66,9 +66,10 @@ same reasoning that puts cPanel in tier 3:
   of the setup wizard, and are the ones most often missing from a default PHP build.
 - The `php.ini` values the wizard checks ([2.5](../../../install/02-requirements.md#25-phpini-settings)).
 - Apache (or LiteSpeed) reading `.htaccess`, with `mod_rewrite`.
-- A database: 1. SQLite 3 needs none; otherwise one of the servers in the official order, 2. PostgreSQL ·
-  3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL (Microsoft SQL Server is known to be possible with additional work
-  at this time). On a typical cPanel server this is the MariaDB or MySQL server the panel manages.
+- A database: 1. SQLite 3 needs none; otherwise one of the servers in the official order, 2. PostgreSQL · 3. MongoDB ·
+  4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+  database](../../choosing-a-database.md)). On a typical cPanel server this is the MariaDB or MySQL server the panel
+  manages.
 - A cron job for `runcronjobs.php`.
 
 ## Setting up an account (generic)

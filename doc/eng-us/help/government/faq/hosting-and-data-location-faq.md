@@ -48,8 +48,9 @@ and GD or ImageMagick; a web server is optional with Velocity ([2. Requirements]
 
 ## Which databases are supported?
 
-In the official order: SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL. Microsoft SQL Server is
-possible with additional work ([Database support](../../database-support.md)).
+In the official order: SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, and from 6.0.15 Microsoft SQL
+Server and Azure SQL ([Database support](../../database-support.md)); the others 6.0.15 reaches are on
+[Choosing a database](../../choosing-a-database.md).
 
 ## Which web servers?
 

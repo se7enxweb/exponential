@@ -67,9 +67,10 @@ derselben Überlegung, die cPanel in Stufe 3 einordnet:
   Setup-Assistenten und fehlen am häufigsten in einem Standard-Build von PHP.
 - Die `php.ini`-Werte, die der Assistent prüft ([2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)).
 - Apache (oder LiteSpeed), das `.htaccess` liest, mit `mod_rewrite`.
-- Eine Datenbank: 1. SQLite 3 braucht keine; sonst einer der Server in der offiziellen Reihenfolge, 2. PostgreSQL · 3. MongoDB ·
-  4. MariaDB · 5. Oracle · 6. MySQL (Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich). Auf einem
-  typischen cPanel-Server ist das der Server für MariaDB oder MySQL, den das Panel verwaltet.
+- Eine Datenbank: 1. SQLite 3 braucht keine; sonst einer der Server in der offiziellen Reihenfolge, 2. PostgreSQL ·
+  3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab
+  6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)). Auf einem typischen cPanel-Server ist das der Server
+  für MariaDB oder MySQL, den das Panel verwaltet.
 - Ein Cronjob für `runcronjobs.php`.
 
 ## Ein Konto einrichten (allgemein)

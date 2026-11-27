@@ -153,7 +153,7 @@ Each sentence below can be backed by the source in brackets. Do not say the brac
 >    the GNU Free Documentation License. [README, Free documentation]
 > 6. It runs on almost any operating system with PHP 8.0 or later (PHP 7.4 usable without support), behind Apache, Nginx and other web servers, or on
 >    its own Velocity server. [Operating system support, README]
-> 7. It supports six databases, with SQLite as the default, so a site needs no database server at all.
+> 7. It supports seven databases, with SQLite as the default, so a site needs no database server at all.
 >    [Database support]
 > 8. Its code continues eZ Publish, a product its creator discontinued after almost 18 years, and the full Git
 >    history back to 2002 comes with it. [Who is 7x?]

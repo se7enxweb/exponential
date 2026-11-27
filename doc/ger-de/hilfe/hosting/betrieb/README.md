@@ -42,7 +42,7 @@ Dokumentation im Repository, in der sie beschrieben sind, sodass Sie jede Aussag
 - [Backup-Zeitpläne und Aufbewahrung](backup-zeitplaene-und-aufbewahrung.md): Optionen dafür, wie oft und wie lange, für ein
   Hosting-Angebot formuliert.
 - [Datenbank-Backups je Engine](datenbank-backups-je-engine.md): die Befehle für Backup und Wiederherstellung für jede der
-  sechs unterstützten Datenbanken, in der offiziellen Reihenfolge.
+  sieben unterstützten Datenbanken, in der offiziellen Reihenfolge.
 - [Wiederherstellung und Wiederherstellungstests](wiederherstellung-und-wiederherstellungstests.md): das Verfahren der Wiederherstellung und wie
   Sie beweisen, dass ein Backup funktioniert.
 

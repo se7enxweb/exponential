@@ -3,7 +3,7 @@ title: Character sets and collations
 audience: dba
 category: database-administration
 order: 23
-summary: How Exponential stores text as UTF-8 on each of the six engines, which character set and collation to create, how the MySQL and MariaDB connection differs from the tables, how case-sensitive and case-insensitive comparison differ between engines, and how to check a running site.
+summary: How Exponential stores text as UTF-8 on each of the supported engines, which character set and collation to create, how the MySQL and MariaDB connection differs from the tables, how case-sensitive and case-insensitive comparison differ between engines, and how to check a running site.
 keywords: character set, charset, collation, UTF-8, UTF8, utf8mb4, utf8mb3, AL32UTF8, BSON, template0, case sensitive, case insensitive, LIKE, lower, NLS_COMP, OracleCaseInsensitive, latin1, System information
 type: help
 ---

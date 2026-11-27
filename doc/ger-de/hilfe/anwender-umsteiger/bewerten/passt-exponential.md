@@ -33,7 +33,7 @@ type: help
 | Situation | Was Sie prüfen |
 |---|---|
 | Ihr Team kennt nur Symfony und Twig | Die auf Symfony basierende Platform-Linie passt vielleicht besser ([Ein Produkt auswählen](../../oekosystem/produkte/ein-produkt-auswaehlen.md)) |
-| Sie müssen Microsoft SQL Server verwenden | Kein Treiber in 6.0.x; "known to be possible with additional work", also mit zusätzlicher Arbeit bekanntermaßen möglich ([Datenbankunterstützung](../../datenbankunterstuetzung.md)) |
+| Sie müssen Microsoft SQL Server verwenden | Ab 6.0.15 unterstützt (SQL Server 2017 bis 2025, Azure SQL); nicht in 6.0.14 und älter. Andere Datenbanken: [Eine Datenbank wählen](../../datenbank-waehlen.md) |
 | Ihr Hoster erlaubt keine langlebigen Prozesse | Verwenden Sie Apache oder LiteSpeed statt Velocity ([Webserver und Engines](../../oekosystem/php-stack/webserver-und-engines.md)) |
 | Sie brauchen eine Funktion, die Sie in der Hilfe nicht finden | Gehen Sie davon aus, dass es sie nicht gibt, bis ein Machbarkeitsnachweis sie zeigt; prüfen Sie die Erweiterungen ([Eine Erweiterung finden](../../oekosystem/pakete/eine-erweiterung-finden.md)) |
 | Sie brauchen garantierte Antwortzeiten | Planen Sie bezahlten Support von 7x oder einem Partner ein ([Langlebigkeit und Unterstützung](../entscheiden/langlebigkeit-und-unterstuetzung.md)) |

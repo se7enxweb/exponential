@@ -91,13 +91,15 @@ darauf verlassen ([Shared Hosting](../modelle/shared-hosting.md)).
 
 ## Datenbanken
 
-Geben Sie jeder Installation eine eigene Datenbank und einen eigenen Datenbankbenutzer mit Rechten nur auf diese Datenbank. Die
-Verbindung, einschließlich des Passworts, steht in `settings/override/site.ini.append.php` der Installation; halten Sie diese Datei auf
-`0640` oder strenger, damit andere Benutzer sie nicht lesen können ([Datenbanken und Benutzer](../control-panels/datenbanken-und-benutzer.md)). Die
-unterstützten Datenbanken in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
-5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich
-([Datenbankunterstützung](../../datenbankunterstuetzung.md)). Mit SQLite 3 ist die Datenbank eine Datei unterhalb der Installation
-(standardmäßig `var/storage/sqlite3/`), sodass die Dateiberechtigungen die ganze Grenze sind.
+Geben Sie jeder Installation eine eigene Datenbank und einen eigenen Datenbankbenutzer mit Rechten nur auf diese
+Datenbank. Die Verbindung, einschließlich des Passworts, steht in `settings/override/site.ini.append.php` der
+Installation; halten Sie diese Datei auf `0640` oder strenger, damit andere Benutzer sie nicht lesen können
+([Datenbanken und Benutzer](../control-panels/datenbanken-und-benutzer.md)). Die unterstützten Datenbanken in der
+offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL ·
+7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank
+wählen](../../datenbank-waehlen.md)) ([Datenbankunterstützung](../../datenbankunterstuetzung.md)). Mit SQLite 3 ist
+die Datenbank eine Datei unterhalb der Installation (standardmäßig `var/storage/sqlite3/`), sodass die
+Dateiberechtigungen die ganze Grenze sind.
 
 ## Caches, Sitzungen und Logs
 

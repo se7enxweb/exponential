@@ -28,7 +28,7 @@ a site moves to another engine. Whole-site backups, schedules and restore tests 
 
 After this lesson, learners can:
 
-- name the backup and restore command for each of the six supported engines;
+- name the backup and restore command for each of the supported engines;
 - take a consistent SQLite backup while the site runs and check it with `PRAGMA integrity_check`;
 - restore a SQLite database with `.restore` inside maintenance mode and clear the caches afterwards;
 - explain why `--single-transaction` matters for MariaDB and MySQL dumps;

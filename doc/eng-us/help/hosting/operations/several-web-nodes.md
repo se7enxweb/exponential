@@ -43,11 +43,11 @@ when one machine is not enough or when the offer promises that a node can fail w
 ## The database
 
 A multi-node site needs a database server. From the supported databases, in the official order (1. SQLite 3, the
-default · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server is known to be
-possible with additional work at this time, with no driver in 6.0.x), every engine except SQLite supports several web
-servers on one database ([Database support, at a glance](../../database-support.md#at-a-glance)). SQLite's WAL mode
-uses shared memory, so all processes must be on one machine; "several web servers sharing one database file over NFS
-are not" supported ([chapter 9](../../../install/09-databases.md#wal-readers-and-the-writer-side-by-side)).
+default · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL; more
+databases from 6.0.15 in [Choosing a database](../../choosing-a-database.md)), every engine except SQLite supports
+several web servers on one database ([Database support, at a glance](../../database-support.md#at-a-glance)). SQLite's
+WAL mode uses shared memory, so all processes must be on one machine; "several web servers sharing one database file
+over NFS are not" supported ([chapter 9](../../../install/09-databases.md#wal-readers-and-the-writer-side-by-side)).
 
 For read-heavy sites on MySQL or MariaDB, `site.ini [DatabaseSettings] UseSlaveServer` sends read queries to replicas
 (`SlaveServerArray[]` and the related keys); the shipped value is `disabled`

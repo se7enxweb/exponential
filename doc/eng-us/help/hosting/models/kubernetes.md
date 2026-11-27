@@ -57,7 +57,7 @@ and every cluster differs. Treat it as the list of decisions your manifests must
 
 | | One replica | Several replicas |
 |---|---|---|
-| Database | any of the six, 1. SQLite 3 included | a database server |
+| Database | any of the seven, 1. SQLite 3 included | a database server |
 | `var/` | one persistent volume | shared storage for `var/storage`; caches decided per replica or shared |
 | Sessions | PHP's default files work | shared session storage required |
 | Cron | in the pod or a CronJob | exactly one scheduler, not one per replica |
@@ -68,8 +68,9 @@ move to several replicas as its own project.
 
 ## The database
 
-In the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server is known to be possible with additional work at this time.
+In the official order: 1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL ·
+7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15: [Choosing a
+database](../../choosing-a-database.md)).
 
 With several replicas, SQLite is out: "SQLite's WAL needs shared memory on one host, so several replicas cannot share
 one database file over a network volume." The sources recommend **2. PostgreSQL** first; every server database in the

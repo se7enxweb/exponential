@@ -3,7 +3,7 @@ title: Supported engines and versions
 audience: dba
 category: database-administration
 order: 3
-summary: The six databases Exponential 6.0.x supports, in the project's official order, with the three version numbers that matter for each (the setup wizard's floor, the practical minimum of the current drivers and the versions seen working), the PHP range, and what the continuous integration really tests.
+summary: The seven databases Exponential 6.0.x supports, in the project's official order, with the three version numbers that matter for each (the setup wizard's floor, the practical minimum of the current drivers and the versions seen working), the PHP range, and what the continuous integration really tests.
 keywords: supported databases, versions, minimum version, SQLite 3.33, PostgreSQL 13, PostgreSQL 15, MongoDB 6.0, MariaDB, MySQL 8.0, Oracle 19c, AL32UTF8, wizard floor, CI, test coverage, PHP 8.0, PHP 8.5
 type: help
 ---
@@ -28,11 +28,11 @@ against the code and the continuous integration of the 6.0.15 line.
 ## The official order
 
 > **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
-> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-> at this time.
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
+> [Choosing a database](../choosing-a-database.md)).
 
-All six have a driver in the kernel or in a shipped extension, an entry in the setup wizard and a path in the
-command-line installers. The order is a recommendation for new sites; it is not a ranking of quality. MySQL is last
+All seven have a driver in the kernel or in a shipped extension and a path in the command-line installers; all but SQL Server have an
+entry in the setup wizard. The order is a recommendation for new sites; it is not a ranking of quality. MySQL is last
 because the project recommends the others first, not because it works less well
 ([Database support](../database-support.md#the-supported-databases-in-order)).
 
@@ -93,10 +93,14 @@ restore tested ([Restoring a database](restoring-a-database.md)).
 
 ## Engines that are not supported
 
-- **Microsoft SQL Server**: no driver, no schema handler, no installer entry in 6.0.x. It is known to be possible
-  with additional work ([Microsoft SQL Server: status for DBAs](microsoft-sql-server-status.md)).
+- **Microsoft SQL Server and Azure SQL** are supported from 6.0.15 on the kernel's own driver
+  ([Microsoft SQL Server: status for DBAs](microsoft-sql-server-status.md)); 6.0.14 and older have no driver.
+- **The databases added in 6.0.15** (Firebird, DuckDB, TiDB, Vitess, SingleStore, Xpand, Aurora MySQL, CockroachDB,
+  YugabyteDB, Neon, Supabase, Aurora PostgreSQL, and Spanner, ODBC and MS Access for data tables) are listed with
+  their level and tests on [Choosing a database](../choosing-a-database.md); Xpand, Aurora MySQL, Neon, Supabase and
+  Aurora PostgreSQL are untested.
 - **Any other engine** (for example a cloud database that speaks neither of these protocols): not supported. Managed
-  services that run one of the six engines (a managed PostgreSQL or MySQL) are the same engine to Exponential; check
+  services that run one of the seven engines (a managed PostgreSQL or MySQL) are the same engine to Exponential; check
   that they allow the privileges listed on [Database accounts and privileges](database-accounts-and-privileges.md),
   and for PostgreSQL that `pgcrypto` can be created.
 

@@ -104,8 +104,9 @@ Mehr: [Velocity für Hoster](../server/velocity-fuer-hoster.md),
 
 ## Die Datenbank
 
-In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
-Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
+In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle ·
+6. MySQL · 7. Microsoft SQL Server und Azure SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank
+wählen](../../datenbank-waehlen.md)).
 
 Ein VPS liefert eine Website von einer Maschine aus, und genau dort ist **1. SQLite 3** eine vollwertige
 Produktionsdatenbank. Wählen Sie einen Server, wenn mehr als eine Maschine in die Datenbank schreiben muss, wenn viele

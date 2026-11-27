@@ -3,7 +3,7 @@ title: "Datenbanken: eine wählen und betreiben"
 audience: software-engineer, admin
 category: software-engineering
 order: 200
-summary: Die sechs Datenbanken, die Exponential 6.0.x unterstützt, in der Reihenfolge der Präferenz des Projekts - SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL - so verglichen, wie ein Ingenieur sie vergleicht - Treiber, CI-Abdeckung, Betrieb mit mehreren Knoten, Transaktionen, Zeichensätze und Grenzen - mit einer Entscheidungstabelle und den Befehlen, die zeigen, welche eine Website verwendet.
+summary: Die sieben Datenbanken, die Exponential 6.0.x unterstützt, in der Reihenfolge der Präferenz des Projekts - SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL - so verglichen, wie ein Ingenieur sie vergleicht - Treiber, CI-Abdeckung, Betrieb mit mehreren Knoten, Transaktionen, Zeichensätze und Grenzen - mit einer Entscheidungstabelle und den Befehlen, die zeigen, welche eine Website verwendet.
 keywords: Datenbank, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, DatabaseImplementation, Treiber, CI, Transaktionen, Zeichensatz, mehrere Knoten, Wahl, Entscheidung, Softwareingenieur, database, driver, transactions, character set, multi-node, choice, decision
 type: help
 ---
@@ -28,8 +28,8 @@ Architekturentscheidung braucht.
 > 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist bekanntermaßen mit
 > zusätzlicher Arbeit möglich.
 
-Alle sechs haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung, einen Eintrag im Einrichtungsassistenten
-und einen Weg in den Kommandozeilen-Installern. Die Reihenfolge ist eine Empfehlung für neue Websites, keine Rangfolge
+Alle sieben haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung
+und einen Weg in den Kommandozeilen-Installern; alle außer SQL Server haben auch einen Eintrag im Einrichtungsassistenten. Die Reihenfolge ist eine Empfehlung für neue Websites, keine Rangfolge
 der Qualität ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 
 ## Für Ingenieure verglichen
@@ -43,6 +43,11 @@ der Qualität ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unter
 | Transaktionen | ja, Schreibende serialisiert | ja | nein: jede Operation wird für sich festgeschrieben | ja | ja | ja |
 | In der CI des Projekts getestet | Unit-Tests des Treibers | ja (PostgreSQL 15) | Unit-Tests des Adapters | nein | nein | ja (MySQL 8.0) |
 | SQL-Abfrage-Cache | ja | ja | nicht verwendet | ja | ja (Hooks von ezoracle) | ja |
+
+Die siebte, **Microsoft SQL Server und Azure SQL** (ab 6.0.15), läuft mit `expSQLServerDB` (`sqlserver`, PHPs
+`sqlsrv`, `pdo_sqlsrv` oder `pdo_odbc`), mit mehreren Webservern und Transaktionen, in der CI auf SQL Server 2017 bis
+2025 getestet. Die Datenbanken, die 6.0.15 über die sieben hinaus bringt, vergleicht
+[Eine Datenbank wählen](../datenbank-waehlen.md).
 
 Quelle: [Datenbankunterstützung, auf einen Blick](../datenbankunterstuetzung.md#auf-einen-blick),
 [Standards für Datenbanken und SQL](../../standards/datenbanken-und-sql.md) und
