@@ -154,6 +154,7 @@ class expMonetDBDB extends eZDBInterface
         $host = $this->SocketPath ? (string)$this->SocketPath : ( $this->Server === '' || $this->Server === false ? '127.0.0.1' : (string)$this->Server );
         $port = $this->Port ? (int)$this->Port : self::DEFAULT_PORT;
         $tries = max( 1, (int)$this->ConnectRetries );
+        $ok = false;
         for ( $try = 0; $try < $tries; $try++ )
         {
             if ( $try > 0 )
