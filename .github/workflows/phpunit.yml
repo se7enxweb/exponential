@@ -1601,6 +1601,106 @@ jobs:
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
 
+  # The columnar databases: MonetDB (expMonetDBDB, a whole site) and ClickHouse (expClickHouseDB, data tables and
+  # imports). The DB-less tests, the live tests against both servers in containers, and on the newest pair a whole site
+  # installed on MonetDB (exp:install --db=monetdb) with its front page and admin login rendered. Neither needs a PHP
+  # extension: MonetDB is reached over its protocol MAPI in plain PHP, ClickHouse over HTTP.
+  columnar:
+    name: Columnar (MonetDB ${{ matrix.monetdb }}, ClickHouse ${{ matrix.clickhouse }}; PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { monetdb: 'Dec2025-SP5', clickhouse: '25.8.33.6', php: '8.5', install: true }
+          - { monetdb: 'Dec2023-SP4', clickhouse: '24.8', php: '8.1', install: false }
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Start MonetDB and ClickHouse
+        run: |
+          docker run -d --name monetdb -p 50000:50000 -e MDB_DB_ADMIN_PASS=monetdb -e MDB_CREATE_DBS=exp monetdb/monetdb:${{ matrix.monetdb }}
+          docker run -d --name clickhouse -p 8123:8123 -e CLICKHOUSE_USER=exp -e CLICKHOUSE_PASSWORD=exp -e CLICKHOUSE_DB=exp \
+            -e CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1 --ulimit nofile=262144:262144 clickhouse/clickhouse-server:${{ matrix.clickhouse }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, xsl, curl, zlib, pdo, pdo_sqlite, sqlite3, pcntl, posix, zip
+          ini-values: memory_limit=1G
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          case "${{ matrix.php }}" in
+            8.1) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^10.5" ;;
+            8.2|8.3) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^11.5" ;;
+          esac
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            sleep $((attempt * 15))
+          done
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Wait for the servers
+        run: |
+          for i in $(seq 1 60); do curl -sf -u exp:exp 'http://127.0.0.1:8123/?query=SELECT%201' >/dev/null && break; sleep 2; done
+          curl -sf -u exp:exp 'http://127.0.0.1:8123/?query=SELECT%20version()' || { docker logs --tail 40 clickhouse; exit 1; }
+          for i in $(seq 1 60); do docker exec monetdb sh -c 'printf "user=monetdb\npassword=monetdb\n" > /tmp/.m; DOTMONETDBFILE=/tmp/.m mclient -d exp -s "SELECT 1"' >/dev/null 2>&1 && break; sleep 2; done
+          docker exec monetdb sh -c 'DOTMONETDBFILE=/tmp/.m mclient -d exp -s "SELECT value FROM sys.env() WHERE name = '"'"'monet_version'"'"'"' || { docker logs --tail 40 monetdb; exit 1; }
+
+      - name: Run the MonetDB and ClickHouse tests
+        env:
+          EXP_TEST_MONETDB_HOST: 127.0.0.1
+          EXP_TEST_MONETDB_PASSWORD: monetdb
+          EXP_TEST_MONETDB_DATABASE: exp
+          EXP_TEST_CLICKHOUSE_HOST: 127.0.0.1
+          EXP_TEST_CLICKHOUSE_USER: exp
+          EXP_TEST_CLICKHOUSE_PASSWORD: exp
+          EXP_TEST_CLICKHOUSE_DATABASE: exp
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite columnar
+          php vendor/bin/phpunit --colors=always --fail-on-skipped --testsuite columnar-live
+
+      # The whole site on MonetDB: a user with a schema of its own, then the kernel schema and data, the package, the
+      # siteaccesses, the front page and the admin login through PHP's built-in server
+      - name: Install a site on MonetDB
+        if: matrix.install
+        run: |
+          docker exec monetdb sh -c 'DOTMONETDBFILE=/tmp/.m mclient -d exp -s "CREATE USER \"exponential\" WITH PASSWORD '"'"'Ci-MonetDB-Site-2026'"'"' NAME '"'"'Exponential'"'"' SCHEMA \"sys\"; CREATE SCHEMA \"exponential\" AUTHORIZATION \"exponential\"; ALTER USER \"exponential\" SET SCHEMA \"exponential\""'
+          mkdir -p settings/override
+          printf '<?php /* #?ini charset="utf-8"?\n[ManualSettings]\nBuildOnInstall=disabled\n*/ ?>\n' > settings/override/exphelp.ini.append.php
+          EXP_INSTALL_DB_PASSWORD=Ci-MonetDB-Site-2026 php bin/php/install.php --db=monetdb --db-host=127.0.0.1 --db-user=exponential --db-name=exp \
+            --apply --password=Ci-MonetDB-2026 --no-crontab
+          php -S 127.0.0.1:8080 -t . index.php >var/log/php-server.log 2>&1 &
+          sleep 2
+          code=$(curl -s -o front.html -w '%{http_code}' http://127.0.0.1:8080/)
+          echo "front page: $code"; head -c 600 front.html
+          test "$code" = 200
+          code=$(curl -s -o admin.html -w '%{http_code}' http://127.0.0.1:8080/admin/user/login)
+          echo "admin login: $code"
+          test "$code" = 200
+
+      - name: Logs
+        if: failure()
+        run: |
+          tail -n 200 var/log/error.log var/log/setup.log var/log/php-server.log 2>/dev/null || true
+          docker logs --tail 60 monetdb || true
+          docker logs --tail 60 clickhouse || true
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: |
+          rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+          docker rm -f monetdb clickhouse || true
+
   # MS Access on Windows: Microsoft's Access Database Engine 2016 (x64) ODBC driver, an empty .accdb made with ADOX,
   # the driver's live tests, the import through ODBC, and the probe of a minimal site on Access (its report is an
   # artifact). The engine is a download from Microsoft, not part of the runner image, so the job may not fail the run.
