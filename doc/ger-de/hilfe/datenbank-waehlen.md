@@ -80,6 +80,8 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | [libSQL (sqld), Turso](../funktionen/6.0/libsql-datenbanktreiber.md) | nein | neu; Turso **ungetestet** | ja (gemessen auf sqld 0.24) | **kein** Backend; mehrere Webserver teilen sich die Datenbank, die Dateien brauchen ein geteiltes Verzeichnis | nein (die Replikate von Turso antworten unter derselben URL) | Kickstarter, `libsql`, `turso` |
 | [IBM Db2 11.5 und 12.1](../funktionen/6.0/db2-datenbanktreiber.md) | nein | neu | ja | **noch nicht** | nein | Assistent (mit `pdo_ibm` oder `ibm_db2`), Kickstarter, `db2` |
 | [IBM Informix 14.10 und 15](../funktionen/6.0/informix-datenbanktreiber.md) | nein | neu | ja (auf 15 gemessen) | **nein** | nein | Assistent (mit `ibm_db2` oder `pdo_ibm`), Kickstarter, `informix` |
+| [MonetDB Dec2023 und später](../funktionen/6.0/spaltenorientierte-datenbanken.md#monetdb) | nein | neu | ja, immer nur ein Schreiber | **nein** | nein | Kickstarter, `monetdb` |
+| [ClickHouse 24.8 und später](../funktionen/6.0/spaltenorientierte-datenbanken.md#clickhouse) | nein | neu | **nein**: Datentabellen und Import ([warum](../funktionen/6.0/spaltenorientierte-datenbanken.md#warum-keine-site-datenbank)) | nein | nein | keiner |
 | [Jede Datenbank über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md) | nein | neu | ja auf SQL Server, PostgreSQL, MariaDB/MySQL und Db2 ([eine Site über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md#eine-site-über-odbc)); Datentabellen und Import auf jeder | ja: das von SQL Server und PostgreSQL über PDO_ODBC, das von MariaDB über `mysqli` | nein | Assistent, Kickstarter, `odbc` mit `--db-dialect` |
 | [MS Access (`.accdb`, `.mdb`)](../funktionen/6.0/ms-access-unterstuetzung.md) | nein | neu | **nein**: Import, unter Windows auch Datentabellen | nein | nein | keiner (`exp:access:import`) |
 | [Apache Cassandra 4.0 bis 5.0, ScyllaDB 2025.1](../funktionen/6.0/cassandra-scylladb-treiber.md) | nein | neu | **nein**: Datentabellen und Import ([warum](../funktionen/6.0/cassandra-scylladb-treiber.md#warum-keine-site-auf-cassandra-läuft)) | nein | nein | keiner (`exp:cassandra:import`) |
@@ -131,6 +133,8 @@ nimmt die Aktualisierung wieder zurück.
 | ODBC | `pdo_odbc` oder `odbc` und der ODBC-Treiber der Datenbank | `odbc` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung; `exp:access:import` in sie hinein | Linux, Windows | Live-Tests auf SQL Server, PostgreSQL, MariaDB und SQLite, beide Schichten, ganze Sites installiert (Job `odbc`); LocalDB unter Windows | die Upgrade-Stufen über ODBC auf MariaDB gemessen (`exp:upgrade:database`); xne wie PostgreSQL oder MySQL |
 | MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine (x64); Linux: die Programme von MDBTools (nur Import) | `msaccess` (Windows) | `exp:access:import`; SQL-Quelle über eine benannte Verbindung (Windows) | Windows (Treiber und Import), Linux und macOS (Import mit MDBTools) | der Import unter Linux; Treiber und Import auf windows-2022 und windows-2025 (Job `msaccess-windows`) | entfällt |
 | libSQL (sqld), Turso | `curl` (oder `allow_url_fopen`); `sqlite3` nicht nötig | `libsql`, `turso` | eine Datentabellen-Verbindung | Linux (sqld in einem Container); die PHP-Seite auf jedem System mit curl | Tests ohne Server, Live-Tests auf sqld 0.24.33 und eine ganze Site installiert (Job `libsql`); Turso nicht getestet | noch nicht; kein eingebauter Sicherungspunkt (unten) |
+| MonetDB | keine: MAPI in reinem PHP | `monetdb` | eine Datentabellen-Verbindung (`table_to_content`) | Linux | Live-Tests auf Dec2023-SP4 und Dec2025-SP5 und eine ganz installierte Site (Job `columnar`) | noch nicht; kein eingebauter Sicherungspunkt (unten) |
+| ClickHouse | keine: HTTP über `curl` oder PHPs HTTP-Stream | `clickhouse` | eine Datentabellen-Verbindung; die ClickHouse-Quelle von SQLI Import | Linux | Live-Tests auf 24.8 und 25.8 (Job `columnar`) | nicht anwendbar |
 | Cassandra, ScyllaDB | PHP 8.1 und die Bibliothek `mroosz/php-cassandra` (keine Erweiterung) | `cassandra`, `scylladb` | eine Datentabellen-Verbindung; `exp:cassandra:import` eines Keyspace | Linux | Live-Tests auf Cassandra 5.0 und ScyllaDB 2025.1, PHP 8.1 und 8.5 (Job `cassandra`) | entfällt |
 | Couchbase | `curl` (die REST-API des Query-Dienstes; kein SDK) | `couchbase` | `exp:couchbase:import`; eine Datentabellen-Verbindung | Linux | Live-Tests auf Couchbase Community 7.6.2 und 7.2.4 (Job `couch`) | entfällt |
 | Apache CouchDB | `curl` und `sqlite3` | `couchdb` | `exp:couchdb:import`; eine Datentabellen-Verbindung | Linux | Live-Tests auf CouchDB 3.4.3 und 3.3.3 (Job `couch`) | entfällt |
@@ -161,6 +165,7 @@ jeder anderen Datenbank sichern Sie selbst mit dem Werkzeug der Datenbank und f�
 | DuckDB | **keiner** („no built-in dump for duckdb“) | die Datei kopieren, solange kein Prozess schreibt, oder `EXPORT DATABASE` aus dem Programm `duckdb` |
 | Cassandra, ScyllaDB (nur Datentabellen) | **keiner** | `nodetool snapshot` oder das Backup-Werkzeug des Herstellers |
 | libSQL (sqld), Turso | **keiner** („no built-in dump for a libSQL server“) | eine Kopie des Datenverzeichnisses von sqld, während er angehalten ist; Turso's Point-in-Time-Restore |
+| MonetDB | **keiner** | `msqldump` oder MonetDBs Schnappschuss (`monetdb snapshot`) |
 
 Das vollständige Verfahren je Engine: [Sicherungen je Engine](datenbankadministratoren/sicherungen-je-engine.md).
 
@@ -181,13 +186,17 @@ nicht, wie zwei Datenbanken im Vergleich abschneiden.
 | | Firebird 4.0 und 5.0 | 21 und 22 Minuten |
 | | DuckDB 2.0.1 | 31 Minuten |
 | | libSQL, sqld 0.24.33 über HTTP | 22 Minuten |
+| | MonetDB Dec2025-SP5 | 29 Minuten |
 | | YugabyteDB 2.25 | 42 Minuten (langsame DDL) |
 | | CockroachDB 25.2 | 47 Minuten (langsame DDL) |
 | | Informix 15 | 2.016 s |
 | Eine Anweisung | Firebird, in eigener Transaktion / innerhalb einer Transaktion | etwa 20 ms / etwa 4 ms |
 | | DuckDB, eine Zeile über ihren Schlüssel gelesen / mit Commit eingefügt / innerhalb einer Transaktion | 2,7 ms / 7,4 ms / 2,7 ms |
 | | libSQL (sqld über HTTP), eine Zeile über ihren Schlüssel gelesen / mit Commit geschrieben / innerhalb einer Transaktion | 2,1 ms / 76 bis 101 ms / 2,3 bis 6,7 ms |
+| | MonetDB, eine Zeile über ihren Schlüssel gelesen / mit Schreibsperre und Commit eingefügt / innerhalb einer Transaktion | 3,7 bis 4,2 ms / 22 ms / 3,9 ms |
+| | ClickHouse, eine Zeile über ihren Schlüssel gelesen / eine Zeile eingefügt / eine Million Zeilen eingefügt | 30 bis 48 ms / 9 bis 18 ms / 214 ms |
 | Eine Startseite | DuckDB, Ansichts-Cache gefüllt / leer | 2,3 bis 3,5 s / 17 s |
+| | MonetDB, Ansichts-Cache gefüllt / leer | 0,05 bis 0,09 s / 2,6 s |
 | Eine Access-Datei importiert (4.103 Zeilen, `exp:access:import`) | in SQLite, MariaDB, PostgreSQL, SQL Server über ODBC | 0,4 s, 2,5 s, 2,6 s, 31 s |
 | Eine Anweisung | Cassandra 5.0 / ScyllaDB 2025.1, eine Zeile über ihren Schlüssel gelesen / mit neuer ID eingefügt | 2,2 ms / 0,6 ms; 17,6 ms / 17,8 ms |
 | Eine Keyspace-Tabelle importiert (2.000 Zeilen, `exp:cassandra:import`) | aus Cassandra / ScyllaDB nach SQLite | 0,20 s / 0,51 s |
@@ -250,11 +259,16 @@ legen, oder die DFS-Metadaten in eine der Datenbanken oben.
 - **Eine libSQL-Datenbankdatei** (was `sqld` schreibt) ist eine SQLite-Datei: der SQLite-Treiber öffnet eine Kopie
   davon. Die eingebetteten Replikate von libSQL brauchen die Client-Bibliothek von libSQL, die PHP nicht laden kann; der
   Treiber bietet sie nicht an.
+- **MonetDB** hält eine ganze Site auf einem Server, mit immer nur einem Schreiber und Millisekunden je Anweisung: für
+  eine Site, die vor allem gelesen wird und deren Daten auch spaltenorientiert ausgewertet werden.
 
 ### Auswertungen, Berichte und Importe
 
 - **Eine DuckDB-Datei als Datentabellen-Verbindung** (`Engine=duckdb`) hält Auswertungen neben einer Site auf jeder
   Datenbank; die DuckDB-Quelle von SQLI Import liest Parquet-, CSV- und JSON-Dateien über DuckDB.
+- **ClickHouse** (`Engine=clickhouse`) hält Auswertungstabellen mit Milliarden von Zeilen, in Blöcken geschrieben und
+  mit Aggregaten gelesen; es ist keine Site-Datenbank (keine durchgesetzten Schlüssel, keine Transaktionen). Die
+  ClickHouse-Quelle von SQLI Import liest ein `SELECT` in Inhalte.
 - **Spanner** (über PGAdapter), **Firebird**, **Cassandra und ScyllaDB** und **jede ODBC-Datenbank** erreichen eine
   Site als Datentabellen-Verbindungen: Dort werden Tabellen angelegt, gelesen und geschrieben, und Zeilen gelangen über die
   Werkzeuge der Datentabellen in Inhalte.
@@ -305,6 +319,7 @@ sind in keinem Release enthalten, und nichts auf dieser Seite beschreibt sie.
   [PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md),
   [Firebird](../funktionen/6.0/firebird-datenbanktreiber.md), [DuckDB](../funktionen/6.0/duckdb-datenbanktreiber.md),
   [libSQL und Turso](../funktionen/6.0/libsql-datenbanktreiber.md),
+  [MonetDB und ClickHouse](../funktionen/6.0/spaltenorientierte-datenbanken.md),
   [ODBC](../funktionen/6.0/odbc-datenbanktreiber.md), [MS Access](../funktionen/6.0/ms-access-unterstuetzung.md),
   [Couchbase](../funktionen/6.0/couchbase-treiber.md), [Apache CouchDB](../funktionen/6.0/couchdb-treiber.md).
 - [Clustering in Exponential 6.0](../funktionen/6.0/clustering-ueberblick.md), [Datentabellen](../funktionen/6.0/datentabellen.md).

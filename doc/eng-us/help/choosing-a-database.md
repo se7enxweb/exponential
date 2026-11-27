@@ -79,6 +79,8 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | [libSQL (sqld), Turso](../features/6.0/libsql-database-driver.md) | no | new; Turso **untested** | yes (measured on sqld 0.24) | **no** backend; several web servers share the database, the files need a shared directory | no (Turso's replicas answer at the same URL) | kickstarter, `libsql`, `turso` |
 | [IBM Db2 11.5 and 12.1](../features/6.0/db2-database-driver.md) | no | new | yes | **not yet** | no | wizard (with `pdo_ibm` or `ibm_db2`), kickstarter, `db2` |
 | [IBM Informix 14.10 and 15](../features/6.0/informix-database-driver.md) | no | new | yes (measured on 15) | **no** | no | wizard (with `ibm_db2` or `pdo_ibm`), kickstarter, `informix` |
+| [MonetDB Dec2023 and later](../features/6.0/columnar-databases.md#monetdb) | no | new | yes, one writer at a time | **no** | no | kickstarter, `monetdb` |
+| [ClickHouse 24.8 and later](../features/6.0/columnar-databases.md#clickhouse) | no | new | **no**: data tables and import ([why](../features/6.0/columnar-databases.md#why-not-a-site-database)) | no | no | none |
 | [Any database through ODBC](../features/6.0/odbc-database-driver.md) | no | new | yes on SQL Server, PostgreSQL, MariaDB/MySQL and Db2 ([a site over ODBC](../features/6.0/odbc-database-driver.md#a-site-over-odbc)); data tables and import on any | yes: SQL Server's and PostgreSQL's over PDO_ODBC, MariaDB's through `mysqli` | no | wizard, kickstarter, `odbc` with `--db-dialect` |
 | [MS Access (`.accdb`, `.mdb`)](../features/6.0/ms-access-support.md) | no | new | **no**: import, and data tables on Windows | no | no | none (`exp:access:import`) |
 | [Apache Cassandra 4.0 to 5.0, ScyllaDB 2025.1](../features/6.0/cassandra-scylladb-driver.md) | no | new | **no**: data tables and import ([why](../features/6.0/cassandra-scylladb-driver.md#why-no-site-runs-on-cassandra)) | no | no | none (`exp:cassandra:import`) |
@@ -127,6 +129,8 @@ real 6.0.14 site, upgrades it to the current code and rolls it back.
 | ODBC | `pdo_odbc` or `odbc`, and the database's ODBC driver | `odbc` | a data table connection; SQL source through a named connection; `exp:access:import` into it | Linux, Windows | live tests on SQL Server, PostgreSQL, MariaDB and SQLite, both layers, whole sites installed (job `odbc`); LocalDB on Windows | the upgrade stages over ODBC measured on MariaDB (`exp:upgrade:database`); xne as PostgreSQL or MySQL |
 | MS Access | Windows: `odbc` and `pdo_odbc` with the Access Database Engine (x64); Linux: the MDBTools programs (import only) | `msaccess` (Windows) | `exp:access:import`; SQL source through a named connection (Windows) | Windows (driver and import), Linux and macOS (import with MDBTools) | the import on Linux; the driver and the import on windows-2022 and windows-2025 (job `msaccess-windows`) | not applicable |
 | libSQL (sqld), Turso | `curl` (or `allow_url_fopen`); `sqlite3` not needed | `libsql`, `turso` | a data table connection | Linux (sqld in a container); the PHP side on any system with curl | tests without a server, live tests on sqld 0.24.33 and a whole site installed (job `libsql`); Turso not tested | not yet; no built-in caption (below) |
+| MonetDB | none: MAPI in plain PHP | `monetdb` | a data table connection (`table_to_content`) | Linux | live tests on Dec2023-SP4 and Dec2025-SP5, and a whole site installed (job `columnar`) | not yet; no built-in caption (below) |
+| ClickHouse | none: HTTP through `curl` or PHP's HTTP stream | `clickhouse` | a data table connection; SQLI Import's ClickHouse source | Linux | live tests on 24.8 and 25.8 (job `columnar`) | not applicable |
 | Cassandra, ScyllaDB | PHP 8.1 and the library `mroosz/php-cassandra` (no extension) | `cassandra`, `scylladb` | a data table connection; `exp:cassandra:import` of a keyspace | Linux | live tests on Cassandra 5.0 and ScyllaDB 2025.1, PHP 8.1 and 8.5 (job `cassandra`) | not applicable |
 | Couchbase | `curl` (the Query service's REST API; no SDK) | `couchbase` | `exp:couchbase:import`; a data table connection | Linux | live tests on Couchbase Community 7.6.2 and 7.2.4 (job `couch`) | not applicable |
 | Apache CouchDB | `curl` and `sqlite3` | `couchdb` | `exp:couchdb:import`; a data table connection | Linux | live tests on CouchDB 3.4.3 and 3.3.3 (job `couch`) | not applicable |
@@ -156,6 +160,7 @@ the database's tool and run the upgrade with `--no-backup`.
 | DuckDB | **none** ("no built-in dump for duckdb") | copy the file while no process writes, or `EXPORT DATABASE` from the `duckdb` program |
 | Cassandra, ScyllaDB (data tables only) | **none** | `nodetool snapshot`, or the vendor's backup tool |
 | libSQL (sqld), Turso | **none** ("no built-in dump for a libSQL server") | a copy of sqld's data directory while it is stopped, Turso's point-in-time restore |
+| MonetDB | **none** | `msqldump`, or MonetDB's hot snapshot (`monetdb snapshot`) |
 
 The full procedure per engine: [Backups per engine](database-administrators/backups-per-engine.md).
 
@@ -175,13 +180,17 @@ they measured, so the numbers say how long something took there, not how two dat
 | | Firebird 4.0 and 5.0 | 21 and 22 minutes |
 | | DuckDB 2.0.1 | 31 minutes |
 | | libSQL, sqld 0.24.33 over HTTP | 22 minutes |
+| | MonetDB Dec2025-SP5 | 29 minutes |
 | | YugabyteDB 2.25 | 42 minutes (slow DDL) |
 | | CockroachDB 25.2 | 47 minutes (slow DDL) |
 | | Informix 15 | 2,016 s |
 | One statement | Firebird, in its own transaction / inside a transaction | about 20 ms / about 4 ms |
 | | DuckDB, a row read by its key / inserted with a commit / inside a transaction | 2.7 ms / 7.4 ms / 2.7 ms |
 | | libSQL (sqld over HTTP), a row read by its key / written with a commit / inside a transaction | 2.1 ms / 76 to 101 ms / 2.3 to 6.7 ms |
+| | MonetDB, a row read by its key / inserted with the write lock and a commit / inside a transaction | 3.7 to 4.2 ms / 22 ms / 3.9 ms |
+| | ClickHouse, a row read by its key / one row inserted / a million rows inserted | 30 to 48 ms / 9 to 18 ms / 214 ms |
 | A front page | DuckDB, view cache filled / empty | 2.3 to 3.5 s / 17 s |
+| | MonetDB, view cache filled / empty | 0.05 to 0.09 s / 2.6 s |
 | An Access file imported (4,103 rows, `exp:access:import`) | into SQLite, MariaDB, PostgreSQL, SQL Server over ODBC | 0.4 s, 2.5 s, 2.6 s, 31 s |
 | One statement | Cassandra 5.0 / ScyllaDB 2025.1, a row read by its key / inserted with a new id | 2.2 ms / 0.6 ms; 17.6 ms / 17.8 ms |
 | A keyspace table imported (2,000 rows, `exp:cassandra:import`) | from Cassandra / ScyllaDB into SQLite | 0.20 s / 0.51 s |
@@ -239,11 +248,16 @@ DFS metadata in one of the databases above.
   driver itself.
 - **A libSQL database file** (what `sqld` writes) is an SQLite file: the SQLite driver opens a copy of it. libSQL's
   embedded replicas need the libSQL client library, which PHP cannot load; the driver does not offer them.
+- **MonetDB** holds a whole site on a server, with one writer at a time and milliseconds per statement: for a site
+  that is mostly read and whose data is also worked with in columnar queries.
 
 ### Analytics, reporting and imports
 
 - **A DuckDB file as a data table connection** (`Engine=duckdb`) keeps analytics next to a site on any database;
   SQLI Import's DuckDB source reads Parquet, CSV and JSON files through DuckDB.
+- **ClickHouse** (`Engine=clickhouse`) holds analytics tables of billions of rows, written in chunks and read with
+  aggregates; it is no site database (no enforced keys, no transactions). SQLI Import's ClickHouse source reads a
+  `SELECT` into content.
 - **Spanner** (through PGAdapter), **Firebird**, **Cassandra and ScyllaDB** and **any ODBC database** reach a site as data table connections:
   tables are made, read and written there, and rows go into content through the data table tools.
 - **SQLI Import's SQL source** reads a single `SELECT` from MySQL or MariaDB, PostgreSQL, SQLite, Oracle or SQL Server
@@ -289,6 +303,7 @@ part of any release, and nothing on this page describes them.
   [PostgreSQL protocol](../features/6.0/postgresql-wire-databases.md),
   [Firebird](../features/6.0/firebird-database-driver.md), [DuckDB](../features/6.0/duckdb-database-driver.md),
   [libSQL and Turso](../features/6.0/libsql-database-driver.md),
+  [MonetDB and ClickHouse](../features/6.0/columnar-databases.md),
   [ODBC](../features/6.0/odbc-database-driver.md), [MS Access](../features/6.0/ms-access-support.md),
   [Couchbase](../features/6.0/couchbase-driver.md), [Apache CouchDB](../features/6.0/couchdb-driver.md).
 - [Clustering in Exponential 6.0](../features/6.0/clustering-overview.md), [Data tables](../features/6.0/data-tables.md).
