@@ -27002,7 +27002,7 @@ beaa61e71c08d986b7579d43655f0ca0  kernel/setup/steps/ezstep_site_access.php
 9c0bc683565055f3f7e22cb3aaf6c832  kernel/setup/steps/ezstep_site_packages.php
 0c806c2ea538afb632e14c4b28d14005  kernel/setup/steps/ezstep_site_templates.php
 74bb49af1352c6309a301d82fdbff5b6  kernel/setup/steps/ezstep_site_types.php
-bdad4c1a1d84aad6e3498e312c016be5  kernel/setup/steps/ezstep_system_check.php
+7a5dce5b43b4df5be91636d7da7c3ed4  kernel/setup/steps/ezstep_system_check.php
 9328b6177f501d7512e63448f5147596  kernel/setup/steps/ezstep_system_finetune.php
 2cffef753997d4ac6b28c53779676cb1  kernel/setup/steps/ezstep_welcome.php
 e79e71e48cc6a984896e27c650259531  kernel/setup/systemupgrade.php
@@ -30178,7 +30178,7 @@ cf8be805ae4c110abc4bbd547249a7e8  tests/tests/kernel/classes/setup/SetupContentF
 866007765df415bc0fa1c5ba884b19d5  tests/tests/kernel/classes/setup/SetupPhpVersionTest.php
 1a309404167d3bf08eab4bc81308bb16  tests/tests/kernel/classes/setup/SetupRemoteIndexSanitizingTest.php
 5dcf377fe99f8d8c6e6adcde9f3142bd  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
-45c81627f1279e7ade4d72297aa65a60  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
+bbb6fcd70362c8fc0119ecf22da86a6b  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 ff16951947f561095e82a782732322f0  tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php
 c9d7f04ca55c0d534e3521802d1dafdc  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
 fa6f79d270e209b0682a26e186459e52  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php

@@ -233,6 +233,25 @@ class SetupWizardGuardTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( "if ( \$accountChecks && \$moduleResult === null && class_exists( '$class' ) )", $source, $class );
     }
 
+    public function testARejectedSystemCheckNamesTheFailedTestInTheSetupLog()
+    {
+        // on an installed site a folder owned by another user (settings/ root:root) failed directory_permissions,
+        // and the step came back with nothing in var/log/setup.log to say why
+        $root = dirname( __DIR__, 5 );
+        include_once $root . '/kernel/setup/ezsetuptests.php';
+        include_once $root . '/kernel/setup/steps/ezstep_installer.php';
+        include_once $root . '/kernel/setup/steps/ezstep_system_check.php';
+        $lines = eZStepSystemCheck::failedTests( array(
+            array( EZ_SETUP_TEST_SUCCESS, 'phpversion', array( 'result' => true ) ),
+            array( 2, 'directory_permissions', array( 'result' => false, 'result_elements' => array(
+                array( 'file' => 'design', 'result' => 1 ),
+                array( 'file' => 'settings', 'result' => 3 ) ) ) ),
+            array( 2, 'memory_limit', array( 'result' => false ) ),
+        ) );
+        $this->assertSame( array( 'critical test failed: directory_permissions: settings (not writable)',
+                                  'critical test failed: memory_limit' ), $lines );
+    }
+
     public function testTheFormsPostToTheSiteRootThroughTheValidityCheck()
     {
         $this->assertSame( '/', expSetupWizardGuard::formAction( true, '', '', '', '' ) );

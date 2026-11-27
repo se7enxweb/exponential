@@ -39,7 +39,41 @@ class eZStepSystemCheck extends eZStepInstaller
         {
             $this->PersistenceList['run_finetune'] = true;
         }
+        // The step is asked again while a critical test fails: say which in var/log/setup.log
+        if ( !$return && class_exists( 'expSetupLog' ) )
+        {
+            foreach ( self::failedTests( (array)$this->Results ) as $line )
+                expSetupLog::note( $line );
+        }
         return $return;
+    }
+
+    /**
+     * The critical tests that failed, one line each, with the paths a permission test refused.
+     *
+     * @param array $results eZSetupRunTests()'s results: array( result, test name, test data )
+     * @return string[]
+     */
+    static function failedTests( array $results )
+    {
+        $lines = array();
+        foreach ( $results as $item )
+        {
+            if ( !is_array( $item ) || ( isset( $item[0] ) && $item[0] == EZ_SETUP_TEST_SUCCESS ) )
+                continue;
+            $name = isset( $item[1] ) ? (string)$item[1] : '?';
+            $paths = array();
+            if ( isset( $item[2]['result_elements'] ) && is_array( $item[2]['result_elements'] ) )
+            {
+                foreach ( $item[2]['result_elements'] as $element )
+                {
+                    if ( isset( $element['result'], $element['file'] ) && (int)$element['result'] !== 1 )
+                        $paths[] = $element['file'] . ( (int)$element['result'] === 3 ? ' (not writable)' : ( (int)$element['result'] === 2 ? ' (cannot be created)' : ' (a file, not a folder)' ) );
+                }
+            }
+            $lines[] = 'critical test failed: ' . $name . ( $paths ? ': ' . implode( ', ', $paths ) : '' );
+        }
+        return $lines;
     }
 
     function init()
