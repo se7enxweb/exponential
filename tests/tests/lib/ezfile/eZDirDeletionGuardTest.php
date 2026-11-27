@@ -256,9 +256,10 @@ class eZDirDeletionGuardTest extends PHPUnit\Framework\TestCase
     {
         $outside = $this->outsideDir( 'beside-root' );
         self::fill( $outside, array( 'sub' ) );
-        // The nearest directory that holds both the installation and the temp directory
+        // The nearest directory that holds both the installation and the temp directory; none below the file system
+        // root when they are on different drives (Windows: D:\a\... and C:\Users\...), where dirname() stays at "D:\"
         $ancestor = self::root();
-        while ( strpos( $outside . '/', rtrim( $ancestor, '/' ) . '/' ) !== 0 )
+        while ( strpos( $outside . '/', rtrim( $ancestor, '/' ) . '/' ) !== 0 && $ancestor !== dirname( $ancestor ) )
         {
             $ancestor = dirname( $ancestor );
         }
