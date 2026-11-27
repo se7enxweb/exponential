@@ -176,7 +176,8 @@ class expPhar
             {
                 if ( !$file->isFile() )
                     continue;
-                $files[] = substr( $file->getPathname(), strlen( $root ) + 1 );
+                // names with slashes, also on Windows, where the iterator joins with a backslash
+                $files[] = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $root ) + 1 ) );
             }
         }
 
