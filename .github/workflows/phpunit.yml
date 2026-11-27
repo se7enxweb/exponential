@@ -944,10 +944,34 @@ jobs:
           for db in EXPSITE EXPLIVE; do
             docker exec db2 su - db2inst1 -c "db2 create database $db using codeset UTF-8 territory US pagesize 32768 && db2 connect to $db && db2 'create user temporary tablespace USERTEMP pagesize 32768' && db2 terminate"
           done
-          for i in $(seq 1 60); do docker exec ifx bash -lc 'onstat -' 2>/dev/null | grep -q "On-Line" && break; sleep 5; done
+          # Informix's entrypoint initialises the server on every start and stops it again ("Informix is offline -
+          # Exit") when the sysadmin database takes more than 60 s, which happens on a busy runner: wait for the end of
+          # its start-up ("Type exit to quit"), and restart the container when it gave up
+          ifx_ready() {
+            for i in $(seq 1 90); do
+              [ "$(docker inspect -f '{{.State.Running}}' ifx)" = true ] || return 1
+              docker logs --since "$1" ifx 2>&1 | grep -q "Informix is offline" && return 1
+              docker logs --since "$1" ifx 2>&1 | grep -q "Type exit to quit" \
+                && docker exec ifx bash -lc 'onstat -' 2>/dev/null | grep -q "On-Line" && return 0
+              sleep 5
+            done
+            return 1
+          }
+          ifx_up() {
+            since=$1
+            for attempt in 1 2 3; do
+              ifx_ready "$since" && return 0
+              echo "::warning::Informix did not come up (attempt $attempt), starting it again"
+              since=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+              docker restart ifx >/dev/null
+            done
+            docker logs --tail 60 ifx; return 1
+          }
+          ifx_up 1970-01-01T00:00:00Z
           docker exec ifx bash -lc 'for f in /opt/ibm/config/onconfig $INFORMIXDIR/etc/$ONCONFIG; do [ -f "$f" ] || continue; sed -i "s/^PHYSBUFF .*/PHYSBUFF 512/; s/^LOGBUFF .*/LOGBUFF 256/" "$f"; grep -q "size=16k" "$f" || echo "BUFFERPOOL size=16k,buffers=6000,lrus=8,lru_min_dirty=50,lru_max_dirty=60" >> "$f"; done'
-          docker restart ifx
-          for i in $(seq 1 60); do docker exec ifx bash -lc 'onstat -' 2>/dev/null | grep -q "On-Line" && break; sleep 5; done
+          since=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          docker restart ifx >/dev/null
+          ifx_up "$since"
           # a dbspace of 16 KB pages for the kernel's indexes of text, an sbspace (the default one) for its CLOBs
           docker exec ifx bash -lc 'D=$INFORMIX_DATA_DIR/spaces; touch $D/dbs16k.000 $D/sbs1.000 && chmod 660 $D/dbs16k.000 $D/sbs1.000 && onspaces -c -d dbs16k -k 16 -p $D/dbs16k.000 -o 0 -s 2000000 && onspaces -c -S sbs1 -p $D/sbs1.000 -o 0 -s 500000 -Df LOGGING=ON && onmode -wf SBSPACENAME=sbs1 && ontape -s -L 0 -t /dev/null </dev/null >/dev/null 2>&1; export DB_LOCALE=en_us.utf8 CLIENT_LOCALE=en_us.utf8; printf "CREATE DATABASE explive IN dbs16k WITH LOG;\n" > /tmp/db.sql && dbaccess sysmaster /tmp/db.sql'
           php -r 'new PDO("ibm:DATABASE=EXPLIVE;HOSTNAME=127.0.0.1;PORT=50000;PROTOCOL=TCPIP;", "db2inst1", "Ci-Db2-2026"); db2_connect("DATABASE=explive;HOSTNAME=127.0.0.1;PORT=9089;PROTOCOL=TCPIP;UID=informix;PWD=in4mix;", "", "") or exit(1); echo "both answer\n";'
