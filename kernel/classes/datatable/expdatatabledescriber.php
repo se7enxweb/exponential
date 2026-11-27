@@ -87,6 +87,12 @@ class expDataTableDescriber
             case 'duckdb':
                 $sql = "SELECT column_name AS name, data_type AS type, is_nullable AS nullable, column_default AS def FROM information_schema.columns WHERE table_schema = current_schema() AND table_name = '$table' ORDER BY ordinal_position";
                 break;
+            case 'monetdb':
+                $sql = "SELECT column_name AS name, data_type AS type, is_nullable AS nullable, column_default AS def FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA AND table_name = '$table' ORDER BY ordinal_position";
+                break;
+            case 'clickhouse':
+                $sql = "SELECT column_name AS name, data_type AS type, if( toString( is_nullable ) IN ( '1', 'YES' ), 'YES', 'NO' ) AS nullable, column_default AS def FROM information_schema.columns WHERE table_schema = currentDatabase() AND table_name = '$table' ORDER BY ordinal_position";
+                break;
             case 'sqlserver':
                 $sql = "SELECT column_name AS name, data_type AS type, is_nullable AS nullable, column_default AS def FROM information_schema.columns WHERE table_name = '$table' ORDER BY ordinal_position";
                 break;

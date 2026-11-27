@@ -94,6 +94,9 @@ class expDataConnections
             // document databases over HTTP (PHP's curl extension): Couchbase's Query service (SQL++), CouchDB's API
             'couchbase' => array( 'label' => 'Couchbase', 'kind' => 'document', 'ez' => 'couchbase', 'pdo' => array(), 'port' => 8093, 'file' => false ),
             'couchdb' => array( 'label' => 'Apache CouchDB', 'kind' => 'document', 'ez' => 'couchdb', 'pdo' => array(), 'port' => 5984, 'file' => false ),
+            // the columnar databases: MonetDB over its own protocol (expMonetDBMapi), ClickHouse over HTTP (expClickHouseHttp)
+            'monetdb' => array( 'label' => 'MonetDB', 'kind' => 'relational', 'ez' => 'monetdb', 'pdo' => array(), 'port' => 50000, 'file' => false ),
+            'clickhouse' => array( 'label' => 'ClickHouse (no transactions, no enforced keys)', 'kind' => 'relational', 'ez' => 'clickhouse', 'pdo' => array(), 'port' => 8123, 'file' => false ),
         );
     }
 
@@ -250,7 +253,7 @@ class expDataConnections
         $options = isset( $c['options'] ) && is_array( $c['options'] ) ? $c['options'] : array();
         $clean = array();
         foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver', 'odbc_driver', 'odbc_dsn', 'connection_string', 'layer',
-                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler', 'consistency', 'url', 'tls', 'scan_consistency' ) as $key )
+                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler', 'consistency', 'url', 'tls', 'scan_consistency', 'schema', 'secure', 'verify_tls' ) as $key )
             if ( isset( $options[$key] ) && is_scalar( $options[$key] ) && trim( (string)$options[$key] ) !== '' )
                 $clean[$key] = mb_substr( trim( (string)$options[$key] ), 0, 1000 );
         $engine = strtolower( $text( 'engine', 32 ) );
@@ -644,6 +647,19 @@ class expDataConnections
                 if ( $couch )
                     $parameters[$c['engine']] = $couch;
             }
+            // MonetDB: the schema of the tables ([MonetDBSettings] Schema)
+            if ( $c['engine'] === 'monetdb' && isset( $c['options']['schema'] ) )
+                $parameters['monetdb'] = array( 'Schema' => $c['options']['schema'] );
+            // ClickHouse: HTTPS and the certificate check ([ClickHouseSettings])
+            if ( $c['engine'] === 'clickhouse' )
+            {
+                $clickhouse = array();
+                if ( isset( $c['options']['secure'] ) )
+                    $clickhouse['Secure'] = $c['options']['secure'];
+                if ( isset( $c['options']['verify_tls'] ) )
+                    $clickhouse['VerifyTLS'] = $c['options']['verify_tls'];
+                $parameters['clickhouse'] = $clickhouse;
+            }
         }
         else
         {
@@ -945,6 +961,8 @@ class expDataConnections
             $engine = strpos( $impl, 'duckdb' ) !== false ? 'duckdb' : ( strpos( $impl, 'turso' ) !== false ? 'turso' : ( strpos( $impl, 'libsql' ) !== false || $impl === 'sqld' ? 'libsql'
                     : ( strpos( $impl, 'sqlite' ) !== false ? 'sqlite' : ( strpos( $impl, 'postgres' ) !== false ? 'postgresql'
                     : ( strpos( $impl, 'oracle' ) !== false ? 'oracle' : ( strpos( $impl, 'mongo' ) !== false ? 'mongodb' : 'mysql' ) ) ) ) ) );
+            if ( strpos( $impl, 'monetdb' ) !== false )
+                $engine = 'monetdb';
             $database = (string)$ini->variable( 'DatabaseSettings', 'Database' );
         }
         catch ( Throwable $e )
@@ -1081,6 +1099,11 @@ class expDataConnections
                 return extension_loaded( 'pgsql' );
             case 'duckdb':
                 return class_exists( 'expDuckDBFFI' ) && expDuckDBFFI::ffiUsable();
+            // plain PHP: MAPI over a socket, HTTP through curl or PHP's own stream
+            case 'monetdb':
+                return class_exists( 'expMonetDBMapi' ) && function_exists( 'stream_socket_client' );
+            case 'clickhouse':
+                return class_exists( 'expClickHouseHttp' ) && ( function_exists( 'curl_init' ) || ini_get( 'allow_url_fopen' ) );
             case 'oracle':
                 return extension_loaded( 'oci8' );
             case 'mongodb':
