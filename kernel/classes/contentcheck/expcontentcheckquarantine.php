@@ -541,7 +541,7 @@ class expContentCheckQuarantine
             {
                 if ( !$file->isFile() || $file->isLink() || $file->getFilename() === self::MANIFEST )
                     continue;
-                $relative = substr( $file->getPathname(), strlen( $root . '/' . $date ) + 1 );
+                $relative = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $root . '/' . $date ) + 1 ) );
                 $result['count']++;
                 $result['bytes'] += (int)$file->getSize();
                 if ( count( $result['items'] ) + count( $items ) < $max )

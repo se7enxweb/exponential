@@ -629,7 +629,7 @@ class expPackageJson
         {
             if ( !$file->isFile() || $file->isLink() )
                 continue;
-            $relative = substr( $file->getPathname(), strlen( $dir ) + 1 );
+            $relative = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $dir ) + 1 ) );
             if ( $relative === '.cache' || strpos( $relative, '.cache/' ) === 0 )
                 continue;
             $files[] = str_replace( DIRECTORY_SEPARATOR, '/', $relative );

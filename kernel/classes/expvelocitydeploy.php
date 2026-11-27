@@ -253,7 +253,7 @@ class expVelocityDeploy
                 {
                     if ( $file->isFile() && $file->getMTime() >= $since )
                     {
-                        $found[] = substr( $file->getPathname(), strlen( $root ) + 1 );
+                        $found[] = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $root ) + 1 ) );
                         if ( count( $found ) >= $limit )
                             return $found;
                     }

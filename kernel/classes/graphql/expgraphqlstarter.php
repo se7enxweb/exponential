@@ -91,7 +91,7 @@ class expGraphQLStarter
         {
             if ( !$file->isFile() )
                 continue;
-            $relative = substr( $file->getPathname(), strlen( $dir ) + 1 );
+            $relative = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $dir ) + 1 ) );
             $parts = explode( '/', $relative );
             foreach ( $parts as $i => $part )
             {

@@ -189,7 +189,7 @@ class expHelpExamplesGenerator
                                                          RecursiveIteratorIterator::LEAVES_ONLY, RecursiveIteratorIterator::CATCH_GET_CHILD );
                 foreach ( $iterator as $file )
                     if ( $file->isFile() )
-                        $list[] = substr( $file->getPathname(), strlen( $root ) + 1 );
+                        $list[] = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $root ) + 1 ) );
             }
         }
         sort( $list, SORT_STRING );
@@ -434,7 +434,7 @@ class expHelpExamplesGenerator
                     continue;
                 $head = (string)file_get_contents( $file->getPathname(), false, null, 0, 2048 );
                 if ( strpos( $head, "\ngenerated: " . self::MARKER . "\n" ) !== false )
-                    $found[] = substr( $file->getPathname(), strlen( $this->root ) + 1 );
+                    $found[] = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $this->root ) + 1 ) );
             }
         }
         sort( $found, SORT_STRING );

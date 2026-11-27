@@ -373,7 +373,7 @@ class expMigrationCaption
         {
             if ( $file->isLink() || !$file->isFile() )
                 continue;
-            $lines[] = substr( $file->getPathname(), strlen( $dir ) + 1 ) . "\t" . $file->getSize() . "\t" . $file->getMTime();
+            $lines[] = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $dir ) + 1 ) ) . "\t" . $file->getSize() . "\t" . $file->getMTime();
         }
         sort( $lines, SORT_STRING );
         return hash( 'sha256', implode( "\n", $lines ) );

@@ -136,7 +136,7 @@ class eZPackageComparison
             {
                 if ( !$file->isFile() )
                     continue;
-                $relative = substr( $file->getPathname(), strlen( $base ) + 1 );
+                $relative = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $base ) + 1 ) );
                 if ( $relative === '' || $relative[0] === '.' || strpos( $relative, '/.' ) !== false )
                     continue;
                 ++$count;

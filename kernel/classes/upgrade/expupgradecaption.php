@@ -273,7 +273,7 @@ class expUpgradeCaption
         {
             if ( !$file->isFile() || $file->isLink() )
                 continue;
-            $rel = substr( $file->getPathname(), strlen( $dir ) + 1 );
+            $rel = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file->getPathname(), strlen( $dir ) + 1 ) );
             if ( $rel === 'upgrade/checksums.json' )
                 continue;
             $out[$rel] = hash_file( 'sha256', $file->getPathname() );
