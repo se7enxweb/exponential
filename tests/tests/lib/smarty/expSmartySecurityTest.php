@@ -217,7 +217,8 @@ class expSmartySecurityTest extends PHPUnit\Framework\TestCase
         $this->enable();
         $secure = expSmartyRenderer::smarty()->getCompileDir();
         $this->assertNotSame( $plain, $secure );
-        $this->assertStringEndsWith( '/smarty/compile-secure/', $secure );
+        // Smarty writes its directories with DIRECTORY_SEPARATOR
+        $this->assertStringEndsWith( '/smarty/compile-secure/', str_replace( '\\', '/', $secure ) );
         // a template compiled without the policy is compiled again with it
         $source = '{$smarty.server.PATH|default:1}';
         expSmartyRenderer::resetSettings();

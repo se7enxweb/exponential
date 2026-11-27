@@ -222,8 +222,10 @@ class expStaticCredentialsTest extends PHPUnit\Framework\TestCase
         $this->assertArrayNotHasKey( 'GIT_ASKPASS', $g['env'] );
         $this->assertSame( 1, preg_match( "#^ssh -i '([^']+)' -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile='([^']+)'$#",
                                           $g['env']['GIT_SSH_COMMAND'], $m ), $g['env']['GIT_SSH_COMMAND'] );
-        $this->assertStringStartsWith( $this->dir . '/.keys/key-', $m[1] );
-        $this->assertSame( $this->dir . '/.known_hosts', $m[2] );
+        // the paths of ssh have slashes, also on Windows
+        $dir = str_replace( '\\', '/', $this->dir );
+        $this->assertStringStartsWith( $dir . '/.keys/key-', str_replace( '\\', '/', $m[1] ) );
+        $this->assertSame( $dir . '/.known_hosts', str_replace( '\\', '/', $m[2] ) );
         $this->assertSame( $key, file_get_contents( $m[1] ) );
         if ( function_exists( 'posix_geteuid' ) )
         {

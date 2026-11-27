@@ -191,7 +191,7 @@ class eZFatalUserErrorTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, $this->errors, var_export( $this->errors, true ) );
         $this->assertSame( E_USER_ERROR, $this->errors[0][0] );
         $this->assertSame( 'x1label: x1 debug error', $this->errors[0][1] );
-        $this->assertStringEndsWith( 'lib/ezutils/classes/ezdebug.php', $this->errors[0][2] );
+        $this->assertStringEndsWith( 'lib/ezutils/classes/ezdebug.php', str_replace( '\\', '/', $this->errors[0][2] ) );
     }
 
     /** FU-05 */
@@ -218,7 +218,7 @@ class eZFatalUserErrorTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, $this->errors, var_export( $this->errors, true ) );
         $this->assertSame( E_USER_ERROR, $this->errors[0][0] );
         $this->assertSame( 'Fatal error - could not restore expiry.php file.', $this->errors[0][1] );
-        $this->assertStringEndsWith( 'lib/ezutils/classes/ezexpiryhandler.php', $this->errors[0][2] );
+        $this->assertStringEndsWith( 'lib/ezutils/classes/ezexpiryhandler.php', str_replace( '\\', '/', $this->errors[0][2] ) );
     }
 
     /** FU-06 */

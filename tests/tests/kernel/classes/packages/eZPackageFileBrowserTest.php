@@ -88,9 +88,10 @@ class eZPackageFileBrowserTest extends PHPUnit\Framework\TestCase
 
     public function testFilePathStaysInsideThePackage()
     {
-        $base = realpath( "$this->dir/k1_browse" );
-        $this->assertSame( "$base/images/logo.png", eZPackageFileBrowser::filePath( $this->package, 'images/logo.png' ) );
-        $this->assertSame( "$base/images/logo.png", eZPackageFileBrowser::filePath( $this->package, '/images/logo.png' ), 'a leading slash is relative to the package' );
+        // the real path, as realpath() writes it on this system
+        $logo = realpath( "$this->dir/k1_browse/images/logo.png" );
+        $this->assertSame( $logo, eZPackageFileBrowser::filePath( $this->package, 'images/logo.png' ) );
+        $this->assertSame( $logo, eZPackageFileBrowser::filePath( $this->package, '/images/logo.png' ), 'a leading slash is relative to the package' );
         foreach ( array( '', '../outside.txt', 'images/../../outside.txt', '..', "images/logo.png\0x", 'images', 'missing.txt' ) as $path )
             $this->assertFalse( eZPackageFileBrowser::filePath( $this->package, $path ), $path );
         $this->assertFalse( eZPackageFileBrowser::filePath( eZPackage::create( 'k1_missing', array(), $this->dir ), 'package.xml' ) );

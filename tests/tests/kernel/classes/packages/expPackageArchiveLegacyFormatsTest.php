@@ -277,17 +277,23 @@ class expPackageArchiveLegacyFormatsTest extends PHPUnit\Framework\TestCase
         foreach ( $items as $item )
         {
             $path = $item->getPathname();
-            // eZPackage's own cache of an imported package, not from the archive
-            if ( strpos( substr( $path, strlen( $target ) ), '/.cache' ) === 0 )
+            // eZPackage's own cache of an imported package, not from the archive (a backslash between on Windows)
+            if ( strpos( str_replace( '\\', '/', substr( $path, strlen( $target ) ) ), '/.cache' ) === 0 )
                 continue;
             $this->assertFalse( is_link( $path ), "$path is a link" );
-            $this->assertStringStartsWith( $root . '/', realpath( $path ) );
+            $this->assertTrue( eZDir::isInside( realpath( $path ), $root ) && realpath( $path ) !== $root, realpath( $path ) . " is inside $root" );
+            // Windows has no Unix file modes: fileperms() gives 0666 or 0777 whatever chmod() was asked
+            $modes = !eZDir::isWindows();
             if ( is_dir( $path ) )
-                $this->assertSame( $dirMode, sprintf( '%04o', fileperms( $path ) & 07777 ), $path );
+            {
+                if ( $modes )
+                    $this->assertSame( $dirMode, sprintf( '%04o', fileperms( $path ) & 07777 ), $path );
+            }
             else
             {
                 $this->assertTrue( is_file( $path ), "$path is no plain file" );
-                $this->assertSame( $fileMode, sprintf( '%04o', fileperms( $path ) & 07777 ), $path );
+                if ( $modes )
+                    $this->assertSame( $fileMode, sprintf( '%04o', fileperms( $path ) & 07777 ), $path );
             }
         }
     }

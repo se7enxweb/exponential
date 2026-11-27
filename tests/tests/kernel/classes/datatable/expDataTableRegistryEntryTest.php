@@ -31,8 +31,9 @@ class expDataTableRegistryEntryTest extends PHPUnit\Framework\TestCase
     private static function ini( $file )
     {
         $method = new ReflectionMethod( 'eZINI', 'installationRoot' );
-        $from = explode( '/', trim( (string)realpath( $method->invoke( null ) ), '/' ) );
-        $to = explode( '/', trim( (string)realpath( self::root() . '/settings' ), '/' ) );
+        // realpath() gives backslashes on Windows
+        $from = explode( '/', trim( str_replace( '\\', '/', (string)realpath( $method->invoke( null ) ) ), '/' ) );
+        $to = explode( '/', trim( str_replace( '\\', '/', (string)realpath( self::root() . '/settings' ) ), '/' ) );
         while ( $from && $to && $from[0] === $to[0] )
         {
             array_shift( $from );
