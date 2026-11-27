@@ -111,6 +111,8 @@
             <exclude>tests/tests/lib/ezdb/odbc</exclude>
             <!-- in the suites duckdb and duckdb-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/duckdb</exclude>
+            <!-- in the suites libsql and libsql-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/libsql</exclude>
             <!-- in the suites pgwire and pgwire-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/pgwire</exclude>
             <!-- in the suites mysqlwire and mysqlwire-live; a file can be in one suite only -->
@@ -263,6 +265,21 @@
 
         <testsuite name="duckdb-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/duckdb/live</directory>
+        </testsuite>
+
+        <!--
+          The libSQL driver (expLibSQLDB, expTursoDB): the DB-less tests on a stand-in server (PHP's sqlite3 extension),
+          and the live tests against a libSQL server (EXP_TEST_LIBSQL_URL, e.g. http://127.0.0.1:8080; EXP_TEST_LIBSQL_TOKEN
+          when it wants one; they skip without it).
+          Run: php vendor/bin/phpunit - -testsuite libsql | libsql-live
+        -->
+        <testsuite name="libsql">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/libsql</directory>
+            <exclude>tests/tests/lib/ezdb/libsql/live</exclude>
+        </testsuite>
+
+        <testsuite name="libsql-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/libsql/live</directory>
         </testsuite>
 
         <testsuite name="mongodb-live">

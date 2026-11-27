@@ -212,7 +212,7 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $engines = expDataConnections::engines();
         $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird', 'duckdb',
                                   'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurorapostgresql', 'db2', 'informix',
-                                  'cassandra', 'scylladb' ),
+                                  'cassandra', 'scylladb', 'libsql', 'turso' ),
                            array_keys( $engines ) );
         foreach ( $engines as $key => $engine )
         {

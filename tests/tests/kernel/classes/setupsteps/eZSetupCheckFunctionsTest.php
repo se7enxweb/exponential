@@ -206,7 +206,7 @@ class eZSetupCheckFunctionsTest extends PHPUnit\Framework\TestCase
     {
         $map = eZSetupDatabaseMap();
         // after Oracle the databases of the PostgreSQL wire protocol, which go with PHP's pgsql extension
-        $this->assertSame( array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'sqlserver', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora', 'firebird', 'db2', 'informix', 'duckdb', 'oci8',
+        $this->assertSame( array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'sqlserver', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora', 'firebird', 'db2', 'informix', 'duckdb', 'libsql', 'turso', 'oci8',
                                   'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql' ),
                            array_keys( $map ) );
         // databases that speak the MySQL protocol: set up as MySQL, each with its own driver
@@ -222,6 +222,10 @@ class eZSetupCheckFunctionsTest extends PHPUnit\Framework\TestCase
         // the kernel's own driver (expSQLServerDB): no extension to activate, SQL Server 2017 (14.0) or later
         $this->assertArrayNotHasKey( 'extension', $map['sqlserver'] );
         $this->assertSame( '14.0', $map['sqlserver']['required_version'] );
+        // libSQL and Turso: the SQLite driver over HTTP (expLibSQLDB), checked against the server's sqlite_version()
+        $this->assertSame( 'libsql', $map['libsql']['driver'] );
+        $this->assertSame( 'turso', $map['turso']['driver'] );
+        $this->assertArrayNotHasKey( 'family', $map['libsql'] );
         $this->assertTrue( eZSetupActivateDatabaseExtension( $map['mysqli'] ) );
         $this->assertTrue( eZSetupActivateDatabaseExtension( 'not an array' ) );
         $this->assertIsArray( eZSetupCriticalTests() );

@@ -3376,6 +3376,13 @@
     "kernel/sql/duckdb/*": [
       "tests/tests/lib/ezdb/duckdb/expDuckDBSchemaTest.php"
     ],
+    "lib/ezdb/classes/explibsql*.php": [
+      "tests/tests/lib/ezdb/libsql/expLibSQLConnectionTest.php",
+      "tests/tests/lib/ezdb/libsql/expLibSQLDBTest.php"
+    ],
+    "lib/ezdb/classes/exptursodb.php": [
+      "tests/tests/lib/ezdb/libsql/expLibSQLDBTest.php"
+    ],
     "lib/ezdb/classes/expmsaccess*.php": [
       "tests/tests/lib/ezdb/odbc/expMSAccessDialectTest.php",
       "tests/tests/lib/ezdb/odbc/expODBCDBTest.php"
@@ -4492,7 +4499,8 @@
       "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "lib/ezdb/classes/ezsqlite3db.php": [
-      "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php"
+      "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php",
+      "tests/tests/lib/ezdb/libsql/expLibSQLDBTest.php"
     ],
     "index_cluster.php": [
       "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
