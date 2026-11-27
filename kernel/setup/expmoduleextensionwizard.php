@@ -576,15 +576,16 @@ class expModuleExtensionWizard extends expExtensionWizard
             return '';
 
         $root = self::installationRoot();
-        $full = strpos( $value, '/' ) === 0 ? $value : $root . '/' . $value;
+        $full = eZDir::isAbsolutePath( $value ) ? $value : $root . '/' . $value;
         $real = realpath( $full );
 
         // Inside the root directory, not only starting like it: /x/site-old is
-        // not inside /x/site
-        if ( $real === false || strpos( $real, $root . '/' ) !== 0 )
+        // not inside /x/site. On Windows realpath() gives back backslashes,
+        // which the root of the installation may have or not.
+        if ( $real === false || !eZDir::isInside( $real, $root ) || strlen( $real ) <= strlen( rtrim( $root, '/\\' ) ) + 1 )
             return '';
 
-        return substr( $real, strlen( $root ) + 1 );
+        return str_replace( '\\', '/', substr( $real, strlen( rtrim( $root, '/\\' ) ) + 1 ) );
     }
 
     /**
