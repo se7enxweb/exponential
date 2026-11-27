@@ -35,7 +35,7 @@ driver: a customer on an older release upgrades first.
 | Servers | SQL Server 2017, 2019, 2022 and 2025; Azure SQL Database and Azure SQL Managed Instance. Not SQL Server 2016 and older, not Azure SQL Edge (retired by Microsoft) |
 | PHP layers | Microsoft's `sqlsrv` (recommended) or `pdo_sqlsrv`, PHP's `pdo_odbc` with ODBC Driver 17 or 18, or `pdo_dblib` over FreeTDS |
 | Operating systems | Linux and Windows; SQL Server Express and LocalDB work for development |
-| Installers | the kickstarter (`Type=sqlserver`) and `exp:install --db=sqlserver`; the setup wizard in the browser does not offer it |
+| Installers | the kickstarter (`Type=sqlserver`), `exp:install --db=sqlserver` and the setup wizard in the browser (with `sqlsrv` or `pdo_sqlsrv`) |
 | Several web servers | yes: the DFS cluster backend `expDFSFileHandlerSQLServerBackend`; read replicas through Always On |
 | Tests | on every push against SQL Server 2017, 2019, 2022 and 2025 on three PHP layers, PHP 8.1 to 8.5, and LocalDB on Windows |
 
@@ -53,7 +53,8 @@ driver: a customer on an older release upgrades first.
 
 ## What it does not do yet
 
-- The setup wizard in the browser lists no SQL Server entry: install with the kickstarter or `exp:install`.
+- The setup wizard in the browser lists SQL Server only when its PHP has `sqlsrv` or `pdo_sqlsrv`; with `pdo_odbc` or
+  `pdo_dblib` alone, install with the kickstarter or `exp:install`.
 - No upgrade from an older release has been tested on SQL Server yet: 6.0.15 is the first release with the driver.
 - No `update/database/` files for SQL Server: the schema is `kernel/sql/sqlserver/`.
 - The DFS backend stores file names of at most 830 characters.

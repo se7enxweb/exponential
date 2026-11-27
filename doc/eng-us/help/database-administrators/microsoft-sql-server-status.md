@@ -85,7 +85,8 @@ release has been tested on SQL Server: 6.0.15 is the first release with the driv
 
 ## What is not there yet
 
-- The setup wizard in the browser does not list SQL Server; use the kickstarter or `exp:install`.
+- The setup wizard in the browser lists SQL Server only when its PHP has `sqlsrv` or `pdo_sqlsrv`; with `pdo_odbc` or
+  `pdo_dblib` alone, use the kickstarter or `exp:install`.
 - No `update/database/` files for SQL Server; the schema is `kernel/sql/sqlserver/kernel_schema.sql`.
 - `pdo_dblib` is covered by the tests without a server only.
 

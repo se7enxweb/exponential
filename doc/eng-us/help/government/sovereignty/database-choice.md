@@ -26,8 +26,8 @@ questions public bodies ask.
 > 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
 > [Choosing a database](../../choosing-a-database.md)).
 
-All seven have a driver in the kernel or a shipped extension and a path in the command-line installers; all but SQL Server have an
-entry in the setup wizard ([Database support](../../database-support.md#the-supported-databases-in-order)).
+All seven have a driver in the kernel or a shipped extension and a path in the command-line installers; all of them also have an
+entry in the setup wizard (SQL Server with `sqlsrv` or `pdo_sqlsrv`) ([Database support](../../database-support.md#the-supported-databases-in-order)).
 
 | Engine | In short |
 |---|---|

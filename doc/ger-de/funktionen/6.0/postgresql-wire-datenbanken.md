@@ -33,8 +33,9 @@ Konto angelegt.
 8. [Supabase](#supabase)
 9. [Amazon Aurora PostgreSQL](#amazon-aurora-postgresql)
 10. [Eine Site installieren](#eine-site-installieren)
-11. [Datentabellen-Verbindungen](#datentabellen-verbindungen)
-12. [Tests](#tests)
+11. [Cluster](#cluster)
+12. [Datentabellen-Verbindungen](#datentabellen-verbindungen)
+13. [Tests](#tests)
 
 ## Warum ein Profil und kein neuer Treiber
 
@@ -234,12 +235,33 @@ nimmt `Type=cockroachdb` (auch `cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `
 PostgreSQL, wenn PHP die Erweiterung `pgsql` hat. Installieren Sie über eine direkte Verbindung oder einen
 Sitzungs-Pooler: Das Schema entsteht Anweisung für Anweisung, ein Transaktions-Pooler bringt dabei nichts.
 
+## Cluster
+
+`exp:cluster:enable` gibt CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL das PostgreSQL-DFS-Backend
+(`eZDFSFileHandlerPostgresqlBackend` / `expDFSFileHandlerPostgresqlBackend`, Gateway `dfspostgresql`), mit seinen
+Tabellen in der eigenen Datenbank der Site. Ohne Einstellung `Port` nimmt der Cluster den Port der Datenbank
+(CockroachDB 26257, YugabyteDB 5433). Auf CockroachDB wird das Cluster-Schema ohne `text_pattern_ops` angelegt:
+CockroachDB erlaubt Operatorklassen nur auf invertierten und Vektor-Indizes, und seine Textindizes vergleichen Bytes,
+also bedient der einfache Index die Präfixsuchen. Spanner hält keine Site und bekommt keinen Cluster.
+
+| Datenbank | Stand | Gemessene Unterschiede |
+|---|---|---|
+| CockroachDB v25.2.4 | alle 26 DFS-Prüfungen bestanden (`expCockroachDBDFSClusterLiveTest`) | `FOR UPDATE SKIP LOCKED` kann eine Zeile überspringen, deren Write Intent noch nicht aufgelöst ist; ein Cache-Purge direkt nach einem Schreiben findet diese Zeile dann erst beim nächsten Lauf |
+| YugabyteDB 2.25.2 | bestanden (`expYugabyteDBDFSClusterLiveTest`) | `lock_timeout` wird nicht angewandt: Ein Speichern wartet, solange eine andere Transaktion die Zeile hält, statt nach `DBLockTimeout` aufzugeben, und läuft weiter, sobald die Sperre frei ist. Bei einem Wettlauf kann eine Cache-Datei zweimal nacheinander erzeugt werden (ein zweiter Prozess erhält „ok“, sobald die erste Erzeugung beendet ist); nie schreiben zwei Prozesse gleichzeitig über eine `.generating`-Zeile |
+| Neon, Supabase, Aurora PostgreSQL | **ungetestet** | ebenso zugeordnet (sie sind PostgreSQL selbst), nicht gegen den Dienst ausgeführt |
+
+Die Live-Prüfungen sind die Paritätsprüfungen, die jedes DFS-Backend besteht: Speichern, Abrufen, eine Datei hin und
+zurück über die DFS-Freigabe, Umbenennen, Löschen, Purge, Cache-Erzeugung und der Cluster-Plan. Sie liegen in der
+Testsuite `pgwire-live` (`tests/tests/lib/ezdb/pgwire/live/`).
+
 ## Datentabellen-Verbindungen
 
 `datatable.ini [ConnectionSettings] Engines[]` enthält `cockroachdb`, `yugabytedb`, `spanner`, `neon`, `supabase` und
 `aurorapostgresql`. Eine Verbindung öffnet sich über den Treiber (PHPs `pgsql`); ihre Optionen `sslmode` und `pooler` werden zu den
 `[PostgreSQLWireSettings]` der Verbindung. Neon, Supabase und Aurora sind in der Liste der Engines als "hier nicht
-getestet" markiert.
+getestet" markiert. Die SQL-Quelle von SQLI Import liest jede von ihnen über eine benannte Verbindung
+(PostgreSQL-Quoting, `crdb_internal` wird abgelehnt), live getestet auf CockroachDB und
+YugabyteDB.
 
 ## Tests
 

@@ -1092,7 +1092,7 @@ EXP_INSTALL_DB_PASSWORD=secret ./console exp:install --apply --db=sqlserver --db
 ```
 
 The kickstarter takes `Type=sqlserver` with `Encrypt` and `TrustServerCertificate`; the setup wizard in the browser
-does not list SQL Server. Read replicas: Always On with `ApplicationIntent=ReadOnly`. Several web servers: the DFS
+lists SQL Server when PHP has `sqlsrv` or `pdo_sqlsrv` (port 1433, user `sa` prefilled). Read replicas: Always On with `ApplicationIntent=ReadOnly`. Several web servers: the DFS
 backend `expDFSFileHandlerSQLServerBackend` (`exp:cluster:enable --backend=sqlserver`). Backups: `BACKUP DATABASE`;
 the upgrade's own safety copy has no SQL Server dump, so run upgrades with `--no-backup` after yours. Details:
 [Microsoft SQL Server driver](../features/6.0/sqlserver-database-driver.md) and
@@ -1120,8 +1120,8 @@ EXP_INSTALL_DB_PASSWORD=secret ./console exp:install --apply --db=singlestore --
 
 Create the database (on Vitess and PlanetScale the keyspace) first. On Vitess, raise the tablet's transaction timeout
 for the install (`--queryserver-config-transaction-timeout`); PlanetScale kills transactions after 20 seconds, so
-install elsewhere and import. Kickstarter: `Type=tidb` ... with `SSL` and `SSLCA`; the setup wizard does not list
-them. [Databases that speak the MySQL protocol](../features/6.0/mysql-wire-databases.md).
+install elsewhere and import. Kickstarter: `Type=tidb` ... with `SSL` and `SSLCA`; the setup wizard lists them after
+MySQL when PHP has `mysqli` (TiDB with port 4000). [Databases that speak the MySQL protocol](../features/6.0/mysql-wire-databases.md).
 
 ### The PostgreSQL protocol: CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL, Spanner
 
@@ -1129,7 +1129,10 @@ The PostgreSQL driver with a profile per database (`cockroachdb`, `yugabytedb`, 
 `aurorapostgresql`, `spanner`), PHP's `pgsql`, `[PostgreSQLWireSettings]` for TLS, poolers, retries and cold starts.
 CockroachDB 25.2 and YugabyteDB 2.25 installed a whole site; **Neon, Supabase and Aurora PostgreSQL are untested**
 (profiles from the services' documentation). Spanner, through PGAdapter, holds data table connections and imports,
-not a site. `exp:cluster:enable` offers no DFS backend for any of them.
+not a site. `exp:cluster:enable` gives the five site databases the PostgreSQL DFS backend, with its tables in the
+site's own database and, without a `Port` setting, the database's port (CockroachDB 26257, YugabyteDB 5433). It passed
+the DFS checks live on CockroachDB 25.2 and YugabyteDB 2.25 (on YugabyteDB `lock_timeout` is not applied); on Neon,
+Supabase and Aurora it is untested. Spanner gets no cluster.
 
 ```bash
 ./console exp:install --apply --db=cockroachdb --db-host=crdb1 --db-user=root
@@ -1179,8 +1182,9 @@ AccessMode=auto
 Threads=2
 ```
 
-Every statement costs milliseconds, so keep the view cache on. No DFS cluster, no read replicas, no web setup
-wizard; the upgrade's safety copy has no DuckDB dump: copy the file while nothing writes, or `EXPORT DATABASE`.
+Every statement costs milliseconds, so keep the view cache on. No DFS cluster and no read replicas. The setup wizard
+offers DuckDB only where the web PHP has `ffi.enable=true` (it asks for a file name in `var/storage/duckdb`); the
+upgrade's safety copy has no DuckDB dump: copy the file while nothing writes, or `EXPORT DATABASE`.
 [DuckDB driver](../features/6.0/duckdb-database-driver.md).
 
 ### ODBC and MS Access: data and imports

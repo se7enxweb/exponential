@@ -193,6 +193,16 @@ ein Gateway, das eine persistente Verbindung wiederverwendet (eine Backend-PID).
 Gemessen am 19. November 2026: PostgreSQL 13, 14, 15, 16, 17, 18 und 19 (Release Candidate 1, seit der Veröffentlichung auch 19.0) bestanden alle 27
 Prüfungen, MySQL 8.0 die 21, die dort gelten. GitHub Actions führt sie bei jedem Push aus (Job "DFS cluster backends").
 
+**Die Datenbanken mit dem PostgreSQL-Protokoll.** `exp:cluster:enable` gibt CockroachDB, YugabyteDB, Neon, Supabase und
+Aurora PostgreSQL dieses Backend, in der eigenen Datenbank der Site. Auf CockroachDB wird das Schema ohne
+`text_pattern_ops` angelegt (CockroachDB erlaubt Operatorklassen nur auf invertierten und Vektor-Indizes; seine
+Textindizes vergleichen Bytes, also bedient der einfache Index die Präfixsuchen). CockroachDB v25.2.4 bestand alle 26
+Prüfungen, die dort gelten (`expCockroachDBDFSClusterLiveTest`); YugabyteDB 2.25.2 bestand mit zwei gemessenen
+Unterschieden (`expYugabyteDBDFSClusterLiveTest`): `lock_timeout` wird nicht angewandt, ein Speichern wartet also auf
+eine gehaltene Zeilensperre, statt aufzugeben, und bei einem Wettlauf kann eine Cache-Datei zweimal nacheinander erzeugt
+werden. Neon, Supabase und Aurora PostgreSQL sind ungetestet. Einzelheiten:
+[Datenbanken mit dem PostgreSQL-Protokoll](postgresql-wire-datenbanken.md#cluster).
+
 ## Weitere Datenbanken: Oracle, MongoDB und SQLite
 
 Ein neues Backend ist eine Klasse (die `expDFSFileHandlerDBBackendInterface` und `eZClusterEventNotifier`

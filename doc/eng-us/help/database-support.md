@@ -88,15 +88,15 @@ What the order means in practice:
 | MariaDB | releases your vendor supports | `mysqli` | setup wizard, kickstarter, `exp:install` | any number of servers (MySQLi backend), read replicas | through the MySQL jobs (the same driver) | supported |
 | Oracle | 19c and later | `oci8` | setup wizard, kickstarter, `exp:install` (driver from `ezoracle`) | any number of servers (`expDFSFileHandlerOracleBackend`, 12.1 and later), read replicas | the DFS backend on Oracle Free 23 | supported |
 | MySQL | releases your vendor supports | `mysqli` | setup wizard, kickstarter, `exp:install` | any number of servers (the default backend), read replicas | MySQL 8.0 | supported |
-| Microsoft SQL Server, Azure SQL | 2017, 2019, 2022, 2025; Azure SQL Database and Managed Instance | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` | kickstarter, `exp:install` | any number of servers (`expDFSFileHandlerSQLServerBackend`), Always On read replicas | 2017, 2019, 2022 and 2025 on PHP 8.1 to 8.5 across three PHP layers; LocalDB on Windows | supported (new in 6.0.15) |
-| TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (an unsharded keyspace), SingleStore 8.5+ | `mysqli` | kickstarter, `exp:install` | any number of servers (the MySQLi backend) | TiDB 8.5, Vitess and SingleStore in containers (job `mysqlwire`) | supported (new in 6.0.15): [the MySQL protocol](#databases-that-speak-the-mysql-protocol) |
-| MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | kickstarter, `exp:install` | the MySQLi backend | no (no image; a managed service) | drivers and profiles, not measured |
-| DuckDB | 1.5 and 2.0 (1.5.6 and 2.0.1 tested) | `ffi` with DuckDB's C library `libduckdb` | kickstarter, `exp:install` | none: one process writes at a time | driver and live tests on DuckDB 1.5.6 and 2.0.1, and a whole site installed | supported for small and read-mostly sites (new in 6.0.15); [what works and what does not](../features/6.0/duckdb-database-driver.md#what-works-and-what-does-not) |
+| Microsoft SQL Server, Azure SQL | 2017, 2019, 2022, 2025; Azure SQL Database and Managed Instance | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` | setup wizard (with `sqlsrv` or `pdo_sqlsrv`), kickstarter, `exp:install` | any number of servers (`expDFSFileHandlerSQLServerBackend`), Always On read replicas | 2017, 2019, 2022 and 2025 on PHP 8.1 to 8.5 across three PHP layers; LocalDB on Windows | supported (new in 6.0.15) |
+| TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (an unsharded keyspace), SingleStore 8.5+ | `mysqli` | setup wizard (with `mysqli`), kickstarter, `exp:install` | any number of servers (the MySQLi backend) | TiDB 8.5, Vitess and SingleStore in containers (job `mysqlwire`) | supported (new in 6.0.15): [the MySQL protocol](#databases-that-speak-the-mysql-protocol) |
+| MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | setup wizard (with `mysqli`), kickstarter, `exp:install` | the MySQLi backend | no (no image; a managed service) | drivers and profiles, not measured |
+| DuckDB | 1.5 and 2.0 (1.5.6 and 2.0.1 tested) | `ffi` with DuckDB's C library `libduckdb` | setup wizard (with `ffi` and `ffi.enable=true`), kickstarter, `exp:install` | none: one process writes at a time | driver and live tests on DuckDB 1.5.6 and 2.0.1, and a whole site installed | supported for small and read-mostly sites (new in 6.0.15); [what works and what does not](../features/6.0/duckdb-database-driver.md#what-works-and-what-does-not) |
 | libSQL (sqld), Turso | sqld 0.22 and later (0.24.33 tested, SQLite 3.47); Turso | `curl` (or `allow_url_fopen`); no `sqlite3` needed | kickstarter, `exp:install` (`libsql`, `turso`) | the database: any number of web servers share it; no DFS backend on it | driver tests without a server, live tests against sqld 0.24.33 and a whole site installed (job `libsql`) | full site database (new in 6.0.15); Turso **untested**; [what works and what does not](../features/6.0/libsql-database-driver.md#what-works-and-what-does-not) |
-| CockroachDB (PostgreSQL wire protocol) | 23.2 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`cockroachdb`) | none: `exp:cluster:enable` offers no backend for it | the live suite `pgwire-live` on CockroachDB 25.2, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
-| YugabyteDB (PostgreSQL wire protocol) | 2.20 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`yugabytedb`) | none: `exp:cluster:enable` offers no backend for it | the live suite `pgwire-live` on YugabyteDB 2.25, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
+| CockroachDB (PostgreSQL wire protocol) | 23.2 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`cockroachdb`) | any number of servers (`expDFSFileHandlerPostgresqlBackend`, in the site's database; measured) | the live suite `pgwire-live` on CockroachDB 25.2, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
+| YugabyteDB (PostgreSQL wire protocol) | 2.20 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`yugabytedb`) | any number of servers (`expDFSFileHandlerPostgresqlBackend`, in the site's database; measured, no lock timeout) | the live suite `pgwire-live` on YugabyteDB 2.25, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
 | Google Cloud Spanner, PostgreSQL dialect (PGAdapter) | the Spanner emulator, PGAdapter | `pgsql` | none: not a site database | none | the live suite `pgwire-live` on the emulator behind PGAdapter | data-table connection and import (new in 6.0.15) |
-| Neon, Supabase, Amazon Aurora PostgreSQL | the services' PostgreSQL (13 and later) | `pgsql` | setup wizard, kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | none: `exp:cluster:enable` offers no backend for them | profiles and unit tests only; **not live-tested** | full site database as PostgreSQL, **untested**; profiles new in 6.0.15 |
+| Neon, Supabase, Amazon Aurora PostgreSQL | the services' PostgreSQL (13 and later) | `pgsql` | setup wizard, kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | the PostgreSQL backend (`expDFSFileHandlerPostgresqlBackend`), **untested** | profiles and unit tests only; **not live-tested** | full site database as PostgreSQL, **untested**; profiles new in 6.0.15 |
 | Firebird | 4.0 and 5.0 | `pdo_firebird` of PHP 8.4 or later | setup wizard (with `pdo_firebird`), kickstarter, `exp:install` (`firebird`) | none yet: one web server | 4.0 and 5.0 on PHP 8.4 and 8.5 (job `firebird`) | full site database (new in 6.0.15): [Firebird driver](../features/6.0/firebird-database-driver.md) |
 | Any database through ODBC | the database's ODBC driver; measured on SQL Server 2022, PostgreSQL 17, MariaDB 11.4, SQLite 3.45 | `pdo_odbc` or `odbc` | none: not a site database | none | live tests on four databases and both layers (job `odbc`); LocalDB on Windows | data table connections and imports (new in 6.0.15): [ODBC driver](../features/6.0/odbc-database-driver.md) |
 | MS Access (`.accdb`, `.mdb`) | Access 97 (JET3) to ACE | Windows: `odbc`, `pdo_odbc` with the Access Database Engine x64; Linux: MDBTools programs | none: `exp:access:import` | none | the import on Linux; driver and import on Windows (job `msaccess-windows`) | import, and on Windows a small driver for data tables (new in 6.0.15): [MS Access](../features/6.0/ms-access-support.md) |
@@ -150,7 +150,7 @@ Moving an existing site from one engine to another: [Moving off an old database]
 | PHP extension | `sqlite3` | `pgsql` | `mongodb` + library `mongodb/mongodb` | `mysqli` | `oci8` | `mysqli` | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` |
 | Database server | none (one file) | yes | yes | yes | yes | yes | yes |
 | Installer default | yes | | | | | |  |
-| Setup wizard | yes | yes | yes (slow step) | yes | yes | yes | no (kickstarter and `exp:install`) |
+| Setup wizard | yes | yes | yes (slow step) | yes | yes | yes | yes (with `sqlsrv` or `pdo_sqlsrv`) |
 | `exp:install --db=` | `sqlite` (default) | `pgsql` | `mongodb` | `mariadb` | `oracle` | `mysql` | `sqlserver` |
 | Several web servers on one database | no | yes | yes | yes | yes | yes | yes |
 | Character set | UTF-8 | `UTF8` | UTF-8 (BSON) | `utf8mb4` | `AL32UTF8` | `utf8mb4` | UTF-8 collation (`_UTF8`, 2019 and later) or `NVARCHAR` |
@@ -198,11 +198,15 @@ web server, needs PHP 8.0. See [chapter 2](../install/02-requirements.md#22-php)
 ## PHP extensions
 
 One database extension is required; the setup wizard's critical test `database_extensions` passes when at least one
-of `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv`, `pdo_firebird`, `pdo_ibm` and `ibm_db2` is loaded
-(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2`,
-`Require=one`). The wizard's database page then offers the databases of `sqlite3`, `mysqli`, `pgsql` (with the
-PostgreSQL protocol databases), `mongodb`, `oci8`, `pdo_firebird` and, from the IBM drivers, `pdo_ibm` or `ibm_db2`; a PHP with only `sqlsrv` or `pdo_sqlsrv` passes
-the test but is offered no database there, so install SQL Server with the kickstarter or `exp:install`. Install only
+of `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv`, `pdo_firebird`, `pdo_ibm`, `ibm_db2` and `ffi` is loaded
+(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`,
+`Require=one`). The wizard's database page then offers the databases of every extension it finds: `sqlite3`, `mysqli`
+(with the MySQL protocol databases), `pgsql` (with the PostgreSQL protocol databases), `mongodb`, `oci8`, `sqlsrv` or
+`pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` or `ibm_db2` (Db2, Informix) and `ffi` (DuckDB). `ffi` counts only
+where FFI may be used in the process: with `ffi.enable=true`. PHP's default `preload` allows FFI on the command line
+only, so the web wizard then does not count `ffi` and does not offer DuckDB; DuckDB also needs `libduckdb`
+(`[DuckDBSettings] Library`). The system check has an explanation page for each database extension it may report
+missing. Install only
 the extension your site uses.
 
 | Database | Extension | Where it comes from |
@@ -340,9 +344,9 @@ a site behaves as if its database were down.
 
 ## Installer support per path
 
-Exponential has three installers in the kernel. All three support the first seven databases, Firebird and the
-PostgreSQL protocol databases; Microsoft SQL Server, the MySQL protocol databases, DuckDB, libSQL and Turso are installed with the
-kickstarter and `exp:install`. ODBC, MS Access and Spanner are not site databases and have no installer entry.
+Exponential has three installers in the kernel. All three support the first seven databases (SQL Server included),
+Firebird, DuckDB and the MySQL and PostgreSQL protocol databases; the setup wizard offers each one when the PHP running
+it has the database's extension. libSQL and Turso are installed with the kickstarter and `exp:install`. ODBC, MS Access and Spanner are not site databases and have no installer entry.
 
 | Database | Setup wizard (browser) | Kickstarter (`kickstart.ini`, `[database_choice] Type=`) | `exp:install --db=` |
 |---|---|---|---|
@@ -352,11 +356,11 @@ kickstarter and `exp:install`. ODBC, MS Access and Spanner are not site database
 | 4. MariaDB | yes, as "MySQL Improved"; checks that the database is UTF-8 | `mysqli` (`mysql` accepted) | `mariadb` (the same as `mysql`) |
 | 5. Oracle | yes, when `oci8` is loaded and `extension/ezoracle` is present; activates the extension for the new site | `oci8` (`oracle` accepted); `Database` is the connect string | `oracle` (also `oci8`, `ezoracle`); `--db-name` is the service name, default `FREEPDB1` |
 | 6. MySQL | yes, as "MySQL Improved" | `mysqli` (`mysql` accepted) | `mysql` (also `mysqli`) |
-| 7. SQL Server, Azure SQL | | `sqlserver` (`mssql`, `sqlsrv` accepted), with `Encrypt` and `TrustServerCertificate` | `sqlserver` (also `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; the database must exist |
-| CockroachDB, YugabyteDB, Neon, Supabase, Aurora | yes, listed after PostgreSQL when `pgsql` is loaded | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, with `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | the same names; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
-| TiDB, Vitess / PlanetScale, SingleStore, Xpand, Aurora MySQL | | `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`), with `SSL` and `SSLCA` | the same names; `--db-ssl=enabled` or `verify`, `--db-ssl-ca`; on Vitess the keyspace must exist |
+| 7. SQL Server, Azure SQL | yes, when `sqlsrv` or `pdo_sqlsrv` is loaded; prefills port 1433 and user `sa` | `sqlserver` (`mssql`, `sqlsrv` accepted), with `Encrypt` and `TrustServerCertificate` | `sqlserver` (also `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; the database must exist |
+| CockroachDB, YugabyteDB, Neon, Supabase, Aurora | yes, listed after PostgreSQL when `pgsql` is loaded; prefills port 26257 (CockroachDB) or 5433 and user `yugabyte` (YugabyteDB) | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, with `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | the same names; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
+| TiDB, Vitess / PlanetScale, SingleStore, Xpand, Aurora MySQL | yes, listed after MySQL when `mysqli` is loaded; TiDB prefills port 4000 | `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`), with `SSL` and `SSLCA` | the same names; `--db-ssl=enabled` or `verify`, `--db-ssl-ca`; on Vitess the keyspace must exist |
 | Firebird | yes, when `pdo_firebird` is loaded | `firebird` (`fb`, `pdo_firebird` accepted) | `firebird` (also `fb`); the database must exist (`PAGE_SIZE 16384`, UTF8); default port 3050, user `SYSDBA` |
-| DuckDB | | `duckdb`; `Database` is the file | `duckdb`; `--db-name` is the file (default `var/storage/duckdb/exponential.duckdb`) |
+| DuckDB | yes, when `ffi` may be used (`ffi.enable=true`) and `libduckdb` is found; asks only for a file name (default `exponential.duckdb` in `var/storage/duckdb`) | `duckdb`; `Database` is the file | `duckdb`; `--db-name` is the file (default `var/storage/duckdb/exponential.duckdb`) |
 | libSQL (sqld), Turso | | `libsql` (`sqld` accepted), `turso`, with `URL` and `TLS`; `Password` is the auth token | `libsql`, `turso`; `--db-url`, `--db-tls`; port 8080 (443 for turso); the server's database is emptied first |
 
 - If the `sqlite3` extension is missing, the wizard chooses the first database whose extension is loaded and says
@@ -584,7 +588,8 @@ backend.
   `pdo_dblib` over FreeTDS; `[SQLServerSettings] Layer=auto` takes the first one that is loaded. On Linux and on
   Windows.
 - **Installing**: create the database first (a UTF-8 collation, `READ_COMMITTED_SNAPSHOT`), then
-  `exp:install --apply --db=sqlserver` or the kickstarter with `Type=sqlserver`. Measured on SQL Server 2022: 16
+  `exp:install --apply --db=sqlserver`, the kickstarter with `Type=sqlserver` or the setup wizard (with `sqlsrv` or
+  `pdo_sqlsrv`). Measured on SQL Server 2022: 16
   steps, no errors, 323 content objects.
 - **Clustering**: `expDFSFileHandlerSQLServerBackend` keeps the DFS metadata on SQL Server or Azure SQL for any
   number of web servers; `exp:cluster:enable --backend=sqlserver` makes a one-node cluster.
@@ -610,6 +615,12 @@ the PostgreSQL driver with one profile per database. To the kernel each of them 
 | Supabase | `supabase` | full site database (PostgreSQL) | **no** | as PostgreSQL; TLS; Supavisor session mode | port 6543 is transaction mode; the direct host is IPv6 only |
 | Amazon Aurora PostgreSQL | `aurorapostgresql` | full site database (PostgreSQL) | **no** | as PostgreSQL; failover reconnects outside transactions; reader endpoint as replica | a transaction in flight during a failover is lost; IAM tokens expire |
 
+**Cluster**: `exp:cluster:enable` gives the five site databases the PostgreSQL DFS backend
+(`expDFSFileHandlerPostgresqlBackend`, gateway `dfspostgresql`), with its tables in the site's own database. It passed
+every DFS check live on CockroachDB 25.2 and YugabyteDB 2.25 (on YugabyteDB `lock_timeout` is not applied, so a store
+waits for a held row lock). Neon, Supabase and Aurora PostgreSQL are mapped the same way, not tested against the
+service. Spanner holds no site and gets no cluster.
+
 Details: [Databases of the PostgreSQL wire protocol](../features/6.0/postgresql-wire-databases.md).
 
 ## Databases that speak the MySQL protocol
@@ -617,7 +628,8 @@ Details: [Databases of the PostgreSQL wire protocol](../features/6.0/postgresql-
 TiDB, Vitess and PlanetScale, SingleStore, MariaDB Xpand and Amazon Aurora MySQL run on drivers of their own from
 6.0.15: each is the MySQL driver with a profile of what its database does differently (`expTiDBDB`, `expVitessDB`,
 `expSingleStoreDB`, `expXpandDB`, `expAuroraMySQLDB`; `DatabaseImplementation` `tidb`, `vitess`, `singlestore`, `xpand`,
-`aurora`). They need `mysqli`, install with `exp:install --db=<name>` or the kickstarter, and use the MySQL DFS backend.
+`aurora`). They need `mysqli`, install with `exp:install --db=<name>`, the kickstarter or the setup wizard (listed
+after MySQL), and use the MySQL DFS backend.
 
 | Database | Level reached | Works | Does not, or differently |
 |---|---|---|---|

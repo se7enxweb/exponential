@@ -176,7 +176,7 @@ The critical tests are listed in `settings/site.ini [SetupSettings] CriticalTest
 |---|---|---|
 | `directory_permissions` | the web server can write the listed directories | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` and its subdirectories, `var/log`, `var/storage`, `var/storage/original`, `var/storage/reference`, `var/storage/variations`, `var/autoload` |
 | `phpversion` | the PHP version | `[phpversion] MinimumVersion` |
-| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2`, `Require=one` |
+| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one`; `ffi` counts only with `ffi.enable=true` |
 | `image_conversion` | GD or ImageMagick | `[image_conversion] TestList=imagegd_extension;imagemagick_program`, `Require=one` |
 | `safe_mode`, `magic_quotes_runtime` | legacy PHP settings that must be off | |
 | `memory_limit` | `memory_limit` | `[memory_limit] MinMemoryLimit=64M` (`-1` passes) |
@@ -196,7 +196,9 @@ reappear." Under **Issues**, each failed test has its own explanation (`design/s
 <test>_error.tpl`). The directory permissions issue, for example, is titled "Insufficient directory permissions",
 says "Exponential cannot write to some important directories, without this the setup cannot finish and parts of
 Exponential will fail.", lists "The affected directories are: ..." and gives ready-made **Shell commands** (and
-**Alternative shell commands** for when you cannot change the owner).
+**Alternative shell commands** for when you cannot change the owner). Every database extension the check may report
+missing (`sqlsrv`, `pdo_sqlsrv`, `oci8`, `pdo_firebird`, `pdo_ibm`, `ibm_db2`, `ffi` and the others) has an explanation
+of its own.
 
 | Field | Form name | Effect |
 |---|---|---|
@@ -259,12 +261,14 @@ found, limited to the ones the installer knows (`eZSetupDatabaseMap()` in `kerne
 | `firebird` | Firebird (shown when `pdo_firebird` is loaded) | `firebird` | 4.0 |
 | `db2`, `informix` | IBM Db2, IBM Informix (shown when `pdo_ibm` or `ibm_db2` is loaded) | the type | see their pages |
 | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` | CockroachDB, YugabyteDB, Neon (PostgreSQL), Supabase (PostgreSQL), Amazon Aurora PostgreSQL; listed after PostgreSQL when `pgsql` is loaded | the type | 23.2, 11.2, 14.0, 14.0, 13.0 |
+| `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` | TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Amazon Aurora MySQL; listed after MySQL when `mysqli` is loaded | the type | 5.7.25, 5.7.0, 5.7.0, 5.0.45, 8.0.0 |
+| `sqlserver` | Microsoft SQL Server (shown when `sqlsrv` or `pdo_sqlsrv` is loaded) | `sqlserver` | 14.0 |
+| `duckdb` | DuckDB (shown when `ffi` may be used: `ffi.enable=true`; also needs `libduckdb`, `[DuckDBSettings] Library`) | `duckdb` | 1.5 |
 
-The map also holds `sqlserver`, `duckdb` and the MySQL protocol databases (`tidb`, `vitess`, `singlestore`, `xpand`,
-`aurora`), but the list does not show them: SQL Server's extensions (`sqlsrv`, `pdo_sqlsrv`) pass the system check
-without giving a type of their own, DuckDB has no PHP extension of its own, and the MySQL protocol databases share
-`mysqli` with MySQL. Install those with the kickstarter (whose `Type=` reaches every entry of the map) or
-`exp:install` ([chapter 6](06-kickstarter.md), [chapter 7](07-console-install.md)).
+Every database the kernel can install a site on is in this list when PHP has its extension. `ffi.enable=preload`,
+PHP's default, allows FFI on the command line only: the web wizard then does not count `ffi` and does not offer
+DuckDB; install it with `exp:install` or the kickstarter ([chapter 6](06-kickstarter.md),
+[chapter 7](07-console-install.md)), or set `ffi.enable=true` in the web PHP's pool.
 
 **Screen.** "Choose database system", "Support for the following database systems was detected on your system:",
 "Please choose the database system you would like to use." and a radio list. The recommended system is
@@ -296,8 +300,8 @@ For a database server:
 | Field | Form name | Default (`setup.ini [DatabaseSettings]`) |
 |---|---|---|
 | Servername | `eZSetupDatabaseServer` | `DefaultServer=localhost` |
-| Port | `eZSetupDatabasePort` | `DefaultPort` (empty), `DefaultPort_pgsql=5432` |
-| Username | `eZSetupDatabaseUser` | `DefaultUser=root`, `DefaultUser_pgsql=postgres` |
+| Port | `eZSetupDatabasePort` | `DefaultPort` (empty), `DefaultPort_pgsql=5432`, `DefaultPort_sqlserver=1433`, `DefaultPort_tidb=4000`, `DefaultPort_cockroachdb=26257`, `DefaultPort_yugabytedb=5433` |
+| Username | `eZSetupDatabaseUser` | `DefaultUser=root`, `DefaultUser_pgsql=postgres`, `DefaultUser_sqlserver=sa`, `DefaultUser_yugabytedb=yugabyte` |
 | Password | `eZSetupDatabasePassword` | `DefaultPassword` (empty) |
 | Database name | `eZSetupDatabaseName` | `DefaultName=exponential` |
 | Socket (optional) | `eZSetupDatabaseSocket` | empty; "If you are using MySQL and do not know what to enter in the socket field, leave it blank" |
@@ -308,6 +312,9 @@ For SQLite there is one field, **Database file name** (`eZSetupDatabaseName`, de
 keeps the whole database in one file, in the directory var/storage/sqlite3 of this installation. It needs no server,
 user or password. The file is created if it does not exist; if it already holds tables, the Site details page asks
 what to do with them."
+
+For DuckDB the page likewise asks only for a file name (`DefaultName_duckdb=exponential.duckdb`, kept in
+`var/storage/duckdb`); there is no server, user or password.
 
 **Validation.** Pressing **Next** connects to the database with the values given:
 

@@ -76,7 +76,7 @@ and `openssl` (HTTPS); in practice all three are needed for a production Velocit
 ## Database extensions
 
 Install only the extension of the database the site uses; at least one is required
-(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8`, `Require=one`).
+(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one`).
 
 | Database | Extension | Where it comes from |
 |---|---|---|

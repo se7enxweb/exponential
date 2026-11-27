@@ -45,10 +45,10 @@ fragen Sie Ihren Administrator.
 
 | Die Daten liegen in | Lesen Sie sie mit |
 |---|---|
-| MySQL oder MariaDB, PostgreSQL, SQLite, Oracle, SQL Server | der Quelle **SQL** von Imports: ein `SELECT`, nur lesend, direkt (`pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `oci8`, `pdo_sqlsrv`/`pdo_dblib`/PDO_ODBC) oder über eine benannte Verbindung einer dieser Engines (eine Datenbank des MySQL-Protokolls zählt als `mysql`) |
+| MySQL oder MariaDB, PostgreSQL, SQLite, Oracle, SQL Server | der Quelle **SQL** von Imports: ein `SELECT`, nur lesend, direkt (`pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `oci8`, `pdo_sqlsrv`/`pdo_dblib`/PDO_ODBC) oder über eine benannte Verbindung (**Setup > Datentabellen > Verbindungen**) jeder Engine der Datentabellen-Verbindungen |
 | Parquet-, CSV- oder JSON-Dateien oder einer DuckDB-Datenbankdatei | der Quelle **DuckDB** von Imports (das Programm `duckdb` oder FFI mit `libduckdb`) |
 | MongoDB; einem Supabase-Projekt (seiner REST-API) | den Quellen **MongoDB** und **Supabase** von Imports |
-| Firebird, Spanner, CockroachDB, YugabyteDB, jeder Datenbank hinter einem ODBC-Treiber | einer **Datentabellen-Verbindung** dieser Engine, dann einer Synchronisation in Inhalte (die SQL-Quelle von Imports nimmt diese Engines nicht) |
+| Firebird, Spanner, CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL, den Datenbanken des MySQL-Protokolls, DuckDB, IBM Db2, IBM Informix, jeder Datenbank hinter einem ODBC-Treiber, MS Access | einer **Datentabellen-Verbindung** dieser Engine: Die Quelle **SQL** von Imports liest sie über die benannte Verbindung (vom Treiber des Kernels geöffnet, die Abfrage im Dialekt dieser Engine geprüft; DuckDB lehnt außerdem Funktionen zum Lesen von Dateien und URLs und einen Dateinamen in Anführungszeichen hinter `FROM` ab), oder einer Synchronisation in Inhalte |
 | einer MS-Access-Datei | **`exp:access:import`** in die Datenbank der Site oder eine Datentabellen-Verbindung |
 
 Welche Datenbank eine Site wie erreicht: [Eine Datenbank wählen](datenbank-waehlen.md#auswertungen-berichte-und-importe).

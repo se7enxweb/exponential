@@ -97,7 +97,7 @@ einen Datenbankadministrator:
 - **Sie betreibt Firebird 4 oder 5**: eine ganze Site, auf einem Webserver (kein DFS-Backend), mit PHP 8.4 oder neuer.
 - **Sie betreibt TiDB, Vitess/PlanetScale oder SingleStore**: eine ganze Site und das MySQL-DFS-Backend, gemessen;
   beachten Sie das Transaktions-Timeout von Vitess und die Referenztabellen von SingleStore.
-- **Sie betreibt CockroachDB oder YugabyteDB**: eine ganze Site, gemessen; langsame DDL, kein DFS-Backend.
+- **Sie betreibt CockroachDB oder YugabyteDB**: eine ganze Site, gemessen; langsame DDL; DFS über das PostgreSQL-Backend.
 - **Sie kauft Aurora, Neon, Supabase oder Xpand**: Profile nach der Dokumentation der Hersteller, **ungetestet**.
 - **Sie will DuckDB**: immer nur ein schreibender Prozess; eine Demo, eine Site, die vor allem gelesen wird, oder
   Auswertungen neben einer anderen Datenbank.

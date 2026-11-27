@@ -46,7 +46,7 @@ Each row is explained below with its source.
 > 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
 > [Choosing a database](../choosing-a-database.md)). ([Database support](../database-support.md))
 
-All seven have a driver and a path in the command-line installers; all but SQL Server have an entry in the setup wizard
+All seven have a driver and a path in the command-line installers; all of them also have an entry in the setup wizard (SQL Server with `sqlsrv` or `pdo_sqlsrv`)
 ([Database support](../database-support.md#the-supported-databases-in-order)).
 
 ### Decision table

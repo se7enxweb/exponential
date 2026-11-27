@@ -62,8 +62,11 @@ aus; die Datei wird also nie ausgeliefert. Mit `kickstart.ini` ist die Datenbank
 gefunden, wie `[DuckDBSettings] Library` es sagt, sonst über `DUCKDB_LIBRARY` aus der Umgebung, sonst unter dem Namen
 `libduckdb.so` im Bibliothekspfad des Systems.
 
-Der Einrichtungsassistent im Browser listet DuckDB nicht auf: er bietet die Datenbanken an, deren PHP-Erweiterung er
-findet, und DuckDB hat keine eigene. Nehmen Sie `exp:install` oder den Kickstarter.
+Der Einrichtungsassistent im Browser listet DuckDB auf, wenn die PHP-Erweiterung `ffi` im Web-Prozess verwendet werden
+darf (`ffi.enable=true`; `[database_extensions]` zählt `ffi`) und `libduckdb` gefunden wird. Seine Datenbankseite fragt
+nur nach einem Dateinamen (Standard `exponential.duckdb` in `var/storage/duckdb`), ohne Server, Benutzer und Passwort,
+wie bei SQLite. Mit `ffi.enable=preload`, dem PHP-Standard, geht FFI nur auf der Kommandozeile; der Assistent im Web
+bietet DuckDB dann nicht an. Nehmen Sie dann `exp:install` oder den Kickstarter.
 
 Der Installer legt die Tabellen des Kernels aus `share/db_schema.dba` über den Schema-Handler `expDuckDBSchema` an,
 fügt die Grunddaten ein, setzt die Sequenzen hinter die eingefügten IDs, installiert das Paket und schreibt
@@ -172,7 +175,7 @@ Site, installiert mit `exp:install --db=duckdb` auf DuckDB 2.0.1.
 |---|---|---|
 | Kernel-Schema (153 Tabellen) und Grunddaten | geht | `kernel/sql/duckdb/kernel_schema.sql`, `share/db_schema.dba` über den Schema-Handler |
 | Installation mit `exp:install` / Kickstarter, Paket und Erweiterungen | geht | das Multisite-Paket mit seinen Inhalten: 16 Schritte, 0 Fehler, 0 Warnungen, 9 Prüfungen bestanden; 31 Minuten auf einem ausgelasteten geteilten Host (etwa 118 MB). Der Installer lässt die Datei los, bevor er einen eigenen PHP-Prozess startet (Cluster, Hilfe-Handbücher, Migrationen), der sonst auf ihn warten würde |
-| Einrichtungsassistent im Browser | geht nicht | nicht angeboten (keine eigene PHP-Erweiterung zum Erkennen); `exp:install` nehmen |
+| Einrichtungsassistent im Browser | geht | angeboten mit `ffi` und `ffi.enable=true` im Web-PHP; mit `ffi.enable=preload` nicht angeboten, `exp:install` nehmen |
 | Seiten lesen, die Administration, Bearbeiten und Veröffentlichen | geht, langsam | Startseite, Anmeldung der Administration und Inhaltsansichten antworten mit 200. **Jede Anweisung kostet Millisekunden** (unten gemessen), wo SQLite und MySQL für einen Zugriff über den Schlüssel einige zehn Mikrosekunden brauchen: eine Seite mit Hunderten von Abfragen braucht ohne View-Cache Sekunden |
 | Transaktionen, verschachteltes `begin()`/`commit()`, Rollback | geht | eine gescheiterte Anweisung beendet DuckDBs Transaktion; der Kernel rollt zurück wie bei PostgreSQL |
 | Neue IDs (`lastSerialID()`), beim Einfügen gegebene IDs, nachgeführte Sequenzen | geht | `setval()` auf 2.0, `nextval()` über `range()` auf 1.x |

@@ -31,8 +31,9 @@ documentation and checked by unit tests only. No account was opened at any of th
 8. [Supabase](#supabase)
 9. [Amazon Aurora PostgreSQL](#amazon-aurora-postgresql)
 10. [Installing a site](#installing-a-site)
-11. [Data-table connections](#data-table-connections)
-12. [Tests](#tests)
+11. [Cluster](#cluster)
+12. [Data-table connections](#data-table-connections)
+13. [Tests](#tests)
 
 ## Why a profile and not a new driver
 
@@ -220,11 +221,32 @@ with `SSLMode`, `SSLRootCert`, `Pooler` and `Endpoint` in `[database_init]`. The
 PostgreSQL when PHP has the `pgsql` extension. Install through a direct connection or a session pooler: the schema is
 created statement by statement and a transaction pooler does not change that, but nothing gains from it.
 
+## Cluster
+
+`exp:cluster:enable` gives CockroachDB, YugabyteDB, Neon, Supabase and Aurora PostgreSQL the PostgreSQL DFS backend
+(`eZDFSFileHandlerPostgresqlBackend` / `expDFSFileHandlerPostgresqlBackend`, gateway `dfspostgresql`), with its tables
+in the site's own database. Without a `Port` setting the cluster takes the database's port (CockroachDB 26257,
+YugabyteDB 5433). On CockroachDB the cluster schema is created without `text_pattern_ops`: CockroachDB allows operator
+classes only on inverted and vector indexes, and its text indexes compare bytes, so the plain index serves the prefix
+searches. Spanner holds no site and gets no cluster.
+
+| Database | Status | Differences measured |
+|---|---|---|
+| CockroachDB v25.2.4 | all 26 DFS checks pass (`expCockroachDBDFSClusterLiveTest`) | `FOR UPDATE SKIP LOCKED` can skip a row whose write intent is not resolved yet, so a cache purge right after a write may find that row only on its next run |
+| YugabyteDB 2.25.2 | passes (`expYugabyteDBDFSClusterLiveTest`) | `lock_timeout` is not applied: a store waits as long as another transaction holds the row instead of giving up after `DBLockTimeout`, and continues once the lock is released. Under a race a cache file can be generated twice, one after the other (a second process is told "ok" once the first generation ended); never two writers over one `.generating` row at the same time |
+| Neon, Supabase, Aurora PostgreSQL | **untested** | mapped the same way (they are PostgreSQL itself), not run against the service |
+
+The live checks are the parity checks every DFS backend passes: stores, fetches, a file round trip through the DFS
+share, rename, delete, purge, cache generation, and the cluster plan. They are in the testsuite `pgwire-live`
+(`tests/tests/lib/ezdb/pgwire/live/`).
+
 ## Data-table connections
 
 `datatable.ini [ConnectionSettings] Engines[]` has `cockroachdb`, `yugabytedb`, `spanner`, `neon`, `supabase` and
 `aurorapostgresql`. A connection opens through the driver (PHP's `pgsql`), its options `sslmode` and `pooler` become the
 connection's `[PostgreSQLWireSettings]`. Neon, Supabase and Aurora are marked "untested here" in the list of engines.
+SQLI Import's SQL source reads every one of them through a named connection (PostgreSQL quoting, `crdb_internal`
+refused), live-tested on CockroachDB and YugabyteDB.
 
 ## Tests
 

@@ -27,8 +27,8 @@ Exponential auswählen. Die Aussage des Projekts und die Einzelheiten je Datenba
 > SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)).
 
 Alle sieben haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung und einen Weg in den Installationsprogrammen für die Kommandozeile
-([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)); alle außer SQL Server haben auch einen Eintrag im
-Einrichtungsassistenten.
+([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)); alle haben auch einen Eintrag im
+Einrichtungsassistenten (SQL Server mit `sqlsrv` oder `pdo_sqlsrv`).
 
 | Datenbank | Kurz gesagt |
 |---|---|

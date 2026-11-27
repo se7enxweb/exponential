@@ -58,8 +58,11 @@ to `index.php` by the shipped `.htaccess` and left out of Velocity's static file
 user and password are ignored. The library is found as `[DuckDBSettings] Library` says, else from the environment's
 `DUCKDB_LIBRARY`, else by the name `libduckdb.so` in the system's library path.
 
-The web setup wizard does not list DuckDB: it offers the databases whose PHP extension it finds, and DuckDB has none
-of its own. Use `exp:install` or the kickstarter.
+The web setup wizard lists DuckDB when PHP's `ffi` extension may be used in the web process (`ffi.enable=true`;
+`[database_extensions]` counts `ffi`) and `libduckdb` is found. Its database page asks only for a file name (default
+`exponential.duckdb` in `var/storage/duckdb`), with no server, user or password, as for SQLite. With
+`ffi.enable=preload`, PHP's default, FFI works on the command line only, so the web wizard does not offer DuckDB: use
+`exp:install` or the kickstarter.
 
 The installer creates the kernel's tables from `share/db_schema.dba` through the schema handler `expDuckDBSchema`,
 inserts the clean data, moves the sequences on past the inserted ids, installs the package and writes
@@ -165,7 +168,7 @@ site installed with `exp:install --db=duckdb` on DuckDB 2.0.1.
 |---|---|---|
 | Kernel schema (153 tables) and clean data | works | `kernel/sql/duckdb/kernel_schema.sql`, `share/db_schema.dba` through the schema handler |
 | Install with `exp:install` / kickstarter, package and extensions | works | the multisite package with its content: 16 steps, 0 errors, 0 warnings, 9 checks passed; 31 minutes on a busy shared host (about 118 MB). The installer lets the file go before it starts a PHP process of its own (cluster, help manuals, migrations), which would otherwise wait for it |
-| Web setup wizard | does not | not offered (no PHP extension of its own to detect); use `exp:install` |
+| Web setup wizard | works | offered with `ffi` and `ffi.enable=true` in the web PHP; with `ffi.enable=preload` not offered, use `exp:install` |
 | Reading pages, the admin, editing and publishing | works, slowly | front page, admin login and content views answer 200. **Every statement costs milliseconds** (measured below), where SQLite and MySQL take tens of microseconds for a lookup by key: a page with hundreds of queries takes seconds without the view cache |
 | Transactions, nested `begin()`/`commit()`, rollback | works | a failed statement ends DuckDB's transaction; the kernel rolls back as on PostgreSQL |
 | New ids (`lastSerialID()`), ids given on insert, sequences moved on | works | `setval()` on 2.0, `nextval()` over `range()` on 1.x |

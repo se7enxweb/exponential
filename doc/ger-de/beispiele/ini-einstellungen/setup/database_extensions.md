@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/setup.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Extensions
 
-Standard: `sqlite3;mysqli;pgsql;mongodb;oci8`.
+Standard: `sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/setup.ini.append.php
 [database_extensions]
-Extensions=sqlite3;mysqli;pgsql;mongodb;oci8
+Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi
 */ ?>
 ```
 

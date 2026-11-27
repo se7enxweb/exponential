@@ -44,7 +44,7 @@ example, logs "SQLite3 extension was not found, the DB handler will not be initi
 
 ```ini
 [database_extensions]
-Extensions=sqlite3;mysqli;pgsql;mongodb;oci8
+Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi
 Require=one
 ```
 
@@ -101,8 +101,9 @@ be changed at run time ([Oracle: persistent connections, DRCP and tuning](oracle
 | ODBC | `pdo_odbc` (default) or `odbc` | ship with PHP; unixODBC and the database's ODBC driver (`odbc-postgresql`, `odbc-mariadb`, `libsqliteodbc`, `msodbcsql18`) |
 | MS Access | Windows: `odbc` and `pdo_odbc` with the Access Database Engine 2016 x64; Linux: none, the import runs the MDBTools programs | Microsoft's redistributable; `mdbtools` 0.9 or later |
 
-The setup wizard's critical test passes with `pdo_firebird` too (`setup.ini [database_extensions]`), and with
-`sqlsrv` or `pdo_sqlsrv` without offering SQL Server in its list. Check every PHP that runs the site, as above.
+The setup wizard's critical test passes with `pdo_firebird`, `sqlsrv`, `pdo_sqlsrv` or `ffi` too
+(`setup.ini [database_extensions]`), and its list then offers Firebird, SQL Server or DuckDB. `ffi` counts only where
+the process may use FFI (`ffi.enable=true`), so with the default `preload` the web wizard does not offer DuckDB. Check every PHP that runs the site, as above.
 [Choosing a database](../choosing-a-database.md) has the matrix of all of them.
 
 ## Checklist

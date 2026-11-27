@@ -105,10 +105,15 @@ same parity checks:
 **The databases added in 6.0.15.** TiDB, Vitess and SingleStore take the MySQL backend (`exp:cluster:enable` maps
 their `DatabaseImplementation` to `mysqli`); a one-node cluster was measured on each. The backend's own `mysqli`
 connection has no TLS, so with PlanetScale, TiDB Cloud and SingleStore Helios keep the metadata in another database.
-Xpand and Aurora MySQL map to the same backend but are untested. There is **no** DFS backend for Firebird (pdo_firebird
-cannot bound a lock wait), DuckDB (one writer, a local file lock), ODBC, MS Access and Spanner, and `exp:cluster:enable`
-offers none for CockroachDB, YugabyteDB, Neon, Supabase and Aurora PostgreSQL; their sites can still keep the cluster
-metadata in another database of the table above ([Choosing a database](../../help/choosing-a-database.md)).
+Xpand and Aurora MySQL map to the same backend but are untested. CockroachDB, YugabyteDB, Neon, Supabase and Aurora
+PostgreSQL take the PostgreSQL backend (`dfspostgresql`), with its tables in the site's own database and, without a
+`Port` setting, the database's port (CockroachDB 26257, YugabyteDB 5433). It passed the DFS checks live on CockroachDB
+25.2 and YugabyteDB 2.25 (on YugabyteDB `lock_timeout` is not applied, so a store waits for a held row lock); Neon,
+Supabase and Aurora PostgreSQL are mapped the same way but untested
+([Databases of the PostgreSQL wire protocol](postgresql-wire-databases.md#cluster)). There is **no** DFS backend for
+Firebird (pdo_firebird cannot bound a lock wait), DuckDB (one writer, a local file lock), ODBC, MS Access and Spanner;
+a site on Firebird or DuckDB can still keep the cluster metadata in another database of the table above
+([Choosing a database](../../help/choosing-a-database.md)).
 
 The site's database and the cluster metadata are separate choices: a site on MySQL can keep its cluster metadata in
 PostgreSQL, and the other way round. The settings that matter on every SQL backend:

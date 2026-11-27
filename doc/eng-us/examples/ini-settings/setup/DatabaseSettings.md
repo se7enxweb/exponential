@@ -3,13 +3,13 @@ title: setup.ini [DatabaseSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [DatabaseSettings] in setup.ini: DefaultType, DefaultServer, DefaultPort, DefaultName, DefaultUser, DefaultPassword, DefaultPort_pgsql, DefaultUser_pgsql ..."
-keywords: setup.ini, DatabaseSettings, INI, setting, DefaultType, DefaultServer, DefaultPort, DefaultName, DefaultUser, DefaultPassword, DefaultPort_pgsql, DefaultUser_pgsql, SQLSchema, CleanSQLData, DemoSQLData
+keywords: setup.ini, DatabaseSettings, INI, setting, DefaultType, DefaultServer, DefaultPort, DefaultName, DefaultUser, DefaultPassword, DefaultPort_pgsql, DefaultUser_pgsql, DefaultPort_sqlserver, DefaultUser_sqlserver, DefaultPort_tidb, DefaultPort_cockroachdb, DefaultPort_yugabytedb, DefaultUser_yugabytedb, DefaultName_duckdb, DefaultServer_duckdb, DefaultUser_duckdb, SQLSchema, CleanSQLData, DemoSQLData
 type: generated
 generated: exp:help:examples
 ---
 # setup.ini [DatabaseSettings]
 
-The block `[DatabaseSettings]` of `settings/setup.ini`, with 11 setting(s).
+The block `[DatabaseSettings]` of `settings/setup.ini`, with 20 setting(s).
 
 Never edit `settings/setup.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -118,6 +118,116 @@ Default: `postgres`.
 # settings/override/setup.ini.append.php
 [DatabaseSettings]
 DefaultUser_pgsql=postgres
+*/ ?>
+```
+
+## DefaultPort_sqlserver
+
+Default: `1433`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultPort_sqlserver=1433
+*/ ?>
+```
+
+## DefaultUser_sqlserver
+
+Default: `sa`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultUser_sqlserver=sa
+*/ ?>
+```
+
+## DefaultPort_tidb
+
+Default: `4000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultPort_tidb=4000
+*/ ?>
+```
+
+## DefaultPort_cockroachdb
+
+Default: `26257`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultPort_cockroachdb=26257
+*/ ?>
+```
+
+## DefaultPort_yugabytedb
+
+Default: `5433`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultPort_yugabytedb=5433
+*/ ?>
+```
+
+## DefaultUser_yugabytedb
+
+Default: `yugabyte`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultUser_yugabytedb=yugabyte
+*/ ?>
+```
+
+## DefaultName_duckdb
+
+> DuckDB is one file in var/storage/duckdb: no server, user or password  
+
+Default: `exponential.duckdb`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultName_duckdb=exponential.duckdb
+*/ ?>
+```
+
+## DefaultServer_duckdb
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultServer_duckdb=
+*/ ?>
+```
+
+## DefaultUser_duckdb
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[DatabaseSettings]
+DefaultUser_duckdb=
 */ ?>
 ```
 

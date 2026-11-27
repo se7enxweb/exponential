@@ -102,8 +102,11 @@ On an upgrade apply the `dbupdate-cluster-...` file of every step that has one (
   ([Clustering on SQL Server](../../features/6.0/sqlserver-dfs-cluster.md)).
 - **TiDB, Vitess, SingleStore** use the MySQL backend (measured as one-node clusters); its own `mysqli` connection
   has no TLS. **Xpand and Aurora MySQL** map to it too, untested.
-- **No backend** for Firebird, DuckDB, ODBC, MS Access and Spanner; `exp:cluster:enable` offers none for CockroachDB,
-  YugabyteDB, Neon, Supabase and Aurora PostgreSQL. Keep the metadata of such a site in a database that has one.
+- **CockroachDB, YugabyteDB, Neon, Supabase and Aurora PostgreSQL** take the PostgreSQL backend, on the site's own
+  database; it passed the DFS checks live on CockroachDB 25.2 and YugabyteDB 2.25 (on YugabyteDB `lock_timeout` is not
+  applied), and is untested on Neon, Supabase and Aurora.
+- **No backend** for Firebird, DuckDB, ODBC, MS Access and Spanner. Keep the metadata of such a site in a database
+  that has one.
 
 ## Maintenance commands
 

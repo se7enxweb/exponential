@@ -63,20 +63,20 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | MariaDB | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MySQL Improved“), Kickstarter, `mariadb` |
 | Oracle 19c und neuer (`ezoracle`) | ja | ja | ja | ja, im Kernel | ja | Assistent, Kickstarter, `oracle` |
 | MySQL | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MySQL Improved“), Kickstarter, `mysql` |
-| [SQL Server 2017 bis 2025, Azure SQL](../funktionen/6.0/sqlserver-datenbanktreiber.md) | nein | neu | ja | ja, im Kernel | ja (Always On, `ApplicationIntent=ReadOnly`) | Kickstarter, `sqlserver` |
-| [TiDB](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja | ja (MySQLi-Backend, gemessen) | der Mechanismus von MySQL, nicht getestet | Kickstarter, `tidb` |
-| [Vitess, PlanetScale](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja, in einem ungesplitteten Keyspace | ja (auf Vitess gemessen) | der Mechanismus von MySQL, nicht getestet | Kickstarter, `vitess` |
-| [SingleStore](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja | ja (gemessen) | der Mechanismus von MySQL, nicht getestet | Kickstarter, `singlestore` |
-| [MariaDB Xpand](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu, **ungetestet** | nicht gemessen | nicht gemessen | nicht gemessen | Kickstarter, `xpand` |
-| [Amazon Aurora MySQL](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu, **ungetestet** | nicht gemessen | nicht gemessen | der Reader-Endpunkt, nicht gemessen | Kickstarter, `aurora` |
-| [CockroachDB 23.2 und neuer](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neu | ja | nein: `exp:cluster:enable` bietet dafür kein Backend an | nicht getestet | Assistent, Kickstarter, `cockroachdb` |
-| [YugabyteDB 2.20 und neuer](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neu | ja | nein: `exp:cluster:enable` bietet dafür kein Backend an | nicht getestet | Assistent, Kickstarter, `yugabytedb` |
-| [Neon](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neues Profil, **ungetestet** | wie PostgreSQL, nicht gemessen | nein: `exp:cluster:enable` bietet dafür kein Backend an | eine Read-Replica-Compute, nicht gemessen | Assistent, Kickstarter, `neon` |
-| [Supabase](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neues Profil, **ungetestet** | wie PostgreSQL, nicht gemessen | nein: `exp:cluster:enable` bietet dafür kein Backend an | nicht gemessen | Assistent, Kickstarter, `supabase` |
-| [Amazon Aurora PostgreSQL](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neues Profil, **ungetestet** | wie PostgreSQL, nicht gemessen | nein: `exp:cluster:enable` bietet dafür kein Backend an | der Reader-Endpunkt, nicht gemessen | Assistent, Kickstarter, `aurorapostgresql` |
+| [SQL Server 2017 bis 2025, Azure SQL](../funktionen/6.0/sqlserver-datenbanktreiber.md) | nein | neu | ja | ja, im Kernel | ja (Always On, `ApplicationIntent=ReadOnly`) | Assistent (mit `sqlsrv` oder `pdo_sqlsrv`), Kickstarter, `sqlserver` |
+| [TiDB](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja | ja (MySQLi-Backend, gemessen) | der Mechanismus von MySQL, nicht getestet | Assistent, Kickstarter, `tidb` |
+| [Vitess, PlanetScale](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja, in einem ungesplitteten Keyspace | ja (auf Vitess gemessen) | der Mechanismus von MySQL, nicht getestet | Assistent, Kickstarter, `vitess` |
+| [SingleStore](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja | ja (gemessen) | der Mechanismus von MySQL, nicht getestet | Assistent, Kickstarter, `singlestore` |
+| [MariaDB Xpand](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu, **ungetestet** | nicht gemessen | nicht gemessen | nicht gemessen | Assistent, Kickstarter, `xpand` |
+| [Amazon Aurora MySQL](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu, **ungetestet** | nicht gemessen | nicht gemessen | der Reader-Endpunkt, nicht gemessen | Assistent, Kickstarter, `aurora` |
+| [CockroachDB 23.2 und neuer](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neu | ja | ja (PostgreSQL-Backend, gemessen) | nicht getestet | Assistent, Kickstarter, `cockroachdb` |
+| [YugabyteDB 2.20 und neuer](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neu | ja | ja (PostgreSQL-Backend, gemessen; kein Lock-Timeout) | nicht getestet | Assistent, Kickstarter, `yugabytedb` |
+| [Neon](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neues Profil, **ungetestet** | wie PostgreSQL, nicht gemessen | PostgreSQL-Backend, **ungetestet** | eine Read-Replica-Compute, nicht gemessen | Assistent, Kickstarter, `neon` |
+| [Supabase](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neues Profil, **ungetestet** | wie PostgreSQL, nicht gemessen | PostgreSQL-Backend, **ungetestet** | nicht gemessen | Assistent, Kickstarter, `supabase` |
+| [Amazon Aurora PostgreSQL](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neues Profil, **ungetestet** | wie PostgreSQL, nicht gemessen | PostgreSQL-Backend, **ungetestet** | der Reader-Endpunkt, nicht gemessen | Assistent, Kickstarter, `aurorapostgresql` |
 | [Google Cloud Spanner, PostgreSQL-Dialekt](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neu | **nein**: Datentabellen und Import | nein | nein | keiner |
 | [Firebird 4.0 und 5.0](../funktionen/6.0/firebird-datenbanktreiber.md) | nein | neu | ja | **noch nicht** | nein | Assistent (mit `pdo_firebird`), Kickstarter, `firebird` |
-| [DuckDB 1.5 und 2.0](../funktionen/6.0/duckdb-datenbanktreiber.md) | nein | neu | ja, immer nur ein schreibender Prozess | **nein** | nein | Kickstarter, `duckdb` |
+| [DuckDB 1.5 und 2.0](../funktionen/6.0/duckdb-datenbanktreiber.md) | nein | neu | ja, immer nur ein schreibender Prozess | **nein** | nein | Assistent (mit `ffi` und `ffi.enable=true`), Kickstarter, `duckdb` |
 | [libSQL (sqld), Turso](../funktionen/6.0/libsql-datenbanktreiber.md) | nein | neu; Turso **ungetestet** | ja (gemessen auf sqld 0.24) | **kein** Backend; mehrere Webserver teilen sich die Datenbank, die Dateien brauchen ein geteiltes Verzeichnis | nein (die Replikate von Turso antworten unter derselben URL) | Kickstarter, `libsql`, `turso` |
 | [IBM Db2 11.5 und 12.1](../funktionen/6.0/db2-datenbanktreiber.md) | nein | neu | ja | **noch nicht** | nein | Assistent (mit `pdo_ibm` oder `ibm_db2`), Kickstarter, `db2` |
 | [IBM Informix 14.10 und 15](../funktionen/6.0/informix-datenbanktreiber.md) | nein | neu | ja (auf 15 gemessen) | **nein** | nein | Assistent (mit `ibm_db2` oder `pdo_ibm`), Kickstarter, `informix` |
@@ -87,16 +87,18 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 Anmerkungen zur Tabelle:
 
 - **Der Setup-Assistent** führt eine Datenbank auf, wenn das PHP, das ihn ausführt, die Erweiterung der Datenbank hat:
-  `sqlite3`, `mysqli`, `pgsql` (mit CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL nach PostgreSQL),
-  `mongodb`, `oci8`, `pdo_firebird` sowie `pdo_ibm` oder `ibm_db2` (Db2, Informix). SQL Server, die Datenbanken mit dem MySQL-Protokoll, DuckDB, libSQL und Turso werden mit dem
-  Kickstarter oder `exp:install` installiert ([Setup-Assistent](../installation/05-setup-assistent.md)).
+  `sqlite3`, `mysqli` (mit TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand und Aurora MySQL nach MySQL),
+  `pgsql` (mit CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL nach PostgreSQL), `mongodb`, `oci8`,
+  `sqlsrv` oder `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` oder `ibm_db2` (Db2, Informix) sowie `ffi`
+  (DuckDB, nur mit `ffi.enable=true` und `libduckdb`). libSQL und Turso werden mit dem Kickstarter oder `exp:install`
+  installiert ([Setup-Assistent](../installation/05-setup-assistent.md)).
 - **DFS auf den Datenbanken mit dem MySQL-Protokoll**: Das Backend öffnet seine eigene `mysqli`-Verbindung ohne TLS. Bei
   PlanetScale, TiDB Cloud und SingleStore Helios, die TLS verlangen, liegen die DFS-Metadaten besser in einer anderen
   Datenbank.
-- **DFS auf den Datenbanken mit dem PostgreSQL-Protokoll**: `exp:cluster:enable` ordnet nur die Werte von
-  `DatabaseImplementation` für MySQL, MariaDB und die Datenbanken mit dem MySQL-Protokoll, PostgreSQL, SQLite, MongoDB,
-  Oracle und SQL Server einem Backend zu. Ein von Hand eingerichtetes PostgreSQL-Backend auf CockroachDB, YugabyteDB,
-  Neon, Supabase oder Aurora wurde nicht ausprobiert.
+- **DFS auf den Datenbanken mit dem PostgreSQL-Protokoll**: `exp:cluster:enable` gibt CockroachDB, YugabyteDB, Neon,
+  Supabase und Aurora PostgreSQL das PostgreSQL-Backend, mit seinen Tabellen in der eigenen Datenbank der Site. Es hat
+  die DFS-Prüfungen live auf CockroachDB 25.2 und YugabyteDB 2.25 bestanden; auf Neon, Supabase und Aurora lief es
+  nicht gegen den Dienst.
 
 ## Die Matrix: Voraussetzungen und Tests
 
@@ -118,15 +120,15 @@ nimmt die Aktualisierung wieder zurück.
 | SQL Server, Azure SQL | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` oder `pdo_dblib` | `sqlserver` | SQL-Quelle (`pdo_sqlsrv`, `pdo_dblib` oder PDO_ODBC), benannte Verbindung | Linux, Windows (LocalDB in der CI) | 2017, 2019, 2022, 2025 über drei PHP-Schichten, PHP 8.1 bis 8.5; LocalDB unter Windows | noch nicht (neu in 6.0.15) |
 | TiDB, Vitess, SingleStore | `mysqli` | `tidb`, `vitess`, `singlestore` (oder `mysql` mit der Option `profile`) | benannte Verbindung der Engine `mysql` | Linux | Live-Tests in Containern (Job `mysqlwire`) | noch nicht |
 | Xpand, Aurora MySQL | `mysqli` | `xpand`, `aurora` | benannte Verbindung der Engine `mysql` | Linux | nur Tests ohne Server | noch nicht |
-| CockroachDB, YugabyteDB | `pgsql` | `cockroachdb`, `yugabytedb` | eine Datentabellen-Verbindung | Linux | Live-Tests in Containern (Job „PostgreSQL wire protocol“) | noch nicht |
-| Neon, Supabase, Aurora PostgreSQL | `pgsql` | `neon`, `supabase`, `aurorapostgresql` | eine Datentabellen-Verbindung; Supabase auch die Supabase-Quelle (REST) von SQLI Import | Linux | nur Tests ohne Server | noch nicht |
-| Spanner (PGAdapter) | `pgsql` | `spanner` | eine Datentabellen-Verbindung (`table_to_content`) | Linux | Live-Tests gegen den Emulator hinter PGAdapter | entfällt |
-| Firebird | `pdo_firebird` ab **PHP 8.4** und die Client-Bibliothek von Firebird | `firebird` | eine Datentabellen-Verbindung | Linux | Live-Tests auf Firebird 4 und 5, PHP 8.4 und 8.5 (Job `firebird`) | noch nicht |
-| DuckDB | `ffi` (mit `ffi.enable=true` für das Web) und `libduckdb` | `duckdb` | eine Datentabellen-Verbindung; die DuckDB-Quelle von SQLI Import (Parquet-, CSV-, JSON- und DuckDB-Dateien) | Linux (`libduckdb.so`); Windows und macOS nicht getestet | Live-Tests auf DuckDB 1.5.6 und 2.0.1 und eine ganz installierte Site (Job `duckdb`) | noch nicht; kein eingebauter Sicherungspunkt (unten) |
+| CockroachDB, YugabyteDB | `pgsql` | `cockroachdb`, `yugabytedb` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung | Linux | Live-Tests in Containern (Job „PostgreSQL wire protocol“) | noch nicht |
+| Neon, Supabase, Aurora PostgreSQL | `pgsql` | `neon`, `supabase`, `aurorapostgresql` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung; Supabase auch die Supabase-Quelle (REST) von SQLI Import | Linux | nur Tests ohne Server | noch nicht |
+| Spanner (PGAdapter) | `pgsql` | `spanner` | eine Datentabellen-Verbindung (`table_to_content`); SQL-Quelle über eine benannte Verbindung | Linux | Live-Tests gegen den Emulator hinter PGAdapter | entfällt |
+| Firebird | `pdo_firebird` ab **PHP 8.4** und die Client-Bibliothek von Firebird | `firebird` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung | Linux | Live-Tests auf Firebird 4 und 5, PHP 8.4 und 8.5 (Job `firebird`) | noch nicht |
+| DuckDB | `ffi` (mit `ffi.enable=true` für das Web) und `libduckdb` | `duckdb` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung; die DuckDB-Quelle von SQLI Import (Parquet-, CSV-, JSON- und DuckDB-Dateien) | Linux (`libduckdb.so`); Windows und macOS nicht getestet | Live-Tests auf DuckDB 1.5.6 und 2.0.1 und eine ganz installierte Site (Job `duckdb`) | noch nicht; kein eingebauter Sicherungspunkt (unten) |
+| IBM Db2, IBM Informix | `pdo_ibm` oder `ibm_db2` (PECL) mit dem Data Server Driver von IBM; Informix braucht für eine Site `ibm_db2` | `db2`, `informix` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung | Linux | Live-Tests auf Db2 12.1 und 11.5 sowie Informix 15 und 14.10 (Job `db2`) | noch nicht |
+| ODBC | `pdo_odbc` oder `odbc` und der ODBC-Treiber der Datenbank | `odbc` | eine Datentabellen-Verbindung; SQL-Quelle über eine benannte Verbindung; `exp:access:import` in sie hinein | Linux, Windows | Live-Tests auf SQL Server, PostgreSQL, MariaDB und SQLite, beide Schichten (Job `odbc`); LocalDB unter Windows | entfällt |
+| MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine (x64); Linux: die Programme von MDBTools (nur Import) | `msaccess` (Windows) | `exp:access:import`; SQL-Quelle über eine benannte Verbindung (Windows) | Windows (Treiber und Import), Linux und macOS (Import mit MDBTools) | der Import unter Linux; Treiber und Import auf windows-2022 und windows-2025 (Job `msaccess-windows`) | entfällt |
 | libSQL (sqld), Turso | `curl` (oder `allow_url_fopen`); `sqlite3` nicht nötig | `libsql`, `turso` | eine Datentabellen-Verbindung | Linux (sqld in einem Container); die PHP-Seite auf jedem System mit curl | Tests ohne Server, Live-Tests auf sqld 0.24.33 und eine ganze Site installiert (Job `libsql`); Turso nicht getestet | noch nicht; kein eingebauter Sicherungspunkt (unten) |
-| IBM Db2, IBM Informix | `pdo_ibm` oder `ibm_db2` (PECL) mit dem Data Server Driver von IBM; Informix braucht für eine Site `ibm_db2` | `db2`, `informix` | eine Datentabellen-Verbindung | Linux | Live-Tests auf Db2 12.1 und 11.5 sowie Informix 15 und 14.10 (Job `db2`) | noch nicht |
-| ODBC | `pdo_odbc` oder `odbc` und der ODBC-Treiber der Datenbank | `odbc` | eine Datentabellen-Verbindung; `exp:access:import` in sie hinein | Linux, Windows | Live-Tests auf SQL Server, PostgreSQL, MariaDB und SQLite, beide Schichten (Job `odbc`); LocalDB unter Windows | entfällt |
-| MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine (x64); Linux: die Programme von MDBTools (nur Import) | `msaccess` (Windows) | `exp:access:import` | Windows (Treiber und Import), Linux und macOS (Import mit MDBTools) | der Import unter Linux; Treiber und Import auf windows-2022 und windows-2025 (Job `msaccess-windows`) | entfällt |
 | Cassandra, ScyllaDB | PHP 8.1 und die Bibliothek `mroosz/php-cassandra` (keine Erweiterung) | `cassandra`, `scylladb` | eine Datentabellen-Verbindung; `exp:cassandra:import` eines Keyspace | Linux | Live-Tests auf Cassandra 5.0 und ScyllaDB 2025.1, PHP 8.1 und 8.5 (Job `cassandra`) | entfällt |
 
 Die Tests des Aktualisierungswerkzeugs sind in seiner eigenen Dokumentation beschrieben; eine Aktualisierung von 6.0.14
@@ -211,11 +213,12 @@ Millisekunden; deshalb braucht eine Seite mit Hunderten von Anweisungen auf dies
 Die Datenbank muss die DFS-Metadaten der Dateien für alle Webserver halten: **PostgreSQL** (empfohlen),
 **MariaDB/MySQL**, **Oracle**, **SQL Server/Azure SQL** oder **MongoDB**, jede mit ihrem Backend im Kernel. TiDB,
 Vitess und SingleStore liefen über das MySQL-Backend als DFS-Cluster aus einem Knoten; bei einem verwalteten Dienst,
-der TLS verlangt, liegen die DFS-Metadaten besser woanders. Nicht für einen Cluster: SQLite (ein Rechner), DuckDB (ein
-schreibender Prozess, eine lokale Dateisperre), Firebird (noch kein Backend), die Datenbanken mit dem
-PostgreSQL-Protokoll (kein Backend in `exp:cluster:enable`). Einen **libSQL-Server** können sich mehrere Webserver für die
-Tabellen der Site teilen, er hält aber keine DFS-Metadaten: die Dateien in ein geteiltes Verzeichnis legen, oder die
-DFS-Metadaten in eine der Datenbanken oben.
+der TLS verlangt, liegen die DFS-Metadaten besser woanders. CockroachDB und YugabyteDB haben die DFS-Prüfungen über das
+PostgreSQL-Backend bestanden; Neon, Supabase und Aurora PostgreSQL verwenden dasselbe Backend, ungetestet. Nicht für
+einen Cluster: SQLite (ein Rechner), DuckDB (ein schreibender Prozess, eine lokale Dateisperre), Firebird (noch kein
+Backend), Spanner (hält keine Site). Einen **libSQL-Server** können sich mehrere
+Webserver für die Tabellen der Site teilen, er hält aber keine DFS-Metadaten: die Dateien in ein geteiltes Verzeichnis
+legen, oder die DFS-Metadaten in eine der Datenbanken oben.
 
 ### Eine verwaltete Cloud-Datenbank
 
@@ -228,7 +231,7 @@ DFS-Metadaten in eine der Datenbanken oben.
 | Neon, Supabase | `neon`, `supabase` | Profile, **ungetestet**; über eine direkte Verbindung oder einen Session-Pooler installieren |
 | PlanetScale | `vitess` (`planetscale`) | auf Vitess gemessen; Transaktionen über 20 s werden abgebrochen, also anderswo installieren und importieren |
 | TiDB Cloud, SingleStore Helios | `tidb`, `singlestore` | auf den selbst betriebenen Servern gemessen; TLS mit `--db-ssl=verify` |
-| CockroachDB, YugabyteDB (selbst betrieben oder in der Cloud) | `cockroachdb`, `yugabytedb` | je auf einem Knoten gemessen; langsame DDL, kein DFS-Backend |
+| CockroachDB, YugabyteDB (selbst betrieben oder in der Cloud) | `cockroachdb`, `yugabytedb` | je auf einem Knoten gemessen; langsame DDL; DFS über das PostgreSQL-Backend |
 | Google Cloud Spanner | `spanner` als Datentabellen-Verbindung | keine Site-Datenbank |
 | DataStax Astra DB, ScyllaDB Cloud, Amazon Keyspaces | `cassandra` oder `scylladb` als Datentabellen-Verbindung (TLS) | keine Site-Datenbank; die Dienste selbst nicht ausprobiert |
 | Turso (libSQL in der Cloud) | `turso` | Profil des libSQL-Treibers, **ungetestet** (kein Konto benutzt); dasselbe Protokoll wie beim getesteten sqld, über HTTPS mit einem Token |
@@ -252,7 +255,9 @@ DFS-Metadaten in eine der Datenbanken oben.
   Site als Datentabellen-Verbindungen: Dort werden Tabellen angelegt, gelesen und geschrieben, und Zeilen gelangen über die
   Werkzeuge der Datentabellen in Inhalte.
 - **Die SQL-Quelle von SQLI Import** liest ein einzelnes `SELECT` aus MySQL oder MariaDB, PostgreSQL, SQLite, Oracle
-  oder SQL Server, direkt oder über eine benannte Verbindung einer dieser Engines.
+  oder SQL Server direkt und über eine benannte Verbindung aus jeder relationalen Engine der Datentabellen-Verbindungen
+  (auch den Datenbanken mit dem PostgreSQL- und MySQL-Protokoll, Spanner, Firebird, DuckDB, Db2, Informix, ODBC und
+  MS Access); der Treiber des Kernels öffnet sie, und die Abfrage wird im Dialekt dieser Engine geprüft.
 
 ### Windows
 

@@ -75,8 +75,8 @@ panel does that.
 
 ## Things a bundle must not promise
 
-- **Microsoft SQL Server.** Supported from 6.0.15, but the setup wizard does not offer it and the database must exist
-  before the install: a bundle installs it with `exp:install --db=sqlserver`
+- **Microsoft SQL Server.** Supported from 6.0.15; the setup wizard offers it only when PHP has `sqlsrv` or
+  `pdo_sqlsrv`, and the database must exist before the install: a bundle installs it with `exp:install --db=sqlserver`
   ([Database support](../database-support.md#7-microsoft-sql-server-and-azure-sql)).
 - **Several web servers on one SQLite file.** "Several web servers on one database: no" for SQLite.
 - **Untested combinations.** CI tests PostgreSQL 15 and MySQL 8.0 and the drivers' unit tests; test the database your

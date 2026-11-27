@@ -29,7 +29,7 @@ Architekturentscheidung braucht.
 > zusätzlicher Arbeit möglich.
 
 Alle sieben haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung
-und einen Weg in den Kommandozeilen-Installern; alle außer SQL Server haben auch einen Eintrag im Einrichtungsassistenten. Die Reihenfolge ist eine Empfehlung für neue Websites, keine Rangfolge
+und einen Weg in den Kommandozeilen-Installern; alle haben auch einen Eintrag im Einrichtungsassistenten (SQL Server mit `sqlsrv` oder `pdo_sqlsrv`). Die Reihenfolge ist eine Empfehlung für neue Websites, keine Rangfolge
 der Qualität ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 
 ## Für Ingenieure verglichen

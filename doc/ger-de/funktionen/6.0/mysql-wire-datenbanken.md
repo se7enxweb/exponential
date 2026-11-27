@@ -50,7 +50,7 @@ TiDB 6.5 und später, selbst betrieben oder TiDB Cloud (mit `SSL=verify`). Gemes
 
 | Geht | Geht nicht oder anders |
 |---|---|
-| eine ganze Site: `exp:install --db=tidb`, der Einrichtungsassistent über den Kickstarter (`Type=tidb`) | `BEGIN WORK` wird abgelehnt: der Treiber schickt `BEGIN` |
+| eine ganze Site: `exp:install --db=tidb`, der Kickstarter (`Type=tidb`), der Einrichtungsassistent | `BEGIN WORK` wird abgelehnt: der Treiber schickt `BEGIN` |
 | Fremdschlüssel, durchgesetzt (TiDB 8.5) | `LOCK IN SHARE MODE` und `FOR SHARE` werden abgelehnt: der Treiber schickt `FOR UPDATE`, das mehr sperrt, nie weniger |
 | Transaktionen, Savepoints | die Isolationsstufen `READ UNCOMMITTED` und `SERIALIZABLE` werden abgelehnt; `READ COMMITTED` und `REPEATABLE READ` (Snapshot) gehen |
 | `AUTO_INCREMENT` in MySQLs Reihenfolge: neue Tabellen bekommen `AUTO_ID_CACHE=1` | ohne das sind IDs eindeutig, aber je TiDB-Server zwischengespeichert: über mehrere Server nicht in Einfügereihenfolge |
@@ -204,8 +204,8 @@ EXP_INSTALL_DB_PASSWORD=geheim ./console exp:install --apply --db=singlestore --
 `--db=` nimmt `tidb`, `vitess` (oder `planetscale`), `singlestore` (oder `memsql`), `xpand` und `aurora` (oder
 `aurora-mysql`); `--db-ssl` nimmt `enabled` oder `verify`, `--db-ssl-ca` eine CA-Datei. Der Kickstarter nimmt dieselben
 Namen als `[database_choice] Type` und `SSL` und `SSLCA` in `[database_init]`. Der Einrichtungsassistent im Browser
-zeigt die Datenbankarten, deren PHP-Erweiterung er findet, und das ist für alle diese die von MySQL: sie über den
-Kickstarter oder `exp:install` wählen.
+führt TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand und Amazon Aurora MySQL nach MySQL auf, wenn PHP `mysqli`
+hat (TiDB mit vorgetragenem Port 4000); TLS (`SSL`, `SSLCA`) setzen Sie über den Kickstarter oder `exp:install`.
 
 Gemessen am 26.11.2026, das Site-Paket `sevenx_multisite` mit seinen Demo-Inhalten, PHP 8.5, jede Datenbank in einem
 Container mit zwei bis vier Kernen, auf einem mit anderer Arbeit ausgelasteten Rechner (die Zeiten sind schlecht

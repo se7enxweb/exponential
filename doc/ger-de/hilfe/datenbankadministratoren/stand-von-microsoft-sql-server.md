@@ -88,7 +88,8 @@ erste Release mit dem Treiber.
 
 ## Was noch fehlt
 
-- Der Setup-Assistent im Browser führt SQL Server nicht auf; verwenden Sie den Kickstarter oder `exp:install`.
+- Der Setup-Assistent im Browser führt SQL Server nur auf, wenn sein PHP `sqlsrv` oder `pdo_sqlsrv` hat; mit nur
+  `pdo_odbc` oder `pdo_dblib` verwenden Sie den Kickstarter oder `exp:install`.
 - Keine Dateien in `update/database/` für SQL Server; das Schema ist `kernel/sql/sqlserver/kernel_schema.sql`.
 - `pdo_dblib` ist nur durch die Tests ohne Server abgedeckt.
 

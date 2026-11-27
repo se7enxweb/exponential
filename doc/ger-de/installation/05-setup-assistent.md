@@ -195,7 +195,7 @@ Die kritischen Tests stehen in `settings/site.ini [SetupSettings] CriticalTests`
 |---|---|---|
 | `directory_permissions` | der Webserver kann die aufgeführten Verzeichnisse beschreiben | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` und seine Unterverzeichnisse, `var/log`, `var/storage`, `var/storage/original`, `var/storage/reference`, `var/storage/variations`, `var/autoload` |
 | `phpversion` | die PHP-Version | `[phpversion] MinimumVersion` |
-| `database_extensions` | mindestens eine Datenbank-Extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2`, `Require=one` |
+| `database_extensions` | mindestens eine Datenbank-Extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one`; `ffi` zählt nur mit `ffi.enable=true` |
 | `image_conversion` | GD oder ImageMagick | `[image_conversion] TestList=imagegd_extension;imagemagick_program`, `Require=one` |
 | `safe_mode`, `magic_quotes_runtime` | veraltete PHP-Einstellungen, die ausgeschaltet sein müssen | |
 | `memory_limit` | `memory_limit` | `[memory_limit] MinMemoryLimit=64M` (`-1` besteht) |
@@ -217,7 +217,8 @@ Erläuterung (`design/standard/templates/setup/tests/
 Verzeichnisberechtigungen“, sagt „Exponential kann einige wichtige Verzeichnisse nicht anlegen. Ohne diese Einstellung
 kann die Installation nicht abgeschlossen werden.“, listet „Die betroffenen Verzeichnisse sind: ...“ auf und gibt
 fertige **Shell-Befehle** an (sowie **Alternative Shell-Kommandos** für den Fall, dass Sie den Eigentümer nicht ändern
-können).
+können). Jede Datenbankerweiterung, die die Prüfung als fehlend melden kann (`sqlsrv`, `pdo_sqlsrv`, `oci8`,
+`pdo_firebird`, `pdo_ibm`, `ibm_db2`, `ffi` und die übrigen), hat eine eigene Erklärung.
 
 | Feld | Formularname | Wirkung |
 |---|---|---|
@@ -286,12 +287,15 @@ Systemtest gefunden hat, beschränkt auf diejenigen, die der Installer kennt (`e
 | `db2`, `informix` | IBM Db2, IBM Informix (angezeigt, wenn `pdo_ibm` oder `ibm_db2` geladen ist) | der Typ | siehe ihre Seiten |
 | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` | CockroachDB, YugabyteDB, Neon (PostgreSQL), Supabase (PostgreSQL), Amazon Aurora PostgreSQL; nach PostgreSQL aufgeführt, wenn `pgsql` geladen ist | der Typ | 23.2, 11.2, 14.0, 14.0, 13.0 |
 
-Die Zuordnung enthält auch `sqlserver`, `duckdb` und die Datenbanken des MySQL-Protokolls (`tidb`, `vitess`,
-`singlestore`, `xpand`, `aurora`), aber die Liste zeigt sie nicht: Die Erweiterungen von SQL Server (`sqlsrv`,
-`pdo_sqlsrv`) bestehen die Systemprüfung, ohne einen eigenen Typ zu liefern, DuckDB hat keine eigene PHP-Erweiterung,
-und die Datenbanken des MySQL-Protokolls teilen sich `mysqli` mit MySQL. Installieren Sie sie mit dem Kickstarter (dessen
-`Type=` jeden Eintrag der Zuordnung erreicht) oder mit `exp:install` ([Kapitel 6](06-kickstarter.md),
-[Kapitel 7](07-installation-ueber-die-konsole.md)).
+| `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` | TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Amazon Aurora MySQL; nach MySQL aufgeführt, wenn `mysqli` geladen ist | der Typ | 5.7.25, 5.7.0, 5.7.0, 5.0.45, 8.0.0 |
+| `sqlserver` | Microsoft SQL Server (angezeigt, wenn `sqlsrv` oder `pdo_sqlsrv` geladen ist) | `sqlserver` | 14.0 |
+| `duckdb` | DuckDB (angezeigt, wenn FFI verwendet werden darf: `ffi.enable=true`; braucht außerdem `libduckdb`, `[DuckDBSettings] Library`) | `duckdb` | 1.5 |
+
+Jede Datenbank, auf der der Kernel eine Site installieren kann, steht in dieser Liste, wenn PHP ihre Erweiterung hat.
+`ffi.enable=preload`, der PHP-Standard, erlaubt FFI nur auf der Kommandozeile: Der Assistent im Web zählt `ffi` dann
+nicht und bietet DuckDB nicht an. Installieren Sie DuckDB dann mit `exp:install` oder dem Kickstarter
+([Kapitel 6](06-kickstarter.md), [Kapitel 7](07-installation-ueber-die-konsole.md)), oder setzen Sie
+`ffi.enable=true` im Pool des Web-PHP.
 
 **Bildschirm.** „Datenbanksystem auswählen“, „Auf Ihrem System wurde Unterstützung für die folgenden Datenbanksysteme
 erkannt:“, „Bitte wählen Sie das Datenbanksystem, das Sie verwenden möchten.“ und eine Liste mit Optionsfeldern. Das
@@ -324,8 +328,8 @@ Für einen Datenbankserver:
 | Feld | Formularname | Standardwert (`setup.ini [DatabaseSettings]`) |
 |---|---|---|
 | Servername | `eZSetupDatabaseServer` | `DefaultServer=localhost` |
-| Port | `eZSetupDatabasePort` | `DefaultPort` (leer), `DefaultPort_pgsql=5432` |
-| Benutzername | `eZSetupDatabaseUser` | `DefaultUser=root`, `DefaultUser_pgsql=postgres` |
+| Port | `eZSetupDatabasePort` | `DefaultPort` (leer), `DefaultPort_pgsql=5432`, `DefaultPort_sqlserver=1433`, `DefaultPort_tidb=4000`, `DefaultPort_cockroachdb=26257`, `DefaultPort_yugabytedb=5433` |
+| Benutzername | `eZSetupDatabaseUser` | `DefaultUser=root`, `DefaultUser_pgsql=postgres`, `DefaultUser_sqlserver=sa`, `DefaultUser_yugabytedb=yugabyte` |
 | Passwort | `eZSetupDatabasePassword` | `DefaultPassword` (leer) |
 | Name der Datenbank | `eZSetupDatabaseName` | `DefaultName=exponential` |
 | Socket (optional) | `eZSetupDatabaseSocket` | leer; „Falls Sie MySQL nutzen und nicht wissen, was Sie in das Socket-Feld eintragen sollen, lassen Sie es leer“ |
@@ -336,6 +340,9 @@ Für SQLite gibt es ein einziges Feld, **Name der Datenbankdatei** (`eZSetupData
 Text „SQLite hält die gesamte Datenbank in einer Datei im Verzeichnis var/storage/sqlite3 dieser Installation. Es
 benötigt keinen Server, Benutzer oder Passwort. Die Datei wird angelegt, falls sie nicht existiert; enthält sie bereits
 Tabellen, fragt die Seite mit den Website-Details, was damit geschehen soll.“
+
+Für DuckDB fragt die Seite ebenso nur nach einem Dateinamen (`DefaultName_duckdb=exponential.duckdb`, abgelegt in
+`var/storage/duckdb`); Server, Benutzer und Passwort gibt es nicht.
 
 **Prüfung.** Ein Druck auf **Weiter** verbindet sich mit den angegebenen Werten mit der Datenbank:
 

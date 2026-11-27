@@ -47,8 +47,8 @@ Jede Zeile wird unten mit ihrer Quelle erläutert.
 > SQL (weitere Datenbanken ab 6.0.15: [Eine Datenbank wählen](../datenbank-waehlen.md)).
 > ([Datenbankunterstützung](../datenbankunterstuetzung.md))
 
-Alle sieben haben einen Treiber und einen Weg in den Installern für die Kommandozeile; alle außer SQL Server haben
-auch einen Eintrag im Setup-Assistenten ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
+Alle sieben haben einen Treiber und einen Weg in den Installern für die Kommandozeile; alle haben
+auch einen Eintrag im Setup-Assistenten (SQL Server mit `sqlsrv` oder `pdo_sqlsrv`) ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 
 ### Entscheidungstabelle
 

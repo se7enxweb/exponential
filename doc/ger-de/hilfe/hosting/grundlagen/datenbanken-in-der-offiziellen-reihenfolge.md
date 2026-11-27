@@ -33,7 +33,7 @@ das Kapitel für den Betrieb ist [Kapitel 9, Datenbanken](../../../installation/
 > Datenbanken ab 6.0.15: [Eine Datenbank wählen](../../datenbank-waehlen.md)).
 
 Alle sieben haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung
-und einen Weg in den Installern für die Kommandozeile ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)); alle außer SQL Server haben auch einen Eintrag im Setup-Assistenten.
+und einen Weg in den Installern für die Kommandozeile ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)); alle haben auch einen Eintrag im Setup-Assistenten (SQL Server mit `sqlsrv` oder `pdo_sqlsrv`).
 Die Reihenfolge ist die Reihenfolge der Empfehlung für neue Websites; sie bedeutet nicht, dass die späteren weniger gut
 funktionieren. Microsoft SQL Server läuft ab 6.0.15 ([Stand von Microsoft SQL Server](stand-von-microsoft-sql-server.md)); die übrigen
 Datenbanken von 6.0.15 stehen auf [Eine Datenbank wählen](../../datenbank-waehlen.md).

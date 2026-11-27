@@ -19,13 +19,21 @@ Never edit `settings/setup.ini` itself: an update replaces it. Put the settings 
 
 ## Extensions
 
-Default: `sqlite3;mysqli;pgsql;mongodb;oci8`.
+> The PHP extensions of the databases the wizard can install a site on; one is  
+> enough. mysqli also gives the databases of the MySQL protocol (TiDB, Vitess,  
+> SingleStore, Xpand, Aurora MySQL), pgsql those of the PostgreSQL protocol  
+> (CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL), sqlsrv or  
+> pdo\_sqlsrv SQL Server, pdo\_firebird Firebird, pdo\_ibm or ibm\_db2 Db2 and  
+> Informix, and ffi DuckDB (with ffi.enable=true: preload, PHP's default,  
+> allows FFI on the command line only, and libduckdb, see \[DuckDBSettings\]).  
+
+Default: `sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/setup.ini.append.php
 [database_extensions]
-Extensions=sqlite3;mysqli;pgsql;mongodb;oci8
+Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi
 */ ?>
 ```
 

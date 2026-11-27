@@ -44,7 +44,7 @@ SQLite-Treiber zum Beispiel protokolliert "SQLite3 extension was not found, the 
 
 ```ini
 [database_extensions]
-Extensions=sqlite3;mysqli;pgsql;mongodb;oci8
+Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi
 Require=one
 ```
 
@@ -102,8 +102,10 @@ sich zur Laufzeit nicht ändern ([Oracle: persistente Verbindungen, DRCP und Tun
 | ODBC | `pdo_odbc` (Standard) oder `odbc` | kommen mit PHP; unixODBC und der ODBC-Treiber der Datenbank (`odbc-postgresql`, `odbc-mariadb`, `libsqliteodbc`, `msodbcsql18`) |
 | MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine 2016 x64; Linux: keine, der Import ruft die Programme von MDBTools auf | das Redistributable von Microsoft; `mdbtools` 0.9 oder neuer |
 
-Der kritische Test des Setup-Assistenten besteht auch mit `pdo_firebird` (`setup.ini [database_extensions]`), und mit
-`sqlsrv` oder `pdo_sqlsrv`, ohne SQL Server in seiner Liste anzubieten. Prüfen Sie jedes PHP, das die Site ausführt,
+Der kritische Test des Setup-Assistenten besteht auch mit `pdo_firebird`, `sqlsrv`, `pdo_sqlsrv` oder `ffi`
+(`setup.ini [database_extensions]`), und seine Liste bietet dann Firebird, SQL Server oder DuckDB an. `ffi` zählt nur,
+wo der Prozess FFI verwenden darf (`ffi.enable=true`); mit dem Standard `preload` bietet der Assistent im Web DuckDB
+also nicht an. Prüfen Sie jedes PHP, das die Site ausführt,
 wie oben. [Eine Datenbank wählen](../datenbank-waehlen.md) enthält die Matrix aller Datenbanken.
 
 ## Checkliste

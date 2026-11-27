@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # setup.ini
 
-The shipped settings of `settings/setup.ini`: 24 blocks, 55 settings.
+The shipped settings of `settings/setup.ini`: 24 blocks, 64 settings.
 
 > Exponential configuration file for eZ Setup  
 >
@@ -49,7 +49,7 @@ The shipped settings of `settings/setup.ini`: 24 blocks, 55 settings.
 | [xsl_extension](xsl_extension.md) | 2 |
 | [intl_extension](intl_extension.md) | 2 |
 | [imagemagick_program](imagemagick_program.md) | 6 |
-| [DatabaseSettings](DatabaseSettings.md) | 11 |
+| [DatabaseSettings](DatabaseSettings.md) | 20 |
 | [DemoSettings](DemoSettings.md) | 1 |
 | [SiteTemplates](SiteTemplates.md) | 3 |
 

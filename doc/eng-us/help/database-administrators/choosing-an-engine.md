@@ -94,7 +94,7 @@ Database size is rarely the reason. SQLite handles databases far larger than an 
 - **It runs Firebird 4 or 5**: a whole site, on one web server (no DFS backend), with PHP 8.4 or later.
 - **It runs TiDB, Vitess/PlanetScale or SingleStore**: a whole site and the MySQL DFS backend, measured; mind the
   transaction timeout of Vitess and the reference tables of SingleStore.
-- **It runs CockroachDB or YugabyteDB**: a whole site, measured; slow DDL, no DFS backend.
+- **It runs CockroachDB or YugabyteDB**: a whole site, measured; slow DDL; DFS through the PostgreSQL backend.
 - **It buys Aurora, Neon, Supabase or Xpand**: profiles written from the vendors' documentation, **untested**.
 - **It wants DuckDB**: one writer at a time; a demo, a read-mostly site, or analytics beside another database.
 - **It has data in Access, Spanner or behind an ODBC driver**: import it, or read it as a data table connection.

@@ -44,10 +44,10 @@ use. So a tool in this table may be missing from your menus: then it is not acti
 
 | The data is in | Read it with |
 |---|---|
-| MySQL or MariaDB, PostgreSQL, SQLite, Oracle, SQL Server | Imports' **SQL** source: one `SELECT`, read-only, directly (`pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `oci8`, `pdo_sqlsrv`/`pdo_dblib`/PDO_ODBC) or through a named connection of one of these engines (a MySQL protocol database counts as `mysql`) |
+| MySQL or MariaDB, PostgreSQL, SQLite, Oracle, SQL Server | Imports' **SQL** source: one `SELECT`, read-only, directly (`pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `oci8`, `pdo_sqlsrv`/`pdo_dblib`/PDO_ODBC) or through a named connection (**Setup > Data tables > Connections**) of every engine of the data table connections |
 | Parquet, CSV or JSON files, or a DuckDB database file | Imports' **DuckDB** source (the `duckdb` program or FFI with `libduckdb`) |
 | MongoDB; a Supabase project (its REST API) | Imports' **MongoDB** and **Supabase** sources |
-| Firebird, Spanner, CockroachDB, YugabyteDB, any database behind an ODBC driver | a **data table connection** of that engine, then a synchronisation into content (Imports' SQL source does not take these engines) |
+| Firebird, Spanner, CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL, the MySQL protocol databases, DuckDB, IBM Db2, IBM Informix, any database behind an ODBC driver, MS Access | a **data table connection** of that engine: Imports' **SQL** source reads it through the named connection (opened by the kernel's driver, the query checked in that engine's dialect; DuckDB also refuses file and URL reading functions and a quoted file name in `FROM`), or a synchronisation into content |
 | An MS Access file | **`exp:access:import`** into the site's database or a data table connection |
 
 Which database reaches a site how: [Choosing a database](choosing-a-database.md#analytics-reporting-and-imports).

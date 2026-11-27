@@ -229,6 +229,15 @@ MySQL 8.0 passed the 21 that apply (the two left out are times after 2038, which
 and the bounded lock wait, which MySQL leaves to its own `innodb_lock_wait_timeout`). GitHub Actions runs the same
 on every push (job "DFS cluster backends" of `.github/workflows/phpunit.yml`, PostgreSQL 13 to 19).
 
+**The PostgreSQL protocol databases.** `exp:cluster:enable` gives CockroachDB, YugabyteDB, Neon, Supabase and Aurora
+PostgreSQL this backend, on the site's own database. On CockroachDB the schema is created without `text_pattern_ops`
+(CockroachDB allows operator classes only on inverted and vector indexes; its text indexes compare bytes, so the plain
+index serves the prefix searches). CockroachDB v25.2.4 passed all 26 checks that apply (`expCockroachDBDFSClusterLiveTest`);
+YugabyteDB 2.25.2 passed with two measured differences (`expYugabyteDBDFSClusterLiveTest`): `lock_timeout` is not
+applied, so a store waits for a held row lock instead of giving up, and under a race a cache file can be generated twice
+one after the other. Neon, Supabase and Aurora PostgreSQL are untested. Details:
+[Databases of the PostgreSQL wire protocol](postgresql-wire-databases.md#cluster).
+
 ## More engines: Oracle, MongoDB and SQLite
 
 The kernel now has what a further engine needs: the contract `expDFSFileHandlerDBBackendInterface` and the parity

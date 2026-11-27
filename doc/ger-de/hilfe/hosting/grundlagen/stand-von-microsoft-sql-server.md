@@ -35,7 +35,7 @@ haben keinen SQL-Server-Treiber: Ein Kunde mit einem älteren Release aktualisie
 | Server | SQL Server 2017, 2019, 2022 und 2025; Azure SQL Database und Azure SQL Managed Instance. Nicht SQL Server 2016 und älter, nicht Azure SQL Edge (von Microsoft eingestellt) |
 | PHP-Schichten | `sqlsrv` von Microsoft (empfohlen) oder `pdo_sqlsrv`, PHPs `pdo_odbc` mit ODBC Driver 17 oder 18, oder `pdo_dblib` über FreeTDS |
 | Betriebssysteme | Linux und Windows; SQL Server Express und LocalDB genügen für die Entwicklung |
-| Installer | der Kickstarter (`Type=sqlserver`) und `exp:install --db=sqlserver`; der Setup-Assistent im Browser bietet ihn nicht an |
+| Installer | der Kickstarter (`Type=sqlserver`), `exp:install --db=sqlserver` und der Setup-Assistent im Browser (mit `sqlsrv` oder `pdo_sqlsrv`) |
 | Mehrere Webserver | ja: das DFS-Cluster-Backend `expDFSFileHandlerSQLServerBackend`; Lesereplikate über Always On |
 | Tests | bei jedem Push gegen SQL Server 2017, 2019, 2022 und 2025 über drei PHP-Schichten, PHP 8.1 bis 8.5, und LocalDB unter Windows |
 
@@ -53,7 +53,8 @@ haben keinen SQL-Server-Treiber: Ein Kunde mit einem älteren Release aktualisie
 
 ## Was noch nicht geht
 
-- Der Setup-Assistent im Browser führt SQL Server nicht auf: Installieren Sie mit dem Kickstarter oder `exp:install`.
+- Der Setup-Assistent im Browser führt SQL Server nur auf, wenn sein PHP `sqlsrv` oder `pdo_sqlsrv` hat; mit nur
+  `pdo_odbc` oder `pdo_dblib` installieren Sie mit dem Kickstarter oder `exp:install`.
 - Eine Aktualisierung von einem älteren Release wurde auf SQL Server noch nicht getestet: 6.0.15 ist das erste
   Release mit dem Treiber.
 - Keine Dateien in `update/database/` für SQL Server: Das Schema liegt in `kernel/sql/sqlserver/`.

@@ -33,7 +33,7 @@ geprüft wurde.
 > Datenbanken ab 6.0.15: [Eine Datenbank wählen](../datenbank-waehlen.md)).
 
 Alle sieben haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung
-und einen Weg in den Kommandozeilen-Installern; alle außer SQL Server haben auch einen Eintrag im Einrichtungsassistenten. Die Reihenfolge ist eine Empfehlung für neue Websites, keine Rangliste der
+und einen Weg in den Kommandozeilen-Installern; alle haben auch einen Eintrag im Einrichtungsassistenten (SQL Server mit `sqlsrv` oder `pdo_sqlsrv`). Die Reihenfolge ist eine Empfehlung für neue Websites, keine Rangliste der
 Qualität. MySQL steht zuletzt, weil das Projekt die anderen zuerst empfiehlt, nicht weil es schlechter funktioniert
 ([Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 

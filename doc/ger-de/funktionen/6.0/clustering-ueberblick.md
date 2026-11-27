@@ -109,11 +109,15 @@ dieselben Paritätsprüfungen:
 (`exp:cluster:enable` ordnet ihr `DatabaseImplementation` `mysqli` zu); auf jeder wurde ein Cluster aus einem Knoten
 gemessen. Die eigene `mysqli`-Verbindung des Backends hat kein TLS; bei PlanetScale, TiDB Cloud und SingleStore Helios
 liegen die Metadaten daher besser in einer anderen Datenbank. Xpand und Aurora MySQL werden demselben Backend
-zugeordnet, sind aber ungetestet. **Kein** DFS-Backend gibt es für Firebird (pdo_firebird kann eine Sperrwartezeit nicht
-begrenzen), DuckDB (ein schreibender Prozess, eine lokale Dateisperre), ODBC, MS Access und Spanner, und
-`exp:cluster:enable` bietet keins für CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL an; deren Sites
-können die Cluster-Metadaten trotzdem in einer anderen Datenbank der Tabelle oben halten
-([Eine Datenbank wählen](../../hilfe/datenbank-waehlen.md)).
+zugeordnet, sind aber ungetestet. CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL nehmen das
+PostgreSQL-Backend (`dfspostgresql`), mit seinen Tabellen in der eigenen Datenbank der Site und ohne Einstellung `Port`
+mit dem Port der Datenbank (CockroachDB 26257, YugabyteDB 5433). Es hat die DFS-Prüfungen live auf CockroachDB 25.2 und
+YugabyteDB 2.25 bestanden (auf YugabyteDB wird `lock_timeout` nicht angewandt, ein Speichern wartet also auf eine
+gehaltene Zeilensperre); Neon, Supabase und Aurora PostgreSQL werden ebenso zugeordnet, sind aber ungetestet
+([Datenbanken mit dem PostgreSQL-Protokoll](postgresql-wire-datenbanken.md#cluster)). **Kein** DFS-Backend gibt es für
+Firebird (pdo_firebird kann eine Sperrwartezeit nicht begrenzen), DuckDB (ein schreibender Prozess, eine lokale
+Dateisperre), ODBC, MS Access und Spanner; eine Site auf Firebird oder DuckDB kann die Cluster-Metadaten trotzdem in
+einer anderen Datenbank der Tabelle oben halten ([Eine Datenbank wählen](../../hilfe/datenbank-waehlen.md)).
 
 Die Datenbank der Website und die Cluster-Metadaten sind getrennte Entscheidungen: Eine Website auf MySQL kann ihre
 Cluster-Metadaten in PostgreSQL halten und umgekehrt. Die Einstellungen, die auf jedem SQL-Backend zählen:

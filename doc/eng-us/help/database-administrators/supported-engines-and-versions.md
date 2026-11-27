@@ -31,8 +31,8 @@ against the code and the continuous integration of the 6.0.15 line.
 > 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL Server and Azure SQL (more databases from 6.0.15:
 > [Choosing a database](../choosing-a-database.md)).
 
-All seven have a driver in the kernel or in a shipped extension and a path in the command-line installers; all but SQL Server have an
-entry in the setup wizard. The order is a recommendation for new sites; it is not a ranking of quality. MySQL is last
+All seven have a driver in the kernel or in a shipped extension and a path in the command-line installers; all of them also have an
+entry in the setup wizard (SQL Server with `sqlsrv` or `pdo_sqlsrv`). The order is a recommendation for new sites; it is not a ranking of quality. MySQL is last
 because the project recommends the others first, not because it works less well
 ([Database support](../database-support.md#the-supported-databases-in-order)).
 

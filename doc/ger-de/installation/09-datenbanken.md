@@ -1151,7 +1151,7 @@ EXP_INSTALL_DB_PASSWORD=geheim ./console exp:install --apply --db=sqlserver --db
 ```
 
 Der Kickstarter nimmt `Type=sqlserver` mit `Encrypt` und `TrustServerCertificate`; der Setup-Assistent im Browser
-führt SQL Server nicht auf. Lesereplikate: Always On mit `ApplicationIntent=ReadOnly`. Mehrere Webserver: das
+führt SQL Server auf, wenn PHP `sqlsrv` oder `pdo_sqlsrv` hat (Port 1433 und Benutzer `sa` vorgetragen). Lesereplikate: Always On mit `ApplicationIntent=ReadOnly`. Mehrere Webserver: das
 DFS-Backend `expDFSFileHandlerSQLServerBackend` (`exp:cluster:enable --backend=sqlserver`). Sicherungen:
 `BACKUP DATABASE`; die eigene Sicherheitskopie der Aktualisierung hat keinen Dump für SQL Server, führen Sie
 Aktualisierungen also nach Ihrer Sicherung mit `--no-backup` aus. Einzelheiten:
@@ -1182,7 +1182,7 @@ EXP_INSTALL_DB_PASSWORD=geheim ./console exp:install --apply --db=singlestore --
 Legen Sie die Datenbank (auf Vitess und PlanetScale den Keyspace) zuerst an. Auf Vitess erhöhen Sie für die
 Installation das Transaktions-Timeout des Tablets (`--queryserver-config-transaction-timeout`); PlanetScale bricht
 Transaktionen nach 20 Sekunden ab, also anderswo installieren und importieren. Kickstarter: `Type=tidb` ... mit `SSL`
-und `SSLCA`; der Setup-Assistent führt sie nicht auf.
+und `SSLCA`; der Setup-Assistent führt sie nach MySQL auf, wenn PHP `mysqli` hat (TiDB mit Port 4000).
 [Datenbanken, die das MySQL-Protokoll sprechen](../funktionen/6.0/mysql-wire-datenbanken.md).
 
 ### Das PostgreSQL-Protokoll: CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL, Spanner
@@ -1191,7 +1191,11 @@ Der PostgreSQL-Treiber mit einem Profil je Datenbank (`cockroachdb`, `yugabytedb
 `aurorapostgresql`, `spanner`), PHPs `pgsql`, `[PostgreSQLWireSettings]` für TLS, Pooler, Wiederholungen und
 Kaltstarts. CockroachDB 25.2 und YugabyteDB 2.25 haben eine ganze Site installiert; **Neon, Supabase und Aurora
 PostgreSQL sind ungetestet** (Profile nach der Dokumentation der Dienste). Spanner hält über PGAdapter
-Datentabellen-Verbindungen und Importe, keine Site. `exp:cluster:enable` bietet für keine von ihnen ein DFS-Backend an.
+Datentabellen-Verbindungen und Importe, keine Site. `exp:cluster:enable` gibt den fünf Site-Datenbanken das
+PostgreSQL-DFS-Backend, mit seinen Tabellen in der eigenen Datenbank der Site und ohne Einstellung `Port` mit dem Port
+der Datenbank (CockroachDB 26257, YugabyteDB 5433). Es hat die DFS-Prüfungen live auf CockroachDB 25.2 und YugabyteDB
+2.25 bestanden (auf YugabyteDB wird `lock_timeout` nicht angewandt); auf Neon, Supabase und Aurora ist es ungetestet.
+Spanner bekommt keinen Cluster.
 
 ```bash
 ./console exp:install --apply --db=cockroachdb --db-host=crdb1 --db-user=root
@@ -1242,7 +1246,8 @@ Threads=2
 ```
 
 Jede Anweisung kostet Millisekunden; lassen Sie den Ansichts-Cache eingeschaltet. Kein DFS-Cluster, keine
-Lesereplikate, kein Setup-Assistent im Browser; die Sicherheitskopie der Aktualisierung hat keinen Dump für DuckDB:
+Lesereplikate. Der Setup-Assistent bietet DuckDB nur an, wo das Web-PHP `ffi.enable=true` hat (er fragt nach einem
+Dateinamen in `var/storage/duckdb`); die Sicherheitskopie der Aktualisierung hat keinen Dump für DuckDB:
 Kopieren Sie die Datei, solange nichts schreibt, oder verwenden Sie `EXPORT DATABASE`.
 [DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md).
 

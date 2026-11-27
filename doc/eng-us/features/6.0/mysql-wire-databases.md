@@ -47,7 +47,7 @@ TiDB 6.5 and later, self-hosted or TiDB Cloud (with `SSL=verify`). Measured on T
 
 | Works | Does not, or differently |
 |---|---|
-| a whole site: `exp:install --db=tidb`, the setup wizard by kickstarter (`Type=tidb`) | `BEGIN WORK` is refused: the driver sends `BEGIN` |
+| a whole site: `exp:install --db=tidb`, the kickstarter (`Type=tidb`), the setup wizard | `BEGIN WORK` is refused: the driver sends `BEGIN` |
 | foreign keys, enforced (TiDB 8.5) | `LOCK IN SHARE MODE` and `FOR SHARE` are refused: the driver sends `FOR UPDATE`, which locks more, never less |
 | transactions, savepoints | isolation levels `READ UNCOMMITTED` and `SERIALIZABLE` are refused; `READ COMMITTED` and `REPEATABLE READ` (snapshot) work |
 | `AUTO_INCREMENT` in MySQL's order: new tables get `AUTO_ID_CACHE=1` | without it, ids are unique but cached per TiDB server: not in insert order across servers |
@@ -199,9 +199,9 @@ EXP_INSTALL_DB_PASSWORD=secret ./console exp:install --apply --db=singlestore --
 
 `--db=` takes `tidb`, `vitess` (or `planetscale`), `singlestore` (or `memsql`), `xpand` and `aurora` (or
 `aurora-mysql`); `--db-ssl` takes `enabled` or `verify`, `--db-ssl-ca` a CA file. The kickstarter takes the same names
-as `[database_choice] Type`, and `SSL` and `SSLCA` in `[database_init]`. The setup wizard in the browser lists the
-database types whose PHP extension it finds, which for all of these is MySQL's: choose them through the kickstarter or
-`exp:install`.
+as `[database_choice] Type`, and `SSL` and `SSLCA` in `[database_init]`. The setup wizard in the browser lists TiDB,
+Vitess / PlanetScale, SingleStore, MariaDB Xpand and Amazon Aurora MySQL after MySQL when PHP has `mysqli` (TiDB with
+port 4000 prefilled); TLS (`SSL`, `SSLCA`) is set through the kickstarter or `exp:install`.
 
 Measured on 2026-11-26, the site package `sevenx_multisite` with its demo content, PHP 8.5, each database in a
 container with two to four cores, on a host busy with other work (the times compare poorly). After each install the

@@ -78,8 +78,8 @@ Ihres Bundles oder Ihr Panel.
 
 ## Was ein Bundle nicht versprechen darf
 
-- **Microsoft SQL Server.** Ab 6.0.15 unterstützt, aber der Setup-Assistent bietet ihn nicht an, und die Datenbank muss
-  vor der Installation bestehen: Ein Bundle installiert ihn mit `exp:install --db=sqlserver`
+- **Microsoft SQL Server.** Ab 6.0.15 unterstützt; der Setup-Assistent bietet ihn nur an, wenn PHP `sqlsrv` oder
+  `pdo_sqlsrv` hat, und die Datenbank muss vor der Installation bestehen: Ein Bundle installiert ihn mit `exp:install --db=sqlserver`
   ([Datenbankunterstützung](../datenbankunterstuetzung.md#7-microsoft-sql-server-und-azure-sql)).
 - **Mehrere Webserver auf einer SQLite-Datei.** "Mehrere Webserver auf einer Datenbank: nein" für SQLite.
 - **Ungetestete Kombinationen.** Die CI testet PostgreSQL 15 und MySQL 8.0 sowie die Unit-Tests der Treiber; testen Sie
