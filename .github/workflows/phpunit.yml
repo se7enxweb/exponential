@@ -894,6 +894,21 @@ jobs:
           coverage: none
           tools: composer:v2
 
+      # setup-php's ":pdo_sqlsrv" left the runner's sqlsrv extensions loaded on PHP 8.5, where pdo_sqlsrv then ended
+      # PHP at start: every ini line that loads an ODBC or SQL Server extension is commented out
+      - name: Unload the ODBC extensions
+        run: |
+          ini="$(php-config --ini-path 2>/dev/null)/php.ini"
+          dir=$(php -n -r 'echo PHP_CONFIG_FILE_SCAN_DIR;')
+          for f in $ini "$dir"/*.ini /etc/php/${{ matrix.php }}/*/conf.d/*.ini /etc/php/${{ matrix.php }}/*/php.ini; do
+            [ -f "$f" ] || continue
+            if grep -qiE '^[[:space:]]*(zend_)?extension[[:space:]]*=[[:space:]]*"?[^";]*(pdo_)?(sqlsrv|odbc)' "$f"; then
+              echo "unloading in $f"
+              sudo sed -i -E 's/^([[:space:]]*(zend_)?extension[[:space:]]*=[[:space:]]*"?[^";]*(pdo_)?(sqlsrv|odbc))/;\1/I' "$f"
+            fi
+          done
+          php -m
+
       - name: Install dependencies
         run: |
           php -m | grep -qi pdo_ibm || { echo "::error::PHP has no pdo_ibm"; exit 1; }
