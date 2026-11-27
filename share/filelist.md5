@@ -26301,7 +26301,7 @@ a573746e35d57fd27c9ed26381984c3a  kernel/private/classes/commands/upgradestatus.
 17ecd5648d56fa50c922a3d5489bf422  kernel/private/classes/commands/upgradeverify.php
 4d5b91dec82d92b0555e75103bcf5260  kernel/private/classes/commands/userlogincheck.php
 87746228d18ed6cf18f1e7948ad5cb70  kernel/private/classes/commands/userpasswordchangerequired.php
-8f248c48c5d283c36102067ac464a4b5  kernel/private/classes/commands/velocity-router.php
+b4a05feb6a5b466c42d5de310c2eee7f  kernel/private/classes/commands/velocity-router.php
 8d78c996e65c0a20e974b652c3f67d70  kernel/private/classes/commands/velocity-warmup.php
 aac65e7fd766d8fa5b4e1f8fd0133409  kernel/private/classes/commands/velocity.php
 459ade5685b7da3718f61d04bfc8f83a  kernel/private/classes/commands/verify_aliases.php
@@ -29882,14 +29882,14 @@ efb4efe29e25709e604f9834704b1252  tests/tests/kernel/classes/imagealias/expImage
 f690141245e50243cc625aa9a60ee8ca  tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php
 b1ebd8ffc99147a968396ff9cbb6990b  tests/tests/kernel/classes/imagealias/fixtures/expimagestagingsource.php
 1aa770e689bd7f16f586ab4e23e4d5f5  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
-f78366b0c8b681d7735a9dbd8ef2242e  tests/tests/kernel/classes/ini/command/IniCommandTest.php
-a89f451926982156b55d15bc9ea0a718  tests/tests/kernel/classes/ini/command/IniMoveTest.php
+9992d90f61eef113b08a5f51cc1a348f  tests/tests/kernel/classes/ini/command/IniCommandTest.php
+0e82df9db451a640f5026229819223fa  tests/tests/kernel/classes/ini/command/IniMoveTest.php
 e12244a691b371cd6a6cd4c582bbce53  tests/tests/kernel/classes/ini/command/RadSurveyIniCommandTest.php
 6c5b7b2df655f40209628787a28f3348  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/classes/iniactionfixture.php
 5221c75de5bbdcc09105177fb33c5bbd  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/settings/ini.ini.append.php
 5939381b57ac0bff4aa4d4bae62c62e4  tests/tests/kernel/classes/ini/command/fixtures/iniroot.php
 1ebdb97a3f7768e00c7fd0790b0d5702  tests/tests/kernel/classes/ini/expIniEditorTest.php
-7ede1e4745b15a2e4d85e7ef4c94d88c  tests/tests/kernel/classes/ini/expIniLoadOrderTest.php
+a449f21b8b5be93a2640702f769190dd  tests/tests/kernel/classes/ini/expIniLoadOrderTest.php
 db641c4b5383f740c64bb611165ca04f  tests/tests/kernel/classes/ini/expIniLocatorTest.php
 a539490d86fd33239173ebcfcbe5cb2a  tests/tests/kernel/classes/ini/expIniRoundTripTest.php
 906ffea11e533a8f0ca6d1ddd88b685a  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
@@ -30860,7 +30860,7 @@ e5529f72cb0fc966c3b8ace307c75a52  tests/tests/lib/ezdbschema/expSchemaFetchTable
 12b3233a1f4a17a2718f3cca0f76a6c8  tests/tests/lib/ezdiff/eZDiffTextEngineTest.php
 d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
 fbe5ed073eff50ecaa865d5ab00505fd  tests/tests/lib/ezfile/eZDirAndFileHandlerTest.php
-99078a0ee4afe4578c64380277936e72  tests/tests/lib/ezfile/eZDirDeletionGuardTest.php
+c5c6803cfb0db5be148e5c2b4e702bfd  tests/tests/lib/ezfile/eZDirDeletionGuardTest.php
 1d19f57a32db94e17baa3c7451571761  tests/tests/lib/ezfile/eZDirTestInsideRootTest.php
 eb2d9c2aa877218d2852b4e392b9c88f  tests/tests/lib/ezfile/eZDirTestOutsideRootTest.php
 33915f5665c5741bdf57d77c40917051  tests/tests/lib/ezfile/eZFileDownloadShortReadTest.php
