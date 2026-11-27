@@ -494,6 +494,9 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'settings/bytes.ini: Password' ), $this->secrets() );
         unlink( $this->dir() . '/settings/bytes.ini' );
 
+        // Windows keeps names in UTF-16: PHP converts the bytes, and the names read back are others
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'Windows keeps file names in UTF-16, so names that are not UTF-8 are not kept as bytes' );
         if ( @file_put_contents( $this->dir() . "/\xFF.key", 'x' ) === false || @file_put_contents( $this->dir() . "/settings/\xFE", "Password=hunter2\n" ) === false )
             $this->markTestSkipped( 'the file system takes UTF-8 names only' );
         // sorted byte by byte: "s" (0x73) before 0xFF
