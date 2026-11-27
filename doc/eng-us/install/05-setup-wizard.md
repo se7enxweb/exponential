@@ -324,12 +324,12 @@ For **libSQL** and **Turso** the page has fields of its own (`eZSetupLibSQLPage`
 
 | Field | Form name | Default (`setup.ini [DatabaseSettings]`) |
 |---|---|---|
-| Mode (libSQL only): a libSQL server, or the embedded file mode | `eZSetupLibSQLMode` (`remote`, `file`) | `DefaultMode_libsql=remote` |
-| Server URL (replaces server name and port: `http://host:port`, `https://host`, `libsql://host`) | `eZSetupLibSQLURL` | empty |
+| Mode (libSQL only): "Remote" (a libSQL server, sqld) or "Local" (the embedded file mode, an SQLite file) | `eZSetupLibSQLMode` (`remote`, `file`) | `DefaultMode_libsql=remote` |
+| URL (replaces server name and port: `http://host:port`, `https://host`, `libsql://host`) | `eZSetupLibSQLURL` | empty |
 | Servername, Port | `eZSetupDatabaseServer`, `eZSetupDatabasePort` | `DefaultServer_libsql=127.0.0.1`, `DefaultPort_libsql=8080`; Turso: port 443 |
-| TLS (https), libSQL only (Turso always uses it) | `eZSetupLibSQLTLS` | on when the port is 443 |
-| CA file (optional, a PEM file's full path) | `eZSetupLibSQLCAFile` | empty: the system's CAs |
-| Auth token | `eZSetupLibSQLToken` (a password field) | empty; Turso needs one |
+| Encryption (TLS, https), libSQL only (Turso always uses it) | `eZSetupLibSQLTLS` | on when the port is 443 |
+| CA: Path (optional, a PEM file's full path) | `eZSetupLibSQLCAFile` | empty: the system's CAs |
+| Password (auth token) | `eZSetupLibSQLToken` (a password field) | empty; Turso needs one |
 | Database name | `eZSetupDatabaseName` | `DefaultName_libsql=exponential` |
 | Database file name (embedded file mode, in `var/storage/sqlite3`) | `eZSetupLibSQLFile` | `DefaultFile_libsql=exponential-libsql.db` |
 

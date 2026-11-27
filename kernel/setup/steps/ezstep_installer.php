@@ -883,19 +883,27 @@ class eZStepInstaller
             }
             case self::DB_ERROR_LIBSQL_SETTINGS:
             {
+                // The field to look at, by its label on the page (texts every interface language has); a missing
+                // sqlite3 extension as the system check says it
                 $problem = isset( $errorInfo['database_info']['libsql_problem'] ) ? (string)$errorInfo['database_info']['libsql_problem'] : '';
-                $texts = array(
-                    'url' => ezpI18n::tr( 'design/standard/setup/init', 'The server URL is not valid. Give http://host:port, https://host or libsql://host, or leave it empty and give the server name and port.' ),
-                    'server' => ezpI18n::tr( 'design/standard/setup/init', 'Give the libSQL server: its name or address and port, or its URL.' ),
-                    'port' => ezpI18n::tr( 'design/standard/setup/init', 'The port must be a number from 1 to 65535.' ),
-                    'cafile' => ezpI18n::tr( 'design/standard/setup/init', 'The CA file cannot be read by the web server. Give the full path of a PEM file, or leave it empty to use the system\'s certificate authorities.' ),
-                    'token' => ezpI18n::tr( 'design/standard/setup/init', 'Turso needs an auth token (made with: turso db tokens create, followed by the database\'s name).' ),
-                    'sealing' => ezpI18n::tr( 'design/standard/setup/init', 'The auth token cannot be kept safely between the pages of the wizard: PHP has neither libsodium nor OpenSSL, or var/setup cannot be written. Install with exp:install instead.' ),
-                    'sqlite3' => ezpI18n::tr( 'design/standard/setup/init', 'The embedded file mode needs PHP\'s sqlite3 extension. Enable it, or choose the server mode.' ),
-                );
-                $dbError = array( 'text' => isset( $texts[$problem] ) ? $texts[$problem] : ezpI18n::tr( 'design/standard/setup/init', 'The libSQL settings are not valid.' ),
-                                  'url' => false,
-                                  'number' => $code );
+                if ( $problem === 'sqlite3' )
+                    $text = ezpI18n::tr( 'design/standard/setup/db', '%1 is reached through the PHP %2 extension. Install it, enable it in php.ini and start the setup wizard again.',
+                                         null, array( 'SQLite', 'sqlite3' ) );
+                else
+                {
+                    // "Input did not validate" and the field's label as the page shows it, all of them texts every
+                    // interface language translates already
+                    $labels = array( 'url' => array( 'design/admin/url/edit', 'URL', '' ),
+                                     'server' => array( 'design/standard/setup/init', 'Servername', '' ),
+                                     'port' => array( 'design/standard/setup/init', 'Port', '' ),
+                                     'cafile' => array( 'design/admin/package', 'Path', 'CA: ' ),
+                                     'token' => array( 'design/standard/setup/init', 'Password', '' ),
+                                     'sealing' => array( 'design/standard/setup/init', 'Password', '' ) );
+                    $label = isset( $labels[$problem] ) ? $labels[$problem] : $labels['url'];
+                    $text = ezpI18n::tr( 'design/admin/settings', 'Input did not validate' ) . ': '
+                          . htmlspecialchars( $label[2] . ezpI18n::tr( $label[0], $label[1] ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+                }
+                $dbError = array( 'text' => $text, 'url' => false, 'number' => $code );
                 break;
             }
             case self::DB_ERROR_CONNECTION_FAILED:
@@ -919,11 +927,11 @@ class eZStepInstaller
                 else if ( in_array( $errorInfo['database_info']['type'], array( 'libsql', 'turso' ), true ) )
                 {
                     $reason = isset( $errorInfo['database_info']['connect_error'] ) ? (string)$errorInfo['database_info']['connect_error'] : '';
+                    // the general text, then the server's own answer (the token is never in it)
                     $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
-                                                        'The libSQL server did not accept the connection: %reason. Check the server URL or name and port, TLS, the CA file and the auth token, and that the server is running.',
-                                                        null, array( '%reason' => htmlspecialchars( $reason !== '' ? $reason : '?', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) ) ),
-                                      'url' => array( 'href' => 'https://github.com/tursodatabase/libsql/tree/main/libsql-server',
-                                                      'text' => ezpI18n::tr( 'design/standard/setup/init', 'libSQL server documentation' ) ),
+                                                        'The database would not accept the connection, please review your settings and try again.' )
+                                                . ( $reason !== '' ? ' (' . htmlspecialchars( $reason, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . ')' : '' ),
+                                      'url' => false,
                                       'number' => self::DB_ERROR_CONNECTION_FAILED );
                 }
                 else

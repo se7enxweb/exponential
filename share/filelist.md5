@@ -3168,7 +3168,7 @@ d8482a05ee84a83719221085943a099a  design/standard/templates/settings/settings_va
 2513adfc2dc9706257cc455d1a3c5c7c  design/standard/templates/setup/clear_cache.tpl
 8434f931a5a089913702d03416af09a7  design/standard/templates/setup/contentextension.tpl
 b06a8db122f5ece36108fa54d7adc849  design/standard/templates/setup/datatype.tpl
-697562e30a6aeb941276cfe4db1b5356  design/standard/templates/setup/db/curl_info.tpl
+87d51e015df7d9204853867dc1f8d2c8  design/standard/templates/setup/db/curl_info.tpl
 6d3f51242765b695f1badcb67bf842bb  design/standard/templates/setup/db/ffi_info.tpl
 558dcf6c09a52d40d9397eec7598c937  design/standard/templates/setup/db/ibm_db2_info.tpl
 4d01455f0a0bb1aea986bf2dfab8b9f7  design/standard/templates/setup/db/mongodb_info.tpl
@@ -3195,7 +3195,7 @@ c0219421895a4cf5b88e26960960baac  design/standard/templates/setup/init/database_
 f1a844820729251ac74cad3909d9f93d  design/standard/templates/setup/init/database_choice.tpl
 afdd51db555e5767714133cfd0a7cdc6  design/standard/templates/setup/init/database_choice_help.tpl
 9c8def98c116502e31708d8136d85c9b  design/standard/templates/setup/init/database_done.tpl
-7fd2ef575947cc0b071abc28b54188ed  design/standard/templates/setup/init/database_init.tpl
+2a0e57cff47c6873da967dd2087495af  design/standard/templates/setup/init/database_init.tpl
 f4612c67f1380a8659adba3542a491b8  design/standard/templates/setup/init/database_init_help.tpl
 10799a7fc97d8afd89d9bdbf2c3ceef9  design/standard/templates/setup/init/database_setup.tpl
 d1e3a923a9127579b13c6a5e7e7c3845  design/standard/templates/setup/init/details.tpl
@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-76ead5d2343d32fce75e2f578c3181c6  doc/changelogs/6.0/6.0.15.md
+5ee04b787b5340861d3be4641e59aba2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -13298,7 +13298,7 @@ bc4db0183deb0089e58c6eaea3a5ff1f  doc/eng-us/install/01-introduction.md
 cb10da725a3fecff3599dfd9f57e1e0e  doc/eng-us/install/02-requirements.md
 efcb7e6e422a7d33b312c844e73c7efb  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
-03873eb7272e3865d6f33a1c590655d9  doc/eng-us/install/05-setup-wizard.md
+fae8c90b34c63d8c33ba3c4d943cf2bc  doc/eng-us/install/05-setup-wizard.md
 83261f15db4694059d061715d1d33f37  doc/eng-us/install/06-kickstarter.md
 0097b666167efd6ba1a2b941f2b817fd  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
@@ -23236,7 +23236,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 a39faf94d6a7af78312ae4eb1ef01146  doc/ger-de/installation/02-voraussetzungen.md
 e8a1d89728201585d1cb6850cad1ce36  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
-d0b41e04178879d14b1f8b2f4077fec2  doc/ger-de/installation/05-setup-assistent.md
+ddbc3bd7491b7a24b499bb7d002ef253  doc/ger-de/installation/05-setup-assistent.md
 00ff5b63c49005d825b5c7d213ba05ea  doc/ger-de/installation/06-kickstarter.md
 0444a0b72e7fcdb36a5e507d9829ca36  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
@@ -26993,7 +26993,7 @@ df68e5e07841432d9e6e51b23e5ae234  kernel/setup/steps/ezstep_data.php
 bb5e30f8b8aea95fd7c9566e8b2262be  kernel/setup/steps/ezstep_database_init.php
 1eb7cf0835903b23ffeeda25b7e8bf6a  kernel/setup/steps/ezstep_email_settings.php
 d252c1fdbb70b34ee56f05351fb1ad10  kernel/setup/steps/ezstep_final.php
-8d4605db0494055f4d1bb56b4501f364  kernel/setup/steps/ezstep_installer.php
+e3bd993c61b3604b1324d8c4595b8681  kernel/setup/steps/ezstep_installer.php
 354ef133bd7fb328e3e815febc5e6530  kernel/setup/steps/ezstep_language_options.php
 0b0e15cf920388c3361a4778b61018b5  kernel/setup/steps/ezstep_package_language_options.php
 15a86df69632da17559f29833414bdfc  kernel/setup/steps/ezstep_registration.php
@@ -28768,7 +28768,7 @@ c1e435f100ef3bbc94a2f374f07fc897  share/translations/ful-SN/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-002bbd1eb32952caf1e41aed4af56846  share/translations/ger-DE/translation.ts
+cda9adc33f420f8a99194e55af252479  share/translations/ger-DE/translation.ts
 1663811be417a845709468b796268b8e  share/translations/gla-GB/GUIDE.md
 c84fd0ab91c6cd662733f7533113d1ae  share/translations/gla-GB/translation.ts
 c9c96be6fea59b4e6e70919f636e2de8  share/translations/gle-IE/GUIDE.md
