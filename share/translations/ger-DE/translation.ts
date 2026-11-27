@@ -56416,7 +56416,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>TLS (https)</source>
-        <translation>TLS (https)</translation>
+        <translation>TLS (verschlüsselt, https)</translation>
     </message>
     <message>
         <source>CA file (optional)</source>

@@ -11,7 +11,7 @@
  * A secret the setup wizard has to carry from one page to the next (a libSQL server's or Turso's auth token) without
  * sending it back to the browser in clear text. The wizard keeps its answers in hidden fields of every page; a secret
  * goes there only sealed: encrypted and authenticated with a key that never leaves the server (var/setup/secret.key,
- * made on first use, 0600). The page's password field is always empty, the token is never echoed, and only
+ * made on first use, owner only). The page's password field is always empty, the token is never echoed, and only
  * unseal() on the server gives it back, for the connection test and for the settings the installation writes.
  *
  * libsodium (XChaCha20-Poly1305) when PHP has it, else OpenSSL's AES-256-GCM; without either there is no sealing,
@@ -110,16 +110,17 @@ class expSetupSecret
         if ( !$create )
             return null;
         $directory = dirname( $file );
-        if ( !is_dir( $directory ) && !@mkdir( $directory, 0700, true ) )
+        if ( !is_dir( $directory ) && !@mkdir( $directory, eZDir::dirMode( 0700 ), true ) )
             return null;
+        // made empty first and narrowed to the owner before the key is written into it
+        $fh = @fopen( $file, 'xb' );
+        if ( !$fh )
+            return null;
+        @chmod( $file, eZFile::fileMode( 0600 ) );
         $key = random_bytes( 32 );
-        $old = umask( 0077 );
-        $written = @file_put_contents( $file, $key, LOCK_EX );
-        umask( $old );
-        if ( $written !== 32 )
-            return null;
-        @chmod( $file, 0600 );
-        return $key;
+        $written = fwrite( $fh, $key );
+        fclose( $fh );
+        return $written === 32 ? $key : null;
     }
 
     /** @return string the key file's absolute path */

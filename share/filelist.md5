@@ -26948,7 +26948,7 @@ c79e30f37d2c6b5683a68830b4b12828  kernel/setup/expradcatalogue.php
 f992962ffb9d244f229a771b7aac1792  kernel/setup/expradhealth.php
 b9ae2b6d7c11dfc7cbfb230f9990940e  kernel/setup/expradsurvey.php
 6a041f7853c1b97fc67a1265bdca07a0  kernel/setup/expsettingsextensionwizard.php
-e17e41f565c066d38358f310a27f4f65  kernel/setup/expsetupsecret.php
+54620f00b0260df8fef2b1567b70e357  kernel/setup/expsetupsecret.php
 888ba389409002e147f2a9a5d51765c5  kernel/setup/expstaticcacherunner.php
 83b2d74c690d4a3b1b90955e2ad1cc94  kernel/setup/exptemplateextensionwizard.php
 620a64b4016505c286a3a9d524e1f56f  kernel/setup/expworkfloweventwizard.php
@@ -27174,7 +27174,7 @@ d24666ee463d329e56d79ccab42e3928  lib/ezdb/classes/expclickhousedialect.php
 d3b3cc96820c0e4630d0f05e27fc21bf  lib/ezdb/classes/expdbinlist.php
 13493200fa1e3c5cb49613ca1b0bb108  lib/ezdb/classes/expdbunsupportedexception.php
 d86fe9a614a2a99e348fe1a1005b29e6  lib/ezdb/classes/explibsqlconnection.php
-7cebf90d27048dee5b7078427c9aca16  lib/ezdb/classes/explibsqldb.php
+7f2b2becf32239055c2c9dac62ed04cd  lib/ezdb/classes/explibsqldb.php
 fed6401ffa6fc1e202a5002bf3a073b3  lib/ezdb/classes/explibsqlprofile.php
 7da76532d1bbe4ab8b3e99e942c7a1bc  lib/ezdb/classes/explibsqlresult.php
 1c7adef79e2490a41fc25b7ea6184e3a  lib/ezdb/classes/expmonetdbdb.php
@@ -28768,7 +28768,7 @@ c1e435f100ef3bbc94a2f374f07fc897  share/translations/ful-SN/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-98414fade83689da4282bfabf44995ce  share/translations/ger-DE/translation.ts
+002bbd1eb32952caf1e41aed4af56846  share/translations/ger-DE/translation.ts
 1663811be417a845709468b796268b8e  share/translations/gla-GB/GUIDE.md
 c84fd0ab91c6cd662733f7533113d1ae  share/translations/gla-GB/translation.ts
 c9c96be6fea59b4e6e70919f636e2de8  share/translations/gle-IE/GUIDE.md

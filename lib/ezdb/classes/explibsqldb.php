@@ -350,7 +350,10 @@ class expLibSQLDB extends eZSQLite3DB
     function createTempTable( $createTableQuery = '', $server = self::SERVER_SLAVE )
     {
         if ( $this->Embedded )
-            return parent::createTempTable( $createTableQuery, $server );
+        {
+            parent::createTempTable( $createTableQuery, $server );
+            return true;
+        }
         if ( !preg_match( '/^\s*CREATE\s+(?:GLOBAL\s+|LOCAL\s+)?TEMP(?:ORARY)?\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?([A-Za-z0-9_]+)/i', (string)$createTableQuery, $m ) )
             return $this->query( $createTableQuery );
         $sql = preg_replace( '/^\s*CREATE\s+(?:GLOBAL\s+|LOCAL\s+)?TEMP(?:ORARY)?\s+TABLE\b/i', 'CREATE TABLE', (string)$createTableQuery );
@@ -363,7 +366,10 @@ class expLibSQLDB extends eZSQLite3DB
     function dropTempTable( $dropTableQuery = '', $server = self::SERVER_SLAVE )
     {
         if ( $this->Embedded )
-            return parent::dropTempTable( $dropTableQuery, $server );
+        {
+            parent::dropTempTable( $dropTableQuery, $server );
+            return true;
+        }
         if ( preg_match( '/^\s*DROP\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+EXISTS\s+)?([A-Za-z0-9_]+)\s*;?\s*$/i', (string)$dropTableQuery, $m ) )
         {
             unset( $this->TempTables[strtolower( $m[1] )] );
@@ -406,7 +412,7 @@ class expLibSQLDB extends eZSQLite3DB
     function createDatabase( $dbName )
     {
         if ( $this->Embedded )
-            return parent::createDatabase( $dbName );
+            parent::createDatabase( $dbName );
     }
 
     /// The database of the server, by the name of the settings
