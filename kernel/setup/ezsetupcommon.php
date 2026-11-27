@@ -38,7 +38,7 @@ function eZSetupDatabaseMap()
 {
     return array( 'mysqli' => array( 'type' => 'mysqli',
                                      'driver' => 'ezmysqli',
-                                     'name' => 'MySQL Improved',
+                                     'name' => 'MariaDB / MySQL Improved',
                                      'required_version' => '4.1.1',
                                      'has_demo_data' => true,
                                      'supports_unicode' => true ),
