@@ -146,6 +146,15 @@ file, the database can be shared by several web servers. See [libSQL and Turso d
 measured). There is no DFS
 cluster backend for them and no read replicas. Details, the server preparation and limits:
 [IBM Db2 driver](../features/6.0/db2-database-driver.md), [IBM Informix driver](../features/6.0/informix-database-driver.md).
+**SAP HANA** (new in 6.0.15, not in the order above): SAP HANA 2.0 SPS 05 and later runs a whole site on the
+kernel's `expHANADB` (`DatabaseImplementation=hana`, SAP's HANA ODBC driver through PHP's `odbc` extension or
+PDO_ODBC, `exp:install --db=hana`; the database is a schema), measured on HANA, express edition 2.00.088 and tested on
+every push against it. No DFS cluster backend and no read replicas yet. Details and limits:
+[SAP HANA driver](../features/6.0/hana-database-driver.md).
+
+**SAP ASE** (Sybase, new in 6.0.15): the kernel's `expASEDB` (`DatabaseImplementation=ase`, FreeTDS's `pdo_dblib` or
+PDO_ODBC) is written for ASE 15.7 and 16.0 and tested without a server only: no ASE server could be had. See
+[SAP ASE driver](../features/6.0/ase-database-driver.md).
 
 **Apache Cassandra and ScyllaDB** (`cassandra`, `scylladb`, new in 6.0.15) are data table connections and an import
 source (`exp:cassandra:import`), not site databases: CQL has no joins, no sub-selects and no transactions across
@@ -277,6 +286,8 @@ override for you. `DatabaseImplementation` names the driver by an alias that `Im
 | `couchdb` | `expCouchDBDB` (`lib/ezdb/classes/expcouchdbdb.php`), data table connections only |
 | `monetdb` | `expMonetDBDB` (`lib/ezdb/classes/expmonetdbdb.php`) |
 | `clickhouse` | `expClickHouseDB` (`lib/ezdb/classes/expclickhousedb.php`); data table connections only |
+| `hana`, `saphana` | `expHANADB` (`lib/ezdb/classes/exphanadb.php`) |
+| `ase`, `sybase` | `expASEDB` (`lib/ezdb/classes/expasedb.php`) |
 
 The examples below use placeholder names and passwords; put your own values in your override file and never commit
 that file. Every key is explained in [9.1 How Exponential chooses a database driver](../install/09-databases.md#91-how-exponential-chooses-a-database-driver).
@@ -821,6 +832,8 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | 6. MySQL | yes, database tests | the job "Database tests (mysql, PHP 8.3)" with a `mysql:8.0` service |
 | Firebird | yes, driver, live and kernel schema tests | the job "firebird" with `firebirdsql/firebird` 5 and 4 as service containers and `pdo_firebird`, PHP 8.4 and 8.5 |
 | IBM Db2, IBM Informix | yes, driver, live and kernel schema tests, a whole site on Db2 | the job "db2" with Db2 Community Edition 12.1 and 11.5 and Informix Developer Edition 15 and 14.10 as containers, `pdo_ibm` and `ibm_db2`, PHP 8.5 and 8.3 |
+| SAP HANA | yes, driver, live and kernel schema tests | the job "hana" with `saplabs/hanaexpress` and SAP's HANA ODBC driver from the image, PHP 8.5 on `odbc` and `pdo_odbc` |
+| SAP ASE | DB-less tests only | the job "hana" runs the testsuite `ase`; there is no ASE image |
 | 7. SQL Server | yes, driver, live and DFS tests | the job "sqlserver" with `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 and 2025 and ODBC Driver 18, on `sqlsrv`, `pdo_sqlsrv` and `pdo_odbc` and PHP 8.1 to 8.5; the job "SQL Server LocalDB smoke" on Windows with PHP 8.4 |
 | MySQL protocol | yes, driver and live tests | the testsuite `mysqlwire`; the job `mysqlwire` runs `mysqlwire-live` against TiDB 8.5, Vitess (`vttestserver`) and SingleStore (dev image) in containers. Xpand and Aurora MySQL: tests without a server only |
 | DuckDB | yes, driver, live tests and a whole site | the job `duckdb` on DuckDB 2.0.1 (PHP 8.5) and 1.5.6 (PHP 8.3); on 2.0.1 it installs a site and fetches its front page and admin login |

@@ -133,6 +133,10 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Spaltenorientierte Datenbanken: MonetDB und ClickHouse](spaltenorientierte-datenbanken.md): `expMonetDBDB`, eine
   ganze Site auf MonetDB über sein Protokoll in reinem PHP, immer nur ein Schreiber; `expClickHouseDB`, ClickHouse über
   HTTP für Datentabellen und Importe, und warum es keine Site halten kann; was geht und was nicht, gemessen
+- [SAP-HANA-Treiber](hana-datenbanktreiber.md): `expHANADB` für SAP HANA 2.0 und HANA Cloud über SAPs HANA-ODBC-Treiber;
+  wie das SQL des Kernels umgeschrieben wird, gebundene Literale, was geht und was nicht
+- [SAP-ASE-Treiber](ase-datenbanktreiber.md): `expASEDB` für SAP Adaptive Server Enterprise (Sybase) 15.7 und 16.0 auf
+  dem SQL-Server-Treiber, über FreeTDS oder ODBC; geschrieben und ohne Server getestet
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
   Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)

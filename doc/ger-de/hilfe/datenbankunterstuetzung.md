@@ -158,6 +158,15 @@ und 15 über dessen DRDA-Listener) erreichen ihre Server über IBMs PECL-Erweite
 Ein DFS-Cluster-Backend gibt es dafür nicht und keine Lesereplikate. Einzelheiten, die Vorbereitung des Servers und
 Grenzen: [IBM-Db2-Treiber](../funktionen/6.0/db2-datenbanktreiber.md),
 [IBM-Informix-Treiber](../funktionen/6.0/informix-datenbanktreiber.md).
+**SAP HANA** (neu in 6.0.15, nicht in der Reihenfolge oben): SAP HANA 2.0 ab SPS 05 trägt eine ganze Site mit
+`expHANADB` aus dem Kernel (`DatabaseImplementation=hana`, SAPs HANA-ODBC-Treiber über PHPs Erweiterung `odbc` oder
+PDO_ODBC, `exp:install --db=hana`; die Datenbank ist ein Schema), gemessen an HANA Express Edition 2.00.088 und bei
+jedem Push dagegen getestet. Noch kein DFS-Cluster-Backend und keine Lesereplikate. Einzelheiten und Grenzen:
+[SAP-HANA-Treiber](../funktionen/6.0/hana-datenbanktreiber.md).
+
+**SAP ASE** (Sybase, neu in 6.0.15): `expASEDB` aus dem Kernel (`DatabaseImplementation=ase`, `pdo_dblib` von FreeTDS
+oder PDO_ODBC) ist für ASE 15.7 und 16.0 geschrieben und nur ohne Server getestet: es war kein ASE-Server zu haben.
+Siehe [SAP-ASE-Treiber](../funktionen/6.0/ase-datenbanktreiber.md).
 
 **Apache Cassandra und ScyllaDB** (`cassandra`, `scylladb`, neu in 6.0.15) sind Datentabellen-Verbindungen und eine
 Importquelle (`exp:cassandra:import`), keine Site-Datenbanken: CQL kennt keine Joins, keine Unterabfragen und keine
@@ -292,6 +301,8 @@ Treiber mit einem Alias, den `ImplementationAlias[]` einer Klasse zuordnet:
 | `couchdb` | `expCouchDBDB` (`lib/ezdb/classes/expcouchdbdb.php`), nur für Datentabellen-Verbindungen |
 | `monetdb` | `expMonetDBDB` (`lib/ezdb/classes/expmonetdbdb.php`) |
 | `clickhouse` | `expClickHouseDB` (`lib/ezdb/classes/expclickhousedb.php`); nur Datentabellen-Verbindungen |
+| `hana`, `saphana` | `expHANADB` (`lib/ezdb/classes/exphanadb.php`) |
+| `ase`, `sybase` | `expASEDB` (`lib/ezdb/classes/expasedb.php`) |
 
 Die folgenden Beispiele verwenden Platzhalter für Namen und Passwörter; tragen Sie Ihre eigenen Werte in Ihre
 Überschreibungsdatei ein und committen Sie diese Datei nie. Jeder Schlüssel wird in
@@ -795,6 +806,8 @@ Wegwerf-Datenbank pro Test laufen.
 | 6. MySQL | ja, Datenbanktests | der Job „Database tests (mysql, PHP 8.3)“ mit einem `mysql:8.0`-Service |
 | Firebird | ja, Treiber-, Live- und Kernel-Schema-Tests | der Job „firebird“ mit `firebirdsql/firebird` 5 und 4 als Service-Container und `pdo_firebird`, PHP 8.4 und 8.5 |
 | IBM Db2, IBM Informix | ja, Treiber-, Live- und Kernel-Schema-Tests, eine ganze Site auf Db2 | der Job „db2“ mit Db2 Community Edition 12.1 und 11.5 und Informix Developer Edition 15 und 14.10 als Container, `pdo_ibm` und `ibm_db2`, PHP 8.5 und 8.3 |
+| SAP HANA | ja, Treiber-, Live- und Kernel-Schema-Tests | der Job „hana“ mit `saplabs/hanaexpress` und SAPs HANA-ODBC-Treiber aus dem Image, PHP 8.5 auf `odbc` und `pdo_odbc` |
+| SAP ASE | nur Tests ohne Server | der Job „hana“ führt die Testsuite `ase` aus; ein ASE-Image gibt es nicht |
 | 7. SQL Server | ja, Treiber-, Live- und DFS-Tests | der Job „sqlserver“ mit `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 und 2025 und ODBC Driver 18, auf `sqlsrv`, `pdo_sqlsrv` und `pdo_odbc` und PHP 8.1 bis 8.5; der Job „SQL Server LocalDB smoke“ unter Windows mit PHP 8.4 |
 | MySQL-Protokoll | ja, Treiber- und Live-Tests | die Testsuite `mysqlwire`; der Job `mysqlwire` führt `mysqlwire-live` gegen TiDB 8.5, Vitess (`vttestserver`) und SingleStore (Dev-Image) in Containern aus. Xpand und Aurora MySQL: nur Tests ohne Server |
 | DuckDB | ja, Treiber- und Live-Tests und eine ganze Site | der Job `duckdb` auf DuckDB 2.0.1 (PHP 8.5) und 1.5.6 (PHP 8.3); auf 2.0.1 installiert er eine Site und ruft ihre Startseite und die Anmeldung der Administration ab |

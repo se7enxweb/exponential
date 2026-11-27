@@ -3589,6 +3589,8 @@
     "funktionen/6.0/couchbase-treiber.md": "features/6.0/couchbase-driver.md",
     "funktionen/6.0/couchdb-treiber.md": "features/6.0/couchdb-driver.md",
     "funktionen/6.0/spaltenorientierte-datenbanken.md": "features/6.0/columnar-databases.md",
+    "funktionen/6.0/hana-datenbanktreiber.md": "features/6.0/hana-database-driver.md",
+    "funktionen/6.0/ase-datenbanktreiber.md": "features/6.0/ase-database-driver.md",
     "funktionen/6.0/sqlserver-dfs-cluster.md": "features/6.0/sqlserver-dfs-cluster.md",
     "funktionen/6.0/standard-extension-auslieferung.md": "features/6.0/default-extension-distribution.md",
     "funktionen/6.0/standardwerte-einer-sauberen-installation.md": "features/6.0/clean-install-defaults.md",
