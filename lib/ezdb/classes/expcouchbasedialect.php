@@ -56,12 +56,34 @@ class expCouchbaseDialect
     /** @var array this query level's renamed tables: name in the SQL => name in the SQL++ */
     protected $renames = array();
 
+    /** @var string `bucket`.`scope`. of the connection, or '' */
+    protected $keyspacePrefix = '';
+
     /**
      * @param array $catalogue table => array( 'fields' => column => int|float|text, 'order' => columns in order )
+     * @param string $bucket the connection's bucket (with $scope: the path a sub-select names its collections by)
+     * @param string $scope
      */
-    public function __construct( array $catalogue = array() )
+    public function __construct( array $catalogue = array(), $bucket = '', $scope = '' )
     {
         $this->catalogue = $catalogue;
+        if ( (string)$bucket !== '' && (string)$scope !== '' )
+            $this->keyspacePrefix = self::quoteName( $bucket ) . '.' . self::quoteName( $scope ) . '.';
+    }
+
+    /**
+     * A collection in a FROM: its name, or in a sub-select whose enclosing query uses that name as an alias, its full
+     * path (SQL++ would read the bare name as the enclosing query's row, a sub-select over one document).
+     *
+     * @param string $table
+     * @return string
+     */
+    protected function keyspace( $table )
+    {
+        foreach ( $this->outer as $alias )
+            if ( strcasecmp( $alias, $table ) === 0 )
+                return $this->keyspacePrefix . self::quoteName( $table );
+        return self::quoteName( $table );
     }
 
     /**
@@ -641,7 +663,7 @@ class expCouchbaseDialect
                 $ref = '(' . $this->query( $item['derived'], 'from', $derivedColumns ) . ') AS ' . self::quoteName( $item['alias'] );
             }
             else
-                $ref = self::quoteName( $item['table'] ) . ' AS ' . self::quoteName( $item['alias'] );
+                $ref = $this->keyspace( $item['table'] ) . ' AS ' . self::quoteName( $item['alias'] );
             if ( $k === 0 )
                 $sql = $ref;
             elseif ( $item['join'] === ',' || $item['join'] === 'CROSS' )

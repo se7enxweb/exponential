@@ -193,6 +193,13 @@ class expCouchbaseDialectTest extends PHPUnit\Framework\TestCase
         // the sub-select's own column, not the enclosing row's (SQL++ would take qty of the outer row)
         $this->assertStringContainsString( '(SELECT RAW MAX(`ezcontentobject_2`.`section_id`) FROM `ezcontentobject` AS `ezcontentobject_2`',
                                            $this->sql( 'SELECT name FROM ezcontentobject WHERE section_id = (SELECT MAX(section_id) FROM ezcontentobject)' ) );
+        // with the connection's bucket and scope, that sub-select names its collection by the full path: SQL++ would
+        // read the bare name as the enclosing query's row (alias ezcontentobject), a sub-select over one document
+        $scoped = new expCouchbaseDialect( expCouchTestKit::catalogue(), 'exponential', 'site' );
+        $this->assertStringContainsString( 'FROM `exponential`.`site`.`ezcontentobject` AS `ezcontentobject_2`',
+                                           $scoped->select( 'SELECT name FROM ezcontentobject WHERE section_id = (SELECT MAX(section_id) FROM ezcontentobject)' )['sql'] );
+        $this->assertStringStartsWith( 'SELECT `ezcontentobject`.`name` AS `name` FROM `ezcontentobject` AS `ezcontentobject` WHERE',
+                                       $scoped->select( 'SELECT name FROM ezcontentobject WHERE section_id = (SELECT MAX(section_id) FROM ezcontentobject)' )['sql'] );
     }
 
     /** CB-09 */

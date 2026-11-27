@@ -426,7 +426,7 @@ class expCouchbaseDB extends eZDBInterface
             $catalogue = array();
             foreach ( $this->definitions() as $table => $definition )
                 $catalogue[$table] = self::catalogueEntry( $definition );
-            $this->Dialect = new expCouchbaseDialect( $catalogue );
+            $this->Dialect = new expCouchbaseDialect( $catalogue, $this->Bucket, $this->ScopeName );
             $this->Translations = array();
         }
         return $this->Dialect;
