@@ -15,7 +15,7 @@ dcd2c18968f0d52e402cd003ab6e2c67  .github/workflows/codeql.yml
 ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4e4cf2c5480563f1820cd63eab5e211b  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
-765ecf25f39975ec95472e8cfa665fa9  .github/workflows/windows.yml
+f5e48b43c426c6a14417958e3ba8d9a1  .github/workflows/windows.yml
 4d0253977e439c014ee12602a2095d56  .gitignore
 1942bd02f05e39a47b6f0c82d826f841  .htaccess_root
 611220d94480211641f3087b69ad7c11  .htaccess_root_static

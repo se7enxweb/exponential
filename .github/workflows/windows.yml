@@ -120,6 +120,15 @@ jobs:
             tail -n 8 "$f" | cut -c1-400
           done
 
+      - name: Keep the PHPUnit event logs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: phpunit-events-${{ matrix.os }}-php${{ matrix.php }}
+          path: ${{ runner.temp }}/events-*.txt
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Install a site on SQLite (exp:install)
         id: install
         if: ${{ !cancelled() }}
