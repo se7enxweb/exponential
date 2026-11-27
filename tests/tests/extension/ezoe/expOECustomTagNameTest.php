@@ -52,9 +52,13 @@ class expOECustomTagNameTest extends PHPUnit\Framework\TestCase
             else
                 $GLOBALS[$name] = $saved[0];
         }
-        foreach ( (array)glob( $this->dir . '/*' ) as $file )
-            unlink( $file );
-        rmdir( $this->dir );
+        // a setUp() that stopped before making the directory leaves it empty: glob('/*') would be the root
+        if ( is_string( $this->dir ) && $this->dir !== '' && is_dir( $this->dir ) )
+        {
+            foreach ( (array)glob( $this->dir . '/*' ) as $file )
+                unlink( $file );
+            rmdir( $this->dir );
+        }
     }
 
     /** CN-01 */

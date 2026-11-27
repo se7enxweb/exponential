@@ -61,9 +61,13 @@ class ezBccieTest extends TestCase
                 $object->purge();
             }
         }
-        foreach ( (array)glob( $this->tmpDir . '/*' ) as $file )
+        // a setUp() that stopped before setting the directory leaves it empty: glob('/*') would be the root
+        if ( is_string( $this->tmpDir ) && $this->tmpDir !== '' && is_dir( $this->tmpDir ) )
         {
-            @unlink( $file );
+            foreach ( (array)glob( $this->tmpDir . '/*' ) as $file )
+            {
+                @unlink( $file );
+            }
         }
         self::$objectID = 0;
         $this->storeSiteData( bccieRunner::EXPORT_LOG, $this->savedLog );
