@@ -115,6 +115,8 @@ nginx with PHP-FPM keep working as before.
   extension; one process writes at a time; what works and what does not
 - [Apache Cassandra and ScyllaDB driver](cassandra-scylladb-driver.md): `expCassandraDB` and `expScyllaDB`, data table
   connections and `exp:cassandra:import` over CQL; why no site runs on them, with measurements
+- [libSQL and Turso driver](libsql-database-driver.md): `expLibSQLDB` and `expTursoDB`, the SQLite driver over a libSQL
+  server's HTTP API (sqld, Turso); a whole site on a server several web servers share; what works and what does not
 - [Clustering in Exponential 6.0](clustering-overview.md): application servers, shared files, primary and replicas,
   caches, purges and health checks in one place, with every cluster page
 - [Clustering on PostgreSQL: the DFS backend in the kernel](postgresql-dfs-cluster.md)

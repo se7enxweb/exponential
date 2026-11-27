@@ -3,8 +3,8 @@ title: Datenbankunterstützung
 audience: admin, developer
 category: install-upgrade
 order: 10
-summary: Welche Datenbanken Exponential 6.0.x unterstützt und in welcher Reihenfolge (zuerst SQLite, dann PostgreSQL, MongoDB, MariaDB, Oracle, MySQL sowie Microsoft SQL Server mit Azure SQL), die in 6.0.15 hinzugekommenen Datenbanken (Firebird, DuckDB, die Familien des MySQL- und des PostgreSQL-Protokolls, ODBC und MS Access), mit einer Unterstützungsmatrix und jeweils mit Versionen, PHP-Erweiterungen, Einstellungen, Installern, Clustering, Zeichensätzen, Performance, Backup und Wiederherstellung, Grenzen, Migration und Testabdeckung.
-keywords: Datenbank, Datenbanken, unterstützte Datenbanken, Unterstützungsmatrix, support matrix, Firebird, pdo_firebird, DuckDB, FFI, ODBC, MS Access, exp:access:import, TiDB, Vitess, PlanetScale, SingleStore, Xpand, Aurora, CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, Datenbanktreiber, Sicherung, Wiederherstellung, Migration, Zeichensatz, Anforderungen, Versionen, Testabdeckung, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, database, databases, supported databases, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
+summary: Welche Datenbanken Exponential 6.0.x unterstützt und in welcher Reihenfolge (zuerst SQLite, dann PostgreSQL, MongoDB, MariaDB, Oracle, MySQL sowie Microsoft SQL Server mit Azure SQL), die in 6.0.15 hinzugekommenen Datenbanken (Firebird, DuckDB, libSQL und Turso, die Familien des MySQL- und des PostgreSQL-Protokolls, ODBC und MS Access), mit einer Unterstützungsmatrix und jeweils mit Versionen, PHP-Erweiterungen, Einstellungen, Installern, Clustering, Zeichensätzen, Performance, Backup und Wiederherstellung, Grenzen, Migration und Testabdeckung.
+keywords: Datenbank, Datenbanken, unterstützte Datenbanken, Unterstützungsmatrix, support matrix, Firebird, pdo_firebird, DuckDB, FFI, libSQL, sqld, Turso, Hrana, ODBC, MS Access, exp:access:import, TiDB, Vitess, PlanetScale, SingleStore, Xpand, Aurora, CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, Datenbanktreiber, Sicherung, Wiederherstellung, Migration, Zeichensatz, Anforderungen, Versionen, Testabdeckung, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, database, databases, supported databases, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
 featured: true
 context: setup/info, setup/systemupgrade, dse
 type: help
@@ -97,6 +97,7 @@ Was die Reihenfolge in der Praxis bedeutet:
 | TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (ein ungesplitteter Keyspace), SingleStore 8.5+ | `mysqli` | Kickstarter, `exp:install` | beliebig viele Server (das MySQLi-Backend) | TiDB 8.5, Vitess und SingleStore in Containern (Job `mysqlwire`) | unterstützt (neu in 6.0.15): [das MySQL-Protokoll](#datenbanken-die-das-mysql-protokoll-sprechen) |
 | MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | Kickstarter, `exp:install` | das MySQLi-Backend | nein (kein Image; ein verwalteter Dienst) | Treiber und Profile, nicht gemessen |
 | DuckDB | 1.5 und 2.0 (1.5.6 und 2.0.1 getestet) | `ffi` mit DuckDBs C-Bibliothek `libduckdb` | Kickstarter, `exp:install` | keiner: es schreibt immer nur ein Prozess | Treiber- und Live-Tests auf DuckDB 1.5.6 und 2.0.1 und eine ganz installierte Site | unterstützt für kleine Sites, die vor allem gelesen werden (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/duckdb-datenbanktreiber.md#was-geht-und-was-nicht) |
+| libSQL (sqld), Turso | sqld 0.22 und neuer (0.24.33 getestet, SQLite 3.47); Turso | `curl` (oder `allow_url_fopen`); kein `sqlite3` nötig | Kickstarter, `exp:install` (`libsql`, `turso`) | die Datenbank: beliebig viele Webserver teilen sie; kein DFS-Backend darauf | Treibertests ohne Server, Live-Tests gegen sqld 0.24.33 und eine ganze Site installiert (Job `libsql`) | ganze Site-Datenbank (neu in 6.0.15); Turso **ungetestet**; [was funktioniert und was nicht](../funktionen/6.0/libsql-datenbanktreiber.md#was-funktioniert-und-was-nicht) |
 | CockroachDB (PostgreSQL-Protokoll) | 23.2 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`cockroachdb`) | keins: `exp:cluster:enable` bietet dafür kein Backend an | die Live-Suite `pgwire-live` auf CockroachDB 25.2, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
 | YugabyteDB (PostgreSQL-Protokoll) | 2.20 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`yugabytedb`) | keins: `exp:cluster:enable` bietet dafür kein Backend an | die Live-Suite `pgwire-live` auf YugabyteDB 2.25, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
 | Google Cloud Spanner, PostgreSQL-Dialekt (PGAdapter) | der Spanner-Emulator, PGAdapter | `pgsql` | keiner: keine Site-Datenbank | keins | die Live-Suite `pgwire-live` auf dem Emulator hinter PGAdapter | Datentabellen-Verbindung und Import (neu in 6.0.15) |
@@ -128,6 +129,12 @@ keine Lesereplikate: eine Site mit Firebird läuft auf einem Webserver. Einzelhe
 über PHPs FFI-Erweiterung. DuckDB lässt immer nur einen Prozess schreiben; es passt daher zu kleinen Sites, die vor allem
 gelesen werden, zu einzelnen Redakteuren, Build- und Demo-Sites; einen DFS-Cluster gibt es darauf nicht. Siehe
 [DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md).
+
+**libSQL und Turso** (`DatabaseImplementation=libsql` oder `turso`, `exp:install --db=libsql`) halten die Datenbank einer
+Site auf einem libSQL-Server (`sqld`) oder in Turso's Cloud, erreicht über die HTTP-API des Servers mit PHPs
+curl-Erweiterung. libSQL ist ein Fork von SQLite: der Treiber ist der SQLite-Treiber mit einem HTTP-Transport, SQL und
+Schema sind die von SQLite. Anders als eine SQLite-Datei können sich mehrere Webserver die Datenbank teilen. Siehe
+[libSQL- und Turso-Treiber](../funktionen/6.0/libsql-datenbanktreiber.md).
 
 **IBM Db2 und IBM Informix** (neu in 6.0.15, nicht in der Reihenfolge oben): `expDb2DB` aus dem Kernel
 (`DatabaseImplementation=db2`, Db2 11.5 und 12.1) und `expInformixDB` (`DatabaseImplementation=informix`, Informix 14.10
@@ -190,6 +197,7 @@ Für jede Datenbank gibt es drei verschiedene Zahlen, die man leicht verwechselt
 | Neon, Supabase, Aurora PostgreSQL | 14.0, 14.0, 13.0 | wie das PostgreSQL des Dienstes | keine: nicht gemessen |
 | Firebird | 4.0 | **4.0** (Namen über 31 Zeichen, `CRYPT_HASH()`); PHP **8.4** für `pdo_firebird` | 4.0 und 5.0.4 in der CI |
 | DuckDB | 1.5 | **1.5** (die stabile C-API) | 1.5.6 und 2.0.1 in der CI |
+| libSQL (sqld), Turso | 3.35 (das `sqlite_version()` des Servers) | **sqld 0.22** (Hrana 3; ältere Server in Hrana 2) | sqld 0.24.33 (SQLite 3.47.0) in der CI |
 
 Verwenden Sie eine Serverversion, für die Ihr Anbieter noch Sicherheitskorrekturen liefert. Die Untergrenzen gibt es,
 damit der Assistent einen alten Server nicht von vornherein ablehnt; sie sind kein Versprechen, dass ein Server dieses
@@ -222,6 +230,7 @@ besteht den Test, bekommt dort aber keine Datenbank angeboten: Installieren Sie 
 | CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Aurora PostgreSQL | `pgsql` | wie PostgreSQL |
 | Firebird | `pdo_firebird` ab **PHP 8.4** | mit PHP geliefert; braucht die Client-Bibliothek von Firebird (`libfbclient2`; `firebird-dev`, um PHP damit zu bauen). PHP 8.3 und älter: dessen `pdo_firebird` hält im Autocommit-Modus eine Transaktion offen und wird abgelehnt |
 | DuckDB | `ffi` und die C-Bibliothek `libduckdb` von DuckDB | `ffi` wird mit PHP geliefert (`php-ffi`, `php<version>-ffi`); `ffi.enable=true` im Pool des Web-PHP (der Standard `preload` erlaubt FFI nur auf der Kommandozeile); `libduckdb.so` aus den Releases von DuckDB |
+| libSQL (sqld), Turso | `curl`, oder ohne curl `allow_url_fopen=On` | wird mit PHP geliefert (`php-curl`, `php<version>-curl`); PHPs `sqlite3` ist für eine Site auf einem libSQL-Server nicht nötig |
 | ODBC | `pdo_odbc` (Standard) oder `odbc` | mit PHP geliefert; unter Linux unixODBC und der ODBC-Treiber der Datenbank |
 | MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine 2016 x64; Linux: die Programme von MDBTools (`mdb-tables`, `mdb-schema`, `mdb-json`) für den Import | das Redistributable von Microsoft; `mdbtools` (Debian, Ubuntu, EPEL) |
 
@@ -244,6 +253,7 @@ Treiber mit einem Alias, den `ImplementationAlias[]` einer Klasse zuordnet:
 | `ezmysqli`, `mysqli`, `ezmysql`, `mysql` | `eZMySQLiDB` (`lib/ezdb/classes/ezmysqlidb.php`) |
 | `ezoracle`, `oracle` | `eZOracleDB` (in der Erweiterung `ezoracle`, registriert durch deren eigene `site.ini.append.php`) |
 | `duckdb` | `expDuckDBDB` (`lib/ezdb/classes/expduckdbdb.php`) |
+| `libsql`, `sqld`; `turso` | `expLibSQLDB` (`lib/ezdb/classes/explibsqldb.php`), `expTursoDB` (`lib/ezdb/classes/exptursodb.php`) |
 | `sqlserver`, `mssql`, `sqlsrv` | `expSQLServerDB` (`lib/ezdb/classes/expsqlserverdb.php`) |
 | `firebird`, `fb` | `expFirebirdDB` (`lib/ezdb/classes/expfirebirddb.php`) |
 | `tidb`; `vitess`, `planetscale`; `singlestore`, `memsql`; `xpand`; `aurora`, `auroramysql` | `expTiDBDB`, `expVitessDB`, `expSingleStoreDB`, `expXpandDB`, `expAuroraMySQLDB` (`expMySQLWireDB`) |
@@ -346,7 +356,7 @@ fehl. Lesen Sie zuerst `error.log`, wenn sich eine Site verhält, als wäre ihre
 ## Unterstützung durch die Installer
 
 Exponential hat drei Installer im Kernel. Alle drei unterstützen die ersten sieben Datenbanken, Firebird und die
-Datenbanken des PostgreSQL-Protokolls; Microsoft SQL Server, die Datenbanken des MySQL-Protokolls und DuckDB werden mit
+Datenbanken des PostgreSQL-Protokolls; Microsoft SQL Server, die Datenbanken des MySQL-Protokolls, DuckDB, libSQL und Turso werden mit
 dem Kickstarter und `exp:install` installiert. ODBC, MS Access und Spanner sind keine Site-Datenbanken und haben keinen
 Eintrag in den Installern.
 
@@ -363,6 +373,7 @@ Eintrag in den Installern.
 | TiDB, Vitess / PlanetScale, SingleStore, Xpand, Aurora MySQL | | `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`), mit `SSL` und `SSLCA` | dieselben Namen; `--db-ssl=enabled` oder `verify`, `--db-ssl-ca`; auf Vitess muss der Keyspace bestehen |
 | Firebird | ja, wenn `pdo_firebird` geladen ist | `firebird` (auch `fb`, `pdo_firebird`) | `firebird` (auch `fb`); die Datenbank muss bestehen (`PAGE_SIZE 16384`, UTF8); Standardport 3050, Benutzer `SYSDBA` |
 | DuckDB | | `duckdb`; `Database` ist die Datei | `duckdb`; `--db-name` ist die Datei (Standard `var/storage/duckdb/exponential.duckdb`) |
+| libSQL (sqld), Turso | | `libsql` (`sqld` geht auch), `turso`, mit `URL` und `TLS`; `Password` ist das Auth-Token | `libsql`, `turso`; `--db-url`, `--db-tls`; Port 8080 (443 für turso); die Datenbank des Servers wird zuerst geleert |
 
 - Fehlt die Erweiterung `sqlite3`, wählt der Assistent die erste Datenbank, deren Erweiterung geladen ist, und weist
   darauf hin.
@@ -692,11 +703,12 @@ Das vollständige Verfahren steht in [Kapitel 10, Backups und Wiederherstellung]
 | 7. SQL Server, Azure SQL | `BACKUP DATABASE [site] TO DISK = '/backup/site.bak'` oder die automatischen Sicherungen des Dienstes | `RESTORE DATABASE` |
 | Firebird | `gbak -b -user SYSDBA exponential /backup/exponential.fbk` | `gbak -c` in eine neue Datenbank |
 | DuckDB | die Datei kopieren, solange kein Prozess schreibt, oder `EXPORT DATABASE '/backup/site'` im Programm `duckdb` | die Kopie oder `IMPORT DATABASE` |
+| libSQL (sqld), Turso | eine Kopie des Datenverzeichnisses von sqld, während er angehalten ist; Turso's Point-in-Time-Restore | die Kopie; Turso's Restore |
 | YugabyteDB | `ysql_dump` (nicht `pg_dump` aus PostgreSQL 17, dessen Dump YugabyteDB 2.25 ablehnte) | `ysqlsh` |
 | TiDB, Vitess, SingleStore, CockroachDB, die Cloud-Dienste | die eigene Sicherung der Datenbank oder des Dienstes | dieselbe |
 
 Die Sicherheitskopie, die `exp:upgrade` vor dem Schreiben anlegt (`exp:upgrade:backup`), hat einen eingebauten Dump nur
-für SQLite, MySQL/MariaDB, PostgreSQL und MongoDB; auf Oracle, SQL Server, Firebird und DuckDB meldet sie „no built-in
+für SQLite, MySQL/MariaDB, PostgreSQL und MongoDB; auf Oracle, SQL Server, Firebird, DuckDB und libSQL meldet sie „no built-in
 dump“, und die Aktualisierung läuft nach Ihrer eigenen Sicherung mit `--no-backup`
 ([Eine Datenbank wählen](datenbank-waehlen.md#sicherungen-und-sicherungspunkte-vor-aktualisierungen)).
 
@@ -748,6 +760,7 @@ Wegwerf-Datenbank pro Test laufen.
 | 7. SQL Server | ja, Treiber-, Live- und DFS-Tests | der Job „sqlserver“ mit `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 und 2025 und ODBC Driver 18, auf `sqlsrv`, `pdo_sqlsrv` und `pdo_odbc` und PHP 8.1 bis 8.5; der Job „SQL Server LocalDB smoke“ unter Windows mit PHP 8.4 |
 | MySQL-Protokoll | ja, Treiber- und Live-Tests | die Testsuite `mysqlwire`; der Job `mysqlwire` führt `mysqlwire-live` gegen TiDB 8.5, Vitess (`vttestserver`) und SingleStore (Dev-Image) in Containern aus. Xpand und Aurora MySQL: nur Tests ohne Server |
 | DuckDB | ja, Treiber- und Live-Tests und eine ganze Site | der Job `duckdb` auf DuckDB 2.0.1 (PHP 8.5) und 1.5.6 (PHP 8.3); auf 2.0.1 installiert er eine Site und ruft ihre Startseite und die Anmeldung der Administration ab |
+| libSQL | ja, Treiber- und Live-Tests und eine ganze Site | der Job `libsql` mit sqld 0.24.33 als Service-Container (PHP 8.5 und 8.3): die Suiten `libsql` und `libsql-live`; auf PHP 8.5 installiert er eine Site auf dem Server und ruft ihre Startseite und die Anmeldung der Administration ab |
 | ODBC | ja, Treiber- und Live-Tests | der Job `odbc` unter Linux (SQL Server, PostgreSQL, MariaDB und SQLite, `pdo_odbc` und `odbc`); der Windows-Job „ODBC on Windows“ gegen LocalDB |
 | MS Access | Import und Treiber | der Live-Test des Imports unter Linux mit MDBTools; der Job `msaccess-windows` (windows-2022, windows-2025, Access Database Engine 2016 x64, PHP 8.4) für Treiber und Import |
 | PostgreSQL-Protokoll | ja, Treiber- und Live-Tests | die Testsuite `pgwire` im PHPUnit-Job; der Job „PostgreSQL wire protocol“ führt `pgwire-live` gegen CockroachDB 25.2, YugabyteDB 2.25 und den Spanner-Emulator hinter PGAdapter aus, PHP 8.1 und 8.5. Neon, Supabase und Aurora: nur Unit-Tests |
@@ -772,7 +785,7 @@ Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, 
 - Im Code: `eZDB::instance()->databaseName()` liefert `sqlite`, `postgresql`, `mongo`, `mysql`, `oracle`, `SQLServer`,
   `firebird`, `duckdb`, `MSAccess` oder, für den allgemeinen ODBC-Dialekt, `odbc`. Die Datenbanken des MySQL-Protokolls
   antworten `mysql`, die des PostgreSQL-Protokolls `postgresql`; bei letzteren nennt `databaseVariant()` die Datenbank
-  selbst.
+  selbst. libSQL und Turso antworten `sqlite` (der Treiber ist der SQLite-Treiber über HTTP); `instanceof expLibSQLDB` unterscheidet sie.
 
 ## Verwandte Seiten
 
@@ -785,6 +798,7 @@ Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, 
   [Datenbanken mit dem PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md),
   [Datenbanken, die das MySQL-Protokoll sprechen](../funktionen/6.0/mysql-wire-datenbanken.md),
   [Firebird-Treiber](../funktionen/6.0/firebird-datenbanktreiber.md), [DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md),
+  [libSQL- und Turso-Treiber](../funktionen/6.0/libsql-datenbanktreiber.md),
   [ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md), [MS-Access-Unterstützung](../funktionen/6.0/ms-access-unterstuetzung.md),
   [Clustering in Exponential 6.0](../funktionen/6.0/clustering-ueberblick.md).
 - [SQLite-Datenbankunterstützung](../funktionen/6.0/sqlite-datenbank.md),
