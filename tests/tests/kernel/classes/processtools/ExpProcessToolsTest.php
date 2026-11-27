@@ -17,6 +17,12 @@ use PHPUnit\Framework\TestCase;
 #[\PHPUnit\Framework\Attributes\Group('processtools')]
 class ExpProcessToolsTest extends TestCase
 {
+    protected function setUp(): void
+    {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'setsid is a Unix program, and the open_basedir list of these tests is separated by ":"' );
+    }
+
     private static function root()
     {
         return dirname( __DIR__, 5 );
