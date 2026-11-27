@@ -30919,7 +30919,7 @@ acf325e88c6fe2f034a54901c164e805  tests/tests/lib/ezsession/EzpSessionHandlerDBP
 aa21338d48b89aa67e3f7d5b7ccde9b8  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
 a471352943b179c6a59174225848025b  tests/tests/lib/ezsession/eZSessionRememberMeTest.php
 586bc0f3bc3a351087f7c147cc654a50  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
-f3ac9af74c61bda1f06724c7f3ace7bb  tests/tests/lib/ezsession/eZSessionSameSiteAliasTest.php
+22abe029a010d0fcd14f354110db8440  tests/tests/lib/ezsession/eZSessionSameSiteAliasTest.php
 2b394f19a1eba68e531983d8352956f2  tests/tests/lib/ezsoap/eZSOAPClientTest.php
 987175a0aade8b73f37e0fc71ee70ba1  tests/tests/lib/ezsoap/eZSOAPClientTlsOptionsTest.php
 8cb02cf5bec8cf1e441d46fd23984ecd  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
@@ -31298,8 +31298,8 @@ b4fe2dd7efdfe60a2316187e32da18b9  webdav.php
 b57b5d3994882cc18ae91c51b21ec4ba  doc/eng-us/bc/6.0/postgresql-read-replica.md
 f27f5e5268a2227d2cd37a56bf679636  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
 e7afb3f92bd8b24d334059d05a9d890d  tests/tests/kernel/classes/upgrade/expUpgradeBackupPostgresqlToolTest.php
-9354ba55ffabebb97fc7be2d469c341d  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
-bffe954ffe945514685fcfe3e31f1107  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php
+a822bb53aad926b39b6e4ddb635d47b5  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
+3d00b0a839bd26b7d085c56a1c9d5d66  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php
 5bad832361a03e9276414147ced0f962  doc/eng-us/features/6.0/postgresql-18-and-19.md
 586bba138a183664f64780cc114d411c  doc/eng-us/features/6.0/clustering-overview.md
 ff2e813bd450f00e1284e25319d91180  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
