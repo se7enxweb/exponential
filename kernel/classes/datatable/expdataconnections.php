@@ -17,7 +17,8 @@
  * Engines: SQLite (a file in one of [ConnectionSettings] SQLiteDirectories), MySQL/MariaDB, PostgreSQL, Oracle (the
  * ezoracle handler when active, else PDO oci), Microsoft SQL Server (PDO sqlsrv, dblib or odbc), MongoDB, any database
  * through ODBC (expODBCDB; the SQL dialect in the options), MS Access through ODBC (expMSAccessDB; the file in one of
- * the SQLiteDirectories); a server may be remote. The password is the name of a secret of the kernel's secret store (expSecrets).
+ * the SQLiteDirectories), Apache Cassandra and ScyllaDB (expCassandraDB, expScyllaDB; Database is the keyspace); a server
+ * may be remote. The password is the name of a secret of the kernel's secret store (expSecrets).
  *
  *   $db = expDataConnections::db( 'archive' );          // an eZDBInterface of its own, one per connection and request
  *   $result = expDataConnections::test( 'archive' );    // ok, engine, version, tables, ms, error (secrets masked)
@@ -56,7 +57,7 @@ class expDataConnections
     /**
      * Every engine a connection can use, and what it takes.
      *
-     * @return array key => array( label, kind (relational, document), ez (the site.ini alias), pdo (drivers), port, file,
+     * @return array key => array( label, kind (relational, document, widecolumn), ez (the site.ini alias), pdo (drivers), port, file,
      *               and class: the driver class of an engine reached through ODBC (PDO_ODBC or PHP's odbc extension) )
      */
     public static function engineTypes()
@@ -83,6 +84,9 @@ class expDataConnections
             // expDb2DB and expInformixDB: pdo_ibm (Informix through its DRDA listener)
             'db2' => array( 'label' => 'IBM Db2', 'kind' => 'relational', 'ez' => 'db2', 'pdo' => array( 'ibm' ), 'port' => 50000, 'file' => false ),
             'informix' => array( 'label' => 'IBM Informix (DRDA)', 'kind' => 'relational', 'ez' => 'informix', 'pdo' => array( 'ibm' ), 'port' => 9089, 'file' => false ),
+            // wide-column databases that speak CQL (expCassandraDB, expScyllaDB), through the library mroosz/php-cassandra
+            'cassandra' => array( 'label' => 'Apache Cassandra', 'kind' => 'widecolumn', 'ez' => 'cassandra', 'pdo' => array(), 'port' => 9042, 'file' => false ),
+            'scylladb' => array( 'label' => 'ScyllaDB', 'kind' => 'widecolumn', 'ez' => 'scylladb', 'pdo' => array(), 'port' => 9042, 'file' => false ),
         );
     }
 
@@ -206,7 +210,7 @@ class expDataConnections
                 $get = function ( $name, $default = '' ) use ( $values ) { return isset( $values[$name] ) ? $values[$name] : $default; };
                 $options = array();
                 foreach ( array( 'Charset' => 'charset', 'Socket' => 'socket', 'DSN' => 'dsn', 'Dialect' => 'dialect', 'Driver' => 'driver',
-                                 'ODBCDriver' => 'odbc_driver', 'ODBCDataSourceName' => 'odbc_dsn', 'ConnectionString' => 'connection_string', 'Layer' => 'layer' ) as $key => $option )
+                                 'ODBCDriver' => 'odbc_driver', 'ODBCDataSourceName' => 'odbc_dsn', 'ConnectionString' => 'connection_string', 'Layer' => 'layer', 'Consistency' => 'consistency' ) as $key => $option )
                     if ( isset( $values[$key] ) && trim( (string)$values[$key] ) !== '' )
                         $options[$option] = trim( (string)$values[$key] );
                 $declared[$id] = self::normalize( array(
@@ -238,7 +242,7 @@ class expDataConnections
         $options = isset( $c['options'] ) && is_array( $c['options'] ) ? $c['options'] : array();
         $clean = array();
         foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver', 'odbc_driver', 'odbc_dsn', 'connection_string', 'layer',
-                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler' ) as $key )
+                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler', 'consistency' ) as $key )
             if ( isset( $options[$key] ) && is_scalar( $options[$key] ) && trim( (string)$options[$key] ) !== '' )
                 $clean[$key] = mb_substr( trim( (string)$options[$key] ), 0, 1000 );
         $engine = strtolower( $text( 'engine', 32 ) );
@@ -267,6 +271,8 @@ class expDataConnections
             $engine = 'msaccess';
         if ( $engine === 'fb' || $engine === 'interbase' )
             $engine = 'firebird';
+        if ( $engine === 'scylla' )
+            $engine = 'scylladb';
         $wire = expPostgreSQLWireProfile::get( $engine );
         if ( $wire && $wire['name'] !== 'postgresql' )
             $engine = $wire['name'];
@@ -585,6 +591,19 @@ class expDataConnections
                     $pgWire[$setting] = $c['options'][$option];
             if ( $pgWire )
                 $parameters['postgresql_wire'] = $pgWire;
+            // Cassandra and ScyllaDB: TLS, its CA and the consistency ([CassandraSettings])
+            if ( in_array( $c['engine'], array( 'cassandra', 'scylladb' ), true ) )
+            {
+                $cassandra = array();
+                if ( !empty( $c['options']['ssl'] ) )
+                    $cassandra['TLS'] = in_array( strtolower( $c['options']['ssl'] ), array( '1', 'true', 'enabled', 'yes', 'on', 'required' ), true ) ? 'enabled' : 'disabled';
+                if ( !empty( $c['options']['ssl_ca'] ) )
+                    $cassandra['TLSCAFile'] = $c['options']['ssl_ca'];
+                if ( !empty( $c['options']['consistency'] ) )
+                    $cassandra['Consistency'] = strtoupper( $c['options']['consistency'] );
+                if ( $cassandra )
+                    $parameters['cassandra'] = $cassandra;
+            }
         }
         else
         {
@@ -1030,6 +1049,9 @@ class expDataConnections
             case 'db2':
             case 'informix':
                 return class_exists( 'expDb2Transport' ) && expDb2Transport::availableLayer() !== null;
+            case 'cassandra':
+            case 'scylladb':
+                return class_exists( 'expCassandraTransport' ) && expCassandraTransport::availableLayer() !== null;
         }
         return false;
     }

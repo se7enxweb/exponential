@@ -99,6 +99,18 @@ class expDataTableDescriber
                 break;
             case 'mongodb':
                 return self::mongoColumns( $db, $table );
+            case 'cassandra':
+            case 'scylladb':
+                // system_schema: CQL has no NULL constraint and no default (the driver keeps them in its definition)
+                $columns = array();
+                $description = $db instanceof expCassandraDB ? $db->tableDescription( $table ) : null;
+                foreach ( $description ? $description['columns'] : array() as $name => $cqlType )
+                {
+                    $field = $description['definition'] && isset( $description['definition']['fields'][$name] ) ? $description['definition']['fields'][$name] : null;
+                    $columns[$name] = array( 'type' => strtolower( (string)$cqlType ), 'nullable' => $field ? empty( $field['not_null'] ) : true,
+                                              'default' => $field && isset( $field['default'] ) && $field['default'] !== false ? (string)$field['default'] : null );
+                }
+                return $columns;
             case 'firebird':
                 $columns = array();
                 foreach ( method_exists( $db, 'tableColumns' ) ? (array)$db->tableColumns( $table ) : array() as $column )

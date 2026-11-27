@@ -21,7 +21,8 @@
  * Engines: MySQL/MariaDB, PostgreSQL and SQLite through the kernel's schema handlers (CREATE from them, the upgrade
  * from eZDbSchemaChecker and the handler's upgrade SQL); Oracle through ezoracle's handler when it is active, else
  * through the statements here (a sequence and a trigger for the counted key, named as expPDODB reads them); SQL Server
- * through the statements here (IDENTITY); MS Access through expMSAccessDialect (COUNTER); MongoDB through its schema handler (collections and indexes). An upgrade
+ * through the statements here (IDENTITY); MS Access through expMSAccessDialect (COUNTER); MongoDB through its schema handler (collections and indexes); Cassandra and ScyllaDB
+ * through expCassandraSchema (CQL tables, secondary indexes, the definition kept for the driver). An upgrade
  * adds columns and indexes; it drops or changes one only when asked ('drop', 'alter').
  *
  * @since 6.0.15
@@ -209,6 +210,11 @@ class expDataTableSchema
                 if ( self::hasHandler( 'oracle' ) && !$db instanceof expPDODB )
                     return self::split( expKernelTableSchema::sql( array( $table => $definition ), 'oracle' ) );
                 return self::oracleCreate( $table, $definition );
+            case 'cassandra':
+            case 'scylladb':
+                // CQL: the table, its secondary indexes and the definition the driver reads (defaults, the counted-up key)
+                $handler = new expCassandraSchema( array( 'instance' => $db instanceof expCassandraDB ? $db : expKernelTableSchema::nullDB() ) );
+                return $handler->generateTableSQLList( $table, $definition, array(), false );
             case 'mongodb':
                 return array( '// MongoDB: the collection ' . $table . ' is made on its first write; indexes: '
                               . json_encode( isset( $definition['indexes'] ) ? $definition['indexes'] : array(), JSON_UNESCAPED_SLASHES ) );
@@ -489,7 +495,10 @@ class expDataTableSchema
             {
                 if ( isset( $columns[strtolower( $name )] ) )
                     continue;
-                if ( $engine === 'msaccess' )
+                if ( $engine === 'cassandra' || $engine === 'scylladb' )
+                    $step['statements'][] = 'ALTER TABLE ' . expCassandraDialect::quoteName( $table ) . ' ADD ' . expCassandraDialect::quoteName( $name ) . ' '
+                                          . expCassandraDialect::cqlType( $field );
+                elseif ( $engine === 'msaccess' )
                     $step['statements'][] = 'ALTER TABLE ' . expMSAccessDialect::quoteName( $table ) . ' ADD COLUMN ' . expMSAccessDialect::quoteName( $name ) . ' '
                                           . expMSAccessDialect::columnType( $field, $db instanceof expODBCDB ? $db->ansi92() : true );
                 else

@@ -94,7 +94,7 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'admin', $c['origin'] );
         $this->assertTrue( $c['read_only'] );
         foreach ( array( 'mysqli' => 'mysql', 'pgsql' => 'postgresql', 'mongo' => 'mongodb', 'mssql' => 'sqlserver', 'sqlite' => 'sqlite',
-                         'crdb' => 'cockroachdb', 'yugabyte' => 'yugabytedb', 'spannerpg' => 'spanner', 'aurora-postgresql' => 'aurorapostgresql' ) as $alias => $engine )
+                         'crdb' => 'cockroachdb', 'yugabyte' => 'yugabytedb', 'spannerpg' => 'spanner', 'aurora-postgresql' => 'aurorapostgresql', 'scylla' => 'scylladb' ) as $alias => $engine )
             $this->assertSame( $engine, expDataConnections::normalize( array( 'engine' => $alias ) )['engine'], $alias );
         $this->assertSame( 0, expDataConnections::normalize( array( 'port' => '-5' ) )['port'] );
         $this->assertSame( 0, expDataConnections::normalize( array( 'port' => 'abc' ) )['port'] );
@@ -211,7 +211,8 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
     {
         $engines = expDataConnections::engines();
         $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird', 'duckdb',
-                                  'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurorapostgresql', 'db2', 'informix' ),
+                                  'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurorapostgresql', 'db2', 'informix',
+                                  'cassandra', 'scylladb' ),
                            array_keys( $engines ) );
         foreach ( $engines as $key => $engine )
         {
@@ -233,6 +234,11 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'firebird', 3050, 'relational' ), array( $engines['firebird']['ez'], $engines['firebird']['port'], $engines['firebird']['kind'] ) );
         $this->assertSame( array( 'db2', 50000, array( 'ibm' ) ), array( $engines['db2']['ez'], $engines['db2']['port'], $engines['db2']['pdo'] ) );
         $this->assertSame( array( 'informix', 9089, array( 'ibm' ) ), array( $engines['informix']['ez'], $engines['informix']['port'], $engines['informix']['pdo'] ) );
+        foreach ( array( 'cassandra', 'scylladb' ) as $key )
+        {
+            $this->assertSame( array( $key, 9042, 'widecolumn' ), array( $engines[$key]['ez'], $engines[$key]['port'], $engines[$key]['kind'] ), $key );
+            $this->assertFalse( $engines[$key]['untested'], $key );
+        }
     }
 
     /** DC-07 */
