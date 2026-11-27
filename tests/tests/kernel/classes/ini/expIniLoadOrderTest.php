@@ -135,12 +135,18 @@ class expIniLoadOrderTest extends PHPUnit\Framework\TestCase
     {
         $command = array_merge( array( PHP_BINARY, __DIR__ . '/fixtures/expiniezinichain.php', $this->root,
                                        $siteAccess === null ? '-' : $siteAccess, 'site.ini' ), self::PROBES );
-        $p = proc_open( $command, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $this->root );
-        $out = stream_get_contents( $pipes[1] );
-        $err = stream_get_contents( $pipes[2] );
-        fclose( $pipes[1] );
-        fclose( $pipes[2] );
+        // Output and errors to files, not pipes: a child that fills the error pipe while the test still waits for the
+        // end of its output never ends (a pipe holds 4 KB on Windows; the help alone is 6 KB on stderr). No input.
+        $outFile = tempnam( sys_get_temp_dir(), 'exp-ini-out' );
+        $errFile = tempnam( sys_get_temp_dir(), 'exp-ini-err' );
+        $null = DIRECTORY_SEPARATOR === '\\' ? 'NUL' : '/dev/null';
+        $p = proc_open( $command, array( 0 => array( 'file', $null, 'r' ), 1 => array( 'file', $outFile, 'w' ), 2 => array( 'file', $errFile, 'w' ) ),
+                           $pipes, $this->root );
         $code = proc_close( $p );
+        $out = (string)file_get_contents( $outFile );
+        $err = (string)file_get_contents( $errFile );
+        unlink( $outFile );
+        unlink( $errFile );
         $data = json_decode( trim( $out ), true );
         $this->assertSame( 0, $code, "eZINI child process failed\nstdout: $out\nstderr: $err" );
         $this->assertIsArray( $data, "no JSON from the eZINI child process\nstdout: $out\nstderr: $err" );

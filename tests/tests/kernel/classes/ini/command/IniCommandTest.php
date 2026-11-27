@@ -85,12 +85,18 @@ class IniCommandTest extends PHPUnit\Framework\TestCase
                                     $withRoot ? array( '--root=' . $this->root ) : array(),
                                     array( '--allow-root-user', '--no-colors' ), array_slice( $args, $i ) );
         }
-        $process = proc_open( $command, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, self::$installation );
-        $out = stream_get_contents( $pipes[1] );
-        $err = stream_get_contents( $pipes[2] );
-        fclose( $pipes[1] );
-        fclose( $pipes[2] );
+        // Output and errors to files, not pipes: a child that fills the error pipe while the test still waits for the
+        // end of its output never ends (a pipe holds 4 KB on Windows; the help alone is 6 KB on stderr). No input.
+        $outFile = tempnam( sys_get_temp_dir(), 'exp-ini-out' );
+        $errFile = tempnam( sys_get_temp_dir(), 'exp-ini-err' );
+        $null = DIRECTORY_SEPARATOR === '\\' ? 'NUL' : '/dev/null';
+        $process = proc_open( $command, array( 0 => array( 'file', $null, 'r' ), 1 => array( 'file', $outFile, 'w' ), 2 => array( 'file', $errFile, 'w' ) ),
+                           $pipes, self::$installation );
         $code = proc_close( $process );
+        $out = (string)file_get_contents( $outFile );
+        $err = (string)file_get_contents( $errFile );
+        unlink( $outFile );
+        unlink( $errFile );
         $err = trim( str_replace( 'With great power comes great responsibility.', '', $err ) );
         return array( $code, $out, $err );
     }
