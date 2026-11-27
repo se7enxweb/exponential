@@ -129,11 +129,14 @@ Eine Site gilt als installiert, wenn:
   oder
 - die Anfrage über die Gültigkeitsprüfung kam und die Datenbank aus den Einstellungen Inhaltsobjekte enthält.
 
-Für die Entwicklung lässt `settings/site.ini [SetupSettings] AllowWizardOnInstalledSite=enabled` (Standard ist
-`disabled`) den Assistenten auf einer installierten Site laufen, und zwar erst nach einer Bestätigungsseite: Der
-Wartungsmodus beginnt, wenn das Formular dieser Seite mit seinem Einmal-Token (das in der Sitzung liegt)
-zurückgeschickt wird, niemals durch ein GET. Ein abgeschickter Schritt, dessen Frist abgelaufen ist, kehrt zur
-Bestätigungsseite zurück.
+Um eine installierte Site mit dem Assistenten neu zu installieren, setzen Sie `[SiteAccessSettings]
+CheckValidity=true`: Mit `[SetupSettings] AllowWizardOnInstalledSite=auto` (Standard) bietet die Seite dann
+**Einrichtungsassistenten trotzdem ausführen** an (`enabled` immer, `disabled` nie). Die Schaltfläche führt zu einer
+Bestätigungsseite: Der Wartungsmodus beginnt, wenn das Formular dieser Seite mit seinem Einmal-Token (es gehört zu einem
+Cookie: Der Assistent läuft ohne Sitzung) zurückgeschickt wird, niemals durch ein GET oder die Schaltfläche. Ein abgeschickter Schritt, dessen
+Frist abgelaufen ist, kehrt zur Bestätigungsseite zurück. Über die Gültigkeitsprüfung ist jede Adresse der Assistent,
+und seine Formulare senden an die Wurzel der Site, nie an `/setup/...` (ein Administrationsmodul, das eine Firewall im
+Frontend abweist). Siehe [Der Setup-Assistent auf einer installierten Website](../bc/6.0/setup-assistent-auf-installierter-website.md).
 
 Vor 6.0.15 startete jedes GET auf `setup/init` den Wartungsmodus, sodass ein Crawler eines angemeldeten Administrators
 eine installierte Site mit „The site is being set up“ offline nehmen konnte, bis die Frist abgelaufen war oder

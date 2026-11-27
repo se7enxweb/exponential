@@ -134,8 +134,9 @@ files (`kickstart.ini`, a generated password file) contain passwords.
 
 **Built in.** On an installed site `setup/init` only shows "This site is already installed" and writes nothing
 (`expSetupWizardGuard`; installed means `var/site_installed.json` exists, the site is served normally, or the database
-holds content). `[SetupSettings] AllowWizardOnInstalledSite` (default `disabled`, development only) is the one way
-around it, and even then a confirmation with a one-time token is required. The installer writes
+holds content). `[SetupSettings] AllowWizardOnInstalledSite` (default `auto`: allowed when an administrator set
+`CheckValidity=true`; `enabled`; `disabled`) is the one way around it, and even then a confirmation with a one-time
+token is required. The installer writes
 `[SiteAccessSettings] CheckValidity=false`. With `[ConfigurationSettings] ManagedByDeployment=enabled` the
 administration cannot run the wizard, edit settings or templates, activate extensions or install packages at all
 ([Configuration managed by the deployment](../features/6.0/managed-by-deployment.md)).

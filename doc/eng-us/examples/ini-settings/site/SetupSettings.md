@@ -71,17 +71,20 @@ OverrideSiteDesign=standard
 
 ## AllowWizardOnInstalledSite
 
-> The setup wizard (setup/init) on a site that is already installed: disabled  
-> shows a page that says so and changes nothing. enabled is for development  
-> only: the wizard then runs after a confirm page, and the site goes into  
-> maintenance mode once that page is posted. Reinstalling a site is done with  
-> the kickstarter or a fresh installation.  
+> The setup wizard on a site that is already installed. It first shows a page  
+> that says so and changes nothing. auto (the default): when the admin set  
+> [SiteAccessSettings] CheckValidity=true, that page offers "Run the setup  
+> wizard anyway", which leads to a confirm page; enabled: always offered;  
+> disabled: never. Only the confirm page's POST starts the wizard and puts the  
+> site into maintenance mode. Reinstalling is also done with the kickstarter  
+> or a fresh installation.  
 
-Default: `disabled`.
+Default: `auto`. Values: `auto`, `enabled`, `disabled` (any other value counts as `auto`). See
+[The setup wizard on an installed site](../../../bc/6.0/setup-wizard-on-installed-site.md).
 
 ```ini
 <?php /* #?ini charset="utf-8"?
-# settings/override/site.ini.append.php
+# settings/override/site.ini.append.php: the wizard never runs on this installed site, even with CheckValidity=true
 [SetupSettings]
 AllowWizardOnInstalledSite=disabled
 */ ?>

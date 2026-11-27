@@ -145,8 +145,9 @@ Passwörter.
 
 **Eingebaut.** Auf einer installierten Site zeigt `setup/init` nur „This site is already installed“ und schreibt nichts
 (`expSetupWizardGuard`; installiert heißt: `var/site_installed.json` existiert, die Site wird normal ausgeliefert oder
-die Datenbank enthält Inhalte). `[SetupSettings] AllowWizardOnInstalledSite` (Vorgabe `disabled`, nur für die
-Entwicklung) ist der einzige Weg daran vorbei, und selbst dann ist eine Bestätigung mit einem Einmal-Token nötig. Der
+die Datenbank enthält Inhalte). `[SetupSettings] AllowWizardOnInstalledSite` (Vorgabe `auto`: erlaubt, wenn ein
+Administrator `CheckValidity=true` gesetzt hat; `enabled`; `disabled`) ist der einzige Weg daran vorbei, und selbst
+dann ist eine Bestätigung mit einem Einmal-Token nötig. Der
 Installer schreibt `[SiteAccessSettings] CheckValidity=false`. Mit `[ConfigurationSettings] ManagedByDeployment=enabled`
 kann die Administration den Assistenten überhaupt nicht ausführen, keine Einstellungen oder Templates bearbeiten, keine
 Erweiterungen aktivieren und keine Pakete installieren

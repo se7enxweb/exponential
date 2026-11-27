@@ -117,10 +117,13 @@ maintenance marker, no run in `var/log/setup.log`. A site counts as installed wh
 - the request did not come through the validity check (`CheckValidity` is off, so the site is served normally), or
 - the request came through the validity check and the database in the settings holds content objects.
 
-For development, `settings/site.ini [SetupSettings] AllowWizardOnInstalledSite=enabled` (the default is `disabled`)
-lets the wizard run on an installed site, and then only after a confirm page: maintenance starts when that page's form
-is posted back with its one-time token (kept in the session), never from a GET. A posted step whose lease has run out
-returns to the confirm page.
+To reinstall an installed site with the wizard, set `[SiteAccessSettings] CheckValidity=true`: with
+`[SetupSettings] AllowWizardOnInstalledSite=auto` (the default) the page then offers **Run the setup wizard anyway**
+(`enabled` offers it always, `disabled` never). The button leads to a confirm page: maintenance starts when that page's
+form is posted back with its one-time token (paired with a cookie: the wizard runs without a session), never from a GET or the button. A posted step whose
+lease has run out returns to the confirm page. Through the validity check every address is the wizard, and its forms
+post to the site root, never to `/setup/...` (an admin module a frontend firewall refuses). See
+[The setup wizard on an installed site](../bc/6.0/setup-wizard-on-installed-site.md).
 
 Before 6.0.15 any GET of `setup/init` started maintenance, so a crawler of a signed-in administrator could take an
 installed site offline with "The site is being set up" until the lease ran out or `exp:maintenance off` was run.

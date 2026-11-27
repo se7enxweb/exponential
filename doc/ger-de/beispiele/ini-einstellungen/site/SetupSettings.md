@@ -71,17 +71,20 @@ OverrideSiteDesign=standard
 
 ## AllowWizardOnInstalledSite
 
-> Der Setup-Assistent (setup/init) auf einer bereits installierten Website: disabled  
-> zeigt eine Seite, die das sagt, und ändert nichts. enabled ist nur für die Entwicklung:  
-> Der Assistent läuft dann nach einer Bestätigungsseite, und die Website geht in den  
-> Wartungsmodus, sobald diese Seite abgeschickt ist. Eine Website wird mit dem  
-> Kickstarter oder einer frischen Installation neu installiert.  
+> Der Setup-Assistent auf einer bereits installierten Website. Er zeigt zuerst eine  
+> Seite, die das sagt, und ändert nichts. auto (die Vorgabe): Hat der Administrator  
+> [SiteAccessSettings] CheckValidity=true gesetzt, bietet diese Seite „Einrichtungsassistenten  
+> trotzdem ausführen“ an, das zu einer Bestätigungsseite führt; enabled: immer angeboten;  
+> disabled: nie. Erst der POST der Bestätigungsseite startet den Assistenten und versetzt  
+> die Website in den Wartungsmodus. Neu installiert wird auch mit dem Kickstarter oder  
+> einer frischen Installation.  
 
-Standard: `disabled`.
+Standard: `auto`. Werte: `auto`, `enabled`, `disabled` (jeder andere Wert gilt als `auto`). Siehe
+[Der Setup-Assistent auf einer installierten Website](../../../bc/6.0/setup-assistent-auf-installierter-website.md).
 
 ```ini
 <?php /* #?ini charset="utf-8"?
-# settings/override/site.ini.append.php
+# settings/override/site.ini.append.php: der Assistent läuft auf dieser installierten Website nie, auch nicht mit CheckValidity=true
 [SetupSettings]
 AllowWizardOnInstalledSite=disabled
 */ ?>
