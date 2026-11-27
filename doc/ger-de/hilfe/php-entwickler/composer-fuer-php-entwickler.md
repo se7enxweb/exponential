@@ -31,7 +31,7 @@ Klassen.
 | `license` | `GPL-2.0-or-later` |
 | `require` `php` | `^8.0 \|\| ^8.1 \|\| ... \|\| ^8.5` (und vorausschauende Bereiche bis 8.8) |
 | `require` `ext-*` | `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`, `reflection`, `session`, `spl`, `simplexml` |
-| `require` Pakete | das Installer-Plugin, Velocity (`se7enxweb/exponential-velocity`), die mitgelieferten `se7enxweb/*`-Erweiterungen, die Bibliotheken des Kernels `se7enxweb/expcomponents-*` (die [expcomponents](../../funktionen/6.0/expcomponents.md), seit 6.0.15 der Fork der Zeta Components durch Exponential) |
+| `require` Pakete | das Installer-Plugin, Velocity (`se7enxweb/exponential-velocity`), die mitgelieferten `se7enxweb/*`-Erweiterungen, die Bibliotheken des Kernels `se7enxweb/expcomponents-*` (die [Exponential Components](../../funktionen/6.0/expcomponents.md), seit 6.0.15 der Fork der Zeta Components durch Exponential) |
 | `require-dev` | `phpunit/phpunit` (`^9.6 \|\| ^10.5 \|\| ^11.5 \|\| ^12.0 \|\| ^13.4`) |
 | `suggest` | Datenbankerweiterungen (`ext-sqlite3`, `ext-pgsql`, `ext-mysqli`, `mongodb/mongodb`), `ext-gd`, `ext-curl`, optionale Erweiterungen |
 | `autoload` | `files: autoload.php`, sodass der Autoloader von Composer den des Kernels lädt |

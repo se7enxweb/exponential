@@ -421,7 +421,7 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `tests/` | ja | Die PHPUnit-Testsuite (`tests/runtests.php`, `phpunit.xml`). |
 | `update/` | ja | Datenbank-Update-Dateien pro Engine und Version (`update/database/<engine>/`) und Skripte zur Datenreparatur (`update/common/scripts/`); siehe [Kapitel 11](11-aktualisieren.md). |
 | `var/` | nein (nur `var/webdav/`) | Alles, was zur Laufzeit geschrieben wird: `var/cache/`, `var/log/`, `var/storage/` (hochgeladene Dateien, Pakete, die SQLite-Datenbank in `var/storage/sqlite3/`), `var/autoload/` (die Class Maps der Extensions), `var/vc/` (Laufzeitdateien und Protokolle von Velocity). Muss für den Webserver beschreibbar sein. |
-| `vendor/` | nein | Die Composer-Bibliotheken: die expcomponents (`vendor/se7enxweb/expcomponents-*`, der Fork der Zeta Components), das Installer-Plugin, Velocity, sofern installiert. |
+| `vendor/` | nein | Die Composer-Bibliotheken: die Exponential Components (`vendor/se7enxweb/expcomponents-*`, der Fork der Zeta Components), das Installer-Plugin, Velocity, sofern installiert. |
 
 ### Dateien
 

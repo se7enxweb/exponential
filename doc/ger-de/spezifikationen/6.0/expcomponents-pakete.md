@@ -1,9 +1,9 @@
 # Spezifikation: die expcomponents-Pakete und wofür der Kernel sie verwendet
 
-Diese Seite ist die Referenz zu jeder Bibliothek der **expcomponents**, des Forks der Zeta Components durch Exponential
+Diese Seite ist die Referenz zu jeder Bibliothek der **Exponential Components**, des Forks der Zeta Components durch Exponential
 (Apache License 2.0): was das Paket tut, welche Klassen, Dateien und Funktionen des Kernels es verwenden, welches
 Ursprungspaket es ersetzt und wo sein Repository ist. Überblick, Geschichte und Gründe für den Fork stehen auf der
-Funktionsseite [Exponential Components (expcomponents)](../../funktionen/6.0/expcomponents.md); was ein Upgrade bedeutet,
+Funktionsseite [Exponential Components](../../funktionen/6.0/expcomponents.md); was ein Upgrade bedeutet,
 in den [Upgrade-Hinweisen](../../bc/6.0/expcomponents.md).
 
 Die Listen der Verwendungen stammen aus dem eigenen Code des Kernels (`kernel/`, `lib/`, `bin/`, `update/`,
@@ -339,7 +339,7 @@ Eine Erweiterung, die einen davon braucht, verlangt den Fork mit seinem Namen.
 
 ## Verwandte Seiten
 
-- [Exponential Components (expcomponents)](../../funktionen/6.0/expcomponents.md)
-- [Upgrade-Hinweise: der Wechsel zu expcomponents](../../bc/6.0/expcomponents.md)
-- [Zu expcomponents beitragen](../../anleitungen/zu-expcomponents-beitragen.md)
+- [Exponential Components](../../funktionen/6.0/expcomponents.md)
+- [Upgrade-Hinweise: der Wechsel zu Exponential Components](../../bc/6.0/expcomponents.md)
+- [Zu Exponential Components beitragen](../../anleitungen/zu-expcomponents-beitragen.md)
 - [APIs und Protokolle](../../standards/apis-und-protokolle.md)

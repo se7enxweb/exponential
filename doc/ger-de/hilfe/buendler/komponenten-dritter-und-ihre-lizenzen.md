@@ -46,9 +46,9 @@ composer licenses --no-dev --format=json > var/log/bundle-licenses.json
 
 Ein Paket ohne Lizenzfeld erscheint als "none"; prüfen Sie es von Hand, bevor Sie es ausliefern.
 
-### Die Bibliotheken des Kernels: expcomponents (Apache 2.0)
+### Die Bibliotheken des Kernels: Exponential Components (Apache 2.0)
 
-Jedes Bündel von Exponential enthält die Bibliotheken des Kernels. Seit 6.0.15 sind das die **expcomponents**, der
+Jedes Bündel von Exponential enthält die Bibliotheken des Kernels. Seit 6.0.15 sind das die **Exponential Components**, der
 Fork der Zeta Components durch Exponential, ein Composer-Paket je Bibliothek (`se7enxweb/expcomponents-mail`,
 `se7enxweb/expcomponents-archive` ...), installiert in `vendor/se7enxweb/expcomponents-*/`. Bis 6.0.14 waren es die
 Ursprungspakete `zetacomponents/*` in `vendor/zetacomponents/`. In beiden Fällen gilt:

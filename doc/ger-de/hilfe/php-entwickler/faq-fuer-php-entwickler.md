@@ -67,14 +67,14 @@ Symfony-Plattform aus ([Symfony und die Legacy Bridge](../ersteller/anwendungsen
 
 **Was sind die `ezc*`-Klassen, und woher kommen sie?**
 Es sind die Bibliotheken des Kernels (`ezcMail`, `ezcArchive`, `ezcWebdavServer`, `ezcMvcController` ...). Seit
-6.0.15 kommen sie aus den **expcomponents** (`se7enxweb/expcomponents-*`), dem Fork der Zeta Components durch
+6.0.15 kommen sie aus den **Exponential Components** (`se7enxweb/expcomponents-*`), dem Fork der Zeta Components durch
 Exponential, unter der Apache License 2.0; Klassennamen und APIs haben sich nicht geändert. Ein Fehler in einer davon
 gehört in das Repository dieses Forks ([Exponential Components](../../funktionen/6.0/expcomponents.md),
-[Zu expcomponents beitragen](../../anleitungen/zu-expcomponents-beitragen.md)).
+[Zu Exponential Components beitragen](../../anleitungen/zu-expcomponents-beitragen.md)).
 
 **Meine Erweiterung verlangt `zetacomponents/mail`. Muss ich das ändern?**
 Nein: Jeder Fork ersetzt seinen Ursprungsnamen, die Anforderung ist also erfüllt. Benennen Sie sie in Ihrem nächsten
-Release in `se7enxweb/expcomponents-mail` um ([Upgrade-Hinweise: der Wechsel zu expcomponents](../../bc/6.0/expcomponents.md#erweiterungen)).
+Release in `se7enxweb/expcomponents-mail` um ([Upgrade-Hinweise: der Wechsel zu Exponential Components](../../bc/6.0/expcomponents.md#erweiterungen)).
 
 ## Klassen und Einstellungen
 

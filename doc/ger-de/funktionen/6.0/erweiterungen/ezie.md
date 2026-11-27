@@ -13,7 +13,7 @@ und aufgegeben haben, versuchen Sie es erneut.
 
 Exponential 6, PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar), GD2 oder ImageMagick und ein Bearbeitungsformular von Exponential (Admin oder ein
 Design, das die Skripte des Bearbeitungsformulars lädt). Er verwendet jQuery, jQuery UI, die Plugins Jcrop und
-colorpicker und die Bildkonvertierungsbibliothek der [expcomponents](../expcomponents.md) (`ezcImageConverter`, ein Fork der
+colorpicker und die Bildkonvertierungsbibliothek der [Exponential Components](../expcomponents.md) (`ezcImageConverter`, ein Fork der
 Zeta Components).
 
 ## Installieren

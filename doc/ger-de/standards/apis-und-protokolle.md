@@ -215,7 +215,7 @@ PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK und UNLOCK. Klasse 1 ist der Grundu
 ### Wie Exponential es erfüllt
 
 - Einstiegspunkt `index_webdav.php` im Installationsverzeichnis (bis 6.0.14 `webdav.php`, jetzt ein weiterleitender
-  Shim, siehe [die Änderung](../bc/6.0/webdav-einstiegsskript-index-webdav.md)); er verwendet den WebDAV-Server der expcomponents, des Forks der
+  Shim, siehe [die Änderung](../bc/6.0/webdav-einstiegsskript-index-webdav.md)); er verwendet den WebDAV-Server der Exponential Components, des Forks der
   Zeta Components
   (`se7enxweb/expcomponents-webdav ~1.2.3` in `composer.json`) mit dem Inhalts-Backend
   `kernel/private/classes/webdav/ezwebdavcontentbackend.php` und dem Authentifizierungs-Backend
@@ -284,7 +284,7 @@ IETF Atom Syndication Format, RFC 4287 (Dezember 2005). OPML 2.0 listet Feeds au
 ### Wie Exponential es erfüllt
 
 - **Export** (`kernel/classes/ezrssexport.php`, `rssXmlContent()`): RSS 1.0 (`rss1`), RSS 2.0 (`rss2`) und Atom
-  (`atom`) über die Feed-Bibliothek der expcomponents (`se7enxweb/expcomponents-feed ~1.4.7`, seit 6.0.15 der Fork von
+  (`atom`) über die Feed-Bibliothek der Exponential Components (`se7enxweb/expcomponents-feed ~1.4.7`, seit 6.0.15 der Fork von
   `zetacomponents/feed` 1.4.6); Feeds für Apple Podcasts
   (`ITUNES`) und OPML schreibt Exponential selbst. Feeds werden unter `/rss/feed/<address>` ausgeliefert.
 - **Import** (`kernel/classes/ezrssimport.php`, Cronjob-Teil `kernel/private/classes/cronjobs/rssimport.php`): RSS

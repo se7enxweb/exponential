@@ -1,7 +1,7 @@
-# Exponential Components (expcomponents): die Bibliotheken des Kernels, geforkt aus den Zeta Components
+# Exponential Components: die Bibliotheken des Kernels, geforkt aus den Zeta Components
 
-Seit 6.0.15 sind die PHP-Bibliotheken, auf denen der Kernel von Exponential aufbaut, die **Exponential Components**,
-kurz **expcomponents**: der eigene Fork der Zeta Components durch Exponential, veröffentlicht als die Composer-Pakete
+Seit 6.0.15 sind die PHP-Bibliotheken, auf denen der Kernel von Exponential aufbaut, die **Exponential Components**:
+der eigene Fork der Zeta Components durch Exponential, veröffentlicht als die Composer-Pakete
 `se7enxweb/expcomponents-<name>`, wie der Code, aus dem sie stammen, unter der Apache License 2.0 lizenziert und
 gepflegt von 7x und der Exponential Foundation. Die `composer.json` des Kernels verlangt die Forks anstelle der
 Ursprungspakete `zetacomponents/*`. Die Klassen behalten ihre `ezc`-Namen und ihre APIs, daher ändert sich Code, der
@@ -11,13 +11,13 @@ Diese Seite ist für alle, die wissen wollen, was diese Bibliotheken sind, woher
 forkt, was gleich bleibt und wo jede einzelne zu finden ist. Was ein Upgrade für eine Installation, eine Erweiterung
 oder eigenen Code bedeutet, steht in den [Upgrade-Hinweisen](../../bc/6.0/expcomponents.md); was jedes Paket im Kernel
 tut, Klasse für Klasse, in der [Paketreferenz](../../spezifikationen/6.0/expcomponents-pakete.md); wie man an einem
-Fork arbeitet, in der Anleitung [Zu expcomponents beitragen](../../anleitungen/zu-expcomponents-beitragen.md).
+Fork arbeitet, in der Anleitung [Zu Exponential Components beitragen](../../anleitungen/zu-expcomponents-beitragen.md).
 
 ## Inhalt
 
 1. [Kurz gesagt](#kurz-gesagt)
 2. [Was die Komponenten sind](#was-die-komponenten-sind)
-3. [Geschichte: eZ Components, Zeta Components, expcomponents](#geschichte-ez-components-zeta-components-expcomponents)
+3. [Geschichte: eZ Components, Zeta Components, Exponential Components](#geschichte-ez-components-zeta-components-exponential-components)
 4. [Warum Exponential sie forkt](#warum-exponential-sie-forkt)
 5. [Was gleich bleibt](#was-gleich-bleibt)
 6. [Was sich ändert](#was-sich-ändert)
@@ -66,7 +66,7 @@ log, persistent object, database), Konsolenskripte (console tools), Setup > Syst
 und die Veröffentlichungswarteschlange für Inhalte (signal slot). Die
 [Paketreferenz](../../spezifikationen/6.0/expcomponents-pakete.md) nennt die Klassen und Dateien für jede.
 
-## Geschichte: eZ Components, Zeta Components, expcomponents
+## Geschichte: eZ Components, Zeta Components, Exponential Components
 
 Die Bibliotheken sind älter als der größte Teil des PHP-Ökosystems um sie herum, und sie haben vor diesem Fork zweimal
 den Besitzer gewechselt.
@@ -76,7 +76,7 @@ den Besitzer gewechselt.
 | Ab 2005 | **eZ Components** | eZ Systems AS, das norwegische Unternehmen hinter eZ Publish, dem Produkt, aus dem Exponential hervorging | New-BSD-Lizenz | ez.no, neben dem Code installiert (zum Beispiel als `ezcomponents/trunk`) |
 | Ab 2010 | **Apache Zeta Components** | Der Inkubator der Apache Software Foundation, nachdem eZ Systems den Code eingebracht hatte | Apache License 2.0 | incubator.apache.org |
 | Nach dem Inkubator | **Zeta Components** | Die Zeta Components development group, als unabhängiges Projekt | Apache License 2.0 | github.com/zetacomponents, Packagist `zetacomponents/*` |
-| Seit 6.0.15 | **Exponential Components (expcomponents)** | 7x und die Exponential Foundation | Apache License 2.0 | github.com/se7enxweb, Packagist `se7enxweb/expcomponents-*` |
+| Seit 6.0.15 | **Exponential Components** | 7x und die Exponential Foundation | Apache License 2.0 | github.com/se7enxweb, Packagist `se7enxweb/expcomponents-*` |
 
 Die Lizenzdatei jedes Pakets erzählt diese Geschichte noch heute mit eigenen Worten: „Zeta Components, Copyright
 2011-2015 The Zeta Components development group“, „Apache Zeta Components, Copyright 2010-2011 The Apache Software
@@ -97,7 +97,7 @@ Was das für die Produktlinie bedeutete:
   war vor seiner Umbenennung als `se7enxweb/zetacomponents-webdav` 1.2.1 veröffentlicht worden) und
   `se7enxweb/expcomponents-archive` 1.5.2, das GNU-tar-Einträge mit langen Namen wieder entpackt und unter PHP 8.4
   und 8.5 keine Deprecations mehr ausgibt. Dann machte das Projekt es offiziell: Jede Zeta Component, die der Kernel
-  braucht, wird als expcomponents geforkt, alle 21 Forks wurden am 2026-11-06 veröffentlicht, und die Linie 6.0.15
+  braucht, wird als Exponential Components geforkt, alle 21 Forks wurden am 2026-11-06 veröffentlicht, und die Linie 6.0.15
   verlangt sie anstelle der Ursprungspakete.
 
 ## Warum Exponential sie forkt
@@ -312,7 +312,7 @@ Das ist keine Rechtsberatung; fragen Sie zu Ihrer eigenen Verbreitung einen Rech
 - **Unklar, ob es am Kernel oder an der Bibliothek liegt:** Eröffnen Sie es beim Kernel, `se7enxweb/exponential`; es
   wird verschoben.
 - **Code:** ein Pull-Request an den Fork, mit einem Test. Wie man klont, die Tests auf mehreren PHP-Versionen ausführt
-  und die Commit-Nachricht schreibt: [Zu expcomponents beitragen](../../anleitungen/zu-expcomponents-beitragen.md).
+  und die Commit-Nachricht schreibt: [Zu Exponential Components beitragen](../../anleitungen/zu-expcomponents-beitragen.md).
 
 ## Modernisierung: die Absicht
 
@@ -358,9 +358,9 @@ verwechselt. Das Präfix `exp` ist das, das Exponential für eigenen Code verwen
 
 ## Verwandte Seiten
 
-- [Upgrade-Hinweise: der Wechsel zu expcomponents](../../bc/6.0/expcomponents.md)
+- [Upgrade-Hinweise: der Wechsel zu Exponential Components](../../bc/6.0/expcomponents.md)
 - [Spezifikation: die expcomponents-Pakete und wofür der Kernel sie verwendet](../../spezifikationen/6.0/expcomponents-pakete.md)
-- [Zu expcomponents beitragen](../../anleitungen/zu-expcomponents-beitragen.md)
+- [Zu Exponential Components beitragen](../../anleitungen/zu-expcomponents-beitragen.md)
 - [Upstream-Projekte und Forks](../../hilfe/oekosystem/php-stack/upstream-projekte-und-forks.md)
 - [Komponenten Dritter und ihre Lizenzen](../../hilfe/buendler/komponenten-dritter-und-ihre-lizenzen.md)
 - [Urheberrecht und Copyleft](../../hilfe/urheberrecht-und-copyleft.md)

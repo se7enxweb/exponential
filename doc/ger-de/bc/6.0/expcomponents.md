@@ -1,11 +1,11 @@
-# Der Wechsel zu expcomponents: was beim Upgrade zu prüfen ist (6.0.15)
+# Der Wechsel zu Exponential Components: was beim Upgrade zu prüfen ist (6.0.15)
 
-Seit 6.0.15 verlangt die `composer.json` des Kernels die **expcomponents**, den Fork der Zeta Components durch
+Seit 6.0.15 verlangt die `composer.json` des Kernels die **Exponential Components**, den Fork der Zeta Components durch
 Exponential, anstelle der Ursprungspakete `zetacomponents/*`: `se7enxweb/expcomponents-mail` statt
 `zetacomponents/mail` und so weiter für jede Bibliothek, die der Kernel verwendet. Die Klassen behalten ihre
 `ezc`-Namen und APIs, und jeder Fork erklärt, dass er den alten Paketnamen ersetzt. Für fast jede Installation ist der
 Wechsel ein `composer update` und sonst nichts. Was die Bibliotheken sind und warum sie geforkt werden:
-[Exponential Components (expcomponents)](../../funktionen/6.0/expcomponents.md).
+[Exponential Components](../../funktionen/6.0/expcomponents.md).
 
 Diese Seite ist für Administratoren, die eine Installation aktualisieren, für Entwickler von Erweiterungen und für
 alle, die eine eigene `composer.json` pflegen, in der Pakete der Zeta Components stehen.
@@ -290,9 +290,9 @@ eingeschlossen.
 
 ## Verwandte Seiten
 
-- [Exponential Components (expcomponents)](../../funktionen/6.0/expcomponents.md)
+- [Exponential Components](../../funktionen/6.0/expcomponents.md)
 - [Spezifikation: die expcomponents-Pakete](../../spezifikationen/6.0/expcomponents-pakete.md)
-- [Zu expcomponents beitragen](../../anleitungen/zu-expcomponents-beitragen.md)
+- [Zu Exponential Components beitragen](../../anleitungen/zu-expcomponents-beitragen.md)
 - [Upgrade mit der Konsole](../../anleitungen/aktualisieren-mit-der-konsole.md)
 - [Verhaltensänderungen vom Oktober 2026](verhaltensaenderungen-2026-10.md) (die Zeta Components, die der Kernel nicht mehr verlangt)
 - [Das Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md)

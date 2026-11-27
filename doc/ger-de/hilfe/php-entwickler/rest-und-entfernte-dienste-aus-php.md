@@ -35,9 +35,9 @@ der REST-Schicht etwas hinzufügen; die Sicht der Verbraucher ist
 ## Der REST-Kernel
 
 `index_rest.php` führt den REST-Kernel in `kernel/private/rest/` aus (`ezpkernelrest.php`, der Router, die
-MVC-Konfiguration, Renderer, OAuth). Er baut auf den MVC-Werkzeugen der expcomponents
+MVC-Konfiguration, Renderer, OAuth). Er baut auf den MVC-Werkzeugen der Exponential Components
 (`se7enxweb/expcomponents-mvc-tools`, seit 6.0.15 der Fork von `zetacomponents/mvc-tools`;
-[expcomponents](../../funktionen/6.0/expcomponents.md))
+[Exponential Components](../../funktionen/6.0/expcomponents.md))
 auf, sodass ein Provider Routen und Controller in der Form dieses Frameworks liefert. Die Einstellungen stehen in
 `settings/rest.ini`:
 

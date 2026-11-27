@@ -1,11 +1,11 @@
-# Zu expcomponents beitragen: an einem Fork der Bibliotheken des Kernels arbeiten
+# Zu Exponential Components beitragen: an einem Fork der Bibliotheken des Kernels arbeiten
 
-Diese Anleitung ist für Entwickler, die eine der **expcomponents** korrigieren oder verbessern wollen, den Fork der
+Diese Anleitung ist für Entwickler, die eine der **Exponential Components** korrigieren oder verbessern wollen, den Fork der
 Zeta Components durch Exponential (Apache License 2.0), die Bibliotheken, die der Kernel für E-Mail, Archive, WebDAV,
 Feeds, die REST-Schicht und mehr verwendet. Sie führt durch eine Änderung vom Klon bis zum Release: den Code holen,
 die Tests auf mehreren PHP-Versionen ausführen, die Regeln, die eine Änderung einhalten muss, die Commit-Nachricht,
 den Pull-Request, wie Releases und Versionen funktionieren und wie die Forks mit dem Original Schritt halten. Was die
-Bibliotheken sind und warum sie geforkt werden: [Exponential Components (expcomponents)](../funktionen/6.0/expcomponents.md).
+Bibliotheken sind und warum sie geforkt werden: [Exponential Components](../funktionen/6.0/expcomponents.md).
 
 Zeit: 30 Minuten für die erste Einrichtung; eine kleine Korrektur mit ihrem Test ist ein Nachmittag.
 
@@ -294,8 +294,8 @@ vorbereitet und mit ihren Notes veröffentlicht.
 
 ## Verwandte Seiten
 
-- [Exponential Components (expcomponents)](../funktionen/6.0/expcomponents.md)
+- [Exponential Components](../funktionen/6.0/expcomponents.md)
 - [Spezifikation: die expcomponents-Pakete](../spezifikationen/6.0/expcomponents-pakete.md)
-- [Upgrade-Hinweise: der Wechsel zu expcomponents](../bc/6.0/expcomponents.md)
+- [Upgrade-Hinweise: der Wechsel zu Exponential Components](../bc/6.0/expcomponents.md)
 - [Code beitragen](../hilfe/gemeinschaft/mitwirken/code-beitragen.md)
 - [Das CLA erklärt](../hilfe/gemeinschaft/mitwirken/das-cla-erklaert.md)

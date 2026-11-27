@@ -116,7 +116,7 @@ mit Composer), und eröffnen Sie zuerst ein Issue, wenn Sie meinen, dass sie wir
 
 ### Die eigenen Bibliotheken des Kernels stehen unter der Apache License 2.0. Wie passt das?
 
-Die Bibliotheken, auf denen der Kernel aufbaut, die **expcomponents** (seit 6.0.15 der Fork der Zeta Components durch
+Die Bibliotheken, auf denen der Kernel aufbaut, die **Exponential Components** (seit 6.0.15 der Fork der Zeta Components durch
 Exponential, `se7enxweb/expcomponents-*`), stehen unter der Apache License 2.0, wie zuvor die Zeta Components. Die
 Free Software Foundation hält Apache 2.0 für kompatibel mit GPL Version 3 und für inkompatibel mit *ausschließlich*
 GPL Version 2. Die Lizenz von Exponential, GPL Version 2 **oder jede spätere Version**, erlaubt, die Kombination unter

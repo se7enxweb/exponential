@@ -80,7 +80,7 @@ Erweiterung mit oder bringen Sie sie in den Kernel.
 **Wohin kommen hochgeladene Bilder?** Unter `var/` (zum Beispiel `var/<site>/storage`). Bearbeiten Sie sie nie von
 Hand.
 
-**Gehört `vendor/` zum Kernel?** Nein. Er enthält Composer-Bibliotheken wie die expcomponents (den Fork der Zeta
+**Gehört `vendor/` zum Kernel?** Nein. Er enthält Composer-Bibliotheken wie die Exponential Components (den Fork der Zeta
 Components). Ändern Sie ihn
 ebenfalls nicht.
 

@@ -103,7 +103,7 @@ console (Exponential) 6.0.15stable
 selbst aussagt, keine Aussage darüber, dass eine Release mit dieser Nummer veröffentlicht wurde: siehe
 [1.5](#15-konventionen), **Versionen**.
 
-Der Kernel hängt von den **expcomponents** ab (`se7enxweb/expcomponents-*` in `composer.json`), einer Sammlung von
+Der Kernel hängt von den **Exponential Components** ab (`se7enxweb/expcomponents-*` in `composer.json`), einer Sammlung von
 PHP-Bibliotheken für Caching, Konfiguration, Mail, Archive, Bildkonvertierung und mehr. Sie sind der Fork der Zeta
 Components (`zetacomponents/*`, die der Kernel bis 6.0.14 verlangte) durch Exponential, unter derselben Apache License
 2.0 und mit denselben `ezc*`-Klassennamen ([Exponential Components](../funktionen/6.0/expcomponents.md)). Ihretwegen ist Composer
@@ -422,8 +422,8 @@ enthält jeden Begriff der Dokumentation.
 | PHP-FPM | Der Prozessmanager von PHP, der PHP hinter Apache oder nginx ausliefert. |
 | Composer | Der PHP-Paketmanager, der die Bibliotheken und Extensions installiert, die `composer.json` aufführt. |
 | Packagist | Das Paket-Repository, das Composer standardmäßig liest. |
-| expcomponents | Exponential Components: die PHP-Bibliotheken (`se7enxweb/expcomponents-*`), auf denen der Kernel seit 6.0.15 aufbaut, der Fork der Zeta Components durch Exponential. |
-| Zeta Components | Die PHP-Bibliotheken (`zetacomponents/*`), auf denen der Kernel bis 6.0.14 aufbaute; fortgeführt als expcomponents. |
+| Exponential Components | Die PHP-Bibliotheken (`se7enxweb/expcomponents-*`), auf denen der Kernel seit 6.0.15 aufbaut, der Fork der Zeta Components durch Exponential. |
+| Zeta Components | Die PHP-Bibliotheken (`zetacomponents/*`), auf denen der Kernel bis 6.0.14 aufbaute; fortgeführt als Exponential Components. |
 | Autoload | Die erzeugten Klassenzuordnungen (`autoload/ezp_kernel.php`, `var/autoload/ezp_extension.php`), die PHP mitteilen, wo jede Klasse liegt. |
 | Cache | Gespeicherte Ergebnisse, die Seiten schneller machen (INI, Template, Inhaltsansicht, Antwort-Cache von Velocity); geleert mit `ezcache.php`. |
 | Wartungsmodus | Die Site beantwortet jede Seite mit einem Hinweis (HTTP 503), während sie installiert oder gewartet wird; aktiv, solange `var/maintenance.json` existiert. |

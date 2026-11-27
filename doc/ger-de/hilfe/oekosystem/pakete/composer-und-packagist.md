@@ -23,7 +23,7 @@ type: help
 ausdrücklich den PHP-Paketmanager Composer (`README.md`). Composer "installs the required Zeta Components php libraries
 and the extensions listed in `composer.json`", installiert also die benötigten Bibliotheken der Zeta Components und
 die in `composer.json` aufgeführten Erweiterungen (`README.md`, "Requirements"). Seit 6.0.15 sind diese Bibliotheken
-die [expcomponents](../../../funktionen/6.0/expcomponents.md), der Fork der Zeta Components durch Exponential
+die [Exponential Components](../../../funktionen/6.0/expcomponents.md), der Fork der Zeta Components durch Exponential
 (`se7enxweb/expcomponents-*`). Ohne `composer install` läuft die
 Software nicht.
 
