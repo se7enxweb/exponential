@@ -17,8 +17,9 @@
  * Engines: SQLite (a file in one of [ConnectionSettings] SQLiteDirectories), MySQL/MariaDB, PostgreSQL, Oracle (the
  * ezoracle handler when active, else PDO oci), Microsoft SQL Server (PDO sqlsrv, dblib or odbc), MongoDB, any database
  * through ODBC (expODBCDB; the SQL dialect in the options), MS Access through ODBC (expMSAccessDB; the file in one of
- * the SQLiteDirectories), Apache Cassandra and ScyllaDB (expCassandraDB, expScyllaDB; Database is the keyspace); a server
- * may be remote. The password is the name of a secret of the kernel's secret store (expSecrets).
+ * the SQLiteDirectories), Apache Cassandra and ScyllaDB (expCassandraDB, expScyllaDB; Database is the keyspace),
+ * Couchbase (expCouchbaseDB; Database is bucket.scope) and Apache CouchDB (expCouchDBDB; Database is the CouchDB
+ * database); a server may be remote. The password is the name of a secret of the kernel's secret store (expSecrets).
  *
  *   $db = expDataConnections::db( 'archive' );          // an eZDBInterface of its own, one per connection and request
  *   $result = expDataConnections::test( 'archive' );    // ok, engine, version, tables, ms, error (secrets masked)
@@ -90,6 +91,9 @@ class expDataConnections
             // expLibSQLDB and expTursoDB: SQLite over a libSQL server's HTTP API (curl or allow_url_fopen); options url, tls
             'libsql' => array( 'label' => 'libSQL server (sqld)', 'kind' => 'relational', 'ez' => 'libsql', 'pdo' => array(), 'port' => 8080, 'file' => false ),
             'turso' => array( 'label' => 'Turso (libSQL)', 'kind' => 'relational', 'ez' => 'turso', 'pdo' => array(), 'port' => 443, 'file' => false ),
+            // document databases over HTTP (PHP's curl extension): Couchbase's Query service (SQL++), CouchDB's API
+            'couchbase' => array( 'label' => 'Couchbase', 'kind' => 'document', 'ez' => 'couchbase', 'pdo' => array(), 'port' => 8093, 'file' => false ),
+            'couchdb' => array( 'label' => 'Apache CouchDB', 'kind' => 'document', 'ez' => 'couchdb', 'pdo' => array(), 'port' => 5984, 'file' => false ),
         );
     }
 
@@ -213,7 +217,8 @@ class expDataConnections
                 $get = function ( $name, $default = '' ) use ( $values ) { return isset( $values[$name] ) ? $values[$name] : $default; };
                 $options = array();
                 foreach ( array( 'Charset' => 'charset', 'Socket' => 'socket', 'DSN' => 'dsn', 'Dialect' => 'dialect', 'Driver' => 'driver',
-                                 'ODBCDriver' => 'odbc_driver', 'ODBCDataSourceName' => 'odbc_dsn', 'ConnectionString' => 'connection_string', 'Layer' => 'layer', 'Consistency' => 'consistency' ) as $key => $option )
+                                 'ODBCDriver' => 'odbc_driver', 'ODBCDataSourceName' => 'odbc_dsn', 'ConnectionString' => 'connection_string', 'Layer' => 'layer', 'Consistency' => 'consistency',
+                                 'SSL' => 'ssl', 'SSLCA' => 'ssl_ca', 'ScanConsistency' => 'scan_consistency' ) as $key => $option )
                     if ( isset( $values[$key] ) && trim( (string)$values[$key] ) !== '' )
                         $options[$option] = trim( (string)$values[$key] );
                 $declared[$id] = self::normalize( array(
@@ -245,7 +250,7 @@ class expDataConnections
         $options = isset( $c['options'] ) && is_array( $c['options'] ) ? $c['options'] : array();
         $clean = array();
         foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver', 'odbc_driver', 'odbc_dsn', 'connection_string', 'layer',
-                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler', 'consistency', 'url', 'tls' ) as $key )
+                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler', 'consistency', 'url', 'tls', 'scan_consistency' ) as $key )
             if ( isset( $options[$key] ) && is_scalar( $options[$key] ) && trim( (string)$options[$key] ) !== '' )
                 $clean[$key] = mb_substr( trim( (string)$options[$key] ), 0, 1000 );
         $engine = strtolower( $text( 'engine', 32 ) );
@@ -625,6 +630,20 @@ class expDataConnections
                     $libsql[$setting] = $c['options'][$option];
             if ( $libsql )
                 $parameters['libsql'] = $libsql;
+            // Couchbase and CouchDB: TLS and its CA, Couchbase's scan consistency ([CouchbaseSettings], [CouchDBSettings])
+            if ( in_array( $c['engine'], array( 'couchbase', 'couchdb' ), true ) )
+            {
+                $couch = array();
+                if ( !empty( $c['options']['ssl'] ) )
+                    $couch['TLS'] = in_array( strtolower( $c['options']['ssl'] ), array( '1', 'true', 'enabled', 'yes', 'on', 'required' ), true ) ? 'enabled' : 'disabled';
+                if ( !empty( $c['options']['ssl_ca'] ) )
+                    $couch['TLSCAFile'] = $c['options']['ssl_ca'];
+                if ( $c['engine'] === 'couchbase' && !empty( $c['options']['scan_consistency'] )
+                     && in_array( $c['options']['scan_consistency'], array( 'request_plus', 'not_bounded', 'auto' ), true ) )
+                    $couch['ScanConsistency'] = $c['options']['scan_consistency'];
+                if ( $couch )
+                    $parameters[$c['engine']] = $couch;
+            }
         }
         else
         {
@@ -1077,6 +1096,11 @@ class expDataConnections
             case 'cassandra':
             case 'scylladb':
                 return class_exists( 'expCassandraTransport' ) && expCassandraTransport::availableLayer() !== null;
+            case 'couchbase':
+                return extension_loaded( 'curl' );
+            case 'couchdb':
+                // the SQL is answered on an in-memory SQLite copy
+                return extension_loaded( 'curl' ) && extension_loaded( 'sqlite3' );
         }
         return false;
     }

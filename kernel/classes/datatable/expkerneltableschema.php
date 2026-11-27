@@ -127,6 +127,11 @@ class expKernelTableSchema
             case 'sqlserver':
                 $sql = "SELECT table_name AS name FROM information_schema.tables WHERE table_type = 'BASE TABLE'";
                 break;
+            case 'couchbase':
+            case 'couchdb':
+                // every collection of the scope (Couchbase) or table the driver keeps (CouchDB), not only ez* and exp*
+                $list = $db->relationList( eZDBInterface::RELATION_TABLE );
+                return is_array( $list ) ? array_values( array_map( 'strval', $list ) ) : null;
             case 'mongodb':
                 if ( !method_exists( $db, 'listCollectionNames' ) )
                     return null;

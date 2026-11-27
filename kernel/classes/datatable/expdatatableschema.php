@@ -22,7 +22,8 @@
  * from eZDbSchemaChecker and the handler's upgrade SQL); Oracle through ezoracle's handler when it is active, else
  * through the statements here (a sequence and a trigger for the counted key, named as expPDODB reads them); SQL Server
  * through the statements here (IDENTITY); MS Access through expMSAccessDialect (COUNTER); MongoDB through its schema handler (collections and indexes); Cassandra and ScyllaDB
- * through expCassandraSchema (CQL tables, secondary indexes, the definition kept for the driver). An upgrade
+ * through expCassandraSchema (CQL tables, secondary indexes, the definition kept for the driver); Couchbase and CouchDB
+ * through their schema handlers (the table's definition kept in the database, with its indexes). An upgrade
  * adds columns and indexes; it drops or changes one only when asked ('drop', 'alter').
  *
  * @since 6.0.15
@@ -214,6 +215,12 @@ class expDataTableSchema
             case 'scylladb':
                 // CQL: the table, its secondary indexes and the definition the driver reads (defaults, the counted-up key)
                 $handler = new expCassandraSchema( array( 'instance' => $db instanceof expCassandraDB ? $db : expKernelTableSchema::nullDB() ) );
+                return $handler->generateTableSQLList( $table, $definition, array(), false );
+            case 'couchbase':
+            case 'couchdb':
+                // a collection (Couchbase) or a set of documents (CouchDB), its indexes, the definition the driver reads
+                $class = $engine === 'couchbase' ? 'expCouchbaseSchema' : 'expCouchDBSchema';
+                $handler = new $class( array( 'instance' => $db instanceof eZDBInterface ? $db : expKernelTableSchema::nullDB() ) );
                 return $handler->generateTableSQLList( $table, $definition, array(), false );
             case 'mongodb':
                 return array( '// MongoDB: the collection ' . $table . ' is made on its first write; indexes: '
@@ -451,7 +458,7 @@ class expDataTableSchema
             }
             return $step;
         }
-        if ( in_array( $engine, array( 'mysql', 'postgresql', 'sqlite', 'firebird', 'duckdb', 'db2', 'informix' ), true ) || ( $engine === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
+        if ( in_array( $engine, array( 'mysql', 'postgresql', 'sqlite', 'firebird', 'duckdb', 'db2', 'informix', 'couchbase', 'couchdb' ), true ) || ( $engine === 'oracle' && self::hasHandler( 'oracle' ) && !$db instanceof expPDODB ) )
         {
             $handler = expKernelTableSchema::handler( $db, array() );
             if ( !$handler )

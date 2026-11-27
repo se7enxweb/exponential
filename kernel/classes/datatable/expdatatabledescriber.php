@@ -111,6 +111,15 @@ class expDataTableDescriber
                                               'default' => $field && isset( $field['default'] ) && $field['default'] !== false ? (string)$field['default'] : null );
                 }
                 return $columns;
+            case 'couchbase':
+            case 'couchdb':
+                // the definition the driver keeps: documents carry no catalogue of their own
+                $columns = array();
+                $definition = method_exists( $db, 'tableDefinition' ) ? $db->tableDefinition( $table ) : null;
+                foreach ( $definition ? (array)$definition['fields'] : array() as $name => $field )
+                    $columns[strtolower( $name )] = array( 'type' => isset( $field['type'] ) ? (string)$field['type'] : 'varchar', 'nullable' => empty( $field['not_null'] ),
+                                                           'default' => isset( $field['default'] ) && $field['default'] !== false ? (string)$field['default'] : null );
+                return $columns;
             case 'firebird':
                 $columns = array();
                 foreach ( method_exists( $db, 'tableColumns' ) ? (array)$db->tableColumns( $table ) : array() as $column )

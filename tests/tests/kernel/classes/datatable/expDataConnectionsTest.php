@@ -212,7 +212,7 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $engines = expDataConnections::engines();
         $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'oracle', 'sqlserver', 'mongodb', 'odbc', 'msaccess', 'firebird', 'duckdb',
                                   'cockroachdb', 'yugabytedb', 'spanner', 'neon', 'supabase', 'aurorapostgresql', 'db2', 'informix',
-                                  'cassandra', 'scylladb', 'libsql', 'turso' ),
+                                  'cassandra', 'scylladb', 'libsql', 'turso', 'couchbase', 'couchdb' ),
                            array_keys( $engines ) );
         foreach ( $engines as $key => $engine )
         {
@@ -239,6 +239,10 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
             $this->assertSame( array( $key, 9042, 'widecolumn' ), array( $engines[$key]['ez'], $engines[$key]['port'], $engines[$key]['kind'] ), $key );
             $this->assertFalse( $engines[$key]['untested'], $key );
         }
+        $this->assertSame( array( 'couchbase', 8093, 'document' ), array( $engines['couchbase']['ez'], $engines['couchbase']['port'], $engines['couchbase']['kind'] ) );
+        $this->assertSame( array( 'couchdb', 5984, 'document' ), array( $engines['couchdb']['ez'], $engines['couchdb']['port'], $engines['couchdb']['kind'] ) );
+        $this->assertFalse( $engines['couchbase']['untested'] );
+        $this->assertFalse( $engines['couchdb']['untested'] );
     }
 
     /** DC-07 */
