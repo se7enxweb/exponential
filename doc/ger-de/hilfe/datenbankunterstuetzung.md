@@ -99,6 +99,8 @@ Was die Reihenfolge in der Praxis bedeutet:
 | YugabyteDB (PostgreSQL-Protokoll) | 2.20 und neuer | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`yugabytedb`) | nicht getestet | die Live-Suite `pgwire-live` auf YugabyteDB 2.25, PHP 8.1 und 8.5 | vollständige Site-Datenbank (neu in 6.0.15) |
 | Google Cloud Spanner, PostgreSQL-Dialekt (PGAdapter) | der Spanner-Emulator, PGAdapter | `pgsql` | keiner: keine Site-Datenbank | keins | die Live-Suite `pgwire-live` auf dem Emulator hinter PGAdapter | Datentabellen-Verbindung und Import (neu in 6.0.15) |
 | Neon, Supabase, Amazon Aurora PostgreSQL | das PostgreSQL der Dienste (13 und neuer) | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | wie PostgreSQL, nicht getestet | nur Profile und Unit-Tests; **nicht live getestet** | vollständige Site-Datenbank wie PostgreSQL; Profile neu in 6.0.15 |
+| IBM Db2 | 11.5 und 12.1 (11.5.9 und 12.1.6 getestet) | `pdo_ibm` oder `ibm_db2` mit IBMs Data Server Driver | Setup-Assistent, Kickstarter, `exp:install` (`db2`) | noch keiner: ein Webserver | Treiber- und Live-Tests auf Db2 12.1 und 11.5, auf beiden PHP-Schichten, und eine ganz installierte Site | vollständige Site-Datenbank (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/db2-datenbanktreiber.md#was-geht-und-was-nicht) |
+| IBM Informix | 14.10 und 15 (14.10.FC9W1 und 15.0.1 getestet) | `ibm_db2` mit IBMs Data Server Driver, über den DRDA-Listener | Setup-Assistent, Kickstarter, `exp:install` (`informix`) | noch keiner: ein Webserver | Treiber- und Live-Tests auf Informix 15 und 14.10; eine ganze Site außerhalb der CI auf 15 installiert | vollständige Site-Datenbank (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/informix-datenbanktreiber.md#was-geht-und-was-nicht) |
 
 **In Entwicklung.** Treiber für Microsoft Access und für Datenbanken, die über eine allgemeine ODBC-Verbindung erreicht
 werden, entstehen gerade; sie sind noch in keinem Release enthalten.
@@ -113,6 +115,15 @@ keine Lesereplikate: eine Site mit Firebird läuft auf einem Webserver. Einzelhe
 über PHPs FFI-Erweiterung. DuckDB lässt immer nur einen Prozess schreiben; es passt daher zu kleinen Sites, die vor allem
 gelesen werden, zu einzelnen Redakteuren, Build- und Demo-Sites; einen DFS-Cluster gibt es darauf nicht. Siehe
 [DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md).
+
+**IBM Db2 und IBM Informix** (neu in 6.0.15, nicht in der Reihenfolge oben): `expDb2DB` aus dem Kernel
+(`DatabaseImplementation=db2`, Db2 11.5 und 12.1) und `expInformixDB` (`DatabaseImplementation=informix`, Informix 14.10
+und 15 über dessen DRDA-Listener) erreichen ihre Server über IBMs PECL-Erweiterungen `pdo_ibm` und `ibm_db2`
+(`exp:install --db=db2`, `--db=informix`), bei jedem Push gegen beide Versionen jeder Datenbank getestet. Eine ganze Site installiert sich und läuft auf beiden
+(Db2 12.1 und Informix 15, gemessen).
+Ein DFS-Cluster-Backend gibt es dafür nicht und keine Lesereplikate. Einzelheiten, die Vorbereitung des Servers und
+Grenzen: [IBM-Db2-Treiber](../funktionen/6.0/db2-datenbanktreiber.md),
+[IBM-Informix-Treiber](../funktionen/6.0/informix-datenbanktreiber.md).
 
 Eine bestehende Website von einer Engine auf eine andere umziehen: [Weg von einer alten Datenbank](weg-von-einer-alten-datenbank.md).
 
@@ -196,6 +207,8 @@ Treiber mit einem Alias, den `ImplementationAlias[]` einer Klasse zuordnet:
 | `ezmysqli`, `mysqli`, `ezmysql`, `mysql` | `eZMySQLiDB` (`lib/ezdb/classes/ezmysqlidb.php`) |
 | `ezoracle`, `oracle` | `eZOracleDB` (in der Erweiterung `ezoracle`, registriert durch deren eigene `site.ini.append.php`) |
 | `duckdb` | `expDuckDBDB` (`lib/ezdb/classes/expduckdbdb.php`) |
+| `db2`, `ibm_db2` | `expDb2DB` (`lib/ezdb/classes/expdb2db.php`) |
+| `informix`, `ifx` | `expInformixDB` (`lib/ezdb/classes/expinformixdb.php`) |
 
 Die folgenden Beispiele verwenden Platzhalter für Namen und Passwörter; tragen Sie Ihre eigenen Werte in Ihre
 Überschreibungsdatei ein und committen Sie diese Datei nie. Jeder Schlüssel wird in
@@ -672,6 +685,7 @@ Wegwerf-Datenbank pro Test laufen.
 | 5. Oracle | das DFS-Cluster-Backend | der Job „cluster-oracle“ führt die Tests des Oracle-DFS-Backends gegen Oracle Free 23 mit `oci8` aus; Oracle-spezifische Kernel-Tests werden auf anderen Engines übersprungen |
 | 6. MySQL | ja, Datenbanktests | der Job „Database tests (mysql, PHP 8.3)“ mit einem `mysql:8.0`-Service |
 | Firebird | ja, Treiber-, Live- und Kernel-Schema-Tests | der Job „firebird“ mit `firebirdsql/firebird` 5 und 4 als Service-Container und `pdo_firebird`, PHP 8.4 und 8.5 |
+| IBM Db2, IBM Informix | ja, Treiber-, Live- und Kernel-Schema-Tests, eine ganze Site auf Db2 | der Job „db2“ mit Db2 Community Edition 12.1 und 11.5 und Informix Developer Edition 15 und 14.10 als Container, `pdo_ibm` und `ibm_db2`, PHP 8.5 und 8.3 |
 | 7. SQL Server | ja, Treiber-, Live- und DFS-Tests | der Job „sqlserver“ mit `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 und 2025 und ODBC Driver 18, auf `sqlsrv`, `pdo_sqlsrv` und `pdo_odbc` und PHP 8.1 bis 8.5; der Job „SQL Server LocalDB smoke“ unter Windows mit PHP 8.4 |
 | PostgreSQL-Protokoll | ja, Treiber- und Live-Tests | die Testsuite `pgwire` im PHPUnit-Job; der Job „PostgreSQL wire protocol“ führt `pgwire-live` gegen CockroachDB 25.2, YugabyteDB 2.25 und den Spanner-Emulator hinter PGAdapter aus, PHP 8.1 und 8.5. Neon, Supabase und Aurora: nur Unit-Tests |
 

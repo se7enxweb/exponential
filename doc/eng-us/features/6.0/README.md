@@ -105,6 +105,10 @@ nginx with PHP-FPM keep working as before.
   Windows) and the small `expMSAccessDB` driver; what Access can and cannot do
 - [Databases that speak the MySQL protocol](mysql-wire-databases.md): TiDB, Vitess and PlanetScale, SingleStore,
   MariaDB Xpand and Aurora MySQL on the MySQL driver with a profile each; what works and what does not per database
+- [IBM Db2 driver](db2-database-driver.md): `expDb2DB` for Db2 11.5 and 12.1 over pdo_ibm; a whole site, how the
+  kernel's SQL is rewritten, what works and what does not, licences
+- [IBM Informix driver](informix-database-driver.md): `expInformixDB` for Informix 14.10 and 15 over pdo_ibm through
+  the DRDA listener; preparing the server, what works and what does not
 - [DuckDB driver](duckdb-database-driver.md): `expDuckDBDB`, a whole site in one DuckDB file through PHP's FFI
   extension; one process writes at a time; what works and what does not
 - [Clustering in Exponential 6.0](clustering-overview.md): application servers, shared files, primary and replicas,

@@ -112,6 +112,10 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Datenbanken, die das MySQL-Protokoll sprechen](mysql-wire-datenbanken.md): TiDB, Vitess und PlanetScale,
   SingleStore, MariaDB Xpand und Aurora MySQL auf dem MySQL-Treiber mit je einem Profil; was je Datenbank geht und was
   nicht
+- [IBM-Db2-Treiber](db2-datenbanktreiber.md): `expDb2DB` für Db2 11.5 und 12.1 über pdo_ibm; eine ganze Site, wie das
+  SQL des Kernels umgeschrieben wird, was geht und was nicht, Lizenzen
+- [IBM-Informix-Treiber](informix-datenbanktreiber.md): `expInformixDB` für Informix 14.10 und 15 über pdo_ibm und den
+  DRDA-Listener; den Server vorbereiten, was geht und was nicht
 - [DuckDB-Treiber](duckdb-datenbanktreiber.md): `expDuckDBDB`, eine ganze Site in einer DuckDB-Datei über PHPs
   FFI-Erweiterung; es schreibt immer nur ein Prozess; was geht und was nicht
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und

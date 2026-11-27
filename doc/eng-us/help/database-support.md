@@ -95,6 +95,8 @@ What the order means in practice:
 | YugabyteDB (PostgreSQL wire protocol) | 2.20 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`yugabytedb`) | not tested | the live suite `pgwire-live` on YugabyteDB 2.25, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
 | Google Cloud Spanner, PostgreSQL dialect (PGAdapter) | the Spanner emulator, PGAdapter | `pgsql` | none: not a site database | none | the live suite `pgwire-live` on the emulator behind PGAdapter | data-table connection and import (new in 6.0.15) |
 | Neon, Supabase, Amazon Aurora PostgreSQL | the services' PostgreSQL (13 and later) | `pgsql` | setup wizard, kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | as PostgreSQL, not tested | profiles and unit tests only; **not live-tested** | full site database as PostgreSQL; profiles new in 6.0.15 |
+| IBM Db2 | 11.5 and 12.1 (11.5.9 and 12.1.6 tested) | `pdo_ibm` or `ibm_db2` with IBM's Data Server Driver | setup wizard, kickstarter, `exp:install` (`db2`) | none yet: one web server | driver and live tests on Db2 12.1 and 11.5, on both PHP layers, and a whole site installed | full site database (new in 6.0.15); [what works and what does not](../features/6.0/db2-database-driver.md#what-works-and-what-does-not) |
+| IBM Informix | 14.10 and 15 (14.10.FC9W1 and 15.0.1 tested) | `ibm_db2` with IBM's Data Server Driver, through the DRDA listener | setup wizard, kickstarter, `exp:install` (`informix`) | none yet: one web server | driver and live tests on Informix 15 and 14.10; a whole site installed on 15 outside CI | full site database (new in 6.0.15); [what works and what does not](../features/6.0/informix-database-driver.md#what-works-and-what-does-not) |
 
 **In development.** Drivers for Microsoft Access and for databases reached through a generic ODBC connection are
 being built; they are not part of a release yet.
@@ -107,6 +109,14 @@ on Firebird runs on one web server. Details and limits: [Firebird driver](../fea
 **DuckDB** (`DatabaseImplementation=duckdb`, `exp:install --db=duckdb`) keeps a whole site in one file, reached through
 PHP's FFI extension. DuckDB lets one process write at a time, so it suits small and read-mostly sites, single editors,
 build and demo sites; there is no DFS cluster on it. See [DuckDB driver](../features/6.0/duckdb-database-driver.md).
+
+**IBM Db2 and IBM Informix** (new in 6.0.15, not in the order above): the kernel's `expDb2DB`
+(`DatabaseImplementation=db2`, Db2 11.5 and 12.1) and `expInformixDB` (`DatabaseImplementation=informix`, Informix
+14.10 and 15 through its DRDA listener) reach their servers over IBM's PECL extensions `pdo_ibm` and `ibm_db2`
+(`exp:install --db=db2`, `--db=informix`), tested on every push against both versions of each. A whole site installs and runs on both (Db2 12.1 and Informix 15,
+measured). There is no DFS
+cluster backend for them and no read replicas. Details, the server preparation and limits:
+[IBM Db2 driver](../features/6.0/db2-database-driver.md), [IBM Informix driver](../features/6.0/informix-database-driver.md).
 
 Moving an existing site from one engine to another: [Moving off an old database](moving-off-an-old-database.md).
 
@@ -187,6 +197,8 @@ override for you. `DatabaseImplementation` names the driver by an alias that `Im
 | `ezmysqli`, `mysqli`, `ezmysql`, `mysql` | `eZMySQLiDB` (`lib/ezdb/classes/ezmysqlidb.php`) |
 | `ezoracle`, `oracle` | `eZOracleDB` (in the `ezoracle` extension, registered by its own `site.ini.append.php`) |
 | `duckdb` | `expDuckDBDB` (`lib/ezdb/classes/expduckdbdb.php`) |
+| `db2`, `ibm_db2` | `expDb2DB` (`lib/ezdb/classes/expdb2db.php`) |
+| `informix`, `ifx` | `expInformixDB` (`lib/ezdb/classes/expinformixdb.php`) |
 
 The examples below use placeholder names and passwords; put your own values in your override file and never commit
 that file. Every key is explained in [9.1 How Exponential chooses a database driver](../install/09-databases.md#91-how-exponential-chooses-a-database-driver).
@@ -704,6 +716,7 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | 5. Oracle | the DFS cluster backend | the job "cluster-oracle" runs the Oracle DFS backend's tests against Oracle Free 23 with `oci8`; Oracle-specific kernel tests skip on other engines |
 | 6. MySQL | yes, database tests | the job "Database tests (mysql, PHP 8.3)" with a `mysql:8.0` service |
 | Firebird | yes, driver, live and kernel schema tests | the job "firebird" with `firebirdsql/firebird` 5 and 4 as service containers and `pdo_firebird`, PHP 8.4 and 8.5 |
+| IBM Db2, IBM Informix | yes, driver, live and kernel schema tests, a whole site on Db2 | the job "db2" with Db2 Community Edition 12.1 and 11.5 and Informix Developer Edition 15 and 14.10 as containers, `pdo_ibm` and `ibm_db2`, PHP 8.5 and 8.3 |
 | 7. SQL Server | yes, driver, live and DFS tests | the job "sqlserver" with `mcr.microsoft.com/mssql/server` 2017, 2019, 2022 and 2025 and ODBC Driver 18, on `sqlsrv`, `pdo_sqlsrv` and `pdo_odbc` and PHP 8.1 to 8.5; the job "SQL Server LocalDB smoke" on Windows with PHP 8.4 |
 | PostgreSQL wire protocol | yes, driver and live tests | the testsuite `pgwire` in the PHPUnit job; the job "PostgreSQL wire protocol" runs `pgwire-live` against CockroachDB 25.2, YugabyteDB 2.25 and the Spanner emulator behind PGAdapter, PHP 8.1 and 8.5. Neon, Supabase and Aurora: unit tests only |
 
