@@ -29206,7 +29206,7 @@ f96677e1bb99cc91498abf168a30c7b1  tests/tests/design/js/subitems_no_table.js
 21216ef3117d1a782916cf6f32a369be  tests/tests/design/js/tree_toggle.js
 a9783d8fbfa1ea4ad11845ce41c8598a  tests/tests/design/js/uploader.js
 38b761d901443d5b255c1ec2c76213c3  tests/tests/design/js/visibility_status.js
-cca1b124076d9a40da699a40f51f08e4  tests/tests/extension/bccie/ezBccieTest.php
+254775cf2f145a4fb5f51cb140b44f75  tests/tests/extension/bccie/ezBccieTest.php
 f272d122a2f95b0a240839ddaa62116f  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
 ddb2b6154e1a87f3de5356aa34374d03  tests/tests/extension/cjw_newsletter/cjwNewsletterBounceTest.php
 93a0086f8dab8574f944068e648a9569  tests/tests/extension/cjw_newsletter/cjwNewsletterClassLanguagesTest.php
@@ -29317,7 +29317,7 @@ bf92d179ff71d9ad9c34a8b6553633eb  tests/tests/extension/expservices/users/expSes
 f770f6887ead2724f148e7b2864e6975  tests/tests/extension/ezjscore/ezjscAjaxContentJsonTest.php
 bc83b32aa1ddb2f8e8b13cf1b1a33d10  tests/tests/extension/ezjscore/ezjscPackerGeneratedContentTest.php
 f82317eba244d05af19e21639cb63575  tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php
-46e5241d082b14cb64739c1574e27d64  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
+450dc6116177f342fbf056623d852e61  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
 1e0fcb4874b2cd2a6d62df1cb2723a90  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderHandlerArgumentsTest.php
 14553fdb1453df8912cda84e8d0ed882  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php
 e458e8c851930219b1149ed03c86078a  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderTokenTest.php
@@ -29337,9 +29337,9 @@ e47a7485e45f3811267df74cd7b41c59  tests/tests/extension/ezjscore/fixtures/publis
 bba2907ef92102bd177cc0f7981e5543  tests/tests/extension/ezoe/expOEAtdRemovedTest.php
 07e12117083530dbbc9e9b0ee10a4568  tests/tests/extension/ezoe/expOEContentSecurityPolicyEngineTest.php
 d7cd9371255c10d6b5244621b3a368c0  tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php
-4e4ffa1a1acda3a502b122c80586c7b0  tests/tests/extension/ezoe/expOECustomTagAssetsTest.php
+3d54bdee6d8a93ae6555f247e08111e9  tests/tests/extension/ezoe/expOECustomTagAssetsTest.php
 05c9d99e588443117c6e16ae833e54d3  tests/tests/extension/ezoe/expOECustomTagListTest.php
-6ead562a93a7bd1c11d7bb5e2d41041e  tests/tests/extension/ezoe/expOECustomTagNameTest.php
+d671aae641a32bcc2ba3b2edbb6cce50  tests/tests/extension/ezoe/expOECustomTagNameTest.php
 0523db0db43e3830b44c3578547c22fe  tests/tests/extension/ezoe/expOEDeadLinkMessageTest.php
 e5c21ecb2c0f21218803aef90c3d4c71  tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php
 f0ab63ab7b4a29b1ad01427737adcec2  tests/tests/extension/ezoe/expOEDialogAccessTest.php
