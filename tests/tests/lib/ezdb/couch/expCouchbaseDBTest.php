@@ -296,8 +296,13 @@ class expCouchbaseDBTest extends PHPUnit\Framework\TestCase
         $this->assertContains( 'UPDATE `ezpreferences` AS t UNSET t.`note` WHERE t.`note` IS NOT MISSING', $this->service->statements() );
         $this->service->requests = array();
         $this->assertTrue( $db->query( 'DROP TABLE IF EXISTS ezpreferences' ) );
-        $this->assertSame( array( 'DROP COLLECTION `ezpreferences` IF EXISTS', 'DELETE FROM `exp_couchbase_schema` USE KEYS "ezpreferences"',
-                                  'DELETE FROM `exp_couchbase_sequence` USE KEYS "ezpreferences"' ), $this->service->statements() );
+        // after the DROP the driver waits until the collection is really gone (the fake answers at once)
+        $statements = $this->service->statements();
+        $this->assertCount( 4, $statements );
+        $this->assertSame( 'DROP COLLECTION `ezpreferences` IF EXISTS', $statements[0] );
+        $this->assertStringStartsWith( 'SELECT RAW name FROM system:keyspaces', $statements[1] );
+        $this->assertSame( array( 'DELETE FROM `exp_couchbase_schema` USE KEYS "ezpreferences"',
+                                  'DELETE FROM `exp_couchbase_sequence` USE KEYS "ezpreferences"' ), array_slice( $statements, 2 ) );
         $this->service->queue = array( expCouchbaseFakeService::ok( array( 'a', 'exp_couchbase_schema', 'exp_couchbase_sequence', '_default', 'ezb' ) ) );
         $this->assertSame( array( 'a', 'ezb' ), $db->relationList() );
         $this->service->queue = array( expCouchbaseFakeService::ok( array( 'a', 'ezb', 'expx' ) ) );

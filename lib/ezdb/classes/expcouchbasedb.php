@@ -1062,6 +1062,11 @@ class expCouchbaseDB extends eZDBInterface
                 {
                     if ( $this->send( 'DROP COLLECTION ' . expCouchbaseDialect::quoteName( $table ) . ' IF EXISTS', array( 'tx' => false ) ) === false )
                         return false;
+                    // Couchbase drops a collection after the answer: a CREATE right after would find it still there
+                    // (IF NOT EXISTS does nothing) and the table would then be gone
+                    $deadline = microtime( true ) + max( 1, (int)$this->Settings['IndexWait'] );
+                    while ( $this->collectionExists( $table ) && microtime( true ) < $deadline )
+                        usleep( 200000 );
                     $this->send( 'DELETE FROM ' . expCouchbaseDialect::quoteName( self::SCHEMA_COLLECTION ) . ' USE KEYS ' . expCouchbaseDialect::stringLiteral( $table ),
                                  array( 'tx' => false, 'report' => false ) );
                     unset( $this->TemporaryTables[$table], $this->LastIds[$table] );
