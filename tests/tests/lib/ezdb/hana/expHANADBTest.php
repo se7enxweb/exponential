@@ -16,6 +16,8 @@
  *  HA-07 - NCLOB columns read once and compared as TO_NVARCHAR; read again after a change of the schema
  *  HA-09 - Literal values bound as parameters, not those the odbc extension would read as a file name
  *  HA-08 - Relations in lower case; a dropped table takes its sequence along; IF EXISTS asked of the catalogue
+ *  HA-10 - isAvailable(): an ODBC layer of PHP and SAP's ODBC driver registered in an odbcinst.ini (or a library path
+ *          that exists); what the setup wizard offers SAP HANA by
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -276,5 +278,53 @@ class expHANADBTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $t->sent( '/^DROP TABLE ezgone/' ) );
         $this->assertTrue( $db->removeRelation( 'ezy', eZDBInterface::RELATION_TABLE ) );
         $this->assertSame( array( 'DROP TABLE "EZY"' ), $t->sent( '/^DROP TABLE "EZY"/' ) );
+    }
+
+    /** HA-10 */
+    public function testAvailableWhenTheODBCDriverIsRegistered()
+    {
+        $dir = sys_get_temp_dir() . '/exp-hana-odbcinst-' . getmypid() . '-' . bin2hex( random_bytes( 3 ) );
+        mkdir( $dir, 0700, true );
+        $with = $dir . '/with.ini';
+        $without = $dir . '/without.ini';
+        file_put_contents( $with, "# drivers\r\n[PostgreSQL]\r\nDriver=/usr/lib64/psqlodbcw.so\r\n\r\n [ HDBODBC ] \r\nDriver=/usr/sap/hdbclient/libodbcHDB.so\r\n" );
+        file_put_contents( $without, "[PostgreSQL]\nDriver=/usr/lib64/psqlodbcw.so\n; [HDBODBC]\nDescription=HDBODBC\n" );
+        try
+        {
+            $this->assertTrue( expHANAODBCTransport::driverRegistered( 'HDBODBC', array( $with ) ) );
+            $this->assertTrue( expHANAODBCTransport::driverRegistered( '{hdbodbc}', array( $with ) ), 'braces and case do not matter' );
+            $this->assertTrue( expHANAODBCTransport::driverRegistered( '', array( $with ) ), 'the default driver' );
+            $this->assertFalse( expHANAODBCTransport::driverRegistered( 'HDBODBC', array( $without, $dir . '/missing.ini' ) ) );
+            $this->assertTrue( expHANAODBCTransport::driverRegistered( 'HDBODBC', array( $without, $with ) ) );
+            // a library path: whether the file exists
+            $this->assertTrue( expHANAODBCTransport::driverRegistered( $with, array() ) );
+            $this->assertFalse( expHANAODBCTransport::driverRegistered( $dir . '/libodbcHDB.so', array( $with ) ) );
+
+            $settings = array( 'Driver' => 'HDBODBC', 'Layer' => 'auto' );
+            $this->assertTrue( expHANADB::isAvailable( $settings, array( 'odbc' ), array( $with ) ) );
+            $this->assertTrue( expHANADB::isAvailable( $settings, array( 'pdo_odbc' ), array( $with ) ) );
+            $this->assertFalse( expHANADB::isAvailable( $settings, array(), array( $with ) ), 'no ODBC layer in PHP' );
+            $this->assertFalse( expHANADB::isAvailable( array( 'Layer' => 'odbc' ) + $settings, array( 'pdo_odbc' ), array( $with ) ), 'not the layer asked for' );
+            $this->assertFalse( expHANADB::isAvailable( $settings, array( 'odbc' ), array( $without ) ), 'no HANA ODBC driver' );
+
+            // ODBCSYSINI (as the CI job sets it) is read first
+            $saved = getenv( 'ODBCSYSINI' );
+            putenv( 'ODBCSYSINI=' . $dir );
+            try
+            {
+                $this->assertSame( $dir . '/odbcinst.ini', expHANAODBCTransport::odbcInstFiles()[0] );
+            }
+            finally
+            {
+                putenv( $saved === false ? 'ODBCSYSINI' : 'ODBCSYSINI=' . $saved );
+            }
+            $this->assertContains( '/etc/odbcinst.ini', expHANAODBCTransport::odbcInstFiles() );
+        }
+        finally
+        {
+            @unlink( $with );
+            @unlink( $without );
+            @rmdir( $dir );
+        }
     }
 }

@@ -57,6 +57,25 @@ class expMonetDBMapi
     }
 
     /**
+     * Whether this PHP can speak MAPI: it may open a socket (stream_socket_client(), which disable_functions can take
+     * away) and has one of the hash algorithms of the login (answer()). No extension is needed beyond that; the setup
+     * wizard offers MonetDB by it, and its database page checks the login itself.
+     *
+     * @param string[]|null $disabled the functions PHP has disabled (tests); null: ini disable_functions
+     * @param string[]|null $algorithms the hash algorithms PHP has (tests); null: hash_algos()
+     * @return bool
+     */
+    public static function isAvailable( $disabled = null, $algorithms = null )
+    {
+        $disabled = $disabled === null ? array_map( 'trim', explode( ',', (string)ini_get( 'disable_functions' ) ) ) : (array)$disabled;
+        foreach ( array( 'stream_socket_client', 'stream_set_timeout' ) as $function )
+            if ( !function_exists( $function ) || in_array( $function, $disabled, true ) )
+                return false;
+        $algorithms = $algorithms === null ? ( function_exists( 'hash_algos' ) ? hash_algos() : array() ) : (array)$algorithms;
+        return count( array_intersect( array_values( self::ALGORITHMS ), $algorithms ) ) > 0;
+    }
+
+    /**
      * Connects and logs in.
      *
      * @param string $host a host name, an address, or a Unix socket path (starting with /)

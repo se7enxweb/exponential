@@ -71,8 +71,9 @@ EXP_INSTALL_DB_PASSWORD=secret php bin/php/install.php --db=monetdb --db-host=12
     --db-name=exponential --apply
 ```
 
-With `kickstart.ini` the database is `[database_choice] Type=monetdb`. The web setup wizard does not list MonetDB: it
-offers the databases whose PHP extension it finds, and MonetDB needs none. "Remove the existing data" (the default)
+With `kickstart.ini` the database is `[database_choice] Type=monetdb`. The web setup wizard lists MonetDB last, below
+the databases whose PHP extension it finds, whenever PHP may open a socket (MonetDB needs no extension); its database
+page takes the server, port (50000), user (monetdb), password and database, and checks the login. "Remove the existing data" (the default)
 drops every table, view and sequence of the user's schema. The installer creates the kernel's tables from
 `share/db_schema.dba` through `expMonetDBSchema`, inserts the data, restarts the sequences after the inserted ids and
 writes `DatabaseImplementation=monetdb`.
@@ -186,7 +187,7 @@ database node under a load of 35 to 40 from other work), and a whole site instal
 | Kernel schema (153 tables) and clean data | works | `kernel/sql/monetdb/kernel_schema.sql` and `cleandata.sql`: 17 to 31 s; through the schema handler from `share/db_schema.dba` and `db_data.dba`: 7 to 16 s |
 | Install with `exp:install` / kickstarter, package and extensions | works | [the install](#the-install-on-monetdb): 29 minutes on a busy host |
 | Reading pages, the admin | works | front page and admin login 200; with the view cache 0.05 to 0.09 s |
-| Web setup wizard | does not | not offered (no PHP extension to detect); use `exp:install` |
+| Web setup wizard | offered | listed last whenever PHP may open a socket; the database page checks the login; not driven end to end yet |
 | Transactions, nested `begin()`/`commit()`, rollback | works | a failed statement ends MonetDB's transaction; the kernel rolls back as on PostgreSQL |
 | Several writers at once | works, one after the other | the write lock; without it MonetDB fails the second of two writers of one table |
 | Several readers at once, readers during a write | works | snapshots |

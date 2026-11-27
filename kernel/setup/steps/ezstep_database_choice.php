@@ -37,6 +37,12 @@ class eZStepDatabaseChoice extends eZStepInstaller
     /** @var bool|null tests: whether FFI may be used, instead of asking PHP (expDuckDBFFI::ffiUsable()) */
     public static $FFIUsable = null;
 
+    /** @var bool|null tests: whether SAP HANA's ODBC driver is there, instead of asking the driver (expHANADB::isAvailable()) */
+    public static $HANAAvailable = null;
+
+    /** @var bool|null tests: whether PHP can speak MonetDB's protocol, instead of asking the driver (expMonetDBMapi::isAvailable()) */
+    public static $MonetDBAvailable = null;
+
     function processPostData()
     {
         $databaseMap = eZSetupDatabaseMap();
@@ -103,6 +109,9 @@ class eZStepDatabaseChoice extends eZStepInstaller
                     foreach ( array_keys( eZSetupODBCDatabaseMap() ) as $type )
                         if ( isset( $databaseMap[$type] ) && !in_array( $type, $types ) )
                             $types[] = $type;
+                    // SAP HANA too (expHANADB), when SAP's HANA ODBC driver is registered
+                    if ( isset( $databaseMap['hana'] ) && !in_array( 'hana', $types ) && self::hanaAvailable() )
+                        $types[] = 'hana';
                     continue;
                 }
                 $extension = self::typeOfExtension( $extension );
@@ -121,6 +130,33 @@ class eZStepDatabaseChoice extends eZStepInstaller
             }
         }
         return $types;
+    }
+
+    /**
+     * Whether SAP HANA can be offered: PHP has PDO_ODBC or the odbc extension and the ODBC driver of [HANASettings]
+     * Driver (HDBODBC, SAP's HANA client) is registered with unixODBC, or is a library that exists.
+     *
+     * @return bool
+     */
+    static function hanaAvailable()
+    {
+        if ( self::$HANAAvailable !== null )
+            return (bool)self::$HANAAvailable;
+        return class_exists( 'expHANADB' ) && expHANADB::isAvailable();
+    }
+
+    /**
+     * The databases offered without a PHP extension of their own, listed below the others but never chosen on their
+     * own: MonetDB, whose protocol (MAPI) the driver speaks in plain PHP over a socket (expMonetDBMapi::isAvailable());
+     * its database page checks the login like any server's.
+     *
+     * @return string[]
+     */
+    static function typesWithoutExtension()
+    {
+        $available = self::$MonetDBAvailable !== null ? (bool)self::$MonetDBAvailable
+                                                       : class_exists( 'expMonetDBMapi' ) && expMonetDBMapi::isAvailable();
+        return $available && isset( eZSetupDatabaseMap()['monetdb'] ) ? array( 'monetdb' ) : array();
     }
 
     /**
@@ -266,6 +302,10 @@ class eZStepDatabaseChoice extends eZStepInstaller
         // right below Oracle: SQL Server (native, then over ODBC), Firebird and DuckDB, then the rest
         $next = array_values( array_intersect( self::NEXT_TYPES, $later ) );
         $later = array_values( array_diff( $later, self::NEXT_TYPES ) );
+        // last, the databases that need no PHP extension (MonetDB)
+        foreach ( self::typesWithoutExtension() as $type )
+            if ( !in_array( $type, $later ) )
+                $later[] = $type;
 
         $availableDatabases = array();
         $databaseList = array();

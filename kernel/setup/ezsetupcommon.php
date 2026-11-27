@@ -129,7 +129,8 @@ function eZSetupDatabaseMap()
                                        'has_demo_data' => false,
                                        'supports_unicode' => true ),
                   // expHANADB in the kernel: SAP HANA 2.0 SPS 05 or later, or HANA Cloud, over SAP's HANA ODBC
-                  // driver through PHP's odbc extension or PDO_ODBC; the database is a schema of the tenant
+                  // driver through PHP's odbc extension or PDO_ODBC; the database is a schema of the tenant. The
+                  // wizard offers it with odbc or pdo_odbc when the driver is registered (expHANADB::isAvailable())
                   'hana' => array( 'type' => 'hana',
                                    'driver' => 'hana',
                                    'name' => 'SAP HANA',
@@ -167,8 +168,8 @@ function eZSetupDatabaseMap()
                                     'required_version' => '3.33',
                                     'has_demo_data' => false,
                                     'supports_unicode' => true ),
-                  // expMonetDBDB in the kernel: a MonetDB server, over MAPI in plain PHP (no extension; not offered by
-                  // the wizard, which lists the databases whose PHP extension it finds: exp:install --db=monetdb)
+                  // expMonetDBDB in the kernel: a MonetDB server, over MAPI in plain PHP (no extension: the wizard lists
+                  // it last whenever PHP may open a socket, eZStepDatabaseChoice::typesWithoutExtension())
                   'monetdb' => array( 'type' => 'monetdb',
                                       'driver' => 'monetdb',
                                       'name' => 'MonetDB',

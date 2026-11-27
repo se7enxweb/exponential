@@ -73,7 +73,9 @@ EXP_INSTALL_DB_PASSWORD=geheim php bin/php/install.php --db=monetdb --db-host=12
 ```
 
 Mit `kickstart.ini` ist die Datenbank `[database_choice] Type=monetdb`. Der Web-Einrichtungsassistent führt MonetDB
-nicht auf: er bietet die Datenbanken an, deren PHP-Erweiterung er findet, und MonetDB braucht keine. „Vorhandene Daten
+zuletzt auf, unter den Datenbanken, deren PHP-Erweiterung er findet, sobald PHP einen Socket öffnen darf (MonetDB braucht
+keine Erweiterung); seine Datenbankseite nimmt Server, Port (50000), Benutzer (monetdb), Passwort und Datenbank und prüft
+die Anmeldung. „Vorhandene Daten
 entfernen" (die Vorgabe) löscht alle Tabellen, Sichten und Sequenzen im Schema des Benutzers. Der Installer legt die
 Tabellen des Kernels aus `share/db_schema.dba` über `expMonetDBSchema` an, fügt die Daten ein, startet die Sequenzen hinter
 den eingefügten IDs neu und schreibt `DatabaseImplementation=monetdb`.
@@ -192,7 +194,7 @@ Datenbankknoten des Projekts bei einer Last von 35 bis 40 durch andere Arbeit), 
 | Kernel-Schema (153 Tabellen) und saubere Daten | geht | `kernel/sql/monetdb/kernel_schema.sql` und `cleandata.sql`: 17 bis 31 s; über den Schema-Handler aus `share/db_schema.dba` und `db_data.dba`: 7 bis 16 s |
 | Installation mit `exp:install` / Kickstarter, Paket und Erweiterungen | geht | [die Installation](#die-installation-auf-monetdb): 29 Minuten auf einem ausgelasteten Host |
 | Seiten lesen, der Admin | geht | Startseite und Admin-Anmeldung 200; mit View-Cache 0,05 bis 0,09 s |
-| Web-Einrichtungsassistent | geht nicht | nicht angeboten (keine PHP-Erweiterung zu erkennen); nehmen Sie `exp:install` |
+| Web-Einrichtungsassistent | angeboten | zuletzt aufgeführt, sobald PHP einen Socket öffnen darf; die Datenbankseite prüft die Anmeldung; noch nicht durchgehend durchlaufen |
 | Transaktionen, verschachteltes `begin()`/`commit()`, Rollback | geht | eine gescheiterte Anweisung beendet MonetDBs Transaktion; der Kernel rollt zurück wie auf PostgreSQL |
 | Mehrere Schreiber zugleich | geht, nacheinander | die Schreibsperre; ohne sie lässt MonetDB den zweiten von zwei Schreibern einer Tabelle scheitern |
 | Mehrere Leser zugleich, Leser während eines Schreibens | geht | Schnappschüsse |

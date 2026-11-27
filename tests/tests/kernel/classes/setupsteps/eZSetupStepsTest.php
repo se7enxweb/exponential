@@ -28,10 +28,15 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         $this->helper = new eZSetupStepTestHelper();
+        // what this PHP has decides whether SAP HANA and MonetDB are offered; the tests say it themselves
+        eZStepDatabaseChoice::$HANAAvailable = false;
+        eZStepDatabaseChoice::$MonetDBAvailable = false;
     }
 
     protected function tearDown(): void
     {
+        eZStepDatabaseChoice::$HANAAvailable = null;
+        eZStepDatabaseChoice::$MonetDBAvailable = null;
         $this->helper->restore();
     }
 
@@ -363,6 +368,81 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         $this->assertGreaterThan( array_search( 'firebird', $list ), array_search( 'tidb', $list ), 'the rest after them' );
     }
 
+    /**
+     * SAP HANA: offered with PDO_ODBC or the odbc extension when SAP's HANA ODBC driver is registered, after the
+     * dialects of the generic ODBC driver, among the databases below Oracle; never without an ODBC layer.
+     */
+    public function testSAPHANAIsOfferedWhenItsODBCDriverIsRegistered()
+    {
+        foreach ( array( 'odbc', 'pdo_odbc' ) as $layer )
+        {
+            $step = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => array( 'sqlite3', $layer ) ) ) );
+            $this->assertNotContains( 'hana', $step->foundDatabaseTypes(), 'no HANA ODBC driver: not offered' );
+
+            eZStepDatabaseChoice::$HANAAvailable = true;
+            $types = $step->foundDatabaseTypes();
+            $this->assertContains( 'hana', $types, $layer );
+            $this->assertSame( 'hana', end( $types ), 'after the ODBC dialects' );
+            $step->display();
+            $list = array_column( $this->variable( 'database_list' ), 'type' );
+            $this->assertContains( 'hana', $list );
+            $this->assertGreaterThan( array_search( 'sqlite3', $list ), array_search( 'hana', $list ), 'below the established databases' );
+            $this->assertTrue( $this->variable( 'available_databases' )['hana'] );
+            $_POST = array( 'eZSetupDatabaseType' => 'hana' );
+            $this->assertTrue( $step->processPostData() );
+            $this->assertSame( array( 'hana', 'hana' ), array( $step->PersistenceList['database_info']['type'], $step->PersistenceList['database_info']['driver'] ) );
+            $_POST = array();
+            eZStepDatabaseChoice::$HANAAvailable = false;
+        }
+
+        eZStepDatabaseChoice::$HANAAvailable = true;
+        $step = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => array( 'sqlite3', 'pgsql' ) ) ) );
+        $this->assertNotContains( 'hana', $step->foundDatabaseTypes(), 'without an ODBC layer of PHP: not offered' );
+        $this->assertSame( (bool)eZStepDatabaseChoice::$HANAAvailable, eZStepDatabaseChoice::hanaAvailable() );
+    }
+
+    /**
+     * MonetDB: no PHP extension, so it is listed last whenever PHP can speak its protocol, never chosen on its own (one
+     * database extension still skips the page), and chosen like any database when posted.
+     */
+    public function testMonetDBIsOfferedWithoutAnExtension()
+    {
+        $step = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => array( 'sqlite3', 'pgsql' ) ) ) );
+        $step->display();
+        $this->assertNotContains( 'monetdb', array_column( $this->variable( 'database_list' ), 'type' ), 'PHP cannot speak MAPI: not offered' );
+        $this->assertSame( array(), eZStepDatabaseChoice::typesWithoutExtension() );
+
+        eZStepDatabaseChoice::$MonetDBAvailable = true;
+        $this->assertSame( array( 'monetdb' ), eZStepDatabaseChoice::typesWithoutExtension() );
+        $this->assertSame( array( 'sqlite3', 'pgsql' ), $step->foundDatabaseTypes(), 'not found by an extension' );
+        $step->display();
+        $list = array_column( $this->variable( 'database_list' ), 'type' );
+        $this->assertSame( 'monetdb', end( $list ), 'listed last' );
+        $this->assertTrue( $this->variable( 'available_databases' )['monetdb'] );
+        $_POST = array( 'eZSetupDatabaseType' => 'monetdb' );
+        $this->assertTrue( $step->processPostData() );
+        $this->assertSame( array( 'monetdb', 'monetdb' ), array( $step->PersistenceList['database_info']['type'], $step->PersistenceList['database_info']['driver'] ) );
+        $_POST = array();
+
+        $single = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => array( 'pgsql' ) ) ) );
+        $this->assertTrue( $single->init(), 'one database extension: still chosen without the page' );
+        $this->assertSame( 'pgsql', $single->PersistenceList['database_info']['type'] );
+    }
+
+    /** The database page's defaults for SAP HANA (the tenant's SQL port) and MonetDB (monetdbd's port and user) */
+    public function testDatabasePageDefaultsOfSAPHANAAndMonetDB()
+    {
+        foreach ( array( 'hana' => array( '39041', '' ), 'monetdb' => array( '50000', 'monetdb' ) ) as $type => $expected )
+        {
+            $step = $this->step( 'eZStepDatabaseInit', array( 'database_info' => array( 'type' => $type ) ) );
+            $this->assertFalse( $step->init(), 'the database page is always shown' );
+            $info = $step->PersistenceList['database_info'];
+            $this->assertSame( $expected, array( (string)$info['port'], (string)$info['user'] ), $type );
+            $this->assertNotSame( '', (string)$info['server'], $type );
+            $this->assertNotSame( '', (string)$info['dbname'], $type );
+        }
+    }
+
     public static function databaseExtensionProvider()
     {
         return array( array( array( 'sqlsrv' ), true, array( 'sqlserver' ) ),
@@ -427,10 +507,15 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         }
         // curl gives libSQL, and Turso is listed after it
         $this->assertSame( 'libsql', eZStepDatabaseChoice::typeOfExtension( 'curl' ) );
-        // MonetDB needs no PHP extension the system check could find, so the wizard has nothing to offer it by
-        // (exp:install --db=monetdb). SAP HANA and SAP ASE have no PHP extension of their own to detect (they go
-        // through odbc, pdo_odbc or pdo_dblib) and are installed with the kickstarter too
-        $notInTheWizard = array( 'monetdb', 'hana', 'ase' );
+        // SAP HANA comes with odbc or pdo_odbc when its ODBC driver is registered, MonetDB needs no extension
+        // (eZStepDatabaseChoice::typesWithoutExtension()); SAP ASE was never tested against a server and stays with
+        // the kickstarter (exp:install --db=ase)
+        $this->assertArrayHasKey( 'odbc_pgsql', $reachable );
+        $reachable['hana'] = true;
+        eZStepDatabaseChoice::$MonetDBAvailable = true;
+        foreach ( eZStepDatabaseChoice::typesWithoutExtension() as $type )
+            $reachable[$type] = true;
+        $notInTheWizard = array( 'ase' );
         foreach ( eZSetupDatabaseMap() as $type => $entry )
         {
             if ( in_array( $type, $notInTheWizard, true ) )

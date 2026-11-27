@@ -46,6 +46,61 @@ class expHANAODBCTransport extends expHANATransport
         return $this->layer;
     }
 
+    /**
+     * The odbcinst.ini files unixODBC reads its drivers from, the first one first: <ODBCSYSINI>/<ODBCINSTINI> when the
+     * environment names them (as `odbcinst -j` reports), then the places distributions and SAP's client installer use,
+     * then the user's ~/.odbcinst.ini.
+     *
+     * @return string[]
+     */
+    public static function odbcInstFiles()
+    {
+        $directory = (string)getenv( 'ODBCSYSINI' );
+        $name = (string)getenv( 'ODBCINSTINI' );
+        $files = array();
+        if ( $directory !== '' || $name !== '' )
+            $files[] = ( $directory !== '' ? rtrim( $directory, '/' ) : '/etc' ) . '/' . ( $name !== '' ? $name : 'odbcinst.ini' );
+        foreach ( array( '/etc/odbcinst.ini', '/etc/unixODBC/odbcinst.ini', '/usr/local/etc/odbcinst.ini' ) as $file )
+            $files[] = $file;
+        $home = (string)getenv( 'HOME' );
+        if ( $home !== '' )
+            $files[] = rtrim( $home, '/' ) . '/.odbcinst.ini';
+        return array_values( array_unique( $files ) );
+    }
+
+    /**
+     * Whether the ODBC driver the connection string names is there: a driver given as the path of its library (DRIVER=
+     * /usr/sap/hdbclient/libodbcHDB.so) when that file exists, a driver given by name (HDBODBC, the default) when an
+     * odbcinst.ini of unixODBC has a section of that name. PHP has no call that lists the ODBC drivers, so on Windows,
+     * where the drivers are in the registry, only a library path is recognised.
+     *
+     * @param string $driver the name or the library of the driver ([HANASettings] Driver)
+     * @param string[]|null $files the odbcinst.ini files to read (tests); null: odbcInstFiles()
+     * @return bool
+     */
+    public static function driverRegistered( $driver, $files = null )
+    {
+        $driver = trim( (string)$driver, " \t{}" );
+        if ( $driver === '' )
+            $driver = expHANADialect::DEFAULT_DRIVER;
+        if ( strpbrk( $driver, '/\\' ) !== false )
+            return is_file( $driver );
+        foreach ( $files === null ? self::odbcInstFiles() : (array)$files as $file )
+        {
+            if ( !is_file( $file ) || !is_readable( $file ) )
+                continue;
+            $text = @file_get_contents( $file );
+            if ( !is_string( $text ) )
+                continue;
+            foreach ( preg_split( '/\r\n|\r|\n/', $text ) as $line )
+            {
+                if ( preg_match( '/^\s*\[\s*(.+?)\s*\]\s*$/', $line, $match ) && strcasecmp( $match[1], $driver ) === 0 )
+                    return true;
+            }
+        }
+        return false;
+    }
+
     public function open( array $config )
     {
         $this->close();

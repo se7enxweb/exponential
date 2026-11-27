@@ -103,4 +103,14 @@ class expMonetDBMapiTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $mapi->query( 'SELECT 1' ) );
         $this->assertSame( '08003', $mapi->SQLState );
     }
+
+    /** What the setup wizard offers MonetDB by: a socket may be opened and a hash of the login is there */
+    public function testAvailable()
+    {
+        $this->assertTrue( expMonetDBMapi::isAvailable( array(), array( 'md5', 'sha512' ) ) );
+        $this->assertTrue( expMonetDBMapi::isAvailable( array( 'exec' ), array( 'ripemd160' ) ) );
+        $this->assertFalse( expMonetDBMapi::isAvailable( array( 'stream_socket_client' ), array( 'sha512' ) ), 'sockets disabled' );
+        $this->assertFalse( expMonetDBMapi::isAvailable( array(), array( 'md5', 'crc32' ) ), 'no hash of the login' );
+        $this->assertTrue( expMonetDBMapi::isAvailable(), 'this PHP' );
+    }
 }

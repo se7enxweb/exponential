@@ -95,8 +95,10 @@ EXP_INSTALL_DB_PASSWORD=... php bin/php/install.php --apply --db=hana \
 ```
 
 Der Benutzer braucht `CREATE SCHEMA` (oder ein für ihn angelegtes Schema). Der Kickstarter nimmt `Type=hana` in
-`[database_choice]`. Der Setup-Assistent listet HANA nicht auf: es hat keine eigene PHP-Erweiterung, an der er es
-erkennen könnte. `--db-action=remove` (der Standard) löscht zuerst die Tabellen und Sequenzen des Schemas.
+`[database_choice]`. Der Setup-Assistent listet HANA unter den anderen Datenbanken auf, wenn PHP PDO_ODBC oder die
+odbc-Erweiterung hat und SAPs ODBC-Treiber (`[HANASettings] Driver`, HDBODBC) ein Abschnitt der `odbcinst.ini` von
+unixODBC ist (`$ODBCSYSINI`, `/etc`, `/etc/unixODBC`, `/usr/local/etc` oder `~/.odbcinst.ini`) oder ein vorhandener
+Bibliothekspfad; die Datenbankseite nimmt Server, den SQL-Port des Tenants (39041), Benutzer, Passwort und Schema. `--db-action=remove` (der Standard) löscht zuerst die Tabellen und Sequenzen des Schemas.
 
 ## Wie das SQL des Kernels zu dem von HANA wird
 

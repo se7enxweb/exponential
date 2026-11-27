@@ -171,6 +171,24 @@ class expHANADB extends eZDBInterface
     }
 
     /**
+     * Whether this PHP can reach SAP HANA: it has the ODBC layer [HANASettings] Layer asks for (PDO_ODBC or the odbc
+     * extension) and the ODBC driver [HANASettings] Driver names is registered with unixODBC, or is a library that
+     * exists (expHANAODBCTransport::driverRegistered()). The setup wizard offers SAP HANA by it.
+     *
+     * @param array $settings [HANASettings] (tests); null: settings()
+     * @param string[]|null $layers the ODBC layers PHP has (tests); null: asked of PHP
+     * @param string[]|null $files the odbcinst.ini files (tests); null: expHANAODBCTransport::odbcInstFiles()
+     * @return bool
+     */
+    public static function isAvailable( $settings = null, $layers = null, $files = null )
+    {
+        $settings = is_array( $settings ) ? $settings + self::DEFAULT_SETTINGS : self::settings();
+        if ( expHANATransport::availableLayer( (string)$settings['Layer'], $layers ) === null )
+            return false;
+        return expHANAODBCTransport::driverRegistered( (string)$settings['Driver'], $files );
+    }
+
+    /**
      * The connection settings for the transport; $withSchema false connects without a current schema (to make it).
      *
      * @param bool $withSchema
