@@ -30968,7 +30968,7 @@ de182c6651bca7ec15040fd30f746217  tests/tests/lib/ezutils/eZExecutionCleaningUpT
 a372f6e5de1712c3fada5181614e3ddf  tests/tests/lib/ezutils/eZExecutionDatabaseUnavailableTest.php
 9c724385cea52f5b979e9efbdd7e1dbf  tests/tests/lib/ezutils/eZExecutionExceptionHandlerTest.php
 64d9a92e2dbfc619fb59da22f6a75f36  tests/tests/lib/ezutils/eZExecutionPerRequestRegistrationTest.php
-a125189bfe5d2702852f9ea2a0a274eb  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
+cbcb2c8f605ba590f0be7688d378548f  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 8f91fc248bab73e6c8781d9c616cea9b  tests/tests/lib/ezutils/eZExtensionCountsTest.php
 417ffc9e1eca0a60e45f8a0e603c53f6  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
 27cb687a8e1c708e0bbce77a07cf6644  tests/tests/lib/ezutils/eZExtensionRequiredExtensionsTest.php
