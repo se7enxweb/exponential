@@ -1032,8 +1032,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { layer: pdo_odbc, php: '8.5' }
-          - { layer: odbc, php: '8.4' }
+          - { layer: pdo_odbc, php: '8.5', install: 'sqlserver mysql' }
+          - { layer: odbc, php: '8.4', install: 'postgresql' }
     services:
       sqlserver:
         image: mcr.microsoft.com/mssql/server:2022-latest
@@ -1144,6 +1144,45 @@ jobs:
         run: |
           php vendor/bin/phpunit --colors=always --testsuite odbc
           php vendor/bin/phpunit --colors=always --display-skipped --testsuite odbc-live
+
+      # A whole site over ODBC (DatabaseImplementation=odbc): the kernel schema and data, the package, the
+      # siteaccesses, then the front page, the admin login and a search through PHP's built-in server. SQL Server runs
+      # on its own driver with ODBC as the layer, PostgreSQL and MariaDB on expODBCDB with their schema handlers.
+      - name: Install a site over ODBC
+        env:
+          EXP_ODBC_INSTALL: ${{ matrix.install }}
+        run: |
+          mkdir -p settings/override
+          printf '<?php /* #?ini charset="utf-8"?\n[ManualSettings]\nBuildOnInstall=disabled\n*/ ?>\n' > settings/override/exphelp.ini.append.php
+          php -r 'new PDO("odbc:Driver={ODBC Driver 18 for SQL Server};Server=127.0.0.1,1433;Encrypt=yes;TrustServerCertificate=yes", "sa", "Ci-SqlServer-2026!")->exec("IF DB_ID(N'"'"'exp_odbc'"'"') IS NULL CREATE DATABASE exp_odbc COLLATE Latin1_General_100_CI_AS_SC_UTF8");'
+          for dialect in $EXP_ODBC_INSTALL; do
+            case $dialect in
+              sqlserver)  set -- --db-port=1433 --db-name=exp_odbc --db-user=sa --db-trust-server-certificate; pw='Ci-SqlServer-2026!' ;;
+              postgresql) set -- --db-port=5432 --db-name=odbctest --db-user=postgres; pw=ci-odbc ;;
+              mysql)      set -- --db-port=3306 --db-name=odbctest --db-user=root; pw=ci-odbc ;;
+            esac
+            echo "::group::install over ODBC: $dialect"
+            start=$(date +%s)
+            EXP_INSTALL_DB_PASSWORD="$pw" php bin/php/install.php --db=odbc --db-dialect=$dialect --db-host=127.0.0.1 "$@" \
+              --apply --force --password=Ci-Odbc-Admin-2026 --no-crontab
+            echo "installed in $(( $(date +%s) - start )) s"
+            grep -A4 '^\[ODBCSettings\]' settings/override/site.ini.append.php
+            grep -q '^DatabaseImplementation=odbc' settings/override/site.ini.append.php
+            php -S 127.0.0.1:8080 -t . index.php >var/log/php-server.log 2>&1 &
+            server=$!
+            sleep 2
+            for page in / /admin/user/login '/content/search?SearchText=exponential'; do
+              code=$(curl -s -o page.html -w '%{http_code}' "http://127.0.0.1:8080$page")
+              echo "$dialect $page: $code"
+              test "$code" = 200
+            done
+            kill $server
+            echo "::endgroup::"
+          done
+
+      - name: Logs
+        if: failure()
+        run: tail -n 200 var/log/error.log var/log/setup.log var/log/php-server.log 2>/dev/null || true
 
       - name: Clean CI Composer overlay
         if: always()
