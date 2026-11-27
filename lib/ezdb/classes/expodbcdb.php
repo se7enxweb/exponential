@@ -978,6 +978,48 @@ class expODBCDB extends expPDODB
         return true;
     }
 
+    /**
+     * INSERT INTO ... DEFAULT VALUES: not in MySQL/MariaDB (the kernel writes VALUES () there instead) nor in MS Access.
+     *
+     * @return bool
+     */
+    function supportsDefaultValuesInsertion()
+    {
+        return !in_array( $this->Dialect, array( 'mysql', 'msaccess' ), true );
+    }
+
+    /**
+     * The table locks of the dialect, as its own driver takes them: LOCK TABLES ... WRITE on MySQL/MariaDB, a
+     * transaction with LOCK TABLE on PostgreSQL; nothing elsewhere (as eZDBInterface).
+     *
+     * @param string|array $table a name, or a list of array( 'table' => name )
+     */
+    function lock( $table )
+    {
+        if ( !$this->IsConnected || !in_array( $this->Dialect, array( 'mysql', 'postgresql' ), true ) )
+            return;
+        $names = array();
+        foreach ( is_array( $table ) ? $table : array( array( 'table' => $table ) ) as $entry )
+            $names[] = is_array( $entry ) ? (string)$entry['table'] : (string)$entry;
+        if ( $this->Dialect === 'mysql' )
+        {
+            $this->query( 'LOCK TABLES ' . implode( ', ', array_map( function ( $name ) { return $name . ' WRITE'; }, $names ) ) );
+            return;
+        }
+        $this->begin();
+        $this->query( 'LOCK TABLE ' . implode( ', ', $names ) );
+    }
+
+    function unlock()
+    {
+        if ( !$this->IsConnected )
+            return;
+        if ( $this->Dialect === 'mysql' )
+            $this->query( 'UNLOCK TABLES' );
+        elseif ( $this->Dialect === 'postgresql' )
+            $this->commit();
+    }
+
     function removeRelation( $relationName, $relationType )
     {
         if ( $this->Dialect === 'msaccess' && $relationType == eZDBInterface::RELATION_TABLE )
