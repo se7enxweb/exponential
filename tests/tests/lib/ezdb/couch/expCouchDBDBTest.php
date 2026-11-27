@@ -126,6 +126,8 @@ class expCouchDBDBTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( array( 'POST', '/shop/_all_docs?include_docs=true' ) ), $this->couch->log );
         $this->assertSame( array(), $db->arrayQuery( "SELECT name FROM item WHERE id = 2 AND name = 'apple'" ) );
         $this->assertSame( array(), $db->arrayQuery( 'SELECT name FROM item WHERE id = 99' ) );
+        // SELECT * lists the table's columns only, not the copy's own
+        $this->assertSame( array( array( 'id' => 2, 'name' => 'pear', 'qty' => 5, 'cat' => 1 ) ), $db->arrayQuery( 'SELECT * FROM item WHERE id = 2' ) );
         $this->assertSame( array( 'exp_table' => 'item', 'name' => 'pear' ), expCouchDBDB::pushdown( expCouchSQLLexer::tokenize( "SELECT id FROM item WHERE name = 'pear' AND qty > 1", false ),
                                                                                                     'item', $db->tableEntry( 'item' ) ) );
         $this->assertSame( array( array( 'n' => 3, 's' => 9 ) ), $db->arrayQuery( 'SELECT COUNT(*) AS n, SUM(qty) AS s FROM item' ) );
@@ -239,7 +241,7 @@ class expCouchDBDBTest extends PHPUnit\Framework\TestCase
                                                                          'n' => array( 'type' => 'float', 'default' => 1.5 ) ),
                                                         'indexes' => array( 'PRIMARY' => array( 'type' => 'primary', 'fields' => array( 'id', 'k' ) ),
                                                                             'u' => array( 'type' => 'unique', 'fields' => array( 'n' ) ) ) ) );
-        $this->assertSame( 'CREATE TABLE "t" ("exp_id" TEXT, "exp_rev" TEXT, "id" INT, "k" TEXT DEFAULT \'a\'\'b\', "n" REAL DEFAULT 1.5, PRIMARY KEY ("id", "k"));'
+        $this->assertSame( 'CREATE TABLE "t" ("_exp_id" TEXT, "_exp_rev" TEXT, "id" INT, "k" TEXT DEFAULT \'a\'\'b\', "n" REAL DEFAULT 1.5, PRIMARY KEY ("id", "k"));'
                            . ' CREATE UNIQUE INDEX "t__u" ON "t" ("n");',
                            expCouchDBDB::memoryTableSQL( 't', $entry, array( 'indexes' => array( 'u' => array( 'type' => 'unique', 'fields' => array( 'n' ) ) ) ) ) );
         $this->assertSame( 't:["1","x"]', expCouchDBDB::documentId( 't', $entry, array( 'id' => 1, 'k' => 'x' ) ) );

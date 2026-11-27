@@ -487,7 +487,7 @@ class expCouchDBDB extends eZDBInterface
                 return false;
             if ( !$docs )
                 continue;
-            $columns = array_merge( array( 'exp_id', 'exp_rev' ), $entry['order'] );
+            $columns = array_merge( array( '_exp_id', '_exp_rev' ), $entry['order'] );
             $quoted = array_map( array( 'expCouchDBDB', 'quote' ), $columns );
             $memory->exec( 'BEGIN' );
             $insert = $memory->prepare( 'INSERT INTO ' . self::quote( $table ) . ' (' . implode( ', ', $quoted ) . ') VALUES (' . implode( ', ', array_fill( 0, count( $columns ), '?' ) ) . ')' );
@@ -634,12 +634,12 @@ class expCouchDBDB extends eZDBInterface
 
     /**
      * The CREATE TABLE of a table's in-memory copy (pure): the columns with SQLite's affinity and the definition's
-     * defaults, the primary key and the unique indexes (so SQLite's upserts and conflicts see them), plus exp_id and
-     * exp_rev (the document's).
+     * defaults, the primary key and the unique indexes (so SQLite's upserts and conflicts see them), plus _exp_id and
+     * _exp_rev (the document's; CouchDB allows no column named _...).
      */
     public static function memoryTableSQL( $table, array $entry, array $definition )
     {
-        $columns = array( '"exp_id" TEXT', '"exp_rev" TEXT' );
+        $columns = array( '"_exp_id" TEXT', '"_exp_rev" TEXT' );
         foreach ( $entry['order'] as $column )
         {
             $type = $entry['fields'][$column] === 'int' ? 'INT' : ( $entry['fields'][$column] === 'float' ? 'REAL' : 'TEXT' );
@@ -792,7 +792,11 @@ class expCouchDBDB extends eZDBInterface
         {
             $result = $memory->query( $sql );
             while ( $row = $result->fetchArray( SQLITE3_ASSOC ) )
+            {
+                // the copy's own columns (a SELECT * would list them) are not the table's
+                unset( $row['_exp_id'], $row['_exp_rev'] );
                 $rows[] = $row;
+            }
         }
         catch ( Exception $e )
         {
@@ -852,8 +856,8 @@ class expCouchDBDB extends eZDBInterface
             $old[] = "'" . str_replace( "'", "''", $column ) . "', OLD." . self::quote( $column );
         $memory->exec( 'CREATE TEMP TABLE exp_changes (op TEXT, rid INTEGER, exp_id TEXT, exp_rev TEXT, old TEXT)' );
         $memory->exec( "CREATE TEMP TRIGGER exp_i AFTER INSERT ON $q BEGIN INSERT INTO exp_changes VALUES ('i', NEW.rowid, NULL, NULL, NULL); END" );
-        $memory->exec( "CREATE TEMP TRIGGER exp_u AFTER UPDATE ON $q BEGIN INSERT INTO exp_changes VALUES ('u', NEW.rowid, OLD.exp_id, OLD.exp_rev, json_object(" . implode( ', ', $old ) . ')); END' );
-        $memory->exec( "CREATE TEMP TRIGGER exp_d AFTER DELETE ON $q BEGIN INSERT INTO exp_changes VALUES ('d', NULL, OLD.exp_id, OLD.exp_rev, json_object(" . implode( ', ', $old ) . ')); END' );
+        $memory->exec( "CREATE TEMP TRIGGER exp_u AFTER UPDATE ON $q BEGIN INSERT INTO exp_changes VALUES ('u', NEW.rowid, OLD._exp_id, OLD._exp_rev, json_object(" . implode( ', ', $old ) . ')); END' );
+        $memory->exec( "CREATE TEMP TRIGGER exp_d AFTER DELETE ON $q BEGIN INSERT INTO exp_changes VALUES ('d', NULL, OLD._exp_id, OLD._exp_rev, json_object(" . implode( ', ', $old ) . ')); END' );
         try
         {
             $memory->exec( $sql );
@@ -871,7 +875,7 @@ class expCouchDBDB extends eZDBInterface
             $changes[] = $c;
         $deleted = array();
         $written = array();
-        $columns = implode( ', ', array_map( array( 'expCouchDBDB', 'quote' ), array_merge( array( 'exp_id', 'exp_rev' ), $entry['order'] ) ) );
+        $columns = implode( ', ', array_map( array( 'expCouchDBDB', 'quote' ), array_merge( array( '_exp_id', '_exp_rev' ), $entry['order'] ) ) );
         foreach ( $changes as $c )
         {
             if ( $c['op'] === 'd' )
