@@ -3,94 +3,106 @@ title: "Microsoft SQL Server: Stand für Datenbankadministratoren"
 audience: dba
 category: database-administration
 order: 22
-summary: Wo Microsoft SQL Server für Exponential 6.0.x steht - nicht unterstützt, bekanntermaßen mit zusätzlicher Arbeit möglich -, was es gibt, worauf solche Arbeit aufbauen könnte (die Treiberschnittstelle, das .dba-Format, austauschbare Schema-Handler, die alte Erweiterung xrowmssql), was fehlt und was ein Datenbankadministrator antworten sollte, wenn er gebeten wird, eine Website auf SQL Server zu betreiben.
-keywords: Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, pdo_sqlsrv, xrowmssql, nicht unterstützt, mit zusätzlicher Arbeit möglich, eZDBInterface, Schema-Handler, BIT_OR, OFFSET FETCH, SCOPE_IDENTITY, NVARCHAR, not supported, possible with additional work, schema handler
+summary: Wo Microsoft SQL Server für Exponential steht - unterstützt ab 6.0.15 mit dem eigenen Treiber des Kernels, expSQLServerDB (SQL Server 2017 bis 2025, Azure SQL), nicht in 6.0.14 und älter -, mit dem, was ein Datenbankadministrator vorbereitet (Kollation, Read Committed Snapshot, Logins), den PHP-Schichten, Verschlüsselung, Pooling, Lesereplikaten, dem DFS-Cluster, Sicherungen und dem, was noch fehlt.
+keywords: Microsoft SQL Server, MSSQL, SQL Server, Azure SQL, expSQLServerDB, expSQLServerSchema, sqlsrv, pdo_sqlsrv, pdo_odbc, pdo_dblib, ODBC Driver 18, READ_COMMITTED_SNAPSHOT, UTF-8-Kollation, NVARCHAR, Always On, ApplicationIntent, DFS-Cluster, BACKUP DATABASE, xrowmssql
 type: help
 ---
 # Microsoft SQL Server: Stand für Datenbankadministratoren
 
-Diese Seite richtet sich an Datenbankadministratoren in Organisationen, die auf Microsoft SQL Server standardisiert sind und
-gefragt werden, ob eine Exponential-Website darauf laufen kann. Die kurze Antwort: **nicht in Exponential 6.0.x**. SQL Server
-ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich; es gibt keinen Treiber, keinen Schema-Handler und keinen
-Installer-Eintrag dafür, und nichts hier verspricht ein Release, das einen hat. Diese Seite fasst zusammen, was es gibt, was
-fehlt und was Sie in der Zwischenzeit tun. Die vollständige Aussage und die Arbeitsliste stehen in
-[Datenbankunterstützung](../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand).
+Diese Seite richtet sich an Datenbankadministratoren in Organisationen, die auf Microsoft SQL Server standardisiert
+haben und eine Exponential-Site darauf betreiben sollen. Die kurze Antwort: **ja, ab Exponential 6.0.15**. Der Kernel
+hat einen eigenen Treiber, `expSQLServerDB`, mit dem Schema-Handler `expSQLServerSchema`, dem Kernel-Schema in
+`kernel/sql/sqlserver/`, Einträgen in den Installern und einem DFS-Cluster-Backend. Exponential 6.0.14 und älter haben
+nichts davon. Die vollständige Referenz ist die Seite
+[Microsoft-SQL-Server-Treiber](../../funktionen/6.0/sqlserver-datenbanktreiber.md).
 
 ## Inhalt
 
-1. [Die Aussage](#die-aussage)
-2. [Was es gibt, um darauf aufzubauen](#was-es-gibt-um-darauf-aufzubauen)
-3. [Die Erweiterung xrowmssql](#die-erweiterung-xrowmssql)
-4. [Was fehlt](#was-fehlt)
-5. [Was Sie in der Zwischenzeit tun](#was-sie-in-der-zwischenzeit-tun)
-6. [Die Arbeit beitragen](#die-arbeit-beitragen)
+1. [Server und PHP-Schichten](#server-und-php-schichten)
+2. [Die Datenbank vorbereiten](#die-datenbank-vorbereiten)
+3. [Verschlüsselung, Pooling und Sitzungen](#verschlüsselung-pooling-und-sitzungen)
+4. [Lesereplikate und der Cluster](#lesereplikate-und-der-cluster)
+5. [Sicherungen und Aktualisierungen](#sicherungen-und-aktualisierungen)
+6. [Was noch fehlt](#was-noch-fehlt)
+7. [Die alte Erweiterung xrowmssql](#die-alte-erweiterung-xrowmssql)
+8. [Verwandte Seiten](#verwandte-seiten)
 
-## Die Aussage
+## Server und PHP-Schichten
 
-> Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
-
-Planen Sie mit Exponential 6.0.x keine Produktionswebsite auf SQL Server. Installieren Sie keinen online gefundenen Treiber
-eines Dritten ohne vollständigen Test auf einer Produktionswebsite: Das Projekt hat keinen SQL-Server-Treiber auf
-Exponential 6 betrieben.
-
-## Was es gibt, um darauf aufzubauen
-
-- **Eine kleine Treiberschnittstelle.** Jede Datenbank wird über `eZDBInterface` erreicht
-  (`lib/ezdb/classes/ezdbinterface.php`); fünf Treiber implementieren sie bereits, für eine Dateidatenbank, drei SQL-Server
-  und einen Dokumentenspeicher ([Die Datenbankschicht auf einer Seite](die-datenbankschicht-auf-einer-seite.md)).
-- **Ein engine-neutrales Schema.** `share/db_schema.dba` und `share/db_data.dba` werden von einem Schema-Handler in die DDL
-  jeder Engine umgewandelt ([Das .dba-Schemaformat](das-dba-schemaformat.md)).
-- **Austauschbare Schema-Handler und Aliase.** `settings/dbschema.ini` (`SchemaPaths[]`, `SchemaHandlerClasses[]`) und
-  `site.ini [DatabaseSettings] ImplementationAlias[]` lassen sich aus einer Erweiterung erweitern, so wie `ezoracle` es tut.
-- **PHP-Treiber.** Microsoft veröffentlicht `sqlsrv` und `pdo_sqlsrv` für PHP unter Linux und Windows; prüfen Sie Microsofts
-  Unterstützungsmatrix für PHP-Versionen. Nicht mit Exponential getestet.
-- **Werkzeuge, die SQL Server lesen** (keine Wege, eine Website zu betreiben): Der Datenbankmanager der Erweiterung
-  `sevenx_dse` liefert einen MS-SQL-Treiber zum Durchsehen von Tabellen.
-
-## Die Erweiterung xrowmssql
-
-[se7enxweb/xrowmssql](https://github.com/se7enxweb/xrowmssql) ist eine SQL-Server-Erweiterung, geschrieben für die Linie 4.x
-und SQL Server 2005/2008, im Oktober 2013 von `xrow/xrowmssql` kopiert. Sie hat einen Treiber (`eZMSSQLDB`), einen
-Schema-Handler (`eZMssqlSchema`), Einstellungen und Installationshinweise. Sie wurde nicht auf Exponential 6 betrieben. Um
-dort zu funktionieren, braucht sie mindestens: einen PHP-8-Konstruktor, das Backend `sqlsrv` unter Linux (die alten
-`mssql_*`-Funktionen gibt es seit PHP 7 nicht mehr), echtes Offset und Limit (`OFFSET ... FETCH`, SQL Server 2012 und
-neuer), `SCOPE_IDENTITY()` statt `@@identity` und `NVARCHAR(MAX)` statt `ntext`. Ihre `extension.xml` nennt GPL v2, während
-ihre Datei `LICENSE` GPL v3 ist; prüfen Sie beides, bevor Sie Code wiederverwenden.
-
-## Was fehlt
-
-| Teil | Was dazugehört |
+| Server | Stand |
 |---|---|
-| Ein Treiber | `eZDBInterface` auf `sqlsrv`: Verbinden, Abfragen, Offset und Limit, Transaktionen, `lastSerialID()`, Maskierung, Zeichenkettenhelfer, `md5()` über `HASHBYTES` |
-| Das Aggregat `BIT_OR` | SQL Server hat keines; die Inhalts-Engine fasst Sprachmasken damit zusammen |
-| `UPDATE ... JOIN` | Auf SQL Server als `UPDATE t SET ... FROM t JOIN ...` geschrieben |
-| Ein Schema-Handler | `.dba` in SQL-Server-DDL und zurück, für den Installer und die Upgrade-Prüfung |
-| SQL- und Update-Dateien | `kernel/sql/<engine>/`, `update/database/<engine>/` |
-| Installer-Einträge | der Assistent, `settings/setup.ini [database_extensions]`, `exp:install --db` |
-| Session-Anweisungen, Groß-/Kleinschreibung und Sortierfolge | reine MySQL-`SET` ignorieren; eine UTF-8-Sortierfolge (2019 und neuer) oder `NVARCHAR` wählen |
-| Erweiterungen | jede Erweiterung mit eigenem SQL prüfen |
-| Tests und CI | ein CI-Job mit einem SQL-Server-Container |
+| SQL Server 2017 (14.x) | unterstützt; die Untergrenze (`STRING_AGG`, `TRIM`, `CONCAT_WS`) |
+| SQL Server 2019, 2022, 2025 | unterstützt; 2022 ist das Hauptziel der CI, alle vier laufen in der CI |
+| Azure SQL Database, Managed Instance | unterstützt; vorübergehende Fehler werden wiederholt |
+| Azure SQL Edge, SQL Server 2016 und älter | nicht unterstützt |
 
-Wie groß diese Arbeit ist, wurde nicht gemessen, und es wird keine Schätzung gegeben.
+PHP erreicht ihn über `sqlsrv` (empfohlen), `pdo_sqlsrv`, `pdo_odbc` mit dem ODBC Driver 17 oder 18 von Microsoft oder
+`pdo_dblib` über FreeTDS; `[SQLServerSettings] Layer=auto` nimmt die erste geladene. Gemessen: `sqlsrv` und
+`pdo_sqlsrv` 5.11 bis 5.13 lassen sich auf PHP 8.0 bis 8.5 bauen und bestehen die Tests (5.11 auf PHP 8.0 liest mit
+`pdo_sqlsrv` `TrustServerCertificate=yes` als falsch).
 
-## Was Sie in der Zwischenzeit tun
+## Die Datenbank vorbereiten
 
-- Betreiben Sie die Website auf einer der sechs unterstützten Engines. PostgreSQL ist der empfohlene Server
-  ([Eine Engine wählen](eine-engine-waehlen.md)).
-- Verlangt Ihre Organisation Berichte aus SQL Server, replizieren oder exportieren Sie Daten aus der unterstützten Engine mit
-  Ihren üblichen Integrationswerkzeugen nach SQL Server; die Website selbst behält ihre eigene Datenbank.
-- Behandeln Sie jede Behauptung einer SQL-Server-Unterstützung, der Sie begegnen, als ungeprüft, bis sie einen
-  veröffentlichten, getesteten Treiber nennt.
+Die Installer legen die Datenbank auf SQL Server nicht an. Legen Sie sie und Login und Benutzer der Site zuerst an:
 
-## Die Arbeit beitragen
+```sql
+CREATE DATABASE [site] COLLATE Latin1_General_100_CI_AS_SC_UTF8;
+ALTER DATABASE [site] SET READ_COMMITTED_SNAPSHOT ON;
+```
 
-Wer sie übernehmen möchte, ist willkommen: Beginnen Sie mit xrowmssql für die Besonderheiten von SQL Server und mit
-`ezoracle` als Vorbild eines aktuellen Treibers, der außerhalb des Kernels ausgeliefert wird, und eröffnen Sie ein Issue im
-[Software-Tracker](https://github.com/se7enxweb/exponential/issues), um sich abzustimmen.
+- **Read Committed Snapshot** lässt Leser nie auf Schreiber warten, wie es der Kernel von MySQL und PostgreSQL erwartet;
+  der Treiber vermerkt es in der Debug-Ausgabe, wenn es ausgeschaltet ist.
+- **Eine UTF-8-Kollation** (2019 und neuer) oder Spalten vom Typ `NVARCHAR` bewahren jedes Zeichen; `VARCHAR` in einer
+  Latin-Kollation verliert Zeichen, und PDO_ODBC liest `VARCHAR` in der Codepage des Clients.
+- **Indexschlüssel**: SQL Server indiziert höchstens 1.700 Byte und kein `NVARCHAR(MAX)`; der Schema-Handler legt die
+  acht Textspalten des Kernels in einem Indexschlüssel als `NVARCHAR(840)` an.
+
+Dann `exp:install --apply --db=sqlserver --db-host=... --db-name=site --db-user=...` oder `Type=sqlserver` im
+Kickstarter ([eine Site installieren](../../funktionen/6.0/sqlserver-datenbanktreiber.md#eine-site-auf-sql-server-installieren)).
+
+## Verschlüsselung, Pooling und Sitzungen
+
+- `--db-encrypt` / `[SQLServerSettings] Encrypt`: `yes` (der Standard), `no` oder `strict` (TDS 8.0, SQL Server 2022
+  und neuer); `TrustServerCertificate` akzeptiert ein selbst signiertes Zertifikat in einem vertrauenswürdigen Netz.
+- `ConnectionPooling=disabled` (der Standard): Eine gepoolte `sqlsrv`-Verbindung würde von abgespaltenen Workern geerbt.
+  Lassen Sie unter Linux auch das Pooling in `odbcinst.ini` aus.
+- Jede Sitzung setzt `NOCOUNT`, `XACT_ABORT`, die ANSI-Optionen, `DATEFORMAT ymd`, `LOCK_TIMEOUT` und `READ COMMITTED`.
+  Deadlocks (1205) und Sperr-Timeouts (1222) werden unterschieden; eine einzelne Anweisung außerhalb einer Transaktion
+  wird wiederholt.
+
+## Lesereplikate und der Cluster
+
+- `UseSlaveServer=enabled` mit dem Always-On-Listener oder einem Sekundärknoten: anonyme Lesezugriffe gehen dorthin mit
+  `ApplicationIntent=ReadOnly`; ein Replikat, das weiter zurückliegt als `SlaveServerMaxLag`, wird nicht verwendet. Über
+  Subnetze hinweg setzen Sie `MultiSubnetFailover=enabled`.
+- Das DFS-Cluster-Backend `expDFSFileHandlerSQLServerBackend` hält die Metadaten der Dateien in derselben Datenbank für
+  beliebig viele Webserver; `exp:cluster:enable --backend=sqlserver` macht einen Cluster aus einem Knoten
+  ([Clustering auf SQL Server](../../funktionen/6.0/sqlserver-dfs-cluster.md)). Dateinamen haben höchstens 830 Zeichen.
+
+## Sicherungen und Aktualisierungen
+
+Die Sicherheitskopie, die `exp:upgrade` vor dem Schreiben anlegt, hat für SQL Server keinen eingebauten Dump. Sichern
+Sie mit `BACKUP DATABASE` (oder auf Azure mit den Sicherungen des Dienstes) und führen Sie die Aktualisierung mit
+`--no-backup` aus. Eine Aktualisierung von einem älteren Release wurde auf SQL Server nicht getestet: 6.0.15 ist das
+erste Release mit dem Treiber.
+
+## Was noch fehlt
+
+- Der Setup-Assistent im Browser führt SQL Server nicht auf; verwenden Sie den Kickstarter oder `exp:install`.
+- Keine Dateien in `update/database/` für SQL Server; das Schema ist `kernel/sql/sqlserver/kernel_schema.sql`.
+- `pdo_dblib` ist nur durch die Tests ohne Server abgedeckt.
+
+## Die alte Erweiterung xrowmssql
+
+Der Treiber ist nicht von xrowmssql abgeleitet. Diese Erweiterung wurde nur auf ihre Probleme hin gelesen, und jedes
+davon ist jetzt ein Test (die Tabelle zur Rückverfolgbarkeit auf der
+[Treiberseite](../../funktionen/6.0/sqlserver-datenbanktreiber.md#tests-und-rückverfolgbarkeit)). Installieren Sie
+xrowmssql nicht auf 6.0.15.
 
 ## Verwandte Seiten
 
-- [Datenbankunterstützung: Microsoft SQL Server](../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)
+- [Datenbankunterstützung: Microsoft SQL Server](../datenbankunterstuetzung.md#7-microsoft-sql-server-und-azure-sql),
+  [Eine Datenbank wählen](../datenbank-waehlen.md)
 - [Stand von Microsoft SQL Server](../hosting/grundlagen/stand-von-microsoft-sql-server.md) (für Hosting-Unternehmen)
 - [Unterstützte Engines und Versionen](unterstuetzte-engines-und-versionen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -3,92 +3,102 @@ title: "Microsoft SQL Server: status for DBAs"
 audience: dba
 category: database-administration
 order: 22
-summary: Where Microsoft SQL Server stands for Exponential 6.0.x - not supported, known to be possible with additional work - what exists that such work could build on (the driver interface, the .dba format, pluggable schema handlers, the old xrowmssql extension), what is missing, and what a DBA should answer when asked to run a site on SQL Server.
-keywords: Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, pdo_sqlsrv, xrowmssql, not supported, possible with additional work, eZDBInterface, schema handler, BIT_OR, OFFSET FETCH, SCOPE_IDENTITY, NVARCHAR
+summary: Where Microsoft SQL Server stands for Exponential - supported from 6.0.15 on the kernel's own driver expSQLServerDB (SQL Server 2017 to 2025, Azure SQL), not in 6.0.14 and older - with what a DBA prepares (collation, read committed snapshot, logins), the PHP layers, encryption, pooling, read replicas, the DFS cluster, backups and what is not there yet.
+keywords: Microsoft SQL Server, MSSQL, SQL Server, Azure SQL, expSQLServerDB, expSQLServerSchema, sqlsrv, pdo_sqlsrv, pdo_odbc, pdo_dblib, ODBC Driver 18, READ_COMMITTED_SNAPSHOT, UTF-8 collation, NVARCHAR, Always On, ApplicationIntent, DFS cluster, BACKUP DATABASE, xrowmssql
 type: help
 ---
 # Microsoft SQL Server: status for DBAs
 
-This page is for database administrators in organizations standardized on Microsoft SQL Server who are asked whether
-an Exponential site can run on it. The short answer: **not in Exponential 6.0.x**. SQL Server is known to be possible
-with additional work at this time; there is no driver, no schema handler and no installer entry for it, and nothing
-here is a promise of a release that has one. This page summarizes what exists, what is missing and what to do
-meanwhile. The full statement and work list are in
-[Database support](../database-support.md#microsoft-sql-server-possible-with-additional-work).
+This page is for database administrators in organizations standardized on Microsoft SQL Server who are asked to run
+an Exponential site on it. The short answer: **yes, from Exponential 6.0.15**. The kernel has a driver of its own,
+`expSQLServerDB`, with the schema handler `expSQLServerSchema`, the kernel schema in `kernel/sql/sqlserver/`,
+installer entries and a DFS cluster backend. Exponential 6.0.14 and older have none of it. The full reference is the
+[Microsoft SQL Server driver](../../features/6.0/sqlserver-database-driver.md) page.
 
 ## Contents
 
-1. [The statement](#the-statement)
-2. [What exists to build on](#what-exists-to-build-on)
-3. [The xrowmssql extension](#the-xrowmssql-extension)
-4. [What is missing](#what-is-missing)
-5. [What to do meanwhile](#what-to-do-meanwhile)
-6. [Contributing the work](#contributing-the-work)
+1. [Servers and PHP layers](#servers-and-php-layers)
+2. [Preparing the database](#preparing-the-database)
+3. [Encryption, pooling and sessions](#encryption-pooling-and-sessions)
+4. [Read replicas and the cluster](#read-replicas-and-the-cluster)
+5. [Backups and upgrades](#backups-and-upgrades)
+6. [What is not there yet](#what-is-not-there-yet)
+7. [The old xrowmssql extension](#the-old-xrowmssql-extension)
+8. [Related pages](#related-pages)
 
-## The statement
+## Servers and PHP layers
 
-> Microsoft SQL Server is known to be possible with additional work at this time.
-
-Do not plan a production site on SQL Server with Exponential 6.0.x. Do not install a third-party driver found online
-on a production site without a full test: no SQL Server driver has been run on Exponential 6 by the project.
-
-## What exists to build on
-
-- **A small driver interface.** Every database is reached through `eZDBInterface`
-  (`lib/ezdb/classes/ezdbinterface.php`); five drivers already implement it for a file database, three SQL servers
-  and a document store ([The database layer in one page](the-database-layer-in-one-page.md)).
-- **An engine-neutral schema.** `share/db_schema.dba` and `share/db_data.dba` are turned into each engine's DDL by a
-  schema handler ([The .dba schema format](the-dba-schema-format.md)).
-- **Pluggable schema handlers and aliases.** `settings/dbschema.ini` (`SchemaPaths[]`, `SchemaHandlerClasses[]`) and
-  `site.ini [DatabaseSettings] ImplementationAlias[]` can be extended from an extension, the way `ezoracle` does it.
-- **PHP drivers.** Microsoft publishes `sqlsrv` and `pdo_sqlsrv` for PHP on Linux and Windows; check Microsoft's
-  support matrix for PHP versions. Not tested with Exponential.
-- **Tools that read SQL Server** (not ways to run a site): the database manager of the `sevenx_dse` extension ships an
-  MS SQL driver for browsing tables.
-
-## The xrowmssql extension
-
-[se7enxweb/xrowmssql](https://github.com/se7enxweb/xrowmssql) is a SQL Server extension written for the 4.x line and
-SQL Server 2005/2008, copied from `xrow/xrowmssql` in October 2013. It has a driver (`eZMSSQLDB`), a schema handler
-(`eZMssqlSchema`), settings and install notes. It has not been run on Exponential 6. To work there it needs at least:
-a PHP 8 constructor, the `sqlsrv` back end on Linux (the old `mssql_*` functions are gone since PHP 7), real offset
-and limit (`OFFSET ... FETCH`, SQL Server 2012 and later), `SCOPE_IDENTITY()` instead of `@@identity`, and
-`NVARCHAR(MAX)` instead of `ntext`. Its `extension.xml` says GPL v2 while its `LICENSE` file is GPL v3; check both
-before reusing code.
-
-## What is missing
-
-| Piece | What it involves |
+| Server | Status |
 |---|---|
-| A driver | `eZDBInterface` on `sqlsrv`: connect, query, offset and limit, transactions, `lastSerialID()`, escaping, string helpers, `md5()` via `HASHBYTES` |
-| The `BIT_OR` aggregate | SQL Server has none; the content engine folds language masks with it |
-| `UPDATE ... JOIN` | Written `UPDATE t SET ... FROM t JOIN ...` on SQL Server |
-| A schema handler | `.dba` to SQL Server DDL and back, for the installer and the upgrade check |
-| SQL and update files | `kernel/sql/<engine>/`, `update/database/<engine>/` |
-| Installer entries | the wizard, `settings/setup.ini [database_extensions]`, `exp:install --db` |
-| Session statements, case and collation | ignore MySQL-only `SET`; choose a UTF-8 collation (2019 and later) or `NVARCHAR` |
-| Extensions | review every extension with SQL of its own |
-| Tests and CI | a CI job with a SQL Server container |
+| SQL Server 2017 (14.x) | supported; the floor (`STRING_AGG`, `TRIM`, `CONCAT_WS`) |
+| SQL Server 2019, 2022, 2025 | supported; 2022 is the main CI target, all four run in CI |
+| Azure SQL Database, Managed Instance | supported; transient errors are retried |
+| Azure SQL Edge, SQL Server 2016 and older | not supported |
 
-How large this work is has not been measured, and no estimate is given.
+PHP reaches it through `sqlsrv` (recommended), `pdo_sqlsrv`, `pdo_odbc` with Microsoft's ODBC Driver 17 or 18, or
+`pdo_dblib` over FreeTDS; `[SQLServerSettings] Layer=auto` takes the first one loaded. Measured: `sqlsrv` and
+`pdo_sqlsrv` 5.11 to 5.13 build and pass on PHP 8.0 to 8.5 (5.11 on PHP 8.0 reads `TrustServerCertificate=yes` as
+false with `pdo_sqlsrv`).
 
-## What to do meanwhile
+## Preparing the database
 
-- Run the site on one of the six supported engines. PostgreSQL is the recommended server
-  ([Choosing an engine](choosing-an-engine.md)).
-- If your organization requires reporting from SQL Server, replicate or export data from the supported engine into
-  SQL Server with your usual integration tools; the site itself keeps its own database.
-- Treat any claim of SQL Server support you meet as unverified until it names a released, tested driver.
+The installers do not create the database on SQL Server. Create it, and the login and user of the site, first:
 
-## Contributing the work
+```sql
+CREATE DATABASE [site] COLLATE Latin1_General_100_CI_AS_SC_UTF8;
+ALTER DATABASE [site] SET READ_COMMITTED_SNAPSHOT ON;
+```
 
-Anyone who wants to take it on is welcome: start from xrowmssql for the SQL Server specifics and from `ezoracle` as
-the model of a current driver shipped outside the kernel, and open an issue on the
-[software tracker](https://github.com/se7enxweb/exponential/issues) to coordinate.
+- **Read committed snapshot** lets readers never wait for writers, as the kernel expects from MySQL and PostgreSQL;
+  the driver notes it in the debug output when it is off.
+- **A UTF-8 collation** (2019 and later) or `NVARCHAR` columns keep every character; `VARCHAR` in a Latin collation
+  loses them, and PDO_ODBC reads `VARCHAR` in the client code page.
+- **Index keys**: SQL Server indexes at most 1,700 bytes and no `NVARCHAR(MAX)`; the schema handler makes the eight
+  kernel text columns in an index key `NVARCHAR(840)`.
+
+Then `exp:install --apply --db=sqlserver --db-host=... --db-name=site --db-user=...` or the kickstarter's
+`Type=sqlserver` ([installing a site](../../features/6.0/sqlserver-database-driver.md#installing-a-site-on-sql-server)).
+
+## Encryption, pooling and sessions
+
+- `--db-encrypt` / `[SQLServerSettings] Encrypt`: `yes` (the default), `no` or `strict` (TDS 8.0, SQL Server 2022 and
+  later); `TrustServerCertificate` accepts a self-signed certificate on a trusted network.
+- `ConnectionPooling=disabled` (the default): a pooled `sqlsrv` connection would be inherited by forked workers. Keep
+  `odbcinst.ini`'s pooling off on Linux as well.
+- Each session sets `NOCOUNT`, `XACT_ABORT`, the ANSI options, `DATEFORMAT ymd`, `LOCK_TIMEOUT` and `READ COMMITTED`.
+  Deadlocks (1205) and lock timeouts (1222) are told apart; a single statement outside a transaction is retried.
+
+## Read replicas and the cluster
+
+- `UseSlaveServer=enabled` with the Always On listener or a secondary: anonymous reads go there with
+  `ApplicationIntent=ReadOnly`; a replica further behind than `SlaveServerMaxLag` is not used. Across subnets set
+  `MultiSubnetFailover=enabled`.
+- The DFS cluster backend `expDFSFileHandlerSQLServerBackend` keeps the file metadata in the same database for any
+  number of web servers; `exp:cluster:enable --backend=sqlserver` makes a one-node cluster
+  ([Clustering on SQL Server](../../features/6.0/sqlserver-dfs-cluster.md)). File names are at most 830 characters.
+
+## Backups and upgrades
+
+The safety copy `exp:upgrade` makes before it writes has no built-in dump for SQL Server. Back up with
+`BACKUP DATABASE` (or the service's backups on Azure) and run the upgrade with `--no-backup`. No upgrade from an older
+release has been tested on SQL Server: 6.0.15 is the first release with the driver.
+
+## What is not there yet
+
+- The setup wizard in the browser does not list SQL Server; use the kickstarter or `exp:install`.
+- No `update/database/` files for SQL Server; the schema is `kernel/sql/sqlserver/kernel_schema.sql`.
+- `pdo_dblib` is covered by the tests without a server only.
+
+## The old xrowmssql extension
+
+The driver is not derived from xrowmssql. That extension was read for its problems only, and each of them is now a
+test ([the traceability table](../../features/6.0/sqlserver-database-driver.md#traceability-the-old-extensions-problems)).
+Do not install xrowmssql on 6.0.15.
 
 ## Related pages
 
-- [Database support: Microsoft SQL Server](../database-support.md#microsoft-sql-server-possible-with-additional-work)
+- [Database support: Microsoft SQL Server](../database-support.md#7-microsoft-sql-server-and-azure-sql),
+  [Choosing a database](../choosing-a-database.md)
 - [Microsoft SQL Server status](../hosting/basics/microsoft-sql-server-status.md) (for hosting companies)
 - [Supported engines and versions](supported-engines-and-versions.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

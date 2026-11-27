@@ -3,100 +3,76 @@ title: Microsoft SQL Server status
 audience: hosting
 category: hosting
 order: 130
-summary: The status of Microsoft SQL Server for Exponential 6.0.x as a host should state it: known to be possible with additional work at this time, with no driver, schema handler or installer entry in 6.0.x; what exists, what is missing, and what to tell a customer who asks.
-keywords: Microsoft SQL Server, SQL Server, MSSQL, sqlsrv, pdo_sqlsrv, Windows hosting, database support, driver, eZDBInterface, schema handler, not supported, possible with additional work, customer question, hosting offer
+summary: The status of Microsoft SQL Server for Exponential as a host should state it - supported from 6.0.15 on the kernel's own driver expSQLServerDB (SQL Server 2017 to 2025, Azure SQL Database and Managed Instance), not in 6.0.14 and older - what a host needs to offer it, what it does not do yet, and what to tell a customer who asks.
+keywords: Microsoft SQL Server, SQL Server, MSSQL, Azure SQL, sqlsrv, pdo_sqlsrv, pdo_odbc, ODBC Driver 18, Windows hosting, LocalDB, database support, expSQLServerDB, DFS cluster, Always On, customer question, hosting offer
 type: help
 ---
 # Microsoft SQL Server status
 
 This page is for product managers, sales staff and support staff at a hosting company, especially one with a Windows
-or Microsoft-centered offer, who are asked whether Exponential runs on Microsoft SQL Server. It answers: what the
-project's statement is, what exists today, what is missing, and what a host can honestly offer instead. The source is
-[Database support, Microsoft SQL Server](../../database-support.md#microsoft-sql-server-possible-with-additional-work).
+or Microsoft-centred customer base, who are asked whether Exponential runs on Microsoft SQL Server.
 
 ## Contents
 
 1. [The statement](#the-statement)
-2. [What exists today](#what-exists-today)
-3. [What is missing](#what-is-missing)
+2. [What a host needs](#what-a-host-needs)
+3. [What it does not do yet](#what-it-does-not-do-yet)
 4. [What to tell a customer](#what-to-tell-a-customer)
-5. [What a host can offer instead](#what-a-host-can-offer-instead)
-6. [Related pages](#related-pages)
+5. [Related pages](#related-pages)
 
 ## The statement
 
-> **Microsoft SQL Server is known to be possible with additional work at this time.**
+> **Microsoft SQL Server and Azure SQL are supported from Exponential 6.0.15**, the seventh database in the project's
+> official order: 1. SQLite 3 · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL · 7. Microsoft SQL
+> Server and Azure SQL.
 
-It is not supported in Exponential 6.0.x: there is no driver, no schema handler and no installer entry for it. The
-project's documentation says explicitly that nothing should be read as a promise of a release that has one. The
-supported databases, in the official order, are 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
-5. Oracle · 6. MySQL ([Databases in the official order](databases-in-the-official-order.md)).
+The kernel has a driver of its own, `expSQLServerDB`, written anew under the GPL, with a schema handler, the kernel
+schema for SQL Server, installer entries and a DFS cluster backend. Exponential 6.0.14 and older have no SQL Server
+driver: a customer on an older release upgrades first.
 
-> **Warning**
-> Do not list SQL Server as an available database in a plan, an order form or marketing material for Exponential.
-
-## What exists today
-
-From [Database support](../../database-support.md#microsoft-sql-server-possible-with-additional-work):
-
-| Piece | What it means |
+| | |
 |---|---|
-| A small driver interface | Every database is reached through `eZDBInterface` (`lib/ezdb/classes/ezdbinterface.php`); five existing drivers implement it, from a file database to a document store |
-| An engine-neutral schema | `share/db_schema.dba` and `share/db_data.dba`, turned into an engine's DDL by a schema handler |
-| Pluggable schema handlers | `settings/dbschema.ini` maps a type to a handler class |
-| Pluggable driver aliases | `site.ini [DatabaseSettings] ImplementationAlias[]` is extended by an extension, the way `ezoracle` adds its aliases |
-| Tools that read SQL Server | the database manager of the `sevenx_dse` extension ships an MS SQL driver for browsing tables; neither it nor any other tool is a way to run a site on SQL Server |
-| PHP drivers | Microsoft publishes `sqlsrv` and `pdo_sqlsrv` for PHP; not tested with Exponential |
+| Servers | SQL Server 2017, 2019, 2022 and 2025; Azure SQL Database and Azure SQL Managed Instance. Not SQL Server 2016 and older, not Azure SQL Edge (retired by Microsoft) |
+| PHP layers | Microsoft's `sqlsrv` (recommended) or `pdo_sqlsrv`, PHP's `pdo_odbc` with ODBC Driver 17 or 18, or `pdo_dblib` over FreeTDS |
+| Operating systems | Linux and Windows; SQL Server Express and LocalDB work for development |
+| Installers | the kickstarter (`Type=sqlserver`) and `exp:install --db=sqlserver`; the setup wizard in the browser does not offer it |
+| Several web servers | yes: the DFS cluster backend `expDFSFileHandlerSQLServerBackend`; read replicas through Always On |
+| Tests | on every push against SQL Server 2017, 2019, 2022 and 2025 on three PHP layers, PHP 8.1 to 8.5, and LocalDB on Windows |
 
-## What is missing
+## What a host needs
 
-The work list, summarized from the same page:
+- **An existing database.** The installer does not create it on SQL Server. Create it with a UTF-8 collation
+  (`Latin1_General_100_CI_AS_SC_UTF8`, SQL Server 2019 and later) and `READ_COMMITTED_SNAPSHOT ON`.
+- **The PHP extension** in the PHP of the site and of the command line: `sqlsrv` or `pdo_sqlsrv` from Microsoft
+  (PECL on Linux, DLLs on Windows), or `pdo_odbc` with Microsoft's ODBC Driver 18. ODBC Driver 18 encrypts by
+  default: a server with a self-signed certificate needs `--db-trust-server-certificate`.
+- **Connection pooling off** (the default, `[SQLServerSettings] ConnectionPooling=disabled`), and on Linux
+  `odbcinst.ini`'s pooling off as well: a pooled connection would be shared by forked workers.
+- **Your own backups**: the upgrade's built-in safety copy has no dump for SQL Server. Use `BACKUP DATABASE` or the
+  service's backups and run upgrades with `--no-backup`.
 
-| Piece | What it involves |
-|---|---|
-| A driver class | `eZDBInterface` on `sqlsrv`: connections, queries with offset and limit, transactions, identity columns, string and hash helpers |
-| The `BIT_OR` aggregate | SQL Server has none; the content engine folds language masks with it |
-| `UPDATE ... JOIN` | SQL Server writes it as `UPDATE ... FROM ... JOIN` |
-| A schema handler | `.dba` to SQL Server DDL and back, for installs and the upgrade check |
-| SQL files | the generated schema and the update files of every later release |
-| Installer entries | the setup wizard, the extension check and the `exp:install` `--db` alias |
-| Case and collation | a UTF-8 collation or `NVARCHAR` columns |
-| Extensions | every extension with SQL of its own needs review |
-| Tests and CI | a CI job with a SQL Server container |
+## What it does not do yet
 
-How large that work is has not been measured, and the project gives no estimate. Anyone who wants to take it on is
-invited to coordinate on the [software tracker](https://github.com/se7enxweb/exponential/issues), with the `ezoracle`
-extension as the model of a driver shipped outside the kernel.
+- The setup wizard in the browser lists no SQL Server entry: install with the kickstarter or `exp:install`.
+- No upgrade from an older release has been tested on SQL Server yet: 6.0.15 is the first release with the driver.
+- No `update/database/` files for SQL Server: the schema is `kernel/sql/sqlserver/`.
+- The DFS backend stores file names of at most 830 characters.
 
 ## What to tell a customer
 
-A short answer support staff can use:
+> Exponential 6.0.15 runs on Microsoft SQL Server 2017 to 2025 and on Azure SQL, on Linux and on Windows, with its own
+> driver and cluster backend, tested on every push. The database must exist before the installation; use a UTF-8
+> collation and read-committed snapshot.
 
-```text
-Exponential 6.0.x does not run on Microsoft SQL Server today. The project states that it is
-known to be possible with additional work, but there is no driver in the current release.
-The supported databases, in the project's order, are SQLite 3 (the default), PostgreSQL,
-MongoDB, MariaDB, Oracle and MySQL. We can host your site on <the databases of your plan>.
-```
-
-If the customer's reason is that their organization standardizes on SQL Server for its own data, a site database of
-another engine next to it is usually acceptable; ask what the policy actually requires.
-
-## What a host can offer instead
-
-- **SQLite 3** needs no database server at all, which suits customers who mainly want to avoid running a second
-  database product ([SQLite for hosts](sqlite-for-hosts.md)).
-- **PostgreSQL** is the recommended database server ([PostgreSQL for hosts](postgresql-for-hosts.md)).
-- **On Windows servers**, Windows is in tier 2 (known to work) with the official PHP builds for Windows and Apache
-  or IIS with FastCGI; read what is missing there first
-  ([Operating systems for hosts](operating-systems-for-hosts.md), [OS support: Windows](../../os-support.md#windows)).
+Do not offer SQL Server for a site that has to stay on 6.0.14 or older.
 
 ## Related pages
 
 - [Databases in the official order](databases-in-the-official-order.md)
-- [Database support: Microsoft SQL Server](../../database-support.md#microsoft-sql-server-possible-with-additional-work)
-- [Chapter 9.10: Microsoft SQL Server](../../../install/09-databases.md#910-microsoft-sql-server)
-- [Working with the project and 7x](../business/working-with-the-project-and-7x.md)
+- [Choosing a database](../../choosing-a-database.md) and [Database support: Microsoft SQL Server](../../database-support.md#7-microsoft-sql-server-and-azure-sql)
+- [Microsoft SQL Server driver](../../../features/6.0/sqlserver-database-driver.md) and
+  [Clustering on SQL Server](../../../features/6.0/sqlserver-dfs-cluster.md)
+- [Exponential on Windows](../../exponential-on-windows.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->
