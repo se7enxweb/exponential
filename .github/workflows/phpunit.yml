@@ -889,7 +889,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, xsl, curl, zlib, pdo, pdo_ibm, ibm_db2, pdo_sqlite, sqlite3, pcntl, posix, zip
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, xsl, curl, zlib, pdo, pdo_ibm, ibm_db2, pdo_sqlite, sqlite3, pcntl, posix, zip, :odbc, :pdo_odbc
           ini-values: memory_limit=1G
           coverage: none
           tools: composer:v2
@@ -898,7 +898,8 @@ jobs:
         run: |
           php -m | grep -qi pdo_ibm || { echo "::error::PHP has no pdo_ibm"; exit 1; }
           php -m | grep -qi ibm_db2 || { echo "::error::PHP has no ibm_db2"; exit 1; }
-          # pdo_ibm and an ODBC extension of PHP answer each other's calls: none may be loaded
+          # pdo_ibm and an ODBC extension of PHP answer each other's calls: the runner's PHP has odbc and pdo_odbc, setup-php turns them off
+          php -m | grep -i odbc || true
           ! php -m | grep -qi odbc || { echo "::error::PHP has an ODBC extension loaded next to pdo_ibm"; exit 1; }
           cp composer.json "${CI_COMPOSER_FILE}"
           for attempt in 1 2 3; do
