@@ -298,7 +298,10 @@ class expMigrationRemote
                 $problems[] = "$label: Port must be 1 to 65535";
         }
         $path = $this->path();
-        if ( $path === '/' || $path[0] !== '/' || strpos( "$path/", '/../' ) !== false || !preg_match( '#^[A-Za-z0-9._/@+-]+$#', $path ) )
+        // a directory of this host is a path of Windows on Windows: C:\site is checked as /site
+        if ( $transport === 'local' && eZDir::isWindows() && eZDir::isAbsolutePath( $path ) )
+            $path = preg_replace( '#^[A-Za-z]:#', '', str_replace( '\\', '/', $path ) );
+        if ( $path === '' || $path === '/' || $path[0] !== '/' || strpos( "$path/", '/../' ) !== false || !preg_match( '#^[A-Za-z0-9._/@+-]+$#', $path ) )
             $problems[] = "$label: Path must be the installation's absolute root on the remote (letters, digits and . _ / @ + -)";
         if ( $this->php() === '' || preg_match( '/[\x00-\x1f\'"`$;&|<>]/', $this->php() ) )
             $problems[] = "$label: Php must be the PHP CLI (a command or a path) without shell characters";
