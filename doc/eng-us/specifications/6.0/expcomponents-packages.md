@@ -1,9 +1,9 @@
-# Specification: the expcomponents packages and what the kernel uses them for
+# Specification: the Exponential Components packages and what the kernel uses them for
 
-This page is the reference for each library of **expcomponents**, Exponential's fork of the Zeta Components
+This page is the reference for each library of **Exponential Components**, Exponential's fork of the Zeta Components
 (Apache License 2.0): what the package does, which kernel classes, files and features use it, which upstream package
 it replaces and where its repository is. The overview, the history and the reasons for the fork are on the feature
-page [Exponential Components (expcomponents)](../../features/6.0/expcomponents.md); what an upgrade means is in the
+page [Exponential Components](../../features/6.0/expcomponents.md); what an upgrade means is in the
 [upgrade notes](../../bc/6.0/expcomponents.md).
 
 The usage lists were taken from the kernel's own code (`kernel/`, `lib/`, `bin/`, `update/`, `index_webdav.php`) by
@@ -328,7 +328,7 @@ An extension that needs one of them requires the fork by its name.
 
 ## Related pages
 
-- [Exponential Components (expcomponents)](../../features/6.0/expcomponents.md)
-- [Upgrade notes: the switch to expcomponents](../../bc/6.0/expcomponents.md)
-- [Contributing to expcomponents](../../guides/contributing-to-expcomponents.md)
+- [Exponential Components](../../features/6.0/expcomponents.md)
+- [Upgrade notes: the switch to Exponential Components](../../bc/6.0/expcomponents.md)
+- [Contributing to Exponential Components](../../guides/contributing-to-expcomponents.md)
 - [APIs and protocols](../../standards/apis-and-protocols.md)

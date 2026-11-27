@@ -1,11 +1,11 @@
-# Contributing to expcomponents: working on a fork of the kernel's libraries
+# Contributing to Exponential Components: working on a fork of the kernel's libraries
 
-This guide is for developers who want to fix or improve one of the **expcomponents**, Exponential's fork of the Zeta
+This guide is for developers who want to fix or improve one of the **Exponential Components**, Exponential's fork of the Zeta
 Components (Apache License 2.0), the libraries the kernel uses for mail, archives, WebDAV, feeds, the REST layer and
 more. It walks through a change from the clone to the release: getting the code, running the tests on several PHP
 versions, the rules a change must keep, the commit message, the pull request, how releases and versions work and how
 the forks stay in step with upstream. What the libraries are and why they are forked:
-[Exponential Components (expcomponents)](../features/6.0/expcomponents.md).
+[Exponential Components](../features/6.0/expcomponents.md).
 
 Time: 30 minutes for the first setup; a small fix with its test is an afternoon.
 
@@ -278,8 +278,8 @@ security@se7enx.com, as the kernel's `SECURITY.md` says. The fix is prepared in 
 
 ## Related pages
 
-- [Exponential Components (expcomponents)](../features/6.0/expcomponents.md)
-- [Specification: the expcomponents packages](../specifications/6.0/expcomponents-packages.md)
-- [Upgrade notes: the switch to expcomponents](../bc/6.0/expcomponents.md)
+- [Exponential Components](../features/6.0/expcomponents.md)
+- [Specification: the Exponential Components packages](../specifications/6.0/expcomponents-packages.md)
+- [Upgrade notes: the switch to Exponential Components](../bc/6.0/expcomponents.md)
 - [Contributing code](../help/community/contributing/contributing-code.md)
 - [The CLA explained](../help/community/contributing/the-cla-explained.md)

@@ -30,7 +30,7 @@ libraries, and the kernel's own class maps load the classes.
 | `license` | `GPL-2.0-or-later` |
 | `require` `php` | `^8.0 \|\| ^8.1 \|\| ... \|\| ^8.5` (and forward-looking ranges to 8.8) |
 | `require` `ext-*` | `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`, `reflection`, `session`, `spl`, `simplexml` |
-| `require` packages | the installer plugin, Velocity (`se7enxweb/exponential-velocity`), the shipped `se7enxweb/*` extensions, the kernel's libraries `se7enxweb/expcomponents-*` (the [expcomponents](../../features/6.0/expcomponents.md), Exponential's fork of the Zeta Components, since 6.0.15) |
+| `require` packages | the installer plugin, Velocity (`se7enxweb/exponential-velocity`), the shipped `se7enxweb/*` extensions, the kernel's libraries `se7enxweb/expcomponents-*` (the [Exponential Components](../../features/6.0/expcomponents.md), Exponential's fork of the Zeta Components, since 6.0.15) |
 | `require-dev` | `phpunit/phpunit` (`^9.6 \|\| ^10.5 \|\| ^11.5 \|\| ^12.0 \|\| ^13.4`) |
 | `suggest` | database extensions (`ext-sqlite3`, `ext-pgsql`, `ext-mysqli`, `mongodb/mongodb`), `ext-gd`, `ext-curl`, optional extensions |
 | `autoload` | `files: autoload.php`, so Composer's autoloader loads the kernel's |

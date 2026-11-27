@@ -46,9 +46,9 @@ composer licenses --no-dev --format=json > var/log/bundle-licenses.json
 
 A package without a license field shows as "none"; look it up by hand before you ship it.
 
-### The kernel's libraries: expcomponents (Apache 2.0)
+### The kernel's libraries: Exponential Components (Apache 2.0)
 
-Every bundle of Exponential contains the kernel's libraries. Since 6.0.15 they are the **expcomponents**,
+Every bundle of Exponential contains the kernel's libraries. Since 6.0.15 they are the **Exponential Components**,
 Exponential's fork of the Zeta Components, one Composer package each (`se7enxweb/expcomponents-mail`,
 `se7enxweb/expcomponents-archive` ...), installed in `vendor/se7enxweb/expcomponents-*/`. Up to 6.0.14 they were the
 upstream `zetacomponents/*` packages in `vendor/zetacomponents/`. Either way:

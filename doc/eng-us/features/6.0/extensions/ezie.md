@@ -12,7 +12,7 @@ that made tools fail, and closed two security holes. If you tried the editor bef
 
 Exponential 6, PHP 8.0 or later (PHP 7.4 usable without support), GD2 or ImageMagick, and an Exponential edit form (admin, or a design that loads the
 edit form scripts). It uses jQuery, jQuery UI, the Jcrop and colorpicker plugins and the image
-conversion library of the [expcomponents](../expcomponents.md) (`ezcImageConverter`, forked from the Zeta Components).
+conversion library of the [Exponential Components](../expcomponents.md) (`ezcImageConverter`, forked from the Zeta Components).
 
 ## Install it
 

@@ -48,7 +48,7 @@ Exponential is PHP software installed with Composer. Its world sits inside the l
 open in both directions:
 
 - Exponential uses PHP projects: the Zeta Components for its kernel libraries (forked as
-  [expcomponents](../../features/6.0/expcomponents.md) since 6.0.15), Symfony, Twig and Doctrine for the
+  [Exponential Components](../../features/6.0/expcomponents.md) since 6.0.15), Symfony, Twig and Doctrine for the
   platform line, the upstream layouts packages for the page builder concept, the Qbix web server for the Velocity engine.
 - It gives back: forks and patches kept current for new PHP versions, and pull requests upstream, for example "14
   security PRs submitted upstream to zetacomponents"

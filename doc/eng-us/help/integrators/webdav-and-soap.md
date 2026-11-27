@@ -45,7 +45,7 @@ something newer. Their status against the standards is in
 > HTTPS) and rewrite rules, then test them: [The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md).
 
 The entry point is `index_webdav.php` at the installation root. It runs the WebDAV server of the
-[expcomponents](../../features/6.0/expcomponents.md), Exponential's fork of the Zeta Components
+[Exponential Components](../../features/6.0/expcomponents.md), Exponential's fork of the Zeta Components
 (`se7enxweb/expcomponents-webdav ~1.2.3`) with the content backend
 `kernel/private/classes/webdav/ezwebdavcontentbackend.php` and basic authentication against Exponential users
 (`ezwebdavcontentbackendauth.php`).

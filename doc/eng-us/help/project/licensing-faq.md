@@ -114,7 +114,7 @@ you think it really must be included.
 
 ### The kernel's own libraries are under the Apache License 2.0. How does that fit?
 
-The libraries the kernel is built on, the **expcomponents** (since 6.0.15 Exponential's fork of the Zeta Components,
+The libraries the kernel is built on, the **Exponential Components** (since 6.0.15 Exponential's fork of the Zeta Components,
 `se7enxweb/expcomponents-*`), are licensed under the Apache License 2.0, as the Zeta Components were before them.
 The Free Software Foundation considers Apache 2.0 compatible with GPL version 3 and incompatible with GPL version 2
 *only*. Exponential's license, GPL version 2 **or any later version**, lets the combination be distributed under GPL

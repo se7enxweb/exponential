@@ -1,7 +1,7 @@
-# Exponential Components (expcomponents): the kernel's libraries, forked from Zeta Components
+# Exponential Components: the kernel's libraries, forked from Zeta Components
 
-Since 6.0.15 the PHP libraries that the Exponential kernel is built on are **Exponential Components**, short
-**expcomponents**: Exponential's own fork of the Zeta Components, published as the Composer packages
+Since 6.0.15 the PHP libraries that the Exponential kernel is built on are **Exponential Components**:
+Exponential's own fork of the Zeta Components, published as the Composer packages
 `se7enxweb/expcomponents-<name>`, licensed under the Apache License 2.0 like the code they come from, and maintained
 by 7x and the Exponential Foundation. The kernel's `composer.json` requires the forks in place of the upstream
 `zetacomponents/*` packages. The classes keep their `ezc` names and their APIs, so code that uses them does not change.
@@ -10,13 +10,13 @@ This page is for everybody who wants to know what these libraries are, where the
 them, what stays the same and where to find each one. What an upgrade means for an installation, an extension or
 custom code is in the [upgrade notes](../../bc/6.0/expcomponents.md); what each package does in the kernel, class by
 class, is in the [package reference](../../specifications/6.0/expcomponents-packages.md); how to work on a fork is in
-the guide [Contributing to expcomponents](../../guides/contributing-to-expcomponents.md).
+the guide [Contributing to Exponential Components](../../guides/contributing-to-expcomponents.md).
 
 ## Contents
 
 1. [In short](#in-short)
 2. [What the components are](#what-the-components-are)
-3. [History: eZ Components, Zeta Components, expcomponents](#history-ez-components-zeta-components-expcomponents)
+3. [History: eZ Components, Zeta Components, Exponential Components](#history-ez-components-zeta-components-exponential-components)
 4. [Why Exponential forks them](#why-exponential-forks-them)
 5. [What stays the same](#what-stays-the-same)
 6. [What changes](#what-changes)
@@ -63,7 +63,7 @@ console scripts (console tools), Setup > System information (system information)
 (signal slot). The [package reference](../../specifications/6.0/expcomponents-packages.md) names the classes and
 files for each.
 
-## History: eZ Components, Zeta Components, expcomponents
+## History: eZ Components, Zeta Components, Exponential Components
 
 The libraries are older than most of the PHP ecosystem around them, and they changed hands twice before this fork.
 
@@ -72,7 +72,7 @@ The libraries are older than most of the PHP ecosystem around them, and they cha
 | From 2005 | **eZ Components** | eZ Systems AS, the Norwegian company behind eZ Publish, the product Exponential grew from | New BSD license | ez.no, installed beside the code (for example as `ezcomponents/trunk`) |
 | From 2010 | **Apache Zeta Components** | The Apache Software Foundation's incubator, after eZ Systems contributed the code | Apache License 2.0 | incubator.apache.org |
 | After the incubator | **Zeta Components** | The Zeta Components development group, as an independent project | Apache License 2.0 | github.com/zetacomponents, Packagist `zetacomponents/*` |
-| Since 6.0.15 | **Exponential Components (expcomponents)** | 7x and the Exponential Foundation | Apache License 2.0 | github.com/se7enxweb, Packagist `se7enxweb/expcomponents-*` |
+| Since 6.0.15 | **Exponential Components** | 7x and the Exponential Foundation | Apache License 2.0 | github.com/se7enxweb, Packagist `se7enxweb/expcomponents-*` |
 
 The license file of every package still tells this story in its own words: "Zeta Components, Copyright 2011-2015 The
 Zeta Components development group", "Apache Zeta Components, Copyright 2010-2011 The Apache Software Foundation",
@@ -90,7 +90,7 @@ What this meant for the product line:
   `se7enxweb/expcomponents-webdav` 1.2.2, with security fixes to the WebDAV server (the fork had been published as
   `se7enxweb/zetacomponents-webdav` 1.2.1 before its rename), and `se7enxweb/expcomponents-archive` 1.5.2, which
   extracts GNU tar entries with long names again and prints no deprecations on PHP 8.4 and 8.5. Then the project
-  made it official: every Zeta Component the kernel needs is forked as expcomponents, all 21 forks were released on
+  made it official: every Zeta Component the kernel needs is forked as Exponential Components, all 21 forks were released on
   2026-11-06, and the 6.0.15 line requires them in place of the upstream packages.
 
 ## Why Exponential forks them
@@ -296,7 +296,7 @@ This is not legal advice; ask counsel about your own distribution.
 - **Not sure whether it is the kernel or the library:** open it against the kernel, `se7enxweb/exponential`; it will
   be moved.
 - **Code:** a pull request to the fork, with a test. How to clone, run the tests on several PHP versions and write the
-  commit message: [Contributing to expcomponents](../../guides/contributing-to-expcomponents.md).
+  commit message: [Contributing to Exponential Components](../../guides/contributing-to-expcomponents.md).
 
 ## Modernization: the intent
 
@@ -339,9 +339,9 @@ project's. The prefix `exp` is the one Exponential uses for its own code.
 
 ## Related pages
 
-- [Upgrade notes: the switch to expcomponents](../../bc/6.0/expcomponents.md)
-- [Specification: the expcomponents packages and what the kernel uses them for](../../specifications/6.0/expcomponents-packages.md)
-- [Contributing to expcomponents](../../guides/contributing-to-expcomponents.md)
+- [Upgrade notes: the switch to Exponential Components](../../bc/6.0/expcomponents.md)
+- [Specification: the Exponential Components packages and what the kernel uses them for](../../specifications/6.0/expcomponents-packages.md)
+- [Contributing to Exponential Components](../../guides/contributing-to-expcomponents.md)
 - [Upstream projects and forks](../../help/ecosystem/php-stack/upstream-projects-and-forks.md)
 - [Third-party components and their licenses](../../help/bundlers/third-party-components-and-their-licenses.md)
 - [Copyright and copyleft](../../help/copyright-and-copyleft.md)

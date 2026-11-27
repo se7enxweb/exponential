@@ -36,7 +36,7 @@ class, `eZMail`, and one sending function, `eZMailTransport::send()`, which pick
 | `AdminEmail`, `EmailSender`, `EmailReplyTo` | Addresses; `EmailSender` is the default From |
 | `DebugSending`, `DebugReceiverEmail` | Send every mail to one test address instead |
 
-`eZSMTPTransport` sends through the mail library of the [expcomponents](../../features/6.0/expcomponents.md)
+`eZSMTPTransport` sends through the mail library of the [Exponential Components](../../features/6.0/expcomponents.md)
 (`se7enxweb/expcomponents-mail`, the fork of the Zeta Components mail library since 6.0.15); `tls` means STARTTLS
 ([API and protocol standards, SMTP](../../standards/apis-and-protocols.md#smtp-rfc-5321-and-mail)).
 

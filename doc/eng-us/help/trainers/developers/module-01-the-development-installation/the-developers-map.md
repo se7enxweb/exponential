@@ -75,7 +75,7 @@ site the change would be lost at the next update; carry it in an extension, or g
 
 **Where do uploaded images go?** Below `var/` (for example `var/<site>/storage`). Never edit them by hand.
 
-**Is `vendor/` part of the kernel?** No. It holds Composer libraries such as the expcomponents (the fork of the Zeta
+**Is `vendor/` part of the kernel?** No. It holds Composer libraries such as the Exponential Components (the fork of the Zeta
 Components). Do not change it
 either.
 

@@ -1,10 +1,10 @@
-# The switch to expcomponents: what to check when you upgrade (6.0.15)
+# The switch to Exponential Components: what to check when you upgrade (6.0.15)
 
-Since 6.0.15 the kernel's `composer.json` requires **expcomponents**, Exponential's fork of the Zeta Components, in
+Since 6.0.15 the kernel's `composer.json` requires **Exponential Components**, Exponential's fork of the Zeta Components, in
 place of the upstream `zetacomponents/*` packages: `se7enxweb/expcomponents-mail` instead of `zetacomponents/mail`,
 and so on for every library the kernel uses. The classes keep their `ezc` names and APIs, and each fork declares that
 it replaces the old package name. For almost every installation the switch is one `composer update` and nothing else.
-What the libraries are and why they are forked: [Exponential Components (expcomponents)](../../features/6.0/expcomponents.md).
+What the libraries are and why they are forked: [Exponential Components](../../features/6.0/expcomponents.md).
 
 This page is for administrators who upgrade an installation, developers of extensions and anyone who keeps a
 `composer.json` of their own that names Zeta Components packages.
@@ -274,9 +274,9 @@ isolate a problem; report the problem so it can be fixed in the fork.
 
 ## Related pages
 
-- [Exponential Components (expcomponents)](../../features/6.0/expcomponents.md)
-- [Specification: the expcomponents packages](../../specifications/6.0/expcomponents-packages.md)
-- [Contributing to expcomponents](../../guides/contributing-to-expcomponents.md)
+- [Exponential Components](../../features/6.0/expcomponents.md)
+- [Specification: the Exponential Components packages](../../specifications/6.0/expcomponents-packages.md)
+- [Contributing to Exponential Components](../../guides/contributing-to-expcomponents.md)
 - [Upgrading with the console](../../guides/upgrading-with-the-console.md)
 - [Behaviour changes of October 2026](behaviour-changes-2026-10.md) (the Zeta Components the kernel stopped requiring)
 - [The 6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)

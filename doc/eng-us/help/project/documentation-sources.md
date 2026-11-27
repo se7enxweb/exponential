@@ -61,7 +61,7 @@ versions you run, and installation steps against the [installation book](../../i
 
 ## Libraries Exponential uses
 
-Exponential uses the [expcomponents](../../features/6.0/expcomponents.md), its own fork (since 6.0.15) of the Zeta
+Exponential uses the [Exponential Components](../../features/6.0/expcomponents.md), its own fork (since 6.0.15) of the Zeta
 Components, a set of PHP libraries for tasks such as mail, archives, the database and configuration. The class names
 and APIs did not change in the fork, so the Zeta Components documentation, with many examples, still describes them:
 [zetacomponents.org](https://zetacomponents.org/documentation/overview.html). Each fork's repository
