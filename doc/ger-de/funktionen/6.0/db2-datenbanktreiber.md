@@ -43,8 +43,10 @@ installiert beides mit `extensions: pdo_ibm, ibm_db2`. `Layer=auto` nimmt `pdo_i
 **pdo_ibm und die ODBC-Erweiterungen schließen sich aus.** PHP lädt Erweiterungen mit globalen Symbolen, und `pdo_ibm`
 (über `libdb2.so`) wie PHPs `odbc`/`pdo_odbc` (über unixODBC) exportieren die Namen der ODBC-Funktionen: die zuerst
 geladene beantwortet die Aufrufe der anderen (gemessen: `pdo_ibm` scheitert dann mit „Can't open lib 'IBM DB2 ODBC
-DRIVER'“ von unixODBC). Ein PHP, das eine Db2-Site ausliefert, darf `odbc` und `pdo_odbc` nicht laden; geben Sie ihm ein
-eigenes Scan-Verzeichnis (`PHP_INI_SCAN_DIR`) oder einen Pool ohne sie.
+DRIVER'“ von unixODBC). Microsofts `sqlsrv` und `pdo_sqlsrv`, die ebenfalls unixODBC verwenden, beenden PHP
+neben `pdo_ibm` schon beim Start (gemessen mit PHP 8.5). Ein PHP, das eine Db2- oder Informix-Site ausliefert, darf
+`odbc`, `pdo_odbc`, `sqlsrv` und `pdo_sqlsrv` nicht laden; geben Sie ihm ein eigenes Scan-Verzeichnis
+(`PHP_INI_SCAN_DIR`) oder einen Pool ohne sie.
 
 ## Einstellungen
 

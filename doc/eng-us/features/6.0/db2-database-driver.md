@@ -41,8 +41,9 @@ yet: a DFS cluster backend (several web servers on one Db2 database) and read re
 **pdo_ibm and the ODBC extensions exclude each other.** PHP loads extensions with their symbols global, and both
 `pdo_ibm` (through `libdb2.so`) and PHP's `odbc`/`pdo_odbc` (through unixODBC) export the ODBC function names: the one
 loaded first answers the calls of the other (measured: `pdo_ibm` then fails with "Can't open lib 'IBM DB2 ODBC DRIVER'"
-from unixODBC). A PHP that serves a Db2 site must not load `odbc` or `pdo_odbc`; give it a scan directory of its own
-(`PHP_INI_SCAN_DIR`) or a pool without them.
+from unixODBC). Microsoft's `sqlsrv` and `pdo_sqlsrv`, which use unixODBC too, end PHP at
+start next to `pdo_ibm` (measured on PHP 8.5). A PHP that serves a Db2 or Informix site must not load `odbc`,
+`pdo_odbc`, `sqlsrv` or `pdo_sqlsrv`; give it a scan directory of its own (`PHP_INI_SCAN_DIR`) or a pool without them.
 
 ## Settings
 
