@@ -969,6 +969,8 @@ jobs:
           ifx_diag() {
             echo "::group::Informix diagnostics"
             docker exec ifx bash -lc 'tail -n 80 $INFORMIX_DATA_DIR/logs/online.log; onstat -' || true
+            # online.log stays empty when oninit ends at once: its own output, and one run of it in the foreground
+            docker exec ifx bash -lc 'echo "INIT_LOG=$INIT_LOG"; tail -n 60 "$INIT_LOG"; ls -la $INFORMIX_DATA_DIR/logs $INFORMIX_DATA_DIR/spaces; id; ulimit -a; uname -a; grep -m1 "model name" /proc/cpuinfo; timeout 120 oninit -ivy; echo "oninit exit $?"; tail -n 40 $INFORMIX_DATA_DIR/logs/online.log' || true
             df -h / /var/lib/docker || true; free -m || true; ipcs -l || true
             docker stats --no-stream || true
             echo "::endgroup::"
