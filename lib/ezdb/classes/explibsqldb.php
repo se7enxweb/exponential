@@ -41,6 +41,9 @@
  *    while another write waits; the statement then fails with "the libSQL server ended the transaction", and the
  *    caller's transaction is rolled back, as any failed transaction is.
  *
+ * The embedded file mode ([LibSQLSettings] Mode=file) needs no server: the database is a local file in
+ * var/storage/sqlite3, and every method is then the SQLite driver's own over PHP's sqlite3.
+ *
  * @since 6.0.15
  */
 class expLibSQLDB extends eZSQLite3DB
@@ -59,6 +62,9 @@ class expLibSQLDB extends eZSQLite3DB
 
     /** @var array lower-case name => name of the tables createTempTable() made on this connection */
     protected $TempTables = array();
+
+    /** @var bool the embedded file mode: the database is a local file, every method is the SQLite driver's */
+    public $Embedded = false;
 
     /** @var expLibSQLConnection|null the transport the parameters gave ('libsql_connection') */
     protected $GivenConnection = null;
@@ -83,9 +89,20 @@ class expLibSQLDB extends eZSQLite3DB
         if ( $profile === null )
             $profile = expLibSQLProfile::get( static::PROFILE );
         $this->Profile = expLibSQLProfile::apply( $profile, self::settingsFrom( $parameters ) );
-        $this->Url = expLibSQLProfile::url( $this->Profile, $this->Server, $this->Port );
         $this->TempTableList = array();
         $this->StatementWaitMs = self::configuredStatementWaitMs();
+
+        // The embedded file mode ([LibSQLSettings] Mode=file): a local file in var/storage/sqlite3, opened by PHP's
+        // sqlite3 exactly as an SQLite site's (libSQL's file format is SQLite's); every method below then is the
+        // SQLite driver's own
+        if ( expLibSQLProfile::embedded( $this->Profile ) )
+        {
+            $this->Embedded = true;
+            $this->Url = '';
+            parent::__construct( $parameters );
+            return;
+        }
+        $this->Url = expLibSQLProfile::url( $this->Profile, $this->Server, $this->Port );
 
         if ( !function_exists( 'curl_init' ) && !filter_var( ini_get( 'allow_url_fopen' ), FILTER_VALIDATE_BOOLEAN ) )
         {
@@ -155,6 +172,8 @@ class expLibSQLDB extends eZSQLite3DB
         $timeout = max( (float)$settings['Timeout'], $this->StatementWaitMs / 1000 + 5 );
         $connection = $this->newConnection( $this->Url, $token, $timeout );
         $connection->keepStreamOpen( !in_array( strtolower( $settings['KeepStream'] ), array( 'disabled', 'false', '0' ), true ) );
+        if ( $settings['CAFile'] !== '' )
+            $connection->setCAFile( $settings['CAFile'] );
         $attempts = max( (int)$settings['ConnectAttempts'], (int)$this->connectRetryCount() + 1, 1 );
         $wait = (int)$settings['ConnectWait'];
         for ( $n = 1; $n <= $attempts; $n++ )
@@ -196,16 +215,22 @@ class expLibSQLDB extends eZSQLite3DB
     /// The server's settings are its own: no PRAGMAs per connection
     protected function applyPragmas()
     {
+        if ( $this->Embedded )
+            return parent::applyPragmas(  );
     }
 
     /// WAL is the server's journal mode (sqld runs WAL always)
     protected function useWAL()
     {
+        if ( $this->Embedded )
+            return parent::useWAL(  );
     }
 
     /// No lock file: the server queues the writers
     protected function writerGate()
     {
+        if ( $this->Embedded )
+            return parent::writerGate(  );
         $this->WriterGate = false;
         $this->HoldsWriterGate = false;
         return false;
@@ -214,17 +239,23 @@ class expLibSQLDB extends eZSQLite3DB
     /// No queue file, see writerGate()
     protected function writerQueue()
     {
+        if ( $this->Embedded )
+            return parent::writerQueue(  );
         $this->WriterQueue = false;
         return false;
     }
 
     function query( $sql, $server = false )
     {
+        if ( $this->Embedded )
+            return parent::query( $sql, $server );
         return parent::query( self::rewriteFunctions( $sql ), $server );
     }
 
     function arrayQuery( $sql, $params = array(), $server = false )
     {
+        if ( $this->Embedded )
+            return parent::arrayQuery( $sql, $params, $server );
         return parent::arrayQuery( self::rewriteFunctions( $sql ), $params, $server );
     }
 
@@ -300,6 +331,8 @@ class expLibSQLDB extends eZSQLite3DB
      */
     function md5( $str )
     {
+        if ( $this->Embedded )
+            return parent::md5( $str );
         $trimmed = trim( (string)$str );
         if ( preg_match( "/^'((?:[^']|'')*)'$/s", $trimmed, $m ) )
             return " '" . md5( str_replace( "''", "'", $m[1] ) ) . "' ";
@@ -316,6 +349,8 @@ class expLibSQLDB extends eZSQLite3DB
      */
     function createTempTable( $createTableQuery = '', $server = self::SERVER_SLAVE )
     {
+        if ( $this->Embedded )
+            return parent::createTempTable( $createTableQuery, $server );
         if ( !preg_match( '/^\s*CREATE\s+(?:GLOBAL\s+|LOCAL\s+)?TEMP(?:ORARY)?\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?([A-Za-z0-9_]+)/i', (string)$createTableQuery, $m ) )
             return $this->query( $createTableQuery );
         $sql = preg_replace( '/^\s*CREATE\s+(?:GLOBAL\s+|LOCAL\s+)?TEMP(?:ORARY)?\s+TABLE\b/i', 'CREATE TABLE', (string)$createTableQuery );
@@ -327,6 +362,8 @@ class expLibSQLDB extends eZSQLite3DB
 
     function dropTempTable( $dropTableQuery = '', $server = self::SERVER_SLAVE )
     {
+        if ( $this->Embedded )
+            return parent::dropTempTable( $dropTableQuery, $server );
         if ( preg_match( '/^\s*DROP\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+EXISTS\s+)?([A-Za-z0-9_]+)\s*;?\s*$/i', (string)$dropTableQuery, $m ) )
         {
             unset( $this->TempTables[strtolower( $m[1] )] );
@@ -345,6 +382,8 @@ class expLibSQLDB extends eZSQLite3DB
 
     function escapeString( $str )
     {
+        if ( $this->Embedded )
+            return parent::escapeString( $str );
         return $str === null ? '' : expLibSQLConnection::escapeString( (string)$str );
     }
 
@@ -366,22 +405,30 @@ class expLibSQLDB extends eZSQLite3DB
     /// The database is on the server: nothing to make here
     function createDatabase( $dbName )
     {
+        if ( $this->Embedded )
+            return parent::createDatabase( $dbName );
     }
 
     /// The database of the server, by the name of the settings
     function availableDatabases()
     {
+        if ( $this->Embedded )
+            return parent::availableDatabases(  );
         return (string)$this->DB !== '' ? array( (string)$this->DB ) : array();
     }
 
     function databaseServerVersion()
     {
+        if ( $this->Embedded )
+            return parent::databaseServerVersion(  );
         $version = $this->ServerSQLiteVersion;
         return array( 'string' => $version, 'values' => explode( '.', $version ) );
     }
 
     function databaseClientVersion()
     {
+        if ( $this->Embedded )
+            return parent::databaseClientVersion(  );
         $hrana = $this->DBConnection instanceof expLibSQLConnection ? $this->DBConnection->hranaVersion() : 3;
         return array( 'string' => 'Hrana ' . $hrana . ' over HTTP', 'values' => array( $hrana ) );
     }
@@ -393,6 +440,8 @@ class expLibSQLDB extends eZSQLite3DB
      */
     public function serverProduct()
     {
+        if ( $this->Embedded )
+            return 'SQLite ' . SQLite3::version()['versionString'] . ' (embedded file mode)';
         return $this->DBConnection instanceof expLibSQLConnection ? $this->DBConnection->serverVersion() : '';
     }
 

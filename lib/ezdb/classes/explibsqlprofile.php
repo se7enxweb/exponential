@@ -22,7 +22,7 @@ class expLibSQLProfile
 {
     /** The settings and their defaults: [LibSQLSettings] of site.ini */
     const DEFAULTS = array( 'URL' => '', 'TLS' => 'auto', 'AuthToken' => '', 'Timeout' => '30', 'ConnectAttempts' => '3', 'ConnectWait' => '200',
-                              'KeepStream' => 'enabled' );
+                              'KeepStream' => 'enabled', 'Mode' => 'remote', 'CAFile' => '' );
 
     /**
      * The profiles by name.
@@ -120,5 +120,19 @@ class expLibSQLProfile
                 return $value;
         }
         return '';
+    }
+
+    /**
+     * Whether the settings ask for the embedded file mode ([LibSQLSettings] Mode=file): the database is a local file,
+     * opened by PHP's sqlite3 like an SQLite site's (libSQL's file format is SQLite's), with no server. Turso is always
+     * remote (pure).
+     *
+     * @param array $profile from apply()
+     * @return bool
+     */
+    public static function embedded( array $profile )
+    {
+        $settings = isset( $profile['settings'] ) ? $profile['settings'] : self::DEFAULTS;
+        return $profile['name'] !== 'turso' && in_array( strtolower( (string)$settings['Mode'] ), array( 'file', 'embedded' ), true );
     }
 }

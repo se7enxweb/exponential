@@ -186,6 +186,13 @@
 ## TLS=<auto|enabled|disabled>
 ## libsql, turso: https (auto: turso, or port 443)
 #TLS=
+## Mode=<remote|file>
+## libsql: remote (a server) or file (the embedded file mode: Database is a file in
+## var/storage/sqlite3, opened with sqlite3, no server)
+#Mode=
+## CAFile=<file>
+## libsql, turso: the CA file that checks the server's certificate over https
+#CAFile=
 
 #[language_options]
 ## Continue=<true|false>

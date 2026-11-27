@@ -12,6 +12,7 @@
  *  LD-08 - Temporary tables as ordinary tables, dropped by dropTempTable() or close()
  *  LD-09 - No writer gate file; removeDatabase() empties the server's database; versions; statistics
  *  LD-10 - Data table connections: the engines libsql and turso, the options url and tls, a url refused
+ *  LD-11 - The embedded file mode (Mode=file): the SQLite driver itself on a local file, no transport; Turso never
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -314,5 +315,45 @@ class expLibSQLDBTest extends PHPUnit\Framework\TestCase
             $this->assertSame( array( 'URL' => 'http://10.0.0.5:8080', 'TLS' => 'disabled' ), $plan['parameters']['libsql'] );
             $this->assertSame( 'token', $plan['parameters']['password'] );
         }
+    }
+
+    /** LD-11 */
+    public function testEmbeddedFileMode()
+    {
+        $file = sys_get_temp_dir() . '/exp-libsql-embedded-' . getmypid() . '-' . bin2hex( random_bytes( 3 ) ) . '.db';
+        $db = new expLibSQLDB( expLibSQLTestKit::parameters( array( 'database' => $file, 'libsql' => array( 'Mode' => 'file' ),
+                                                                    'libsql_connection' => new expLibSQLFakeConnection() ) ) );
+        try
+        {
+            $this->assertTrue( $db->Embedded );
+            $this->assertTrue( $db->isConnected() );
+            $this->assertSame( '', $db->Url );
+            $this->assertInstanceOf( 'SQLite3', $db->DBConnection );
+            $this->assertSame( 'sqlite', $db->databaseName() );
+            $this->assertStringEndsWith( '(embedded file mode)', $db->serverProduct() );
+            $db->query( 'CREATE TABLE ezt ( id INTEGER PRIMARY KEY, mask INT )' );
+            $db->query( 'INSERT INTO ezt ( mask ) VALUES ( 5 )' );
+            $db->query( 'INSERT INTO ezt ( mask ) VALUES ( 6 )' );
+            $this->assertSame( 2, (int)$db->lastSerialID( 'ezt', 'id' ) );
+            // the SQLite driver's own BIT_OR() and md5(): the functions PHP registers on the file
+            $this->assertSame( array( 7 ), $db->arrayQuery( 'SELECT BIT_OR( mask ) AS o FROM ezt', array( 'column' => 'o' ) ) );
+            $this->assertSame( ' MD5( name ) ', $db->md5( 'name' ) );
+            $db->createTempTable( 'CREATE TEMPORARY TABLE eztmp_1 ( a int )' );
+            $db->query( 'INSERT INTO eztmp_1 VALUES ( 1 )' );
+            $this->assertSame( array( 1 ), $db->arrayQuery( 'SELECT COUNT(*) AS c FROM eztmp_1', array( 'column' => 'c' ) ) );
+            $this->assertSame( array(), $db->tempTables() );
+            $this->assertFileExists( $file );
+        }
+        finally
+        {
+            $db->close();
+            foreach ( array( '', '-wal', '-shm', '.writer-lock', '.writer-queue' ) as $suffix )
+                if ( is_file( $file . $suffix ) )
+                    unlink( $file . $suffix );
+        }
+        // Turso is always remote
+        $turso = new expTursoDB( expLibSQLTestKit::parameters( array( 'password' => 't', 'libsql' => array( 'Mode' => 'file', 'ConnectAttempts' => 1 ),
+                                                                      'libsql_connection' => new expLibSQLFakeConnection() ) ) );
+        $this->assertFalse( $turso->Embedded );
     }
 }

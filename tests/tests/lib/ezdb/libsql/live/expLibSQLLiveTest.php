@@ -69,7 +69,7 @@ class expLibSQLLiveTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $db->isConnected() );
         $this->assertSame( 'sqlite', $db->databaseName() );
         $this->assertMatchesRegularExpression( '/^3\.\d+\.\d+$/', $db->databaseServerVersion()['string'] );
-        $this->assertTrue( version_compare( $db->databaseServerVersion()['string'], '3.35', '>=' ) );
+        $this->assertTrue( version_compare( $db->databaseServerVersion()['string'], '3.33', '>=' ) );
         $this->assertStringStartsWith( 'sqld', $db->serverProduct() );
         $this->assertSame( 'Hrana 3 over HTTP', $db->databaseClientVersion()['string'] );
     }

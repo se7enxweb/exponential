@@ -92,6 +92,9 @@ class expLibSQLConnection
     /** @var bool curl when PHP has it (the default), else PHP's HTTP stream wrapper; false: the stream wrapper always */
     public $UseCurl = true;
 
+    /** @var string the CA file that checks the server's certificate over https ('' for the system's), setCAFile() */
+    protected $CAFile = '';
+
     /** @var resource|object|null the curl handle, per process */
     protected $Curl = null;
 
@@ -151,6 +154,17 @@ class expLibSQLConnection
     public function hranaVersion()
     {
         return $this->Version;
+    }
+
+    /**
+     * The CA file that checks the server's certificate over https, instead of the system's (a server with a
+     * certificate of its own CA).
+     *
+     * @param string $file
+     */
+    public function setCAFile( $file )
+    {
+        $this->CAFile = (string)$file;
     }
 
     /**
@@ -530,6 +544,8 @@ class expLibSQLConnection
                                              CURLOPT_CONNECTTIMEOUT_MS => (int)( min( 10.0, $this->Timeout ) * 1000 ),
                                              CURLOPT_TIMEOUT_MS => (int)( $this->Timeout * 1000 ), CURLOPT_FOLLOWLOCATION => false,
                                              CURLOPT_NOSIGNAL => true, CURLOPT_ENCODING => '' ) );
+            if ( $this->CAFile !== '' )
+                curl_setopt( $curl, CURLOPT_CAINFO, $this->CAFile );
             if ( $method === 'POST' )
             {
                 curl_setopt( $curl, CURLOPT_POST, true );
@@ -543,7 +559,8 @@ class expLibSQLConnection
         }
         $context = stream_context_create( array( 'http' => array( 'method' => $method, 'header' => implode( "\r\n", $headers ),
                                                                    'content' => (string)$body, 'timeout' => $this->Timeout,
-                                                                   'ignore_errors' => true, 'follow_location' => 0 ) ) );
+                                                                   'ignore_errors' => true, 'follow_location' => 0 ),
+                                                 'ssl' => $this->CAFile !== '' ? array( 'cafile' => $this->CAFile, 'verify_peer' => true ) : array() ) );
         $error = '';
         set_error_handler( function ( $no, $text ) use ( &$error ) { $error = $text; return true; } );
         $stream = fopen( $url, 'rb', false, $context );

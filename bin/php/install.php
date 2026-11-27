@@ -96,6 +96,8 @@ $options = array(
     'db-odbc-driver' => '',
     'db-dsn'         => '',
     'db-connection-string' => '',
+    'db-mode'        => '',
+    'db-cafile'      => '',
     'db-action'      => 'remove',
     'package'        => 'sevenx_multisite',
     'language'       => 'eng-US',
@@ -387,7 +389,7 @@ $sections = array(
                               ? array_filter( array( 'SSL' => $options['db-ssl'], 'SSLCA' => $options['db-ssl-ca'] ), 'strlen' ) : array() )
                           + ( in_array( $db, $pgWireTypes, true ) ? array_filter( array( 'SSLMode' => $options['db-sslmode'], 'SSLRootCert' => $options['db-sslrootcert'],
                                                                                          'Pooler' => $options['db-pooler'], 'Endpoint' => $options['db-endpoint'] ), 'strlen' ) : array() )
-                          + ( in_array( $db, array( 'libsql', 'turso' ), true ) ? array_filter( array( 'URL' => $options['db-url'], 'TLS' => $options['db-tls'] ), 'strlen' ) : array() ),
+                          + ( in_array( $db, array( 'libsql', 'turso' ), true ) ? array_filter( array( 'URL' => $options['db-url'], 'TLS' => $options['db-tls'], 'Mode' => $options['db-mode'], 'CAFile' => $options['db-cafile'] ), 'strlen' ) : array() ),
     'language_options' => array( 'Primary' => $options['language'], 'Languages' => $languages, 'TimeZone' => $timeZone['zone'] ),
     'site_types'       => array( 'Site_package' => $options['package'] ),
     'site_access'      => array( 'Access' => $accessType ),
@@ -618,6 +620,9 @@ Database (default: SQLite, no server needed)
   --db-dsn=<name>        odbc with postgresql or mysql: a data source of odbc.ini instead
                          of --db-odbc-driver, --db-host and --db-port
   --db-connection-string=<k=v;...>  odbc: more keywords of the connection
+  --db-mode=<mode>       libsql: remote (default: a server) or file (the embedded file mode: --db-name is
+                         a file in var/storage/sqlite3, opened with sqlite3, no server)
+  --db-cafile=<file>     libsql, turso: the CA file that checks the server's certificate (https)
   --db-action=<action>   remove (default: empty the database first), ignore, skip
 
 Site
