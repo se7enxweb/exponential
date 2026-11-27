@@ -3,7 +3,7 @@ title: Eine Engine wählen
 audience: dba
 category: database-administration
 order: 4
-summary: Eine Entscheidungshilfe für Datenbankadministratoren - welche der unterstützten Datenbanken zu einer bestimmten Exponential-Website passt, von einer Maschine mit SQLite bis zu mehreren Webservern auf PostgreSQL, MariaDB oder MySQL, und wann MongoDB oder Oracle sinnvoll sind, mit den zu stellenden Fragen und den Kosten jeder Wahl.
+summary: Eine Entscheidungshilfe für Datenbankadministratoren - welche der unterstützten Datenbanken zu einer bestimmten Exponential-Website passt, von einer Maschine mit SQLite bis zu mehreren Webservern auf PostgreSQL, MariaDB oder MySQL, wo SQL Server und die in 6.0.15 hinzugekommenen Datenbanken hingehören, und wann MongoDB oder Oracle sinnvoll sind, mit den zu stellenden Fragen und den Kosten jeder Wahl.
 keywords: Datenbank wählen, welche Datenbank, SQLite oder PostgreSQL, MySQL oder MariaDB, MongoDB, Oracle, Entscheidung, mehrere Webserver, Replikation, redaktionelle Last, Schreibzugriffe, Nebenläufigkeit, Vergleich, choose database, which database, decision, several web servers, replication, concurrency, comparison
 type: help
 ---
@@ -21,7 +21,8 @@ mehr passt. Sie fasst [9.7 Vergleich](../../installation/09-datenbanken.md#97-ve
 3. [Typische Antworten](#typische-antworten)
 4. [Wann SQLite nicht mehr passt](#wann-sqlite-nicht-mehr-passt)
 5. [Bevor Sie MongoDB oder Oracle wählen](#bevor-sie-mongodb-oder-oracle-wählen)
-6. [Später umentscheiden](#später-umentscheiden)
+6. [Über die offizielle Reihenfolge hinaus: die Datenbanken von 6.0.15](#über-die-offizielle-reihenfolge-hinaus-die-datenbanken-von-6015)
+7. [Später umentscheiden](#später-umentscheiden)
 
 ## Fünf Fragen
 
@@ -85,6 +86,25 @@ Exponential-Website.
 - **Oracle**: braucht Exponential 6.0.15 oder neuer, Oracle 19c oder neuer in `AL32UTF8`, `oci8` gegen einen Oracle-Client
   gebaut und Aufmerksamkeit für `''` als NULL und Vergleiche mit Beachtung der Groß-/Kleinschreibung. Oracle ist nicht in
   der CI des Projekts ([Oracle mit ezoracle einrichten](oracle-einrichten.md)).
+
+## Über die offizielle Reihenfolge hinaus: die Datenbanken von 6.0.15
+
+6.0.15 erreicht mehr Datenbanken als die sieben der offiziellen Reihenfolge, jede auf ihrer eigenen Stufe. Kurz, für
+einen Datenbankadministrator:
+
+- **Ihre Organisation betreibt SQL Server oder Azure SQL**: die siebte unterstützte Datenbank, mit DFS-Backend und
+  Replikaten über Always On ([Stand für Datenbankadministratoren](stand-von-microsoft-sql-server.md)).
+- **Sie betreibt Firebird 4 oder 5**: eine ganze Site, auf einem Webserver (kein DFS-Backend), mit PHP 8.4 oder neuer.
+- **Sie betreibt TiDB, Vitess/PlanetScale oder SingleStore**: eine ganze Site und das MySQL-DFS-Backend, gemessen;
+  beachten Sie das Transaktions-Timeout von Vitess und die Referenztabellen von SingleStore.
+- **Sie betreibt CockroachDB oder YugabyteDB**: eine ganze Site, gemessen; langsame DDL, kein DFS-Backend.
+- **Sie kauft Aurora, Neon, Supabase oder Xpand**: Profile nach der Dokumentation der Hersteller, **ungetestet**.
+- **Sie will DuckDB**: immer nur ein schreibender Prozess; eine Demo, eine Site, die vor allem gelesen wird, oder
+  Auswertungen neben einer anderen Datenbank.
+- **Sie hat Daten in Access, Spanner oder hinter einem ODBC-Treiber**: importieren oder als Datentabellen-Verbindung
+  lesen.
+
+Die Matrix mit Versionen, Erweiterungen, CI und getesteten Aktualisierungen: [Eine Datenbank wählen](../datenbank-waehlen.md).
 
 ## Später umentscheiden
 

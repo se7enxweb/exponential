@@ -3,7 +3,7 @@ title: Choosing an engine
 audience: dba
 category: database-administration
 order: 4
-summary: A decision guide for database administrators - which of the supported databases fits a given Exponential site, from one machine with SQLite to several web servers on PostgreSQL, MariaDB or MySQL, and when MongoDB or Oracle make sense, with the questions to ask and the costs of each choice.
+summary: A decision guide for database administrators - which of the supported databases fits a given Exponential site, from one machine with SQLite to several web servers on PostgreSQL, MariaDB or MySQL, when MongoDB or Oracle make sense, where SQL Server and the databases added in 6.0.15 fit, with the questions to ask and the costs of each choice.
 keywords: choose database, which database, SQLite or PostgreSQL, MySQL or MariaDB, MongoDB, Oracle, decision, several web servers, replication, editorial load, writes, concurrency, comparison
 type: help
 ---
@@ -21,7 +21,8 @@ condenses [9.7 Comparison](../../install/09-databases.md#97-comparison) and the 
 3. [Typical answers](#typical-answers)
 4. [When SQLite stops fitting](#when-sqlite-stops-fitting)
 5. [Before you choose MongoDB or Oracle](#before-you-choose-mongodb-or-oracle)
-6. [Changing your mind later](#changing-your-mind-later)
+6. [Beyond the official order: the databases of 6.0.15](#beyond-the-official-order-the-databases-of-6015)
+7. [Changing your mind later](#changing-your-mind-later)
 
 ## Five questions
 
@@ -83,6 +84,22 @@ Database size is rarely the reason. SQLite handles databases far larger than an 
 - **Oracle**: needs Exponential 6.0.15 or later, Oracle 19c or later in `AL32UTF8`, `oci8` built against an Oracle
   client, and attention to `''` as NULL and case-sensitive comparison. Oracle is not in the project's CI
   ([Setting up Oracle with ezoracle](oracle-setup.md)).
+
+## Beyond the official order: the databases of 6.0.15
+
+6.0.15 reaches more databases than the seven of the official order, each at its own level. In short, for a DBA:
+
+- **Your organization runs SQL Server or Azure SQL**: it is the seventh supported database, with a DFS backend and
+  Always On replicas ([status for DBAs](microsoft-sql-server-status.md)).
+- **It runs Firebird 4 or 5**: a whole site, on one web server (no DFS backend), with PHP 8.4 or later.
+- **It runs TiDB, Vitess/PlanetScale or SingleStore**: a whole site and the MySQL DFS backend, measured; mind the
+  transaction timeout of Vitess and the reference tables of SingleStore.
+- **It runs CockroachDB or YugabyteDB**: a whole site, measured; slow DDL, no DFS backend.
+- **It buys Aurora, Neon, Supabase or Xpand**: profiles written from the vendors' documentation, **untested**.
+- **It wants DuckDB**: one writer at a time; a demo, a read-mostly site, or analytics beside another database.
+- **It has data in Access, Spanner or behind an ODBC driver**: import it, or read it as a data table connection.
+
+The matrix with versions, extensions, CI and tested upgrades: [Choosing a database](../choosing-a-database.md).
 
 ## Changing your mind later
 

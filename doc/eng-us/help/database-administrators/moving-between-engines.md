@@ -22,9 +22,10 @@ and [Database support](../database-support.md#moving-a-site-to-another-database)
 3. [Into Oracle](#into-oracle)
 4. [Into MongoDB](#into-mongodb)
 5. [Switch the settings](#switch-the-settings)
-6. [Check before you reopen](#check-before-you-reopen)
-7. [After the move](#after-the-move)
-8. [Checklist](#checklist)
+6. [Moving data in from the databases of 6.0.15](#moving-data-in-from-the-databases-of-6015)
+7. [Check before you reopen](#check-before-you-reopen)
+8. [After the move](#after-the-move)
+9. [Checklist](#checklist)
 
 ## Plan
 
@@ -79,6 +80,18 @@ php bin/php/console exp:velocity restart --allow-root-user     # when Velocity s
 ```
 
 and reload PHP-FPM. A forgotten `DatabaseImplementation` is the usual reason no page loads after a switch.
+
+## Moving data in from the databases of 6.0.15
+
+- **From MS Access**: `exp:access:import file.accdb --prefix=... --apply` copies the tables into the site's database
+  or a data table connection (MDBTools on Linux, the Access ODBC driver on Windows); it moves tables, not a site
+  ([MS Access](../../features/6.0/ms-access-support.md)).
+- **From any database with an ODBC driver, Firebird or Spanner**: make it a data table connection and copy its rows
+  into content with the data table tools ([Data tables](../../features/6.0/data-tables.md)).
+- **A whole site to SQL Server, Firebird or DuckDB**: each has a schema handler (`expSQLServerSchema`,
+  `expFirebirdSchema`, `expDuckDBSchema`), which the installers use; moving an existing site there through a `.dba`
+  dump and `ezsqlinsertschema.php --type=<driver>` has not been measured. Install a new site there and import, or
+  test the move on a copy first.
 
 ## Check before you reopen
 

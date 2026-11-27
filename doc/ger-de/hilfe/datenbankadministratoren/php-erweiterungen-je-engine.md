@@ -3,7 +3,7 @@ title: PHP-Erweiterungen je Engine
 audience: dba
 category: database-administration
 order: 5
-summary: Welche PHP-Erweiterung jede Datenbank braucht (sqlite3, pgsql, mongodb mit seiner Composer-Bibliothek, mysqli, oci8), woher sie auf den gängigen Linux-Familien kommt, wie der Einrichtungsassistent sie prüft und wie Sie bestätigen, dass das PHP des Webservers, das PHP von Velocity und das PHP der Kommandozeile sie alle haben.
+summary: Welche PHP-Erweiterung jede Datenbank braucht (sqlite3, pgsql, mongodb mit seiner Composer-Bibliothek, mysqli, oci8 und ab 6.0.15 sqlsrv oder pdo_sqlsrv, pdo_firebird ab PHP 8.4, ffi mit libduckdb, pdo_odbc oder odbc), woher sie auf den gängigen Linux-Familien kommt, wie der Einrichtungsassistent sie prüft und wie Sie bestätigen, dass das PHP des Webservers, das PHP von Velocity und das PHP der Kommandozeile sie alle haben.
 keywords: PHP-Erweiterung, sqlite3, pgsql, mysqli, mysqlnd, mongodb, mongodb/mongodb, oci8, Instant Client, pecl, php -m, php --ri, database_extensions, setup.ini, PHP-FPM, CLI, PHP extension
 type: help
 ---
@@ -21,7 +21,8 @@ wie die Installer sie prüfen und wie Sie sicherstellen, dass jedes PHP, das die
 3. [Mehrere PHPs auf einem Server](#mehrere-phps-auf-einem-server)
 4. [MongoDB: Erweiterung und Bibliothek](#mongodb-erweiterung-und-bibliothek)
 5. [Oracle: oci8 und der Client](#oracle-oci8-und-der-client)
-6. [Checkliste](#checkliste)
+6. [Die in 6.0.15 hinzugekommenen Datenbanken](#die-in-6015-hinzugekommenen-datenbanken)
+7. [Checkliste](#checkliste)
 
 ## Eine Erweiterung je Engine
 
@@ -88,6 +89,22 @@ Systems liegt, und dann auch im PHP-FPM-Pool (`env[...]`) und in der Umgebung vo
 liest ([9.6](../../installation/09-datenbanken.md#96-oracle-19c-und-neuer-ezoracle)). Die `php.ini`-Einstellungen
 `oci8.persistent_timeout`, `oci8.max_persistent` und `oci8.ping_interval` steuern persistente Verbindungen und lassen
 sich zur Laufzeit nicht ändern ([Oracle: persistente Verbindungen, DRCP und Tuning](oracle-verbindungen-und-tuning.md)).
+
+## Die in 6.0.15 hinzugekommenen Datenbanken
+
+| Datenbank | Erweiterung | Woher sie kommt |
+|---|---|---|
+| SQL Server, Azure SQL | `sqlsrv` (empfohlen) oder `pdo_sqlsrv`; oder `pdo_odbc` mit dem ODBC Driver 17 oder 18 von Microsoft; oder `pdo_dblib` | `sqlsrv` und `pdo_sqlsrv` aus PECL (Linux, über ODBC Driver 18: `msodbcsql18` aus dem Repository von Microsoft) oder die DLLs von Microsoft (Windows); `pdo_odbc` und `pdo_dblib` kommen mit PHP. Gemessen: 5.11 auf PHP 8.0, 5.12 auf 8.1 und 8.2, 5.13.3 auf 8.3 bis 8.5, einschließlich des PHP 8.5 von Plesk |
+| Firebird 4, 5 | `pdo_firebird` ab **PHP 8.4** | kommt mit PHP; braucht die Client-Bibliothek von Firebird (`libfbclient2`). PHP 8.3 und älter werden abgelehnt (deren `pdo_firebird` hält im Autocommit-Modus eine Transaktion offen) |
+| DuckDB | `ffi` und DuckDBs C-Bibliothek `libduckdb` 1.5 oder 2.0 | `php-ffi` (RHEL-Familie, Remi), `php<version>-ffi` (Debian, Ubuntu); die Bibliothek aus den Releases von DuckDB. Das Web-PHP braucht `ffi.enable=true` (`php_admin_value[ffi.enable]=true` im eigenen Pool der Site): Der Standard `preload` erlaubt FFI nur auf der Kommandozeile |
+| TiDB, Vitess, SingleStore, Xpand, Aurora MySQL | `mysqli` | wie MySQL |
+| CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Aurora PostgreSQL | `pgsql` | wie PostgreSQL |
+| ODBC | `pdo_odbc` (Standard) oder `odbc` | kommen mit PHP; unixODBC und der ODBC-Treiber der Datenbank (`odbc-postgresql`, `odbc-mariadb`, `libsqliteodbc`, `msodbcsql18`) |
+| MS Access | Windows: `odbc` und `pdo_odbc` mit der Access Database Engine 2016 x64; Linux: keine, der Import ruft die Programme von MDBTools auf | das Redistributable von Microsoft; `mdbtools` 0.9 oder neuer |
+
+Der kritische Test des Setup-Assistenten besteht auch mit `pdo_firebird` (`setup.ini [database_extensions]`), und mit
+`sqlsrv` oder `pdo_sqlsrv`, ohne SQL Server in seiner Liste anzubieten. Prüfen Sie jedes PHP, das die Site ausführt,
+wie oben. [Eine Datenbank wählen](../datenbank-waehlen.md) enthält die Matrix aller Datenbanken.
 
 ## Checkliste
 

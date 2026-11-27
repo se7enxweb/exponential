@@ -3,7 +3,7 @@ title: Sicherungen je Engine
 audience: dba
 category: database-administration
 order: 28
-summary: Wie Sie die Datenbank einer Exponential-Website auf jeder Engine sichern (sqlite3 .backup oder VACUUM INTO, pg_dump, mongodump, mariadb-dump und mysqldump mit --single-transaction, Data Pump für Oracle), was sonst zu einer vollständigen Sicherung gehört, wann der Wartungsmodus nötig ist und wie Sie eine Sicherung prüfen.
+summary: Wie Sie die Datenbank einer Exponential-Website auf jeder Engine sichern (sqlite3 .backup oder VACUUM INTO, pg_dump, mongodump, mariadb-dump und mysqldump mit --single-transaction, Data Pump für Oracle, und für die Datenbanken von 6.0.15 BACKUP DATABASE, gbak, ysql_dump und eine Kopie der DuckDB-Datei), was sonst zu einer vollständigen Sicherung gehört, wann der Wartungsmodus nötig ist und wie Sie eine Sicherung prüfen.
 keywords: Sicherung, Backup, Datenbanksicherung, sqlite3 .backup, VACUUM INTO, integrity_check, pg_dump, mongodump, mysqldump, mariadb-dump, --single-transaction, expdp, datapump, ext:ezoracle:datapump, Wartungsmodus, var/storage, settings/override, Aufbewahrung, portabler Dump, dba, backup, database backup, maintenance mode, retention, portable dump
 type: help
 ---
@@ -21,9 +21,10 @@ Wartungsmodus nötig ist und wie Sie eine Sicherung prüfen. Quellen:
 2. [Die Datenbank, je Engine](#die-datenbank-je-engine)
 3. [Konsistenz und Wartungsmodus](#konsistenz-und-wartungsmodus)
 4. [Ein portables zweites Format](#ein-portables-zweites-format)
-5. [Eine Sicherung prüfen](#eine-sicherung-prüfen)
-6. [Zeitpläne und Aufbewahrung](#zeitpläne-und-aufbewahrung)
-7. [Checkliste](#checkliste)
+5. [Die in 6.0.15 hinzugekommenen Datenbanken](#die-in-6015-hinzugekommenen-datenbanken)
+6. [Eine Sicherung prüfen](#eine-sicherung-prüfen)
+7. [Zeitpläne und Aufbewahrung](#zeitpläne-und-aufbewahrung)
+8. [Checkliste](#checkliste)
 
 ## Eine vollständige Sicherung
 
@@ -86,6 +87,20 @@ php bin/php/ezsqldumpschema.php --type=mysql --user=exponential --password='<pas
 
 Er ist langsamer und größer als ein nativer Dump und nimmt das Passwort auf der Kommandozeile
 ([Schemawerkzeuge](schemawerkzeuge-dump-insert-diff.md)). Für MongoDB ist er nicht verfügbar.
+
+## Die in 6.0.15 hinzugekommenen Datenbanken
+
+| Datenbank | Sichern mit | Wiederherstellen mit | Die eigene Sicherheitskopie der Aktualisierung |
+|---|---|---|---|
+| SQL Server, Azure SQL | `BACKUP DATABASE [site] TO DISK = '/backup/site.bak' WITH COMPRESSION` oder die automatischen Sicherungen des Dienstes | `RESTORE DATABASE` | keine: führen Sie `exp:upgrade` nach Ihrer Sicherung mit `--no-backup` aus |
+| Firebird | `gbak -b` (logisch, auch über Versionen hinweg) oder `nbackup` (physisch, inkrementell) | `gbak -c` in eine neue Datenbank | keine |
+| DuckDB | die Datei kopieren, solange kein Prozess sie zum Schreiben hält, oder `EXPORT DATABASE '/backup/site'` im Programm `duckdb` | die Kopie oder `IMPORT DATABASE` | keine („no built-in dump for duckdb“) |
+| TiDB, Vitess, SingleStore | die Werkzeuge der Datenbank (TiDB BR oder Dumpling, Vitess-Backups, `BACKUP DATABASE` von SingleStore) | dieselben | `mysqldump` wird ausgeführt; auf diesen nicht gemessen |
+| YugabyteDB | `ysql_dump` (ein `pg_dump` aus PostgreSQL 17 setzt `transaction_timeout`, was YugabyteDB 2.25 beim Wiederherstellen ablehnte) | `ysqlsh` | `pg_dump` wird ausgeführt |
+| CockroachDB, Neon, Supabase, Aurora | die Sicherungen der Datenbank oder des Dienstes | dieselben | `pg_dump` wird ausgeführt; nicht gemessen |
+
+[Eine Datenbank wählen](../datenbank-waehlen.md#sicherungen-und-sicherungspunkte-vor-aktualisierungen) nennt die
+Sicherheitskopie je Engine.
 
 ## Eine Sicherung prüfen
 

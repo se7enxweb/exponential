@@ -3,7 +3,7 @@ title: Backups per engine
 audience: dba
 category: database-administration
 order: 28
-summary: How to back up the database of an Exponential site on each engine (sqlite3 .backup or VACUUM INTO, pg_dump, mongodump, mariadb-dump and mysqldump with --single-transaction, Data Pump for Oracle), what else belongs in a complete backup, when to use maintenance mode, and how to verify a backup.
+summary: How to back up the database of an Exponential site on each engine (sqlite3 .backup or VACUUM INTO, pg_dump, mongodump, mariadb-dump and mysqldump with --single-transaction, Data Pump for Oracle, and for the databases of 6.0.15 BACKUP DATABASE, gbak, ysql_dump and a copy of the DuckDB file), what else belongs in a complete backup, when to use maintenance mode, and how to verify a backup.
 keywords: backup, database backup, sqlite3 .backup, VACUUM INTO, integrity_check, pg_dump, mongodump, mysqldump, mariadb-dump, --single-transaction, expdp, datapump, ext:ezoracle:datapump, maintenance mode, var/storage, settings/override, retention, portable dump, dba
 type: help
 ---
@@ -20,9 +20,10 @@ and [10.9 Backups and restore](../../install/10-after-installing.md#109-backups-
 2. [The database, per engine](#the-database-per-engine)
 3. [Consistency and maintenance mode](#consistency-and-maintenance-mode)
 4. [A portable second format](#a-portable-second-format)
-5. [Verifying a backup](#verifying-a-backup)
-6. [Schedules and retention](#schedules-and-retention)
-7. [Checklist](#checklist)
+5. [The databases added in 6.0.15](#the-databases-added-in-6015)
+6. [Verifying a backup](#verifying-a-backup)
+7. [Schedules and retention](#schedules-and-retention)
+8. [Checklist](#checklist)
 
 ## A complete backup
 
@@ -83,6 +84,19 @@ php bin/php/ezsqldumpschema.php --type=mysql --user=exponential --password='<pas
 
 It is slower and larger than a native dump and takes the password on the command line
 ([Schema tools](schema-tools-dump-insert-diff.md)). It is not available for MongoDB.
+
+## The databases added in 6.0.15
+
+| Database | Back up with | Restore with | The upgrade's own safety copy |
+|---|---|---|---|
+| SQL Server, Azure SQL | `BACKUP DATABASE [site] TO DISK = '/backup/site.bak' WITH COMPRESSION`, or the service's automated backups | `RESTORE DATABASE` | none: run `exp:upgrade` with `--no-backup` after your backup |
+| Firebird | `gbak -b` (logical, also across versions) or `nbackup` (physical, incremental) | `gbak -c` into a new database | none |
+| DuckDB | copy the file while no process holds it to write, or `EXPORT DATABASE '/backup/site'` in the `duckdb` program | the copy, or `IMPORT DATABASE` | none ("no built-in dump for duckdb") |
+| TiDB, Vitess, SingleStore | the database's own tools (TiDB BR or Dumpling, Vitess backups, SingleStore `BACKUP DATABASE`) | the same | `mysqldump` is run; not measured on these |
+| YugabyteDB | `ysql_dump` (a PostgreSQL 17 `pg_dump` sets `transaction_timeout`, which YugabyteDB 2.25 refused on restore) | `ysqlsh` | `pg_dump` is run |
+| CockroachDB, Neon, Supabase, Aurora | the database's or the service's backups | the same | `pg_dump` is run; not measured |
+
+[Choosing a database](../choosing-a-database.md#backups-and-upgrade-captions) lists the safety copy per engine.
 
 ## Verifying a backup
 

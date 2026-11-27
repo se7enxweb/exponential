@@ -23,9 +23,10 @@ und [Datenbankunterstützung](../datenbankunterstuetzung.md#eine-site-auf-eine-a
 3. [Nach Oracle](#nach-oracle)
 4. [Nach MongoDB](#nach-mongodb)
 5. [Die Einstellungen umstellen](#die-einstellungen-umstellen)
-6. [Prüfen, bevor Sie wieder öffnen](#prüfen-bevor-sie-wieder-öffnen)
-7. [Nach dem Umzug](#nach-dem-umzug)
-8. [Checkliste](#checkliste)
+6. [Daten aus den Datenbanken von 6.0.15 übernehmen](#daten-aus-den-datenbanken-von-6015-übernehmen)
+7. [Prüfen, bevor Sie wieder öffnen](#prüfen-bevor-sie-wieder-öffnen)
+8. [Nach dem Umzug](#nach-dem-umzug)
+9. [Checkliste](#checkliste)
 
 ## Planen
 
@@ -83,6 +84,19 @@ php bin/php/console exp:velocity restart --allow-root-user     # when Velocity s
 
 und laden Sie PHP-FPM neu. Ein vergessenes `DatabaseImplementation` ist der übliche Grund, warum nach einem Wechsel keine Seite
 lädt.
+
+## Daten aus den Datenbanken von 6.0.15 übernehmen
+
+- **Aus MS Access**: `exp:access:import datei.accdb --prefix=... --apply` kopiert die Tabellen in die Datenbank der Site
+  oder in eine Datentabellen-Verbindung (MDBTools unter Linux, der ODBC-Treiber von Access unter Windows); es zieht
+  Tabellen um, keine Site ([MS Access](../../funktionen/6.0/ms-access-unterstuetzung.md)).
+- **Aus jeder Datenbank mit ODBC-Treiber, aus Firebird oder Spanner**: machen Sie sie zu einer Datentabellen-Verbindung
+  und kopieren Sie ihre Zeilen mit den Werkzeugen der Datentabellen in Inhalte
+  ([Datentabellen](../../funktionen/6.0/datentabellen.md)).
+- **Eine ganze Site nach SQL Server, Firebird oder DuckDB**: Jede hat einen Schema-Handler (`expSQLServerSchema`,
+  `expFirebirdSchema`, `expDuckDBSchema`), den die Installer verwenden; der Umzug einer bestehenden Site dorthin über
+  einen `.dba`-Dump und `ezsqlinsertschema.php --type=<treiber>` wurde nicht gemessen. Installieren Sie dort eine neue
+  Site und importieren Sie, oder testen Sie den Umzug zuerst an einer Kopie.
 
 ## Prüfen, bevor Sie wieder öffnen
 

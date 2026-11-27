@@ -22,9 +22,10 @@ Backends es gibt, die Einstellungen, die Wartungsbefehle und worauf Sie achten. 
 3. [Backends](#backends)
 4. [Die Einstellungen](#die-einstellungen)
 5. [Upgrades](#upgrades)
-6. [Wartungsbefehle](#wartungsbefehle)
-7. [Worauf Sie achten](#worauf-sie-achten)
-8. [Checkliste](#checkliste)
+6. [SQL Server und die Datenbanken von 6.0.15](#sql-server-und-die-datenbanken-von-6015)
+7. [Wartungsbefehle](#wartungsbefehle)
+8. [Worauf Sie achten](#worauf-sie-achten)
+9. [Checkliste](#checkliste)
 
 ## Wann ein Cluster nötig ist
 
@@ -93,6 +94,17 @@ andere). Halten Sie beide Dateien aus der Versionsverwaltung heraus: Sie enthalt
 
 Wenden Sie bei einem Upgrade die Datei `dbupdate-cluster-...` jedes Schritts an, der eine hat (MySQL: 4.3, 4.7, 5.2, 5.4)
 ([Upgrades und die SQL-Update-Dateien](upgrades-und-sql-update-dateien.md#regeln)).
+
+## SQL Server und die Datenbanken von 6.0.15
+
+- **SQL Server und Azure SQL**: `expDFSFileHandlerSQLServerBackend` (Gateway `dfssqlserver`, `exp:cluster:enable
+  --backend=sqlserver`), mit `LOCK_TIMEOUT` aus `DBLockTimeout`; Dateinamen von höchstens 830 Zeichen
+  ([Clustering auf SQL Server](../../funktionen/6.0/sqlserver-dfs-cluster.md)).
+- **TiDB, Vitess, SingleStore** verwenden das MySQL-Backend (als Cluster aus einem Knoten gemessen); seine eigene
+  `mysqli`-Verbindung hat kein TLS. **Xpand und Aurora MySQL** werden ihm ebenfalls zugeordnet, ungetestet.
+- **Kein Backend** für Firebird, DuckDB, ODBC, MS Access und Spanner; `exp:cluster:enable` bietet keins für
+  CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL an. Halten Sie die Metadaten einer solchen Site in einer
+  Datenbank, die eins hat.
 
 ## Wartungsbefehle
 

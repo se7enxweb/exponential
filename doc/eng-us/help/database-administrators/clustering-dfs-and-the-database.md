@@ -22,9 +22,10 @@ maintenance commands and what to watch. The overall design (the NFS mount, `inde
 3. [Backends](#backends)
 4. [The settings](#the-settings)
 5. [Upgrades](#upgrades)
-6. [Maintenance commands](#maintenance-commands)
-7. [What to watch](#what-to-watch)
-8. [Checklist](#checklist)
+6. [SQL Server and the databases of 6.0.15](#sql-server-and-the-databases-of-6015)
+7. [Maintenance commands](#maintenance-commands)
+8. [What to watch](#what-to-watch)
+9. [Checklist](#checklist)
 
 ## When a cluster is needed
 
@@ -93,6 +94,16 @@ serves cluster files over HTTP, reads its own connection from the `CLUSTER_*` co
 
 On an upgrade apply the `dbupdate-cluster-...` file of every step that has one (MySQL: 4.3, 4.7, 5.2, 5.4)
 ([Upgrades and the SQL update files](upgrades-and-sql-update-files.md#rules)).
+
+## SQL Server and the databases of 6.0.15
+
+- **SQL Server and Azure SQL**: `expDFSFileHandlerSQLServerBackend` (gateway `dfssqlserver`, `exp:cluster:enable
+  --backend=sqlserver`), with `LOCK_TIMEOUT` from `DBLockTimeout`; file names of at most 830 characters
+  ([Clustering on SQL Server](../../features/6.0/sqlserver-dfs-cluster.md)).
+- **TiDB, Vitess, SingleStore** use the MySQL backend (measured as one-node clusters); its own `mysqli` connection
+  has no TLS. **Xpand and Aurora MySQL** map to it too, untested.
+- **No backend** for Firebird, DuckDB, ODBC, MS Access and Spanner; `exp:cluster:enable` offers none for CockroachDB,
+  YugabyteDB, Neon, Supabase and Aurora PostgreSQL. Keep the metadata of such a site in a database that has one.
 
 ## Maintenance commands
 

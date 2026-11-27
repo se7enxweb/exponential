@@ -3,7 +3,7 @@ title: PHP extensions per engine
 audience: dba
 category: database-administration
 order: 5
-summary: Which PHP extension each database needs (sqlite3, pgsql, mongodb with its Composer library, mysqli, oci8), where it comes from on the common Linux families, how the setup wizard checks it, and how to confirm that the web server's PHP, Velocity's PHP and the command line PHP all have it.
+summary: Which PHP extension each database needs (sqlite3, pgsql, mongodb with its Composer library, mysqli, oci8, and from 6.0.15 sqlsrv or pdo_sqlsrv, pdo_firebird of PHP 8.4, ffi with libduckdb, pdo_odbc or odbc), where it comes from on the common Linux families, how the setup wizard checks it, and how to confirm that the web server's PHP, Velocity's PHP and the command line PHP all have it.
 keywords: PHP extension, sqlite3, pgsql, mysqli, mysqlnd, mongodb, mongodb/mongodb, oci8, Instant Client, pecl, php -m, php --ri, database_extensions, setup.ini, PHP-FPM, CLI
 type: help
 ---
@@ -21,7 +21,8 @@ it, and how to make sure every PHP that touches the database has it. Source:
 3. [Several PHPs on one server](#several-phps-on-one-server)
 4. [MongoDB: extension and library](#mongodb-extension-and-library)
 5. [Oracle: oci8 and the client](#oracle-oci8-and-the-client)
-6. [Checklist](#checklist)
+6. [The databases added in 6.0.15](#the-databases-added-in-6015)
+7. [Checklist](#checklist)
 
 ## One extension per engine
 
@@ -87,6 +88,22 @@ and then in the PHP-FPM pool (`env[...]`) and in Velocity's environment as well,
 once ([9.6](../../install/09-databases.md#96-oracle-19c-and-later-ezoracle)). The `php.ini` settings
 `oci8.persistent_timeout`, `oci8.max_persistent` and `oci8.ping_interval` govern persistent connections and cannot
 be changed at run time ([Oracle: persistent connections, DRCP and tuning](oracle-connections-and-tuning.md)).
+
+## The databases added in 6.0.15
+
+| Database | Extension | Where it comes from |
+|---|---|---|
+| SQL Server, Azure SQL | `sqlsrv` (recommended) or `pdo_sqlsrv`; or `pdo_odbc` with Microsoft's ODBC Driver 17 or 18; or `pdo_dblib` | `sqlsrv` and `pdo_sqlsrv` from PECL (Linux, over ODBC Driver 18: `msodbcsql18` from Microsoft's repository) or Microsoft's DLLs (Windows); `pdo_odbc` and `pdo_dblib` ship with PHP. Measured: 5.11 on PHP 8.0, 5.12 on 8.1 and 8.2, 5.13.3 on 8.3 to 8.5, Plesk's PHP 8.5 included |
+| Firebird 4, 5 | `pdo_firebird` of **PHP 8.4 or later** | ships with PHP; needs Firebird's client library (`libfbclient2`). PHP 8.3 and older are refused (their `pdo_firebird` keeps a transaction open in autocommit mode) |
+| DuckDB | `ffi`, and DuckDB's C library `libduckdb` 1.5 or 2.0 | `php-ffi` (RHEL family, Remi), `php<version>-ffi` (Debian, Ubuntu); the library from DuckDB's releases. The web PHP needs `ffi.enable=true` (`php_admin_value[ffi.enable]=true` in the site's own pool): the default `preload` allows FFI on the command line only |
+| TiDB, Vitess, SingleStore, Xpand, Aurora MySQL | `mysqli` | as MySQL |
+| CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Aurora PostgreSQL | `pgsql` | as PostgreSQL |
+| ODBC | `pdo_odbc` (default) or `odbc` | ship with PHP; unixODBC and the database's ODBC driver (`odbc-postgresql`, `odbc-mariadb`, `libsqliteodbc`, `msodbcsql18`) |
+| MS Access | Windows: `odbc` and `pdo_odbc` with the Access Database Engine 2016 x64; Linux: none, the import runs the MDBTools programs | Microsoft's redistributable; `mdbtools` 0.9 or later |
+
+The setup wizard's critical test passes with `pdo_firebird` too (`setup.ini [database_extensions]`), and with
+`sqlsrv` or `pdo_sqlsrv` without offering SQL Server in its list. Check every PHP that runs the site, as above.
+[Choosing a database](../choosing-a-database.md) has the matrix of all of them.
 
 ## Checklist
 
