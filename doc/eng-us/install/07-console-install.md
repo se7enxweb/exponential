@@ -108,7 +108,7 @@ with exit status 1.
 
 | Option | Default | Meaning and checks |
 |---|---|---|
-| `--db=<type>` | `sqlite` | `sqlite`, `mysql`, `pgsql`, `mongodb`, `oracle`, `sqlserver`, `firebird`, `duckdb`, `db2`, `informix`; the MySQL protocol databases `tidb`, `vitess`, `singlestore`, `xpand`, `aurora`; the PostgreSQL protocol databases `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`. Also accepted: `sqlite3`; `mysqli`, `mariadb`; `postgresql`, `postgres`; `mongo`; `oci8`, `ezoracle`; `mssql`, `sqlsrv`; `planetscale`; `memsql`; `aurora-mysql`, `auroramysql`; `fb`, `pdo_firebird`; `cockroach`, `crdb`; `yugabyte`, `ysql`; `aurora-postgresql`. Anything else: "Unknown database type '...'" with the list. Xpand, Aurora MySQL, Neon, Supabase and Aurora PostgreSQL are untested ([Choosing a database](../help/choosing-a-database.md)) |
+| `--db=<type>` | `sqlite` | `sqlite`, `mysql`, `pgsql`, `mongodb`, `oracle`, `sqlserver`, `firebird`, `duckdb`, `db2`, `informix`, `odbc` (with `--db-dialect`); the MySQL protocol databases `tidb`, `vitess`, `singlestore`, `xpand`, `aurora`; the PostgreSQL protocol databases `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`. Also accepted: `sqlite3`; `mysqli`, `mariadb`; `postgresql`, `postgres`; `mongo`; `oci8`, `ezoracle`; `mssql`, `sqlsrv`; `planetscale`; `memsql`; `aurora-mysql`, `auroramysql`; `fb`, `pdo_firebird`; `cockroach`, `crdb`; `yugabyte`, `ysql`; `aurora-postgresql`. Anything else: "Unknown database type '...'" with the list. Xpand, Aurora MySQL, Neon, Supabase and Aurora PostgreSQL are untested ([Choosing a database](../help/choosing-a-database.md)) |
 | `--db-host=<host>` | `localhost` | the database server |
 | `--db-port=<port>` | `3306` (mysql and the MySQL protocol databases), `5432` (pgsql, neon, supabase, aurorapostgresql), `27017` (mongodb), `1521` (oracle), `1433` (sqlserver), `4000` (tidb), `3050` (firebird), `50000` (db2), `9089` (informix), `26257` (cockroachdb), `5433` (yugabytedb), none (sqlite, duckdb) | |
 | `--db-name=<name>` | `exponential`; `exponential.db` for sqlite; `exponential.duckdb` for duckdb; `FREEPDB1` for oracle | the database. SQLite and DuckDB: a file name in `var/storage/sqlite3/` or `var/storage/duckdb/`, or an absolute path. Oracle: a service name becomes the Easy Connect string `<db-host>:<db-port>/<service>`; a value with `/` or `(` is used as it is; `@alias` names a TNS alias. Firebird: an alias of the server's `databases.conf` or the path of the file on the server |
@@ -123,6 +123,10 @@ with exit status 1.
 | `--db-sslrootcert=<file>` | none | the CA file for `verify-ca` and `verify-full` |
 | `--db-pooler=<mode>` | `auto` (from the host and port) | `none`, `session` or `transaction`: a transaction pooler gets no session statements and `RETURNING` for new ids |
 | `--db-endpoint=<id>` | none | neon: the endpoint id, for a libpq without SNI |
+| `--db-dialect=<name>` | | `--db=odbc`: `sqlserver`, `postgresql`, `mysql` (MariaDB too) or `db2`; port, name and user default to the dialect's ([A site over ODBC](../features/6.0/odbc-database-driver.md#a-site-over-odbc)) |
+| `--db-odbc-driver=<name>` | the dialect's usual driver | `--db=odbc`: the ODBC driver's name (`odbcinst.ini`, or the ODBC administrator on Windows) |
+| `--db-dsn=<name>` | | `--db=odbc` with `postgresql` or `mysql`: a data source of `odbc.ini` instead of the driver, host and port |
+| `--db-connection-string=<k=v;...>` | | `--db=odbc`: more keywords of the connection |
 | `--db-action=<action>` | `remove` | `remove`, `ignore` or `skip`, as `DatabaseAction` in [chapter 6](06-kickstarter.md#65-databaseaction-read-this-before-you-run). Anything else: "--db-action must be remove, ignore or skip". **`remove` empties the database first** |
 
 Prefer `EXP_INSTALL_DB_PASSWORD` to `--db-password`: an option is visible to every user of the machine in the process

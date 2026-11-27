@@ -98,7 +98,7 @@ What the order means in practice:
 | Google Cloud Spanner, PostgreSQL dialect (PGAdapter) | the Spanner emulator, PGAdapter | `pgsql` | none: not a site database | none | the live suite `pgwire-live` on the emulator behind PGAdapter | data-table connection and import (new in 6.0.15) |
 | Neon, Supabase, Amazon Aurora PostgreSQL | the services' PostgreSQL (13 and later) | `pgsql` | setup wizard, kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | the PostgreSQL backend (`expDFSFileHandlerPostgresqlBackend`), **untested** | profiles and unit tests only; **not live-tested** | full site database as PostgreSQL, **untested**; profiles new in 6.0.15 |
 | Firebird | 4.0 and 5.0 | `pdo_firebird` of PHP 8.4 or later | setup wizard (with `pdo_firebird`), kickstarter, `exp:install` (`firebird`) | none yet: one web server | 4.0 and 5.0 on PHP 8.4 and 8.5 (job `firebird`) | full site database (new in 6.0.15): [Firebird driver](../features/6.0/firebird-database-driver.md) |
-| Any database through ODBC | the database's ODBC driver; measured on SQL Server 2022, PostgreSQL 17, MariaDB 11.4, SQLite 3.45 | `pdo_odbc` or `odbc` | none: not a site database | none | live tests on four databases and both layers (job `odbc`); LocalDB on Windows | data table connections and imports (new in 6.0.15): [ODBC driver](../features/6.0/odbc-database-driver.md) |
+| Any database through ODBC | the database's ODBC driver; measured on SQL Server 2022, PostgreSQL 17, MariaDB 11.4, SQLite 3.45 | `pdo_odbc` or `odbc` | setup wizard, kickstarter, `exp:install` (`--db=odbc --db-dialect=sqlserver`, `postgresql`, `mysql` or `db2`) | the dialect's: SQL Server and PostgreSQL over PDO_ODBC, MariaDB/MySQL through `mysqli` | live tests on four databases and both layers, whole sites installed on SQL Server, MariaDB and PostgreSQL (job `odbc`); LocalDB on Windows | full site database on SQL Server, PostgreSQL, MariaDB/MySQL and Db2, data table connections and imports (new in 6.0.15): [A site over ODBC](../features/6.0/odbc-database-driver.md#a-site-over-odbc) |
 | MS Access (`.accdb`, `.mdb`) | Access 97 (JET3) to ACE | Windows: `odbc`, `pdo_odbc` with the Access Database Engine x64; Linux: MDBTools programs | none: `exp:access:import` | none | the import on Linux; driver and import on Windows (job `msaccess-windows`) | import, and on Windows a small driver for data tables (new in 6.0.15): [MS Access](../features/6.0/ms-access-support.md) |
 | IBM Db2 | 11.5 and 12.1 (11.5.9 and 12.1.6 tested) | `pdo_ibm` or `ibm_db2` with IBM's Data Server Driver | setup wizard, kickstarter, `exp:install` (`db2`) | none yet: one web server | driver and live tests on Db2 12.1 and 11.5, on both PHP layers, and a whole site installed | full site database (new in 6.0.15); [what works and what does not](../features/6.0/db2-database-driver.md#what-works-and-what-does-not) |
 | IBM Informix | 14.10 and 15 (14.10.FC9W1 and 15.0.1 tested) | `ibm_db2` with IBM's Data Server Driver, through the DRDA listener | setup wizard, kickstarter, `exp:install` (`informix`) | none yet: one web server | driver and live tests on Informix 15 and 14.10; a whole site installed on 15 outside CI | full site database (new in 6.0.15); [what works and what does not](../features/6.0/informix-database-driver.md#what-works-and-what-does-not) |
@@ -106,9 +106,10 @@ What the order means in practice:
 | Couchbase | Server 7.2 and later, Community or Enterprise (7.6.2 and 7.2.4 tested) | `curl` (the Query service's REST API) | none: not a site database | none | driver and live tests on Community 7.6.2 and 7.2.4 (job `couch`) | data table connections and import (new in 6.0.15): [Couchbase driver](../features/6.0/couchbase-driver.md) |
 | Apache CouchDB | 3.3 and 3.4 (3.4.3 and 3.3.3 tested) | `curl` and `sqlite3` | none: not a site database | none | driver and live tests on 3.4.3 and 3.3.3 (job `couch`) | data table connections and import (new in 6.0.15): [CouchDB driver](../features/6.0/couchdb-driver.md) |
 
-**ODBC and MS Access** (new in 6.0.15) do not carry a site. The generic ODBC driver `expODBCDB`
-(`DatabaseImplementation=odbc`, the SQL dialect in `[ODBCSettings]`) reaches any database with an ODBC driver as a
-data table connection; `exp:access:import` copies the tables of an Access file into the site's database or a data
+**ODBC** (new in 6.0.15) carries a site on SQL Server, PostgreSQL, MariaDB/MySQL and Db2: `DatabaseImplementation=odbc`
+with the dialect in `[ODBCSettings]`, installed by every installer, clustered by `exp:cluster:enable`; SQL Server and
+Db2 run on their own drivers with ODBC as the layer. Any other database with an ODBC driver is reached as a data table
+connection. **MS Access** does not carry a site: `exp:access:import` copies the tables of an Access file into the site's database or a data
 table connection, and on Windows the small driver `expMSAccessDB` reads and writes Access files in place. See
 [ODBC driver](../features/6.0/odbc-database-driver.md) and [MS Access support](../features/6.0/ms-access-support.md).
 
@@ -358,7 +359,9 @@ a site behaves as if its database were down.
 
 Exponential has three installers in the kernel. All three support the first seven databases (SQL Server included),
 Firebird, DuckDB and the MySQL and PostgreSQL protocol databases; the setup wizard offers each one when the PHP running
-it has the database's extension. libSQL and Turso are installed with the kickstarter and `exp:install`. ODBC, MS Access and Spanner are not site databases and have no installer entry.
+it has the database's extension. libSQL and Turso are installed with the kickstarter and `exp:install`. Over ODBC all three install SQL Server,
+PostgreSQL, MariaDB/MySQL and Db2 (`--db=odbc` with `--db-dialect`). MS Access and Spanner are not site databases and
+have no installer entry.
 
 | Database | Setup wizard (browser) | Kickstarter (`kickstart.ini`, `[database_choice] Type=`) | `exp:install --db=` |
 |---|---|---|---|
@@ -374,6 +377,7 @@ it has the database's extension. libSQL and Turso are installed with the kicksta
 | Firebird | yes, when `pdo_firebird` is loaded | `firebird` (`fb`, `pdo_firebird` accepted) | `firebird` (also `fb`); the database must exist (`PAGE_SIZE 16384`, UTF8); default port 3050, user `SYSDBA` |
 | DuckDB | yes, when `ffi` may be used (`ffi.enable=true`) and `libduckdb` is found; asks only for a file name (default `exponential.duckdb` in `var/storage/duckdb`) | `duckdb`; `Database` is the file | `duckdb`; `--db-name` is the file (default `var/storage/duckdb/exponential.duckdb`) |
 | libSQL (sqld), Turso | | `libsql` (`sqld` accepted), `turso`, with `URL` and `TLS`; `Password` is the auth token | `libsql`, `turso`; `--db-url`, `--db-tls`; port 8080 (443 for turso); the server's database is emptied first |
+| Over ODBC: SQL Server, PostgreSQL, MariaDB/MySQL, Db2 | yes, when `pdo_odbc` or `odbc` is loaded: one entry per database, "(ODBC)" | `odbc` with `Dialect=sqlserver`, `postgresql`, `mysql` or `db2` (also `odbc_sqlserver`, `odbc_pgsql`, `odbc_mysql`, `odbc_db2`); `ODBCDriver`, `DataSourceName`, `ConnectionString` | `odbc` with `--db-dialect`; `--db-odbc-driver`, `--db-dsn` (PostgreSQL, MySQL), `--db-connection-string` ([A site over ODBC](../features/6.0/odbc-database-driver.md#a-site-over-odbc)) |
 
 - If the `sqlite3` extension is missing, the wizard chooses the first database whose extension is loaded and says
   so.

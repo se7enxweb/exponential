@@ -116,8 +116,14 @@ YugabyteDB 2.25 bestanden (auf YugabyteDB wird `lock_timeout` nicht angewandt, e
 gehaltene Zeilensperre); Neon, Supabase und Aurora PostgreSQL werden ebenso zugeordnet, sind aber ungetestet
 ([Datenbanken mit dem PostgreSQL-Protokoll](postgresql-wire-datenbanken.md#cluster)). **Kein** DFS-Backend gibt es für
 Firebird (pdo_firebird kann eine Sperrwartezeit nicht begrenzen), DuckDB (ein schreibender Prozess, eine lokale
-Dateisperre), ODBC, MS Access und Spanner; eine Site auf Firebird oder DuckDB kann die Cluster-Metadaten trotzdem in
+Dateisperre), MS Access und Spanner; eine Site auf Firebird oder DuckDB kann die Cluster-Metadaten trotzdem in
 einer anderen Datenbank der Tabelle oben halten ([Eine Datenbank wählen](../../hilfe/datenbank-waehlen.md)).
+
+**Eine Site über ODBC** (`DatabaseImplementation=odbc`) bekommt von `exp:cluster:enable` das Backend ihres Dialekts:
+das von SQL Server über PDO_ODBC (die Schicht aus `[SQLServerSettings]`), das von PostgreSQL über PDO_ODBC mit
+psqlODBC (`DBODBCDriver` in `file.ini`, `CLUSTER_STORAGE_ODBC_DRIVER` für das Gateway; `pdo_pgsql` nicht nötig), das
+von MariaDB/MySQL über `mysqli`. Gemessen auf PostgreSQL 17 nur mit PDO_ODBC:
+[Eine Site über ODBC](odbc-datenbanktreiber.md#eine-site-über-odbc).
 
 Die Datenbank der Website und die Cluster-Metadaten sind getrennte Entscheidungen: Eine Website auf MySQL kann ihre
 Cluster-Metadaten in PostgreSQL halten und umgekehrt. Die Einstellungen, die auf jedem SQL-Backend zählen:

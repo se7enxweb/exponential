@@ -103,7 +103,7 @@ Was die Reihenfolge in der Praxis bedeutet:
 | Google Cloud Spanner, PostgreSQL-Dialekt (PGAdapter) | der Spanner-Emulator, PGAdapter | `pgsql` | keiner: keine Site-Datenbank | keins | die Live-Suite `pgwire-live` auf dem Emulator hinter PGAdapter | Datentabellen-Verbindung und Import (neu in 6.0.15) |
 | Neon, Supabase, Amazon Aurora PostgreSQL | das PostgreSQL der Dienste (13 und neuer) | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` (`neon`, `supabase`, `aurorapostgresql`) | das PostgreSQL-Backend (`expDFSFileHandlerPostgresqlBackend`), **ungetestet** | nur Profile und Unit-Tests; **nicht live getestet** | vollständige Site-Datenbank wie PostgreSQL, **ungetestet**; Profile neu in 6.0.15 |
 | Firebird | 4.0 und 5.0 | `pdo_firebird` ab PHP 8.4 | Setup-Assistent (mit `pdo_firebird`), Kickstarter, `exp:install` (`firebird`) | noch keins: ein Webserver | 4.0 und 5.0 auf PHP 8.4 und 8.5 (Job `firebird`) | vollständige Site-Datenbank (neu in 6.0.15): [Firebird-Treiber](../funktionen/6.0/firebird-datenbanktreiber.md) |
-| Jede Datenbank über ODBC | der ODBC-Treiber der Datenbank; gemessen auf SQL Server 2022, PostgreSQL 17, MariaDB 11.4, SQLite 3.45 | `pdo_odbc` oder `odbc` | keiner: keine Site-Datenbank | keins | Live-Tests auf vier Datenbanken und beiden Schichten (Job `odbc`); LocalDB unter Windows | Datentabellen-Verbindungen und Importe (neu in 6.0.15): [ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md) |
+| Jede Datenbank über ODBC | der ODBC-Treiber der Datenbank; gemessen auf SQL Server 2022, PostgreSQL 17, MariaDB 11.4, SQLite 3.45 | `pdo_odbc` oder `odbc` | Einrichtungsassistent, Kickstarter, `exp:install` (`--db=odbc --db-dialect=sqlserver`, `postgresql`, `mysql` oder `db2`) | das des Dialekts: SQL Server und PostgreSQL über PDO_ODBC, MariaDB/MySQL über `mysqli` | Live-Tests auf vier Datenbanken und beiden Schichten, ganze Sites auf SQL Server, MariaDB und PostgreSQL installiert (Job `odbc`); LocalDB unter Windows | volle Site-Datenbank auf SQL Server, PostgreSQL, MariaDB/MySQL und Db2, Datentabellen-Verbindungen und Importe (neu in 6.0.15): [Eine Site über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md#eine-site-über-odbc) |
 | MS Access (`.accdb`, `.mdb`) | Access 97 (JET3) bis ACE | Windows: `odbc`, `pdo_odbc` mit der Access Database Engine x64; Linux: die Programme von MDBTools | keiner: `exp:access:import` | keins | der Import unter Linux; Treiber und Import unter Windows (Job `msaccess-windows`) | Import und unter Windows ein kleiner Treiber für Datentabellen (neu in 6.0.15): [MS Access](../funktionen/6.0/ms-access-unterstuetzung.md) |
 | IBM Db2 | 11.5 und 12.1 (11.5.9 und 12.1.6 getestet) | `pdo_ibm` oder `ibm_db2` mit IBMs Data Server Driver | Setup-Assistent, Kickstarter, `exp:install` (`db2`) | noch keiner: ein Webserver | Treiber- und Live-Tests auf Db2 12.1 und 11.5, auf beiden PHP-Schichten, und eine ganz installierte Site | vollständige Site-Datenbank (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/db2-datenbanktreiber.md#was-geht-und-was-nicht) |
 | IBM Informix | 14.10 und 15 (14.10.FC9W1 und 15.0.1 getestet) | `ibm_db2` mit IBMs Data Server Driver, über den DRDA-Listener | Setup-Assistent, Kickstarter, `exp:install` (`informix`) | noch keiner: ein Webserver | Treiber- und Live-Tests auf Informix 15 und 14.10; eine ganze Site außerhalb der CI auf 15 installiert | vollständige Site-Datenbank (neu in 6.0.15); [was geht und was nicht](../funktionen/6.0/informix-datenbanktreiber.md#was-geht-und-was-nicht) |
@@ -111,9 +111,11 @@ Was die Reihenfolge in der Praxis bedeutet:
 | Couchbase | Server 7.2 und neuer, Community oder Enterprise (7.6.2 und 7.2.4 getestet) | `curl` (die REST-API des Query-Dienstes) | keiner: keine Site-Datenbank | keins | Treiber- und Live-Tests auf Community 7.6.2 und 7.2.4 (Job `couch`) | Datentabellen-Verbindungen und Import (neu in 6.0.15): [Couchbase-Treiber](../funktionen/6.0/couchbase-treiber.md) |
 | Apache CouchDB | 3.3 und 3.4 (3.4.3 und 3.3.3 getestet) | `curl` und `sqlite3` | keiner: keine Site-Datenbank | keins | Treiber- und Live-Tests auf 3.4.3 und 3.3.3 (Job `couch`) | Datentabellen-Verbindungen und Import (neu in 6.0.15): [CouchDB-Treiber](../funktionen/6.0/couchdb-treiber.md) |
 
-**ODBC und MS Access** (neu in 6.0.15) tragen keine Site. Der allgemeine ODBC-Treiber `expODBCDB`
-(`DatabaseImplementation=odbc`, der SQL-Dialekt in `[ODBCSettings]`) erreicht jede Datenbank mit ODBC-Treiber als
-Datentabellen-Verbindung; `exp:access:import` kopiert die Tabellen einer Access-Datei in die Datenbank der Site oder in
+**ODBC** (neu in 6.0.15) trägt eine Site auf SQL Server, PostgreSQL, MariaDB/MySQL und Db2:
+`DatabaseImplementation=odbc` mit dem Dialekt in `[ODBCSettings]`, von jedem Installer installiert, von
+`exp:cluster:enable` geclustert; SQL Server und Db2 laufen auf ihren eigenen Treibern mit ODBC als Schicht. Jede andere
+Datenbank mit ODBC-Treiber wird als Datentabellen-Verbindung erreicht. **MS Access** trägt keine Site:
+`exp:access:import` kopiert die Tabellen einer Access-Datei in die Datenbank der Site oder in
 eine Datentabellen-Verbindung, und unter Windows liest und schreibt der kleine Treiber `expMSAccessDB` Access-Dateien an
 Ort und Stelle. Siehe [ODBC-Treiber](../funktionen/6.0/odbc-datenbanktreiber.md) und
 [MS-Access-Unterstützung](../funktionen/6.0/ms-access-unterstuetzung.md).
@@ -373,8 +375,9 @@ fehl. Lesen Sie zuerst `error.log`, wenn sich eine Site verhält, als wäre ihre
 
 Exponential hat drei Installer im Kernel. Alle drei unterstützen die ersten sieben Datenbanken (mit SQL Server),
 Firebird, DuckDB und die Datenbanken des MySQL- und des PostgreSQL-Protokolls; der Setup-Assistent bietet jede an, wenn
-das PHP, das ihn ausführt, die Erweiterung der Datenbank hat. libSQL und Turso werden mit dem Kickstarter und `exp:install` installiert. ODBC, MS Access und Spanner sind keine Site-Datenbanken und haben keinen
-Eintrag in den Installern.
+das PHP, das ihn ausführt, die Erweiterung der Datenbank hat. libSQL und Turso werden mit dem Kickstarter und `exp:install` installiert. Über ODBC installieren alle drei SQL Server,
+PostgreSQL, MariaDB/MySQL und Db2 (`--db=odbc` mit `--db-dialect`). MS Access und Spanner sind keine Site-Datenbanken
+und haben keinen Eintrag in den Installern.
 
 | Datenbank | Setup-Assistent (Browser) | Kickstarter (`kickstart.ini`, `[database_choice] Type=`) | `exp:install --db=` |
 |---|---|---|---|
@@ -390,6 +393,7 @@ Eintrag in den Installern.
 | Firebird | ja, wenn `pdo_firebird` geladen ist | `firebird` (auch `fb`, `pdo_firebird`) | `firebird` (auch `fb`); die Datenbank muss bestehen (`PAGE_SIZE 16384`, UTF8); Standardport 3050, Benutzer `SYSDBA` |
 | DuckDB | ja, wenn FFI verwendet werden darf (`ffi.enable=true`) und `libduckdb` gefunden wird; fragt nur nach einem Dateinamen (Standard `exponential.duckdb` in `var/storage/duckdb`) | `duckdb`; `Database` ist die Datei | `duckdb`; `--db-name` ist die Datei (Standard `var/storage/duckdb/exponential.duckdb`) |
 | libSQL (sqld), Turso | | `libsql` (`sqld` geht auch), `turso`, mit `URL` und `TLS`; `Password` ist das Auth-Token | `libsql`, `turso`; `--db-url`, `--db-tls`; Port 8080 (443 für turso); die Datenbank des Servers wird zuerst geleert |
+| Über ODBC: SQL Server, PostgreSQL, MariaDB/MySQL, Db2 | ja, wenn `pdo_odbc` oder `odbc` geladen ist: ein Eintrag je Datenbank, „(ODBC)“ | `odbc` mit `Dialect=sqlserver`, `postgresql`, `mysql` oder `db2` (auch `odbc_sqlserver`, `odbc_pgsql`, `odbc_mysql`, `odbc_db2`); `ODBCDriver`, `DataSourceName`, `ConnectionString` | `odbc` mit `--db-dialect`; `--db-odbc-driver`, `--db-dsn` (PostgreSQL, MySQL), `--db-connection-string` ([Eine Site über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md#eine-site-über-odbc)) |
 
 - Fehlt die Erweiterung `sqlite3`, wählt der Assistent die erste Datenbank, deren Erweiterung geladen ist, und weist
   darauf hin.

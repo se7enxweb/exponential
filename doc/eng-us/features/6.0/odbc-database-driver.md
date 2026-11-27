@@ -5,20 +5,25 @@ the driver. From Exponential 6.0.15 the kernel has a generic ODBC driver, `expOD
 driver for every database that has an ODBC driver, with the SQL it writes itself (paging, escaping, the new id, the
 catalogue, the portable helpers) chosen by a dialect in the settings.
 
-**What it is for.** Named connections of the data table layer ([Data tables](data-tables.md)) to databases the
-installation has no native driver for, or that a host only offers through ODBC, and the import of
-[MS Access files](ms-access-support.md). A site runs on its native driver (MySQL/MariaDB, PostgreSQL, SQLite,
-[SQL Server](sqlserver-database-driver.md)): `DatabaseImplementation=odbc` works for reading and writing data, but the
-installers do not offer it and it is not tested as a site's database.
+**What it is for.** A site's own database over ODBC (SQL Server, PostgreSQL, MariaDB/MySQL, Db2): the installers,
+the setup wizard and the kickstarter install it, `exp:cluster:enable` puts a DFS cluster on it, and the upgrade
+stages run over it ([A site over ODBC](#a-site-over-odbc)). Further: named connections of the data table layer
+([Data tables](data-tables.md)) to databases the installation has no native driver for, or that a host only offers
+through ODBC, and the import of [MS Access files](ms-access-support.md).
+
+**ODBC is a transport.** For SQL Server and Db2, whose own drivers have an ODBC layer, `DatabaseImplementation=odbc`
+opens that driver (`expSQLServerDB`, `expDb2DB`) over PDO_ODBC: a site on SQL Server over ODBC behaves exactly as one
+on the SQL Server driver. PostgreSQL and MariaDB/MySQL run on `expODBCDB`, with their own schema handlers.
 
 ## Contents
 
 1. [Settings](#settings)
 2. [Dialects](#dialects)
-3. [What works and what does not, per dialect](#what-works-and-what-does-not-per-dialect)
-4. [PHP layers](#php-layers)
-5. [A data table connection over ODBC](#a-data-table-connection-over-odbc)
-6. [Tests](#tests)
+3. [A site over ODBC](#a-site-over-odbc)
+4. [What works and what does not, per dialect](#what-works-and-what-does-not-per-dialect)
+5. [PHP layers](#php-layers)
+6. [A data table connection over ODBC](#a-data-table-connection-over-odbc)
+7. [Tests](#tests)
 
 ## Settings
 
@@ -72,6 +77,63 @@ handlers and the data table layer treat the connection as that engine.
 
 The portable helpers (`sqlLimit()`, `sqlUpsert()`, `sqlGroupConcat()`, `sqlUnixTimestamp()`,
 `sqlFromUnixTimestamp()`, `sqlForUpdate()`, `sqlQuoteIdentifier()`) follow the dialect, as on the native drivers.
+
+## A site over ODBC
+
+From 6.0.15 a site can be installed on SQL Server, PostgreSQL, MariaDB/MySQL or Db2 through the database's ODBC
+driver. The site gets `DatabaseImplementation=odbc` and `[ODBCSettings]` (in `settings/override` and every
+siteaccess); everything else reads the dialect as the engine.
+
+| Dialect | Runs on | Schema handler | DFS cluster backend | xne backup and rollback |
+|---|---|---|---|---|
+| `sqlserver` | `expSQLServerDB` with `[SQLServerSettings] Layer=pdo_odbc` | `expSQLServerSchema` | SQL Server's, over PDO_ODBC (`Layer=pdo_odbc`, written by the installer) | refused, as for SQL Server |
+| `postgresql` | `expODBCDB` | `eZPgsqlSchema` | PostgreSQL's, over PDO_ODBC (`DBODBCDriver`, written by `exp:cluster:enable`); no `pdo_pgsql` needed | as PostgreSQL, through `pdo_pgsql` of the PHP that runs xne |
+| `mysql` (MariaDB too) | `expODBCDB` | `eZMysqlSchema` | MySQLi's (needs PHP's `mysqli`) | as MySQL, through `pdo_mysql` of the PHP that runs xne |
+| `db2` | `expDb2DB` with `[Db2Settings] Layer=pdo_odbc` | `expDb2Schema` | none (Db2 has none) | refused, as for Db2 |
+
+```bash
+# install.php (exp:install) - SQL Server, PostgreSQL, MariaDB through their ODBC drivers
+EXP_INSTALL_DB_PASSWORD=... php bin/php/install.php --db=odbc --db-dialect=sqlserver --db-host=sql.example \
+    --db-name=exponential --db-user=exp --db-trust-server-certificate --apply
+php bin/php/install.php --db=odbc --db-dialect=postgresql --db-host=pg.example --db-name=exponential --db-user=exp --apply
+php bin/php/install.php --db=odbc --db-dialect=mysql --db-dsn=exp-mariadb --db-name=exponential --db-user=exp --apply
+```
+
+| Option | Meaning |
+|---|---|
+| `--db-dialect` | `sqlserver`, `postgresql`, `mysql` (MariaDB too) or `db2`; the port, name and user default to the dialect's |
+| `--db-odbc-driver` | the ODBC driver's name; default the dialect's usual one (below) |
+| `--db-dsn` | `postgresql` and `mysql`: a data source of `odbc.ini` instead of the driver, host and port |
+| `--db-connection-string` | more `keyword=value` pairs |
+| `--cluster=one-node` | with `postgresql`, `sqlserver` or `mysql`: a one-node DFS cluster after the installation |
+
+The kickstarter takes `[database_choice] Type=odbc` with `Dialect=`, and `[database_init] ODBCDriver`,
+`DataSourceName`, `ConnectionString` (`kickstart.ini-dist`); `odbc_sqlserver`, `odbc_pgsql`, `odbc_mysql` and
+`odbc_db2` are accepted as types too. The setup wizard offers these four types when PHP has `pdo_odbc` or `odbc`.
+
+**Measured** on 2026-11-27 (PHP 8.5.13 with only PDO_ODBC and the odbc extension, Ubuntu 24.04, the package
+`sevenx_multisite`):
+
+| What | PostgreSQL 17, psqlODBC 16 | MariaDB 11.4, MariaDB Connector/ODBC 3.1 |
+|---|---|---|
+| installation (`install.php --db=odbc`) | works, 302 s | works, 220 s |
+| front page, admin login, search | 200 | 200 |
+| schema read back against `share/db_schema.dba` | the same differences as the PostgreSQL driver reading the same database (the tables and the index the 6.0.15 migrations add, bigint defaults read as `'0'`) | the tables and the index the migrations add, nothing else |
+| `exp:upgrade:database` (two kernel tables dropped first) | - | works: a caption with `mysqldump`, both tables made again, schema read back as before |
+| `exp:cluster:enable` and DFS | works without `pdo_pgsql`: 312 files moved in, a 200 KB file stored, read back, sized and deleted in 34 ms, a stored image served by the gateway | - |
+
+SQL Server 2022 over ODBC Driver 18 and MariaDB are installed by the GitHub job `odbc` (job `pdo_odbc`), PostgreSQL by
+the job `odbc` on PHP's odbc extension.
+
+**Upgrades.** The upgrade stages (`exp:upgrade`) run over ODBC with the dialect's schema handler, and the caption
+before them uses the dialect's dump tool (`mysqldump`, `pg_dump`; like the SQL Server driver, SQL Server over ODBC
+has no caption dump, so make a backup of the database first or run with `--no-backup`). A site installed over ODBC
+starts with 6.0.15, so there is no earlier release to upgrade from; the first upgrade over ODBC is 6.0.15 to the next
+release.
+
+**Not here.** SQLite, Oracle and MS Access as a site database over ODBC (SQLite and Oracle have native drivers; for
+Access see [MS Access](ms-access-support.md#a-minimal-site-on-access)); a DSN for SQL Server and Db2 (their drivers
+build the connection string from the host and port).
 
 ## What works and what does not, per dialect
 
@@ -140,6 +202,7 @@ without `EXP_TEST_ODBC_SQLSERVER`, `_POSTGRESQL`, `_MYSQL`, `_SQLITE` with `_USE
 
 | File | What |
 |---|---|
-| `expODBCDBTest` | layers, default drivers, connection strings, engine names, escaping, paging, masked passwords, settings |
+| `expODBCDBTest` | layers, default drivers, connection strings, engine names, escaping, paging, masked passwords, settings; the transport to SQL Server's and Db2's drivers (`resolve()`) |
+| `expODBCSiteInstallTest` | the setup wizard's ODBC types, the kickstarter's options, the parameters the steps carry, `install.php --db=odbc` |
 | `expMSAccessDialectTest` | the Access dialect (see [MS Access](ms-access-support.md)) |
 | `live/expODBCLiveTest` | per target and layer: connect, new ids, paging, transactions, Unicode, 1 MB text, escaping, helpers, duplicate keys, a data table connection |

@@ -111,9 +111,14 @@ PostgreSQL take the PostgreSQL backend (`dfspostgresql`), with its tables in the
 25.2 and YugabyteDB 2.25 (on YugabyteDB `lock_timeout` is not applied, so a store waits for a held row lock); Neon,
 Supabase and Aurora PostgreSQL are mapped the same way but untested
 ([Databases of the PostgreSQL wire protocol](postgresql-wire-databases.md#cluster)). There is **no** DFS backend for
-Firebird (pdo_firebird cannot bound a lock wait), DuckDB (one writer, a local file lock), ODBC, MS Access and Spanner;
+Firebird (pdo_firebird cannot bound a lock wait), DuckDB (one writer, a local file lock), MS Access and Spanner;
 a site on Firebird or DuckDB can still keep the cluster metadata in another database of the table above
 ([Choosing a database](../../help/choosing-a-database.md)).
+
+**A site over ODBC** (`DatabaseImplementation=odbc`) gets the backend of its dialect from `exp:cluster:enable`: SQL
+Server's over PDO_ODBC (the layer of `[SQLServerSettings]`), PostgreSQL's over PDO_ODBC with psqlODBC (`DBODBCDriver`
+in `file.ini`, `CLUSTER_STORAGE_ODBC_DRIVER` for the gateway; no `pdo_pgsql` needed), MariaDB/MySQL's through
+`mysqli`. Measured on PostgreSQL 17 with only PDO_ODBC: [A site over ODBC](odbc-database-driver.md#a-site-over-odbc).
 
 The site's database and the cluster metadata are separate choices: a site on MySQL can keep its cluster metadata in
 PostgreSQL, and the other way round. The settings that matter on every SQL backend:
