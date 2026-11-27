@@ -1354,6 +1354,9 @@ class expCouchbaseDB extends eZDBInterface
 
     /**
      * Makes a scope of the bucket.
+     *
+     * @param string $dbName scope, or bucket.scope
+     * @return bool
      */
     function createDatabase( $dbName )
     {
@@ -1368,6 +1371,9 @@ class expCouchbaseDB extends eZDBInterface
 
     /**
      * Drops a scope of the bucket, with every collection in it.
+     *
+     * @param string $dbName scope, or bucket.scope
+     * @return bool
      */
     function removeDatabase( $dbName )
     {

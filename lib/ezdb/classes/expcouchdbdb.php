@@ -1386,6 +1386,12 @@ class expCouchDBDB extends eZDBInterface
         return $status === 200 && is_array( $list ) ? array_values( array_filter( $list, function ( $n ) { return $n[0] !== '_'; } ) ) : false;
     }
 
+    /**
+     * Makes a CouchDB database (one that exists already is no error).
+     *
+     * @param string $dbName
+     * @return bool
+     */
     function createDatabase( $dbName )
     {
         list( $status, $answer ) = $this->Client->request( 'PUT', expCouchDBClient::path( $dbName ) );
@@ -1395,6 +1401,12 @@ class expCouchDBDB extends eZDBInterface
         return false;
     }
 
+    /**
+     * Deletes a CouchDB database (one that does not exist is no error).
+     *
+     * @param string $dbName
+     * @return bool
+     */
     function removeDatabase( $dbName )
     {
         list( $status, ) = $this->Client->request( 'DELETE', expCouchDBClient::path( $dbName ) );
