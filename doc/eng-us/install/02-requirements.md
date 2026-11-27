@@ -230,7 +230,7 @@ ignored with its checkbox, which is not recommended: an ignored test usually fai
 |---|---|---|---|
 | `directory_permissions` | The web server can write the directories in `CheckList` | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` and its subdirectories, `var/log`, `var/storage` and its subdirectories, `var/autoload` | the `chmod`/`chown` commands the page prints |
 | `phpversion` | PHP at least `MinimumVersion`, not one of `UnstableVersions` | `[phpversion] MinimumVersion=7.4.0` | a newer PHP |
-| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one` | install one |
+| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi;pdo_odbc;odbc;curl`, `Require=one` | install one |
 | `image_conversion` | GD's `imagegd2()` or ImageMagick's `convert` | `[image_conversion] TestList`, `Require=one` | install `gd` or ImageMagick |
 | `safe_mode` | `safe_mode` off | | (removed from PHP; always passes) |
 | `memory_limit` | `memory_limit` at least `MinMemoryLimit`; `-1` (unlimited) passes | `[memory_limit] MinMemoryLimit=64M` | raise it in `php.ini` |

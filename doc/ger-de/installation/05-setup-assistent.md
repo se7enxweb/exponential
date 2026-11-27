@@ -198,7 +198,7 @@ Die kritischen Tests stehen in `settings/site.ini [SetupSettings] CriticalTests`
 |---|---|---|
 | `directory_permissions` | der Webserver kann die aufgeführten Verzeichnisse beschreiben | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` und seine Unterverzeichnisse, `var/log`, `var/storage`, `var/storage/original`, `var/storage/reference`, `var/storage/variations`, `var/autoload` |
 | `phpversion` | die PHP-Version | `[phpversion] MinimumVersion` |
-| `database_extensions` | mindestens eine Datenbank-Extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one`; `ffi` zählt nur mit `ffi.enable=true` |
+| `database_extensions` | mindestens eine Datenbank-Extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi;pdo_odbc;odbc;curl`, `Require=one`; `ffi` zählt nur mit `ffi.enable=true` |
 | `image_conversion` | GD oder ImageMagick | `[image_conversion] TestList=imagegd_extension;imagemagick_program`, `Require=one` |
 | `safe_mode`, `magic_quotes_runtime` | veraltete PHP-Einstellungen, die ausgeschaltet sein müssen | |
 | `memory_limit` | `memory_limit` | `[memory_limit] MinMemoryLimit=64M` (`-1` besteht) |
@@ -293,8 +293,10 @@ Systemtest gefunden hat, beschränkt auf diejenigen, die der Installer kennt (`e
 | `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` | TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Amazon Aurora MySQL; nach MySQL aufgeführt, wenn `mysqli` geladen ist | der Typ | 5.7.25, 5.7.0, 5.7.0, 5.0.45, 8.0.0 |
 | `sqlserver` | Microsoft SQL Server (angezeigt, wenn `sqlsrv` oder `pdo_sqlsrv` geladen ist) | `sqlserver` | 14.0 |
 | `duckdb` | DuckDB (angezeigt, wenn FFI verwendet werden darf: `ffi.enable=true`; braucht außerdem `libduckdb`, `[DuckDBSettings] Library`) | `duckdb` | 1.5 |
+| `libsql`, `turso` | libSQL (sqld oder der eingebettete Dateimodus) und Turso, danach aufgeführt (angezeigt, wenn `curl` geladen ist) | der Typ | 3.33 (das SQLite, auf dem der Server gebaut ist, im Dateimodus das von PHP) |
 
-Jede Datenbank, auf der der Kernel eine Site installieren kann, steht in dieser Liste, wenn PHP ihre Erweiterung hat.
+Jede Datenbank, auf der der Kernel eine Site installieren kann, steht in dieser Liste, wenn PHP ihre Erweiterung hat
+(`curl` ergibt libSQL und Turso).
 `ffi.enable=preload`, der PHP-Standard, erlaubt FFI nur auf der Kommandozeile: Der Assistent im Web zählt `ffi` dann
 nicht und bietet DuckDB nicht an. Installieren Sie DuckDB dann mit `exp:install` oder dem Kickstarter
 ([Kapitel 6](06-kickstarter.md), [Kapitel 7](07-installation-ueber-die-konsole.md)), oder setzen Sie
@@ -346,6 +348,28 @@ Tabellen, fragt die Seite mit den Website-Details, was damit geschehen soll.“
 
 Für DuckDB fragt die Seite ebenso nur nach einem Dateinamen (`DefaultName_duckdb=exponential.duckdb`, abgelegt in
 `var/storage/duckdb`); Server, Benutzer und Passwort gibt es nicht.
+
+Für **libSQL** und **Turso** hat die Seite eigene Felder (`eZSetupLibSQLPage` kennzeichnet sie):
+
+| Feld | Formularname | Standard (`setup.ini [DatabaseSettings]`) |
+|---|---|---|
+| Modus (nur libSQL): ein libSQL-Server oder der eingebettete Dateimodus | `eZSetupLibSQLMode` (`remote`, `file`) | `DefaultMode_libsql=remote` |
+| Server-URL (ersetzt Servername und Port: `http://host:port`, `https://host`, `libsql://host`) | `eZSetupLibSQLURL` | leer |
+| Servername, Port | `eZSetupDatabaseServer`, `eZSetupDatabasePort` | `DefaultServer_libsql=127.0.0.1`, `DefaultPort_libsql=8080`; Turso: Port 443 |
+| TLS (https), nur libSQL (Turso benutzt es immer) | `eZSetupLibSQLTLS` | an, wenn der Port 443 ist |
+| CA-Datei (optional, der vollständige Pfad einer PEM-Datei) | `eZSetupLibSQLCAFile` | leer: die Zertifizierungsstellen des Systems |
+| Auth-Token | `eZSetupLibSQLToken` (ein Passwortfeld) | leer; Turso braucht eines |
+| Datenbankname | `eZSetupDatabaseName` | `DefaultName_libsql=exponential` |
+| Name der Datenbankdatei (eingebetteter Dateimodus, in `var/storage/sqlite3`) | `eZSetupLibSQLFile` | `DefaultFile_libsql=exponential-libsql.db` |
+
+Das Tokenfeld ist immer leer, und das Token wird nie an den Browser zurückgeschickt: Der Assistent hält seine Antworten
+in versteckten Feldern, und das Token steht dort nur versiegelt (verschlüsselt und authentifiziert mit einem Schlüssel in
+`var/setup/secret.key`, beim ersten Gebrauch angelegt, 0600). Bleibt das Feld bei einem späteren Besuch leer, gilt das
+zuvor angegebene Token weiter. Die Seite prüft die URL, Server und Port, ob die CA-Datei lesbar ist, das Token von
+Turso und im Dateimodus PHPs `sqlite3`; dann verbindet sich **Weiter** mit dem Server (oder öffnet die Datei) wie bei
+jeder anderen Datenbank, und eine abgelehnte Verbindung wird mit dem Grund des Servers gezeigt (nie mit dem Token). Die
+Installation schreibt `[DatabaseSettings]` (das Token als `Password`) und `[LibSQLSettings]` (`Mode`, `URL`, `TLS`,
+`CAFile`) so, wie `exp:install` sie schreibt.
 
 **Prüfung.** Ein Druck auf **Weiter** verbindet sich mit den angegebenen Werten mit der Datenbank:
 

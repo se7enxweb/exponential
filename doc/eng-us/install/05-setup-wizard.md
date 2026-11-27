@@ -179,7 +179,7 @@ The critical tests are listed in `settings/site.ini [SetupSettings] CriticalTest
 |---|---|---|
 | `directory_permissions` | the web server can write the listed directories | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` and its subdirectories, `var/log`, `var/storage`, `var/storage/original`, `var/storage/reference`, `var/storage/variations`, `var/autoload` |
 | `phpversion` | the PHP version | `[phpversion] MinimumVersion` |
-| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one`; `ffi` counts only with `ffi.enable=true` |
+| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi;pdo_odbc;odbc;curl`, `Require=one`; `ffi` counts only with `ffi.enable=true` |
 | `image_conversion` | GD or ImageMagick | `[image_conversion] TestList=imagegd_extension;imagemagick_program`, `Require=one` |
 | `safe_mode`, `magic_quotes_runtime` | legacy PHP settings that must be off | |
 | `memory_limit` | `memory_limit` | `[memory_limit] MinMemoryLimit=64M` (`-1` passes) |
@@ -267,8 +267,9 @@ found, limited to the ones the installer knows (`eZSetupDatabaseMap()` in `kerne
 | `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` | TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Amazon Aurora MySQL; listed after MySQL when `mysqli` is loaded | the type | 5.7.25, 5.7.0, 5.7.0, 5.0.45, 8.0.0 |
 | `sqlserver` | Microsoft SQL Server (shown when `sqlsrv` or `pdo_sqlsrv` is loaded) | `sqlserver` | 14.0 |
 | `duckdb` | DuckDB (shown when `ffi` may be used: `ffi.enable=true`; also needs `libduckdb`, `[DuckDBSettings] Library`) | `duckdb` | 1.5 |
+| `libsql`, `turso` | libSQL (sqld or the embedded file mode) and Turso, listed after it (shown when `curl` is loaded) | the type | 3.33 (the SQLite the server is built on, or PHP's in the file mode) |
 
-Every database the kernel can install a site on is in this list when PHP has its extension. `ffi.enable=preload`,
+Every database the kernel can install a site on is in this list when PHP has its extension (`curl` gives libSQL and Turso). `ffi.enable=preload`,
 PHP's default, allows FFI on the command line only: the web wizard then does not count `ffi` and does not offer
 DuckDB; install it with `exp:install` or the kickstarter ([chapter 6](06-kickstarter.md),
 [chapter 7](07-console-install.md)), or set `ffi.enable=true` in the web PHP's pool.
@@ -318,6 +319,27 @@ what to do with them."
 
 For DuckDB the page likewise asks only for a file name (`DefaultName_duckdb=exponential.duckdb`, kept in
 `var/storage/duckdb`); there is no server, user or password.
+
+For **libSQL** and **Turso** the page has fields of its own (`eZSetupLibSQLPage` marks them):
+
+| Field | Form name | Default (`setup.ini [DatabaseSettings]`) |
+|---|---|---|
+| Mode (libSQL only): a libSQL server, or the embedded file mode | `eZSetupLibSQLMode` (`remote`, `file`) | `DefaultMode_libsql=remote` |
+| Server URL (replaces server name and port: `http://host:port`, `https://host`, `libsql://host`) | `eZSetupLibSQLURL` | empty |
+| Servername, Port | `eZSetupDatabaseServer`, `eZSetupDatabasePort` | `DefaultServer_libsql=127.0.0.1`, `DefaultPort_libsql=8080`; Turso: port 443 |
+| TLS (https), libSQL only (Turso always uses it) | `eZSetupLibSQLTLS` | on when the port is 443 |
+| CA file (optional, a PEM file's full path) | `eZSetupLibSQLCAFile` | empty: the system's CAs |
+| Auth token | `eZSetupLibSQLToken` (a password field) | empty; Turso needs one |
+| Database name | `eZSetupDatabaseName` | `DefaultName_libsql=exponential` |
+| Database file name (embedded file mode, in `var/storage/sqlite3`) | `eZSetupLibSQLFile` | `DefaultFile_libsql=exponential-libsql.db` |
+
+The token field always comes empty and the token is never sent back to the browser: the wizard keeps its answers in
+hidden fields, and the token goes there only sealed (encrypted and authenticated with a key in `var/setup/secret.key`,
+made on first use, 0600). Leaving the field empty on a later visit keeps the token given before. The page checks the
+URL, the server and port, that the CA file can be read, Turso's token and, for the file mode, PHP's `sqlite3`; then
+**Next** connects to the server (or opens the file) as for any other database, and a refused connection is shown with
+the server's reason (never the token). The installation writes `[DatabaseSettings]` (the token as `Password`) and
+`[LibSQLSettings]` (`Mode`, `URL`, `TLS`, `CAFile`) as `exp:install` writes them.
 
 **Validation.** Pressing **Next** connects to the database with the values given:
 

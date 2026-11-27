@@ -38,7 +38,7 @@ zu machen (unten gemessen). Lassen Sie den View-Cache an.
 |---|---|
 | Ein libSQL-Server: `sqld` 0.22 oder neuer (Hrana 3; mit älteren Servern spricht der Treiber Hrana 2), oder eine Turso-Datenbank | der Container `ghcr.io/tursodatabase/libsql-server` (getestet: sqld 0.24.33, SQLite 3.47.0); Turso's Dashboard oder `turso db create` |
 | PHPs curl-Erweiterung (empfohlen: Keep-Alive), oder `allow_url_fopen=On` | in jeder Distribution bei PHP dabei; der Stream-Wrapper ist der Rückfall |
-| Das SQLite, auf dem der Server gebaut ist: 3.35 oder neuer | der Installer prüft `sqlite_version()` |
+| Das SQLite, auf dem der Server gebaut ist (oder das von PHP, im eingebetteten Dateimodus): 3.33 oder neuer | der Installer prüft `sqlite_version()` |
 
 PHPs Erweiterung `sqlite3` wird auf dem Webserver **nicht** gebraucht. Die Clients auf Packagist wurden angesehen und
 nicht genommen: die PHP-Clients für libSQL laden entweder Turso's native Bibliothek über FFI oder eine in Rust
@@ -71,8 +71,17 @@ EXP_INSTALL_DB_PASSWORD="$(turso db tokens create exponential)" \
 
 `--db-url` ersetzt `--db-host` und `--db-port` (`http://host:8080`, `https://host`, `libsql://<datenbank>-<org>.turso.io`),
 `--db-tls=enabled|disabled|auto` wählt https (auto: Turso, oder Port 443). Der Kickstarter nimmt `Type=libsql` (auch
-`sqld`) oder `Type=turso`, mit `URL` und `TLS` in `[database_init]`. Der Web-Setup-Assistent bietet libSQL nicht an: es
-gibt keine eigene PHP-Erweiterung, die er erkennen könnte; nehmen Sie `exp:install`.
+`sqld`) oder `Type=turso`, mit `URL`, `TLS`, `Mode` und `CAFile` in `[database_init]`; `--db-mode=file` und
+`--db-cafile` sind die Optionen von `exp:install` dafür.
+
+**Der Web-Setup-Assistent** bietet libSQL, und danach Turso, an, wenn das Web-PHP `curl` hat. Seine Datenbankseite fragt
+nach dem Modus (ein Server oder der eingebettete Dateimodus), der Server-URL oder Servername und Port, TLS, einer
+optionalen CA-Datei und dem Auth-Token, im Dateimodus nach einem Dateinamen; die Seite prüft sie und verbindet sich dann,
+und eine abgelehnte Verbindung wird mit dem Grund des Servers gezeigt. Das Tokenfeld ist immer leer: das Token wird
+zwischen den Seiten nur versiegelt aufbewahrt (verschlüsselt mit einem Schlüssel in `var/setup/secret.key`), nie im
+Klartext in der Seite, und als `Password` der Einstellungen geschrieben, wie `exp:install` es schreibt
+([Kapitel 5](../../installation/05-setup-assistent.md)). Gemessen: eine ganze Site über den Assistenten installiert, von
+Playwright gesteuert, auf einem lokalen sqld und im Dateimodus (unten).
 
 Der Installer leert die Datenbank des Servers zuerst (`DatabaseAction=remove`), wie er eine SQLite-Datei leert: jede
 Tabelle, jede Sicht, jeder Index und jeder Trigger wird gelöscht.
@@ -97,6 +106,8 @@ Timeout=30                        # Sekunden pro Anfrage (mindestens die Lock-Wa
 ConnectAttempts=3                 # Versuche der ersten Verbindung
 ConnectWait=200                   # ms vor dem zweiten Versuch, nach jedem Fehlschlag verdoppelt
 KeepStream=enabled                # ein Server-Stream für alle Anweisungen (unten)
+Mode=remote                       # file: der eingebettete Dateimodus (Database ist eine Datei in var/storage/sqlite3)
+CAFile=                           # eine PEM-Datei, die das Zertifikat des Servers über https prüft
 ```
 
 `[DatabaseSettings] SQLiteBusyTimeout`, `SQLiteTransactionWait` und ihre Gegenstücke für die Kommandozeile behalten
@@ -142,7 +153,8 @@ ganze Site mit `exp:install --db=libsql` installiert.
 |---|---|---|
 | Kernel-Schema (153 Tabellen) und saubere Daten | funktioniert | das SQLite-Schema des Kernels über `eZSQLiteSchema`: 4.205 Anweisungen in 22 bis 49 s |
 | Installation mit `exp:install` / Kickstarter, Paket und Erweiterungen | funktioniert | das Multisite-Paket mit seinen Inhalten und Erweiterungen: 16 Schritte, 0 Fehler, 0 Warnungen, 9 Prüfungen bestanden; 1.289 s (22 Minuten) auf einem ausgelasteten Host, das meiste davon Schreiben außerhalb einer Transaktion |
-| Web-Setup-Assistent | nein | nicht angeboten; `exp:install` nehmen |
+| Web-Setup-Assistent | funktioniert | von Playwright gesteuert auf sqld 0.24.33: 12 Seiten, das Multisite-Paket in 1.447 s installiert (26 Minuten insgesamt), 0 Fehler, 9 Prüfungen bestanden; Startseite und Anmeldung der Administration 200. Das Token stand in keiner Seite und keinem Log, nur in den geschriebenen Einstellungen (und ihrem übersetzten Cache) |
+| Eingebetteter Dateimodus (`Mode=file`) | funktioniert | derselbe Lauf des Assistenten im Dateimodus: in 98 s installiert (160 s insgesamt), 0 Fehler, 9 Prüfungen bestanden; Startseite und Anmeldung der Administration 200 |
 | Seiten lesen, die Administration, Anmelden | funktioniert | Startseite, Site und Anmeldung der Administration antworten mit 200 (PHPs eingebauter Server); die Anmeldung als Administrator funktioniert. Jede Anweisung ist ein Umlauf, also den View-Cache anlassen |
 | Transaktionen, verschachteltes `begin()`/`commit()`, Rollback, eine scheiternde Anweisung darin | funktioniert | |
 | Neue IDs (`lastSerialID()`), ein Schlüssel aus zwei Spalten | funktioniert | die rowid des Servers; MAX + 1, wo SQLite keine Spalte nummeriert |
@@ -184,6 +196,10 @@ kostet je einen Umlauf. Die Zahlen stammen von einem ausgelasteten Host; ein Ser
 in einem anderen Rechenzentrum um die Umlaufzeit des Netzes langsamer.
 
 ## Eingebetteter Dateimodus und eingebettete Replikate
+
+- **Der eingebettete Dateimodus** (`[LibSQLSettings] Mode=file`, `exp:install --db=libsql --db-mode=file` oder die
+  Wahl im Assistenten): die Datenbank ist eine lokale Datei in `var/storage/sqlite3`, und `expLibSQLDB` ist dann der
+  SQLite-Treiber selbst, über PHPs `sqlite3`, ohne Server und ohne HTTP. Turso ist immer entfernt.
 
 - **Eine libSQL-Datei, gelesen vom SQLite-Treiber**: eine Datei, die `sqld` schreibt (`<datenverzeichnis>/dbs/default/data`),
   ist eine SQLite-Datei, und `DatabaseImplementation=sqlite` öffnet sie, solange keine Funktion nur von libSQL

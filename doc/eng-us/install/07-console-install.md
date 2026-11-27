@@ -108,7 +108,7 @@ with exit status 1.
 
 | Option | Default | Meaning and checks |
 |---|---|---|
-| `--db=<type>` | `sqlite` | `sqlite`, `mysql`, `pgsql`, `mongodb`, `oracle`, `sqlserver`, `firebird`, `duckdb`, `db2`, `informix`, `odbc` (with `--db-dialect`); the MySQL protocol databases `tidb`, `vitess`, `singlestore`, `xpand`, `aurora`; the PostgreSQL protocol databases `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`. Also accepted: `sqlite3`; `mysqli`, `mariadb`; `postgresql`, `postgres`; `mongo`; `oci8`, `ezoracle`; `mssql`, `sqlsrv`; `planetscale`; `memsql`; `aurora-mysql`, `auroramysql`; `fb`, `pdo_firebird`; `cockroach`, `crdb`; `yugabyte`, `ysql`; `aurora-postgresql`. Anything else: "Unknown database type '...'" with the list. Xpand, Aurora MySQL, Neon, Supabase and Aurora PostgreSQL are untested ([Choosing a database](../help/choosing-a-database.md)) |
+| `--db=<type>` | `sqlite` | `sqlite`, `mysql`, `pgsql`, `mongodb`, `oracle`, `sqlserver`, `firebird`, `duckdb`, `db2`, `informix`, `odbc` (with `--db-dialect`), `libsql`, `turso`; the MySQL protocol databases `tidb`, `vitess`, `singlestore`, `xpand`, `aurora`; the PostgreSQL protocol databases `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`. Also accepted: `sqlite3`; `mysqli`, `mariadb`; `postgresql`, `postgres`; `mongo`; `oci8`, `ezoracle`; `mssql`, `sqlsrv`; `planetscale`; `memsql`; `aurora-mysql`, `auroramysql`; `fb`, `pdo_firebird`; `cockroach`, `crdb`; `yugabyte`, `ysql`; `aurora-postgresql`. Anything else: "Unknown database type '...'" with the list. Xpand, Aurora MySQL, Neon, Supabase and Aurora PostgreSQL are untested ([Choosing a database](../help/choosing-a-database.md)) |
 | `--db-host=<host>` | `localhost` | the database server |
 | `--db-port=<port>` | `3306` (mysql and the MySQL protocol databases), `5432` (pgsql, neon, supabase, aurorapostgresql), `27017` (mongodb), `1521` (oracle), `1433` (sqlserver), `4000` (tidb), `3050` (firebird), `50000` (db2), `9089` (informix), `26257` (cockroachdb), `5433` (yugabytedb), none (sqlite, duckdb) | |
 | `--db-name=<name>` | `exponential`; `exponential.db` for sqlite; `exponential.duckdb` for duckdb; `FREEPDB1` for oracle | the database. SQLite and DuckDB: a file name in `var/storage/sqlite3/` or `var/storage/duckdb/`, or an absolute path. Oracle: a service name becomes the Easy Connect string `<db-host>:<db-port>/<service>`; a value with `/` or `(` is used as it is; `@alias` names a TNS alias. Firebird: an alias of the server's `databases.conf` or the path of the file on the server |
@@ -576,6 +576,19 @@ php bin/php/console exp:install --apply --db=duckdb --db-name=/srv/sites/example
 Needs PHP's `ffi` and `libduckdb` (`[DuckDBSettings] Library`, or `DUCKDB_LIBRARY` in the environment). The
 measured install took 31 minutes on a busy shared host
 ([DuckDB driver](../features/6.0/duckdb-database-driver.md#installing-a-site-on-duckdb)).
+
+### libSQL and Turso
+
+```bash
+php bin/php/console exp:install --apply --db=libsql --db-host=127.0.0.1 --db-port=8080
+php bin/php/console exp:install --apply --db=libsql --db-mode=file --db-name=site-libsql.db
+EXP_INSTALL_DB_PASSWORD=<token> php bin/php/console exp:install --apply --db=turso --db-url=libsql://exponential-acme.turso.io
+```
+
+`--db-url` replaces host and port, `--db-tls=enabled|disabled|auto` and `--db-cafile` set TLS and its CA file, and
+`--db-mode=file` is the embedded file mode (a file in `var/storage/sqlite3`, no server). The password is the server's
+auth token. Measured on sqld 0.24.33: 22 minutes for the multisite package
+([libSQL and Turso driver](../features/6.0/libsql-database-driver.md#installing-a-site-on-a-libsql-server)).
 
 ### Host and port matching
 

@@ -36,7 +36,7 @@ transaction costs what the server takes to make it durable (measured below). Kee
 |---|---|
 | A libSQL server: `sqld` 0.22 or later (Hrana 3; older servers are spoken to in Hrana 2), or a Turso database | the container `ghcr.io/tursodatabase/libsql-server` (tested: sqld 0.24.33, SQLite 3.47.0); Turso's dashboard or `turso db create` |
 | PHP's curl extension (recommended: keep-alive), or `allow_url_fopen=On` | bundled with PHP on every distribution; the stream wrapper is the fallback |
-| The SQLite the server is built on: 3.35 or later | the installer checks `sqlite_version()` |
+| The SQLite the server is built on (or PHP's, in the embedded file mode): 3.33 or later | the installer checks `sqlite_version()` |
 
 PHP's `sqlite3` extension is **not** needed on the web server. The Packagist clients were looked at and not taken: the
 PHP clients of libSQL either load Turso's native library through FFI or a PHP extension written in Rust (neither is
@@ -68,8 +68,16 @@ EXP_INSTALL_DB_PASSWORD="$(turso db tokens create exponential)" \
 
 `--db-url` replaces `--db-host` and `--db-port` (`http://host:8080`, `https://host`, `libsql://<database>-<org>.turso.io`),
 `--db-tls=enabled|disabled|auto` chooses https (auto: Turso, or port 443). The kickstarter takes `Type=libsql` (also
-`sqld`) or `Type=turso`, with `URL` and `TLS` in `[database_init]`. The web setup wizard does not list libSQL: there is
-no PHP extension of its own to detect; use `exp:install`.
+`sqld`) or `Type=turso`, with `URL`, `TLS`, `Mode` and `CAFile` in `[database_init]`; `--db-mode=file` and
+`--db-cafile` are their `exp:install` options.
+
+**The web setup wizard** lists libSQL, and Turso after it, when the web PHP has `curl`. Its database page asks for the
+mode (a server, or the embedded file mode), the server URL or name and port, TLS, an optional CA file and the auth
+token, or for the file mode a file name; the page checks them and then connects, and a refused connection is shown with
+the server's reason. The token field always comes empty: the token is kept between the pages only sealed (encrypted with
+a key in `var/setup/secret.key`), never in clear text in the page, and is written as the `Password` of the settings, as
+`exp:install` writes it ([chapter 5](../../install/05-setup-wizard.md)). Measured: a whole site installed through the
+wizard, driven by Playwright, on a local sqld and in the file mode (below).
 
 The installer empties the server's database first (`DatabaseAction=remove`), as it empties a SQLite file: every table,
 view, index and trigger is dropped.
@@ -94,6 +102,8 @@ Timeout=30                        # seconds per request (at least the statements
 ConnectAttempts=3                 # tries of the first connection
 ConnectWait=200                   # ms before the second try, doubled after each failure
 KeepStream=enabled                # one server stream for all statements (below)
+Mode=remote                       # file: the embedded file mode (Database is a file in var/storage/sqlite3)
+CAFile=                           # a PEM file that checks the server's certificate over https
 ```
 
 `[DatabaseSettings] SQLiteBusyTimeout`, `SQLiteTransactionWait` and their command line pairs keep their meaning: how
@@ -137,7 +147,8 @@ site installed with `exp:install --db=libsql`.
 |---|---|---|
 | Kernel schema (153 tables) and clean data | works | the kernel's SQLite schema through `eZSQLiteSchema`: 4,205 statements in 22 to 49 s |
 | Install with `exp:install` / kickstarter, package and extensions | works | the multisite package with its content and extensions: 16 steps, 0 errors, 0 warnings, 9 checks passed; 1,289 s (22 minutes) on a busy shared host, most of it in writes outside a transaction |
-| Web setup wizard | does not | not offered; use `exp:install` |
+| Web setup wizard | works | driven by Playwright on sqld 0.24.33: 12 pages, the multisite package installed in 1,447 s (26 minutes in all), 0 errors, 9 checks passed; front page and admin login 200. The token was in no page and no log, only in the written settings (and their compiled cache) |
+| Embedded file mode (`Mode=file`) | works | the same wizard run in the file mode: installed in 98 s (160 s in all), 0 errors, 9 checks passed; front page and admin login 200 |
 | Reading pages, the admin, signing in | works | front page, site and admin login answer 200 (PHP's built-in server); signing in as admin works. Every statement is a round trip, so keep the view cache on |
 | Transactions, nested `begin()`/`commit()`, rollback, a failed statement inside one | works | |
 | New ids (`lastSerialID()`), a key of two columns | works | the server's rowid; MAX + 1 where SQLite numbers no column |
@@ -178,6 +189,10 @@ and its own replication log) before it answers. Writes inside a transaction cost
 from a loaded host; an idle server answers faster, a server in another data centre slower by the network's round trip.
 
 ## Embedded file mode and embedded replicas
+
+- **The embedded file mode** (`[LibSQLSettings] Mode=file`, `exp:install --db=libsql --db-mode=file`, or the wizard's
+  choice): the database is a local file in `var/storage/sqlite3`, and `expLibSQLDB` is then the SQLite driver itself,
+  over PHP's `sqlite3`, with no server and no HTTP. Turso is always remote.
 
 - **A libSQL database file read by the SQLite driver**: a file `sqld` writes (`<data dir>/dbs/default/data`) is an
   SQLite file, and `DatabaseImplementation=sqlite` opens it, as long as no libSQL-only feature (vector columns, random

@@ -76,7 +76,7 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | [Google Cloud Spanner, PostgreSQL dialect](../features/6.0/postgresql-wire-databases.md#google-cloud-spanner-postgresql-dialect) | no | new | **no**: data tables and import | no | no | none |
 | [Firebird 4.0 and 5.0](../features/6.0/firebird-database-driver.md) | no | new | yes | **not yet** | no | wizard (with `pdo_firebird`), kickstarter, `firebird` |
 | [DuckDB 1.5 and 2.0](../features/6.0/duckdb-database-driver.md) | no | new | yes, one writer at a time | **no** | no | wizard (with `ffi` and `ffi.enable=true`), kickstarter, `duckdb` |
-| [libSQL (sqld), Turso](../features/6.0/libsql-database-driver.md) | no | new; Turso **untested** | yes (measured on sqld 0.24) | **no** backend; several web servers share the database, the files need a shared directory | no (Turso's replicas answer at the same URL) | kickstarter, `libsql`, `turso` |
+| [libSQL (sqld), Turso](../features/6.0/libsql-database-driver.md) | no | new; Turso **untested** | yes (measured on sqld 0.24) | **no** backend; several web servers share the database, the files need a shared directory | no (Turso's replicas answer at the same URL) | wizard (with `curl`; a server or the embedded file mode), kickstarter, `libsql`, `turso` |
 | [IBM Db2 11.5 and 12.1](../features/6.0/db2-database-driver.md) | no | new | yes | **not yet** | no | wizard (with `pdo_ibm` or `ibm_db2`), kickstarter, `db2` |
 | [IBM Informix 14.10 and 15](../features/6.0/informix-database-driver.md) | no | new | yes (measured on 15) | **no** | no | wizard (with `ibm_db2` or `pdo_ibm`), kickstarter, `informix` |
 | [MonetDB Dec2023 and later](../features/6.0/columnar-databases.md#monetdb) | no | new | yes, one writer at a time | **no** | no | kickstarter, `monetdb` |
@@ -94,8 +94,9 @@ Notes on the table:
 - **The setup wizard** lists a database when the PHP running it has the database's extension: `sqlite3`, `mysqli`
   (with TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand and Aurora MySQL listed after MySQL),
   `pgsql` (with CockroachDB, YugabyteDB, Neon, Supabase and Aurora PostgreSQL listed after PostgreSQL), `mongodb`,
-  `oci8`, `sqlsrv` or `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` or `ibm_db2` (Db2, Informix) and `ffi`
-  (DuckDB, only where `ffi.enable=true` and with `libduckdb`). libSQL and Turso are installed with the kickstarter or
+  `oci8`, `sqlsrv` or `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` or `ibm_db2` (Db2, Informix), `ffi`
+  (DuckDB, only where `ffi.enable=true` and with `libduckdb`) and `curl` (libSQL, with a server or the embedded file
+  mode, and Turso after it). Every database of the table that carries a site can also be installed with the kickstarter or
   `exp:install` ([setup wizard](../install/05-setup-wizard.md)).
 - **DFS on the MySQL protocol databases**: the backend opens its own `mysqli` connection without TLS. On PlanetScale,
   TiDB Cloud and SingleStore Helios, which require TLS, keep the DFS metadata in another database.

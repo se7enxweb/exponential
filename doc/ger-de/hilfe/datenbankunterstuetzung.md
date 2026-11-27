@@ -227,7 +227,7 @@ Für jede Datenbank gibt es drei verschiedene Zahlen, die man leicht verwechselt
 | Neon, Supabase, Aurora PostgreSQL | 14.0, 14.0, 13.0 | wie das PostgreSQL des Dienstes | keine: nicht gemessen |
 | Firebird | 4.0 | **4.0** (Namen über 31 Zeichen, `CRYPT_HASH()`); PHP **8.4** für `pdo_firebird` | 4.0 und 5.0.4 in der CI |
 | DuckDB | 1.5 | **1.5** (die stabile C-API) | 1.5.6 und 2.0.1 in der CI |
-| libSQL (sqld), Turso | 3.35 (das `sqlite_version()` des Servers) | **sqld 0.22** (Hrana 3; ältere Server in Hrana 2) | sqld 0.24.33 (SQLite 3.47.0) in der CI |
+| libSQL (sqld), Turso | 3.33 (das `sqlite_version()` des Servers, im Dateimodus das von PHP) | **sqld 0.22** (Hrana 3; ältere Server in Hrana 2) | sqld 0.24.33 (SQLite 3.47.0) in der CI |
 
 Verwenden Sie eine Serverversion, für die Ihr Anbieter noch Sicherheitskorrekturen liefert. Die Untergrenzen gibt es,
 damit der Assistent einen alten Server nicht von vornherein ablehnt; sie sind kein Versprechen, dass ein Server dieses
@@ -242,7 +242,7 @@ der empfohlene Webserver, braucht PHP 8.0. Siehe [Kapitel 2](../installation/02-
 Eine Datenbankerweiterung ist erforderlich; der kritische Test `database_extensions` des Setup-Assistenten ist
 bestanden, wenn mindestens eine von `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv`,
 `pdo_firebird`, `pdo_ibm`, `ibm_db2` und `ffi` geladen ist (`settings/setup.ini`,
-`[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one`).
+`[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi;pdo_odbc;odbc;curl`, `Require=one`).
 Die Datenbankseite des Assistenten bietet dann die Datenbanken jeder gefundenen Erweiterung an: `sqlite3`, `mysqli`
 (mit den Datenbanken des MySQL-Protokolls), `pgsql` (mit den Datenbanken des PostgreSQL-Protokolls), `mongodb`, `oci8`,
 `sqlsrv` oder `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` oder `ibm_db2` (Db2, Informix) und `ffi` (DuckDB).

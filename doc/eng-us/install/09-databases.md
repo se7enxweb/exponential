@@ -1187,6 +1187,24 @@ offers DuckDB only where the web PHP has `ffi.enable=true` (it asks for a file n
 upgrade's safety copy has no DuckDB dump: copy the file while nothing writes, or `EXPORT DATABASE`.
 [DuckDB driver](../features/6.0/duckdb-database-driver.md).
 
+### libSQL and Turso
+
+`DatabaseImplementation=libsql` (`expLibSQLDB`) and `turso` (`expTursoDB`): SQLite's SQL and schema on a libSQL server
+(`sqld`) reached over HTTP with PHP's `curl`, or in Turso's cloud; `databaseName()` is `sqlite`. Several web servers can
+share the database. The embedded file mode (`[LibSQLSettings] Mode=file`) is a local file in `var/storage/sqlite3`,
+opened with `sqlite3` as an SQLite site's.
+
+```bash
+./console exp:install --apply --db=libsql --db-host=10.0.0.5 --db-port=8080
+./console exp:install --apply --db=libsql --db-mode=file --db-name=site-libsql.db
+EXP_INSTALL_DB_PASSWORD=<token> ./console exp:install --apply --db=turso --db-url=libsql://exponential-acme.turso.io
+```
+
+The setup wizard offers libSQL and Turso when the web PHP has `curl`, with fields for the server or the file, TLS, a CA
+file and the auth token (kept sealed between the pages, never shown again). A write outside a transaction costs the
+server's commit, so installs are slower than on a SQLite file; keep the view cache on. No DFS backend and no built-in
+upgrade dump. [libSQL and Turso driver](../features/6.0/libsql-database-driver.md).
+
 ### ODBC and MS Access: data and imports
 
 These do not carry a site. `expODBCDB` (`DatabaseImplementation=odbc` or a data table connection with `Engine=odbc`)

@@ -77,7 +77,7 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | [Google Cloud Spanner, PostgreSQL-Dialekt](../funktionen/6.0/postgresql-wire-datenbanken.md) | nein | neu | **nein**: Datentabellen und Import | nein | nein | keiner |
 | [Firebird 4.0 und 5.0](../funktionen/6.0/firebird-datenbanktreiber.md) | nein | neu | ja | **noch nicht** | nein | Assistent (mit `pdo_firebird`), Kickstarter, `firebird` |
 | [DuckDB 1.5 und 2.0](../funktionen/6.0/duckdb-datenbanktreiber.md) | nein | neu | ja, immer nur ein schreibender Prozess | **nein** | nein | Assistent (mit `ffi` und `ffi.enable=true`), Kickstarter, `duckdb` |
-| [libSQL (sqld), Turso](../funktionen/6.0/libsql-datenbanktreiber.md) | nein | neu; Turso **ungetestet** | ja (gemessen auf sqld 0.24) | **kein** Backend; mehrere Webserver teilen sich die Datenbank, die Dateien brauchen ein geteiltes Verzeichnis | nein (die Replikate von Turso antworten unter derselben URL) | Kickstarter, `libsql`, `turso` |
+| [libSQL (sqld), Turso](../funktionen/6.0/libsql-datenbanktreiber.md) | nein | neu; Turso **ungetestet** | ja (gemessen auf sqld 0.24) | **kein** Backend; mehrere Webserver teilen sich die Datenbank, die Dateien brauchen ein geteiltes Verzeichnis | nein (die Replikate von Turso antworten unter derselben URL) | Assistent (mit `curl`; ein Server oder der eingebettete Dateimodus), Kickstarter, `libsql`, `turso` |
 | [IBM Db2 11.5 und 12.1](../funktionen/6.0/db2-datenbanktreiber.md) | nein | neu | ja | **noch nicht** | nein | Assistent (mit `pdo_ibm` oder `ibm_db2`), Kickstarter, `db2` |
 | [IBM Informix 14.10 und 15](../funktionen/6.0/informix-datenbanktreiber.md) | nein | neu | ja (auf 15 gemessen) | **nein** | nein | Assistent (mit `ibm_db2` oder `pdo_ibm`), Kickstarter, `informix` |
 | [MonetDB Dec2023 und später](../funktionen/6.0/spaltenorientierte-datenbanken.md#monetdb) | nein | neu | ja, immer nur ein Schreiber | **nein** | nein | Kickstarter, `monetdb` |
@@ -95,9 +95,10 @@ Anmerkungen zur Tabelle:
 - **Der Setup-Assistent** führt eine Datenbank auf, wenn das PHP, das ihn ausführt, die Erweiterung der Datenbank hat:
   `sqlite3`, `mysqli` (mit TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand und Aurora MySQL nach MySQL),
   `pgsql` (mit CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL nach PostgreSQL), `mongodb`, `oci8`,
-  `sqlsrv` oder `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` oder `ibm_db2` (Db2, Informix) sowie `ffi`
-  (DuckDB, nur mit `ffi.enable=true` und `libduckdb`). libSQL und Turso werden mit dem Kickstarter oder `exp:install`
-  installiert ([Setup-Assistent](../installation/05-setup-assistent.md)).
+  `sqlsrv` oder `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` oder `ibm_db2` (Db2, Informix), `ffi`
+  (DuckDB, nur mit `ffi.enable=true` und `libduckdb`) sowie `curl` (libSQL, mit einem Server oder im eingebetteten
+  Dateimodus, und Turso danach). Jede Datenbank der Tabelle, die eine Site trägt, lässt sich auch mit dem Kickstarter oder `exp:install`
+  installieren ([Setup-Assistent](../installation/05-setup-assistent.md)).
 - **DFS auf den Datenbanken mit dem MySQL-Protokoll**: Das Backend öffnet seine eigene `mysqli`-Verbindung ohne TLS. Bei
   PlanetScale, TiDB Cloud und SingleStore Helios, die TLS verlangen, liegen die DFS-Metadaten besser in einer anderen
   Datenbank.

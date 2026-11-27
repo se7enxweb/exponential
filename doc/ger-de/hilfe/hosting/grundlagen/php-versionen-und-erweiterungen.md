@@ -78,7 +78,7 @@ und `openssl` (HTTPS) vor; in der Praxis sind alle drei für ein produktives Vel
 ## Datenbankerweiterungen
 
 Installieren Sie nur die Erweiterung der Datenbank, die die Website nutzt; mindestens eine ist erforderlich
-(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one`).
+(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi;pdo_odbc;odbc;curl`, `Require=one`).
 
 | Datenbank | Erweiterung | Woher sie kommt |
 |---|---|---|

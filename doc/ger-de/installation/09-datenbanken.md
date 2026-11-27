@@ -1251,6 +1251,25 @@ Dateinamen in `var/storage/duckdb`); die Sicherheitskopie der Aktualisierung hat
 Kopieren Sie die Datei, solange nichts schreibt, oder verwenden Sie `EXPORT DATABASE`.
 [DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md).
 
+### libSQL und Turso
+
+`DatabaseImplementation=libsql` (`expLibSQLDB`) und `turso` (`expTursoDB`): SQL und Schema von SQLite auf einem
+libSQL-Server (`sqld`), erreicht über HTTP mit PHPs `curl`, oder in Turso's Cloud; `databaseName()` ist `sqlite`. Mehrere
+Webserver können sich die Datenbank teilen. Der eingebettete Dateimodus (`[LibSQLSettings] Mode=file`) ist eine lokale
+Datei in `var/storage/sqlite3`, geöffnet mit `sqlite3` wie die einer SQLite-Site.
+
+```bash
+./console exp:install --apply --db=libsql --db-host=10.0.0.5 --db-port=8080
+./console exp:install --apply --db=libsql --db-mode=file --db-name=site-libsql.db
+EXP_INSTALL_DB_PASSWORD=<token> ./console exp:install --apply --db=turso --db-url=libsql://exponential-acme.turso.io
+```
+
+Der Setup-Assistent bietet libSQL und Turso an, wenn das Web-PHP `curl` hat, mit Feldern für den Server oder die Datei,
+TLS, eine CA-Datei und das Auth-Token (zwischen den Seiten versiegelt aufbewahrt, nie wieder angezeigt). Ein Schreiben
+außerhalb einer Transaktion kostet das Commit des Servers, Installationen dauern daher länger als auf einer SQLite-Datei;
+lassen Sie den View-Cache an. Kein DFS-Backend und kein eingebauter Dump vor Aktualisierungen.
+[libSQL- und Turso-Treiber](../funktionen/6.0/libsql-datenbanktreiber.md).
+
 ### ODBC und MS Access: Daten und Importe
 
 Diese tragen keine Site. `expODBCDB` (`DatabaseImplementation=odbc` oder eine Datentabellen-Verbindung mit

@@ -239,7 +239,7 @@ meist erneut fehl, dann als defekte Seite).
 |---|---|---|---|
 | `directory_permissions` | Der Webserver kann in die Verzeichnisse aus `CheckList` schreiben | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` und seine Unterverzeichnisse, `var/log`, `var/storage` und seine Unterverzeichnisse, `var/autoload` | die Befehle `chmod`/`chown`, die die Seite ausgibt |
 | `phpversion` | PHP mindestens `MinimumVersion`, keine aus `UnstableVersions` | `[phpversion] MinimumVersion=7.4.0` | ein neueres PHP |
-| `database_extensions` | mindestens eine Datenbank-Extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`, `Require=one` | eine installieren |
+| `database_extensions` | mindestens eine Datenbank-Extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi;pdo_odbc;odbc;curl`, `Require=one` | eine installieren |
 | `image_conversion` | `imagegd2()` von GD oder `convert` von ImageMagick | `[image_conversion] TestList`, `Require=one` | `gd` oder ImageMagick installieren |
 | `safe_mode` | `safe_mode` aus | | (aus PHP entfernt; immer bestanden) |
 | `memory_limit` | `memory_limit` mindestens `MinMemoryLimit`; `-1` (unbegrenzt) besteht | `[memory_limit] MinMemoryLimit=64M` | in der `php.ini` erhöhen |

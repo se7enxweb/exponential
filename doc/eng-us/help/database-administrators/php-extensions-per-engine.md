@@ -44,7 +44,7 @@ example, logs "SQLite3 extension was not found, the DB handler will not be initi
 
 ```ini
 [database_extensions]
-Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi
+Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi;pdo_odbc;odbc;curl
 Require=one
 ```
 

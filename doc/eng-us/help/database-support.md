@@ -214,7 +214,7 @@ Three different numbers exist for each database, and they are easy to mix up:
 | Neon, Supabase, Aurora PostgreSQL | 14.0, 14.0, 13.0 | as the service's PostgreSQL | none: not measured |
 | Firebird | 4.0 | **4.0** (names over 31 characters, `CRYPT_HASH()`); PHP **8.4** for `pdo_firebird` | 4.0 and 5.0.4 in CI |
 | DuckDB | 1.5 | **1.5** (the stable C API) | 1.5.6 and 2.0.1 in CI |
-| libSQL (sqld), Turso | 3.35 (the server's `sqlite_version()`) | **sqld 0.22** (Hrana 3; older servers in Hrana 2) | sqld 0.24.33 (SQLite 3.47.0) in CI |
+| libSQL (sqld), Turso | 3.33 (the server's `sqlite_version()`, or PHP's in the file mode) | **sqld 0.22** (Hrana 3; older servers in Hrana 2) | sqld 0.24.33 (SQLite 3.47.0) in CI |
 
 Use a server version your vendor still supports with security fixes. The floors exist so that the wizard does not
 refuse an old server outright; they are not a promise that a server of that age works with the current drivers.
@@ -227,7 +227,7 @@ web server, needs PHP 8.0. See [chapter 2](../install/02-requirements.md#22-php)
 
 One database extension is required; the setup wizard's critical test `database_extensions` passes when at least one
 of `sqlite3`, `mysqli`, `pgsql`, `mongodb`, `oci8`, `sqlsrv`, `pdo_sqlsrv`, `pdo_firebird`, `pdo_ibm`, `ibm_db2` and `ffi` is loaded
-(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi`,
+(`settings/setup.ini`, `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird;pdo_ibm;ibm_db2;ffi;pdo_odbc;odbc;curl`,
 `Require=one`). The wizard's database page then offers the databases of every extension it finds: `sqlite3`, `mysqli`
 (with the MySQL protocol databases), `pgsql` (with the PostgreSQL protocol databases), `mongodb`, `oci8`, `sqlsrv` or
 `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` or `ibm_db2` (Db2, Informix) and `ffi` (DuckDB). `ffi` counts only

@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-17c750b8c7015878739cda96623d6c36  doc/changelogs/6.0/6.0.15.md
+76ead5d2343d32fce75e2f578c3181c6  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -5577,7 +5577,7 @@ cba49bf8baba62063e00bf1cf7199248  doc/eng-us/examples/ini-settings/setup/Databas
 0672ebc020bb13cb606d5581ac1921ab  doc/eng-us/examples/ini-settings/setup/SiteTemplates.md
 b314ab73833f839108d03447e9d0e065  doc/eng-us/examples/ini-settings/setup/curl_extension.md
 eff64c3223934d1df4c2bc79d28d9cc0  doc/eng-us/examples/ini-settings/setup/database_all_extensions.md
-3dbba3407d757ccd7f94ba96d4759dc1  doc/eng-us/examples/ini-settings/setup/database_extensions.md
+6d726acb8b62617b8188778b6f5736fa  doc/eng-us/examples/ini-settings/setup/database_extensions.md
 dc193576798b0f52c737a1a7a2953ef4  doc/eng-us/examples/ini-settings/setup/directory_permissions.md
 626778c4689e2f34aae72852774a0c01  doc/eng-us/examples/ini-settings/setup/dom_extension.md
 c3e2d2a647a2fdb377b784f0be7d569d  doc/eng-us/examples/ini-settings/setup/execution_time.md
@@ -7099,7 +7099,7 @@ ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-remova
 905bc7ae5fe91108707194f5e9b5d063  doc/eng-us/features/6.0/kickstarter-cli.md
 04a373a7481b984288eb74d3f580269d  doc/eng-us/features/6.0/legacy-bridge.md
 dc5174c6c6658955b28fe63f7b7a8047  doc/eng-us/features/6.0/legacy-fork-fixes.md
-0a75d49ffca10b16907d1a15026c5ee8  doc/eng-us/features/6.0/libsql-database-driver.md
+431b8e18cf13bef47cdbb7edf2457a69  doc/eng-us/features/6.0/libsql-database-driver.md
 4363ad61fc0af57c4a88abd40393b9f6  doc/eng-us/features/6.0/log-rotation.md
 636c8c263571ab562af1d79e9412bf9b  doc/eng-us/features/6.0/log-viewer.md
 3bbfd911c86b7d7853c0838a963d01f4  doc/eng-us/features/6.0/mail-layout.md
@@ -8177,7 +8177,7 @@ eac710891ec446c14acec9e1d27b8426  doc/eng-us/help/businesses/templates/roi-works
 91d2aca3118f828f8e72d618b23e8e16  doc/eng-us/help/businesses/which-section-fits-your-organization.md
 8c90026c2aa02ea5007adb6264190737  doc/eng-us/help/businesses/why-businesses-rely-on-exponential.md
 650935738878fa3c486c5f262cb57df6  doc/eng-us/help/change-the-admin-password.md
-ac9ac2956246d1fa712223cd351d8934  doc/eng-us/help/choosing-a-database.md
+a13a53d92467d8b75de31a119c3c8274  doc/eng-us/help/choosing-a-database.md
 32b4a33172034277fee4c8b12b0041a6  doc/eng-us/help/cms-developers/accessibility.md
 d2670fd89d336c5d257a17d39a7923ac  doc/eng-us/help/cms-developers/caching-for-cms-developers.md
 227110c9a9a69e8dea9acd57d0b7702c  doc/eng-us/help/cms-developers/choosing-a-ready-made-content-class.md
@@ -8604,7 +8604,7 @@ d78ee65f76a4759be3fb8ba1e97c5a1a  doc/eng-us/help/database-administrators/mysql-
 d3e691f57cca73c3c99d28828e7bdc37  doc/eng-us/help/database-administrators/oracle-maintenance-commands.md
 4b6ee6d83592080a9623477da6b562af  doc/eng-us/help/database-administrators/oracle-setup.md
 a26ea831feb5f66b0442cf7453ade6fe  doc/eng-us/help/database-administrators/performance-and-scaling.md
-be8ae4123a03f3afd91f2f5626688633  doc/eng-us/help/database-administrators/php-extensions-per-engine.md
+facb98b93c5fe4871de286e1d56021dc  doc/eng-us/help/database-administrators/php-extensions-per-engine.md
 f5822f1999a6a9e425388cbcc70d4614  doc/eng-us/help/database-administrators/portable-sql-for-extensions.md
 e9c4ba2cf653c7d54bdce31441959f14  doc/eng-us/help/database-administrators/postgresql-operations.md
 8a88dabb0bc58b6d4dbcd98e327d153f  doc/eng-us/help/database-administrators/postgresql-setup.md
@@ -8625,7 +8625,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-664e48793c4b3eec577180ef0a03a52f  doc/eng-us/help/database-support.md
+6f9c462cb6fb315df968f0292bba69b7  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -10231,7 +10231,7 @@ d75facd73d2641db121a1dfe0336faf0  doc/eng-us/help/hosting/basics/mariadb-for-hos
 7a7833c279d0b1916cd090a32e66a5e0  doc/eng-us/help/hosting/basics/operating-systems-for-hosts.md
 f088e27383e27d949cdec8c67fbd2105  doc/eng-us/help/hosting/basics/oracle-for-hosts.md
 abc44c7179bc8d1d12bb91bb3a5d14ea  doc/eng-us/help/hosting/basics/php-settings-for-exponential.md
-4a3b0af7be201368e3c873c8ebc0b0c7  doc/eng-us/help/hosting/basics/php-versions-and-extensions.md
+a662e198f4e39fc43b57d8636757118d  doc/eng-us/help/hosting/basics/php-versions-and-extensions.md
 2bfc5adc6599e831b3ec6e9c59279caa  doc/eng-us/help/hosting/basics/postgresql-for-hosts.md
 92b57cec15b35cc5167c0c674a017e33  doc/eng-us/help/hosting/basics/requirements-at-a-glance.md
 da61ae9375332086e56fdc5f086bd961  doc/eng-us/help/hosting/basics/search-backends.md
@@ -13295,14 +13295,14 @@ cd0b6a85e34fba589a0baf3632bf2fc6  doc/eng-us/images/languages/coverage-map.svg
 cff5e250d6fd7deb062328fd2fac4734  doc/eng-us/images/languages/coverage-map.webp
 fa3733d7d5fa00676ab2bc74eafca985  doc/eng-us/images/languages/world-outline.svg
 bc4db0183deb0089e58c6eaea3a5ff1f  doc/eng-us/install/01-introduction.md
-d5c2d19a767ca9e245baded77a66621d  doc/eng-us/install/02-requirements.md
+cb10da725a3fecff3599dfd9f57e1e0e  doc/eng-us/install/02-requirements.md
 efcb7e6e422a7d33b312c844e73c7efb  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
-d0836635035feee9ce75fa8222d227e9  doc/eng-us/install/05-setup-wizard.md
+03873eb7272e3865d6f33a1c590655d9  doc/eng-us/install/05-setup-wizard.md
 83261f15db4694059d061715d1d33f37  doc/eng-us/install/06-kickstarter.md
-69163c3ae2073dc3667fd254173a897a  doc/eng-us/install/07-console-install.md
+0097b666167efd6ba1a2b941f2b817fd  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
-dd52e156a2265b36031d718ebeaff85b  doc/eng-us/install/09-databases.md
+b3b87216f383e55f8a59e92fdd674604  doc/eng-us/install/09-databases.md
 278eeb7d25c1222ac28937a2f8165689  doc/eng-us/install/10-after-installing.md
 fc437371e11683057c29e92404604cfb  doc/eng-us/install/11-upgrading.md
 48ccb4898ab342e4c3afa0435641ccd7  doc/eng-us/install/12-troubleshooting.md
@@ -15715,7 +15715,7 @@ cb731f5651273a656514132bf7ecadfa  doc/ger-de/beispiele/ini-einstellungen/setup/R
 313d647f3cab304b9b70f82309a2b695  doc/ger-de/beispiele/ini-einstellungen/setup/SiteTemplates.md
 079a1fefb55707c0186891ff25f52b66  doc/ger-de/beispiele/ini-einstellungen/setup/curl_extension.md
 eac01517fca2df655afe225cc68cc68f  doc/ger-de/beispiele/ini-einstellungen/setup/database_all_extensions.md
-41e8ee8453221cbabc6789c73546f2c8  doc/ger-de/beispiele/ini-einstellungen/setup/database_extensions.md
+f93b9a7e9b1b1bd898d313ade2e41887  doc/ger-de/beispiele/ini-einstellungen/setup/database_extensions.md
 842563117a2327e7528d8ee819566a19  doc/ger-de/beispiele/ini-einstellungen/setup/directory_permissions.md
 00a14bccffc48fd0a4d919e766247971  doc/ger-de/beispiele/ini-einstellungen/setup/dom_extension.md
 facd7efe1b82555eeca281f0d35fe6ce  doc/ger-de/beispiele/ini-einstellungen/setup/execution_time.md
@@ -17255,7 +17255,7 @@ c9de4471d5c29a61f80d16650e22b29a  doc/ger-de/funktionen/6.0/ladereihenfolge-der-
 68af730977a4562fde48dd55a371e5ad  doc/ger-de/funktionen/6.0/legacy-bridge.md
 1367a47ed5090fc9b6f4d69d7cc870f8  doc/ger-de/funktionen/6.0/lesezeichen-fuer-systemseiten.md
 da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
-25c29a0befaaecff0b6eb6ec3db79f7f  doc/ger-de/funktionen/6.0/libsql-datenbanktreiber.md
+5d4e9c2b0ae3d5913f0b74b07a8073a1  doc/ger-de/funktionen/6.0/libsql-datenbanktreiber.md
 624d05010894d447da028cc1de54c066  doc/ger-de/funktionen/6.0/log-betrachter.md
 d1adeb16d48df541b3a2c073b9495150  doc/ger-de/funktionen/6.0/log-rotation.md
 2d9e73a5bdc1de02051bb8e74ea9d2b7  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
@@ -18490,7 +18490,7 @@ a006c16efec268bb2bcd620a9b237fb9  doc/ger-de/hilfe/cms-entwickler/umstieg-von-ty
 9864b91414734c9054a5e35f3a3b2c36  doc/ger-de/hilfe/cms-entwickler/versionen-entwuerfe-und-veroeffentlichen.md
 a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-ausloeser.md
 f5be1f862dc084f747a2aec672a8f29e  doc/ger-de/hilfe/das-benutzer-auditprotokoll.md
-2fdb7c1af67b7a3c073e0986ca0b165c  doc/ger-de/hilfe/datenbank-waehlen.md
+47f4ea748de8ab302366bd8d9875d509  doc/ger-de/hilfe/datenbank-waehlen.md
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 4aa0910c6c1843fcc009479fcb70efb2  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
@@ -18520,7 +18520,7 @@ b65f3b8242c922d931c5b22affef4db7  doc/ger-de/hilfe/datenbankadministratoren/mysq
 c85b2b2474d045c9cc4296df9a53534d  doc/ger-de/hilfe/datenbankadministratoren/oracle-einrichten.md
 722a60d31b538d6fbd5f9f3825579e7c  doc/ger-de/hilfe/datenbankadministratoren/oracle-verbindungen-und-tuning.md
 d6e66adc2960dd80553d074534160603  doc/ger-de/hilfe/datenbankadministratoren/oracle-wartungsbefehle.md
-f28a7d843b8017f0fca77913ba771966  doc/ger-de/hilfe/datenbankadministratoren/php-erweiterungen-je-engine.md
+c7cb1fdb0d1a054eb9e58806b864155d  doc/ger-de/hilfe/datenbankadministratoren/php-erweiterungen-je-engine.md
 9f926eabcab1e8eb433ef62058702ce6  doc/ger-de/hilfe/datenbankadministratoren/portables-sql-fuer-erweiterungen.md
 920559dd18cf2efa9bf07c30550d1461  doc/ger-de/hilfe/datenbankadministratoren/postgresql-betrieb.md
 37a3e604b4cd7dcb78b9e8e907ad5aa3  doc/ger-de/hilfe/datenbankadministratoren/postgresql-einrichten.md
@@ -18540,7 +18540,7 @@ c12fde09d2b2903b72ee39a69d679a4a  doc/ger-de/hilfe/datenbankadministratoren/tabe
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 0b448d4a2328dede7b623ac5bf777188  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 3db1ede61ace04f667926b567c1cfedc  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-6844d909b32ab58f9f4d7023019d44ba  doc/ger-de/hilfe/datenbankunterstuetzung.md
+4bc5c6b12f19e5fce7b2afd6a3414d73  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
@@ -19691,7 +19691,7 @@ f1cd61598cee1076aa5bcd1881a3fb93  doc/ger-de/hilfe/hosting/grundlagen/mongodb-fu
 2cd877b1aff1d712792867feb001e25c  doc/ger-de/hilfe/hosting/grundlagen/mysql-fuer-hoster.md
 417088a36808833e32ea240287a06480  doc/ger-de/hilfe/hosting/grundlagen/oracle-fuer-hoster.md
 9131a57d3251bbe019f7473c3d496a02  doc/ger-de/hilfe/hosting/grundlagen/php-einstellungen-fuer-exponential.md
-5333d3ee6514c761c0b45c80a8b29dab  doc/ger-de/hilfe/hosting/grundlagen/php-versionen-und-erweiterungen.md
+b0df3cb0e625d4c9b3b44a6a6efc5a5a  doc/ger-de/hilfe/hosting/grundlagen/php-versionen-und-erweiterungen.md
 1f065405bfa09a692081ccf60e5bceab  doc/ger-de/hilfe/hosting/grundlagen/postgresql-fuer-hoster.md
 06fc6de40da3affab558a5e1edbd08aa  doc/ger-de/hilfe/hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md
 8984c045fdd38abd6a9a2e8c4aeac96f  doc/ger-de/hilfe/hosting/grundlagen/sqlite-fuer-hoster.md
@@ -23233,14 +23233,14 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 3b542781e7b9593616e5ebe02ac6493e  doc/ger-de/hilfe/zwei-wege-zum-bauen/zuordnung-block-zu-template.md
 7b4de1d134e1317c82fbce40572f8ae4  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
 433c4a1ebb47d5171f19d80a978e339a  doc/ger-de/installation/01-einfuehrung.md
-fa0c94d942047738800834a0095c0907  doc/ger-de/installation/02-voraussetzungen.md
+a39faf94d6a7af78312ae4eb1ef01146  doc/ger-de/installation/02-voraussetzungen.md
 e8a1d89728201585d1cb6850cad1ce36  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
-39c81c9217b060c6c7769b621a4a1faf  doc/ger-de/installation/05-setup-assistent.md
+d0b41e04178879d14b1f8b2f4077fec2  doc/ger-de/installation/05-setup-assistent.md
 00ff5b63c49005d825b5c7d213ba05ea  doc/ger-de/installation/06-kickstarter.md
-cde7a014f7c5971ca8e36fedc76661f7  doc/ger-de/installation/07-installation-ueber-die-konsole.md
+0444a0b72e7fcdb36a5e507d9829ca36  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
-874a559b21669772161b7eeb84d56e07  doc/ger-de/installation/09-datenbanken.md
+817645faebd5a714ccb47e43529a770e  doc/ger-de/installation/09-datenbanken.md
 706664b7b744252ec94b974f9c76a582  doc/ger-de/installation/10-nach-der-installation.md
 a163deec7ec9e2ce690bbf919cbf86c2  doc/ger-de/installation/11-aktualisieren.md
 7a29282cee8bb67807ed770c2543e9ad  doc/ger-de/installation/12-fehlerbehebung.md
