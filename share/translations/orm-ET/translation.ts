@@ -49760,6 +49760,10 @@ Koodiin durtii parameetaroota bu'uuraa filattan irraa tolfameera.</translation>
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Yoo kuusaa deetaa keessan waliin wal qunnamuu irratti rakkoo qabaattan %link irratti %title ilaaluu qabdu.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51483,6 +51487,14 @@ Ibsa dabalataaf fuula barbaachisummaa ilaalaa.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Irra deebiin fe&apos;uun Kickstarter&apos;iin (%file, achiis php bin/php/kickstarter.php run --apply) yookiin fe&apos;iinsa haaraadhaan raawwatama.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle fi sirnoota kuusaa daataa biroo tarreeffaman ni deeggara. MariaDB yookiin MySQL&apos;f, MariaDB / MySQL Improved filadhaa.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB yookiin MySQL &gt;= 4.1 deeggarsa unicode Exponential keessatti barbaachisa.</translation>
     </message>
 </context>
 <context>

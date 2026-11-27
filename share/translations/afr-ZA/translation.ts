@@ -49699,6 +49699,10 @@ Die verstekkode is uit die basiese parameters wat u gekies het, saamgestel.</tra
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>As daar probleme is om met die databasis te koppel, kyk na %title by %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51422,6 +51426,14 @@ Raadpleeg die vereistebladsy vir meer inligting.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Herinstallering word met die kickstarter gedoen (%file, dan php bin/php/kickstarter.php run --apply) of met &apos;n nuwe installering.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential ondersteun SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle en die ander databasisstelsels wat gelys is. Vir MariaDB of MySQL, kies MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB of MySQL &gt;= 4.1 word vereis vir Unicode-ondersteuning in Exponential.</translation>
     </message>
 </context>
 <context>

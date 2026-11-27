@@ -49699,6 +49699,10 @@ Privzeta koda je bila ustvarjena iz osnovnih parametrov, ki ste jih izbrali.</tr
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Če imate težave pri povezovanju z zbirko podatkov, si oglejte %title na %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51422,6 +51426,14 @@ Več informacij najdete na strani z zahtevami.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Vnovična namestitev se izvede z namestitvenim programom kickstarter (%file, nato php bin/php/kickstarter.php run --apply) ali z novo namestitvijo.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential podpira SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle in druge navedene sisteme podatkovnih zbirk. Za MariaDB ali MySQL izberite MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Za podporo za Unicode v sistemu Exponential je potreben PostgreSQL, MariaDB ali MySQL &gt;= 4.1.</translation>
     </message>
 </context>
 <context>

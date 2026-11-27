@@ -42646,6 +42646,10 @@ De standaardcode is gemaakt op basis van de basisparameters die je hebt gekozen.
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Als je problemen hebt met het verbinden met je database, kijk dan naar %title op %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -44449,6 +44453,14 @@ Zie de pagina met systeemeisen voor meer informatie.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Opnieuw installeren gaat met de kickstarter (%file, daarna php bin/php/kickstarter.php run --apply) of met een nieuwe installatie.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential ondersteunt SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle en de andere vermelde databasesystemen. Kies voor MariaDB of MySQL MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Voor Unicode-ondersteuning in Exponential is PostgreSQL, MariaDB of MySQL &gt;= 4.1 vereist.</translation>
     </message>
 </context>
 <context>

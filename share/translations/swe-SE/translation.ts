@@ -42728,6 +42728,10 @@ Standardkoden skapades från de grundläggande som du valde.</translation>
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Om du har problem att ansluta till din databas bör du titta på %title på %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -44527,6 +44531,14 @@ Se sidan med krav för mer information.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Ominstallation görs med kickstartern (%file, sedan php bin/php/kickstarter.php run --apply) eller med en ny installation.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential stöder SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle och de andra databassystemen i listan. För MariaDB eller MySQL väljer du MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB eller MySQL &gt;= 4.1 krävs för unicode-stöd i Exponential.</translation>
     </message>
 </context>
 <context>

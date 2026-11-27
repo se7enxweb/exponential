@@ -56360,6 +56360,10 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
         <source>More information on the SQLite extension can be found at</source>
         <translation>Weitere Informationen zur SQLite-Extension finden Sie unter</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -58436,6 +58440,14 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     <message>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Die Crontab wurde nicht geschrieben (%reason). Tragen Sie diese Zeilen in die Crontab des Benutzers ein, unter dem die Website läuft, sonst laufen die Warteschlange, die Importe, die Benachrichtigungen und der Suchindex nie:</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential unterstützt SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle und die anderen aufgeführten Datenbanksysteme. Für MariaDB oder MySQL wählen Sie MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB oder MySQL &gt;= 4.1 sind für die Unterstützung von Unicode in Exponential notwendig.</translation>
     </message>
 </context>
 <context>

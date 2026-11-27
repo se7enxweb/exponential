@@ -282,7 +282,7 @@ Systemtest gefunden hat, beschränkt auf diejenigen, die der Installer kennt (`e
 | Typ | Angezeigt als | Treiber | Mindestversion |
 |---|---|---|---|
 | `sqlite3` | SQLite (empfohlen) | `sqlite3` | 3.0.1 |
-| `mysqli` | MySQL Improved | `ezmysqli` | 4.1.1 |
+| `mysqli` | MariaDB / MySQL Improved | `ezmysqli` | 4.1.1 |
 | `pgsql` | PostgreSQL | `ezpostgresql` | 8.0 |
 | `mongodb` | MongoDB | `mongodb` | 4.0 |
 | `oci8` | Oracle | `ezoracle` (braucht die Extension `ezoracle` in `extension/`) | 19.0 |
@@ -290,7 +290,7 @@ Systemtest gefunden hat, beschränkt auf diejenigen, die der Installer kennt (`e
 | `db2`, `informix` | IBM Db2, IBM Informix (angezeigt, wenn `pdo_ibm` oder `ibm_db2` geladen ist) | der Typ | siehe ihre Seiten |
 | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` | CockroachDB, YugabyteDB, Neon (PostgreSQL), Supabase (PostgreSQL), Amazon Aurora PostgreSQL; nach PostgreSQL aufgeführt, wenn `pgsql` geladen ist | der Typ | 23.2, 11.2, 14.0, 14.0, 13.0 |
 
-| `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` | TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Amazon Aurora MySQL; nach MySQL aufgeführt, wenn `mysqli` geladen ist | der Typ | 5.7.25, 5.7.0, 5.7.0, 5.0.45, 8.0.0 |
+| `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` | TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Amazon Aurora MySQL; nach MariaDB / MySQL Improved aufgeführt, wenn `mysqli` geladen ist | der Typ | 5.7.25, 5.7.0, 5.7.0, 5.0.45, 8.0.0 |
 | `sqlserver` | Microsoft SQL Server (angezeigt, wenn `sqlsrv` oder `pdo_sqlsrv` geladen ist) | `sqlserver` | 14.0 |
 | `duckdb` | DuckDB (angezeigt, wenn FFI verwendet werden darf: `ffi.enable=true`; braucht außerdem `libduckdb`, `[DuckDBSettings] Library`) | `duckdb` | 1.5 |
 | `libsql`, `turso` | libSQL (sqld oder der eingebettete Dateimodus) und Turso, danach aufgeführt (angezeigt, wenn `curl` geladen ist) | der Typ | 3.33 (das SQLite, auf dem der Server gebaut ist, im Dateimodus das von PHP) |

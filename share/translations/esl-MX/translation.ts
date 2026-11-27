@@ -52842,6 +52842,10 @@ El código por defecto ha sido hecho con los parámetros básicos que has elegid
         <source>It&apos;s a very popular database in the Open Source community and provides highly advanced database functionality.</source>
         <translation type="obsolete">Es una base de datos muy popular en la comunidad de código abierto y aporta funcionalidades de base de datos altamente avanzadas.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -54808,6 +54812,14 @@ Esta funcionalidad queda también disponible más adelante desde la interfaz de 
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>La reinstalación se hace con el kickstarter (%file y después php bin/php/kickstarter.php run --apply) o con una instalación nueva.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential es compatible con SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle y los demás sistemas de bases de datos de la lista. Para MariaDB o MySQL, elige MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Para el soporte unicode en Exponential se requiere PostgreSQL, MariaDB o MySQL 4.1 o superior.</translation>
     </message>
 </context>
 <context>

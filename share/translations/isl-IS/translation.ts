@@ -49699,6 +49699,10 @@ Sjálfgefni kóðinn var búinn til út frá grunnfæribreytunum sem þú valdir
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Ef þú átt í vandræðum með að tengjast gagnagrunninum ættirðu að skoða %title á %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51422,6 +51426,14 @@ Nánari upplýsingar eru á síðunni um kerfiskröfur.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Enduruppsetning fer fram með kickstarter (%file, síðan php bin/php/kickstarter.php run --apply) eða með nýrri uppsetningu.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential styður SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle og hin gagnagrunnskerfin á listanum. Fyrir MariaDB eða MySQL skaltu velja MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB eða MySQL &gt;= 4.1 er krafist fyrir Unicode-stuðning í Exponential.</translation>
     </message>
 </context>
 <context>

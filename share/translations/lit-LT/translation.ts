@@ -49699,6 +49699,10 @@ Numatytasis kodas sukurtas pagal jūsų pasirinktus pagrindinius parametrus.</tr
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Jei kyla problemų jungiantis prie duomenų bazės, peržiūrėkite %title adresu %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51422,6 +51426,14 @@ Daugiau informacijos rasite reikalavimų puslapyje.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Iš naujo įdiegiama naudojant kickstarter (%file, tada php bin/php/kickstarter.php run --apply) arba atliekant naują įdiegimą.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential palaiko SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle ir kitas sąraše nurodytas duomenų bazių sistemas. Jei naudojate MariaDB arba MySQL, pasirinkite MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Norint, kad „Exponential“ palaikytų Unicode, reikalinga „PostgreSQL“, „MariaDB“ arba „MySQL“ &gt;= 4.1.</translation>
     </message>
 </context>
 <context>

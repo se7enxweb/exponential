@@ -49758,6 +49758,10 @@ Ikhowudi okuzenzekelayo yenziwe ngeeparamitha ezisisiseko enazikhethileyo.</tran
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Ukuba nineengxaki zokuqhagamshela kugcino-datha lwenu, kufuneka nijonge %title ku-%link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51481,6 +51485,14 @@ Jongani iphepha lezinto ezifunekayo ukuze nifumane ulwazi oluthe kratya.</transl
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Ukufaka kwakhona kwenziwa nge-Kickstarter (%file, emva koko php bin/php/kickstarter.php run --apply) okanye ngofakelo olutsha.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>I-Exponential ixhasa i-SQLite, i-MariaDB, i-MySQL, i-PostgreSQL, i-MongoDB, i-Oracle kunye nezinye iinkqubo zoovimba weenkcukacha ezidwelisiweyo. Kwi-MariaDB okanye i-MySQL, khetha i-MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>I-PostgreSQL, i-MariaDB okanye i-MySQL &gt;= 4.1 iyadingeka ukuxhasa i-unicode kwi-Exponential.</translation>
     </message>
 </context>
 <context>

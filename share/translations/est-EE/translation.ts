@@ -49699,6 +49699,10 @@ Vaikekood on koostatud teie valitud põhiparameetrite järgi.</translation>
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Kui teil on probleeme andmebaasiga ühenduse loomisel, vaadake dokumenti %title aadressil %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51422,6 +51426,14 @@ Lisateavet leiate nõuete lehelt.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Uuesti installimiseks kasutatakse kickstarterit (%file, seejärel php bin/php/kickstarter.php run --apply) või tehakse uus installimine.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential toetab SQLite&apos;i, MariaDB-d, MySQL-i, PostgreSQL-i, MongoDB-d, Oracle&apos;it ja teisi loetletud andmebaasisüsteeme. MariaDB või MySQL-i jaoks valige MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Unicode&apos;i toeks Exponentialis on vaja PostgreSQL-i, MariaDB-d või MySQL-i &gt;= 4.1.</translation>
     </message>
 </context>
 <context>

@@ -49760,6 +49760,10 @@ The default code was made from the basic parameters you chose.</source>
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>ඔබේ දත්ත සමුදාය සමඟ සම්බන්ධ වීමේ ගැටලු ඇත්නම්, %link හි %title බලන්න.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51483,6 +51487,14 @@ See the requirements page for more information.</source>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>නැවත ස්ථාපනය කරනු ලබන්නේ kickstarter මගින් (%file, ඉන්පසු php bin/php/kickstarter.php run --apply) හෝ නව ස්ථාපනයක් මගිනි.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle සහ ලැයිස්තුවේ ඇති අනෙකුත් දත්ත සමුදාය පද්ධති සඳහා සහාය දක්වයි. MariaDB හෝ MySQL සඳහා MariaDB / MySQL Improved තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Exponential හි Unicode සහාය සඳහා PostgreSQL, MariaDB හෝ MySQL &gt;= 4.1 අවශ්‍ය වේ.</translation>
     </message>
 </context>
 <context>

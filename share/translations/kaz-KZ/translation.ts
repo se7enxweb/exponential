@@ -49760,6 +49760,10 @@ The default code was made from the basic parameters you chose.</source>
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Дерекқорға қосылуда мәселелер туындаса, %link мекенжайындағы «%title» бөліміне қараңыз.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51483,6 +51487,14 @@ See the requirements page for more information.</source>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Қайта орнату kickstarter арқылы (%file, содан кейін php bin/php/kickstarter.php run --apply) немесе жаңа орнатумен жасалады.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle және тізімдегі басқа дерекқор жүйелерін қолдайды. MariaDB немесе MySQL үшін MariaDB / MySQL Improved таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Exponential-да Unicode қолдауы үшін PostgreSQL, MariaDB немесе MySQL &gt;= 4.1 қажет.</translation>
     </message>
 </context>
 <context>

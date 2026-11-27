@@ -49760,6 +49760,10 @@ Noforonina avy amin'ny masontsivana fototra nofidinao ny kaody mahazatra.</trans
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Raha manana olana amin'ny fifandraisana amin'ny tahiry angonao ianao dia jereo ny %title ao amin'ny %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51483,6 +51487,14 @@ Jereo ny pejin'ny fepetra raha mila fanazavana fanampiny.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Ny fametrahana indray dia atao amin&apos;ny kickstarter (%file, avy eo php bin/php/kickstarter.php run --apply) na amin&apos;ny fametrahana vaovao.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Manohana ny SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle ary ireo rafitra tahiry angona hafa voatanisa ny Exponential. Ho an&apos;ny MariaDB na MySQL, safidio ny MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB na MySQL &gt;= 4.1 no ilaina ho an&apos;ny fanohanana unicode ao amin&apos;i Exponential.</translation>
     </message>
 </context>
 <context>

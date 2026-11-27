@@ -49699,6 +49699,10 @@ Rinneadh an cód réamhshocraithe as na bunpharaiméadair a roghnaigh tú.</tran
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Má tá fadhbanna agat ceangal le do bhunachar sonraí, ba cheart duit féachaint ar %title ag %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51422,6 +51426,14 @@ Féach ar leathanach na riachtanas le haghaidh tuilleadh faisnéise.</translatio
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Déantar athshuiteáil leis an kickstarter (%file, ansin php bin/php/kickstarter.php run --apply) nó le suiteáil úr.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Tacaíonn Exponential le SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle agus na córais bunachar sonraí eile atá liostaithe. Le haghaidh MariaDB nó MySQL, roghnaigh MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Tá PostgreSQL, MariaDB nó MySQL &gt;= 4.1 riachtanach le haghaidh tacaíochta Unicode in Exponential.</translation>
     </message>
 </context>
 <context>

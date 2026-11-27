@@ -50015,6 +50015,10 @@ Exponential-version</translation>
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Hvis du har problemer med at oprette forbindelse til din database, bør du se på %title på %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51814,6 +51818,14 @@ Se siden med krav for at få flere oplysninger.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Geninstallation sker med kickstarteren (%file, derefter php bin/php/kickstarter.php run --apply) eller med en ny installation.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential understøtter SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle og de øvrige databasesystemer på listen. Til MariaDB eller MySQL skal du vælge MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB eller MySQL &gt;= 4.1 er påkrævet for Unicode-understøttelse i Exponential.</translation>
     </message>
 </context>
 <context>

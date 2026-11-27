@@ -49760,6 +49760,10 @@ I hangaia te waehere taunoa mai i ngā tawhā taketake i kōwhiria e koe.</trans
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Mēnā he raruraru tō te hono atu ki tō pātengi raraunga me tiro koe ki a %title ki %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51483,6 +51487,14 @@ Tirohia te whārangi whāinga mō ētahi atu mōhiohio.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Ka whakaurua anō mā te kickstarter (%file, kātahi ko php bin/php/kickstarter.php run --apply) mā tētahi tāutanga hou rānei.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>E tautoko ana a Exponential i a SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle me ērā atu pūnaha pātengi raraunga kua rārangitia. Mō MariaDB, MySQL rānei, kōwhiria a MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>E hiahiatia ana a PostgreSQL, MariaDB, a MySQL &gt;= 4.1 rānei mō te tautoko unicode i Exponential.</translation>
     </message>
 </context>
 <context>

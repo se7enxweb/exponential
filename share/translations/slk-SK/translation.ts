@@ -49699,6 +49699,10 @@ Predvolený kód bol vytvorený zo základných parametrov, ktoré ste zvolili.<
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Ak máte problémy s pripojením k databáze, pozrite si %title na %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51422,6 +51426,14 @@ See the requirements page for more information.</source>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Preinštalovanie sa vykonáva pomocou inštalačného programu kickstarter (%file, potom php bin/php/kickstarter.php run --apply) alebo novou inštaláciou.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential podporuje SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle a ďalšie uvedené databázové systémy. Pre MariaDB alebo MySQL zvoľte MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Na podporu Unicode v systéme Exponential sa vyžaduje PostgreSQL, MariaDB alebo MySQL &gt;= 4.1.</translation>
     </message>
 </context>
 <context>

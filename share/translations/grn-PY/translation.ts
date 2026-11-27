@@ -49756,6 +49756,10 @@ Kódigo ijypykuéva ojejapo parámetro ypyguáva reiporavova'ekuégui.</translat
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Reguerekóramo apañuãi rejoaju hag̃ua nde mba'ekuaarenda ndive ehecha %title %link-pe.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51475,6 +51479,14 @@ Ehecha tekotevẽ kuatiarogue marandu hetave peg̃uarã.</translation>
     <message>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ndojehaíri (%reason). Embojoapy ko'ã tysýi puruhára tenda oikohápe crontab-pe, térã jere, ñemoinge, ñemomarandu ha jeheka ñemohenda araka'eve ndoikói:</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential oipytyvõ SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle ha ambue database sistema oĩva lísta-pe. MariaDB térã MySQL-pe g̃uarã, eiporavo MariaDB / MySQL Improved.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB térã MySQL &gt;= 4.1 tekotevẽ unicode pytyvõ peg̃uarã Exponential-pe.</translation>
     </message>
 </context>
 <context>

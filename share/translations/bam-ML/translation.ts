@@ -49760,6 +49760,10 @@ Kode sariyalen dilanna parametiri fɔlɔw ma i ye minw sugandi.</translation>
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Ni i ka kunnafoniso sirili ye gɛlɛya sɔrɔ, i ka %title filɛ yan: %link.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51483,6 +51487,14 @@ A filɛ nafaw ɲɛ la walasa ka kunnafoni caman sɔrɔ.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>A bɛ sigi kokura ni Kickstarter ye (%file, o kɔ php bin/php/kickstarter.php run --apply) walima ni sigili kura ye.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential bɛ SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle ani database sistɛmu tɔw minnu sɛbɛnnen bɛ yan dɛmɛ. MariaDB walima MySQL kama, MariaDB / MySQL Improved sugandi.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>PostgreSQL, MariaDB walima MySQL &gt;= 4.1 mago bɛ Unicode dɛmɛ na Exponential kɔnɔ.</translation>
     </message>
 </context>
 <context>

@@ -49760,6 +49760,10 @@ Deslapky kod Siziň saýlan esasy parametrleriňizden döredildi.</translation>
         <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
         <translation>Maglumatlar binýadyňyza baglanmakda kynçylyk çekýän bolsaňyz, %link salgysyndaky %title serediň.</translation>
     </message>
+    <message>
+        <source>MariaDB / MySQL Improved</source>
+        <translation>MariaDB / MySQL Improved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/extensions</name>
@@ -51483,6 +51487,14 @@ Goşmaça maglumat üçin talaplar sahypasyna serediň.</translation>
     <message>
         <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation>Gaýtadan gurnamak kickstarter bilen (%file, soňra php bin/php/kickstarter.php run --apply) ýa-da täze gurnama bilen ýerine ýetirilýär.</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle and the other database systems listed. For MariaDB or MySQL, choose MariaDB / MySQL Improved.</source>
+        <translation>Exponential SQLite, MariaDB, MySQL, PostgreSQL, MongoDB, Oracle we sanawdaky beýleki maglumat bazasy ulgamlaryny goldaýar. MariaDB ýa-da MySQL üçin MariaDB / MySQL Improved saýlaň.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL, MariaDB or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Exponential-da Unicode goldawy üçin PostgreSQL, MariaDB ýa-da MySQL &gt;= 4.1 talap edilýär.</translation>
     </message>
 </context>
 <context>
