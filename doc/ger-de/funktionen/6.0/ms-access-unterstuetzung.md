@@ -141,11 +141,29 @@ Der Test `expMSAccessKernelSchemaTest` legt das Kernel-Schema (`share/db_schema.
 schreibt die Kernel-Daten (`share/db_data.dba`) und führt dann Kernel-Lesezugriffe mit Access als Datenbank der Site
 aus. Sein Bericht ist das Artefakt `msaccess-kernel-probe-<os>` des Jobs.
 
-Noch nicht gemessen: die Probe läuft zum ersten Mal im Job `msaccess-windows`. Was der Dialekt schon sagt: der
-Kernel liest Sprachmasken mit `bitAnd()` (BAND im ANSI-92-Modus, sonst nur eine konstante Maske), blättert mit
-`LIMIT`/`OFFSET` über `arrayQuery()` (TOP und PHP) und schreibt stellenweise mit `sqlUpsert()` und `GROUP_CONCAT` (auf
-Access abgelehnt); jeder Upgrade-, Cache- und Cluster-Pfad des Kernels setzt einen Server voraus. Eine Site auf Access
-ist daher kein Ziel.
+Gemessen am 26.11.2026 im Job `msaccess-windows` (windows-2022 und windows-2025, ACE 2016 x64, PHP 8.4, die Schicht
+`odbc`, ANSI-92-Modus; auf beiden dasselbe Ergebnis):
+
+| Stufe | Ergebnis |
+|---|---|
+| das Kernel-Schema (153 Tabellen aus `share/db_schema.dba`) | **geht**: jede Tabelle und jeder Index angelegt |
+| die Kernel-Daten (`share/db_data.dba`, 41 Tabellen) | **geht**: 3.837 von 3.837 Zeilen geschrieben |
+| Lesezugriffe des Kernels mit Access als Datenbank der Site | **3 von 10 gehen**: die Sprachliste, eine Sprachmaske mit `bitAnd()`, eine Seite der Bereiche über `eZPersistentObject` |
+| `eZContentObject::fetch()`, `eZContentClass::fetchByIdentifier()`, Teilbaum lesen und zählen | scheitern: „Data type mismatch in criteria expression“ (der Kernel vergleicht Zahlenspalten mit Werten in Anführungszeichen, `id = '1'`; Access lehnt ab, was jeder Server umwandelt) |
+| `eZContentObjectTreeNode::fetch()` | scheitert: „Syntax error (missing operator)“: Access braucht jeden Join nach dem ersten in Klammern |
+| `eZUser::fetchByName()` | scheitert: „Reserved error (-1001)“ |
+| `eZURLAliasML::fetchByPath()` (jede URL) | scheitert: die URL-Aliase werden über `MD5()` in SQL gefunden, das Access nicht hat |
+
+**Ergebnis: eine Site auf Access ist nicht tragfähig.** Schema und Daten kommen hinein, aber die Lesezugriffe des
+Kernels bräuchten eine Übersetzung seines SQL, die den Typ jeder Spalte kennt (um Zahlen aus den Anführungszeichen zu
+nehmen), Joins klammert und `MD5()` in PHP rechnet, und jeder Schreibweg mit `sqlUpsert()` oder `GROUP_CONCAT` eine
+weitere; nichts davon gibt es, daher bieten die Installer Access nicht an. Ein **DFS-Cluster auf Access ist nicht
+möglich**: Access ist eine Datei, die jeder Client über das Dateisystem öffnet, mit einer Sperrdatei (`.laccdb`)
+daneben; mehrere Webserver würden sie über SMB öffnen, was Microsoft für gleichzeitig schreibende Clients nicht
+unterstützt und was die Datei bei einer abgerissenen Verbindung beschädigen kann, und auf einem Server leistet der
+einfache Datei-Handler alles, was ein Cluster mit einem Knoten leisten würde. Access als Importquelle nutzen
+(`exp:access:import`), und unter Windows die Site auf SQL Server Express oder LocalDB betreiben, über `sqlsrv` oder
+[über ODBC](odbc-datenbanktreiber.md#eine-site-über-odbc).
 
 ## Die Treiber installieren
 

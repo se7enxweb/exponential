@@ -137,11 +137,28 @@ The test `expMSAccessKernelSchemaTest` makes the kernel's schema (`share/db_sche
 the kernel's data (`share/db_data.dba`), then runs kernel reads with Access as the site's database. Its report is the
 artifact `msaccess-kernel-probe-<os>` of the job.
 
-Not measured yet: the probe runs for the first time in the job `msaccess-windows`. What the dialect already tells:
-the kernel reads language masks with `bitAnd()` (BAND in ANSI-92 mode, else only a constant mask), pages with
-`LIMIT`/`OFFSET` through `arrayQuery()` (TOP and PHP), and writes with `sqlUpsert()` and `GROUP_CONCAT` in places
-(refused on Access); every kernel upgrade, cache and cluster path assumes a server. A site on Access is therefore not
-a target.
+Measured on 2026-11-26 in the job `msaccess-windows` (windows-2022 and windows-2025, ACE 2016 x64, PHP 8.4, the
+`odbc` layer, ANSI-92 mode; the same result on both):
+
+| Level | Result |
+|---|---|
+| the kernel schema (153 tables of `share/db_schema.dba`) | **works**: every table and index made |
+| the kernel data (`share/db_data.dba`, 41 tables) | **works**: 3,837 of 3,837 rows written |
+| kernel reads with Access as the site's database | **3 of 10 work**: the language list, a language mask with `bitAnd()`, a page of sections through `eZPersistentObject` |
+| `eZContentObject::fetch()`, `eZContentClass::fetchByIdentifier()`, subtree fetch and count | fail: "Data type mismatch in criteria expression" (the kernel compares number columns with quoted values, `id = '1'`; Access refuses what every server converts) |
+| `eZContentObjectTreeNode::fetch()` | fails: "Syntax error (missing operator)": Access needs every join after the first in parentheses |
+| `eZUser::fetchByName()` | fails: "Reserved error (-1001)" |
+| `eZURLAliasML::fetchByPath()` (every URL) | fails: the URL aliases are found by `MD5()` in SQL, which Access does not have |
+
+**Verdict: a site on Access is not viable.** The schema and the data go in, but the kernel's reads need a translation
+of its SQL that knows the type of every column (to unquote numbers), puts joins in parentheses and computes `MD5()` in
+PHP, and every write path that uses `sqlUpsert()` or `GROUP_CONCAT` would need another; none of that exists, so the
+installers do not offer Access. A **DFS cluster on Access is not possible**: Access is a file that every client opens
+over the file system, with one lock file (`.laccdb`) next to it; several web servers would open it over SMB, which
+Microsoft does not support for concurrent writers and which can corrupt the file on a dropped connection, and on one
+server the plain file handler does all a one-node cluster would. Use Access as an import source
+(`exp:access:import`), and on Windows run the site on SQL Server Express or LocalDB, through `sqlsrv` or
+[over ODBC](odbc-database-driver.md#a-site-over-odbc).
 
 ## Installing the drivers
 
