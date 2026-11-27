@@ -613,7 +613,10 @@ class eZPgsqlSchema extends eZDBSchemaInterface
     {
         // Only a PostgreSQL connection has these catalogues: a dump for PostgreSQL
         // made on a site that runs another database asked them of that one.
-        if ( strpos( $index, $table . '_' ) === 0 || !$this->DBInstance instanceof eZPostgreSQLDB || !$this->DBInstance->isConnected() )
+        // (or PostgreSQL over ODBC: expODBCDB with the postgresql dialect, whose databaseName() is postgresql)
+        $onPostgreSQL = $this->DBInstance instanceof eZPostgreSQLDB
+                        || ( $this->DBInstance instanceof expODBCDB && $this->DBInstance->databaseName() === 'postgresql' );
+        if ( strpos( $index, $table . '_' ) === 0 || !$onPostgreSQL || !$this->DBInstance->isConnected() )
             return $index;
 
         $owner = $this->DBInstance->arrayQuery(
