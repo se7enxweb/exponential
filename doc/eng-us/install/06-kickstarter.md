@@ -331,7 +331,7 @@ masked in the logs.
 | Key | Type | Default | Effect |
 |---|---|---|---|
 | `Continue` | bool | `false` | |
-| `Type` | choice | `setup.ini [DatabaseSettings] DefaultType` (`sqlite3`) | `sqlite3` (alias `sqlite`), `mysqli` (alias `mysql`), `pgsql` (alias `postgresql`), `mongodb`, `oci8` (aliases `oracle`, `ezoracle`; needs `extension/ezoracle`). An unknown value is ignored and the step falls back to asking |
+| `Type` | choice | `setup.ini [DatabaseSettings] DefaultType` (`sqlite3`) | `sqlite3` (alias `sqlite`), `mysqli` (alias `mysql`), `pgsql` (alias `postgresql`), `mongodb`, `oci8` (aliases `oracle`, `ezoracle`; needs `extension/ezoracle`); from 6.0.15 also `sqlserver` (`mssql`, `sqlsrv`), `firebird` (`fb`, `pdo_firebird`), `duckdb`, the MySQL protocol databases `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`) and the PostgreSQL protocol databases `cockroachdb` (`cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase`, `aurorapostgresql` (`aurora-postgresql`). An unknown value is ignored and the step falls back to asking |
 
 **`[database_init]`**
 
@@ -344,6 +344,9 @@ masked in the logs.
 | `User` | text | empty | |
 | `Password` | secret | empty | |
 | `Socket` | text | empty | path of a local MySQL socket; empty writes `Socket=disabled` |
+| `Encrypt`, `TrustServerCertificate` | text, bool | `yes`, `false` | SQL Server only: `[SQLServerSettings]` of the new site |
+| `SSL`, `SSLCA` | choice, text | empty | the MySQL protocol databases: `enabled` or `verify`, and the CA file (`[MySQLWireSettings]`) |
+| `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | text | empty | the PostgreSQL protocol databases (`[PostgreSQLWireSettings]`): libpq's `sslmode` and CA file, `auto`/`none`/`session`/`transaction`, Neon's endpoint id |
 
 This step connects to the database to check it. The checks and messages are those of the wizard
 ([section 5.3.6](05-setup-wizard.md#536-database-initialization)).
@@ -735,7 +738,27 @@ Send=false
 
 When the installer cannot create `pgcrypto` itself, `DatabaseInit` fails with the message about the `digest` function
 quoted in [section 5.3.6](05-setup-wizard.md#536-database-initialization). MongoDB and Oracle use the same sections
-with `Type=mongodb` or `Type=oci8`; their specifics are in [chapter 9](09-databases.md).
+with `Type=mongodb` or `Type=oci8`; their specifics are in [chapter 9](09-databases.md). So do the databases of
+6.0.15, for example:
+
+```ini
+[database_choice]
+Continue=true
+Type=firebird
+
+[database_init]
+Continue=true
+Server=db.example.com
+Port=3050
+Database=exponential
+User=EXPONENTIAL
+Password=...
+```
+
+SQL Server (`Type=sqlserver`, with `Encrypt`), the MySQL protocol databases (`Type=tidb` ..., with `SSL`), the
+PostgreSQL protocol databases (`Type=cockroachdb` ..., with `SSLMode` and `Pooler`) and DuckDB (`Type=duckdb`,
+`Database` the file; server, port, user and password are ignored) follow the same pattern
+([chapter 9.10 and 9.11](09-databases.md#910-microsoft-sql-server-and-azure-sql)).
 
 ## 6.7 Dry runs
 

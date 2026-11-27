@@ -176,7 +176,7 @@ The critical tests are listed in `settings/site.ini [SetupSettings] CriticalTest
 |---|---|---|
 | `directory_permissions` | the web server can write the listed directories | `[directory_permissions] CheckList`: `design`, `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` and its subdirectories, `var/log`, `var/storage`, `var/storage/original`, `var/storage/reference`, `var/storage/variations`, `var/autoload` |
 | `phpversion` | the PHP version | `[phpversion] MinimumVersion` |
-| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8`, `Require=one` |
+| `database_extensions` | at least one database extension | `[database_extensions] Extensions=sqlite3;mysqli;pgsql;mongodb;oci8;sqlsrv;pdo_sqlsrv;pdo_firebird`, `Require=one` |
 | `image_conversion` | GD or ImageMagick | `[image_conversion] TestList=imagegd_extension;imagemagick_program`, `Require=one` |
 | `safe_mode`, `magic_quotes_runtime` | legacy PHP settings that must be off | |
 | `memory_limit` | `memory_limit` | `[memory_limit] MinMemoryLimit=64M` (`-1` passes) |
@@ -256,6 +256,14 @@ found, limited to the ones the installer knows (`eZSetupDatabaseMap()` in `kerne
 | `pgsql` | PostgreSQL | `ezpostgresql` | 8.0 |
 | `mongodb` | MongoDB | `mongodb` | 4.0 |
 | `oci8` | Oracle | `ezoracle` (needs the `ezoracle` extension in `extension/`) | 19.0 |
+| `firebird` | Firebird (shown when `pdo_firebird` is loaded) | `firebird` | 4.0 |
+| `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` | CockroachDB, YugabyteDB, Neon (PostgreSQL), Supabase (PostgreSQL), Amazon Aurora PostgreSQL; listed after PostgreSQL when `pgsql` is loaded | the type | 23.2, 11.2, 14.0, 14.0, 13.0 |
+
+The map also holds `sqlserver`, `duckdb` and the MySQL protocol databases (`tidb`, `vitess`, `singlestore`, `xpand`,
+`aurora`), but the list does not show them: SQL Server's extensions (`sqlsrv`, `pdo_sqlsrv`) pass the system check
+without giving a type of their own, DuckDB has no PHP extension of its own, and the MySQL protocol databases share
+`mysqli` with MySQL. Install those with the kickstarter (whose `Type=` reaches every entry of the map) or
+`exp:install` ([chapter 6](06-kickstarter.md), [chapter 7](07-console-install.md)).
 
 **Screen.** "Choose database system", "Support for the following database systems was detected on your system:",
 "Please choose the database system you would like to use." and a radio list. The recommended system is

@@ -116,13 +116,21 @@ Befehl mit dem Exit-Status 1.
 
 | Option | Standardwert | Bedeutung und Prüfungen |
 |---|---|---|
-| `--db=<type>` | `sqlite` | `sqlite`, `mysql`, `pgsql`, `mongodb` oder `oracle`. Ebenfalls akzeptiert: `sqlite3`; `mysqli`, `mariadb`; `postgresql`, `postgres`; `mongo`; `oci8`, `ezoracle`. Alles andere: „Unknown database type '...': use sqlite, mysql, pgsql, mongodb or oracle“ |
+| `--db=<type>` | `sqlite` | `sqlite`, `mysql`, `pgsql`, `mongodb`, `oracle`, `sqlserver`, `firebird`, `duckdb`; die Datenbanken des MySQL-Protokolls `tidb`, `vitess`, `singlestore`, `xpand`, `aurora`; die Datenbanken des PostgreSQL-Protokolls `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`. Ebenfalls akzeptiert: `sqlite3`; `mysqli`, `mariadb`; `postgresql`, `postgres`; `mongo`; `oci8`, `ezoracle`; `mssql`, `sqlsrv`; `planetscale`; `memsql`; `aurora-mysql`, `auroramysql`; `fb`, `pdo_firebird`; `cockroach`, `crdb`; `yugabyte`, `ysql`; `aurora-postgresql`. Alles andere: „Unknown database type '...'“ mit der Liste. Xpand, Aurora MySQL, Neon, Supabase und Aurora PostgreSQL sind ungetestet ([Eine Datenbank wählen](../hilfe/datenbank-waehlen.md)) |
 | `--db-host=<host>` | `localhost` | der Datenbankserver |
-| `--db-port=<port>` | `3306` (mysql), `5432` (pgsql), `27017` (mongodb), `1521` (oracle), keiner (sqlite) | |
-| `--db-name=<name>` | `exponential`; `exponential.db` für sqlite; `FREEPDB1` für oracle | die Datenbank. SQLite: ein Dateiname in `var/storage/sqlite3/`. Oracle: Ein Dienstname wird zum Easy-Connect-String `<db-host>:<db-port>/<service>`; ein Wert mit `/` oder `(` wird unverändert verwendet; `@alias` nennt einen TNS-Alias |
-| `--db-user=<user>` | `root` (mysql), `postgres` (pgsql), sonst keiner | |
+| `--db-port=<port>` | `3306` (mysql und die Datenbanken des MySQL-Protokolls), `5432` (pgsql, neon, supabase, aurorapostgresql), `27017` (mongodb), `1521` (oracle), `1433` (sqlserver), `4000` (tidb), `3050` (firebird), `26257` (cockroachdb), `5433` (yugabytedb), keiner (sqlite, duckdb) | |
+| `--db-name=<name>` | `exponential`; `exponential.db` für sqlite; `exponential.duckdb` für duckdb; `FREEPDB1` für oracle | die Datenbank. SQLite und DuckDB: ein Dateiname in `var/storage/sqlite3/` bzw. `var/storage/duckdb/` oder ein absoluter Pfad. Oracle: Ein Dienstname wird zum Easy-Connect-String `<db-host>:<db-port>/<service>`; ein Wert mit `/` oder `(` wird unverändert verwendet; `@alias` nennt einen TNS-Alias. Firebird: ein Alias aus der `databases.conf` des Servers oder der Pfad der Datei auf dem Server |
+| `--db-user=<user>` | `root` (mysql, cockroachdb), `postgres` (pgsql, supabase, aurorapostgresql), `sa` (sqlserver), `SYSDBA` (firebird), `yugabyte` (yugabytedb), sonst keiner | |
 | `--db-password=<pass>` | keiner | wenn nicht angegeben, wird die Umgebungsvariable `EXP_INSTALL_DB_PASSWORD` verwendet |
 | `--db-socket=<path>` | keiner | ein lokaler MySQL-Socket statt Host und Port |
+| `--db-encrypt=<mode>` | `yes` | sqlserver: `yes`, `no` oder `strict` (TDS 8.0, SQL Server 2022 und neuer) |
+| `--db-trust-server-certificate` | aus | sqlserver: das Zertifikat des Servers ohne Prüfung annehmen (ein selbst signiertes in einem vertrauenswürdigen Netz) |
+| `--db-ssl=<mode>` | `disabled` | tidb, vitess, singlestore, xpand, aurora: `enabled` (TLS) oder `verify` (TLS, Zertifikat geprüft); geschrieben als `[MySQLWireSettings] SSL` |
+| `--db-ssl-ca=<file>` | die CAs des Systems | die CA-Datei für `--db-ssl=verify` |
+| `--db-sslmode=<mode>` | die der Datenbank (`require` für neon, supabase, aurorapostgresql) | cockroachdb, yugabytedb, neon, supabase, aurorapostgresql: `disable`, `require`, `verify-ca` oder `verify-full`; geschrieben als `[PostgreSQLWireSettings] SSLMode` |
+| `--db-sslrootcert=<file>` | keiner | die CA-Datei für `verify-ca` und `verify-full` |
+| `--db-pooler=<mode>` | `auto` (aus Host und Port) | `none`, `session` oder `transaction`: Ein Transaktions-Pooler bekommt keine Sitzungsanweisungen und `RETURNING` für neue IDs |
+| `--db-endpoint=<id>` | keiner | neon: die Endpunkt-ID, für eine libpq ohne SNI |
 | `--db-action=<action>` | `remove` | `remove`, `ignore` oder `skip`, wie `DatabaseAction` in [Kapitel 6](06-kickstarter.md#65-databaseaction-lesen-sie-dies-bevor-sie-run-ausführen). Alles andere: „--db-action must be remove, ignore or skip“. **`remove` leert die Datenbank zuerst** |
 
 Verwenden Sie lieber `EXP_INSTALL_DB_PASSWORD` als `--db-password`: Eine Option ist, solange die Installation läuft,
@@ -525,6 +533,67 @@ EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply --db=oracl
 
 Die erste Form verbindet sich mit `127.0.0.1:1521/FREEPDB1` (Easy Connect); die zweite übergibt `EXPDB` an den
 Oracle-Client, der den Namen in seiner `tnsnames.ora` nachschlägt.
+
+### Microsoft SQL Server und Azure SQL
+
+Die Datenbank muss bestehen (legen Sie sie mit einer UTF-8-Kollation und `READ_COMMITTED_SNAPSHOT ON` an), und das PHP
+der Kommandozeile braucht `sqlsrv`, `pdo_sqlsrv` oder PDO_ODBC:
+
+```bash
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply \
+    --db=sqlserver --db-host=sql1.example.com --db-name=site --db-user=exponential --db-encrypt=yes
+```
+
+Einzelheiten: [SQL-Server-Treiber](../funktionen/6.0/sqlserver-datenbanktreiber.md#eine-site-auf-sql-server-installieren).
+
+### Das MySQL-Protokoll: TiDB, Vitess und PlanetScale, SingleStore, Xpand, Aurora MySQL
+
+```bash
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply \
+    --db=tidb --db-host=tidb.example.com --db-port=4000 --db-name=site --db-user=exponential
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply \
+    --db=planetscale --db-host=aws.connect.psdb.cloud --db-name=site --db-user=... --db-ssl=verify
+```
+
+Auf Vitess und PlanetScale muss der Keyspace bestehen; eine Transaktion, die länger dauert als das Timeout des Tablets,
+wird abgebrochen (für die Installation erhöhen oder anderswo installieren und nach PlanetScale importieren). Xpand und
+Aurora MySQL sind ungetestet.
+[Datenbanken, die das MySQL-Protokoll sprechen](../funktionen/6.0/mysql-wire-datenbanken.md#eine-site-installieren).
+
+### Das PostgreSQL-Protokoll: CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL
+
+```bash
+php bin/php/console exp:install --apply --db=cockroachdb --db-host=crdb1 --db-user=root
+php bin/php/console exp:install --apply --db=yugabytedb --db-host=yb1 --db-user=yugabyte
+php bin/php/console exp:install --apply --db=supabase --db-host=db.abcd.supabase.co --db-name=postgres
+php bin/php/console exp:install --apply --db=aurorapostgresql --db-host=site.cluster-x.eu-west-1.rds.amazonaws.com \
+    --db-sslmode=verify-full --db-sslrootcert=/etc/ssl/rds-global-bundle.pem
+```
+
+Die Datenbank muss bestehen, außer auf CockroachDB und YugabyteDB, wo der Benutzer sie anlegen darf. Installieren Sie
+über eine direkte Verbindung oder einen Session-Pooler. Neon, Supabase und Aurora PostgreSQL sind ungetestet.
+[Datenbanken mit dem PostgreSQL-Protokoll](../funktionen/6.0/postgresql-wire-datenbanken.md#eine-site-installieren).
+
+### Firebird
+
+```bash
+EXP_INSTALL_DB_PASSWORD='...' php bin/php/console exp:install --apply \
+    --db=firebird --db-host=db.example.com --db-name=exponential --db-user=EXPONENTIAL
+```
+
+Braucht `pdo_firebird` ab PHP 8.4 und eine vorher angelegte Datenbank mit `PAGE_SIZE 16384` und UTF8
+([Firebird-Treiber](../funktionen/6.0/firebird-datenbanktreiber.md#die-datenbank-anlegen)).
+
+### DuckDB
+
+```bash
+php bin/php/console exp:install --apply --db=duckdb
+php bin/php/console exp:install --apply --db=duckdb --db-name=/srv/sites/example/data/site.duckdb
+```
+
+Braucht PHPs `ffi` und `libduckdb` (`[DuckDBSettings] Library` oder `DUCKDB_LIBRARY` in der Umgebung). Die gemessene
+Installation dauerte 31 Minuten auf einem ausgelasteten gemeinsam genutzten Rechner
+([DuckDB-Treiber](../funktionen/6.0/duckdb-datenbanktreiber.md#eine-site-auf-duckdb-installieren)).
 
 ### Host- und Port-Zuordnung
 

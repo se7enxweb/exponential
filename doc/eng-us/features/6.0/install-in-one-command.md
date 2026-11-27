@@ -27,6 +27,14 @@ is the same as `php bin/php/install.php --apply`.
 | `pgsql` | `postgresql`, `postgres` | 5432 | `exponential` (user `postgres`) |
 | `mongodb` | `mongo` | 27017 | `exponential` |
 | `oracle` | `oci8`, `ezoracle` | 1521 | service `FREEPDB1` |
+| `sqlserver` (6.0.15) | `mssql`, `sqlsrv` | 1433 | `exponential` (user `sa`); the database must exist |
+| `firebird` (6.0.15) | `fb`, `pdo_firebird` | 3050 | `exponential` (user `SYSDBA`); the database must exist |
+| `duckdb` (6.0.15) | | none | `exponential.duckdb` in `var/storage/duckdb/` |
+| `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` (6.0.15) | `planetscale`, `memsql`, `aurora-mysql`, `auroramysql` | 4000 (tidb), 3306 | `exponential` |
+| `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` (6.0.15) | `cockroach`, `crdb`, `yugabyte`, `ysql`, `aurora-postgresql` | 26257, 5433, 5432 | `exponential` |
+
+The options of each (`--db-encrypt`, `--db-ssl`, `--db-sslmode`, `--db-pooler` ...) and which of them are untested:
+[chapter 7](../../install/07-console-install.md#database) and [Choosing a database](../../help/choosing-a-database.md).
 
 For Oracle the connect string is built as `host:port/service`; a full connect
 string or an `@alias` (TNS) is used as given. The Oracle driver lives in the

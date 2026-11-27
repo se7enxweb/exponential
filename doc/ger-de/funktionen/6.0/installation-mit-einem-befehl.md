@@ -27,6 +27,15 @@ ist dasselbe wie `php bin/php/install.php --apply`.
 | `pgsql` | `postgresql`, `postgres` | 5432 | `exponential` (Benutzer `postgres`) |
 | `mongodb` | `mongo` | 27017 | `exponential` |
 | `oracle` | `oci8`, `ezoracle` | 1521 | Service `FREEPDB1` |
+| `sqlserver` (6.0.15) | `mssql`, `sqlsrv` | 1433 | `exponential` (Benutzer `sa`); die Datenbank muss bestehen |
+| `firebird` (6.0.15) | `fb`, `pdo_firebird` | 3050 | `exponential` (Benutzer `SYSDBA`); die Datenbank muss bestehen |
+| `duckdb` (6.0.15) | | keiner | `exponential.duckdb` in `var/storage/duckdb/` |
+| `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` (6.0.15) | `planetscale`, `memsql`, `aurora-mysql`, `auroramysql` | 4000 (tidb), 3306 | `exponential` |
+| `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` (6.0.15) | `cockroach`, `crdb`, `yugabyte`, `ysql`, `aurora-postgresql` | 26257, 5433, 5432 | `exponential` |
+
+Die Optionen jeder Datenbank (`--db-encrypt`, `--db-ssl`, `--db-sslmode`, `--db-pooler` ...) und welche davon ungetestet
+sind: [Kapitel 7](../../installation/07-installation-ueber-die-konsole.md#datenbank) und
+[Eine Datenbank wählen](../../hilfe/datenbank-waehlen.md).
 
 Für Oracle wird der Connect-String als `host:port/service` zusammengesetzt; ein vollständiger Connect-String
 oder ein `@alias` (TNS) wird so verwendet, wie er angegeben ist. Der Oracle-Treiber liegt in der

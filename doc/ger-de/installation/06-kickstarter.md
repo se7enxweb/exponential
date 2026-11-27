@@ -345,7 +345,7 @@ Typen: *bool* ist `true`/`false`, *Auswahl* eines der aufgeführten Wörter, *in
 | Schlüssel | Typ | Standard | Wirkung |
 |---|---|---|---|
 | `Continue` | bool | `false` | |
-| `Type` | Auswahl | `setup.ini [DatabaseSettings] DefaultType` (`sqlite3`) | `sqlite3` (Alias `sqlite`), `mysqli` (Alias `mysql`), `pgsql` (Alias `postgresql`), `mongodb`, `oci8` (Aliase `oracle`, `ezoracle`; braucht `extension/ezoracle`). Ein unbekannter Wert wird ignoriert, und der Schritt fällt auf Nachfragen zurück |
+| `Type` | Auswahl | `setup.ini [DatabaseSettings] DefaultType` (`sqlite3`) | `sqlite3` (Alias `sqlite`), `mysqli` (Alias `mysql`), `pgsql` (Alias `postgresql`), `mongodb`, `oci8` (Aliase `oracle`, `ezoracle`; braucht `extension/ezoracle`); ab 6.0.15 auch `sqlserver` (`mssql`, `sqlsrv`), `firebird` (`fb`, `pdo_firebird`), `duckdb`, die Datenbanken des MySQL-Protokolls `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`) und die des PostgreSQL-Protokolls `cockroachdb` (`cockroach`, `crdb`), `yugabytedb` (`yugabyte`, `ysql`), `neon`, `supabase`, `aurorapostgresql` (`aurora-postgresql`). Ein unbekannter Wert wird ignoriert, und der Schritt fällt auf Nachfragen zurück |
 
 **`[database_init]`**
 
@@ -358,6 +358,9 @@ Typen: *bool* ist `true`/`false`, *Auswahl* eines der aufgeführten Wörter, *in
 | `User` | Text | leer | |
 | `Password` | geheim | leer | |
 | `Socket` | Text | leer | Pfad eines lokalen MySQL-Sockets; leer schreibt `Socket=disabled` |
+| `Encrypt`, `TrustServerCertificate` | Text, bool | `yes`, `false` | nur SQL Server: `[SQLServerSettings]` der neuen Site |
+| `SSL`, `SSLCA` | Auswahl, Text | leer | die Datenbanken des MySQL-Protokolls: `enabled` oder `verify` und die CA-Datei (`[MySQLWireSettings]`) |
+| `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | Text | leer | die Datenbanken des PostgreSQL-Protokolls (`[PostgreSQLWireSettings]`): `sslmode` und CA-Datei von libpq, `auto`/`none`/`session`/`transaction`, die Endpunkt-ID von Neon |
 
 Dieser Schritt verbindet sich mit der Datenbank, um sie zu prüfen. Prüfungen und Meldungen sind die des Assistenten
 ([Abschnitt 5.3.6](05-setup-assistent.md#536-initialisierung-der-datenbank)).
@@ -759,7 +762,26 @@ Send=false
 Kann der Installer `pgcrypto` nicht selbst anlegen, schlägt `DatabaseInit` mit der Meldung über die Funktion `digest`
 fehl, die in [Abschnitt 5.3.6](05-setup-assistent.md#536-initialisierung-der-datenbank) zitiert ist. MongoDB und Oracle
 verwenden dieselben Abschnitte mit `Type=mongodb` oder `Type=oci8`; ihre Besonderheiten stehen in
-[Kapitel 9](09-datenbanken.md).
+[Kapitel 9](09-datenbanken.md). Ebenso die Datenbanken von 6.0.15, zum Beispiel:
+
+```ini
+[database_choice]
+Continue=true
+Type=firebird
+
+[database_init]
+Continue=true
+Server=db.example.com
+Port=3050
+Database=exponential
+User=EXPONENTIAL
+Password=...
+```
+
+SQL Server (`Type=sqlserver`, mit `Encrypt`), die Datenbanken des MySQL-Protokolls (`Type=tidb` ..., mit `SSL`), die des
+PostgreSQL-Protokolls (`Type=cockroachdb` ..., mit `SSLMode` und `Pooler`) und DuckDB (`Type=duckdb`, `Database` ist die
+Datei; Server, Port, Benutzer und Passwort werden ignoriert) folgen demselben Muster
+([Kapitel 9.10 und 9.11](09-datenbanken.md#910-microsoft-sql-server-und-azure-sql)).
 
 ## 6.7 Probeläufe
 
