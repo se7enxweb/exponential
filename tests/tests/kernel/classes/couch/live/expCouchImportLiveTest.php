@@ -131,8 +131,9 @@ class expCouchImportLiveTest extends PHPUnit\Framework\TestCase
         $reader = new expCouchbaseReader( $db );
         $this->assertContains( 'airline', $reader->tables() );
         $description = $reader->table( 'airline' );
-        $this->assertSame( array( 'doc_id', 'id', 'name', 'country', 'active', 'fleet' ), array_keys( $description['fields'] ) );
-        $this->assertSame( array( 'text', 'integer', 'text', 'text', 'boolean', 'memo' ), array_column( $description['fields'], 'type' ) );
+        // doc_id first, then the fields as Couchbase gives them (in the order of their names)
+        $this->assertSame( array( 'doc_id' => 'text', 'active' => 'boolean', 'country' => 'text', 'fleet' => 'memo', 'id' => 'integer', 'name' => 'text' ),
+                           array_map( function ( $field ) { return $field['type']; }, $description['fields'] ) );
         $target = $this->target();
         $result = expAccessImport::run( $reader, $target, array( 'tables' => array( 'airline' ), 'prefix' => 'cb_' ) );
         $this->assertTrue( $result['ok'], json_encode( $result ) );

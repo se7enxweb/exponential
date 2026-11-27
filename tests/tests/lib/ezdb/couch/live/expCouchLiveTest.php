@@ -192,8 +192,13 @@ class expCouchLiveTest extends PHPUnit\Framework\TestCase
         $db = $this->db( $product );
         $text = "it's \"quoted\" \\ back\\slash, Ünïcødé ✓ " . str_repeat( 'x', 100000 );
         $this->assertTrue( $db->query( "INSERT INTO cl_item (name, body) VALUES ('t', '" . $db->escapeString( $text ) . "')" ), $db->errorMessage() );
-        $this->assertSame( $text, $db->arrayQuery( "SELECT body FROM cl_item WHERE name = 't'" )[0]['body'] );
-        $this->assertSame( 1, count( $db->arrayQuery( "SELECT id FROM cl_item WHERE body = '" . $db->escapeString( $text ) . "'" ) ) );
+        $rows = $db->arrayQuery( "SELECT id, body FROM cl_item WHERE name = 't'" );
+        $this->assertIsArray( $rows, $db->errorMessage() );
+        $this->assertCount( 1, $rows, json_encode( array_map( function ( $r ) { return array( $r['id'], strlen( (string)$r['body'] ) ); }, $rows ) ) );
+        $this->assertSame( $text, $rows[0]['body'] );
+        $rows = $db->arrayQuery( "SELECT id FROM cl_item WHERE body = '" . $db->escapeString( $text ) . "'" );
+        $this->assertIsArray( $rows, $db->errorMessage() );
+        $this->assertCount( 1, $rows );
     }
 }
 ?>

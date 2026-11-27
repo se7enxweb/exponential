@@ -106,6 +106,9 @@ class expCouchDBClient
             return call_user_func( $this->transport, $method, $path, $body );
         if ( $this->handle === null )
             $this->handle = curl_init();
+        else
+            // the options of the request before (a POST's body) stay on a handle; the connection is kept
+            curl_reset( $this->handle );
         $options = $this->options + array(
             CURLOPT_URL => $this->base . $path,
             CURLOPT_CUSTOMREQUEST => $method,
@@ -119,6 +122,13 @@ class expCouchDBClient
             unset( $options[CURLOPT_POSTFIELDS] );
         curl_setopt_array( $this->handle, $options );
         $raw = curl_exec( $this->handle );
+        if ( $raw === false && $method === 'GET' )
+        {
+            // a kept connection the server closed meanwhile: a read is sent once more on a new one
+            $this->handle = curl_init();
+            curl_setopt_array( $this->handle, $options );
+            $raw = curl_exec( $this->handle );
+        }
         if ( $raw === false )
         {
             $error = curl_error( $this->handle );
