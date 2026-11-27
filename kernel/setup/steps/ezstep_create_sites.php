@@ -1104,7 +1104,8 @@ class eZStepCreateSites extends eZStepInstaller
             // (expaudit_*, explayouts_* ...) stayed and the schema load failed with "table
             // already exists" on a second install. A SQLite database is a file that is
             // emptied completely, as a removed MySQL or PostgreSQL database would be; a DuckDB file the same.
-            if ( in_array( strtolower( $db->databaseName() ), array( 'sqlite', 'duckdb' ), true ) && method_exists( $db, 'removeDatabase' ) )
+            // A MonetDB schema the same: its tables, views and sequences are dropped.
+            if ( in_array( strtolower( $db->databaseName() ), array( 'sqlite', 'duckdb', 'monetdb' ), true ) && method_exists( $db, 'removeDatabase' ) )
                 $db->removeDatabase( $dbName );
             // MongoDB and Oracle the same way: the collections and tables of extensions (expuser_session,
             // expaudit_*, explayouts_* ...) kept the previous installation's rows, which the new one then read

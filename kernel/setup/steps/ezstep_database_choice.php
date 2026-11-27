@@ -180,6 +180,7 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'pdo_firebird' => 'firebird',
                           'duckdb' => 'duckdb',
                           'sqld' => 'libsql',
+                          'monetdb' => 'monetdb',
                           'cockroach' => 'cockroachdb',
                           'crdb' => 'cockroachdb',
                           'yugabyte' => 'yugabytedb',

@@ -150,6 +150,14 @@ function eZSetupDatabaseMap()
                                     'required_version' => '3.35',
                                     'has_demo_data' => false,
                                     'supports_unicode' => true ),
+                  // expMonetDBDB in the kernel: a MonetDB server, over MAPI in plain PHP (no extension; not offered by
+                  // the wizard, which lists the databases whose PHP extension it finds: exp:install --db=monetdb)
+                  'monetdb' => array( 'type' => 'monetdb',
+                                      'driver' => 'monetdb',
+                                      'name' => 'MonetDB',
+                                      'required_version' => '11.49',
+                                      'has_demo_data' => false,
+                                      'supports_unicode' => true ),
                   // the driver lives in an extension, activated for the
                   // installation by eZSetupActivateDatabaseExtension()
                   'oci8' => array( 'type' => 'oci8',

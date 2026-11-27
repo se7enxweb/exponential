@@ -207,7 +207,7 @@ class eZSetupCheckFunctionsTest extends PHPUnit\Framework\TestCase
         $map = eZSetupDatabaseMap();
         // after Oracle the databases of the PostgreSQL wire protocol, which go with PHP's pgsql extension, then the
         // databases a site reaches over ODBC
-        $this->assertSame( array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'sqlserver', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora', 'firebird', 'db2', 'informix', 'duckdb', 'libsql', 'turso', 'oci8',
+        $this->assertSame( array( 'mysqli', 'pgsql', 'sqlite3', 'mongodb', 'sqlserver', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora', 'firebird', 'db2', 'informix', 'duckdb', 'libsql', 'turso', 'monetdb', 'oci8',
                                   'cockroachdb', 'yugabytedb', 'neon', 'supabase', 'aurorapostgresql',
                                   'odbc_sqlserver', 'odbc_pgsql', 'odbc_mysql', 'odbc_db2' ),
                            array_keys( $map ) );

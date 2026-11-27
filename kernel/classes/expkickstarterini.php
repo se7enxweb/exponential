@@ -45,6 +45,7 @@ class expKickstarterIni
                 'aurorapostgresql' => 'Amazon Aurora PostgreSQL (pgsql)',
                 'libsql'      => 'libSQL server, sqld (SQLite over HTTP, curl)',
                 'turso'       => 'Turso (libSQL over HTTPS, curl)',
+                'monetdb'     => 'MonetDB (no PHP extension needed)',
             ),
         ),
         'email_settings' => array(

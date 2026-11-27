@@ -403,8 +403,9 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
             eZStepDatabaseChoice::$FFIUsable = null;
         }
         // libSQL and Turso are installed with the kickstarter and exp:install: the wizard's database page has no
-        // fields for their server URL, TLS and token yet
-        $notInTheWizard = array( 'libsql', 'turso' );
+        // fields for their server URL, TLS and token yet. MonetDB the same: it needs no PHP extension the system check
+        // could find, so the wizard has nothing to offer it by (exp:install --db=monetdb)
+        $notInTheWizard = array( 'libsql', 'turso', 'monetdb' );
         foreach ( eZSetupDatabaseMap() as $type => $entry )
         {
             if ( in_array( $type, $notInTheWizard, true ) )

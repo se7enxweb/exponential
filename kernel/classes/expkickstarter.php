@@ -177,7 +177,8 @@ class expKickstarter
             expSetupLog::finish( 'installed', true );
             // DuckDB lets one process write at a time, and the manuals are built by a worker in the background for 20
             // to 30 minutes: there the migrations and the cluster go first, the manuals last
-            $singleWriter = eZDB::hasInstance() && eZDB::instance()->databaseName() === 'duckdb';
+            // (MonetDB too: one writer at a time through its driver's write lock)
+            $singleWriter = eZDB::hasInstance() && in_array( eZDB::instance()->databaseName(), array( 'duckdb', 'monetdb' ), true );
             // still in maintenance: the help's content classes and the manuals made from the Markdown help
             if ( !$singleWriter )
                 $this->installHelpManuals();

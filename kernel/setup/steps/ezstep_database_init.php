@@ -137,7 +137,7 @@ class eZStepDatabaseInit extends eZStepInstaller
         // DuckDB the same: the database is the file named
         // Db2 and Informix the same: the login is tested against the named database
         // libSQL and Turso the same: the server holds the one database the name stands for
-        if ( ( in_array( eZSetupDatabaseFamily( $databaseInfo['type'] ), array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix', 'libsql', 'turso' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
+        if ( ( in_array( eZSetupDatabaseFamily( $databaseInfo['type'] ), array( 'mysql', 'mysqli', 'pgsql', 'oci8', 'sqlserver', 'firebird', 'duckdb', 'db2', 'informix', 'libsql', 'turso', 'monetdb' ) ) || eZSetupIsMySQLFamily( $databaseInfo['type'] ) ) &&
              !empty( $databaseInfo['dbname'] ) )
         {
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );

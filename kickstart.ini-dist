@@ -125,6 +125,8 @@
 ##          run on their own drivers with ODBC as the layer, PostgreSQL and
 ##          MariaDB/MySQL on the ODBC driver with their schema handlers.
 ##          odbc_sqlserver, odbc_pgsql, odbc_mysql and odbc_db2 are accepted too
+## - monetdb - MonetDB Dec2023 or later (monetdbd); the database must exist
+##   (monetdb create <name>, monetdb release <name>); User defaults to monetdb
 ## other values are possible if provided by extension
 #Type=sqlite3
 ## Dialect=<sqlserver|postgresql|mysql|db2>
