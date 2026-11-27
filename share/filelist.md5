@@ -29,7 +29,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 0d7690af9ec0ab034cdec5f7bae6b092  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 fec8e184c046898f71a24fa2008c767f  autoload.php
-4a016daad5f57bb8426da8420a4f8b35  autoload/ezp_kernel.php
+b205c7b6ba71c6df4a417b710b8ebf2e  autoload/ezp_kernel.php
 4f5aae97c4777e3d9fe309fc409be8d6  benchmarks/classes/ezbenchmark.php
 9c88f2cf9ede23d32cabee36659239f2  benchmarks/classes/ezbenchmarkcase.php
 dbc264cff80d6c4b0b5fd393d1b45297  benchmarks/classes/ezbenchmarkclirunner.php
@@ -27154,6 +27154,10 @@ efbd0eec92f8ae73766639a072611217  kernel/workflow/view.php
 77caed9863481da63d2b05e2dc3cc13e  lib/ezdb/classes/expcockroachdb.php
 d3b3cc96820c0e4630d0f05e27fc21bf  lib/ezdb/classes/expdbinlist.php
 13493200fa1e3c5cb49613ca1b0bb108  lib/ezdb/classes/expdbunsupportedexception.php
+0ade0c5cb4404a3bedd7390948904658  lib/ezdb/classes/explibsqlconnection.php
+314834446fdbb4a8cb7d90dfd15fdd56  lib/ezdb/classes/explibsqldb.php
+6d9199c7b33fbe2c1c82a005763c4edc  lib/ezdb/classes/explibsqlprofile.php
+7da76532d1bbe4ab8b3e99e942c7a1bc  lib/ezdb/classes/explibsqlresult.php
 a162439dfcb945c46a4f863817de574a  lib/ezdb/classes/expmongodb.php
 82dacdc47ff2d6c14cd326158ac73770  lib/ezdb/classes/expmsaccessdb.php
 0495ea859056918e7ff81852975f3d0e  lib/ezdb/classes/expmsaccessdialect.php
@@ -27169,6 +27173,7 @@ fd1c8576538037dab8a7ca0a1f318394  lib/ezdb/classes/expsinglestoredb.php
 a91e4d1e4d31f8a94b68b386bd7500dc  lib/ezdb/classes/expspannerpgdb.php
 f4aa9d75ce60274d973c0b6ac8e18484  lib/ezdb/classes/expsupabasedb.php
 2272da049ffd9626c284ce97278dcc8d  lib/ezdb/classes/exptidbdb.php
+cf770a21f2421d6963c230bca65552e0  lib/ezdb/classes/exptursodb.php
 1452aaca7dffe6b92d640413b37970b6  lib/ezdb/classes/expvitessdb.php
 b0ec48eddd6650b3be7b84dd6ebd2e7b  lib/ezdb/classes/expxpanddb.php
 f43f382da35a63493ef1772e1f3fbe0e  lib/ezdb/classes/expyugabytedb.php
@@ -27648,7 +27653,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 e73c1efbfaf9379c9907b44b2ca32e72  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-ae8a48defc664a52c63e2f94b579ecc1  settings/site.ini
+928dba1d0b108785ce9a8e1a95f2c837  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
