@@ -65,8 +65,9 @@ images (Debian), with every PHP extension Exponential and Velocity use, and the 
 | `edge-php<php>-apache`, `edge-php<php>-velocity` | the main branch, rebuilt nightly | always |
 | `edge`, `main`, `edge-velocity` | the main branch on the default PHP | always |
 
-`<version>` is the release without its `v` (`6.0.14`). `<php>` is 8.0 to 8.5 for 6.0.15 and later, and 8.1 to 8.5 for
-6.0.14, which needs PHP 8.1. PHP 8.5 is the default because it is the newest; pick an older one only when an
+`<version>` is the release without its `v` (`6.0.14`). `<php>` is 8.0 to 8.5 for 6.0.15 and later, and 8.4 or 8.5 for
+6.0.14: its `composer.json` requires PHPUnit 13.0.0, which needs PHP 8.4.1, so `composer install` of that release
+does not resolve on older PHP. PHP 8.5 is the default because it is the newest; pick an older one only when an
 extension of yours needs it. Every tag is multi-architecture. The PHP 8.0 images are built on Debian 11, the only base
 the official PHP 8.0 image has; Debian 11 has reached its end of life and its packages come from archive.debian.org, so
 neither PHP 8.0 nor the system gets security updates. Use them to test compatibility, not to serve a public site.
