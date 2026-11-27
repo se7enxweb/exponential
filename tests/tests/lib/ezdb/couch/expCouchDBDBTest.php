@@ -126,6 +126,8 @@ class expCouchDBDBTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( array( 'POST', '/shop/_all_docs?include_docs=true' ) ), $this->couch->log );
         $this->assertSame( array(), $db->arrayQuery( "SELECT name FROM item WHERE id = 2 AND name = 'apple'" ) );
         $this->assertSame( array(), $db->arrayQuery( 'SELECT name FROM item WHERE id = 99' ) );
+        // MD5() as the kernel's SQLite driver has it
+        $this->assertSame( array( array( 'name' => 'pear' ) ), $db->arrayQuery( "SELECT name FROM item WHERE " . $db->md5( 'name' ) . " = '" . md5( 'pear' ) . "'" ) );
         // SELECT * lists the table's columns only, not the copy's own
         $this->assertSame( array( array( 'id' => 2, 'name' => 'pear', 'qty' => 5, 'cat' => 1 ) ), $db->arrayQuery( 'SELECT * FROM item WHERE id = 2' ) );
         $this->assertSame( array( 'exp_table' => 'item', 'name' => 'pear' ), expCouchDBDB::pushdown( expCouchSQLLexer::tokenize( "SELECT id FROM item WHERE name = 'pear' AND qty > 1", false ),

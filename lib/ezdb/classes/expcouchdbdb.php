@@ -467,6 +467,8 @@ class expCouchDBDB extends eZDBInterface
         $memory = new SQLite3( ':memory:' );
         $memory->enableExceptions( true );
         $memory->exec( 'PRAGMA recursive_triggers = ON' );
+        // MD5(), as the kernel's SQLite driver gives its connections (the URL aliases look pages up by it)
+        $memory->createFunction( 'md5', function ( $value ) { return $value === null ? null : md5( (string)$value ); }, 1 );
         foreach ( $load as $table => $selector )
         {
             $entry = $this->tableEntry( $table );
@@ -1306,7 +1308,7 @@ class expCouchDBDB extends eZDBInterface
 
     function md5( $str )
     {
-        throw new expDBUnsupportedException( 'couchdb', 'MD5', 'SQLite has no MD5: compute it in PHP' );
+        return " MD5( $str ) ";
     }
 
     function supportedRelationTypeMask()
