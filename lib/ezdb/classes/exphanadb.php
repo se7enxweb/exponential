@@ -555,12 +555,32 @@ class expHANADB extends eZDBInterface
             if ( isset( $params['column'] ) && ( is_numeric( $params['column'] ) || is_string( $params['column'] ) ) )
                 $column = is_string( $params['column'] ) ? strtolower( $params['column'] ) : $params['column'];
         }
-        $paged = expHANADialect::applyLimit( $this->prepareStatement( $sql ), $limit, $offset );
+        $prepared = $this->prepareStatement( $sql );
+        // SELECT DISTINCT over an NCLOB, which HANA refuses: sent without DISTINCT, the duplicates dropped here
+        $distinct = expHANADialect::statementKind( $prepared ) === 'SELECT' ? expHANADialect::withoutLobDistinct( $prepared, $this->lobColumns() ) : null;
+        if ( $distinct !== null && $limit === 0 )
+            return array();
+        $paged = $distinct !== null ? $distinct : expHANADialect::applyLimit( $prepared, $limit, $offset );
         if ( $paged === null )
             return array();
         $result = $this->execute( $paged, 'arrayQuery', true );
         if ( $result === false )
             return false;
+        if ( $distinct !== null )
+        {
+            $seen = array();
+            $rows = array();
+            foreach ( $result['rows'] as $row )
+            {
+                $key = serialize( $row );
+                if ( !isset( $seen[$key] ) )
+                {
+                    $seen[$key] = true;
+                    $rows[] = $row;
+                }
+            }
+            $result['rows'] = array_slice( $rows, $offset, $limit === false ? null : $limit );
+        }
         $retArray = array();
         foreach ( $result['rows'] as $i => $row )
         {

@@ -23,7 +23,8 @@
  *  - Functions: CONCAT(a, b, c) (HANA's takes two arguments) becomes (a || b || c), CHAR_LENGTH() LENGTH(), SUBSTR()
  *    SUBSTRING(), MD5(x) the hex text of HASH_MD5(), CURDATE() CURRENT_DATE, UNIX_TIMESTAMP() and FROM_UNIXTIME() the
  *    seconds since 1970 of the UTC clock.
- *  - Bit operators: a & b is BITAND(a, b), a | b BITOR(a, b) (|| stays the concatenation), ~a BITNOT(a).
+ *  - Bit operators: a & b is BITAND(a, b), a | b BITOR(a, b) (|| stays the concatenation), ~a BITNOT(a); HANA has no
+ *    shift, so a >> n is TO_BIGINT(FLOOR((a) / POWER(2, n))) and a << n TO_BIGINT((a) * POWER(2, n)).
  *  - LIKE: MySQL and PostgreSQL take a backslash as the escape character of a pattern; HANA has none unless the
  *    statement names one. A pattern with a backslash gets ESCAPE '\'.
  *  - LIMIT m, n (MySQL's offset first) becomes LIMIT n OFFSET m; LIMIT n [OFFSET m] is HANA's own.
@@ -382,7 +383,7 @@ class expHANADialect
     public static function bitOperators( $sql )
     {
         $sql = (string)$sql;
-        if ( strpbrk( $sql, '&|~' ) === false )
+        if ( strpbrk( $sql, '&|~' ) === false && strpos( $sql, '>>' ) === false && strpos( $sql, '<<' ) === false )
             return $sql;
         for ( $round = 0; $round < 200; $round++ )
         {
@@ -392,7 +393,27 @@ class expHANADialect
             for ( $i = 0; $i < $count; $i++ )
             {
                 $t = $tokens[$i];
-                if ( $t['type'] !== expSQLServerLexer::PUNCT || !in_array( $t['text'], array( '&', '|', '~' ), true ) )
+                if ( $t['type'] !== expSQLServerLexer::PUNCT )
+                    continue;
+                // >> and << (two adjacent tokens): HANA has no shift, so a division or a product by a power of two
+                if ( ( $t['text'] === '>' || $t['text'] === '<' ) && isset( $tokens[$i + 1] ) && $tokens[$i + 1]['text'] === $t['text'] )
+                {
+                    $right = self::operandAfter( $tokens, $i + 1 );
+                    $left = $right === null ? null : self::operandBefore( $tokens, $i );
+                    if ( $left === null )
+                    {
+                        $i++;
+                        continue;
+                    }
+                    $a = trim( expSQLServerLexer::join( array_slice( $tokens, $left, $i - $left ) ) );
+                    $b = trim( expSQLServerLexer::join( array_slice( $tokens, $i + 2, $right - $i - 1 ) ) );
+                    $sql = expSQLServerLexer::join( array_slice( $tokens, 0, $left ) )
+                         . ( $t['text'] === '>' ? "TO_BIGINT(FLOOR(($a) / POWER(2, $b)))" : "TO_BIGINT(($a) * POWER(2, $b))" )
+                         . expSQLServerLexer::join( array_slice( $tokens, $right + 1 ) );
+                    $done = false;
+                    break;
+                }
+                if ( !in_array( $t['text'], array( '&', '|', '~' ), true ) )
                     continue;
                 if ( $t['text'] === '|' && ( ( isset( $tokens[$i + 1] ) && $tokens[$i + 1]['text'] === '|' ) || ( $i > 0 && $tokens[$i - 1]['text'] === '|' ) ) )
                     continue;
@@ -633,6 +654,52 @@ class expHANADialect
     private static function wordOrText( array $token )
     {
         return $token['type'] === expSQLServerLexer::WORD ? strtoupper( $token['text'] ) : $token['text'];
+    }
+
+    /**
+     * A SELECT DISTINCT whose select list may hold an NCLOB (a * or a column of $lobColumns) without its DISTINCT:
+     * HANA refuses DISTINCT over an NCLOB, so the caller drops the duplicate rows itself. Null for any other statement.
+     *
+     * @param string $sql
+     * @param string[] $lobColumns
+     * @return string|null
+     */
+    public static function withoutLobDistinct( $sql, array $lobColumns )
+    {
+        if ( !$lobColumns || stripos( (string)$sql, 'distinct' ) === false )
+            return null;
+        $lob = array_fill_keys( array_map( 'strtolower', $lobColumns ), true );
+        $tokens = expSQLServerLexer::tokenize( (string)$sql );
+        $outer = self::outerWords( $tokens );
+        if ( count( $outer ) < 3 || $outer[0][1] !== 'SELECT' || $outer[1][1] !== 'DISTINCT' )
+            return null;
+        $distinctAt = $outer[1][0];
+        $fromAt = null;
+        foreach ( $outer as $entry )
+            if ( $entry[1] === 'FROM' )
+            {
+                $fromAt = $entry[0];
+                break;
+            }
+        if ( $fromAt === null )
+            return null;
+        $hasLob = false;
+        for ( $i = $distinctAt + 1; $i < $fromAt; $i++ )
+        {
+            $token = $tokens[$i];
+            if ( ( $token['type'] === expSQLServerLexer::PUNCT && $token['text'] === '*' )
+                 || ( in_array( $token['type'], array( expSQLServerLexer::WORD, expSQLServerLexer::IDENT ), true ) && isset( $lob[strtolower( expSQLServerLexer::identifierValue( $token ) )] ) ) )
+            {
+                $hasLob = true;
+                break;
+            }
+        }
+        if ( !$hasLob )
+            return null;
+        $end = $distinctAt + 1;
+        if ( isset( $tokens[$end] ) && $tokens[$end]['type'] === expSQLServerLexer::WS )
+            $end++;
+        return expSQLServerLexer::join( array_slice( $tokens, 0, $distinctAt ) ) . expSQLServerLexer::join( array_slice( $tokens, $end ) );
     }
 
     /**

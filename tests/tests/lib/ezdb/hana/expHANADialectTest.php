@@ -65,6 +65,8 @@ class expHANADialectTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'SELECT BITAND(a, BITNOT(b)) FROM t', expHANADialect::rewrite( 'SELECT a & ~b FROM t' ) );
         $this->assertSame( "SELECT a || 'x' FROM t", expHANADialect::rewrite( "SELECT a || 'x' FROM t" ) );
         $this->assertSame( 'SELECT BITAND((a + 1), (b - 1)) FROM t', expHANADialect::rewrite( 'SELECT (a + 1) & (b - 1) FROM t' ) );
+        $this->assertSame( 'SELECT ( TO_BIGINT(FLOOR((( BITAND(m, 4) )) / POWER(2, 1))) ) FROM t', expHANADialect::rewrite( 'SELECT ( ( m & 4 ) >> 1 ) FROM t' ) );
+        $this->assertSame( 'SELECT TO_BIGINT((a) * POWER(2, 2)) FROM t', expHANADialect::rewrite( 'SELECT a << 2 FROM t' ) );
     }
 
     public function testLikeAndLiterals()
@@ -159,6 +161,16 @@ class expHANADialectTest extends PHPUnit\Framework\TestCase
         $this->assertSame( "CREATE COLUMN TABLE t (a NVARCHAR(5) DEFAULT 'ä')", expHANADialect::unicodeLiterals( "CREATE COLUMN TABLE t (a NVARCHAR(5) DEFAULT 'ä')" ) );
         $this->assertSame( 'eda0bdedb880', bin2hex( expHANADialect::cesu8( '😀' ) ) );
         $this->assertSame( 'ä€', expHANADialect::cesu8( 'ä€' ) );
+    }
+
+    public function testLobDistinct()
+    {
+        $this->assertSame( 'SELECT cc.*, n.name FROM ezcontentclass cc, n WHERE cc.id = n.id ORDER BY n.name',
+                           expHANADialect::withoutLobDistinct( 'SELECT DISTINCT cc.*, n.name FROM ezcontentclass cc, n WHERE cc.id = n.id ORDER BY n.name', array( 'data_text' ) ) );
+        $this->assertSame( 'SELECT a.data_text FROM a', expHANADialect::withoutLobDistinct( 'SELECT DISTINCT a.data_text FROM a', array( 'data_text' ) ) );
+        $this->assertNull( expHANADialect::withoutLobDistinct( 'SELECT DISTINCT a.id FROM a', array( 'data_text' ) ) );
+        $this->assertNull( expHANADialect::withoutLobDistinct( 'SELECT COUNT(DISTINCT a.id) FROM a', array( 'data_text' ) ) );
+        $this->assertNull( expHANADialect::withoutLobDistinct( 'SELECT DISTINCT * FROM a', array() ) );
     }
 
     public function testHelpers()

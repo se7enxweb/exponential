@@ -250,6 +250,17 @@ class expHANADBTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 2, $t->sent( '/GROUP BY LOWER\(COLUMN_NAME\)/' ) );
     }
 
+    public function testDistinctOverNclob()
+    {
+        $t = new expHANAFakeTransport();
+        $t->on( '/GROUP BY LOWER\(COLUMN_NAME\)/', array( array( 'name' => 'data_text', 'lob' => '1' ) ) );
+        $t->on( '/FROM ezcontentclass/', array( array( 'id' => '1', 'data_text' => 'x' ), array( 'id' => '1', 'data_text' => 'x' ), array( 'id' => '2', 'data_text' => 'y' ) ) );
+        $db = expHANATestKit::driver( $t, array(), array( 'database' => 'DISTINCT_' . uniqid() ) );
+        $rows = $db->arrayQuery( 'SELECT DISTINCT cc.* FROM ezcontentclass cc', array( 'offset' => 1 ) );
+        $this->assertSame( 'SELECT cc.* FROM ezcontentclass cc', $db->LastStatement );
+        $this->assertSame( array( 1 => array( 'id' => '2', 'data_text' => 'y' ) ), $rows );
+    }
+
     public function testRelationsAndConditionalDDL()
     {
         $t = $this->transport();
