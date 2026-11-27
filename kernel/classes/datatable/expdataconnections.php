@@ -87,6 +87,9 @@ class expDataConnections
             // wide-column databases that speak CQL (expCassandraDB, expScyllaDB), through the library mroosz/php-cassandra
             'cassandra' => array( 'label' => 'Apache Cassandra', 'kind' => 'widecolumn', 'ez' => 'cassandra', 'pdo' => array(), 'port' => 9042, 'file' => false ),
             'scylladb' => array( 'label' => 'ScyllaDB', 'kind' => 'widecolumn', 'ez' => 'scylladb', 'pdo' => array(), 'port' => 9042, 'file' => false ),
+            // expLibSQLDB and expTursoDB: SQLite over a libSQL server's HTTP API (curl or allow_url_fopen); options url, tls
+            'libsql' => array( 'label' => 'libSQL server (sqld)', 'kind' => 'relational', 'ez' => 'libsql', 'pdo' => array(), 'port' => 8080, 'file' => false ),
+            'turso' => array( 'label' => 'Turso (libSQL)', 'kind' => 'relational', 'ez' => 'turso', 'pdo' => array(), 'port' => 443, 'file' => false ),
         );
     }
 
@@ -142,7 +145,7 @@ class expDataConnections
                 'pdo_driver' => $pdoDriver,
                 'why' => $why,
                 // not run against a server of its own here: the managed PostgreSQL services
-                'untested' => in_array( $key, array( 'sqlserver', 'neon', 'supabase', 'aurorapostgresql' ), true ),
+                'untested' => in_array( $key, array( 'sqlserver', 'neon', 'supabase', 'aurorapostgresql', 'turso' ), true ),
             );
         }
         return $engines;
@@ -242,7 +245,7 @@ class expDataConnections
         $options = isset( $c['options'] ) && is_array( $c['options'] ) ? $c['options'] : array();
         $clean = array();
         foreach ( array( 'charset', 'socket', 'dsn', 'dialect', 'driver', 'odbc_driver', 'odbc_dsn', 'connection_string', 'layer',
-                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler', 'consistency' ) as $key )
+                         'profile', 'ssl', 'ssl_ca', 'sslmode', 'pooler', 'consistency', 'url', 'tls' ) as $key )
             if ( isset( $options[$key] ) && is_scalar( $options[$key] ) && trim( (string)$options[$key] ) !== '' )
                 $clean[$key] = mb_substr( trim( (string)$options[$key] ), 0, 1000 );
         $engine = strtolower( $text( 'engine', 32 ) );
@@ -335,6 +338,17 @@ class expDataConnections
                 $problems[] = 'The server must be a host name or an address.';
             if ( $c['database'] === '' && $c['engine'] !== 'oracle' )
                 $problems[] = 'Give the database.';
+        }
+        // libSQL and Turso: a URL in place of the server must name an allowed host, over http, https or libsql
+        if ( isset( $c['options']['url'] ) )
+        {
+            $urlHost = (string)parse_url( (string)$c['options']['url'], PHP_URL_HOST );
+            if ( !in_array( $c['engine'], array( 'libsql', 'turso' ), true ) )
+                $problems[] = 'The option url is for libsql and turso.';
+            elseif ( !preg_match( '#^(https?|libsql|wss?)://#i', (string)$c['options']['url'] ) || $urlHost === '' )
+                $problems[] = 'The url must be http://, https:// or libsql:// with a host.';
+            elseif ( !self::hostAllowed( trim( $urlHost, '[]' ) ) )
+                $problems[] = 'The host of the url is not in datatable.ini [ConnectionSettings] AllowedHosts[].';
         }
         if ( $c['secret'] !== '' && !expSecrets::validName( $c['secret'] ) )
             $problems[] = 'The password must be the name of a secret (Setup > Secrets) or env:VARIABLE.';
@@ -604,6 +618,13 @@ class expDataConnections
                 if ( $cassandra )
                     $parameters['cassandra'] = $cassandra;
             }
+            // libSQL and Turso: the server's URL and TLS ([LibSQLSettings]); the password is the auth token
+            $libsql = array();
+            foreach ( array( 'url' => 'URL', 'tls' => 'TLS' ) as $option => $setting )
+                if ( isset( $c['options'][$option] ) )
+                    $libsql[$setting] = $c['options'][$option];
+            if ( $libsql )
+                $parameters['libsql'] = $libsql;
         }
         else
         {
@@ -902,8 +923,9 @@ class expDataConnections
         {
             $ini = eZINI::instance( 'site.ini' );
             $impl = strtolower( (string)$ini->variable( 'DatabaseSettings', 'DatabaseImplementation' ) );
-            $engine = strpos( $impl, 'duckdb' ) !== false ? 'duckdb' : ( strpos( $impl, 'sqlite' ) !== false ? 'sqlite' : ( strpos( $impl, 'postgres' ) !== false ? 'postgresql'
-                    : ( strpos( $impl, 'oracle' ) !== false ? 'oracle' : ( strpos( $impl, 'mongo' ) !== false ? 'mongodb' : 'mysql' ) ) ) );
+            $engine = strpos( $impl, 'duckdb' ) !== false ? 'duckdb' : ( strpos( $impl, 'turso' ) !== false ? 'turso' : ( strpos( $impl, 'libsql' ) !== false || $impl === 'sqld' ? 'libsql'
+                    : ( strpos( $impl, 'sqlite' ) !== false ? 'sqlite' : ( strpos( $impl, 'postgres' ) !== false ? 'postgresql'
+                    : ( strpos( $impl, 'oracle' ) !== false ? 'oracle' : ( strpos( $impl, 'mongo' ) !== false ? 'mongodb' : 'mysql' ) ) ) ) ) );
             $database = (string)$ini->variable( 'DatabaseSettings', 'Database' );
         }
         catch ( Throwable $e )
@@ -1046,6 +1068,9 @@ class expDataConnections
                 return extension_loaded( 'mongodb' ) && class_exists( 'MongoDB\\Client' );
             case 'firebird':
                 return class_exists( 'expFirebirdTransport' ) && expFirebirdTransport::availableLayer() !== null;
+            case 'libsql':
+            case 'turso':
+                return function_exists( 'curl_init' ) || filter_var( ini_get( 'allow_url_fopen' ), FILTER_VALIDATE_BOOLEAN );
             case 'db2':
             case 'informix':
                 return class_exists( 'expDb2Transport' ) && expDb2Transport::availableLayer() !== null;

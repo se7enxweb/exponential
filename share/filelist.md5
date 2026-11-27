@@ -24833,7 +24833,7 @@ a4eaa659eda324dae71e98320dd1b9d2  kernel/classes/contentjob/expcontentjobtransfe
 360ff8975b148bb0361cb0b98d62b7c2  kernel/classes/contentjob/expcontentjobworker.php
 474ea1a861aee819acdab722cee2f5e0  kernel/classes/contentwriter/expcontentwriter.php
 53190e2e0d73d0c7b0aa4a2eecd4ada8  kernel/classes/datatable/expdataconnection.php
-ff73d79639ed834d9a077f7480b27ba7  kernel/classes/datatable/expdataconnections.php
+50c89e51a7aa48c0db988f06beb46dad  kernel/classes/datatable/expdataconnections.php
 73b8c1e625a3f79814d488687aba7215  kernel/classes/datatable/expdatatablecatalogue.php
 4bac9d69ef18c67e7a6e2fa5d64fdfea  kernel/classes/datatable/expdatatabledescriber.php
 8f34c0dd424871274d7553e6345b0f3e  kernel/classes/datatable/expdatatablefieldsource.php
@@ -27607,7 +27607,7 @@ de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 ee38fe027250131e8952f8dacf0f18c9  settings/countrygroups.ini
 35ccc7907d59d54e6a6dfa8f48560bb1  settings/cronjob.ini
 bd5b3823ca4e81603f9fc446e6ab4e66  settings/dashboard.ini
-90282ce39d0353bef16bfe63b31c1df6  settings/datatable.ini
+ec2653e057dd8bbf5c3dd63f389cb3cb  settings/datatable.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 fbaec1e1a9acc3a729afdaafd4676557  settings/dbschema.ini
