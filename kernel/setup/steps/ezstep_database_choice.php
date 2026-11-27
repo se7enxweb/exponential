@@ -34,6 +34,9 @@ class eZStepDatabaseChoice extends eZStepInstaller
                                 'database_choice', 'Database choice' );
     }
 
+    /** @var bool|null tests: whether FFI may be used, instead of asking PHP (expDuckDBFFI::ffiUsable()) */
+    public static $FFIUsable = null;
+
     function processPostData()
     {
         $databaseMap = eZSetupDatabaseMap();
@@ -88,8 +91,9 @@ class eZStepDatabaseChoice extends eZStepInstaller
             foreach ( (array)$this->PersistenceList['database_extensions']['found'] as $extension )
             {
                 // the PHP extension of a driver in the kernel, by the type it gives
-                if ( $extension === 'pdo_firebird' )
-                    $extension = 'firebird';
+                $extension = self::typeOfExtension( $extension );
+                if ( $extension === '' )
+                    continue;
                 // pdo_ibm and ibm_db2 reach Db2 and, over DRDA, Informix
                 if ( $extension === 'pdo_ibm' || $extension === 'ibm_db2' )
                 {
@@ -103,6 +107,30 @@ class eZStepDatabaseChoice extends eZStepInstaller
             }
         }
         return $types;
+    }
+
+    /**
+     * The database type a PHP extension of setup.ini [database_extensions] gives, '' for none: the extension's name
+     * when it is a type itself (mysqli, pgsql, sqlite3, mongodb, oci8), else the type of the kernel's driver that uses
+     * it. sqlsrv and pdo_sqlsrv give SQL Server (expSQLServerDB). ffi gives DuckDB (expDuckDBDB reaches libduckdb
+     * through FFI) only when FFI may be used in this process: ffi.enable=preload, PHP's default, allows it on the
+     * command line only, so a wizard in the web server would offer a database it cannot open.
+     *
+     * @param string $extension
+     * @return string
+     */
+    static function typeOfExtension( $extension )
+    {
+        $extension = strtolower( (string)$extension );
+        $types = array( 'pdo_firebird' => 'firebird', 'sqlsrv' => 'sqlserver', 'pdo_sqlsrv' => 'sqlserver' );
+        if ( isset( $types[$extension] ) )
+            return $types[$extension];
+        if ( $extension === 'ffi' )
+        {
+            $usable = self::$FFIUsable !== null ? self::$FFIUsable : class_exists( 'expDuckDBFFI' ) && expDuckDBFFI::ffiUsable();
+            return $usable ? 'duckdb' : '';
+        }
+        return $extension;
     }
 
     /**
@@ -206,7 +234,8 @@ class eZStepDatabaseChoice extends eZStepInstaller
             $database['recommended'] = ( $type === $preferred );
             $databaseList[] = $database;
             $availableDatabases[$type] = true;
-            // the databases of the PostgreSQL wire protocol go with PHP's pgsql extension, after PostgreSQL
+            // the databases of the PostgreSQL wire protocol go with PHP's pgsql extension, after PostgreSQL, and
+            // those of the MySQL protocol (TiDB, Vitess, SingleStore, Xpand, Aurora MySQL) with mysqli, after MySQL
             foreach ( $databaseMap as $variant => $entry )
             {
                 if ( isset( $entry['php_extension'] ) && $entry['php_extension'] === $type && !isset( $availableDatabases[$variant] ) )

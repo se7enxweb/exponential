@@ -467,7 +467,10 @@ function eZSetupTestExtension( $type )
     $failedExtensions = array();
     foreach ( $extensionList as $extension )
     {
-        if ( extension_loaded( $extension ) )
+        // FFI (DuckDB's way to libduckdb) counts only where it may be used: ffi.enable=preload, PHP's
+        // default, keeps it from the web server, and a check that passed on it would offer no database
+        if ( extension_loaded( $extension ) &&
+             ( strtolower( $extension ) !== 'ffi' || !class_exists( 'expDuckDBFFI' ) || expDuckDBFFI::ffiUsable() ) )
         {
             $foundExtensions[] = $extension;
         }

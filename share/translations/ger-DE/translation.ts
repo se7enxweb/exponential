@@ -56165,6 +56165,14 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
 <context>
     <name>design/standard/setup/db</name>
     <message>
+        <source>%1 is reached through the PHP %2 extension. Install it, enable it in php.ini and start the setup wizard again.</source>
+        <translation>%1 wird über die PHP-Erweiterung %2 angesprochen. Installieren Sie sie, aktivieren Sie sie in der php.ini und starten Sie den Einrichtungsassistenten erneut.</translation>
+    </message>
+    <message>
+        <source>DuckDB also needs ffi.enable=true in php.ini (preload, PHP&apos;s default, allows FFI on the command line only) and the libduckdb library ([DuckDBSettings] Library in site.ini).</source>
+        <translation>DuckDB benötigt außerdem ffi.enable=true in der php.ini (preload, die Voreinstellung von PHP, erlaubt FFI nur auf der Kommandozeile) und die Bibliothek libduckdb ([DuckDBSettings] Library in site.ini).</translation>
+    </message>
+    <message>
         <source>If you are having problems connecting to your database you should take a look at</source>
         <translation>Sollten Sie Probleme bei der Verbindung mit Ihrer Datenbank haben sollten Sie hier nachschauen</translation>
     </message>
@@ -56370,6 +56378,10 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
 </context>
 <context>
     <name>design/standard/setup/init</name>
+    <message>
+        <source>DuckDB keeps the whole database in one file, in the directory %directory of this installation. It needs no server, user or password, but PHP&apos;s FFI extension with ffi.enable=true and the libduckdb library ([DuckDBSettings] Library in site.ini). The file is created if it does not exist.</source>
+        <translation>DuckDB hält die gesamte Datenbank in einer Datei im Verzeichnis %directory dieser Installation. Es benötigt keinen Server, Benutzer oder Passwort, aber die PHP-Erweiterung FFI mit ffi.enable=true und die Bibliothek libduckdb ([DuckDBSettings] Library in site.ini). Die Datei wird angelegt, falls sie nicht existiert.</translation>
+    </message>
     <message>
         <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilites of Exponential</source>
         <translation type="obsolete">If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilites of Exponential</translation>

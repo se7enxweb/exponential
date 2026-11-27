@@ -64,6 +64,14 @@ class eZStepDatabaseInit extends eZStepInstaller
             if ( $this->PersistenceList['database_info']['dbname'] === '' )
                 $this->PersistenceList['database_info']['dbname'] = eZStepInstaller::SQLITE_DEFAULT_FILE_NAME;
         }
+        if ( $this->PersistenceList['database_info']['type'] == 'duckdb' )
+        {
+            // DuckDB too: one file in var/storage/duckdb, opened through FFI, no server
+            $this->resetSQLiteServerFields();
+            $this->PersistenceList['database_info']['dbname'] = trim( $this->PersistenceList['database_info']['dbname'] );
+            if ( $this->PersistenceList['database_info']['dbname'] === '' )
+                $this->PersistenceList['database_info']['dbname'] = self::DUCKDB_DEFAULT_FILE_NAME;
+        }
 
         $this->Error = 0;
         $dbStatus = false;
@@ -323,7 +331,7 @@ class eZStepDatabaseInit extends eZStepInstaller
         $this->Tpl->setVariable( 'database_info', $databaseInfo );
         $this->Tpl->setVariable( 'regional_info', $regionalInfo );
         $this->Tpl->setVariable( 'db_not_empty', $dbNotEmpty );
-        $this->Tpl->setVariable( 'database_directory', eZSQLite3DB::STORAGE_DIRECTORY );
+        $this->Tpl->setVariable( 'database_directory', $databaseInfo['type'] == 'duckdb' ? expDuckDBDB::STORAGE_DIRECTORY : eZSQLite3DB::STORAGE_DIRECTORY );
 
         $result = array();
         // Display template
@@ -333,6 +341,9 @@ class eZStepDatabaseInit extends eZStepInstaller
                                         'url' => false ) );
         return $result;
     }
+
+    /** The file of a DuckDB site when none is named (install.php and setup.ini [DatabaseSettings] DefaultName_duckdb) */
+    const DUCKDB_DEFAULT_FILE_NAME = 'exponential.duckdb';
 
     public $Error = 0;
     public $DBEmpty = true;

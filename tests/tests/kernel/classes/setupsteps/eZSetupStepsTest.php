@@ -266,7 +266,10 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         return array( array( 'postgresql', 'pgsql' ), array( 'mysql', 'mysqli' ), array( 'sqlite', 'sqlite3' ), array( 'oracle', 'oci8' ), array( 'ezoracle', 'oci8' ), array( 'mongodb', 'mongodb' ),
                       // the databases of the PostgreSQL wire protocol
                       array( 'cockroachdb', 'cockroachdb' ), array( 'crdb', 'cockroachdb' ), array( 'yugabyte', 'yugabytedb' ), array( 'neon', 'neon' ),
-                      array( 'supabase', 'supabase' ), array( 'aurora-postgresql', 'aurorapostgresql' ) );
+                      array( 'supabase', 'supabase' ), array( 'aurora-postgresql', 'aurorapostgresql' ),
+                      // SQL Server, DuckDB and the databases of the MySQL protocol
+                      array( 'sqlserver', 'sqlserver' ), array( 'sqlsrv', 'sqlserver' ), array( 'duckdb', 'duckdb' ), array( 'tidb', 'tidb' ),
+                      array( 'planetscale', 'vitess' ), array( 'aurora-mysql', 'aurora' ) );
     }
 
     #[\PHPUnit\Framework\Attributes\DataProvider('kickstartDatabaseProvider')]
@@ -308,13 +311,98 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
                                                             'database_info' => array( 'type' => 'mysqli', 'name' => 'chosen before' ) ) );
         $result = $step->display();
         $this->assertSame( '[design:setup/init/database_choice.tpl]', $result['content'] );
-        $list = array_column( $this->variable( 'database_list' ), 'type' );
+        $map = eZSetupDatabaseMap();
+        // the databases of the MySQL protocol come with mysqli; the order of the found ones is what is checked here
+        $list = array_values( array_filter( array_column( $this->variable( 'database_list' ), 'type' ), function ( $type ) use ( $map ) {
+            return !isset( $map[$type]['php_extension'] );
+        } ) );
         $this->assertSame( $step->defaultChoice( array( 'mongodb', 'mysqli', 'sqlite3' ) )['type'], $list[0] );
         $this->assertSame( 'chosen before', $this->variable( 'database_info' )['name'] );
         $this->assertSame( array_values( array_diff( array( 'mongodb', 'mysqli', 'sqlite3' ), array( $list[0] ) ) ), array_slice( $list, 1 ), 'the rest keep their order' );
         $available = $this->variable( 'available_databases' );
         ksort( $available );
-        $this->assertSame( array( 'mongodb' => true, 'mysqli' => true, 'sqlite3' => true ), $available );
+        $this->assertSame( array( 'aurora' => true, 'mongodb' => true, 'mysqli' => true, 'singlestore' => true, 'sqlite3' => true, 'tidb' => true,
+                                  'vitess' => true, 'xpand' => true ), $available );
+    }
+
+    public function testMySQLWireDatabasesComeWithMysqli()
+    {
+        $step = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => array( 'sqlite3', 'mysqli' ) ) ) );
+        $this->assertSame( array( 'sqlite3', 'mysqli' ), $step->foundDatabaseTypes(), 'never chosen on their own' );
+        $step->display();
+        $list = array_column( $this->variable( 'database_list' ), 'type' );
+        $this->assertSame( array( 'mysqli', 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), array_slice( $list, array_search( 'mysqli', $list ), 6 ) );
+        foreach ( array( 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ) as $type )
+            $this->assertTrue( eZSetupIsMySQLFamily( $type ), $type );
+        $_POST = array( 'eZSetupDatabaseType' => 'tidb' );
+        $this->assertTrue( $step->processPostData() );
+        $this->assertSame( 'tidb', $step->PersistenceList['database_info']['driver'] );
+        $_POST = array();
+    }
+
+    public static function databaseExtensionProvider()
+    {
+        return array( array( array( 'sqlsrv' ), true, array( 'sqlserver' ) ),
+                      array( array( 'pdo_sqlsrv', 'sqlsrv' ), true, array( 'sqlserver' ) ),
+                      array( array( 'ffi' ), true, array( 'duckdb' ) ),
+                      // ffi.enable=preload in the web server, or off
+                      array( array( 'ffi' ), false, array() ),
+                      array( array( 'pdo_firebird' ), true, array( 'firebird' ) ),
+                      array( array( 'pdo_ibm' ), true, array( 'db2', 'informix' ) ),
+                      array( array( 'oci8', 'FFI', 'pgsql' ), true, array( 'oci8', 'duckdb', 'pgsql' ) ) );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('databaseExtensionProvider')]
+    public function testTheExtensionOfAKernelDriverGivesItsDatabase( array $found, $ffiUsable, array $types )
+    {
+        eZStepDatabaseChoice::$FFIUsable = $ffiUsable;
+        try
+        {
+            $step = $this->step( 'eZStepDatabaseChoice', array( 'database_extensions' => array( 'found' => $found ) ) );
+            $this->assertSame( $types, $step->foundDatabaseTypes() );
+            if ( count( $types ) === 1 )
+            {
+                $this->assertTrue( $step->init(), 'one to choose from: chosen' );
+                $this->assertSame( $types[0], $step->PersistenceList['database_info']['type'] );
+            }
+        }
+        finally
+        {
+            eZStepDatabaseChoice::$FFIUsable = null;
+        }
+    }
+
+    /**
+     * Every database the wizard can install a site on is offered when PHP has its extension: setup.ini
+     * [database_extensions] names an extension that gives it (its own name, the kernel driver's extension, or the
+     * extension of its protocol family), and the system check has a page for each extension it may miss.
+     */
+    public function testEveryDatabaseOfTheWizardHasItsExtensionChecked()
+    {
+        $extensions = eZSetupConfigVariableArray( 'database_extensions', 'Extensions' );
+        $reachable = array();
+        eZStepDatabaseChoice::$FFIUsable = true;
+        try
+        {
+            foreach ( $extensions as $extension )
+            {
+                $this->assertFileExists( dirname( __DIR__, 5 ) . '/design/standard/templates/setup/db/' . $extension . '_info.tpl',
+                                         "the system check explains how to get $extension" );
+                $type = eZStepDatabaseChoice::typeOfExtension( $extension );
+                $reachable[$type] = true;
+                if ( in_array( $type, array( 'pdo_ibm', 'ibm_db2' ), true ) )
+                    $reachable['db2'] = $reachable['informix'] = true;
+            }
+        }
+        finally
+        {
+            eZStepDatabaseChoice::$FFIUsable = null;
+        }
+        foreach ( eZSetupDatabaseMap() as $type => $entry )
+        {
+            $via = isset( $entry['php_extension'] ) ? $entry['php_extension'] : $type;
+            $this->assertArrayHasKey( $via, $reachable, "$type is offered by the wizard when PHP has its extension" );
+        }
     }
 
     // ---------------------------------------------------------------- security, finetune, final

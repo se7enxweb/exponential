@@ -95,7 +95,7 @@
   {$database_info.info.name|wash}
   </td>
 </tr>
-{if $database_info.info.type|ne('sqlite3')}
+{if and( $database_info.info.type|ne('sqlite3'), $database_info.info.type|ne('duckdb') )}
 <tr>
   <td class="normal"><label class="textfield">{"Servername"|i18n("design/standard/setup/init")}:</label></td>
   <td class="normal"><input type="text" name="eZSetupDatabaseServer" size="16" value="{$database_info.server|wash}" /></td>
@@ -124,7 +124,11 @@
 <tr>
   <td class="normal"></td>
   <td class="normal">
+  {if $database_info.info.type|eq('duckdb')}
+  <p>{"DuckDB keeps the whole database in one file, in the directory %directory of this installation. It needs no server, user or password, but PHP's FFI extension with ffi.enable=true and the libduckdb library ([DuckDBSettings] Library in site.ini). The file is created if it does not exist."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}</p>
+  {else}
   <p>{"SQLite keeps the whole database in one file, in the directory %directory of this installation. It needs no server, user or password. The file is created if it does not exist; if it already holds tables, the Site details page asks what to do with them."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}</p>
+  {/if}
   </td>
 </tr>
 {/if}
