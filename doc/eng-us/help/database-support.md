@@ -93,6 +93,8 @@ What the order means in practice:
 | MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | setup wizard (with `mysqli`), kickstarter, `exp:install` | the MySQLi backend | no (no image; a managed service) | drivers and profiles, not measured |
 | DuckDB | 1.5 and 2.0 (1.5.6 and 2.0.1 tested) | `ffi` with DuckDB's C library `libduckdb` | setup wizard (with `ffi` and `ffi.enable=true`), kickstarter, `exp:install` | none: one process writes at a time | driver and live tests on DuckDB 1.5.6 and 2.0.1, and a whole site installed | supported for small and read-mostly sites (new in 6.0.15); [what works and what does not](../features/6.0/duckdb-database-driver.md#what-works-and-what-does-not) |
 | libSQL (sqld), Turso | sqld 0.22 and later (0.24.33 tested, SQLite 3.47); Turso | `curl` (or `allow_url_fopen`); no `sqlite3` needed | kickstarter, `exp:install` (`libsql`, `turso`) | the database: any number of web servers share it; no DFS backend on it | driver tests without a server, live tests against sqld 0.24.33 and a whole site installed (job `libsql`) | full site database (new in 6.0.15); Turso **untested**; [what works and what does not](../features/6.0/libsql-database-driver.md#what-works-and-what-does-not) |
+| MonetDB | Dec2023 and later (Dec2023-SP4 and Dec2025-SP5 tested) | none: MAPI in plain PHP | kickstarter, `exp:install` (`monetdb`) | none: no DFS backend; one writer at a time | driver and live tests on Dec2023-SP4 and Dec2025-SP5, and a whole site installed (job `columnar`) | full site database (new in 6.0.15); [what works and what does not](../features/6.0/columnar-databases.md#what-works-and-what-does-not) |
+| ClickHouse | 24.8 and later (24.8 and 25.8 tested) | none: HTTP through `curl` or PHP's HTTP stream | none: not a site database | none | driver and live tests on 24.8 and 25.8 (job `columnar`) | data table connection and import source (new in 6.0.15); [why not a site](../features/6.0/columnar-databases.md#why-not-a-site-database) |
 | CockroachDB (PostgreSQL wire protocol) | 23.2 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`cockroachdb`) | any number of servers (`expDFSFileHandlerPostgresqlBackend`, in the site's database; measured) | the live suite `pgwire-live` on CockroachDB 25.2, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
 | YugabyteDB (PostgreSQL wire protocol) | 2.20 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`yugabytedb`) | any number of servers (`expDFSFileHandlerPostgresqlBackend`, in the site's database; measured, no lock timeout) | the live suite `pgwire-live` on YugabyteDB 2.25, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
 | Google Cloud Spanner, PostgreSQL dialect (PGAdapter) | the Spanner emulator, PGAdapter | `pgsql` | none: not a site database | none | the live suite `pgwire-live` on the emulator behind PGAdapter | data-table connection and import (new in 6.0.15) |
@@ -148,6 +150,13 @@ cluster backend for them and no read replicas. Details, the server preparation a
 **Apache Cassandra and ScyllaDB** (`cassandra`, `scylladb`, new in 6.0.15) are data table connections and an import
 source (`exp:cassandra:import`), not site databases: CQL has no joins, no sub-selects and no transactions across
 rows, and the kernel resolves every URL with a join. See [Cassandra and ScyllaDB driver](../features/6.0/cassandra-scylladb-driver.md).
+
+**MonetDB and ClickHouse** (new in 6.0.15), two columnar databases reached without a PHP extension. MonetDB
+(`DatabaseImplementation=monetdb`, `exp:install --db=monetdb`) holds a whole site; its driver lets one writer write at
+a time, as MonetDB's optimistic transactions would otherwise fail one of two writers of a table, and every statement
+costs milliseconds. ClickHouse (`clickhouse`) is a data table connection and an import source: it enforces no keys and
+has no transactions over statements, so a site cannot run on it. See
+[Columnar databases: MonetDB and ClickHouse](../features/6.0/columnar-databases.md).
 
 Moving an existing site from one engine to another: [Moving off an old database](moving-off-an-old-database.md).
 
@@ -266,6 +275,8 @@ override for you. `DatabaseImplementation` names the driver by an alias that `Im
 | `cassandra`; `scylladb`, `scylla` | `expCassandraDB`; `expScyllaDB` (`lib/ezdb/classes/expcassandradb.php`, `expscylladb.php`; data table connections only) |
 | `couchbase` | `expCouchbaseDB` (`lib/ezdb/classes/expcouchbasedb.php`), data table connections only |
 | `couchdb` | `expCouchDBDB` (`lib/ezdb/classes/expcouchdbdb.php`), data table connections only |
+| `monetdb` | `expMonetDBDB` (`lib/ezdb/classes/expmonetdbdb.php`) |
+| `clickhouse` | `expClickHouseDB` (`lib/ezdb/classes/expclickhousedb.php`); data table connections only |
 
 The examples below use placeholder names and passwords; put your own values in your override file and never commit
 that file. Every key is explained in [9.1 How Exponential chooses a database driver](../install/09-databases.md#91-how-exponential-chooses-a-database-driver).
@@ -819,6 +830,7 @@ the legacy toolkit's tests run against a live server with a throw-away database 
 | PostgreSQL wire protocol | yes, driver and live tests | the testsuite `pgwire` in the PHPUnit job; the job "PostgreSQL wire protocol" runs `pgwire-live` against CockroachDB 25.2, YugabyteDB 2.25 and the Spanner emulator behind PGAdapter, PHP 8.1 and 8.5. Neon, Supabase and Aurora: unit tests only |
 | Cassandra and ScyllaDB | yes, driver, data table and import tests | the testsuite `cassandra` in the PHPUnit job; the job "Cassandra and ScyllaDB" runs `cassandra-live` against Cassandra 5.0 and ScyllaDB 2025.1 (with authentication), PHP 8.1 and 8.5 |
 | Couchbase, Apache CouchDB | yes, driver, data table and import tests | the job `couch` runs the testsuites `couch` and `couch-live` against Couchbase Server Community 7.6.2 and CouchDB 3.4.3 (PHP 8.5) and 7.2.4 and 3.3.3 (PHP 8.1) in containers |
+| MonetDB, ClickHouse | yes, driver and live tests | the testsuite `columnar` and the job "Columnar", which runs `columnar-live` against MonetDB Dec2025-SP5 with ClickHouse 25.8 (PHP 8.5) and MonetDB Dec2023-SP4 with ClickHouse 24.8 (PHP 8.1), and installs a whole site on MonetDB |
 
 PHP 8.0, the oldest supported version, and PHP 7.4 (usable without support) are checked by the Quality workflow with a syntax check of every PHP file and a
 boot smoke test without a database. The test suites and how to run them locally are described in

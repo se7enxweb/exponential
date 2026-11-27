@@ -121,6 +121,9 @@ nginx with PHP-FPM keep working as before.
   API; data table connections and `exp:couchbase:import`; why no site runs on Couchbase, measured
 - [Apache CouchDB driver](couchdb-driver.md): `expCouchDBDB`, tables as CouchDB documents, SQL answered on an
   in-memory SQLite copy; data table connections and `exp:couchdb:import`; why no site runs on CouchDB, measured
+- [Columnar databases: MonetDB and ClickHouse](columnar-databases.md): `expMonetDBDB`, a whole site on MonetDB over its
+  protocol in plain PHP, one writer at a time; `expClickHouseDB`, ClickHouse over HTTP for data tables and imports, and
+  why it cannot hold a site; what works and what does not, measured
 - [Clustering in Exponential 6.0](clustering-overview.md): application servers, shared files, primary and replicas,
   caches, purges and health checks in one place, with every cluster page
 - [Clustering on PostgreSQL: the DFS backend in the kernel](postgresql-dfs-cluster.md)

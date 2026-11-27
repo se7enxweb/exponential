@@ -130,6 +130,9 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Apache-CouchDB-Treiber](couchdb-treiber.md): `expCouchDBDB`, Tabellen als CouchDB-Dokumente, SQL auf einer
   SQLite-Kopie im Speicher beantwortet; Datentabellen-Verbindungen und `exp:couchdb:import`; warum keine Site auf CouchDB
   läuft, gemessen
+- [Spaltenorientierte Datenbanken: MonetDB und ClickHouse](spaltenorientierte-datenbanken.md): `expMonetDBDB`, eine
+  ganze Site auf MonetDB über sein Protokoll in reinem PHP, immer nur ein Schreiber; `expClickHouseDB`, ClickHouse über
+  HTTP für Datentabellen und Importe, und warum es keine Site halten kann; was geht und was nicht, gemessen
 - [Clustering in Exponential 6.0](clustering-ueberblick.md): Anwendungsserver, gemeinsame Dateien, Primärserver und
   Replikate, Caches, Leeren und Zustandsprüfungen an einer Stelle, mit allen Cluster-Seiten
 - [Clustering mit PostgreSQL: das DFS-Backend im Kernel](postgresql-dfs-cluster.md)
