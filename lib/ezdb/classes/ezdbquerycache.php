@@ -1967,6 +1967,9 @@ class eZDBQueryCache
         switch ( $db->databaseName() )
         {
             case 'mysql':
+            // MonetDB and ClickHouse read C escapes in string literals as MySQL does
+            case 'monetdb':
+            case 'clickhouse':
                 return true;
             case 'postgresql':
                 return method_exists( $db, 'standardConformingStrings' ) && $db->standardConformingStrings() === false;

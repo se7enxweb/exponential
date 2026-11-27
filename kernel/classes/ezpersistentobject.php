@@ -707,9 +707,10 @@ class eZPersistentObject
             // SQLite numbers a serial column only when it is the table's single INTEGER PRIMARY KEY;
             // in a Platform schema the id is part of a two column key and NOT NULL, and the insert
             // must give it a value (see eZSQLite3DB::serialIDNeedsValue()). The maximum + 1 is taken
-            // and used inside one transaction, which holds the write lock from its start.
+            // and used inside one transaction, which holds the write lock from its start. ClickHouse
+            // makes no ids at all: its driver takes the maximum + 1 the same way (expClickHouseDB).
             $serialTransaction = false;
-            if ( $db->DatabaseName() == 'sqlite' &&
+            if ( ( $db->DatabaseName() == 'sqlite' || $db->DatabaseName() == 'clickhouse' ) &&
                  isset( $def["increment_key"] ) && is_string( $def["increment_key"] ) &&
                  in_array( $def["increment_key"], $exclude_fields ) &&
                  method_exists( $db, 'serialIDNeedsValue' ) &&

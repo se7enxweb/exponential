@@ -13,7 +13,7 @@
  * postgresql, sqlite, oracle, sqlserver, msaccess (MS Access through ODBC, expMSAccessDB), firebird (expFirebirdDB),
  * db2 (expDb2DB), informix (expInformixDB), cassandra (expCassandraDB: the SQL its driver answers on CQL),
  * couchbase (expCouchbaseDB: MySQL's forms, which its driver turns into SQL++; a LIMIT without a number is an OFFSET
- * alone, as DuckDB's);
+ * alone, as DuckDB's), monetdb (expMonetDBDB), clickhouse (expClickHouseDB);
  * generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
  * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code
  * branches on the database it runs on.
@@ -23,7 +23,8 @@
  */
 class expDBSQLHelpers
 {
-    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'duckdb', 'db2', 'informix', 'cassandra', 'couchbase', 'generic' );
+    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'duckdb', 'db2', 'informix', 'cassandra', 'couchbase',
+                            'monetdb', 'clickhouse', 'generic' );
 
     /**
      * The limit and offset as integers: limit false for "no limit" (false, null, '', negative or not a number).
@@ -107,7 +108,9 @@ class expDBSQLHelpers
             case 'sqlite':
                 return $sql . "\nLIMIT " . ( $limit === false ? '-1' : $limit ) . ( $offset ? " OFFSET $offset" : '' );
             case 'duckdb':
-                // DuckDB has no LIMIT ALL: an offset alone is OFFSET without LIMIT
+            case 'monetdb':
+            case 'clickhouse':
+                // DuckDB, MonetDB and ClickHouse have no LIMIT ALL: an offset alone is OFFSET without LIMIT
                 return $sql . ( $limit === false ? "\nOFFSET $offset" : "\nLIMIT $limit" . ( $offset ? " OFFSET $offset" : '' ) );
             default:
                 return $sql . "\nLIMIT " . ( $limit === false ? 'ALL' : $limit ) . ( $offset ? " OFFSET $offset" : '' );
@@ -148,6 +151,8 @@ class expDBSQLHelpers
                 throw new InvalidArgumentException( "The key column '$key' has no value" );
         if ( $dialect === 'msaccess' )
             throw new expDBUnsupportedException( 'msaccess', 'upsert', 'run an UPDATE and, when it changed no row, an INSERT' );
+        if ( $dialect === 'clickhouse' )
+            throw new expDBUnsupportedException( 'clickhouse', 'upsert', 'ClickHouse enforces no key: read the row first, then UPDATE or INSERT (one writer at a time)' );
         if ( $updateColumns === null )
             $updateColumns = array_values( array_diff( array_keys( $row ), $keyColumns ) );
         $q = function ( $name ) use ( $dialect ) { return expDBSQLHelpers::quoteIdentifier( $dialect, $name ); };
@@ -164,18 +169,23 @@ class expDBSQLHelpers
                     $set[] = $q( $column ) . ' = VALUES(' . $q( $column ) . ')';
                 return "INSERT INTO $t ($columns) VALUES ($values) ON DUPLICATE KEY UPDATE " . implode( ', ', $set );
             case 'oracle':
+            case 'monetdb':
+                // MonetDB: MERGE with a SELECT without FROM, the target unaliased (SET names its own columns bare)
                 $source = array();
                 foreach ( $row as $column => $value )
                     $source[] = $literal( $value ) . ' AS ' . $q( $column );
+                $target = $dialect === 'monetdb' ? $t : 't';
                 $on = array();
                 foreach ( $keyColumns as $key )
-                    $on[] = 't.' . $q( $key ) . ' = s.' . $q( $key );
-                $sql = "MERGE INTO $t t USING (SELECT " . implode( ', ', $source ) . ' FROM dual) s ON (' . implode( ' AND ', $on ) . ')';
+                    $on[] = $target . '.' . $q( $key ) . ' = s.' . $q( $key );
+                $sql = $dialect === 'monetdb'
+                     ? "MERGE INTO $t USING (SELECT " . implode( ', ', $source ) . ') AS s ON (' . implode( ' AND ', $on ) . ')'
+                     : "MERGE INTO $t t USING (SELECT " . implode( ', ', $source ) . ' FROM dual) s ON (' . implode( ' AND ', $on ) . ')';
                 if ( $updateColumns )
                 {
                     $set = array();
                     foreach ( $updateColumns as $column )
-                        $set[] = 't.' . $q( $column ) . ' = s.' . $q( $column );
+                        $set[] = ( $dialect === 'monetdb' ? '' : 't.' ) . $q( $column ) . ' = s.' . $q( $column );
                     $sql .= ' WHEN MATCHED THEN UPDATE SET ' . implode( ', ', $set );
                 }
                 $sValues = array();
@@ -196,8 +206,9 @@ class expDBSQLHelpers
     /**
      * A SELECT that locks the rows it reads until the end of the transaction: FOR UPDATE (MySQL, PostgreSQL, Oracle,
      * generic), FOR UPDATE WITH LOCK on Firebird, an isolation clause keeping update locks on Db2, table hints on SQL Server, the statement as it is on SQLite (whose write
-     * transaction locks the database), MS Access (whose engine locks pages itself) and DuckDB (one process writes at a
-     * time; it has no row locks).
+     * transaction locks the database), MS Access (whose engine locks pages itself), DuckDB (one process writes at a
+     * time; it has no row locks), MonetDB (optimistic transactions: a conflicting commit fails) and ClickHouse (no
+     * transactions).
      *
      * @param string $dialect
      * @param string $sql a SELECT without FOR UPDATE
@@ -208,7 +219,7 @@ class expDBSQLHelpers
         if ( $dialect === 'couchbase' )
             $dialect = 'mysql';
         $sql = rtrim( (string)$sql, " \t\r\n;" );
-        if ( $dialect === 'sqlite' || $dialect === 'msaccess' || $dialect === 'duckdb' )
+        if ( in_array( $dialect, array( 'sqlite', 'msaccess', 'duckdb', 'monetdb', 'clickhouse' ), true ) )
             return $sql;
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::forUpdate( $sql );
@@ -258,6 +269,15 @@ class expDBSQLHelpers
                 return "GROUP_CONCAT($expression, $sep)";
             case 'oracle':
                 return "LISTAGG($expression, $sep) WITHIN GROUP (ORDER BY " . ( $order ? $order : 'NULL' ) . ')';
+            case 'monetdb':
+                return "GROUP_CONCAT(CAST($expression AS TEXT), $sep" . ( $order ? " ORDER BY $order" : '' ) . ')';
+            case 'clickhouse':
+                // groupArray keeps no order of its own: with an order, the values are sorted by it first
+                if ( !$order )
+                    return "arrayStringConcat(groupArray(toString($expression)), $sep)";
+                $descending = (bool)preg_match( '/\s+DESC\s*$/i', $order );
+                $key = preg_replace( '/\s+(ASC|DESC)\s*$/i', '', $order );
+                return "arrayStringConcat(arrayMap(x -> x.2, array" . ( $descending ? 'ReverseSort' : 'Sort' ) . "(x -> x.1, groupArray(tuple($key, toString($expression))))), $sep)";
             default:
                 return "STRING_AGG(CAST($expression AS TEXT), $sep" . ( $order ? " ORDER BY $order" : '' ) . ')';
         }
@@ -295,6 +315,10 @@ class expDBSQLHelpers
             case 'oracle':
                 $value = $expression === null ? 'SYS_EXTRACT_UTC(SYSTIMESTAMP)' : $expression;
                 return "ROUND((CAST($value AS DATE) - DATE '1970-01-01') * 86400)";
+            case 'monetdb':
+                return $expression === null ? 'CAST(epoch(CURRENT_TIMESTAMP) AS BIGINT)' : "CAST(epoch($expression) AS BIGINT)";
+            case 'clickhouse':
+                return $expression === null ? 'toUnixTimestamp(now())' : "toUnixTimestamp($expression, 'UTC')";
             default:
                 return $expression === null ? 'CAST(EXTRACT(EPOCH FROM CURRENT_TIMESTAMP) AS BIGINT)' : "CAST(EXTRACT(EPOCH FROM $expression) AS BIGINT)";
         }
@@ -331,6 +355,10 @@ class expDBSQLHelpers
                 return "datetime($expression, 'unixepoch')";
             case 'oracle':
                 return "(TIMESTAMP '1970-01-01 00:00:00' + NUMTODSINTERVAL($expression, 'SECOND'))";
+            case 'monetdb':
+                return "CAST(epoch(CAST($expression AS BIGINT)) AS TIMESTAMP)";
+            case 'clickhouse':
+                return "toDateTime($expression, 'UTC')";
             default:
                 return "(TIMESTAMP '1970-01-01 00:00:00' + ($expression) * INTERVAL '1 second')";
         }
