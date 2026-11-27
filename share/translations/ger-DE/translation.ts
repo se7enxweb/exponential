@@ -58398,6 +58398,30 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Einrichtungsassistenten starten</translation>
     </message>
     <message>
+        <source>Opening the setup wizard changes nothing: the site stays online.</source>
+        <translation>Den Einrichtungsassistenten zu öffnen ändert nichts: Die Website bleibt online.</translation>
+    </message>
+    <message>
+        <source>A site is reinstalled in one of three ways: with the setup wizard, which asks for a confirmation first; with the kickstarter (%file, then php bin/php/kickstarter.php run --apply); or with a fresh installation. A reinstall replaces the content and settings of the site.</source>
+        <translation>Eine Website wird auf eine von drei Arten neu installiert: mit dem Einrichtungsassistenten, der zuerst eine Bestätigung verlangt; mit dem Kickstarter (%file, dann php bin/php/kickstarter.php run --apply); oder mit einer frischen Installation. Eine Neuinstallation ersetzt die Inhalte und Einstellungen der Website.</translation>
+    </message>
+    <message>
+        <source>The setup wizard is allowed on this installed site: [SiteAccessSettings] CheckValidity=true is set, or [SetupSettings] AllowWizardOnInstalledSite=enabled. When you are done, set CheckValidity=false again.</source>
+        <translation>Der Einrichtungsassistent ist auf dieser installierten Website erlaubt: [SiteAccessSettings] CheckValidity=true ist gesetzt, oder [SetupSettings] AllowWizardOnInstalledSite=enabled. Setzen Sie danach CheckValidity=false wieder.</translation>
+    </message>
+    <message>
+        <source>The setup wizard does not run on this site. To run it on an installed site, set [SiteAccessSettings] CheckValidity=true (with [SetupSettings] AllowWizardOnInstalledSite=auto, the default) or AllowWizardOnInstalledSite=enabled.</source>
+        <translation>Der Einrichtungsassistent läuft auf dieser Website nicht. Um ihn auf einer installierten Website auszuführen, setzen Sie [SiteAccessSettings] CheckValidity=true (mit [SetupSettings] AllowWizardOnInstalledSite=auto, der Vorgabe) oder AllowWizardOnInstalledSite=enabled.</translation>
+    </message>
+    <message>
+        <source>Run the setup wizard anyway</source>
+        <translation>Einrichtungsassistenten trotzdem ausführen</translation>
+    </message>
+    <message>
+        <source>This site is already installed. Running the setup wizard installs it again and replaces its content and settings.</source>
+        <translation>Diese Website ist bereits installiert. Der Einrichtungsassistent installiert sie erneut und ersetzt ihre Inhalte und Einstellungen.</translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>

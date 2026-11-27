@@ -11,12 +11,15 @@
  * Decides what a request to the web setup wizard (setup/init) may do, before
  * the wizard shows a page or touches maintenance mode.
  *
- * - On an installed site the wizard is refused: the page explains that the
- *   site is installed and that a reinstall is done with the kickstarter or a
- *   fresh installation. Nothing is written: no maintenance marker, no setup
- *   log run. [SetupSettings] AllowWizardOnInstalledSite=enabled (development
- *   only, disabled by default) lets it run, and then only after a confirm page
- *   whose form is posted back with a one-time token.
+ * - On an installed site the wizard first shows a page that says so and
+ *   explains reinstalling (the wizard, the kickstarter or a fresh
+ *   installation). Nothing is written: no maintenance marker, no setup log
+ *   run. [SetupSettings] AllowWizardOnInstalledSite decides whether that page
+ *   offers "Run the setup wizard anyway": auto (the default) when the admin set
+ *   [SiteAccessSettings] CheckValidity=true (the request came through the
+ *   validity check), enabled always, disabled never. The button leads to a
+ *   confirm page whose form is posted back with a one-time token; only that
+ *   POST starts the run.
  * - Maintenance mode (expMaintenance::beginWizard()) is never started by a GET
  *   or by a page being shown. It starts with the first posted wizard step on a
  *   fresh installation, or with the confirmed POST on an installed one.
@@ -32,6 +35,8 @@ class expSetupWizardGuard
     const SHOW = 'show';
     /** Installed site, wizard not allowed: show the explanation page */
     const REFUSE = 'refuse';
+    /** Installed site, wizard allowed: the explanation page with "Run the setup wizard anyway" */
+    const OFFER = 'offer';
     /** Installed site, wizard allowed: ask for a confirmation first */
     const CONFIRM = 'confirm';
     /** Start a run and maintenance mode (wizard lease) */
@@ -39,21 +44,36 @@ class expSetupWizardGuard
     /** A further step of a run that holds the lease */
     const CONTINUE_RUN = 'continue';
 
+    /** The posted field of the "already installed" page's "Run the setup wizard anyway" button */
+    const RUN_ANYWAY_BUTTON = 'ExpSetupRunAnywayButton';
     /** The posted fields of the confirm page */
     const CONFIRM_BUTTON = 'ExpSetupConfirmReinstallButton';
     const CONFIRM_TOKEN = 'ExpSetupConfirmToken';
-    /** Session variable that holds the confirm page's token */
-    const CONFIRM_SESSION_KEY = 'expSetupWizardConfirmToken';
+    /**
+     * The cookie that pairs with the confirm page's token. The wizard runs without a
+     * session (CheckValidity routes it before the session and the database start), so
+     * the token is carried by the browser: the form holds "<expiry>.<nonce>", the cookie
+     * the nonce. A page of another site can neither read nor set this site's cookie.
+     */
+    const CONFIRM_COOKIE = 'exp_setup_confirm';
+    /** How long the confirm page's token is good for, in seconds */
+    const CONFIRM_LIFETIME = 900;
+
+    /** [SetupSettings] AllowWizardOnInstalledSite values */
+    const MODE_AUTO = 'auto';
+    const MODE_ENABLED = 'enabled';
+    const MODE_DISABLED = 'disabled';
 
     /**
      * @param bool $installed the site is installed (see isInstalled())
-     * @param bool $allowedOnInstalled [SetupSettings] AllowWizardOnInstalledSite is enabled
+     * @param bool $allowedOnInstalled the wizard may run on an installed site (see allowedOnInstalledSite())
      * @param bool $isStepPost the request posts a wizard step (eZSetup_current_step)
      * @param bool $confirmed the request is the confirm page's POST with a valid token
      * @param bool $leaseRenewed this run's maintenance lease was renewed
-     * @return string one of the constants SHOW, REFUSE, CONFIRM, BEGIN, CONTINUE_RUN
+     * @param bool $runAnyway the request posts the "Run the setup wizard anyway" button
+     * @return string one of the constants SHOW, REFUSE, OFFER, CONFIRM, BEGIN, CONTINUE_RUN
      */
-    static function decide( $installed, $allowedOnInstalled, $isStepPost, $confirmed, $leaseRenewed )
+    static function decide( $installed, $allowedOnInstalled, $isStepPost, $confirmed, $leaseRenewed, $runAnyway = false )
     {
         if ( $installed )
         {
@@ -61,9 +81,13 @@ class expSetupWizardGuard
                 return self::REFUSE;
             if ( $confirmed )
                 return self::BEGIN;
-            // A step of a confirmed run whose lease still holds; anything else
-            // (a GET, a step after the lease ran out) asks again
-            return ( $isStepPost && $leaseRenewed ) ? self::CONTINUE_RUN : self::CONFIRM;
+            // A step of a confirmed run whose lease still holds
+            if ( $isStepPost && $leaseRenewed )
+                return self::CONTINUE_RUN;
+            // The button of the "already installed" page, or a step after the
+            // lease ran out: the confirm page. A first visit: the explanation
+            // page with the button. Neither writes anything.
+            return ( $runAnyway || $isStepPost ) ? self::CONFIRM : self::OFFER;
         }
         if ( !$isStepPost )
             return self::SHOW;
@@ -135,47 +159,153 @@ class expSetupWizardGuard
     }
 
     /**
-     * @param eZINI $ini site.ini
-     * @return bool [SetupSettings] AllowWizardOnInstalledSite is enabled (development only)
-     */
-    static function allowedOnInstalledSite( $ini )
-    {
-        return $ini->hasVariable( 'SetupSettings', 'AllowWizardOnInstalledSite' )
-            && $ini->variable( 'SetupSettings', 'AllowWizardOnInstalledSite' ) === 'enabled';
-    }
-
-    /**
-     * A one-time token for the confirm page, kept in the session.
+     * [SetupSettings] AllowWizardOnInstalledSite as one of MODE_AUTO,
+     * MODE_ENABLED, MODE_DISABLED. Missing or not one of the three: auto.
      *
-     * @param eZHTTPTool $http
+     * @param eZINI $ini site.ini
      * @return string
      */
-    static function issueConfirmToken( $http )
+    static function mode( $ini )
     {
-        $token = bin2hex( random_bytes( 16 ) );
-        $http->setSessionVariable( self::CONFIRM_SESSION_KEY, $token );
-        return $token;
+        $value = $ini->hasVariable( 'SetupSettings', 'AllowWizardOnInstalledSite' )
+            ? strtolower( trim( (string)$ini->variable( 'SetupSettings', 'AllowWizardOnInstalledSite' ) ) )
+            : '';
+        if ( $value === self::MODE_ENABLED || $value === self::MODE_DISABLED )
+            return $value;
+        return self::MODE_AUTO;
     }
 
     /**
-     * Is this the confirm page's POST, with the token the session holds? The
-     * token is used up either way.
+     * May the wizard run on an installed site (after the confirm page)?
+     * enabled: yes; disabled: no; auto: when the request came through the
+     * validity check, that is, the admin set [SiteAccessSettings]
+     * CheckValidity=true to reach the wizard.
+     *
+     * @param eZINI|string $ini site.ini, or a mode (MODE_*)
+     * @param bool $validityCheck the request was routed to the wizard by CheckValidity
+     * @return bool
+     */
+    static function allowedOnInstalledSite( $ini, $validityCheck = false )
+    {
+        $mode = is_string( $ini ) ? $ini : self::mode( $ini );
+        if ( $mode === self::MODE_ENABLED )
+            return true;
+        if ( $mode === self::MODE_DISABLED )
+            return false;
+        return (bool)$validityCheck;
+    }
+
+    /**
+     * Did the "already installed" page's "Run the setup wizard anyway" button
+     * post this request? It only leads to the confirm page.
      *
      * @param eZHTTPTool $http
      * @return bool
      */
-    static function confirmedByPost( $http )
+    static function runAnywayPosted( $http )
+    {
+        if ( !isset( $_SERVER['REQUEST_METHOD'] ) || strtoupper( (string)$_SERVER['REQUEST_METHOD'] ) !== 'POST' )
+            return false;
+        return $http->hasPostVariable( self::RUN_ANYWAY_BUTTON );
+    }
+
+    /**
+     * The address every wizard form posts to. Through the validity check
+     * (CheckValidity=true) every address is the wizard, so the forms post
+     * back to the site root: a /setup/... address is an admin module that a
+     * frontend firewall (request-shield's EXP-MODULES) rightly refuses.
+     * Otherwise the wizard is the setup/init view and the forms name it.
+     *
+     * @param bool $validityCheck the request was routed to the wizard by CheckValidity
+     * @param string $wwwDir eZSys::wwwDir()
+     * @param string $indexFileName eZSys::indexFileName()
+     * @param string $indexFile eZSys::indexFile()
+     * @param string $uriPrefix '/ezsetup' when served by that entry point, else ''
+     * @return string
+     */
+    static function formAction( $validityCheck, $wwwDir, $indexFileName, $indexFile, $uriPrefix = '' )
+    {
+        if ( !$validityCheck )
+            return $indexFile . $uriPrefix . '/setup/init';
+        // The old ezsetup entry point keeps its own address
+        if ( $uriPrefix !== '' )
+            return $wwwDir . $indexFileName . $uriPrefix;
+        return rtrim( (string)$wwwDir, '/' ) . '/';
+    }
+
+    /**
+     * A one-time token for the confirm page: "<expiry>.<nonce>" for the form, the
+     * nonce in a cookie (see CONFIRM_COOKIE). No session, nothing written on the server.
+     *
+     * @param int|null $now
+     * @return string
+     */
+    static function issueConfirmToken( $now = null )
+    {
+        $nonce = bin2hex( random_bytes( 16 ) );
+        $expires = ( $now === null ? time() : (int)$now ) + self::CONFIRM_LIFETIME;
+        $_COOKIE[self::CONFIRM_COOKIE] = $nonce;
+        self::confirmCookie( $nonce, $expires );
+        return $expires . '.' . $nonce;
+    }
+
+    /**
+     * Is this the confirm page's POST, with a token that is not expired and
+     * matches this browser's cookie? The cookie is used up either way.
+     *
+     * @param eZHTTPTool $http
+     * @param int|null $now
+     * @return bool
+     */
+    static function confirmedByPost( $http, $now = null )
     {
         if ( !isset( $_SERVER['REQUEST_METHOD'] ) || strtoupper( (string)$_SERVER['REQUEST_METHOD'] ) !== 'POST' )
             return false;
         if ( !$http->hasPostVariable( self::CONFIRM_BUTTON ) || !$http->hasPostVariable( self::CONFIRM_TOKEN ) )
             return false;
-        if ( !$http->hasSessionVariable( self::CONFIRM_SESSION_KEY ) )
-            return false;
-        $expected = (string)$http->sessionVariable( self::CONFIRM_SESSION_KEY );
-        $http->removeSessionVariable( self::CONFIRM_SESSION_KEY );
+        $cookie = isset( $_COOKIE[self::CONFIRM_COOKIE] ) && is_string( $_COOKIE[self::CONFIRM_COOKIE] ) ? $_COOKIE[self::CONFIRM_COOKIE] : '';
+        unset( $_COOKIE[self::CONFIRM_COOKIE] );
+        self::confirmCookie( '', time() - 3600 );
         $posted = $http->postVariable( self::CONFIRM_TOKEN );
-        return $expected !== '' && is_string( $posted ) && hash_equals( $expected, $posted );
+        if ( $cookie === '' || !is_string( $posted ) || !preg_match( '/^([0-9]{1,12})\.([0-9a-f]{32})$/', $posted, $m ) )
+            return false;
+        if ( (int)$m[1] < ( $now === null ? time() : (int)$now ) )
+            return false;
+        return hash_equals( $cookie, $m[2] );
+    }
+
+    /**
+     * Every page of the wizard (the "already installed" page, the confirm page
+     * with its token, each step) is one visitor's: no cache keeps it. Replaces
+     * a Cache-Control the site's [HTTPHeaderSettings] set for the address.
+     */
+    static function sendNoStoreHeaders()
+    {
+        if ( !isset( $_SERVER['REQUEST_METHOD'] ) || headers_sent() )
+            return;
+        foreach ( self::noStoreHeaders() as $name => $value )
+            header( $name . ': ' . $value, true );
+    }
+
+    /**
+     * @return array name => value
+     */
+    static function noStoreHeaders()
+    {
+        return array( 'Cache-Control' => 'no-store, private',
+                      'Pragma' => 'no-cache',
+                      'Expires' => 'Thu, 01 Jan 1970 00:00:00 GMT',
+                      'X-Exp-Cache' => 'BYPASS (setup wizard)' );
+    }
+
+    protected static function confirmCookie( $value, $expires )
+    {
+        // Not PHP_SAPI: Velocity's workers answer web requests from the CLI SAPI
+        if ( !isset( $_SERVER['REQUEST_METHOD'] ) || headers_sent() )
+            return;
+        $secure = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== '' && $_SERVER['HTTPS'] !== 'off' );
+        setcookie( self::CONFIRM_COOKIE, $value, array( 'expires' => $expires, 'path' => '/',
+                   'secure' => $secure, 'httponly' => true, 'samesite' => 'Strict' ) );
     }
 
     /**

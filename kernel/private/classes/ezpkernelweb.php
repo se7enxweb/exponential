@@ -1128,19 +1128,24 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         if ( class_exists( 'expAuditGuard' ) && !expAuditGuard::webAllows( $this->module->attribute( 'name' ), $functionName ) )
                             $moduleResult = expAuditGuard::refusedResult( $this->module->attribute( 'name' ), $functionName );
 
+                        // The setup wizard reached through CheckValidity runs before the session, the database and
+                        // the user: none of the account checks below applies to it (each asked a user that is not
+                        // there, and "Verify it's you" refused every step of the wizard)
+                        $accountChecks = empty( $this->siteBasics['validity-check-required'] );
+
                         // An account marked "change password at next sign-in" goes to user/password first, on every
                         // siteaccess ([PasswordChangeRequiredSettings] ExemptViews[] stay open)
-                        if ( $moduleResult === null && class_exists( 'expPasswordChangeRequired' ) )
+                        if ( $accountChecks && $moduleResult === null && class_exists( 'expPasswordChangeRequired' ) )
                             $moduleResult = expPasswordChangeRequired::moduleResult( $this->module, $functionName );
 
                         // The passkey policy ([PasskeySettings] Policy, doc/eng-us/guides/passkeys.md): an account that
                         // must have a passkey adds one first; "preferred" suggests it once per session
-                        if ( $moduleResult === null && class_exists( 'expPasskeyPolicy' ) )
+                        if ( $accountChecks && $moduleResult === null && class_exists( 'expPasskeyPolicy' ) )
                             $moduleResult = expPasskeyPolicy::moduleResult( $this->module, $functionName );
 
                         // "Verify it's you" before a sensitive action ([ReauthSettings]; doc/eng-us/guides/verify-its-you.md):
                         // only here, on the web pages, never on REST, SOAP, WebDAV or the command line
-                        if ( $moduleResult === null && class_exists( 'expReauth' ) )
+                        if ( $accountChecks && $moduleResult === null && class_exists( 'expReauth' ) )
                             $moduleResult = expReauth::moduleResult( $this->module, $functionName, is_array( $params ) ? $params : array() );
 
                         // The node or object the view is asked for, for the line of a request that ends as a not-found

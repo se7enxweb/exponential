@@ -51310,6 +51310,30 @@ See the requirements page for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Opening the setup wizard changes nothing: the site stays online.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A site is reinstalled in one of three ways: with the setup wizard, which asks for a confirmation first; with the kickstarter (%file, then php bin/php/kickstarter.php run --apply); or with a fresh installation. A reinstall replaces the content and settings of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The setup wizard is allowed on this installed site: [SiteAccessSettings] CheckValidity=true is set, or [SetupSettings] AllowWizardOnInstalledSite=enabled. When you are done, set CheckValidity=false again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The setup wizard does not run on this site. To run it on an installed site, set [SiteAccessSettings] CheckValidity=true (with [SetupSettings] AllowWizardOnInstalledSite=auto, the default) or AllowWizardOnInstalledSite=enabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run the setup wizard anyway</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This site is already installed. Running the setup wizard installs it again and replaces its content and settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
