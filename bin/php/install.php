@@ -46,6 +46,16 @@ $databaseTypes = array(
     // libSQL over HTTP (expLibSQLDB, the SQLite driver): a libSQL server (sqld) or Turso's cloud; the password is the auth token
     'libsql'   => array( 'type' => 'libsql',   'port' => '8080',  'name' => 'exponential', 'user' => '' ),
     'turso'    => array( 'type' => 'turso',    'port' => '443',   'name' => 'exponential', 'user' => '' ),
+    // any of these through its ODBC driver (--db-dialect): DatabaseImplementation=odbc and [ODBCSettings]; the port, name
+    // and user are the dialect's ($odbcDialects)
+    'odbc'     => array( 'type' => 'odbc',     'port' => '',      'name' => 'exponential', 'user' => '' ),
+);
+// --db=odbc: the dialects a site can be installed on, with their defaults
+$odbcDialects = array(
+    'sqlserver'  => array( 'port' => '1433',  'name' => 'exponential', 'user' => 'sa' ),
+    'postgresql' => array( 'port' => '5432',  'name' => 'exponential', 'user' => 'postgres' ),
+    'mysql'      => array( 'port' => '3306',  'name' => 'exponential', 'user' => 'root' ),
+    'db2'        => array( 'port' => '50000', 'name' => 'EXP',         'user' => 'db2inst1' ),
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
                           'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
@@ -75,6 +85,10 @@ $options = array(
     'db-endpoint'    => '',
     'db-url'         => '',
     'db-tls'         => '',
+    'db-dialect'     => '',
+    'db-odbc-driver' => '',
+    'db-dsn'         => '',
+    'db-connection-string' => '',
     'db-action'      => 'remove',
     'package'        => 'sevenx_multisite',
     'language'       => 'eng-US',
@@ -152,10 +166,32 @@ if ( isset( $databaseAliases[$db] ) )
 if ( !isset( $databaseTypes[$db] ) )
 {
     fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird,"
-                  . " duckdb, cockroachdb, yugabytedb, neon, supabase, aurorapostgresql, db2, informix, libsql or turso\n" );
+                  . " duckdb, cockroachdb, yugabytedb, neon, supabase, aurorapostgresql, db2, informix, libsql, turso or odbc\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
+// --db=odbc: the dialect decides the defaults; the ODBC options belong to it alone
+$odbcDialect = '';
+if ( $db === 'odbc' )
+{
+    $odbcDialect = expODBCDB::normalizeDialect( $options['db-dialect'] );
+    if ( !isset( $odbcDialects[$odbcDialect] ) )
+    {
+        fwrite( STDERR, "--db=odbc needs --db-dialect=sqlserver, postgresql, mysql or db2 (the database behind the ODBC driver)\n" );
+        exit( 1 );
+    }
+    if ( $options['db-dsn'] !== '' && expODBCDB::nativeImplementation( $odbcDialect ) !== null )
+    {
+        fwrite( STDERR, "--db-dsn is for --db-dialect=postgresql or mysql; $odbcDialect over ODBC takes --db-host, --db-port and --db-odbc-driver\n" );
+        exit( 1 );
+    }
+    $dbDefaults = array( 'type' => 'odbc' ) + $odbcDialects[$odbcDialect];
+}
+else if ( $options['db-dialect'] !== '' || $options['db-odbc-driver'] !== '' || $options['db-dsn'] !== '' || $options['db-connection-string'] !== '' )
+{
+    fwrite( STDERR, "--db-dialect, --db-odbc-driver, --db-dsn and --db-connection-string are for --db=odbc\n" );
+    exit( 1 );
+}
 $dbPort = $options['db-port'] !== null ? $options['db-port'] : $dbDefaults['port'];
 $dbName = $options['db-name'] !== null ? $options['db-name'] : $dbDefaults['name'];
 $dbUser = $options['db-user'] !== null ? $options['db-user'] : $dbDefaults['user'];
@@ -332,10 +368,12 @@ $languages = array_values( array_filter( array_map( 'trim', explode( ',', $optio
 // The configuration, section by section, as kickstart.ini-dist documents it.
 $sections = array(
     'email_settings'   => array( 'Type' => 'mta', 'Server' => '', 'User' => '', 'Password' => '' ),
-    'database_choice'  => array( 'Type' => $dbDefaults['type'] ),
+    'database_choice'  => array( 'Type' => $dbDefaults['type'] ) + ( $db === 'odbc' ? array( 'Dialect' => $odbcDialect ) : array() ),
     'database_init'    => array( 'Server' => $options['db-host'], 'Port' => $dbPort, 'Database' => $dbName,
                                  'User' => $dbUser, 'Password' => $options['db-password'], 'Socket' => $options['db-socket'] )
-                          + ( $db === 'sqlserver' ? array( 'Encrypt' => $options['db-encrypt'] !== '' ? $options['db-encrypt'] : 'yes',
+                          + ( $db === 'odbc' ? array_filter( array( 'ODBCDriver' => $options['db-odbc-driver'], 'DataSourceName' => $options['db-dsn'],
+                                                                    'ConnectionString' => $options['db-connection-string'] ), 'strlen' ) : array() )
+                          + ( $db === 'sqlserver' || $odbcDialect === 'sqlserver' ? array( 'Encrypt' => $options['db-encrypt'] !== '' ? $options['db-encrypt'] : 'yes',
                                                            'TrustServerCertificate' => $flags['db-trust-server-certificate'] ? 'enabled' : 'disabled' ) : array() )
                           + ( in_array( $db, array( 'tidb', 'vitess', 'singlestore', 'xpand', 'aurora' ), true ) && $options['db-ssl'] !== ''
                               ? array_filter( array( 'SSL' => $options['db-ssl'], 'SSLCA' => $options['db-ssl-ca'] ), 'strlen' ) : array() )
@@ -424,7 +462,7 @@ $summary = array(
     'Username'       => 'admin',
     'Password'       => $options['password'],
     'E-mail'         => $options['email'],
-    'Database'       => $db . ' ' . $dbName . ( $db === 'sqlite' || $db === 'duckdb' ? '' : ' at ' . ( $options['db-socket'] !== '' ? $options['db-socket'] : $options['db-host'] . ( $dbPort !== '' ? ':' . $dbPort : '' ) ) )
+    'Database'       => ( $db === 'odbc' ? "odbc ($odbcDialect)" : $db ) . ' ' . $dbName . ( $db === 'sqlite' || $db === 'duckdb' ? '' : ' at ' . ( $options['db-socket'] !== '' ? $options['db-socket'] : $options['db-host'] . ( $dbPort !== '' ? ':' . $dbPort : '' ) ) )
                         . ( $dbUser !== '' ? ', user ' . $dbUser : '' ),
     'Package'        => $options['package'] . ', ' . $options['language'] . ( $languages ? ' + ' . implode( ',', $languages ) : '' ),
     'Time zone'      => $timeZone['zone'] . ' (' . $timeZoneReasons[$timeZone['reason']] . ')',
@@ -480,7 +518,7 @@ register_shutdown_function( function () use ( $kickstart, $aside, $sections, $lo
            . "  Change it after the first login and delete that file.\n";
 } );
 
-echo "exp:install" . ( $flags['dry-run'] ? ' (dry run, --apply installs)' : '' ) . ": {$options['package']} on $db"
+echo "exp:install" . ( $flags['dry-run'] ? ' (dry run, --apply installs)' : '' ) . ": {$options['package']} on " . ( $db === 'odbc' ? "odbc ($odbcDialect)" : $db )
     . ( $db === 'sqlite' || $db === 'duckdb' ? " ($dbName)" : " ({$dbName} at {$options['db-host']}" . ( $dbPort !== '' ? ":$dbPort" : '' ) . ')' )
     . ", $url, access by " . ( $accessType === 'hostname' ? 'host' : $accessType )
     . ", time zone {$timeZone['zone']} (" . $timeZoneReasons[$timeZone['reason']] . ')'
@@ -507,6 +545,9 @@ Database (default: SQLite, no server needed)
                          db2 or informix (IBM, over pdo_ibm or ibm_db2)
                          libsql (sqld) or turso: SQLite over HTTP, with curl or allow_url_fopen;
                          the password is the server's auth token (turso: required)
+                         odbc: through the database's ODBC driver (PDO_ODBC or PHP's odbc
+                         extension), with --db-dialect; the defaults of port, name and
+                         user are the dialect's
                          (sqlserver: needs sqlsrv, pdo_sqlsrv or PDO_ODBC, and an existing database)
                          (neon, supabase, aurorapostgresql: the database must exist; TLS required by default)
                          (firebird: needs pdo_firebird of PHP 8.4 or later, Firebird 4 or 5, and an
@@ -552,6 +593,15 @@ Database (default: SQLite, no server needed)
                          https://host, libsql://<db>-<org>.turso.io)
   --db-tls=<mode>        libsql, turso: enabled (https), disabled (http) or auto (default: turso,
                          or port 443)
+  --db-dialect=<name>    odbc: sqlserver, postgresql, mysql (MariaDB too) or db2. SQL Server
+                         and Db2 run on their own drivers with ODBC as the layer,
+                         PostgreSQL and MySQL on the ODBC driver with their schema handlers
+  --db-odbc-driver=<name>  odbc: the ODBC driver's name (odbcinst.ini); default the
+                         dialect's: ODBC Driver 18 for SQL Server, PostgreSQL Unicode,
+                         MariaDB Unicode, IBM DB2 ODBC DRIVER
+  --db-dsn=<name>        odbc with postgresql or mysql: a data source of odbc.ini instead
+                         of --db-odbc-driver, --db-host and --db-port
+  --db-connection-string=<k=v;...>  odbc: more keywords of the connection
   --db-action=<action>   remove (default: empty the database first), ignore, skip
 
 Site

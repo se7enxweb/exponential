@@ -119,8 +119,17 @@
 ##   PHP's curl extension; turso - the same in Turso's cloud. Server and Port name
 ##   the server (8080, 443 for turso), Password is the auth token; URL and TLS of
 ##   [database_init] set [LibSQLSettings] of the new site
+## - odbc - The database through its ODBC driver (PDO_ODBC or PHP's odbc
+##          extension), with Dialect= below; the site gets
+##          DatabaseImplementation=odbc and [ODBCSettings]. SQL Server and Db2
+##          run on their own drivers with ODBC as the layer, PostgreSQL and
+##          MariaDB/MySQL on the ODBC driver with their schema handlers.
+##          odbc_sqlserver, odbc_pgsql, odbc_mysql and odbc_db2 are accepted too
 ## other values are possible if provided by extension
 #Type=sqlite3
+## Dialect=<sqlserver|postgresql|mysql|db2>
+## Type=odbc only: the database behind the ODBC driver
+#Dialect=
 
 #[database_init]
 ## Continue=<true|false>
@@ -143,6 +152,18 @@
 ## Socket=<socket-path>
 ## Path to socket or empty for no socket
 #Socket=
+## ODBCDriver=<name>
+## Type=odbc: the ODBC driver's name (odbcinst.ini, or the ODBC administrator on
+## Windows); empty: the dialect's usual one (ODBC Driver 18 for SQL Server,
+## PostgreSQL Unicode, MariaDB Unicode, IBM DB2 ODBC DRIVER)
+#ODBCDriver=
+## DataSourceName=<dsn>
+## Type=odbc with Dialect=postgresql or mysql: a DSN of odbc.ini instead of
+## ODBCDriver, Server and Port
+#DataSourceName=
+## ConnectionString=<keyword=value;...>
+## Type=odbc: more keywords of the connection (SSLmode=require ...)
+#ConnectionString=
 ## SSLMode=<disable|require|verify-ca|verify-full>
 ## cockroachdb, yugabytedb, neon, supabase, aurorapostgresql: TLS of the connection
 ## (empty: the database's default, require for Neon, Supabase and Aurora)

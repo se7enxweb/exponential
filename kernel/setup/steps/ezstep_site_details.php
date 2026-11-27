@@ -399,6 +399,9 @@ class eZStepSiteDetails extends eZStepInstaller
             $dbParameters['sqlserver'] = $databaseInfo['sqlserver'];
         if ( !empty( $databaseInfo['postgresql_wire'] ) )
             $dbParameters['postgresql_wire'] = $databaseInfo['postgresql_wire'];
+        // a database over ODBC: its [ODBCSettings], the dialect first (expODBCDB::resolve())
+        if ( eZSetupODBCParameters( $databaseInfo ) )
+            $dbParameters['odbc'] = eZSetupODBCParameters( $databaseInfo );
 
         try
         {

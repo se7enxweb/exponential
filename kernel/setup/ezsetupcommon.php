@@ -159,7 +159,95 @@ function eZSetupDatabaseMap()
                                    'required_version' => '19.0',
                                    'has_demo_data' => false,
                                    'supports_unicode' => true )
-                   ) + eZSetupPostgreSQLWireDatabaseMap();
+                   ) + eZSetupPostgreSQLWireDatabaseMap() + eZSetupODBCDatabaseMap();
+}
+}
+
+if ( !function_exists( 'eZSetupODBCDatabaseMap' ) ) {
+/**
+ * The databases a site can be installed into over ODBC (DatabaseImplementation=odbc, site.ini [ODBCSettings]): one
+ * type per dialect, whose 'family' is the database's own type, so every step that treats that database in its own
+ * way treats it the same over ODBC. SQL Server and Db2 run on their own drivers with PDO_ODBC as the layer, PostgreSQL
+ * and MariaDB/MySQL on expODBCDB (expODBCDB::resolve()). 'odbc_dialect' is [ODBCSettings] Dialect.
+ *
+ * @return array
+ */
+function eZSetupODBCDatabaseMap()
+{
+    $entry = function ( $type, $family, $dialect, $name, $version ) {
+        return array( 'type' => $type, 'driver' => 'odbc', 'family' => $family, 'odbc_dialect' => $dialect,
+                      'name' => $name, 'required_version' => $version, 'has_demo_data' => false, 'supports_unicode' => true );
+    };
+    return array( 'odbc_sqlserver' => $entry( 'odbc_sqlserver', 'sqlserver', 'sqlserver', 'Microsoft SQL Server (ODBC)', '14.0' ),
+                  'odbc_pgsql' => $entry( 'odbc_pgsql', 'pgsql', 'postgresql', 'PostgreSQL (ODBC)', '10.0' ),
+                  'odbc_mysql' => $entry( 'odbc_mysql', 'mysqli', 'mysql', 'MariaDB / MySQL (ODBC)', '5.7.0' ),
+                  'odbc_db2' => $entry( 'odbc_db2', 'db2', 'db2', 'IBM Db2 (ODBC)', '11.5' ) );
+}
+}
+
+if ( !function_exists( 'eZSetupODBCType' ) ) {
+/**
+ * The wizard type of an ODBC dialect (sqlserver, postgresql, mysql, db2 and their other names), or null for a
+ * dialect a site cannot be installed on.
+ *
+ * @param string $dialect
+ * @return string|null
+ */
+function eZSetupODBCType( $dialect )
+{
+    $dialect = expODBCDB::normalizeDialect( $dialect );
+    foreach ( eZSetupODBCDatabaseMap() as $type => $entry )
+        if ( $entry['odbc_dialect'] === $dialect )
+            return $type;
+    return null;
+}
+}
+
+if ( !function_exists( 'eZSetupODBCParameters' ) ) {
+/**
+ * The 'odbc' parameters of eZDB::instance() for the wizard's database_info: its [ODBCSettings] (database_info['odbc'])
+ * with the dialect of its type; an empty array for a database that is not reached over ODBC.
+ *
+ * @param array $databaseInfo PersistenceList['database_info']
+ * @return array
+ */
+function eZSetupODBCParameters( array $databaseInfo )
+{
+    $map = eZSetupODBCDatabaseMap();
+    $type = isset( $databaseInfo['type'] ) ? (string)$databaseInfo['type'] : '';
+    if ( !isset( $map[$type] ) )
+        return array();
+    $options = isset( $databaseInfo['odbc'] ) && is_array( $databaseInfo['odbc'] ) ? $databaseInfo['odbc'] : array();
+    $options['Dialect'] = $map[$type]['odbc_dialect'];
+    return $options;
+}
+}
+
+if ( !function_exists( 'eZSetupODBCOptions' ) ) {
+/**
+ * The [ODBCSettings] of a site installed over ODBC, from kickstart.ini's [database_init] (Driver or ODBCDriver,
+ * DataSourceName, ConnectionString, Layer) and the dialect of the wizard type; empty values left out.
+ *
+ * @param string $type a type of eZSetupODBCDatabaseMap()
+ * @param array $data
+ * @return array
+ */
+function eZSetupODBCOptions( $type, array $data )
+{
+    $map = eZSetupODBCDatabaseMap();
+    if ( !isset( $map[$type] ) )
+        return array();
+    $options = array( 'Dialect' => $map[$type]['odbc_dialect'] );
+    $keys = array( 'Driver' => array( 'ODBCDriver', 'Driver' ), 'DataSourceName' => array( 'DataSourceName', 'DSN' ),
+                   'ConnectionString' => array( 'ConnectionString' ), 'Layer' => array( 'ODBCLayer', 'Layer' ) );
+    foreach ( $keys as $setting => $names )
+        foreach ( $names as $name )
+            if ( isset( $data[$name] ) && trim( (string)$data[$name] ) !== '' )
+            {
+                $options[$setting] = trim( (string)$data[$name] );
+                break;
+            }
+    return $options;
 }
 }
 

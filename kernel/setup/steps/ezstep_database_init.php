@@ -208,14 +208,24 @@ class eZStepDatabaseInit extends eZStepInstaller
                         $options[$key] = trim( (string)$data[$key] );
                 $this->PersistenceList['database_info']['mysqlwire'] = $options;
             }
-            // SQL Server: the connection's encryption ([SQLServerSettings] of the site)
-            if ( isset( $this->PersistenceList['database_info']['type'] ) && $this->PersistenceList['database_info']['type'] == 'sqlserver' )
+            // SQL Server: the connection's encryption ([SQLServerSettings] of the site); over ODBC its layer too
+            if ( isset( $this->PersistenceList['database_info']['type'] ) && eZSetupDatabaseFamily( $this->PersistenceList['database_info']['type'] ) == 'sqlserver' )
             {
                 $options = array();
                 foreach ( array( 'Encrypt', 'TrustServerCertificate' ) as $key )
                     if ( isset( $data[$key] ) && trim( (string)$data[$key] ) !== '' )
                         $options[$key] = trim( (string)$data[$key] );
+                if ( $this->PersistenceList['database_info']['type'] != 'sqlserver' )
+                    $options['Layer'] = 'pdo_odbc';
                 $this->PersistenceList['database_info']['sqlserver'] = $options;
+            }
+            // A database over ODBC: [ODBCSettings] of the site (Dialect, Driver, DataSourceName, ConnectionString, Layer)
+            if ( isset( $this->PersistenceList['database_info']['type'] ) && eZSetupODBCOptions( $this->PersistenceList['database_info']['type'], $data ) )
+            {
+                $odbc = eZSetupODBCOptions( $this->PersistenceList['database_info']['type'], $data );
+                $this->PersistenceList['database_info']['odbc'] = $odbc;
+                if ( isset( $odbc['Driver'] ) && isset( $this->PersistenceList['database_info']['sqlserver'] ) )
+                    $this->PersistenceList['database_info']['sqlserver']['ODBCDriver'] = $odbc['Driver'];
             }
             // The databases of the PostgreSQL wire protocol: TLS and the pooler ([PostgreSQLWireSettings] of the site)
             if ( isset( $this->PersistenceList['database_info']['type'] ) && eZSetupDatabaseFamily( $this->PersistenceList['database_info']['type'] ) == 'pgsql'

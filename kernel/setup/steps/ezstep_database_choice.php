@@ -91,6 +91,14 @@ class eZStepDatabaseChoice extends eZStepInstaller
             foreach ( (array)$this->PersistenceList['database_extensions']['found'] as $extension )
             {
                 // the PHP extension of a driver in the kernel, by the type it gives
+                // PDO_ODBC and PHP's odbc extension: a site over ODBC, one type per dialect (eZSetupODBCDatabaseMap())
+                if ( $extension === 'pdo_odbc' || $extension === 'odbc' )
+                {
+                    foreach ( array_keys( eZSetupODBCDatabaseMap() ) as $type )
+                        if ( isset( $databaseMap[$type] ) && !in_array( $type, $types ) )
+                            $types[] = $type;
+                    continue;
+                }
                 $extension = self::typeOfExtension( $extension );
                 if ( $extension === '' )
                     continue;
@@ -182,6 +190,13 @@ class eZStepDatabaseChoice extends eZStepInstaller
                           'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];
+            // Type=odbc: the wizard type of the dialect ([database_choice] Dialect=sqlserver, postgresql, mysql or db2)
+            if ( $extension === 'odbc' )
+            {
+                $odbcType = eZSetupODBCType( isset( $data['Dialect'] ) ? $data['Dialect'] : '' );
+                if ( $odbcType !== null )
+                    $extension = $odbcType;
+            }
 
             if ( isset( $databaseMap[$extension] ) )
             {

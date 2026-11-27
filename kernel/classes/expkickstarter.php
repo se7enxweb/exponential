@@ -330,6 +330,11 @@ class expKickstarter
             return $ini->hasVariable( $group, $name ) ? $ini->variable( $group, $name ) : $default;
         };
         $type = (string)$get( 'database_choice', 'Type', '?' );
+        // over ODBC: the dialect and the driver or data source name ([database_choice] Dialect, [database_init] ODBCDriver, DataSourceName)
+        if ( strtolower( $type ) === 'odbc' )
+            $type = 'odbc (' . (string)$get( 'database_choice', 'Dialect', '?' )
+                  . ( (string)$get( 'database_init', 'DataSourceName', '' ) !== '' ? ', DSN ' . $get( 'database_init', 'DataSourceName', '' )
+                      : ( (string)$get( 'database_init', 'ODBCDriver', '' ) !== '' ? ', ' . $get( 'database_init', 'ODBCDriver', '' ) : '' ) ) . ')';
         $database = (string)$get( 'site_details', 'Database', $get( 'database_init', 'Database', '?' ) );
         $server = (string)$get( 'database_init', 'Server', '' );
         $port = (string)$get( 'database_init', 'Port', '' );

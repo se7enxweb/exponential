@@ -370,6 +370,11 @@ class eZStepCreateSites extends eZStepInstaller
         if ( !empty( $this->PersistenceList['database_info']['sqlserver'] ) && is_array( $this->PersistenceList['database_info']['sqlserver'] ) )
             foreach ( $this->PersistenceList['database_info']['sqlserver'] as $name => $value )
                 $ini->setVariable( 'SQLServerSettings', $name, $value );
+        // A database over ODBC: [ODBCSettings] in settings/override as well (the cluster file handler and the
+        // command line tools open the database before a siteaccess is matched)
+        if ( eZSetupODBCParameters( $this->PersistenceList['database_info'] ) )
+            foreach ( eZSetupODBCParameters( $this->PersistenceList['database_info'] ) as $name => $value )
+                $ini->setVariable( 'ODBCSettings', $name, $value );
         // A MySQL-wire database (TiDB, Vitess, SingleStore, Xpand, Aurora): its TLS the same way
         if ( !empty( $this->PersistenceList['database_info']['mysqlwire'] ) && is_array( $this->PersistenceList['database_info']['mysqlwire'] ) )
             foreach ( $this->PersistenceList['database_info']['mysqlwire'] as $name => $value )
@@ -1059,6 +1064,9 @@ class eZStepCreateSites extends eZStepInstaller
             $dbParameters['libsql'] = $databaseInfo['libsql'];
         if ( !empty( $databaseInfo['postgresql_wire'] ) )
             $dbParameters['postgresql_wire'] = $databaseInfo['postgresql_wire'];
+        // a database over ODBC: its [ODBCSettings], the dialect first (expODBCDB::resolve())
+        if ( eZSetupODBCParameters( $databaseInfo ) )
+            $dbParameters['odbc'] = eZSetupODBCParameters( $databaseInfo );
         try
         {
             $db = eZDB::instance( $dbDriver, $dbParameters, true );
@@ -1308,6 +1316,8 @@ class eZStepCreateSites extends eZStepInstaller
             $siteINIChanges['PostgreSQLWireSettings'] = $databaseInfo['postgresql_wire'];
         if ( !empty( $databaseInfo['libsql'] ) )
             $siteINIChanges['LibSQLSettings'] = $databaseInfo['libsql'];
+        if ( eZSetupODBCParameters( $databaseInfo ) )
+            $siteINIChanges['ODBCSettings'] = eZSetupODBCParameters( $databaseInfo );
         if ( trim( $dbSocket ) != '' )
             $siteINIChanges['DatabaseSettings']['Socket'] = $dbSocket;
         else
