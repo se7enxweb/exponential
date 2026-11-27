@@ -54,6 +54,8 @@
             <exclude>tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php</exclude>
             <!-- in the suites odbc and odbc-live (the GitHub job odbc); a file can be in one suite only -->
             <exclude>tests/tests/kernel/classes/msaccess</exclude>
+            <!-- in the suites cassandra and cassandra-live; a file can be in one suite only -->
+            <exclude>tests/tests/kernel/classes/cassandra</exclude>
         </testsuite>
 
         <testsuite name="kernel-content">
@@ -117,6 +119,8 @@
             <exclude>tests/tests/lib/ezdb/firebird</exclude>
             <!-- in the suites db2 and db2-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/db2</exclude>
+            <!-- in the suites cassandra and cassandra-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/cassandra</exclude>
         </testsuite>
 
         <!--
@@ -222,6 +226,24 @@
 
         <testsuite name="db2-live">
             <directory suffix="Test.php">tests/tests/lib/ezdb/db2/live</directory>
+        </testsuite>
+
+        <!--
+          The Apache Cassandra and ScyllaDB driver (expCassandraDB, expScyllaDB) and the import from a keyspace: the DB-less
+          tests, and the live tests against servers (EXP_TEST_CASSANDRA_HOST, _PORT, _USER, _PASSWORD, _KEYSPACE and the
+          same for EXP_TEST_SCYLLADB_; each skips without one, and without PHP 8.1 and the library mroosz/php-cassandra).
+          Run: php vendor/bin/phpunit - -testsuite cassandra | cassandra-live
+        -->
+        <testsuite name="cassandra">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/cassandra</directory>
+            <directory suffix="Test.php">tests/tests/kernel/classes/cassandra</directory>
+            <exclude>tests/tests/lib/ezdb/cassandra/live</exclude>
+            <exclude>tests/tests/kernel/classes/cassandra/live</exclude>
+        </testsuite>
+
+        <testsuite name="cassandra-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/cassandra/live</directory>
+            <directory suffix="Test.php">tests/tests/kernel/classes/cassandra/live</directory>
         </testsuite>
 
         <testsuite name="odbc-live">

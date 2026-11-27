@@ -3393,6 +3393,27 @@
     "bin/php/expaccessimport.php": [
       "tests/tests/kernel/classes/msaccess/expAccessImportTest.php"
     ],
+    "lib/ezdb/classes/expcassandra*.php": [
+      "tests/tests/lib/ezdb/cassandra/expCassandraDialectTest.php",
+      "tests/tests/lib/ezdb/cassandra/expCassandraDBTest.php",
+      "tests/tests/lib/ezdb/cassandra/expCassandraSchemaTest.php",
+      "tests/tests/kernel/classes/cassandra/expCassandraReaderTest.php"
+    ],
+    "lib/ezdb/classes/expscylladb.php": [
+      "tests/tests/lib/ezdb/cassandra/expCassandraDBTest.php"
+    ],
+    "lib/ezdbschema/classes/expcassandraschema.php": [
+      "tests/tests/lib/ezdb/cassandra/expCassandraSchemaTest.php"
+    ],
+    "kernel/classes/cassandra/*": [
+      "tests/tests/kernel/classes/cassandra/expCassandraReaderTest.php"
+    ],
+    "kernel/private/classes/commands/expcassandraimport.php": [
+      "tests/tests/kernel/classes/cassandra/expCassandraReaderTest.php"
+    ],
+    "bin/php/expcassandraimport.php": [
+      "tests/tests/kernel/classes/cassandra/expCassandraReaderTest.php"
+    ],
     "lib/ezdb/classes/expmysqlwire*.php": [
       "tests/tests/lib/ezdb/mysqlwire/expMySQLWireProfileTest.php",
       "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php"
@@ -3425,6 +3446,7 @@
     ],
     "kernel/classes/datatable/expdataconnections.php": [
       "tests/tests/lib/ezdb/mysqlwire/expMySQLWireDBTest.php",
+      "tests/tests/lib/ezdb/cassandra/expCassandraDBTest.php",
       "tests/tests/kernel/classes/datatable/expDataConnectionsTest.php"
     ],
     "kernel/classes/cluster/expclustersetup.php": [

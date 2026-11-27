@@ -1271,6 +1271,86 @@ jobs:
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
 
+  # Apache Cassandra and ScyllaDB (expCassandraDB, expScyllaDB) through the library mroosz/php-cassandra: the DB-less
+  # tests (testsuite cassandra, also in the PHPUnit job above, where the live ones skip) and the live ones (testsuite
+  # cassandra-live: the driver, data table connections with persistent classes, the import from a keyspace) against
+  # Cassandra 5.0 without authentication and ScyllaDB 2025.1 with PasswordAuthenticator. The live tests fail here
+  # instead of skipping: both servers are configured.
+  cassandra:
+    name: Cassandra and ScyllaDB (PHP ${{ matrix.php }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '8.1', '8.5' ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Start Cassandra 5.0 and ScyllaDB 2025.1
+        run: |
+          docker run -d --name cassandra -p 9042:9042 -e MAX_HEAP_SIZE=1G -e HEAP_NEWSIZE=200M \
+            -e "JVM_EXTRA_OPTS=-XX:MaxDirectMemorySize=512M" cassandra:5.0
+          docker run -d --name scylladb -p 9043:9042 scylladb/scylla:2025.1 --smp 1 --memory 1G --reserve-memory 0M \
+            --overprovisioned 1 --developer-mode 1 --authenticator PasswordAuthenticator --authorizer CassandraAuthorizer
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, intl, pdo, pdo_sqlite, sqlite3, sockets, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies (with mroosz/php-cassandra)
+        run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
+          COMPOSER="${CI_COMPOSER_FILE}" composer require --no-update --no-interaction "mroosz/php-cassandra:^1.2"
+          case "${{ matrix.php }}" in
+            8.1) COMPOSER="${CI_COMPOSER_FILE}" composer require --dev --no-update --no-interaction "phpunit/phpunit:^10.5" ;;
+          esac
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          test -d vendor/mroosz/php-cassandra/src
+          php bin/php/ezpgenerateautoloads.php -s -e
+
+      - name: Wait for the servers
+        run: |
+          for i in $(seq 1 90); do docker exec cassandra cqlsh -e 'SELECT release_version FROM system.local' >/dev/null 2>&1 && break; sleep 3; done
+          docker exec cassandra cqlsh -e 'SELECT release_version FROM system.local' || { docker logs --tail 40 cassandra; echo "::error::Cassandra did not answer"; exit 1; }
+          for i in $(seq 1 90); do docker exec scylladb cqlsh -u cassandra -p cassandra -e 'SELECT version FROM system.versions' >/dev/null 2>&1 && break; sleep 3; done
+          docker exec scylladb cqlsh -u cassandra -p cassandra -e 'SELECT version FROM system.versions' || { docker logs --tail 40 scylladb; echo "::error::ScyllaDB did not answer"; exit 1; }
+
+      - name: Run the Cassandra and ScyllaDB tests
+        env:
+          EXP_TEST_CASSANDRA_HOST: 127.0.0.1
+          EXP_TEST_CASSANDRA_PORT: 9042
+          EXP_TEST_SCYLLADB_HOST: 127.0.0.1
+          EXP_TEST_SCYLLADB_PORT: 9043
+          EXP_TEST_SCYLLADB_USER: cassandra
+          EXP_TEST_SCYLLADB_PASSWORD: cassandra
+        run: |
+          php vendor/bin/phpunit --colors=always --testsuite cassandra
+          php vendor/bin/phpunit --colors=always --fail-on-skipped --testsuite cassandra-live
+
+      - name: Logs
+        if: failure()
+        run: |
+          docker logs --tail 80 cassandra || true
+          docker logs --tail 80 scylladb || true
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: |
+          rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+          docker rm -f cassandra scylladb || true
+
   # MS Access on Windows: Microsoft's Access Database Engine 2016 (x64) ODBC driver, an empty .accdb made with ADOX,
   # the driver's live tests, the import through ODBC, and the probe of a minimal site on Access (its report is an
   # artifact). The engine is a download from Microsoft, not part of the runner image, so the job may not fail the run.
