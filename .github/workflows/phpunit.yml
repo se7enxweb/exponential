@@ -882,8 +882,16 @@ jobs:
           docker run -d --name db2 --privileged -p 50000:50000 -e LICENSE=accept -e DB2INSTANCE=db2inst1 \
             -e DB2INST1_PASSWORD=Ci-Db2-2026 -e SAMPLEDB=false -e ARCHIVE_LOGS=false -e AUTOCONFIG=false \
             -e PERSISTENT_HOME=false icr.io/db2_community/db2:${{ matrix.db2 }}
-          docker run -d --name ifx --privileged -p 9089:9089 -e LICENSE=accept \
-            icr.io/informix/informix-developer-database:${{ matrix.informix }}
+          # Informix's entrypoint gives up ("Informix is offline") when the sysadmin database takes more than 60 s
+          # to appear, which it does on a runner busy starting Db2 too: its wait is raised to 600 s before the start
+          docker create --name ifx --privileged -p 9089:9089 -e LICENSE=accept \
+            icr.io/informix/informix-developer-database:${{ matrix.informix }} >/dev/null
+          docker cp ifx:/opt/ibm/scripts/informix_init.sh informix_init.sh
+          sed -i -E 's/-lt 60 \]/-lt 600 ]/; s/-gt 60 \]/-ge 600 ]/' informix_init.sh
+          grep -q -- '-lt 600 ]' informix_init.sh || echo "::warning::Informix's sysadmin wait was not found, left as it is"
+          docker cp informix_init.sh ifx:/opt/ibm/scripts/informix_init.sh
+          rm -f informix_init.sh
+          docker start ifx >/dev/null
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
