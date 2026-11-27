@@ -11,7 +11,9 @@
  * The SQL of the portable helpers every driver offers (eZDBInterface::sqlLimit(), sqlUpsert(), sqlGroupConcat(),
  * sqlUnixTimestamp(), sqlFromUnixTimestamp(), sqlQuoteIdentifier()), per SQL dialect: mysql (MySQL and MariaDB), duckdb,
  * postgresql, sqlite, oracle, sqlserver, msaccess (MS Access through ODBC, expMSAccessDB), firebird (expFirebirdDB),
- * db2 (expDb2DB), informix (expInformixDB), cassandra (expCassandraDB: the SQL its driver answers on CQL);
+ * db2 (expDb2DB), informix (expInformixDB), cassandra (expCassandraDB: the SQL its driver answers on CQL),
+ * couchbase (expCouchbaseDB: MySQL's forms, which its driver turns into SQL++; a LIMIT without a number is an OFFSET
+ * alone, as DuckDB's);
  * generic is ANSI SQL. Kernel code that would otherwise write MySQL's LIMIT,
  * ON DUPLICATE KEY UPDATE, GROUP_CONCAT or UNIX_TIMESTAMP calls the helper of its database instead, so no code
  * branches on the database it runs on.
@@ -21,7 +23,7 @@
  */
 class expDBSQLHelpers
 {
-    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'duckdb', 'db2', 'informix', 'cassandra', 'generic' );
+    const DIALECTS = array( 'mysql', 'postgresql', 'sqlite', 'oracle', 'sqlserver', 'msaccess', 'firebird', 'duckdb', 'db2', 'informix', 'cassandra', 'couchbase', 'generic' );
 
     /**
      * The limit and offset as integers: limit false for "no limit" (false, null, '', negative or not a number).
@@ -44,6 +46,8 @@ class expDBSQLHelpers
      */
     public static function quoteIdentifier( $dialect, $name )
     {
+        if ( $dialect === 'couchbase' )
+            $dialect = 'mysql';
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::quoteName( $name );
         if ( $dialect === 'msaccess' )
@@ -75,6 +79,8 @@ class expDBSQLHelpers
      */
     public static function limit( $dialect, $sql, $limit, $offset = 0 )
     {
+        if ( $dialect === 'couchbase' )
+            $dialect = 'duckdb';
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::applyLimit( $sql, $limit, $offset );
         if ( $dialect === 'msaccess' )
@@ -123,6 +129,8 @@ class expDBSQLHelpers
      */
     public static function upsert( $dialect, callable $literal, $table, array $row, array $keyColumns, $updateColumns = null )
     {
+        if ( $dialect === 'couchbase' )
+            $dialect = 'mysql';
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::upsert( $table, $row, $keyColumns, $updateColumns );
         if ( $dialect === 'firebird' )
@@ -197,6 +205,8 @@ class expDBSQLHelpers
      */
     public static function forUpdate( $dialect, $sql )
     {
+        if ( $dialect === 'couchbase' )
+            $dialect = 'mysql';
         $sql = rtrim( (string)$sql, " \t\r\n;" );
         if ( $dialect === 'sqlite' || $dialect === 'msaccess' || $dialect === 'duckdb' )
             return $sql;
@@ -224,6 +234,8 @@ class expDBSQLHelpers
      */
     public static function groupConcat( $dialect, callable $literal, $expression, $separator = ',', $orderBy = null )
     {
+        if ( $dialect === 'couchbase' )
+            $dialect = 'mysql';
         if ( $dialect === 'sqlserver' )
             return expSQLServerDialect::groupConcat( $expression, $separator, $orderBy );
         if ( $dialect === 'msaccess' )
@@ -260,6 +272,8 @@ class expDBSQLHelpers
      */
     public static function unixTimestamp( $dialect, $expression = null )
     {
+        if ( $dialect === 'couchbase' )
+            $dialect = 'mysql';
         switch ( $dialect )
         {
             case 'sqlserver':
@@ -295,6 +309,8 @@ class expDBSQLHelpers
      */
     public static function fromUnixTimestamp( $dialect, $expression )
     {
+        if ( $dialect === 'couchbase' )
+            $dialect = 'mysql';
         switch ( $dialect )
         {
             case 'sqlserver':
