@@ -77,9 +77,14 @@ class eZSessionSameSiteAliasTest extends PHPUnit\Framework\TestCase
             else
                 $_SERVER[$key] = $saved[0];
         }
-        foreach ( glob( $this->dir . '*' ) as $file )
-            unlink( $file );
-        rmdir( $this->dir );
+        // only the directory setUp() made: when setUp() failed before making it, glob( '*' ) would list the
+        // installation's own files
+        if ( is_string( $this->dir ) && strpos( $this->dir, 'var/tmp/phpunit-samesite-' ) === 0 && is_dir( $this->dir ) )
+        {
+            foreach ( glob( $this->dir . '*' ) as $file )
+                unlink( $file );
+            rmdir( $this->dir );
+        }
     }
 
     private function setNoted( $value )
