@@ -68,7 +68,8 @@ class eZExpiryHandlerCacheDirectoryTest extends PHPUnit\Framework\TestCase
         $siteVarDir = $this->useVarDir( array( 'image-alias' => 200 ) );
 
         $this->assertTrue( eZExpiryHandler::resetForCurrentCacheDirectory() );
-        $this->assertSame( $siteVarDir . '/cache/expiry.php', eZExpiryHandler::instance()->CacheFile->name() );
+        // eZDir::path() writes slashes, also on Windows
+        $this->assertSame( str_replace( '\\', '/', $siteVarDir . '/cache/expiry.php' ), str_replace( '\\', '/', eZExpiryHandler::instance()->CacheFile->name() ) );
         $this->assertSame( 200, eZExpiryHandler::getTimestamp( 'image-alias' ) );
     }
 
