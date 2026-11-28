@@ -1816,7 +1816,7 @@ class expDFSFileHandlerMongoDBBackend implements eZClusterEventNotifier, expDFSF
         }
 
         $table = $this->metaDataTable;
-        $rows = $this->find( $table, array( 'name' => new MongoDB\BSON\Regex( self::prefixRegex( eZSys::cacheDirectory() . DIRECTORY_SEPARATOR ), '' ) ),
+        $rows = $this->find( $table, array( 'name' => new MongoDB\BSON\Regex( self::prefixRegex( eZSys::cacheDirectory() . '/' ), '' ) ),
                              array( 'projection' => array( '_id' => 1 ), 'limit' => max( 0, (int)$limit ) ), __METHOD__ );
         if ( $rows === false )
             throw new RuntimeException( "MongoDB error selecting cache files in $table\n" . $this->lastErrorText() );

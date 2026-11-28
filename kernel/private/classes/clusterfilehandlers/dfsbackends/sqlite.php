@@ -2207,7 +2207,7 @@ class expDFSFileHandlerSQLiteBackend implements eZClusterEventNotifier, expDFSFi
             throw new InvalidArgumentException( "The split table features is disabled: cache and storage table are identical" );
         }
 
-        $glob = self::globPrefix( eZSys::cacheDirectory() . DIRECTORY_SEPARATOR );
+        $glob = self::globPrefix( eZSys::cacheDirectory() . '/' );
         $table = $this->metaDataTable;
         $query = "DELETE FROM $table WHERE name_hash IN (SELECT name_hash FROM $table WHERE name GLOB :glob LIMIT " . (int)$limit . ")";
         $stmt = $this->_query( $query, __METHOD__, true, array( ':glob' => $glob ) );

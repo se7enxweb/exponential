@@ -2157,7 +2157,7 @@ class expDFSFileHandlerSQLServerBackend implements eZClusterEventNotifier, expDF
 
         $table = $this->metaDataTable;
         $query = "DELETE TOP (" . (int)$limit . ") FROM $table WHERE name LIKE :pattern ESCAPE '\\'";
-        $stmt = $this->_query( $query, __METHOD__, true, array( ':pattern' => self::likePrefix( eZSys::cacheDirectory() . DIRECTORY_SEPARATOR ) ) );
+        $stmt = $this->_query( $query, __METHOD__, true, array( ':pattern' => self::likePrefix( eZSys::cacheDirectory() . '/' ) ) );
         if ( !$stmt )
         {
             throw new RuntimeException( "SQL Server error in $query\n" . $this->lastErrorText() );

@@ -2073,7 +2073,7 @@ class eZDFSFileHandlerMySQLiBackend implements eZClusterEventNotifier, expDFSFil
             throw new InvalidArgumentException( "The split table features is disabled: cache and storage table are identical" );
         }
 
-        $like = addcslashes( eZSys::cacheDirectory(), '_' ) . DIRECTORY_SEPARATOR . '%';
+        $like = addcslashes( eZSys::cacheDirectory(), '_' ) . '/%';
 
         $query = "DELETE FROM {$this->metaDataTable} WHERE name LIKE '$like' LIMIT $limit";
         if ( !mysqli_query( $this->db, $query ) )

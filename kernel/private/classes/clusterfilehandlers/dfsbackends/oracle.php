@@ -2124,7 +2124,7 @@ class expDFSFileHandlerOracleBackend implements eZClusterEventNotifier, expDFSFi
 
         $table = $this->metaDataTable;
         $query = "DELETE FROM $table WHERE name LIKE :pattern ESCAPE '\\' AND ROWNUM <= " . (int)$limit;
-        $stmt = $this->_query( $query, __METHOD__, true, array( ':pattern' => self::likePrefix( eZSys::cacheDirectory() . DIRECTORY_SEPARATOR ) ) );
+        $stmt = $this->_query( $query, __METHOD__, true, array( ':pattern' => self::likePrefix( eZSys::cacheDirectory() . '/' ) ) );
         if ( !$stmt )
         {
             throw new RuntimeException( "Oracle error in $query\n" . $this->lastErrorText() );
