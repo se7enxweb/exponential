@@ -177,7 +177,8 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         // for no file under PHP 8 (unpack() gives "", and "" == 0 is false), so the archive is rewritten for it
         $nul = self::file( 'package.xml', eZPackageTestFixtures::definition( array( 'name' => 'k1_archive' ) ), '0000644', $v7, "\0" )
              . self::file( 'a.txt', 'nul typed', '0000644', $v7, "\0" );
-        $path = $this->write( $nul, 'nul.ezpkg' );
+        // not nul.ezpkg: NUL is a device name on Windows, whatever the extension
+        $path = $this->write( $nul, 'nul-type.ezpkg' );
         $this->assertNull( expPackageArchive::scan( $path, $this->limits ) );
         $this->assertTrue( expPackageArchive::index( $path, $this->limits )['rewrite'] );
         $this->assertSame( 'ok', $this->inspect( $path ) );
