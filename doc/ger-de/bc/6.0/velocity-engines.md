@@ -706,6 +706,60 @@ auflöst**: `/design/standard/stylesheets/../../../settings/site.ini` beginnt wi
 Server würde die Punkte auflösen und die Datei senden. Ein aufgelöster Pfad außerhalb des Wurzelverzeichnisses oder
 außerhalb der Liste, oder ein Skript, ergibt 404.
 
+## Eine Site von Apache übernehmen: was velocity.ini hinzufügt
+
+Seit dem 25. November 2026 schreibt `exp:velocity` sechs weitere Dinge aus `settings/velocity.ini` in die
+Konfiguration, mit der es die Qbix-Engine startet, damit sich eine Site, die vorher Apache ausgeliefert hat, unter
+Velocity gleich verhält. Jedes braucht **Velocity v0.0.4.65 oder neuer**; eine ältere Engine ignoriert die Schlüssel.
+Setzen Sie sie in `settings/override/velocity.ini.append.php` (oder mit `./console exp:ini`) und starten Sie neu oder
+rollen Sie aus (`./console exp:velocity deploy`).
+
+| Einstellung | Standard | Was sie tut | Entsprechung bei Apache |
+|---|---|---|---|
+| `[ServerSettings] DropMaster` | `disabled` | `enabled` startet den Server mit `--drop-master`: Er bindet seine Ports und liest das Zertifikat als root und wird dann endgültig `User`/`Group`, vor dem Warm-up und den Workern. Braucht `User`; ein Start, der die Rechte nicht abgeben kann, endet mit einem Fehler und läuft nie als root weiter. Ein erneuertes Zertifikat wird beim nächsten Neustart gelesen. | `User`/`Group` des Elternprozesses |
+| `[ServerSettings] MimeTypes` | leer | eine lesbare Datei wie `/etc/mime.types`, gelesen vor der eigenen Liste der Inhaltstypen des Servers | `TypesConfig` |
+| `[ServerSettings] DefaultCharset` | leer | der Zeichensatz, der Textantworten ohne eigenen hinzugefügt wird | `AddDefaultCharset` |
+| `[ServerSettings] TrustedProxies[]` | leer: nur Loopback | Adressen oder CIDR-Bereiche, deren `X-Forwarded-For` und `X-Forwarded-Proto` der Server glaubt: der Webserver oder Load Balancer davor | `RemoteIPTrustedProxy` von `mod_remoteip` |
+| `[ServerSettings] StaticRoots[]` | leer | weitere Verzeichnisse, aufgebaut wie der Document Root, in denen ein statischer Pfad gesucht wird, wenn der Document Root ihn nicht hat; jeder Eintrag `dir` oder `dir;regex` (der reguläre Ausdruck beschränkt ihn auf die Pfade, auf die er passt); nur absolute, vorhandene Verzeichnisse zählen | ein `Alias` oder ein Rewrite in ein anderes Verzeichnis |
+| `[ErrorDocumentSettings] Hosts[]`, `Documents[<status>]` | leer | für jeden Hostnamen in `Hosts[]` die Datei, die als Body einer Antwort geschickt wird, die der Server selbst erzeugt (403 für einen abgelehnten Pfad, 404 ...); Seiten, die die Anwendung rendert, bleiben unberührt | `ErrorDocument` (die `error_docs` von Plesk) |
+| `[HostFallbackSettings]` | `Enabled=disabled` | siehe unten | keine |
+
+**Der DFS-Cluster.** Auf einem Cluster mit `file.ini [ClusteringSettings] FileHandler=eZDFSFileHandler` fügt
+`exp:velocity` den DFS-Mount (`[eZDFSClusteringSettings] MountPointPath`) von selbst den statischen Wurzeln hinzu,
+beschränkt auf `^/var/([^/]+/)?cache/(texttoimage|public)/`: Die gepackten Skripte und Stylesheets und die Textbilder,
+die ein anderer Knoten erzeugt hat, werden vom gemeinsamen Mount geschickt, so wie Apache sie an `index_cluster.php`
+übergibt. Nichts einzustellen.
+
+**Der Host-Fallback.** Mit `[HostFallbackSettings] Enabled=enabled` geht ein Host, dessen Antworten in eine Flut von
+Serverfehlern umschlagen (`Errors` 5xx-Antworten innerhalb von `Window` Sekunden; Standard 20 und 60) oder den ein
+Werkzeug in `StateDir` markiert hat, für `Hold` Sekunden (Standard 300) an den Server zurück, der ihn vorher bedient
+hat: an `Upstream` (ein einfaches HTTP-`host:port` oder `unix:/pfad`), oder ohne `Upstream` antwortet der Server mit
+einer 503, die den Grund nennt (`X-Vc-Fallback: unavailable`), damit der Webserver davor sie an den vorherigen Server
+weitergibt. `Report` ist ein Befehl, der einmal je Episode läuft.
+
+```ini
+# settings/override/velocity.ini.append.php: eine von Apache übernommene Site hinter nginx auf demselben Rechner
+[ServerSettings]
+User=example
+Group=example
+DropMaster=enabled
+MimeTypes=/etc/mime.types
+DefaultCharset=UTF-8
+TrustedProxies[]
+TrustedProxies[]=127.0.0.1
+TrustedProxies[]=::1
+
+[ErrorDocumentSettings]
+Hosts[]
+Hosts[]=www.example.com
+Documents[]
+Documents[404]=/var/www/vhosts/example.com/error_docs/not_found.html
+
+[HostFallbackSettings]
+Enabled=enabled
+Upstream=127.0.0.1:7080
+```
+
 ## Einstellungen, die jede Engine ignoriert
 
 `start` und `status` nennen jede Einstellung, die eine Installation gesetzt hat und auf die die verwendete Engine

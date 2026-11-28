@@ -752,6 +752,57 @@ starts like a stylesheet, and the built-in server would resolve the dots and
 send the file. A resolved path outside the root, or outside the list, or a
 script, is a 404.
 
+## Taking a site over from Apache: what velocity.ini adds
+
+From 25 November 2026 `exp:velocity` writes six more things from `settings/velocity.ini` into the configuration it
+starts the Qbix engine with, so that a site Apache served before behaves the same under Velocity. Each needs **Velocity
+v0.0.4.65 or later**; an older engine ignores the keys. Set them in `settings/override/velocity.ini.append.php` (or with
+`./console exp:ini`) and restart or deploy (`./console exp:velocity deploy`).
+
+| Setting | Default | What it does | Apache's counterpart |
+|---|---|---|---|
+| `[ServerSettings] DropMaster` | `disabled` | `enabled` starts the server with `--drop-master`: it binds its ports and reads the certificate as root, then becomes `User`/`Group` for good, before the warm-up and the workers. Needs `User`; a start that cannot drop stops with an error and never goes on as root. A renewed certificate is read at the next restart. | `User`/`Group` of the parent process |
+| `[ServerSettings] MimeTypes` | empty | a readable file such as `/etc/mime.types`, read before the server's own list of content types | `TypesConfig` |
+| `[ServerSettings] DefaultCharset` | empty | the charset added to text answers that do not name one | `AddDefaultCharset` |
+| `[ServerSettings] TrustedProxies[]` | empty: loopback only | addresses or CIDR ranges whose `X-Forwarded-For` and `X-Forwarded-Proto` the server believes: the web server or load balancer in front | `mod_remoteip`'s `RemoteIPTrustedProxy` |
+| `[ServerSettings] StaticRoots[]` | empty | further directories laid out like the document root where a static path is looked for when the document root lacks it; each entry `dir` or `dir;regex` (the regular expression limits it to the paths it matches); only absolute, existing directories count | an `Alias` or a rewrite to another directory |
+| `[ErrorDocumentSettings] Hosts[]`, `Documents[<status>]` | empty | for each host name in `Hosts[]`, the file sent as the body of an answer the server makes itself (403 for a path it refuses, 404 ...); pages the application renders are not touched | `ErrorDocument` (Plesk's `error_docs`) |
+| `[HostFallbackSettings]` | `Enabled=disabled` | see below | none |
+
+**The DFS cluster.** On a cluster with `file.ini [ClusteringSettings] FileHandler=eZDFSFileHandler`, `exp:velocity`
+adds the DFS mount (`[eZDFSClusteringSettings] MountPointPath`) to the static roots by itself, limited to
+`^/var/([^/]+/)?cache/(texttoimage|public)/`: the packed scripts and stylesheets and the text images another node
+made are sent from the shared mount, as Apache hands them to `index_cluster.php`. Nothing to set.
+
+**The host fallback.** With `[HostFallbackSettings] Enabled=enabled`, a host whose answers turn into a storm of server
+errors (`Errors` 5xx answers within `Window` seconds; defaults 20 and 60), or that a tool flagged in `StateDir`, goes
+back to the server that served it before for `Hold` seconds (default 300): to `Upstream` (a plain HTTP `host:port` or
+`unix:/path`), or, with no `Upstream`, the server answers a 503 that says why (`X-Vc-Fallback: unavailable`) for the
+web server in front to hand to the previous server. `Report` is a command run once per episode.
+
+```ini
+# settings/override/velocity.ini.append.php: a site moved from Apache behind nginx on the same machine
+[ServerSettings]
+User=example
+Group=example
+DropMaster=enabled
+MimeTypes=/etc/mime.types
+DefaultCharset=UTF-8
+TrustedProxies[]
+TrustedProxies[]=127.0.0.1
+TrustedProxies[]=::1
+
+[ErrorDocumentSettings]
+Hosts[]
+Hosts[]=www.example.com
+Documents[]
+Documents[404]=/var/www/vhosts/example.com/error_docs/not_found.html
+
+[HostFallbackSettings]
+Enabled=enabled
+Upstream=127.0.0.1:7080
+```
+
 ## Settings each engine ignores
 
 `start` and `status` name every setting an installation set that the engine in

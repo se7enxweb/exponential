@@ -3769,7 +3769,7 @@ e2a516f7c4bc0c989a595f527c163d15  doc/eng-us/bc/6.0/frankenphp.md
 0e2c6e7e224b88704ec2751a68e242f2  doc/eng-us/bc/6.0/help-content-workflow-feedback.md
 574676e730c70304294db7266381f8b6  doc/eng-us/bc/6.0/http-caching.md
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/eng-us/bc/6.0/http2-and-cache-warming.md
-e42d994559ab9bfcfdbdfa47277e8ef3  doc/eng-us/bc/6.0/httpcache.md
+683192abd6345020bb088a4113f4b959  doc/eng-us/bc/6.0/httpcache.md
 869d3527557d514a7afb1bb6a5062513  doc/eng-us/bc/6.0/image-aliases-on-demand.md
 2b3cb1c9f14801037ef6f761686abd69  doc/eng-us/bc/6.0/image-focal-point.md
 ca5c128dd8208e512e824d14b875859f  doc/eng-us/bc/6.0/ini-save-file-permissions.md
@@ -3843,7 +3843,7 @@ cd72965db1f76b02f5d4df61cda1e0b5  doc/eng-us/bc/6.0/translated-documentation.md
 69d804d80e2da3a6139cf129f4fba8de  doc/eng-us/bc/6.0/user-account-approval.md
 7928239ba6369a6bb899ee998ce94b05  doc/eng-us/bc/6.0/user-password-change.md
 e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-notes.md
-25854029eacb00ad463e28e9ab5f3432  doc/eng-us/bc/6.0/velocity-engines.md
+c9d6a8f00eeda8bfef7efec2acd97759  doc/eng-us/bc/6.0/velocity-engines.md
 308dc577e917e96bd27c826e958d21b4  doc/eng-us/bc/6.0/velocity-ondisk-layout.md
 4a126e058dbc83024b374941e06092ab  doc/eng-us/bc/6.0/view-count-multi-site.md
 9b429d7d4f93a93dfca9de098c81823a  doc/eng-us/bc/6.0/view_full_security.md
@@ -13300,7 +13300,7 @@ bc4db0183deb0089e58c6eaea3a5ff1f  doc/eng-us/install/01-introduction.md
 cb10da725a3fecff3599dfd9f57e1e0e  doc/eng-us/install/02-requirements.md
 efcb7e6e422a7d33b312c844e73c7efb  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
-8a8e127dd8a181987a096d9fffb3b51e  doc/eng-us/install/05-setup-wizard.md
+c8a7f774673c9f8d16aba39e06a54ec6  doc/eng-us/install/05-setup-wizard.md
 83261f15db4694059d061715d1d33f37  doc/eng-us/install/06-kickstarter.md
 0097b666167efd6ba1a2b941f2b817fd  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
@@ -13937,7 +13937,7 @@ cf889b0a0d4dd069a1e712446b41dc27  doc/ger-de/bc/6.0/hilfeinhalte-dita-ebooks-rev
 51e8b49f488658854f6e5be9919c8014  doc/ger-de/bc/6.0/hilfeinhalte-pruefablauf-rueckmeldung.md
 2f85d280cc30fec78fa498042ebfa2d7  doc/ger-de/bc/6.0/http-caching.md
 43d676b154295b51022f71acc225fb5f  doc/ger-de/bc/6.0/http2-und-cache-vorwaermen.md
-a8bce999dfa1cb936111fb3883fa06e1  doc/ger-de/bc/6.0/httpcache.md
+f7d6972443f8f49c0afab80d82f663bf  doc/ger-de/bc/6.0/httpcache.md
 f7afe9eda5b02d1cb4e810857a818dd0  doc/ger-de/bc/6.0/inhaltsjobs.md
 8f0969a969c6db8b47b441c1ae4bd03b  doc/ger-de/bc/6.0/kernel-dienste.md
 197db39abf7f4ea2eeb9a260a803daee  doc/ger-de/bc/6.0/kickstartercli.md
@@ -14011,7 +14011,7 @@ fb7e473b95d422399e463bfe56d9395d  doc/ger-de/bc/6.0/ui-umschalter.md
 6444af39a4f005b744ebce2ec72a46cf  doc/ger-de/bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md
 22bc65a307d1512fbbf434892dde300a  doc/ger-de/bc/6.0/url-zuordnungen-importieren.md
 271c73727f0fff7506e5831158e4122d  doc/ger-de/bc/6.0/velocity-engine-upgrade-hinweise.md
-5f2fa56405a5e809d03e0b2383de4457  doc/ger-de/bc/6.0/velocity-engines.md
+e7fa00993389ae854b881ae1923e3e9d  doc/ger-de/bc/6.0/velocity-engines.md
 5d2e214aff835b2b72b2c43b01fd5ffa  doc/ger-de/bc/6.0/velocity-verzeichnisstruktur.md
 46accbb2931f17afb423b888e8950f8a  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-07-08.md
 4f6beb8db57ca766b2bde6b68a6eacd6  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-09b.md
@@ -23240,7 +23240,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 a39faf94d6a7af78312ae4eb1ef01146  doc/ger-de/installation/02-voraussetzungen.md
 e8a1d89728201585d1cb6850cad1ce36  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
-dc8e282da8372c7775b4bab6d839930a  doc/ger-de/installation/05-setup-assistent.md
+21836f9632cbebb5344268c227a1af86  doc/ger-de/installation/05-setup-assistent.md
 00ff5b63c49005d825b5c7d213ba05ea  doc/ger-de/installation/06-kickstarter.md
 0444a0b72e7fcdb36a5e507d9829ca36  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
