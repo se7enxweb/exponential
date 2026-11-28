@@ -3699,7 +3699,7 @@ bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
 ba34fdb46710aeaf4d07089fce9a4354  doc/eng-us/HISTORY.md
 86d40872aa2238b814b094d0b0bd252c  doc/eng-us/INSTALL.md
-2ad2ddcc246ceef3533255537837bdf7  doc/eng-us/INTEGRATING.md
+4aadb8da54ed618cffb8c42a2f901fbb  doc/eng-us/INTEGRATING.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 e94bf215ce25a360619c5214ddb267df  doc/eng-us/README-LICENSE.md
 8285cb495a0778621e3c2e97738fb78e  doc/eng-us/SUPPORT.md
@@ -6980,7 +6980,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-aa1e0fc1d5576ea2bd15784d4ca4156a  doc/eng-us/features/6.0/README.md
+2f12da9e3ab867f9a45e695fbc60c051  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7023,6 +7023,7 @@ c5efbdd362ad6370abdcf053a6f5cd9d  doc/eng-us/features/6.0/exp-adminui.md
 d5595ab6ae6776be882417841beb8fb8  doc/eng-us/features/6.0/exp-debug-bar.md
 d9177e42ef957029c160b94a0b7e6363  doc/eng-us/features/6.0/exp-ini-command.md
 d66caa2588e3b8971bf0eac483e98e51  doc/eng-us/features/6.0/expcomponents.md
+f2a45f7f46dee27e3c8cb0c716267e49  doc/eng-us/features/6.0/exponential-tron-mcp-server.md
 ac55ec9c4caa5425b7c20230440f9026  doc/eng-us/features/6.0/extension-list-and-downloads.md
 b35cf8140a2f26d5e3488661f148506d  doc/eng-us/features/6.0/extension-loading-order.md
 9ba1fccc9070cac52fac658d50975120  doc/eng-us/features/6.0/extension-module-override.md
@@ -7535,12 +7536,12 @@ ec1459258c63333639f8c01d681837b9  doc/eng-us/help/advocates/writing-a-community-
 8c453ae70ee60b740b0ecfb544915ae0  doc/eng-us/help/advocates/writing-about-the-history-correctly.md
 48331694540cc60597526eb3d848c240  doc/eng-us/help/advocates/writing-history-posts.md
 06ce2f649d34b8cc912770c84f144a90  doc/eng-us/help/advocates/your-first-week-as-an-advocate.md
-94f3fad89f450be110491316f6b3bd8d  doc/eng-us/help/ai-agents/agentic-workflows/README.md
+1e33d84333db927078a9e23e3a7128bc  doc/eng-us/help/ai-agents/agentic-workflows/README.md
 e8aa983ebb9815de5517c3abafe993a7  doc/eng-us/help/ai-agents/agentic-workflows/a-read-only-api-key-step-by-step.md
 a7204efdd08bfaab61e30d291c2a1d8b  doc/eng-us/help/ai-agents/agentic-workflows/agent-friendly-documentation.md
 9f2a9b690eb009382dd7f366ff539128  doc/eng-us/help/ai-agents/agentic-workflows/agents-and-expservices.md
 cda9a1d29a55b6246d299bc0739f653a  doc/eng-us/help/ai-agents/agentic-workflows/agents-and-the-rest-api.md
-befc0df540afc895b8d9c8d3592c392c  doc/eng-us/help/ai-agents/agentic-workflows/choosing-an-interface.md
+60bd8bba0be3b653c0544d13a24377e8  doc/eng-us/help/ai-agents/agentic-workflows/choosing-an-interface.md
 ba3395443f7a02f2c5998bc5f5248c94  doc/eng-us/help/ai-agents/agentic-workflows/coding-agents-on-an-exponential-project.md
 833233fc450086959ebb00c557c6c043  doc/eng-us/help/ai-agents/agentic-workflows/credentials-for-agents.md
 22affed21212e1ed661c6ebcadc74e63  doc/eng-us/help/ai-agents/agentic-workflows/keeping-a-person-in-the-loop.md
@@ -7548,7 +7549,7 @@ ba3395443f7a02f2c5998bc5f5248c94  doc/eng-us/help/ai-agents/agentic-workflows/co
 d6613ceae63361d2a92cc595f986d233  doc/eng-us/help/ai-agents/agentic-workflows/workflow-content-import.md
 2cdcfa947ca66bd7bc2906af87484b8b  doc/eng-us/help/ai-agents/agentic-workflows/workflow-diagnosis-with-the-console.md
 079886b99da2a20bbd2de7f2a0cef5c8  doc/eng-us/help/ai-agents/agentic-workflows/workflow-read-only-content-report.md
-0cebdaebf4f58cd282aa37999c82cea8  doc/eng-us/help/ai-agents/ai-agents-faq.md
+ba4502802c2f12f1e0fdac113d18ce2a  doc/eng-us/help/ai-agents/ai-agents-faq.md
 4f29d085eab01484739a174b7c98e860  doc/eng-us/help/ai-agents/ai-agents-glossary.md
 c3284232b86354569cdff241359c5cca  doc/eng-us/help/ai-agents/ai-agents-reading-path.md
 e9a10bf9cc5d3c075a00fed661b2c8ab  doc/eng-us/help/ai-agents/ai-agents-start-here.md
@@ -7580,8 +7581,8 @@ b73905e496bebc437a83fa90d493e1b6  doc/eng-us/help/ai-agents/governance/cost-cont
 4279ef81d3ef168909637340410f123a  doc/eng-us/help/ai-agents/governance/incident-response-for-ai.md
 3d00f781c270275835c49078d7634ec4  doc/eng-us/help/ai-agents/governance/privacy-and-data-leaving-the-site.md
 fa5dab70befbd178aa40216b7f623265  doc/eng-us/help/ai-agents/governance/roles-and-least-privilege.md
-0bd8aee009f2b4137aaefa9e73f74c4b  doc/eng-us/help/ai-agents/what-ai-in-exponential-does-not-do.md
-b35c20df3fe71d3407d738c69f807483  doc/eng-us/help/ai-agents/what-exists-today.md
+a1cd04a8759ea6fddb8884cb7d1b3d67  doc/eng-us/help/ai-agents/what-ai-in-exponential-does-not-do.md
+e0023a0f17d58a0a29f9f4697537b520  doc/eng-us/help/ai-agents/what-exists-today.md
 6babacb7e73787cbff0ed30f4169ebba  doc/eng-us/help/ai-agents/which-path-fits-your-task.md
 3f9c521a72bd80288eb14250549bddc4  doc/eng-us/help/book-building-a-site/README.md
 eac21ef53aa0b553fcddc55266dd145a  doc/eng-us/help/book-building-a-site/approving-guestbook-entries.md
@@ -11063,7 +11064,7 @@ bddededec4a71f9421c599b53f415fc4  doc/eng-us/help/individuals/setup/running-on-a
 be58b903d57573e6a824d2f2be923686  doc/eng-us/help/individuals/setup/shared-hosting-or-a-small-server.md
 5e40536e0cd0ab30a3b5b47b289f7d4f  doc/eng-us/help/individuals/what-exists-and-what-does-not.md
 f8861c025f98ad7f95a3637a50ea1b00  doc/eng-us/help/individuals/your-personal-site-for-free.md
-7a7efb15e4ccd6385edfc8090a41f3a7  doc/eng-us/help/integrators/ai-job-queue-and-mcp.md
+8ab9c4f8b4216cba2c022a5eba67e378  doc/eng-us/help/integrators/ai-job-queue-and-mcp.md
 536abcdacc4f4282637972fce70b9543  doc/eng-us/help/integrators/building-an-integration-as-an-extension.md
 963af4e756891c458cb1094c5545f360  doc/eng-us/help/integrators/bulk-data-exchange-with-xrowextract.md
 9a8ffb099cd06a49cbba3b79f6d7f9a9  doc/eng-us/help/integrators/caching-after-imports.md
@@ -13423,7 +13424,7 @@ df930bef620e43a1fd4749ed2955dd4b  doc/eng-us/specifications/6.0/xrowextract.md
 3776e41e02736ef2a668d89f556dc372  doc/eng-us/specifications/trunk/webdav/testing.txt
 4283b436a52ce19f8703ab633cb14f06  doc/eng-us/standards/README.md
 252df4ad929147a4f4291beb83c99f09  doc/eng-us/standards/accessibility.md
-fc4caf3cd24197c75a1e82764fbbb948  doc/eng-us/standards/apis-and-protocols.md
+cc40462f57a7aa21a31ca1b323c7819d  doc/eng-us/standards/apis-and-protocols.md
 4b751711e7ca52ac093090ce8529d22e  doc/eng-us/standards/architecture/compatibility-releases-deployment.md
 cb656231284cc62aab9930e9704740fa  doc/eng-us/standards/architecture/kernel-architecture.md
 c82ccb5029181dda770339fe7005bf37  doc/eng-us/standards/architecture/layering-and-naming.md
@@ -13625,7 +13626,7 @@ fa9c3a0063330326492d2e26107df05b  doc/eng-us/standards/security.md
 965ab8e3c5a29dc3c29e89f7f5a9c31c  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-755da4eb37cfcea7514557e3fb98b0ef  doc/eng-us/translation-waves.md
+19504489aef65f2edeef9b733bcfb36e  doc/eng-us/translation-waves.md
 1bfe80927d309dbfdef43522262579d6  doc/ger-de/.dirnames.json
 5326137e7fef823ead0a674a13e47dc1  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -13692,14 +13693,14 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-9565f9178482ed37016ca8b477d3123f  doc/ger-de/.paths.json
+ee0585397415794cae7de267e3d4f251  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 72a6daa6760de22190206de884484e7d  doc/ger-de/HISTORY.md
 7e70ef78e6b4135c7ad832ecb2482961  doc/ger-de/INSTALL.md
-8f5021bc74ead35a752a5366535ca248  doc/ger-de/INTEGRATING.md
+8f62c445bc67bf38c71a5629938af00f  doc/ger-de/INTEGRATING.md
 28bb0394d0d8b5056ebfe1a57ae0bd12  doc/ger-de/LIZENZ-GFDL-1.3.txt
 2072d6941fefc9115d92914b86485c50  doc/ger-de/README-LIZENZ.md
 ddbb3c2493e9b29f1d3369b5cc346376  doc/ger-de/SUPPORT.md
@@ -17125,7 +17126,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-2b9606d466d4b7c8475e55ce7ba645bd  doc/ger-de/funktionen/6.0/README.md
+fe22519039a7b796262a37da13e4ceec  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17225,6 +17226,7 @@ aaf7124b4c84243459602e94e15c755e  doc/ger-de/funktionen/6.0/erweiterungen/xrowex
 cb8293dc8cd3120854a1ecc27684f05c  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
 562485087228bd9e87a72a2bad882695  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 1b116c4d40916a7fbcc04293f1a76835  doc/ger-de/funktionen/6.0/expcomponents.md
+a8e9844f006446791d52e86d726bfd0b  doc/ger-de/funktionen/6.0/exponential-tron-mcp-server.md
 0de4b3d8a279a43c0f19fcb08c3b54ec  doc/ger-de/funktionen/6.0/extension-liste-und-downloads.md
 2e31533efcf8f0f4f1dce7fa4d593a7b  doc/ger-de/funktionen/6.0/ezpm-paketmanager-cli.md
 9d9894268f854965be088eb0dcfdd36c  doc/ger-de/funktionen/6.0/filter-fuer-cronjob-teile.md
@@ -19849,7 +19851,7 @@ cbdeb66760289c11fe50fbd7010934d7  doc/ger-de/hilfe/integratoren/integrationsmust
 d4c52ad75a73ecbc8f835bc192fcdc70  doc/ger-de/hilfe/integratoren/integrationsschnittstellen-auf-einen-blick.md
 5167ff6985161bcf278cf45ed55771b3  doc/ger-de/hilfe/integratoren/integratoren-hier-beginnen.md
 8b8ce40041d8ab038df10fb22d3f8d99  doc/ger-de/hilfe/integratoren/integratoren-und-das-partnerprogramm.md
-56f4dd45e47ba287f5f7d95ee01984aa  doc/ger-de/hilfe/integratoren/ki-jobwarteschlange-und-mcp.md
+f1b92ac6eaed0dfb755b00066cca05fc  doc/ger-de/hilfe/integratoren/ki-jobwarteschlange-und-mcp.md
 bd691adcd6a344bbbbc979ad0f7b46b5  doc/ger-de/hilfe/integratoren/leistungsbeschreibungen-fuer-integrationen.md
 121d4a4d24632b3457f056c3aae9711a  doc/ger-de/hilfe/integratoren/lesepfad-fuer-integratoren.md
 a7eb7c2ddece2fcfd95ba3e2975ab9f4  doc/ger-de/hilfe/integratoren/login-handler-ldap-und-textdatei.md
@@ -19875,7 +19877,7 @@ ec0c53ec54b5a4e29bd4b277eb7a50be  doc/ger-de/hilfe/integratoren/webdav-und-soap.
 bbf44d6f18db0cd75a0c86e463043335  doc/ger-de/hilfe/integratoren/workflows-und-trigger-als-hooks.md
 fc494ee8d53fe23b6cbb2d1f6bd0506b  doc/ger-de/hilfe/integratoren/zahlungsanbieter-und-der-shop.md
 6d9d5cf3b3b53770d5938793a4e25344  doc/ger-de/hilfe/integratoren/zugangsdaten-fuer-eine-integration-waehlen.md
-06d085fab919c180d6bb1a5290344b4b  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/README.md
+bad8d434d5f79d996286d5c0d499bd3d  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/README.md
 993cb7017471fddad54978da3dcee281  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/ablauf-diagnose-mit-der-konsole.md
 f02ffa40bf076c6790081e9a80878b4f  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/ablauf-inhaltsimport.md
 f42c80329f39d3dc65c3d6b9f6007b32  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/ablauf-nur-lesender-inhaltsbericht.md
@@ -19884,7 +19886,7 @@ e82f7251fcffa0cc98ee84e0a8a8e678  doc/ger-de/hilfe/ki-agenten/agentische-ablaeuf
 aa36d92f1861708e9a2aaa347bfa8af2  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/agentenfreundliche-dokumentation.md
 62cad82493c4ebf7111bde8c14d1df8d  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/coding-agenten-in-einem-exponential-projekt.md
 86c9669498c1f5b73ed56b0e259442fa  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/ein-nur-lesender-api-schluessel-schritt-fuer-schritt.md
-47a3bbe224992b6a8276ddd5905a7e77  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/eine-schnittstelle-waehlen.md
+662068748a93cc1043b5da1e0e835071  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/eine-schnittstelle-waehlen.md
 b1468233b529e723d1f6023b406d8b05  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/einen-menschen-beteiligt-halten.md
 c52720877a8f6347b62b7c56a7746a9e  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/nicht-vertrauenswuerdige-daten-und-prompt-injection.md
 ecc7b2faded283d42762dcb6a38f5cb1  doc/ger-de/hilfe/ki-agenten/agentische-ablaeufe/zugangsdaten-fuer-agenten.md
@@ -19910,7 +19912,7 @@ adbc2f15f891305c1cbd51ab2b1e18fa  doc/ger-de/hilfe/ki-agenten/expai/uebersetzung
 eff9e044124895d4909232a05cd3888c  doc/ger-de/hilfe/ki-agenten/expai/was-exponential-intelligence-tut.md
 1d434d27de232eab826a4a2d74e022b9  doc/ger-de/hilfe/ki-agenten/expai/web-und-verlaufswerkzeuge.md
 95d3336b1ecf92cb505c891d8ebeab0c  doc/ger-de/hilfe/ki-agenten/glossar-zu-ki-und-agenten.md
-54ddb86e4f9f4f4ef36555eee523a049  doc/ger-de/hilfe/ki-agenten/haeufige-fragen-zu-ki-und-agenten.md
+eda3b9b4c4d936398f9f02d0cda2ddf1  doc/ger-de/hilfe/ki-agenten/haeufige-fragen-zu-ki-und-agenten.md
 59693037c125314c238af454491277a7  doc/ger-de/hilfe/ki-agenten/ki-und-agenten-hier-beginnen.md
 4d8df1e390ebcccbcc5a7957a2945e87  doc/ger-de/hilfe/ki-agenten/lesepfad-zu-ki-und-agenten.md
 f0e7d517b3d06ada6ff3f0b23dc9103f  doc/ger-de/hilfe/ki-agenten/steuerung/README.md
@@ -19920,8 +19922,8 @@ e954b3270237cd0dcead63889fd6d0af  doc/ger-de/hilfe/ki-agenten/steuerung/audit-tr
 53ac373587f857e8f62f7f431ae5f9fa  doc/ger-de/hilfe/ki-agenten/steuerung/kostenkontrolle.md
 58edd52e6e7ab8f720a4bf93007020ba  doc/ger-de/hilfe/ki-agenten/steuerung/reaktion-auf-ki-vorfaelle.md
 c821ae403ac57746c7394b449baeaa50  doc/ger-de/hilfe/ki-agenten/steuerung/rollen-und-minimale-rechte.md
-30431e3986e4a3887b6bf31aba726efe  doc/ger-de/hilfe/ki-agenten/was-es-heute-gibt.md
-e08a29aaa847e7fa336e587d563e56d8  doc/ger-de/hilfe/ki-agenten/was-ki-in-exponential-nicht-tut.md
+21740882d6dfb17fba57cec3e203da5e  doc/ger-de/hilfe/ki-agenten/was-es-heute-gibt.md
+7a8375aae7db3ffb01dea2a84d190cf5  doc/ger-de/hilfe/ki-agenten/was-ki-in-exponential-nicht-tut.md
 5ec5de2fce836e60148280c377f564b1  doc/ger-de/hilfe/ki-agenten/welcher-weg-zu-ihrer-aufgabe-passt.md
 93574ba27668bf213f542de4240c371f  doc/ger-de/hilfe/konten-fuer-redakteure-und-administratoren-einrichten.md
 8a93098128ee167711a24d6ea24c4423  doc/ger-de/hilfe/konten-und-anmeldung.md
@@ -23338,7 +23340,7 @@ abde9c42a1d4341895fe65062fdf54ff  doc/ger-de/spezifikationen/trunk/webdav/design
 51bc2087567b61328ee13ab371704a59  doc/ger-de/spezifikationen/trunk/webdav/testing.txt
 7d788e95f395e9039f243c631ab77bd6  doc/ger-de/sprachen.md
 646670ae34963ff3e0c2c29b89df73d0  doc/ger-de/standards/README.md
-3940310c233513594e5d81e37815aa8c  doc/ger-de/standards/apis-und-protokolle.md
+7e928b0145270ebb9874a789bbe05352  doc/ger-de/standards/apis-und-protokolle.md
 0b0f0ca714c2ab620eab9538302ed3dc  doc/ger-de/standards/architektur/kernel-architektur.md
 4e0eec5e0ba68deb282c2f24de4cced0  doc/ger-de/standards/architektur/kompatibilitaet-releases-deployment.md
 43a2f1d024a49dcd7669c76add1cc44a  doc/ger-de/standards/architektur/schichten-und-benennung.md
@@ -23541,7 +23543,7 @@ c14434c498b33fd33143ddec39a92283  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 f1b4a7cf645fcdcd0e1f0c602ecdd3b5  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-9682d6962f3877d1a123e0f11a202edc  doc/ger-de/uebersetzungswellen.md
+67085e17133579045a633458aeaf6932  doc/ger-de/uebersetzungswellen.md
 d9e9ce839a81021a31411fb57ae96eba  doc/ger-de/wettbewerb/README.md
 fe69325110b28a3d4f93bea4c20e0564  doc/ger-de/wettbewerb/andere-sprachen.md
 6c44cb5435a6f2a5302356e0175921cb  doc/ger-de/wettbewerb/php-cms-und-frameworks.md

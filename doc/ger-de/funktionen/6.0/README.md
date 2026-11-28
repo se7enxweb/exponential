@@ -171,6 +171,9 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Die GraphQL-API: genau die Felder abfragen, die eine Seite braucht](graphql.md): `/api/graphql`, ein aus den
   Inhaltsklassen erzeugtes Schema, Richtlinien gelten immer, Setup > GraphQL mit einem Playground,
   `exp:graphql:status`, `exp:graphql:schema` und `exp:graphql:query`
+- [Exponential Tron: die MCP-Server-Schicht](exponential-tron-mcp-server.md): KI-Agenten arbeiten als eigene Benutzer
+  in einer Installation, mit ablaufenden Tokens, unter den Richtlinien der Installation, jeder Aufruf protokolliert;
+  stdio und HTTPS unter `/tron/mcp`; Programme in Ihren eigenen Extensions (ein verlangtes Paket, nicht standardmäßig aktiv)
 - [Anfrageregeln: entscheiden, was mit einer Anfrage geschieht, bevor ihr View läuft](anfrageregeln.md)
 - [Prüfungen von Rollen und Richtlinien in Templates](template-operatoren-fuer-rollen-und-richtlinien.md)
 - [String-Funktionen von PHP als Template-Operatoren](template-operatoren-fuer-zeichenketten.md)

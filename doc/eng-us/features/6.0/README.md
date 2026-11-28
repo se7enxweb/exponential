@@ -162,6 +162,9 @@ nginx with PHP-FPM keep working as before.
 - [The GraphQL API: ask the content for exactly the fields a page needs](graphql.md): `/api/graphql`, a schema
   generated from the content classes, policies always applied, Setup > GraphQL with a playground,
   `exp:graphql:status`, `exp:graphql:schema` and `exp:graphql:query`
+- [Exponential Tron: the MCP server layer](exponential-tron-mcp-server.md): AI agents work inside an installation
+  as dedicated users, through expiring tokens, under the installation's policies, every call audited; stdio and
+  HTTPS at `/tron/mcp`; programs in your own extensions (a required package, not active by default)
 - [Request rules: decide what happens to a request before its view runs](request-rules.md)
 - [Role and policy checks in templates](role-and-policy-template-operators.md)
 - [PHP string functions as template operators](string-template-operators.md)
