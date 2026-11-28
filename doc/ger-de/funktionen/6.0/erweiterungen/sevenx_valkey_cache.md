@@ -133,6 +133,27 @@ Website ohne die Extension nichts bezahlt. Hooks, hinzugefügt am 20. Juli 2026 
 Bei einem Fehltreffer oder wenn abgeschaltet, greift der Kernel genau wie bisher auf den Cluster-Datei-Handler und die
 Dateien zurück.
 
+### Leeren (27. November 2026)
+
+Das Leeren der Caches durch den Kernel erreicht die Caches in Valkey über einen Listener, nicht dadurch, dass der Kernel
+die Klassen der Extension beim Namen nennt. Die Extension (ab 1.0.2.6) trägt `sevenxValkeyCacheClearListener` in ihrer
+eigenen `settings/site.ini.append.php` ein (`[Cache] ClearListeners[]`); der Kernel ruft jede dort eingetragene Klasse
+auf, die existiert und `expCacheClearListener` implementiert. (Die kompilierten INI-Arrays leert der Kernel selbst mit
+`ini` und `global_ini`, da eZINI sie über den Klassennamen liest: Ein Listener steht in den Einstellungen, die dieser
+Cache hält.) Dasselbe Leeren geschieht dann aus `bin/php/ezcache.php`,
+Setup > Cache und `exp:velocity deploy`:
+
+| Vom Kernel geleert | In Valkey geleert |
+|---|---|
+| `content`, `template-block` (`--clear-tag=content`, `--clear-all`) | die Inhaltsansichts-Caches und `{valkey-block}`-Einträge der Installation mit ihren Indizes; die INI-Arrays bleiben |
+| die Knoten einer Inhaltsänderung (Veröffentlichen, Verschieben, Verstecken ...), gleich welcher `StaticCacheHandler` | ihre Ansichts-Caches und Einträge mit Knotenablauf über den Knotenindex, und Einträge mit Teilbaumablauf der Knoten und ihres Pfads |
+
+Nur die eigenen Schlüssel der Installation werden angefasst. Ohne die Extension geschieht nichts. Ohne die PHP-Extension
+redis, oder wenn Valkey nicht antwortet, wird dort nichts geleert, und das Leeren des Kernels geht mit einer Warnung
+weiter. Leeren Sie Valkey vor dem HTTP-Cache (`--clear-id=content`, dann `--clear-id=exphttpcache` oder
+`exp:velocity cache clear`): Eine Seite, die dazwischen aus einer alten Ansicht in Valkey erzeugt wird, landet sonst
+wieder im HTTP-Cache.
+
 ## Grenzen
 
 * Einträge liegen im Speicher: Bemessen Sie den Server nach der Anzahl der Seiten und Siteaccesses, und setzen Sie eine

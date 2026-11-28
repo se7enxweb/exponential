@@ -125,6 +125,25 @@ The kernel calls the extension only when its classes exist (`class_exists()` is 
 
 On a miss or when disabled, the kernel falls back to the cluster file handler and the files, exactly as before.
 
+### Clearing (27 November 2026)
+
+The kernel's cache clearing reaches the caches in Valkey through a listener, not by naming the extension's classes.
+The extension (1.0.2.6 or later) lists `sevenxValkeyCacheClearListener` in its own `settings/site.ini.append.php`
+(`[Cache] ClearListeners[]`); the kernel calls every class listed there that exists and implements
+`expCacheClearListener`. (The compiled INI arrays are cleared by the kernel itself with `ini` and `global_ini`,
+as eZINI reads them by the class's name: a listener is found in the settings that cache holds.) The same clear then
+happens from `bin/php/ezcache.php`, Setup > Cache and `exp:velocity deploy`:
+
+| Cleared by the kernel | Cleared in Valkey |
+|---|---|
+| `content`, `template-block` (`--clear-tag=content`, `--clear-all`) | the content view caches and `{valkey-block}` entries of the installation with their indexes; the INI arrays stay |
+| the nodes of a content change (publish, move, hide ...), whatever `StaticCacheHandler` is | their view caches and node-expiry entries through the node index, and subtree-expiry entries of the nodes and their path |
+
+Only the installation's own keys are touched. Without the extension, nothing happens. Without the PHP redis
+extension, or with Valkey not answering, nothing is cleared there and the kernel's clear goes on with a warning.
+Clear Valkey before the HTTP cache (`--clear-id=content`, then `--clear-id=exphttpcache` or `exp:velocity cache clear`):
+a page rendered in between from an old view in Valkey is stored in the HTTP cache again.
+
 ## Limits
 
 * Entries live in memory: size the server for the number of pages and siteaccesses, and set an eviction policy.
