@@ -50,7 +50,7 @@ These follow from how the parts are built; every page here applies them.
 5. **Check the audit trail.** Every write by an account is recorded; read it after each automated run
    ([The audit trail for AI](../governance/audit-trail-for-ai.md)).
 
-An MCP server is not part of Exponential today; agents use the interfaces listed above.
+An agent that speaks MCP can also use Exponential Tron, the MCP server every installation has in `extension/tron` (not active by default): [Exponential Tron: the MCP server layer](../../../features/6.0/exponential-tron-mcp-server.md).
 
 ## Suggested reading order
 

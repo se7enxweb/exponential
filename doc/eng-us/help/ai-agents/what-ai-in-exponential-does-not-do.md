@@ -46,7 +46,8 @@ Sources: the expai [FAQ](https://github.com/se7enxweb/expai/blob/main/doc/faq.md
 | Accept writes without POST | expservices writes need POST, and with a session a form token too |
 | Keep working for a disabled user | Every key and token of a disabled owner stops at once |
 
-An MCP server for agents is not part of Exponential today.
+The MCP server, Exponential Tron, is not active by default: an administrator activates it, makes a user and a token
+per agent, and can revoke them in one step ([Exponential Tron](../../features/6.0/exponential-tron-mcp-server.md)).
 
 ## Across the system
 

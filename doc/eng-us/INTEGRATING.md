@@ -332,8 +332,9 @@ reading search results into another system: [Search engine integration](help/int
 `expai` (Exponential Intelligence) connects the administration to AI providers: editors ask in plain language, and
 the assistant writes drafts as the signed-in editor, with that editor's permissions; it never publishes on its own.
 Providers, keys, budgets and the local model are set under Setup > EI: Models and Setup > EI: Budgets; long work runs
-through `expqueue`. `expai` can also use read-only tools of MCP servers in its panel (policy `expai/mcp`). The kernel
-itself ships no MCP server. See [expai](features/6.0/extensions/expai.md) and
+through `expqueue`. `expai` can also use read-only tools of MCP servers in its panel (policy `expai/mcp`). The MCP
+server of Exponential is Exponential Tron, a required package in `extension/tron`, not active by default
+([Exponential Tron](features/6.0/exponential-tron-mcp-server.md)). See [expai](features/6.0/extensions/expai.md) and
 [AI providers, the job queue and MCP](help/integrators/ai-job-queue-and-mcp.md).
 
 ## 14. Automation and CI: the console

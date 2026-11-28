@@ -82,8 +82,9 @@ Jede Anfrage, jede Ablehnung und jeder Entwurf ist ein Ereignis des Audit-Kanals
 
 **Wie verbindet sich ein Agent mit Exponential?**
 Über die REST-API oder expservices mit seinem eigenen Konto oder, auf dem Server selbst, über die Konsole und die Hilfedateien
-([Eine Schnittstelle für einen Agenten wählen](agentische-ablaeufe/eine-schnittstelle-waehlen.md)). Ein MCP-Server ist heute nicht Teil
-von Exponential.
+([Eine Schnittstelle für einen Agenten wählen](agentische-ablaeufe/eine-schnittstelle-waehlen.md)). Ein Agent, der MCP spricht, kann
+Exponential Tron verwenden, den MCP-Server, den jede Installation in `extension/tron` hat, sobald er aktiviert ist
+([Exponential Tron](../../funktionen/6.0/exponential-tron-mcp-server.md)).
 
 **Wie sollte sich ein Agent authentifizieren?**
 Mit seinem eigenen Konto und den engsten Zugangsdaten: einem persönlichen API-Schlüssel mit Geltungsbereichen für REST oder einem

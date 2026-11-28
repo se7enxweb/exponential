@@ -87,8 +87,9 @@ command line with `./console exp:help search` and `./console exp:help show`, or 
 
 ## What is not part of Exponential today
 
-- An MCP server for agents is not part of Exponential today. Agents use the REST API, expservices and the command line
-  instead.
+- An MCP server is part of every installation but not active by default: Exponential Tron in `extension/tron`, required
+  by the root `composer.json` from 25 November 2026 and still a preview. Until it is activated, agents use the REST API,
+  expservices and the command line ([Exponential Tron](../../features/6.0/exponential-tron-mcp-server.md)).
 - No AI model is built in; the assistant calls the providers you configure.
 - The assistant is not an API for other programs; it works inside the administration for signed-in editors.
 

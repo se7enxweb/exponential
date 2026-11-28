@@ -82,7 +82,8 @@ Every request, refusal and draft is an event of the audit channel `ai`, without 
 
 **How does an agent connect to Exponential?**
 Over the REST API or expservices with its own account, or, on the server itself, through the console and the help
-files ([Choosing an interface for an agent](agentic-workflows/choosing-an-interface.md)). An MCP server is not part of Exponential today.
+files ([Choosing an interface for an agent](agentic-workflows/choosing-an-interface.md)). An agent that speaks MCP can use Exponential Tron, the MCP server every installation has in `extension/tron` once it
+is activated ([Exponential Tron](../../features/6.0/exponential-tron-mcp-server.md)).
 
 **How should an agent authenticate?**
 With its own account and the narrowest credential: a scoped personal API key for REST, or a personal token with a

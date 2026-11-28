@@ -46,7 +46,8 @@ Quellen: die Seiten [FAQ](https://github.com/se7enxweb/expai/blob/main/doc/faq.m
 | Schreibzugriffe ohne POST annehmen | Schreibzugriffe über expservices brauchen POST und mit einer Session zusätzlich ein Formular-Token |
 | Für einen deaktivierten Benutzer weiterarbeiten | Jeder Schlüssel und jedes Token eines deaktivierten Eigentümers hört sofort auf |
 
-Ein MCP-Server für Agenten ist heute nicht Teil von Exponential.
+Der MCP-Server, Exponential Tron, ist nicht standardmäßig aktiv: Ein Administrator aktiviert ihn, legt je Agent einen
+Benutzer und ein Token an und kann beides in einem Schritt widerrufen ([Exponential Tron](../../funktionen/6.0/exponential-tron-mcp-server.md)).
 
 ## Im ganzen System
 

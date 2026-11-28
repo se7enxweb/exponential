@@ -51,7 +51,7 @@ Sie folgen daraus, wie die Teile gebaut sind; jede Seite hier wendet sie an.
 5. **Den Audit-Trail prüfen.** Jeder Schreibzugriff eines Kontos wird festgehalten; lesen Sie ihn nach jedem automatisierten Lauf
    ([Der Audit-Trail für KI](../steuerung/audit-trail-fuer-ki.md)).
 
-Ein MCP-Server ist heute nicht Teil von Exponential; Agenten verwenden die oben aufgeführten Schnittstellen.
+Ein Agent, der MCP spricht, kann außerdem Exponential Tron verwenden, den MCP-Server, den jede Installation in `extension/tron` hat (nicht standardmäßig aktiv): [Exponential Tron: die MCP-Server-Schicht](../../../funktionen/6.0/exponential-tron-mcp-server.md).
 
 ## Empfohlene Lesereihenfolge
 

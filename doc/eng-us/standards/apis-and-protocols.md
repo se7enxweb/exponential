@@ -36,7 +36,7 @@ says what the standard is, what Exponential implements, where the code, settings
 | One-click unsubscribe | RFC 8058 | **Complies** | `kernel/classes/mailpreferences/expmailgate.php` adds `List-Unsubscribe` and `List-Unsubscribe-Post` |
 | LDAP authentication | RFC 4511 (LDAPv3) | **Partly complies** | `kernel/classes/datatypes/ezuser/ezldapuser.php`; default `LDAPVersion=2`; no StartTLS |
 | Webhooks (outgoing, signed) | no formal standard | **Complies** with its own documented contract | `kernel/classes/audit/sinks/expauditwebhooksink.php`, HMAC-SHA-256 signature |
-| Model Context Protocol | 2025 specification | **Not applicable** (kernel) | the kernel repository ships no MCP server |
+| Model Context Protocol | 2025-11-25 specification (and 2025-06-18, 2025-03-26, 2024-11-05) | **Complies** through Exponential Tron (`se7enxweb/tron`, required by the root `composer.json`, not active by default); the kernel itself ships no MCP code | `extension/tron`: stdio and streamable HTTP at `/tron/mcp`, on the official MCP PHP SDK from PHP 8.2 |
 
 ## OAuth 2.0 (RFC 6749) and Bearer tokens (RFC 6750)
 
@@ -404,11 +404,17 @@ The audit log can deliver its records to a webhook (`kernel/classes/audit/sinks/
 
 ## Model Context Protocol (MCP)
 
-The Exponential 6 kernel repository ships no MCP server. The extension point survey (Setup > RAD tools,
+The kernel itself contains no MCP code. The MCP server of Exponential is **Exponential Tron**, the package
+`se7enxweb/tron`, which the root `composer.json` requires from 25 November 2026, so every installation has it in
+`extension/tron`; it is not active until an administrator activates it. It speaks MCP 2025-11-25 and the versions
+2025-06-18, 2025-03-26 and 2024-11-05, over stdio and stateless streamable HTTP, with per-agent tokens, the
+installation's policies and an audit of every call; on PHP 8.2 and later its protocol layer is the official MCP PHP
+SDK (`mcp/sdk`), and its conformance over real stdio and HTTP is part of Tron's own test suite
+([Exponential Tron: the MCP server layer](../features/6.0/exponential-tron-mcp-server.md)). Besides Tron, the extension point survey (Setup > RAD tools,
 `settings/rad.ini`) can count MCP tool registries that an extension declares, and Velocity publishes
 `/.well-known/mcp.json` for its own handlers
 ([Velocity discovery, federation and deploy](../features/6.0/velocity-discovery-federation-and-deploy.md)); neither
-was checked against the MCP specification for this page. **Not applicable** to the kernel.
+was checked against the MCP specification for this page. **Complies** through Exponential Tron; not applicable to the kernel's own code.
 
 ## Related pages
 

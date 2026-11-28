@@ -351,8 +351,9 @@ Einen externen Suchdienst füttern oder Suchergebnisse in ein anderes System les
 Sprache, und der Assistent schreibt Entwürfe als der angemeldete Redakteur, mit dessen Berechtigungen; er
 veröffentlicht nie von selbst. Anbieter, Schlüssel, Budgets und das lokale Modell werden unter Setup > EI: Models und
 Setup > EI: Budgets eingestellt; lange Arbeiten laufen über `expqueue`. `expai` kann in seinem Bereich außerdem
-lesende Werkzeuge von MCP-Servern verwenden (Richtlinie `expai/mcp`). Der Kernel selbst liefert keinen MCP-Server
-mit. Siehe [expai](funktionen/6.0/erweiterungen/expai.md) und
+lesende Werkzeuge von MCP-Servern verwenden (Richtlinie `expai/mcp`). Der MCP-Server
+von Exponential ist Exponential Tron, ein verlangtes Paket in `extension/tron`, nicht standardmäßig aktiv
+([Exponential Tron](funktionen/6.0/exponential-tron-mcp-server.md)). Siehe [expai](funktionen/6.0/erweiterungen/expai.md) und
 [KI-Anbieter, die Job-Warteschlange und MCP](hilfe/integratoren/ki-jobwarteschlange-und-mcp.md).
 
 ## 14. Automatisierung und CI: die Konsole

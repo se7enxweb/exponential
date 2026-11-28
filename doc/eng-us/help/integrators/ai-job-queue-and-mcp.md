@@ -71,7 +71,11 @@ matter ([Queues with expqueue](../creators/app-creators/queues-with-expqueue.md)
 
 ## The Model Context Protocol
 
-The kernel repository ships **no MCP server**. What exists:
+The MCP server of Exponential is **Exponential Tron** (`se7enxweb/tron`). The root `composer.json` requires it from
+25 November 2026, so every installation has it in `extension/tron`; it is **not active by default**. Once activated it
+lets an outside agent work as a dedicated user of the installation, through a token of its own, under that user's
+roles and policies, with every call audited, over stdio (on the server or over SSH) or HTTPS at `/tron/mcp`
+([Exponential Tron: the MCP server layer](../../features/6.0/exponential-tron-mcp-server.md)). Besides it:
 
 - expai can call **external** MCP servers that an administrator puts on an allowlist.
 - The extension point survey (Setup > RAD tools, `settings/rad.ini`) can count MCP tool registries that an extension
@@ -79,8 +83,8 @@ The kernel repository ships **no MCP server**. What exists:
 - Velocity publishes `/.well-known/mcp.json` for its own handlers, not for the content
   ([Velocity discovery, federation and deploy](../../features/6.0/velocity-discovery-federation-and-deploy.md)).
 
-An integration that must let an outside AI agent read content today uses the REST API or `expservices` with a
-read-only API key or token of a service account ([API and protocol standards](../../standards/apis-and-protocols.md#model-context-protocol-mcp)).
+An integration whose agent cannot speak MCP, or that must not activate an extension, uses the REST API or
+`expservices` with a read-only API key or token of a service account ([API and protocol standards](../../standards/apis-and-protocols.md#model-context-protocol-mcp)).
 
 ## Integration questions to settle
 

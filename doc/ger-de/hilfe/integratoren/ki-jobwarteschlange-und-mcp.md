@@ -75,7 +75,12 @@ Wiederholungen, Prioritäten und Sichtbarkeit zählen
 
 ## Das Model Context Protocol
 
-Das Kernel-Repository liefert **keinen MCP-Server** mit. Was es gibt:
+Der MCP-Server von Exponential ist **Exponential Tron** (`se7enxweb/tron`). Die Root-`composer.json` verlangt ihn seit
+dem 25. November 2026, jede Installation hat ihn also in `extension/tron`; er ist **nicht standardmäßig aktiv**.
+Aktiviert lässt er einen externen Agenten als eigenen Benutzer der Installation arbeiten, mit einem eigenen Token,
+unter den Rollen und Richtlinien dieses Benutzers und mit einem Audit jedes Aufrufs, über stdio (auf dem Server oder
+über SSH) oder HTTPS unter `/tron/mcp`
+([Exponential Tron: die MCP-Server-Schicht](../../funktionen/6.0/exponential-tron-mcp-server.md)). Daneben:
 
 - expai kann **externe** MCP-Server aufrufen, die ein Administrator auf eine Positivliste setzt.
 - Die Übersicht der Erweiterungspunkte (Setup > RAD tools, `settings/rad.ini`) kann MCP-Werkzeugregister zählen, die
@@ -83,7 +88,7 @@ Das Kernel-Repository liefert **keinen MCP-Server** mit. Was es gibt:
 - Velocity veröffentlicht `/.well-known/mcp.json` für seine eigenen Handler, nicht für die Inhalte
   ([Velocity: Discovery, Föderation und Deploy](../../funktionen/6.0/velocity-erkennung-foederation-und-deployment.md)).
 
-Eine Integration, die heute einen externen KI-Agenten Inhalte lesen lassen muss, verwendet die REST-API oder
+Eine Integration, deren Agent kein MCP spricht oder die keine Extension aktivieren darf, verwendet die REST-API oder
 `expservices` mit einem nur lesenden API-Schlüssel oder Token eines Dienstkontos
 ([API- und Protokollstandards](../../standards/apis-und-protokolle.md#model-context-protocol-mcp)).
 

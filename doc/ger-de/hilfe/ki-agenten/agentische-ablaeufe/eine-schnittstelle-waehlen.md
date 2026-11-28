@@ -11,8 +11,9 @@ type: help
 
 Diese Seite richtet sich an Entwickler, die einen KI-Agenten mit Exponential verbinden und eine Schnittstelle wählen müssen. Alle
 handeln als ein Konto und beachten dessen Richtlinien; sie unterscheiden sich darin, was sie erreichen, wie sie authentifizieren
-und wo der Agent laufen kann. Ein MCP-Server ist heute nicht Teil von Exponential, ein Agent verwendet also eine der Schnittstellen
-unten.
+und wo der Agent laufen kann. Ein Agent, der das Model Context Protocol spricht, kann Exponential Tron verwenden, den
+MCP-Server, den jede Installation in `extension/tron` hat (aktiv erst, wenn ein Administrator ihn aktiviert); die
+übrigen stehen unten.
 
 ## Inhalt
 
@@ -21,18 +22,19 @@ unten.
 3. [Wann Sie expservices verwenden](#wann-sie-expservices-verwenden)
 4. [Wann Sie eigene ezjscore-Funktionen verwenden](#wann-sie-eigene-ezjscore-funktionen-verwenden)
 5. [Wann Sie die Konsole auf dem Server verwenden](#wann-sie-die-konsole-auf-dem-server-verwenden)
-6. [Schreibzugriffe: Entwürfe oder Veröffentlichungen](#schreibzugriffe-entwürfe-oder-veröffentlichungen)
+6. [Wann Sie MCP verwenden (Exponential Tron)](#wann-sie-mcp-verwenden-exponential-tron)
+7. [Schreibzugriffe: Entwürfe oder Veröffentlichungen](#schreibzugriffe-entwürfe-oder-veröffentlichungen)
 
 ## Nebeneinander
 
-| | REST-API | expservices | Eigene ezjscore-Funktion | Konsole auf dem Server |
-|---|---|---|---|---|
-| Mit dem Hauptrepository ausgeliefert | Ja (Kernel) | Ja (Standarddistribution) | Ja (ezjscore) | Ja (Kernel) |
-| Erreicht | Knoten, Kinder, Felder, Objekte; Anlegen, Aktualisieren und Entfernen in v2 | Über tausend benannte Dienste der Administration | Was Sie schreiben | Einstellungen mit ihren Quelldateien, Zugriffsprüfungen, Logs, den Audit-Trail, die Hilfe |
-| Authentifiziert | OAuth2-Token oder persönlicher API-Schlüssel mit Geltungsbereichen | Session oder ein persönliches Token `expt_...` | Session; Ihre eigene Richtlinienprüfung | Der Systembenutzer, der den Befehl ausführt |
-| Schreibt | Als Eigentümer des Schlüssels, durch Geltungsbereich begrenzt | Als Benutzer des Tokens; POST | Wie Sie es festlegen | Vermeiden: Geben Sie einem Coding-Agenten nur lesende Befehle |
-| Läuft wo | Überall über HTTPS | Überall über HTTPS | Meist im Browser | Auf dem Server oder einer Entwicklungskopie |
-| Als Nächstes lesen | [Agenten und die REST-API](agenten-und-die-rest-api.md) | [Agenten und expservices](agenten-und-expservices.md) | [JSON-Endpunkte mit ezjscore](../../ersteller/anwendungsentwickler/json-endpunkte-mit-ezjscore.md) | [Ein Diagnoseablauf mit der Konsole](ablauf-diagnose-mit-der-konsole.md) |
+| | REST-API | expservices | Eigene ezjscore-Funktion | Konsole auf dem Server | MCP (Exponential Tron) |
+|---|---|---|---|---|---|
+| Mit dem Hauptrepository ausgeliefert | Ja (Kernel) | Ja (Standarddistribution) | Ja (ezjscore) | Ja (Kernel) | Ja (verlangtes Paket `se7enxweb/tron`; zuerst aktivieren) |
+| Erreicht | Knoten, Kinder, Felder, Objekte; Anlegen, Aktualisieren und Entfernen in v2 | Über tausend benannte Dienste der Administration | Was Sie schreiben | Einstellungen mit ihren Quelldateien, Zugriffsprüfungen, Logs, den Audit-Trail, die Hilfe | Die Werkzeuge seiner Programme: Suche, Inhalte, Klassen, Einstellungen, Templates und mehr, und Ihre eigenen Programme |
+| Authentifiziert | OAuth2-Token oder persönlicher API-Schlüssel mit Geltungsbereichen | Session oder ein persönliches Token `expt_...` | Session; Ihre eigene Richtlinienprüfung | Der Systembenutzer, der den Befehl ausführt | Ein Tron-Token `tron_...` eines eigenen Benutzers, als Hash gespeichert, mit Ablauf, auf Programme beschränkt |
+| Schreibt | Als Eigentümer des Schlüssels, durch Geltungsbereich begrenzt | Als Benutzer des Tokens; POST | Wie Sie es festlegen | Vermeiden: Geben Sie einem Coding-Agenten nur lesende Befehle | Als Benutzer des Tokens; protokolliert, bevor der Schreibzugriff läuft |
+| Läuft wo | Überall über HTTPS | Überall über HTTPS | Meist im Browser | Auf dem Server oder einer Entwicklungskopie | stdio auf dem Server oder über SSH, oder HTTPS unter `/tron/mcp` |
+| Als Nächstes lesen | [Agenten und die REST-API](agenten-und-die-rest-api.md) | [Agenten und expservices](agenten-und-expservices.md) | [JSON-Endpunkte mit ezjscore](../../ersteller/anwendungsentwickler/json-endpunkte-mit-ezjscore.md) | [Ein Diagnoseablauf mit der Konsole](ablauf-diagnose-mit-der-konsole.md) | [Exponential Tron](../../../funktionen/6.0/exponential-tron-mcp-server.md) |
 
 ## Wann Sie die REST-API verwenden
 
@@ -61,6 +63,15 @@ unten.
   und was die Dokumentation sagt (`./console exp:help search`).
 - Verwenden Sie sie auf einer Entwicklungs- oder Staging-Kopie. Ein Befehl läuft als der Systembenutzer, der ihn startet, mit
   Zugriff auf die ganze Installation, er ist also keine Schnittstelle für Agenten in der Produktion.
+
+## Wann Sie MCP verwenden (Exponential Tron)
+
+- Der Agent ist ein MCP-Client (Claude Code, Claude Desktop, Cursor, VS Code) und soll seine Werkzeuge selbst finden.
+- Sie wollen einen eigenen Benutzer je Agent, Tokens, die ablaufen und sich in einem Schritt widerrufen lassen, und ein
+  Audit jedes Aufrufs in **Setup > tron**.
+- Sie wollen Ihre eigenen Daten als Werkzeuge anbieten: ein Programm in Ihrer Extension (`tron/program.json`).
+- Aktivieren Sie es zuerst (`ActiveExtensions[]=tron`, `tron.php install`); der HTTP-Endpunkt bleibt aus, bis
+  `[HTTPSettings] Enabled=true` gesetzt ist ([Exponential Tron](../../../funktionen/6.0/exponential-tron-mcp-server.md)).
 
 ## Schreibzugriffe: Entwürfe oder Veröffentlichungen
 
