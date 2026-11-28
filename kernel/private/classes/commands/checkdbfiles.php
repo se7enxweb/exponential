@@ -163,8 +163,29 @@ function exportGitRelease( $ref, $exportPath )
     $archive = $exportPath . '/release.tar';
     $commands = array( 'git archive --format=tar -o ' . escapeshellarg( $archive ) . ' ' . escapeshellarg( $ref ) . ' update/database',
                        'tar -x -f ' . escapeshellarg( $archive ) . ' -C ' . escapeshellarg( $releasePath ) );
+    // On Windows the tar found first may be GNU tar (Git for Windows), which reads "D:\..." as a remote host:
+    // there PHP itself extracts the archive
+    if ( DIRECTORY_SEPARATOR === '\\' && class_exists( 'PharData' ) )
+        $commands[1] = 'phardata';
     foreach ( $commands as $command )
     {
+        if ( $command === 'phardata' )
+        {
+            try
+            {
+                $tar = new \PharData( $archive );
+                $tar->extractTo( $releasePath, null, true );
+                unset( $tar );
+                // Phar keeps the archive open; it removes it itself
+                \Phar::unlinkArchive( $archive );
+            }
+            catch ( \Exception $e )
+            {
+                print( "Failed to extract $archive:\n" . $e->getMessage() . "\n" );
+                return false;
+            }
+            continue;
+        }
         $output = array();
         exec( $command . ' 2>&1', $output, $code );
         if ( $code != 0 )
@@ -173,7 +194,8 @@ function exportGitRelease( $ref, $exportPath )
             return false;
         }
     }
-    unlink( $archive );
+    if ( is_file( $archive ) )
+        unlink( $archive );
     return is_dir( $releasePath . '/update/database' ) ? $releasePath : false;
 }
 }
