@@ -471,7 +471,7 @@ class eZStepInstaller
 
         // MongoDB: the setup form posts 'dbname' not 'database', so database stays empty.
         // Read the DB name from the existing siteaccess configuration.
-        if ( $this->PersistenceList['database_info']['type'] == 'mongodb' and
+        if ( eZSetupDatabaseFamily( $this->PersistenceList['database_info']['type'] ) == 'mongodb' and
              ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) )
         {
             if ( !empty( $databaseInfo['dbname'] ) )
@@ -498,7 +498,7 @@ class eZStepInstaller
                     foreach ( glob( $siteRootPath . '/settings/siteaccess/*/site.ini.append.php' ) ?: [] as $siteAccessIniFilePath )
                     {
                         $siteAccessFileContent = file_get_contents( $siteAccessIniFilePath );
-                        if ( preg_match( '/DatabaseImplementation\s*=\s*mongodb/i', $siteAccessFileContent ) &&
+                        if ( preg_match( '/DatabaseImplementation\s*=\s*(mongodb|ferretdb|documentdb|cosmosdb|cosmosdbvcore)\b/i', $siteAccessFileContent ) &&
                              preg_match( '/\bDatabase\s*=\s*([^\s\r\n*]+)/', $siteAccessFileContent, $regexMatches ) )
                         {
                             $databaseNameFromSiteAccess = trim( $regexMatches[1] );

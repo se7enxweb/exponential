@@ -19,6 +19,12 @@ $databaseTypes = array(
     'mysql'   => array( 'type' => 'mysqli',  'port' => '3306',  'name' => 'exponential',    'user' => 'root' ),
     'pgsql'   => array( 'type' => 'pgsql',   'port' => '5432',  'name' => 'exponential',    'user' => 'postgres' ),
     'mongodb' => array( 'type' => 'mongodb', 'port' => '27017', 'name' => 'exponential',    'user' => '' ),
+    // the databases of the MongoDB wire protocol (expMongoDB with the database's profile, expMongoWireProfile); TLS,
+    // the CA bundle and other URI options go into site.ini [MongoWireSettings]
+    'ferretdb'      => array( 'type' => 'ferretdb',      'port' => '27017', 'name' => 'exponential', 'user' => '' ),
+    'documentdb'    => array( 'type' => 'documentdb',    'port' => '27017', 'name' => 'exponential', 'user' => '' ),
+    'cosmosdb'      => array( 'type' => 'cosmosdb',      'port' => '10255', 'name' => 'exponential', 'user' => '' ),
+    'cosmosdbvcore' => array( 'type' => 'cosmosdbvcore', 'port' => '10260', 'name' => 'exponential', 'user' => '' ),
     // the name is the service; the connect string becomes host:port/service
     'oracle'  => array( 'type' => 'oci8',    'port' => '1521',  'name' => 'FREEPDB1',       'user' => '' ),
     // Microsoft SQL Server: the database must exist (CREATE DATABASE, a UTF-8 collation recommended)
@@ -65,6 +71,7 @@ $odbcDialects = array(
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
                           'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
+                          'ferret' => 'ferretdb', 'docdb' => 'documentdb', 'cosmos' => 'cosmosdb', 'cosmosvcore' => 'cosmosdbvcore',
                           'oci8' => 'oracle', 'ezoracle' => 'oracle',
                           'mssql' => 'sqlserver', 'sqlsrv' => 'sqlserver',
                           'planetscale' => 'vitess', 'memsql' => 'singlestore', 'aurora-mysql' => 'aurora', 'auroramysql' => 'aurora',
@@ -174,7 +181,7 @@ if ( isset( $databaseAliases[$db] ) )
     $db = $databaseAliases[$db];
 if ( !isset( $databaseTypes[$db] ) )
 {
-    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird,"
+    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb, ferretdb, documentdb, cosmosdb, cosmosdbvcore, oracle, sqlserver, tidb, vitess, singlestore, xpand, aurora, firebird,"
                   . " duckdb, monetdb, cockroachdb, yugabytedb, neon, supabase, aurorapostgresql, db2, informix, libsql, turso, odbc, hana or ase\n" );
     exit( 1 );
 }
@@ -552,6 +559,7 @@ packages, and ends with "PASS: ... (dry run, nothing changed; --apply writes)".
 Database (default: SQLite, no server needed)
   --db=<type>            sqlite (default), mysql, pgsql, mongodb, oracle, sqlserver, firebird, duckdb or monetdb;
                          cockroachdb, yugabytedb, neon, supabase or aurorapostgresql (PostgreSQL wire protocol)
+                         ferretdb, documentdb, cosmosdb or cosmosdbvcore (MongoDB wire protocol)
                          db2 or informix (IBM, over pdo_ibm or ibm_db2)
                          libsql (sqld) or turso: SQLite over HTTP, with curl or allow_url_fopen;
                          the password is the server's auth token (turso: required)
@@ -577,7 +585,8 @@ Database (default: SQLite, no server needed)
                          (ase: SAP ASE 15.7 or 16.0, an existing database, pdo_dblib or PDO_ODBC
                          with FreeTDS, see [ASESettings]; not tested against a server)
   --db-host=<host>       default localhost
-  --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
+  --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb, ferretdb, documentdb),
+                         10255 (cosmosdb), 10260 (cosmosdbvcore),
                          1521 (oracle), 1433 (sqlserver), 4000 (tidb), 3050 (firebird),
                          26257 (cockroachdb), 5433 (yugabytedb),
                          50000 (db2, monetdb), 9089 (informix, DRDA), 8080 (libsql), 443 (turso),

@@ -119,6 +119,8 @@
             <exclude>tests/tests/lib/ezdb/pgwire</exclude>
             <!-- in the suites mysqlwire and mysqlwire-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/mysqlwire</exclude>
+            <!-- in the suites mongowire and mongowire-live; a file can be in one suite only -->
+            <exclude>tests/tests/lib/ezdb/mongowire</exclude>
             <!-- in the suites firebird and firebird-live; a file can be in one suite only -->
             <exclude>tests/tests/lib/ezdb/firebird</exclude>
             <!-- in the suites db2 and db2-live; a file can be in one suite only -->
@@ -186,6 +188,17 @@
           they skip without one).
           Run: php vendor/bin/phpunit - -testsuite pgwire | pgwire-live
         -->
+        <!-- the databases of the MongoDB wire protocol (FerretDB, Amazon DocumentDB, Azure Cosmos DB for MongoDB):
+             the profiles without a server; mongowire-live against a server of EXP_MONGOWIRE_URI
+          Run: php vendor/bin/phpunit - -testsuite mongowire | mongowire-live
+        -->
+        <testsuite name="mongowire">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/mongowire</directory>
+            <exclude>tests/tests/lib/ezdb/mongowire/live</exclude>
+        </testsuite>
+        <testsuite name="mongowire-live">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/mongowire/live</directory>
+        </testsuite>
         <testsuite name="pgwire">
             <directory suffix="Test.php">tests/tests/lib/ezdb/pgwire</directory>
             <exclude>tests/tests/lib/ezdb/pgwire/live</exclude>

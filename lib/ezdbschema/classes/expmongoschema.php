@@ -124,11 +124,34 @@ class expMongoSchema extends eZDBSchemaInterface
             if ( $tableName === '_info' || !is_array( $tableDef ) )
                 continue;
 
-            if ( !isset( $tableDef['indexes'] ) || !is_array( $tableDef['indexes'] ) )
-                continue;
-
             $collection = $client->selectCollection( $dbName, $tableName );
             $fields     = isset( $tableDef['fields'] ) ? $tableDef['fields'] : array();
+
+            // A database whose sort needs an index on the field (Azure Cosmos DB for MongoDB): one per column
+            if ( method_exists( $this->DBInstance, 'wireProfile' ) )
+            {
+                $leading = array();
+                foreach ( isset( $tableDef['indexes'] ) && is_array( $tableDef['indexes'] ) ? $tableDef['indexes'] : array() as $indexDef )
+                    if ( isset( $indexDef['fields'] ) && is_array( $indexDef['fields'] ) && $indexDef['fields'] )
+                    {
+                        $first = reset( $indexDef['fields'] );
+                        $leading[] = array( 'fields' => array( is_array( $first ) ? $first['name'] : $first ) );
+                    }
+                foreach ( expMongoDB::sortIndexes( $this->DBInstance->wireProfile(), array_keys( $fields ), $leading ) as $sortName => $keyDoc )
+                {
+                    try
+                    {
+                        $collection->createIndex( $keyDoc, array( 'name' => $sortName ) );
+                    }
+                    catch ( \Exception $e )
+                    {
+                        eZDebug::writeWarning( "MongoDB createIndex '$sortName' on '$tableName': " . $e->getMessage(), __METHOD__ );
+                    }
+                }
+            }
+
+            if ( !isset( $tableDef['indexes'] ) || !is_array( $tableDef['indexes'] ) )
+                continue;
 
             foreach ( $tableDef['indexes'] as $indexName => $indexDef )
             {

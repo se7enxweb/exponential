@@ -213,13 +213,109 @@ class expMongoDB extends eZDBInterface
             self::$Clients = array();
             self::$ClientsPid = $pid;
         }
-        $uri = self::connectionUri( $this->Server, $this->Port, $this->User, $this->Password, $this->DB );
+        $uri = $this->clientUri();
         if ( !isset( self::$Clients[$uri] ) )
         {
             self::requireClientLibrary();
             self::$Clients[$uri] = new MongoDB\Client($uri);
         }
         return self::$Clients[$uri];
+    }
+
+    /** The profile of the driver (expMongoWireProfile): MongoDB here, FerretDB, DocumentDB or Cosmos DB in a subclass */
+    const PROFILE = 'mongodb';
+
+    /** @var array|null see wireProfile() */
+    protected $WireProfile = null;
+
+    /** @var array the server version per connection URI (buildInfo), for serverSupportsBitwise() */
+    private static $ServerVersions = array();
+
+    /**
+     * The profile of the database this driver talks to: site.ini [MongoWireSettings] Profile when it names one,
+     * else the driver's own (PROFILE).
+     *
+     * @return array see expMongoWireProfile::all()
+     */
+    public function wireProfile()
+    {
+        if ( $this->WireProfile === null )
+        {
+            $configured = '';
+            if ( class_exists( 'eZINI' ) )
+            {
+                $ini = eZINI::instance();
+                if ( $ini->hasVariable( 'MongoWireSettings', 'Profile' ) )
+                    $configured = (string)$ini->variable( 'MongoWireSettings', 'Profile' );
+            }
+            $this->WireProfile = $configured !== '' ? expMongoWireProfile::get( $configured )
+                                                    : expMongoWireProfile::get( static::PROFILE );
+        }
+        return $this->WireProfile;
+    }
+
+    /**
+     * site.ini [MongoWireSettings]: TLS, TLSCAFile, ReplicaSet, AuthSource, ReadPreference, RetryWrites, URIOptions.
+     *
+     * @return array
+     */
+    public static function wireSettings()
+    {
+        $settings = array();
+        if ( !class_exists( 'eZINI' ) )
+            return $settings;
+        $ini = eZINI::instance();
+        foreach ( array( 'TLS', 'TLSCAFile', 'ReplicaSet', 'AuthSource', 'ReadPreference', 'RetryWrites', 'URIOptions' ) as $key )
+            if ( $ini->hasVariable( 'MongoWireSettings', $key ) )
+                $settings[$key] = $ini->variable( 'MongoWireSettings', $key );
+        return $settings;
+    }
+
+    /**
+     * The connection URI of this instance: connectionUri() with the options of the profile and of
+     * [MongoWireSettings] (TLS, retryWrites=false, the replica set), and the profile's port when none is set.
+     *
+     * @return string
+     */
+    public function clientUri()
+    {
+        $profile = $this->wireProfile();
+        return self::connectionUri( $this->Server, $this->Port ? $this->Port : $profile['port'], $this->User, $this->Password,
+                                    $this->DB, expMongoWireProfile::uriOptions( $profile, self::wireSettings() ) );
+    }
+
+    /**
+     * Whether the server takes $bitAnd, $bitOr, $bitXor and $bitNot in an aggregation expression; asked once per
+     * connection URI and process (buildInfo) where the profile leaves it to the version (MongoDB: 6.3 and later).
+     *
+     * @return bool
+     */
+    public function serverSupportsBitwise()
+    {
+        $profile = $this->wireProfile();
+        if ( $profile['bitwise_aggregation'] !== 'version' )
+            return (bool)$profile['bitwise_aggregation'];
+        $uri = $this->clientUri();
+        if ( !isset( self::$ServerVersions[$uri] ) )
+        {
+            $info = $this->databaseServerVersion();
+            self::$ServerVersions[$uri] = $info['string'];
+        }
+        return expMongoWireProfile::bitwiseAggregation( $profile, self::$ServerVersions[$uri] );
+    }
+
+    /**
+     * A filter or pipeline as the server takes it: the bitwise aggregation operators written as arithmetic where
+     * the server has none (expMongoWireProfile::emulateBitwise()).
+     *
+     * @param mixed $node
+     * @return mixed
+     */
+    public function forServer( $node )
+    {
+        if ( !is_array( $node ) || !expMongoWireProfile::hasBitwise( $node ) || $this->serverSupportsBitwise() )
+            return $node;
+        return expMongoWireProfile::emulateBitwise( $node );
     }
 
     /**
@@ -262,7 +358,7 @@ class expMongoDB extends eZDBInterface
     public function hasClient()
     {
         return self::$ClientsPid === getmypid()
-            && isset( self::$Clients[self::connectionUri( $this->Server, $this->Port, $this->User, $this->Password, $this->DB )] );
+            && isset( self::$Clients[$this->clientUri()] );
     }
 
     /**
@@ -279,9 +375,10 @@ class expMongoDB extends eZDBInterface
      * @param string $user
      * @param string $password
      * @param string $database
+     * @param array $options URI options (name => value), written after "?" (expMongoWireProfile::uriOptions())
      * @return string
      */
-    public static function connectionUri( $server, $port, $user, $password, $database )
+    public static function connectionUri( $server, $port, $user, $password, $database, array $options = array() )
     {
         $server = (string)$server !== '' ? (string)$server : 'localhost';
         $port   = $port ? $port : 27017;
@@ -293,7 +390,10 @@ class expMongoDB extends eZDBInterface
                 $credentials .= ':' . rawurlencode( (string)$password );
             $credentials .= '@';
         }
-        return 'mongodb://' . $credentials . $server . ':' . $port . '/' . $database;
+        $query = array();
+        foreach ( $options as $name => $value )
+            $query[] = rawurlencode( (string)$name ) . '=' . rawurlencode( (string)$value );
+        return 'mongodb://' . $credentials . $server . ':' . $port . '/' . $database . ( $query ? '?' . implode( '&', $query ) : '' );
     }
 
     function findOne( $table, $condition, $server = false )
@@ -346,7 +446,8 @@ class expMongoDB extends eZDBInterface
         $this->WhereTable = $table;
         try
         {
-            return $this->parseWhereClauseOfTable( $whereSql );
+            $filter = $this->parseWhereClauseOfTable( $whereSql );
+            return is_array( $filter ) ? $this->forServer( $filter ) : $filter;
         }
         finally
         {
@@ -1612,6 +1713,10 @@ class expMongoDB extends eZDBInterface
                     // is what IF NOT EXISTS has to mean here.
                     $collection->createIndex( $keyDoc, $options );
                 }
+                // A database whose sort needs an index on the field (Cosmos DB): one per column
+                foreach ( self::sortIndexes( $this->wireProfile(), self::parseCreateTableColumns( $m[2] ),
+                                             self::parseCreateTableIndexes( $m[2] ) ) as $indexName => $keyDoc )
+                    $collection->createIndex( $keyDoc, array( 'name' => $indexName ) );
             }
             catch ( Exception $e )
             {
@@ -2585,6 +2690,11 @@ class expMongoDB extends eZDBInterface
             if ( is_array( $stage ) && array_key_exists( '$match', $stage ) && $stage['$match'] === array() )
                 $pipeline[$index]['$match'] = new stdClass();
         }
+        $pipeline = $this->forServer( $pipeline );
+        $profile = $this->wireProfile();
+        if ( !$profile['lookup_let'] && expMongoWireProfile::hasCorrelatedLookup( $pipeline ) )
+            eZDebug::writeWarning( $profile['label'] . ' has no $lookup with let or pipeline; the server will refuse the '
+                . 'aggregation on ' . $table . ' (doc/eng-us/help/database-administrators/mongodb-limits-and-operations.md)', __METHOD__ );
 
         $this->traceStatement( 'aggregate ' . $table . ': ' . json_encode( $pipeline ) );
 
@@ -3618,6 +3728,50 @@ class expMongoDB extends eZDBInterface
      * @param string $body the text between the outer brackets
      * @return array indexName => array( 'fields' => array, 'unique' => bool )
      */
+    /**
+     * The column names of the body of a CREATE TABLE, in order (the clauses that are not a key or a constraint).
+     *
+     * @param string $body
+     * @return string[]
+     */
+    static function parseCreateTableColumns( $body )
+    {
+        $columns = array();
+        foreach ( self::splitSqlList( $body ) as $clause )
+        {
+            $clause = trim( $clause );
+            if ( preg_match( '/^(PRIMARY|UNIQUE|KEY|INDEX|CONSTRAINT|FOREIGN|CHECK|FULLTEXT|SPATIAL)\b/i', $clause ) )
+                continue;
+            if ( preg_match( '/^[`"]?(\w+)[`"]?\s+\w/', $clause, $m ) )
+                $columns[] = $m[1];
+        }
+        return $columns;
+    }
+
+    /**
+     * The extra single-field indexes a profile with index_every_field needs (Azure Cosmos DB for MongoDB sorts only
+     * on an indexed field): one for every column that does not already lead an index, named exp_sort_<column>.
+     *
+     * @param array $profile expMongoWireProfile
+     * @param string[] $columns
+     * @param array $indexes name => array( 'fields' => string[] ), as parseCreateTableIndexes() gives them
+     * @return array index name => key document
+     */
+    static function sortIndexes( array $profile, array $columns, array $indexes )
+    {
+        if ( empty( $profile['index_every_field'] ) )
+            return array();
+        $leading = array();
+        foreach ( $indexes as $index )
+            if ( !empty( $index['fields'] ) )
+                $leading[reset( $index['fields'] )] = true;
+        $extra = array();
+        foreach ( $columns as $column )
+            if ( !isset( $leading[$column] ) )
+                $extra['exp_sort_' . $column] = array( $column => 1 );
+        return $extra;
+    }
+
     static function parseCreateTableIndexes( $body )
     {
         $indexes = array();

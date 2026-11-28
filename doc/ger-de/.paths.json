@@ -3596,6 +3596,7 @@
     "funktionen/6.0/firebird-datenbanktreiber.md": "features/6.0/firebird-database-driver.md",
     "funktionen/6.0/ms-access-unterstuetzung.md": "features/6.0/ms-access-support.md",
     "funktionen/6.0/mysql-wire-datenbanken.md": "features/6.0/mysql-wire-databases.md",
+    "funktionen/6.0/mongodb-wire-datenbanken.md": "features/6.0/mongodb-wire-databases.md",
     "funktionen/6.0/duckdb-datenbanktreiber.md": "features/6.0/duckdb-database-driver.md",
     "funktionen/6.0/libsql-datenbanktreiber.md": "features/6.0/libsql-database-driver.md",
     "funktionen/6.0/db2-datenbanktreiber.md": "features/6.0/db2-database-driver.md",
