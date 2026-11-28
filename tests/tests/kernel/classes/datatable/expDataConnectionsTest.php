@@ -140,10 +140,10 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'var/datatable/a.txt', 'var/datatable/a.php', 'var/a.db', 'var/datatable/../a.db', 'var/datatable/../../settings/a.db',
                          '/etc/passwd.db', 'var/datatable/nosuchdir/a.db', '' ) as $file )
             $this->assertNotEmpty( expDataConnections::problems( array( 'database' => $file ) + $sqlite ), "file '$file'" );
-        $this->assertSame( eZSys::rootDir() . '/var/datatable/a.db', expDataConnections::sqlitePath( 'var/datatable/a.db' ) );
+        $this->assertSame( self::slashes( eZSys::rootDir() . '/var/datatable/a.db' ), self::slashes( expDataConnections::sqlitePath( 'var/datatable/a.db' ) ) );
         $this->assertNull( expDataConnections::sqlitePath( "var/datatable/a\0.db" ) );
         // a DuckDB file: its own endings (expDataConnections::filePattern())
-        $this->assertSame( eZSys::rootDir() . '/var/datatable/a.duckdb', expDataConnections::sqlitePath( 'var/datatable/a.duckdb', expDataConnections::filePattern( 'duckdb' ) ) );
+        $this->assertSame( self::slashes( eZSys::rootDir() . '/var/datatable/a.duckdb' ), self::slashes( expDataConnections::sqlitePath( 'var/datatable/a.duckdb', expDataConnections::filePattern( 'duckdb' ) ) ) );
         $this->assertNull( expDataConnections::sqlitePath( 'var/datatable/a.duckdb' ) );
         $this->assertNull( expDataConnections::sqlitePath( 'var/datatable/a.sqlite', expDataConnections::filePattern( 'duckdb' ) ) );
         $this->assertSame( array( 'var/datatable' ), expDataConnections::sqliteDirectories() );
@@ -172,7 +172,7 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', $plan['error'] );
         $this->assertSame( 'ez', $plan['via'] );
         $this->assertSame( 'sqlite3', $plan['implementation'] );
-        $this->assertSame( eZSys::rootDir() . '/' . $file, $plan['parameters']['database'] );
+        $this->assertSame( self::slashes( eZSys::rootDir() . '/' . $file ), self::slashes( $plan['parameters']['database'] ) );
         $this->assertFalse( $plan['parameters']['use_defaults'] );
 
         $plan = expDataConnections::plan( array( 'identifier' => 'x', 'engine' => 'nosuch' ) );
@@ -351,5 +351,11 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'site', expDataConnections::get( '' )['identifier'] );
         $this->assertSame( 'local', expDataConnections::get( 'local' )['identifier'] );
         $this->assertNull( expDataConnections::get( 'nosuch' ) );
+    }
+
+    /** A path with slashes: realpath() writes backslashes on Windows */
+    private static function slashes( $path )
+    {
+        return str_replace( '\\', '/', (string)$path );
     }
 }

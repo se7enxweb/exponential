@@ -53,9 +53,11 @@ $ini->findInputFiles( $inputFiles, $iniFile );
 $files = array();
 foreach ( $inputFiles as $path )
 {
-    $real = realpath( $path[0] === '/' ? $path : $root . '/' . $path );
-    $path = $real !== false ? $real : $path;
-    $files[] = strpos( $path, $root . '/' ) === 0 ? substr( $path, strlen( $root ) + 1 ) : $path;
+    $real = realpath( eZDir::isAbsolutePath( $path ) ? $path : $root . '/' . $path );
+    // with slashes: realpath() writes backslashes on Windows
+    $path = str_replace( DIRECTORY_SEPARATOR, '/', $real !== false ? $real : $path );
+    $rootSlashes = str_replace( DIRECTORY_SEPARATOR, '/', $root );
+    $files[] = strpos( $path, $rootSlashes . '/' ) === 0 ? substr( $path, strlen( $rootSlashes ) + 1 ) : $path;
 }
 $values = array();
 foreach ( $wanted as $setting )

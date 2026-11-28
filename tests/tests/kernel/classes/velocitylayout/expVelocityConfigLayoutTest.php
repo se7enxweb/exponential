@@ -34,7 +34,7 @@ class expVelocityConfigLayoutTestVelocity extends expVelocity
 
     public function absolutePath( $path )
     {
-        return $path !== '' && $path[0] === '/' ? $path : rtrim( $this->root . '/' . $path, '/' );
+        return eZDir::isAbsolutePath( $path ) ? $path : rtrim( $this->root . '/' . $path, '/' );
     }
 
     public function assets()
