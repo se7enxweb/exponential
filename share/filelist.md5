@@ -24933,7 +24933,7 @@ ae1774fc23c80886e12c9af6758176ed  kernel/classes/datatypes/ezurl/ezurl.php
 d9ab87d474ed1fe5af5f03fc772fd772  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 ec42fbb862185f893bd786630123fe41  kernel/classes/datatypes/ezuser/ezldapuser.php
 e2a4bc3b141c1b61d8993ee61f071ac8  kernel/classes/datatypes/ezuser/eztextfileuser.php
-11fb555dca8f780aa6192ffc511058f2  kernel/classes/datatypes/ezuser/ezuser.php
+09cc84f76c5dedc7217c9bf065694776  kernel/classes/datatypes/ezuser/ezuser.php
 35b90470a8d399197997c67a80804e93  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 7c3ef82fa174c9d8dc331efd95bbce96  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 2d6209a1e6e18e25ba12c90f82cb1fbd  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -30110,7 +30110,7 @@ dd0fd5598f5041c4419d9efa03b210fd  tests/tests/kernel/classes/processtools/ExpPre
 57e7e1a7a4ca08d28c9348b683fa522d  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
 0d15cbf0ed8896a8ce8fae3bd6ffc1a8  tests/tests/kernel/classes/radwizards/expContentExtensionWizardTest.php
 d67f76f1665b8a9945651b3efd6e8c15  tests/tests/kernel/classes/radwizards/expDesignExtensionWizardTest.php
-4e40a2eb98886d119e5c401dba93705a  tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php
+333de11bfe42367a948413436b854804  tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php
 51d2b3f7e49dcd837f4a041c5826bd2f  tests/tests/kernel/classes/radwizards/expModuleExtensionWizardTest.php
 de9111a81ec80d9f0c79000d96768d6c  tests/tests/kernel/classes/radwizards/expModuleWizardTest.php
 a5e9511411952917c069bbff3b45e10c  tests/tests/kernel/classes/radwizards/expRadSurveyHelpersTest.php
@@ -30206,7 +30206,7 @@ d5f83bba4055677cf777bf58a82f49d0  tests/tests/kernel/classes/staticpublish/expSt
 a59936ac5aaf6b1c22876f28bee53d29  tests/tests/kernel/classes/staticpublish/expStaticBuildSignatureTest.php
 202acd8e0737783700b57bdcc9fe93fc  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
 760a5ae7dc7e5432a704077e0a9c88be  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
-7f255b013151c3bc91d98222d029bfab  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
+a715126eeb74043ef2a435166d015a45  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
 48049f42f1455ed66ca122e17b92d968  tests/tests/kernel/classes/staticpublish/expStaticDegraderTest.php
 dc8164b53b2e30936c1b16dcf423c851  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
 ce3e4c7015008e89f5abf6bbfd959b4a  tests/tests/kernel/classes/staticpublish/expStaticFormEndpointTest.php
