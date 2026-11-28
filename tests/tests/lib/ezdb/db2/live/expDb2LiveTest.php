@@ -13,6 +13,8 @@
  *  DL-05 - Temporary tables: rows belong to the connection; the kernel's create, insert, read, drop twice
  *  DL-06 - The kernel schema and data (share/db_schema.dba, share/db_data.dba), the next id after the data, the
  *          schema read back (equal on Db2), upgrades, the portable helpers
+ *  DL-07 - Memory: 2,000 reads of 10 columns keep less than 256 KB (pdo_ibm's closeCursor() kept every result's
+ *          column descriptors, ibm_db2's DB2_ATTR_CASE every column name)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -220,5 +222,26 @@ class expDb2LiveTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 'Standard|s', $joined );
             $this->assertSame( md5( 'x' ), $db->arrayQuery( "SELECT " . $db->md5( 'name' ) . " AS m FROM ezcontentobject WHERE remote_id = 'dl06'" )[0]['m'] );
         }
+    }
+
+    /**
+     * DL-07: a result keeps no memory once read. pdo_ibm's closeCursor() held the column descriptors of every
+     * result for the rest of the process (68 MB for these 2,000 reads of 10 columns with a CLOB), which took a site
+     * install past a memory_limit of 1G; ibm_db2's DB2_ATTR_CASE held 16 bytes a column of every row (320 KB).
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('engines')]
+    public function testReadsKeepNoMemory( $class )
+    {
+        $db = $this->connect( $class );
+        $this->makeTable( $db );
+        $this->assertTrue( $db->query( "INSERT INTO exp_live (name, mask, value) VALUES ('a', 1, 'text')" ), (string)$db->errorMessage() );
+        $sql = 'SELECT id, name, mask, value, id AS i2, name AS n2, mask AS m2, id AS i3, name AS n3, mask AS m3 FROM exp_live';
+        $this->assertCount( 10, $db->arrayQuery( $sql )[0] );
+        gc_collect_cycles();
+        $before = memory_get_usage();
+        for ( $i = 0; $i < 2000; $i++ )
+            $db->arrayQuery( $sql );
+        gc_collect_cycles();
+        $this->assertLessThan( 262144, memory_get_usage() - $before, 'memory kept by 2,000 reads of 10 columns' );
     }
 }

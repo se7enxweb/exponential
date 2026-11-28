@@ -96,7 +96,10 @@ class expDb2PDOTransport extends expDb2Transport
                     $rows[] = self::normalizeRow( $row );
             }
             $affected = self::rowCount( $statement->rowCount() );
-            $statement->closeCursor();
+            // the statement is dropped, not closeCursor()'d: pdo_ibm's closeCursor() keeps the column descriptors of
+            // the result (about 140 bytes a column) for the rest of the process, which took a site install past a
+            // memory_limit of 1G; dropping the statement frees its cursor and all of it, on every PDO driver
+            $statement = null;
             return array( 'rows' => $rows, 'affected' => $affected );
         }
         catch ( Throwable $e )

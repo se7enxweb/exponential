@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d1861a86d2c20c9e4923bb3ff1b3f85d  doc/changelogs/6.0/6.0.15.md
+61b5c853cda2fdfe8ffb3b1bd22ff534  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -31392,8 +31392,8 @@ b5c2b85150578f5d070550fd5282fc5f  kernel/sql/db2/kernel_schema.sql
 ca9a91d8db3ccf4096e8292bcc5e5d66  kernel/sql/informix/kernel_schema.sql
 f4126f5fe22f086453f99dddc44a19d0  lib/ezdb/classes/expdb2db.php
 3a4c8081ffa673edbb6cf4d826b5568d  lib/ezdb/classes/expdb2dialect.php
-e3f0b55fd7cb2a03105abc4e8b1f9b0f  lib/ezdb/classes/expdb2ibmdb2transport.php
-f1d3190960b196c941c42d6660bbc564  lib/ezdb/classes/expdb2pdotransport.php
+7e85a9bfac111b1c6dede8be82ae2ba1  lib/ezdb/classes/expdb2ibmdb2transport.php
+c608db106beffc03cf3c21488dc2f00b  lib/ezdb/classes/expdb2pdotransport.php
 0acff45ac9d3161f025e3280e684c9e8  lib/ezdb/classes/expdb2transport.php
 1e81a69a1987e6e53a68f9affda5711d  lib/ezdb/classes/expinformixdb.php
 cf70487c44823d6724f07b3c2dc36210  lib/ezdb/classes/expinformixdialect.php
@@ -31403,7 +31403,7 @@ e065454f0a4cee443e8ec14e9613bf0f  lib/ezdb/classes/expinformixpdotransport.php
 c97af21cdc37e7fd628ee280f98a5596  tests/tests/lib/ezdb/db2/expDb2DBTest.php
 eff85d73651f8700172e31f983f234c8  tests/tests/lib/ezdb/db2/expDb2DialectTest.php
 d0dfc47f515369cf7e6abde6ef2556d1  tests/tests/lib/ezdb/db2/expDb2TestKit.php
-a45cab7b03cf441f391fdbd3dba8a590  tests/tests/lib/ezdb/db2/live/expDb2LiveTest.php
+9b607cdb5e0c8e7c8ad3830eebb4bee8  tests/tests/lib/ezdb/db2/live/expDb2LiveTest.php
 ddb1c25847d0fb652a11b0b36684443e  tests/tests/lib/ezdbschema/expDb2SchemaTest.php
 374d547f5b91c01a25626f6b87539a48  bin/php/expcassandraimport.php
 9cc4e0e789a3ffa0433c7ec1fca06bbb  doc/eng-us/features/6.0/cassandra-scylladb-driver.md

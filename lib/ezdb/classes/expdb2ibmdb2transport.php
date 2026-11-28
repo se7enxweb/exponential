@@ -12,7 +12,7 @@
  * Driver for ODBC and CLI, as pdo_ibm is). It is the layer of Informix: pdo_ibm 1.7 ends PHP with a segmentation fault
  * when it reads a CLOB or TEXT of Informix over DRDA (measured with Informix 15), while ibm_db2 reads them as text.
  * The connection runs in autocommit mode; begin() turns autocommit off until commit() or rollback(). Column names
- * come in lower case.
+ * come in lower case (lower-cased by normalizeRow(), not by the connection's DB2_ATTR_CASE, which keeps memory).
  *
  * @since 6.0.15
  * @package lib
@@ -70,7 +70,9 @@ class expDb2IbmDb2Transport extends expDb2Transport
         try
         {
             $this->persistent = !empty( $config['persistent'] );
-            $options = array( 'autocommit' => DB2_AUTOCOMMIT_ON, 'DB2_ATTR_CASE' => DB2_CASE_LOWER );
+            // no DB2_ATTR_CASE: ibm_db2 2.3 keeps the lower-cased name of every column of every fetched row for the
+            // rest of the process (16 bytes a column); normalizeRow() lower-cases the names instead
+            $options = array( 'autocommit' => DB2_AUTOCOMMIT_ON );
             $string = $this->connectionString( $config );
             $connection = $this->persistent ? @db2_pconnect( $string, '', '', $options ) : @db2_connect( $string, '', '', $options );
         }
