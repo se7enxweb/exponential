@@ -245,6 +245,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 
 - [Shop-Dashboard und Bestellstatus](shop-dashboard.md)
 - [Dauerhafte Bestellbelege](bestellbelege.md)
+- [Meine Bestellungen: die Bestellliste des Kunden](meine-bestellungen.md)
 - [Die Bestellliste nach jeder Spalte sortieren](sortierung-der-bestellliste.md)
 - [Aus welchem Siteaccess eine Bestellung kam](bestellungen-nach-siteaccess.md)
 

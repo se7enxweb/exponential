@@ -272,6 +272,7 @@ nginx with PHP-FPM keep working as before.
 
 - [Store dashboard and order statuses](store-dashboard.md)
 - [Permanent order receipts](order-receipts.md)
+- [My orders: a customer's own order list](my-orders.md)
 - [Sort the order list by any column](order-list-sorting.md)
 - [Which siteaccess an order came from](order-siteaccess.md)
 

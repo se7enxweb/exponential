@@ -536,6 +536,7 @@ return array(
       'Exponential\\View\\Kernel\\Shop\\Discountruleedit'            => 'kernel/private/classes/views/shop/discountruleedit.php',
       'Exponential\\View\\Kernel\\Shop\\Editcurrency'                => 'kernel/private/classes/views/shop/editcurrency.php',
       'Exponential\\View\\Kernel\\Shop\\Editvatrule'                 => 'kernel/private/classes/views/shop/editvatrule.php',
+      'Exponential\\View\\Kernel\\Shop\\Myorders'                    => 'kernel/private/classes/views/shop/myorders.php',
       'Exponential\\View\\Kernel\\Shop\\Orderlist'                   => 'kernel/private/classes/views/shop/orderlist.php',
       'Exponential\\View\\Kernel\\Shop\\Orderreceipt'                => 'kernel/private/classes/views/shop/orderreceipt.php',
       'Exponential\\View\\Kernel\\Shop\\Orderreciept'                => 'kernel/private/classes/views/shop/orderreciept.php',

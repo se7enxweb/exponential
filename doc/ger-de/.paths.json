@@ -3525,6 +3525,7 @@
     "funktionen/6.0/log-betrachter.md": "features/6.0/log-viewer.md",
     "funktionen/6.0/log-rotation.md": "features/6.0/log-rotation.md",
     "funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md": "features/6.0/multi-site-log-and-cache-paths.md",
+    "funktionen/6.0/meine-bestellungen.md": "features/6.0/my-orders.md",
     "funktionen/6.0/migrationen.md": "features/6.0/migrations.md",
     "funktionen/6.0/moderation.md": "features/6.0/moderation.md",
     "funktionen/6.0/moderne-passwortaenderung.md": "features/6.0/modern-password-change.md",

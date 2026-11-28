@@ -94,6 +94,15 @@ $ViewList["wishlist"] = array(
     'unordered_params' => array( 'offset' => 'Offset' ),
     "params" => array(  ) );
 
+// The signed-in customer's own orders, newest first, each linked where the shop links orders (order view or
+// receipt). Its own policy, shop/myorders, so a site decides who gets the list; it never shows anyone else's orders.
+$ViewList["myorders"] = array(
+    "functions" => array( 'myorders' ),
+    "script" => "myorders.php",
+    "default_navigation_part" => 'ezmynavigationpart',
+    'unordered_params' => array( 'offset' => 'Offset' ),
+    "params" => array(  ) );
+
 // The store owner's overview: activity, open orders, configuration and next steps.
 // Same policy as the order list and the statistics it summarises.
 $ViewList["dashboard"] = array(
@@ -350,6 +359,7 @@ $FunctionList = array();
 $FunctionList['setup'] = array( );
 $FunctionList['administrate'] = array( );
 $FunctionList['buy'] = array( );
+$FunctionList['myorders'] = array( );
 $FunctionList['edit_status'] = array( );
 $FunctionList['setstatus'] = array( 'FromStatus' => $FromStatus,
                                     'ToStatus' => $ToStatus );

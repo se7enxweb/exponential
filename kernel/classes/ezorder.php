@@ -346,6 +346,38 @@ class eZOrder extends eZPersistentObject
                                                     $asObject );
     }
 
+    /**
+     * A customer's own orders, newest first: the completed orders (not temporary) of one user, archived ones too
+     * (archiving tidies the shop's lists, the order is still the customer's). shop/myorders lists these.
+     *
+     * @param int $userID the customer's content object id
+     * @param int $offset
+     * @param int|null $limit null: all
+     * @param bool $asObject
+     * @return eZOrder[]|array[]
+     */
+    static function fetchListByUserID( $userID, $offset = 0, $limit = null, $asObject = true )
+    {
+        $limits = $limit === null ? null : array( 'offset' => max( 0, (int)$offset ), 'length' => max( 1, (int)$limit ) );
+        return eZPersistentObject::fetchObjectList( eZOrder::definition(),
+                                                    null,
+                                                    array( 'user_id' => (int)$userID, 'is_temporary' => 0 ),
+                                                    array( 'created' => 'desc', 'id' => 'desc' ), $limits,
+                                                    $asObject );
+    }
+
+    /**
+     * The number of a customer's own orders, as fetchListByUserID() lists them.
+     *
+     * @param int $userID
+     * @return int
+     */
+    static function countByUserID( $userID )
+    {
+        return (int)eZPersistentObject::count( eZOrder::definition(),
+                                               array( 'user_id' => (int)$userID, 'is_temporary' => 0 ) );
+    }
+
     static function getShowOrdersQuery( $show, $table = null )
     {
         $table = ( $table === null ? '' : $table . '.' );
