@@ -3,7 +3,8 @@
  * ezpRestDbConfig::lazyDbHelper(), the database connection of the REST interface's persistent objects (OAuth tokens):
  * the DSN built from site.ini [DatabaseSettings] for each database implementation, SQLite files and memory, an
  * unknown implementation refused, and user names and passwords with characters that have a meaning in a DSN, which
- * must come back unchanged when the DSN is parsed.
+ * must come back unchanged when the DSN is parsed, and the connection charset a MySQL DSN carries. Also the directories
+ * of the persistent-object definitions, which must not depend on the working directory.
  *
  * No database: nothing connects. The settings are set on the loaded site.ini and put back.
  *
@@ -64,17 +65,39 @@ class ezpRestDbConfigTest extends PHPUnit\Framework\TestCase
     public static function implementationProvider()
     {
         return array(
-            array( 'ezmysqli', 'mysql' ), array( 'mysqli', 'mysql' ), array( 'ezmysql', 'mysql' ), array( 'mysql', 'mysql' ),
-            array( 'ezpostgresql', 'pgsql' ), array( 'postgresql', 'pgsql' ), array( 'pgsql', 'pgsql' ),
-            array( 'ezoracle', 'oracle' ), array( 'oracle', 'oracle' ),
+            array( 'ezmysqli', 'mysql', '?charset=utf8mb4' ), array( 'mysqli', 'mysql', '?charset=utf8mb4' ),
+            array( 'ezmysql', 'mysql', '?charset=utf8mb4' ), array( 'mysql', 'mysql', '?charset=utf8mb4' ),
+            array( 'ezpostgresql', 'pgsql', '' ), array( 'postgresql', 'pgsql', '' ), array( 'pgsql', 'pgsql', '' ),
+            array( 'ezoracle', 'oracle', '' ), array( 'oracle', 'oracle', '' ),
         );
     }
 
     #[\PHPUnit\Framework\Attributes\DataProvider('implementationProvider')]
-    public function testImplementationGivesTheDsnType( $implementation, $type )
+    public function testImplementationGivesTheDsnType( $implementation, $type, $options )
     {
         $this->database( $implementation, 'db.k1.example.invalid', '', 'k1user', 'k1pass', 'k1db' );
-        $this->assertSame( "$type://k1user:k1pass@db.k1.example.invalid/k1db", ezpRestDbConfigTestDouble::dsn() );
+        $this->assertSame( "$type://k1user:k1pass@db.k1.example.invalid/k1db$options", ezpRestDbConfigTestDouble::dsn() );
+    }
+
+    public function testMysqlDsnCarriesTheMappedCharset()
+    {
+        $this->database( 'ezmysqli', 'db.k1.example.invalid', '3307', 'k1user', 'k1pass', 'k1db' );
+        $parsed = ezcDbFactory::parseDSN( ezpRestDbConfigTestDouble::dsn() );
+        $this->assertSame( eZMySQLCharset::mapTo( 'utf-8' ), $parsed['charset'] );
+        $this->assertSame( 'utf8mb4', $parsed['charset'] );
+        $this->assertSame( 'k1db', $parsed['database'] );
+        $this->assertSame( 'k1user', $parsed['username'] );
+        $this->assertSame( 'k1pass', (string)$parsed['password'] );
+        $this->assertSame( 'db.k1.example.invalid', $parsed['hostspec'] );
+        $this->assertSame( '3307', (string)$parsed['port'] );
+    }
+
+    public function testPostgresqlDsnCarriesNoCharset()
+    {
+        $this->database( 'ezpostgresql', 'db.k1.example.invalid', '', 'k1user', 'k1pass', 'k1db' );
+        $parsed = ezcDbFactory::parseDSN( ezpRestDbConfigTestDouble::dsn() );
+        $this->assertArrayNotHasKey( 'charset', $parsed );
+        $this->assertSame( 'k1db', $parsed['database'] );
     }
 
     public function testPortIsAddedToTheHost()
@@ -114,6 +137,8 @@ class ezpRestDbConfigTest extends PHPUnit\Framework\TestCase
             'colon in user' => array( 'k1:user', 'p' ),
             'empty password' => array( 'k1user', '' ),
             'spaces and plus' => array( 'k1 user', 'a+b c' ),
+            'option characters' => array( 'k1?u&s=e%r', 'p?a&charset=latin1%w' ),
+            'option characters first' => array( '?&=%', '?&=%' ),
         );
     }
 
@@ -126,5 +151,28 @@ class ezpRestDbConfigTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $password, (string)$parsed['password'] );
         $this->assertSame( 'db.k1.example.invalid', $parsed['hostspec'] );
         $this->assertSame( 'k1db', $parsed['database'] );
+        $this->assertSame( eZMySQLCharset::mapTo( 'utf-8' ), $parsed['charset'] );
+    }
+
+    public function testDefinitionDirectoriesDoNotDependOnTheWorkingDirectory()
+    {
+        $before = getcwd();
+        chdir( sys_get_temp_dir() );
+        try
+        {
+            $directories = ezpRestPoConfig::definitionDirectories();
+            $this->assertCount( 2, $directories );
+            foreach ( $directories as $directory )
+            {
+                $this->assertStringStartsWith( eZSys::rootDir() . '/', $directory );
+                $this->assertTrue( is_dir( $directory ), "$directory is not a directory" );
+            }
+            $this->assertStringEndsWith( '/kernel/private/rest/classes/po_maps/', $directories[0] );
+            $this->assertStringEndsWith( '/kernel/private/oauth/classes/persistentobjects/', $directories[1] );
+        }
+        finally
+        {
+            chdir( $before );
+        }
     }
 }

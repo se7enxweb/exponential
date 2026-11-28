@@ -64,7 +64,7 @@ class ezpRestLazyTest extends ezpTestCase
         $this->assertSame( array( 'phptype' => 'sqlite', 'port' => 'memory' ), $helper->invoke( null ) );
     }
 
-    public function testMysqlDsnIsUnchanged()
+    public function testMysqlDsnCarriesTheSiteCharset()
     {
         $helper = new ReflectionMethod( 'ezpRestDbConfig', 'lazyDbHelper' );
         ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'DatabaseImplementation', 'ezmysqli' );
@@ -73,7 +73,11 @@ class ezpRestLazyTest extends ezpTestCase
         ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'User', 'u' );
         ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'Password', 'p' );
         ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'Database', 'd' );
-        $this->assertSame( 'mysql://u:p@db.example:3307/d', $helper->invoke( null ) );
+        // Host, port, credentials and database as before; the charset of the site's own connections is appended.
+        $this->assertSame(
+            'mysql://u:p@db.example:3307/d?charset=' . rawurlencode( eZMySQLCharset::mapTo( 'utf-8' ) ),
+            $helper->invoke( null )
+        );
     }
 }
 

@@ -65,6 +65,12 @@ class ezpRestDbConfig implements ezcBaseConfigurationInitializer
         $dsnHost = $dbHost . ( $dbPort != '' ? ":$dbPort" : '' );
         // ezcDbFactory::parseDSN() rawurldecodes the user and the password, and splits them at the first colon
         $dsn = "{$dbType}://" . rawurlencode( (string)$dbUser ) . ":" . rawurlencode( (string)$dbPass ) . "@{$dsnHost}/{$dbName}";
+        if ( $dbType === 'mysql' )
+        {
+            // The site's own connections speak this charset; without the option
+            // the connection takes the server's default instead.
+            $dsn .= '?charset=' . rawurlencode( eZMySQLCharset::mapTo( 'utf-8' ) );
+        }
 
         return $dsn;
     }
@@ -102,12 +108,26 @@ class ezpRestPoConfig implements ezcBaseConfigurationInitializer
 {
     public static function configureObject( $instance )
     {
+        $directories = self::definitionDirectories();
         return new ezcPersistentSession( ezcDbInstance::get(),
             new ezcPersistentMultiManager( array(
-                new ezcPersistentCodeManager( 'kernel/private/rest/classes/po_maps/' ),
-                new ezcPersistentCodeManager( 'kernel/private/oauth/classes/persistentobjects/' )
+                new ezcPersistentCodeManager( $directories[0] ),
+                new ezcPersistentCodeManager( $directories[1] )
             ))
         );
+    }
+
+    /**
+     * The directories holding the persistent-object definitions of the REST layer and of OAuth, as absolute
+     * paths below the installation root: they do not depend on the working directory of the process.
+     *
+     * @return string[]
+     */
+    public static function definitionDirectories()
+    {
+        $root = eZSys::rootDir();
+        return array( $root . '/kernel/private/rest/classes/po_maps/',
+                      $root . '/kernel/private/oauth/classes/persistentobjects/' );
     }
 }
 ezpRestDbConfig::registerCallbacks();
