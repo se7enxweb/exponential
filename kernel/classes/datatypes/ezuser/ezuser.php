@@ -2300,7 +2300,8 @@ WHERE user_id = '" . $userID . "' AND
     */
     function isEnabled( $useCache = true )
     {
-        if ( isset( $this->UserCache['info'][$this->ContentObjectID]['is_enabled'] ) && $useCache )
+        // a user without an object id (none loaded) has no cache entry: null as an array key is deprecated in PHP 8.5
+        if ( $this->ContentObjectID !== null && isset( $this->UserCache['info'][$this->ContentObjectID]['is_enabled'] ) && $useCache )
         {
             return $this->UserCache['info'][$this->ContentObjectID]['is_enabled'];
         }
