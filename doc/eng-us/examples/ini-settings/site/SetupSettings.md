@@ -2,14 +2,14 @@
 title: site.ini [SetupSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [SetupSettings] in site.ini: PageLayout, CriticalTests, OptionalTests, OverrideSiteDesign, AllowWizardOnInstalledSite"
-keywords: site.ini, SetupSettings, INI, setting, PageLayout, CriticalTests, OptionalTests, OverrideSiteDesign, AllowWizardOnInstalledSite
+summary: "The settings of [SetupSettings] in site.ini: PageLayout, CriticalTests, OptionalTests, OverrideSiteDesign, AllowWizardOnInstalledSite, SharedStateDir"
+keywords: site.ini, SetupSettings, INI, setting, PageLayout, CriticalTests, OptionalTests, OverrideSiteDesign, AllowWizardOnInstalledSite, SharedStateDir
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [SetupSettings]
 
-The block `[SetupSettings]` of `settings/site.ini`, with 5 setting(s).
+The block `[SetupSettings]` of `settings/site.ini`, with 6 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -87,6 +87,28 @@ Default: `auto`. Values: `auto`, `enabled`, `disabled` (any other value counts a
 # settings/override/site.ini.append.php: the wizard never runs on this installed site, even with CheckValidity=true
 [SetupSettings]
 AllowWizardOnInstalledSite=disabled
+*/ ?>
+```
+
+## SharedStateDir
+
+> Where the setup wizard keeps what every node of a site served by several  
+> nodes must see: its lease (maintenance mode while it runs), its run and  
+> setup.log, the installed marker, and copies of the files it writes (the new  
+> site's settings, imported packages) for the node that serves the next step.  
+> A directory on storage every node shares, absolute or relative to the  
+> installation; the environment variable EXP\_SETUP\_SHARED\_STATE\_DIR takes  
+> precedence. Empty: <MountPointPath>/var/exp-setup when file.ini uses  
+> eZDFSFileHandler, else none, and a single node keeps all of it in var/.  
+
+Default: empty. See
+[Several web nodes](../../../help/hosting/operations/several-web-nodes.md) and [The setup wizard](../../../install/05-setup-wizard.md).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php: every node mounts /mnt/shared
+[SetupSettings]
+SharedStateDir=/mnt/shared/exp-setup
 */ ?>
 ```
 

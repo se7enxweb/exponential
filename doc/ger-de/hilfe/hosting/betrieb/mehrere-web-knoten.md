@@ -139,6 +139,14 @@ Die Adresse `192.0.2.10` oben ist eine Adresse für Dokumentation; verwenden Sie
   werden darf.
 - **Wartung auf jedem Knoten.** Der Wartungszustand ist die Datei `var/maintenance.json` einer Installation. Mit einem Verzeichnis
   `var/` pro Knoten schalten Sie sie auf jedem Knoten ein und aus ([Wartungsmodus](wartungsmodus.md)).
+- **Der Setup-Assistent über mehrere Knoten.** Der Web-Setup-Assistent ist eine Anfrage pro Schritt, und der Balancer kann jeden
+  Schritt an einen anderen Knoten senden. Ab 6.0.15 liegen seine Frist (die Wartung, die er hält, solange er läuft), sein Durchlauf
+  und `setup.log` sowie die Installiert-Markierung in einem gemeinsamen Zustandsverzeichnis: `site.ini [SetupSettings]
+  SharedStateDir`, oder `<MountPointPath>/var/exp-setup` auf dem DFS-Mount, wenn die Website mit `eZDFSFileHandler` geclustert ist.
+  Jeder Knoten antwortet anderen Besuchern dann mit der Wartungsseite, und die Einstellungen und Pakete, die der Assistent schreibt,
+  werden auf den Knoten kopiert, der den nächsten Schritt bedient. Ohne gemeinsames Verzeichnis halten Sie den Browser des
+  Assistenten auf einem Knoten (Sticky Sessions) oder installieren mit dem Kickstarter
+  ([Der Setup-Assistent](../../../installation/05-setup-assistent.md#der-assistent-auf-mehreren-knoten)).
 - **Logs pro Knoten.** Jeder Knoten schreibt sein eigenes `var/log`. Die Fehlerreferenz eines Besuchers steht vielleicht im Log
   eines anderen Knotens als dem, auf den Sie schauen
   ([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)). Sammeln Sie Logs zentral,
@@ -154,6 +162,7 @@ Die Adresse `192.0.2.10` oben ist eine Adresse für Dokumentation; verwenden Sie
 - [ ] `TrustedProxies[]` nennt den Balancer, und `ClientIpByCustomHTTPHeader` ist gesetzt, wenn die Adresse des Besuchers zählt.
 - [ ] Die Crontab läuft auf einem Knoten; das Verzeichnis für Pausen ist geteilt.
 - [ ] Runbooks für Ausrollen, Leeren der Caches und Wartung nennen jeden Knoten.
+- [ ] Der Setup-Assistent hat ein gemeinsames Zustandsverzeichnis (`[SetupSettings] SharedStateDir` oder den DFS-Mount), oder Installationen laufen mit dem Kickstarter.
 - [ ] Logs werden gesammelt, oder das Support-Team weiß, wie es jeden Knoten durchsucht.
 
 ## Verwandte Seiten

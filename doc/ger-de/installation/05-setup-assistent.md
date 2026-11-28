@@ -116,6 +116,47 @@ Während der Assistent läuft, ist die Site für alle außer dem Browser, der ih
 Die Sperre gibt es, damit ein zweiter Besucher keinen zweiten Assistenten starten kann, der den ersten abbrechen oder
 über ihn hinweg installieren würde, und damit niemand auf eine halb aufgebaute Datenbank trifft.
 
+### Der Assistent auf mehreren Knoten
+
+Der Assistent ist eine Anfrage pro Schritt. Auf einer Site, die mehrere Knoten hinter einem Load Balancer bedienen, kann
+jeder Schritt auf einem anderen Knoten landen, und jeder Knoten hat sein eigenes `var/`. Vor 6.0.15 lagen Frist,
+Durchlauf und Installiert-Markierung in `var/`: Ein Schritt, den ein zweiter Knoten bediente, fand keinen Durchlauf,
+nahm eine neue Frist mit einem neuen Cookie, und der erste Knoten wies den Browser danach ab, sodass der Assistent von
+vorn begann (meist direkt nach dem Systemtest).
+
+Ab 6.0.15 legt der Assistent ab, was jeder Knoten sehen muss, in einem **gemeinsamen Zustandsverzeichnis** (Klasse
+`expSetupSharedState`):
+
+- `site.ini [SetupSettings] SharedStateDir` (absolut oder relativ zur Installation), oder die Umgebungsvariable
+  `EXP_SETUP_SHARED_STATE_DIR` (zum Beispiel ein `SetEnv` des vhosts), die Vorrang hat;
+- sonst, wenn `file.ini [ClusteringSettings] FileHandler=eZDFSFileHandler`, `<MountPointPath>/var/exp-setup` auf dem
+  NFS-Mount, den alle Knoten teilen;
+- sonst keines: Ein einzelner Knoten behält alles genau wie bisher in `var/`.
+
+Was dort liegt:
+
+| Datei | Statt |
+|---|---|
+| `maintenance.json` (die Frist des Assistenten) | `var/maintenance.json` |
+| `log/setup-run.state`, `log/setup.log` (nur Web-Anfragen; der Kickstarter behält `var/log`) | `var/log/` |
+| `site_installed.json` (zusätzlich zu `var/site_installed.json` geschrieben) | `var/site_installed.json` |
+| `files/` und `files/manifest.json`: Kopien der Dateien, die der Durchlauf schrieb | (keine) |
+
+- Die Frist wird unter einer Sperre geändert (ein mit `mkdir()` angelegtes Verzeichnis, atomar auf NFS) und ganz
+  geschrieben (eine temporäre Datei, die an ihren Platz umbenannt wird). Eine Frist, die ein anderer Browser hält, wird
+  nie übernommen: Diese Anfrage erhält die Wartungsseite.
+- Jeder Knoten prüft die gemeinsame Frist zu Beginn jeder Anfrage, vor Siteaccess, Sitzung und Datenbank, und
+  antwortet allen außer dem Browser des Assistenten mit der Wartungsseite (503).
+- Die Einstellungen, die der Assistent schreibt (`settings/override`, `settings/siteaccess`), und die Pakete, die er
+  importiert (`var/storage/packages`), werden am Ende jedes Schritts nach `files/` kopiert und von dem Knoten geholt,
+  der den nächsten Schritt bedient. Geholt werden nur die Dateien des laufenden Durchlaufs, jede gegen ihren SHA-1 im
+  Manifest geprüft. Ist die Site installiert, holt ein Knoten, der die letzten Schritte nicht bedient hat, sie beim
+  ersten Aufruf des Assistenten.
+
+Das Verzeichnis muss auf jedem Knoten für den Benutzer des Webservers beschreibbar sein. Ohne eines (keine Einstellung,
+kein DFS) halten Sie den Browser des Assistenten auf einem Knoten (Sticky Sessions am Balancer) oder installieren mit
+dem Kickstarter. Siehe [Mehrere Web-Knoten](../hilfe/hosting/betrieb/mehrere-web-knoten.md).
+
 ### Der Assistent auf einer installierten Site
 
 Ein Administrator kann `setup/init` auf einer installierten Site weiterhin öffnen (die View braucht die Richtlinie

@@ -106,6 +106,43 @@ While the wizard runs, the site is in **maintenance mode** for everybody except 
 The hold exists so that a second visitor cannot start a second wizard that would abandon or install over the first,
 and so that nobody meets a database that is half built.
 
+### The wizard on several nodes
+
+The wizard is one request per step. On a site served by several nodes behind a load balancer, each step may land on
+another node, and each node has its own `var/`. Before 6.0.15 the lease, the run and the installed marker were in
+`var/`: a step served by a second node found no run, took a new lease with a new cookie, and the first node then
+refused the browser, so the wizard started over (typically right after the system check).
+
+From 6.0.15 the wizard keeps what every node must see in a **shared state directory** (class `expSetupSharedState`):
+
+- `site.ini [SetupSettings] SharedStateDir` (absolute, or relative to the installation), or the environment variable
+  `EXP_SETUP_SHARED_STATE_DIR` (for example a `SetEnv` of the vhost), which takes precedence;
+- else, when `file.ini [ClusteringSettings] FileHandler=eZDFSFileHandler`, `<MountPointPath>/var/exp-setup` on the NFS
+  mount every node shares;
+- else none: a single node keeps everything in `var/` exactly as before.
+
+What lives there:
+
+| File | Instead of |
+|---|---|
+| `maintenance.json` (the wizard's lease) | `var/maintenance.json` |
+| `log/setup-run.state`, `log/setup.log` (web requests only; the kickstarter keeps `var/log`) | `var/log/` |
+| `site_installed.json` (written in addition to `var/site_installed.json`) | `var/site_installed.json` |
+| `files/` and `files/manifest.json`: copies of the files the run wrote | (none) |
+
+- The lease is changed under a lock (a directory created with `mkdir()`, atomic on NFS) and written whole (a temporary
+  file renamed into place). A lease another browser holds is never taken over: that request gets the maintenance page.
+- Every node checks the shared lease at the start of each request, before the siteaccess, the session and the
+  database, and answers everybody but the wizard's browser with the 503 maintenance page.
+- The settings the wizard writes (`settings/override`, `settings/siteaccess`) and the packages it imports
+  (`var/storage/packages`) are copied to `files/` at the end of each step and fetched by the node that serves the next
+  one. Only the files of the current run are fetched, and each is checked against its SHA-1 in the manifest. Once the
+  site is installed, a node that did not serve the last steps fetches them the first time it is asked for the wizard.
+
+The directory must be writable by the web server's user on every node. Without one (no setting, no DFS), keep the
+wizard's browser on one node (sticky sessions at the balancer) or install with the kickstarter. See
+[Several web nodes](../help/hosting/operations/several-web-nodes.md).
+
 ### The wizard on an installed site
 
 An administrator can still open `setup/init` on an installed site (the view needs the policy `setup/install`). It

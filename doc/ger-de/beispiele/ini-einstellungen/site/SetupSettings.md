@@ -2,14 +2,14 @@
 title: site.ini [SetupSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [SetupSettings] in site.ini: PageLayout, CriticalTests, OptionalTests, OverrideSiteDesign, AllowWizardOnInstalledSite"
-keywords: Einstellung, site.ini, SetupSettings, INI, setting, PageLayout, CriticalTests, OptionalTests, OverrideSiteDesign, AllowWizardOnInstalledSite
+summary: "Die Einstellungen von [SetupSettings] in site.ini: PageLayout, CriticalTests, OptionalTests, OverrideSiteDesign, AllowWizardOnInstalledSite, SharedStateDir"
+keywords: Einstellung, site.ini, SetupSettings, INI, setting, PageLayout, CriticalTests, OptionalTests, OverrideSiteDesign, AllowWizardOnInstalledSite, SharedStateDir
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [SetupSettings]
 
-Der Block `[SetupSettings]` von `settings/site.ini`, mit 5 Einstellung(en).
+Der Block `[SetupSettings]` von `settings/site.ini`, mit 6 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -87,6 +87,29 @@ Standard: `auto`. Werte: `auto`, `enabled`, `disabled` (jeder andere Wert gilt a
 # settings/override/site.ini.append.php: der Assistent läuft auf dieser installierten Website nie, auch nicht mit CheckValidity=true
 [SetupSettings]
 AllowWizardOnInstalledSite=disabled
+*/ ?>
+```
+
+## SharedStateDir
+
+> Wo der Setup-Assistent ablegt, was jeder Knoten einer von mehreren Knoten  
+> bedienten Website sehen muss: seine Frist (der Wartungsmodus, solange er läuft),  
+> seinen Durchlauf und setup.log, die Installiert-Markierung und Kopien der Dateien,  
+> die er schreibt (die Einstellungen der neuen Website, importierte Pakete), für den  
+> Knoten, der den nächsten Schritt bedient. Ein Verzeichnis auf einem Speicher, den  
+> alle Knoten teilen, absolut oder relativ zur Installation; die Umgebungsvariable  
+> EXP\_SETUP\_SHARED\_STATE\_DIR hat Vorrang. Leer: <MountPointPath>/var/exp-setup, wenn  
+> file.ini eZDFSFileHandler verwendet, sonst keines, und ein einzelner Knoten behält  
+> alles in var/.  
+
+Standard: leer. Siehe
+[Mehrere Web-Knoten](../../../hilfe/hosting/betrieb/mehrere-web-knoten.md) und [Der Setup-Assistent](../../../installation/05-setup-assistent.md).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php: jeder Knoten hat /mnt/shared eingehängt
+[SetupSettings]
+SharedStateDir=/mnt/shared/exp-setup
 */ ?>
 ```
 

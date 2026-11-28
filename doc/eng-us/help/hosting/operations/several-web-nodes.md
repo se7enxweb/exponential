@@ -134,6 +134,13 @@ The address `192.0.2.10` above is a documentation address; use your balancer's.
   is deployed if the change must not be served half way.
 - **Maintenance on every node.** The maintenance state is the file `var/maintenance.json` of an installation. With a
   `var/` directory per node, switch it on and off on every node ([Maintenance mode](maintenance-mode.md)).
+- **The setup wizard across nodes.** The web setup wizard is one request per step, and the balancer may send each step
+  to another node. From 6.0.15 its lease (the maintenance it holds while it runs), its run and `setup.log`, and the
+  installed marker are kept in a shared state directory: `site.ini [SetupSettings] SharedStateDir`, or
+  `<MountPointPath>/var/exp-setup` on the DFS mount when the site is clustered with `eZDFSFileHandler`. Every node then
+  answers other visitors with the maintenance page, and the settings and packages the wizard writes are copied to the
+  node that serves the next step. Without a shared directory, keep the wizard's browser on one node (sticky sessions)
+  or install with the kickstarter ([The setup wizard](../../../install/05-setup-wizard.md#the-wizard-on-several-nodes)).
 - **Logs per node.** Each node writes its own `var/log`. An error reference from a visitor may be in the log of
   another node than the one you look at ([Finding an error by its reference](../../../guides/finding-an-error-by-its-reference.md)).
   Collect logs centrally, or forward the audit trail with a sink (see [Security log](security-log.md)).
@@ -148,6 +155,7 @@ The address `192.0.2.10` above is a documentation address; use your balancer's.
 - [ ] `TrustedProxies[]` lists the balancer, and `ClientIpByCustomHTTPHeader` is set when the visitor's address matters.
 - [ ] The crontab runs on one node; the pause directory is shared.
 - [ ] Deploy, cache clearing and maintenance runbooks name every node.
+- [ ] The setup wizard has a shared state directory (`[SetupSettings] SharedStateDir` or the DFS mount), or installs use the kickstarter.
 - [ ] Logs are collected or the support team knows how to search every node.
 
 ## Related pages
