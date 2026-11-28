@@ -54,6 +54,8 @@ class expVelocityNiceTest extends ezpTestCase
 
     public function testNicePrefix()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'nice is a Unix program, and its command line is quoted for a POSIX shell' );
         $this->assertSame( "'/usr/bin/nice' -n -14 ", expVelocity::nicePrefix( 5, 19, '/usr/bin/nice' ),
             'a deploy under nice 19 starts the server at 5' );
         $this->assertSame( "'/usr/bin/nice' -n -10 ", expVelocity::nicePrefix( 5, 15, '/usr/bin/nice' ) );

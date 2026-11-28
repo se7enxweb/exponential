@@ -166,6 +166,8 @@ class expVelocityWatchdogTest extends ezpTestCase
 
     public function testRunRespectsLiveRestartMarker()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'a restart marker is live while its pid runs, which is checked through posix_kill() or /proc on Unix' );
         $engine = new expVelocityWatchdogTestEngine();
         $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
         ( new expVelocityMarkers( $this->dir . '/run' ) )->write( expVelocityMarkers::RESTART,
@@ -203,6 +205,8 @@ class expVelocityWatchdogTest extends ezpTestCase
 
     public function testRunPausedWhenConfDisabled()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'conf-enabled holds symbolic links, as /etc/apache2 of Debian does' );
         $engine = new expVelocityWatchdogTestEngine();
         $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
         file_put_contents( $dog->confFile( false ), $dog->confText() );
@@ -356,6 +360,8 @@ class expVelocityWatchdogTest extends ezpTestCase
 
     public function testANewSkipReasonWritesANewEvent()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'a restart marker is live while its pid runs, which is checked through posix_kill() or /proc on Unix' );
         $engine = new expVelocityWatchdogTestEngine();
         $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
         $markers = new expVelocityMarkers( $this->dir . '/run' );

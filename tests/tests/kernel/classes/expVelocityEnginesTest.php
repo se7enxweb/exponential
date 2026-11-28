@@ -963,7 +963,8 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertStringContainsString( 'IP Address:127.0.0.1', $cert['extensions']['subjectAltName'] );
         $this->assertGreaterThan( time() + 300 * 86400, $cert['validTo_time_t'] );
         $this->assertSame( 'sha256WithRSAEncryption', $cert['signatureTypeLN'] ?? 'sha256WithRSAEncryption' );
-        $this->assertSame( '600', substr( sprintf( '%o', fileperms( $dir . '/c.key' ) ), -3 ) );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( '600', substr( sprintf( '%o', fileperms( $dir . '/c.key' ) ), -3 ) );
         $this->assertTrue( openssl_x509_check_private_key( file_get_contents( $dir . '/c.crt' ), file_get_contents( $dir . '/c.key' ) ) );
 
         @unlink( $dir . '/c.crt' );
