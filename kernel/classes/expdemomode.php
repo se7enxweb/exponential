@@ -117,12 +117,12 @@ class expDemoMode
         if ( !$confDirs || (string)$root === '' )
             return true;
         $rootReal = realpath( (string)$root );
-        $rootPrefix = rtrim( $rootReal !== false ? $rootReal : (string)$root, '/' ) . '/';
+        $rootPath = $rootReal !== false ? $rootReal : (string)$root;
         foreach ( $confDirs as $dir )
         {
             $real = realpath( $dir );
-            $path = rtrim( $real !== false ? $real : $dir, '/' ) . '/';
-            if ( strpos( $path, $rootPrefix ) !== 0 )
+            // compared as paths: on Windows realpath() writes backslashes, a directory that is not there keeps its slashes
+            if ( !eZDir::isInside( $real !== false ? $real : $dir, $rootPath ) )
                 return true;
         }
         return false;
