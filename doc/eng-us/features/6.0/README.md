@@ -318,3 +318,33 @@ nginx with PHP-FPM keep working as before.
 - [SQLite for Exponential Platform: no database server needed](platform-sqlite-install.md)
 - [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](platform-php85-framework-forks.md)
 - [Legacy bridge: run Exponential 6 inside the Symfony platform](legacy-bridge.md)
+
+## Documentation status for 6.0.15
+
+The documentation of 6.0.15 was checked against the code on main on 27 and 28 November 2026: the history since the
+6.0.14 tag (7,095 commits), every `exp:*` console command (146, each documented in English and German), every
+setting added to `settings/*.ini` since 6.0.14 (1,393 keys) and every database driver in `lib/ezdb/classes/`. What
+was missing, stale or thin, and what was done:
+
+| Area | Was | Now (English and German) |
+|---|---|---|
+| Databases: the support statement and matrix | stale: SAP HANA and SAP ASE missing from the matrix; the SAP, Cassandra, ClickHouse and MonetDB drivers called "in development" although they are on main | [Database support](../../help/database-support.md) and [Choosing a database](../../help/choosing-a-database.md) list every driver on main, with the planned databases (no code yet) instead of the old paragraph |
+| Databases: per driver | complete: a feature page for every driver | unchanged; see [Databases](#databases) |
+| Setup wizard: the database list (order, the label MariaDB / MySQL Improved, SAP HANA and MonetDB offered, SQL Server over ODBC) | stale | [chapter 5, Choose database system](../../install/05-setup-wizard.md#535-choose-database-system): every offer with its condition, the order, the defaults for SAP HANA, MonetDB, libSQL and Turso |
+| Setup wizard on an installed site (the guard) | complete | unchanged: [The setup wizard on an installed site](../../bc/6.0/setup-wizard-on-installed-site.md) |
+| Exponential Tron, the MCP server layer | missing; nine pages said Exponential ships no MCP server | new: [Exponential Tron: the MCP server layer](exponential-tron-mcp-server.md); the integration, AI agent and standards pages corrected |
+| xne (Exponential Network), the upgrade tool | thin: named in passing | new: [Upgrading with xne](../../guides/upgrading-with-xne.md); chapter 11 points to it; the MongoDB and Oracle upgrade proofs corrected |
+| Velocity: the settings that take a site over from Apache (`DropMaster`, `MimeTypes`, `DefaultCharset`, `StaticRoots[]`, error documents, the host fallback) | missing | [Velocity engines: taking a site over from Apache](../../bc/6.0/velocity-engines.md#taking-a-site-over-from-apache-what-velocityini-adds) |
+| HTTP cache in a cluster: `SharedStateCacheTime` | missing | [The HTTP cache](../../bc/6.0/httpcache.md) |
+| Console commands (`exp:*`) | complete | unchanged |
+| Velocity and `exp:velocity`, expqueue and jobs, Layouts, image aliases, the request shield, the admin4 design, Windows | present, with feature, guide and help pages in both languages | not re-read line by line against the latest commits in this pass |
+
+**Still open, to schedule:**
+
+1. A line-by-line pass of the pages of Layouts, expqueue and content jobs, image aliases, the request shield, the admin4
+   design and Windows against the commits of 20 to 27 November 2026.
+2. The administration of xne inside an installation (Setup > Network, `exp:network:*`) when it lands; today it is
+   planned only.
+3. Exponential Tron's own manual (`extension/tron/doc/`) is in English only; the kernel's feature page is in both
+   languages.
+4. The database pages state what xne does not yet upgrade (the drivers added in 6.0.15); they change when xne does.

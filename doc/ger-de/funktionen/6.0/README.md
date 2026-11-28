@@ -287,3 +287,34 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [SQLite für Exponential Platform: kein Datenbankserver nötig](plattform-sqlite-installation.md)
 - [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](plattform-php85-framework-forks.md)
 - [Legacy Bridge: Exponential 6 innerhalb der Symfony-Plattform betreiben](legacy-bridge.md)
+
+## Stand der Dokumentation für 6.0.15
+
+Die Dokumentation von 6.0.15 wurde am 27. und 28. November 2026 gegen den Code im Hauptzweig geprüft: die Historie seit
+dem Tag 6.0.14 (7.095 Commits), jeder Konsolenbefehl `exp:*` (146, jeder auf Englisch und Deutsch dokumentiert), jede
+seit 6.0.14 in `settings/*.ini` hinzugekommene Einstellung (1.393 Schlüssel) und jeder Datenbanktreiber in
+`lib/ezdb/classes/`. Was fehlte, veraltet oder dünn war, und was getan wurde:
+
+| Bereich | War | Jetzt (Englisch und Deutsch) |
+|---|---|---|
+| Datenbanken: die Unterstützungsaussage und die Matrix | veraltet: SAP HANA und SAP ASE fehlten in der Matrix; die Treiber für SAP, Cassandra, ClickHouse und MonetDB hießen „in Entwicklung“, obwohl sie im Hauptzweig sind | [Datenbankunterstützung](../../hilfe/datenbankunterstuetzung.md) und [Eine Datenbank wählen](../../hilfe/datenbank-waehlen.md) nennen jeden Treiber im Hauptzweig, mit den geplanten Datenbanken (noch ohne Code) statt des alten Absatzes |
+| Datenbanken: je Treiber | vollständig: eine Funktionsseite je Treiber | unverändert; siehe [Datenbanken](#datenbanken) |
+| Setup-Assistent: die Datenbankliste (Reihenfolge, die Beschriftung MariaDB / MySQL Improved, SAP HANA und MonetDB angeboten, SQL Server über ODBC) | veraltet | [Kapitel 5, Datenbanksystem auswählen](../../installation/05-setup-assistent.md#535-datenbanksystem-auswählen): jedes Angebot mit seiner Bedingung, die Reihenfolge, die Standardwerte für SAP HANA, MonetDB, libSQL und Turso |
+| Setup-Assistent auf einer installierten Site (der Wächter) | vollständig | unverändert |
+| Exponential Tron, die MCP-Server-Schicht | fehlte; neun Seiten sagten, Exponential liefere keinen MCP-Server | neu: [Exponential Tron: die MCP-Server-Schicht](exponential-tron-mcp-server.md); die Seiten zu Integration, KI-Agenten und Standards berichtigt |
+| xne (Exponential Network), das Upgrade-Werkzeug | dünn: nur nebenbei genannt | neu: [Upgrade mit xne](../../anleitungen/aktualisieren-mit-xne.md); Kapitel 11 verweist darauf; die Upgrade-Beweise für MongoDB und Oracle berichtigt |
+| Velocity: die Einstellungen, die eine Site von Apache übernehmen (`DropMaster`, `MimeTypes`, `DefaultCharset`, `StaticRoots[]`, Fehlerdokumente, der Host-Fallback) | fehlte | [Velocity-Engines: eine Site von Apache übernehmen](../../bc/6.0/velocity-engines.md#eine-site-von-apache-übernehmen-was-velocityini-hinzufügt) |
+| HTTP-Cache im Cluster: `SharedStateCacheTime` | fehlte | [Der HTTP-Cache](../../bc/6.0/httpcache.md) |
+| Konsolenbefehle (`exp:*`) | vollständig | unverändert |
+| Velocity und `exp:velocity`, expqueue und Jobs, Layouts, Bild-Aliase, der Request Shield, das admin4-Design, Windows | vorhanden, mit Funktions-, Anleitungs- und Hilfeseiten in beiden Sprachen | in diesem Durchgang nicht Zeile für Zeile gegen die neuesten Commits gelesen |
+
+**Noch offen, zum Einplanen:**
+
+1. Ein Durchgang Zeile für Zeile durch die Seiten zu Layouts, expqueue und Inhaltsjobs, Bild-Aliasen, dem Request
+   Shield, dem admin4-Design und Windows gegen die Commits vom 20. bis 27. November 2026.
+2. Die Administration von xne in einer Installation (Setup > Network, `exp:network:*`), sobald sie kommt; heute ist sie
+   nur geplant.
+3. Das eigene Handbuch von Exponential Tron (`extension/tron/doc/`) gibt es nur auf Englisch; die Funktionsseite des
+   Kernels gibt es in beiden Sprachen.
+4. Die Datenbankseiten sagen, was xne noch nicht aktualisiert (die in 6.0.15 hinzugekommenen Treiber); sie ändern sich,
+   wenn xne es tut.
