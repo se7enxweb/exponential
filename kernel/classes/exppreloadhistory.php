@@ -261,7 +261,7 @@ class expPreloadHistory
 
     /**
      * Whether a process is there: /proc on Linux, which answers for a process of another user as well (the web
-     * server and the shell may be different users), posix_kill() otherwise.
+     * server and the shell may be different users), posix_kill() otherwise, tasklist on Windows.
      *
      * @param int $pid
      * @return bool
@@ -275,6 +275,20 @@ class expPreloadHistory
             return is_dir( '/proc/' . $pid );
         if ( function_exists( 'posix_kill' ) )
             return posix_kill( $pid, 0 ) || ( function_exists( 'posix_get_last_error' ) && posix_get_last_error() === 1 );
+        // Windows has neither: tasklist names the process when it is there
+        if ( DIRECTORY_SEPARATOR === '\\' && function_exists( 'proc_open' ) )
+        {
+            $process = @proc_open( array( 'tasklist', '/FI', 'PID eq ' . $pid, '/NH', '/FO', 'CSV' ),
+                                   array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
+            if ( is_resource( $process ) )
+            {
+                $out = (string)stream_get_contents( $pipes[1] );
+                fclose( $pipes[1] );
+                fclose( $pipes[2] );
+                if ( proc_close( $process ) === 0 )
+                    return strpos( $out, '"' . $pid . '"' ) !== false;
+            }
+        }
         return true;
     }
 
