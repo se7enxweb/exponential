@@ -60,7 +60,7 @@ class expMailTemplateBodyTest extends PHPUnit\Framework\TestCase
             $tpl->resetVariables();
         }
         $this->assertSame( 'multipart/alternative', $mail->contentType() );
-        $body = $mail->body( false );
+        $body = self::lf( $mail->body( false ) );
         $this->assertStringContainsString( 'Content-Type: text/plain; charset=utf-8', $body );
         $this->assertStringContainsString( 'Content-Type: text/html; charset=utf-8', $body );
         $this->assertStringContainsString( "Hello & welcome\n", $body );
@@ -109,7 +109,7 @@ class expMailTemplateBodyTest extends PHPUnit\Framework\TestCase
             $tpl->resetVariables();
         }
         $this->assertSame( 'text/html', $mail->contentType() );
-        $this->assertSame( '<p>only html</p>', $mail->body( false ) );
+        $this->assertSame( '<p>only html</p>', self::lf( $mail->body( false ) ) );
     }
 
     /** MB-03 */
@@ -127,7 +127,7 @@ class expMailTemplateBodyTest extends PHPUnit\Framework\TestCase
             $tpl->resetVariables();
         }
         $this->assertSame( 'text/plain', $mail->contentType() );
-        $this->assertSame( "plain text\n", $mail->body( false ) );
+        $this->assertSame( "plain text\n", self::lf( $mail->body( false ) ) );
     }
 
     /** MB-04 */
@@ -144,6 +144,12 @@ class expMailTemplateBodyTest extends PHPUnit\Framework\TestCase
             $tpl->resetVariables();
         }
         $this->assertSame( 'text/html', $mail->contentType() );
-        $this->assertSame( '<p>x</p>', $mail->body( false ) );
+        $this->assertSame( '<p>x</p>', self::lf( $mail->body( false ) ) );
+    }
+
+    /** eZMail keeps the body with the line ending of the system: "\r\n" on Windows (eZMail::lineSeparator()) */
+    private static function lf( $text )
+    {
+        return str_replace( "\r\n", "\n", (string)$text );
     }
 }

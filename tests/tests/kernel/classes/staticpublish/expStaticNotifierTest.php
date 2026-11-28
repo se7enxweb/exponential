@@ -124,7 +124,8 @@ class expStaticNotifierTest extends PHPUnit\Framework\TestCase
         $sender = $ini->variable( 'MailSettings', 'EmailSender' ) ?: $ini->variable( 'MailSettings', 'AdminEmail' );
         $this->assertSame( (string)$sender, $mail->senderText() );
         $this->assertStringNotContainsStringIgnoringCase( 'html', (string)$mail->contentType() );
-        $body = (string)$mail->body();
+        // eZMail keeps the line ending of the system: "\r\n" on Windows
+        $body = str_replace( "\r\n", "\n", (string)$mail->body() );
         $this->assertStringNotContainsString( '<', $body, 'plain text, no HTML' );
         foreach ( array( 'Static publishing of Public (pub) failed on Demo', 'Target: Public (pub)', 'Id: r1', 'Result: failed',
                          'Changes: nothing changed', 'Push: pushed', "Errors:\n- not pushed: the secret github_pages_token is not set",
