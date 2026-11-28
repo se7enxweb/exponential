@@ -268,6 +268,8 @@ class expClusterHostCommandsTest extends PHPUnit\Framework\TestCase
     /** Local hosts run for real: one after the other and all at once give the same results; a failing host fails alone. */
     public function testLocalProcessesSequentialAndParallel()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the steps of a cluster host are POSIX shell scripts ($(pwd), >&2), run on Unix hosts' );
         $dir = $this->tempDir();
         $hosts = array( 'a' => $this->localHost( 'a', 'php', $dir ), 'b' => $this->localHost( 'b', 'php', $dir ), 'c' => $this->localHost( 'c', 'php', $dir ) );
         $steps = array(
@@ -291,6 +293,8 @@ class expClusterHostCommandsTest extends PHPUnit\Framework\TestCase
 
     public function testTimeoutStopsAHost()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the steps of a cluster host run through a POSIX shell, and PHP on Windows has no non-blocking pipes to stop one on time' );
         $dir = $this->tempDir();
         foreach ( array( false, true ) as $parallel )
         {
@@ -440,7 +444,8 @@ class expClusterHostCommandsTest extends PHPUnit\Framework\TestCase
         {
             $file = "bin/php/$script.php";
             $this->assertFileExists( $file );
-            $this->assertTrue( is_executable( $file ), "$file is executable" );
+            if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no executable bit: is_executable() knows .exe, .bat and .cmd
+                $this->assertTrue( is_executable( $file ), "$file is executable" );
             $this->assertStringStartsWith( "#!/usr/bin/env php\n", file_get_contents( $file ) );
             foreach ( array( $file, "kernel/private/classes/commands/$script.php" ) as $source )
             {
