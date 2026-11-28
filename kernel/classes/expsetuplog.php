@@ -232,9 +232,10 @@ class expSetupLog
             if ( self::$run['current'] )
                 self::doStepEnd( 'shown' );
             $f = self::setupLogDir() . '/' . self::STATE_FILE;
-            if ( !is_dir( self::setupLogDir() ) )
-                eZDir::mkdir( self::setupLogDir(), false, true );
+            self::makeSetupLogDir();
             @file_put_contents( $f, serialize( self::$run ), LOCK_EX );
+            if ( self::isSharedLogDir() )
+                @chmod( $f, eZFile::fileMode( expSetupSharedState::FILE_MODE ) );
             self::giveToVarOwner( $f );
             self::$run['suspended'] = true;
             // The wizard's page is sent: what this process logs from now on is not the run's
@@ -746,8 +747,8 @@ class expSetupLog
             $existed = false;
         if ( self::$run )
             self::$run['lines'] = ( isset( self::$run['lines'] ) ? self::$run['lines'] : 0 ) + 1;
-        if ( !$existed && !is_dir( self::setupLogDir() ) )
-            eZDir::mkdir( self::setupLogDir(), false, true );
+        if ( !$existed )
+            self::makeSetupLogDir();
         $fh = @fopen( $file, 'a' );
         if ( !$fh )
             return;
@@ -756,7 +757,8 @@ class expSetupLog
         @flock( $fh, LOCK_UN );
         @fclose( $fh );
         if ( !$existed )
-            @chmod( $file, eZFile::fileMode( octdec( eZINI::instance()->variable( 'FileSettings', 'LogFilePermissions' ) ) ) );
+            @chmod( $file, eZFile::fileMode( self::isSharedLogDir() ? expSetupSharedState::FILE_MODE
+                                                                    : octdec( eZINI::instance()->variable( 'FileSettings', 'LogFilePermissions' ) ) ) );
         if ( !$existed || @fileowner( $file ) === 0 )
             self::giveToVarOwner( $file );
     }
@@ -783,6 +785,24 @@ class expSetupLog
                 return $shared . '/log';
         }
         return self::LOG_DIR;
+    }
+
+    /** Whether setupLogDir() is in the shared state directory, whose files are never readable by others */
+    protected static function isSharedLogDir()
+    {
+        return class_exists( 'expSetupSharedState' ) && expSetupSharedState::isSharedPath( self::setupLogDir() );
+    }
+
+    /** Creates setupLogDir(): with the shared directory's mode there, else as the installation makes directories */
+    protected static function makeSetupLogDir()
+    {
+        $dir = self::setupLogDir();
+        if ( is_dir( $dir ) )
+            return;
+        if ( self::isSharedLogDir() )
+            expSetupSharedState::makeDir( $dir );
+        else
+            eZDir::mkdir( $dir, false, true );
     }
 
     /** @return float|null the unix time the run in progress started, null when there is none */

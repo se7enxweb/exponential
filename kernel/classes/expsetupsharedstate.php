@@ -55,6 +55,15 @@ class expSetupSharedState
     /** The mirrored files and their manifest */
     const FILES_DIR = 'files';
     const MANIFEST = 'files/manifest.json';
+    /**
+     * The modes of what this class creates in the shared directory: never readable
+     * by others. The directory holds copies of the new site's settings, which carry
+     * the database password, so only the web server's user (and its group, the web
+     * group of every node) may read it. Narrowed further by EZP_DIR_MODE_MAX and
+     * EZP_FILE_MODE_MAX (eZDir::dirMode(), eZFile::fileMode()).
+     */
+    const DIR_MODE = 0750;
+    const FILE_MODE = 0640;
 
     /** @var array root => resolved directory (string) or false, per process */
     protected static $cache = array();
@@ -175,6 +184,57 @@ class expSetupSharedState
         return $dir !== null ? $dir . '/' . ltrim( $shared, '/' ) : rtrim( $root, '/' ) . '/' . ltrim( $local, '/' );
     }
 
+    /** The mode of a directory created in the shared directory (0750 or narrower) */
+    static function dirMode()
+    {
+        return eZDir::dirMode( self::DIR_MODE );
+    }
+
+    /**
+     * The mode of a file written to the shared directory: $mode (the mode of the file it copies) without
+     * the bits FILE_MODE does not allow, so never readable by others; FILE_MODE when null.
+     *
+     * @param int|null $mode
+     * @return int
+     */
+    static function fileMode( $mode = null )
+    {
+        return eZFile::fileMode( $mode === null ? self::FILE_MODE : ( (int)$mode & self::FILE_MODE ) );
+    }
+
+    /**
+     * Creates a directory in the shared directory (and its parents) with dirMode().
+     *
+     * @param string $dir
+     * @return bool whether the directory is there
+     */
+    static function makeDir( $dir )
+    {
+        if ( is_dir( $dir ) )
+            return true;
+        return @mkdir( $dir, self::dirMode(), true ) || is_dir( $dir );
+    }
+
+    /**
+     * Whether $path lies in the shared state directory of this process's installation, or of one
+     * dir() resolved before: what the maintenance lease and setup.log write there gets the shared modes.
+     *
+     * @param string $path
+     * @return bool
+     */
+    static function isSharedPath( $path )
+    {
+        $dirs = array_filter( self::$cache, 'is_string' );
+        if ( class_exists( 'eZSys', false ) && ( $own = self::dir( eZSys::rootDir() ) ) !== null )
+            $dirs[] = $own;
+        foreach ( $dirs as $dir )
+        {
+            if ( $path === $dir || strpos( (string)$path, $dir . '/' ) === 0 )
+                return true;
+        }
+        return false;
+    }
+
     /**
      * Whether a file is there now, asked of the file system: a persistent worker's
      * stat cache (PHP's own, Velocity's file layer) would answer what it saw before.
@@ -192,20 +252,27 @@ class expSetupSharedState
      * Writes a file whole: a temporary file in the same directory renamed into place.
      * The temporary name carries the host and the process, which differ between nodes.
      *
+     * Directories it creates get dirMode() (the shared directory) unless $dirMode says otherwise. The
+     * temporary file is created readable by its owner alone and gets its mode before it is renamed into place.
+     *
      * @param string $file
      * @param string $data
-     * @param int|null $mode the file's mode; null: the installation's file mode
+     * @param int|null $mode the file's mode; null: fileMode() (a state file of the shared directory)
+     * @param int|null $dirMode the mode of the directories it creates; null: dirMode()
      * @return bool
      */
-    static function writeAtomic( $file, $data, $mode = null )
+    static function writeAtomic( $file, $data, $mode = null, $dirMode = null )
     {
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0777 ), true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( $dirMode === null ? self::DIR_MODE : (int)$dirMode ), true ) && !is_dir( $dir ) )
             return false;
         $tmp = $file . '.tmp-' . self::nodeName() . '-' . getmypid() . '-' . bin2hex( random_bytes( 4 ) );
-        if ( @file_put_contents( $tmp, $data ) === false )
+        $oldUmask = umask( eZFile::creationUmask( 0077 ) );
+        $written = @file_put_contents( $tmp, $data );
+        umask( $oldUmask );
+        if ( $written === false )
             return false;
-        @chmod( $tmp, eZFile::fileMode( $mode === null ? 0666 : ( (int)$mode & 0777 ) ) );
+        @chmod( $tmp, eZFile::fileMode( $mode === null ? self::FILE_MODE : ( (int)$mode & 0777 ) ) );
         if ( !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );
@@ -228,11 +295,11 @@ class expSetupSharedState
     static function lock( $dir, callable $fn, $wait = null, $name = '.exp-setup.lock' )
     {
         $dir = rtrim( $dir, '/' );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0777 ), true ) && !is_dir( $dir ) )
+        if ( !self::makeDir( $dir ) )
             return null;
         $lock = $dir . '/' . $name;
         $deadline = microtime( true ) + ( $wait === null ? self::LOCK_WAIT : (float)$wait );
-        while ( !@mkdir( $lock, eZDir::dirMode( 0777 ) ) )
+        while ( !@mkdir( $lock, self::dirMode() ) )
         {
             clearstatcache( true, $lock );
             $since = @filemtime( $lock );
@@ -336,10 +403,11 @@ class expSetupSharedState
                     if ( $sha === false || ( isset( $manifest['files'][$relative]['sha1'] ) && $manifest['files'][$relative]['sha1'] === $sha ) )
                         continue;
                     $data = @file_get_contents( $file );
-                    // The copy keeps the file's mode: a settings file holds the database password
+                    // The manifest keeps the file's mode for the nodes that fetch it; the copy in the shared
+                    // directory is never readable by others (fileMode()): a settings file holds the database password
                     $mode = @fileperms( $file );
                     $mode = $mode === false ? 0640 : ( $mode & 0777 );
-                    if ( $data === false || !self::writeAtomic( $dir . '/' . self::FILES_DIR . '/' . $relative, $data, $mode ) )
+                    if ( $data === false || !self::writeAtomic( $dir . '/' . self::FILES_DIR . '/' . $relative, $data, self::fileMode( $mode ) ) )
                         return false;
                     $manifest['files'][$relative] = array( 'sha1' => $sha, 'size' => strlen( $data ), 'mode' => sprintf( '%04o', $mode ),
                                                            'node' => self::nodeName(), 'time' => time() );
@@ -381,7 +449,8 @@ class expSetupSharedState
                     continue;
                 $data = @file_get_contents( $dir . '/' . self::FILES_DIR . '/' . $relative );
                 $mode = isset( $entry['mode'] ) && preg_match( '/^0?[0-7]{3}$/', (string)$entry['mode'] ) ? octdec( (string)$entry['mode'] ) : 0640;
-                if ( $data === false || sha1( $data ) !== $entry['sha1'] || !self::writeAtomic( $local, $data, $mode ) )
+                // In the installation: the file's own mode, and directories as the installation makes them
+                if ( $data === false || sha1( $data ) !== $entry['sha1'] || !self::writeAtomic( $local, $data, $mode, eZDir::dirMode( 0777 ) ) )
                     return false;
                 $written++;
             }

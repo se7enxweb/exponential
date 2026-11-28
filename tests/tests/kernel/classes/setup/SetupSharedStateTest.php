@@ -205,6 +205,36 @@ class SetupSharedStateTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'run-2', $manifest['run'] );
     }
 
+    /**
+     * The shared directory holds copies of the new site's settings, with the database password: what the wizard
+     * creates there is never readable by others (0750 directories, 0640 files or narrower), whatever the mode of
+     * the file it copies; a node that fetches a file gives it that file's own mode.
+     */
+    public function testNothingTheWizardWritesToTheSharedDirectoryIsReadableByOthers()
+    {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'Windows has no Unix file modes' );
+        mkdir( $this->nodeA . '/settings/override', 0775, true );
+        file_put_contents( $this->nodeA . '/settings/override/site.ini.append.php', "[DatabaseSettings]\nPassword=secret\n" );
+        chmod( $this->nodeA . '/settings/override/site.ini.append.php', 0664 );
+        $this->assertSame( 1, expSetupSharedState::push( $this->nodeA, $this->shared, array( 'settings/override' ), time() - 10, 'run-1' ) );
+        $this->assertTrue( expSetupWizardGuard::markInstalled( $this->nodeA, 'run-1' ) );
+        $this->holdLease( $this->nodeA, 'run-1', 'token-a' );
+
+        foreach ( array( 'files', 'files/settings', 'files/settings/override' ) as $dir )
+            $this->assertSame( 0750, fileperms( $this->shared . '/' . $dir ) & 0777, $dir );
+        foreach ( array( 'files/settings/override/site.ini.append.php', 'files/manifest.json', 'site_installed.json' ) as $file )
+            $this->assertSame( 0640, fileperms( $this->shared . '/' . $file ) & 0777, $file );
+        $this->assertSame( 0, fileperms( expMaintenance::wizardMarker( $this->nodeA ) ) & 0007, 'the lease' );
+        $this->assertTrue( expSetupSharedState::isSharedPath( $this->shared . '/log/setup.log' ), 'setup.log gets the same modes' );
+        $this->assertFalse( expSetupSharedState::isSharedPath( $this->nodeA . '/var/log/setup.log' ) );
+
+        $manifest = json_decode( file_get_contents( $this->shared . '/' . expSetupSharedState::MANIFEST ), true );
+        $this->assertSame( '0664', $manifest['files']['settings/override/site.ini.append.php']['mode'] );
+        $this->assertSame( 1, expSetupSharedState::pull( $this->nodeB, $this->shared, 'run-1' ) );
+        $this->assertSame( 0664, fileperms( $this->nodeB . '/settings/override/site.ini.append.php' ) & 0777, 'node B: the mode of node A\'s file' );
+    }
+
     public function testAFileWhoseSharedCopyIsDamagedIsNotWritten()
     {
         mkdir( $this->nodeA . '/settings/override', 0775, true );
