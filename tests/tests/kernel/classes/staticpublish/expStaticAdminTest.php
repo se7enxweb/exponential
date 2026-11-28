@@ -106,7 +106,7 @@ class expStaticAdminTest extends PHPUnit\Framework\TestCase
     public function testJobsReadBack()
     {
         $jobs = expStaticJob::directory( $this->dir );
-        $this->assertSame( $this->dir . '/.jobs', $jobs );
+        $this->assertSame( str_replace( '\\', '/', $this->dir . '/.jobs' ), str_replace( '\\', '/', $jobs ) );
         $write = function ( $id, $kind, $target, $out ) use ( $jobs ) {
             file_put_contents( "$jobs/$id.json", json_encode( array( 'id' => $id, 'kind' => $kind, 'target' => $target, 'user' => 'editor', 'pid' => 0,
                                                                      'started' => 1, 'progress' => "$jobs/$id.progress" ) ) );
