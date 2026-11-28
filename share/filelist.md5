@@ -29868,7 +29868,7 @@ c400a4746cf4d52ce9587ca3eb8a2c2c  tests/tests/kernel/classes/help/expHelpSearchH
 aca7abe53c0ac19c6c2b7aba18177ef0  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
 e4c8eb579a5fa41d2944a361f672a541  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
-988730ac96d673f008cfc63d8a9862ac  tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php
+1f191f294be69795ae419cdf939b7b17  tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php
 8e0808580e979d519cc0c9347676a7c1  tests/tests/kernel/classes/httpcache/ezpHttpCacheModulePagesTest.php
 25dc20a75f24e36ceae1352fc38c31e3  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 74c9f1f467fdd401d2bd43d13197f351  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
