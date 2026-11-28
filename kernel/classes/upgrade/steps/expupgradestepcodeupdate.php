@@ -20,6 +20,10 @@
  * Status and detection read the refs of the last fetch; the dry run and the run fetch first (the remote-tracking refs
  * only, never the working tree), and only as the owner of the checkout.
  *
+ * Code put in place outside git (an upgrade tool's file patch of a release, the checkout's commits left as they were)
+ * is named with the option code-applied (--code-applied=<version or commit>): the step then moves nothing and counts
+ * as in place, so the later stages run in their order without --force-order.
+ *
  * @since 6.0.15
  * @package kernel
  */
@@ -77,6 +81,9 @@ class expUpgradeStepCodeUpdate extends expUpgradeBaseStep
     public function detect( expUpgradeContext $context )
     {
         $root = (string)$context->option( 'root' );
+        $applied = (string)$context->option( 'code-applied', '' );
+        if ( $applied !== '' )
+            return self::effect( self::PRESENT, "the code was put in place outside git at $applied (--code-applied): no checkout is moved" );
         if ( !file_exists( "$root/.git" ) )
             return self::effect( self::NOT_APPLICABLE, 'the installation is not a git checkout: update the code by hand' );
         if ( !expUpgradeGit::available() )

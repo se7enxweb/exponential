@@ -149,6 +149,16 @@ Schreiben enthält die Commits, auf denen jeder Checkout stand (`code.json`). Oh
 Installation kein Git-Checkout ist, gilt die Stufe nicht: Aktualisieren
 Sie den Code, wie es [Upgrade](aktualisieren.md), Teil C, beschreibt.
 
+Wurde der Code außerhalb von git eingespielt, etwa von einem Upgrade-Werkzeug, das die Dateien eines Releases in einen
+Git-Checkout patcht und dessen Commits lässt, wie sie waren, nennen Sie dieses Release mit
+`--code-applied=<Version oder Commit>`. Die Code-Stufe bewegt dann nichts und gilt als erledigt, sodass die späteren
+Stufen in ihrer Reihenfolge laufen, ohne `--force-order`, das die Prüfung jeder früheren Stufe überspringen würde:
+
+```bash
+./console exp:upgrade --apply --stages=libraries,database,scripts --code-applied=c071e1a0002e
+./console exp:upgrade:status --code-applied=c071e1a0002e
+```
+
 ## Die Bibliotheken-Stufe
 
 ```bash

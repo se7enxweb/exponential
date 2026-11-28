@@ -42,6 +42,7 @@ or unknown, and how it was told. Changes nothing, takes no lock.
 | `--only` | erforderlich | Nur diese Schritte (Schritt-IDs, als Komma-Liste oder wiederholt); ein optionaler Schritt läuft nur, wenn er hier genannt ist |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-upgrade/1) |
 | `--fail-on-pending` |  | Exit-Code 1, wenn noch Schritte offen sind (für CI) |
+| `--code-applied` | erforderlich | Der Code ist schon auf diesem Release (eine Version oder ein Commit), außerhalb von git eingespielt, etwa durch einen Datei-Patch: die Code-Stufe bewegt nichts und gilt als erledigt |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

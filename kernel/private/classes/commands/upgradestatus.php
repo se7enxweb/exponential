@@ -32,11 +32,12 @@ class Upgradestatus extends UpgradeBase
                              "./console exp:upgrade:status --stages=database --format=json\n" .
                              "./console exp:upgrade:status --fail-on-pending     exit 1 when something is pending, for CI",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[stages:][only:*][format:][fail-on-pending]', '', array(
+        return (array)$this->startup( '[stages:][only:*][format:][fail-on-pending][code-applied:]', '', array(
             'stages' => 'Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)',
             'only' => 'Only these steps (step ids, a comma list or repeated); an optional step runs only when named here',
             'format' => 'text (default) or json (the machine output exp-upgrade/1)',
             'fail-on-pending' => 'Exit 1 when steps are still pending (for CI)',
+            'code-applied' => 'The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place',
         ) );
     }
 
@@ -47,6 +48,7 @@ class Upgradestatus extends UpgradeBase
         $stages = $this->stageOption( $options );
         $report = \expUpgrade::status( $stages, array(
             'only' => isset( $options['only'] ) ? \expUpgrade::listOption( $options['only'] ) : array(),
+            'code-applied' => isset( $options['code-applied'] ) && $options['code-applied'] ? (string)$options['code-applied'] : '',
             'command' => $this->name(),
         ) );
         if ( !empty( $options['fail-on-pending'] ) && $report['exit'] === \expUpgrade::EXIT_OK && $report['summary']['pending'] > 0 )

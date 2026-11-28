@@ -24,7 +24,7 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
     const RUN_OPTIONS = '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption]';
 
     /** Options of the code stage. */
-    const CODE_OPTIONS = '[to:][repos:*]';
+    const CODE_OPTIONS = '[to:][repos:*][code-applied:]';
 
     /** Options of the libraries stage. */
     const LIBRARIES_OPTIONS = '[update:*][composer:][no-audit][allow-vendor-changes]';
@@ -41,7 +41,7 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
     {
         return array(
             'exp:upgrade' => '[stages:]' . self::RUN_OPTIONS . self::FINISH_OPTIONS . self::CODE_OPTIONS . self::LIBRARIES_OPTIONS . '[no-verify][rollback-on-fail][post-caption][no-tests]',
-            'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending]',
+            'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending][code-applied:]',
             'exp:upgrade:steps' => '[stage:][engine:][format:]',
             'exp:upgrade:code' => self::RUN_OPTIONS . self::CODE_OPTIONS,
             'exp:upgrade:libraries' => self::RUN_OPTIONS . self::LIBRARIES_OPTIONS,
@@ -76,6 +76,7 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'force-no-backup' => 'With --no-backup on a production installation: write without a backup all the same',
             'to' => 'The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch)',
             'repos' => 'More git checkouts the code stage moves, paths inside the installation (a comma list or repeated)',
+            'code-applied' => 'The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place',
             'update' => 'composer update these packages, with their dependencies (a comma list or repeated)',
             'composer' => 'The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root)',
             'no-audit' => 'Skip the security audit of the libraries (composer audit) before and after',
@@ -178,6 +179,7 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'url' => isset( $options['url'] ) ? \expUpgrade::listOption( $options['url'] ) : array(),
             'to' => isset( $options['to'] ) && $options['to'] ? (string)$options['to'] : '',
             'repos' => isset( $options['repos'] ) ? \expUpgrade::listOption( $options['repos'] ) : array(),
+            'code-applied' => isset( $options['code-applied'] ) && $options['code-applied'] ? (string)$options['code-applied'] : '',
             'update' => isset( $options['update'] ) ? \expUpgrade::listOption( $options['update'] ) : array(),
             'composer' => isset( $options['composer'] ) && $options['composer'] ? (string)$options['composer'] : '',
             'no-audit' => !empty( $options['no-audit'] ),

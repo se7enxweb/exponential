@@ -60,6 +60,7 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--url` | erforderlich | Die Adressen, die die Rauchprobe nach dem Deploy abruft (Komma-Liste oder wiederholt); Standard die Startseite von SiteURL |
 | `--to` | erforderlich | Die Code-Stufe bringt die Checkouts auf diesen Tag, Branch oder Commit (Standard: den Upstream des Branches) |
 | `--repos` | erforderlich | Weitere Git-Checkouts, die die Code-Stufe bewegt, Pfade in der Installation (Komma-Liste oder wiederholt) |
+| `--code-applied` | erforderlich | Der Code ist schon auf diesem Release (eine Version oder ein Commit), außerhalb von git eingespielt, etwa durch einen Datei-Patch: die Code-Stufe bewegt nichts und gilt als erledigt |
 | `--update` | erforderlich | composer update für diese Pakete, mit ihren Abhängigkeiten (Komma-Liste oder wiederholt) |
 | `--composer` | erforderlich | Das Composer-Programm oder composer.phar (Standard: composer im PATH, sonst composer.phar in der Wurzel) |
 | `--no-audit` |  | Die Sicherheitsprüfung der Bibliotheken (composer audit) vorher und nachher überspringen |

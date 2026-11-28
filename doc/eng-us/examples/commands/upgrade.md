@@ -58,6 +58,7 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--url` | required | The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL |
 | `--to` | required | The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch) |
 | `--repos` | required | More git checkouts the code stage moves, paths inside the installation (a comma list or repeated) |
+| `--code-applied` | required | The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place |
 | `--update` | required | composer update these packages, with their dependencies (a comma list or repeated) |
 | `--composer` | required | The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root) |
 | `--no-audit` |  | Skip the security audit of the libraries (composer audit) before and after |

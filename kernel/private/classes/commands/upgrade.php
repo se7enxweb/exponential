@@ -37,7 +37,7 @@ class Upgrade extends UpgradeBase
                              "2 usage error, 3 database not reachable, 4 internal error.\n" .
                              "Guide: doc/eng-us/guides/upgrading-with-the-console.md",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][no-deploy][url:*][to:][repos:*][update:*][composer:][no-audit][allow-vendor-changes][no-verify][rollback-on-fail][post-caption][no-tests]', '', array(
+        return (array)$this->startup( '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][no-deploy][url:*][to:][repos:*][code-applied:][update:*][composer:][no-audit][allow-vendor-changes][no-verify][rollback-on-fail][post-caption][no-tests]', '', array(
             'stages' => 'Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)',
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
@@ -55,6 +55,7 @@ class Upgrade extends UpgradeBase
             'url' => 'The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL',
             'to' => 'The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch)',
             'repos' => 'More git checkouts the code stage moves, paths inside the installation (a comma list or repeated)',
+            'code-applied' => 'The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place',
             'update' => 'composer update these packages, with their dependencies (a comma list or repeated)',
             'composer' => 'The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root)',
             'no-audit' => 'Skip the security audit of the libraries (composer audit) before and after',
@@ -251,7 +252,7 @@ class Upgrade extends UpgradeBase
                 $args[] = "--$flag";
         if ( $backedUp && empty( $options['no-backup'] ) )
             array_push( $args, '--no-backup', '--force-no-backup' );
-        foreach ( array( 'backup-dir', 'composer', 'to' ) as $value )
+        foreach ( array( 'backup-dir', 'composer', 'to', 'code-applied' ) as $value )
             if ( !empty( $options[$value] ) )
                 $args[] = "--$value=" . $options[$value];
         foreach ( array( 'only', 'skip', 'url', 'update', 'repos' ) as $list )

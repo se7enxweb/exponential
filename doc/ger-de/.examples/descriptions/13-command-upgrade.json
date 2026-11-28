@@ -15,6 +15,10 @@
         "en": "Where the backup goes (default var/backup/upgrade); a directory <time> is made in it",
         "de": "Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt"
     },
+    "command:upgrade --code-applied": {
+        "en": "The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place",
+        "de": "Der Code ist schon auf diesem Release (eine Version oder ein Commit), außerhalb von git eingespielt, etwa durch einen Datei-Patch: die Code-Stufe bewegt nichts und gilt als erledigt"
+    },
     "command:upgrade --composer": {
         "en": "The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root)",
         "de": "Das Composer-Programm oder composer.phar (Standard: composer im PATH, sonst composer.phar in der Wurzel)"
@@ -130,6 +134,10 @@
     "command:upgradecode": {
         "en": "Upgrade stage 1, code: the git checkouts moved to the target release, fast-forward only, through git_manager (dry run unless --apply)",
         "de": "Upgrade-Stufe 1, Code: die Git-Checkouts auf das Ziel-Release gebracht, nur Fast-Forward, über git_manager (Probelauf ohne --apply)"
+    },
+    "command:upgradecode --code-applied": {
+        "en": "The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place",
+        "de": "Der Code ist schon auf diesem Release (eine Version oder ein Commit), außerhalb von git eingespielt, etwa durch einen Datei-Patch: die Code-Stufe bewegt nichts und gilt als erledigt"
     },
     "command:upgradecode --force-no-backup": {
         "en": "With --no-backup on a production installation: write without a backup all the same",
@@ -374,6 +382,10 @@
     "command:upgradestatus": {
         "en": "Upgrade status: every upgrade step with its state (done, pending, not-needed, failed, unknown)",
         "de": "Upgrade-Status: jeder Upgrade-Schritt mit seinem Zustand (done, pending, not-needed, failed, unknown)"
+    },
+    "command:upgradestatus --code-applied": {
+        "en": "The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place",
+        "de": "Der Code ist schon auf diesem Release (eine Version oder ein Commit), außerhalb von git eingespielt, etwa durch einen Datei-Patch: die Code-Stufe bewegt nichts und gilt als erledigt"
     },
     "command:upgradestatus --fail-on-pending": {
         "en": "Exit 1 when steps are still pending (for CI)",

@@ -53,6 +53,7 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--force-no-caption` |  | With --no-caption on a production installation: write without a caption all the same |
 | `--to` | required | The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch) |
 | `--repos` | required | More git checkouts the code stage moves, paths inside the installation (a comma list or repeated) |
+| `--code-applied` | required | The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -35,7 +35,7 @@ class Upgradecode extends UpgradeBase
                              "./console exp:upgrade:code --apply --to=v6.0.16 --repos=extension/myext\n" .
                              "Guide: doc/eng-us/guides/upgrading-with-the-console.md",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][to:][repos:*]', '', array(
+        return (array)$this->startup( '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][to:][repos:*][code-applied:]', '', array(
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
             'only' => 'Only these steps (step ids, a comma list or repeated); an optional step runs only when named here',
@@ -50,6 +50,7 @@ class Upgradecode extends UpgradeBase
             'force-no-caption' => 'With --no-caption on a production installation: write without a caption all the same',
             'to' => 'The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch)',
             'repos' => 'More git checkouts the code stage moves, paths inside the installation (a comma list or repeated)',
+            'code-applied' => 'The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place',
         ) );
     }
 

@@ -55,6 +55,7 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--force-no-caption` |  | Mit --no-caption auf einer Produktions-Installation: trotzdem ohne Sicherungspunkt schreiben |
 | `--to` | erforderlich | Die Code-Stufe bringt die Checkouts auf diesen Tag, Branch oder Commit (Standard: den Upstream des Branches) |
 | `--repos` | erforderlich | Weitere Git-Checkouts, die die Code-Stufe bewegt, Pfade in der Installation (Komma-Liste oder wiederholt) |
+| `--code-applied` | erforderlich | Der Code ist schon auf diesem Release (eine Version oder ein Commit), außerhalb von git eingespielt, etwa durch einen Datei-Patch: die Code-Stufe bewegt nichts und gilt als erledigt |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

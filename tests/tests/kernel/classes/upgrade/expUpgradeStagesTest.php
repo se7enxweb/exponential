@@ -16,6 +16,9 @@
  *        a git checkout; a COMPOSER_ROOT_VERSION of the process wins
  *  US-09 Composer writing more to stderr than a pipe holds does not leave the upgrade waiting: output, errors and
  *        the exit code are all collected
+ *  US-10 code put in place outside git (--code-applied, an upgrade tool's file patch): the code step counts as in
+ *        place without looking at git, the stage-order check and the new process hand the option on, and a value
+ *        that is no version or commit is refused
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -30,7 +33,8 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
     public static function setUpBeforeClass(): void
     {
         self::$root = dirname( __DIR__, 5 );
-        foreach ( array( 'expupgradestep', 'expupgraderegistry', 'expupgrade', 'expupgradecomposer', 'expupgradebackup', 'expupgradelock', 'expupgraderollback', 'expupgradecaption' ) as $f )
+        foreach ( array( 'expupgradestep', 'expupgraderegistry', 'expupgrade', 'expupgradecomposer', 'expupgradebackup', 'expupgradelock', 'expupgraderollback', 'expupgradecaption',
+                         'expupgradecontext', 'expupgradebasestep', 'steps/expupgradestepcodeupdate' ) as $f )
             require_once self::$root . "/kernel/classes/upgrade/$f.php";
         require_once self::$root . '/kernel/private/classes/runnable/runnable.php';
         require_once self::$root . '/kernel/private/classes/runnable/command.php';
@@ -244,5 +248,39 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( "done us09\n", $result['output'] );
         $this->assertSame( 20000, substr_count( $result['errors'], "\n" ) );
         $this->assertLessThan( 60, microtime( true ) - $started );
+    }
+
+    /** US-10 */
+    public function testCodeAppliedOutsideGit()
+    {
+        $db = new stdClass();
+        $step = new expUpgradeStepCodeUpdate();
+        // a git checkout behind its upstream: without the option the step would look at git; with it, it does not
+        @mkdir( $this->dir . '/.git', 0700, true );
+        foreach ( array( 'status', 'dry-run', 'apply' ) as $mode )
+        {
+            $context = new expUpgradeContext( $db, $mode === 'apply', array( 'root' => $this->dir, 'mode' => $mode, 'code-applied' => 'c071e1a0002e' ) );
+            $effect = $step->detect( $context );
+            $this->assertSame( expUpgradeStep::PRESENT, $effect['effect'], $mode );
+            $this->assertStringContainsString( 'c071e1a0002e', $effect['detail'] );
+            $this->assertSame( 'not-needed', expUpgrade::stateOf( $effect, null ), 'in place without exp:upgrade' );
+            $this->assertFalse( (bool)$context->option( 'code-fetched', false ), 'nothing fetched' );
+        }
+        @rmdir( $this->dir . '/.git' );
+        $context = new expUpgradeContext( $db, false, array( 'root' => $this->dir, 'mode' => 'status' ) );
+        $this->assertSame( expUpgradeStep::NOT_APPLICABLE, $step->detect( $context )['effect'], 'not a checkout, no option: as before' );
+
+        $this->assertSame( array( 'db' => $db, 'registry' => null, 'code-applied' => 'v6.0.16' ),
+                           expUpgrade::orderCheckOptions( array( 'code-applied' => 'v6.0.16', 'to' => 'x', 'only' => array( 'a' ) ), $db, null ),
+                           'the stage-order check sees the option' );
+        $this->assertSame( array( 'db' => $db, 'registry' => null ), expUpgrade::orderCheckOptions( array( 'code-applied' => '' ), $db, null ) );
+
+        foreach ( array( '', 'v6.0.16', '6.0.15', 'c071e1a0002e2c1847feabb68c23268ad16acc9b', 'main', 'origin/main', '6.0.15+build.1' ) as $ok )
+            $this->assertSame( '', expUpgrade::codeAppliedProblem( $ok ), $ok );
+        foreach ( array( '-x', 'a b', "a\nb", '--force-order', str_repeat( 'a', 101 ), 'a;b' ) as $bad )
+            $this->assertNotSame( '', expUpgrade::codeAppliedProblem( $bad ), $bad );
+
+        $args = \Exponential\Command\Kernel\Upgrade::childArguments( array( 'database' ), array( 'code-applied' => 'v6.0.16' ), false );
+        $this->assertSame( array( '--stages=database', '--apply', '--format=json', '--no-verify', '--code-applied=v6.0.16' ), $args );
     }
 }

@@ -193,6 +193,37 @@ class expUpgrade
         );
     }
 
+    /**
+     * The options of the status run that checks the stages before the first one of a run: the database, the registry
+     * and code-applied, so code put in place outside git (a file patch) does not count as a pending code stage. Pure.
+     *
+     * @param array $options the run's options
+     * @param mixed $db
+     * @param mixed $registry
+     * @return array
+     */
+    public static function orderCheckOptions( array $options, $db, $registry )
+    {
+        $out = array( 'db' => $db, 'registry' => $registry );
+        if ( isset( $options['code-applied'] ) && (string)$options['code-applied'] !== '' )
+            $out['code-applied'] = (string)$options['code-applied'];
+        return $out;
+    }
+
+    /**
+     * Why a code-applied value is refused ('' when it is fine): a version, tag, branch or commit, without spaces. Pure.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public static function codeAppliedProblem( $value )
+    {
+        $value = (string)$value;
+        if ( $value === '' || preg_match( '#^[A-Za-z0-9][A-Za-z0-9._/+-]{0,99}$#', $value ) )
+            return '';
+        return '--code-applied must name a version, tag, branch or commit (letters, digits and ._/+-), not ' . substr( $value, 0, 40 );
+    }
+
     /** @return string the version of the code (eZPublishSDK) */
     public static function kernelVersion()
     {
@@ -233,6 +264,8 @@ class expUpgrade
             foreach ( array_merge( $only, $skip ) as $id )
                 if ( !$registry->get( $id ) )
                     $report['errors'][] = "no step $id (./console exp:upgrade:steps lists them)";
+            if ( ( $problem = self::codeAppliedProblem( isset( $options['code-applied'] ) ? $options['code-applied'] : '' ) ) !== '' )
+                $report['errors'][] = $problem;
             // a production installation is never written without a backup, unless the operator insists
             // --no-caption and --no-backup are the same (the caption is the backup); so are their --force-* forms
             $noCaption = !empty( $options['no-backup'] ) || !empty( $options['no-caption'] );
@@ -256,7 +289,7 @@ class expUpgrade
                 $earlier = array_slice( expUpgradeRegistry::STAGES, 0, (int)$first );
                 if ( $earlier )
                 {
-                    $before = self::status( $earlier, array( 'db' => $db, 'registry' => $registry ) );
+                    $before = self::status( $earlier, self::orderCheckOptions( $options, $db, $registry ) );
                     foreach ( $before['stages'] as $stage )
                         if ( $stage['pending'] > 0 )
                         {

@@ -40,6 +40,7 @@ or unknown, and how it was told. Changes nothing, takes no lock.
 | `--only` | required | Only these steps (step ids, a comma list or repeated); an optional step runs only when named here |
 | `--format` | required | text (default) or json (the machine output exp-upgrade/1) |
 | `--fail-on-pending` |  | Exit 1 when steps are still pending (for CI) |
+| `--code-applied` | required | The code is already at this release (a version or commit), put in place outside git, e.g. by a file patch: the code stage moves nothing and counts as in place |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

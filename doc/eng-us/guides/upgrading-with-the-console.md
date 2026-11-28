@@ -141,6 +141,16 @@ refs only, never the working tree, and only as the owner. The caption taken befo
 commits every checkout was on (`code.json`). Without git_manager, or when the installation is not a git
 checkout, the stage does not apply: update the code as [Upgrading](upgrading.md), part C, says.
 
+When the code was put in place outside git, for example by an upgrade tool that patches the files of a release into
+a git checkout and leaves its commits as they were, name that release with `--code-applied=<version or commit>`. The
+code stage then moves nothing and counts as in place, so the later stages run in their order without
+`--force-order`, which would skip every earlier stage's check:
+
+```bash
+./console exp:upgrade --apply --stages=libraries,database,scripts --code-applied=c071e1a0002e
+./console exp:upgrade:status --code-applied=c071e1a0002e
+```
+
 ## The libraries stage
 
 ```bash

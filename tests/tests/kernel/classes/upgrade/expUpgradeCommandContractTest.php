@@ -19,10 +19,10 @@ class expUpgradeCommandContractTest extends PHPUnit\Framework\TestCase
 
     /** The snapshot. Add, never change or remove. */
     const COMMANDS = array(
-        'exp:upgrade' => '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][no-deploy][url:*][to:][repos:*][update:*][composer:][no-audit][allow-vendor-changes][no-verify][rollback-on-fail][post-caption][no-tests]',
-        'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending]',
+        'exp:upgrade' => '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][no-deploy][url:*][to:][repos:*][code-applied:][update:*][composer:][no-audit][allow-vendor-changes][no-verify][rollback-on-fail][post-caption][no-tests]',
+        'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending][code-applied:]',
         'exp:upgrade:steps' => '[stage:][engine:][format:]',
-        'exp:upgrade:code' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][to:][repos:*]',
+        'exp:upgrade:code' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][to:][repos:*][code-applied:]',
         'exp:upgrade:libraries' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption][update:*][composer:][no-audit][allow-vendor-changes]',
         'exp:upgrade:database' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption]',
         'exp:upgrade:scripts' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-caption][force-no-caption]',
