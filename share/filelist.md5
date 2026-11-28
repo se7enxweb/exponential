@@ -6980,7 +6980,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-2f12da9e3ab867f9a45e695fbc60c051  doc/eng-us/features/6.0/README.md
+82be3764fc9afa9a254964c8a51ebd4b  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -8179,7 +8179,7 @@ eac710891ec446c14acec9e1d27b8426  doc/eng-us/help/businesses/templates/roi-works
 91d2aca3118f828f8e72d618b23e8e16  doc/eng-us/help/businesses/which-section-fits-your-organization.md
 8c90026c2aa02ea5007adb6264190737  doc/eng-us/help/businesses/why-businesses-rely-on-exponential.md
 650935738878fa3c486c5f262cb57df6  doc/eng-us/help/change-the-admin-password.md
-f12a9aecac32972ec720b42b58244c7d  doc/eng-us/help/choosing-a-database.md
+112ae8f0f28e1668bd587930c897c990  doc/eng-us/help/choosing-a-database.md
 32b4a33172034277fee4c8b12b0041a6  doc/eng-us/help/cms-developers/accessibility.md
 d2670fd89d336c5d257a17d39a7923ac  doc/eng-us/help/cms-developers/caching-for-cms-developers.md
 227110c9a9a69e8dea9acd57d0b7702c  doc/eng-us/help/cms-developers/choosing-a-ready-made-content-class.md
@@ -13306,7 +13306,7 @@ c8a7f774673c9f8d16aba39e06a54ec6  doc/eng-us/install/05-setup-wizard.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
 b3b87216f383e55f8a59e92fdd674604  doc/eng-us/install/09-databases.md
 278eeb7d25c1222ac28937a2f8165689  doc/eng-us/install/10-after-installing.md
-4548d9de6a690c8426804ca69664dc50  doc/eng-us/install/11-upgrading.md
+c7ea4bbbc3b898354b5bbe91f167c982  doc/eng-us/install/11-upgrading.md
 48ccb4898ab342e4c3afa0435641ccd7  doc/eng-us/install/12-troubleshooting.md
 311dc1363a91c90c78f4d57a63ee0ed2  doc/eng-us/install/13-security-hardening.md
 fc58ac7d6caf0cec29836290720ef92f  doc/eng-us/install/14-migrating-from-4x.md
@@ -17128,7 +17128,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-fe22519039a7b796262a37da13e4ceec  doc/ger-de/funktionen/6.0/README.md
+170c182b7e50709e879343d76cd494ee  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -18494,7 +18494,7 @@ a006c16efec268bb2bcd620a9b237fb9  doc/ger-de/hilfe/cms-entwickler/umstieg-von-ty
 9864b91414734c9054a5e35f3a3b2c36  doc/ger-de/hilfe/cms-entwickler/versionen-entwuerfe-und-veroeffentlichen.md
 a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-ausloeser.md
 f5be1f862dc084f747a2aec672a8f29e  doc/ger-de/hilfe/das-benutzer-auditprotokoll.md
-a995a129ec1a9d40f003b01b3fe0bfc0  doc/ger-de/hilfe/datenbank-waehlen.md
+de609b7473f9a4cb656bb41aca6eb24a  doc/ger-de/hilfe/datenbank-waehlen.md
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 4aa0910c6c1843fcc009479fcb70efb2  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
@@ -23246,7 +23246,7 @@ e8a1d89728201585d1cb6850cad1ce36  doc/ger-de/installation/03-den-code-beschaffen
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
 817645faebd5a714ccb47e43529a770e  doc/ger-de/installation/09-datenbanken.md
 706664b7b744252ec94b974f9c76a582  doc/ger-de/installation/10-nach-der-installation.md
-31c36edffac33c9075671abcfc3b45ec  doc/ger-de/installation/11-aktualisieren.md
+a29a13ebcbd2fde6d9f6a52b5011a375  doc/ger-de/installation/11-aktualisieren.md
 7a29282cee8bb67807ed770c2543e9ad  doc/ger-de/installation/12-fehlerbehebung.md
 7fc531a89a26d702403324480023f8a1  doc/ger-de/installation/13-sicherheitshaertung.md
 817c02a891226d45dd7e8ba5ff6ac605  doc/ger-de/installation/14-migration-von-4x.md
