@@ -92,6 +92,7 @@ Datei `settings/httpcache.ini`, Block `[HttpCacheSettings]`, Geltungsbereich: In
 | `APCu` | `enabled` | Häufig genutzte Einträge in APCu vor den Dateien. |
 | `MaxBodySize` | 2 MB | Größere Seiten werden nicht gespeichert. |
 | `SharedStateDir` | leer | Mehrere Webserver: wo jedes Leeren geteilt wird, damit es die Seiten aller Server erreicht; leer = die gemeinsame Platte des DFS-Cluster-Handlers, auf einem einzelnen Server nichts; `disabled` = nie. Siehe „Mehrere Webserver“ unten. |
+| `SharedStateCacheTime` | `2` | Sekunden, die jeder Server den gemeinsamen Zustand in APCu hält, bevor er die Datei erneut liest; `0` liest sie bei jedem Lookup. Braucht `APCu=enabled` und APCu in PHP. |
 
 ## Welcher Siteaccess, welches Schema und welcher Host
 
@@ -172,6 +173,20 @@ SharedStateDir=disabled
 Es kostet je Lookup einen weiteren kleinen Dateizugriff auf der gemeinsamen Platte. Der eigene Antwort-Cache von
 Exponential Velocity nimmt dann die gemeinsame Datei als Generationsmarke, sodass ihn ein Leeren auf einem anderen
 Server ebenfalls erreicht.
+
+**Den gemeinsamen Zustand in APCu halten** (seit dem 24. November 2026). Eine gemeinsame Platte über das Netz kostet
+jeden Lookup einen Umlauf, und eine langsame oder hängende Platte würde jede Seite aufhalten. `SharedStateCacheTime`
+(Standard `2`) hält den Zustand, den jeder Server gelesen hat, so viele Sekunden in APCu: Eine Anfrage je Server liest
+die Datei, wenn es Zeit ist, die anderen antworten mit dem zuletzt gelesenen Zustand. Ein Leeren auf einem anderen
+Server erreicht diesen also innerhalb dieser Sekunden; ein Leeren auf diesem Server gilt hier sofort. `0` liest die
+Datei wie zuvor bei jedem Lookup. Es braucht `APCu=enabled` in `httpcache.ini` und die Extension APCu in PHP; ohne
+APCu liest jeder Lookup die Datei.
+
+```ini
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+SharedStateCacheTime=5
+```
 
 ## Sehen, was er tut
 

@@ -96,6 +96,7 @@ File `settings/httpcache.ini`, block `[HttpCacheSettings]`, scope: installation.
 | `APCu` | `enabled` | Hot entries in APCu in front of the files. |
 | `MaxBodySize` | 2 MB | Larger pages are not stored. |
 | `SharedStateDir` | empty | Several web servers: where every purge is shared so it reaches the pages of all of them; empty = the shared disk of the DFS cluster handler, or nothing on one server; `disabled` = never. See "Several web servers" below. |
+| `SharedStateCacheTime` | `2` | Seconds each server keeps the shared state in APCu before it reads the file again; `0` reads it on every lookup. Needs `APCu=enabled` and APCu in PHP. |
 
 ## Which siteaccess, scheme and host
 
@@ -190,6 +191,22 @@ SharedStateDir=disabled
 The cost is one more small file read per lookup on the shared disk. Exponential
 Velocity's own response cache takes the shared file as its generation marker
 then, so a purge on another server reaches it too.
+
+**Keeping the shared state in APCu** (from 24 November 2026). A shared disk over
+the network costs every lookup a round trip, and a slow or stalled disk would
+hold up every page. `SharedStateCacheTime` (default `2`) keeps the state each
+server read in APCu for that many seconds: one request per server reads the
+file when it is due, the others answer with the state read last. A purge made on
+another server therefore reaches this one within those seconds; a purge made on
+this server applies here at once. `0` reads the file on every lookup, as before.
+It needs `APCu=enabled` in `httpcache.ini` and the APCu extension in PHP;
+without APCu every lookup reads the file.
+
+```ini
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+SharedStateCacheTime=5
+```
 
 ## Seeing what it does
 
