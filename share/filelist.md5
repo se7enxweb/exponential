@@ -25172,7 +25172,7 @@ b9e9539994357e5af600405fdb5a31be  kernel/classes/ezsearch.php
 89718629cff51104be4687be5a7da2c4  kernel/classes/ezserializedobjectnamelist.php
 33e1c9c5d461edcc7dac79eb8df72615  kernel/classes/ezshippingmanager.php
 0e391dcc9919449db4862a6935e5b69f  kernel/classes/ezshopaccounthandler.php
-c2dc36b039cdc0346e1e4f8e0c42c8cf  kernel/classes/ezsiteaccess.php
+ef6f023a73ee851e2ef2b933fbd990a7  kernel/classes/ezsiteaccess.php
 345d21a4c41ded0c56f1b83f1a422fa7  kernel/classes/ezsitedata.php
 154de98c81f7db5c53872a2e5808af58  kernel/classes/ezsiteinstaller.php
 2dfe608165d9d10247fb447d831c6ed9  kernel/classes/ezsslzone.php
@@ -26386,7 +26386,7 @@ e6144e472a2c4552d0be9718564e8b4c  kernel/private/classes/ezpkernel.php
 be8cdbb5b8fe8e504850e689e21def82  kernel/private/classes/ezpkernelredirect.php
 cae1daaf1de53266d1073fd3a76faa21  kernel/private/classes/ezpkernelresult.php
 cfb368b88c619b389425dee03f10b9c0  kernel/private/classes/ezpkerneltreemenu.php
-584b512fd2cf64b7942e6c66e0c71c5f  kernel/private/classes/ezpkernelweb.php
+d90b93f87b847a23235c99c9533fce52  kernel/private/classes/ezpkernelweb.php
 5c244f8105822a81124a48dcf75f657f  kernel/private/classes/ezplanguageswitcher.php
 69d8850cc8d71b9a27d3ddc558d04268  kernel/private/classes/ezpmail.php
 8dcd128ae32ce6b90bb3bd055edaaeda  kernel/private/classes/ezpmobiledevicedetect.php
@@ -29827,7 +29827,7 @@ c1b2927c92d8a65e168f67f9e4c40ba3  tests/tests/kernel/classes/help/expHelpContent
 67f9865707c6b64878c88b7be82c2d33  tests/tests/kernel/classes/help/expHelpContentPackageTest.php
 31f1bfedeae2e8e5a16242fbff3e9751  tests/tests/kernel/classes/help/expHelpContentReviewTest.php
 b7c2c9338c2f1e5edc7e0b5f85931a41  tests/tests/kernel/classes/help/expHelpContentTest.php
-44e20552a76185c16c008c417f1f7a21  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
+41c5d4d41cb8189439a0c9709d7669bc  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
 7484b0d4f9af0d0dfd92f43bf42034a2  tests/tests/kernel/classes/help/expHelpContentWorkflowTest.php
 ec572e91a188d4cbcbc1b96361044b86  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 e8499ab93ff69e0522559631099419ec  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
@@ -30891,7 +30891,7 @@ b45f2e7374b9468239cd573cdea64d11  tests/tests/lib/ezi18n/eZTSTranslatorFallbackC
 8b1253e9a2eeba295b4b56d618036a55  tests/tests/lib/ezi18n/eZTranslationCacheHardeningTest.php
 e4d8dcd46d82c8227a33c06f603ada3b  tests/tests/lib/ezi18n/eZTranslationCacheLocaleTest.php
 4824e6a3089609831d4ddd3b15d16466  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
-6ddbe455d127dc1d24685d78be6d823e  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
+05b71ea3dbde382da9329d4f5a439a44  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 bb57993b1d110100fe1526d2b9a985de  tests/tests/lib/ezi18n/expChineseHongKongFallbackTest.php
 14d16fe778db7b8fa93e108b5ec936d4  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 497722a5fd5f8624049db3bea0d408b7  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
