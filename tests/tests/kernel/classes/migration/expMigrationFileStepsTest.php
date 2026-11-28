@@ -172,11 +172,14 @@ class expMigrationFileStepsTest extends PHPUnit\Framework\TestCase
         $replaced = expMigrationFiles::write( $root, 'extension/demo/old.css', "replaced\n", $id, self::ROOTS );
         $this->assertTrue( $replaced['existed'] );
         $this->assertSame( hash( 'sha256', "old\n" ), $replaced['before'] );
-        $this->assertSame( '0640', $replaced['mode'] );
-        $this->assertSame( 0640, fileperms( "$root/extension/demo/old.css" ) & 0777, 'the mode is kept' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( '0640', $replaced['mode'] );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0640, fileperms( "$root/extension/demo/old.css" ) & 0777, 'the mode is kept' );
         $this->assertSame( expMigrationFiles::BACKUP_DIRECTORY . "/$id/extension/demo/old.css", $replaced['backup'] );
         $this->assertSame( "old\n", file_get_contents( "$root/" . $replaced['backup'] ) );
-        $this->assertSame( 0600, fileperms( "$root/" . $replaced['backup'] ) & 0777, 'the backup is readable by its owner only' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0600, fileperms( "$root/" . $replaced['backup'] ) & 0777, 'the backup is readable by its owner only' );
 
         file_put_contents( "$root/extension/demo/gone.js", "gone\n" );
         $removed = expMigrationFiles::write( $root, 'extension/demo/gone.js', null, $id, self::ROOTS );
@@ -185,7 +188,8 @@ class expMigrationFileStepsTest extends PHPUnit\Framework\TestCase
 
         $changes = expMigrationFiles::changes( $root, $id );
         $this->assertSame( array( 'design/site/templates/new/footer.tpl', 'extension/demo/old.css', 'extension/demo/gone.js' ), array_keys( $changes ) );
-        $this->assertSame( 0600, fileperms( expMigrationFiles::listFile( $root, $id ) ) & 0777 );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0600, fileperms( expMigrationFiles::listFile( $root, $id ) ) & 0777 );
 
         // put back, the last first
         $this->assertStringContainsString( 'put back extension/demo/gone.js', expMigrationFiles::restore( $root, $changes['extension/demo/gone.js'] ) );

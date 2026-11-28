@@ -657,6 +657,8 @@ class expMigrationCaptionTest extends PHPUnit\Framework\TestCase
     /** A tool that writes much to stderr (mongorestore's progress) does not block expUpgradeBackup::runWithEnv(). */
     public function testRunWithEnvDrainsBothPipes()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the command line is a POSIX shell pipeline (yes, head, 2>/dev/null)' );
         $err = '';
         $start = microtime( true );
         $code = expUpgradeBackup::runWithEnv( 'yes x 2>/dev/null | head -c 300000 1>&2; yes y 2>/dev/null | head -c 300000; exit 3', array( 'EXP_WP4' => '1' ), $err );

@@ -306,7 +306,9 @@ class expMigrationRunnerTest extends PHPUnit\Framework\TestCase
         // expUpgradeLock as before: acquire, again true, the pid in the lock file, release, release again
         $this->assertTrue( expUpgradeLock::acquire( $this->lockFile ) );
         $this->assertTrue( expUpgradeLock::acquire( $this->lockFile ) );
-        $this->assertSame( (string)getmypid(), trim( file_get_contents( $this->lockFile ) ) );
+        // the lock of Windows is mandatory: another handle cannot read the locked file
+        if ( PHP_OS_FAMILY !== 'Windows' )
+            $this->assertSame( (string)getmypid(), trim( file_get_contents( $this->lockFile ) ) );
         $holder = expUpgradeLock::holder( $this->lockFile );
         $this->assertSame( 'exp:upgrade', $holder['purpose'] );
         $this->assertFalse( $holder['stale'] );
