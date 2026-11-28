@@ -202,6 +202,8 @@ class expSetupLog
         try
         {
             $f = self::setupLogDir() . '/' . self::STATE_FILE;
+            // Asked of the file system now: on shared storage another node may have written it a moment ago
+            clearstatcache( true, $f );
             if ( self::$run || !file_exists( $f ) )
                 return (bool)self::$run;
             $state = @unserialize( (string)file_get_contents( $f ) );
@@ -230,6 +232,8 @@ class expSetupLog
             if ( self::$run['current'] )
                 self::doStepEnd( 'shown' );
             $f = self::setupLogDir() . '/' . self::STATE_FILE;
+            if ( !is_dir( self::setupLogDir() ) )
+                eZDir::mkdir( self::setupLogDir(), false, true );
             @file_put_contents( $f, serialize( self::$run ), LOCK_EX );
             self::giveToVarOwner( $f );
             self::$run['suspended'] = true;
@@ -247,6 +251,26 @@ class expSetupLog
         if ( self::resume() )
             self::finish( 'ABANDONED (the wizard was started again)' );
         return self::start( 'web setup wizard', $context );
+    }
+
+    /**
+     * The web setup: this request's run ends here without touching the run state,
+     * which may be another browser's (a wizard that holds the site): one line in
+     * the log, nothing suspended or removed.
+     */
+    public static function detach( $status )
+    {
+        try
+        {
+            if ( !self::$run )
+                return;
+            self::line( 'END setup run ' . self::$run['id'] . ': ' . $status );
+            self::$run = null;
+            self::clearLogContext();
+        }
+        catch ( Throwable $e )
+        {
+        }
     }
 
     /** @return string|null the id of the run in progress (started or resumed) */
@@ -738,15 +762,33 @@ class expSetupLog
     }
 
     /**
-     * Where setup.log and the web setup's state are kept: var/log, or the
-     * directory in EXP_SETUP_LOG_DIR (tests, so they never rotate the log of a
-     * real installation away). The kernel's own logs are read from
-     * kernelLogDir().
+     * Where setup.log and the web setup's state are kept: the directory in
+     * EXP_SETUP_LOG_DIR (tests, so they never rotate the log of a real
+     * installation away); for a web request on a site served by several nodes
+     * the log directory below the shared state directory (expSetupSharedState),
+     * so the next step of the wizard finds the run whichever node serves it;
+     * else var/log. The kickstarter runs in one process on one node and keeps
+     * var/log. The kernel's own logs are read from kernelLogDir().
      */
-    protected static function setupLogDir()
+    public static function setupLogDir()
     {
         $dir = getenv( 'EXP_SETUP_LOG_DIR' );
-        return is_string( $dir ) && $dir !== '' ? rtrim( $dir, '/' ) : self::LOG_DIR;
+        if ( is_string( $dir ) && $dir !== '' )
+            return rtrim( $dir, '/' );
+        // Not PHP_SAPI: Velocity's workers answer web requests from the CLI SAPI
+        if ( isset( $_SERVER['REQUEST_METHOD'] ) && class_exists( 'expSetupSharedState' ) && class_exists( 'eZSys' ) )
+        {
+            $shared = expSetupSharedState::dir( eZSys::rootDir() );
+            if ( $shared !== null )
+                return $shared . '/log';
+        }
+        return self::LOG_DIR;
+    }
+
+    /** @return float|null the unix time the run in progress started, null when there is none */
+    public static function startedAt()
+    {
+        return self::$run && isset( self::$run['started'] ) ? (float)self::$run['started'] : null;
     }
 
     /**

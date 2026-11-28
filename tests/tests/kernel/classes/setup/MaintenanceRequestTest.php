@@ -150,7 +150,9 @@ class MaintenanceRequestTest extends PHPUnit\Framework\TestCase
         $source = file_get_contents( $this->kernelRoot . '/kernel/classes/expmaintenance.php' );
         $this->assertMatchesRegularExpression( '/Q_WebServer_CompatFileWrapper::forgetPath\(\s*\$file\s*\)/', $source, 'Velocity: only this path is forgotten' );
         $this->assertMatchesRegularExpression( '/clearstatcache\(\s*true,\s*\$file\s*\)/', $source, 'other engines: PHP\'s stat cache of this path' );
-        $this->assertMatchesRegularExpression( '/static function state\([^)]*\)\s*\{[^}]*self::markerExists\(/s', $source );
+        // state() reads var/maintenance.json through readState(), which the shared wizard lease uses too
+        $this->assertMatchesRegularExpression( '/static function state\([^)]*\)\s*\{[^}]*self::readState\(/s', $source );
+        $this->assertMatchesRegularExpression( '/static function readState\([^)]*\)\s*\{[^}]*self::markerExists\(/s', $source );
     }
 
     public function testVelocityGetsThePauseFileWithTheResponseCacheOffToo()

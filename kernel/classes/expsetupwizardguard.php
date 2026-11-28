@@ -95,7 +95,9 @@ class expSetupWizardGuard
     }
 
     /**
-     * Is the site installed? True when the marker exists, when the request did
+     * Is the site installed? True when the marker exists (in var/, or in the
+     * shared state directory of a site served by several nodes, where the node
+     * that served the wizard's last page wrote it), when the request did
      * not come through the validity check (the site is served normally, so it
      * was set up), or when the configured database has content.
      *
@@ -106,8 +108,9 @@ class expSetupWizardGuard
      */
     static function isInstalled( $root, $validityCheck, $databaseHasContent = null )
     {
-        if ( is_file( rtrim( $root, '/' ) . '/' . self::INSTALLED_MARKER ) )
-            return true;
+        foreach ( self::installedMarkers( $root ) as $marker )
+            if ( is_file( $marker ) )
+                return true;
         if ( !$validityCheck )
             return true;
         $probe = $databaseHasContent ?: array( __CLASS__, 'databaseHasContent' );
@@ -309,17 +312,59 @@ class expSetupWizardGuard
     }
 
     /**
-     * The wizard's last page: the site is installed from now on.
+     * The installed markers of the installation at $root: var/site_installed.json,
+     * and on a site served by several nodes site_installed.json in the shared state
+     * directory (expSetupSharedState), which every node sees.
+     *
+     * @param string $root
+     * @return string[]
+     */
+    static function installedMarkers( $root )
+    {
+        $markers = array( rtrim( $root, '/' ) . '/' . self::INSTALLED_MARKER );
+        $dir = class_exists( 'expSetupSharedState' ) ? expSetupSharedState::dir( $root ) : null;
+        if ( $dir !== null )
+            $markers[] = $dir . '/site_installed.json';
+        return $markers;
+    }
+
+    /**
+     * The setup run that installed the site, as the shared installed marker
+     * records it: the run whose files (settings, packages) a node that did not
+     * serve the wizard's last steps still has to fetch.
+     *
+     * @param string $root
+     * @return string|null null on a single node, or when no wizard installed the site
+     */
+    static function sharedInstalledRun( $root )
+    {
+        $dir = class_exists( 'expSetupSharedState' ) ? expSetupSharedState::dir( $root ) : null;
+        if ( $dir === null )
+            return null;
+        $data = expSetupSharedState::readJson( $dir . '/site_installed.json' );
+        return is_array( $data ) && isset( $data['run'] ) && (string)$data['run'] !== '' ? (string)$data['run'] : null;
+    }
+
+    /**
+     * The wizard's last page: the site is installed from now on, for every node.
      *
      * @param string $root
      * @param string $runId the setup log's run
-     * @return bool
+     * @return bool true when every marker was written
      */
     static function markInstalled( $root, $runId )
     {
-        $file = rtrim( $root, '/' ) . '/' . self::INSTALLED_MARKER;
-        $data = json_encode( array( 'installed' => gmdate( 'c' ), 'by' => 'setup wizard', 'run' => (string)$runId ),
+        $data = json_encode( array( 'installed' => gmdate( 'c' ), 'by' => 'setup wizard', 'run' => (string)$runId,
+                                    'node' => class_exists( 'expSetupSharedState' ) ? expSetupSharedState::nodeName() : php_uname( 'n' ) ),
                              JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n";
-        return @file_put_contents( $file, $data ) !== false;
+        $written = true;
+        foreach ( self::installedMarkers( $root ) as $i => $file )
+        {
+            if ( $i === 0 )
+                $written = @file_put_contents( $file, $data ) !== false && $written;
+            else
+                $written = expSetupSharedState::writeAtomic( $file, $data ) && $written;
+        }
+        return $written;
     }
 }

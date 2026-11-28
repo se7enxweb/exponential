@@ -93,7 +93,11 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
         //   wizard. It ends with the last page, or by itself when the wizard is left
         //   (expMaintenance::WIZARD_LEASE, renewed by each posted step only).
         // var/log/setup.log: a run starts with the wizard's first page, posted steps continue it
+        // Several nodes (expSetupSharedState): the lease, the run and the installed marker are in the
+        // shared state directory, so a step that lands on another node continues the same run, and the
+        // files the wizard writes (settings, packages) are copied to whichever node serves the next step
         $root = \eZSys::rootDir();
+        $sharedDir = \expSetupSharedState::dir( $root );
         // No cache keeps a page of the wizard (the confirm page carries a one-time token)
         \expSetupWizardGuard::sendNoStoreHeaders();
         $isStepPost = $http->hasPostVariable( 'eZSetup_current_step' );
@@ -106,6 +110,13 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
                                                     \eZSys::indexFile(), $uriPrefix );
         $tpl->setVariable( 'script', $script );
         $installed = \expSetupWizardGuard::isInstalled( $root, $validityCheck );
+        if ( $installed && $sharedDir !== null && !$warmup )
+        {
+            // Another node served the wizard's last steps: this node fetches the settings and packages it wrote
+            $installedRun = \expSetupWizardGuard::sharedInstalledRun( $root );
+            if ( $installedRun !== null && \expSetupSharedState::pull( $root, $sharedDir, $installedRun ) )
+                \eZINI::resetAllInstances( false );
+        }
         $allowedOnInstalled = \expSetupWizardGuard::allowedOnInstalledSite( $ini, $validityCheck );
         if ( $installed && !$allowedOnInstalled )
         {
@@ -155,9 +166,23 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
                 \expSetupLog::startWeb( array( 'confirmed' => 'reinstall of an installed site' ) );
             else if ( !\expSetupLog::resume() )
                 \expSetupLog::start( 'web setup wizard (joined at step ' . $http->postVariable( 'eZSetup_current_step' ) . ')' );
-            \expMaintenance::beginWizard( $root, (string)\expSetupLog::runId() );
+            if ( !\expMaintenance::beginWizard( $root, (string)\expSetupLog::runId() ) )
+            {
+                // Another browser's wizard holds the site (on this node or another): its maintenance page,
+                // never a second wizard that would abandon it or install over it
+                $held = \expMaintenance::wizardState( $root );
+                \expSetupLog::detach( 'REFUSED (another setup wizard holds the site)' );
+                if ( is_array( $held ) )
+                {
+                    \expMaintenance::send( $root, $held );
+                    \eZExecution::cleanExit();
+                }
+            }
         }
         $setupRunId = (string)\expSetupLog::runId();
+        // The files earlier steps of this run wrote on another node
+        if ( $sharedDir !== null && !$warmup && $setupRunId !== '' && $decision !== \expSetupWizardGuard::SHOW )
+            \expSetupSharedState::pull( $root, $sharedDir, $setupRunId );
         $result = null;
 
         // process previous step
@@ -320,7 +345,16 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
         \eZDebug::addTimingPoint( "End" );
         // A step that ran long (a package import) holds the lease from its end, not its start
         if ( !$warmup && $setupRunId !== '' && ( $decision === \expSetupWizardGuard::BEGIN || $decision === \expSetupWizardGuard::CONTINUE_RUN ) )
+        {
             \expMaintenance::renewWizard( $root, $setupRunId );
+            // What this step wrote, for the node that serves the next one (and, once installed, every other node)
+            if ( $sharedDir !== null )
+            {
+                $since = \expSetupLog::startedAt();
+                \expSetupSharedState::push( $root, $sharedDir, \expSetupSharedState::mirroredPaths(),
+                                            $since !== null ? $since : time() - \expMaintenance::WIZARD_LEASE, $setupRunId );
+            }
+        }
         \expSetupLog::suspend();
 
         return $this->viewResult( isset( $Result ) ? $Result : null,  $result );

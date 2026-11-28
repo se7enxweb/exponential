@@ -62,7 +62,17 @@ class expMaintenance
      */
     static function state( $root )
     {
-        $file = rtrim( $root, '/' ) . '/' . self::MARKER;
+        return self::readState( rtrim( $root, '/' ) . '/' . self::MARKER );
+    }
+
+    /**
+     * A marker file's state, as state() reads var/maintenance.json.
+     *
+     * @param string $file
+     * @return array|false
+     */
+    static function readState( $file )
+    {
         if ( !self::markerExists( $file ) )
             return false;
         $state = json_decode( (string)@file_get_contents( $file ), true );
@@ -73,6 +83,51 @@ class expMaintenance
         // A web wizard's maintenance ends on its own when the wizard was left:
         // nobody else could reach the site, or start the wizard again
         if ( !empty( $state['lease'] ) && (int)$state['lease'] < time() )
+            return false;
+        return $state;
+    }
+
+    /**
+     * The file that holds the web wizard's lease: var/maintenance.json, or on a
+     * site served by several nodes maintenance.json in the shared state
+     * directory (expSetupSharedState), so every node knows the wizard's run and
+     * its browser.
+     *
+     * @param string $root
+     * @return string
+     */
+    static function wizardMarker( $root )
+    {
+        if ( class_exists( 'expSetupSharedState' ) )
+            return expSetupSharedState::file( $root, 'maintenance.json', self::MARKER );
+        return rtrim( $root, '/' ) . '/' . self::MARKER;
+    }
+
+    /**
+     * @param string $root
+     * @return array|false the web wizard's lease, false when no wizard holds the site
+     */
+    static function wizardState( $root )
+    {
+        return self::readState( self::wizardMarker( $root ) );
+    }
+
+    /**
+     * The shared lease for the kernel: on a site served by several nodes, the
+     * wizard's state when this request is not its browser's, so every node
+     * answers with the maintenance page and not only the one that served the
+     * wizard's first step. False on a single node (check() reads var/ already),
+     * when no wizard runs, and for the wizard's own browser.
+     *
+     * @param string $root
+     * @return array|false
+     */
+    static function sharedWizardState( $root )
+    {
+        if ( !class_exists( 'expSetupSharedState' ) || !expSetupSharedState::isShared( $root ) )
+            return false;
+        $state = self::wizardState( $root );
+        if ( $state === false || self::letThrough( $state ) )
             return false;
         return $state;
     }
@@ -106,19 +161,31 @@ class expMaintenance
      * Every other visitor gets the maintenance page instead of a second
      * wizard that would abandon this one or install over it.
      *
+     * A lease that another browser holds (it has not run out, and this request
+     * does not carry its cookie) is not taken: false, and the caller shows the
+     * maintenance page. On several nodes the lease is in the shared state
+     * directory and is changed under its lock.
+     *
      * @param string $root
      * @param string $runId the setup log's run
      * @return bool
      */
     static function beginWizard( $root, $runId )
     {
-        $token = bin2hex( random_bytes( 16 ) );
-        if ( !self::enable( $root, array( 'reason' => 'setup', 'run' => (string)$runId,
-                                          'allow_token' => hash( 'sha256', $token ),
-                                          'lease' => time() + self::WIZARD_LEASE ) ) )
-            return false;
-        self::wizardCookie( $token, time() + self::WIZARD_LEASE );
-        return true;
+        $file = self::wizardMarker( $root );
+        $result = self::underWizardLock( $root, $file, function () use ( $root, $file, $runId ) {
+            $held = self::readState( $file );
+            if ( is_array( $held ) && !empty( $held['allow_token'] ) && !empty( $held['lease'] ) && !self::holdsWizardCookie( $held ) )
+                return false;
+            $token = bin2hex( random_bytes( 16 ) );
+            if ( !self::enableAt( $root, $file, array( 'reason' => 'setup', 'run' => (string)$runId,
+                                                       'allow_token' => hash( 'sha256', $token ),
+                                                       'lease' => time() + self::WIZARD_LEASE ) ) )
+                return false;
+            self::wizardCookie( $token, time() + self::WIZARD_LEASE );
+            return true;
+        } );
+        return $result === true;
     }
 
     /**
@@ -128,28 +195,56 @@ class expMaintenance
      */
     static function renewWizard( $root, $runId )
     {
-        $state = self::state( $root );
-        if ( $state === false || empty( $state['lease'] ) || ( $state['run'] ?? null ) !== (string)$runId )
-            return false;
-        $state['lease'] = time() + self::WIZARD_LEASE;
-        $file = rtrim( $root, '/' ) . '/' . self::MARKER;
-        $tmp = $file . '.tmp' . getmypid();
-        if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
-            return false;
-        @chmod( $tmp, eZFile::fileMode( 0666 ) );
-        if ( !@rename( $tmp, $file ) )
-            return false;
-        $cookie = isset( $_COOKIE[self::WIZARD_COOKIE] ) && is_string( $_COOKIE[self::WIZARD_COOKIE] ) ? $_COOKIE[self::WIZARD_COOKIE] : '';
-        if ( $cookie !== '' && !empty( $state['allow_token'] ) && hash_equals( (string)$state['allow_token'], hash( 'sha256', $cookie ) ) )
-            self::wizardCookie( $cookie, (int)$state['lease'] );
-        return true;
+        $file = self::wizardMarker( $root );
+        $result = self::underWizardLock( $root, $file, function () use ( $file, $runId ) {
+            $state = self::readState( $file );
+            if ( $state === false || empty( $state['lease'] ) || ( $state['run'] ?? null ) !== (string)$runId )
+                return false;
+            $state['lease'] = time() + self::WIZARD_LEASE;
+            if ( !self::writeMarker( $file, $state ) )
+                return false;
+            if ( self::holdsWizardCookie( $state ) )
+                self::wizardCookie( (string)$_COOKIE[self::WIZARD_COOKIE], (int)$state['lease'] );
+            return true;
+        } );
+        return $result === true;
     }
 
     /** The wizard's last page: the site is installed, maintenance off. */
     static function endWizard( $root, $runId )
     {
         self::wizardCookie( '', time() - 3600 );
-        return self::disable( $root, (string)$runId );
+        $file = self::wizardMarker( $root );
+        $result = self::underWizardLock( $root, $file, function () use ( $file, $runId ) {
+            return self::disableAt( $file, (string)$runId );
+        } );
+        return $result === true;
+    }
+
+    /**
+     * Whether this request carries the cookie of the wizard that holds $state.
+     *
+     * @param array $state
+     * @return bool
+     */
+    static function holdsWizardCookie( array $state )
+    {
+        return !empty( $state['allow_token'] ) && isset( $_COOKIE[self::WIZARD_COOKIE] ) && is_string( $_COOKIE[self::WIZARD_COOKIE] )
+               && $_COOKIE[self::WIZARD_COOKIE] !== ''
+               && hash_equals( (string)$state['allow_token'], hash( 'sha256', $_COOKIE[self::WIZARD_COOKIE] ) );
+    }
+
+    /**
+     * Runs $fn under the lock of the wizard's marker directory when the marker is
+     * shared by several nodes; on a single node (one var/) it runs as it always did.
+     *
+     * @return mixed what $fn returned, null when the lock could not be had
+     */
+    protected static function underWizardLock( $root, $file, callable $fn )
+    {
+        if ( !class_exists( 'expSetupSharedState' ) || $file === rtrim( $root, '/' ) . '/' . self::MARKER )
+            return $fn();
+        return expSetupSharedState::lock( dirname( $file ), $fn, null, '.maintenance.lock' );
     }
 
     protected static function wizardCookie( $value, $expires )
@@ -173,6 +268,19 @@ class expMaintenance
      */
     static function enable( $root, array $options = array() )
     {
+        return self::enableAt( $root, rtrim( $root, '/' ) . '/' . self::MARKER, $options );
+    }
+
+    /**
+     * enable() for a marker file of its own (the wizard's lease on several nodes).
+     *
+     * @param string $root the installation
+     * @param string $file the marker
+     * @param array $options as enable()
+     * @return bool
+     */
+    protected static function enableAt( $root, $file, array $options )
+    {
         $state = $options + array(
             'reason' => 'manual',
             'message' => '',
@@ -182,17 +290,34 @@ class expMaintenance
             'page' => self::themePage( $root ),
             'since' => time(),
         );
-        $file = rtrim( $root, '/' ) . '/' . self::MARKER;
-        $tmp = $file . '.tmp' . getmypid();
-        $auditBefore = self::state( $root );
-        if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
-            return false;
-        @chmod( $tmp, eZFile::fileMode( 0666 ) );
-        // Renamed into place, so a request never reads half a marker
-        if ( !@rename( $tmp, $file ) )
+        $auditBefore = self::readState( $file );
+        if ( !self::writeMarker( $file, $state ) )
             return false;
         self::clearResponseCaches( $root );
         self::auditChange( $auditBefore, $state );
+        return true;
+    }
+
+    /**
+     * Writes a marker whole: a temporary file renamed into place, so a request
+     * never reads half a marker. The temporary name carries the host and the
+     * process, which differ between the nodes that share a marker.
+     */
+    protected static function writeMarker( $file, array $state )
+    {
+        $dir = dirname( $file );
+        if ( !is_dir( $dir ) && !@mkdir( $dir, 0777 & ~umask(), true ) && !is_dir( $dir ) )
+            return false;
+        $host = function_exists( 'gethostname' ) ? preg_replace( '/[^A-Za-z0-9._-]/', '', (string)gethostname() ) : '';
+        $tmp = $file . '.tmp-' . ( $host !== '' ? $host : 'node' ) . '-' . getmypid();
+        if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
+            return false;
+        @chmod( $tmp, class_exists( 'eZFile' ) ? eZFile::fileMode( 0666 ) : 0664 );
+        if ( !@rename( $tmp, $file ) )
+        {
+            @unlink( $tmp );
+            return false;
+        }
         return true;
     }
 
@@ -265,12 +390,18 @@ class expMaintenance
      */
     static function disable( $root, $onlyRun = null )
     {
-        $state = self::state( $root );
+        return self::disableAt( rtrim( $root, '/' ) . '/' . self::MARKER, $onlyRun );
+    }
+
+    /** disable() for a marker file of its own */
+    protected static function disableAt( $file, $onlyRun = null )
+    {
+        $state = self::readState( $file );
         if ( $state === false )
             return false;
         if ( $onlyRun !== null && ( !isset( $state['run'] ) || $state['run'] !== $onlyRun ) )
             return false;
-        $removed = @unlink( rtrim( $root, '/' ) . '/' . self::MARKER );
+        $removed = @unlink( $file );
         if ( $removed )
             self::auditChange( $state, false );
         return $removed;
@@ -283,8 +414,7 @@ class expMaintenance
     static function letThrough( array $state )
     {
         // The web wizard's own browser
-        if ( !empty( $state['allow_token'] ) && isset( $_COOKIE[self::WIZARD_COOKIE] ) && is_string( $_COOKIE[self::WIZARD_COOKIE] )
-             && hash_equals( (string)$state['allow_token'], hash( 'sha256', $_COOKIE[self::WIZARD_COOKIE] ) ) )
+        if ( self::holdsWizardCookie( $state ) )
             return true;
         $ip =isset( $_SERVER['REMOTE_ADDR'] ) ? (string)$_SERVER['REMOTE_ADDR'] : '';
         if ( $ip !== '' && !empty( $state['allow_ips'] ) && in_array( $ip, (array)$state['allow_ips'], true ) )

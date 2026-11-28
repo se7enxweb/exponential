@@ -406,6 +406,16 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             expRequestLog::reset();
         $this->requestLogPending = true;
 
+        // A site served by several nodes: the web setup wizard's lease is in the shared state directory, and
+        // index.php only reads this node's var/. Every node answers with the maintenance page, not only the one
+        // that served the wizard's first step; the wizard's own browser passes on its cookie.
+        $maintenance = $this->sharedMaintenanceResult();
+        if ( $maintenance !== null )
+        {
+            $this->shutdown();
+            return $maintenance;
+        }
+
         if ( $this->mobileDeviceDetect->isEnabled() )
         {
             $this->mobileDeviceDetect->process();
@@ -1994,6 +2004,31 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         $this->shutdown( $postReinitialize );
 
         return $return;
+    }
+
+    /**
+     * The maintenance page of a web setup wizard that holds a site served by several nodes
+     * (expMaintenance::sharedWizardState()), before the siteaccess, the session and the database.
+     *
+     * @return ezpKernelResult|null null when no wizard holds the site, on a single node, or for the wizard's browser
+     */
+    protected function sharedMaintenanceResult()
+    {
+        if ( !class_exists( 'expMaintenance' ) || !class_exists( 'expSetupSharedState' ) )
+            return null;
+        $root = eZSys::rootDir();
+        $state = expMaintenance::sharedWizardState( $root );
+        if ( $state === false )
+            return null;
+        if ( !headers_sent() )
+        {
+            foreach ( array( 'Cache-Control', 'Expires', 'ETag', 'Last-Modified', 'Vary' ) as $name )
+                header_remove( $name );
+            header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.1' ) . ' 503 Service Unavailable', true, 503 );
+            foreach ( expMaintenance::headers( $state ) as $name => $value )
+                header( $name . ': ' . $value );
+        }
+        return new ezpKernelResult( expMaintenance::page( $root, $state ), array( 'maintenance' => 'setup' ) );
     }
 
     /**
