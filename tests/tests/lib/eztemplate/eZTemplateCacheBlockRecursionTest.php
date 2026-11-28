@@ -171,7 +171,7 @@ class eZTemplateCacheBlockRecursionTest extends PHPUnit\Framework\TestCase
                 // the token in the text lets tearDown() find the cache files
                 $this->assertSame( '(1(11))(2)', str_replace( '[' . $this->token . ']', '', $output ), "$mode, $pass" );
                 $this->assertSame( array(), $errors, "$mode, $pass: no template errors" );
-                $this->assertSame( array(), $notices, "$mode, $pass: no PHP notices" );
+                $this->assertSame( array(), $notices, "$mode, $pass: no PHP notices" . ': ' . implode( ' | ', $notices ) );
             }
         }
     }

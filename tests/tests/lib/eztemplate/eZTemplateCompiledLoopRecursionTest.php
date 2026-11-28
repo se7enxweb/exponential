@@ -131,7 +131,7 @@ class eZTemplateCompiledLoopRecursionTest extends PHPUnit\Framework\TestCase
             list( $output, $errors, $notices ) = $this->render( $name, $source, $variables, $compiled );
             $this->assertSame( $expected, $output, $mode );
             $this->assertSame( array(), $errors, $mode . ': no template errors' );
-            $this->assertSame( array(), $notices, $mode . ': no PHP notices (compact() of undefined variables)' );
+            $this->assertSame( array(), $notices, $mode . ': no PHP notices (compact() of undefined variables)' . ': ' . implode( ' | ', $notices ) );
         }
     }
 

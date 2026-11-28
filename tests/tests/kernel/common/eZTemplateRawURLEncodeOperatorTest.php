@@ -181,7 +181,7 @@ class eZTemplateRawURLEncodeOperatorTest extends PHPUnit\Framework\TestCase
         foreach ( $this->renderBothWays( $source, $variables ) as $mode => $result )
         {
             list( $output, $notices ) = $result;
-            $this->assertSame( array(), $notices, "$mode: no PHP notices" );
+            $this->assertSame( array(), $notices, "$mode: no PHP notices" . ': ' . implode( ' | ', $notices ) );
             $this->assertSame( "[42][][-_.~%20%21%2A%27%28%29][a+b c][\u{20AC}]", $output, $mode );
         }
     }
@@ -193,7 +193,7 @@ class eZTemplateRawURLEncodeOperatorTest extends PHPUnit\Framework\TestCase
         foreach ( $this->renderBothWays( $source, array( 'nothing' => null ) ) as $mode => $result )
         {
             list( $output, $notices ) = $result;
-            $this->assertSame( array(), $notices, "$mode: no PHP notices" );
+            $this->assertSame( array(), $notices, "$mode: no PHP notices" . ': ' . implode( ' | ', $notices ) );
             $this->assertSame( '[][][]', $output, $mode );
         }
     }

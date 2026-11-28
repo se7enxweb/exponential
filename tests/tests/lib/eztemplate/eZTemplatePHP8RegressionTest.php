@@ -126,7 +126,7 @@ class eZTemplatePHP8RegressionTest extends PHPUnit\Framework\TestCase
             $mode = $compiled ? 'compiled' : 'interpreted';
             list( $output, $notices, $thrown ) = $this->render( $source, $variables, $compiled );
             $this->assertSame( '', $thrown, "$mode: $source threw" );
-            $this->assertSame( array(), $notices, "$mode: $source raised PHP notices" );
+            $this->assertSame( array(), $notices, "$mode: $source raised PHP notices" . ': ' . implode( ' | ', $notices ) );
             $this->assertSame( $expected, $output, "$mode: $source" );
         }
     }
