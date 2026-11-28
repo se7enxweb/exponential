@@ -57,16 +57,33 @@ class expStaticLock
         }
         if ( !flock( $handle, LOCK_EX | LOCK_NB ) )
         {
-            $held = trim( (string)stream_get_contents( $handle ) );
+            $held = trim( (string)@stream_get_contents( $handle ) );
+            // the lock of Windows is mandatory: the locked file cannot be read, its holder is written beside it
+            if ( $held === '' && self::besideLock() )
+                $held = trim( (string)@file_get_contents( $file . '.holder' ) );
             fclose( $handle );
             $problem = "another process works on the target $targetId" . ( $held !== '' ? " ($held)" : '' ) . '; try again when it has finished';
             return null;
         }
         ftruncate( $handle, 0 );
         rewind( $handle );
-        fwrite( $handle, $holder . ' by process ' . getmypid() . ' since ' . gmdate( 'Y-m-d H:i:s' ) . " UTC\n" );
+        $text = $holder . ' by process ' . getmypid() . ' since ' . gmdate( 'Y-m-d H:i:s' ) . " UTC\n";
+        fwrite( $handle, $text );
         fflush( $handle );
+        if ( self::besideLock() )
+            @file_put_contents( $file . '.holder', $text );
         return new self( $handle, $file );
+    }
+
+    /**
+     * Whether the holder is also written to a file beside the lock: on Windows, where another process cannot read a
+     * locked file.
+     *
+     * @return bool
+     */
+    protected static function besideLock()
+    {
+        return DIRECTORY_SEPARATOR === '\\';
     }
 
     /** Releases the lock. */
@@ -78,6 +95,8 @@ class expStaticLock
             flock( $this->handle, LOCK_UN );
             fclose( $this->handle );
             $this->handle = null;
+            if ( self::besideLock() )
+                @unlink( $this->file . '.holder' );
         }
     }
 

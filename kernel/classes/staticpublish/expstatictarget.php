@@ -627,7 +627,9 @@ class expStaticTarget
             $errors[] = "Folder={$s['Folder']} must be a folder inside the repository (docs).";
         if ( $s['Kind'] === 'github-pages' && $s['Folder'] !== '' && trim( $s['Folder'], '/' ) !== 'docs' )
             $errors[] = 'GitHub Pages publishes from the root of the branch or from /docs: Folder must be empty or docs.';
-        if ( $s['Remote'] !== '' && !preg_match( '#^(https?://|ssh://|git@|file://|/)[^\s]+$#', $s['Remote'] ) )
+        // a path is an absolute path of this system (C:\repos\site.git on Windows)
+        if ( $s['Remote'] !== '' && !preg_match( '#^(https?://|ssh://|git@|file://|/)[^\s]+$#', $s['Remote'] )
+             && !( eZDir::isAbsolutePath( $s['Remote'] ) && !preg_match( '#\s#', $s['Remote'] ) ) )
             $errors[] = "Remote={$s['Remote']} is not a git address (https://, ssh://, git@host:owner/repo.git or a path).";
         if ( preg_match( '#^https?://[^/@\s]+:[^/@\s]+@#', $s['Remote'] ) )
             $errors[] = 'Remote must not hold a password or token; name a credential in Credential instead.';
