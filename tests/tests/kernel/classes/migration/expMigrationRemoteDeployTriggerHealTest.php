@@ -297,13 +297,17 @@ class expMigrationRemoteDeployTriggerHealTest extends PHPUnit\Framework\TestCase
         $options = array( 'apply' => true, 'directories' => array( $missing ), 'dir_mode' => 0775, 'file_mode' => 0664, 'owner' => function () { return true; } );
         ( new expMigrationHeal( $options ) )->run( array( 'paths' ) );
         $this->assertDirectoryExists( $missing );
-        file_put_contents( "$missing/a.yml", "steps: []\n" );
-        chmod( "$missing/a.yml", 0600 );
-        $report = ( new expMigrationHeal( $options ) )->run( array( 'modes' ) );
-        $this->assertStringContainsString( 'modes: gave ', $report['fixes'][0] );
-        clearstatcache();
-        $this->assertSame( 0664, fileperms( "$missing/a.yml" ) & 0777 );
-        $this->assertSame( array(), ( new expMigrationHeal( $options ) )->run( array( 'modes' ) )['fixes'], 'nothing left to fix' );
+        // the modes heal gives Unix file modes, which Windows does not have
+        if ( PHP_OS_FAMILY !== 'Windows' )
+        {
+            file_put_contents( "$missing/a.yml", "steps: []\n" );
+            chmod( "$missing/a.yml", 0600 );
+            $report = ( new expMigrationHeal( $options ) )->run( array( 'modes' ) );
+            $this->assertStringContainsString( 'modes: gave ', $report['fixes'][0] );
+            clearstatcache();
+            $this->assertSame( 0664, fileperms( "$missing/a.yml" ) & 0777 );
+            $this->assertSame( array(), ( new expMigrationHeal( $options ) )->run( array( 'modes' ) )['fixes'], 'nothing left to fix' );
+        }
         $report = ( new expMigrationHeal( array( 'apply' => true, 'caches' => function ( array $caches ) { return array( 'cleared ' . implode( ',', $caches ) ); } ) ) )->run( array( 'caches' ) );
         $this->assertSame( array( 'caches: cleared tag:ini,template-override' ), $report['fixes'] );
         $unknown = array();
