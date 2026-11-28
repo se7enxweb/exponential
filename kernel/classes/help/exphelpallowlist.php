@@ -1116,6 +1116,6 @@ class expHelpAllowlist
                 return false;
         }
         $real = realpath( $current );
-        return $real !== false && is_file( $real ) && strncmp( $real, $rootReal . '/', strlen( $rootReal ) + 1 ) === 0;
+        return $real !== false && is_file( $real ) && $real !== $rootReal && eZDir::isInside( $real, $rootReal );
     }
 }

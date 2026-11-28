@@ -114,7 +114,7 @@ class expContentCheckQuarantine
     {
         $real = realpath( dirname( $path ) );
         $base = realpath( $directory );
-        return $real !== false && $base !== false && strncmp( $real . '/', $base . '/', strlen( $base ) + 1 ) === 0;
+        return $real !== false && $base !== false && eZDir::isInside( $real, $base );
     }
 
     /**

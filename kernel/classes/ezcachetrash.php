@@ -241,8 +241,8 @@ class eZCacheTrash
         if ( self::isInside( $dir, $cacheDir ) )
         {
             $real = realpath( $dir );
-            $relative = $real !== false && realpath( $cacheDir ) !== false && strpos( $real, realpath( $cacheDir ) . '/' ) === 0
-                ? substr( $real, strlen( realpath( $cacheDir ) ) + 1 )
+            $relative = $real !== false && realpath( $cacheDir ) !== false && $real !== realpath( $cacheDir ) && eZDir::isInside( $real, realpath( $cacheDir ) )
+                ? str_replace( DIRECTORY_SEPARATOR, '/', substr( $real, strlen( realpath( $cacheDir ) ) + 1 ) )
                 : substr( rtrim( $dir, '/' ), strlen( $cacheDir ) + 1 );
             if ( $relative !== '' && $relative !== false )
                 $name = str_replace( '/', '-', $relative );
