@@ -361,7 +361,8 @@ class expExtensionWizardBaseTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $result['ok'], $result['message'] );
         $this->assertSame( array( 'a/b/c.txt', 'top.txt' ), $result['written'] );
         $this->assertSame( 'one', file_get_contents( $target . '/a/b/c.txt' ) );
-        $this->assertSame( '0644', substr( sprintf( '%o', fileperms( $target . '/top.txt' ) ), -4 ) );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( '0644', substr( sprintf( '%o', fileperms( $target . '/top.txt' ) ), -4 ) );
 
         $again = expExtensionWizardBaseTestWizard::write( $settings );
         $this->assertFalse( $again['ok'] );
