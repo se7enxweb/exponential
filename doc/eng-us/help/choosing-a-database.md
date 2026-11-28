@@ -30,7 +30,7 @@ is [chapter 9 of the installation guide](../install/09-databases.md).
 4. [Backups and upgrade captions](#backups-and-upgrade-captions)
 5. [Measured timings](#measured-timings)
 6. [Which database for which use](#which-database-for-which-use)
-7. [In development](#in-development)
+7. [Planned](#planned)
 8. [Related pages](#related-pages)
 
 ## The levels
@@ -59,9 +59,9 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | [SQLite 3](../features/6.0/sqlite-database.md) | yes | yes, the default | yes | one machine only (a one-node cluster) | no | wizard, kickstarter, `exp:install` (`sqlite`, the default) |
 | [PostgreSQL 13 to 19](../features/6.0/postgresql-18-and-19.md) | yes | yes | yes | yes, in the kernel | yes | wizard, kickstarter, `pgsql` |
 | [MongoDB 6.0 and later](../features/6.0/mongodb-database-support.md) | yes | yes | yes, through an adapter | yes, in the kernel | MongoDB's own replica set | wizard, kickstarter, `mongodb` |
-| MariaDB | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MySQL Improved"), kickstarter, `mariadb` |
+| MariaDB | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MariaDB / MySQL Improved"), kickstarter, `mariadb` |
 | Oracle 19c and later (`ezoracle`) | yes | yes | yes | yes, in the kernel | yes | wizard, kickstarter, `oracle` |
-| MySQL | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MySQL Improved"), kickstarter, `mysql` |
+| MySQL | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MariaDB / MySQL Improved"), kickstarter, `mysql` |
 | [SQL Server 2017 to 2025, Azure SQL](../features/6.0/sqlserver-database-driver.md) | no | new | yes | yes, in the kernel | yes (Always On, `ApplicationIntent=ReadOnly`) | wizard (with `sqlsrv` or `pdo_sqlsrv`), kickstarter, `sqlserver` |
 | [TiDB](../features/6.0/mysql-wire-databases.md#tidb) | no | new | yes | yes (MySQLi backend, measured) | the MySQL mechanism, not tested | wizard, kickstarter, `tidb` |
 | [Vitess, PlanetScale](../features/6.0/mysql-wire-databases.md#vitess-and-planetscale) | no | new | yes, in an unsharded keyspace | yes (measured on Vitess) | the MySQL mechanism, not tested | wizard, kickstarter, `vitess` |
@@ -79,10 +79,10 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | [libSQL (sqld), Turso](../features/6.0/libsql-database-driver.md) | no | new; Turso **untested** | yes (measured on sqld 0.24) | **no** backend; several web servers share the database, the files need a shared directory | no (Turso's replicas answer at the same URL) | wizard (with `curl`; a server or the embedded file mode), kickstarter, `libsql`, `turso` |
 | [IBM Db2 11.5 and 12.1](../features/6.0/db2-database-driver.md) | no | new | yes | **not yet** | no | wizard (with `pdo_ibm` or `ibm_db2`), kickstarter, `db2` |
 | [IBM Informix 14.10 and 15](../features/6.0/informix-database-driver.md) | no | new | yes (measured on 15) | **no** | no | wizard (with `ibm_db2` or `pdo_ibm`), kickstarter, `informix` |
-| [MonetDB Dec2023 and later](../features/6.0/columnar-databases.md#monetdb) | no | new | yes, one writer at a time | **no** | no | kickstarter, `monetdb` |
+| [MonetDB Dec2023 and later](../features/6.0/columnar-databases.md#monetdb) | no | new | yes, one writer at a time | **no** | no | wizard (listed last; no PHP extension needed), kickstarter, `monetdb` |
 | [ClickHouse 24.8 and later](../features/6.0/columnar-databases.md#clickhouse) | no | new | **no**: data tables and import ([why](../features/6.0/columnar-databases.md#why-not-a-site-database)) | no | no | none |
-| [SAP HANA 2.0 SPS 05 and later](../features/6.0/hana-database-driver.md) | no | new | yes (measured on HANA express 2.00.088) | **no** | no | kickstarter, `hana` |
-| [SAP ASE 15.7 and 16.0](../features/6.0/ase-database-driver.md) | no | new | **untested**: written, no server to test | **no** | no | kickstarter, `ase` |
+| [SAP HANA 2.0 SPS 05 and later](../features/6.0/hana-database-driver.md) | no | new | yes (measured on HANA express 2.00.088) | **no** | no | wizard (with `odbc` or `pdo_odbc` and SAP's HANA ODBC driver registered), kickstarter, `hana` |
+| [SAP ASE 15.7 and 16.0](../features/6.0/ase-database-driver.md) | no | new | **untested**: written, no server to test | **no** | no | kickstarter, `ase` (not offered by the wizard) |
 | [Any database through ODBC](../features/6.0/odbc-database-driver.md) | no | new | yes on SQL Server, PostgreSQL, MariaDB/MySQL and Db2 ([a site over ODBC](../features/6.0/odbc-database-driver.md#a-site-over-odbc)); data tables and import on any | yes: SQL Server's and PostgreSQL's over PDO_ODBC, MariaDB's through `mysqli` | no | wizard, kickstarter, `odbc` with `--db-dialect` |
 | [MS Access (`.accdb`, `.mdb`)](../features/6.0/ms-access-support.md) | no | new | **no**: import, and data tables on Windows | no | no | none (`exp:access:import`) |
 | [Apache Cassandra 4.0 to 5.0, ScyllaDB 2025.1](../features/6.0/cassandra-scylladb-driver.md) | no | new | **no**: data tables and import ([why](../features/6.0/cassandra-scylladb-driver.md#why-no-site-runs-on-cassandra)) | no | no | none (`exp:cassandra:import`) |
@@ -96,8 +96,12 @@ Notes on the table:
   `pgsql` (with CockroachDB, YugabyteDB, Neon, Supabase and Aurora PostgreSQL listed after PostgreSQL), `mongodb`,
   `oci8`, `sqlsrv` or `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` or `ibm_db2` (Db2, Informix), `ffi`
   (DuckDB, only where `ffi.enable=true` and with `libduckdb`) and `curl` (libSQL, with a server or the embedded file
-  mode, and Turso after it). Every database of the table that carries a site can also be installed with the kickstarter or
-  `exp:install` ([setup wizard](../install/05-setup-wizard.md)).
+  mode, and Turso after it), `pdo_odbc` or `odbc` (SQL Server, PostgreSQL, MariaDB / MySQL and Db2 over ODBC, and
+  SAP HANA when SAP's HANA ODBC driver is registered). MonetDB needs no extension and is listed last whenever PHP may
+  open a socket. SAP ASE is never offered. The order since 27 November 2026: MariaDB / MySQL Improved, PostgreSQL,
+  SQLite (preselected, so on top), MongoDB, Oracle; then SQL Server, SQL Server over ODBC, Firebird and DuckDB; then the
+  protocol families; then the databases added later; MonetDB last. Every database of the table that carries a site can
+  also be installed with the kickstarter or `exp:install` ([setup wizard](../install/05-setup-wizard.md#535-choose-database-system)).
 - **DFS on the MySQL protocol databases**: the backend opens its own `mysqli` connection without TLS. On PlanetScale,
   TiDB Cloud and SingleStore Helios, which require TLS, keep the DFS metadata in another database.
 - **DFS on the PostgreSQL protocol databases**: `exp:cluster:enable` gives CockroachDB, YugabyteDB, Neon, Supabase and
@@ -297,10 +301,11 @@ Firebird and DuckDB have not been tried on Windows. See [Exponential on Windows]
 - **Moving a whole site to another engine**: [Moving off an old database](moving-off-an-old-database.md) and
   [Moving a site to another engine](database-administrators/moving-between-engines.md).
 
-## In development
+## Planned
 
-Drivers for SAP databases and for ClickHouse and MonetDB are being built. They are not
-part of any release, and nothing on this page describes them.
+Every driver in the matrices above is on the main branch and ships with 6.0.15; none is in development any more.
+Planned, with no code yet: Snowflake, Google BigQuery, Teradata, Exasol, H2, HSQLDB, Apache Derby, Ingres and the
+Amazon-native databases. Nothing on this list is a promise of a release, and nothing on this page describes them.
 
 ## Related pages
 
@@ -312,6 +317,9 @@ part of any release, and nothing on this page describes them.
   [Firebird](../features/6.0/firebird-database-driver.md), [DuckDB](../features/6.0/duckdb-database-driver.md),
   [libSQL and Turso](../features/6.0/libsql-database-driver.md),
   [MonetDB and ClickHouse](../features/6.0/columnar-databases.md),
+  [IBM Db2](../features/6.0/db2-database-driver.md), [IBM Informix](../features/6.0/informix-database-driver.md),
+  [SAP HANA](../features/6.0/hana-database-driver.md), [SAP ASE](../features/6.0/ase-database-driver.md),
+  [Cassandra and ScyllaDB](../features/6.0/cassandra-scylladb-driver.md),
   [ODBC](../features/6.0/odbc-database-driver.md), [MS Access](../features/6.0/ms-access-support.md),
   [Couchbase](../features/6.0/couchbase-driver.md), [Apache CouchDB](../features/6.0/couchdb-driver.md).
 - [Clustering in Exponential 6.0](../features/6.0/clustering-overview.md), [Data tables](../features/6.0/data-tables.md).

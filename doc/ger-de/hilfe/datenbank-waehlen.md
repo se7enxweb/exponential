@@ -31,7 +31,7 @@ Einstellungen; das Kapitel für den Betrieb ist [Kapitel 9 der Installationsanle
 4. [Sicherungen und Sicherungspunkte vor Aktualisierungen](#sicherungen-und-sicherungspunkte-vor-aktualisierungen)
 5. [Gemessene Zeiten](#gemessene-zeiten)
 6. [Welche Datenbank für welchen Zweck](#welche-datenbank-für-welchen-zweck)
-7. [In Entwicklung](#in-entwicklung)
+7. [Geplant](#geplant)
 8. [Verwandte Seiten](#verwandte-seiten)
 
 ## Die Stufen
@@ -60,9 +60,9 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | [SQLite 3](../funktionen/6.0/sqlite-datenbank.md) | ja | ja, der Standard | ja | nur ein Rechner (ein Cluster aus einem Knoten) | nein | Assistent, Kickstarter, `exp:install` (`sqlite`, der Standard) |
 | [PostgreSQL 13 bis 19](../funktionen/6.0/postgresql-18-und-19.md) | ja | ja | ja | ja, im Kernel | ja | Assistent, Kickstarter, `pgsql` |
 | [MongoDB 6.0 und neuer](../funktionen/6.0/mongodb-datenbankunterstuetzung.md) | ja | ja | ja, über einen Adapter | ja, im Kernel | das eigene Replica Set von MongoDB | Assistent, Kickstarter, `mongodb` |
-| MariaDB | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MySQL Improved“), Kickstarter, `mariadb` |
+| MariaDB | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MariaDB / MySQL Improved“), Kickstarter, `mariadb` |
 | Oracle 19c und neuer (`ezoracle`) | ja | ja | ja | ja, im Kernel | ja | Assistent, Kickstarter, `oracle` |
-| MySQL | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MySQL Improved“), Kickstarter, `mysql` |
+| MySQL | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MariaDB / MySQL Improved“), Kickstarter, `mysql` |
 | [SQL Server 2017 bis 2025, Azure SQL](../funktionen/6.0/sqlserver-datenbanktreiber.md) | nein | neu | ja | ja, im Kernel | ja (Always On, `ApplicationIntent=ReadOnly`) | Assistent (mit `sqlsrv` oder `pdo_sqlsrv`), Kickstarter, `sqlserver` |
 | [TiDB](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja | ja (MySQLi-Backend, gemessen) | der Mechanismus von MySQL, nicht getestet | Assistent, Kickstarter, `tidb` |
 | [Vitess, PlanetScale](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja, in einem ungesplitteten Keyspace | ja (auf Vitess gemessen) | der Mechanismus von MySQL, nicht getestet | Assistent, Kickstarter, `vitess` |
@@ -80,10 +80,10 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | [libSQL (sqld), Turso](../funktionen/6.0/libsql-datenbanktreiber.md) | nein | neu; Turso **ungetestet** | ja (gemessen auf sqld 0.24) | **kein** Backend; mehrere Webserver teilen sich die Datenbank, die Dateien brauchen ein geteiltes Verzeichnis | nein (die Replikate von Turso antworten unter derselben URL) | Assistent (mit `curl`; ein Server oder der eingebettete Dateimodus), Kickstarter, `libsql`, `turso` |
 | [IBM Db2 11.5 und 12.1](../funktionen/6.0/db2-datenbanktreiber.md) | nein | neu | ja | **noch nicht** | nein | Assistent (mit `pdo_ibm` oder `ibm_db2`), Kickstarter, `db2` |
 | [IBM Informix 14.10 und 15](../funktionen/6.0/informix-datenbanktreiber.md) | nein | neu | ja (auf 15 gemessen) | **nein** | nein | Assistent (mit `ibm_db2` oder `pdo_ibm`), Kickstarter, `informix` |
-| [MonetDB Dec2023 und später](../funktionen/6.0/spaltenorientierte-datenbanken.md#monetdb) | nein | neu | ja, immer nur ein Schreiber | **nein** | nein | Kickstarter, `monetdb` |
+| [MonetDB Dec2023 und später](../funktionen/6.0/spaltenorientierte-datenbanken.md#monetdb) | nein | neu | ja, immer nur ein Schreiber | **nein** | nein | Assistent (als Letzte aufgeführt; keine PHP-Extension nötig), Kickstarter, `monetdb` |
 | [ClickHouse 24.8 und später](../funktionen/6.0/spaltenorientierte-datenbanken.md#clickhouse) | nein | neu | **nein**: Datentabellen und Import ([warum](../funktionen/6.0/spaltenorientierte-datenbanken.md#warum-keine-site-datenbank)) | nein | nein | keiner |
-| [SAP HANA 2.0 ab SPS 05](../funktionen/6.0/hana-datenbanktreiber.md) | nein | neu | ja (an HANA Express 2.00.088 gemessen) | **nein** | nein | Kickstarter, `hana` |
-| [SAP ASE 15.7 und 16.0](../funktionen/6.0/ase-datenbanktreiber.md) | nein | neu | **ungetestet**: geschrieben, kein Server zum Testen | **nein** | nein | Kickstarter, `ase` |
+| [SAP HANA 2.0 ab SPS 05](../funktionen/6.0/hana-datenbanktreiber.md) | nein | neu | ja (an HANA Express 2.00.088 gemessen) | **nein** | nein | Assistent (mit `odbc` oder `pdo_odbc` und registriertem HANA-ODBC-Treiber von SAP), Kickstarter, `hana` |
+| [SAP ASE 15.7 und 16.0](../funktionen/6.0/ase-datenbanktreiber.md) | nein | neu | **ungetestet**: geschrieben, kein Server zum Testen | **nein** | nein | Kickstarter, `ase` (vom Assistenten nicht angeboten) |
 | [Jede Datenbank über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md) | nein | neu | ja auf SQL Server, PostgreSQL, MariaDB/MySQL und Db2 ([eine Site über ODBC](../funktionen/6.0/odbc-datenbanktreiber.md#eine-site-über-odbc)); Datentabellen und Import auf jeder | ja: das von SQL Server und PostgreSQL über PDO_ODBC, das von MariaDB über `mysqli` | nein | Assistent, Kickstarter, `odbc` mit `--db-dialect` |
 | [MS Access (`.accdb`, `.mdb`)](../funktionen/6.0/ms-access-unterstuetzung.md) | nein | neu | **nein**: Import, unter Windows auch Datentabellen | nein | nein | keiner (`exp:access:import`) |
 | [Apache Cassandra 4.0 bis 5.0, ScyllaDB 2025.1](../funktionen/6.0/cassandra-scylladb-treiber.md) | nein | neu | **nein**: Datentabellen und Import ([warum](../funktionen/6.0/cassandra-scylladb-treiber.md#warum-keine-site-auf-cassandra-läuft)) | nein | nein | keiner (`exp:cassandra:import`) |
@@ -97,8 +97,13 @@ Anmerkungen zur Tabelle:
   `pgsql` (mit CockroachDB, YugabyteDB, Neon, Supabase und Aurora PostgreSQL nach PostgreSQL), `mongodb`, `oci8`,
   `sqlsrv` oder `pdo_sqlsrv` (SQL Server), `pdo_firebird`, `pdo_ibm` oder `ibm_db2` (Db2, Informix), `ffi`
   (DuckDB, nur mit `ffi.enable=true` und `libduckdb`) sowie `curl` (libSQL, mit einem Server oder im eingebetteten
-  Dateimodus, und Turso danach). Jede Datenbank der Tabelle, die eine Site trägt, lässt sich auch mit dem Kickstarter oder `exp:install`
-  installieren ([Setup-Assistent](../installation/05-setup-assistent.md)).
+  Dateimodus, und Turso danach), `pdo_odbc` oder `odbc` (SQL Server, PostgreSQL, MariaDB / MySQL und Db2 über ODBC,
+  und SAP HANA, wenn SAPs HANA-ODBC-Treiber registriert ist). MonetDB braucht keine Extension und steht zuletzt, wann
+  immer PHP einen Socket öffnen darf. SAP ASE wird nie angeboten. Die Reihenfolge seit dem 27. November 2026: MariaDB /
+  MySQL Improved, PostgreSQL, SQLite (vorausgewählt, daher oben), MongoDB, Oracle; dann SQL Server, SQL Server über
+  ODBC, Firebird und DuckDB; dann die Protokollfamilien; dann die später hinzugekommenen Datenbanken; MonetDB zuletzt.
+  Jede Datenbank der Tabelle, die eine Site trägt, lässt sich auch mit dem Kickstarter oder `exp:install` installieren
+  ([Setup-Assistent](../installation/05-setup-assistent.md#535-datenbanksystem-auswählen)).
 - **DFS auf den Datenbanken mit dem MySQL-Protokoll**: Das Backend öffnet seine eigene `mysqli`-Verbindung ohne TLS. Bei
   PlanetScale, TiDB Cloud und SingleStore Helios, die TLS verlangen, liegen die DFS-Metadaten besser in einer anderen
   Datenbank.
@@ -312,10 +317,11 @@ Siehe [Exponential unter Windows](exponential-unter-windows.md).
 - **Eine ganze Site auf eine andere Engine umziehen**: [Weg von einer alten Datenbank](weg-von-einer-alten-datenbank.md)
   und [Zwischen Engines wechseln](datenbankadministratoren/zwischen-engines-wechseln.md).
 
-## In Entwicklung
+## Geplant
 
-Treiber für Datenbanken von SAP sowie für ClickHouse und MonetDB entstehen gerade. Sie
-sind in keinem Release enthalten, und nichts auf dieser Seite beschreibt sie.
+Jeder Treiber in den Tabellen oben ist im Hauptzweig und kommt mit 6.0.15; keiner ist mehr in Entwicklung. Geplant,
+noch ohne Code: Snowflake, Google BigQuery, Teradata, Exasol, H2, HSQLDB, Apache Derby, Ingres und die Amazon-eigenen
+Datenbanken. Nichts auf dieser Liste ist eine Zusage für ein Release, und nichts auf dieser Seite beschreibt sie.
 
 ## Verwandte Seiten
 
@@ -328,6 +334,9 @@ sind in keinem Release enthalten, und nichts auf dieser Seite beschreibt sie.
   [Firebird](../funktionen/6.0/firebird-datenbanktreiber.md), [DuckDB](../funktionen/6.0/duckdb-datenbanktreiber.md),
   [libSQL und Turso](../funktionen/6.0/libsql-datenbanktreiber.md),
   [MonetDB und ClickHouse](../funktionen/6.0/spaltenorientierte-datenbanken.md),
+  [IBM Db2](../funktionen/6.0/db2-datenbanktreiber.md), [IBM Informix](../funktionen/6.0/informix-datenbanktreiber.md),
+  [SAP HANA](../funktionen/6.0/hana-datenbanktreiber.md), [SAP ASE](../funktionen/6.0/ase-datenbanktreiber.md),
+  [Cassandra und ScyllaDB](../funktionen/6.0/cassandra-scylladb-treiber.md),
   [ODBC](../funktionen/6.0/odbc-datenbanktreiber.md), [MS Access](../funktionen/6.0/ms-access-unterstuetzung.md),
   [Couchbase](../funktionen/6.0/couchbase-treiber.md), [Apache CouchDB](../funktionen/6.0/couchdb-treiber.md).
 - [Clustering in Exponential 6.0](../funktionen/6.0/clustering-ueberblick.md), [Datentabellen](../funktionen/6.0/datentabellen.md).

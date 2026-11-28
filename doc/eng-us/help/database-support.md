@@ -92,8 +92,8 @@ What the order means in practice:
 | TiDB, Vitess / PlanetScale, SingleStore | TiDB 6.5+, Vitess (an unsharded keyspace), SingleStore 8.5+ | `mysqli` | setup wizard (with `mysqli`), kickstarter, `exp:install` | any number of servers (the MySQLi backend) | TiDB 8.5, Vitess and SingleStore in containers (job `mysqlwire`) | supported (new in 6.0.15): [the MySQL protocol](#databases-that-speak-the-mysql-protocol) |
 | MariaDB Xpand, Amazon Aurora MySQL | Xpand 6, Aurora MySQL 3 | `mysqli` | setup wizard (with `mysqli`), kickstarter, `exp:install` | the MySQLi backend | no (no image; a managed service) | drivers and profiles, not measured |
 | DuckDB | 1.5 and 2.0 (1.5.6 and 2.0.1 tested) | `ffi` with DuckDB's C library `libduckdb` | setup wizard (with `ffi` and `ffi.enable=true`), kickstarter, `exp:install` | none: one process writes at a time | driver and live tests on DuckDB 1.5.6 and 2.0.1, and a whole site installed | supported for small and read-mostly sites (new in 6.0.15); [what works and what does not](../features/6.0/duckdb-database-driver.md#what-works-and-what-does-not) |
-| libSQL (sqld), Turso | sqld 0.22 and later (0.24.33 tested, SQLite 3.47); Turso | `curl` (or `allow_url_fopen`); no `sqlite3` needed | kickstarter, `exp:install` (`libsql`, `turso`) | the database: any number of web servers share it; no DFS backend on it | driver tests without a server, live tests against sqld 0.24.33 and a whole site installed (job `libsql`) | full site database (new in 6.0.15); Turso **untested**; [what works and what does not](../features/6.0/libsql-database-driver.md#what-works-and-what-does-not) |
-| MonetDB | Dec2023 and later (Dec2023-SP4 and Dec2025-SP5 tested) | none: MAPI in plain PHP | kickstarter, `exp:install` (`monetdb`) | none: no DFS backend; one writer at a time | driver and live tests on Dec2023-SP4 and Dec2025-SP5, and a whole site installed (job `columnar`) | full site database (new in 6.0.15); [what works and what does not](../features/6.0/columnar-databases.md#what-works-and-what-does-not) |
+| libSQL (sqld), Turso | sqld 0.22 and later (0.24.33 tested, SQLite 3.47); Turso | `curl` (or `allow_url_fopen`); no `sqlite3` needed | setup wizard (with `curl`; server or local file mode), kickstarter, `exp:install` (`libsql`, `turso`) | the database: any number of web servers share it; no DFS backend on it | driver tests without a server, live tests against sqld 0.24.33 and a whole site installed (job `libsql`) | full site database (new in 6.0.15); Turso **untested**; [what works and what does not](../features/6.0/libsql-database-driver.md#what-works-and-what-does-not) |
+| MonetDB | Dec2023 and later (Dec2023-SP4 and Dec2025-SP5 tested) | none: MAPI in plain PHP | setup wizard (listed last whenever PHP may open a socket), kickstarter, `exp:install` (`monetdb`) | none: no DFS backend; one writer at a time | driver and live tests on Dec2023-SP4 and Dec2025-SP5, and a whole site installed (job `columnar`) | full site database (new in 6.0.15); [what works and what does not](../features/6.0/columnar-databases.md#what-works-and-what-does-not) |
 | ClickHouse | 24.8 and later (24.8 and 25.8 tested) | none: HTTP through `curl` or PHP's HTTP stream | none: not a site database | none | driver and live tests on 24.8 and 25.8 (job `columnar`) | data table connection and import source (new in 6.0.15); [why not a site](../features/6.0/columnar-databases.md#why-not-a-site-database) |
 | CockroachDB (PostgreSQL wire protocol) | 23.2 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`cockroachdb`) | any number of servers (`expDFSFileHandlerPostgresqlBackend`, in the site's database; measured) | the live suite `pgwire-live` on CockroachDB 25.2, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
 | YugabyteDB (PostgreSQL wire protocol) | 2.20 and later | `pgsql` | setup wizard, kickstarter, `exp:install` (`yugabytedb`) | any number of servers (`expDFSFileHandlerPostgresqlBackend`, in the site's database; measured, no lock timeout) | the live suite `pgwire-live` on YugabyteDB 2.25, PHP 8.1 and 8.5 | full site database (new in 6.0.15) |
@@ -104,6 +104,8 @@ What the order means in practice:
 | MS Access (`.accdb`, `.mdb`) | Access 97 (JET3) to ACE | Windows: `odbc`, `pdo_odbc` with the Access Database Engine x64; Linux: MDBTools programs | none: `exp:access:import` | none | the import on Linux; driver and import on Windows (job `msaccess-windows`) | import, and on Windows a small driver for data tables (new in 6.0.15): [MS Access](../features/6.0/ms-access-support.md) |
 | IBM Db2 | 11.5 and 12.1 (11.5.9 and 12.1.6 tested) | `pdo_ibm` or `ibm_db2` with IBM's Data Server Driver | setup wizard, kickstarter, `exp:install` (`db2`) | none yet: one web server | driver and live tests on Db2 12.1 and 11.5, on both PHP layers, and a whole site installed | full site database (new in 6.0.15); [what works and what does not](../features/6.0/db2-database-driver.md#what-works-and-what-does-not) |
 | IBM Informix | 14.10 and 15 (14.10.FC9W1 and 15.0.1 tested) | `ibm_db2` with IBM's Data Server Driver, through the DRDA listener | setup wizard, kickstarter, `exp:install` (`informix`) | none yet: one web server | driver and live tests on Informix 15 and 14.10; a whole site installed on 15 outside CI | full site database (new in 6.0.15); [what works and what does not](../features/6.0/informix-database-driver.md#what-works-and-what-does-not) |
+| SAP HANA | 2.0 SPS 05 and later, HANA Cloud (HANA, express edition 2.00.088 tested) | `odbc` or `pdo_odbc` with SAP's HANA ODBC driver (`HDBODBC`) | setup wizard (when the HANA ODBC driver is registered), kickstarter, `exp:install` (`hana`) | none yet: one web server | driver, live and kernel schema tests on HANA, express edition, both ODBC layers (job `hana`) | full site database (new in 6.0.15); [what works and what does not](../features/6.0/hana-database-driver.md#what-works-and-what-does-not) |
+| SAP ASE (Sybase) | written for 15.7 and 16.0 | `pdo_dblib` (FreeTDS) or `pdo_odbc` | kickstarter, `exp:install` (`ase`); not offered by the setup wizard | none | DB-less tests only (testsuite `ase`): no ASE server was available | a driver, **not tested against a server** (new in 6.0.15); [SAP ASE driver](../features/6.0/ase-database-driver.md) |
 | Apache Cassandra, ScyllaDB (CQL) | Cassandra 4.0 to 5.0, ScyllaDB 2025.1 and later (5.0.9 and 2025.1.17 tested) | PHP 8.1 and the library `mroosz/php-cassandra` | none: not a site database | none | the live suite `cassandra-live` on Cassandra 5.0 and ScyllaDB 2025.1, PHP 8.1 and 8.5 | data-table connection and import (new in 6.0.15); [why no site](../features/6.0/cassandra-scylladb-driver.md#why-no-site-runs-on-cassandra) |
 | Couchbase | Server 7.2 and later, Community or Enterprise (7.6.2 and 7.2.4 tested) | `curl` (the Query service's REST API) | none: not a site database | none | driver and live tests on Community 7.6.2 and 7.2.4 (job `couch`) | data table connections and import (new in 6.0.15): [Couchbase driver](../features/6.0/couchbase-driver.md) |
 | Apache CouchDB | 3.3 and 3.4 (3.4.3 and 3.3.3 tested) | `curl` and `sqlite3` | none: not a site database | none | driver and live tests on 3.4.3 and 3.3.3 (job `couch`) | data table connections and import (new in 6.0.15): [CouchDB driver](../features/6.0/couchdb-driver.md) |
@@ -122,8 +124,9 @@ in-memory SQLite copy of the documents a statement needs. Both are data table co
 (`exp:couchbase:import`, `exp:couchdb:import`), with PHP's `curl` (and `sqlite3` for CouchDB). See
 [Couchbase driver](../features/6.0/couchbase-driver.md) and [Apache CouchDB driver](../features/6.0/couchdb-driver.md).
 
-**In development.** Drivers for SAP databases, for Cassandra and ScyllaDB and for ClickHouse and MonetDB are
-being built; they are not part of a release yet.
+**Every driver above is on the main branch** and ships with 6.0.15; none is in development any more. **Planned**, with
+no code yet: Snowflake, Google BigQuery, Teradata, Exasol, H2, HSQLDB, Apache Derby, Ingres and the Amazon-native
+databases. Nothing on this list is a promise of a release.
 
 **Firebird** (new in 6.0.15, not in the order above): Firebird 4.0 and 5.0 run a whole site on the kernel's
 `expFirebirdDB` (`DatabaseImplementation=firebird`, pdo_firebird of PHP 8.4 or later, `exp:install --db=firebird`),
@@ -380,25 +383,37 @@ a site behaves as if its database were down.
 ## Installer support per path
 
 Exponential has three installers in the kernel. All three support the first seven databases (SQL Server included),
-Firebird, DuckDB and the MySQL and PostgreSQL protocol databases; the setup wizard offers each one when the PHP running
-it has the database's extension. libSQL and Turso are installed with the kickstarter and `exp:install`. Over ODBC all three install SQL Server,
-PostgreSQL, MariaDB/MySQL and Db2 (`--db=odbc` with `--db-dialect`). MS Access and Spanner are not site databases and
-have no installer entry.
+Firebird, DuckDB, IBM Db2 and Informix, SAP HANA, libSQL and Turso, MonetDB and the MySQL and PostgreSQL protocol
+databases; the setup wizard offers each one when the PHP running it can reach the database (its extension, for SAP HANA
+also SAP's registered ODBC driver, for MonetDB only a socket). Over ODBC all three install SQL Server, PostgreSQL,
+MariaDB/MySQL and Db2 (`--db=odbc` with `--db-dialect`). SAP ASE is installed by the kickstarter and `exp:install` only.
+MS Access, Spanner, ClickHouse, Cassandra and ScyllaDB, Couchbase and CouchDB are not site databases and have no
+installer entry.
+
+The setup wizard lists the databases in this order (since 27 November 2026): MariaDB / MySQL Improved, PostgreSQL,
+SQLite (preselected, so shown first), MongoDB and Oracle; right below Oracle Microsoft SQL Server, SQL Server over ODBC,
+Firebird and DuckDB; then the MySQL and PostgreSQL protocol databases; then every database added later (Db2, Informix,
+the other ODBC dialects, SAP HANA, libSQL and Turso); MonetDB last. Details:
+[chapter 5, Choose database system](../install/05-setup-wizard.md#535-choose-database-system).
 
 | Database | Setup wizard (browser) | Kickstarter (`kickstart.ini`, `[database_choice] Type=`) | `exp:install --db=` |
 |---|---|---|---|
 | 1. SQLite 3 | yes, listed first and preselected (`settings/setup.ini [DatabaseSettings] DefaultType=sqlite3`); proposes `sqlite.db` | `sqlite3` (the default in `kickstart.ini-dist`) | `sqlite` (the default; also `sqlite3`), file `exponential.db` |
 | 2. PostgreSQL | yes; prefills port 5432 and user `postgres`; creates `pgcrypto` or tells you how | `pgsql` (`postgresql` accepted) | `pgsql` (also `postgresql`, `postgres`) |
 | 3. MongoDB | yes; the configuration step can take one to three minutes, so raise PHP-FPM's `request_terminate_timeout` or use the console | `mongodb` | `mongodb` (also `mongo`) |
-| 4. MariaDB | yes, as "MySQL Improved"; checks that the database is UTF-8 | `mysqli` (`mysql` accepted) | `mariadb` (the same as `mysql`) |
+| 4. MariaDB | yes, as "MariaDB / MySQL Improved"; checks that the database is UTF-8 | `mysqli` (`mysql` accepted) | `mariadb` (the same as `mysql`) |
 | 5. Oracle | yes, when `oci8` is loaded and `extension/ezoracle` is present; activates the extension for the new site | `oci8` (`oracle` accepted); `Database` is the connect string | `oracle` (also `oci8`, `ezoracle`); `--db-name` is the service name, default `FREEPDB1` |
-| 6. MySQL | yes, as "MySQL Improved" | `mysqli` (`mysql` accepted) | `mysql` (also `mysqli`) |
+| 6. MySQL | yes, as "MariaDB / MySQL Improved" | `mysqli` (`mysql` accepted) | `mysql` (also `mysqli`) |
 | 7. SQL Server, Azure SQL | yes, when `sqlsrv` or `pdo_sqlsrv` is loaded; prefills port 1433 and user `sa` | `sqlserver` (`mssql`, `sqlsrv` accepted), with `Encrypt` and `TrustServerCertificate` | `sqlserver` (also `mssql`, `sqlsrv`); `--db-encrypt`, `--db-trust-server-certificate`; the database must exist |
 | CockroachDB, YugabyteDB, Neon, Supabase, Aurora | yes, listed after PostgreSQL when `pgsql` is loaded; prefills port 26257 (CockroachDB) or 5433 and user `yugabyte` (YugabyteDB) | `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql`, with `SSLMode`, `SSLRootCert`, `Pooler`, `Endpoint` | the same names; `--db-sslmode`, `--db-sslrootcert`, `--db-pooler`, `--db-endpoint` |
 | TiDB, Vitess / PlanetScale, SingleStore, Xpand, Aurora MySQL | yes, listed after MySQL when `mysqli` is loaded; TiDB prefills port 4000 | `tidb`, `vitess` (`planetscale`), `singlestore` (`memsql`), `xpand`, `aurora` (`aurora-mysql`, `auroramysql`), with `SSL` and `SSLCA` | the same names; `--db-ssl=enabled` or `verify`, `--db-ssl-ca`; on Vitess the keyspace must exist |
 | Firebird | yes, when `pdo_firebird` is loaded | `firebird` (`fb`, `pdo_firebird` accepted) | `firebird` (also `fb`); the database must exist (`PAGE_SIZE 16384`, UTF8); default port 3050, user `SYSDBA` |
 | DuckDB | yes, when `ffi` may be used (`ffi.enable=true`) and `libduckdb` is found; asks only for a file name (default `exponential.duckdb` in `var/storage/duckdb`) | `duckdb`; `Database` is the file | `duckdb`; `--db-name` is the file (default `var/storage/duckdb/exponential.duckdb`) |
-| libSQL (sqld), Turso | | `libsql` (`sqld` accepted), `turso`, with `URL` and `TLS`; `Password` is the auth token | `libsql`, `turso`; `--db-url`, `--db-tls`; port 8080 (443 for turso); the server's database is emptied first |
+| libSQL (sqld), Turso | yes, when `curl` is loaded: libSQL with a mode (a server, or the embedded file mode in `var/storage/sqlite3`), a URL, TLS, a CA file and the auth token; Turso after it | `libsql` (`sqld` accepted), `turso`, with `URL` and `TLS`; `Password` is the auth token | `libsql`, `turso`; `--db-url`, `--db-tls`; port 8080 (443 for turso); the server's database is emptied first |
+| IBM Db2, IBM Informix | yes, when `pdo_ibm` or `ibm_db2` is loaded | `db2` (`ibm_db2` accepted), `informix` (`ifx`) | `db2` (also `ibm_db2`, `pdo_ibm`; port 50000, user `db2inst1`, database `EXP`), `informix` (also `ifx`; the DRDA port 9089, user `informix`) |
+| SAP HANA | yes, when `odbc` or `pdo_odbc` is loaded and the HANA ODBC driver of `[HANASettings] Driver` is registered; prefills port 39041 | `hana` (`saphana` accepted) | `hana` (also `saphana`, `hdb`); port 39041, user `SYSTEM`, the schema `EXPONENTIAL` |
+| SAP ASE | no: never tested against a server | `ase` (`sybase` accepted) | `ase` (also `sybase`, `sapase`); port 5000, user `sa` |
+| MonetDB | yes, listed last whenever PHP may open a socket (no extension needed); prefills port 50000 and user `monetdb` | `monetdb` | `monetdb` (also `monetdbd`); port 50000, user `monetdb` |
 | Over ODBC: SQL Server, PostgreSQL, MariaDB/MySQL, Db2 | yes, when `pdo_odbc` or `odbc` is loaded: one entry per database, "(ODBC)" | `odbc` with `Dialect=sqlserver`, `postgresql`, `mysql` or `db2` (also `odbc_sqlserver`, `odbc_pgsql`, `odbc_mysql`, `odbc_db2`); `ODBCDriver`, `DataSourceName`, `ConnectionString` | `odbc` with `--db-dialect`; `--db-odbc-driver`, `--db-dsn` (PostgreSQL, MySQL), `--db-connection-string` ([A site over ODBC](../features/6.0/odbc-database-driver.md#a-site-over-odbc)) |
 
 - If the `sqlite3` extension is missing, the wizard chooses the first database whose extension is loaded and says
@@ -533,7 +548,7 @@ Details: [9.5 MongoDB](../install/09-databases.md#95-mongodb).
 **What it is.** The same driver as MySQL, `eZMySQLiDB`, on the PHP extension `mysqli`. Everything in
 [6. MySQL](#6-mysql) applies; the notes here are what differs.
 
-- Install with `exp:install --db=mariadb` (the same as `--db=mysql`) or choose "MySQL Improved" in the wizard.
+- Install with `exp:install --db=mariadb` (the same as `--db=mysql`) or choose "MariaDB / MySQL Improved" in the wizard.
 - Create the database in `utf8mb4` with an InnoDB default, as for MySQL. In MariaDB, as in MySQL, the connection name
   `utf8` means the three-byte `utf8mb3`; see [Character sets and collations](#character-sets-and-collations).
 - Backups with `mariadb-dump` (or the older name `mysqldump`) `--single-transaction`.

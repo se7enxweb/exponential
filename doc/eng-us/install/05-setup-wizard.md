@@ -254,24 +254,49 @@ using an SMTP relay server.") and the note "SMTP is recommended for MS Windows u
 **Purpose.** Which database system the site uses. The list holds the systems whose PHP extension the system check
 found, limited to the ones the installer knows (`eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php`):
 
-| Type | Shown as | Driver | Minimum version |
-|---|---|---|---|
-| `sqlite3` | SQLite (recommended) | `sqlite3` | 3.0.1 |
-| `mysqli` | MariaDB / MySQL Improved | `ezmysqli` | 4.1.1 |
-| `pgsql` | PostgreSQL | `ezpostgresql` | 8.0 |
-| `mongodb` | MongoDB | `mongodb` | 4.0 |
-| `oci8` | Oracle | `ezoracle` (needs the `ezoracle` extension in `extension/`) | 19.0 |
-| `firebird` | Firebird (shown when `pdo_firebird` is loaded) | `firebird` | 4.0 |
-| `db2`, `informix` | IBM Db2, IBM Informix (shown when `pdo_ibm` or `ibm_db2` is loaded) | the type | see their pages |
-| `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` | CockroachDB, YugabyteDB, Neon (PostgreSQL), Supabase (PostgreSQL), Amazon Aurora PostgreSQL; listed after PostgreSQL when `pgsql` is loaded | the type | 23.2, 11.2, 14.0, 14.0, 13.0 |
-| `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` | TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Amazon Aurora MySQL; listed after MariaDB / MySQL Improved when `mysqli` is loaded | the type | 5.7.25, 5.7.0, 5.7.0, 5.0.45, 8.0.0 |
-| `sqlserver` | Microsoft SQL Server (shown when `sqlsrv` or `pdo_sqlsrv` is loaded) | `sqlserver` | 14.0 |
-| `duckdb` | DuckDB (shown when `ffi` may be used: `ffi.enable=true`; also needs `libduckdb`, `[DuckDBSettings] Library`) | `duckdb` | 1.5 |
-| `libsql`, `turso` | libSQL (sqld or the embedded file mode) and Turso, listed after it (shown when `curl` is loaded) | the type | 3.33 (the SQLite the server is built on, or PHP's in the file mode) |
+| Type | Shown as | Offered when | Driver | Minimum version |
+|---|---|---|---|---|
+| `mysqli` | MariaDB / MySQL Improved | `mysqli` is loaded | `ezmysqli` | 4.1.1 |
+| `pgsql` | PostgreSQL | `pgsql` is loaded | `ezpostgresql` | 8.0 |
+| `sqlite3` | SQLite (recommended) | `sqlite3` is loaded | `sqlite3` | 3.0.1 |
+| `mongodb` | MongoDB | `mongodb` is loaded | `mongodb` | 4.0 |
+| `oci8` | Oracle | `oci8` is loaded | `ezoracle` (needs the `ezoracle` extension in `extension/`) | 19.0 |
+| `sqlserver` | Microsoft SQL Server | `sqlsrv` or `pdo_sqlsrv` is loaded | `sqlserver` | 14.0 |
+| `odbc_sqlserver` | Microsoft SQL Server (ODBC) | `pdo_odbc` or `odbc` is loaded | `odbc`, dialect `sqlserver` | 14.0 |
+| `firebird` | Firebird | `pdo_firebird` is loaded | `firebird` | 4.0 |
+| `duckdb` | DuckDB | `ffi` may be used in the web server (`ffi.enable=true`); also needs `libduckdb`, `[DuckDBSettings] Library` | `duckdb` | 1.5 |
+| `tidb`, `vitess`, `singlestore`, `xpand`, `aurora` | TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Amazon Aurora MySQL | `mysqli` is loaded | the type | 5.7.25, 5.7.0, 5.7.0, 5.0.45, 8.0.0 |
+| `cockroachdb`, `yugabytedb`, `neon`, `supabase`, `aurorapostgresql` | CockroachDB, YugabyteDB, Neon (PostgreSQL), Supabase (PostgreSQL), Amazon Aurora PostgreSQL | `pgsql` is loaded | the type | 23.2, 11.2, 14.0, 14.0, 13.0 |
+| `db2`, `informix` | IBM Db2, IBM Informix | `pdo_ibm` or `ibm_db2` is loaded | the type | 11.5, 14.10 |
+| `odbc_pgsql`, `odbc_mysql`, `odbc_db2` | PostgreSQL (ODBC), MariaDB / MySQL (ODBC), IBM Db2 (ODBC) | `pdo_odbc` or `odbc` is loaded | `odbc` with the dialect `postgresql`, `mysql` or `db2` | 10.0, 5.7.0, 11.5 |
+| `hana` | SAP HANA | `pdo_odbc` or `odbc` is loaded **and** SAP's HANA ODBC driver (`[HANASettings] Driver`, `HDBODBC`) is registered with unixODBC or is a library path that exists | `hana` | 2.00.050 (HANA 2.0 SPS 05; [its page](../features/6.0/hana-database-driver.md)) |
+| `libsql`, `turso` | libSQL server (sqld), Turso | `curl` is loaded | the type | 3.33 (the SQLite the server is built on, or PHP's in the file mode) |
+| `monetdb` | MonetDB | always, when PHP may open a socket and has a hash for MonetDB's login (no PHP extension needed: the driver speaks MAPI in plain PHP) | `monetdb` | 11.49 (Dec2023) |
 
-Every database the kernel can install a site on is in this list when PHP has its extension (`curl` gives libSQL and Turso). `ffi.enable=preload`,
-PHP's default, allows FFI on the command line only: the web wizard then does not count `ffi` and does not offer
-DuckDB; install it with `exp:install` or the kickstarter ([chapter 6](06-kickstarter.md),
+**The order of the list** (`eZStepDatabaseChoice::display()`, since 27 November 2026):
+
+1. The databases the wizard has offered longest, `ESTABLISHED_TYPES`: MariaDB / MySQL Improved, PostgreSQL, SQLite,
+   MongoDB and Oracle. Within them the order of `[database_extensions] Extensions` in `setup.ini` applies, and the
+   preselected database (SQLite, see below) moves to the top.
+2. Right below Oracle, `NEXT_TYPES`: Microsoft SQL Server, Microsoft SQL Server over ODBC, Firebird and DuckDB.
+3. The databases of the MySQL protocol (TiDB, Vitess / PlanetScale, SingleStore, MariaDB Xpand, Aurora MySQL) and of
+   the PostgreSQL wire protocol (CockroachDB, YugabyteDB, Neon, Supabase, Aurora PostgreSQL).
+4. Every database added later, in the order `setup.ini` gives their extensions: IBM Db2 and Informix, the other ODBC
+   dialects, SAP HANA, libSQL and Turso.
+5. Last, the databases that need no PHP extension of their own: MonetDB.
+
+The label **MariaDB / MySQL Improved** (`eZSetupDatabaseMap()`, renamed on 27 November 2026 from "MySQL Improved")
+says what the entry is for: both MariaDB and MySQL are installed through it, on PHP's `mysqli` extension. The help
+text of the page tells MariaDB users to pick it too.
+
+**Not offered by the wizard.** SAP ASE (`ase`) is in the installer's map but never listed: its driver was written and
+tested without an ASE server. Install it with `exp:install --db=ase` or the kickstarter if you want to try it. The
+data-table-only engines (ClickHouse, Cassandra and ScyllaDB, Couchbase, CouchDB, Spanner, MS Access) are never site
+databases and are not in the list.
+
+Every database the kernel can install a site on and test against a server is in this list when PHP can reach it.
+`ffi.enable=preload`, PHP's default, allows FFI on the command line only: the web wizard then does not count `ffi` and
+does not offer DuckDB; install it with `exp:install` or the kickstarter ([chapter 6](06-kickstarter.md),
 [chapter 7](07-console-install.md)), or set `ffi.enable=true` in the web PHP's pool.
 
 **Screen.** "Choose database system", "Support for the following database systems was detected on your system:",
@@ -290,8 +315,10 @@ again."
 |---|---|
 | Database | `eZSetupDatabaseType` |
 
-**When the page is skipped.** When exactly one database extension is loaded, that system is chosen without a page.
-Nothing is written.
+**When the page is skipped.** When exactly one database type is found, that system is chosen without a page. Nothing
+is written. MonetDB never counts here: it is offered without an extension, so one loaded database extension still
+skips the page. With `pdo_odbc` or `odbc` alone the page is shown, because ODBC gives four dialects (and SAP HANA when
+its driver is registered).
 
 ### 5.3.6 Database initialization
 
@@ -304,8 +331,8 @@ For a database server:
 | Field | Form name | Default (`setup.ini [DatabaseSettings]`) |
 |---|---|---|
 | Servername | `eZSetupDatabaseServer` | `DefaultServer=localhost` |
-| Port | `eZSetupDatabasePort` | `DefaultPort` (empty), `DefaultPort_pgsql=5432`, `DefaultPort_sqlserver=1433`, `DefaultPort_tidb=4000`, `DefaultPort_cockroachdb=26257`, `DefaultPort_yugabytedb=5433` |
-| Username | `eZSetupDatabaseUser` | `DefaultUser=root`, `DefaultUser_pgsql=postgres`, `DefaultUser_sqlserver=sa`, `DefaultUser_yugabytedb=yugabyte` |
+| Port | `eZSetupDatabasePort` | `DefaultPort` (empty), `DefaultPort_pgsql=5432`, `DefaultPort_sqlserver=1433`, `DefaultPort_tidb=4000`, `DefaultPort_cockroachdb=26257`, `DefaultPort_yugabytedb=5433`, `DefaultPort_hana=39041` (the SQL port of the tenant database of HANA, express edition; 443 for HANA Cloud), `DefaultPort_monetdb=50000` |
+| Username | `eZSetupDatabaseUser` | `DefaultUser=root`, `DefaultUser_pgsql=postgres`, `DefaultUser_sqlserver=sa`, `DefaultUser_yugabytedb=yugabyte`, `DefaultUser_hana=` (empty), `DefaultUser_monetdb=monetdb` |
 | Password | `eZSetupDatabasePassword` | `DefaultPassword` (empty) |
 | Database name | `eZSetupDatabaseName` | `DefaultName=exponential` |
 | Socket (optional) | `eZSetupDatabaseSocket` | empty; "If you are using MySQL and do not know what to enter in the socket field, leave it blank" |
@@ -319,6 +346,11 @@ what to do with them."
 
 For DuckDB the page likewise asks only for a file name (`DefaultName_duckdb=exponential.duckdb`, kept in
 `var/storage/duckdb`); there is no server, user or password.
+
+For **SAP HANA** and **MonetDB** the page has the fields of any database server, with no new ones. For HANA the
+**Database name** is the schema the site's tables go in; the connection goes through the ODBC driver named by
+`[HANASettings] Driver`. For MonetDB it is the database `monetdbd` serves. The connection check on **Next** is the same
+as for every server.
 
 For **libSQL** and **Turso** the page has fields of its own (`eZSetupLibSQLPage` marks them):
 
