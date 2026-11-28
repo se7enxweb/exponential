@@ -336,10 +336,11 @@ class expTemplateChecker
 
     private function relative( $path )
     {
-        $root = rtrim( eZSys::rootDir(), '/' ) . '/';
+        $root = rtrim( (string)eZSys::rootDir(), '/' . DIRECTORY_SEPARATOR );
         $real = realpath( $path );
-        if ( $real !== false && strncmp( $real, $root, strlen( $root ) ) === 0 )
-            return substr( $real, strlen( $root ) );
+        // relative to the root, with slashes: realpath() writes backslashes on Windows
+        if ( $real !== false && $root !== '' && $real !== $root && eZDir::isInside( $real, $root ) )
+            return str_replace( DIRECTORY_SEPARATOR, '/', substr( $real, strlen( $root ) + 1 ) );
         return $real !== false ? $real : $path;
     }
 
