@@ -192,9 +192,12 @@ class expSetupSharedState
      * Writes a file whole: a temporary file in the same directory renamed into place.
      * The temporary name carries the host and the process, which differ between nodes.
      *
+     * @param string $file
+     * @param string $data
+     * @param int|null $mode the file's mode; null: the installation's file mode
      * @return bool
      */
-    static function writeAtomic( $file, $data )
+    static function writeAtomic( $file, $data, $mode = null )
     {
         $dir = dirname( $file );
         if ( !is_dir( $dir ) && !@mkdir( $dir, self::dirMode(), true ) && !is_dir( $dir ) )
@@ -202,7 +205,7 @@ class expSetupSharedState
         $tmp = $file . '.tmp-' . self::nodeName() . '-' . getmypid() . '-' . bin2hex( random_bytes( 4 ) );
         if ( @file_put_contents( $tmp, $data ) === false )
             return false;
-        @chmod( $tmp, self::fileMode() );
+        @chmod( $tmp, $mode === null ? self::fileMode() : ( (int)$mode & 0777 ) );
         if ( !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );
@@ -332,9 +335,12 @@ class expSetupSharedState
                     if ( $sha === false || ( isset( $manifest['files'][$relative]['sha1'] ) && $manifest['files'][$relative]['sha1'] === $sha ) )
                         continue;
                     $data = @file_get_contents( $file );
-                    if ( $data === false || !self::writeAtomic( $dir . '/' . self::FILES_DIR . '/' . $relative, $data ) )
+                    // The copy keeps the file's mode: a settings file holds the database password
+                    $mode = @fileperms( $file );
+                    $mode = $mode === false ? 0640 : ( $mode & 0777 );
+                    if ( $data === false || !self::writeAtomic( $dir . '/' . self::FILES_DIR . '/' . $relative, $data, $mode ) )
                         return false;
-                    $manifest['files'][$relative] = array( 'sha1' => $sha, 'size' => strlen( $data ),
+                    $manifest['files'][$relative] = array( 'sha1' => $sha, 'size' => strlen( $data ), 'mode' => sprintf( '%04o', $mode ),
                                                            'node' => self::nodeName(), 'time' => time() );
                     $copied++;
                 }
@@ -373,7 +379,8 @@ class expSetupSharedState
                 if ( is_file( $local ) && @sha1_file( $local ) === $entry['sha1'] )
                     continue;
                 $data = @file_get_contents( $dir . '/' . self::FILES_DIR . '/' . $relative );
-                if ( $data === false || sha1( $data ) !== $entry['sha1'] || !self::writeAtomic( $local, $data ) )
+                $mode = isset( $entry['mode'] ) && preg_match( '/^0?[0-7]{3}$/', (string)$entry['mode'] ) ? octdec( (string)$entry['mode'] ) : 0640;
+                if ( $data === false || sha1( $data ) !== $entry['sha1'] || !self::writeAtomic( $local, $data, $mode ) )
                     return false;
                 $written++;
             }

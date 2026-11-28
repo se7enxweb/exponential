@@ -161,6 +161,8 @@ class SetupSharedStateTest extends PHPUnit\Framework\TestCase
         mkdir( $this->nodeA . '/settings/override', 0775, true );
         mkdir( $this->nodeA . '/settings/siteaccess/site', 0775, true );
         file_put_contents( $this->nodeA . '/settings/override/site.ini.append.php', "[SiteAccessSettings]\nCheckValidity=false\n" );
+        // a settings file holds the database password: its mode travels with it, never wider
+        chmod( $this->nodeA . '/settings/override/site.ini.append.php', 0640 );
         file_put_contents( $this->nodeA . '/settings/siteaccess/site/site.ini.append.php', "[SiteSettings]\nSiteName=Site\n" );
         // a file the run did not write (older than the run) stays where it is
         file_put_contents( $this->nodeA . '/settings/override/old.ini.append.php', "old\n" );
@@ -178,6 +180,8 @@ class SetupSharedStateTest extends PHPUnit\Framework\TestCase
         $this->assertFileDoesNotExist( $this->nodeB . '/settings/override/site.ini.append.php' );
 
         $this->assertSame( 2, expSetupSharedState::pull( $this->nodeB, $this->shared, 'run-1' ) );
+        $this->assertSame( 0640, fileperms( $this->nodeB . '/settings/override/site.ini.append.php' ) & 0777, 'the mode of node A\'s file' );
+        $this->assertSame( 0640, fileperms( $this->shared . '/files/settings/override/site.ini.append.php' ) & 0777, 'the shared copy too' );
         $this->assertFileEquals( $this->nodeA . '/settings/override/site.ini.append.php', $this->nodeB . '/settings/override/site.ini.append.php' );
         $this->assertFileEquals( $this->nodeA . '/settings/siteaccess/site/site.ini.append.php', $this->nodeB . '/settings/siteaccess/site/site.ini.append.php' );
         $this->assertFileDoesNotExist( $this->nodeB . '/settings/override/old.ini.append.php' );
