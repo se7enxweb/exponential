@@ -117,6 +117,8 @@ class expPackageArchiveLegacyFormatsTest extends PHPUnit\Framework\TestCase
     #[PHPUnit\Framework\Attributes\DataProvider( 'fixtures' )]
     public function testFixtureIsInspectedAndExtracted( $fixture, $name, array $expected )
     {
+        if ( $fixture === 'gnu-oddities' && PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'a name of this archive is longer than the 260 characters a Windows path may have (MAX_PATH)' );
         $path = self::fixturePath( $fixture );
         $this->assertFileExists( $path );
         $start = microtime( true );
@@ -140,6 +142,8 @@ class expPackageArchiveLegacyFormatsTest extends PHPUnit\Framework\TestCase
     #[PHPUnit\Framework\Attributes\DataProvider( 'fixtures' )]
     public function testFixtureIsImported( $fixture, $name, array $expected )
     {
+        if ( $fixture === 'gnu-oddities' && PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'a name of this archive is longer than the 260 characters a Windows path may have (MAX_PATH)' );
         $packageName = '';
         $package = @eZPackage::importUnaudited( self::fixturePath( $fixture ), $packageName, false, self::REPOSITORY );
         $this->assertSame( $name, $packageName );
