@@ -88,9 +88,10 @@ class expMigrationRemoteProcess
                 if ( $status['running'] && $over )
                 {
                     proc_terminate( $state['proc'], 9 );
+                    self::close( $state );
+                    self::collect( $state, $results[$key] );
                     $results[$key]['stderr'] .= "\ntimed out after {$timeout} s";
                     $results[$key]['exit'] = -1;
-                    self::close( $state );
                     $results[$key]['duration_ms'] = (int)round( ( microtime( true ) - $state['started'] ) * 1000 );
                     unset( $running[$key] );
                     continue;
@@ -101,6 +102,7 @@ class expMigrationRemoteProcess
                         if ( isset( $state['pipes'][$n] ) && is_resource( $state['pipes'][$n] ) )
                             $results[$key][$name] .= (string)stream_get_contents( $state['pipes'][$n] );
                     self::close( $state );
+                    self::collect( $state, $results[$key] );
                     $results[$key]['exit'] = (int)$status['exitcode'];
                     if ( $results[$key]['exit'] === 0 )
                         $results[$key]['done']++;
@@ -153,6 +155,17 @@ class expMigrationRemoteProcess
             }
             $env = !empty( $op['env'] ) ? array_merge( self::environment(), $op['env'] ) : null;
             $spec = array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) );
+            // Windows has no non-blocking pipes: a read waited for the end of the process, so a remote over its time
+            // was never stopped. There the output goes to files, read when the process ends or is stopped.
+            $files = array();
+            if ( DIRECTORY_SEPARATOR === '\\' )
+            {
+                foreach ( array( 1, 2 ) as $n )
+                {
+                    $files[$n] = (string)tempnam( sys_get_temp_dir(), 'exprp' );
+                    $spec[$n] = array( 'file', $files[$n], 'w' );
+                }
+            }
             $proc = @proc_open( $op['argv'], $spec, $pipes, isset( $op['cwd'] ) ? $op['cwd'] : null, $env );
             if ( !is_resource( $proc ) )
             {
@@ -163,13 +176,35 @@ class expMigrationRemoteProcess
             if ( isset( $op['stdin'] ) && $op['stdin'] !== null )
                 fwrite( $pipes[0], (string)$op['stdin'] );
             fclose( $pipes[0] );
+            $state['proc'] = $proc;
+            $state['files'] = $files;
+            if ( $files )
+            {
+                $state['pipes'] = array();
+                return true;
+            }
             stream_set_blocking( $pipes[1], false );
             stream_set_blocking( $pipes[2], false );
-            $state['proc'] = $proc;
             $state['pipes'] = array( 1 => $pipes[1], 2 => $pipes[2] );
             return true;
         }
         return false;
+    }
+
+    /**
+     * Adds the output a process wrote to its files (on Windows, see next()) to its result, and removes the files.
+     *
+     * @param array $state
+     * @param array $result
+     */
+    protected static function collect( array &$state, array &$result )
+    {
+        foreach ( isset( $state['files'] ) ? $state['files'] : array() as $n => $file )
+        {
+            $result[$n === 1 ? 'stdout' : 'stderr'] .= (string)@file_get_contents( $file );
+            @unlink( $file );
+        }
+        $state['files'] = array();
     }
 
     /** Closes the pipes and the process of a key. */
