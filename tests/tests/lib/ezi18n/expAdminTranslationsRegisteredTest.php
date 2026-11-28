@@ -288,7 +288,9 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
             'Central Kurdish' => array( 'ckb-IQ', 'ckb-IQ', 'Central Kurdish', '\p{Arabic}' ),
             'N’Ko' => array( 'nqo-GN', 'nqo-GN', 'N’Ko', '\p{Nko}' ),
             'Dhivehi' => array( 'div-MV', 'dv-MV', 'Dhivehi', '\p{Thaana}' ),
-            'Kashmiri' => array( 'kas-IN', 'ks-IN', 'Kashmiri', '\p{Arabic}' ),
+            // the vowel signs (U+064F ...) are of the Inherited script: PCRE2 before 10.40 (PHP 8.1 on Windows) counts
+            // them to Arabic only by their script extensions, which it does not read
+            'Kashmiri' => array( 'kas-IN', 'ks-IN', 'Kashmiri', '\p{Arabic}\p{Mn}' ),
             'Dari' => array( 'fas-AF', 'fa-AF', 'Dari', '\p{Arabic}' ),
         );
     }

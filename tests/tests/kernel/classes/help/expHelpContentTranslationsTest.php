@@ -92,8 +92,9 @@ class expHelpContentTranslationsTest extends PHPUnit\Framework\TestCase
                 $this->assertNotSame( '', $translation, "$language: $source" );
                 if ( $language === 'eng-US' )
                     $this->assertSame( $source, $translation );
-                preg_match_all( '/%\w+/', $source, $want );
-                preg_match_all( '/%\w+/', $translation, $have );
+                // the letters of a placeholder are ASCII: \w follows the locale's character tables without /u (Windows)
+                preg_match_all( '/%[A-Za-z0-9_]+/', $source, $want );
+                preg_match_all( '/%[A-Za-z0-9_]+/', $translation, $have );
                 sort( $want[0] );
                 sort( $have[0] );
                 $this->assertSame( $want[0], $have[0], "$language: placeholders of $source" );
