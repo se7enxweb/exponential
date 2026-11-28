@@ -95,6 +95,7 @@ class expMongoWireLiveTest extends PHPUnit\Framework\TestCase
         $probes = array(
             'bitsAnySet' => function () use ( $c ) { return self::ids( $c->find( array( 'mask' => array( '$bitsAnySet' => 4 ) ) ) ) === array( 4, 5, 6, 7, 12 ); },
             'bitAnd_native' => function () use ( $c ) { return self::ids( $c->aggregate( array( array( '$match' => array( '$expr' => array( '$gt' => array( array( '$bitAnd' => array( '$mask', 4 ) ), 0 ) ) ) ) ) ) ) === array( 4, 5, 6, 7, 12 ); },
+            'bitsAnySet_emulated' => function () use ( $c ) { return self::ids( $c->find( expMongoWireProfile::emulateBitsAnySet( array( 'mask' => array( '$bitsAnySet' => 4 ) ) ) ) ) === array( 4, 5, 6, 7, 12 ); },
             'bitAnd_emulated' => function () use ( $c ) { return self::ids( $c->aggregate( expMongoWireProfile::emulateBitwise( array( array( '$match' => array( '$expr' => array( '$gt' => array( array( '$bitAnd' => array( '$mask', 4 ) ), 0 ) ) ) ) ) ) ) ) === array( 4, 5, 6, 7, 12 ); },
             'convert' => function () use ( $c ) { return self::ids( $c->aggregate( array( array( '$match' => array( '$expr' => array( '$eq' => array( array( '$convert' => array( 'input' => '$smask', 'to' => 'long', 'onError' => 0, 'onNull' => 0 ) ), 3 ) ) ) ) ) ) ) === array( 3 ); },
             'lookup_equality' => function () use ( $c, $o ) { $r = iterator_to_array( $c->aggregate( array( array( '$match' => array( 'id' => 2 ) ), array( '$lookup' => array( 'from' => $o, 'localField' => 'parent', 'foreignField' => 'id', 'as' => 'p' ) ) ) ) ); return count( $r ) === 1 && count( $r[0]['p'] ) === 1; },
@@ -132,7 +133,9 @@ class expMongoWireLiveTest extends PHPUnit\Framework\TestCase
             file_put_contents( $path, json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" );
 
         // what the driver relies on, whatever the profile
-        foreach ( array( 'bitsAnySet', 'bitAnd_emulated', 'convert', 'lookup_equality', 'unwind_group_sort', 'replaceRoot_mergeObjects',
+        if ( self::$profile['bits_query'] )
+            $this->assertSame( 'yes', $results['bitsAnySet'], 'bitsAnySet (the profile claims it)' );
+        foreach ( array( 'bitsAnySet_emulated', 'bitAnd_emulated', 'convert', 'lookup_equality', 'unwind_group_sort', 'replaceRoot_mergeObjects',
                          'indexOfArray_let', 'sort_skip_limit', 'regex_case_insensitive', 'findOneAndUpdate_upsert_inc',
                          'unique_index_refuses_duplicate', 'updateMany_deleteMany', 'listIndexes', 'buildInfo' ) as $name )
             $this->assertSame( 'yes', $results[$name], $name );

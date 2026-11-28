@@ -59,7 +59,13 @@ profile's. `[MongoWireSettings]`:
 - **`$lookup` with `let` and `pipeline`.** The kernel uses it in 19 places. DocumentDB and Cosmos DB (request units)
   refuse it; the driver logs a warning naming the table. This is why both are expected at the data tables level.
 - **Transactions** are not used by the adapter; no profile depends on them.
-- **Index limits.** DocumentDB keeps index keys to 2048 bytes and 64 indexes per collection.
+- **`$bitsAnySet` on Cosmos DB.** Cosmos DB (request units) has no bitwise query operators; the driver writes
+  `{ field: { $bitsAnySet: mask } }` as an `$expr` with the same arithmetic.
+- **DocumentDB 8.0.** Engine 8.0 adds the bitwise aggregation operators (8.0.1), correlated subqueries and retryable
+  writes (8.0.2). On such a cluster `[MongoWireSettings] Profile=mongodb` with `TLS=enabled` uses them natively.
+- **FerretDB and logins.** PHP's `mongodb` extension (libmongoc) refuses the 16-byte SCRAM salt of the PostgreSQL users
+  FerretDB 2 logs in ("invalid salt length of 16"). Run FerretDB without authentication (`FERRETDB_AUTH=false`) on a
+  private network or a Unix socket, with the PostgreSQL login behind it.
 
 ## Installing a site
 

@@ -25,7 +25,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { label: 'FerretDB 2', db: ferretdb, profile: ferretdb, port: '27017', user: 'exp', password: 'exp-ferret-2026' }
+          # without authentication: PHP's mongodb extension (libmongoc) refuses the 16-byte SCRAM salt of the
+          # PostgreSQL users FerretDB 2 logs in ("invalid salt length of 16"); the first run showed it
+          - { label: 'FerretDB 2', db: ferretdb, profile: ferretdb, port: '27017', user: '', password: '' }
           - { label: 'MongoDB 5.0', db: mongodb, profile: mongodb, port: '27017', user: '', password: '' }
           - { label: 'Azure Cosmos DB emulator', db: cosmosdb, profile: cosmosdb, port: '10255', user: 'localhost',
               password: 'C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==' }
@@ -40,7 +42,7 @@ jobs:
           docker network create mw
           docker run -d --name pg --network mw -e POSTGRES_USER=exp -e POSTGRES_PASSWORD=exp-ferret-2026 \
             -e POSTGRES_DB=postgres ghcr.io/ferretdb/postgres-documentdb:17
-          docker run -d --name ferretdb --network mw -p 27017:27017 \
+          docker run -d --name ferretdb --network mw -p 27017:27017 -e FERRETDB_AUTH=false \
             -e FERRETDB_POSTGRESQL_URL=postgres://exp:exp-ferret-2026@pg:5432/postgres ghcr.io/ferretdb/ferretdb:2
           for i in $(seq 1 60); do (echo > /dev/tcp/127.0.0.1/27017) 2>/dev/null && break; sleep 2; done
           sleep 5; docker logs ferretdb 2>&1 | tail -5
@@ -94,7 +96,7 @@ jobs:
           fi
           opts=""
           [ "${{ matrix.db }}" = cosmosdb ] && opts="?tls=true&retryWrites=false"
-          [ "${{ matrix.db }}" = ferretdb ] && opts="?retryWrites=false&authSource=admin&authMechanism=SCRAM-SHA-256"
+          [ "${{ matrix.db }}" = ferretdb ] && opts="?retryWrites=false"
           echo "EXP_MONGOWIRE_URI=mongodb://${creds}127.0.0.1:${{ matrix.port }}/exp_mongowire${opts}" >> "$GITHUB_ENV"
           echo "EXP_MONGOWIRE_PROFILE=${{ matrix.profile }}" >> "$GITHUB_ENV"
           echo "EXP_MONGOWIRE_REPORT=$RUNNER_TEMP/probe-${{ matrix.db }}.json" >> "$GITHUB_ENV"

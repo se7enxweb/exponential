@@ -61,7 +61,15 @@ des Profils. `[MongoWireSettings]`:
   lehnen es ab; der Treiber schreibt eine Warnung mit der Tabelle. Deshalb sind beide auf der Stufe Datentabellen
   erwartet.
 - **Transaktionen** nutzt der Adapter nicht; kein Profil hängt davon ab.
-- **Index-Grenzen.** DocumentDB erlaubt Index-Schlüssel bis 2048 Byte und 64 Indizes je Collection.
+- **`$bitsAnySet` auf Cosmos DB.** Cosmos DB (Request Units) hat keine bitweisen Abfrageoperatoren; der Treiber
+  schreibt `{ feld: { $bitsAnySet: maske } }` als `$expr` mit derselben Arithmetik.
+- **DocumentDB 8.0.** Engine 8.0 bringt die bitweisen Aggregationsoperatoren (8.0.1), korrelierte Unterabfragen und
+  Retryable Writes (8.0.2). Auf einem solchen Cluster nutzt `[MongoWireSettings] Profile=mongodb` mit `TLS=enabled` sie
+  direkt.
+- **FerretDB und Anmeldungen.** PHPs Erweiterung `mongodb` (libmongoc) lehnt das 16-Byte-SCRAM-Salt der
+  PostgreSQL-Benutzer ab, mit denen FerretDB 2 anmeldet ("invalid salt length of 16"). FerretDB ohne Anmeldung
+  (`FERRETDB_AUTH=false`) in einem privaten Netz oder über einen Unix-Socket betreiben, die PostgreSQL-Anmeldung
+  dahinter.
 
 ## Eine Site installieren
 

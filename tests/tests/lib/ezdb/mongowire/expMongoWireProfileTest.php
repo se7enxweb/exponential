@@ -159,6 +159,27 @@ class expMongoWireProfileTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( expMongoWireProfile::hasCorrelatedLookup( array( array( '$lookup' => array( 'from' => 't', 'localField' => 'a', 'foreignField' => 'b', 'as' => 'o' ) ) ) ) );
     }
 
+    public function testBitsAnySetAsExpression()
+    {
+        $filter = array( 'parent' => 3, 'lang_mask' => array( '$bitsAnySet' => 6 ), '$expr' => array( '$eq' => array( '$a', 1 ) ) );
+        $out = expMongoWireProfile::emulateBitsAnySet( $filter );
+        $this->assertArrayNotHasKey( 'lang_mask', $out );
+        $this->assertSame( 3, $out['parent'] );
+        $this->assertSame( array( '$eq' => array( '$a', 1 ) ), $out['$expr']['$and'][0] );
+        $this->assertFalse( expMongoWireProfile::hasBitsAnySet( $out ) );
+        $this->assertFalse( expMongoWireProfile::hasBitwise( $out ) );
+        // the arithmetic gives 6 & x > 0
+        $gt = $out['$expr']['$and'][1]['$gt'];
+        $this->assertSame( 0, $gt[1] );
+        $pipeline = expMongoWireProfile::emulateBitsAnySet( array( array( '$match' => array( '$or' => array( array( 'm' => array( '$bitsAnySet' => 1 ) ), array( 'x' => 2 ) ) ) ), array( '$limit' => 1 ) ), true );
+        $this->assertArrayHasKey( '$expr', $pipeline[0]['$match']['$or'][0] );
+        $this->assertSame( array( 'x' => 2 ), $pipeline[0]['$match']['$or'][1] );
+        // a list of bit positions is left alone
+        $this->assertSame( array( 'm' => array( '$bitsAnySet' => array( 1, 2 ) ) ), expMongoWireProfile::emulateBitsAnySet( array( 'm' => array( '$bitsAnySet' => array( 1, 2 ) ) ) ) );
+        $this->assertFalse( expMongoWireProfile::get( 'cosmosdb' )['bits_query'] );
+        $this->assertTrue( expMongoWireProfile::get( 'documentdb' )['bits_query'] );
+    }
+
     public function testDriverHelpers()
     {
         $this->assertSame( 'mongodb://h:10255/db?tls=true&retryWrites=false',

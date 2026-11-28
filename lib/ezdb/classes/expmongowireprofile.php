@@ -81,35 +81,38 @@ class expMongoWireProfile
             'ferretdb' => array(
                 'label' => 'FerretDB', 'alias' => 'ferretdb', 'aliases' => array( 'ferret' ), 'driver' => 'expFerretDB',
                 'port' => 27017, 'retry_writes' => false, 'text_index' => false,
-                // FerretDB 2 authenticates PostgreSQL's users with SCRAM-SHA-256 against admin; negotiated against
-                // the site's database, the client falls back to SCRAM-SHA-1 and fails ("invalid salt length")
+                // FerretDB 2 authenticates PostgreSQL's users with SCRAM-SHA-256 against admin
                 'auth_source' => 'admin', 'auth_mechanism' => 'SCRAM-SHA-256',
                 'notes' => array( 'FerretDB 2 over PostgreSQL with the DocumentDB extension',
-                                  'Logs in with SCRAM-SHA-256 against admin (authSource=admin)',
+                                  'Logs in with SCRAM-SHA-256 against admin (authSource=admin); PHP\'s mongodb extension '
+                                  . '(libmongoc) refuses the 16-byte salt of PostgreSQL\'s SCRAM verifiers ("invalid salt length '
+                                  . 'of 16"): run FerretDB without authentication (FERRETDB_AUTH=false) on a private network',
                                   'FerretDB 1 (PostgreSQL or SQLite backend) has no $lookup: not a site database',
                                   'Bitwise aggregation operators are written as arithmetic' ),
             ),
             'documentdb' => array(
                 'label' => 'Amazon DocumentDB', 'alias' => 'documentdb', 'aliases' => array( 'docdb', 'awsdocumentdb' ),
                 'driver' => 'expDocumentDB', 'port' => 27017, 'tls' => true, 'retry_writes' => false,
-                'replica_set' => 'rs0', 'lookup_let' => false, 'index_key_bytes' => 2048, 'level' => 'datatable',
+                'replica_set' => 'rs0', 'lookup_let' => false, 'level' => 'datatable',
                 'notes' => array( 'No retryable writes: retryWrites=false',
                                   'TLS with the Amazon RDS CA bundle ([MongoWireSettings] TLSCAFile)',
                                   'No $bitAnd/$bitOr/$bitXor/$bitNot in aggregation: written as arithmetic',
-                                  '$lookup with let (a correlated subquery) is refused: the kernel uses it in 19 places',
-                                  'Index keys of at most 2048 bytes, at most 64 indexes per collection',
+                                  '$lookup with let (a correlated subquery) is refused before engine 8.0.2: the kernel uses it in 19 places',
+                                  'Engine 8.0 adds the bitwise aggregation operators (8.0.1), correlated subqueries and retryable writes (8.0.2): set [MongoWireSettings] Profile=mongodb there to use them natively',
+                                  'An array element in an index holds at most 2048 bytes',
                                   'No emulator exists: not tested live' ),
             ),
             'cosmosdb' => array(
                 'label' => 'Azure Cosmos DB for MongoDB', 'alias' => 'cosmosdb',
                 'aliases' => array( 'cosmos', 'cosmosmongo', 'azurecosmosdb' ), 'driver' => 'expCosmosMongoDB',
-                'port' => 10255, 'tls' => true, 'retry_writes' => false, 'lookup_let' => false,
+                'port' => 10255, 'tls' => true, 'retry_writes' => false, 'lookup_let' => false, 'bits_query' => false,
                 'index_every_field' => true, 'unique_index_on_empty' => true, 'max_indexes' => 0,
                 'text_index' => false, 'level' => 'datatable',
                 'notes' => array( 'Request-unit API, server version 4.2 or later',
                                   'No retryable writes: retryWrites=false; TLS on port 10255',
                                   'No $bitAnd/$bitOr/$bitXor/$bitNot in aggregation: written as arithmetic',
                                   'No $lookup with let or pipeline: the kernel uses it in 19 places',
+                                  'No $bitsAnySet in a filter: written as an $expr with arithmetic',
                                   'A sort needs an index on the field: every column is indexed',
                                   'A unique index only on an empty collection: made with CREATE TABLE' ),
             ),
@@ -313,6 +316,66 @@ class expMongoWireProfile
             $terms[] = $power === 1 ? $bit : array( '$multiply' => array( $bit, $power ) );
         }
         return array( '$toLong' => count( $terms ) === 1 ? $terms[0] : array( '$add' => $terms ) );
+    }
+
+    /**
+     * Rewrites the query operator $bitsAnySet with an integer mask in a filter (or in the $match stages of a
+     * pipeline) as an $expr of arithmetic, for a server without it (Azure Cosmos DB for MongoDB): { f: { $bitsAnySet:
+     * m } } becomes $expr: { $gt: [ f & m, 0 ] }, with f read as a long as the kernel's masks are. A mask given as a
+     * list of bit positions, or another operator next to it, is left as it is.
+     *
+     * @param array $filter a filter, or a pipeline when $pipeline
+     * @param bool $pipeline
+     * @return array
+     */
+    public static function emulateBitsAnySet( array $filter, $pipeline = false )
+    {
+        if ( $pipeline )
+        {
+            foreach ( $filter as $index => $stage )
+                if ( is_array( $stage ) && isset( $stage['$match'] ) && is_array( $stage['$match'] ) )
+                    $filter[$index]['$match'] = self::emulateBitsAnySet( $stage['$match'] );
+            return $filter;
+        }
+        $expressions = array();
+        foreach ( $filter as $key => $value )
+        {
+            if ( in_array( $key, array( '$and', '$or', '$nor' ), true ) && is_array( $value ) )
+            {
+                foreach ( $value as $i => $clause )
+                    if ( is_array( $clause ) )
+                        $filter[$key][$i] = self::emulateBitsAnySet( $clause );
+                continue;
+            }
+            if ( !is_string( $key ) || $key === '' || $key[0] === '$' || !is_array( $value )
+                 || array_keys( $value ) !== array( '$bitsAnySet' ) || !is_int( $value['$bitsAnySet'] ) )
+                continue;
+            $field = array( '$convert' => array( 'input' => '$' . $key, 'to' => 'long', 'onError' => 0, 'onNull' => 0 ) );
+            $expressions[] = array( '$gt' => array( self::emulateBitwise( array( '$bitAnd' => array( $field, $value['$bitsAnySet'] ) ) ), 0 ) );
+            unset( $filter[$key] );
+        }
+        if ( !$expressions )
+            return $filter;
+        if ( isset( $filter['$expr'] ) )
+            array_unshift( $expressions, $filter['$expr'] );
+        $filter['$expr'] = count( $expressions ) === 1 ? $expressions[0] : array( '$and' => $expressions );
+        return $filter;
+    }
+
+    /**
+     * Whether a filter or pipeline holds $bitsAnySet.
+     *
+     * @param mixed $node
+     * @return bool
+     */
+    public static function hasBitsAnySet( $node )
+    {
+        if ( !is_array( $node ) )
+            return false;
+        foreach ( $node as $key => $value )
+            if ( $key === '$bitsAnySet' || self::hasBitsAnySet( $value ) )
+                return true;
+        return false;
     }
 
     /**

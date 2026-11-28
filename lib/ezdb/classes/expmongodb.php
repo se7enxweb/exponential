@@ -306,14 +306,21 @@ class expMongoDB extends eZDBInterface
 
     /**
      * A filter or pipeline as the server takes it: the bitwise aggregation operators written as arithmetic where
-     * the server has none (expMongoWireProfile::emulateBitwise()).
+     * the server has none (expMongoWireProfile::emulateBitwise()), and $bitsAnySet as an $expr where the profile has
+     * no bits_query (Azure Cosmos DB for MongoDB).
      *
-     * @param mixed $node
+     * @param mixed $node a filter, or a pipeline when $pipeline
+     * @param bool $pipeline
      * @return mixed
      */
-    public function forServer( $node )
+    public function forServer( $node, $pipeline = false )
     {
-        if ( !is_array( $node ) || !expMongoWireProfile::hasBitwise( $node ) || $this->serverSupportsBitwise() )
+        if ( !is_array( $node ) )
+            return $node;
+        $profile = $this->wireProfile();
+        if ( !$profile['bits_query'] && expMongoWireProfile::hasBitsAnySet( $node ) )
+            $node = expMongoWireProfile::emulateBitsAnySet( $node, $pipeline );
+        if ( !expMongoWireProfile::hasBitwise( $node ) || $this->serverSupportsBitwise() )
             return $node;
         return expMongoWireProfile::emulateBitwise( $node );
     }
@@ -2680,7 +2687,7 @@ class expMongoDB extends eZDBInterface
     function aggregate( $table, $pipeline = [] )
     {
         // the bitwise operators as arithmetic where the server has none, before a simple pipeline becomes a find
-        $pipeline = $this->forServer( $pipeline );
+        $pipeline = $this->forServer( $pipeline, true );
         $find = self::findFromSimplePipeline( $pipeline );
         if ( $find !== false )
             return $this->runFind( $table, $find );
