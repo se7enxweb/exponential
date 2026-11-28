@@ -195,7 +195,7 @@ class eZDirDeletionGuardTest extends PHPUnit\Framework\TestCase
         $outside = $this->outsideDir( 'var_cache' );
         self::fill( $outside, array( 'x1site/cache/template/compiled', 'x1site/other' ) );
         $this->useSite( array( 'VarDir' => 'var/x1site', 'CacheVarDir' => $outside ) );
-        $this->assertSame( $outside . '/x1site/cache', eZSys::cacheDirectory() );
+        $this->assertSame( str_replace( '\\', '/', $outside . '/x1site/cache' ), str_replace( '\\', '/', eZSys::cacheDirectory() ) );
 
         $this->assertTrue( eZDir::recursiveDelete( $outside . '/x1site/cache/template' ) );
         $this->assertTrue( eZDir::recursiveDelete( $outside . '/x1site/cache' ) );

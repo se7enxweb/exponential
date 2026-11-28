@@ -85,7 +85,7 @@ class eZDebugReportNullLabelTest extends PHPUnit\Framework\TestCase
         $this->assertSame( null, $this->debug->DebugStrings[1]['Label'] );
 
         $report = $this->report();
-        $this->assertSame( array(), $this->messages );
+        $this->assertSame( array(), $this->messages, implode( ' | ', $this->messages ) );
         $this->assertStringContainsString( 'label-of-a-null-notice', $report );
         $this->assertStringContainsString( 'a &lt;warning&gt; without a label', $report );
     }

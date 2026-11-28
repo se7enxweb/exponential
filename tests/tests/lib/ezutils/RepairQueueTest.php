@@ -120,7 +120,8 @@ class RepairQueueTest extends PHPUnit\Framework\TestCase
     public function testDefaultsWithoutFile()
     {
         $c = $this->q();
-        $this->assertSame( self::$root, $c::root() );
+        // as a path: on Windows one may have backslashes where the other has slashes
+        $this->assertSame( str_replace( '\\', '/', self::$root ), str_replace( '\\', '/', $c::root() ) );
         $this->assertSame( array( 'Enabled' => false, 'KeyHash' => '', 'Composer' => '' ), $c::settings() );
         $this->assertFalse( $c::available() );
     }

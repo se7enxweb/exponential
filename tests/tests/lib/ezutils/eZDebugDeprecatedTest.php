@@ -214,7 +214,7 @@ class eZDebugDeprecatedTest extends PHPUnit\Framework\TestCase
             restore_error_handler();
         }
 
-        $this->assertSame( array(), $raised, 'render() raises nothing' );
+        $this->assertSame( array(), $raised, 'render() raises nothing: ' . implode( ' | ', $raised ) );
         $this->assertSame( $before, eZDebug::deprecatedCount() );
         $this->assertMatchesRegularExpression( '/data-key="deprecations"[^>]*>' . $before . ' depr</', $html );
         $this->assertStringNotContainsString( 'counted in the bar', $html, 'no row for it' );
