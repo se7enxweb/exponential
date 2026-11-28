@@ -121,7 +121,7 @@ class eZContentCacheEventSendersTest extends PHPUnit\Framework\TestCase
                     $j++;
                     while ( isset( $tokens[$j] ) && ( $tokens[$j] === ',' || ( is_array( $tokens[$j] ) && $tokens[$j][0] === T_WHITESPACE ) ) )
                         $j++;
-                    self::$senders[$file->getPathname()][] = array( 'line' => $tokens[$j][2] ?? $t[2], 'arguments' => self::arrayLength( $tokens, $j ) );
+                    self::$senders[str_replace( DIRECTORY_SEPARATOR, '/', $file->getPathname() )][] = array( 'line' => $tokens[$j][2] ?? $t[2], 'arguments' => self::arrayLength( $tokens, $j ) );
                 }
             }
         }
