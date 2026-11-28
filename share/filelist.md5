@@ -27454,7 +27454,7 @@ d0da0f82c287c316c9de3c8d9f1e11d7  lib/smarty/classes/expsmartyvoid.php
 2df1458824bfad0dc09512b844c41f21  lib/smarty/classes/eztemplateautoload.php
 317a45b4ea384f912830db2a5ed8cbaf  lib/templatebridge/classes/exptemplatebridge.php
 c1d6a7039a5a9bad2b31e5058902c8c3  lib/templatebridge/classes/exptemplatechainconverter.php
-405f2dd600c1e2b513f3a7fd0e888be3  lib/templatebridge/classes/exptemplatechecker.php
+b95eecf89fe6787cf7b4cc85d671e13a  lib/templatebridge/classes/exptemplatechecker.php
 4fbba930e130e769b6648fea60312ec8  lib/templatebridge/classes/exptemplatecheckformatter.php
 3f6bdc4f0f530e1fdd1d740df7a1d6f3  lib/templatebridge/classes/exptemplatedesignconverter.php
 e793f8be5507f7e6959067d883ab57f1  lib/templatebridge/classes/exptemplateenginechecker.php
