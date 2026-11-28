@@ -26109,7 +26109,7 @@ f772eaa96158ad7509f5965812dc4667  kernel/private/classes/commands/benchmark.php
 e1953225aa120dd0e944df1105e971f7  kernel/private/classes/commands/cache.php
 60c2b1853ed9ca00ff9a837c799860a1  kernel/private/classes/commands/changelog2xmltext.php
 dfaae08f33403266f7403a9a051aa223  kernel/private/classes/commands/checkclasses.php
-48f9421d5c95daea87cbc8aac26da26e  kernel/private/classes/commands/checkdbfiles.php
+8a33f9e8ef55c40e230fe7ea58cdb6b5  kernel/private/classes/commands/checkdbfiles.php
 8a98a1f6badd09c6dfffc071178749ee  kernel/private/classes/commands/cleanuppolicies.php
 68d312cbe7ed1ba1e91bfac5bf1e4cb4  kernel/private/classes/commands/cleanuprss.php
 7e02112b394766eb35be29b624d0b18c  kernel/private/classes/commands/cleanupversions.php
@@ -31488,7 +31488,7 @@ fc218dcb185a768f27d4ac5790f4ab47  design/standard/templates/shop/myorders.tpl
 fe1496bdc9e0826ba179ead7905eb2c7  kernel/private/classes/views/shop/myorders.php
 a8bff2772dd2d28e006986d0c6a33631  kernel/shop/myorders.php
 71d044da80444a8ca56c84b5c5900d82  tests/tests/kernel/classes/shopprices/eZShopMyOrdersViewTest.php
-197b96fe91eeeb99e32b31c6017b0131  kernel/classes/expsetupsharedstate.php
+377c2c56a218910a1908e9b6b8303c6a  kernel/classes/expsetupsharedstate.php
 bff12ac8570ee8221bbd509135e6f7da  tests/tests/kernel/classes/setup/SetupSharedStateTest.php
 1687636c40e1b4c539844e56f7555287  bin/php/expclustercache.php
 4bf23fc88eb38d9ac1677194e8197696  bin/php/expclusterdeploy.php
@@ -31525,4 +31525,4 @@ fd147edc626b9bf070400ed7e7755dd3  kernel/private/classes/commands/expclusterdepl
 af212ab81ef37836f44f9a1cce0b064b  kernel/private/classes/commands/expclusterstatus.php
 62073808a0989559d70f602600d1d161  kernel/private/classes/commands/exphostrun.php
 1ebc56e8bb067eb543e87c67500ff543  settings/cluster.ini
-316c7cfd9353b3b24d8262073fdcba53  tests/tests/kernel/classes/cluster/expClusterHostCommandsTest.php
+05780fe98d7e47289c1fd378f69ecc48  tests/tests/kernel/classes/cluster/expClusterHostCommandsTest.php
