@@ -8179,7 +8179,7 @@ eac710891ec446c14acec9e1d27b8426  doc/eng-us/help/businesses/templates/roi-works
 91d2aca3118f828f8e72d618b23e8e16  doc/eng-us/help/businesses/which-section-fits-your-organization.md
 8c90026c2aa02ea5007adb6264190737  doc/eng-us/help/businesses/why-businesses-rely-on-exponential.md
 650935738878fa3c486c5f262cb57df6  doc/eng-us/help/change-the-admin-password.md
-112ae8f0f28e1668bd587930c897c990  doc/eng-us/help/choosing-a-database.md
+32cf545134ba703216c231f6c60b7599  doc/eng-us/help/choosing-a-database.md
 32b4a33172034277fee4c8b12b0041a6  doc/eng-us/help/cms-developers/accessibility.md
 d2670fd89d336c5d257a17d39a7923ac  doc/eng-us/help/cms-developers/caching-for-cms-developers.md
 227110c9a9a69e8dea9acd57d0b7702c  doc/eng-us/help/cms-developers/choosing-a-ready-made-content-class.md
@@ -8600,7 +8600,7 @@ ee73db4449c98d3c83b16fc6b1fa962e  doc/eng-us/help/database-administrators/mongod
 7802db700ce9e89308630df226577447  doc/eng-us/help/database-administrators/monitoring-the-database.md
 3002c35114742e4f91cdd3bd5a8c5e18  doc/eng-us/help/database-administrators/moving-between-engines.md
 a4e626a5864df0b08ec52850b532fee2  doc/eng-us/help/database-administrators/mysql-and-mariadb-charset-and-innodb.md
-d78ee65f76a4759be3fb8ba1e97c5a1a  doc/eng-us/help/database-administrators/mysql-and-mariadb-setup.md
+e7c98e111dd2170c980e01e20cd811a0  doc/eng-us/help/database-administrators/mysql-and-mariadb-setup.md
 44ea75cfc662ddbf96fa296b6810befe  doc/eng-us/help/database-administrators/mysql-read-replicas.md
 4b7633b30b37fbb7a6d867ba0d3055d6  doc/eng-us/help/database-administrators/oracle-connections-and-tuning.md
 d3e691f57cca73c3c99d28828e7bdc37  doc/eng-us/help/database-administrators/oracle-maintenance-commands.md
@@ -10226,10 +10226,10 @@ d7f8d5387f9d62e78d052c0c8827073e  doc/eng-us/help/government/transparency-and-fo
 88496165cdbbb2184d4d306f6cb75128  doc/eng-us/help/hosting/basics/composer-and-git-on-servers.md
 8f9eb1a7e6f92f2d871524f90729d237  doc/eng-us/help/hosting/basics/databases-in-the-official-order.md
 224a0e441c464e5c301ab1f5690efb83  doc/eng-us/help/hosting/basics/image-processing-and-media.md
-d75facd73d2641db121a1dfe0336faf0  doc/eng-us/help/hosting/basics/mariadb-for-hosts.md
+362021a6bd5cb24baea7a95f859c589a  doc/eng-us/help/hosting/basics/mariadb-for-hosts.md
 1bf3eeeb8606b9a0d99942717a26fef2  doc/eng-us/help/hosting/basics/microsoft-sql-server-status.md
 5cac73bdaf3c2b73a199adbeae283f69  doc/eng-us/help/hosting/basics/mongodb-for-hosts.md
-691a9ae07abdca3cc7e62ec2907ee2bd  doc/eng-us/help/hosting/basics/mysql-for-hosts.md
+221c2cda0e1d6a62ad714f07f89c8d19  doc/eng-us/help/hosting/basics/mysql-for-hosts.md
 7a7833c279d0b1916cd090a32e66a5e0  doc/eng-us/help/hosting/basics/operating-systems-for-hosts.md
 f088e27383e27d949cdec8c67fbd2105  doc/eng-us/help/hosting/basics/oracle-for-hosts.md
 abc44c7179bc8d1d12bb91bb3a5d14ea  doc/eng-us/help/hosting/basics/php-settings-for-exponential.md
@@ -18494,7 +18494,7 @@ a006c16efec268bb2bcd620a9b237fb9  doc/ger-de/hilfe/cms-entwickler/umstieg-von-ty
 9864b91414734c9054a5e35f3a3b2c36  doc/ger-de/hilfe/cms-entwickler/versionen-entwuerfe-und-veroeffentlichen.md
 a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-ausloeser.md
 f5be1f862dc084f747a2aec672a8f29e  doc/ger-de/hilfe/das-benutzer-auditprotokoll.md
-de609b7473f9a4cb656bb41aca6eb24a  doc/ger-de/hilfe/datenbank-waehlen.md
+2fa3b9914d01da0a2ef2ba4d33679a5d  doc/ger-de/hilfe/datenbank-waehlen.md
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 4aa0910c6c1843fcc009479fcb70efb2  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
@@ -18519,7 +18519,7 @@ db1d525d27fd53dd10f2daccea02cd57  doc/ger-de/hilfe/datenbankadministratoren/lese
 21fe1e3783ad8930e794d0c415b470bc  doc/ger-de/hilfe/datenbankadministratoren/mongodb-einrichten.md
 145ae04773321b12ae6beb4ed9dd809b  doc/ger-de/hilfe/datenbankadministratoren/mongodb-grenzen-und-betrieb.md
 791fcd409d5aecc4a15f418980774ef5  doc/ger-de/hilfe/datenbankadministratoren/mysql-lesereplikate.md
-b65f3b8242c922d931c5b22affef4db7  doc/ger-de/hilfe/datenbankadministratoren/mysql-und-mariadb-einrichten.md
+118bd6f9ef13cd038b979576b56f9a16  doc/ger-de/hilfe/datenbankadministratoren/mysql-und-mariadb-einrichten.md
 5a358920e4c742b438c7afc4e3721a91  doc/ger-de/hilfe/datenbankadministratoren/mysql-und-mariadb-zeichensatz-und-innodb.md
 c85b2b2474d045c9cc4296df9a53534d  doc/ger-de/hilfe/datenbankadministratoren/oracle-einrichten.md
 722a60d31b538d6fbd5f9f3825579e7c  doc/ger-de/hilfe/datenbankadministratoren/oracle-verbindungen-und-tuning.md
@@ -18544,7 +18544,7 @@ c12fde09d2b2903b72ee39a69d679a4a  doc/ger-de/hilfe/datenbankadministratoren/tabe
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 0b448d4a2328dede7b623ac5bf777188  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 3db1ede61ace04f667926b567c1cfedc  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-343f5188a9603d15736c26ce5d93d5b0  doc/ger-de/hilfe/datenbankunterstuetzung.md
+659af859b111574cc467d2e6db77b9c8  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
@@ -19690,9 +19690,9 @@ abc97d12076180f435c1b9b29f904bde  doc/ger-de/hilfe/hosting/grundlagen/beschreibb
 6ed833d5e3b960b768ae54d749b71680  doc/ger-de/hilfe/hosting/grundlagen/bildverarbeitung-und-medien.md
 a301c691f7a9ae39c7f35bb826b5604e  doc/ger-de/hilfe/hosting/grundlagen/composer-und-git-auf-servern.md
 141e1f4a462ec3729381937cb948da71  doc/ger-de/hilfe/hosting/grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md
-aa446b42ba0454f406c76df554178cbc  doc/ger-de/hilfe/hosting/grundlagen/mariadb-fuer-hoster.md
+8e2317a1b71b770f928f845037f32456  doc/ger-de/hilfe/hosting/grundlagen/mariadb-fuer-hoster.md
 f1cd61598cee1076aa5bcd1881a3fb93  doc/ger-de/hilfe/hosting/grundlagen/mongodb-fuer-hoster.md
-2cd877b1aff1d712792867feb001e25c  doc/ger-de/hilfe/hosting/grundlagen/mysql-fuer-hoster.md
+a2256b514bcd0df35d605000eb7defdf  doc/ger-de/hilfe/hosting/grundlagen/mysql-fuer-hoster.md
 417088a36808833e32ea240287a06480  doc/ger-de/hilfe/hosting/grundlagen/oracle-fuer-hoster.md
 9131a57d3251bbe019f7473c3d496a02  doc/ger-de/hilfe/hosting/grundlagen/php-einstellungen-fuer-exponential.md
 b0df3cb0e625d4c9b3b44a6a6efc5a5a  doc/ger-de/hilfe/hosting/grundlagen/php-versionen-und-erweiterungen.md
