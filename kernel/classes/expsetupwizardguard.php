@@ -277,6 +277,28 @@ class expSetupWizardGuard
         return hash_equals( $cookie, $m[2] );
     }
 
+    /** File name extensions of what a browser fetches for a page (styles, scripts, images, fonts) and never a page */
+    const ASSET_EXTENSIONS = array( 'css', 'js', 'mjs', 'map', 'png', 'jpg', 'jpeg', 'gif', 'svg', 'ico', 'webp', 'avif',
+                                    'bmp', 'woff', 'woff2', 'ttf', 'otf', 'eot', 'txt', 'xml', 'json', 'webmanifest' );
+
+    /**
+     * Whether a request is for a file a page uses (a style sheet, a script, an image, /favicon.ico,
+     * /robots.txt) rather than for a page. Until the site is installed every address reaches the
+     * wizard; where the web server does not serve such files itself, the browser's requests for
+     * them must not count as opening the wizard's first page: each would start a new run and
+     * abandon the run in progress (on several nodes, also the copies of the files it wrote).
+     *
+     * @param string $uri the request URI (path, optionally with a query string)
+     * @return bool
+     */
+    static function isAssetRequest( $uri )
+    {
+        $path = (string)parse_url( (string)$uri, PHP_URL_PATH );
+        $name = basename( $path );
+        $dot = strrpos( $name, '.' );
+        return $dot !== false && in_array( strtolower( substr( $name, $dot + 1 ) ), self::ASSET_EXTENSIONS, true );
+    }
+
     /**
      * Every page of the wizard (the "already installed" page, the confirm page
      * with its token, each step) is one visitor's: no cache keeps it. Replaces

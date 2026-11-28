@@ -73,6 +73,23 @@ class SetupWizardGuardTest extends PHPUnit\Framework\TestCase
         $this->assertSame( expSetupWizardGuard::CONFIRM, expSetupWizardGuard::decide( true, true, false, false, false, true ) );
     }
 
+    /**
+     * A browser's requests for the files of a page (style sheets, scripts, /favicon.ico) reach the wizard where the
+     * web server does not serve them itself; as a first page each would start a new run and abandon the one in
+     * progress, and with it the copies of the files it wrote for the other nodes.
+     */
+    public function testTheFilesOfAPageAreNotTheWizardsFirstPage()
+    {
+        foreach ( array( '/favicon.ico', '/robots.txt', '/design/standard/stylesheets/core.css',
+                         '/design/standard/javascript/setup.js?x=1', '/share/icons/logo.PNG', '/font.woff2' ) as $uri )
+            $this->assertTrue( expSetupWizardGuard::isAssetRequest( $uri ), $uri );
+        foreach ( array( '/', '', '/index.php', '/ezsetup', '/setup/init', '/index.php?x=a.css', '/a.b/page' ) as $uri )
+            $this->assertFalse( expSetupWizardGuard::isAssetRequest( $uri ), $uri );
+        $view = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/private/classes/views/setup/ezsetup.php' );
+        $this->assertLessThan( strpos( $view, '\\expSetupLog::startWeb();' ), strpos( $view, 'isAssetRequest(' ),
+                               'checked before a first page starts a run' );
+    }
+
     public function testMaintenanceStartsOnlyFromAPostedStepOrAConfirmedPost()
     {
         $this->assertSame( expSetupWizardGuard::BEGIN, expSetupWizardGuard::decide( false, false, true, false, false ) );

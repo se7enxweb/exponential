@@ -155,6 +155,16 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
             return $this->guardPage( $tpl, 'design:setup/init/confirm_reinstall.tpl',
                                      \ezpI18n::tr( 'design/standard/setup/init', 'Reinstall this site' ) );
         }
+        else if ( $decision === \expSetupWizardGuard::SHOW
+                  && \expSetupWizardGuard::isAssetRequest( \eZSys::serverVariable( 'REQUEST_URI', true ) ) )
+        {
+            // A style sheet, script, image or /favicon.ico the web server did not serve itself: not the
+            // wizard's first page, so no new run that would abandon the one in progress
+            if ( !headers_sent() )
+                header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.1' ) . ' 404 Not Found', true, 404 );
+            echo "Not found\n";
+            \eZExecution::cleanExit();
+        }
         else if ( $decision === \expSetupWizardGuard::SHOW )
         {
             // A fresh installation's first page: a run in the setup log, no maintenance yet
