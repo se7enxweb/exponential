@@ -189,6 +189,8 @@ class expDFSSQLiteBackendIntegrationTest extends ezpTestCase
     /** GLOB's own wildcards in a name are literals of a LIKE pattern and of a prefix */
     public function testGlobCharactersInNamesAreLiterals()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'a Windows file name cannot hold * or ?, and the backend keeps a copy of each file' );
         foreach ( array( 'a[1].txt', 'a1.txt', 'b*.txt', 'bX.txt' ) as $name )
             $this->backend->_storeContents( $this->path( "glob/$name" ), $name, 'binaryfile', 'text/plain', 1700000000 );
         $this->assertTrue( $this->backend->_deleteByLike( $this->path( 'glob/a[1]%' ) ) );
