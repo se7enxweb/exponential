@@ -21,7 +21,10 @@ beantwortet die Frage dann je Einsatzzweck.
 Jede Aussage hier stammt aus dem Code der Linie 6.0.15 und aus den Seiten der Treiber selbst. Einzelheiten,
 Einstellungen und Grenzen jeder Datenbank stehen auf ihrer eigenen Seite, die in den Tabellen verlinkt ist.
 [Datenbankunterstützung](datenbankunterstuetzung.md) ist die Aussage zur Unterstützung mit Versionen und
-Einstellungen; das Kapitel für den Betrieb ist [Kapitel 9 der Installationsanleitung](../installation/09-datenbanken.md).
+Einstellungen; das Kapitel für den Betrieb ist [Kapitel 9 der Installationsanleitung](../installation/09-datenbanken.md). Die Unterstützungsstufe
+jeder Datenbank in einer Tabelle (Datentabellen, ganze Website, DFS, Cluster mit mehreren Servern, Setup-Assistent,
+`exp:install` und Kickstarter, xne-Upgrade getestet), dieselbe Tabelle, die network.se7enx.com und se7enx.com zeigen,
+steht unter [Unterstützungsstufen auf einen Blick](datenbankunterstuetzung.md#unterstützungsstufen-auf-einen-blick).
 
 ## Inhalt
 
@@ -58,11 +61,11 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 | Datenbank | 6.0.14 | 6.0.15 | Site-Datenbank | DFS-Cluster | Lesereplikate (`UseSlaveServer`) | Installer |
 |---|---|---|---|---|---|---|
 | [SQLite 3](../funktionen/6.0/sqlite-datenbank.md) | ja | ja, der Standard | ja | nur ein Rechner (ein Cluster aus einem Knoten) | nein | Assistent, Kickstarter, `exp:install` (`sqlite`, der Standard) |
-| [PostgreSQL 13 bis 19](../funktionen/6.0/postgresql-18-und-19.md) | ja | ja | ja | ja, im Kernel | ja | Assistent, Kickstarter, `pgsql` |
+| [PostgreSQL 13 bis 19](../funktionen/6.0/postgresql-datenbank.md) | ja | ja | ja | ja, im Kernel | ja | Assistent, Kickstarter, `pgsql` |
 | [MongoDB 6.0 und neuer](../funktionen/6.0/mongodb-datenbankunterstuetzung.md) | ja | ja | ja, über einen Adapter | ja, im Kernel | das eigene Replica Set von MongoDB | Assistent, Kickstarter, `mongodb` |
-| MariaDB | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MariaDB / MySQL Improved“), Kickstarter, `mariadb` |
-| Oracle 19c und neuer (`ezoracle`) | ja | ja | ja | ja, im Kernel | ja | Assistent, Kickstarter, `oracle` |
-| MySQL | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MariaDB / MySQL Improved“), Kickstarter, `mysql` |
+| [MariaDB](../funktionen/6.0/mariadb-und-mysql-datenbank.md) | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MariaDB / MySQL Improved“), Kickstarter, `mariadb` |
+| [Oracle 19c und neuer (`ezoracle`)](../funktionen/6.0/oracle-datenbank.md) | ja | ja | ja | ja, im Kernel | ja | Assistent, Kickstarter, `oracle` |
+| [MySQL](../funktionen/6.0/mariadb-und-mysql-datenbank.md) | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MariaDB / MySQL Improved“), Kickstarter, `mysql` |
 | [SQL Server 2017 bis 2025, Azure SQL](../funktionen/6.0/sqlserver-datenbanktreiber.md) | nein | neu | ja | ja, im Kernel | ja (Always On, `ApplicationIntent=ReadOnly`) | Assistent (mit `sqlsrv` oder `pdo_sqlsrv`), Kickstarter, `sqlserver` |
 | [TiDB](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja | ja (MySQLi-Backend, gemessen) | der Mechanismus von MySQL, nicht getestet | Assistent, Kickstarter, `tidb` |
 | [Vitess, PlanetScale](../funktionen/6.0/mysql-wire-datenbanken.md) | nein | neu | ja, in einem ungesplitteten Keyspace | ja (auf Vitess gemessen) | der Mechanismus von MySQL, nicht getestet | Assistent, Kickstarter, `vitess` |
@@ -126,9 +129,9 @@ nimmt die Aktualisierung wieder zurück.
 | SQLite 3 | `sqlite3` | `sqlite` | die SQL-Quelle von SQLI Import (`pdo_sqlite`) | Linux, Windows (CI), macOS | Treibertests, PHP 8.1 bis 8.5; eine ganze Site unter Windows | **ja**: 6.0.14 auf main und zurück, unter Linux und im Windows-Job |
 | PostgreSQL | `pgsql` | `postgresql` | SQL-Quelle (`pdo_pgsql`), benannte Verbindung | Linux, Windows | Datenbanktests auf 13, 15, 18, 19; DFS auf 13 bis 19 | **ja**: 6.0.14 auf main und zurück, und ein Fehler zurückgerollt |
 | MongoDB | `mongodb` und die Bibliothek `mongodb/mongodb`; PHP 8.2 und neuer | `mongodb` | die MongoDB-Quelle von SQLI Import | Linux, Windows | Adaptertests; MongoDB 8.0 im DFS-Job | **ja**, ein Beweislauf: ein vollständiges Upgrade einer Kickstarter-Site und ein exaktes `xne rollback` ([Upgrade mit xne](../anleitungen/aktualisieren-mit-xne.md#datenbanken)) |
-| MariaDB | `mysqli` | `mysql` | SQL-Quelle (`pdo_mysql`), benannte Verbindung | Linux, Windows | über die MySQL-Jobs (derselbe Treiber) | wie MySQL (derselbe Treiber), nicht eigens |
+| MariaDB | `mysqli` | `mysql` | SQL-Quelle (`pdo_mysql`), benannte Verbindung | Linux, Windows | über die MySQL-Jobs (derselbe Treiber) | **ja**: 6.0.14 auf main und zurück, und ein Fehler zurückgerollt (die Integrationssuite von xne läuft auf MariaDB) |
 | Oracle | `oci8` und die Extension `ezoracle` | `oracle` | SQL-Quelle (`oci8`), benannte Verbindung | Linux, Windows | das DFS-Backend auf Oracle Free 23 | **ja**, ein Beweislauf: ein vollständiges Upgrade einer Kickstarter-Site über `ezoracle` und ein exaktes `xne rollback` |
-| MySQL | `mysqli` | `mysql` | SQL-Quelle (`pdo_mysql`), benannte Verbindung | Linux, Windows | Datenbanktests auf MySQL 8.0 | **ja**: 6.0.14 auf main und zurück, und ein Fehler zurückgerollt |
+| MySQL | `mysqli` | `mysql` | SQL-Quelle (`pdo_mysql`), benannte Verbindung | Linux, Windows | Datenbanktests auf MySQL 8.0 | derselbe Treiber und Weg wie MariaDB, auf der die Integrationssuite von xne läuft |
 | SQL Server, Azure SQL | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` oder `pdo_dblib` | `sqlserver` | SQL-Quelle (`pdo_sqlsrv`, `pdo_dblib` oder PDO_ODBC), benannte Verbindung | Linux, Windows (LocalDB in der CI) | 2017, 2019, 2022, 2025 über drei PHP-Schichten, PHP 8.1 bis 8.5; LocalDB unter Windows | noch nicht (neu in 6.0.15) |
 | TiDB, Vitess, SingleStore | `mysqli` | `tidb`, `vitess`, `singlestore` (oder `mysql` mit der Option `profile`) | benannte Verbindung der Engine `mysql` | Linux | Live-Tests in Containern (Job `mysqlwire`) | noch nicht |
 | Xpand, Aurora MySQL | `mysqli` | `xpand`, `aurora` | benannte Verbindung der Engine `mysql` | Linux | nur Tests ohne Server | noch nicht |
@@ -320,9 +323,22 @@ Siehe [Exponential unter Windows](exponential-unter-windows.md).
 
 ## Geplant
 
-Jeder Treiber in den Tabellen oben ist im Hauptzweig und kommt mit 6.0.15; keiner ist mehr in Entwicklung. Geplant,
-noch ohne Code: Snowflake, Google BigQuery, Teradata, Exasol, H2, HSQLDB, Apache Derby, Ingres und die Amazon-eigenen
-Datenbanken. Nichts auf dieser Liste ist eine Zusage für ein Release, und nichts auf dieser Seite beschreibt sie.
+Jeder Treiber in den Tabellen oben ist im Hauptzweig und kommt mit 6.0.15; keiner ist mehr in Entwicklung. Geplant
+sind zwei Arten von Arbeit, jede mit dem, was sie bräuchte, und einer geschätzten Größe unter
+[Geplante Datenbanken](datenbankunterstuetzung.md#geplante-datenbanken-und-was-jede-bräuchte):
+
+- **Datenbanken messen, die ein Protokoll sprechen, das Exponential schon hat**, ohne neuen Code: AlloyDB,
+  TimescaleDB, Citus und Azure Cosmos DB for PostgreSQL (eine ganze Website erwartet); QuestDB, Materialize,
+  RisingWave und CrateDB; Percona Server und XtraDB Cluster, Dolt und OceanBase; StarRocks, Apache Doris und Manticore
+  Search; SQLCipher, LiteFS, rqlite und Cloudflare D1; Amazon DocumentDB, Azure Cosmos DB for MongoDB und FerretDB;
+  und über ODBC, für Datentabellen und Importe, Snowflake, Google BigQuery, Databricks, Teradata, Progress OpenEdge,
+  FileMaker Server, Exasol und Ingres.
+- **Neue Treiberarbeit**, für Datentabellen und Importe: Amazon DynamoDB, Google Firestore und Datastore, Azure Cosmos
+  DB (NoSQL-API); Neo4j, ArangoDB, Amazon Neptune und SurrealDB; Redis und Valkey, Riak, RethinkDB und RavenDB;
+  InterBase, älteres Sybase, Apache Derby, H2 und HSQLDB.
+
+Nichts auf dieser Liste ist eine Zusage für ein Release, und eine Datenbank kommt erst in die Tabellen oben, wenn sie
+hier gelaufen ist.
 
 ## Verwandte Seiten
 

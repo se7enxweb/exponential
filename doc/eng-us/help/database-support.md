@@ -3,8 +3,8 @@ title: Database support
 audience: admin, developer
 category: install-upgrade
 order: 10
-summary: Which databases Exponential 6.0.x supports and in which order (SQLite first, then PostgreSQL, MongoDB, MariaDB, Oracle, MySQL and Microsoft SQL Server with Azure SQL), the databases added in 6.0.15 (Firebird, DuckDB, libSQL and Turso, the MySQL and PostgreSQL protocol families, ODBC and MS Access), with a support matrix and the versions, PHP extensions, settings, installers, clustering, character sets, performance, backup and restore, limits, migration and test coverage of each.
-keywords: database, databases, supported databases, support matrix, Firebird, pdo_firebird, DuckDB, FFI, libSQL, sqld, Turso, Hrana, ODBC, pdo_odbc, MS Access, exp:access:import, TiDB, Vitess, PlanetScale, SingleStore, Xpand, Aurora, CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import
+summary: The support level of every database at a glance (data tables, full site, DFS, multi-server cluster, setup wizard, exp:install and kickstarter, xne upgrade tested) and the planned databases with what each would take; which databases Exponential 6.0.x supports and in which order (SQLite first, then PostgreSQL, MongoDB, MariaDB, Oracle, MySQL and Microsoft SQL Server with Azure SQL), the databases added in 6.0.15 (Firebird, DuckDB, libSQL and Turso, the MySQL and PostgreSQL protocol families, ODBC and MS Access), with a support matrix and the versions, PHP extensions, settings, installers, clustering, character sets, performance, backup and restore, limits, migration and test coverage of each.
+keywords: database, databases, supported databases, support matrix, support levels, planned databases, AlloyDB, TimescaleDB, Citus, Percona, Dolt, OceanBase, SQLCipher, LiteFS, rqlite, Cloudflare D1, DocumentDB, Cosmos DB, FerretDB, Snowflake, BigQuery, Databricks, Teradata, DynamoDB, Firestore, Neo4j, SurrealDB, Odoo, Firebird, pdo_firebird, DuckDB, FFI, libSQL, sqld, Turso, Hrana, ODBC, pdo_odbc, MS Access, exp:access:import, TiDB, Vitess, PlanetScale, SingleStore, Xpand, Aurora, CockroachDB, YugabyteDB, Spanner, Neon, Supabase, Azure SQL, expSQLServerDB, pdo_sqlsrv, pdo_odbc, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions, Couchbase, SQL++, N1QL, CouchDB, Mango, exp:couchbase:import, exp:couchdb:import
 featured: true
 context: setup/info, setup/systemupgrade, dse
 type: help
@@ -24,30 +24,103 @@ with a decision guide per use case, is on [Choosing a database](choosing-a-datab
 
 ## Contents
 
-1. [The supported databases, in order](#the-supported-databases-in-order)
-2. [Support matrix](#support-matrix)
-3. [At a glance](#at-a-glance)
-4. [Versions, checked against the code](#versions-checked-against-the-code)
-5. [PHP extensions](#php-extensions)
-6. [The settings: DatabaseSettings in site.ini](#the-settings-databasesettings-in-siteini)
-7. [Installer support per path](#installer-support-per-path)
-8. [SQLite 3, the default](#1-sqlite-3-the-default)
-9. [PostgreSQL](#2-postgresql)
-10. [MongoDB](#3-mongodb)
-11. [MariaDB](#4-mariadb)
-12. [Oracle](#5-oracle)
-13. [MySQL](#6-mysql)
-14. [Microsoft SQL Server and Azure SQL](#7-microsoft-sql-server-and-azure-sql)
+1. [Support levels at a glance](#support-levels-at-a-glance)
+2. [The supported databases, in order](#the-supported-databases-in-order)
+3. [Support matrix](#support-matrix)
+4. [At a glance](#at-a-glance)
+5. [Versions, checked against the code](#versions-checked-against-the-code)
+6. [PHP extensions](#php-extensions)
+7. [The settings: DatabaseSettings in site.ini](#the-settings-databasesettings-in-siteini)
+8. [Installer support per path](#installer-support-per-path)
+9. [SQLite 3, the default](#1-sqlite-3-the-default)
+10. [PostgreSQL](#2-postgresql)
+11. [MongoDB](#3-mongodb)
+12. [MariaDB](#4-mariadb)
+13. [Oracle](#5-oracle)
+14. [MySQL](#6-mysql)
+15. [Microsoft SQL Server and Azure SQL](#7-microsoft-sql-server-and-azure-sql)
     - [Databases of the PostgreSQL wire protocol](#databases-of-the-postgresql-wire-protocol)
-15. [Databases that speak the MySQL protocol: TiDB, Vitess, SingleStore, Xpand, Aurora](#databases-that-speak-the-mysql-protocol)
-16. [Character sets and collations](#character-sets-and-collations)
-17. [Performance and scaling](#performance-and-scaling)
-18. [Backup and restore](#backup-and-restore)
-19. [Moving a site to another database](#moving-a-site-to-another-database)
-20. [Engine parity, measured](#engine-parity-measured)
-21. [Test coverage (CI)](#test-coverage-ci)
-22. [Which database is my site using?](#which-database-is-my-site-using)
-23. [Related pages](#related-pages)
+16. [Databases that speak the MySQL protocol: TiDB, Vitess, SingleStore, Xpand, Aurora](#databases-that-speak-the-mysql-protocol)
+17. [Character sets and collations](#character-sets-and-collations)
+18. [Performance and scaling](#performance-and-scaling)
+19. [Backup and restore](#backup-and-restore)
+20. [Moving a site to another database](#moving-a-site-to-another-database)
+21. [Engine parity, measured](#engine-parity-measured)
+22. [Test coverage (CI)](#test-coverage-ci)
+23. [Which database is my site using?](#which-database-is-my-site-using)
+24. [Planned databases, with what each would take](#planned-databases-with-what-each-would-take)
+25. [Related pages](#related-pages)
+
+## Support levels at a glance
+
+Every database Exponential 6.0.15 reaches, one row per product, with what it can do. The same table is on
+[network.se7enx.com/databases/](https://network.se7enx.com/databases/) and se7enx.com; all three come from one list of
+facts, checked against the code of the main branch on 28 November 2026.
+
+- **Data tables**: a [data table connection](../features/6.0/data-tables.md) can make, read and write tables on it.
+- **Full site**: the installers put the kernel schema and a site package in it, and the site runs from it.
+  "Untested" means the driver and its profile exist and pass their tests without a server, but no site was installed
+  on that product here.
+- **DFS**: it can hold the file metadata of a DFS cluster (`exp:cluster:enable`).
+- **Multi-server cluster**: several web servers serve one site from it.
+- **Setup wizard**: offered by the browser installer, and with which PHP extension (`eZSetupDatabaseMap()` in
+  `kernel/setup/ezsetupcommon.php`, `kernel/setup/steps/ezstep_database_choice.php`).
+- **`exp:install` / kickstarter**: the `--db=` name of the console installer; the kickstarter takes the same databases.
+- **xne upgrade tested**: an upgrade of an installed site with xne and an exact rollback of files and database
+  ([Upgrading with xne](../guides/upgrading-with-xne.md#databases)). xne refuses every database it has no verified
+  backup for.
+
+<!-- exp-db-levels:start -->
+| Database | Data tables | Full site | DFS | Multi-server cluster | Setup wizard | `exp:install` / kickstarter | xne upgrade tested |
+|---|---|---|---|---|---|---|---|
+| **Established** | | | | | | | |
+| [SQLite 3](../features/6.0/sqlite-database.md) | yes | yes, the default | one machine only | no | yes, preselected (sqlite3) | `sqlite`, the default | yes: Linux and Windows, exact rollback |
+| [PostgreSQL](../features/6.0/postgresql-database.md) | yes | yes, the recommended server (13 to 19) | yes | yes, with read replicas | yes (pgsql) | `pgsql` | yes: exact rollback, also of a failed step |
+| [MongoDB](../features/6.0/mongodb-database-support.md) | yes | yes, through an adapter (6.0 and later) | yes | yes | yes (mongodb) | `mongodb` | yes: one full proof run, exact rollback |
+| [MariaDB](../features/6.0/mariadb-and-mysql-database.md) | yes | yes | yes | yes, with read replicas | yes, as MariaDB / MySQL Improved (mysqli) | `mariadb` | yes: exact rollback, also of a failed step |
+| [Oracle](../features/6.0/oracle-database.md) | yes | yes, 19c and later (ezoracle) | yes | yes, with read replicas | yes (oci8) | `oracle` | yes: one full proof run, exact rollback |
+| [MySQL](../features/6.0/mariadb-and-mysql-database.md) | yes | yes | yes | yes, with read replicas | yes, as MariaDB / MySQL Improved (mysqli) | `mysql` | yes: the MariaDB driver and path, tested on MariaDB |
+| **SQL Server, Firebird and DuckDB** | | | | | | | |
+| [Microsoft SQL Server](../features/6.0/sqlserver-database-driver.md) | yes | yes (2017 to 2025) | yes | yes, Always On read replicas | yes, with sqlsrv or pdo_sqlsrv | `sqlserver` | no: xne refuses it (no verified backup yet) |
+| [Azure SQL](../features/6.0/sqlserver-database-driver.md) | yes | yes, the SQL Server driver (Database and Managed Instance; the service is not run in CI) | yes | yes | yes, as Microsoft SQL Server | `sqlserver` | no: xne refuses it (no verified backup yet) |
+| [Firebird](../features/6.0/firebird-database-driver.md) | yes | yes (4.0 and 5.0, PHP 8.4 and later) | no | no: one web server | yes, with pdo_firebird | `firebird` | no: xne refuses it (no verified backup yet) |
+| [DuckDB](../features/6.0/duckdb-database-driver.md) | yes | yes, small and read-mostly sites (one writer at a time) | no | no: one web server | yes, with ffi and ffi.enable=true | `duckdb` | no: xne refuses it (no verified backup yet) |
+| **MySQL protocol** | | | | | | | |
+| [TiDB](../features/6.0/mysql-wire-databases.md) | yes | yes (measured on 8.5) | yes (measured) | yes | yes, with mysqli | `tidb` | no: xne refuses it (no verified backup yet) |
+| [Vitess / PlanetScale](../features/6.0/mysql-wire-databases.md) | yes | yes, in an unsharded keyspace (measured on Vitess) | yes (measured on Vitess) | yes | yes, with mysqli | `vitess` | no: xne refuses it (no verified backup yet) |
+| [SingleStore](../features/6.0/mysql-wire-databases.md) | yes | yes (measured on 10.10) | yes (measured) | yes | yes, with mysqli | `singlestore` | no: xne refuses it (no verified backup yet) |
+| [MariaDB Xpand](../features/6.0/mysql-wire-databases.md) | yes, untested | untested (a profile) | untested | untested | yes, with mysqli | `xpand` | no: xne refuses it (no verified backup yet) |
+| [Amazon Aurora MySQL](../features/6.0/mysql-wire-databases.md) | yes, untested | untested (a profile) | untested | untested | yes, with mysqli | `aurora` | no: xne refuses it (no verified backup yet) |
+| **PostgreSQL protocol** | | | | | | | |
+| [CockroachDB](../features/6.0/postgresql-wire-databases.md) | yes | yes (measured on 25.2) | yes (measured) | yes | yes, with pgsql | `cockroachdb` | no: xne refuses it (no verified backup yet) |
+| [YugabyteDB](../features/6.0/postgresql-wire-databases.md) | yes | yes (measured on 2.25) | yes (measured; no lock timeout) | yes | yes, with pgsql | `yugabytedb` | no: xne refuses it (no verified backup yet) |
+| [Neon](../features/6.0/postgresql-wire-databases.md) | yes, untested | untested (a PostgreSQL profile) | untested | untested | yes, with pgsql | `neon` | no: xne refuses it (no verified backup yet) |
+| [Supabase](../features/6.0/postgresql-wire-databases.md) | yes, untested | untested (a PostgreSQL profile) | untested | untested | yes, with pgsql | `supabase` | no: xne refuses it (no verified backup yet) |
+| [Amazon Aurora PostgreSQL](../features/6.0/postgresql-wire-databases.md) | yes | untested (a PostgreSQL profile) | untested | untested | yes, with pgsql | `aurorapostgresql` | no: xne refuses it (no verified backup yet) |
+| [Google Cloud Spanner (PostgreSQL dialect)](../features/6.0/postgresql-wire-databases.md) | yes | no | no | no | no | no | not applicable |
+| **More site databases** | | | | | | | |
+| [libSQL server (sqld)](../features/6.0/libsql-database-driver.md) | yes | yes (measured on sqld 0.24) | no | yes: the web servers share the database; the DFS metadata goes in another database | yes, with curl | `libsql` | no: xne refuses it (no verified backup yet) |
+| [Turso](../features/6.0/libsql-database-driver.md) | yes, untested | untested (the libSQL driver over HTTPS) | no | as libSQL, untested | yes, with curl | `turso` | no: xne refuses it (no verified backup yet) |
+| [IBM Db2](../features/6.0/db2-database-driver.md) | yes | yes (11.5 and 12.1; a site measured on 12.1) | no | no: one web server | yes, with pdo_ibm or ibm_db2 | `db2` | no: xne refuses it (no verified backup yet) |
+| [IBM Informix](../features/6.0/informix-database-driver.md) | yes | yes (14.10 and 15; a site measured on 15) | no | no: one web server | yes, with ibm_db2 or pdo_ibm | `informix` | no: xne refuses it (no verified backup yet) |
+| [SAP HANA](../features/6.0/hana-database-driver.md) | yes | yes (2.0 SPS 05 and later, HANA Cloud) | no | no: one web server | yes, when SAP's HANA ODBC driver is registered | `hana` | no: xne refuses it (no verified backup yet) |
+| [SAP ASE (Sybase)](../features/6.0/ase-database-driver.md) | yes, untested | untested: no server to test against | no | no | no: never offered | `ase` | no: xne refuses it (no verified backup yet) |
+| [MonetDB](../features/6.0/columnar-databases.md) | yes | yes, one writer at a time | no | no: one web server | yes, listed last (no PHP extension needed) | `monetdb` | no: xne refuses it (no verified backup yet) |
+| **ODBC** | | | | | | | |
+| [ODBC: SQL Server, PostgreSQL, MariaDB / MySQL, Db2](../features/6.0/odbc-database-driver.md) | yes | yes (sites installed on SQL Server, MariaDB and PostgreSQL) | SQL Server and PostgreSQL over PDO_ODBC; MariaDB / MySQL through mysqli | as the dialect | yes, with pdo_odbc or odbc | `odbc` with `--db-dialect` | PostgreSQL and MariaDB / MySQL as that engine (unit tests); SQL Server and Db2 refused |
+| [Any other database with an ODBC driver](../features/6.0/odbc-database-driver.md) | yes | no | no | no | no | no | not applicable |
+| **Data tables and import** | | | | | | | |
+| [ClickHouse](../features/6.0/columnar-databases.md) | yes | no: no enforced keys, no transactions | no | no | no | no | not applicable |
+| [Apache Cassandra](../features/6.0/cassandra-scylladb-driver.md) | yes (and exp:cassandra:import) | no: no joins | no | no | no | no | not applicable |
+| [ScyllaDB](../features/6.0/cassandra-scylladb-driver.md) | yes (and exp:cassandra:import) | no: no joins | no | no | no | no | not applicable |
+| [Couchbase](../features/6.0/couchbase-driver.md) | yes (and exp:couchbase:import) | no (measured: too slow) | no | no | no | no | not applicable |
+| [Apache CouchDB](../features/6.0/couchdb-driver.md) | yes (and exp:couchdb:import) | no (measured: no SQL) | no | no | no | no | not applicable |
+| [Microsoft Access](../features/6.0/ms-access-support.md) | on Windows; exp:access:import everywhere | no (measured) | no | no | no | no | not applicable |
+<!-- exp-db-levels:end -->
+
+Each name links to the page of its driver, with the requirements, the PHP extension, the settings, an install
+example, the limits and the tested versions. Products being verified on the drivers that exist, and the databases
+that need new driver work, are in [Planned databases](#planned-databases-with-what-each-would-take).
 
 ## The supported databases, in order
 
@@ -124,9 +197,9 @@ in-memory SQLite copy of the documents a statement needs. Both are data table co
 (`exp:couchbase:import`, `exp:couchdb:import`), with PHP's `curl` (and `sqlite3` for CouchDB). See
 [Couchbase driver](../features/6.0/couchbase-driver.md) and [Apache CouchDB driver](../features/6.0/couchdb-driver.md).
 
-**Every driver above is on the main branch** and ships with 6.0.15; none is in development any more. **Planned**, with
-no code yet: Snowflake, Google BigQuery, Teradata, Exasol, H2, HSQLDB, Apache Derby, Ingres and the Amazon-native
-databases. Nothing on this list is a promise of a release.
+**Every driver above is on the main branch** and ships with 6.0.15; none is in development any more. The planned
+databases, with what support for each would take, are in
+[Planned databases](#planned-databases-with-what-each-would-take). Nothing on that list is a promise of a release.
 
 **Firebird** (new in 6.0.15, not in the order above): Firebird 4.0 and 5.0 run a whole site on the kernel's
 `expFirebirdDB` (`DatabaseImplementation=firebird`, pdo_firebird of PHP 8.4 or later, `exp:install --db=firebird`),
@@ -881,8 +954,40 @@ boot smoke test without a database. The test suites and how to run them locally 
   `mysql` and the PostgreSQL protocol databases `postgresql`; on the latter `databaseVariant()` names the database itself.
   libSQL and Turso answer `sqlite` (the driver is the SQLite driver over HTTP); `instanceof expLibSQLDB` tells them apart.
 
+## Planned databases, with what each would take
+
+Two kinds of work are planned. First, databases that speak a protocol Exponential already has a driver for (the
+PostgreSQL, MySQL, SQLite and MongoDB families, and anything with an ODBC driver): they need measuring, not new code,
+and each is listed in the table above only once a site or a data table connection has run on it here. Second,
+databases that need new driver work. Sizes are estimates (S: days, M: one to two weeks, L: more), and nothing on this
+list is a promise of a release.
+
+<!-- exp-db-planned:start -->
+| Databases | Kind of work | Realistic level | Approach | Size |
+|---|---|---|---|---|
+| AlloyDB, TimescaleDB, Citus and Azure Cosmos DB for PostgreSQL | verify on an existing driver | full site expected | the PostgreSQL driver as it is: the kernel suite and a whole-site install against each | S |
+| QuestDB, Materialize, RisingWave and CrateDB | verify on an existing driver | data tables expected | the PostgreSQL protocol; analytical and streaming engines without the transactions a site needs | S |
+| Percona Server and Percona XtraDB Cluster | verify on an existing driver | full site expected | drop-in MySQL on the mysqli driver; verify the install and the DFS backend | S |
+| Dolt and OceanBase (MySQL mode) | verify on an existing driver | full site to verify | the MySQL protocol; Dolt adds a branch per staging site | S |
+| StarRocks, Apache Doris and Manticore Search | verify on an existing driver | data tables expected | the MySQL protocol; analytical and search engines (Manticore also as a search backend) | S |
+| SQLCipher and LiteFS | verify on an existing driver | full site expected | SQLCipher: an encrypted SQLite through a SQLCipher-linked PHP extension; LiteFS: replicated SQLite files, one writer | S |
+| rqlite and Cloudflare D1 | verify on an existing driver | full site to verify | SQLite over HTTP: a small transport like the libSQL and Turso driver | M |
+| Amazon DocumentDB, Azure Cosmos DB for MongoDB and FerretDB | verify on an existing driver | full site to verify | the MongoDB adapter; check each service's gaps in aggregation, transactions and indexes | S to M |
+| Snowflake, Google BigQuery, Databricks, Teradata, Progress OpenEdge, FileMaker Server, Exasol and Ingres | verify on an existing driver | data tables and import | the generic ODBC driver with each vendor's ODBC driver; a smoke test each | S each |
+| Amazon DynamoDB, Google Firestore and Datastore, Azure Cosmos DB (NoSQL API) | new driver work | data tables and import | their HTTP APIs, like the Couchbase and CouchDB importers; a site would need a document adapter like MongoDB's (L) | M each |
+| Neo4j, ArangoDB, Amazon Neptune and SurrealDB | new driver work | data tables and import | HTTP or Bolt; SurrealDB's SQL-like language could go further | M each |
+| Redis and Valkey as a primary store, Riak, RethinkDB and RavenDB | new driver work | import and caching | import sources and cache roles; not site databases | S to M |
+| InterBase, Sybase before SAP, Apache Derby, H2 and HSQLDB | new driver work | data tables, InterBase possibly a site | InterBase through the Firebird driver with a profile; Sybase through the SAP ASE driver; Derby, H2 and HSQLDB through ODBC or JDBC bridges | S to M |
+<!-- exp-db-planned:end -->
+
+[Odoo](https://www.odoo.com/) is not a database: it is an ERP on PostgreSQL. Exponential and Odoo can share one
+PostgreSQL server today, each in its own database; syncing products, customers and orders between them is an
+integration through their APIs, not a database driver.
+
 ## Related pages
 
+- [PostgreSQL](../features/6.0/postgresql-database.md), [MariaDB and MySQL](../features/6.0/mariadb-and-mysql-database.md)
+  and [Oracle](../features/6.0/oracle-database.md): one page each, as every other database has.
 - [Choosing a database](choosing-a-database.md): every database of 6.0.15 in one matrix, with a guide per use case.
 - [Chapter 9, Databases](../install/09-databases.md): the operator's reference for every engine.
 - [Chapter 2, Requirements](../install/02-requirements.md#26-databases) and [OS support](os-support.md).

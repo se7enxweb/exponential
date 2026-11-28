@@ -20,7 +20,10 @@ by side, says honestly what was tested and what was not, and then answers the qu
 Every statement here comes from the code of the 6.0.15 line and the pages of the drivers themselves. The details,
 settings and limits of each database are on its own page, linked in the tables.
 [Database support](database-support.md) is the support statement with versions and settings; the operator's chapter
-is [chapter 9 of the installation guide](../install/09-databases.md).
+is [chapter 9 of the installation guide](../install/09-databases.md). The support level of every database in one table
+(data tables, full site, DFS, multi-server cluster, setup wizard, `exp:install` and kickstarter, xne upgrade tested),
+the same table network.se7enx.com and se7enx.com show, is
+[Support levels at a glance](database-support.md#support-levels-at-a-glance).
 
 ## Contents
 
@@ -57,11 +60,11 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 | Database | 6.0.14 | 6.0.15 | Site database | DFS cluster | Read replicas (`UseSlaveServer`) | Installers |
 |---|---|---|---|---|---|---|
 | [SQLite 3](../features/6.0/sqlite-database.md) | yes | yes, the default | yes | one machine only (a one-node cluster) | no | wizard, kickstarter, `exp:install` (`sqlite`, the default) |
-| [PostgreSQL 13 to 19](../features/6.0/postgresql-18-and-19.md) | yes | yes | yes | yes, in the kernel | yes | wizard, kickstarter, `pgsql` |
+| [PostgreSQL 13 to 19](../features/6.0/postgresql-database.md) | yes | yes | yes | yes, in the kernel | yes | wizard, kickstarter, `pgsql` |
 | [MongoDB 6.0 and later](../features/6.0/mongodb-database-support.md) | yes | yes | yes, through an adapter | yes, in the kernel | MongoDB's own replica set | wizard, kickstarter, `mongodb` |
-| MariaDB | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MariaDB / MySQL Improved"), kickstarter, `mariadb` |
-| Oracle 19c and later (`ezoracle`) | yes | yes | yes | yes, in the kernel | yes | wizard, kickstarter, `oracle` |
-| MySQL | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MariaDB / MySQL Improved"), kickstarter, `mysql` |
+| [MariaDB](../features/6.0/mariadb-and-mysql-database.md) | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MariaDB / MySQL Improved"), kickstarter, `mariadb` |
+| [Oracle 19c and later (`ezoracle`)](../features/6.0/oracle-database.md) | yes | yes | yes | yes, in the kernel | yes | wizard, kickstarter, `oracle` |
+| [MySQL](../features/6.0/mariadb-and-mysql-database.md) | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MariaDB / MySQL Improved"), kickstarter, `mysql` |
 | [SQL Server 2017 to 2025, Azure SQL](../features/6.0/sqlserver-database-driver.md) | no | new | yes | yes, in the kernel | yes (Always On, `ApplicationIntent=ReadOnly`) | wizard (with `sqlsrv` or `pdo_sqlsrv`), kickstarter, `sqlserver` |
 | [TiDB](../features/6.0/mysql-wire-databases.md#tidb) | no | new | yes | yes (MySQLi backend, measured) | the MySQL mechanism, not tested | wizard, kickstarter, `tidb` |
 | [Vitess, PlanetScale](../features/6.0/mysql-wire-databases.md#vitess-and-planetscale) | no | new | yes, in an unsharded keyspace | yes (measured on Vitess) | the MySQL mechanism, not tested | wizard, kickstarter, `vitess` |
@@ -121,9 +124,9 @@ real 6.0.14 site, upgrades it to the current code and rolls it back.
 | SQLite 3 | `sqlite3` | `sqlite` | SQLI Import's SQL source (`pdo_sqlite`) | Linux, Windows (CI), macOS | driver tests, PHP 8.1 to 8.5; a whole site on Windows | **yes**: 6.0.14 to main and back, on Linux and in the Windows job |
 | PostgreSQL | `pgsql` | `postgresql` | SQL source (`pdo_pgsql`), named connection | Linux, Windows | database tests on 13, 15, 18, 19; DFS on 13 to 19 | **yes**: 6.0.14 to main and back, and a failure rolled back |
 | MongoDB | `mongodb` and the library `mongodb/mongodb`; PHP 8.2 and later | `mongodb` | SQLI Import's MongoDB source | Linux, Windows | adapter tests; MongoDB 8.0 in the DFS job | **yes**, one proof run: a full upgrade of a kickstarted site and an exact `xne rollback` ([Upgrading with xne](../guides/upgrading-with-xne.md#databases)) |
-| MariaDB | `mysqli` | `mysql` | SQL source (`pdo_mysql`), named connection | Linux, Windows | through the MySQL jobs (the same driver) | as MySQL (the same driver), not separately |
+| MariaDB | `mysqli` | `mysql` | SQL source (`pdo_mysql`), named connection | Linux, Windows | through the MySQL jobs (the same driver) | **yes**: 6.0.14 to main and back, and a failure rolled back (xne's integration suite runs on MariaDB) |
 | Oracle | `oci8` and the `ezoracle` extension | `oracle` | SQL source (`oci8`), named connection | Linux, Windows | the DFS backend on Oracle Free 23 | **yes**, one proof run: a full upgrade of a kickstarted site through `ezoracle` and an exact `xne rollback` |
-| MySQL | `mysqli` | `mysql` | SQL source (`pdo_mysql`), named connection | Linux, Windows | database tests on MySQL 8.0 | **yes**: 6.0.14 to main and back, and a failure rolled back |
+| MySQL | `mysqli` | `mysql` | SQL source (`pdo_mysql`), named connection | Linux, Windows | database tests on MySQL 8.0 | the same driver and path as MariaDB, where xne's integration suite runs |
 | SQL Server, Azure SQL | `sqlsrv`, `pdo_sqlsrv`, `pdo_odbc` or `pdo_dblib` | `sqlserver` | SQL source (`pdo_sqlsrv`, `pdo_dblib` or PDO_ODBC), named connection | Linux, Windows (LocalDB in CI) | 2017, 2019, 2022, 2025 on three PHP layers, PHP 8.1 to 8.5; LocalDB on Windows | not yet (new in 6.0.15) |
 | TiDB, Vitess, SingleStore | `mysqli` | `tidb`, `vitess`, `singlestore` (or `mysql` with the option `profile`) | named connection of engine `mysql` | Linux | live tests in containers (job `mysqlwire`) | not yet |
 | Xpand, Aurora MySQL | `mysqli` | `xpand`, `aurora` | named connection of engine `mysql` | Linux | tests without a server only | not yet |
@@ -305,8 +308,20 @@ Firebird and DuckDB have not been tried on Windows. See [Exponential on Windows]
 ## Planned
 
 Every driver in the matrices above is on the main branch and ships with 6.0.15; none is in development any more.
-Planned, with no code yet: Snowflake, Google BigQuery, Teradata, Exasol, H2, HSQLDB, Apache Derby, Ingres and the
-Amazon-native databases. Nothing on this list is a promise of a release, and nothing on this page describes them.
+Planned are two kinds of work, each with what it would take and an estimated size in
+[Planned databases](database-support.md#planned-databases-with-what-each-would-take):
+
+- **Measuring databases that speak a protocol Exponential already has**, with no new code: AlloyDB, TimescaleDB, Citus
+  and Azure Cosmos DB for PostgreSQL (a full site expected); QuestDB, Materialize, RisingWave and CrateDB; Percona
+  Server and XtraDB Cluster, Dolt and OceanBase; StarRocks, Apache Doris and Manticore Search; SQLCipher, LiteFS,
+  rqlite and Cloudflare D1; Amazon DocumentDB, Azure Cosmos DB for MongoDB and FerretDB; and through ODBC, for data
+  tables and imports, Snowflake, Google BigQuery, Databricks, Teradata, Progress OpenEdge, FileMaker Server, Exasol and
+  Ingres.
+- **New driver work**, for data tables and imports: Amazon DynamoDB, Google Firestore and Datastore, Azure Cosmos DB
+  (NoSQL API); Neo4j, ArangoDB, Amazon Neptune and SurrealDB; Redis and Valkey, Riak, RethinkDB and RavenDB; InterBase,
+  older Sybase, Apache Derby, H2 and HSQLDB.
+
+Nothing on this list is a promise of a release, and a database enters the matrices above only once it has run here.
 
 ## Related pages
 
