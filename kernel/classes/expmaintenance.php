@@ -423,8 +423,28 @@ class expMaintenance
         // does not look the user up for its audit entry (expAudit::canLookUp()); without it, every installation
         // logged a failed database connection of the command.
         $setupRun = class_exists( 'expSetupLog', false ) ? expSetupLog::runId() : null;
+        if ( PHP_SAPI !== 'cli' || !is_file( $root . '/console' ) )
+            return;
+        if ( DIRECTORY_SEPARATOR === '\\' )
+        {
+            // cmd.exe knows neither VAR=value before a command nor /dev/null: the command runs without a shell
+            if ( !function_exists( 'proc_open' ) )
+                return;
+            $env = null;
+            if ( $setupRun !== null )
+            {
+                $env = getenv();
+                $env['EXP_SETUP_RUN'] = $setupRun;
+            }
+            $process = @proc_open( array( 'php', 'console', 'exp:velocity', 'cache', 'clear', '--apply', '--allow-root-user' ),
+                                   array( 0 => array( 'file', 'NUL', 'r' ), 1 => array( 'file', 'NUL', 'w' ), 2 => array( 'file', 'NUL', 'w' ) ),
+                                   $pipes, $root, $env );
+            if ( is_resource( $process ) )
+                proc_close( $process );
+            return;
+        }
         $environment = $setupRun !== null ? 'EXP_SETUP_RUN=' . escapeshellarg( $setupRun ) . ' ' : '';
-        if ( PHP_SAPI === 'cli' && is_file( $root . '/console' ) && function_exists( 'exec' ) )
+        if ( function_exists( 'exec' ) )
             @exec( 'cd ' . escapeshellarg( $root ) . ' && ' . $environment . 'php console exp:velocity cache clear --apply --allow-root-user >/dev/null 2>&1' );
     }
 }
