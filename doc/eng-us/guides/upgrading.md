@@ -370,6 +370,8 @@ and test an order before going live. [Changelog 6.0.15](../../changelogs/6.0/6.0
 - [Operating a site](operating-a-site.md): backups, caches and repairs after the upgrade.
 - [Deploying](deploying.md) and [Velocity engines](../bc/6.0/velocity-engines.md): reload the right PHP-FPM, or move to a faster server.
 - [Extensions](extensions.md): versions, loading order and releases of your own extensions.
+- [Upgrading with xne](upgrading-with-xne.md): the whole upgrade of a 6.0.x installation in one command, with a verified
+  backup and an automatic rollback.
 - [Upgrading with the console](upgrading-with-the-console.md) and [Migrations](../help/migrations/README.md): the
   upgrade as one command, and the site's own changes after it.
 - [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md): compare both files with the new templates.

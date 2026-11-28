@@ -7218,7 +7218,7 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 b98ce1aca91689887d213203fbea6c97  doc/eng-us/glossary.md
 afb367a93b4c39b5a44174aa8dec73c2  doc/eng-us/goals.md
-eb4904446d5ae50788e5d6a90411496a  doc/eng-us/guides/README.md
+4f695401af956cc011ae0f83e663a4be  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
 cb328df2d889368b2297e4864f4c9c19  doc/eng-us/guides/a-static-documentation-site.md
 bc3ce42df979a00f09fbb3e81ada65cd  doc/eng-us/guides/api-keys.md
@@ -7381,7 +7381,8 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 dd4acb3114392fbaac07d6148d4af8c1  doc/eng-us/guides/upgrade-steps-for-extensions.md
 e69a36390c53441867233740f2593ea9  doc/eng-us/guides/upgrading-with-the-console.md
-4c6b872b5a653f219db09984012a0d58  doc/eng-us/guides/upgrading.md
+81f0c858fa125f519675145c54aeb02d  doc/eng-us/guides/upgrading-with-xne.md
+03fcda8a0af29207801ae429755b279e  doc/eng-us/guides/upgrading.md
 8c83c286abed55c79cca43869a20860d  doc/eng-us/guides/url-maps.md
 c6826cf2b7f23a160762b979b996d435  doc/eng-us/guides/urls-and-aliases.md
 c0ef983a2b3afe72eea1bf3e56b186a3  doc/eng-us/guides/user-management-from-the-console.md
@@ -13305,7 +13306,7 @@ d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-meth
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
 b3b87216f383e55f8a59e92fdd674604  doc/eng-us/install/09-databases.md
 278eeb7d25c1222ac28937a2f8165689  doc/eng-us/install/10-after-installing.md
-fc437371e11683057c29e92404604cfb  doc/eng-us/install/11-upgrading.md
+4548d9de6a690c8426804ca69664dc50  doc/eng-us/install/11-upgrading.md
 48ccb4898ab342e4c3afa0435641ccd7  doc/eng-us/install/12-troubleshooting.md
 311dc1363a91c90c78f4d57a63ee0ed2  doc/eng-us/install/13-security-hardening.md
 fc58ac7d6caf0cec29836290720ef92f  doc/eng-us/install/14-migrating-from-4x.md
@@ -13693,7 +13694,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-ee0585397415794cae7de267e3d4f251  doc/ger-de/.paths.json
+31034561fba62519d999aaf5f427a888  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -13706,9 +13707,10 @@ d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 ddbb3c2493e9b29f1d3369b5cc346376  doc/ger-de/SUPPORT.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 9827fd9d541e98abcadb5be9189171c9  doc/ger-de/UPDATE.md
-56d9ccaec191e187a082c4540e69f16d  doc/ger-de/anleitungen/README.md
+eb5de5051628f48cf9735cb27bdd85b4  doc/ger-de/anleitungen/README.md
 741364bdf4d241654c5412fc32652f5d  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
-8f9534d539b24431f28aa5bd8ee1b1ea  doc/ger-de/anleitungen/aktualisieren.md
+02c7902c4accdc6a85c32683dcb1e25e  doc/ger-de/anleitungen/aktualisieren-mit-xne.md
+001c98f331e4718ed8451d4a9a715414  doc/ger-de/anleitungen/aktualisieren.md
 5df3d20c93c092ba569cbbde187645d6  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
 0e14fb80e8b544030c16681a1eb70987  doc/ger-de/anleitungen/benachrichtigungen-entwickler.md
@@ -23244,7 +23246,7 @@ dc8e282da8372c7775b4bab6d839930a  doc/ger-de/installation/05-setup-assistent.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
 817645faebd5a714ccb47e43529a770e  doc/ger-de/installation/09-datenbanken.md
 706664b7b744252ec94b974f9c76a582  doc/ger-de/installation/10-nach-der-installation.md
-a163deec7ec9e2ce690bbf919cbf86c2  doc/ger-de/installation/11-aktualisieren.md
+31c36edffac33c9075671abcfc3b45ec  doc/ger-de/installation/11-aktualisieren.md
 7a29282cee8bb67807ed770c2543e9ad  doc/ger-de/installation/12-fehlerbehebung.md
 7fc531a89a26d702403324480023f8a1  doc/ger-de/installation/13-sicherheitshaertung.md
 817c02a891226d45dd7e8ba5ff6ac605  doc/ger-de/installation/14-migration-von-4x.md

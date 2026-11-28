@@ -392,6 +392,8 @@ und prüfen Sie REST-Clients, die Serverpfade als Dateiwerte oder Felder senden,
 - [Betrieb einer Site](betrieb-einer-website.md): Datensicherungen, Caches und Reparaturen nach dem Upgrade.
 - [Bereitstellung](bereitstellung.md) und [Velocity-Engines](../bc/6.0/velocity-engines.md): das richtige PHP-FPM neu laden oder auf einen schnelleren Server wechseln.
 - [Extensions](extensions.md): Versionen, Ladereihenfolge und Releases Ihrer eigenen Extensions.
+- [Upgrade mit xne](aktualisieren-mit-xne.md): das ganze Upgrade einer 6.0.x-Installation in einem Befehl, mit geprüfter
+  Sicherung und automatischem Rollback.
 - [Upgrade mit der Konsole](aktualisieren-mit-der-konsole.md) und [Migrationen](../hilfe/migrationen/README.md): das
   Upgrade als ein Befehl, und die eigenen Änderungen der Site danach.
 - [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md): beide Dateien mit den neuen Vorlagen vergleichen.

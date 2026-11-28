@@ -305,6 +305,13 @@ before anything is changed.
 
 ## 11.6 From any 6.0.x to today
 
+> **Note**
+> **One command for the whole upgrade: xne.** On MariaDB / MySQL, PostgreSQL, SQLite, MongoDB and Oracle,
+> `xne upgrade --root=<installation>` does steps 1 and 2 below in one run: it plans, makes a verified backup of the
+> files and the database, writes the new release (a file patch, or a git fast-forward), runs `exp:upgrade`, checks the
+> result and rolls everything back by itself when a step fails. `xne plan` shows first what it would change. See
+> [Upgrading with xne](../guides/upgrading-with-xne.md). The steps below are what to do by hand, and what xne does for you.
+
 ### Step 1: put the new code in place
 
 As in 11.5 step 1: a checkout of the tag or branch (`git fetch --tags`, `git checkout v6.0.<n>` or `main`) followed

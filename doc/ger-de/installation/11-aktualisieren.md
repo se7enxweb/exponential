@@ -326,6 +326,14 @@ PHP-Version, bevor irgendetwas geändert wird.
 
 ## 11.6 Von einer beliebigen 6.0.x auf den heutigen Stand
 
+> **Hinweis**
+> **Ein Befehl für das ganze Upgrade: xne.** Auf MariaDB / MySQL, PostgreSQL, SQLite, MongoDB und Oracle erledigt
+> `xne upgrade --root=<installation>` die Schritte 1 und 2 unten in einem Lauf: Es plant, legt eine geprüfte Sicherung
+> der Dateien und der Datenbank an, schreibt das neue Release (ein Dateipatch oder ein git fast-forward), führt
+> `exp:upgrade` aus, prüft das Ergebnis und rollt alles von selbst zurück, wenn ein Schritt fehlschlägt. `xne plan`
+> zeigt vorher, was sich ändern würde. Siehe [Upgrade mit xne](../anleitungen/aktualisieren-mit-xne.md). Die Schritte
+> unten sind das, was Sie von Hand tun, und das, was xne für Sie tut.
+
 ### Schritt 1: den neuen Code an seinen Platz bringen
 
 Wie in 11.5, Schritt 1: ein Checkout des Tags oder Branches (`git fetch --tags`, `git checkout v6.0.<n>` oder `main`)
