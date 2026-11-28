@@ -245,11 +245,12 @@ class expKickstarterIni
         {
             // eZINI reads relative to the installation root, which is
             // $this->rootDir for every real run
-            $installationRoot = rtrim( (string)realpath( dirname( __DIR__, 2 ) ), '/' ) . '/';
+            $installationRoot = rtrim( (string)realpath( dirname( __DIR__, 2 ) ), '/' . DIRECTORY_SEPARATOR );
             $real = (string)realpath( $siteAccessDir );
-            if ( strpos( $real, $installationRoot ) !== 0 )
+            // compared as paths: realpath() writes backslashes on Windows
+            if ( $installationRoot === '' || $real === $installationRoot || !eZDir::isInside( $real, $installationRoot ) )
                 continue;
-            $ini = @eZINI::instance( 'site.ini', substr( $real, strlen( $installationRoot ) ), null, null, null, true );
+            $ini = @eZINI::instance( 'site.ini', str_replace( DIRECTORY_SEPARATOR, '/', substr( $real, strlen( $installationRoot ) + 1 ) ), null, null, null, true );
             if ( !$ini || !is_object( $ini ) )
                 continue;
 
