@@ -111,6 +111,24 @@ printf '%s' "$(openssl rand -hex 24)" > docker/db_password.txt
 docker compose -f docker/compose.postgresql.yml up -d
 ```
 
+Ohne Compose richten allein die Variablen den Container auf einen Datenbankserver, den Sie schon betreiben. MariaDB
+oder MySQL (`EXP_DB=mysql`), das Passwort in einer schreibgeschützt eingehängten Datei (lesbar für uid 33, das `www-data` des Containers):
+
+```bash
+docker run -d --name exponential -p 8080:8080 \
+  -v exp-var:/var/www/exponential/var \
+  -v exp-override:/var/www/exponential/settings/override \
+  -v exp-siteaccess:/var/www/exponential/settings/siteaccess \
+  -v "$PWD/db_password.txt:/run/secrets/db_password:ro" \
+  -e EXP_DB=mysql -e EXP_DB_HOST=db.example.com -e EXP_DB_NAME=exponential -e EXP_DB_USER=exponential \
+  -e EXP_DB_PASSWORD_FILE=/run/secrets/db_password \
+  -e EXP_SITE_URL=www.example.com -e EXP_ADMIN_EMAIL=you@example.com \
+  ghcr.io/se7enxweb/exponential:edge
+```
+
+Für PostgreSQL setzen Sie `EXP_DB=pgsql` (und `EXP_DB_PORT`, wenn er nicht 5432 ist). Die Datenbank und ihr Benutzer
+müssen bestehen; das Installationsprogramm legt die Tabellen darin an.
+
 ### Variablen
 
 | Variable | Standard | Bedeutung |

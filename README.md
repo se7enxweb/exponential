@@ -349,7 +349,7 @@ Exponential is plain PHP and a database: no compiled code of its own and no tie 
 | **Linux** (Red Hat Enterprise Linux 9 and 10 and their rebuilds, Debian 12 and 13, Ubuntu 22.04 and 24.04, Alpine, Plesk hosts) | the reference platform; PHP from the distribution or its usual repositories; Velocity ships `.deb` and `.rpm` packages | [Operating system support](doc/eng-us/help/os-support.md) |
 | **macOS** (Apple Silicon and Intel) | PHP from Homebrew; Velocity forks its workers as on Linux and publishes `macos-arm64` binaries | [macOS notes](doc/eng-us/help/os-support.md#macos) |
 | **Windows** (Windows Server 2022 and 2025, Windows 10 and 11) | the official PHP for Windows behind IIS (FastCGI and URL Rewrite, a ready `web.config`), Apache, or Velocity with its portable worker pool; SQL Server and every other engine | [Exponential on Windows](doc/eng-us/help/exponential-on-windows.md) |
-| **Containers** | Velocity images on `ghcr.io/se7enxweb/exponential-velocity` for amd64 and arm64 | [Containers](doc/eng-us/help/os-support.md#containers-cloud-and-hosting-panels) |
+| **Containers** | Official images on `ghcr.io/se7enxweb/exponential` (Apache with PHP-FPM or Velocity, PHP 8.0 to 8.5) and Velocity's own on `ghcr.io/se7enxweb/exponential-velocity`, for amd64 and arm64 | [Containers](#containers) |
 
 **What the CI proves.** The kernel's test suites run on every push on PHP 8.1 to 8.5, with syntax and boot checks on
 PHP 8.0 and 7.4, against MySQL, PostgreSQL 13 to 19, MongoDB, Oracle and SQL Server 2017 to 2025; the SQL Server
