@@ -19,6 +19,8 @@
  *  US-10 code put in place outside git (--code-applied, an upgrade tool's file patch): the code step counts as in
  *        place without looking at git, the stage-order check and the new process hand the option on, and a value
  *        that is no version or commit is refused
+ *  US-11 Composer runs on the PHP of the upgrade: that PHP's folder goes first in Composer's PATH, so a composer
+ *        started through "env php" (a phar, Plesk's wrapper) does not fall back to the system's default PHP
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -234,6 +236,22 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
         $given = function ( $name ) { return $name === 'COMPOSER_ROOT_VERSION' ? 'dev-main' : false; };
         $this->assertSame( 'dev-main', expUpgradeComposer::environment( $given, false, false, '6.0.15' )['COMPOSER_ROOT_VERSION'],
                            "the process's own wins" );
+    }
+
+    /** US-11 */
+    public function testComposerRunsOnThePhpOfTheUpgrade()
+    {
+        $path = function ( $name ) { return $name === 'PATH' ? '/usr/local/bin:/usr/bin:/bin' : false; };
+        $env = expUpgradeComposer::environment( $path, false, false, null, '/opt/plesk/php/8.5/bin/php' );
+        $this->assertSame( '/opt/plesk/php/8.5/bin:/usr/local/bin:/usr/bin:/bin', $env['PATH'], 'the PHP of the upgrade comes first' );
+        $twice = function ( $name ) { return $name === 'PATH' ? '/usr/bin:/opt/plesk/php/8.5/bin:/bin' : false; };
+        $this->assertSame( '/opt/plesk/php/8.5/bin:/usr/bin:/bin',
+                           expUpgradeComposer::environment( $twice, false, false, null, '/opt/plesk/php/8.5/bin/php' )['PATH'], 'moved to the front, not repeated' );
+        $win = function ( $name ) { return $name === 'PATH' ? 'C:\\Windows;C:\\tools' : false; };
+        $this->assertSame( 'C:/php;C:\\Windows;C:\\tools',
+                           expUpgradeComposer::environment( $win, false, true, null, 'C:/php/php.exe' )['PATH'], 'Windows separator' );
+        $this->assertSame( '/usr/local/bin:/usr/bin:/bin', expUpgradeComposer::environment( $path, false, false, null, null )['PATH'],
+                           'no PHP given: the PATH as it is' );
     }
 
     /** US-09 */

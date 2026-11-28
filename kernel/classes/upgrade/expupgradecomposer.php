@@ -71,9 +71,14 @@ class expUpgradeComposer
      * @param bool|null $windows whether this is Windows (null: PHP_OS_FAMILY)
      * @param string|null $rootVersion the version of the installation's own package (COMPOSER_ROOT_VERSION) where
      *                                 this process sets none: see rootVersion()
+     * @param string|null $phpBinary the PHP running this process (PHP_BINARY): its folder goes first in the PATH, so a
+     *                               Composer started through "#!/usr/bin/env php" (composer.phar, or a wrapper such as
+     *                               Plesk's /usr/local/bin/composer) runs on this PHP, not on the system's default one.
+     *                               With the system PHP (8.3 on a host whose site runs 8.5) Composer checked the wrong
+     *                               PHP version and extensions and the libraries stage failed.
      * @return array
      */
-    public static function environment( callable $getenv, $superuser = false, $windows = null, $rootVersion = null )
+    public static function environment( callable $getenv, $superuser = false, $windows = null, $rootVersion = null, $phpBinary = null )
     {
         if ( $windows === null )
             $windows = PHP_OS_FAMILY === 'Windows';
@@ -89,6 +94,14 @@ class expUpgradeComposer
             $env['COMPOSER_ALLOW_SUPERUSER'] = '1';
         if ( !isset( $env['COMPOSER_ROOT_VERSION'] ) && $rootVersion !== null && $rootVersion !== '' )
             $env['COMPOSER_ROOT_VERSION'] = (string)$rootVersion;
+        $phpDir = $phpBinary !== null && $phpBinary !== '' ? dirname( (string)$phpBinary ) : '';
+        if ( $phpDir !== '' && $phpDir !== '.' )
+        {
+            $separator = $windows ? ';' : ':';
+            $parts = $env['PATH'] === '' ? array() : explode( $separator, $env['PATH'] );
+            if ( !$parts || $parts[0] !== $phpDir )
+                $env['PATH'] = implode( $separator, array_merge( array( $phpDir ), array_values( array_diff( $parts, array( $phpDir ) ) ) ) );
+        }
         return $env;
     }
 
@@ -130,7 +143,7 @@ class expUpgradeComposer
             return array( 'exit' => 127, 'output' => '', 'errors' => 'no composer: give one with --composer=' );
         $root = (string)$context->option( 'root' );
         $command = array_merge( $command, $arguments, array( '--no-interaction', '--working-dir=' . $root ) );
-        $env = self::environment( 'getenv', function_exists( 'posix_geteuid' ) && posix_geteuid() === 0, null, self::rootVersion( $root ) );
+        $env = self::environment( 'getenv', function_exists( 'posix_geteuid' ) && posix_geteuid() === 0, null, self::rootVersion( $root ), PHP_SAPI === 'cli' ? PHP_BINARY : null );
         $result = self::runCommand( $command, $root, $env );
         if ( $result === null )
             return array( 'exit' => 127, 'output' => '', 'errors' => 'cannot start composer' );
