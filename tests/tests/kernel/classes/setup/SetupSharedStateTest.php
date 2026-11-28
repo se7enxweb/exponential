@@ -152,7 +152,9 @@ class SetupSharedStateTest extends PHPUnit\Framework\TestCase
         touch( $lock, time() - expSetupSharedState::LOCK_STALE - 5 );
         $this->assertSame( 'ran', expSetupSharedState::lock( $this->shared, function () { return 'ran'; }, 0.1 ), 'a stale lock is broken' );
         $this->assertDirectoryDoesNotExist( $lock, 'released after use' );
-        $this->assertNull( @expSetupSharedState::lock( '/proc/no-such-dir/setup', function () { return 'ran'; }, 0.1 ), 'no directory, no lock' );
+        // below a file: no system can make that directory (Windows would make /proc/... on the current drive)
+        file_put_contents( $this->shared . '/a-file', 'x' );
+        $this->assertNull( @expSetupSharedState::lock( $this->shared . '/a-file/setup', function () { return 'ran'; }, 0.1 ), 'no directory, no lock' );
     }
 
     public function testFilesTheWizardWroteOnOneNodeReachTheOther()
@@ -180,8 +182,10 @@ class SetupSharedStateTest extends PHPUnit\Framework\TestCase
         $this->assertFileDoesNotExist( $this->nodeB . '/settings/override/site.ini.append.php' );
 
         $this->assertSame( 2, expSetupSharedState::pull( $this->nodeB, $this->shared, 'run-1' ) );
-        $this->assertSame( 0640, fileperms( $this->nodeB . '/settings/override/site.ini.append.php' ) & 0777, 'the mode of node A\'s file' );
-        $this->assertSame( 0640, fileperms( $this->shared . '/files/settings/override/site.ini.append.php' ) & 0777, 'the shared copy too' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0640, fileperms( $this->nodeB . '/settings/override/site.ini.append.php' ) & 0777, 'the mode of node A\'s file' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0640, fileperms( $this->shared . '/files/settings/override/site.ini.append.php' ) & 0777, 'the shared copy too' );
         $this->assertFileEquals( $this->nodeA . '/settings/override/site.ini.append.php', $this->nodeB . '/settings/override/site.ini.append.php' );
         $this->assertFileEquals( $this->nodeA . '/settings/siteaccess/site/site.ini.append.php', $this->nodeB . '/settings/siteaccess/site/site.ini.append.php' );
         $this->assertFileDoesNotExist( $this->nodeB . '/settings/override/old.ini.append.php' );
