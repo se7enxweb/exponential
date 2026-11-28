@@ -677,7 +677,18 @@ class expDb2DB extends eZDBInterface
                     $helper->run( 'SET SCHEMA ' . expDb2Dialect::quoteIdentifier( $schema ) );
                 if ( $stale )
                     $helper->run( 'DROP TABLE ' . $dialect::quoteIdentifierIfNeeded( $name ) );
-                $made = $helper->run( $temporary['sql'] ) !== false || ( !$stale && $this->tableExists( $name, true ) );
+                $made = $helper->run( $temporary['sql'] ) !== false;
+                // SQL0286N: the database has no user temporary tablespace, which a global temporary table needs
+                if ( !$made && self::lacksUserTemporaryTablespace( $helper->error() ) )
+                {
+                    if ( !$this->createUserTemporaryTablespace( $helper ) )
+                    {
+                        $helper->close();
+                        return false;
+                    }
+                    $made = $helper->run( $temporary['sql'] ) !== false;
+                }
+                $made = $made || ( !$stale && $this->tableExists( $name, true ) );
                 $helper->close();
             }
             if ( !$made && !$this->query( $temporary['sql'] ) )
@@ -688,6 +699,55 @@ class expDb2DB extends eZDBInterface
         if ( $ok )
             $this->TempTables[strtolower( $name )] = $name;
         return $ok;
+    }
+
+    /** The user temporary tablespace the driver makes when a database has none. */
+    const USER_TEMPORARY_TABLESPACE = 'EXP_USERTEMP';
+
+    /**
+     * Whether an error is SQL0286N: no user temporary tablespace of a large enough page size (a database made
+     * without CREATE USER TEMPORARY TABLESPACE).
+     *
+     * @param array|null $error a transport's error()
+     * @return bool
+     */
+    public static function lacksUserTemporaryTablespace( $error )
+    {
+        return is_array( $error ) && ( (int)( $error['sqlcode'] ?? 0 ) === -286 || ( $error['state'] ?? '' ) === '42727'
+                                       || strpos( (string)( $error['message'] ?? '' ), 'SQL0286N' ) !== false );
+    }
+
+    /**
+     * Makes the user temporary tablespace EXP_USERTEMP, of the page size of USERSPACE1 in a buffer pool of that page
+     * size, over $transport (needs SYSADM or SYSCTRL, as the instance owner has). Without the authority the
+     * error says what the administrator has to run.
+     *
+     * @param expDb2Transport $transport an open connection in autocommit mode
+     * @return bool
+     */
+    public function createUserTemporaryTablespace( expDb2Transport $transport )
+    {
+        $pageSize = 32768;
+        $result = $transport->run( "SELECT PAGESIZE AS page_size FROM SYSCAT.TABLESPACES WHERE TBSPACE = 'USERSPACE1'" );
+        if ( $result !== false && isset( $result['rows'][0]['page_size'] ) && (int)$result['rows'][0]['page_size'] > 0 )
+            $pageSize = (int)$result['rows'][0]['page_size'];
+        $pool = '';
+        $result = $transport->run( 'SELECT BPNAME AS name FROM SYSCAT.BUFFERPOOLS WHERE PAGESIZE = ' . $pageSize . ' ORDER BY BUFFERPOOLID FETCH FIRST 1 ROWS ONLY' );
+        if ( $result !== false && isset( $result['rows'][0]['name'] ) )
+            $pool = ' BUFFERPOOL ' . expDb2Dialect::quoteIdentifier( trim( (string)$result['rows'][0]['name'] ) );
+        $sql = 'CREATE USER TEMPORARY TABLESPACE ' . self::USER_TEMPORARY_TABLESPACE . ' PAGESIZE ' . $pageSize . $pool;
+        if ( $transport->run( $sql ) !== false )
+        {
+            eZDebug::writeNotice( "The database had no user temporary tablespace, which the kernel's temporary tables need: made with $sql", __METHOD__ );
+            return true;
+        }
+        $error = $transport->error();
+        $this->ErrorMessage = "The database has no user temporary tablespace, which the kernel's temporary tables (search, node counts) need, "
+                            . "and this user may not make one: run as the instance owner: db2 \"CREATE USER TEMPORARY TABLESPACE USERTEMP PAGESIZE "
+                            . ( $pageSize / 1024 ) . ' K" (' . ( $error['message'] ?? 'no error' ) . ')';
+        $this->ErrorNumber = (int)( $error['sqlcode'] ?? -286 );
+        eZDebug::writeError( $this->ErrorMessage, __METHOD__ );
+        return false;
     }
 
     /**

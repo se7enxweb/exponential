@@ -90,13 +90,21 @@ Db2 legt eine Datenbank mit einem Befehl seiner Instanz an, nicht mit SQL; daher
 db2 "CREATE DATABASE EXP USING CODESET UTF-8 TERRITORY US PAGESIZE 32 K"
 db2 "CONNECT TO EXP"
 db2 "CREATE USER TEMPORARY TABLESPACE USERTEMP PAGESIZE 32 K"
+db2 "UPDATE DB CFG FOR EXP USING LOGFILSIZ 16384 LOGSECOND 40"
 ```
 
 **Die Seitengröße zählt.** Db2 nimmt je Index höchstens ein Viertel einer Seite als Schlüssel (8 KB bei Seiten von
 32 KB) und zählt ein `VARCHAR(n CODEUNITS32)` als 4n Bytes. Mit 32-KB-Seiten behalten die URL-Alias-Texte, Pfade und
 Bildpfade des Kernels 2.019 bis 2.022 Zeichen in ihren Indizes; mit den voreingestellten 4-KB-Seiten passen die
 eindeutigen Schlüssel des Kernels gar nicht. **Der benutzertemporäre Tablespace** hält die temporären Tabellen des
-Kernels (Suche, Knotenzählungen): ohne ihn schlagen sie fehl. `EXTENDED_ROW_SZ` muss `ENABLE` bleiben (die Vorgabe seit
+Kernels (Suche, Knotenzählungen). Hat eine Datenbank keinen (`SQL0286N` bei der ersten temporären Tabelle), legt der
+Treiber selbst `EXP_USERTEMP` mit der Seitengröße von `USERSPACE1` an; dafür braucht er `SYSADM` oder `SYSCTRL` (der
+Eigentümer der Instanz hat beides). Ohne diese Berechtigung schlägt die temporäre Tabelle mit einem Fehler fehl, der den
+Befehl oben nennt. **Das Transaktionsprotokoll** einer neuen Datenbank (13 primäre und 12 sekundäre Dateien zu 4 MB)
+ist für die größten Arbeitseinheiten des Kernels zu klein: `updatesearchindex.php --clean` leert den Suchindex in einer
+Transaktion und bricht schon bei einer Site von einigen hundert Objekten mit `SQL0964C` ab ("The transaction log for
+the database is full"). `LOGFILSIZ 16384` (Dateien zu 64 MB) mit `LOGSECOND 40` ergibt etwa 3,3 GB, genug für einen
+großen Index; die neue Dateigröße gilt, sobald die Datenbank wieder aktiviert wird. `EXTENDED_ROW_SZ` muss `ENABLE` bleiben (die Vorgabe seit
 10.5): die Zeilen des Kernels mit mehreren langen Texten sind länger als eine Seite.
 
 ## Eine Site installieren

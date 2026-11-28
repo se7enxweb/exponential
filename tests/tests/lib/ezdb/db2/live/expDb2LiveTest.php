@@ -15,6 +15,8 @@
  *          schema read back (equal on Db2), upgrades, the portable helpers
  *  DL-07 - Memory: 2,000 reads of 10 columns keep less than 256 KB (pdo_ibm's closeCursor() kept every result's
  *          column descriptors, ibm_db2's DB2_ATTR_CASE every column name)
+ *  DL-08 - The search engine's temporary tables: made, filled from a SELECT, joined, emptied and dropped twice; on
+ *          Db2 a database without a user temporary tablespace gets one (the CI's databases are made without)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x; All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -248,5 +250,36 @@ class expDb2LiveTest extends PHPUnit\Framework\TestCase
             $db->arrayQuery( $sql );
         gc_collect_cycles();
         $this->assertLessThan( 262144, memory_get_usage() - $before, 'memory kept by 2,000 reads of 10 columns' );
+    }
+
+    /**
+     * DL-08: the temporary tables of the built-in search (kernel/search/plugins/ezsearchengine), as it uses them.
+     * Db2 makes a user temporary tablespace when the database has none (SQL0286N, as the CI's databases are made).
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('engines')]
+    public function testSearchTemporaryTables( $class )
+    {
+        $db = $this->connect( $class );
+        $this->makeTable( $db );
+        foreach ( array( 'running', 'walking', 'running' ) as $n => $word )
+            $this->assertTrue( $db->query( "INSERT INTO exp_live (name, mask) VALUES ('$word', " . ( $n + 10 ) . ')' ), (string)$db->errorMessage() );
+        for ( $round = 0; $round < 2; $round++ )
+        {
+            $first = $db->generateUniqueTempTableName( 'ezsearch_tmp_%', 0 );
+            $second = $db->generateUniqueTempTableName( 'ezsearch_tmp_%', 1 );
+            $this->assertTrue( $db->createTempTable( "CREATE TEMPORARY TABLE $first ( contentobject_id int primary key not null, published int )" ), (string)$db->errorMessage() );
+            $this->assertTrue( $db->createTempTable( "CREATE TEMPORARY TABLE $second ( contentobject_id int primary key not null, published int )" ), (string)$db->errorMessage() );
+            $this->assertTrue( $db->query( "INSERT INTO $first SELECT DISTINCT id, mask FROM exp_live WHERE name = 'running'" ), (string)$db->errorMessage() );
+            $this->assertTrue( $db->query( "INSERT INTO $second SELECT DISTINCT $first.contentobject_id, $first.published FROM $first, exp_live WHERE exp_live.id = $first.contentobject_id AND exp_live.mask > 10" ), (string)$db->errorMessage() );
+            $rows = $db->arrayQuery( "SELECT count( DISTINCT exp_live.id ) AS count FROM $second, exp_live WHERE exp_live.id = $second.contentobject_id" );
+            $this->assertIsArray( $rows, (string)$db->errorMessage() );
+            $this->assertSame( '1', $rows[0]['count'] );
+            $db->dropTempTableList( array( $first, $second ) );
+        }
+        if ( !$db instanceof expInformixDB )
+        {
+            $spaces = $db->arrayQuery( "SELECT COUNT(*) AS c FROM SYSCAT.TABLESPACES WHERE DATATYPE = 'U'" );
+            $this->assertGreaterThan( 0, (int)$spaces[0]['c'], 'a user temporary tablespace' );
+        }
     }
 }

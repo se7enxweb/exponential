@@ -952,13 +952,14 @@ jobs:
           php vendor/bin/phpunit --colors=always tests/tests/lib/ezdbschema/expDb2SchemaTest.php
 
       # Db2 takes 3 to 8 minutes to set up its instance; the databases are made here, Db2's with pages of 32 KB and
-      # a user temporary tablespace (for the kernel's temporary tables), Informix's in a dbspace of 16 KB pages
+      # no user temporary tablespace (the driver makes EXP_USERTEMP for the kernel's temporary tables, as it has to
+      # on a database made without one), Informix's in a dbspace of 16 KB pages
       - name: Make the databases
         run: |
           for i in $(seq 1 120); do docker logs db2 2>&1 | grep -q "Setup has completed" && break; sleep 10; done
           docker logs db2 2>&1 | grep -q "Setup has completed" || { docker logs --tail 60 db2; echo "::error::Db2 did not start"; exit 1; }
           for db in EXPSITE EXPLIVE; do
-            docker exec db2 su - db2inst1 -c "db2 create database $db using codeset UTF-8 territory US pagesize 32768 && db2 connect to $db && db2 'create user temporary tablespace USERTEMP pagesize 32768' && db2 terminate"
+            docker exec db2 su - db2inst1 -c "db2 create database $db using codeset UTF-8 territory US pagesize 32768 && db2 terminate"
           done
           # Informix's entrypoint initialises the server on every start and stops it again ("Informix is offline -
           # Exit") when the sysadmin database takes more than 60 s, which happens on a busy runner: wait for the end of

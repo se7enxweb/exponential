@@ -11,7 +11,8 @@
  *  DB-05 - A deadlock outside a transaction is sent again, inside one it is not; a lost connection outside a
  *          transaction is opened again; errors carry their category and no password
  *  DB-06 - Temporary tables: Db2 makes the global temporary table over a second connection once and deletes its rows
- *          when the kernel drops it; Informix uses its own temporary tables
+ *          when the kernel drops it; Informix uses its own temporary tables; a database without a user temporary
+ *          tablespace (SQL0286N) gets EXP_USERTEMP of USERSPACE1's page size and the table, or an error naming the fix
  *  DB-07 - Relations in lower case; a dropped table takes its sequence; createDatabase() refused with the reason;
  *          long literals as parameters; Informix's session setup (lock wait, isolation, line breaks)
  *
@@ -168,6 +169,41 @@ class expDb2DBTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $ifx->createTempTable( 'CREATE TEMPORARY TABLE tmp_x ( id int )' ) );
         $this->assertTrue( $ifx->dropTempTable( 'DROP TABLE tmp_x' ) );
         $this->assertSame( array( 'CREATE TEMP TABLE tmp_x ( id INTEGER ) WITH NO LOG', 'DROP TABLE tmp_x' ), $i->sent( '/^(CREATE|DROP)/' ) );
+    }
+
+    /**
+     * DB-06: a database made without a user temporary tablespace (SQL0286N on the global temporary table) gets one of
+     * USERSPACE1's page size in a buffer pool of that size, and the table is made after it; without the authority
+     * the table is not made and the error names the statement to run.
+     */
+    public function testTemporaryTableMakesTheUserTemporaryTablespace()
+    {
+        $space = false;
+        $t = new expDb2FakeTransport();
+        $t->on( '/^CREATE GLOBAL TEMPORARY TABLE/', function () use ( &$space ) {
+            return $space ? array() : array( 'error' => array( -286, '42727', 'SQL0286N A table space could not be found with a page size of at least "4096"' ) );
+        } );
+        $t->on( '/^CREATE USER TEMPORARY TABLESPACE/', function () use ( &$space ) { $space = true; return array(); } );
+        $t->on( "/FROM SYSCAT.TABLESPACES WHERE TBSPACE = 'USERSPACE1'/", array( array( 'page_size' => '32768' ) ) );
+        $t->on( '/FROM SYSCAT.BUFFERPOOLS WHERE PAGESIZE = 32768/', array( array( 'name' => 'IBMDEFAULTBP ' ) ) );
+        $db = expDb2TestKit::driver( $t );
+        $this->assertTrue( $db->createTempTable( 'CREATE TEMPORARY TABLE ezsearch_tmp_0 ( contentobject_id int primary key not null, published int )' ) );
+        $this->assertSame( array( 'CREATE GLOBAL TEMPORARY TABLE ezsearch_tmp_0 ( contentobject_id INTEGER NOT NULL, published INTEGER ) ON COMMIT PRESERVE ROWS NOT LOGGED',
+                                  'CREATE USER TEMPORARY TABLESPACE EXP_USERTEMP PAGESIZE 32768 BUFFERPOOL "IBMDEFAULTBP"',
+                                  'CREATE GLOBAL TEMPORARY TABLE ezsearch_tmp_0 ( contentobject_id INTEGER NOT NULL, published INTEGER ) ON COMMIT PRESERVE ROWS NOT LOGGED' ),
+                           $t->siblings[0]->sent( '/^CREATE/' ) );
+        $this->assertSame( array( 'DELETE FROM ezsearch_tmp_0' ), $t->sent( '/^DELETE/' ) );
+
+        // no authority to make a tablespace: no table, and the error says what to run
+        $r = new expDb2FakeTransport();
+        $r->on( '/^CREATE GLOBAL TEMPORARY TABLE/', array( 'error' => array( -286, '42727', 'SQL0286N A table space could not be found' ) ) );
+        $r->on( '/^CREATE USER TEMPORARY TABLESPACE/', array( 'error' => array( -552, '42502', 'SQL0552N "EXP" does not have the privilege' ) ) );
+        $refused = expDb2TestKit::driver( $r );
+        $this->assertFalse( $refused->createTempTable( 'CREATE TEMPORARY TABLE ezsearch_tmp_0 ( contentobject_id int not null )' ) );
+        $this->assertStringContainsString( 'CREATE USER TEMPORARY TABLESPACE USERTEMP PAGESIZE 32 K', $refused->errorMessage() );
+        $this->assertSame( array(), $r->sent( '/^DELETE FROM ezsearch_tmp_0/' ) );
+        $this->assertFalse( expDb2DB::lacksUserTemporaryTablespace( array( 'sqlcode' => -204, 'state' => '42704', 'message' => 'SQL0204N' ) ) );
+        $this->assertFalse( expDb2DB::lacksUserTemporaryTablespace( null ) );
     }
 
     public function testRelationsAndDatabases()

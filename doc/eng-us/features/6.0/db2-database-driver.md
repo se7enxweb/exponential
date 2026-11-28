@@ -87,12 +87,20 @@ make one. As the instance owner:
 db2 "CREATE DATABASE EXP USING CODESET UTF-8 TERRITORY US PAGESIZE 32 K"
 db2 "CONNECT TO EXP"
 db2 "CREATE USER TEMPORARY TABLESPACE USERTEMP PAGESIZE 32 K"
+db2 "UPDATE DB CFG FOR EXP USING LOGFILSIZ 16384 LOGSECOND 40"
 ```
 
 **The page size matters.** Db2 keys at most a quarter of a page per index (8 KB with pages of 32 KB) and counts a
 `VARCHAR(n CODEUNITS32)` as 4n bytes. With 32 KB pages the kernel's URL alias texts, path strings and image paths keep
 2,019 to 2,022 characters in their indexes; with the default 4 KB pages the kernel's unique keys do not fit at all.
-**The user temporary tablespace** holds the kernel's temporary tables (search, node counts): without it they fail.
+**The user temporary tablespace** holds the kernel's temporary tables (search, node counts). When a database has none
+(`SQL0286N` on the first temporary table), the driver makes `EXP_USERTEMP` of `USERSPACE1`'s page size itself, which
+needs `SYSADM` or `SYSCTRL` (the instance owner has both); without that authority the temporary table fails with an
+error that names the statement above. **The transaction log** of a new database (13 primary and 12 secondary files of
+4 MB) is too small for the kernel's largest units of work: `updatesearchindex.php --clean` empties the search index in
+one transaction and stops with `SQL0964C` ("The transaction log for the database is full") on a site of a few hundred
+objects. `LOGFILSIZ 16384` (64 MB files) with `LOGSECOND 40` gives about 3.3 GB, enough for a large index; the new
+file size takes effect when the database is activated again.
 `EXTENDED_ROW_SZ` must stay `ENABLE` (the default since 10.5): the kernel's rows of several long texts are longer than a
 page.
 
