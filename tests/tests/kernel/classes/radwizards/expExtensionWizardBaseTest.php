@@ -373,7 +373,7 @@ class expExtensionWizardBaseTest extends PHPUnit\Framework\TestCase
         {
             $archive = expExtensionWizardBaseTestWizard::archive( $settings );
             $this->assertTrue( $archive['ok'], $archive['message'] );
-            $this->assertStringStartsWith( expRadWizardTestHelper::root() . '/var/tmp/', $archive['path'] );
+            $this->assertStringStartsWith( str_replace( '\\', '/', expRadWizardTestHelper::root() . '/var/tmp/' ), str_replace( '\\', '/', $archive['path'] ) );
             $this->assertSame( $name . '.zip', $archive['filename'] );
             $zip = new ZipArchive();
             $this->assertTrue( $zip->open( $archive['path'] ) );

@@ -105,7 +105,8 @@ class expStaticCredentialsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', $c->problem() );
         $g = $c->gitEnvironment();
         $this->assertSame( str_replace( '\\', '/', self::root() . '/bin/shell/expstaticaskpass.sh' ), str_replace( '\\', '/', $g['env']['GIT_ASKPASS'] ) );
-        $this->assertTrue( is_executable( $g['env']['GIT_ASKPASS'] ), 'the askpass helper is executable' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no executable bit: is_executable() knows .exe, .bat and .cmd
+            $this->assertTrue( is_executable( $g['env']['GIT_ASKPASS'] ), 'the askpass helper is executable' );
         $this->assertSame( "#!/usr/bin/env sh\n", substr( file_get_contents( $g['env']['GIT_ASKPASS'] ), 0, 18 ) );
         $this->assertSame( self::TOKEN, $g['env'][expStaticCredentials::ENV_TOKEN] );
         $this->assertSame( 'x-access-token', $g['env'][expStaticCredentials::ENV_USER] );
