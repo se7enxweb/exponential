@@ -99,6 +99,11 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
   für einen Server, einen Cluster, eine verwaltete Cloud-Datenbank, eine Demo, Auswertungen und Importe, Windows passt
 - [Unterstützung für die Datenbank SQLite](sqlite-datenbank.md)
 - [MongoDB als Datenbank](mongodb-datenbankunterstuetzung.md)
+- [Unterstützung für die Datenbank PostgreSQL](postgresql-datenbank.md): Unterstützungsstufe, Voraussetzungen,
+  Einstellungen, eine Installation, die Grenzen und die getesteten Versionen auf einer Seite
+- [Unterstützung für die Datenbanken MariaDB und MySQL](mariadb-und-mysql-datenbank.md): dasselbe für MariaDB und
+  MySQL, ein Treiber
+- [Unterstützung für die Datenbank Oracle](oracle-datenbank.md): dasselbe für Oracle 19c und neuer über `ezoracle`
 - [PostgreSQL 18 und 19](postgresql-18-und-19.md): unterstützte Versionen und ihre Tests, Client-Versionen,
   Aktualisieren und ein Cluster auf 18 und 19
 - [Microsoft-SQL-Server-Treiber](sqlserver-datenbanktreiber.md): `expSQLServerDB` für SQL Server 2017 bis 2025 und Azure

@@ -93,6 +93,10 @@ nginx with PHP-FPM keep working as before.
   to take for one server, a cluster, a managed cloud database, a demo, analytics and imports, Windows
 - [SQLite database support](sqlite-database.md)
 - [MongoDB as the database](mongodb-database-support.md)
+- [PostgreSQL database support](postgresql-database.md): the support level, requirements, settings, an install, the
+  limits and the tested versions on one page
+- [MariaDB and MySQL database support](mariadb-and-mysql-database.md): the same for MariaDB and MySQL, one driver
+- [Oracle database support](oracle-database.md): the same for Oracle 19c and later through `ezoracle`
 - [PostgreSQL 18 and 19](postgresql-18-and-19.md): supported versions and their tests, client versions, upgrading,
   and a cluster on 18 and 19
 - [Microsoft SQL Server driver](sqlserver-database-driver.md): `expSQLServerDB` for SQL Server 2017 to 2025 and Azure

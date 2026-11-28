@@ -6980,7 +6980,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-2c2eebf7bc2bfeede2bdb69cfeb18fb8  doc/eng-us/features/6.0/README.md
+3a2ffb1fba4b597d91610a04c9fe1589  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7108,6 +7108,7 @@ fb41e999d70ad1fbeef83693d1ee6c77  doc/eng-us/features/6.0/mail-preferences.md
 c5984c436afd8c71814648959a87d3ea  doc/eng-us/features/6.0/mail-receive.md
 70689845801571a8ad48a92751b21397  doc/eng-us/features/6.0/maintenance-mode.md
 a2b887cb3bf61b535d6fca58c72d1ae0  doc/eng-us/features/6.0/managed-by-deployment.md
+68c25b52dd0a922babc240e2faa6fd22  doc/eng-us/features/6.0/mariadb-and-mysql-database.md
 ec55512dfd4d53e21c83bcc5cb3607ee  doc/eng-us/features/6.0/migrations.md
 edf63d0c3d2620ae2f29a5a96f1c6fa1  doc/eng-us/features/6.0/moderation.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
@@ -7121,6 +7122,7 @@ f67a09aec32d0ad336358cc7f9ac88b7  doc/eng-us/features/6.0/mysql-wire-databases.m
 1e5257640f8fa49f18f0eebd491884c2  doc/eng-us/features/6.0/notifications.md
 e025cc18b1b355794fc3d70d9e517726  doc/eng-us/features/6.0/odbc-database-driver.md
 328d31cb3c5429d428bb28e53e460208  doc/eng-us/features/6.0/online-editor-tinymce8.md
+5aa7ab7d446c5bb205cf09748a904a08  doc/eng-us/features/6.0/oracle-database.md
 3c4fe94e91ca4bfc49f165feb3b805f7  doc/eng-us/features/6.0/oracle-dfs-cluster.md
 e510905150884893d3af084b35ddf870  doc/eng-us/features/6.0/order-list-sorting.md
 28c90ba4d835d68a0013426971fcec5b  doc/eng-us/features/6.0/order-receipts.md
@@ -7140,6 +7142,7 @@ e72286bc83884f1eb24b2ee9034f6481  doc/eng-us/features/6.0/platform-layouts-core-
 9883032b2ce992bfc3a26c0f0a92cc74  doc/eng-us/features/6.0/platform-php85-framework-forks.md
 cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.md
 2e6216a45844e2f3da0b09fbbea87102  doc/eng-us/features/6.0/platform-sqlite-install.md
+cd4a2422b291d5e0cd21b6ce43902fa3  doc/eng-us/features/6.0/postgresql-database.md
 bc69ace0968d5739ba99d8edf380d111  doc/eng-us/features/6.0/postgresql-dfs-cluster.md
 a0e7e167ffd7a78130d954c745186743  doc/eng-us/features/6.0/postgresql-wire-databases.md
 90c5f27d343a57526bf016d4e13900ef  doc/eng-us/features/6.0/preload-sites-view.md
@@ -13694,7 +13697,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-922dbcc0c651b2788ff9a5d2ffdc6bf9  doc/ger-de/.paths.json
+e451e04a530ee0ebb74222314d3d86d0  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17128,7 +17131,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-bd206cf68181c50d4cca6e2d0c8b3bec  doc/ger-de/funktionen/6.0/README.md
+051fb140a40b5d4a1a4f3b09889c1efb  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17263,6 +17266,7 @@ da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
 624d05010894d447da028cc1de54c066  doc/ger-de/funktionen/6.0/log-betrachter.md
 d1adeb16d48df541b3a2c073b9495150  doc/ger-de/funktionen/6.0/log-rotation.md
 2d9e73a5bdc1de02051bb8e74ea9d2b7  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
+6b82dc47d9317a062671a6cc011048c6  doc/ger-de/funktionen/6.0/mariadb-und-mysql-datenbank.md
 aaf9daf6eaa5923ba7b556acd12b9659  doc/ger-de/funktionen/6.0/migrationen.md
 ab38db87d8356eec578bd9158475a255  doc/ger-de/funktionen/6.0/moderation.md
 ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaenderung.md
@@ -17275,6 +17279,7 @@ a0bd58357b09d6587778742acec9e033  doc/ger-de/funktionen/6.0/oberster-knoten-des-
 4306223b2b2eaa27c6fa4023d25f1ce3  doc/ger-de/funktionen/6.0/odbc-datenbanktreiber.md
 99269121eb54ff615dc17139eec01ac3  doc/ger-de/funktionen/6.0/online-editor-tinymce8.md
 53e924c6d8365234e1bcd4525bf25bb2  doc/ger-de/funktionen/6.0/optionen-der-unterelementtabelle.md
+08e30a99845ddda822393d6bb941a0a5  doc/ger-de/funktionen/6.0/oracle-datenbank.md
 2eeed3b957a41e78505c209937ec2070  doc/ger-de/funktionen/6.0/oracle-dfs-cluster.md
 494f858644b4e88de283a243c0d0c22f  doc/ger-de/funktionen/6.0/paketassistent.md
 25a3174397d3a96f8f3b3b80fd5610f4  doc/ger-de/funktionen/6.0/pakete-vergleichen-und-importieren.md
@@ -17291,6 +17296,7 @@ fe5869bd6e0ab614f9de91892d6c9895  doc/ger-de/funktionen/6.0/plattform-nexus-star
 393ffffcd603e012a44013ce86323f2b  doc/ger-de/funktionen/6.0/plattform-site-bundles.md
 04a57e6e4790f4c646e57c18412a6b61  doc/ger-de/funktionen/6.0/plattform-sqlite-installation.md
 2624cae468b076c31b77ae21176969b5  doc/ger-de/funktionen/6.0/postfaecher-lesen.md
+6146dff124a1192033b844c0a0b25a8c  doc/ger-de/funktionen/6.0/postgresql-datenbank.md
 9138cf7d367b35be11781a60d5f7199d  doc/ger-de/funktionen/6.0/postgresql-dfs-cluster.md
 187023fdc99d0d1f697dc4aa6060548a  doc/ger-de/funktionen/6.0/postgresql-wire-datenbanken.md
 566dbc8ab28ae074d810044f0c1b0bc8  doc/ger-de/funktionen/6.0/pruefprotokoll.md
