@@ -284,6 +284,7 @@ nicht.
 | Befehl | Was er tut |
 |---|---|
 | `./console exp:cluster:enable` / `exp:cluster:disable` | eine Installation zu einem DFS-Cluster mit einem Knoten machen und zurück (Share, Tabellen in der Datenbank der Website, Einstellungen, Dateien verschoben), ein Probelauf ohne `--apply`; `--backend` (`mysqli`, `postgresql`, `sqlite`, `mongodb`, `oracle`, `sqlserver`), `--share`, `--no-move` ([Seite](cluster-befehle.md)) |
+| `./console exp:cluster:run`, `exp:cluster:cache clear`, `exp:cluster:deploy`, `exp:cluster:status`, `exp:host:run` | einen Konsolenbefehl ausführen, die Caches leeren, ausrollen oder den Zustand lesen, auf jedem Host aus `settings/cluster.ini` über ssh, als Benutzer der Website, PASS/FAIL je Host, `--dry-run` ([Seite](cluster-host-befehle.md)) |
 | `php bin/php/clusterize.php` (`./console exp:clusterize`) | die Dateien von `var/` in den Cluster verschieben; `-u` verschiebt sie zurück ([Beispiel](../../beispiele/befehle/clusterize.md)) |
 | `php bin/php/clusterpurge.php` (`./console exp:clusterpurge`) | abgelaufene Cluster-Dateien physisch entfernen, ein Probelauf ohne `--apply`; auch der Cronjob-Teil `cluster_maintenance`, den `cronjob.ini [AdminSettings] ForbiddenParts[]` von den Schaltflächen der Administration fernhält ([Beispiel](../../beispiele/befehle/clusterpurge.md)) |
 | `php bin/php/dfscleanup.php` | das Share mit den Metadaten vergleichen (`-S`, `-B`), löschen, was nicht existiert (`-D`) |
@@ -371,6 +372,7 @@ Metadaten auf SQL Server, PostgreSQL oder Oracle, wo immer diese laufen, und umg
 - [Clustering mit MongoDB: das DFS-Backend im Kernel](mongodb-dfs-cluster.md)
 - [Clustering mit SQLite: das Ein-Knoten-DFS-Backend im Kernel](sqlite-dfs-cluster.md)
 - [Ein DFS-Cluster mit einem Knoten in einem Befehl](cluster-befehle.md): `exp:cluster:enable` und `exp:cluster:disable`
+- [Befehle auf anderen Hosts und im ganzen Cluster](cluster-host-befehle.md): `exp:host:run` und `exp:cluster:*`
 - [Bild-Aliase auf Abruf](bild-aliase-auf-abruf.md): das Gateway reicht fehlende Aliase an `index_image.php` weiter
 - [Antwort-Cache von Velocity](velocity-antwort-cache.md)
 - [sevenx_valkey_cache: Cache-Backend für Redis und Valkey](erweiterungen/sevenx_valkey_cache.md)

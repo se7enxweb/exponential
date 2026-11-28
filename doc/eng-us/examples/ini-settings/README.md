@@ -24,6 +24,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [binaryfile.ini](binaryfile/README.md) | kernel | 3 |
 | [bookmark.ini](bookmark/README.md) | kernel | 2 |
 | [browse.ini](browse/README.md) | kernel | 35 |
+| [cluster.ini](cluster/README.md) | kernel | 1 |
 | [codetemplate.ini](codetemplate/README.md) | kernel | 1 |
 | [collaboration.ini](collaboration/README.md) | kernel | 4 |
 | [collect.ini](collect/README.md) | kernel | 4 |

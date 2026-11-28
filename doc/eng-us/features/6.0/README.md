@@ -159,6 +159,8 @@ nginx with PHP-FPM keep working as before.
 - [Remote services: the whole admin as an HTTP API (expservices)](remote-services-expservices.md)
 - [A one-node DFS cluster in one command](cluster-commands.md): `exp:cluster:enable` and `exp:cluster:disable` make the
   share, the cluster tables and settings and move the files in (or back); the gateway rule is printed for the web server
+- [Commands on other hosts and across a cluster](cluster-host-commands.md): `exp:host:run`, `exp:cluster:run`,
+  `exp:cluster:cache clear`, `exp:cluster:deploy` and `exp:cluster:status` run on every host of `settings/cluster.ini` over ssh, PASS/FAIL per host
 - [The GraphQL API: ask the content for exactly the fields a page needs](graphql.md): `/api/graphql`, a schema
   generated from the content classes, policies always applied, Setup > GraphQL with a playground,
   `exp:graphql:status`, `exp:graphql:schema` and `exp:graphql:query`

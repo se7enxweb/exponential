@@ -168,6 +168,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Entfernte Dienste: die ganze Administration als HTTP-API (expservices)](entfernte-dienste-expservices.md)
 - [Ein DFS-Cluster mit einem Knoten in einem Befehl](cluster-befehle.md): `exp:cluster:enable` und `exp:cluster:disable` legen
   Share, Cluster-Tabellen und Einstellungen an und verschieben die Dateien hinein (oder zurück); die Gateway-Regel wird für den Webserver ausgegeben
+- [Befehle auf anderen Hosts und im ganzen Cluster](cluster-host-befehle.md): `exp:host:run`, `exp:cluster:run`,
+  `exp:cluster:cache clear`, `exp:cluster:deploy` und `exp:cluster:status` laufen über ssh auf jedem Host aus `settings/cluster.ini`, PASS/FAIL je Host
 - [Die GraphQL-API: genau die Felder abfragen, die eine Seite braucht](graphql.md): `/api/graphql`, ein aus den
   Inhaltsklassen erzeugtes Schema, Richtlinien gelten immer, Setup > GraphQL mit einem Playground,
   `exp:graphql:status`, `exp:graphql:schema` und `exp:graphql:query`

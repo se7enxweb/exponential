@@ -2262,6 +2262,7 @@ only with `Reads=enabled`).
 | `system.setting.undo` | a debug bar write is undone | as `system.setting.write` | `debugbar/expdebugbarsettings.php:undo` | undo | notice | on | yes | system | buffered |
 | `system.extension.change` | ActiveExtensions or its order is written | list → list | `ezpactiveextensions.php:write` | change | notice | on | yes | system | buffered |
 | `system.cache.clear` | caches are cleared on request | – → ids, ms | `ezcache.php:auditCleared` (also for `bin/php/ezcache.php`, one record per run, through `eZCacheHelper::auditCleared()`) | clear | info | on | yes | system | buffered |
+| `system.cluster.run` | `exp:host:run` or an `exp:cluster:*` command ran on hosts of `settings/cluster.ini` (not a dry run) | – → command, each host's exit code, OS user, result | `commands/expclusterbase.php:record` | run | notice | on | yes | system | buffered |
 | `system.cronjob.run` | a cronjob part runs (parent: the runcronjobs invocation) | – → ms, result | `ezruncronjobs.php:auditPart` | run | info | on | yes | system | buffered |
 | `system.cronjob.fail` | a part throws or exits non-zero | – → error | `ezruncronjobs.php:auditPart` | run | warning | on | yes | system | buffered |
 | `system.cronjob.pause` | a cronjob part, or every part ("all"), is paused at Setup > Cronjobs | – → paused | `expcronjobpause.php:audit` | pause | notice | on | yes | system | buffered |

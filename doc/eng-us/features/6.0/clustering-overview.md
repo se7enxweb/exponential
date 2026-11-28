@@ -273,6 +273,7 @@ Velocity checks its own workers and its cluster peers on an endpoint of its own;
 | Command | What it does |
 |---|---|
 | `./console exp:cluster:enable` / `exp:cluster:disable` | make an installation a one-node DFS cluster and back (share, tables in the site's database, settings, files moved), a dry run unless `--apply`; `--backend` (`mysqli`, `postgresql`, `sqlite`, `mongodb`, `oracle`, `sqlserver`), `--share`, `--no-move` ([page](cluster-commands.md)) |
+| `./console exp:cluster:run`, `exp:cluster:cache clear`, `exp:cluster:deploy`, `exp:cluster:status`, `exp:host:run` | run a console command, clear the caches, deploy or read the state on every host of `settings/cluster.ini` over ssh, as the site user, PASS/FAIL per host, `--dry-run` ([page](cluster-host-commands.md)) |
 | `php bin/php/clusterize.php` (`./console exp:clusterize`) | move the files of `var/` into the cluster; `-u` moves them back ([example](../../examples/commands/clusterize.md)) |
 | `php bin/php/clusterpurge.php` (`./console exp:clusterpurge`) | physically remove expired cluster files, a dry run unless `--apply`; also the cronjob part `cluster_maintenance`, which `cronjob.ini [AdminSettings] ForbiddenParts[]` keeps off the admin buttons ([example](../../examples/commands/clusterpurge.md)) |
 | `php bin/php/dfscleanup.php` | compare the share with the metadata (`-S`, `-B`), delete what does not exist (`-D`) |
@@ -357,6 +358,7 @@ metadata on SQL Server, PostgreSQL or Oracle wherever they run, and the other wa
 - [Clustering on MongoDB: the DFS backend in the kernel](mongodb-dfs-cluster.md)
 - [Clustering on SQLite: the one-node DFS backend in the kernel](sqlite-dfs-cluster.md)
 - [A one-node DFS cluster in one command](cluster-commands.md): `exp:cluster:enable` and `exp:cluster:disable`
+- [Commands on other hosts and across a cluster](cluster-host-commands.md): `exp:host:run` and `exp:cluster:*`
 - [Image aliases made on demand](image-aliases-on-demand.md): the gateway hands missing aliases to `index_image.php`
 - [Velocity response cache](velocity-response-cache.md)
 - [sevenx_valkey_cache: Redis and Valkey cache backend](extensions/sevenx_valkey_cache.md)
