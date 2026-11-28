@@ -235,8 +235,13 @@ class expDb2LiveTest extends PHPUnit\Framework\TestCase
         $db = $this->connect( $class );
         $this->makeTable( $db );
         $this->assertTrue( $db->query( "INSERT INTO exp_live (name, mask, value) VALUES ('a', 1, 'text')" ), (string)$db->errorMessage() );
-        $sql = 'SELECT id, name, mask, value, id AS i2, name AS n2, mask AS m2, id AS i3, name AS n3, mask AS m3 FROM exp_live';
-        $this->assertCount( 10, $db->arrayQuery( $sql )[0] );
+        // the long text once, on Db2: on Informix 14.10 its column takes nearly a whole row, and the other nine pass
+        // the row's limit of 32,767 bytes (SQLCODE -528)
+        $text = $db instanceof expInformixDB ? 'id AS i4' : 'value';
+        $sql = "SELECT id, name, mask, $text, id AS i2, name AS n2, mask AS m2, id AS i3, name AS n3, mask AS m3 FROM exp_live";
+        $rows = $db->arrayQuery( $sql );
+        $this->assertIsArray( $rows, (string)$db->errorMessage() );
+        $this->assertCount( 10, $rows[0] );
         gc_collect_cycles();
         $before = memory_get_usage();
         for ( $i = 0; $i < 2000; $i++ )
