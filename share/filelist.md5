@@ -30201,12 +30201,12 @@ f6ebe5fa89eec82a3ff0cb02c92133ee  tests/tests/kernel/classes/shopprices/eZPaymen
 f066aa43b2db6580533394ac07926980  tests/tests/kernel/classes/shopprices/eZShopReceiptTokenTest.php
 8aa0690c7749a7838bf65508db0f1de7  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 19d20c13f9245b2719ee46b3774b8896  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
-2a2377365145bcf08f4932cf8568ea94  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
+995d153f4dce18746c452267d24dfab0  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
 d5f83bba4055677cf777bf58a82f49d0  tests/tests/kernel/classes/staticpublish/expStaticBuildMultiSiteSqliteTest.php
 a59936ac5aaf6b1c22876f28bee53d29  tests/tests/kernel/classes/staticpublish/expStaticBuildSignatureTest.php
 202acd8e0737783700b57bdcc9fe93fc  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
 760a5ae7dc7e5432a704077e0a9c88be  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
-b4e5c8bd2590f24968da1274f14d351e  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
+7f255b013151c3bc91d98222d029bfab  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
 48049f42f1455ed66ca122e17b92d968  tests/tests/kernel/classes/staticpublish/expStaticDegraderTest.php
 dc8164b53b2e30936c1b16dcf423c851  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
 ce3e4c7015008e89f5abf6bbfd959b4a  tests/tests/kernel/classes/staticpublish/expStaticFormEndpointTest.php
