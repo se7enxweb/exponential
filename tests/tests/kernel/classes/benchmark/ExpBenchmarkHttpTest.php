@@ -133,6 +133,8 @@ class ExpBenchmarkHttpTest extends \PHPUnit\Framework\TestCase
 
     public function testTheSlowPathTakesItsTimeAndConcurrencyOverlapsIt()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'PHP_CLI_SERVER_WORKERS is Unix only: on Windows the built-in server answers one request at a time' );
         $rows = expBenchmarkHttp::run( array( self::$base ), array( '/slow' ), $this->options( array( 'requests' => 8, 'concurrency' => 4, 'rounds' => 1 ) ) );
         $this->assertGreaterThanOrEqual( 20.0, $rows[0]['min'] );
         // Four at a time are clearly faster than one at a time, measured side by side: a fixed floor (50 per second)
