@@ -62,7 +62,7 @@ class eZSiteLogAndExpiryPathsTest extends PHPUnit\Framework\TestCase
     /** A new directory under the system temp directory, removed after the test */
     private function tempDir( $name )
     {
-        $dir = sys_get_temp_dir() . '/x1-site-paths-' . $name . '-' . uniqid();
+        $dir = str_replace( '\\', '/', sys_get_temp_dir() ) . '/x1-site-paths-' . $name . '-' . uniqid();
         mkdir( $dir, 0777, true );
         $this->dirs[] = $dir;
         return $dir;

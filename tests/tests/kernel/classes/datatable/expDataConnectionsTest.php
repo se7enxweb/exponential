@@ -71,8 +71,8 @@ class expDataConnectionsTest extends PHPUnit\Framework\TestCase
     private static function iniDir( $dir )
     {
         $method = new ReflectionMethod( 'eZINI', 'installationRoot' );
-        $from = explode( '/', trim( (string)realpath( $method->invoke( null ) ), '/' ) );
-        $to = explode( '/', trim( (string)realpath( $dir ), '/' ) );
+        $from = explode( '/', trim( str_replace( '\\', '/', (string)realpath( $method->invoke( null ) ) ), '/' ) );
+        $to = explode( '/', trim( str_replace( '\\', '/', (string)realpath( $dir ) ), '/' ) );
         while ( $from && $to && $from[0] === $to[0] )
         {
             array_shift( $from );

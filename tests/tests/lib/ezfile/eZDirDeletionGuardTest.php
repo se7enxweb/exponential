@@ -64,7 +64,7 @@ class eZDirDeletionGuardTest extends PHPUnit\Framework\TestCase
     /** A new directory outside the installation, or a skip where the system temp directory is inside it */
     private function outsideDir( $name )
     {
-        $dir = sys_get_temp_dir() . '/x1-deletion-guard-' . $name . '-' . uniqid();
+        $dir = str_replace( '\\', '/', sys_get_temp_dir() ) . '/x1-deletion-guard-' . $name . '-' . uniqid();
         mkdir( $dir, 0777, true );
         $this->dirs[] = $dir;
         if ( strpos( realpath( $dir ) . '/', self::root() . '/' ) === 0 )

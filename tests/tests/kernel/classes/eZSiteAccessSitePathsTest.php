@@ -28,7 +28,7 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        $this->root = dirname( __DIR__, 4 );
+        $this->root = str_replace( '\\', '/', dirname( __DIR__, 4 ) );
         chdir( $this->root );
         if ( !is_dir( 'settings/siteaccess' ) )
         {
@@ -78,7 +78,7 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
     private function site( $label, array $fileSettings )
     {
         $name = 'x1sitepaths' . $label . substr( uniqid(), -6 );
-        $siteDir = sys_get_temp_dir() . '/x1-site-paths-' . $name;
+        $siteDir = str_replace( '\\', '/', sys_get_temp_dir() ) . '/x1-site-paths-' . $name;
         mkdir( $siteDir, 0777, true );
         $this->created[] = $siteDir;
 

@@ -71,7 +71,7 @@ class expVelocityConfigLayoutTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         chdir( dirname( __DIR__, 5 ) );
-        $this->root = getcwd() . '/var/tmp/phpunit-k1b-velocity-layout-' . getmypid() . '-' . mt_rand();
+        $this->root = str_replace( '\\', '/', getcwd() ) . '/var/tmp/phpunit-k1b-velocity-layout-' . getmypid() . '-' . mt_rand();
         mkdir( $this->root, 0755, true );
         $this->velocity = new expVelocityConfigLayoutTestVelocity( $this->root );
         $this->velocity->settings = array( 'ConfDir' => $this->root . '/etc/vc', 'StateDir' => $this->root . '/lib/vc', 'SiteName' => 'k1.example.invalid' );

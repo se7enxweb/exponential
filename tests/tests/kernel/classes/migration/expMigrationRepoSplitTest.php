@@ -43,12 +43,14 @@ class expMigrationRepoSplitTest extends PHPUnit\Framework\TestCase
 
     protected function git( $path, ...$arguments )
     {
-        $command = 'git -C ' . escapeshellarg( $path ) . ' -c user.name=Test -c user.email=test@example.com';
-        foreach ( $arguments as $argument )
-            $command .= ' ' . escapeshellarg( $argument );
-        exec( $command . ' 2>&1', $out, $rc );
-        $this->assertSame( 0, $rc, implode( "\n", $out ) );
-        return trim( implode( "\n", $out ) );
+        // no shell: escapeshellarg() of cmd.exe turns the % of --format=%s into a space on Windows
+        $command = array_merge( array( 'git', '-C', $path, '-c', 'user.name=Test', '-c', 'user.email=test@example.com' ), $arguments );
+        $process = proc_open( $command, array( 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes );
+        $out = stream_get_contents( $pipes[1] );
+        fclose( $pipes[1] );
+        $rc = proc_close( $process );
+        $this->assertSame( 0, $rc, $out );
+        return trim( str_replace( "\r\n", "\n", $out ) );
     }
 
     protected function commit( $site, $file, $content, $message, $author, $date )
