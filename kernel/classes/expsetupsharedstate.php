@@ -122,7 +122,7 @@ class expSetupSharedState
         $dir = rtrim( $dir, '/' );
         if ( $dir === '' )
             return null;
-        return $dir[0] === '/' ? $dir : $root . '/' . $dir;
+        return eZDir::isAbsolutePath( $dir ) ? $dir : $root . '/' . $dir;
     }
 
     /** Whether $root is the installation whose settings this process reads */
@@ -296,7 +296,7 @@ class expSetupSharedState
     static function isSafeRelative( $path )
     {
         $path = (string)$path;
-        return $path !== '' && $path[0] !== '/' && strpos( $path, "\0" ) === false
+        return $path !== '' && !eZDir::isAbsolutePath( $path ) && strpos( $path, "\0" ) === false
             && !in_array( '..', explode( '/', str_replace( '\\', '/', $path ) ), true );
     }
 
