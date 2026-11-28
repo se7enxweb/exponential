@@ -715,7 +715,8 @@ class expSystemReport
     public static function directorySize( $dir, $deadline, $split = '' )
     {
         $result = array( 'bytes' => 0, 'files' => 0, 'complete' => true, 'entries' => array() );
-        $prefix = $split !== '' ? rtrim( $split, '/' ) . '/' : '';
+        // compared with slashes: the iterator joins with DIRECTORY_SEPARATOR, a backslash on Windows
+        $prefix = $split !== '' ? rtrim( str_replace( DIRECTORY_SEPARATOR, '/', $split ), '/' ) . '/' : '';
         $prefixLength = strlen( $prefix );
         if ( !is_dir( $dir ) )
             return array( 'bytes' => null, 'files' => 0, 'complete' => true );
@@ -736,7 +737,7 @@ class expSystemReport
                     $result['bytes'] += $bytes;
                     if ( $prefixLength > 0 )
                     {
-                        $path = $file->getPathname();
+                        $path = str_replace( DIRECTORY_SEPARATOR, '/', $file->getPathname() );
                         if ( strncmp( $path, $prefix, $prefixLength ) === 0 && ( $slash = strpos( $path, '/', $prefixLength ) ) !== false )
                         {
                             $entry = substr( $path, $prefixLength, $slash - $prefixLength );
