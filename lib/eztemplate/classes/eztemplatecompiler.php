@@ -313,6 +313,10 @@ class eZTemplateCompiler
     {
         $internalCharset = eZTextCodec::internalCharset();
         $templateFilepath = $resourceData['template-filename'];
+        // a backslash separates directories on Windows: without this the name of the compiled file of
+        // D:\site\design\x.tpl was "D:\site\design\x-<md5>.php", which cannot be a file below the compilation directory
+        if ( DIRECTORY_SEPARATOR === '\\' )
+            $templateFilepath = str_replace( '\\', '/', (string)$templateFilepath );
         $extraName = '';
         if ( preg_match( "#^.+/(.*)\.tpl$#", $templateFilepath, $matches ) )
             $extraName = $matches[1] . '-';
