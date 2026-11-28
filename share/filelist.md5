@@ -30069,7 +30069,7 @@ b363b544ed1ad412652829f9da3d10c8  tests/tests/kernel/classes/packages/eZPackageF
 bc1f43f4f6414b2e5c78d662fb54a27b  tests/tests/kernel/classes/packages/eZPackageXMLNoNetworkTest.php
 8b6ac3f25398536a165b2173c31a899f  tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php
 022266f6e4f084ccd33a8f8c0582d1ae  tests/tests/kernel/classes/packages/expPackageArchiveLegacyFormatsTest.php
-671e074fb644803b5b11bf90f41bd1ba  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
+792a66b516051b0afd97cfbedeabfb02  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
 4015413688616aaaada8efd86f803f1c  tests/tests/kernel/classes/packages/expPackageJsonTest.php
 4760d244cf27fef4cb7b77f2035c5a31  tests/tests/kernel/classes/packages/fixtures/build-legacy-package-fixtures.php
 bd68328f1799790292de4ffcb2d7dd04  tests/tests/kernel/classes/packages/fixtures/legacy/bsdtar-macos-pax.ezpkg
