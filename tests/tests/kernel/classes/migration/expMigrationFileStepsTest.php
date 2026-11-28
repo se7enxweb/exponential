@@ -207,7 +207,8 @@ class expMigrationFileStepsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( "edited by hand\n", file_get_contents( "$root/extension/demo/old.css" ) );
         expMigrationFiles::restore( $root, $changes['extension/demo/old.css'], true );
         $this->assertSame( "old\n", file_get_contents( "$root/extension/demo/old.css" ) );
-        $this->assertSame( 0640, fileperms( "$root/extension/demo/old.css" ) & 0777 );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( 0640, fileperms( "$root/extension/demo/old.css" ) & 0777 );
         $this->assertStringContainsString( 'removed design/site/templates/new/footer.tpl again', expMigrationFiles::restore( $root, $changes['design/site/templates/new/footer.tpl'] ) );
         $this->assertFalse( is_file( "$root/design/site/templates/new/footer.tpl" ) );
 

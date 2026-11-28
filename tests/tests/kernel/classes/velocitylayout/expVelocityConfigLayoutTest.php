@@ -251,6 +251,8 @@ class expVelocityConfigLayoutTest extends PHPUnit\Framework\TestCase
 
     public function testGeneratedFileIsWrittenEnabledAndUpdated()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the *-enabled directories hold relative symbolic links, as /etc/apache2 of Debian does; PHP on Windows resolves a relative link target from the working directory' );
         $dir = $this->tree();
         $this->layout->generated( "$dir/mods-available/cache.conf", array( 'Q' => array( 'web' => array( 'cache' => array( 'ttl' => 60 ) ) ) ), 0644, "$dir/mods-enabled/cache.conf" );
         $this->assertSame( array( "created $dir/mods-available/cache.conf", "enabled $dir/mods-enabled/cache.conf" ), $this->layout->actions );
@@ -290,6 +292,8 @@ class expVelocityConfigLayoutTest extends PHPUnit\Framework\TestCase
 
     public function testDisabledSwitchingModule()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the *-enabled directories hold relative symbolic links, as /etc/apache2 of Debian does; PHP on Windows resolves a relative link target from the working directory' );
         $dir = $this->tree();
         $mods = array( 'cache' => array( 'Q' => array() ) );
         $this->assertSame( array(), $this->layout->disabledSwitches( $dir, $mods ), 'a module seen the first time is not counted' );
@@ -360,6 +364,8 @@ class expVelocityConfigLayoutTest extends PHPUnit\Framework\TestCase
 
     public function testDescribe()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the *-enabled directories hold relative symbolic links, as /etc/apache2 of Debian does; PHP on Windows resolves a relative link target from the working directory' );
         $dir = $this->tree();
         file_put_contents( "$dir/sites-available/k1.conf", '{}' );
         symlink( '../sites-available/k1.conf', "$dir/sites-enabled/k1.conf" );
@@ -379,6 +385,8 @@ class expVelocityConfigLayoutTest extends PHPUnit\Framework\TestCase
 
     public function testToggle()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'the *-enabled directories hold relative symbolic links, as /etc/apache2 of Debian does; PHP on Windows resolves a relative link target from the working directory' );
         $dir = $this->tree();
         file_put_contents( "$dir/conf-available/extra.conf", '{}' );
         $this->assertSame( array( 'ok' => true, 'message' => 'enabled conf extra; restart to apply' ), $this->layout->toggle( 'conf', 'extra', true ) );
