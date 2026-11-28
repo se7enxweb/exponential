@@ -26,7 +26,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 761c87979ac8e92df40378abdecee23c  LICENSE
 70a6fb77793402ca3a6cb15cb42d56f2  LICENSE.md
 480b67b6ce7d69d1e98ab8179c0102cc  Makefile
-0d7690af9ec0ab034cdec5f7bae6b092  README.md
+0ac54ae6428b5fa6560b94faa152100f  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 fec8e184c046898f71a24fa2008c767f  autoload.php
 e9b8be4ea93129278822eedcc20916d0  autoload/ezp_kernel.php
@@ -10266,7 +10266,7 @@ e5501b00b1625b9383eee45c841771c1  doc/eng-us/help/hosting/migrations/from-older-
 9c56018dfcf3aa2d7af8d09c44db7bf9  doc/eng-us/help/hosting/migrations/moving-a-site-between-hosts.md
 fe7e3fb77e9faf1ed37a1cb53c8a9a31  doc/eng-us/help/hosting/models/README.md
 4a8f026049aa6b1777d15bc3146609b6  doc/eng-us/help/hosting/models/choosing-a-hosting-model.md
-087f343fc1ce2b1e4262774ea5f31bf8  doc/eng-us/help/hosting/models/containers-docker-and-podman.md
+0e99bfde99dd242b89abf7eacb9def6a  doc/eng-us/help/hosting/models/containers-docker-and-podman.md
 e437b399b439d4b4baa57888ad5774f5  doc/eng-us/help/hosting/models/dedicated-servers.md
 a2bc3b19d85be40c285743230d042b4a  doc/eng-us/help/hosting/models/kubernetes.md
 a75f7d3a4b28ce23cdcd16ea07154ab0  doc/eng-us/help/hosting/models/managed-hosting.md
@@ -19723,7 +19723,7 @@ e85ace593b9e2a9bb90f394583e30233  doc/ger-de/hilfe/hosting/migrationen/kunden-vo
 cddec2bf97a73e40270836240d2c2b85  doc/ger-de/hilfe/hosting/migrationen/kunden-von-ez-platform-und-ibexa-migrieren.md
 c422173cb5479ecc319b264824fa7f33  doc/ger-de/hilfe/hosting/migrationen/kunden-zu-ihrem-hosting-migrieren.md
 d40ba466c1474e301989fa03e7099fee  doc/ger-de/hilfe/hosting/modelle/README.md
-dfe10be1db315a58e4ce5244d7db361e  doc/ger-de/hilfe/hosting/modelle/container-docker-und-podman.md
+fdf85a4ebe7db785265a58ac0cd9e200  doc/ger-de/hilfe/hosting/modelle/container-docker-und-podman.md
 8f018befafcb2cabcb1352d62ddac291  doc/ger-de/hilfe/hosting/modelle/dedizierte-server.md
 f7ef8471c7f586698faf89225fcc6dca  doc/ger-de/hilfe/hosting/modelle/ein-hosting-modell-waehlen.md
 de2e55d82f148cbacadacf1bf7de880c  doc/ger-de/hilfe/hosting/modelle/kubernetes.md
