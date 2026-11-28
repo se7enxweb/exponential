@@ -26109,7 +26109,7 @@ f772eaa96158ad7509f5965812dc4667  kernel/private/classes/commands/benchmark.php
 e1953225aa120dd0e944df1105e971f7  kernel/private/classes/commands/cache.php
 60c2b1853ed9ca00ff9a837c799860a1  kernel/private/classes/commands/changelog2xmltext.php
 dfaae08f33403266f7403a9a051aa223  kernel/private/classes/commands/checkclasses.php
-977af43f2ddd6b841055d14bf37fb8df  kernel/private/classes/commands/checkdbfiles.php
+48f9421d5c95daea87cbc8aac26da26e  kernel/private/classes/commands/checkdbfiles.php
 8a98a1f6badd09c6dfffc071178749ee  kernel/private/classes/commands/cleanuppolicies.php
 68d312cbe7ed1ba1e91bfac5bf1e4cb4  kernel/private/classes/commands/cleanuprss.php
 7e02112b394766eb35be29b624d0b18c  kernel/private/classes/commands/cleanupversions.php
