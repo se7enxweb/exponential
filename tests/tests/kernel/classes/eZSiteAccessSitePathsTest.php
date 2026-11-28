@@ -107,7 +107,7 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
         eZSiteAccess::change( array( 'name' => $siteA, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
 
         $this->assertSame( $dirA . '/log/', eZDebug::instance()->logDirectory() );
-        $this->assertSame( $dirA . '/cache/ini/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $dirA . '/cache/ini/', str_replace( '\\', '/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) );
         $this->assertSame( $dirA . '/expiry/expiry.php', eZExpiryHandler::instance()->CacheFile->name() );
 
         // An INI file read now is cached in the cache directory of site A
@@ -144,7 +144,7 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
         $rest = substr( $varDir, strpos( $varDir . '/', '/' ) );
         $this->assertSame( 'x1-var-log' . $rest . '/log/', eZDebug::instance()->logDirectory() );
         $this->assertSame( 'x1-var-cache' . $rest . '/cache', eZSys::cacheDirectory() );
-        $this->assertSame( $this->root . '/x1-var-cache' . $rest . '/cache/ini/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $this->root . '/x1-var-cache' . $rest . '/cache/ini/', str_replace( '\\', '/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) );
         $this->assertSame( $varDir . '/expiry/expiry.php', eZExpiryHandler::instance()->CacheFile->name() );
 
         eZINI::instance( 'shopaccount.ini' );
@@ -158,7 +158,7 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
 
         eZSiteAccess::change( array( 'name' => $site, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
 
-        $this->assertSame( $siteDir . '/own-ini-cache/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $siteDir . '/own-ini-cache/', str_replace( '\\', '/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) );
     }
 
     public function testADirectoryTheInstallationSetComesBackAfterASiteWithItsOwn()
@@ -168,10 +168,10 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
         $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = $dirB . '/shared-ini-cache/';
 
         eZSiteAccess::change( array( 'name' => $siteA, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
-        $this->assertSame( $dirA . '/cache/ini/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $dirA . '/cache/ini/', str_replace( '\\', '/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) );
 
         eZSiteAccess::change( array( 'name' => $siteB, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
-        $this->assertSame( $dirB . '/shared-ini-cache/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $dirB . '/shared-ini-cache/', str_replace( '\\', '/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) );
     }
 
     /**
@@ -227,12 +227,12 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
 
         eZSiteAccess::change( array( 'name' => $siteA, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
         eZSiteAccess::change( array( 'name' => $siteA, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
-        $this->assertSame( $dirA . '/cache/ini/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $dirA . '/cache/ini/', str_replace( '\\', '/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) );
         $this->assertSame( $dirA . '/log/', eZDebug::instance()->logDirectory() );
 
         eZSiteAccess::change( array( 'name' => $siteB, 'type' => eZSiteAccess::TYPE_DEFAULT ) );
         // Back to var/cache/ini/, which eZINI::loadCache() puts there itself when nothing else is set
-        $this->assertSame( $this->root . '/var/cache/ini/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] );
+        $this->assertSame( $this->root . '/var/cache/ini/', str_replace( '\\', '/', $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) );
         $this->assertArrayNotHasKey( 'eZSiteAccessINICacheDir', $GLOBALS );
         $this->assertSame( 'var/log/', eZDebug::instance()->logDirectory() );
     }
