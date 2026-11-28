@@ -181,8 +181,13 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
         }
         $setupRunId = (string)\expSetupLog::runId();
         // The files earlier steps of this run wrote on another node
-        if ( $sharedDir !== null && !$warmup && $setupRunId !== '' && $decision !== \expSetupWizardGuard::SHOW )
-            \expSetupSharedState::pull( $root, $sharedDir, $setupRunId );
+        if ( $sharedDir !== null && !$warmup && $setupRunId !== '' && $decision !== \expSetupWizardGuard::SHOW
+             && \expSetupSharedState::pull( $root, $sharedDir, $setupRunId ) )
+        {
+            // The settings this request read before are older than the files just written
+            \eZINI::resetAllInstances( false );
+            $ini = \eZINI::instance();
+        }
         $result = null;
 
         // process previous step
