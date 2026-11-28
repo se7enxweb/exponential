@@ -300,6 +300,9 @@ class eZFile
            warning that an error handler sees in spite of the @ (every first write of a cache file on Windows). */
         if ( strtolower( substr( PHP_OS, 0, 3 ) ) == 'win' && is_file( $destFile ) )
         {
+            // and a read-only file cannot be unlinked there: it is made writable first
+            if ( !is_writable( $destFile ) )
+                @chmod( $destFile, self::fileMode( 0666 ) );
             @unlink( $destFile );
         }
         if( $mkdir )
