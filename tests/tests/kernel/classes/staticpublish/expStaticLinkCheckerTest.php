@@ -123,6 +123,8 @@ class expStaticLinkCheckerTest extends PHPUnit\Framework\TestCase
     public function testServe()
     {
         $this->relativeExport();
+        // resolve() names the files with slashes, also on Windows
+        $this->dir = str_replace( '\\', '/', $this->dir );
         $r = expStaticServe::resolve( $this->dir, '/repo/', '/repo/' );
         $this->assertSame( array( 200, $this->dir . '/index.html' ), array( $r['status'], $r['file'] ) );
         $r = expStaticServe::resolve( $this->dir, '/repo/', '/repo/about-us/team/' );
