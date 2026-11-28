@@ -27,7 +27,7 @@ class eZPaymentLogger
     }
 
     /**
-     * Opens the log for one write. A truncating mode ("wt") applies to the
+     * Opens the log for one write. A truncating mode ("wb") applies to the
      * first write only, as it did when the file was opened once; later writes append.
      *
      * @return resource|false
@@ -52,12 +52,13 @@ class eZPaymentLogger
 
     static function CreateNew($fileName)
     {
-        return new eZPaymentLogger( $fileName, "wt" );
+        // binary: the text mode of Windows wrote "\r\r\n" for the "\r\n" of writeString()
+        return new eZPaymentLogger( $fileName, "wb" );
     }
 
     static function CreateForAdd($fileName)
     {
-        return new eZPaymentLogger( $fileName, "a+t" );
+        return new eZPaymentLogger( $fileName, "a+b" );
     }
 
     function writeString( $string, $label='' )
