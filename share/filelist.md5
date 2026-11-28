@@ -29,7 +29,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 0d7690af9ec0ab034cdec5f7bae6b092  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 fec8e184c046898f71a24fa2008c767f  autoload.php
-4494d55b3d74ee5566211b25d20c6eb0  autoload/ezp_kernel.php
+8651bbc4fa7f25ce8decfe0745fc3643  autoload/ezp_kernel.php
 4f5aae97c4777e3d9fe309fc409be8d6  benchmarks/classes/ezbenchmark.php
 9c88f2cf9ede23d32cabee36659239f2  benchmarks/classes/ezbenchmarkcase.php
 dbc264cff80d6c4b0b5fd393d1b45297  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-6e06561306c9bb28540a6feba6fecc1d  doc/changelogs/6.0/6.0.15.md
+d1861a86d2c20c9e4923bb3ff1b3f85d  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6980,7 +6980,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-82be3764fc9afa9a254964c8a51ebd4b  doc/eng-us/features/6.0/README.md
+fe106b9f0be3809a232adde06d8ca433  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -13694,7 +13694,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-31034561fba62519d999aaf5f427a888  doc/ger-de/.paths.json
+be591a8fa60fe666d3eefb8635c6ac3f  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -17128,7 +17128,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-170c182b7e50709e879343d76cd494ee  doc/ger-de/funktionen/6.0/README.md
+e7df0111772ddb8afa325089367b3595  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -25126,7 +25126,7 @@ e30a7ef167021bdff442cf3638f53a0a  kernel/classes/eznamepatternresolver.php
 38d4654a32facadae6e482e52f67f9d3  kernel/classes/eznavigationpart.php
 0456af9cb3776943727e133078d57a57  kernel/classes/eznodeassignment.php
 c6cc386e9cc536617b4b1f43b591fc62  kernel/classes/eznodeviewfunctions.php
-e4027d57c2947c3ca2d8a3ed5d333982  kernel/classes/ezorder.php
+e1d1026af196a7d2f39251eeb8c5c175  kernel/classes/ezorder.php
 003c52d73b1fe83286b216ff1931cb81  kernel/classes/ezorderitem.php
 2f83f9c2e4865f0edd8161a17aed4a61  kernel/classes/ezorderstatus.php
 6ec9ad9434edc65c20a7d0cd80e7fb65  kernel/classes/ezorderstatushistory.php
@@ -27052,7 +27052,7 @@ e107252c0a42e144148c55da73f57f05  kernel/shop/editcurrency.php
 10aa6e959be1abe28ef3cf5ab54e843e  kernel/shop/ezshopfunctioncollection.php
 62ebf22797d8fbf920615b377d24cc29  kernel/shop/ezshopoperationcollection.php
 9eed87f694b3c45a6317969bff5a1bbe  kernel/shop/function_definition.php
-6215cfc61d3ebacefe6687ab330116df  kernel/shop/module.php
+b7007352d2758b8745ed17b7473fed65  kernel/shop/module.php
 836159c99dcb126762d65bf07e2e96cc  kernel/shop/operation_definition.php
 5dd22bbaaf6a9aee647621c31cc2f879  kernel/shop/orderlist.php
 643ed3e35459831cc0ee025e6fe5dd2d  kernel/shop/orderreceipt.php
@@ -27679,7 +27679,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 0e25e6140fca0aab71d94cdb05352146  settings/secrets.ini
 d90940aaed082e22b8356eca7e84228e  settings/setup.ini
-840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
+55888fce5d54995fd4fe569e67d6c56d  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
 26fc7a313a4573fd5f43c80952aa4a0d  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
@@ -31482,3 +31482,9 @@ b0eb7e7b907428f3928d7796b81aa8e8  tests/tests/lib/ezdb/hana/expHANADialectTest.p
 bd0b20233e55db547dd4615a5afb4224  tests/toolkit/exptestchildenvironment.php
 5f84ed2349ad6641e2fdea5d37fcb2ab  kernel/private/interfaces/expcacheclearlistener.php
 1acdd85ba66064d93e85aba3eff633be  tests/tests/kernel/classes/eZCacheClearListenersTest.php
+fc218dcb185a768f27d4ac5790f4ab47  design/standard/templates/shop/myorders.tpl
+960e6fe8df56e1b98fa03f72ae4b7fe4  doc/eng-us/features/6.0/my-orders.md
+0f1554951bd811504c71f35fc1c377d7  doc/ger-de/funktionen/6.0/meine-bestellungen.md
+fe1496bdc9e0826ba179ead7905eb2c7  kernel/private/classes/views/shop/myorders.php
+a8bff2772dd2d28e006986d0c6a33631  kernel/shop/myorders.php
+71d044da80444a8ca56c84b5c5900d82  tests/tests/kernel/classes/shopprices/eZShopMyOrdersViewTest.php
