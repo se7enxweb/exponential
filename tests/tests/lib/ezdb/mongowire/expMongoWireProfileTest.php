@@ -70,6 +70,10 @@ class expMongoWireProfileTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( array(), expMongoWireProfile::uriOptions( expMongoWireProfile::get( 'mongodb' ) ) );
         $this->assertSame( array( 'retryWrites' => 'false' ), expMongoWireProfile::uriOptions( expMongoWireProfile::get( 'ferretdb' ) ) );
+        $this->assertSame( array( 'retryWrites' => 'false', 'authSource' => 'admin', 'authMechanism' => 'SCRAM-SHA-256' ),
+            expMongoWireProfile::uriOptions( expMongoWireProfile::get( 'ferretdb' ), array(), true ) );
+        $this->assertSame( array( 'retryWrites' => 'false', 'authSource' => 'exp', 'authMechanism' => 'SCRAM-SHA-256' ),
+            expMongoWireProfile::uriOptions( expMongoWireProfile::get( 'ferretdb' ), array( 'AuthSource' => 'exp' ), true ) );
         $this->assertSame( array( 'tls' => 'true', 'tlsCAFile' => '/etc/ssl/global-bundle.pem', 'retryWrites' => 'false',
                                   'replicaSet' => 'rs0', 'readPreference' => 'secondaryPreferred' ),
             expMongoWireProfile::uriOptions( expMongoWireProfile::get( 'documentdb' ),

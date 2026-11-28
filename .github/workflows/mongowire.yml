@@ -94,7 +94,7 @@ jobs:
           fi
           opts=""
           [ "${{ matrix.db }}" = cosmosdb ] && opts="?tls=true&retryWrites=false"
-          [ "${{ matrix.db }}" = ferretdb ] && opts="?retryWrites=false"
+          [ "${{ matrix.db }}" = ferretdb ] && opts="?retryWrites=false&authSource=admin&authMechanism=SCRAM-SHA-256"
           echo "EXP_MONGOWIRE_URI=mongodb://${creds}127.0.0.1:${{ matrix.port }}/exp_mongowire${opts}" >> "$GITHUB_ENV"
           echo "EXP_MONGOWIRE_PROFILE=${{ matrix.profile }}" >> "$GITHUB_ENV"
           echo "EXP_MONGOWIRE_REPORT=$RUNNER_TEMP/probe-${{ matrix.db }}.json" >> "$GITHUB_ENV"
@@ -127,7 +127,13 @@ jobs:
       - name: Logs
         if: always()
         run: |
-          grep -h -i -E "refuse|lookup|bitAnd|not supported|unsupported|failed" var/log/error.log var/log/warning.log 2>/dev/null | sort | uniq -c | sort -rn | head -40 || true
+          # the errors by kind: numbers and ids folded, the most frequent first
+          for f in var/log/error.log var/log/warning.log; do
+            [ -f "$f" ] || continue
+            echo "== $f: $(grep -c '^\[ ' "$f") entries"
+            sed -E 's/^(\[[^]]*\] ?)+//; s/[0-9]+/N/g' "$f" | cut -c1-220 | sort | uniq -c | sort -rn | head -40
+          done
+          echo "front page links: $(grep -o '<a href' front.html 2>/dev/null | wc -l), bare content/view/full links: $(grep -o 'href=\"[^\"]*content/view/full/[0-9]*\"' front.html 2>/dev/null | wc -l)"
           tail -n 60 var/log/error.log var/log/setup.log var/log/php-server.log 2>/dev/null || true
 
       - name: Summary
@@ -137,12 +143,15 @@ jobs:
           echo "live tests failed: ${LIVE_FAILED:-0}; install: ${{ steps.install.outcome }}; front page: ${FRONT:-none}; admin login: ${ADMIN:-none}" >> "$GITHUB_STEP_SUMMARY"
           echo '```json' >> "$GITHUB_STEP_SUMMARY"; cat "$EXP_MONGOWIRE_REPORT" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true; echo '```' >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload the probe report
+      - name: Upload the probe report and the logs
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: probe-${{ matrix.db }}
-          path: ${{ runner.temp }}/probe-${{ matrix.db }}.json
+          path: |
+            ${{ runner.temp }}/probe-${{ matrix.db }}.json
+            var/log/*.log
+            front.html
           if-no-files-found: ignore
 
       - name: Fail when the tests or the install failed

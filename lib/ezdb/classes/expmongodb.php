@@ -281,7 +281,7 @@ class expMongoDB extends eZDBInterface
     {
         $profile = $this->wireProfile();
         return self::connectionUri( $this->Server, $this->Port ? $this->Port : $profile['port'], $this->User, $this->Password,
-                                    $this->DB, expMongoWireProfile::uriOptions( $profile, self::wireSettings() ) );
+                                    $this->DB, expMongoWireProfile::uriOptions( $profile, self::wireSettings(), (string)$this->User !== '' ) );
     }
 
     /**
@@ -2643,6 +2643,7 @@ class expMongoDB extends eZDBInterface
      */
     protected function runFind( $table, array $find )
     {
+        $find['filter'] = $this->forServer( $find['filter'] );
         $this->traceStatement( 'find ' . $table . ': ' . json_encode( $find['filter'] ) );
 
         $results = array();
@@ -2678,6 +2679,8 @@ class expMongoDB extends eZDBInterface
 
     function aggregate( $table, $pipeline = [] )
     {
+        // the bitwise operators as arithmetic where the server has none, before a simple pipeline becomes a find
+        $pipeline = $this->forServer( $pipeline );
         $find = self::findFromSimplePipeline( $pipeline );
         if ( $find !== false )
             return $this->runFind( $table, $find );
@@ -2690,7 +2693,6 @@ class expMongoDB extends eZDBInterface
             if ( is_array( $stage ) && array_key_exists( '$match', $stage ) && $stage['$match'] === array() )
                 $pipeline[$index]['$match'] = new stdClass();
         }
-        $pipeline = $this->forServer( $pipeline );
         $profile = $this->wireProfile();
         if ( !$profile['lookup_let'] && expMongoWireProfile::hasCorrelatedLookup( $pipeline ) )
             eZDebug::writeWarning( $profile['label'] . ' has no $lookup with let or pipeline; the server will refuse the '
@@ -2735,7 +2737,7 @@ class expMongoDB extends eZDBInterface
         try
         {
             return (int) $this->getClient()->selectCollection( $this->DB, $table )
-                ->countDocuments( $this->translateConditions( $conds ) );
+                ->countDocuments( $this->forServer( $this->translateConditions( $conds ) ) );
         }
         catch ( Exception $e )
         {
@@ -2752,7 +2754,7 @@ class expMongoDB extends eZDBInterface
         if ( !empty( $projection ) )
             $options['projection'] = $projection;
         try {
-            $filter = $this->translateConditions( $conds );
+            $filter = $this->forServer( $this->translateConditions( $conds ) );
             $cursor = $this->getClient()->selectCollection( $dbName, $table )->find( $filter, $options );
             $results = [];
             foreach ( $cursor as $doc ) {

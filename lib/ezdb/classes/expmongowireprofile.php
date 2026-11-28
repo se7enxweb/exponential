@@ -44,7 +44,8 @@ class expMongoWireProfile
      * bits_query ($bitsAnySet and friends in a filter); index_every_field (an index on every column, where a sort
      * needs one); unique_index_on_empty (a unique index can only be made while the collection is empty);
      * max_indexes (per collection, 0: no limit known); index_key_bytes (the longest index key, 0: no limit known);
-     * transactions (multi-document transactions); text_index; live_tested; level (site, datatable: the most this
+     * auth_source, auth_mechanism (written into the URI when a user logs in); transactions (multi-document
+     * transactions); text_index; live_tested; level (site, datatable: the most this
      * database is expected to carry); version_pattern (finds the version in buildInfo's version); notes.
      *
      * @return array
@@ -62,6 +63,8 @@ class expMongoWireProfile
             'unique_index_on_empty' => false,
             'max_indexes' => 64,
             'index_key_bytes' => 0,
+            'auth_source' => '',
+            'auth_mechanism' => '',
             'transactions' => true,
             'text_index' => true,
             'live_tested' => false,
@@ -78,7 +81,11 @@ class expMongoWireProfile
             'ferretdb' => array(
                 'label' => 'FerretDB', 'alias' => 'ferretdb', 'aliases' => array( 'ferret' ), 'driver' => 'expFerretDB',
                 'port' => 27017, 'retry_writes' => false, 'text_index' => false,
+                // FerretDB 2 authenticates PostgreSQL's users with SCRAM-SHA-256 against admin; negotiated against
+                // the site's database, the client falls back to SCRAM-SHA-1 and fails ("invalid salt length")
+                'auth_source' => 'admin', 'auth_mechanism' => 'SCRAM-SHA-256',
                 'notes' => array( 'FerretDB 2 over PostgreSQL with the DocumentDB extension',
+                                  'Logs in with SCRAM-SHA-256 against admin (authSource=admin)',
                                   'FerretDB 1 (PostgreSQL or SQLite backend) has no $lookup: not a site database',
                                   'Bitwise aggregation operators are written as arithmetic' ),
             ),
@@ -178,9 +185,10 @@ class expMongoWireProfile
      * @param array $profile
      * @param array $settings TLS (enabled, disabled, '' for the profile's), TLSCAFile, ReplicaSet, AuthSource,
      *                        ReadPreference, RetryWrites (enabled, disabled, ''), URIOptions (name=value list)
+     * @param bool $withUser a user logs in: the profile's authSource and authMechanism are written
      * @return array name => value, in the order they are written
      */
-    public static function uriOptions( array $profile, array $settings = array() )
+    public static function uriOptions( array $profile, array $settings = array(), $withUser = false )
     {
         $get = function ( $key ) use ( $settings )
         {
@@ -198,9 +206,13 @@ class expMongoWireProfile
         $replicaSet = $get( 'ReplicaSet' ) !== '' ? $get( 'ReplicaSet' ) : $profile['replica_set'];
         if ( $replicaSet !== '' && $replicaSet !== 'none' )
             $options['replicaSet'] = $replicaSet;
-        foreach ( array( 'AuthSource' => 'authSource', 'ReadPreference' => 'readPreference' ) as $key => $name )
-            if ( $get( $key ) !== '' )
-                $options[$name] = $get( $key );
+        $authSource = $get( 'AuthSource' ) !== '' ? $get( 'AuthSource' ) : ( $withUser ? $profile['auth_source'] : '' );
+        if ( $authSource !== '' )
+            $options['authSource'] = $authSource;
+        if ( $withUser && $profile['auth_mechanism'] !== '' )
+            $options['authMechanism'] = $profile['auth_mechanism'];
+        if ( $get( 'ReadPreference' ) !== '' )
+            $options['readPreference'] = $get( 'ReadPreference' );
         $extra = isset( $settings['URIOptions'] ) ? (array)$settings['URIOptions'] : array();
         foreach ( $extra as $key => $value )
         {
