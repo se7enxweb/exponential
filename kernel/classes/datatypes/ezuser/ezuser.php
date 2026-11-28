@@ -3256,7 +3256,8 @@ WHERE user_id = '" . $userID . "' AND
      */
     public function isRegistered()
     {
-        return $this->ContentObjectID != self::anonymousId() && $this->ContentObjectID != -1;
+        // a user object without an object id (none could be loaded) is nobody, not a registered user
+        return $this->ContentObjectID !== null && $this->ContentObjectID != self::anonymousId() && $this->ContentObjectID != -1;
     }
 
     /**
