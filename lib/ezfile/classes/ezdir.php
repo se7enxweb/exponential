@@ -530,6 +530,9 @@ class eZDir
             }
             else
             {
+                // Windows refuses to unlink a read-only file (git writes its objects read-only): make it writable
+                if ( self::isWindows() && !is_writable( $dir . '/' . $file ) )
+                    @chmod( $dir . '/' . $file, eZFile::fileMode( 0666 ) );
                 unlink( $dir . '/' . $file );
             }
         }
