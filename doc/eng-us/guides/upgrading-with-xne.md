@@ -340,8 +340,10 @@ In PowerShell the same commands run through `xne.ps1` (when scripts are blocked:
 `powershell -ExecutionPolicy Bypass -File C:\xne\bin\xne.ps1 version`). State and cache: `%ProgramData%\xne\lib` and
 `%ProgramData%\xne\cache`.
 
-**Proven on Windows:** upgrades from 6.0.13 to 6.0.14 and from 6.0.14 to 6.0.15 run in CI on Windows Server 2022 and
-2025, each with an exact rollback, in xne's own CI and in Exponential's Windows CI
+**Proven on Windows:** xne's own CI upgrades 6.0.13 to 6.0.14 and 6.0.14 to 6.0.15 on Windows Server 2022 and 2025,
+each with an exact rollback. Exponential's Windows workflow (`.github/workflows/windows.yml`, job "Upgrade 6.0.14 ->
+main on Windows") installs a real 6.0.14 release on SQLite on both servers and plans, dry-runs, upgrades it to main
+with xne and rolls it back, on every push
 ([run 45867228580](https://github.com/se7enxweb/exponential/actions/runs/45867228580)). The Windows launchers are
 simple stubs; an installer (MSI), the IIS, XAMPP and WampServer specifics and a scheduled task are planned. See also
 [Exponential on Windows](../help/exponential-on-windows.md).

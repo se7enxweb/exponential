@@ -7381,7 +7381,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 dd4acb3114392fbaac07d6148d4af8c1  doc/eng-us/guides/upgrade-steps-for-extensions.md
 e69a36390c53441867233740f2593ea9  doc/eng-us/guides/upgrading-with-the-console.md
-81f0c858fa125f519675145c54aeb02d  doc/eng-us/guides/upgrading-with-xne.md
+db015de4e1d40dd0fd62cc27fed55722  doc/eng-us/guides/upgrading-with-xne.md
 03fcda8a0af29207801ae429755b279e  doc/eng-us/guides/upgrading.md
 8c83c286abed55c79cca43869a20860d  doc/eng-us/guides/url-maps.md
 c6826cf2b7f23a160762b979b996d435  doc/eng-us/guides/urls-and-aliases.md
@@ -13709,7 +13709,7 @@ ddbb3c2493e9b29f1d3369b5cc346376  doc/ger-de/SUPPORT.md
 9827fd9d541e98abcadb5be9189171c9  doc/ger-de/UPDATE.md
 eb5de5051628f48cf9735cb27bdd85b4  doc/ger-de/anleitungen/README.md
 741364bdf4d241654c5412fc32652f5d  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
-02c7902c4accdc6a85c32683dcb1e25e  doc/ger-de/anleitungen/aktualisieren-mit-xne.md
+fe04052bdaa9aec92ba08d7e1986bb5b  doc/ger-de/anleitungen/aktualisieren-mit-xne.md
 001c98f331e4718ed8451d4a9a715414  doc/ger-de/anleitungen/aktualisieren.md
 5df3d20c93c092ba569cbbde187645d6  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md

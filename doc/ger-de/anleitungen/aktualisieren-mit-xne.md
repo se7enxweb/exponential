@@ -356,8 +356,10 @@ In PowerShell laufen dieselben Befehle über `xne.ps1` (wenn Skripte gesperrt si
 `powershell -ExecutionPolicy Bypass -File C:\xne\bin\xne.ps1 version`). Zustand und Cache: `%ProgramData%\xne\lib` und
 `%ProgramData%\xne\cache`.
 
-**Unter Windows erprobt:** Upgrades von 6.0.13 auf 6.0.14 und von 6.0.14 auf 6.0.15 laufen in der CI auf Windows Server
-2022 und 2025, jedes mit exaktem Rollback, in der eigenen CI von xne und in der Windows-CI von Exponential
+**Unter Windows erprobt:** Die eigene CI von xne aktualisiert 6.0.13 auf 6.0.14 und 6.0.14 auf 6.0.15 auf Windows
+Server 2022 und 2025, jedes mit exaktem Rollback. Der Windows-Workflow von Exponential (`.github/workflows/windows.yml`,
+Job „Upgrade 6.0.14 -> main on Windows“) installiert auf beiden Servern ein echtes Release 6.0.14 auf SQLite, plant es,
+macht einen Probelauf, aktualisiert es mit xne auf main und rollt es zurück, bei jedem Push
 ([Lauf 45867228580](https://github.com/se7enxweb/exponential/actions/runs/45867228580)). Die Windows-Starter sind
 einfache Platzhalter; ein Installer (MSI), die Besonderheiten von IIS, XAMPP und WampServer und eine geplante Aufgabe
 sind geplant. Siehe auch [Exponential unter Windows](../hilfe/exponential-unter-windows.md).
