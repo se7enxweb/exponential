@@ -30866,7 +30866,7 @@ e5529f72cb0fc966c3b8ace307c75a52  tests/tests/lib/ezdbschema/expSchemaFetchTable
 12b3233a1f4a17a2718f3cca0f76a6c8  tests/tests/lib/ezdiff/eZDiffTextEngineTest.php
 d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
 9a13a876e0c028ac409d2462251d5997  tests/tests/lib/ezfile/eZDirAndFileHandlerTest.php
-131864d66774d016df74a7339fa08cee  tests/tests/lib/ezfile/eZDirDeletionGuardTest.php
+5ecd3c80eb656c5b78e189fba02da196  tests/tests/lib/ezfile/eZDirDeletionGuardTest.php
 1d19f57a32db94e17baa3c7451571761  tests/tests/lib/ezfile/eZDirTestInsideRootTest.php
 eb2d9c2aa877218d2852b4e392b9c88f  tests/tests/lib/ezfile/eZDirTestOutsideRootTest.php
 33915f5665c5741bdf57d77c40917051  tests/tests/lib/ezfile/eZFileDownloadShortReadTest.php
@@ -30961,12 +30961,12 @@ ba2a644c2dba4afd27b3319bbc18a64b  tests/tests/lib/eztemplate/suite.php
 e98a71b65e28c1dcdd0b89b3975ae356  tests/tests/lib/ezutils/EngineArchiveInstallationRootTest.php
 cb8a261346c57ce4272ee0cec5243b75  tests/tests/lib/ezutils/ErrorCasePageTest.php
 1cb86abbb39e758fa2ec557a149ad317  tests/tests/lib/ezutils/PHPUnitTextUICommandShimTest.php
-e30d1d5f768f41dbe17ea4cbcdd780c5  tests/tests/lib/ezutils/RepairQueueTest.php
+1a21da1eb112679c9e0f38230d0c70f8  tests/tests/lib/ezutils/RepairQueueTest.php
 067266dbbac0301b918e5eee01c312c3  tests/tests/lib/ezutils/eZCLITest.php
-dbcd5907d0453be79ae4988c992654c4  tests/tests/lib/ezutils/eZDebugDeprecatedTest.php
+6b8b9d326b334c493d718de8ba133d88  tests/tests/lib/ezutils/eZDebugDeprecatedTest.php
 fb4cbea751e2c3b4e34df7e6773cb2b0  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
 5bd7eee71ab7389390ff9170ec31d2c9  tests/tests/lib/ezutils/eZDebugMessagesTest.php
-926fdedebb6540562207af9a8c79bbaf  tests/tests/lib/ezutils/eZDebugReportNullLabelTest.php
+bd30fc4234990588e94f37314fc5e8a6  tests/tests/lib/ezutils/eZDebugReportNullLabelTest.php
 8c422b1f6b3f02cba02fe279c719b1fe  tests/tests/lib/ezutils/eZDebugTimingPointLogTest.php
 de182c6651bca7ec15040fd30f746217  tests/tests/lib/ezutils/eZExecutionCleaningUpTest.php
 a372f6e5de1712c3fada5181614e3ddf  tests/tests/lib/ezutils/eZExecutionDatabaseUnavailableTest.php
