@@ -31488,8 +31488,8 @@ fc218dcb185a768f27d4ac5790f4ab47  design/standard/templates/shop/myorders.tpl
 fe1496bdc9e0826ba179ead7905eb2c7  kernel/private/classes/views/shop/myorders.php
 a8bff2772dd2d28e006986d0c6a33631  kernel/shop/myorders.php
 71d044da80444a8ca56c84b5c5900d82  tests/tests/kernel/classes/shopprices/eZShopMyOrdersViewTest.php
-377c2c56a218910a1908e9b6b8303c6a  kernel/classes/expsetupsharedstate.php
-bff12ac8570ee8221bbd509135e6f7da  tests/tests/kernel/classes/setup/SetupSharedStateTest.php
+1e8bf6b1bfc7e00c2a042ffe3515a549  kernel/classes/expsetupsharedstate.php
+10e1c4deef226a3ee3171381c18ac32a  tests/tests/kernel/classes/setup/SetupSharedStateTest.php
 1687636c40e1b4c539844e56f7555287  bin/php/expclustercache.php
 4bf23fc88eb38d9ac1677194e8197696  bin/php/expclusterdeploy.php
 4b430f05cc96a2543521b3c31db87f67  bin/php/expclusterhosts.php
