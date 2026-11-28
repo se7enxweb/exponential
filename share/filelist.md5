@@ -29617,7 +29617,7 @@ eab43baf3adb9ef022e55bf28529c7cc  tests/tests/kernel/classes/eZSectionScopeTest.
 4e6b69bfbc99edf70951bb775445bff7  tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php
 ddf8e41db89db5b6927f1283f9206327  tests/tests/kernel/classes/eZSiteAccessGetIniAndFindPathTest.php
 ea6151151575f874630b26859a74da99  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
-c3177b48144b4351efbd0c9441f02743  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
+a4601cba92edc731d033ebdb0fa4e423  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
 5f6f969fee4849b3dc8aa50d360b60a0  tests/tests/kernel/classes/eZSiteDataCreateNewLiveTest.php
 1448ffb79523999ce31e6f51b202e76f  tests/tests/kernel/classes/eZSiteDataCreateTest.php
 bc6cc18f1a9775c287d8d449608fc51b  tests/tests/kernel/classes/eZSiteDataTest.php
