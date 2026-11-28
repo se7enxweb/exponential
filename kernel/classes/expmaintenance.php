@@ -306,13 +306,13 @@ class expMaintenance
     protected static function writeMarker( $file, array $state )
     {
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0777 & ~umask(), true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0777 ), true ) && !is_dir( $dir ) )
             return false;
         $host = function_exists( 'gethostname' ) ? preg_replace( '/[^A-Za-z0-9._-]/', '', (string)gethostname() ) : '';
         $tmp = $file . '.tmp-' . ( $host !== '' ? $host : 'node' ) . '-' . getmypid();
         if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
             return false;
-        @chmod( $tmp, class_exists( 'eZFile' ) ? eZFile::fileMode( 0666 ) : 0664 );
+        @chmod( $tmp, eZFile::fileMode( 0666 ) );
         if ( !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );

@@ -200,12 +200,12 @@ class expSetupSharedState
     static function writeAtomic( $file, $data, $mode = null )
     {
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, self::dirMode(), true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0777 ), true ) && !is_dir( $dir ) )
             return false;
         $tmp = $file . '.tmp-' . self::nodeName() . '-' . getmypid() . '-' . bin2hex( random_bytes( 4 ) );
         if ( @file_put_contents( $tmp, $data ) === false )
             return false;
-        @chmod( $tmp, $mode === null ? self::fileMode() : ( (int)$mode & 0777 ) );
+        @chmod( $tmp, eZFile::fileMode( $mode === null ? 0666 : ( (int)$mode & 0777 ) ) );
         if ( !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );
@@ -228,11 +228,11 @@ class expSetupSharedState
     static function lock( $dir, callable $fn, $wait = null, $name = '.exp-setup.lock' )
     {
         $dir = rtrim( $dir, '/' );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, self::dirMode(), true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0777 ), true ) && !is_dir( $dir ) )
             return null;
         $lock = $dir . '/' . $name;
         $deadline = microtime( true ) + ( $wait === null ? self::LOCK_WAIT : (float)$wait );
-        while ( !@mkdir( $lock, 0777 ) )
+        while ( !@mkdir( $lock, eZDir::dirMode( 0777 ) ) )
         {
             clearstatcache( true, $lock );
             $since = @filemtime( $lock );
@@ -412,15 +412,5 @@ class expSetupSharedState
         $name = function_exists( 'gethostname' ) ? (string)gethostname() : '';
         $name = preg_replace( '/[^A-Za-z0-9._-]/', '', $name );
         return $name !== '' ? $name : 'node';
-    }
-
-    protected static function fileMode()
-    {
-        return class_exists( 'eZFile' ) ? eZFile::fileMode( 0666 ) : 0664;
-    }
-
-    protected static function dirMode()
-    {
-        return 0777 & ~umask();
     }
 }
