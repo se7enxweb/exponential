@@ -116,7 +116,7 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
                 continue;
             }
             $this->receiver = ezpLoopbackServer::start( array( PHP_BINARY, '-S', "127.0.0.1:$port", __DIR__ . '/fixtures/expaudittestwebhookreceiver.php' ),
-                                         array( 'AUDIT_RECEIVER_DIR' => $this->dir . 'receiver', 'AUDIT_RECEIVER_SECRET' => $secret, 'PATH' => getenv( 'PATH' ) ),
+                                         expTestChildEnvironment::with( array( 'AUDIT_RECEIVER_DIR' => $this->dir . 'receiver', 'AUDIT_RECEIVER_SECRET' => $secret, 'PATH' => getenv( 'PATH' ) ) ),
                                          $root, $this->dir . 'receiver.log' );
             for ( $i = 0; $i < 50; $i++ )
             {
@@ -335,6 +335,8 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
     /** SK-08 */
     public function testSyslogPathAllowedParsesOpenBasedir()
     {
+        if ( PHP_OS_FAMILY === 'Windows' )
+            $this->markTestSkipped( 'syslog sockets are Unix, and open_basedir is separated by ";" on Windows, not by ":" as in this test' );
         expAuditSyslogSink::resetPathCache();
         $this->assertTrue( expAuditSyslogSink::pathAllowed( '/dev/log', '' ), 'no open_basedir: everything' );
         $this->assertFalse( expAuditSyslogSink::pathAllowed( '/dev/log', '/srv/site/:/tmp/' ) );
