@@ -29,7 +29,7 @@ da08b7036fa3ea877d5b1208eeb18149  CONTRIBUTING.md
 0d7690af9ec0ab034cdec5f7bae6b092  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 fec8e184c046898f71a24fa2008c767f  autoload.php
-8651bbc4fa7f25ce8decfe0745fc3643  autoload/ezp_kernel.php
+f9047fd8fc00384e9b062d954fce5d8d  autoload/ezp_kernel.php
 4f5aae97c4777e3d9fe309fc409be8d6  benchmarks/classes/ezbenchmark.php
 9c88f2cf9ede23d32cabee36659239f2  benchmarks/classes/ezbenchmarkcase.php
 dbc264cff80d6c4b0b5fd393d1b45297  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-61b5c853cda2fdfe8ffb3b1bd22ff534  doc/changelogs/6.0/6.0.15.md
+80a2deeaf97fbe9e83e1d341e0eb461f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -5645,7 +5645,7 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-7d38cce12d7530640495fce7ad1728ca  doc/eng-us/examples/ini-settings/site/README.md
+e1b25e6c68449c070df8e954fa448b77  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
@@ -5662,7 +5662,7 @@ f28588e05ec0e35f21c7961596721b67  doc/eng-us/examples/ini-settings/site/RequestL
 18308ceff84326f966bf76d2a0ac90a1  doc/eng-us/examples/ini-settings/site/SearchSettings.md
 e48642eee4dbd6e70732b2362277b641  doc/eng-us/examples/ini-settings/site/Session.md
 5070c9d5ae4fdbe45aa19dbdf9cbefc8  doc/eng-us/examples/ini-settings/site/SettingsViewSettings.md
-134ddc13e2f3cc95127a75d210e2b5ab  doc/eng-us/examples/ini-settings/site/SetupSettings.md
+1f6bcfa43d6e50c9bb7357db1c0e0010  doc/eng-us/examples/ini-settings/site/SetupSettings.md
 94c8a3269ae0216f9bb8c244676c3164  doc/eng-us/examples/ini-settings/site/ShopSettings.md
 14a2d46327c1841a0bb5225cb6fd8ad2  doc/eng-us/examples/ini-settings/site/SignInSecondFactorSettings.md
 f919ae53a39eb0dbdae8797d7dc8691e  doc/eng-us/examples/ini-settings/site/SiteAccessRules.md
@@ -10292,7 +10292,7 @@ d94022c2c45bb87a463d52cd0daa089b  doc/eng-us/help/hosting/operations/mail-delive
 87c494781066fa3b070711e8f36f67a6  doc/eng-us/help/hosting/operations/request-logs.md
 314211fff5d2930a02d3e45ecee9cc93  doc/eng-us/help/hosting/operations/restore-and-restore-tests.md
 8ec1972e3a196cc2b4e3fe40a374f916  doc/eng-us/help/hosting/operations/security-log.md
-74124285445a5bb237b4b36f9c2e3960  doc/eng-us/help/hosting/operations/several-web-nodes.md
+7b40692cf79b1c2aefc2ae6fd55d237c  doc/eng-us/help/hosting/operations/several-web-nodes.md
 e4fcf5fe468ba994b7965985a9ca2403  doc/eng-us/help/hosting/operations/storage-layout.md
 a174164828d99869f94f8f0bfbe371ec  doc/eng-us/help/hosting/operations/system-card-for-hosts.md
 458309f84672ad8d3e3f8ed18c1f4529  doc/eng-us/help/hosting/operations/upgrading-customer-sites.md
@@ -13300,7 +13300,7 @@ bc4db0183deb0089e58c6eaea3a5ff1f  doc/eng-us/install/01-introduction.md
 cb10da725a3fecff3599dfd9f57e1e0e  doc/eng-us/install/02-requirements.md
 efcb7e6e422a7d33b312c844e73c7efb  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
-c8a7f774673c9f8d16aba39e06a54ec6  doc/eng-us/install/05-setup-wizard.md
+6101e32d189ba0b0882e6f666730f032  doc/eng-us/install/05-setup-wizard.md
 83261f15db4694059d061715d1d33f37  doc/eng-us/install/06-kickstarter.md
 0097b666167efd6ba1a2b941f2b817fd  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
@@ -13638,7 +13638,7 @@ e4afa9308eb6b0df8a113eb3ab60e03c  doc/ger-de/.examples/descriptions/06-ini-setti
 bc00ce54ab84fdc5b2f608db46f05c96  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 28d7e287ea3e8a4b9f93dd5a335126ec  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 3038f7c327d18629144522453e26e40d  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
-0b2f2176c7b310633d48f4f73c15b13a  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
+a479017766c3dcb6b68db855831ca98c  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
 ed5c1f324557fc5d7a5a91f0c73faeab  doc/ger-de/.examples/descriptions/11-ini-settings-syscard-ini.json
 22d6c9c5408fb8730a53e260be31c8c4  doc/ger-de/.examples/descriptions/12-shell-checkcalltimeref.json
 fd6f22c56fda95c1d7e7e361ba9d2d24  doc/ger-de/.examples/descriptions/13-command-exptemplateconvert.json
@@ -15786,7 +15786,7 @@ e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/Li
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-d2b9c3a1fab85c544b70a1ac2f5d61f3  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+85e64818493b2b323904901024e8e4b1  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 2a84114d910780aab58cbed6767c7621  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_account.md
 aced08af929c3205955ec65ed29d4727  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
@@ -15803,7 +15803,7 @@ b1bbd5b632dffcbf06fde8214877c824  doc/ger-de/beispiele/ini-einstellungen/site/Re
 3d51a2f37c53f10f7d29266e969bb321  doc/ger-de/beispiele/ini-einstellungen/site/SearchSettings.md
 6c6a788f8f8b0d0f590d03f0545f958d  doc/ger-de/beispiele/ini-einstellungen/site/Session.md
 fcad2a9141871c1b2031263cf684ae7f  doc/ger-de/beispiele/ini-einstellungen/site/SettingsViewSettings.md
-5d38de2dd9869a612d6b537b2b08742a  doc/ger-de/beispiele/ini-einstellungen/site/SetupSettings.md
+febe05e50b0b9bd640eb564650072dd2  doc/ger-de/beispiele/ini-einstellungen/site/SetupSettings.md
 20025c05a82e1ac5b21fd3d3231e342a  doc/ger-de/beispiele/ini-einstellungen/site/ShopSettings.md
 9f93a2a06b58369321c32dc53867ba77  doc/ger-de/beispiele/ini-einstellungen/site/SignInSecondFactorSettings.md
 68280efa8ec9398045e4676359d4441a  doc/ger-de/beispiele/ini-einstellungen/site/SiteAccessRules.md
@@ -19649,7 +19649,7 @@ d7e537f0aa82063564ee3f80e078c025  doc/ger-de/hilfe/hosting/betrieb/einwilligung-
 a309015866c21440e17e1c918af18f33  doc/ger-de/hilfe/hosting/betrieb/kunden-websites-aktualisieren.md
 fe93f0c4f243a74aafb27edb7ceda417  doc/ger-de/hilfe/hosting/betrieb/log-viewer-und-log-rotation.md
 d094f26c7507f93d2386fe66812252c6  doc/ger-de/hilfe/hosting/betrieb/mailzustellung.md
-69ffb313b390c93b322e9b294de4b8d7  doc/ger-de/hilfe/hosting/betrieb/mehrere-web-knoten.md
+70cbdffd469732caf0916cfd4d69ae8e  doc/ger-de/hilfe/hosting/betrieb/mehrere-web-knoten.md
 da9ee9a9bb25992219e59168894f1c13  doc/ger-de/hilfe/hosting/betrieb/migrationen-auf-gehosteten-sites.md
 14d57ef8293f4863739c6c5d3d284eba  doc/ger-de/hilfe/hosting/betrieb/sicherheitslog.md
 aed400aa8169a9c70a7574d14e6a8805  doc/ger-de/hilfe/hosting/betrieb/systemkarte-fuer-hoster.md
@@ -23240,7 +23240,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 a39faf94d6a7af78312ae4eb1ef01146  doc/ger-de/installation/02-voraussetzungen.md
 e8a1d89728201585d1cb6850cad1ce36  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
-21836f9632cbebb5344268c227a1af86  doc/ger-de/installation/05-setup-assistent.md
+eb37d5626de4cb3074c347493d4c1258  doc/ger-de/installation/05-setup-assistent.md
 00ff5b63c49005d825b5c7d213ba05ea  doc/ger-de/installation/06-kickstarter.md
 0444a0b72e7fcdb36a5e507d9829ca36  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
@@ -25015,7 +25015,7 @@ ea2ac584c29921333e5bcd36e889d4d4  kernel/classes/expkernelservices.php
 2ca8689ca5bf88646729f7adb1be1751  kernel/classes/expkickstarterini.php
 62c7d643204f1f1f5741e2da8f7acd9f  kernel/classes/explinkcheck.php
 0e7f961116e0722f10ded1ecd4ccdd35  kernel/classes/explovestack.php
-59c961951906afc5cd0e7c3246748d7b  kernel/classes/expmaintenance.php
+b418c4419b8e581207061064e960ede7  kernel/classes/expmaintenance.php
 33cc85b93a8d82398aa5c08ad830cb3c  kernel/classes/expmanagedconfiguration.php
 d80536b118335fd846908026045f1669  kernel/classes/expmembermanagement.php
 965ac362303065fc0fbdc3ea90bfa8d1  kernel/classes/expnamepatternresolverinterface.php
@@ -25043,8 +25043,8 @@ afb2513e75fc4aac5845415fcb286b09  kernel/classes/expscriptstatus.php
 96fd9b39e84a7734ae00ce7f05907025  kernel/classes/expsearchsuggest.php
 fca699a4c3df7cff3d9c09dbb2ef3e28  kernel/classes/expsecretrule.php
 9f97a60176a20903e12d18fc338f76a8  kernel/classes/expsetupfilecopy.php
-25bf89dd759779a3963825271ebb5475  kernel/classes/expsetuplog.php
-a391817942065805c3ebf135d4fae2c1  kernel/classes/expsetupwizardguard.php
+ec318f388fd0b5a0a7f84bc2833b6bb0  kernel/classes/expsetuplog.php
+b603d88e9916271ee1e7269f77055416  kernel/classes/expsetupwizardguard.php
 db9f242bb5c064641868a67dd67c3064  kernel/classes/expsiteaccessfornode.php
 c45fe45f4c305e95e5ffdf4b7bf29503  kernel/classes/expsiteaccessoverview.php
 ac4bcb3f6921bc10b18acf877f90f495  kernel/classes/expsystemreport.php
@@ -26386,7 +26386,7 @@ e6144e472a2c4552d0be9718564e8b4c  kernel/private/classes/ezpkernel.php
 be8cdbb5b8fe8e504850e689e21def82  kernel/private/classes/ezpkernelredirect.php
 cae1daaf1de53266d1073fd3a76faa21  kernel/private/classes/ezpkernelresult.php
 cfb368b88c619b389425dee03f10b9c0  kernel/private/classes/ezpkerneltreemenu.php
-d90b93f87b847a23235c99c9533fce52  kernel/private/classes/ezpkernelweb.php
+daf28f3bbef4b644962b1f92f1dc4cb8  kernel/private/classes/ezpkernelweb.php
 5c244f8105822a81124a48dcf75f657f  kernel/private/classes/ezplanguageswitcher.php
 69d8850cc8d71b9a27d3ddc558d04268  kernel/private/classes/ezpmail.php
 8dcd128ae32ce6b90bb3bd055edaaeda  kernel/private/classes/ezpmobiledevicedetect.php
@@ -26620,7 +26620,7 @@ b3bdcdc24bb02063bdaa0029435ade1c  kernel/private/classes/views/setup/cachetoolba
 14b4b85b145bcf760912bb817150bbce  kernel/private/classes/views/setup/datatype.php
 52dd9789d560b405889c88f5bacd9a32  kernel/private/classes/views/setup/designextension.php
 00e81dd6654ca58068a8749a822ad504  kernel/private/classes/views/setup/extensions.php
-0439b6ee55e05141b9e4578bdf706e18  kernel/private/classes/views/setup/ezsetup.php
+8b1a7ce332d1b3acce2e4a7d6478ec43  kernel/private/classes/views/setup/ezsetup.php
 ae11e7010436d30804244b58f892c156  kernel/private/classes/views/setup/handlerextension.php
 a72243fd530cc0f2c7a4bad6c4709082  kernel/private/classes/views/setup/info.php
 145b00435bed599bec736dee0133ebc6  kernel/private/classes/views/setup/kerneloverride.php
@@ -27681,7 +27681,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 d90940aaed082e22b8356eca7e84228e  settings/setup.ini
 55888fce5d54995fd4fe569e67d6c56d  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-26fc7a313a4573fd5f43c80952aa4a0d  settings/site.ini
+3ca1d4563949ab912ef79462f0fb7bd7  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -30174,7 +30174,7 @@ c1b9ac43b382d3adacd97179e3c97551  tests/tests/kernel/classes/setup/EditorSiteacc
 3b7ea86dfa929a731ae3f4940d9741b2  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
 e6da37a9a7a0c362d187f67607aad7df  tests/tests/kernel/classes/setup/KickstarterResumeTest.php
 e9ef215e419a941a527aa5d5a5c36a17  tests/tests/kernel/classes/setup/MaintenancePageTest.php
-e097031bec0ef05d280bf95b9f3e07da  tests/tests/kernel/classes/setup/MaintenanceRequestTest.php
+4cbea42d022c9e128a3f8f7947fb7400  tests/tests/kernel/classes/setup/MaintenanceRequestTest.php
 c9294c6716c91f230e67d754a097e6d2  tests/tests/kernel/classes/setup/MaintenanceRunTest.php
 76fc04e999530d7662097e7461250bf4  tests/tests/kernel/classes/setup/RegistrationAndDryRunTest.php
 0b5560bf9e64e63016f6c8b75ff2d447  tests/tests/kernel/classes/setup/SessionPageTest.php
@@ -31488,3 +31488,5 @@ fc218dcb185a768f27d4ac5790f4ab47  design/standard/templates/shop/myorders.tpl
 fe1496bdc9e0826ba179ead7905eb2c7  kernel/private/classes/views/shop/myorders.php
 a8bff2772dd2d28e006986d0c6a33631  kernel/shop/myorders.php
 71d044da80444a8ca56c84b5c5900d82  tests/tests/kernel/classes/shopprices/eZShopMyOrdersViewTest.php
+a80363d6f2274493f84a7c699c2dd812  kernel/classes/expsetupsharedstate.php
+f2c5bad5d51eb86378feecf854854ce6  tests/tests/kernel/classes/setup/SetupSharedStateTest.php
