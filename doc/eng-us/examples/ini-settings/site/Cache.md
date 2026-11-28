@@ -2,14 +2,14 @@
 title: site.ini [Cache]
 audience: developer, admin
 category: examples
-summary: "The settings of [Cache] in site.ini: CacheItems"
-keywords: site.ini, Cache, INI, setting, CacheItems
+summary: "The settings of [Cache] in site.ini: CacheItems, ClearListeners"
+keywords: site.ini, Cache, INI, setting, CacheItems, ClearListeners
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [Cache]
 
-The block `[Cache]` of `settings/site.ini`, with 1 setting(s).
+The block `[Cache]` of `settings/site.ini`, with 2 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -60,6 +60,27 @@ CacheItems[]=exphelpcontent
 CacheItems[]=smarty
 CacheItems[]=twig
 CacheItems[]=searchsuggest
+*/ ?>
+```
+
+## ClearListeners
+
+> Classes told about every cache the kernel clears, so an extension that keeps caches outside the file and  
+> cluster storage (Valkey, Memcached, a CDN ...) clears them too. Each implements expCacheClearListener and is  
+> called after every cache item eZCache clears or purges (ezcache.php, Setup > Cache, exp:velocity deploy)  
+> and for the nodes of every content change. A class that does not exist (its extension is not active) is  
+> left out; one that fails is reported as a warning and the clear goes on.  
+> Example (sevenx\_valkey\_cache lists itself in its own site.ini.append.php):  
+> ClearListeners\[\]=sevenxValkeyCacheClearListener  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[Cache]
+# an empty "ClearListeners[]" first replaces the shipped list; without it the items are added
+ClearListeners[]
 */ ?>
 ```
 

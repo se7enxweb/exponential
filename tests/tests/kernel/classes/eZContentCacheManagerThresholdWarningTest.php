@@ -6,7 +6,8 @@
  * [ContentSettings] CacheThreshold; from the threshold on it expires every view cache of the site instead. That
  * used to be a debug message nobody saw in a log; it is a warning now, with the number of nodes and the threshold.
  *
- * With sevenx_valkey_cache, the changed nodes are cleared from its Valkey view cache too (stand-ins below).
+ * The cache clear listeners (site.ini [Cache] ClearListeners[], such as sevenx_valkey_cache's for its Valkey view
+ * cache) hear the changed nodes too, whatever the static cache handler (a recording listener below).
  *
  * Nothing of the site is touched: the threshold is set in-process, the static cache is off, the expiry timestamps
  * go to a private directory under var/tmp (site.ini [FileSettings] ExpiryDir) with an expiry handler of their own,
@@ -21,22 +22,18 @@
  * @group kernel
  */
 
-// Stand-ins for sevenx_valkey_cache (not active on the test installation): they record what the kernel asks them to
-// clear, so the test needs no Valkey server.
-if ( !class_exists( 'sevenxValkeyCacheBlock', false ) && !class_exists( 'sevenxValkeyCacheHandler', false ) )
+/** A cache clear listener that records what the kernel tells it, so the test needs no cache server */
+class eZContentCacheManagerThresholdWarningTestListener implements expCacheClearListener
 {
-    class sevenxValkeyCacheBlock
+    public static $nodes = array();
+
+    public function cacheItemCleared( array $cacheItem )
     {
     }
 
-    class sevenxValkeyCacheHandler
+    public function nodeCachesCleared( array $nodeIDList )
     {
-        public static $cleared = array();
-
-        public function generateNodeListCache( $nodeList )
-        {
-            self::$cleared[] = $nodeList;
-        }
+        self::$nodes[] = $nodeIDList;
     }
 }
 
@@ -163,16 +160,29 @@ class eZContentCacheManagerThresholdWarningTest extends PHPUnit\Framework\TestCa
      */
     #[\PHPUnit\Framework\Attributes\TestDox('below the threshold the nodes\' caches are cleared one by one and nothing is warned')]
     /**
-     * With sevenx_valkey_cache the content view cache is kept in Valkey; with static cache off its handler was never
-     * called, so a changed page kept its old view there for up to an hour. The kernel asks it to clear the nodes now.
+     * With sevenx_valkey_cache the content view cache is kept in Valkey; with static cache off, or another static
+     * cache handler, a changed page kept its old view there for up to an hour. The cache clear listeners hear the
+     * changed nodes whatever the handler.
      */
-    public function testValkeyViewCacheIsClearedWithStaticCacheOff(): void
+    public function testCacheClearListenersHearTheNodesWithStaticCacheOff(): void
     {
-        if ( !property_exists( 'sevenxValkeyCacheHandler', 'cleared' ) )
-            $this->markTestSkipped( 'sevenx_valkey_cache is active here; the stand-in is not loaded' );
-        sevenxValkeyCacheHandler::$cleared = array();
-        eZContentCacheManager::clearNodeViewCacheArray( array( 2147483001, 2147483002 ) );
-        $this->assertSame( array( array( 2147483001, 2147483002 ) ), sevenxValkeyCacheHandler::$cleared );
+        $ini = eZINI::instance();
+        $had = $ini->hasVariable( 'Cache', 'ClearListeners' );
+        $saved = $had ? $ini->variable( 'Cache', 'ClearListeners' ) : null;
+        $ini->setVariable( 'Cache', 'ClearListeners', array( 'eZContentCacheManagerThresholdWarningTestListener' ) );
+        eZContentCacheManagerThresholdWarningTestListener::$nodes = array();
+        try
+        {
+            eZContentCacheManager::clearNodeViewCacheArray( array( 2147483001, 2147483002 ) );
+        }
+        finally
+        {
+            if ( $had )
+                $ini->setVariable( 'Cache', 'ClearListeners', $saved );
+            else
+                $ini->removeSetting( 'Cache', 'ClearListeners' );
+        }
+        $this->assertSame( array( array( 2147483001, 2147483002 ) ), eZContentCacheManagerThresholdWarningTestListener::$nodes );
     }
 
     public function testBelowThresholdWarnsNothing(): void

@@ -1272,6 +1272,7 @@ return array(
       'expBookmarkTypeSystemPage'                                    => 'kernel/classes/expbookmarktypesystempage.php',
       'expBookmarkView'                                              => 'kernel/classes/expbookmarkview.php',
       'expCacheCatalogue'                                            => 'kernel/classes/expcachecatalogue.php',
+      'expCacheClearListener'                                        => 'kernel/private/interfaces/expcacheclearlistener.php',
       'expCacheManager'                                              => 'kernel/classes/expcachemanager.php',
       'expCacheUntil'                                                => 'kernel/classes/expcacheuntil.php',
       'expCacheUntilOperator'                                        => 'kernel/common/expcacheuntiloperator.php',

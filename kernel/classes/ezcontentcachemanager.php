@@ -809,15 +809,10 @@ class eZContentCacheManager
             $staticCacheHandler->generateNodeListCache( $nodeList );
         }
 
-        // With sevenx_valkey_cache the content view cache is kept in Valkey (kernel/private/classes/views/content/view.php),
-        // and only its own handler clears it there. A site with static cache off, or with another static cache handler,
-        // kept every changed page's old view in Valkey for up to an hour, on every server that shares that Valkey.
-        if ( class_exists( 'sevenxValkeyCacheBlock' ) && class_exists( 'sevenxValkeyCacheHandler' )
-             && !( $staticCacheHandler instanceof sevenxValkeyCacheHandler ) )
-        {
-            $valkeyViewCache = new sevenxValkeyCacheHandler();
-            $valkeyViewCache->generateNodeListCache( $nodeList );
-        }
+        // View caches an extension keeps elsewhere (sevenx_valkey_cache: in Valkey) are cleared for these nodes by its
+        // listener (site.ini [Cache] ClearListeners[]), whatever the static cache handler: a site with static cache
+        // off, or with another handler, kept every changed page's old view there for up to an hour
+        eZCache::notifyNodeCachesCleared( $nodeList );
 
         // Static publishing: the pages of these nodes are stale for the targets that publish on content publish
         // (nothing is read or written while static publishing is off or no target has Triggers[]=publish)
@@ -844,6 +839,7 @@ class eZContentCacheManager
             eZDebug::writeWarning( self::cacheThresholdWarningText( count( $nodeList ), $cleanupValue ), __METHOD__ );
             ezpEvent::getInstance()->notify( 'content/cache/all' );
             eZContentObject::expireAllViewCache();
+            eZCache::notifyCacheItemCleared( 'content' );
         }
 
         eZDebug::accumulatorStop( 'node_cleanup' );
@@ -1250,6 +1246,7 @@ class eZContentCacheManager
                 expGraphQLResponseCache::expireIfAvailable();
 
             ezpEvent::getInstance()->notify( 'content/cache/all' );
+            eZCache::notifyCacheItemCleared( 'content' );
 
             // subtree template block caches
             if ( $templateCacheEnabled )

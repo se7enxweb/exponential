@@ -595,9 +595,28 @@ class eZCache
         $cacheItem['iterationMax']   = $iterationMax;
         $cacheItem['expiry']         = $expiry;
         // The compiled INI arrays may also live in Valkey (sevenx_valkey_cache, used by eZINI when the class exists):
-        // clearing the INI caches on disk alone left them there, and every web host kept reading the old settings
+        // clearing the INI caches on disk alone left them there, and every web host kept reading the old settings.
+        // Not a listener: eZINI reads that cache by the class's name, and a listener is found in the settings that
+        // cache holds, so a listener added to them would never be seen until the cache was cleared.
         if ( isset( $cacheItem['id'] ) && ( $cacheItem['id'] === 'ini' || $cacheItem['id'] === 'global_ini' ) )
             self::clearValkeyINICache();
+        self::clearItemStorage( $cacheItem );
+        // Caches an extension keeps elsewhere (Valkey ...) are cleared with the kernel's own, whoever asked
+        self::notifyCacheItemCleared( $cacheItem );
+    }
+
+    /**
+     * Clears the storage of one cache item: its clear or purge function, or its files (clearItem()).
+     *
+     * @param array $cacheItem the item with 'purge', 'reporter', 'iterationSleep', 'iterationMax' and 'expiry' set
+     */
+    private static function clearItemStorage( array $cacheItem )
+    {
+        $purge          = $cacheItem['purge'];
+        $reporter       = $cacheItem['reporter'];
+        $iterationSleep = $cacheItem['iterationSleep'];
+        $iterationMax   = $cacheItem['iterationMax'];
+        $expiry         = $cacheItem['expiry'];
         $functionName = false;
         if ( $purge && isset( $cacheItem['purge-function'] ) )
             $functionName = 'purge-function';
@@ -948,6 +967,86 @@ class eZCache
         if ( !$cache->isEnabled() )
             return false;
         return (bool)$cache->clear();
+    }
+
+    /**
+     * The cache clear listeners of site.ini [Cache] ClearListeners[] (expCacheClearListener): one object per class,
+     * in the order listed. A class that does not exist (its extension is not active) is left out without a word; one
+     * that is not an expCacheClearListener is left out with a warning.
+     *
+     * @return expCacheClearListener[]
+     */
+    static function clearListeners()
+    {
+        $ini = eZINI::instance();
+        $classes = $ini->hasVariable( 'Cache', 'ClearListeners' ) ? $ini->variable( 'Cache', 'ClearListeners' ) : array();
+        $listeners = array();
+        foreach ( array_unique( is_array( $classes ) ? $classes : array() ) as $class )
+        {
+            if ( !is_string( $class ) || trim( $class ) === '' || !class_exists( trim( $class ) ) )
+                continue;
+            $class = trim( $class );
+            if ( !is_subclass_of( $class, 'expCacheClearListener' ) )
+            {
+                eZDebug::writeWarning( "site.ini [Cache] ClearListeners[]=$class does not implement expCacheClearListener; skipped", __METHOD__ );
+                continue;
+            }
+            $listeners[] = new $class();
+        }
+        return $listeners;
+    }
+
+    /**
+     * Tells every cache clear listener that a cache item was cleared or purged (clearItem() does it for every item).
+     *
+     * @param array|string $cacheItem the item, or its id (an id that is not in the cache list is ignored)
+     */
+    static function notifyCacheItemCleared( $cacheItem )
+    {
+        if ( !is_array( $cacheItem ) )
+            $cacheItem = eZCache::fetchByID( $cacheItem );
+        if ( !is_array( $cacheItem ) )
+            return;
+        if ( !isset( $cacheItem['purge'] ) )
+            $cacheItem['purge'] = false;
+        self::notifyClearListeners( 'cacheItemCleared', $cacheItem );
+    }
+
+    /**
+     * Tells every cache clear listener that the view caches of these nodes were cleared for a content change
+     * (eZContentCacheManager).
+     *
+     * @param array $nodeIDList
+     */
+    static function notifyNodeCachesCleared( array $nodeIDList )
+    {
+        if ( !empty( $nodeIDList ) )
+            self::notifyClearListeners( 'nodeCachesCleared', array_values( $nodeIDList ) );
+    }
+
+    /**
+     * Calls $method of every listener. A listener that throws is reported (a warning in the debug output, and on the
+     * command line) and the others are still called: a cache server that does not answer never stops a clear.
+     *
+     * @param string $method
+     * @param array $argument
+     */
+    private static function notifyClearListeners( $method, array $argument )
+    {
+        foreach ( self::clearListeners() as $listener )
+        {
+            try
+            {
+                $listener->$method( $argument );
+            }
+            catch ( Throwable $e )
+            {
+                $message = get_class( $listener ) . "::$method() failed, its caches may not be cleared: " . $e->getMessage();
+                eZDebug::writeWarning( $message, __METHOD__ );
+                if ( PHP_SAPI === 'cli' && empty( $_SERVER['REQUEST_URI'] ) && class_exists( 'eZCLI' ) )
+                    eZCLI::instance()->warning( $message );
+            }
+        }
     }
 
     /**
