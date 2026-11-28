@@ -60,7 +60,7 @@ Browser, den Kickstarter (`kickstart.ini`) und `exp:install`
 
 | Datenbank | 6.0.14 | 6.0.15 | Site-Datenbank | DFS-Cluster | Lesereplikate (`UseSlaveServer`) | Installer |
 |---|---|---|---|---|---|---|
-| [SQLite 3](../funktionen/6.0/sqlite-datenbank.md) | ja | ja, der Standard | ja | nur ein Rechner (ein Cluster aus einem Knoten) | nein | Assistent, Kickstarter, `exp:install` (`sqlite`, der Standard) |
+| [SQLite 3](../funktionen/6.0/sqlite-datenbank.md) | ja | ja, der Standard | ja | nur ein Rechner (ein Cluster aus einem Knoten); mehrere Knoten mit [LiteFS](../funktionen/6.0/sqlite-datenbank.md#mehrere-server-litefs-und-litestream), ein Schreiber | nein | Assistent, Kickstarter, `exp:install` (`sqlite`, der Standard) |
 | [PostgreSQL 13 bis 19](../funktionen/6.0/postgresql-datenbank.md) | ja | ja | ja | ja, im Kernel | ja | Assistent, Kickstarter, `pgsql` |
 | [MongoDB 6.0 und neuer](../funktionen/6.0/mongodb-datenbankunterstuetzung.md) | ja | ja | ja, über einen Adapter | ja, im Kernel | das eigene Replica Set von MongoDB | Assistent, Kickstarter, `mongodb` |
 | [MariaDB](../funktionen/6.0/mariadb-und-mysql-datenbank.md) | ja | ja | ja | ja (MySQLi-Backend) | ja | Assistent („MariaDB / MySQL Improved“), Kickstarter, `mariadb` |
@@ -225,8 +225,8 @@ Millisekunden; deshalb braucht eine Seite mit Hunderten von Anweisungen auf dies
 ### Ein Server
 
 - **SQLite 3**, der Standard: gar kein Datenbankserver, eine ganze Site in einer Datei, eine vollwertige
-  Produktionsdatenbank für eine Site, die von einem Rechner ausgeliefert wird. Schreibende Zugriffe warten in einer
-  Schlange.
+  Produktionsdatenbank für eine Site, die von einem Rechner ausgeliefert wird, oder von mehreren mit LiteFS (ein
+  Primary schreibt, Lesereplikate). Schreibende Zugriffe warten in einer Schlange.
 - **PostgreSQL**, wenn Sie von Anfang an einen Datenbankserver wollen oder später einen zweiten Webserver erwarten.
 - **MariaDB oder MySQL**, wenn der Hoster sie und nichts anderes anbietet. Für MariaDB oder MySQL wählen Sie in der
   Datenbankliste des Setup-Assistenten „MariaDB / MySQL Improved“.
@@ -245,7 +245,8 @@ Die Datenbank muss die DFS-Metadaten der Dateien für alle Webserver halten: **P
 Vitess und SingleStore liefen über das MySQL-Backend als DFS-Cluster aus einem Knoten; bei einem verwalteten Dienst,
 der TLS verlangt, liegen die DFS-Metadaten besser woanders. CockroachDB und YugabyteDB haben die DFS-Prüfungen über das
 PostgreSQL-Backend bestanden; Neon, Supabase und Aurora PostgreSQL verwenden dasselbe Backend, ungetestet. Nicht für
-einen Cluster: SQLite (ein Rechner), DuckDB (ein schreibender Prozess, eine lokale Dateisperre), Firebird (noch kein
+die DFS-Metadaten eines Clusters: SQLite (sein Backend ist für einen Rechner; eine SQLite-Site selbst läuft mit
+[LiteFS](../funktionen/6.0/sqlite-datenbank.md#mehrere-server-litefs-und-litestream) auf mehreren Knoten, die DFS-Metadaten dann in einer der Datenbanken oben), DuckDB (ein schreibender Prozess, eine lokale Dateisperre), Firebird (noch kein
 Backend), Spanner (hält keine Site). Einen **libSQL-Server** können sich mehrere
 Webserver für die Tabellen der Site teilen, er hält aber keine DFS-Metadaten: die Dateien in ein geteiltes Verzeichnis
 legen, oder die DFS-Metadaten in eine der Datenbanken oben.

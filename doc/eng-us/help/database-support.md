@@ -49,7 +49,8 @@ with a decision guide per use case, is on [Choosing a database](choosing-a-datab
 22. [Test coverage (CI)](#test-coverage-ci)
 23. [Which database is my site using?](#which-database-is-my-site-using)
 24. [Planned databases, with what each would take](#planned-databases-with-what-each-would-take)
-25. [Related pages](#related-pages)
+25. [Odoo](#odoo)
+26. [Related pages](#related-pages)
 
 ## Support levels at a glance
 
@@ -74,12 +75,14 @@ facts, checked against the code of the main branch on 28 November 2026.
 | Database | Data tables | Full site | DFS | Multi-server cluster | Setup wizard | `exp:install` / kickstarter | xne upgrade tested |
 |---|---|---|---|---|---|---|---|
 | **Established** | | | | | | | |
-| [SQLite 3](../features/6.0/sqlite-database.md) | yes | yes, the default | one machine only | no | yes, preselected (sqlite3) | `sqlite`, the default | yes: Linux and Windows, exact rollback |
+| [SQLite 3](../features/6.0/sqlite-database.md) | yes | yes, the default | one machine only (the SQLite backend); a LiteFS cluster keeps its file metadata in a server database | yes, with LiteFS: one primary writes, read replicas on the other nodes, writes forwarded to the primary; Litestream for continuous backup and restore (not a second writer) | yes, preselected (sqlite3) | `sqlite`, the default | yes: Linux and Windows, exact rollback |
 | [PostgreSQL](../features/6.0/postgresql-database.md) | yes | yes, the recommended server (13 to 19) | yes | yes, with read replicas | yes (pgsql) | `pgsql` | yes: exact rollback, also of a failed step |
 | [MongoDB](../features/6.0/mongodb-database-support.md) | yes | yes, through an adapter (6.0 and later) | yes | yes | yes (mongodb) | `mongodb` | yes: one full proof run, exact rollback |
 | [MariaDB](../features/6.0/mariadb-and-mysql-database.md) | yes | yes | yes | yes, with read replicas | yes, as MariaDB / MySQL Improved (mysqli) | `mariadb` | yes: exact rollback, also of a failed step |
 | [Oracle](../features/6.0/oracle-database.md) | yes | yes, 19c and later (ezoracle) | yes | yes, with read replicas | yes (oci8) | `oracle` | yes: one full proof run, exact rollback |
 | [MySQL](../features/6.0/mariadb-and-mysql-database.md) | yes | yes | yes | yes, with read replicas | yes, as MariaDB / MySQL Improved (mysqli) | `mysql` | yes: the MariaDB driver and path, tested on MariaDB |
+| **Side by side on the same database server** | | | | | | | |
+| [Odoo](../help/database-support.md#odoo) | no Odoo connector yet: syncing products, customers, orders and stock through Odoo's APIs is planned | yes, side by side: Odoo runs on PostgreSQL, and Exponential runs on the same PostgreSQL server or cluster in its own database | yes, on that PostgreSQL | yes, on that PostgreSQL with its read replicas | yes (pgsql) | `pgsql` | yes, as PostgreSQL: Exponential's own database, exact rollback |
 | **SQL Server, Firebird and DuckDB** | | | | | | | |
 | [Microsoft SQL Server](../features/6.0/sqlserver-database-driver.md) | yes | yes (2017 to 2025) | yes | yes, Always On read replicas | yes, with sqlsrv or pdo_sqlsrv | `sqlserver` | no: xne refuses it (no verified backup yet) |
 | [Azure SQL](../features/6.0/sqlserver-database-driver.md) | yes | yes, the SQL Server driver (Database and Managed Instance; the service is not run in CI) | yes | yes | yes, as Microsoft SQL Server | `sqlserver` | no: xne refuses it (no verified backup yet) |
@@ -155,7 +158,7 @@ What the order means in practice:
 
 | Engine | Versions | PHP extension | Installers | Cluster (DFS metadata) | Tested in CI on every push | Status |
 |---|---|---|---|---|---|---|
-| SQLite 3 | 3.33 and later | `sqlite3` | setup wizard (the default), kickstarter, `exp:install` (the default) | one machine only (`expDFSFileHandlerSQLiteBackend`) | driver tests on PHP 8.1 to 8.5; the DFS backend | supported, the default |
+| SQLite 3 | 3.33 and later | `sqlite3` | setup wizard (the default), kickstarter, `exp:install` (the default) | one machine only (`expDFSFileHandlerSQLiteBackend`) | driver tests on PHP 8.1 to 8.5; the DFS backend | supported, the default; several nodes with LiteFS ([one writer, read replicas](../features/6.0/sqlite-database.md#several-servers-litefs-and-litestream)) |
 | PostgreSQL | 13 to 19 | `pgsql` | setup wizard, kickstarter, `exp:install` | any number of servers (`expDFSFileHandlerPostgresqlBackend`), read replicas | 13, 15, 18 and 19 for the site, 13 to 19 for the DFS backend | supported, the recommended server |
 | MongoDB | 6.0 and later, PHP 8.2 and later | `mongodb` and the library `mongodb/mongodb` | setup wizard, kickstarter, `exp:install` | any number of servers, one server or a replica set (`expDFSFileHandlerMongoDBBackend`, 5.0 and later) | adapter tests; MongoDB 7 and 8.0 in the database and DFS jobs | supported |
 | MariaDB | releases your vendor supports | `mysqli` | setup wizard, kickstarter, `exp:install` | any number of servers (MySQLi backend), read replicas | through the MySQL jobs (the same driver) | supported |
@@ -516,9 +519,9 @@ transaction takes an exclusive lock on `<database>.writer-lock` and then runs `B
 publishes wait their turn (up to `SQLiteTransactionWait` seconds, default 25) instead of failing with "database is
 locked". MySQL-only session statements (`SET NAMES`, `SET FOREIGN_KEY_CHECKS` and similar) are accepted and ignored.
 
-**When it fits.** One machine, any number of readers, an editorial team. The project's own load tests had concurrent
+**When it fits.** One machine, or several with LiteFS (below), any number of readers, an editorial team. The project's own load tests had concurrent
 readers scale with the number of processes and 16 concurrent writers complete without errors, queued. Choose a
-database server instead when more than one machine must write the database (WAL needs shared memory on one host, so
+database server instead when more than one machine must write the database at the same time (WAL needs shared memory on one host, so
 a network file system is not a substitute), when many editors publish large changes at the same moment all day, or
 when you need replication or database-level users and grants.
 
@@ -527,7 +530,8 @@ that uses the site (the web server's PHP, Velocity's workers, cronjobs, console 
 directory and the files; give them one common group, the directory mode `2775` and a umask of `0002`. Never serve the
 directory over HTTP (the shipped rewrite rules do not).
 
-**Limits.** One host; one writer at a time (queued); no replication of its own; access control is the file system's.
+**Limits.** One writer at a time (queued), on one host or on the LiteFS primary; no replication of its own (LiteFS
+and Litestream add it); access control is the file system's.
 
 The full treatment, with every PRAGMA, the queue's behavior under load, monitoring and maintenance (`ANALYZE`,
 `VACUUM`, the WAL file), is [9.2 SQLite 3: a production database in one file](../install/09-databases.md#92-sqlite-3-a-production-database-in-one-file).
@@ -538,6 +542,13 @@ specification [The SQLite3 database driver](../specifications/6.0/sqlite3-databa
 the kernel's `expDFSFileHandlerSQLiteBackend`, the tables of `kernel/sql/sqlite/cluster_dfs_schema.sql` and the gateway
 `dfssqlite`; `exp:cluster:enable` sets it up on a SQLite site. Several web servers cannot share a SQLite file safely:
 [Clustering on SQLite](../features/6.0/sqlite-dfs-cluster.md).
+
+**Several servers.** One SQLite site can run on several nodes with LiteFS: one node is the primary and the only
+writer, the others hold read-only replicas that LiteFS keeps current, and Exponential Velocity forwards every
+request that may write from a replica to the primary. Litestream adds a continuous copy to object storage or
+another server, for backup and restore to a point in time; it is not a second writer. The storage files still need
+the DFS, with the file metadata in a server database:
+[Several servers: LiteFS and Litestream](../features/6.0/sqlite-database.md#several-servers-litefs-and-litestream).
 
 ## 2. PostgreSQL
 
@@ -797,7 +808,8 @@ PostgreSQL, Oracle or MongoDB. Compare `lower(...)` on both sides where case mus
   and the template-block cache answer first; below them the optional SQL query cache (`settings/querycache.ini`,
   `Mode=off` by default) answers repeated `SELECT` statements on every engine except MongoDB. Measure with
   `php bin/php/console exp:benchmark`.
-- **SQLite** scales reads with the number of processes; writes queue. Count up to 64 MB of page cache per process
+- **SQLite** scales reads with the number of processes, and with LiteFS with the number of nodes; writes queue on
+  one primary. Count up to 64 MB of page cache per process
   that has opened the database (`SQLitePragmas[]=cache_size=-16384` lowers it to 16 MB).
 - **PostgreSQL, MariaDB, MySQL** scale writes with row-level locking. `UsePersistentConnection=enabled` keeps one
   connection per PHP process; under Velocity's persistent workers each worker keeps its connection anyway. MySQL,
@@ -970,7 +982,7 @@ list is a promise of a release.
 | Percona Server and Percona XtraDB Cluster | verify on an existing driver | full site expected | drop-in MySQL on the mysqli driver; verify the install and the DFS backend | S |
 | Dolt and OceanBase (MySQL mode) | verify on an existing driver | full site to verify | the MySQL protocol; Dolt adds a branch per staging site | S |
 | StarRocks, Apache Doris and Manticore Search | verify on an existing driver | data tables expected | the MySQL protocol; analytical and search engines (Manticore also as a search backend) | S |
-| SQLCipher and LiteFS | verify on an existing driver | full site expected | SQLCipher: an encrypted SQLite through a SQLCipher-linked PHP extension; LiteFS: replicated SQLite files, one writer | S |
+| SQLCipher | verify on an existing driver | full site expected | an encrypted SQLite through a SQLCipher-linked PHP extension | S |
 | rqlite and Cloudflare D1 | verify on an existing driver | full site to verify | SQLite over HTTP: a small transport like the libSQL and Turso driver | M |
 | Amazon DocumentDB, Azure Cosmos DB for MongoDB and FerretDB | verify on an existing driver | full site to verify | the MongoDB adapter; check each service's gaps in aggregation, transactions and indexes | S to M |
 | Snowflake, Google BigQuery, Databricks, Teradata, Progress OpenEdge, FileMaker Server, Exasol and Ingres | verify on an existing driver | data tables and import | the generic ODBC driver with each vendor's ODBC driver; a smoke test each | S each |
@@ -980,9 +992,17 @@ list is a promise of a release.
 | InterBase, Sybase before SAP, Apache Derby, H2 and HSQLDB | new driver work | data tables, InterBase possibly a site | InterBase through the Firebird driver with a profile; Sybase through the SAP ASE driver; Derby, H2 and HSQLDB through ODBC or JDBC bridges | S to M |
 <!-- exp-db-planned:end -->
 
-[Odoo](https://www.odoo.com/) is not a database: it is an ERP on PostgreSQL. Exponential and Odoo can share one
-PostgreSQL server today, each in its own database; syncing products, customers and orders between them is an
-integration through their APIs, not a database driver.
+## Odoo
+
+[Odoo](https://www.odoo.com/) is an ERP that runs on PostgreSQL, and Exponential runs side by side with it: on the
+same PostgreSQL server or cluster, in a database of its own, with the same backups and the same replication. What
+PostgreSQL gives Exponential, it gives it next to Odoo: a full site, the DFS metadata, read replicas
+(`UseSlaveServer`) and upgrades with xne and an exact rollback of Exponential's own database. Install Exponential
+with the PostgreSQL driver (`--db=pgsql`, or PostgreSQL in the setup wizard) and a new database and user on the
+server Odoo uses; never install into Odoo's database.
+
+There is no Odoo connector in Exponential yet: syncing products, customers, orders and stock between the two through
+Odoo's XML-RPC and JSON-RPC APIs and Exponential's REST and GraphQL APIs is planned.
 
 ## Related pages
 

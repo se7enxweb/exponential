@@ -7177,8 +7177,8 @@ de9ca1cccd8c2ee8addd4af5cfa2f3c5  doc/eng-us/features/6.0/second-factor-on-other
 a3c9e2957fb512acbbbb3f7ecbf57df4  doc/eng-us/features/6.0/siteaccess-host-and-language-matching.md
 fe1c6abb641c7c1556cdce16bb86142c  doc/eng-us/features/6.0/smarty-templates.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
-c8950969cfac953b4214d1a9822574b7  doc/eng-us/features/6.0/sqlite-database.md
-b66a7a499c71003f3f7be4f444876245  doc/eng-us/features/6.0/sqlite-dfs-cluster.md
+dcbd4df73f206353da9d647243130203  doc/eng-us/features/6.0/sqlite-database.md
+f7e78da3046405b76a94e6f06a88525b  doc/eng-us/features/6.0/sqlite-dfs-cluster.md
 935ec6788e61b1717356146c44579111  doc/eng-us/features/6.0/static-cache-generator.md
 87bd2ea6ccbc920155f53d87cb8a61d2  doc/eng-us/features/6.0/static-publishing.md
 afd23090dc06207591ccdb4eb6b91806  doc/eng-us/features/6.0/store-dashboard.md
@@ -8182,7 +8182,7 @@ eac710891ec446c14acec9e1d27b8426  doc/eng-us/help/businesses/templates/roi-works
 91d2aca3118f828f8e72d618b23e8e16  doc/eng-us/help/businesses/which-section-fits-your-organization.md
 8c90026c2aa02ea5007adb6264190737  doc/eng-us/help/businesses/why-businesses-rely-on-exponential.md
 650935738878fa3c486c5f262cb57df6  doc/eng-us/help/change-the-admin-password.md
-65e56192a5ad5acf0db7ea9ad059bf5f  doc/eng-us/help/choosing-a-database.md
+2871be88812caa9b342041d147cea3c5  doc/eng-us/help/choosing-a-database.md
 32b4a33172034277fee4c8b12b0041a6  doc/eng-us/help/cms-developers/accessibility.md
 d2670fd89d336c5d257a17d39a7923ac  doc/eng-us/help/cms-developers/caching-for-cms-developers.md
 227110c9a9a69e8dea9acd57d0b7702c  doc/eng-us/help/cms-developers/choosing-a-ready-made-content-class.md
@@ -8630,7 +8630,7 @@ ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-da
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
 af3f48bcdd35b6e2d502eaabd70ed791  doc/eng-us/help/database-administrators/upgrades-and-sql-update-files.md
-6c956840e1cd78548c508bf124488f2f  doc/eng-us/help/database-support.md
+5e951bc8d910b106e352ae92a5117c28  doc/eng-us/help/database-support.md
 9839872697178f8aa366d091c7a02b2c  doc/eng-us/help/default-administrator-password.md
 2ddd3cd22544975c86c9b217d2ddfe49  doc/eng-us/help/demo-mode-faq.md
 dac637795aab4d352c9738272efd804c  doc/eng-us/help/demo-mode.md
@@ -13307,7 +13307,7 @@ d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-meth
 83261f15db4694059d061715d1d33f37  doc/eng-us/install/06-kickstarter.md
 0097b666167efd6ba1a2b941f2b817fd  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
-b3b87216f383e55f8a59e92fdd674604  doc/eng-us/install/09-databases.md
+148ac574e54025c8cadafea429acba4f  doc/eng-us/install/09-databases.md
 278eeb7d25c1222ac28937a2f8165689  doc/eng-us/install/10-after-installing.md
 c7ea4bbbc3b898354b5bbe91f167c982  doc/eng-us/install/11-upgrading.md
 48ccb4898ab342e4c3afa0435641ccd7  doc/eng-us/install/12-troubleshooting.md
@@ -17323,8 +17323,8 @@ b11a1cfe5de18bae37f762fc4deab69f  doc/ger-de/funktionen/6.0/smarty-templates.md
 048b85449fe4f1d1f763247b12b53ae7  doc/ger-de/funktionen/6.0/soap-client-tls.md
 c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-bestellliste.md
 3634aad45a547c83ee364727590014f0  doc/ger-de/funktionen/6.0/spaltenorientierte-datenbanken.md
-0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
-d6385bbaa2c6dc5931603b6e4af56e47  doc/ger-de/funktionen/6.0/sqlite-dfs-cluster.md
+67806d1f27a74f497cec95a7a234f08f  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
+8028b67878ab3fc13569c51b91f0f620  doc/ger-de/funktionen/6.0/sqlite-dfs-cluster.md
 4585ca572191483a19c48897dd985efc  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
 7b785af03f1e8f01ab7f64354515847f  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
@@ -18500,7 +18500,7 @@ a006c16efec268bb2bcd620a9b237fb9  doc/ger-de/hilfe/cms-entwickler/umstieg-von-ty
 9864b91414734c9054a5e35f3a3b2c36  doc/ger-de/hilfe/cms-entwickler/versionen-entwuerfe-und-veroeffentlichen.md
 a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-ausloeser.md
 f5be1f862dc084f747a2aec672a8f29e  doc/ger-de/hilfe/das-benutzer-auditprotokoll.md
-1a939097f5579e2f69c6d6d8a0407c99  doc/ger-de/hilfe/datenbank-waehlen.md
+366d3445a82d7491ae641e6060182853  doc/ger-de/hilfe/datenbank-waehlen.md
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 4aa0910c6c1843fcc009479fcb70efb2  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
@@ -18550,7 +18550,7 @@ c12fde09d2b2903b72ee39a69d679a4a  doc/ger-de/hilfe/datenbankadministratoren/tabe
 5eb104f19225af7f4917a6e2a8c016e0  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 0b448d4a2328dede7b623ac5bf777188  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
 3db1ede61ace04f667926b567c1cfedc  doc/ger-de/hilfe/datenbankadministratoren/zwischen-engines-wechseln.md
-f44fffb508ed54cb63835f94b19e7286  doc/ger-de/hilfe/datenbankunterstuetzung.md
+eaed14894d63dd3df284b21407e3dcca  doc/ger-de/hilfe/datenbankunterstuetzung.md
 fdd16416b208a5e6077cc28a44e0d6e5  doc/ger-de/hilfe/demomodus-faq.md
 1a8d6bbe231add07ca0c71af36155e2d  doc/ger-de/hilfe/demomodus.md
 1aab9903fa9180953148e48e18a3a17f  doc/ger-de/hilfe/designer/README.md
@@ -23250,7 +23250,7 @@ e8a1d89728201585d1cb6850cad1ce36  doc/ger-de/installation/03-den-code-beschaffen
 00ff5b63c49005d825b5c7d213ba05ea  doc/ger-de/installation/06-kickstarter.md
 0444a0b72e7fcdb36a5e507d9829ca36  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
-817645faebd5a714ccb47e43529a770e  doc/ger-de/installation/09-datenbanken.md
+de4b4456a263252d452e228fd38153ce  doc/ger-de/installation/09-datenbanken.md
 706664b7b744252ec94b974f9c76a582  doc/ger-de/installation/10-nach-der-installation.md
 a29a13ebcbd2fde6d9f6a52b5011a375  doc/ger-de/installation/11-aktualisieren.md
 7a29282cee8bb67807ed770c2543e9ad  doc/ger-de/installation/12-fehlerbehebung.md
@@ -31311,9 +31311,9 @@ f27f5e5268a2227d2cd37a56bf679636  doc/ger-de/bc/6.0/postgresql-lesereplikat.md
 a822bb53aad926b39b6e4ddb635d47b5  tests/tests/lib/ezdb/eZMySQLiDBReadReplicaTest.php
 3d00b0a839bd26b7d085c56a1c9d5d66  tests/tests/lib/ezdb/eZSQLite3DBReadReplicaTest.php
 5bad832361a03e9276414147ced0f962  doc/eng-us/features/6.0/postgresql-18-and-19.md
-7806e5e8a2185d6f35506124c5276cf2  doc/eng-us/features/6.0/clustering-overview.md
+0c139f7b0ccb6627b87cb135b4d5d658  doc/eng-us/features/6.0/clustering-overview.md
 ff2e813bd450f00e1284e25319d91180  doc/ger-de/funktionen/6.0/postgresql-18-und-19.md
-72399ee6644868228e41badd5473e8e1  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
+c50d1386c7296b6f80a411a2627f3574  doc/ger-de/funktionen/6.0/clustering-ueberblick.md
 c935171be46b43c42fd87079d79a1181  lib/ezdb/classes/expsqlserverlexer.php
 e19c81ebb14d98c3f7c0f3d3ef2d5b65  lib/ezdb/classes/expsqlserverdialect.php
 34e8ba03cdca3032e59cbed7e6bc590d  lib/ezdb/classes/expsqlservererrormap.php

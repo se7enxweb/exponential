@@ -103,7 +103,7 @@ dieselben Paritätsprüfungen:
 | Oracle 12.1 und neuer | `expDFSFileHandlerOracleBackend` | `dfsoracle` | beliebig viele | [Clustering mit Oracle](oracle-dfs-cluster.md) |
 | SQL Server 2017 und neuer, Azure SQL | `expDFSFileHandlerSQLServerBackend` | `dfssqlserver` | beliebig viele | [Clustering mit SQL Server](sqlserver-dfs-cluster.md) |
 | MongoDB 5.0 und neuer | `expDFSFileHandlerMongoDBBackend` | `dfsmongodb` | beliebig viele, ein Server oder ein Replica Set | [Clustering mit MongoDB](mongodb-dfs-cluster.md) |
-| SQLite 3.24 und neuer | `expDFSFileHandlerSQLiteBackend` | `dfssqlite` | **nur eine Maschine** | [Clustering mit SQLite](sqlite-dfs-cluster.md) |
+| SQLite 3.24 und neuer | `expDFSFileHandlerSQLiteBackend` | `dfssqlite` | **nur eine Maschine** (eine SQLite-Website auf mehreren Knoten läuft auf [LiteFS](sqlite-datenbank.md#mehrere-server-litefs-und-litestream) und hält ihre DFS-Metadaten in einer der Datenbanken oben) | [Clustering mit SQLite](sqlite-dfs-cluster.md) |
 
 **Die in 6.0.15 hinzugekommenen Datenbanken.** TiDB, Vitess und SingleStore nehmen das MySQL-Backend
 (`exp:cluster:enable` ordnet ihr `DatabaseImplementation` `mysqli` zu); auf jeder wurde ein Cluster aus einem Knoten
@@ -201,7 +201,7 @@ Primärserver aus. Eine Änderung wird nie veraltet zurückgelesen:
 | PostgreSQL | der Standby streamt (`pg_stat_wal_receiver`); der Primärserver wendet Commits auf dem Standby an, bevor sie zurückkehren (`synchronous_commit = remote_apply`) | `UseSlaveServer`, die Schlüssel `SlaveServer*` |
 | MySQL, MariaDB | beide Replikations-Threads laufen, der Rückstand ist höchstens `SlaveServerMaxLag`, das Replikat hat die GTID-Position des Primärservers vom Beginn der Anfrage angewendet | `SlaveServerStatusCheck`, `SlaveServerMaxLag`, `SlaveServerCatchUp`, `SlaveServerCatchUpWait` |
 | Oracle (ezoracle) | der Standby ist schreibgeschützt mit Apply geöffnet, und sein Apply-Rückstand liegt in `SlaveServerMaxLag`; `STANDBY_MAX_DATA_DELAY` | dieselben |
-| SQLite | kein Replikat: `UseSlaveServer` wird ignoriert | keine |
+| SQLite | `UseSlaveServer` wird ignoriert; mit LiteFS liest jeder Knoten sein eigenes Replikat, und Schreibvorgänge gehen zum Primary | keine |
 | MongoDB | die eigenen Read Preferences des Replica Sets; `UseSlaveServer` wird nicht gelesen | keine |
 
 Ein Server ohne Replikat unter der eingetragenen Adresse liest vom Primärserver; ein Satz Einstellungen dient also

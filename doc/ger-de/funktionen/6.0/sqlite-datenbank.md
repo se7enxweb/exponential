@@ -101,6 +101,8 @@ ersten Verwendung funktioniert.
 - SQLite erlaubt einen Schreiber zur Zeit. Viele Redakteure, die im selben Moment veröffentlichen, stellen sich
   hintereinander an (siehe `SQLiteTransactionWait`); für ein stark beschäftigtes Redaktionsteam wählen Sie MySQL,
   PostgreSQL oder MongoDB.
+- Eine Maschine schreibt. Mehrere können die Website mit LiteFS ausliefern, eine davon der schreibende Primary
+  (nächster Abschnitt).
 - Legen Sie die Datenbankdatei nicht in ein Verzeichnis, das der Webserver direkt ausliefert. In der mitgelieferten
   `.htaccess` wird nur eine kurze Liste von Pfaden unter `var/` (öffentliche Bilder, öffentliche Caches, Vorschaubilder
   von Paketen) als Dateien ausgeliefert; der Rest geht an `index.php`. Prüfen Sie auf Ihrem eigenen Host, dass die
@@ -109,6 +111,78 @@ ersten Verwendung funktioniert.
 - Führen Sie nach einem großen Import einmal `ANALYZE` aus, damit der Abfrageplaner Statistiken hat.
 - Sichern Sie mit `sqlite3 <file> ".backup <target>"`, nicht durch Kopieren der Datei, während die Website beschäftigt
   ist.
+
+## Mehrere Server: LiteFS und Litestream
+
+Eine SQLite-Website kann auf mehreren Servern laufen. Zwei Open-Source-Werkzeuge von Fly.io übernehmen die Replikation
+unterhalb von Exponential; der Treiber braucht keine Änderung, und das Write-Ahead-Log, das er für jede Verbindung
+einschaltet (`PRAGMA journal_mode = wal`), ist das, was beide lesen.
+
+| | LiteFS | Litestream |
+|---|---|---|
+| Aufgabe | eine SQLite-Datenbank auf mehreren Knoten: Cluster-Hosting | eine laufende Kopie außerhalb des Hosts: Sicherung und Notfallwiederherstellung |
+| Schreiber | einer, der Primary; die anderen Knoten halten schreibgeschützte Replikate | die Anwendung wie bisher; Litestream liest nur |
+| Mehrere Webserver | ja | nein: eine Wiederherstellung, keine zweite laufende Kopie |
+| Failover | von Hand mit einem statischen Lease (die Konfiguration jedes Knotens nennt den Primary), automatisch mit einem Consul-Lease | die neueste Kopie oder einen Zeitpunkt wiederherstellen |
+
+Was unterstützt wird und was nicht:
+
+- **Immer ein Schreiber.** Nur der Primary schreibt die Datenbank; ein Replikat lehnt Schreibvorgänge ab. Jede Anfrage,
+  die schreiben kann (POST, PUT, PATCH, DELETE: Veröffentlichen, Anmelden, Formulare), muss den Primary erreichen.
+  Exponential Velocity erledigt das selbst: Mit `writeForward` für die Hosts der Website schickt ein Replikat diese
+  Anfragen an den Primary, den die Datei `.primary` von LiteFS nennt, markiert, damit sie nie zweimal weitergeleitet
+  werden, und beantwortet jeden Lesezugriff aus der eigenen Kopie. (Der eigene HTTP-Proxy von LiteFS leitet
+  Schreibvorgänge nur auf Fly.io weiter.) Hinter einem anderen Webserver leitet der Load Balancer die schreibenden
+  Methoden zum Primary.
+- **Replikate lesen einen Moment hinterher.** LiteFS schickt jede Transaktion beim Commit an die Replikate; eine Seite,
+  die direkt nach einem Schreibvorgang auf einem Replikat gelesen wird, kann den Stand kurz davor zeigen.
+- **Litestream ist kein Cluster.** Es repliziert die Datenbank in S3-kompatiblen Objektspeicher, über SFTP oder in ein
+  Verzeichnis, für Sicherung und Wiederherstellung zu einem Zeitpunkt. Es macht nie einen zweiten Schreiber: Zwei
+  Maschinen schreiben nie dieselbe Datenbank.
+- **Speicherdateien liegen nicht in SQLite.** `var/storage` (Bilder, Dateien) braucht eine Freigabe, die jeder Knoten
+  sieht: den DFS-Cluster, mit seinen Dateimetadaten in einer Server-Datenbank (MariaDB/MySQL, PostgreSQL, Oracle, SQL
+  Server oder MongoDB). Das SQLite-DFS-Backend bleibt auf einer Maschine ([Clustering mit SQLite](sqlite-dfs-cluster.md)).
+
+**LiteFS einrichten**
+
+1. LiteFS auf jedem Knoten installieren, mit FUSE (`/dev/fuse` und `fusermount3`). Seinen Replikationsport (Standard
+   20202) zwischen den Knoten öffnen, nur in einem privaten Netz.
+2. Auf jedem Knoten `litefs.yml` schreiben: den FUSE-Mount (zum Beispiel `/var/lib/litefs/<site>/mnt`, mit
+   `allow-other`, damit der Benutzer des Webservers ihn öffnen kann), das Datenverzeichnis und den Lease. Bei einem
+   statischen Lease nennt jeder Knoten den Primary (`candidate: true` nur auf dem Primary), und die Replikate tragen
+   seine Advertise-URL.
+3. Zuerst den Primary starten, dann die Replikate, und die Datenbank der Website auf dem Primary importieren:
+   `litefs import -name exponential.db var/storage/sqlite3/exponential.db`.
+4. Die Website auf jedem Knoten auf die Datei im Mount zeigen lassen:
+
+       [DatabaseSettings]
+       DatabaseImplementation=sqlite3
+       Database=/var/lib/litefs/<site>/mnt/exponential.db
+
+5. Die Schreibvorgänge zum Primary schicken (`writeForward` von Velocity oder der Load Balancer), die Caches leeren,
+   dann über den Hostnamen eines Replikats veröffentlichen und die Änderung auf dem Replikat zurücklesen.
+
+Um den Primary bei einem statischen Lease zu verlegen, jeden Knoten stoppen (den alten Primary zuerst), damit es nie
+zwei Schreiber gibt, die Konfigurationen ändern und den neuen Primary zuerst starten. Schreibvorgänge, die der alte
+Primary noch nicht verschickt hatte, gehen verloren; ein Consul-Lease übernimmt das Failover selbst.
+
+**Mit Litestream sichern**
+
+Für eine Website auf einem Server läuft `litestream replicate` als Dienst, mit einem Eintrag je Datenbank:
+
+    # /etc/litestream.yml
+    dbs:
+      - path: /var/www/example.com/var/storage/sqlite3/exponential.db
+        replicas:
+          - url: s3://backup-bucket/example.com/exponential.db
+
+`litestream restore -o <neue Datei> s3://backup-bucket/example.com/exponential.db` holt die neueste Kopie zurück
+(`-timestamp` einen Zeitpunkt). In eine neue Datei wiederherstellen, mit `PRAGMA integrity_check` prüfen und erst dann
+die Website darauf zeigen lassen. Auf einem LiteFS-Cluster die Sicherung vom Primary nehmen (`litefs export -name
+exponential.db <Datei>` oder `sqlite3 <Datei> ".backup <Ziel>"`).
+
+7x bietet gehostete SQLite-Cluster von Exponential an, die so gebaut sind (7x MasterRec): LiteFS über seine Server,
+Velocity leitet die Schreibvorgänge weiter, und Litestream hält eine laufende Kopie auf einem Sicherungsserver.
 
 ## Verwandte Seiten
 

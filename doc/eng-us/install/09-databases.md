@@ -212,7 +212,8 @@ file and the part of the WAL that was committed when their read began. The conse
   belong to the database; never delete them while any process has it open.
 - **All processes must be on one machine.** WAL uses shared memory, so it does not work across a network file
   system. One server (any number of processes) is fine; several web servers sharing one database file over NFS are
-  not.
+  not. Several servers each with its own copy, kept current by LiteFS from one writing primary, are:
+  [Several servers: LiteFS and Litestream](../features/6.0/sqlite-database.md#several-servers-litefs-and-litestream).
 
 ### Queued writes: BEGIN IMMEDIATE and the writer lock
 
@@ -541,7 +542,8 @@ heavy writing can leave a large `-wal` file behind. Two remedies:
 SQLite fits when the site runs on **one machine** and its write load is that of an editorial team, however many
 visitors read it. Choose MySQL, MariaDB or PostgreSQL when:
 
-- **More than one machine** must write the same database. WAL needs shared memory on one host; a network file
+- **More than one machine** must write the same database at the same time (LiteFS serves one SQLite site from
+  several machines, but only its primary writes). WAL needs shared memory on one host; a network file
   system is not a substitute.
 - **Many editors publish large changes at the same moment**, all day. Each publish waits for the ones before it; if
   the queue is regularly longer than `SQLiteTransactionWait`, a server database with row-level locking will serve
@@ -969,13 +971,13 @@ job does nothing until it is enabled in `ezoracle.ini [CronjobSettings]`:
 | Server to run | none | yes | yes | yes | yes |
 | Installer default | yes | | | | |
 | Concurrent writers | one at a time, queued (`SQLiteTransactionWait`) | row locks (InnoDB) | row locks (MVCC) | document-level | row locks |
-| Several application servers | no (one host) | yes | yes | yes | yes |
+| Several application servers | with LiteFS: one primary writes, read replicas | yes | yes | yes | yes |
 | Replicas for reads | no | `UseSlaveServer` | `UseSlaveServer` | replica sets | `UseSlaveServer` (Active Data Guard) |
 | Persistent connections | not needed (a file) | `UsePersistentConnection` | `UsePersistentConnection` | client kept per process | `Persistent`, DRCP |
 | SQL query cache | yes | yes | yes | no | yes |
 | Users and grants | file system | yes | yes | yes | yes |
 | Backup | `.backup`, `VACUUM INTO` | `mysqldump --single-transaction` | `pg_dump` | `mongodump` | `ext:ezoracle:datapump`, `expdp` |
-| Known gaps | one host; queued writes | 4-byte characters through the `utf8` connection | | see [limits](#limits) | `''` is NULL; case-sensitive |
+| Known gaps | one writer (one host, or the LiteFS primary); queued writes | 4-byte characters through the `utf8` connection | | see [limits](#limits) | `''` is NULL; case-sensitive |
 | Best for | one server, any number of readers, an editorial team | the classic production setup, most extensions | production, strict SQL | organisations standardised on MongoDB | organisations standardised on Oracle |
 
 ## 9.8 Cross-engine notes

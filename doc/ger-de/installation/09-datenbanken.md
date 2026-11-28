@@ -221,7 +221,8 @@ Website:
   `<database>-shm`. Beide gehören zur Datenbank; löschen Sie sie nie, solange irgendein Prozess sie geöffnet hat.
 - **Alle Prozesse müssen auf einer Maschine laufen.** WAL verwendet gemeinsamen Speicher und funktioniert deshalb
   nicht über ein Netzwerkdateisystem. Ein Server (mit beliebig vielen Prozessen) ist in Ordnung; mehrere Webserver,
-  die sich eine Datenbankdatei über NFS teilen, sind es nicht.
+  die sich eine Datenbankdatei über NFS teilen, sind es nicht. Mehrere Server mit je einer eigenen Kopie, die LiteFS
+  von einem schreibenden Primary aus aktuell hält, sind es: [Mehrere Server: LiteFS und Litestream](../funktionen/6.0/sqlite-datenbank.md#mehrere-server-litefs-und-litestream).
 
 ### Schreibvorgänge in der Warteschlange: BEGIN IMMEDIATE und die Schreibsperre
 
@@ -578,7 +579,8 @@ und `--baseline` erkennt eine Verlangsamung zwischen zwei Läufen ([Benchmark](.
 SQLite passt, wenn die Site auf **einer Maschine** läuft und ihre Schreiblast die eines Redaktionsteams ist, ganz
 gleich, wie viele Besucher sie lesen. Wählen Sie MySQL, MariaDB oder PostgreSQL, wenn:
 
-- **Mehr als eine Maschine** dieselbe Datenbank beschreiben muss. WAL braucht gemeinsamen Speicher auf einem Host;
+- **Mehr als eine Maschine** dieselbe Datenbank gleichzeitig beschreiben muss (LiteFS liefert eine SQLite-Site von
+  mehreren Maschinen aus, aber nur sein Primary schreibt). WAL braucht gemeinsamen Speicher auf einem Host;
   ein Netzwerkdateisystem ist kein Ersatz.
 - **Viele Redakteure im selben Moment große Änderungen veröffentlichen**, den ganzen Tag. Jede Veröffentlichung
   wartet auf die vorherigen; ist die Warteschlange regelmäßig länger als `SQLiteTransactionWait`, bedient eine
@@ -1018,13 +1020,13 @@ Prüfung eine Zeile PASS/WARN/FAIL/INFO aus. Die Cronjob-Teile `ezoracle` (näch
 | Zu betreibender Server | keiner | ja | ja | ja | ja |
 | Voreinstellung des Installers | ja | | | | |
 | Gleichzeitige Schreiber | einer zur Zeit, in der Warteschlange (`SQLiteTransactionWait`) | Zeilensperren (InnoDB) | Zeilensperren (MVCC) | auf Dokumentebene | Zeilensperren |
-| Mehrere Anwendungsserver | nein (ein Host) | ja | ja | ja | ja |
+| Mehrere Anwendungsserver | mit LiteFS: ein Primary schreibt, Lesereplikate | ja | ja | ja | ja |
 | Replikate für Lesezugriffe | nein | `UseSlaveServer` | `UseSlaveServer` | Replica Sets | `UseSlaveServer` (Active Data Guard) |
 | Persistente Verbindungen | nicht nötig (eine Datei) | `UsePersistentConnection` | `UsePersistentConnection` | Client pro Prozess vorgehalten | `Persistent`, DRCP |
 | SQL-Abfrage-Cache | ja | ja | ja | nein | ja |
 | Benutzer und Berechtigungen | Dateisystem | ja | ja | ja | ja |
 | Sicherung | `.backup`, `VACUUM INTO` | `mysqldump --single-transaction` | `pg_dump` | `mongodump` | `ext:ezoracle:datapump`, `expdp` |
-| Bekannte Lücken | ein Host; Schreibvorgänge in der Warteschlange | 4-Byte-Zeichen über die `utf8`-Verbindung | | siehe [Grenzen](#grenzen) | `''` ist NULL; Groß-/Kleinschreibung wird unterschieden |
+| Bekannte Lücken | ein Schreiber (ein Host oder der LiteFS-Primary); Schreibvorgänge in der Warteschlange | 4-Byte-Zeichen über die `utf8`-Verbindung | | siehe [Grenzen](#grenzen) | `''` ist NULL; Groß-/Kleinschreibung wird unterschieden |
 | Am besten für | einen Server, beliebig viele Leser, ein Redaktionsteam | die klassische Produktionsumgebung, die meisten Extensions | Produktion, striktes SQL | Organisationen, die auf MongoDB standardisiert sind | Organisationen, die auf Oracle standardisiert sind |
 
 ## 9.8 Hinweise über Engines hinweg

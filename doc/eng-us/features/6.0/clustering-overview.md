@@ -100,7 +100,7 @@ same parity checks:
 | Oracle 12.1 and later | `expDFSFileHandlerOracleBackend` | `dfsoracle` | any number | [Clustering on Oracle](oracle-dfs-cluster.md) |
 | SQL Server 2017 and later, Azure SQL | `expDFSFileHandlerSQLServerBackend` | `dfssqlserver` | any number | [Clustering on SQL Server](sqlserver-dfs-cluster.md) |
 | MongoDB 5.0 and later | `expDFSFileHandlerMongoDBBackend` | `dfsmongodb` | any number, one server or a replica set | [Clustering on MongoDB](mongodb-dfs-cluster.md) |
-| SQLite 3.24 and later | `expDFSFileHandlerSQLiteBackend` | `dfssqlite` | **one machine only** | [Clustering on SQLite](sqlite-dfs-cluster.md) |
+| SQLite 3.24 and later | `expDFSFileHandlerSQLiteBackend` | `dfssqlite` | **one machine only** (a SQLite site on several nodes runs on [LiteFS](sqlite-database.md#several-servers-litefs-and-litestream) and keeps its DFS metadata in one of the databases above) | [Clustering on SQLite](sqlite-dfs-cluster.md) |
 
 **The databases added in 6.0.15.** TiDB, Vitess and SingleStore take the MySQL backend (`exp:cluster:enable` maps
 their `DatabaseImplementation` to `mysqli`); a one-node cluster was measured on each. The backend's own `mysqli`
@@ -192,7 +192,7 @@ any error on the replica runs the statement on the primary. An edit is never rea
 | PostgreSQL | the standby is streaming (`pg_stat_wal_receiver`); the primary applies commits on the standby before they return (`synchronous_commit = remote_apply`) | `UseSlaveServer`, the `SlaveServer*` keys |
 | MySQL, MariaDB | both replication threads run, the lag is at most `SlaveServerMaxLag`, the replica has applied the primary's GTID position of the start of the request | `SlaveServerStatusCheck`, `SlaveServerMaxLag`, `SlaveServerCatchUp`, `SlaveServerCatchUpWait` |
 | Oracle (ezoracle) | the standby is open read-only with apply and its apply lag is within `SlaveServerMaxLag`; `STANDBY_MAX_DATA_DELAY` | the same |
-| SQLite | no replica: `UseSlaveServer` is ignored | none |
+| SQLite | `UseSlaveServer` is ignored; with LiteFS every node reads its own replica and writes go to the primary | none |
 | MongoDB | the replica set's own read preferences; `UseSlaveServer` is not read | none |
 
 A server with no replica on the configured address reads the primary, so one set of settings serves every server

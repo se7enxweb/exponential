@@ -5,7 +5,7 @@ halten wollen, und für Entwickler, die die Cluster-Tests ohne Datenbankserver a
 der DFS-Cluster des Kernels seine Datei-Metadaten auch in SQLite, neben MySQL/MariaDB und PostgreSQL: Das Backend,
 seine Tabellen und sein Datei-Gateway gehören zum Kernel.
 
-**SQLite clustert eine Maschine, nie mehrere.** Eine SQLite-Datenbank ist eine Datei, und ihre Sperren sind die des
+**Das SQLite-DFS-Backend clustert eine Maschine, nie mehrere.** Eine SQLite-Datenbank ist eine Datei, und ihre Sperren sind die des
 Dateisystems. Auf einer Netzwerkfreigabe (NFS, SMB) sind diese Sperren nicht verlässlich, und die Dokumentation von
 SQLite selbst rät davon ab, eine Datenbank von mehreren Maschinen aus zu schreiben. Das SQLite-Backend ist deshalb für:
 
@@ -15,7 +15,9 @@ SQLite selbst rät davon ab, eine Datenbank von mehreren Maschinen aus zu schrei
 - **Tests**: Die Paritätsprüfungen aller Cluster-Backends laufen mit SQLite, ohne dass etwas zu installieren ist.
 
 Eine Website auf mehreren Webservern hält ihre Cluster-Metadaten in MySQL/MariaDB oder
-[PostgreSQL](postgresql-dfs-cluster.md).
+[PostgreSQL](postgresql-dfs-cluster.md). Das gilt auch für eine SQLite-Website auf mehreren Knoten mit LiteFS (ein
+schreibender Primary, Lesereplikate): Ihr Inhalt liegt in SQLite, ihre DFS-Metadaten in einer Server-Datenbank
+([Mehrere Server: LiteFS und Litestream](sqlite-datenbank.md#mehrere-server-litefs-und-litestream)).
 
 ## Inhalt
 

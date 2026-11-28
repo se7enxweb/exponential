@@ -59,7 +59,7 @@ servers on one database, with the file metadata in it (`exp:cluster:enable`,
 
 | Database | 6.0.14 | 6.0.15 | Site database | DFS cluster | Read replicas (`UseSlaveServer`) | Installers |
 |---|---|---|---|---|---|---|
-| [SQLite 3](../features/6.0/sqlite-database.md) | yes | yes, the default | yes | one machine only (a one-node cluster) | no | wizard, kickstarter, `exp:install` (`sqlite`, the default) |
+| [SQLite 3](../features/6.0/sqlite-database.md) | yes | yes, the default | yes | one machine only (a one-node cluster); several nodes with [LiteFS](../features/6.0/sqlite-database.md#several-servers-litefs-and-litestream), one writer | no | wizard, kickstarter, `exp:install` (`sqlite`, the default) |
 | [PostgreSQL 13 to 19](../features/6.0/postgresql-database.md) | yes | yes | yes | yes, in the kernel | yes | wizard, kickstarter, `pgsql` |
 | [MongoDB 6.0 and later](../features/6.0/mongodb-database-support.md) | yes | yes | yes, through an adapter | yes, in the kernel | MongoDB's own replica set | wizard, kickstarter, `mongodb` |
 | [MariaDB](../features/6.0/mariadb-and-mysql-database.md) | yes | yes | yes | yes (MySQLi backend) | yes | wizard ("MariaDB / MySQL Improved"), kickstarter, `mariadb` |
@@ -218,7 +218,7 @@ page with hundreds of statements needs the view cache on those.
 ### One server
 
 - **SQLite 3**, the default: no database server at all, a whole site in one file, a full production database for a
-  site served from one machine. Writers queue.
+  site served from one machine, or from several with LiteFS (one primary writes, read replicas). Writers queue.
 - **PostgreSQL** when you want a database server from the start, or expect a second web server later.
 - **MariaDB or MySQL** when the host offers them and nothing else. For MariaDB or MySQL, choose MariaDB / MySQL
   Improved in the setup wizard's database list.
@@ -235,7 +235,9 @@ The database must hold the DFS file metadata for all web servers: **PostgreSQL**
 **Oracle**, **SQL Server/Azure SQL** or **MongoDB**, each with its backend in the kernel. TiDB, Vitess and SingleStore
 ran a one-node DFS cluster through the MySQL backend; for a managed service that requires TLS keep the DFS metadata
 elsewhere. CockroachDB and YugabyteDB passed the DFS checks through the PostgreSQL backend; Neon, Supabase and Aurora
-PostgreSQL use the same backend, untested. Not for a cluster: SQLite (one machine), DuckDB (one writer, a local file
+PostgreSQL use the same backend, untested. Not for the DFS metadata of a cluster: SQLite (its backend is for one machine; a SQLite site itself runs on several
+nodes with [LiteFS](../features/6.0/sqlite-database.md#several-servers-litefs-and-litestream), the DFS metadata then in
+one of the databases above), DuckDB (one writer, a local file
 lock), Firebird (no backend yet), Spanner (holds no site). A **libSQL server** can be shared by
 several web servers for the site's tables, but holds no DFS metadata: keep the files in a shared directory, or the
 DFS metadata in one of the databases above.

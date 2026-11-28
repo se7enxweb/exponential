@@ -49,7 +49,8 @@ Aussage zur Unterstützung; überall, wo es um Einzelheiten geht, verweist sie a
 21. [Testabdeckung (CI)](#testabdeckung-ci)
 22. [Welche Datenbank verwendet meine Site?](#welche-datenbank-verwendet-meine-site)
 23. [Geplante Datenbanken und was jede bräuchte](#geplante-datenbanken-und-was-jede-bräuchte)
-24. [Verwandte Seiten](#verwandte-seiten)
+24. [Odoo](#odoo)
+25. [Verwandte Seiten](#verwandte-seiten)
 
 ## Unterstützungsstufen auf einen Blick
 
@@ -76,12 +77,14 @@ einer Liste von Fakten, am 28. November 2026 gegen den Code des Hauptzweigs gepr
 | Datenbank | Datentabellen | Ganze Website | DFS | Cluster mit mehreren Servern | Setup-Assistent | `exp:install` / Kickstarter | xne-Upgrade getestet |
 |---|---|---|---|---|---|---|---|
 | **Etabliert** |  |  |  |  |  |  |  |
-| [SQLite 3](../funktionen/6.0/sqlite-datenbank.md) | ja | ja, der Standard | nur eine Maschine | nein | ja, vorausgewählt (sqlite3) | `sqlite`, der Standard | ja: Linux und Windows, exaktes Zurückrollen |
+| [SQLite 3](../funktionen/6.0/sqlite-datenbank.md) | ja | ja, der Standard | nur eine Maschine (das SQLite-Backend); ein LiteFS-Cluster hält seine Dateimetadaten in einer Server-Datenbank | ja, mit LiteFS: ein Primary schreibt, Lesereplikate auf den anderen Knoten, Schreibvorgänge werden zum Primary weitergeleitet; Litestream für laufende Sicherung und Wiederherstellung (kein zweiter Schreiber) | ja, vorausgewählt (sqlite3) | `sqlite`, der Standard | ja: Linux und Windows, exaktes Zurückrollen |
 | [PostgreSQL](../funktionen/6.0/postgresql-datenbank.md) | ja | ja, der empfohlene Server (13 bis 19) | ja | ja, mit Lesereplikaten | ja (pgsql) | `pgsql` | ja: exaktes Zurückrollen, auch eines fehlgeschlagenen Schritts |
 | [MongoDB](../funktionen/6.0/mongodb-datenbankunterstuetzung.md) | ja | ja, über einen Adapter (6.0 und neuer) | ja | ja | ja (mongodb) | `mongodb` | ja: ein voller Nachweislauf, exaktes Zurückrollen |
 | [MariaDB](../funktionen/6.0/mariadb-und-mysql-datenbank.md) | ja | ja | ja | ja, mit Lesereplikaten | ja, als MariaDB / MySQL Improved (mysqli) | `mariadb` | ja: exaktes Zurückrollen, auch eines fehlgeschlagenen Schritts |
 | [Oracle](../funktionen/6.0/oracle-datenbank.md) | ja | ja, 19c und neuer (ezoracle) | ja | ja, mit Lesereplikaten | ja (oci8) | `oracle` | ja: ein voller Nachweislauf, exaktes Zurückrollen |
 | [MySQL](../funktionen/6.0/mariadb-und-mysql-datenbank.md) | ja | ja | ja | ja, mit Lesereplikaten | ja, als MariaDB / MySQL Improved (mysqli) | `mysql` | ja: Treiber und Weg von MariaDB, getestet auf MariaDB |
+| **Nebeneinander auf demselben Datenbankserver** |  |  |  |  |  |  |  |
+| [Odoo](#odoo) | noch kein Odoo-Connector: Produkte, Kunden, Bestellungen und Lagerbestand über die APIs von Odoo abzugleichen ist geplant | ja, nebeneinander: Odoo läuft auf PostgreSQL, und Exponential läuft auf demselben PostgreSQL-Server oder -Cluster in einer eigenen Datenbank | ja, auf diesem PostgreSQL | ja, auf diesem PostgreSQL mit seinen Lesereplikaten | ja (pgsql) | `pgsql` | ja, als PostgreSQL: die eigene Datenbank von Exponential, exaktes Zurückrollen |
 | **SQL Server, Firebird und DuckDB** |  |  |  |  |  |  |  |
 | [Microsoft SQL Server](../funktionen/6.0/sqlserver-datenbanktreiber.md) | ja | ja (2017 bis 2025) | ja | ja, Always-On-Lesereplikate | ja, mit sqlsrv oder pdo_sqlsrv | `sqlserver` | nein: xne lehnt ab (noch keine geprüfte Sicherung) |
 | [Azure SQL](../funktionen/6.0/sqlserver-datenbanktreiber.md) | ja | ja, der SQL-Server-Treiber (Database und Managed Instance; der Dienst läuft nicht in der CI) | ja | ja | ja, als Microsoft SQL Server | `sqlserver` | nein: xne lehnt ab (noch keine geprüfte Sicherung) |
@@ -163,7 +166,7 @@ Was die Reihenfolge in der Praxis bedeutet:
 
 | Engine | Versionen | PHP-Erweiterung | Installer | Cluster (DFS-Metadaten) | Bei jedem Push in der CI getestet | Stand |
 |---|---|---|---|---|---|---|
-| SQLite 3 | 3.33 und neuer | `sqlite3` | Setup-Assistent (Standard), Kickstarter, `exp:install` (Standard) | nur ein Rechner (`expDFSFileHandlerSQLiteBackend`) | Treibertests auf PHP 8.1 bis 8.5; das DFS-Backend | unterstützt, der Standard |
+| SQLite 3 | 3.33 und neuer | `sqlite3` | Setup-Assistent (Standard), Kickstarter, `exp:install` (Standard) | nur ein Rechner (`expDFSFileHandlerSQLiteBackend`) | Treibertests auf PHP 8.1 bis 8.5; das DFS-Backend | unterstützt, der Standard; mehrere Knoten mit LiteFS ([ein Schreiber, Lesereplikate](../funktionen/6.0/sqlite-datenbank.md#mehrere-server-litefs-und-litestream)) |
 | PostgreSQL | 13 bis 19 | `pgsql` | Setup-Assistent, Kickstarter, `exp:install` | beliebig viele Server (`expDFSFileHandlerPostgresqlBackend`), Lesereplikate | 13, 15, 18 und 19 für die Site, 13 bis 19 für das DFS-Backend | unterstützt, der empfohlene Server |
 | MongoDB | 6.0 und neuer, PHP 8.2 und neuer | `mongodb` und die Bibliothek `mongodb/mongodb` | Setup-Assistent, Kickstarter, `exp:install` | beliebig viele Server, ein Server oder ein Replica Set (`expDFSFileHandlerMongoDBBackend`, 5.0 und neuer) | Adaptertests; MongoDB 7 und 8.0 in den Datenbank- und DFS-Jobs | unterstützt |
 | MariaDB | Versionen, die Ihr Anbieter noch pflegt | `mysqli` | Setup-Assistent, Kickstarter, `exp:install` | beliebig viele Server (MySQLi-Backend), Lesereplikate | über die MySQL-Jobs (derselbe Treiber) | unterstützt |
@@ -537,9 +540,9 @@ an der Reihe sind (bis zu `SQLiteTransactionWait` Sekunden, Standard 25), statt 
 fehlzuschlagen. Sitzungsanweisungen, die es nur in MySQL gibt (`SET NAMES`, `SET FOREIGN_KEY_CHECKS` und ähnliche),
 werden angenommen und ignoriert.
 
-**Wann es passt.** Ein Rechner, beliebig viele Leser, ein Redaktionsteam. In den Lasttests des Projekts skalierten
+**Wann es passt.** Ein Rechner oder mehrere mit LiteFS (unten), beliebig viele Leser, ein Redaktionsteam. In den Lasttests des Projekts skalierten
 gleichzeitige Leser mit der Anzahl der Prozesse, und 16 gleichzeitige Schreiber liefen ohne Fehler durch, in der
-Warteschlange. Wählen Sie stattdessen einen Datenbankserver, wenn mehr als ein Rechner in die Datenbank schreiben muss
+Warteschlange. Wählen Sie stattdessen einen Datenbankserver, wenn mehr als ein Rechner gleichzeitig in die Datenbank schreiben muss
 (WAL braucht gemeinsamen Speicher auf einem Host, ein Netzwerkdateisystem ist also kein Ersatz), wenn viele Redakteure
 den ganzen Tag über gleichzeitig große Änderungen veröffentlichen oder wenn Sie Replikation oder Benutzer und
 Berechtigungen auf Datenbankebene brauchen.
@@ -550,8 +553,15 @@ Konsolenbefehle), muss in das Verzeichnis und die Dateien schreiben können; geb
 Verzeichnismodus `2775` und eine umask von `0002`. Liefern Sie das Verzeichnis nie über HTTP aus (die mitgelieferten
 Rewrite-Regeln tun das nicht).
 
-**Grenzen.** Ein Host; ein Schreiber zur selben Zeit (in der Warteschlange); keine eigene Replikation; die
-Zugriffskontrolle ist die des Dateisystems.
+**Grenzen.** Ein Schreiber zur selben Zeit (in der Warteschlange), auf einem Host oder auf dem LiteFS-Primary; keine
+eigene Replikation (LiteFS und Litestream ergänzen sie); die Zugriffskontrolle ist die des Dateisystems.
+
+**Mehrere Server.** Eine SQLite-Website kann mit LiteFS auf mehreren Knoten laufen: Ein Knoten ist der Primary und
+der einzige Schreiber, die anderen halten schreibgeschützte Replikate, die LiteFS aktuell hält, und Exponential
+Velocity leitet jede Anfrage, die schreiben kann, von einem Replikat zum Primary weiter. Litestream ergänzt eine
+laufende Kopie in Objektspeicher oder auf einem anderen Server, für Sicherung und Wiederherstellung zu einem
+Zeitpunkt; es ist kein zweiter Schreiber. Die Speicherdateien brauchen weiterhin den DFS, mit den Dateimetadaten in
+einer Server-Datenbank: [Mehrere Server: LiteFS und Litestream](../funktionen/6.0/sqlite-datenbank.md#mehrere-server-litefs-und-litestream).
 
 Die vollständige Behandlung mit jedem PRAGMA, dem Verhalten der Warteschlange unter Last, Überwachung und Wartung
 (`ANALYZE`, `VACUUM`, die WAL-Datei) finden Sie in [9.2 SQLite 3: eine Produktionsdatenbank in einer Datei](../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei).
@@ -804,7 +814,8 @@ ist.
   View-Cache für Inhalte und der Template-Block-Cache antworten zuerst; darunter beantwortet der optionale
   SQL-Abfrage-Cache (`settings/querycache.ini`, standardmäßig `Mode=off`) wiederholte `SELECT`-Anweisungen auf jeder
   Engine außer MongoDB. Messen Sie mit `php bin/php/console exp:benchmark`.
-- **SQLite** skaliert Lesezugriffe mit der Anzahl der Prozesse; Schreibzugriffe kommen in die Warteschlange. Rechnen
+- **SQLite** skaliert Lesezugriffe mit der Anzahl der Prozesse, mit LiteFS auch mit der Anzahl der Knoten;
+  Schreibzugriffe kommen auf einem Primary in die Warteschlange. Rechnen
   Sie mit bis zu 64 MB Seiten-Cache je Prozess, der die Datenbank geöffnet hat (`SQLitePragmas[]=cache_size=-16384`
   senkt das auf 16 MB).
 - **PostgreSQL, MariaDB, MySQL** skalieren Schreibzugriffe mit Sperren auf Zeilenebene.
@@ -947,7 +958,7 @@ sind Schätzungen (S: Tage, M: ein bis zwei Wochen, L: mehr), und nichts auf die
 | Percona Server und Percona XtraDB Cluster | auf einem vorhandenen Treiber prüfen | ganze Website erwartet | ein direkter MySQL-Ersatz auf dem mysqli-Treiber; Installation und DFS-Backend prüfen | S |
 | Dolt und OceanBase (MySQL mode) | auf einem vorhandenen Treiber prüfen | ganze Website, zu prüfen | das MySQL-Protokoll; Dolt bringt einen Branch je Staging-Website | S |
 | StarRocks, Apache Doris und Manticore Search | auf einem vorhandenen Treiber prüfen | Datentabellen erwartet | das MySQL-Protokoll; Analyse- und Such-Engines (Manticore auch als Such-Backend) | S |
-| SQLCipher und LiteFS | auf einem vorhandenen Treiber prüfen | ganze Website erwartet | SQLCipher: ein verschlüsseltes SQLite über eine gegen SQLCipher gebaute PHP-Erweiterung; LiteFS: replizierte SQLite-Dateien, ein Schreiber | S |
+| SQLCipher | auf einem vorhandenen Treiber prüfen | ganze Website erwartet | ein verschlüsseltes SQLite über eine gegen SQLCipher gebaute PHP-Erweiterung | S |
 | rqlite und Cloudflare D1 | auf einem vorhandenen Treiber prüfen | ganze Website, zu prüfen | SQLite über HTTP: ein kleiner Transport wie beim libSQL- und Turso-Treiber | M |
 | Amazon DocumentDB, Azure Cosmos DB for MongoDB und FerretDB | auf einem vorhandenen Treiber prüfen | ganze Website, zu prüfen | der MongoDB-Adapter; die Lücken jedes Dienstes bei Aggregation, Transaktionen und Indizes prüfen | S bis M |
 | Snowflake, Google BigQuery, Databricks, Teradata, Progress OpenEdge, FileMaker Server, Exasol und Ingres | auf einem vorhandenen Treiber prüfen | Datentabellen und Import | der allgemeine ODBC-Treiber mit dem ODBC-Treiber des Herstellers; je ein Smoke-Test | je S |
@@ -957,9 +968,18 @@ sind Schätzungen (S: Tage, M: ein bis zwei Wochen, L: mehr), und nichts auf die
 | InterBase, Sybase vor SAP, Apache Derby, H2 und HSQLDB | neue Treiberarbeit | Datentabellen, InterBase vielleicht eine Website | InterBase über den Firebird-Treiber mit einem Profil; Sybase über den SAP-ASE-Treiber; Derby, H2 und HSQLDB über ODBC- oder JDBC-Brücken | S bis M |
 <!-- exp-db-planned:end -->
 
-[Odoo](https://www.odoo.com/) ist keine Datenbank, sondern ein ERP auf PostgreSQL. Exponential und Odoo können sich
-schon heute einen PostgreSQL-Server teilen, jedes in seiner eigenen Datenbank; Produkte, Kunden und Bestellungen
-zwischen beiden abzugleichen ist eine Integration über ihre APIs, kein Datenbanktreiber.
+## Odoo
+
+[Odoo](https://www.odoo.com/) ist ein ERP, das auf PostgreSQL läuft, und Exponential läuft daneben: auf demselben
+PostgreSQL-Server oder -Cluster, in einer eigenen Datenbank, mit denselben Sicherungen und derselben Replikation. Was
+PostgreSQL Exponential gibt, gibt es ihm auch neben Odoo: eine ganze Website, die DFS-Metadaten, Lesereplikate
+(`UseSlaveServer`) und Upgrades mit xne samt exaktem Zurückrollen der eigenen Datenbank von Exponential. Installieren
+Sie Exponential mit dem PostgreSQL-Treiber (`--db=pgsql` oder PostgreSQL im Setup-Assistenten) und einer neuen
+Datenbank samt Benutzer auf dem Server, den Odoo verwendet; nie in die Datenbank von Odoo.
+
+Einen Odoo-Connector gibt es in Exponential noch nicht: Produkte, Kunden, Bestellungen und Lagerbestand zwischen
+beiden über die XML-RPC- und JSON-RPC-APIs von Odoo und die REST- und GraphQL-APIs von Exponential abzugleichen ist
+geplant.
 
 ## Verwandte Seiten
 

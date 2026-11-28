@@ -5,7 +5,7 @@ developers who run the cluster tests without a database server. From Exponential
 its file metadata in SQLite as well as in MySQL/MariaDB and PostgreSQL: the backend, its tables and its file gateway
 are part of the kernel.
 
-**SQLite clusters one machine, never several.** A SQLite database is a file, and its locks are the file system's. On a
+**The SQLite DFS backend clusters one machine, never several.** A SQLite database is a file, and its locks are the file system's. On a
 network share (NFS, SMB) those locks are not reliable, and SQLite's own documentation warns against writing one
 database from several machines. The SQLite backend is therefore for:
 
@@ -15,7 +15,9 @@ database from several machines. The SQLite backend is therefore for:
 - **tests**: the parity checks of every cluster backend run on SQLite with nothing to install.
 
 A site on several web servers keeps its cluster metadata in MySQL/MariaDB or
-[PostgreSQL](postgresql-dfs-cluster.md).
+[PostgreSQL](postgresql-dfs-cluster.md). That includes a SQLite site on several nodes with LiteFS (one writing
+primary, read replicas): its content is in SQLite, its DFS metadata in a server database
+([Several servers: LiteFS and Litestream](sqlite-database.md#several-servers-litefs-and-litestream)).
 
 ## Contents
 
