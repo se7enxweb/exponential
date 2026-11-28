@@ -24933,7 +24933,7 @@ ae1774fc23c80886e12c9af6758176ed  kernel/classes/datatypes/ezurl/ezurl.php
 d9ab87d474ed1fe5af5f03fc772fd772  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 ec42fbb862185f893bd786630123fe41  kernel/classes/datatypes/ezuser/ezldapuser.php
 e2a4bc3b141c1b61d8993ee61f071ac8  kernel/classes/datatypes/ezuser/eztextfileuser.php
-09cc84f76c5dedc7217c9bf065694776  kernel/classes/datatypes/ezuser/ezuser.php
+dcae309c9438e7632f6e4000f57e0286  kernel/classes/datatypes/ezuser/ezuser.php
 35b90470a8d399197997c67a80804e93  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 7c3ef82fa174c9d8dc331efd95bbce96  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 2d6209a1e6e18e25ba12c90f82cb1fbd  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -30259,7 +30259,7 @@ eefb436cccaf9cc200f8f516ac01e954  tests/tests/kernel/classes/uiswitch/expUISwitc
 48aa59fe91f6a4211e2678b6a543cea5  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php
 a3c76d93104f3029db64d37470e30d9c  tests/tests/kernel/classes/uiswitch/expUISwitchTest.php
 dcf9f5f48075276b6b606c7f0b333719  tests/tests/kernel/classes/uiswitch/expUISwitchTestLanguageTest.php
-77a6693bf204fe6f1d20e355c79445fd  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
+578f0c2da4dad48ad498d304d3bfab2b  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
 c057599bd2e049a42b96f6fb0aca3ce1  tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php
 b443457ea0c55aff9252b4c47b1614a1  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 b78f30c542438fe4894167ffd0e9e9ca  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
