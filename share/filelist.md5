@@ -29502,7 +29502,7 @@ be60639f26f353c955a39d9763a1c2ff  tests/tests/kernel/classes/contentmodel/eZSeri
 0c3e5eb5563703f81e0f593edf4319df  tests/tests/kernel/classes/contentmodel/eZUserAndRoleLiveTest.php
 403b91bcf2e3751015ed0f2487465ddc  tests/tests/kernel/classes/contentmodel/expContentModelLiveTestCase.php
 c3d2d62204d86bfb196b30b0e041268d  tests/tests/kernel/classes/contentwriter/expContentWriterTest.php
-c279a7ed0510dcb30896af7bb59a4305  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
+dc417ccf4babee631bfbd7fea99ff437  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
 56b4423a241440a1c49ed53ed9a70a9d  tests/tests/kernel/classes/datatable/expDataSyncTest.php
 18bf88b86ab4a799dec24ffb65c350da  tests/tests/kernel/classes/datatable/expDataTableCatalogueTest.php
 0f551db5c1351eebecd1eaa5bf4f9e44  tests/tests/kernel/classes/datatable/expDataTableDescriberTest.php
@@ -29899,7 +29899,7 @@ a449f21b8b5be93a2640702f769190dd  tests/tests/kernel/classes/ini/expIniLoadOrder
 db641c4b5383f740c64bb611165ca04f  tests/tests/kernel/classes/ini/expIniLocatorTest.php
 a539490d86fd33239173ebcfcbe5cb2a  tests/tests/kernel/classes/ini/expIniRoundTripTest.php
 33ebbe077fb815ab73c3419e169935a0  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
-5db459a114a09f3cfe726cce72f95cb9  tests/tests/kernel/classes/ini/fixtures/expiniezinichain.php
+f478068ef6214011e58906d5c45615cd  tests/tests/kernel/classes/ini/fixtures/expiniezinichain.php
 bd25076f8b7ba02a3816eb1c5ffc7ed0  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 9239cdefc2eeb0dfdfee41b01cd89a92  tests/tests/kernel/classes/installationdetails/ExpInstallationDetailsTest.php
 e8669137bb2138bca108dd135a91f59b  tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php
@@ -30331,7 +30331,7 @@ a02fada6c0f8d4cd8e624cf6702adf72  tests/tests/kernel/classes/user/expUserSession
 3242eb3f65d4967f74058c773855efb2  tests/tests/kernel/classes/user/expUserSettingRepairTest.php
 71db98717717a8bafbfbe5a249411024  tests/tests/kernel/classes/user/expWeakPasswordListTest.php
 33240f1b49774968aad5e60e8bb6d47c  tests/tests/kernel/classes/user/expWeakPasswordTestINI.php
-ceaabe7b8724872be2338a51bacc092c  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
+fe1076b9afb21a83af0b0ef35e4cc0db  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
 913030b781036f691bd7e4bd55dc0f4c  tests/tests/kernel/classes/velocitylayout/expVelocityConfigTest.php
 7d3d9bc90d80770764b494a429e0b70e  tests/tests/kernel/classes/viewcount/expViewCountConfigurationTest.php
 c53e2acb1c5b12a1269504951e29f024  tests/tests/kernel/classes/viewcount/expViewCountLogParserTest.php
