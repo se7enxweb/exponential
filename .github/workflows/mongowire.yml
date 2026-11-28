@@ -60,13 +60,18 @@ jobs:
           docker run -d --name cosmos -p 8081:8081 -p 10250-10255:10250-10255 \
             -e AZURE_COSMOS_EMULATOR_PARTITION_COUNT=4 -e AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE=false \
             -e AZURE_COSMOS_EMULATOR_ENABLE_MONGODB_ENDPOINT=4.0 mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:mongodb
-          for i in $(seq 1 120); do
-            curl -sk -o /dev/null https://127.0.0.1:8081/_explorer/emulator.pem && break; sleep 5
+          up=0
+          for i in $(seq 1 90); do
+            if curl -sk -o /dev/null https://127.0.0.1:8081/_explorer/emulator.pem; then up=1; break; fi
+            [ $((i % 12)) = 0 ] && { docker ps -a --filter name=cosmos --format '{{.Status}}'; docker logs cosmos 2>&1 | tail -3; }
+            sleep 10
           done
+          docker ps -a --filter name=cosmos --format '{{.Status}}'
+          docker logs cosmos 2>&1 | tail -40
+          if [ $up = 0 ]; then echo "::error::the Cosmos DB emulator did not start in 15 minutes"; exit 1; fi
           curl -sk https://127.0.0.1:8081/_explorer/emulator.pem -o emulator.crt
           sudo cp emulator.crt /usr/local/share/ca-certificates/cosmos-emulator.crt && sudo update-ca-certificates
           for i in $(seq 1 60); do (echo > /dev/tcp/127.0.0.1/10255) 2>/dev/null && break; sleep 5; done
-          docker logs cosmos 2>&1 | tail -10
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
