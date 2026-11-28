@@ -4,7 +4,7 @@ audience: dba
 category: database-administration
 order: 14
 summary: How to prepare MySQL or MariaDB for an Exponential site - a utf8mb4 database, an account with per-database privileges only, the settings block with host, port or socket, the console install, and what differs between MariaDB and MySQL for Exponential.
-keywords: MySQL, MariaDB, CREATE DATABASE, utf8mb4, utf8mb4_unicode_ci, CREATE USER, GRANT, LOCK TABLES, CREATE TEMPORARY TABLES, InnoDB, ezmysqli, mysqli, Socket, exp:install --db=mysql, --db=mariadb, MySQL Improved
+keywords: MySQL, MariaDB, CREATE DATABASE, utf8mb4, utf8mb4_unicode_ci, CREATE USER, GRANT, LOCK TABLES, CREATE TEMPORARY TABLES, InnoDB, ezmysqli, mysqli, Socket, exp:install --db=mysql, --db=mariadb, MariaDB / MySQL Improved
 type: help
 ---
 # Setting up MySQL and MariaDB
@@ -85,7 +85,7 @@ EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 
-`--db=mariadb` is the same. In the setup wizard choose "MySQL Improved"; it checks that the database's default
+`--db=mariadb` is the same. In the setup wizard choose "MariaDB / MySQL Improved"; it checks that the database's default
 character set is UTF-8 and refuses a `latin1` database. The kickstarter takes `[database_choice] Type=mysqli`
 (`mysql` accepted). The installer creates InnoDB tables when the server offers InnoDB
 (`kernel/setup/steps/ezstep_create_sites.php`).

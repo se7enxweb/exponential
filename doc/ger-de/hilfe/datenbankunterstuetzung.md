@@ -556,8 +556,8 @@ Einzelheiten: [9.5 MongoDB](../installation/09-datenbanken.md#95-mongodb).
 **Was es ist.** Derselbe Treiber wie für MySQL, `eZMySQLiDB`, auf der PHP-Erweiterung `mysqli`. Alles unter
 [6. MySQL](#6-mysql) gilt auch hier; die folgenden Hinweise betreffen nur die Unterschiede.
 
-- Installieren Sie mit `exp:install --db=mariadb` (dasselbe wie `--db=mysql`) oder wählen Sie im Assistenten „MySQL
-  Improved“.
+- Installieren Sie mit `exp:install --db=mariadb` (dasselbe wie `--db=mysql`) oder wählen Sie im Assistenten
+  „MariaDB / MySQL Improved“.
 - Legen Sie die Datenbank wie bei MySQL in `utf8mb4` mit InnoDB als Standard an. In MariaDB bedeutet der
   Verbindungsname `utf8` wie in MySQL das Drei-Byte-`utf8mb3`; siehe [Zeichensätze und Kollationen](#zeichensätze-und-kollationen).
 - Backups mit `mariadb-dump` (oder dem älteren Namen `mysqldump`) `--single-transaction`.

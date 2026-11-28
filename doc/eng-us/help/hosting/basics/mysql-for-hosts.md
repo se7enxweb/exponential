@@ -45,7 +45,7 @@ last only because the project recommends the others first for new sites. Sources
 | Practical minimum | a release your vendor still supports, with `utf8mb4` and InnoDB |
 | Seen working | 8.0 in CI |
 | PHP extension | `mysqli` (`php-mysqlnd` on the RHEL family, `php<version>-mysql` on Debian and Ubuntu) |
-| Installer names | wizard "MySQL Improved"; `exp:install --db=mysql` (also `mysqli`); kickstarter `Type=mysqli` |
+| Installer names | wizard "MariaDB / MySQL Improved"; `exp:install --db=mysql` (also `mysqli`); kickstarter `Type=mysqli` |
 
 ## Creating a database per site
 

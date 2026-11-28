@@ -4,7 +4,7 @@ audience: hosting, admin
 category: hosting
 order: 100
 summary: MariaDB as the database of an Exponential site, from a host's point of view: the shared mysqli driver, utf8mb4 and InnoDB, the grants a site's user needs, settings, installing, the connection character set, backups and the usual problems.
-keywords: MariaDB, mysqli, ezmysqli, MySQL Improved, utf8mb4, utf8mb3, InnoDB, grants, CREATE DATABASE, mariadb-dump, mysqldump, single-transaction, UseSlaveServer, replicas, connection charset, panel databases, hosting
+keywords: MariaDB, mysqli, ezmysqli, MariaDB / MySQL Improved, utf8mb4, utf8mb3, InnoDB, grants, CREATE DATABASE, mariadb-dump, mysqldump, single-transaction, UseSlaveServer, replicas, connection charset, panel databases, hosting
 type: help
 ---
 # MariaDB for hosts
@@ -34,7 +34,7 @@ MariaDB runs on the same driver as MySQL, `eZMySQLiDB` (`lib/ezdb/classes/ezmysq
 `mysqli`. Everything on [MySQL for hosts](mysql-for-hosts.md) applies; this page covers what a host needs to do, and
 what differs.
 
-- The setup wizard lists it as "MySQL Improved".
+- The setup wizard lists it as "MariaDB / MySQL Improved".
 - `exp:install --db=mariadb` is the same as `--db=mysql`.
 - The kickstarter takes `[database_choice] Type=mysqli` (`mysql` accepted).
 - MariaDB is not in the project's CI; the MySQL 8.0 job exercises the same driver, and MariaDB 10.5 runs on the

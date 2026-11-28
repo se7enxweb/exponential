@@ -217,7 +217,8 @@ page with hundreds of statements needs the view cache on those.
 - **SQLite 3**, the default: no database server at all, a whole site in one file, a full production database for a
   site served from one machine. Writers queue.
 - **PostgreSQL** when you want a database server from the start, or expect a second web server later.
-- **MariaDB or MySQL** when the host offers them and nothing else.
+- **MariaDB or MySQL** when the host offers them and nothing else. For MariaDB or MySQL, choose MariaDB / MySQL
+  Improved in the setup wizard's database list.
 - **IBM Db2 or Informix** when that is what your organization runs: a whole site on one web server (no DFS backend).
 - **Firebird 4 or 5** when Firebird is what your organization runs; it needs PHP 8.4 or later and has no cluster
   backend yet, so it stays on one web server.

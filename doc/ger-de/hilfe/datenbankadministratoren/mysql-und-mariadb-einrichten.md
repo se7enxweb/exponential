@@ -4,7 +4,7 @@ audience: dba
 category: database-administration
 order: 14
 summary: Wie Sie MySQL oder MariaDB für eine Exponential-Website vorbereiten - eine utf8mb4-Datenbank, ein Konto nur mit Rechten auf diese Datenbank, der Einstellungsblock mit Host, Port oder Socket, die Installation über die Konsole und was sich für Exponential zwischen MariaDB und MySQL unterscheidet.
-keywords: MySQL, MariaDB, CREATE DATABASE, utf8mb4, utf8mb4_unicode_ci, CREATE USER, GRANT, LOCK TABLES, CREATE TEMPORARY TABLES, InnoDB, ezmysqli, mysqli, Socket, exp:install --db=mysql, --db=mariadb, MySQL Improved, Einrichtung, Rechte, setup, privileges
+keywords: MySQL, MariaDB, CREATE DATABASE, utf8mb4, utf8mb4_unicode_ci, CREATE USER, GRANT, LOCK TABLES, CREATE TEMPORARY TABLES, InnoDB, ezmysqli, mysqli, Socket, exp:install --db=mysql, --db=mariadb, MariaDB / MySQL Improved, Einrichtung, Rechte, setup, privileges
 type: help
 ---
 # MySQL und MariaDB einrichten
@@ -86,7 +86,7 @@ EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 
-`--db=mariadb` ist dasselbe. Wählen Sie im Einrichtungsassistenten "MySQL Improved"; er prüft, dass der
+`--db=mariadb` ist dasselbe. Wählen Sie im Einrichtungsassistenten "MariaDB / MySQL Improved"; er prüft, dass der
 Standardzeichensatz der Datenbank UTF-8 ist, und lehnt eine `latin1`-Datenbank ab. Der Kickstarter nimmt
 `[database_choice] Type=mysqli` (`mysql` wird akzeptiert). Der Installer legt InnoDB-Tabellen an, wenn der Server InnoDB
 anbietet (`kernel/setup/steps/ezstep_create_sites.php`).

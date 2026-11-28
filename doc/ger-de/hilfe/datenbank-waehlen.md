@@ -225,7 +225,8 @@ Millisekunden; deshalb braucht eine Seite mit Hunderten von Anweisungen auf dies
   Produktionsdatenbank für eine Site, die von einem Rechner ausgeliefert wird. Schreibende Zugriffe warten in einer
   Schlange.
 - **PostgreSQL**, wenn Sie von Anfang an einen Datenbankserver wollen oder später einen zweiten Webserver erwarten.
-- **MariaDB oder MySQL**, wenn der Hoster sie und nichts anderes anbietet.
+- **MariaDB oder MySQL**, wenn der Hoster sie und nichts anderes anbietet. Für MariaDB oder MySQL wählen Sie in der
+  Datenbankliste des Setup-Assistenten „MariaDB / MySQL Improved“.
 - **IBM Db2 oder Informix**, wenn Ihre Organisation sie betreibt: eine ganze Site auf einem Webserver (kein DFS-Backend).
 - **Firebird 4 oder 5**, wenn Ihre Organisation Firebird betreibt; es braucht PHP 8.4 oder neuer und hat noch kein
   Cluster-Backend, bleibt also auf einem Webserver.

@@ -46,7 +46,7 @@ zuerst die anderen empfiehlt. Quellen: [Datenbankunterstützung](../../datenbank
 | Praktisches Minimum | ein Release, das Ihr Hersteller noch unterstützt, mit `utf8mb4` und InnoDB |
 | Funktionierend gesehen | 8.0 in der CI |
 | PHP-Erweiterung | `mysqli` (`php-mysqlnd` in der RHEL-Familie, `php<version>-mysql` unter Debian und Ubuntu) |
-| Namen in den Installern | Assistent „MySQL Improved“; `exp:install --db=mysql` (auch `mysqli`); Kickstarter `Type=mysqli` |
+| Namen in den Installern | Assistent „MariaDB / MySQL Improved“; `exp:install --db=mysql` (auch `mysqli`); Kickstarter `Type=mysqli` |
 
 ## Eine Datenbank pro Website anlegen
 

@@ -4,7 +4,7 @@ audience: hosting, admin
 category: hosting
 order: 100
 summary: MariaDB als Datenbank einer Exponential-Website aus Sicht eines Hosters - der gemeinsame Treiber mysqli, utf8mb4 und InnoDB, die Rechte, die der Benutzer einer Website braucht, Einstellungen, Installation, der Zeichensatz der Verbindung, Backups und die üblichen Probleme.
-keywords: MariaDB, mysqli, ezmysqli, MySQL Improved, utf8mb4, utf8mb3, InnoDB, Rechte, CREATE DATABASE, mariadb-dump, mysqldump, single-transaction, UseSlaveServer, Replikate, Zeichensatz der Verbindung, Datenbanken im Panel, Hosting, grants, replicas, connection charset, panel databases, hosting
+keywords: MariaDB, mysqli, ezmysqli, MariaDB / MySQL Improved, utf8mb4, utf8mb3, InnoDB, Rechte, CREATE DATABASE, mariadb-dump, mysqldump, single-transaction, UseSlaveServer, Replikate, Zeichensatz der Verbindung, Datenbanken im Panel, Hosting, grants, replicas, connection charset, panel databases, hosting
 type: help
 ---
 # MariaDB für Hoster
@@ -34,7 +34,7 @@ MariaDB läuft mit demselben Treiber wie MySQL, `eZMySQLiDB` (`lib/ezdb/classes/
 PHP-Erweiterung `mysqli`. Alles auf [MySQL für Hoster](mysql-fuer-hoster.md) gilt; diese Seite behandelt, was ein Hoster
 tun muss und was sich unterscheidet.
 
-- Der Setup-Assistent führt es als „MySQL Improved“.
+- Der Setup-Assistent führt es als „MariaDB / MySQL Improved“.
 - `exp:install --db=mariadb` ist dasselbe wie `--db=mysql`.
 - Der Kickstarter nimmt `[database_choice] Type=mysqli` (`mysql` wird akzeptiert).
 - MariaDB ist nicht in der CI des Projekts; der Job für MySQL 8.0 testet denselben Treiber, und MariaDB 10.5 läuft auf
