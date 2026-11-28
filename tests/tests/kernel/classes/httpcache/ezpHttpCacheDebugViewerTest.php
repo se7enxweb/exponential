@@ -39,7 +39,7 @@ class ezpHttpCacheDebugViewerTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        $base = dirname( __DIR__, 6 ) . '/var/tmp';
+        $base = dirname( __DIR__, 5 ) . '/var/tmp';
         $this->dir = $base . '/httpcache-debug-test-' . getmypid() . '-' . mt_rand();
         $this->sessions = $this->dir . '-sessions';
         mkdir( $this->dir, 0770, true );
@@ -282,7 +282,8 @@ class ezpHttpCacheDebugViewerTest extends PHPUnit\Framework\TestCase
         list( $key, $meta ) = $this->storeWithBar( $c, $c->anonymousContext( 'site' ), 0 );
         $dbg = glob( $this->dir . '/e/*/' . $key . '.*.dbg' );
         $this->assertCount( 1, $dbg );
-        $this->assertSame( '600', substr( sprintf( '%o', fileperms( $dbg[0] ) ), -3 ), 'the bar holds SQL and settings' );
+        if ( PHP_OS_FAMILY !== 'Windows' ) // Windows has no Unix file modes
+            $this->assertSame( '600', substr( sprintf( '%o', fileperms( $dbg[0] ) ), -3 ), 'the bar holds SQL and settings' );
         // expired: within the stale window a page would be served stale, a debug viewer gets a render
         $metaFile = $this->dir . '/e/' . substr( $key, 0, 2 ) . '/' . $key . '.meta';
         $m = json_decode( file_get_contents( $metaFile ), true );
