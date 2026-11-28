@@ -1938,7 +1938,8 @@ class expRADSurvey
             $directory = new RecursiveCallbackFilterIterator( $directory, function ( $file ) {
                 if ( !$file->isDir() )
                     return true;
-                return $file->isReadable() && $file->isExecutable()
+                // Windows has no execute bit: is_executable() is false for every directory there
+                return $file->isReadable() && ( DIRECTORY_SEPARATOR === '\\' || $file->isExecutable() )
                     && !in_array( $file->getFilename(), self::$sourceTreeSkippedDirectories, true );
             } );
             $iterator  = new RecursiveIteratorIterator( $directory, RecursiveIteratorIterator::SELF_FIRST,
