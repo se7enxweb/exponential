@@ -330,7 +330,8 @@ class expSetupSharedState
                     $mtime = @filemtime( $file );
                     if ( $mtime === false || $mtime < (int)floor( (float)$since ) )
                         continue;
-                    $relative = substr( $file, strlen( $root ) + 1 );
+                    // with slashes: the iterator joins with a backslash on Windows, and the manifest is read on every node
+                    $relative = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file, strlen( $root ) + 1 ) );
                     $sha = @sha1_file( $file );
                     if ( $sha === false || ( isset( $manifest['files'][$relative]['sha1'] ) && $manifest['files'][$relative]['sha1'] === $sha ) )
                         continue;
