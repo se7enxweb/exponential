@@ -139,7 +139,20 @@ What lives there:
   one. Only the files of the current run are fetched, and each is checked against its SHA-1 in the manifest. Once the
   site is installed, a node that did not serve the last steps fetches them the first time it is asked for the wizard.
 
-The directory must be writable by the web server's user on every node. Without one (no setting, no DFS), keep the
+The directory must be writable by the web server's user on every node, and it must **never be readable by others**:
+`files/` holds copies of the new site's settings, and `settings/override/site.ini.append.php` carries the database
+password. Create it before the wizard runs, owned by the web server's user and with the web group (the group the web
+server runs as on every node) as its group, mode `0750` or tighter (`2750` keeps the group on what is created inside):
+
+```bash
+install -d -o <web user> -g <web group> -m 2750 /mnt/shared/exp-setup
+```
+
+What the wizard creates there gets `0750` for directories and `0640` for files, or less: a copy never gets more than
+`0640`, whatever the mode of the file it copies (the node that fetches it gives it that file's own mode again), and
+`EZP_DIR_MODE_MAX` / `EZP_FILE_MODE_MAX` in `config.php` narrow both further (`eZDir::dirMode()`,
+`eZFile::fileMode()`). The wizard does not change the mode of the directory itself, so check it with `ls -ld` on every
+node. Without one (no setting, no DFS), keep the
 wizard's browser on one node (sticky sessions at the balancer) or install with the kickstarter. See
 [Several web nodes](../help/hosting/operations/several-web-nodes.md).
 

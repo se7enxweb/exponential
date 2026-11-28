@@ -153,7 +153,21 @@ Was dort liegt:
   Manifest geprüft. Ist die Site installiert, holt ein Knoten, der die letzten Schritte nicht bedient hat, sie beim
   ersten Aufruf des Assistenten.
 
-Das Verzeichnis muss auf jedem Knoten für den Benutzer des Webservers beschreibbar sein. Ohne eines (keine Einstellung,
+Das Verzeichnis muss auf jedem Knoten für den Benutzer des Webservers beschreibbar sein und darf **nie für andere
+lesbar** sein: `files/` enthält Kopien der Einstellungen der neuen Site, und `settings/override/site.ini.append.php`
+enthält das Datenbankpasswort. Legen Sie es vor dem Assistenten an, mit dem Benutzer des Webservers als Eigentümer und
+der Web-Gruppe (der Gruppe, unter der der Webserver auf jedem Knoten läuft) als Gruppe, Modus `0750` oder enger (`2750`
+vererbt die Gruppe an alles, was darin entsteht):
+
+```bash
+install -d -o <Web-Benutzer> -g <Web-Gruppe> -m 2750 /mnt/shared/exp-setup
+```
+
+Was der Assistent dort anlegt, erhält `0750` für Verzeichnisse und `0640` für Dateien oder weniger: Eine Kopie erhält
+nie mehr als `0640`, gleich welchen Modus die kopierte Datei hat (der Knoten, der sie holt, gibt ihr wieder den Modus
+der ursprünglichen Datei), und `EZP_DIR_MODE_MAX` / `EZP_FILE_MODE_MAX` in `config.php` schränken beide weiter ein
+(`eZDir::dirMode()`, `eZFile::fileMode()`). Den Modus des Verzeichnisses selbst ändert der Assistent nicht; prüfen Sie
+ihn mit `ls -ld` auf jedem Knoten. Ohne eines (keine Einstellung,
 kein DFS) halten Sie den Browser des Assistenten auf einem Knoten (Sticky Sessions am Balancer) oder installieren mit
 dem Kickstarter. Siehe [Mehrere Web-Knoten](../hilfe/hosting/betrieb/mehrere-web-knoten.md).
 
