@@ -923,9 +923,14 @@ if ( array_intersect( $aboutFlags, $leading ) )
 $quietMode    = false;
 $filteredArgs = array();
 
+// Only before a "--": the words after it belong to a command the called one
+// runs elsewhere (exp:host:run web -- exp:cache status -q), and are kept as given.
+$afterSeparator = false;
 foreach ( $rawArgs as $arg )
 {
-    if ( $arg === '--quiet' || $arg === '-q' ) { $quietMode = true; continue; }
+    if ( $arg === '--' )
+        $afterSeparator = true;
+    if ( !$afterSeparator && ( $arg === '--quiet' || $arg === '-q' ) ) { $quietMode = true; continue; }
     $filteredArgs[] = $arg;
 }
 

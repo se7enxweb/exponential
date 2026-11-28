@@ -249,6 +249,9 @@ class expAuditTaxonomy
         'system.staticpublish.build' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site built' ),
         'system.staticpublish.form' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site form posted' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        // a command run on the hosts of settings/cluster.ini over ssh (exp:host:run, exp:cluster:*;
+        // doc/eng-us/features/6.0/cluster-host-commands.md): the command and each host's exit code, never a host's output
+        'system.cluster.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Command run on cluster hosts' ),
         // the Velocity watchdog (doc/eng-us/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
         // something notable; a run that finds the engine running records nothing (not even system.command.run)
         'system.velocity.watchdog.start' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
