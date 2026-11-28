@@ -29428,7 +29428,7 @@ d155f5e9bb46f442bce3af6f028b8036  tests/tests/kernel/classes/audit/expAuditForkT
 44d1a5f7340006bdf825bce4fbf8e7ad  tests/tests/kernel/classes/audit/expAuditReaderChunkTest.php
 aed54c0db147e61a278afc8f07858a3e  tests/tests/kernel/classes/audit/expAuditRecentChannelsTest.php
 7d99458235d7f2d61978fb02e5a9672e  tests/tests/kernel/classes/audit/expAuditRecordTest.php
-4edb1bbb6a78d17d59935274c04aa66e  tests/tests/kernel/classes/audit/expAuditSinksTest.php
+066d90afd5f0fbc31d8fca0947971c68  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 17cdc5194888c668bc4c0c2ac710e1e7  tests/tests/kernel/classes/audit/expAuditSourceTest.php
 58a0666dad96d826217fb8bc4a41d339  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php
 17d90cbdf70bad018c2ff519d626b542  tests/tests/kernel/classes/audit/fixtures/expaudittestsyslogopenbasedir.php
