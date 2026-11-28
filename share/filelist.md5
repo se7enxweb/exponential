@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-8ba1ddc014148d5ad2b1180bba689894  doc/changelogs/6.0/6.0.15.md
+3c44a446aec766f952015b98712fc24c  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -25684,7 +25684,7 @@ f45e34d12ad6a7e1568acf45fa911975  kernel/classes/uiswitch/expuiswitchprovider.ph
 db01749d43797cb195a44fad8511aea4  kernel/classes/upgrade/expupgradebasestep.php
 436744bd5028db578825af947b530b65  kernel/classes/upgrade/expupgradecaption.php
 4a5e064a94f4fc93dc157da9b90bc151  kernel/classes/upgrade/expupgradecatalog.php
-936aec805c4cabac3a7ac7019bb1d925  kernel/classes/upgrade/expupgradecomposer.php
+887288554f373c0e3309cf3dcf7b4a54  kernel/classes/upgrade/expupgradecomposer.php
 f32e5c9ced19378ae45cab2e980662a4  kernel/classes/upgrade/expupgradecontext.php
 7345d98b55be90282eb99450410536c1  kernel/classes/upgrade/expupgradefinishstep.php
 40f00678849c999f571a4d8adc4f285e  kernel/classes/upgrade/expupgradegit.php
@@ -30271,7 +30271,7 @@ b78f30c542438fe4894167ffd0e9e9ca  tests/tests/kernel/classes/updatesql/SixZeroPa
 6cb8de81e320beb570bd2ab0c5b8c1ff  tests/tests/kernel/classes/upgrade/expUpgradeKernelTablesTest.php
 ec314851f8b7fb97fad8af6bd4e2b596  tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php
 15d206ad872d8022b137f001b0be1624  tests/tests/kernel/classes/upgrade/expUpgradeSqliteCompositeKeysTest.php
-cbfc42d6b6b70ff1daf4230e0a2ef352  tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php
+7cda572d21760f50e4ecbc1ce500bfb9  tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php
 62d76958dec0f86d2b7b4a418fdfe6f7  tests/tests/kernel/classes/upgrade/fixtures/composer_noisy.php
 a74487bb309f2275c4112a388b3dce4a  tests/tests/kernel/classes/urlalias/eZURLAliasMLHistoryLiveTest.php
 d42c3ea27251dc307d33fde92f941624  tests/tests/kernel/classes/urlalias/eZURLAliasMLMongoStorePathTest.php
