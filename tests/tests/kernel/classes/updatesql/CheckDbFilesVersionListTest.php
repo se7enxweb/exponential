@@ -155,8 +155,8 @@ class CheckDbFilesVersionListTest extends PHPUnit\Framework\TestCase
             $dir = \Exponential\Command\Kernel\Checkdbfiles::createExportDirectory( $this->scratchDirectory() );
             ob_start();
             $release = exportGitRelease( 'HEAD', $dir );
-            ob_end_clean();
-            $this->assertSame( $dir . '/release', $release );
+            $said = (string)ob_get_clean();
+            $this->assertSame( $dir . '/release', $release, $said );
             $this->assertFileExists( $release . '/update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql' );
             $this->assertFileDoesNotExist( $dir . '/release.tar', 'the archive is removed' );
 
