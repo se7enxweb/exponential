@@ -385,11 +385,11 @@ Für **libSQL** und **Turso** hat die Seite eigene Felder (`eZSetupLibSQLPage` k
 |---|---|---|
 | Modus (nur libSQL): „Gegenstelle“ (ein libSQL-Server, sqld) oder „Lokal“ (der eingebettete Dateimodus, eine SQLite-Datei) | `eZSetupLibSQLMode` (`remote`, `file`) | `DefaultMode_libsql=remote` |
 | URL (ersetzt Servername und Port: `http://host:port`, `https://host`, `libsql://host`) | `eZSetupLibSQLURL` | leer |
-| Servername, Port | `eZSetupDatabaseServer`, `eZSetupDatabasePort` | `DefaultServer_libsql=127.0.0.1`, `DefaultPort_libsql=8080`; Turso: Port 443 |
+| Servername, Port | `eZSetupDatabaseServer`, `eZSetupDatabasePort` | `DefaultServer_libsql=127.0.0.1`, `DefaultPort_libsql=8080`; Turso: `DefaultServer_turso=` (leer: Sie tragen den Host oder die URL Ihrer Turso-Datenbank ein), `DefaultPort_turso=443` |
 | Verschlüsselung (TLS, https), nur libSQL (Turso benutzt es immer) | `eZSetupLibSQLTLS` | an, wenn der Port 443 ist |
 | CA: Pfad (optional, der vollständige Pfad einer PEM-Datei) | `eZSetupLibSQLCAFile` | leer: die Zertifizierungsstellen des Systems |
 | Passwort (Auth-Token) | `eZSetupLibSQLToken` (ein Passwortfeld) | leer; Turso braucht eines |
-| Datenbankname | `eZSetupDatabaseName` | `DefaultName_libsql=exponential` |
+| Datenbankname | `eZSetupDatabaseName` | `DefaultName_libsql=exponential`, `DefaultName_turso=exponential`; kein Benutzer (`DefaultUser_libsql=`, `DefaultUser_turso=`): das Token ist das Passwort |
 | Name der Datenbankdatei (eingebetteter Dateimodus, in `var/storage/sqlite3`) | `eZSetupLibSQLFile` | `DefaultFile_libsql=exponential-libsql.db` |
 
 Das Tokenfeld ist immer leer, und das Token wird nie an den Browser zurückgeschickt: Der Assistent hält seine Antworten

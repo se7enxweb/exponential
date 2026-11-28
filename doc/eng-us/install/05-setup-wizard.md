@@ -358,11 +358,11 @@ For **libSQL** and **Turso** the page has fields of its own (`eZSetupLibSQLPage`
 |---|---|---|
 | Mode (libSQL only): "Remote" (a libSQL server, sqld) or "Local" (the embedded file mode, an SQLite file) | `eZSetupLibSQLMode` (`remote`, `file`) | `DefaultMode_libsql=remote` |
 | URL (replaces server name and port: `http://host:port`, `https://host`, `libsql://host`) | `eZSetupLibSQLURL` | empty |
-| Servername, Port | `eZSetupDatabaseServer`, `eZSetupDatabasePort` | `DefaultServer_libsql=127.0.0.1`, `DefaultPort_libsql=8080`; Turso: port 443 |
+| Servername, Port | `eZSetupDatabaseServer`, `eZSetupDatabasePort` | `DefaultServer_libsql=127.0.0.1`, `DefaultPort_libsql=8080`; Turso: `DefaultServer_turso=` (empty: you enter the host or URL of your Turso database), `DefaultPort_turso=443` |
 | Encryption (TLS, https), libSQL only (Turso always uses it) | `eZSetupLibSQLTLS` | on when the port is 443 |
 | CA: Path (optional, a PEM file's full path) | `eZSetupLibSQLCAFile` | empty: the system's CAs |
 | Password (auth token) | `eZSetupLibSQLToken` (a password field) | empty; Turso needs one |
-| Database name | `eZSetupDatabaseName` | `DefaultName_libsql=exponential` |
+| Database name | `eZSetupDatabaseName` | `DefaultName_libsql=exponential`, `DefaultName_turso=exponential`; no user (`DefaultUser_libsql=`, `DefaultUser_turso=`): the token is the password |
 | Database file name (embedded file mode, in `var/storage/sqlite3`) | `eZSetupLibSQLFile` | `DefaultFile_libsql=exponential-libsql.db` |
 
 The token field always comes empty and the token is never sent back to the browser: the wizard keeps its answers in
