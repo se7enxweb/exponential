@@ -30211,7 +30211,7 @@ a59936ac5aaf6b1c22876f28bee53d29  tests/tests/kernel/classes/staticpublish/expSt
 dc8164b53b2e30936c1b16dcf423c851  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
 ce3e4c7015008e89f5abf6bbfd959b4a  tests/tests/kernel/classes/staticpublish/expStaticFormEndpointTest.php
 a739816efeb887b9b40ff3013e0b0417  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
-624c1160896c23856bd5f7c3a4de0014  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
+efa68ade9988c9721a2a2b085cdc2327  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
 05ea7363b5328eac2002f72ed21f719f  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
 ec0ca9043eee8f62b309f3a9dbbf273c  tests/tests/kernel/classes/staticpublish/expStaticManifestTest.php
 97de9d553dbe1ce6759811deb0aded6e  tests/tests/kernel/classes/staticpublish/expStaticNotifierTest.php
