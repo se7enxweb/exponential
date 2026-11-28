@@ -126,7 +126,8 @@ class expSmartyParameterOperatorTest extends PHPUnit\Framework\TestCase
     public function testEveryHintlessKernelOperatorIsClassified()
     {
         $tpl = eZTemplate::factory();
-        $root = getcwd() . '/';
+        // with slashes: getcwd() and getFileName() give backslashes on Windows
+        $root = str_replace( '\\', '/', getcwd() ) . '/';
         $hintless = array();
         foreach ( array_keys( $tpl->Operators ) as $name )
         {
@@ -135,7 +136,7 @@ class expSmartyParameterOperatorTest extends PHPUnit\Framework\TestCase
             $object = $tpl->Operators[$name];
             if ( !is_object( $object ) )
                 continue;
-            $file = ( new ReflectionClass( $object ) )->getFileName();
+            $file = str_replace( '\\', '/', ( new ReflectionClass( $object ) )->getFileName() );
             $relative = strpos( $file, $root ) === 0 ? substr( $file, strlen( $root ) ) : $file;
             if ( strncmp( $relative, 'lib/', 4 ) !== 0 && strncmp( $relative, 'kernel/', 7 ) !== 0 )
                 continue;
