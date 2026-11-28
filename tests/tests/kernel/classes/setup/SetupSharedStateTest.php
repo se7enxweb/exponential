@@ -159,16 +159,20 @@ class SetupSharedStateTest extends PHPUnit\Framework\TestCase
 
     public function testFilesTheWizardWroteOnOneNodeReachTheOther()
     {
-        $since = time() - 10;
         mkdir( $this->nodeA . '/settings/override', 0775, true );
         mkdir( $this->nodeA . '/settings/siteaccess/site', 0775, true );
+        // a file the run did not write (there before the run) stays where it is
+        file_put_contents( $this->nodeA . '/settings/override/old.ini.append.php', "old\n" );
+        touch( $this->nodeA . '/settings/override/old.ini.append.php', time() - 100 );
+        sleep( 1 );
+        $since = time();
         file_put_contents( $this->nodeA . '/settings/override/site.ini.append.php', "[SiteAccessSettings]\nCheckValidity=false\n" );
         // a settings file holds the database password: its mode travels with it, never wider
         chmod( $this->nodeA . '/settings/override/site.ini.append.php', 0640 );
         file_put_contents( $this->nodeA . '/settings/siteaccess/site/site.ini.append.php', "[SiteSettings]\nSiteName=Site\n" );
-        // a file the run did not write (older than the run) stays where it is
-        file_put_contents( $this->nodeA . '/settings/override/old.ini.append.php', "old\n" );
-        touch( $this->nodeA . '/settings/override/old.ini.append.php', $since - 100 );
+        // a file written during the run with an older modification time (a package's file keeps the time of its
+        // archive) is the run's: it was created during the run
+        touch( $this->nodeA . '/settings/siteaccess/site/site.ini.append.php', $since - 86400 );
 
         $paths = array( 'settings/override', 'settings/siteaccess', '../outside', '/etc' );
         $this->assertSame( 2, expSetupSharedState::push( $this->nodeA, $this->shared, $paths, $since, 'run-1' ) );
@@ -253,6 +257,40 @@ class SetupSharedStateTest extends PHPUnit\Framework\TestCase
         $this->assertFileExists( $this->nodeA . '/' . expSetupWizardGuard::INSTALLED_MARKER );
         $this->assertTrue( expSetupWizardGuard::isInstalled( $this->nodeB, true, function () { return false; } ), 'node B did not serve the last page' );
         $this->assertSame( 'run-7', expSetupWizardGuard::sharedInstalledRun( $this->nodeB ) );
+    }
+
+    /**
+     * The node that did not serve the wizard's last page: its first request after it fetches the run's files,
+     * makes its caches and autoloads anew (they were built before the settings arrived) and writes its own marker,
+     * so it does that once.
+     */
+    public function testAnotherNodeTakesTheInstallationOverOnce()
+    {
+        $refreshed = 0;
+        $refresh = function () use ( &$refreshed ) { $refreshed++; };
+        $this->assertFalse( expSetupWizardGuard::adoptSharedInstallation( $this->nodeB, $refresh ), 'not installed yet' );
+        mkdir( $this->nodeA . '/settings/override', 0775, true );
+        file_put_contents( $this->nodeA . '/settings/override/site.ini.append.php', "[SiteAccessSettings]\nCheckValidity=false\n" );
+        mkdir( $this->nodeA . '/var/autoload', 0775, true );
+        file_put_contents( $this->nodeA . '/var/autoload/ezp_extension.php', "<?php return array();\n" );
+        $this->assertContains( 'var/autoload', expSetupSharedState::mirroredPaths() );
+        $this->assertSame( 2, expSetupSharedState::push( $this->nodeA, $this->shared, array( 'settings/override', 'var/autoload' ), time() - 10, 'run-5' ) );
+        $this->assertTrue( expSetupWizardGuard::markInstalled( $this->nodeA, 'run-5' ) );
+        $this->assertFalse( expSetupWizardGuard::adoptSharedInstallation( $this->nodeA, $refresh ), 'the node that served the last page' );
+
+        $this->assertTrue( expSetupWizardGuard::adoptSharedInstallation( $this->nodeB, $refresh ) );
+        $this->assertSame( 1, $refreshed );
+        $this->assertFileEquals( $this->nodeA . '/settings/override/site.ini.append.php', $this->nodeB . '/settings/override/site.ini.append.php' );
+        $this->assertFileEquals( $this->nodeA . '/var/autoload/ezp_extension.php', $this->nodeB . '/var/autoload/ezp_extension.php' );
+        $marker = json_decode( file_get_contents( $this->nodeB . '/' . expSetupWizardGuard::INSTALLED_MARKER ), true );
+        $this->assertSame( 'run-5', $marker['run'] );
+        $this->assertFalse( expSetupWizardGuard::adoptSharedInstallation( $this->nodeB, $refresh ), 'once' );
+        $this->assertSame( 1, $refreshed );
+
+        $root = dirname( __DIR__, 5 );
+        $kernel = file_get_contents( $root . '/kernel/private/classes/ezpkernelweb.php' );
+        $this->assertLessThan( strpos( $kernel, '$this->requestInit();', strpos( $kernel, 'public function run()' ) ),
+                               strpos( $kernel, '$this->sharedInstallationResult()' ) );
     }
 
     public function testTheWebWizardsRunIsKeptInTheSharedDirectory()

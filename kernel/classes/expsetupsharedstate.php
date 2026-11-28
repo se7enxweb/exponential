@@ -347,7 +347,8 @@ class expSetupSharedState
      */
     static function mirroredPaths()
     {
-        $paths = array( 'settings/override', 'settings/siteaccess' );
+        // var/autoload: the extension autoloads the run generated (autoload.php reads them from there on every node)
+        $paths = array( 'settings/override', 'settings/siteaccess', 'var/autoload' );
         try
         {
             if ( class_exists( 'eZPackage' ) )
@@ -394,8 +395,10 @@ class expSetupSharedState
                     continue;
                 foreach ( self::filesBelow( $root . '/' . $path ) as $file )
                 {
-                    $mtime = @filemtime( $file );
-                    if ( $mtime === false || $mtime < (int)floor( (float)$since ) )
+                    // The later of the modification and the change time: an imported package's files keep the
+                    // modification times of its archive, long before the run, but are changed (created) during it
+                    $mtime = max( (int)@filemtime( $file ), (int)@filectime( $file ) );
+                    if ( $mtime === 0 || $mtime < (int)floor( (float)$since ) )
                         continue;
                     // with slashes: the iterator joins with a backslash on Windows, and the manifest is read on every node
                     $relative = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file, strlen( $root ) + 1 ) );

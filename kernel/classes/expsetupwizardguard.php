@@ -368,6 +368,59 @@ class expSetupWizardGuard
     }
 
     /**
+     * A node that did not serve the wizard's last page takes the installation over on its first
+     * request after it: it fetches the files the run wrote (settings, packages, the extension
+     * autoloads), clears the settings caches it built while the site was not installed (a cache
+     * only checks the files it was built from, so a settings file that arrived later is never
+     * seen), regenerates the extension autoloads, and writes its own var/site_installed.json, so
+     * every later request costs one stat. Nothing happens on a single node, on a node that has its
+     * marker, or before the shared installed marker exists.
+     *
+     * @param string $root
+     * @param callable|null $refresh clears the caches and regenerates the autoloads (tests); null: refreshNode()
+     * @return bool true when this request took the installation over: the settings it read are stale
+     */
+    static function adoptSharedInstallation( $root, $refresh = null )
+    {
+        $local = rtrim( $root, '/' ) . '/' . self::INSTALLED_MARKER;
+        if ( is_file( $local ) || !class_exists( 'expSetupSharedState' ) )
+            return false;
+        $dir = expSetupSharedState::dir( $root );
+        if ( $dir === null )
+            return false;
+        $marker = $dir . '/site_installed.json';
+        $data = expSetupSharedState::readJson( $marker );
+        if ( !is_array( $data ) )
+            return false;
+        $run = isset( $data['run'] ) ? (string)$data['run'] : '';
+        if ( $run !== '' && expSetupSharedState::pull( $root, $dir, $run ) === false )
+            return false;
+        try
+        {
+            call_user_func( $refresh ?: array( __CLASS__, 'refreshNode' ) );
+        }
+        catch ( Throwable $e )
+        {
+            if ( class_exists( 'eZDebug' ) )
+                eZDebug::writeError( 'Taking over the installation from the shared state directory: ' . $e->getMessage(), __METHOD__ );
+            return false;
+        }
+        $data['adopted'] = array( 'node' => expSetupSharedState::nodeName(), 'time' => gmdate( 'c' ) );
+        return @file_put_contents( $local, json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) !== false;
+    }
+
+    /** The caches a node built before the site's settings arrived, and its extension autoloads, made anew */
+    static function refreshNode()
+    {
+        if ( class_exists( 'eZCache' ) )
+            eZCache::clearByID( array( 'global_ini', 'ini', 'active_extensions', 'design_base', 'template-override' ) );
+        if ( class_exists( 'eZINI' ) )
+            eZINI::resetAllInstances( false );
+        if ( class_exists( 'ezpAutoloader' ) )
+            ezpAutoloader::updateExtensionAutoloadArray();
+    }
+
+    /**
      * The wizard's last page: the site is installed from now on, for every node.
      *
      * @param string $root

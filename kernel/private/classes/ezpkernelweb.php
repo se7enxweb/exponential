@@ -415,6 +415,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             $this->shutdown();
             return $maintenance;
         }
+        // The first request on a node that did not serve the wizard's last page: it takes the installation over
+        // (expSetupWizardGuard::adoptSharedInstallation()), and the browser asks again, read with the new settings
+        $adopted = $this->sharedInstallationResult();
+        if ( $adopted !== null )
+        {
+            $this->shutdown();
+            return $adopted;
+        }
 
         if ( $this->mobileDeviceDetect->isEnabled() )
         {
@@ -2012,6 +2020,24 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      *
      * @return ezpKernelResult|null null when no wizard holds the site, on a single node, or for the wizard's browser
      */
+    protected function sharedInstallationResult()
+    {
+        if ( !class_exists( 'expSetupWizardGuard' ) || !class_exists( 'expSetupSharedState' )
+             || !expSetupWizardGuard::adoptSharedInstallation( eZSys::rootDir() ) )
+            return null;
+        $method = isset( $_SERVER['REQUEST_METHOD'] ) ? strtoupper( (string)$_SERVER['REQUEST_METHOD'] ) : 'GET';
+        // A form posted now is answered with the settings read so far; a page is asked for again
+        if ( ( $method !== 'GET' && $method !== 'HEAD' ) || headers_sent() )
+            return null;
+        $uri = (string)eZSys::serverVariable( 'REQUEST_URI', true );
+        if ( $uri === '' || $uri[0] !== '/' || strpos( $uri, '//' ) === 0 )
+            $uri = '/';
+        foreach ( expSetupWizardGuard::noStoreHeaders() as $name => $value )
+            header( $name . ': ' . $value, true );
+        header( 'Location: ' . $uri, true, 302 );
+        return new ezpKernelResult( '', array( 'setup' => 'installation taken over' ) );
+    }
+
     protected function sharedMaintenanceResult()
     {
         if ( !class_exists( 'expMaintenance' ) || !class_exists( 'expSetupSharedState' ) )
