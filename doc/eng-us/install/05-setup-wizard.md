@@ -134,10 +134,18 @@ What lives there:
   file renamed into place). A lease another browser holds is never taken over: that request gets the maintenance page.
 - Every node checks the shared lease at the start of each request, before the siteaccess, the session and the
   database, and answers everybody but the wizard's browser with the 503 maintenance page.
-- The settings the wizard writes (`settings/override`, `settings/siteaccess`) and the packages it imports
-  (`var/storage/packages`) are copied to `files/` at the end of each step and fetched by the node that serves the next
-  one. Only the files of the current run are fetched, and each is checked against its SHA-1 in the manifest. Once the
-  site is installed, a node that did not serve the last steps fetches them the first time it is asked for the wizard.
+- The settings the wizard writes (`settings/override`, `settings/siteaccess`), the packages it imports
+  (`var/storage/packages`, including a site package downloaded at **Site selection**) and the extension autoloads it
+  generates (`var/autoload`) are copied to `files/` at the end of each step and fetched by the node that serves the
+  next one. A file counts as the run's when it was modified or created during the run (an imported package's files
+  keep the dates of its archive). Only the files of the current run are fetched, and each is checked against its SHA-1
+  in the manifest.
+- Once the site is installed, every node that did not serve the last page takes the installation over on its first
+  request: it fetches the run's files, clears the settings caches it built before they arrived, regenerates its
+  extension autoloads, writes its own `var/site_installed.json` and sends the browser to the same address again.
+- A request for a style sheet, a script, an image, `/favicon.ico` or `/robots.txt` that the web server does not serve
+  itself reaches the wizard too; it gets a 404 and never counts as opening the wizard's first page, which would start
+  a new run and abandon the one in progress.
 
 The directory must be writable by the web server's user on every node, and it must **never be readable by others**:
 `files/` holds copies of the new site's settings, and `settings/override/site.ini.append.php` carries the database

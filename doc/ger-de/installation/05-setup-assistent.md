@@ -147,11 +147,19 @@ Was dort liegt:
   nie übernommen: Diese Anfrage erhält die Wartungsseite.
 - Jeder Knoten prüft die gemeinsame Frist zu Beginn jeder Anfrage, vor Siteaccess, Sitzung und Datenbank, und
   antwortet allen außer dem Browser des Assistenten mit der Wartungsseite (503).
-- Die Einstellungen, die der Assistent schreibt (`settings/override`, `settings/siteaccess`), und die Pakete, die er
-  importiert (`var/storage/packages`), werden am Ende jedes Schritts nach `files/` kopiert und von dem Knoten geholt,
-  der den nächsten Schritt bedient. Geholt werden nur die Dateien des laufenden Durchlaufs, jede gegen ihren SHA-1 im
-  Manifest geprüft. Ist die Site installiert, holt ein Knoten, der die letzten Schritte nicht bedient hat, sie beim
-  ersten Aufruf des Assistenten.
+- Die Einstellungen, die der Assistent schreibt (`settings/override`, `settings/siteaccess`), die Pakete, die er
+  importiert (`var/storage/packages`, auch ein bei der **Site-Auswahl** heruntergeladenes Site-Paket), und die
+  Erweiterungs-Autoloads, die er erzeugt (`var/autoload`), werden am Ende jedes Schritts nach `files/` kopiert und von
+  dem Knoten geholt, der den nächsten Schritt bedient. Eine Datei gehört zum Durchlauf, wenn sie während des
+  Durchlaufs geändert oder angelegt wurde (die Dateien eines importierten Pakets behalten die Daten seines Archivs).
+  Geholt werden nur die Dateien des laufenden Durchlaufs, jede gegen ihren SHA-1 im Manifest geprüft.
+- Ist die Site installiert, übernimmt jeder Knoten, der die letzte Seite nicht bedient hat, die Installation bei
+  seiner ersten Anfrage: Er holt die Dateien des Durchlaufs, leert die Einstellungs-Caches, die er vor ihrer Ankunft
+  aufgebaut hat, erzeugt seine Erweiterungs-Autoloads neu, schreibt sein eigenes `var/site_installed.json` und
+  schickt den Browser erneut zur selben Adresse.
+- Eine Anfrage nach einem Stylesheet, einem Skript, einem Bild, `/favicon.ico` oder `/robots.txt`, die der Webserver
+  nicht selbst ausliefert, erreicht ebenfalls den Assistenten; sie erhält 404 und gilt nie als Aufruf der ersten Seite
+  des Assistenten, der einen neuen Durchlauf beginnen und den laufenden abbrechen würde.
 
 Das Verzeichnis muss auf jedem Knoten für den Benutzer des Webservers beschreibbar sein und darf **nie für andere
 lesbar** sein: `files/` enthält Kopien der Einstellungen der neuen Site, und `settings/override/site.ini.append.php`
