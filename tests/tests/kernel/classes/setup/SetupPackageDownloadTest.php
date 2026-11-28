@@ -208,7 +208,8 @@ ROUTER;
         $step = $this->downloader();
         $started = microtime( true );
         $this->assertFalse( $step->downloadFile( $this->url( 'ok.ezpkg', self::freePort() ), self::$outDir ) );
-        $this->assertLessThan( 5, microtime( true ) - $started );
+        // Windows tries a refused connection again for about two seconds before it says so: three attempts take 6 s
+        $this->assertLessThan( PHP_OS_FAMILY === 'Windows' ? 10 : 5, microtime( true ) - $started );
         $this->assertSame( 3, $step->DownloadAttemptCount );
         $this->assertMatchesRegularExpression( '/curl error 7: .*(refused|connect)/i', $step->ErrorMsg );
         $this->assertFileDoesNotExist( self::$outDir . '/ok.ezpkg' );
