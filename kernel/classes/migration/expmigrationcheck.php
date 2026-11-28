@@ -228,7 +228,15 @@ class expMigrationCheck
      */
     public static function relative( $text, $root )
     {
-        $root = rtrim( (string)$root, '/' );
-        return $root === '' ? (string)$text : str_replace( $root . '/', '', (string)$text );
+        $text = (string)$text;
+        $root = (string)$root;
+        // on Windows the paths of a report have backslashes, or both kinds: compared and shown with slashes
+        if ( DIRECTORY_SEPARATOR === '\\' )
+        {
+            $text = str_replace( '\\', '/', $text );
+            $root = str_replace( '\\', '/', $root );
+        }
+        $root = rtrim( $root, '/' );
+        return $root === '' ? $text : str_replace( $root . '/', '', $text );
     }
 }

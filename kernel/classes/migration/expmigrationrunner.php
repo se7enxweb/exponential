@@ -1179,9 +1179,10 @@ class expMigrationRunner
         $source = (string)$migration->source();
         $checksum = method_exists( $migration, 'checksum' ) ? $migration->checksum() : null;
         $file = method_exists( $migration, 'file' ) ? (string)$migration->file() : '';
-        $root = rtrim( $context->root(), '/' ) . '/';
-        if ( $file !== '' && strpos( $file, $root ) === 0 )
-            $file = substr( $file, strlen( $root ) );
+        // relative to the installation, with slashes: on Windows both may hold backslashes
+        $root = rtrim( $context->root(), '/' . DIRECTORY_SEPARATOR );
+        if ( $file !== '' && $root !== '' && $file !== $root && eZDir::isInside( $file, $root ) )
+            $file = str_replace( DIRECTORY_SEPARATOR, '/', substr( $file, strlen( $root ) + 1 ) );
         $record = $context->record( $source, $id );
         $entry = array(
             'id' => $id,

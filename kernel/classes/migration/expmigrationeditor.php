@@ -434,7 +434,8 @@ class expMigrationEditor
         {
             $real = realpath( $directory['path'] );
             if ( $real !== false )
-                $folders[] = rtrim( $real, '/' ) . '/';
+                // realpath() writes DIRECTORY_SEPARATOR, a backslash on Windows
+                $folders[] = rtrim( $real, '/' . DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR;
         }
         foreach ( $locator->find() as $definition )
         {
@@ -448,12 +449,15 @@ class expMigrationEditor
         return null;
     }
 
-    /** @return bool a real path inside one of the folders (each ending in /). Pure. */
+    /** @return bool a real path directly inside one of the folders (each ending in / or DIRECTORY_SEPARATOR). Pure. */
     public static function inside( $file, array $folders )
     {
         foreach ( $folders as $folder )
-            if ( strpos( (string)$file, $folder ) === 0 && substr_count( substr( (string)$file, strlen( $folder ) ), '/' ) === 0 )
+        {
+            $rest = substr( (string)$file, strlen( $folder ) );
+            if ( strpos( (string)$file, $folder ) === 0 && strpos( $rest, '/' ) === false && strpos( $rest, DIRECTORY_SEPARATOR ) === false )
                 return true;
+        }
         return false;
     }
 
