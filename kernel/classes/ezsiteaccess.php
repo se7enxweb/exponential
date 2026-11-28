@@ -667,7 +667,9 @@ class eZSiteAccess
      */
     private static function normalizeHost( $host )
     {
-        $host = strtolower( rtrim( trim( (string)$host ), '.' ) );
+        // ASCII only: before PHP 8.2 strtolower() followed the locale, and a single-byte locale (Windows) broke
+        // the UTF-8 of an internationalised name before idn_to_ascii() saw it
+        $host = strtr( rtrim( trim( (string)$host ), '.' ), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz' );
         if ( $host !== '' && preg_match( '/[\x80-\xff]/', $host ) && function_exists( 'idn_to_ascii' ) )
         {
             $port = '';

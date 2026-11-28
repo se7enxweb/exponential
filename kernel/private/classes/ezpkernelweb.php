@@ -1565,7 +1565,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      */
     protected static function normaliseRedirectHost( $host )
     {
-        $host = strtolower( trim( $host ) );
+        // ASCII only: before PHP 8.2 strtolower() followed the locale, and a single-byte locale (Windows) broke
+        // the UTF-8 of an internationalised name before idn_to_ascii() saw it
+        $host = strtr( trim( $host ), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz' );
         if ( $host === '' )
         {
             return '';
