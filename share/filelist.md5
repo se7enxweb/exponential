@@ -3595,7 +3595,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4a6625f1959bdd4b43ea5ca3d869e8e5  doc/changelogs/6.0/6.0.15.md
+fa1a85e00cd3dc668c7170f6980817c6  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -13303,7 +13303,7 @@ bc4db0183deb0089e58c6eaea3a5ff1f  doc/eng-us/install/01-introduction.md
 cb10da725a3fecff3599dfd9f57e1e0e  doc/eng-us/install/02-requirements.md
 efcb7e6e422a7d33b312c844e73c7efb  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
-6101e32d189ba0b0882e6f666730f032  doc/eng-us/install/05-setup-wizard.md
+0700cc19f14da1d34a3890ec2b5f2ae0  doc/eng-us/install/05-setup-wizard.md
 83261f15db4694059d061715d1d33f37  doc/eng-us/install/06-kickstarter.md
 0097b666167efd6ba1a2b941f2b817fd  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
@@ -23246,7 +23246,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 a39faf94d6a7af78312ae4eb1ef01146  doc/ger-de/installation/02-voraussetzungen.md
 e8a1d89728201585d1cb6850cad1ce36  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
-eb37d5626de4cb3074c347493d4c1258  doc/ger-de/installation/05-setup-assistent.md
+05b99dec9a4c01ff3a581ceeb8c3398b  doc/ger-de/installation/05-setup-assistent.md
 00ff5b63c49005d825b5c7d213ba05ea  doc/ger-de/installation/06-kickstarter.md
 0444a0b72e7fcdb36a5e507d9829ca36  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
@@ -25021,7 +25021,7 @@ ea2ac584c29921333e5bcd36e889d4d4  kernel/classes/expkernelservices.php
 2ca8689ca5bf88646729f7adb1be1751  kernel/classes/expkickstarterini.php
 62c7d643204f1f1f5741e2da8f7acd9f  kernel/classes/explinkcheck.php
 0e7f961116e0722f10ded1ecd4ccdd35  kernel/classes/explovestack.php
-ea63b34a4292319b2cdbc35eae659b7f  kernel/classes/expmaintenance.php
+ef6cb5a7dce04db68d46316fb119f31f  kernel/classes/expmaintenance.php
 33cc85b93a8d82398aa5c08ad830cb3c  kernel/classes/expmanagedconfiguration.php
 d80536b118335fd846908026045f1669  kernel/classes/expmembermanagement.php
 965ac362303065fc0fbdc3ea90bfa8d1  kernel/classes/expnamepatternresolverinterface.php
@@ -25049,8 +25049,8 @@ afb2513e75fc4aac5845415fcb286b09  kernel/classes/expscriptstatus.php
 96fd9b39e84a7734ae00ce7f05907025  kernel/classes/expsearchsuggest.php
 fca699a4c3df7cff3d9c09dbb2ef3e28  kernel/classes/expsecretrule.php
 9f97a60176a20903e12d18fc338f76a8  kernel/classes/expsetupfilecopy.php
-ec318f388fd0b5a0a7f84bc2833b6bb0  kernel/classes/expsetuplog.php
-b603d88e9916271ee1e7269f77055416  kernel/classes/expsetupwizardguard.php
+baa533c89e08cb470b6cf4f3f0c8412e  kernel/classes/expsetuplog.php
+fa1354d6242e845e0ca309f25e209cff  kernel/classes/expsetupwizardguard.php
 db9f242bb5c064641868a67dd67c3064  kernel/classes/expsiteaccessfornode.php
 c45fe45f4c305e95e5ffdf4b7bf29503  kernel/classes/expsiteaccessoverview.php
 ac4bcb3f6921bc10b18acf877f90f495  kernel/classes/expsystemreport.php
@@ -26392,7 +26392,7 @@ e6144e472a2c4552d0be9718564e8b4c  kernel/private/classes/ezpkernel.php
 be8cdbb5b8fe8e504850e689e21def82  kernel/private/classes/ezpkernelredirect.php
 cae1daaf1de53266d1073fd3a76faa21  kernel/private/classes/ezpkernelresult.php
 cfb368b88c619b389425dee03f10b9c0  kernel/private/classes/ezpkerneltreemenu.php
-daf28f3bbef4b644962b1f92f1dc4cb8  kernel/private/classes/ezpkernelweb.php
+d488195ec172779af065ccece70423b2  kernel/private/classes/ezpkernelweb.php
 5c244f8105822a81124a48dcf75f657f  kernel/private/classes/ezplanguageswitcher.php
 69d8850cc8d71b9a27d3ddc558d04268  kernel/private/classes/ezpmail.php
 8dcd128ae32ce6b90bb3bd055edaaeda  kernel/private/classes/ezpmobiledevicedetect.php
@@ -26626,7 +26626,7 @@ b3bdcdc24bb02063bdaa0029435ade1c  kernel/private/classes/views/setup/cachetoolba
 14b4b85b145bcf760912bb817150bbce  kernel/private/classes/views/setup/datatype.php
 52dd9789d560b405889c88f5bacd9a32  kernel/private/classes/views/setup/designextension.php
 00e81dd6654ca58068a8749a822ad504  kernel/private/classes/views/setup/extensions.php
-a10cf87192ca067225e0f65ca9de7334  kernel/private/classes/views/setup/ezsetup.php
+b23cb68609f54f5a9ed544efff032320  kernel/private/classes/views/setup/ezsetup.php
 ae11e7010436d30804244b58f892c156  kernel/private/classes/views/setup/handlerextension.php
 a72243fd530cc0f2c7a4bad6c4709082  kernel/private/classes/views/setup/info.php
 145b00435bed599bec736dee0133ebc6  kernel/private/classes/views/setup/kerneloverride.php
@@ -27687,7 +27687,7 @@ fab0b95424f1f85dc539d73f65d8b92c  settings/rest.ini
 d90940aaed082e22b8356eca7e84228e  settings/setup.ini
 55888fce5d54995fd4fe569e67d6c56d  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-3ca1d4563949ab912ef79462f0fb7bd7  settings/site.ini
+644f8afdeb801ae20092caa0b50edfaf  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -30190,7 +30190,7 @@ cf8be805ae4c110abc4bbd547249a7e8  tests/tests/kernel/classes/setup/SetupContentF
 866007765df415bc0fa1c5ba884b19d5  tests/tests/kernel/classes/setup/SetupPhpVersionTest.php
 1a309404167d3bf08eab4bc81308bb16  tests/tests/kernel/classes/setup/SetupRemoteIndexSanitizingTest.php
 5dcf377fe99f8d8c6e6adcde9f3142bd  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
-bbb6fcd70362c8fc0119ecf22da86a6b  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
+4c3b47e36328450f0c870c0e04f48c27  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 ff16951947f561095e82a782732322f0  tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php
 c9d7f04ca55c0d534e3521802d1dafdc  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
 757e4dce76a9500aa9c22bdebcc8662c  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
@@ -31494,8 +31494,8 @@ fc218dcb185a768f27d4ac5790f4ab47  design/standard/templates/shop/myorders.tpl
 fe1496bdc9e0826ba179ead7905eb2c7  kernel/private/classes/views/shop/myorders.php
 a8bff2772dd2d28e006986d0c6a33631  kernel/shop/myorders.php
 71d044da80444a8ca56c84b5c5900d82  tests/tests/kernel/classes/shopprices/eZShopMyOrdersViewTest.php
-1e8bf6b1bfc7e00c2a042ffe3515a549  kernel/classes/expsetupsharedstate.php
-10e1c4deef226a3ee3171381c18ac32a  tests/tests/kernel/classes/setup/SetupSharedStateTest.php
+aa6cf92b0994e24fe4e84a7b96e34b13  kernel/classes/expsetupsharedstate.php
+452146d73d57bac1faf285ddd4b71c05  tests/tests/kernel/classes/setup/SetupSharedStateTest.php
 1687636c40e1b4c539844e56f7555287  bin/php/expclustercache.php
 4bf23fc88eb38d9ac1677194e8197696  bin/php/expclusterdeploy.php
 4b430f05cc96a2543521b3c31db87f67  bin/php/expclusterhosts.php
