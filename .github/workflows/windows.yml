@@ -115,7 +115,8 @@ jobs:
           for f in "$RUNNER_TEMP"/events-*.txt; do
             [ -f "$f" ] || continue
             echo "=== $(basename "$f"): $(grep -c 'Test Prepared' "$f") tests started, $(grep -c 'Test Finished' "$f") finished"
-            grep -E 'Test (Failed|Errored)' "$f" | cut -c1-400 | head -80
+            # no failed test is no match: grep's exit status 1 must not fail this report (the suites' steps fail)
+            { grep -E 'Test (Failed|Errored)' "$f" || true; } | cut -c1-400 | head -80
             echo '--- last events'
             tail -n 8 "$f" | cut -c1-400
           done
