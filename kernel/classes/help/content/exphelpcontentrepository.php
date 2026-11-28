@@ -534,7 +534,8 @@ class expHelpContentRepository
         if ( $configured !== '' )
             $candidates[] = $configured;
         $binary = (string)PHP_BINARY;
-        if ( $binary !== '' && preg_match( '/^php[0-9.]*$/', basename( $binary ) ) )
+        // php.exe on Windows
+        if ( $binary !== '' && preg_match( DIRECTORY_SEPARATOR === '\\' ? '/^php[0-9.]*\.exe$/i' : '/^php[0-9.]*$/', basename( $binary ) ) )
             $candidates[] = $binary;
         if ( $binary !== '' )
             $candidates[] = dirname( dirname( $binary ) ) . '/bin/php';
